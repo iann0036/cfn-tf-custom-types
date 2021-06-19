@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::OCI::DatacatalogDataAsset",
+    "description": "This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.\n\nCreate a new data asset.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatacatalogDataAsset/docs/README.md",
+    "definitions": {
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string",
+            "description": "Unique catalog identifier."
+        },
+        "CreatedById": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) Detailed description of the data asset."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
+        },
+        "ExternalKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            },
+            "description": "(Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the \"default\" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{\"properties\": { \"default\": { \"host\": \"host1\", \"port\": \"1521\", \"database\": \"orcl\"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this [example](https://github.com/terraform-providers/terraform-provider-oci/blob/master/examples/datacatalog/main.tf)."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "TypeKey": {
+            "type": "string",
+            "description": "The key of the data asset type. This can be obtained via the '/types' endpoint."
+        },
+        "UpdatedById": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CatalogId",
+        "DisplayName",
+        "TypeKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedById",
+        "/properties/ExternalKey",
+        "/properties/Id",
+        "/properties/Key",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated",
+        "/properties/UpdatedById",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

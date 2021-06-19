@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::AWS::MskConfiguration",
+    "description": "Manages an Amazon Managed Streaming for Kafka configuration. More information can be found on the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-MskConfiguration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KafkaVersions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Apache Kafka versions which can use this configuration."
+        },
+        "LatestRevision": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the configuration."
+        },
+        "ServerProperties": {
+            "type": "string",
+            "description": "Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServerProperties"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/LatestRevision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

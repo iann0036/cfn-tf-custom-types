@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::AWS::CognitoUserPoolDomain",
+    "description": "Provides a Cognito User Pool Domain resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CognitoUserPoolDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string",
+            "description": "The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain."
+        },
+        "CloudfrontDistributionArn": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "S3Bucket": {
+            "type": "string"
+        },
+        "UserPoolId": {
+            "type": "string",
+            "description": "The user pool ID."
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "UserPoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsAccountId",
+        "/properties/CloudfrontDistributionArn",
+        "/properties/Id",
+        "/properties/S3Bucket",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

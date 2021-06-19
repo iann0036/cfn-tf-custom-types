@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::AzureRM::VirtualDesktopHostPool",
+    "description": "CloudFormation equivalent of azurerm_virtual_desktop_host_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualDesktopHostPool/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RegistrationInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExpirationDate"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomRdpProperties": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FriendlyName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerType": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "MaximumSessionsAllowed": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PersonalDesktopAssignmentType": {
+            "type": "string"
+        },
+        "PreferredAppGroupType": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "StartVmOnConnect": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "ValidateEnvironment": {
+            "type": "boolean"
+        },
+        "RegistrationInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RegistrationInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerType",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

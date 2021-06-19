@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::Vault::JwtAuthBackend",
+    "description": "Provides a resource for managing an\n[JWT auth backend within Vault](https://www.vaultproject.io/docs/auth/jwt.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-JwtAuthBackend/docs/README.md",
+    "definitions": {
+        "ProviderConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TuneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedResponseHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuditNonHmacRequestKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuditNonHmacResponseKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultLeaseTtl": {
+                    "type": "string"
+                },
+                "ListingVisibility": {
+                    "type": "string"
+                },
+                "MaxLeaseTtl": {
+                    "type": "string"
+                },
+                "PassthroughRequestHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TokenType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "BoundIssuer": {
+            "type": "string",
+            "description": "The value against which to match the iss claim in a JWT."
+        },
+        "DefaultRole": {
+            "type": "string",
+            "description": "The default role to use if none is provided during login."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the auth backend."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JwksCaPem": {
+            "type": "string",
+            "description": "The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used."
+        },
+        "JwksUrl": {
+            "type": "string",
+            "description": "JWKS URL to use to authenticate signatures. Cannot be used with \"oidc_discovery_url\" or \"jwt_validation_pubkeys\"."
+        },
+        "JwtSupportedAlgs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of supported signing algorithms. Vault 1.1.0 defaults to [RS256] but future or past versions of Vault may differ."
+        },
+        "JwtValidationPubkeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used in combination with `oidc_discovery_url`."
+        },
+        "OidcClientId": {
+            "type": "string",
+            "description": "Client ID used for OIDC backends."
+        },
+        "OidcClientSecret": {
+            "type": "string",
+            "description": "Client Secret used for OIDC backends."
+        },
+        "OidcDiscoveryCaPem": {
+            "type": "string",
+            "description": "The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used."
+        },
+        "OidcDiscoveryUrl": {
+            "type": "string",
+            "description": "The OIDC Discovery URL, without any .well-known component (base path). Cannot be used in combination with `jwt_validation_pubkeys`."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to mount the JWT/OIDC auth backend."
+        },
+        "ProviderConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProviderConfigDefinition"
+            },
+            "description": "Provider specific handling configuration."
+        },
+        "Tune": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TuneDefinition"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of auth backend. Should be one of `jwt` or `oidc`. Default - `jwt`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/OidcClientSecret"
+    ]
+}

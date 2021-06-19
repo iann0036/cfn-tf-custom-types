@@ -1,0 +1,262 @@
+{
+    "typeName": "TF::Google::PubsubSubscription",
+    "description": "A named resource representing the stream of messages from a single,\nspecific topic, to be delivered to the subscribing application.\n\n\nTo get more information about Subscription, see:\n\n* [API documentation](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions)\n* How-to Guides\n    * [Managing Subscriptions](https://cloud.google.com/pubsub/docs/admin#managing_subscriptions)\n\n~> **Note:** You can retrieve the email of the Google Managed Pub/Sub Service Account used for forwarding \nby using the `google_project_service_identity` resource.\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=pubsub_subscription_push&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-PubsubSubscription/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeadLetterPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeadLetterTopic": {
+                    "type": "string"
+                },
+                "MaxDeliveryAttempts": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ExpirationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ttl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ttl"
+            ]
+        },
+        "PushConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttributesDefinition"
+                    }
+                },
+                "PushEndpoint": {
+                    "type": "string"
+                },
+                "OidcToken": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OidcTokenDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "PushEndpoint"
+            ]
+        },
+        "AttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RetryPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaximumBackoff": {
+                    "type": "string"
+                },
+                "MinimumBackoff": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OidcTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "string"
+                },
+                "ServiceAccountEmail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceAccountEmail"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AckDeadlineSeconds": {
+            "type": "number"
+        },
+        "EnableMessageOrdering": {
+            "type": "boolean"
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "MessageRetentionDuration": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "RetainAckedMessages": {
+            "type": "boolean"
+        },
+        "Topic": {
+            "type": "string"
+        },
+        "DeadLetterPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeadLetterPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExpirationPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExpirationPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "PushConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PushConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetryPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetryPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Topic"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

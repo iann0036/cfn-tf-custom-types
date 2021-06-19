@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::FortiOS::ApplicationCustom",
+    "description": "Configure custom application signatures.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ApplicationCustom/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Behavior": {
+            "type": "string",
+            "description": "Custom application signature behavior."
+        },
+        "Category": {
+            "type": "number",
+            "description": "Custom application category ID (use ? to view available options)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Custom application category ID (use ? to view available options)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of this custom application signature."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Custom application signature protocol."
+        },
+        "Signature": {
+            "type": "string",
+            "description": "The text that makes up the actual custom application signature."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Signature tag."
+        },
+        "Technology": {
+            "type": "string",
+            "description": "Custom application signature technology."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vendor": {
+            "type": "string",
+            "description": "Custom application signature vendor."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

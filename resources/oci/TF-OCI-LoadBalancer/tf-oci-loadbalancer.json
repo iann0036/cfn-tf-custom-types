@@ -1,0 +1,276 @@
+{
+    "typeName": "TF::OCI::LoadBalancer",
+    "description": "CloudFormation equivalent of oci_load_balancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LoadBalancer/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IpAddressDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "IpAddressDetailsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IsPublic": {
+                    "type": "boolean"
+                },
+                "ReservedIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressDetailsDefinition"
+                    }
+                }
+            }
+        },
+        "SystemTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ReservedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ShapeDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaximumBandwidthInMbps": {
+                    "type": "number"
+                },
+                "MinimumBandwidthInMbps": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaximumBandwidthInMbps",
+                "MinimumBandwidthInMbps"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddressDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpAddressDetailsDefinition2"
+            }
+        },
+        "IpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IpMode": {
+            "type": "string"
+        },
+        "IsPrivate": {
+            "type": "boolean"
+        },
+        "NetworkSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SystemTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemTagsDefinition"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "ReservedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReservedIpsDefinition"
+            }
+        },
+        "ShapeDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShapeDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "Shape",
+        "SubnetIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IpAddressDetails",
+        "/properties/IpAddresses",
+        "/properties/State",
+        "/properties/SystemTags",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

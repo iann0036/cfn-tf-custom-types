@@ -1,0 +1,385 @@
+{
+    "typeName": "TF::Nutanix::Project",
+    "description": "Provides a Nutanix Project resource to Create a Project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanix/TF-Nutanix-Project/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OwnerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProjectReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccountReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "CategoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefaultSubnetReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "EnvironmentReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "ExternalNetworkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "ExternalUserGroupReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "ResourceDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SubnetReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "UserReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "ResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Limit": {
+                    "type": "number"
+                },
+                "ResourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Limit",
+                "ResourceType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for project."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the project."
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OwnerReferenceDefinition"
+            }
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProjectReferenceDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "AccountReferenceList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccountReferenceListDefinition"
+            }
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CategoriesDefinition"
+            }
+        },
+        "DefaultSubnetReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultSubnetReferenceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "EnvironmentReferenceList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnvironmentReferenceListDefinition"
+            }
+        },
+        "ExternalNetworkList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalNetworkListDefinition"
+            }
+        },
+        "ExternalUserGroupReferenceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExternalUserGroupReferenceListDefinition"
+            }
+        },
+        "ResourceDomain": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceDomainDefinition"
+            },
+            "maxItems": 1
+        },
+        "SubnetReferenceList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetReferenceListDefinition"
+            }
+        },
+        "UserReferenceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserReferenceListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IsDefault",
+        "/properties/Metadata",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

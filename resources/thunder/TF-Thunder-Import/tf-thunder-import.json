@@ -1,0 +1,380 @@
+{
+    "typeName": "TF::Thunder::Import",
+    "description": "`thunder_import` Provides details about thunder import",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Import/docs/README.md",
+    "definitions": {
+        "AuthSamlIdpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Overwrite": {
+                    "type": "number"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "RemoteFile": {
+                    "type": "string"
+                },
+                "SamlIdpName": {
+                    "type": "string"
+                },
+                "UseMgmtPort": {
+                    "type": "number"
+                },
+                "VerifyXmlSignature": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HealthExternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Externalfilename": {
+                    "type": "string"
+                },
+                "Overwrite": {
+                    "type": "number"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "RemoteFile": {
+                    "type": "string"
+                },
+                "UseMgmtPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HealthPostfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Overwrite": {
+                    "type": "number"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Postfilename": {
+                    "type": "string"
+                },
+                "RemoteFile": {
+                    "type": "string"
+                },
+                "UseMgmtPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "StoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "number"
+                },
+                "Delete": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RemoteFile": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ToDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Device": {
+                    "type": "number"
+                },
+                "GlmCert": {
+                    "type": "string"
+                },
+                "GlmLicense": {
+                    "type": "string"
+                },
+                "Overwrite": {
+                    "type": "number"
+                },
+                "RemoteFile": {
+                    "type": "string"
+                },
+                "UseMgmtPort": {
+                    "type": "number"
+                },
+                "WebCategoryLicense": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aflex": {
+            "type": "string",
+            "description": "aFleX Script Source File."
+        },
+        "AuthJwks": {
+            "type": "string",
+            "description": "JSON web key."
+        },
+        "AuthPortal": {
+            "type": "string",
+            "description": "Portal file for http authentication."
+        },
+        "AuthPortalImage": {
+            "type": "string",
+            "description": "Image file for default portal."
+        },
+        "BwList": {
+            "type": "string",
+            "description": "Black white List File."
+        },
+        "CaCert": {
+            "type": "string",
+            "description": "CA Cert File(enter bulk when import an archive file)."
+        },
+        "CertificateType": {
+            "type": "string",
+            "description": "\u2018pem\u2019: pem; \u2018der\u2019: der; \u2018pfx\u2019: pfx; \u2018p7b\u2019: p7b;."
+        },
+        "ClassList": {
+            "type": "string",
+            "description": "Class List File."
+        },
+        "ClassListConvert": {
+            "type": "string",
+            "description": "Convert Class List File to A10 format."
+        },
+        "ClassListType": {
+            "type": "string",
+            "description": "\u2018ac\u2019: ac; \u2018ipv4\u2019: ipv4; \u2018ipv6\u2019: ipv6; \u2018string\u2019: string; \u2018string-case-insensitive\u2019: string-case-insensitive;."
+        },
+        "CloudConfig": {
+            "type": "string"
+        },
+        "CloudCreds": {
+            "type": "string"
+        },
+        "DnssecDnskey": {
+            "type": "string",
+            "description": "DNSSEC DNSKEY(KSK) file for child zone."
+        },
+        "DnssecDs": {
+            "type": "string",
+            "description": "DNSSEC DS file for child zone."
+        },
+        "FileInspectionBwList": {
+            "type": "string",
+            "description": "Black white List File."
+        },
+        "GeoLocation": {
+            "type": "string",
+            "description": "Geo-location CSV File."
+        },
+        "GlmCert": {
+            "type": "string",
+            "description": "GLM certificate."
+        },
+        "GlmLicense": {
+            "type": "string",
+            "description": "License File."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpMapList": {
+            "type": "string",
+            "description": "IP Map List File."
+        },
+        "LocalUriFile": {
+            "type": "string",
+            "description": "Local URI files for http response."
+        },
+        "Lw4o6": {
+            "type": "string",
+            "description": "LW-4over6 Binding Table File."
+        },
+        "Overwrite": {
+            "type": "number",
+            "description": "Overwrite existing file."
+        },
+        "Password": {
+            "type": "string",
+            "description": "password for the remote site."
+        },
+        "PfxPassword": {
+            "type": "string",
+            "description": "The password for certificate file (pfx type only)."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "WAF policy File."
+        },
+        "RemoteFile": {
+            "type": "string",
+            "description": "Profile name for remote url."
+        },
+        "Secured": {
+            "type": "number"
+        },
+        "SslCert": {
+            "type": "string",
+            "description": "SSL Cert File(enter bulk when import an archive file)."
+        },
+        "SslCertKey": {
+            "type": "string",
+            "description": "\u2018bulk\u2019: import an archive file;."
+        },
+        "SslCrl": {
+            "type": "string",
+            "description": "SSL Crl File."
+        },
+        "SslKey": {
+            "type": "string",
+            "description": "SSL Key File(enter bulk when import an archive file)."
+        },
+        "StoreName": {
+            "type": "string",
+            "description": "Import store name."
+        },
+        "Terminal": {
+            "type": "number",
+            "description": "terminal vi."
+        },
+        "ThalesKmdata": {
+            "type": "string",
+            "description": "Thales Kmdata files."
+        },
+        "ThalesSecworld": {
+            "type": "string",
+            "description": "Thales security world files."
+        },
+        "UsbLicense": {
+            "type": "string",
+            "description": "USB License File."
+        },
+        "UseMgmtPort": {
+            "type": "number",
+            "description": "Use management port as source port."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "WebCategoryLicense": {
+            "type": "string",
+            "description": "License file to enable web-category feature."
+        },
+        "Wsdl": {
+            "type": "string",
+            "description": "Web Service Definition Language File."
+        },
+        "XmlSchema": {
+            "type": "string",
+            "description": "XML-Schema File."
+        },
+        "AuthSamlIdp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthSamlIdpDefinition"
+            },
+            "maxItems": 1
+        },
+        "HealthExternal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthExternalDefinition"
+            },
+            "maxItems": 1
+        },
+        "HealthPostfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthPostfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "Store": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StoreDefinition"
+            },
+            "maxItems": 1
+        },
+        "ToDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ToDeviceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerTrafficpolicy",
+    "description": "Configure FortiSwitch traffic policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerTrafficpolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cos": {
+            "type": "number",
+            "description": "COS queue(0 - 7), or unset to disable."
+        },
+        "CosQueue": {
+            "type": "number",
+            "description": "COS queue(0 - 7), or unset to disable."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the traffic policy."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "FSW Policer id."
+        },
+        "GuaranteedBandwidth": {
+            "type": "number",
+            "description": "Guaranteed bandwidth in kbps (max value = 524287000)."
+        },
+        "GuaranteedBurst": {
+            "type": "number",
+            "description": "Guaranteed burst size in bytes (max value = 4294967295)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaximumBurst": {
+            "type": "number",
+            "description": "Maximum burst size in bytes (max value = 4294967295)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Traffic policy name."
+        },
+        "PolicerStatus": {
+            "type": "string",
+            "description": "Enable/disable policer config on the traffic policy. Valid values: `enable`, `disable`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Configure type of policy(ingress/egress). Valid values: `ingress`, `egress`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

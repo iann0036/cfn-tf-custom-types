@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::AWS::DatasyncAgent",
+    "description": "Manages an AWS DataSync Agent deployed on premises.\n\n~> **NOTE:** One of `activation_key` or `ip_address` must be provided for resource creation (agent activation). Neither is required for resource import. If using `ip_address`, Terraform must be able to make an HTTP (port 80) GET request to the specified IP address from where it is running. The agent will turn off that HTTP server after activation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DatasyncAgent/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationKey": {
+            "type": "string",
+            "description": "DataSync Agent activation key during resource creation. Conflicts with `ip_address`. If an `ip_address` is provided instead, Terraform will retrieve the `activation_key` as part of the resource creation."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "DataSync Agent IP address to retrieve activation key during resource creation. Conflicts with `activation_key`. DataSync Agent must be accessible on port 80 from where Terraform is running."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DataSync Agent."
+        },
+        "PrivateLinkEndpoint": {
+            "type": "string",
+            "description": "The IP address of the VPC endpoint the agent should connect to when retrieving an activation key during resource creation. Conflicts with `activation_key`."
+        },
+        "SecurityGroupArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The ARNs of the security groups used to protect your data transfer task subnets."
+        },
+        "SubnetArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value pairs of resource tags to assign to the DataSync Agent. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcEndpointId": {
+            "type": "string",
+            "description": "The ID of the VPC (virtual private cloud) endpoint that the agent has access to."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

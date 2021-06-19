@@ -1,0 +1,191 @@
+{
+    "typeName": "TF::Alicloud::Disk",
+    "description": "Provides a ECS disk resource.\n\n-> **NOTE:** One of `size` or `snapshot_id` is required when specifying an ECS disk. If all of them be specified, `size` must more than the size of snapshot which `snapshot_id` represents. Currently, `alicloud_disk` doesn't resize disk.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-Disk/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvancedFeatures": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The Zone to create the disk in."
+        },
+        "Category": {
+            "type": "string",
+            "description": "Category of the disk. Valid values are `cloud`, `cloud_efficiency`, `cloud_ssd`, `cloud_essd`. Default is `cloud_efficiency`."
+        },
+        "DedicatedBlockStorageClusterId": {
+            "type": "string"
+        },
+        "DeleteAutoSnapshot": {
+            "type": "boolean",
+            "description": "Indicates whether the automatic snapshot is deleted when the disk is released. Default value: false."
+        },
+        "DeleteWithInstance": {
+            "type": "boolean",
+            "description": "Indicates whether the disk is released together with the instance: Default value: false."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the disk. This description can have a string of 2 to 256 characters, It cannot begin with http:// or https://. Default value is null."
+        },
+        "DiskName": {
+            "type": "string"
+        },
+        "DryRun": {
+            "type": "boolean"
+        },
+        "EnableAutoSnapshot": {
+            "type": "boolean",
+            "description": "Indicates whether to apply a created automatic snapshot policy to the disk. Default value: false."
+        },
+        "EncryptAlgorithm": {
+            "type": "string"
+        },
+        "Encrypted": {
+            "type": "boolean",
+            "description": "If true, the disk will be encrypted, conflict with `snapshot_id`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The ID of the KMS key corresponding to the data disk, The specified parameter `Encrypted` must be `true` when KmsKeyId is not empty."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the ECS disk. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin or end with a hyphen, and must not begin with http:// or https://. Default value is null."
+        },
+        "PaymentType": {
+            "type": "string"
+        },
+        "PerformanceLevel": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the disk belongs.\n-> **NOTE:** Disk category `cloud` has been outdated and it only can be used none I/O Optimized ECS instances. Recommend `cloud_efficiency` and `cloud_ssd` disk."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The size of the disk in GiBs. When resize the disk, the new size must be greater than the former value, or you would get an error `InvalidDiskSize.TooSmall`."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "A snapshot to base the disk off of. If the disk size required by snapshot is greater than `size`, the `size` will be ignored, conflict with `encrypted`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageSetId": {
+            "type": "string"
+        },
+        "StorageSetPartitionNumber": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

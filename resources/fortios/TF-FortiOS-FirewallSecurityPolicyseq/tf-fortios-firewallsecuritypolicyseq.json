@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::FortiOS::FirewallSecurityPolicyseq",
+    "description": "Provides a resource to alter firewall security policy sequence",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallSecurityPolicyseq/docs/README.md",
+    "definitions": {
+        "StatePolicyListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Policyid": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlterPosition": {
+            "type": "string",
+            "description": "The alter position: should only be \"before\" or \"after\"."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "EnableStateChecking": {
+            "type": "boolean",
+            "description": "Enable status detection for policy_src_id and policy_dst_id, to detect whether they have been changed outside of terraform, the default is false. If this parameter is true, when policy_src_id and policy_dst_id are modified or deleted outside the terraform, the resource will be able to detect the change, in other words, terraform plan can detect the change. When this parameter is false, if policy_src_id and policy_dst_id are modified or deleted outside the terraform, the change will not be detected by the resource, which means that the terraform plan will think that the state has not changed. The main purpose of this argument is to make the resource compatible with the old version. If you use this resource for the first time now, it is recommended to set it to true. For detailed usage, see \"Attributes Reference\" and \"A More Detailed Example\" below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PolicyDstId": {
+            "type": "number",
+            "description": "The dest policy id which you want to alter."
+        },
+        "PolicySrcId": {
+            "type": "number",
+            "description": "The policy id which you want to alter."
+        },
+        "StatePolicyList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatePolicyListDefinition"
+            }
+        },
+        "StatePolicySrcdstPos": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlterPosition",
+        "PolicyDstId",
+        "PolicySrcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/StatePolicyList"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

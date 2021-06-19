@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::FortiOS::FmgSystemAdom",
+    "description": "This resource supports Create/Read/Update/Delete system adom for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgSystemAdom/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionWhenConflictsOccurDuringPolicyCheck": {
+            "type": "string",
+            "description": "True or False."
+        },
+        "AutoPushPolicyPackagesWhenDeviceBackOnline": {
+            "type": "string",
+            "description": "True or False."
+        },
+        "CentralManagementFortiap": {
+            "type": "boolean",
+            "description": "True or False."
+        },
+        "CentralManagementSdwan": {
+            "type": "boolean",
+            "description": "True or False."
+        },
+        "CentralManagementVpn": {
+            "type": "boolean",
+            "description": "True or False."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Adom mode: Normal or Backup."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Administrative Domain name."
+        },
+        "PerformPolicyCheckBeforeEveryInstall": {
+            "type": "boolean",
+            "description": "True or False."
+        },
+        "Status": {
+            "type": "number",
+            "description": "Adom status. 0 means off and 1 means on."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Domain type, Enum: [\"FortiGate\", \"FortiCarrier], default is \"FortiCarrier\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

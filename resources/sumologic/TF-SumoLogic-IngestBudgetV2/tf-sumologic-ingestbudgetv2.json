@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::SumoLogic::IngestBudgetV2",
+    "description": "Provides a [Sumologic Ingest Budget v2][1].This API is in private beta and is not available until given access. To participate in the beta program contact your Sumo Logic account representative.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-IngestBudgetV2/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "AuditThreshold": {
+            "type": "number",
+            "description": "The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "CapacityBytes": {
+            "type": "number",
+            "description": "Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The internal ID of the ingest budget."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Display name of the ingest budget. This must be unique across all of the ingest budgets\n* `scope` - (Required) A scope is a constraint that will be used to identify the messages on which budget needs to be applied. A scope is consists of key and value separated by =. The field must be enabled in the fields table.\n* `capacity_bytes` - (Required) Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "ResetTime": {
+            "type": "string",
+            "description": "Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "A scope is a constraint that will be used to identify the messages on which budget needs to be applied. A scope is consists of key and value separated by =. The field must be enabled in the fields table.\n* `capacity_bytes` - (Required) Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`.\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `audit_threshold` - (Optional) The threshold as a percentage of when an ingest budget's capacity usage is logged in the Audit Index."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "CapacityBytes",
+        "Name",
+        "ResetTime",
+        "Scope",
+        "Timezone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Aiven::Account",
+    "description": "CloudFormation equivalent of aiven_account",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-Account/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OwnerTeamId": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

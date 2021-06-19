@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::AWS::NetworkfirewallLoggingConfiguration",
+    "description": "Provides an AWS Network Firewall Logging Configuration Resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkfirewallLoggingConfiguration/docs/README.md",
+    "definitions": {
+        "LoggingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogDestinationConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LogDestinationConfigDefinition"
+                    },
+                    "maxItems": 2,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "LogDestinationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogDestination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogDestinationDefinition"
+                    }
+                },
+                "LogDestinationType": {
+                    "type": "string"
+                },
+                "LogType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogDestination",
+                "LogDestinationType",
+                "LogType"
+            ]
+        },
+        "LogDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FirewallArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Network Firewall firewall."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoggingConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

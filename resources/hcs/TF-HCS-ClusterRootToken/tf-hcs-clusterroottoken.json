@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::HCS::ClusterRootToken",
+    "description": "CloudFormation equivalent of hcs_cluster_root_token",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcs/TF-HCS-ClusterRootToken/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessorId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubernetesSecret": {
+            "type": "string"
+        },
+        "ManagedApplicationName": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SecretId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ManagedApplicationName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessorId",
+        "/properties/Id",
+        "/properties/KubernetesSecret",
+        "/properties/SecretId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KubernetesSecret",
+        "/properties/SecretId"
+    ]
+}

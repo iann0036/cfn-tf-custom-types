@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::Spotinst::MultaiListener",
+    "description": "CloudFormation equivalent of spotinst_multai_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-MultaiListener/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TlsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CipherSuites": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxVersion": {
+                    "type": "string"
+                },
+                "MinVersion": {
+                    "type": "string"
+                },
+                "PreferServerCipherSuites": {
+                    "type": "boolean"
+                },
+                "SessionTicketsDisabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CertificateIds",
+                "CipherSuites",
+                "MaxVersion",
+                "MinVersion",
+                "PreferServerCipherSuites",
+                "SessionTicketsDisabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BalancerId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TlsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TlsConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BalancerId",
+        "Port",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

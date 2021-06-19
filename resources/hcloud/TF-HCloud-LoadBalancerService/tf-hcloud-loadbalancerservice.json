@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::HCloud::LoadBalancerService",
+    "description": "Define services for Hetzner Cloud Load Balancers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-LoadBalancerService/docs/README.md",
+    "definitions": {
+        "HealthCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number",
+                    "description": "Interval how often the health check will be performed, in seconds.\n- `timeout` - (Required, int) Timeout when a health check try will be canceled if there is no response, in seconds.\n- `retries` - (Optional, int) Number of tries a health check will be performed until a target will be listed as `unhealthy`.\n- `http` - (Optional, list) List of http configurations. Required if `protocol` is `http`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port the health check tries to connect to, required if protocol is `tcp`. Can be everything between `1` and `65535`. Must be unique per Load Balancer.\n- `interval` - (Required, int) Interval how often the health check will be performed, in seconds.\n- `timeout` - (Required, int) Timeout when a health check try will be canceled if there is no response, in seconds.\n- `retries` - (Optional, int) Number of tries a health check will be performed until a target will be listed as `unhealthy`.\n- `http` - (Optional, list) List of http configurations. Required if `protocol` is `http`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol the health check uses. `http` or `tcp`\n- `port` - (Required, int) Port the health check tries to connect to, required if protocol is `tcp`. Can be everything between `1` and `65535`. Must be unique per Load Balancer.\n- `interval` - (Required, int) Interval how often the health check will be performed, in seconds.\n- `timeout` - (Required, int) Timeout when a health check try will be canceled if there is no response, in seconds.\n- `retries` - (Optional, int) Number of tries a health check will be performed until a target will be listed as `unhealthy`.\n- `http` - (Optional, list) List of http configurations. Required if `protocol` is `http`."
+                },
+                "Retries": {
+                    "type": "number",
+                    "description": "Number of tries a health check will be performed until a target will be listed as `unhealthy`.\n- `http` - (Optional, list) List of http configurations. Required if `protocol` is `http`."
+                },
+                "Timeout": {
+                    "type": "number",
+                    "description": "Timeout when a health check try will be canceled if there is no response, in seconds.\n- `retries` - (Optional, int) Number of tries a health check will be performed until a target will be listed as `unhealthy`.\n- `http` - (Optional, list) List of http configurations. Required if `protocol` is `http`."
+                },
+                "Http": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Interval",
+                "Port",
+                "Protocol",
+                "Timeout"
+            ]
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string",
+                    "description": "Domain we try to access when performing the Health Check.\n- `path` - (Optional, string) Path we try to access when performing the Health Check.\n- `response` - (Optional, string) Response we expect to be included in the Target response when a Health Check was performed.\n- `tls` - (Optional, bool) Enable TLS certificate checking.\n- `status_codes` - (Optional, list[string]) We expect that the target answers with these status codes. If not the target is marked as `unhealthy`."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "Path we try to access when performing the Health Check.\n- `response` - (Optional, string) Response we expect to be included in the Target response when a Health Check was performed.\n- `tls` - (Optional, bool) Enable TLS certificate checking.\n- `status_codes` - (Optional, list[string]) We expect that the target answers with these status codes. If not the target is marked as `unhealthy`."
+                },
+                "Response": {
+                    "type": "string",
+                    "description": "Response we expect to be included in the Target response when a Health Check was performed.\n- `tls` - (Optional, bool) Enable TLS certificate checking.\n- `status_codes` - (Optional, list[string]) We expect that the target answers with these status codes. If not the target is marked as `unhealthy`."
+                },
+                "StatusCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "We expect that the target answers with these status codes. If not the target is marked as `unhealthy`."
+                },
+                "Tls": {
+                    "type": "boolean",
+                    "description": "Enable TLS certificate checking.\n- `status_codes` - (Optional, list[string]) We expect that the target answers with these status codes. If not the target is marked as `unhealthy`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DestinationPort": {
+            "type": "number",
+            "description": "Port the service connects to the targets on, required if protocol is `tcp`. Can be everything between `1` and `65535`.\n- `proxyprotocol` - (Optional, bool) Enable proxyprotocol.\n- `http` - (Optional, list) List of http configurations when `protocol` is `http` or `https`.\n- `health_check` - (Optional, list) List of health check configurations when `protocol` is `http` or `https`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenPort": {
+            "type": "number",
+            "description": "Port the service listen on, required if protocol is `tcp`. Can be everything between `1` and `65535`. Must be unique per Load Balancer.\n- `destination_port` - (Optional, int) Port the service connects to the targets on, required if protocol is `tcp`. Can be everything between `1` and `65535`.\n- `proxyprotocol` - (Optional, bool) Enable proxyprotocol.\n- `http` - (Optional, list) List of http configurations when `protocol` is `http` or `https`.\n- `health_check` - (Optional, list) List of health check configurations when `protocol` is `http` or `https`."
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "Id of the load balancer this service belongs to.\n- `protocol` - (Required, string) Protocol of the service. `http`, `https` or `tcp`\n- `listen_port` - (Optional, int) Port the service listen on, required if protocol is `tcp`. Can be everything between `1` and `65535`. Must be unique per Load Balancer.\n- `destination_port` - (Optional, int) Port the service connects to the targets on, required if protocol is `tcp`. Can be everything between `1` and `65535`.\n- `proxyprotocol` - (Optional, bool) Enable proxyprotocol.\n- `http` - (Optional, list) List of http configurations when `protocol` is `http` or `https`.\n- `health_check` - (Optional, list) List of health check configurations when `protocol` is `http` or `https`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol of the service. `http`, `https` or `tcp`\n- `listen_port` - (Optional, int) Port the service listen on, required if protocol is `tcp`. Can be everything between `1` and `65535`. Must be unique per Load Balancer.\n- `destination_port` - (Optional, int) Port the service connects to the targets on, required if protocol is `tcp`. Can be everything between `1` and `65535`.\n- `proxyprotocol` - (Optional, bool) Enable proxyprotocol.\n- `http` - (Optional, list) List of http configurations when `protocol` is `http` or `https`.\n- `health_check` - (Optional, list) List of health check configurations when `protocol` is `http` or `https`."
+        },
+        "Proxyprotocol": {
+            "type": "boolean",
+            "description": "Enable proxyprotocol.\n- `http` - (Optional, list) List of http configurations when `protocol` is `http` or `https`.\n- `health_check` - (Optional, list) List of health check configurations when `protocol` is `http` or `https`."
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

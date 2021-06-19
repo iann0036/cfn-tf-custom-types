@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::VCD::VappNatRules",
+    "description": "Provides a vCloud Director vApp NAT resource. This can be used to create,\nmodify, and delete NAT rules in a [vApp network](/docs/providers/vcd/r/vapp_network.html).\nNAT rules can be applied to [vApp networks connected to Org network](/docs/providers/vcd/r/vapp_network.html) or [vApp org networks](/docs/providers/vcd/r/vapp_org_network.html) which are fenced.\n\n!> **Warning:** Using this resource overrides any existing NAT rules on vApp network. It's recommended to have only one resource per vApp and vApp network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VappNatRules/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalIp": {
+                    "type": "string"
+                },
+                "ExternalPort": {
+                    "type": "number"
+                },
+                "ForwardToPort": {
+                    "type": "number"
+                },
+                "MappingMode": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "VmId": {
+                    "type": "string"
+                },
+                "VmNicId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "VmId",
+                "VmNicId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableIpMasquerade": {
+            "type": "boolean",
+            "description": "When enabled translates a virtual machine's private, internal IP address to a public IP address for outbound traffic. Default value is `false`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable or disable NAT. Default is `true`. To enable the NAT service, [vcd_vapp_firewall_rules](/docs/providers/vcd/r/vapp_firewall_rules.html) needs to be enabled as well."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NatType": {
+            "type": "string",
+            "description": "\"One of: `ipTranslation` (use IP translation), `portForwarding` (use port forwarding). For `ipTranslation` fields `vm_id`, `vm_nic_id`, `mapping_mode` are required and `external_ip` is optional. For `portForwarding` fields `vm_id`, `vm_nic_id`, `protocol`, `external_port` and `forward_to_port` are required."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "The identifier of [vApp network](/docs/providers/vcd/r/vapp_network.html)."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "VappId": {
+            "type": "string",
+            "description": "The identifier of [vApp](/docs/providers/vcd/r/vapp.html)."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NatType",
+        "NetworkId",
+        "VappId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

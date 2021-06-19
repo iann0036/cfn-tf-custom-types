@@ -1,0 +1,268 @@
+{
+    "typeName": "TF::Gitlab::Project",
+    "description": "This resource allows you to create and manage projects within your\nGitLab group or within your user.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-Project/docs/README.md",
+    "definitions": {
+        "PushRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthorEmailRegex": {
+                    "type": "string"
+                },
+                "BranchNameRegex": {
+                    "type": "string"
+                },
+                "CommitCommitterCheck": {
+                    "type": "boolean"
+                },
+                "CommitMessageNegativeRegex": {
+                    "type": "string"
+                },
+                "CommitMessageRegex": {
+                    "type": "string"
+                },
+                "DenyDeleteTag": {
+                    "type": "boolean"
+                },
+                "FileNameRegex": {
+                    "type": "string"
+                },
+                "MaxFileSize": {
+                    "type": "number"
+                },
+                "MemberCheck": {
+                    "type": "boolean"
+                },
+                "PreventSecrets": {
+                    "type": "boolean"
+                },
+                "RejectUnsignedCommits": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApprovalsBeforeMerge": {
+            "type": "number",
+            "description": "Number of merge request approvals required for merging. Default is 0."
+        },
+        "Archived": {
+            "type": "boolean",
+            "description": "Whether the project is in read-only mode (archived). Repositories can be archived/unarchived by toggling this parameter."
+        },
+        "ContainerRegistryEnabled": {
+            "type": "boolean",
+            "description": "Enable container registry for the project."
+        },
+        "DefaultBranch": {
+            "type": "string",
+            "description": "The default branch for the project."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the project."
+        },
+        "GroupWithProjectTemplatesId": {
+            "type": "number",
+            "description": "For group-level custom templates, specifies ID of group from which all the custom project templates are sourced. Leave empty for instance-level templates. Requires use_custom_template to be true (enterprise edition)."
+        },
+        "HttpUrlToRepo": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportUrl": {
+            "type": "string",
+            "description": "Git URL to a repository to be imported."
+        },
+        "InitializeWithReadme": {
+            "type": "boolean",
+            "description": "Create main branch with first commit containing a README.md file."
+        },
+        "IssuesEnabled": {
+            "type": "boolean",
+            "description": "Enable issue tracking for the project."
+        },
+        "LfsEnabled": {
+            "type": "boolean",
+            "description": "Enable LFS for the project."
+        },
+        "MergeMethod": {
+            "type": "string",
+            "description": "Set to `ff` to create fast-forward merges\nValid values are `merge`, `rebase_merge`, `ff`\nRepositories are created with `merge` by default."
+        },
+        "MergeRequestsEnabled": {
+            "type": "boolean",
+            "description": "Enable merge requests for the project."
+        },
+        "Mirror": {
+            "type": "boolean"
+        },
+        "MirrorOverwritesDivergedBranches": {
+            "type": "boolean"
+        },
+        "MirrorTriggerBuilds": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the project."
+        },
+        "NamespaceId": {
+            "type": "number",
+            "description": "The namespace (group or user) of the project. Defaults to your user.\nSee [`gitlab_group`](group.html) for an example."
+        },
+        "OnlyAllowMergeIfAllDiscussionsAreResolved": {
+            "type": "boolean",
+            "description": "Set to true if you want allow merges only if all discussions are resolved."
+        },
+        "OnlyAllowMergeIfPipelineSucceeds": {
+            "type": "boolean",
+            "description": "Set to true if you want allow merges only if a pipeline succeeds."
+        },
+        "OnlyMirrorProtectedBranches": {
+            "type": "boolean"
+        },
+        "PackagesEnabled": {
+            "type": "boolean",
+            "description": "Enable packages repository for the project."
+        },
+        "PagesAccessLevel": {
+            "type": "string",
+            "description": "Enable pages access control\nValid values are `disabled`, `private`, `enabled`, `public`.\n`private` is the default."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path of the repository."
+        },
+        "PathWithNamespace": {
+            "type": "string"
+        },
+        "PipelinesEnabled": {
+            "type": "boolean",
+            "description": "Enable pipelines for the project."
+        },
+        "RemoveSourceBranchAfterMerge": {
+            "type": "boolean"
+        },
+        "RequestAccessEnabled": {
+            "type": "boolean",
+            "description": "Allow users to request member access."
+        },
+        "RunnersToken": {
+            "type": "string"
+        },
+        "SharedRunnersEnabled": {
+            "type": "boolean",
+            "description": "Enable shared runners for this project."
+        },
+        "SnippetsEnabled": {
+            "type": "boolean",
+            "description": "Enable snippets for the project."
+        },
+        "SshUrlToRepo": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Tags (topics) of the project."
+        },
+        "TemplateName": {
+            "type": "string",
+            "description": "When used without use_custom_template, name of a built-in project template. When used with use_custom_template, name of a custom project template. This option is mutually exclusive with `template_project_id`."
+        },
+        "TemplateProjectId": {
+            "type": "number",
+            "description": "When used with use_custom_template, project ID of a custom project template. This is preferable to using template_name since template_name may be ambiguous (enterprise edition). This option is mutually exclusive with `template_name`."
+        },
+        "UseCustomTemplate": {
+            "type": "boolean",
+            "description": "Use either custom instance or group (with group_with_project_templates_id) project template (enterprise edition)."
+        },
+        "VisibilityLevel": {
+            "type": "string",
+            "description": "Set to `public` to create a public project.\nValid values are `private`, `internal`, `public`.\nRepositories are created as private by default."
+        },
+        "WebUrl": {
+            "type": "string"
+        },
+        "WikiEnabled": {
+            "type": "boolean",
+            "description": "Enable wiki for the project."
+        },
+        "PushRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PushRulesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HttpUrlToRepo",
+        "/properties/Id",
+        "/properties/PathWithNamespace",
+        "/properties/RunnersToken",
+        "/properties/SshUrlToRepo",
+        "/properties/WebUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RunnersToken"
+    ]
+}

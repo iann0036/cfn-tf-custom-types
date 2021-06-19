@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::ECL::StorageVirtualstorageV1",
+    "description": "Manages a V1 virtual storage resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-StorageVirtualstorageV1/docs/README.md",
+    "definitions": {
+        "IpAddrPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HostRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string",
+                    "description": "Destination CIDR of this routing."
+                },
+                "Nexthop": {
+                    "type": "string",
+                    "description": "Nexthop IP address of this routing."
+                }
+            },
+            "required": [
+                "Destination",
+                "Nexthop"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of Virtual Storage."
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddrPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpAddrPoolDefinition"
+            },
+            "description": "IP address pool which specifies IP address range\nused by the Virtual Storage.\nThe ip_addr_pool structure is documented below."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of Virtual Storage."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "ID(UUID) for network to be connected to the Virtual Storage."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID(UUID) for subnet to be connected to the Virtual Storage."
+        },
+        "VolumeTypeId": {
+            "type": "string",
+            "description": "ID of volume type used for this Virtual Storage (UUID).\nUser must specify either volume_type_id or volume_type_name.\nThis parameter conflicts with `volume_type_name` ."
+        },
+        "VolumeTypeName": {
+            "type": "string",
+            "description": "Name of volume type used for this Virtual Storage.\nUser must specify either volume_type_id or volume_type_name.\nThis parameter conflicts with `volume_type_id` ."
+        },
+        "HostRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostRoutesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpAddrPool",
+        "Name",
+        "NetworkId",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

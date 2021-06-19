@@ -1,0 +1,252 @@
+{
+    "typeName": "TF::OCI::OptimizerProfile",
+    "description": "This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.\n\nCreates a new profile.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OptimizerProfile/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LevelsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TargetCompartmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Items"
+            ]
+        },
+        "TargetTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ItemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagDefinitionName": {
+                    "type": "string"
+                },
+                "TagNamespaceName": {
+                    "type": "string"
+                },
+                "TagValueType": {
+                    "type": "string"
+                },
+                "TagValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "TagDefinitionName",
+                "TagNamespaceName",
+                "TagValueType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the tenancy. The tenancy is the root compartment."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) Text describing the profile. Avoid entering confidential information."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "(Updatable) The name assigned to the profile. Avoid entering confidential information."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "LevelsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LevelsConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TargetCompartments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetCompartmentsDefinition"
+            },
+            "maxItems": 1
+        },
+        "TargetTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetTagsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "Description",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

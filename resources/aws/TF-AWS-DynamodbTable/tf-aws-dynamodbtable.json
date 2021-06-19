@@ -1,0 +1,365 @@
+{
+    "typeName": "TF::AWS::DynamodbTable",
+    "description": "Provides a DynamoDB table resource\n\n~> **Note:** It is recommended to use `lifecycle` [`ignore_changes`](https://www.terraform.io/docs/configuration/meta-arguments/lifecycle.html#ignore_changes) for `read_capacity` and/or `write_capacity` if there's [autoscaling policy](/docs/providers/aws/r/appautoscaling_policy.html) attached to the table.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DynamodbTable/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "GlobalSecondaryIndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashKey": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NonKeyAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProjectionType": {
+                    "type": "string"
+                },
+                "RangeKey": {
+                    "type": "string"
+                },
+                "ReadCapacity": {
+                    "type": "number"
+                },
+                "WriteCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HashKey",
+                "Name",
+                "ProjectionType"
+            ]
+        },
+        "LocalSecondaryIndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "NonKeyAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProjectionType": {
+                    "type": "string"
+                },
+                "RangeKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ProjectionType",
+                "RangeKey"
+            ]
+        },
+        "PointInTimeRecoveryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ReplicaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "RegionName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RegionName"
+            ]
+        },
+        "ServerSideEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TtlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributeName": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AttributeName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BillingMode": {
+            "type": "string",
+            "description": "Controls how you are charged for read and write throughput and how you manage capacity. The valid values are `PROVISIONED` and `PAY_PER_REQUEST`. Defaults to `PROVISIONED`."
+        },
+        "HashKey": {
+            "type": "string",
+            "description": "The attribute to use as the hash (partition) key. Must also be defined as an `attribute`, see below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the attribute\n* `type` - (Required) Attribute type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data."
+        },
+        "RangeKey": {
+            "type": "string",
+            "description": "The attribute to use as the range (sort) key. Must also be defined as an `attribute`, see below."
+        },
+        "ReadCapacity": {
+            "type": "number",
+            "description": "The number of read units for this table. If the `billing_mode` is `PROVISIONED`, this field is required."
+        },
+        "StreamArn": {
+            "type": "string"
+        },
+        "StreamEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether Streams are to be enabled (true) or disabled (false)."
+        },
+        "StreamLabel": {
+            "type": "string"
+        },
+        "StreamViewType": {
+            "type": "string",
+            "description": "When an item in the table is modified, StreamViewType determines what information is written to the table's stream. Valid values are `KEYS_ONLY`, `NEW_IMAGE`, `OLD_IMAGE`, `NEW_AND_OLD_IMAGES`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to populate on the created table. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "WriteCapacity": {
+            "type": "number",
+            "description": "The number of write units for this table. If the `billing_mode` is `PROVISIONED`, this field is required."
+        },
+        "Attribute": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttributeDefinition"
+            },
+            "minItems": 1
+        },
+        "GlobalSecondaryIndex": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GlobalSecondaryIndexDefinition"
+            }
+        },
+        "LocalSecondaryIndex": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocalSecondaryIndexDefinition"
+            }
+        },
+        "PointInTimeRecovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PointInTimeRecoveryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Replica": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ReplicaDefinition"
+            }
+        },
+        "ServerSideEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSideEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Ttl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TtlDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HashKey",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/StreamArn",
+        "/properties/StreamLabel"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

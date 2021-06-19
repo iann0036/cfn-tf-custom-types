@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::AVI::Useraccountprofile",
+    "description": "The UserAccountProfile resource allows the creation and management of Avi UserAccountProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Useraccountprofile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountLockTimeout": {
+            "type": "number",
+            "description": "Lock timeout period (in minutes). Default is 30 minutes. Unit is min."
+        },
+        "CredentialsTimeoutThreshold": {
+            "type": "number",
+            "description": "The time period after which credentials expire. Default is 180 days. Unit is days."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrentSessions": {
+            "type": "number",
+            "description": "Maximum number of concurrent sessions allowed. There are unlimited sessions by default."
+        },
+        "MaxLoginFailureCount": {
+            "type": "number",
+            "description": "Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0 - 'unlimited login attempts allowed.'."
+        },
+        "MaxPasswordHistoryCount": {
+            "type": "number",
+            "description": "Maximum number of passwords to be maintained in the password history. Default is 4 passwords."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "Uuid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

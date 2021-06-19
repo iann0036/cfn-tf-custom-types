@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Aviatrix::VpnProfile",
+    "description": "The **aviatrix_vpn_profile** resource allows the creation and management of Aviatrix VPN user profiles.\n\n~> **NOTE:** As of R2.15, management of user/profile attachment can be set using `manage_user_attachment`. This argument must be set to *true* in either **aviatrix_vpn_user** or **aviatrix_vpn_profile**. If attachment is managed in the **aviatrix_vpn_profile** (set to *true*), it must be set to *false* in the **aviatrix_vpn_user** resource and vice versa.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-VpnProfile/docs/README.md",
+    "definitions": {
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Proto": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Port",
+                "Proto",
+                "Target"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseRule": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageUserAttachment": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Policy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

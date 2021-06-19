@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::AzureRM::VirtualHubRouteTable",
+    "description": "Manages a Virtual Hub Route Table.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualHubRouteTable/docs/README.md",
+    "definitions": {
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destinations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationsType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NextHop": {
+                    "type": "string"
+                },
+                "NextHopType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destinations",
+                "DestinationsType",
+                "Name",
+                "NextHop"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "VirtualHubId": {
+            "type": "string"
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualHubId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

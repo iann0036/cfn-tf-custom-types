@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Panos::PanoramaVirtualRouterEntry",
+    "description": "This resource allows you to add/update/delete an interface in a Panorama\nvirtual router template.\n\nThis resource has some overlap with the `panos_panorama_virtual_router`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_virtual_router` spec does not define the\n`interfaces` field.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaVirtualRouterEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "The interface to import into the virtual router."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Template",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

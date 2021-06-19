@@ -1,0 +1,346 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleCloudSchedulerJob",
+    "description": "CloudFormation equivalent of google_cloud_scheduler_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleCloudSchedulerJob/docs/README.md",
+    "definitions": {
+        "AppEngineHttpTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "RelativeUri": {
+                    "type": "string"
+                },
+                "AppEngineRouting": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AppEngineRoutingDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RelativeUri"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition2"
+                    }
+                },
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "OauthToken": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OauthTokenDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OidcToken": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OidcTokenDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "HeadersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PubsubTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttributesDefinition"
+                    }
+                },
+                "Data": {
+                    "type": "string"
+                },
+                "TopicName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TopicName"
+            ]
+        },
+        "AttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RetryConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxBackoffDuration": {
+                    "type": "string"
+                },
+                "MaxDoublings": {
+                    "type": "number"
+                },
+                "MaxRetryDuration": {
+                    "type": "string"
+                },
+                "MinBackoffDuration": {
+                    "type": "string"
+                },
+                "RetryCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AppEngineRoutingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Instance": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OauthTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "ServiceAccountEmail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceAccountEmail"
+            ]
+        },
+        "OidcTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "string"
+                },
+                "ServiceAccountEmail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceAccountEmail"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttemptDeadline": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "TimeZone": {
+            "type": "string"
+        },
+        "AppEngineHttpTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppEngineHttpTargetDefinition"
+            },
+            "maxItems": 1
+        },
+        "HttpTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpTargetDefinition"
+            },
+            "maxItems": 1
+        },
+        "PubsubTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PubsubTargetDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetryConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetryConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

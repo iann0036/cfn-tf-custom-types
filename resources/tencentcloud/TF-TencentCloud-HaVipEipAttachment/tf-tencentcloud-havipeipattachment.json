@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::TencentCloud::HaVipEipAttachment",
+    "description": "Provides a resource to create a HA VIP EIP attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-HaVipEipAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressIp": {
+            "type": "string",
+            "description": "Public address of the EIP."
+        },
+        "HavipId": {
+            "type": "string",
+            "description": "ID of the attached HA VIP."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AddressIp",
+        "HavipId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "typeName": "TF::OCI::BdsAutoScalingConfiguration",
+    "description": "This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.\n\nAdd autoscaling configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-BdsAutoScalingConfiguration/docs/README.md",
+    "definitions": {
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PolicyType": {
+                    "type": "string"
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "PolicyType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricType": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThresholdDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MetricType"
+            ]
+        },
+        "ThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DurationInMinutes": {
+                    "type": "number"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DurationInMinutes",
+                "Operator",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BdsInstanceId": {
+            "type": "string",
+            "description": "The OCID of the BDS instance."
+        },
+        "ClusterAdminPassword": {
+            "type": "string",
+            "description": "(Updatable) Base-64 encoded password for Cloudera Manager admin user."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the autoscaling configuration is enabled."
+        },
+        "NodeType": {
+            "type": "string",
+            "description": "A node type that is managed by an autoscaling configuration. The only supported type is WORKER."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BdsInstanceId",
+        "ClusterAdminPassword",
+        "IsEnabled",
+        "NodeType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClusterAdminPassword"
+    ]
+}

@@ -1,0 +1,211 @@
+{
+    "typeName": "TF::Heroku::App",
+    "description": "Provides a Heroku App resource. This can be used to create and manage applications on Heroku.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-App/docs/README.md",
+    "definitions": {
+        "AllConfigVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SensitiveConfigVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Locked": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Personal": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acm": {
+            "type": "boolean",
+            "description": "The flag representing Automated Certificate Management for the app."
+        },
+        "AllConfigVars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllConfigVarsDefinition"
+            }
+        },
+        "Buildpacks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Buildpack names or URLs for the application.\nBuildpacks configured externally won't be altered if this is not present."
+        },
+        "ConfigVars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigVarsDefinition"
+            }
+        },
+        "GitUrl": {
+            "type": "string"
+        },
+        "HerokuHostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalRouting": {
+            "type": "boolean",
+            "description": "If true, the application will be routable\nonly internally in a private space. This option is only available for apps\nthat also specify `space`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the application. In Heroku, this is also the\nunique ID, so it must be unique and have a minimum of 3 characters."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region that the app should be deployed in."
+        },
+        "SensitiveConfigVars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SensitiveConfigVarsDefinition"
+            }
+        },
+        "Space": {
+            "type": "string",
+            "description": "The name of a private space to create the app in."
+        },
+        "Stack": {
+            "type": "string",
+            "description": "The application stack is what platform to run the application in."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "WebUrl": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllConfigVars",
+        "/properties/GitUrl",
+        "/properties/HerokuHostname",
+        "/properties/Id",
+        "/properties/Uuid",
+        "/properties/WebUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AllConfigVars",
+        "/properties/SensitiveConfigVars"
+    ]
+}

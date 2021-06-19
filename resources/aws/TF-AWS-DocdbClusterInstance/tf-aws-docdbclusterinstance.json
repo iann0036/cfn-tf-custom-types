@@ -1,0 +1,216 @@
+{
+    "typeName": "TF::AWS::DocdbClusterInstance",
+    "description": "Provides an DocDB Cluster Resource Instance. A Cluster Instance Resource defines\nattributes that are specific to a single instance in a [DocDB Cluster][1].\n\nYou do not designate a primary and subsequent replicas. Instead, you simply add DocDB\nInstances and DocDB manages the replication. You can use the [count][3]\nmeta-parameter to make multiple instances and join them all to the same DocDB\nCluster, or you may specify different Cluster Instance resources with various\n`instance_class` sizes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DocdbClusterInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Specifies whether any database modifications\nare applied immediately, or during the next maintenance window. Default is`false`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean",
+            "description": "Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window. Default `true`."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The EC2 Availability Zone that the DB instance is created in. See [docs](https://docs.aws.amazon.com/documentdb/latest/developerguide/API_CreateDBInstance.html) about the details."
+        },
+        "CaCertIdentifier": {
+            "type": "string"
+        },
+        "ClusterIdentifier": {
+            "type": "string",
+            "description": "The identifier of the [`aws_docdb_cluster`](/docs/providers/aws/r/docdb_cluster.html) in which to launch this instance."
+        },
+        "DbSubnetGroupName": {
+            "type": "string"
+        },
+        "DbiResourceId": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string",
+            "description": "The name of the database engine to be used for the DocDB instance. Defaults to `docdb`. Valid Values: `docdb`."
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string",
+            "description": "The identifier for the DocDB instance, if omitted, Terraform will assign a random, unique identifier."
+        },
+        "IdentifierPrefix": {
+            "type": "string",
+            "description": "Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`."
+        },
+        "InstanceClass": {
+            "type": "string",
+            "description": "The instance class to use. For details on CPU and memory, see [Scaling for DocDB Instances][2]. DocDB currently\nsupports the below instance classes. Please see [AWS Documentation][4] for complete details.\n- db.r5.large\n- db.r5.xlarge\n- db.r5.2xlarge\n- db.r5.4xlarge\n- db.r5.12xlarge\n- db.r5.24xlarge\n- db.r4.large\n- db.r4.xlarge\n- db.r4.2xlarge\n- db.r4.4xlarge\n- db.r4.8xlarge\n- db.r4.16xlarge\n- db.t3.medium."
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PreferredBackupWindow": {
+            "type": "string"
+        },
+        "PreferredMaintenanceWindow": {
+            "type": "string",
+            "description": "The window to perform maintenance in.\nSyntax: \"ddd:hh24:mi-ddd:hh24:mi\". Eg: \"Mon:00:00-Mon:03:00\"."
+        },
+        "PromotionTier": {
+            "type": "number",
+            "description": "Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer."
+        },
+        "PubliclyAccessible": {
+            "type": "boolean"
+        },
+        "StorageEncrypted": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the instance. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Writer": {
+            "type": "boolean"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterIdentifier",
+        "InstanceClass"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DbSubnetGroupName",
+        "/properties/DbiResourceId",
+        "/properties/Endpoint",
+        "/properties/EngineVersion",
+        "/properties/Id",
+        "/properties/KmsKeyId",
+        "/properties/Port",
+        "/properties/PreferredBackupWindow",
+        "/properties/PubliclyAccessible",
+        "/properties/StorageEncrypted",
+        "/properties/Writer"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AzureRM::Image",
+    "description": "Manages a custom virtual machine image that can be used to create virtual machines.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-Image/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlobUri": {
+                    "type": "string",
+                    "description": "Specifies the URI in Azure storage of the blob that you want to use to create the image."
+                },
+                "Caching": {
+                    "type": "string",
+                    "description": "Specifies the caching mode as `ReadWrite`, `ReadOnly`, or `None`. The default is `None`."
+                },
+                "Lun": {
+                    "type": "number",
+                    "description": "Specifies the logical unit number of the data disk."
+                },
+                "ManagedDiskId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the managed disk resource that you want to use to create the image."
+                },
+                "SizeGb": {
+                    "type": "number",
+                    "description": "Specifies the size of the image to be created. The target size can't be smaller than the source size."
+                }
+            },
+            "required": []
+        },
+        "OsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlobUri": {
+                    "type": "string",
+                    "description": "Specifies the URI in Azure storage of the blob that you want to use to create the image."
+                },
+                "Caching": {
+                    "type": "string",
+                    "description": "Specifies the caching mode as `ReadWrite`, `ReadOnly`, or `None`. The default is `None`."
+                },
+                "ManagedDiskId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the managed disk resource that you want to use to create the image."
+                },
+                "OsState": {
+                    "type": "string",
+                    "description": "Specifies the state of the operating system contained in the blob. Currently, the only value is Generalized."
+                },
+                "OsType": {
+                    "type": "string",
+                    "description": "Specifies the type of operating system contained in the virtual machine image. Possible values are: Windows or Linux."
+                },
+                "SizeGb": {
+                    "type": "number",
+                    "description": "Specifies the size of the image to be created. The target size can't be smaller than the source size."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HyperVGeneration": {
+            "type": "string",
+            "description": "The HyperVGenerationType of the VirtualMachine created from the image as `V1`, `V2`. The default is `V1`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specified the supported Azure location where the resource exists.\nChanging this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the image. Changing this forces a\nnew resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create\nthe image. Changing this forces a new resource to be created."
+        },
+        "SourceVirtualMachineId": {
+            "type": "string",
+            "description": "The Virtual Machine ID from which to create the image."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ZoneResilient": {
+            "type": "boolean",
+            "description": "Is zone resiliency enabled?  Defaults to `false`.  Changing this forces a new resource to be created."
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDiskDefinition"
+            }
+        },
+        "OsDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDiskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

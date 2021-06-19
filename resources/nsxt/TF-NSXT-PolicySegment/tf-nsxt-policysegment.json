@@ -1,0 +1,431 @@
+{
+    "typeName": "TF::NSXT::PolicySegment",
+    "description": "This resource provides a method for the management of Segments.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.\n\n~> **NOTE:** For best user experience, it is recommended to use `nsxt_policy_fixed_segment` resource on VMC. Flexible segments and not supported in early versions of VMC UI.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicySegment/docs/README.md",
+    "definitions": {
+        "AdvancedConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressPoolPath": {
+                    "type": "string"
+                },
+                "Connectivity": {
+                    "type": "string"
+                },
+                "Hybrid": {
+                    "type": "boolean"
+                },
+                "LocalEgress": {
+                    "type": "boolean"
+                },
+                "UplinkTeamingPolicy": {
+                    "type": "string"
+                },
+                "UrpfMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiscoveryProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindingMapPath": {
+                    "type": "string"
+                },
+                "IpDiscoveryProfilePath": {
+                    "type": "string"
+                },
+                "MacDiscoveryProfilePath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "L2ExtensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "L2vpnPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TunnelId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "QosProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindingMapPath": {
+                    "type": "string"
+                },
+                "QosProfilePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "QosProfilePath"
+            ]
+        },
+        "SecurityProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindingMapPath": {
+                    "type": "string"
+                },
+                "SecurityProfilePath": {
+                    "type": "string"
+                },
+                "SpoofguardProfilePath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "DhcpRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DhcpV4Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DhcpV4ConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DhcpV6Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DhcpV6ConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DhcpV4ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LeaseTime": {
+                    "type": "number"
+                },
+                "ServerAddress": {
+                    "type": "string"
+                },
+                "DhcpGenericOption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DhcpGenericOptionDefinition"
+                    }
+                },
+                "DhcpOption121": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DhcpOption121Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DhcpV6ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DomainNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LeaseTime": {
+                    "type": "number"
+                },
+                "PreferredTime": {
+                    "type": "number"
+                },
+                "ServerAddress": {
+                    "type": "string"
+                },
+                "SntpServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludedRangeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DhcpGenericOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Code",
+                "Values"
+            ]
+        },
+        "DhcpOption121Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Network": {
+                    "type": "string"
+                },
+                "NextHop": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Network",
+                "NextHop"
+            ]
+        },
+        "ExcludedRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectivityPath": {
+            "type": "string",
+            "description": "Policy path to the connecting Tier-0 or Tier-1."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DhcpConfigPath": {
+            "type": "string",
+            "description": "Policy path to DHCP server or relay configuration to use for subnets configured on this segment. This attribute is supported with NSX 3.0.0 onwards."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "DNS domain names."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "OverlayId": {
+            "type": "number",
+            "description": "Overlay connectivity ID for this Segment."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "TransportZonePath": {
+            "type": "string",
+            "description": "Policy path to the Overlay transport zone. This property is required for NSX Local Manager, and should not be specified for NSX Global Manager, where NSX will automatically assign default transport zone on each site."
+        },
+        "VlanIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of VLAN IDs or ranges. Specifying vlan ids can be useful for overlay segments, f.e. for EVPN."
+        },
+        "AdvancedConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvancedConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "DiscoveryProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiscoveryProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "L2Extension": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/L2ExtensionDefinition"
+            },
+            "maxItems": 1
+        },
+        "QosProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QosProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "SecurityProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecurityProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "Subnet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

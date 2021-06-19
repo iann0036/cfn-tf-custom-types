@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::OCI::OsmanagementManagedInstanceManagement",
+    "description": "This resource provides the Managed Instance Management in Oracle Cloud Infrastructure OS Management service.\nThe resource can be used to attach/detach parent software source, child software sources and managed instance groups from managed instances.\n\nAdds a parent software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance. Software sources that have this software source as a parent will be able to be added to this managed instance.\nRemoves a software source from a managed instance. All child software sources will also be removed from the managed instance. Packages will no longer be able to be installed from these software sources.\n        \nAdds a child software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance.   \nRemoves a child software source from a managed instance. Packages will no longer be able t...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OsmanagementManagedInstanceManagement/docs/README.md",
+    "definitions": {
+        "ChildSoftwareSourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManagedInstanceGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParentSoftwareSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "User friendly name\n* `id` - unique identifier that is immutable on creation."
+        },
+        "Id": {
+            "type": "string",
+            "description": "software source identifier\n* `name` - software source name."
+        },
+        "LastBoot": {
+            "type": "string"
+        },
+        "LastCheckin": {
+            "type": "string"
+        },
+        "ManagedInstanceId": {
+            "type": "string",
+            "description": "OCID for the managed instance."
+        },
+        "OsKernelVersion": {
+            "type": "string"
+        },
+        "OsName": {
+            "type": "string"
+        },
+        "OsVersion": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpdatesAvailable": {
+            "type": "number"
+        },
+        "ChildSoftwareSources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ChildSoftwareSourcesDefinition"
+            }
+        },
+        "ManagedInstanceGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedInstanceGroupsDefinition"
+            }
+        },
+        "ParentSoftwareSource": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParentSoftwareSourceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ManagedInstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompartmentId",
+        "/properties/Description",
+        "/properties/DisplayName",
+        "/properties/Id",
+        "/properties/LastBoot",
+        "/properties/LastCheckin",
+        "/properties/OsKernelVersion",
+        "/properties/OsName",
+        "/properties/OsVersion",
+        "/properties/Status",
+        "/properties/UpdatesAvailable"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

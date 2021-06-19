@@ -1,0 +1,442 @@
+{
+    "typeName": "TF::Aiven::ServiceIntegrationEndpoint",
+    "description": "CloudFormation equivalent of aiven_service_integration_endpoint",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-ServiceIntegrationEndpoint/docs/README.md",
+    "definitions": {
+        "EndpointConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DatadogUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatadogApiKey": {
+                    "type": "string"
+                },
+                "DisableConsumerStats": {
+                    "type": "string"
+                },
+                "MaxPartitionContexts": {
+                    "type": "string"
+                },
+                "Site": {
+                    "type": "string"
+                },
+                "DatadogTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatadogTagsDefinition"
+                    },
+                    "maxItems": 32
+                }
+            },
+            "required": []
+        },
+        "ExternalAwsCloudwatchLogsUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "LogGroupName": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExternalAwsCloudwatchMetricsUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExternalElasticsearchLogsUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ca": {
+                    "type": "string"
+                },
+                "IndexDaysMax": {
+                    "type": "string"
+                },
+                "IndexPrefix": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExternalGoogleCloudLoggingUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "ServiceAccountCredentials": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExternalKafkaUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootstrapServers": {
+                    "type": "string"
+                },
+                "SaslMechanism": {
+                    "type": "string"
+                },
+                "SaslPlainPassword": {
+                    "type": "string"
+                },
+                "SaslPlainUsername": {
+                    "type": "string"
+                },
+                "SecurityProtocol": {
+                    "type": "string"
+                },
+                "SslCaCert": {
+                    "type": "string"
+                },
+                "SslClientCert": {
+                    "type": "string"
+                },
+                "SslClientKey": {
+                    "type": "string"
+                },
+                "SslEndpointIdentificationAlgorithm": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExternalSchemaRegistryUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "string"
+                },
+                "BasicAuthPassword": {
+                    "type": "string"
+                },
+                "BasicAuthUsername": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JolokiaUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BasicAuthPassword": {
+                    "type": "string"
+                },
+                "BasicAuthUsername": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrometheusUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BasicAuthPassword": {
+                    "type": "string"
+                },
+                "BasicAuthUsername": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RsyslogUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ca": {
+                    "type": "string"
+                },
+                "Cert": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Logline": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Sd": {
+                    "type": "string"
+                },
+                "Server": {
+                    "type": "string"
+                },
+                "Tls": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SignalfxUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnabledMetrics": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SignalfxApiKey": {
+                    "type": "string"
+                },
+                "SignalfxRealm": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DatadogTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndpointConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointConfigDefinition"
+            }
+        },
+        "EndpointName": {
+            "type": "string"
+        },
+        "EndpointType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "DatadogUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatadogUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalAwsCloudwatchLogsUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalAwsCloudwatchLogsUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalAwsCloudwatchMetricsUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalAwsCloudwatchMetricsUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalElasticsearchLogsUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalElasticsearchLogsUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalGoogleCloudLoggingUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalGoogleCloudLoggingUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalKafkaUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalKafkaUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalSchemaRegistryUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalSchemaRegistryUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "JolokiaUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JolokiaUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PrometheusUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrometheusUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RsyslogUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RsyslogUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SignalfxUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignalfxUserConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndpointName",
+        "EndpointType",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointConfig",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DatadogUserConfigDefinition/DatadogApiKey",
+        "/definitions/ExternalKafkaUserConfigDefinition/SaslPlainPassword",
+        "/definitions/ExternalSchemaRegistryUserConfigDefinition/BasicAuthPassword",
+        "/definitions/JolokiaUserConfigDefinition/BasicAuthPassword",
+        "/definitions/PrometheusUserConfigDefinition/BasicAuthPassword",
+        "/definitions/SignalfxUserConfigDefinition/SignalfxApiKey"
+    ]
+}

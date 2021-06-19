@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Aviatrix::DeviceRegistration",
+    "description": "The **aviatrix_device_registration** resource allows the registration and management of devices for use in CloudWAN.\n\n~> **NOTE:** Before this device can be attached to any Aviatrix Transit Gateway, AWS TGW or Azure Virtual WAN you must configure its WAN interface and IP via the `aviatrix_device_interface_config` resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-DeviceRegistration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address1": {
+            "type": "string"
+        },
+        "Address2": {
+            "type": "string"
+        },
+        "City": {
+            "type": "string"
+        },
+        "Country": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HostOs": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyFile": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "SshPort": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "ZipCode": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PublicIp",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,209 @@
+{
+    "typeName": "TF::Google::BigqueryDataTransferConfig",
+    "description": "Represents a data transfer configuration. A transfer configuration\ncontains all metadata needed to perform a data transfer.\n\n\nTo get more information about Config, see:\n\n* [API documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/v1/projects.locations.transferConfigs/create)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/)\n\n~> **Warning:** All arguments including `sensitive_params.secret_access_key` will be stored in the raw\nstate as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigqueryDataTransferConfig/docs/README.md",
+    "definitions": {
+        "ParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EmailPreferencesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableFailureEmail": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnableFailureEmail"
+            ]
+        },
+        "ScheduleOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableAutoScheduling": {
+                    "type": "boolean"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SensitiveParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecretAccessKey"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataRefreshWindowDays": {
+            "type": "number"
+        },
+        "DataSourceId": {
+            "type": "string"
+        },
+        "DestinationDatasetId": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotificationPubsubTopic": {
+            "type": "string"
+        },
+        "Params": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParamsDefinition"
+            }
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "ServiceAccountName": {
+            "type": "string"
+        },
+        "EmailPreferences": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailPreferencesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScheduleOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "SensitiveParams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SensitiveParamsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DataSourceId",
+        "DestinationDatasetId",
+        "DisplayName",
+        "Params"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SensitiveParamsDefinition/SecretAccessKey"
+    ]
+}

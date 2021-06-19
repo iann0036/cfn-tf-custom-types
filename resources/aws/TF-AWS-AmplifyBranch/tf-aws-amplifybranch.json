@@ -1,0 +1,224 @@
+{
+    "typeName": "TF::AWS::AmplifyBranch",
+    "description": "Provides an Amplify Branch resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AmplifyBranch/docs/README.md",
+    "definitions": {
+        "EnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The unique ID for an Amplify app."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociatedResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackendEnvironmentArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app."
+        },
+        "BasicAuthCredentials": {
+            "type": "string",
+            "description": "The basic authorization credentials for the branch."
+        },
+        "BranchName": {
+            "type": "string",
+            "description": "The name for the branch."
+        },
+        "CustomDomains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the branch."
+        },
+        "DestinationBranch": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name for a branch. This is used as the default domain prefix."
+        },
+        "EnableAutoBuild": {
+            "type": "boolean",
+            "description": "Enables auto building for the branch."
+        },
+        "EnableBasicAuth": {
+            "type": "boolean",
+            "description": "Enables basic authorization for the branch."
+        },
+        "EnableNotification": {
+            "type": "boolean"
+        },
+        "EnablePerformanceMode": {
+            "type": "boolean",
+            "description": "Enables performance mode for the branch."
+        },
+        "EnablePullRequestPreview": {
+            "type": "boolean",
+            "description": "Enables pull request previews for this branch."
+        },
+        "EnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariablesDefinition"
+            },
+            "description": "The environment variables for the branch."
+        },
+        "Framework": {
+            "type": "string",
+            "description": "The framework for the branch."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PullRequestEnvironmentName": {
+            "type": "string",
+            "description": "The Amplify environment name for the pull request."
+        },
+        "SourceBranch": {
+            "type": "string"
+        },
+        "Stage": {
+            "type": "string",
+            "description": "Describes the current stage for the branch. Valid values: `PRODUCTION`, `BETA`, `DEVELOPMENT`, `EXPERIMENTAL`, `PULL_REQUEST`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value mapping of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "The content Time To Live (TTL) for the website in seconds."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "BranchName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AssociatedResources",
+        "/properties/CustomDomains",
+        "/properties/DestinationBranch",
+        "/properties/Id",
+        "/properties/SourceBranch"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BasicAuthCredentials"
+    ]
+}

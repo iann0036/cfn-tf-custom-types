@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Wavefront::CloudIntegrationCloudtrail",
+    "description": "CloudFormation equivalent of wavefront_cloud_integration_cloudtrail",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-CloudIntegrationCloudtrail/docs/README.md",
+    "definitions": {
+        "AdditionalTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalTagsDefinition"
+            }
+        },
+        "BucketName": {
+            "type": "string"
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "FilterRule": {
+            "type": "string"
+        },
+        "ForceSave": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Prefix": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "ServiceRefreshRateInMinutes": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketName",
+        "ExternalId",
+        "Name",
+        "Region",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

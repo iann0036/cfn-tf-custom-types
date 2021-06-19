@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Okta::AdminRoleTargets",
+    "description": "Manages targets for administrator roles.\n\nThis resource allows you to define permissions for admin roles into a smaller subset of Groups or Apps within your org.\nYou can define admin roles to target Groups, Applications, and Application Instances.\n\n```\nNote 1: you have to assign a role to a user before creating this resource.\n\nNote 2: You can target a mixture of both App and App Instance targets, but can't assign permissions to manage all \n        instances of an App and then a subset of that same App. For example, you can't specify that an admin has access \n        to manage all instances of a Salesforce app and then also specific configurations of the Salesforce app.\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AdminRoleTargets/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Apps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of app names (name represents set of app instances) or a combination of app name and app instance ID (like 'salesforce' or 'facebook.0oapsqQ6dv19pqyEo0g3')."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RoleId": {
+            "type": "string"
+        },
+        "RoleType": {
+            "type": "string",
+            "description": "Name of the role associated with the user."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "ID of the user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RoleType",
+        "UserId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RoleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

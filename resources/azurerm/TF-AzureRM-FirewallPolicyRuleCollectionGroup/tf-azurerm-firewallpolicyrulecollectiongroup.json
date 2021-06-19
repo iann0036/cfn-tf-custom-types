@@ -1,0 +1,263 @@
+{
+    "typeName": "TF::AzureRM::FirewallPolicyRuleCollectionGroup",
+    "description": "Manages a Firewall Policy Rule Collection Group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FirewallPolicyRuleCollectionGroup/docs/README.md",
+    "definitions": {
+        "ApplicationRuleCollectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Name",
+                "Priority"
+            ]
+        },
+        "NatRuleCollectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Name",
+                "Priority"
+            ]
+        },
+        "NetworkRuleCollectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Name",
+                "Priority"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationFqdns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationIpGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Protocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceIpGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DestinationPorts",
+                "Name",
+                "Protocols"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FirewallPolicyId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "ApplicationRuleCollection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ApplicationRuleCollectionDefinition"
+            }
+        },
+        "NatRuleCollection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NatRuleCollectionDefinition"
+            }
+        },
+        "NetworkRuleCollection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkRuleCollectionDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallPolicyId",
+        "Name",
+        "Priority"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

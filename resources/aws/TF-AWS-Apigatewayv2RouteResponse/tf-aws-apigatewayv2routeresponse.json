@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2RouteResponse",
+    "description": "Manages an Amazon API Gateway Version 2 route response.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2RouteResponse/docs/README.md",
+    "definitions": {
+        "ResponseModelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API identifier."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ModelSelectionExpression": {
+            "type": "string",
+            "description": "The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route response."
+        },
+        "ResponseModels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseModelsDefinition"
+            },
+            "description": "The response models for the route response."
+        },
+        "RouteId": {
+            "type": "string",
+            "description": "The identifier of the [`aws_apigatewayv2_route`](/docs/providers/aws/r/apigatewayv2_route.html)."
+        },
+        "RouteResponseKey": {
+            "type": "string",
+            "description": "The route response key."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "RouteId",
+        "RouteResponseKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

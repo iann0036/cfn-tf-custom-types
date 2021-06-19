@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::TencentCloud::MysqlAccount",
+    "description": "Provides a MySQL account resource for database management. A MySQL instance supports multiple database account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MysqlAccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Database description."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Account host, default is `%`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MysqlId": {
+            "type": "string",
+            "description": "Instance ID to which the account belongs."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Account name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Operation password."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MysqlId",
+        "Name",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::Vault::LdapAuthBackendUser",
+    "description": "Provides a resource to create a user in an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-LdapAuthBackendUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string",
+            "description": "Path to the authentication backend."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Override LDAP groups which should be granted to user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Policies which should be granted to user."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The LDAP username."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

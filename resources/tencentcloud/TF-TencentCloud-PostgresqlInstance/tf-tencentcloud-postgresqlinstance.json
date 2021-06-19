@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::TencentCloud::PostgresqlInstance",
+    "description": "Use this resource to create postgresql instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-PostgresqlInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability zone."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Pay type of the postgresql instance. For now, only `POSTPAID_BY_HOUR` is valid."
+        },
+        "Charset": {
+            "type": "string",
+            "description": "Charset of the root account. Valid values are `UTF8`,`LATIN1`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "Version of the postgresql database engine. Valid values: `9.3.5`, `9.5.4`, `10.4`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Memory size(in GB). Allowed value must be larger than `memory` that data source `tencentcloud_postgresql_specinfos` provides."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the postgresql instance."
+        },
+        "PrivateAccessIp": {
+            "type": "string"
+        },
+        "PrivateAccessPort": {
+            "type": "number"
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Project id, default value is `0`."
+        },
+        "PublicAccessHost": {
+            "type": "string"
+        },
+        "PublicAccessPort": {
+            "type": "number"
+        },
+        "PublicAccessSwitch": {
+            "type": "boolean",
+            "description": "Indicates whether to enable the access to an instance from public network or not."
+        },
+        "RootPassword": {
+            "type": "string",
+            "description": "Password of root account. This parameter can be specified when you purchase master instances, but it should be ignored when you purchase read-only instances or disaster recovery instances."
+        },
+        "Storage": {
+            "type": "number",
+            "description": "Volume size(in GB). Allowed value must be a multiple of 10. The storage must be set with the limit of `storage_min` and `storage_max` which data source `tencentcloud_postgresql_specinfos` provides."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of subnet."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The available tags within this postgresql."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Memory",
+        "Name",
+        "RootPassword",
+        "Storage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/PrivateAccessIp",
+        "/properties/PrivateAccessPort",
+        "/properties/PublicAccessHost",
+        "/properties/PublicAccessPort"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RootPassword"
+    ]
+}

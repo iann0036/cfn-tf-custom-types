@@ -1,0 +1,316 @@
+{
+    "typeName": "TF::AWS::AppmeshGatewayRoute",
+    "description": "Provides an AWS App Mesh gateway route resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppmeshGatewayRoute/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GrpcRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GrpcRouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Http2Route": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Http2RouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpRouteDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GrpcRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "Http2RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "HttpRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Target": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string",
+                    "description": "Specifies the path to match requests with. This parameter must always start with `/`, which by itself matches all requests to the virtual service name."
+                }
+            },
+            "required": [
+                "Prefix"
+            ]
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualService": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualServiceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "VirtualServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualServiceName": {
+                    "type": "string",
+                    "description": "The name of the virtual service that traffic is routed to. Must be between 1 and 255 characters in length."
+                }
+            },
+            "required": [
+                "VirtualServiceName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "MeshName": {
+            "type": "string",
+            "description": "The name of the service mesh in which to create the gateway route. Must be between 1 and 255 characters in length."
+        },
+        "MeshOwner": {
+            "type": "string",
+            "description": "The AWS account ID of the service mesh's owner. Defaults to the account ID the [AWS provider][1] is currently connected to."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name to use for the gateway route. Must be between 1 and 255 characters in length."
+        },
+        "ResourceOwner": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VirtualGatewayName": {
+            "type": "string",
+            "description": "The name of the [virtual gateway](/docs/providers/aws/r/appmesh_virtual_gateway.html) to associate the gateway route with. Must be between 1 and 255 characters in length."
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MeshName",
+        "Name",
+        "VirtualGatewayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/ResourceOwner"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

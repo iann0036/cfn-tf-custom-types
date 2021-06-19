@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::AzureRM::KustoEventhubDataConnection",
+    "description": "Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-KustoEventhubDataConnection/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created."
+        },
+        "Compression": {
+            "type": "string",
+            "description": "Specifies compression type for the connection. Allowed values: `GZip` and `None`. Defaults to `None`. Changing this forces a new resource to be created."
+        },
+        "ConsumerGroup": {
+            "type": "string",
+            "description": "Specifies the EventHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created."
+        },
+        "DataFormat": {
+            "type": "string",
+            "description": "Specifies the data format of the EventHub messages. Allowed values: `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSV` and `TXT`."
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created."
+        },
+        "EventSystemProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a list of system properties for the Event Hub."
+        },
+        "EventhubId": {
+            "type": "string",
+            "description": "Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the Kusto Database should be created. Changing this forces a new resource to be created."
+        },
+        "MappingRuleName": {
+            "type": "string",
+            "description": "Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Kusto EventHub Data Connection to create. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created."
+        },
+        "TableName": {
+            "type": "string",
+            "description": "Specifies the target table name used for the message ingestion. Table must exist before resource is created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "ConsumerGroup",
+        "DatabaseName",
+        "EventhubId",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

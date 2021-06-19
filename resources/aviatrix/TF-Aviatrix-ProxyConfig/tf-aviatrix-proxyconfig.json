@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Aviatrix::ProxyConfig",
+    "description": "The **aviatrix_proxy_config** resource allows management of an Aviatrix Controller's proxy configurations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-ProxyConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HttpProxy": {
+            "type": "string",
+            "description": "Http proxy URL."
+        },
+        "HttpsProxy": {
+            "type": "string",
+            "description": "Https proxy URL."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProxyCaCertificate": {
+            "type": "string",
+            "description": "Server CA Certificate file. Use the `file` function to read from a file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HttpProxy",
+        "HttpsProxy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

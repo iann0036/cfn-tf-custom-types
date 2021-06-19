@@ -1,0 +1,221 @@
+{
+    "typeName": "TF::VRA::Network",
+    "description": "CloudFormation equivalent of vra_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-Network/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string"
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            }
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "ExternalZoneId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "OutboundAccess": {
+            "type": "boolean"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Constraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConstraintsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cidr",
+        "/properties/ExternalId",
+        "/properties/ExternalZoneId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrganizationId",
+        "/properties/Owner",
+        "/properties/SelfLink",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

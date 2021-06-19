@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::NetAppCloudManager::Volume",
+    "description": "Provides a netapp-cloudmanager_volume resource. This can be used to create, update, and delete volumes for Cloud Volumes ONTAP.\nRequires existence of a Cloud Manager Connector and a Cloud Volumes ONTAP system.\nNFS, CIFS, and iSCSI volumes are supported.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-Volume/docs/README.md",
+    "definitions": {
+        "InitiatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "Iqn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Alias",
+                "Iqn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregateName": {
+            "type": "string"
+        },
+        "CapacityTier": {
+            "type": "string",
+            "description": "The volume's capacity tier for tiering cold data to object storage: ['S3', 'Blob', 'cloudStorage']. The default values for each cloud provider are as follows: Amazon => 'S3', Azure => 'Blob', GCP => 'cloudStorage'. If none, the capacity tier won't be set on volume creation."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "EnableCompression": {
+            "type": "boolean",
+            "description": "Enable compression. The default is 'true'."
+        },
+        "EnableDeduplication": {
+            "type": "boolean",
+            "description": "Enable deduplication. The default is 'true'."
+        },
+        "EnableThinProvisioning": {
+            "type": "boolean",
+            "description": "Enable thin provisioning. The default is 'true'."
+        },
+        "ExportPolicyIp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Custom export policy list of IPs. (NFS protocol parameters)."
+        },
+        "ExportPolicyName": {
+            "type": "string",
+            "description": "The export policy name. (NFS protocol parameters)."
+        },
+        "ExportPolicyNfsVersion": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Export policy protocol. (NFS protocol parameters)."
+        },
+        "ExportPolicyType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Igroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Iops": {
+            "type": "number",
+            "description": "Provisioned IOPS. Needed only when 'provider_volume_type' is 'io1' or 'gp3'."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the volume."
+        },
+        "OsName": {
+            "type": "string"
+        },
+        "Permission": {
+            "type": "string"
+        },
+        "ProviderVolumeType": {
+            "type": "string",
+            "description": "The underlying cloud provider volume type. For AWS: ['gp3', 'gp2', 'io1', 'st1', 'sc1']. For Azure: ['Premium_LRS','Standard_LRS','StandardSSD_LRS']. For GCP: ['pd-ssd','pd-standard']."
+        },
+        "ShareName": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number",
+            "description": "The volume size, supported with decimal numbers."
+        },
+        "SnapshotPolicyName": {
+            "type": "string",
+            "description": "Snapshot policy name. The default is 'default'. (NFS protocol parameters)."
+        },
+        "SvmName": {
+            "type": "string",
+            "description": "The name of the SVM. The default SVM name is used, if a name isn't provided."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "Required only when 'provider_volume_type' is 'gp3'."
+        },
+        "TieringPolicy": {
+            "type": "string"
+        },
+        "Unit": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VolumeProtocol": {
+            "type": "string",
+            "description": "The protocol for the volume: ['nfs', 'cifs', 'iscsi']. This affects the provided parameters. The default is 'nfs'."
+        },
+        "WorkingEnvironmentId": {
+            "type": "string",
+            "description": "The public ID of the working environment where the volume will be created. The ID can be optional if working_environment_name is provided. You can find the ID from the previous create Cloud Volumes ONTAP action as shown in the example, or from the Information page of the Cloud Volumes ONTAP working environment on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "WorkingEnvironmentName": {
+            "type": "string",
+            "description": "The working environment name where the aggregate will be created. It will be ignored if working_environment_id is provided."
+        },
+        "Initiator": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InitiatorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "Name",
+        "ProviderVolumeType",
+        "Size",
+        "Unit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::AzureRM::RouteTable",
+    "description": "Manages a Route Table\n\n~> **NOTE on Route Tables and Routes:** Terraform currently\nprovides both a standalone [Route resource](route.html), and allows for Routes to be defined in-line within the [Route Table resource](route_table.html).\nAt this time you cannot use a Route Table with in-line Routes in conjunction with any Route resources. Doing so will cause a conflict of Route configurations and will overwrite Routes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-RouteTable/docs/README.md",
+    "definitions": {
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressPrefix": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NextHopInIpAddress": {
+                    "type": "string"
+                },
+                "NextHopType": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisableBgpRoutePropagation": {
+            "type": "boolean",
+            "description": "Boolean flag which controls propagation of routes learned by BGP on that route table. True means disable."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the route table. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the route table. Changing this forces a new resource to be created."
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            },
+            "description": "[List of objects](/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below."
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Subnets"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

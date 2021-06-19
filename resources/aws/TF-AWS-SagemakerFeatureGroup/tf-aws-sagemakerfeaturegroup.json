@@ -1,0 +1,258 @@
+{
+    "typeName": "TF::AWS::SagemakerFeatureGroup",
+    "description": "Provides a SageMaker Feature Group resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SagemakerFeatureGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FeatureDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FeatureName": {
+                    "type": "string"
+                },
+                "FeatureType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OfflineStoreConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableGlueTableCreation": {
+                    "type": "boolean"
+                },
+                "DataCatalogConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataCatalogConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3StorageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3StorageConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "OnlineStoreConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableOnlineStore": {
+                    "type": "boolean"
+                },
+                "SecurityConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DataCatalogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Catalog": {
+                    "type": "string"
+                },
+                "Database": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3StorageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "S3Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "S3Uri"
+            ]
+        },
+        "SecurityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EventTimeFeatureName": {
+            "type": "string",
+            "description": "The name of the feature that stores the EventTime of a Record in a Feature Group."
+        },
+        "FeatureGroupName": {
+            "type": "string",
+            "description": "The name of the Feature Group. The name must be unique within an AWS Region in an AWS account."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RecordIdentifierFeatureName": {
+            "type": "string",
+            "description": "The name of the Feature whose value uniquely identifies a Record defined in the Feature Store. Only the latest record per identifier value will be stored in the Online Store."
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of resource tags for the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "FeatureDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FeatureDefinitionDefinition"
+            },
+            "maxItems": 2500,
+            "minItems": 1
+        },
+        "OfflineStoreConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OfflineStoreConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OnlineStoreConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnlineStoreConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EventTimeFeatureName",
+        "FeatureGroupName",
+        "RecordIdentifierFeatureName",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

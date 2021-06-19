@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Dome9::AttachIamSafe",
+    "description": "Attach IAM safe to AWS cloud account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-AttachIamSafe/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsCloudAccountId": {
+            "type": "string",
+            "description": "AWS cloud account to attach IAM safe to it."
+        },
+        "AwsGroupArn": {
+            "type": "string",
+            "description": "AWS group arn."
+        },
+        "AwsPolicyArn": {
+            "type": "string",
+            "description": "AWS policy arn."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AwsCloudAccountId",
+        "AwsGroupArn",
+        "AwsPolicyArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Mode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

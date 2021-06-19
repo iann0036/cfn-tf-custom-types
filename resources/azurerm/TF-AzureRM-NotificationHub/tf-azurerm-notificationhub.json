@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::AzureRM::NotificationHub",
+    "description": "Manages a Notification Hub within a Notification Hub Namespace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NotificationHub/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApnsCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationMode": {
+                    "type": "string",
+                    "description": "The Application Mode which defines which server the APNS Messages should be sent to. Possible values are `Production` and `Sandbox`."
+                },
+                "BundleId": {
+                    "type": "string",
+                    "description": "The Bundle ID of the iOS/macOS application to send push notifications for, such as `com.hashicorp.example`."
+                },
+                "KeyId": {
+                    "type": "string",
+                    "description": "The Apple Push Notifications Service (APNS) Key."
+                },
+                "TeamId": {
+                    "type": "string",
+                    "description": "The ID of the team the Token."
+                },
+                "Token": {
+                    "type": "string",
+                    "description": "The Push Token associated with the Apple Developer Account. This is the contents of the `key` downloaded from [the Apple Developer Portal](https://developer.apple.com/account/ios/authkey/) between the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` blocks."
+                }
+            },
+            "required": [
+                "ApplicationMode",
+                "BundleId",
+                "KeyId",
+                "TeamId",
+                "Token"
+            ]
+        },
+        "GcmCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string",
+                    "description": "The API Key associated with the Google Cloud Messaging service."
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure Region in which this Notification Hub Namespace exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name to use for this Notification Hub. Changing this forces a new resource to be created."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "The name of the Notification Hub Namespace in which to create this Notification Hub. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Notification Hub Namespace exists. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ApnsCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApnsCredentialDefinition"
+            },
+            "maxItems": 1
+        },
+        "GcmCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GcmCredentialDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "NamespaceName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ApnsCredentialDefinition/Token",
+        "/definitions/GcmCredentialDefinition/ApiKey"
+    ]
+}

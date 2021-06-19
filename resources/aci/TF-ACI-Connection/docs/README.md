@@ -1,0 +1,169 @@
+# TF::ACI::Connection
+
+CloudFormation equivalent of aci_connection
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::ACI::Connection",
+    "Properties" : {
+        "<a href="#adjtype" title="AdjType">AdjType</a>" : <i>String</i>,
+        "<a href="#annotation" title="Annotation">Annotation</a>" : <i>String</i>,
+        "<a href="#conndir" title="ConnDir">ConnDir</a>" : <i>String</i>,
+        "<a href="#conntype" title="ConnType">ConnType</a>" : <i>String</i>,
+        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#directconnect" title="DirectConnect">DirectConnect</a>" : <i>String</i>,
+        "<a href="#l4l7servicegraphtemplatedn" title="L4L7ServiceGraphTemplateDn">L4L7ServiceGraphTemplateDn</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#namealias" title="NameAlias">NameAlias</a>" : <i>String</i>,
+        "<a href="#relationvnsrsabsconnectionconns" title="RelationVnsRsAbsConnectionConns">RelationVnsRsAbsConnectionConns</a>" : <i>[ String, ... ]</i>,
+        "<a href="#relationvnsrsabscopyconnection" title="RelationVnsRsAbsCopyConnection">RelationVnsRsAbsCopyConnection</a>" : <i>[ String, ... ]</i>,
+        "<a href="#unicastroute" title="UnicastRoute">UnicastRoute</a>" : <i>String</i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::ACI::Connection
+Properties:
+    <a href="#adjtype" title="AdjType">AdjType</a>: <i>String</i>
+    <a href="#annotation" title="Annotation">Annotation</a>: <i>String</i>
+    <a href="#conndir" title="ConnDir">ConnDir</a>: <i>String</i>
+    <a href="#conntype" title="ConnType">ConnType</a>: <i>String</i>
+    <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#directconnect" title="DirectConnect">DirectConnect</a>: <i>String</i>
+    <a href="#l4l7servicegraphtemplatedn" title="L4L7ServiceGraphTemplateDn">L4L7ServiceGraphTemplateDn</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#namealias" title="NameAlias">NameAlias</a>: <i>String</i>
+    <a href="#relationvnsrsabsconnectionconns" title="RelationVnsRsAbsConnectionConns">RelationVnsRsAbsConnectionConns</a>: <i>
+      - String</i>
+    <a href="#relationvnsrsabscopyconnection" title="RelationVnsRsAbsCopyConnection">RelationVnsRsAbsCopyConnection</a>: <i>
+      - String</i>
+    <a href="#unicastroute" title="UnicastRoute">UnicastRoute</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### AdjType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Annotation
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnDir
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Description
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DirectConnect
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### L4L7ServiceGraphTemplateDn
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NameAlias
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RelationVnsRsAbsConnectionConns
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RelationVnsRsAbsCopyConnection
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UnicastRoute
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
+

@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleRuntimeconfigVariable",
+    "description": "CloudFormation equivalent of google_runtimeconfig_variable",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleRuntimeconfigVariable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Text": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Text",
+        "/properties/Value"
+    ]
+}

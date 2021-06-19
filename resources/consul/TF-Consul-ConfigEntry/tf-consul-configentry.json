@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Consul::ConfigEntry",
+    "description": "The [Configuration Entry](https://www.consul.io/docs/agent/config_entries.html)\nresource can be used to provide cluster-wide defaults for various aspects of\nConsul.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-ConfigEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigJson": {
+            "type": "string",
+            "description": "An arbitrary map of configuration values."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string",
+            "description": "The kind of configuration entry to register."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the configuration entry being registred."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The namespace to create the config entry within."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Kind",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

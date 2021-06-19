@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::FortiOS::SystemProberesponse",
+    "description": "Configure system probe response.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemProberesponse/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HttpProbeValue": {
+            "type": "string",
+            "description": "Value to respond to the monitoring server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "SLA response mode. Valid values: `none`, `http-probe`, `twamp`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Twamp respondor password in authentication mode."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number to response."
+        },
+        "SecurityMode": {
+            "type": "string",
+            "description": "Twamp respondor security mode. Valid values: `none`, `authentication`."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "An inactivity timer for a twamp test session."
+        },
+        "TtlMode": {
+            "type": "string",
+            "description": "Mode for TWAMP packet TTL modification. Valid values: `reinit`, `decrease`, `retain`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

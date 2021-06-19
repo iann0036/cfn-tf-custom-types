@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::BIGIP::As3",
+    "description": "CloudFormation equivalent of bigip_as3",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-As3/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationList": {
+            "type": "string"
+        },
+        "As3Json": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreMetadata": {
+            "type": "boolean"
+        },
+        "TenantFilter": {
+            "type": "string"
+        },
+        "TenantList": {
+            "type": "string"
+        },
+        "TenantName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "As3Json"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

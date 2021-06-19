@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::AWS::SsmResourceDataSync",
+    "description": "Provides a SSM resource data sync.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmResourceDataSync/docs/README.md",
+    "definitions": {
+        "S3DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SyncFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Region"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the configuration."
+        },
+        "S3Destination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3DestinationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

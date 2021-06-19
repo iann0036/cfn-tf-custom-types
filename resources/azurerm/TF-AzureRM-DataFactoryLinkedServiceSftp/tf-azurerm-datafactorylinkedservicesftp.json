@@ -1,0 +1,198 @@
+{
+    "typeName": "TF::AzureRM::DataFactoryLinkedServiceSftp",
+    "description": "Manages a Linked Service (connection) between a SFTP Server and Azure Data Factory.\n\n~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DataFactoryLinkedServiceSftp/docs/README.md",
+    "definitions": {
+        "AdditionalPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalPropertiesDefinition"
+            },
+            "description": "A map of additional properties to associate with the Data Factory Linked Service."
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that can be used for describing the Data Factory Linked Service."
+        },
+        "AuthenticationType": {
+            "type": "string",
+            "description": "The type of authentication used to connect to the web table source. Valid options are `Anonymous`, `Basic` and `ClientCertificate`."
+        },
+        "DataFactoryName": {
+            "type": "string",
+            "description": "The Data Factory name in which to associate the Linked Service with. Changing this forces a new resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the Data Factory Linked Service."
+        },
+        "Host": {
+            "type": "string",
+            "description": "The SFTP server hostname."
+        },
+        "HostKeyFingerprint": {
+            "type": "string",
+            "description": "The host key fingerprint of the SFTP server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationRuntimeName": {
+            "type": "string",
+            "description": "The integration runtime reference to associate with the Data Factory Linked Service."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data\nfactory. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A map of parameters to associate with the Data Factory Linked Service."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password to logon to the SFTP Server for Basic Authentication."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The TCP port number that the SFTP server uses to lsiten for client connection. Default value is 22."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory Linked Service. Changing this forces a new resource."
+        },
+        "SkipHostKeyValidation": {
+            "type": "boolean",
+            "description": "Whether to validate host key fingerprint while connecting. If set to `false`, `host_key_fingerprint` must also be set."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username used to log on to the SFTP server."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthenticationType",
+        "DataFactoryName",
+        "Host",
+        "Name",
+        "Password",
+        "Port",
+        "ResourceGroupName",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Heroku::Addon",
+    "description": "Provides a Heroku Add-On resource. These can be attach\nservices to a Heroku app.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-Addon/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "App": {
+            "type": "string",
+            "description": "The Heroku app to add to."
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "description": "Optional plan configuration."
+        },
+        "ConfigVars": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Globally unique name of the add-on."
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The addon to add."
+        },
+        "ProviderId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "App",
+        "Plan"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigVars",
+        "/properties/Id",
+        "/properties/ProviderId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::TencentCloud::TcaplusTable",
+    "description": "Use this resource to create TcaplusDB table.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-TcaplusTable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "ID of the TcaplusDB cluster to which the table belongs."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the TcaplusDB table."
+        },
+        "Error": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdlId": {
+            "type": "string",
+            "description": "ID of the IDL File."
+        },
+        "ReservedReadCu": {
+            "type": "number",
+            "description": "Reserved read capacity units of the TcaplusDB table."
+        },
+        "ReservedVolume": {
+            "type": "number",
+            "description": "Reserved storage capacity of the TcaplusDB table (unit: GB)."
+        },
+        "ReservedWriteCu": {
+            "type": "number",
+            "description": "Reserved write capacity units of the TcaplusDB table."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TableIdlType": {
+            "type": "string",
+            "description": "IDL type of the TcaplusDB table. Valid values: `PROTO` and `TDR`."
+        },
+        "TableName": {
+            "type": "string",
+            "description": "Name of the TcaplusDB table."
+        },
+        "TableSize": {
+            "type": "number"
+        },
+        "TableType": {
+            "type": "string",
+            "description": "Type of the TcaplusDB table. Valid values are `GENERIC` and `LIST`."
+        },
+        "TablegroupId": {
+            "type": "string",
+            "description": "ID of the table group to which the table belongs."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "IdlId",
+        "ReservedReadCu",
+        "ReservedVolume",
+        "ReservedWriteCu",
+        "TableIdlType",
+        "TableName",
+        "TableType",
+        "TablegroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Error",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/TableSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::EipAssociation",
+    "description": "Provides an AWS EIP Association as a top level resource, to associate and\ndisassociate Elastic IPs from AWS Instances and Network Interfaces.\n\n~> **NOTE:** Do not use this resource to associate an EIP to `aws_lb` or `aws_nat_gateway` resources. Instead use the `allocation_id` available in those resources to allow AWS to manage the association, otherwise you will see `AuthFailure` errors.\n\n~> **NOTE:** `aws_eip_association` is useful in scenarios where EIPs are either\npre-existing or distributed to customers or users and therefore cannot be changed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EipAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationId": {
+            "type": "string",
+            "description": "The allocation ID. This is required for EC2-VPC."
+        },
+        "AllowReassociation": {
+            "type": "boolean",
+            "description": "Whether to allow an Elastic IP to\nbe re-associated. Defaults to `true` in VPC."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The ID of the instance. This is required for\nEC2-Classic. For EC2-VPC, you can specify either the instance ID or the\nnetwork interface ID, but not both. The operation fails if you specify an\ninstance ID unless exactly one network interface is attached."
+        },
+        "NetworkInterfaceId": {
+            "type": "string",
+            "description": "The ID of the network interface. If the\ninstance has more than one network interface, you must specify a network\ninterface ID."
+        },
+        "PrivateIpAddress": {
+            "type": "string",
+            "description": "The primary or secondary private IP address\nto associate with the Elastic IP address. If no private IP address is\nspecified, the Elastic IP address is associated with the primary private IP\naddress."
+        },
+        "PublicIp": {
+            "type": "string",
+            "description": "The Elastic IP address. This is required for EC2-Classic."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

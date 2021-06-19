@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleLoggingFolderSink",
+    "description": "CloudFormation equivalent of google_logging_folder_sink",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleLoggingFolderSink/docs/README.md",
+    "definitions": {
+        "BigqueryOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UsePartitionedTables": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "UsePartitionedTables"
+            ]
+        },
+        "ExclusionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Filter": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filter",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeChildren": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "WriterIdentity": {
+            "type": "string"
+        },
+        "BigqueryOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BigqueryOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Exclusions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExclusionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Folder",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/WriterIdentity"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

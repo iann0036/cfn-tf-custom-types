@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Wavefront::CloudIntegrationAzureActivityLog",
+    "description": "CloudFormation equivalent of wavefront_cloud_integration_azure_activity_log",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-CloudIntegrationAzureActivityLog/docs/README.md",
+    "definitions": {
+        "AdditionalTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalTagsDefinition"
+            }
+        },
+        "CategoryFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "ForceSave": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "ServiceRefreshRateInMinutes": {
+            "type": "number"
+        },
+        "Tenant": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "ClientSecret",
+        "Name",
+        "Tenant"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret"
+    ]
+}

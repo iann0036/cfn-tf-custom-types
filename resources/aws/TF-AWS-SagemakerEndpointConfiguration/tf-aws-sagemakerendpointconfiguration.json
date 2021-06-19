@@ -1,0 +1,246 @@
+{
+    "typeName": "TF::AWS::SagemakerEndpointConfiguration",
+    "description": "Provides a SageMaker endpoint configuration resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SagemakerEndpointConfiguration/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataCaptureConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationS3Uri": {
+                    "type": "string",
+                    "description": "The URL for S3 location where the captured data is stored."
+                },
+                "EnableCapture": {
+                    "type": "boolean",
+                    "description": "Flag to enable data capture. Defaults to `false`."
+                },
+                "InitialSamplingPercentage": {
+                    "type": "number",
+                    "description": "Portion of data to capture. Should be between 0 and 100."
+                },
+                "KmsKeyId": {
+                    "type": "string",
+                    "description": "Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt the captured data on Amazon S3."
+                },
+                "CaptureContentTypeHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CaptureContentTypeHeaderDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CaptureOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CaptureOptionsDefinition"
+                    },
+                    "maxItems": 2,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DestinationS3Uri",
+                "InitialSamplingPercentage"
+            ]
+        },
+        "ProductionVariantsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceleratorType": {
+                    "type": "string"
+                },
+                "InitialInstanceCount": {
+                    "type": "number",
+                    "description": "Initial number of instances used for auto-scaling."
+                },
+                "InitialVariantWeight": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "ModelName": {
+                    "type": "string",
+                    "description": "The name of the model to use."
+                },
+                "VariantName": {
+                    "type": "string",
+                    "description": "The name of the variant. If omitted, Terraform will assign a random, unique name."
+                }
+            },
+            "required": [
+                "InitialInstanceCount",
+                "InstanceType",
+                "ModelName"
+            ]
+        },
+        "CaptureContentTypeHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CsvContentTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The CSV content type headers to capture."
+                },
+                "JsonContentTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The JSON content type headers to capture."
+                }
+            },
+            "required": []
+        },
+        "CaptureOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaptureMode": {
+                    "type": "string",
+                    "description": "Specifies the data to be captured. Should be one of `Input` or `Output`."
+                }
+            },
+            "required": [
+                "CaptureMode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the endpoint configuration. If omitted, Terraform will assign a random, unique name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "DataCaptureConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataCaptureConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ProductionVariants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProductionVariantsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

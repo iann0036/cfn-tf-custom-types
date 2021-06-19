@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Template::Dir",
+    "description": "Renders a directory containing templates into a separate directory of\ncorresponding rendered files.\n\n`template_dir` is similar to [`template_file`](../d/file.html) but it walks\na given source directory and treats every file it encounters as a template,\nrendering it to a corresponding file in the destination directory.\n\n~> **Note** When working with local files, Terraform will detect the resource\nas having been deleted each time a configuration is applied on a new machine\nwhere the destination dir is not present and will generate a diff to create\nit. This may cause \"noise\" in diffs in environments where configurations are\nroutinely applied by many different users or within automation systems.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/template/TF-Template-Dir/docs/README.md",
+    "definitions": {
+        "VarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DestinationDir": {
+            "type": "string",
+            "description": "Path to the directory where the templated files will be written."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SourceDir": {
+            "type": "string",
+            "description": "Path to the directory where the files to template reside."
+        },
+        "Vars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VarsDefinition"
+            },
+            "description": "Variables for interpolation within the template. Note\nthat variables must all be primitives. Direct references to lists or maps\nwill cause a validation error."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationDir",
+        "SourceDir"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

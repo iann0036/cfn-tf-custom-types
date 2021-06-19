@@ -1,0 +1,220 @@
+{
+    "typeName": "TF::NSXT::PolicyLbPool",
+    "description": "This resource provides a method for the management of Load Balancer Pool.\n\nThis resource is applicable to NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyLbPool/docs/README.md",
+    "definitions": {
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminState": {
+                    "type": "string"
+                },
+                "BackupMember": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MaxConcurrentConnections": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "MemberGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowIpv4": {
+                    "type": "boolean"
+                },
+                "AllowIpv6": {
+                    "type": "boolean"
+                },
+                "GroupPath": {
+                    "type": "string"
+                },
+                "MaxIpListSize": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GroupPath"
+            ]
+        },
+        "SnatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpPoolAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveMonitorPath": {
+            "type": "string",
+            "description": "Active monitor to be associated with this pool."
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "Load balancing algorithm, one of `ROUND_ROBIN`, `WEIGHTED_ROUND_ROBIN`, `LEAST_CONNECTION`, `WEIGHTED_LEAST_CONNECTION`, `IP_HASH`. Default is `ROUND_ROBIN`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the member.\n* `max_concurrent_connections` - (Optional) To ensure members are not overloaded, connections to a member can be capped by this setting.\n* `port` - (Optional) If port is specified, all connections will be redirected to this port.\n* `weight` - (Optional) Pool member weight is used for WEIGHTED algorithms."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinActiveMembers": {
+            "type": "number",
+            "description": "A pool is considered active if there are at least certain minimum number of members."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "PassiveMonitorPath": {
+            "type": "string",
+            "description": "Passive monitor to be associated with this pool."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "TcpMultiplexingEnabled": {
+            "type": "boolean",
+            "description": "Enable TCP multiplexing within the pool."
+        },
+        "TcpMultiplexingNumber": {
+            "type": "number",
+            "description": "The maximum number of TCP connections per pool that are idly kept alive for sending future client requests."
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberDefinition"
+            }
+        },
+        "MemberGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberGroupDefinition"
+            },
+            "maxItems": 1
+        },
+        "Snat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnatDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Volterra::RegistrationApproval",
+    "description": "CloudFormation equivalent of volterra_registration_approval",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-RegistrationApproval/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "ClusterSize": {
+            "type": "number"
+        },
+        "ConnectedRegion": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Latitude": {
+            "type": "number"
+        },
+        "Longitude": {
+            "type": "number"
+        },
+        "RegistrationName": {
+            "type": "string"
+        },
+        "Retry": {
+            "type": "number"
+        },
+        "WaitTime": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "ClusterSize",
+        "Hostname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RegistrationName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

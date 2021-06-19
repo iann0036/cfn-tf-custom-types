@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Aiven::Project",
+    "description": "CloudFormation equivalent of aiven_project",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-Project/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "AvailableCredits": {
+            "type": "string"
+        },
+        "BillingAddress": {
+            "type": "string"
+        },
+        "BillingCurrency": {
+            "type": "string"
+        },
+        "BillingEmails": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BillingExtraText": {
+            "type": "string"
+        },
+        "BillingGroup": {
+            "type": "string"
+        },
+        "CaCert": {
+            "type": "string"
+        },
+        "CardId": {
+            "type": "string"
+        },
+        "CopyFromProject": {
+            "type": "string"
+        },
+        "Country": {
+            "type": "string"
+        },
+        "CountryCode": {
+            "type": "string"
+        },
+        "DefaultCloud": {
+            "type": "string"
+        },
+        "EstimatedBalance": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PaymentMethod": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "TechnicalEmails": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VatId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Country",
+        "/properties/EstimatedBalance",
+        "/properties/Id",
+        "/properties/PaymentMethod"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CaCert"
+    ]
+}

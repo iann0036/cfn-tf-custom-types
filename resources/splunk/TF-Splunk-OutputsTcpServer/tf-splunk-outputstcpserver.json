@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::Splunk::OutputsTcpServer",
+    "description": "Access data forwarding configurations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-OutputsTcpServer/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "If true, disables the group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Method": {
+            "type": "string",
+            "description": "Valid values: (clone | balance | autobalance)\nThe data distribution method used when two or more servers exist in the same forwarder group."
+        },
+        "Name": {
+            "type": "string",
+            "description": "<host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on."
+        },
+        "SslAltNameToCheck": {
+            "type": "string",
+            "description": "The alternate name to match in the remote server's SSL certificate."
+        },
+        "SslCertPath": {
+            "type": "string",
+            "description": "Path to the client certificate. If specified, connection uses SSL."
+        },
+        "SslCipher": {
+            "type": "string",
+            "description": "SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM."
+        },
+        "SslCommonNameToCheck": {
+            "type": "string",
+            "description": "Check the common name of the server's certificate against this name.\nIf there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true."
+        },
+        "SslPassword": {
+            "type": "string",
+            "description": "The password associated with the CAcert.\nThe default Splunk Enterprise CAcert uses the password \"password.\"."
+        },
+        "SslRootCaPath": {
+            "type": "string",
+            "description": "The path to the root certificate authority file."
+        },
+        "SslVerifyServerCert": {
+            "type": "boolean",
+            "description": "If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SslPassword"
+    ]
+}

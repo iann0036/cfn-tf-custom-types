@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::Databricks::MwsLogDelivery",
+    "description": "CloudFormation equivalent of databricks_mws_log_delivery",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-MwsLogDelivery/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "string"
+        },
+        "ConfigName": {
+            "type": "string"
+        },
+        "CredentialsId": {
+            "type": "string"
+        },
+        "DeliveryPathPrefix": {
+            "type": "string"
+        },
+        "DeliveryStartTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogType": {
+            "type": "string"
+        },
+        "OutputFormat": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageConfigurationId": {
+            "type": "string"
+        },
+        "WorkspaceIdsFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "CredentialsId",
+        "LogType",
+        "OutputFormat",
+        "StorageConfigurationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

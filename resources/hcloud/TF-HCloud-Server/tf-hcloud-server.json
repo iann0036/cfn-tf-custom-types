@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::HCloud::Server",
+    "description": "Provides an Hetzner Cloud server resource. This can be used to create, modify, and delete servers. Servers also support [provisioning](https://www.terraform.io/docs/provisioners/index.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-Server/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AliasIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NetworkId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupWindow": {
+            "type": "string"
+        },
+        "Backups": {
+            "type": "boolean",
+            "description": "Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter name to create the server in.\n- `user_data` - (Optional, string) Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "FirewallIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "Firewall IDs the server should be attached to on creation."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string",
+            "description": "Name or ID of the image the server is created from.\n- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`\n- `datacenter` - (Optional, string) The datacenter name to create the server in.\n- `user_data` - (Optional, string) Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Ipv4Address": {
+            "type": "string"
+        },
+        "Ipv6Address": {
+            "type": "string"
+        },
+        "Ipv6Network": {
+            "type": "string"
+        },
+        "Iso": {
+            "type": "string",
+            "description": "ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "KeepDisk": {
+            "type": "boolean",
+            "description": "If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location name to create the server in. `nbg1`, `fsn1` or `hel1`\n- `datacenter` - (Optional, string) The datacenter name to create the server in.\n- `user_data` - (Optional, string) Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the server to create (must be unique per project and a valid hostname as per RFC 1123).\n- `server_type` - (Required, string) Name of the server type this server should be created with.\n- `image` - (Required, string) Name or ID of the image the server is created from.\n- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`\n- `datacenter` - (Optional, string) The datacenter name to create the server in.\n- `user_data` - (Optional, string) Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Rescue": {
+            "type": "string",
+            "description": "Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Name of the server type this server should be created with.\n- `image` - (Required, string) Name or ID of the image the server is created from.\n- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`\n- `datacenter` - (Optional, string) The datacenter name to create the server in.\n- `user_data` - (Optional, string) Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Cloud-Init user data to use during server creation\n- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time\n- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.\n- `iso` - (Optional, string) ID or Name of an ISO image to mount.\n- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.\n- `backups` - (Optional, boolean) Enable or disable backups.\n- `firewall_ids` - (Optional, list) Firewall IDs the server should be attached to on creation."
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Image",
+        "Name",
+        "ServerType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackupWindow",
+        "/properties/Id",
+        "/properties/Ipv4Address",
+        "/properties/Ipv6Address",
+        "/properties/Ipv6Network",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

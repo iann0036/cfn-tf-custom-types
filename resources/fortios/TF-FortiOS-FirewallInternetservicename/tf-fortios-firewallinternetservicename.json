@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::FortiOS::FirewallInternetservicename",
+    "description": "Define internet service names. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallInternetservicename/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CityId": {
+            "type": "number",
+            "description": "City ID."
+        },
+        "CountryId": {
+            "type": "number",
+            "description": "Country or Area ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetServiceId": {
+            "type": "number",
+            "description": "Internet Service ID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Internet Service name."
+        },
+        "RegionId": {
+            "type": "number",
+            "description": "Region ID."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Internet Service name type. Valid values: `default`, `location`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

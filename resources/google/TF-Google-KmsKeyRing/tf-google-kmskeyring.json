@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::Google::KmsKeyRing",
+    "description": "A `KeyRing` is a toplevel logical grouping of `CryptoKeys`.\n\n\n~> **Note:** KeyRings cannot be deleted from Google Cloud Platform.\nDestroying a Terraform-managed KeyRing will remove it from state but\n*will not delete the resource from the project.*\n\n\nTo get more information about KeyRing, see:\n\n* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings)\n* How-to Guides\n    * [Creating a key ring](https://cloud.google.com/kms/docs/creating-keys#create_a_key_ring)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-KmsKeyRing/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

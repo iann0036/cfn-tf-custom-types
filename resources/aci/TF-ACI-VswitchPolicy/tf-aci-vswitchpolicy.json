@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::ACI::VswitchPolicy",
+    "description": "CloudFormation equivalent of aci_vswitch_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-VswitchPolicy/docs/README.md",
+    "definitions": {
+        "RelationVmmRsVswitchExporterPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveFlowTimeOut": {
+                    "type": "string"
+                },
+                "IdleFlowTimeOut": {
+                    "type": "string"
+                },
+                "SamplingRate": {
+                    "type": "string"
+                },
+                "TargetDn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetDn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideCdpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideFwPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideLacpPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideLldpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideMcpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideMtuPol": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchOverrideStpPol": {
+            "type": "string"
+        },
+        "VmmDomainDn": {
+            "type": "string"
+        },
+        "RelationVmmRsVswitchExporterPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationVmmRsVswitchExporterPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VmmDomainDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

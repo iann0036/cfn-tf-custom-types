@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::AzureRM::AutomationJobSchedule",
+    "description": "Links an Automation Runbook and Schedule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AutomationJobSchedule/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomationAccountName": {
+            "type": "string",
+            "description": "The name of the Automation Account in which the Job Schedule is created. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JobScheduleId": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A map of key/value pairs corresponding to the arguments that can be passed to the Runbook. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Job Schedule is created. Changing this forces a new resource to be created."
+        },
+        "RunOn": {
+            "type": "string",
+            "description": "Name of a Hybrid Worker Group the Runbook will be executed on. Changing this forces a new resource to be created."
+        },
+        "RunbookName": {
+            "type": "string",
+            "description": "The name of a Runbook to link to a Schedule. It needs to be in the same Automation Account as the Schedule and Job Schedule. Changing this forces a new resource to be created."
+        },
+        "ScheduleName": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutomationAccountName",
+        "ResourceGroupName",
+        "RunbookName",
+        "ScheduleName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

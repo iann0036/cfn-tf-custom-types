@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::FortiOS::RouterospfNetwork",
+    "description": "OSPF network configuration.\n\n~> The provider supports the definition of Network in Router Ospf `fortios_router_ospf`, and also allows the definition of separate Network resources `fortios_routerospf_network`, but do not use a `fortios_router_ospf` with in-line Network in conjunction with any `fortios_routerospf_network` resources, otherwise conflicts and overwrite will occur.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterospfNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Area": {
+            "type": "string",
+            "description": "Attach the network to area."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Network entry ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Prefix": {
+            "type": "string",
+            "description": "Prefix."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

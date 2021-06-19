@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::FortiOS::FirewallserviceCustom",
+    "description": "Configure custom services.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallserviceCustom/docs/README.md",
+    "definitions": {
+        "AppCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application category id."
+                }
+            },
+            "required": []
+        },
+        "ApplicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application id."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppServiceType": {
+            "type": "string",
+            "description": "Application service type. Valid values: `disable`, `app-id`, `app-category`."
+        },
+        "Category": {
+            "type": "string",
+            "description": "Service category."
+        },
+        "CheckResetRange": {
+            "type": "string",
+            "description": "Configure the type of ICMP error message verification. Valid values: `disable`, `strict`, `default`."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully qualified domain name."
+        },
+        "Helper": {
+            "type": "string",
+            "description": "Helper name."
+        },
+        "Icmpcode": {
+            "type": "number",
+            "description": "ICMP code."
+        },
+        "Icmptype": {
+            "type": "number",
+            "description": "ICMP type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iprange": {
+            "type": "string",
+            "description": "Start and end of the IP range associated with service."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Custom service name."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol type based on IANA numbers. Valid values: `TCP/UDP/SCTP`, `ICMP`, `ICMP6`, `IP`, `HTTP`, `FTP`, `CONNECT`, `SOCKS-TCP`, `SOCKS-UDP`, `ALL`."
+        },
+        "ProtocolNumber": {
+            "type": "number",
+            "description": "IP protocol number."
+        },
+        "Proxy": {
+            "type": "string",
+            "description": "Enable/disable web proxy service. Valid values: `enable`, `disable`."
+        },
+        "SctpPortrange": {
+            "type": "string",
+            "description": "Multiple SCTP port ranges."
+        },
+        "SessionTtl": {
+            "type": "number",
+            "description": "Session TTL (300 - 604800, 0 = default)."
+        },
+        "TcpHalfcloseTimer": {
+            "type": "number",
+            "description": "Wait time to close a TCP session waiting for an unanswered FIN packet (1 - 86400 sec, 0 = default)."
+        },
+        "TcpHalfopenTimer": {
+            "type": "number",
+            "description": "Wait time to close a TCP session waiting for an unanswered open session packet (1 - 86400 sec, 0 = default)."
+        },
+        "TcpPortrange": {
+            "type": "string",
+            "description": "Multiple TCP port ranges."
+        },
+        "TcpTimewaitTimer": {
+            "type": "number",
+            "description": "Set the length of the TCP TIME-WAIT state in seconds (1 - 300 sec, 0 = default)."
+        },
+        "UdpIdleTimer": {
+            "type": "number",
+            "description": "UDP half close timeout (0 - 86400 sec, 0 = default)."
+        },
+        "UdpPortrange": {
+            "type": "string",
+            "description": "Multiple UDP port ranges."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Enable/disable the visibility of the service on the GUI. Valid values: `enable`, `disable`."
+        },
+        "AppCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppCategoryDefinition"
+            }
+        },
+        "Application": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

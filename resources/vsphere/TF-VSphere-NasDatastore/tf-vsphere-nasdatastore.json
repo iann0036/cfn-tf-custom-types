@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::VSphere::NasDatastore",
+    "description": "The `vsphere_nas_datastore` resource can be used to create and manage NAS\ndatastores on an ESXi host or a set of hosts. The resource supports mounting\nNFS v3 and v4.1 shares to be used as datastores.\n\n~> **NOTE:** Unlike [`vsphere_vmfs_datastore`][resource-vmfs-datastore], a NAS\ndatastore is only mounted on the hosts you choose to mount it on. To mount on\nmultiple hosts, you must specify each host that you want to add in the\n`host_system_ids` argument.\n\n[resource-vmfs-datastore]: /docs/providers/vsphere/r/vmfs_datastore.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-NasDatastore/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string",
+            "description": "Access mode for the mount point. Can be one of\n`readOnly` or `readWrite`. Note that `readWrite` does not necessarily mean\nthat the datastore will be read-write depending on the permissions of the\nactual share. Default: `readWrite`. Forces a new resource if changed."
+        },
+        "Accessible": {
+            "type": "boolean"
+        },
+        "Capacity": {
+            "type": "number"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "Map of custom attribute ids to attribute\nvalue strings to set on datasource resource. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
+        },
+        "DatastoreClusterId": {
+            "type": "string",
+            "description": "The [managed object\nID][docs-about-morefs] of a datastore cluster to put this datastore in.\nConflicts with `folder`."
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The relative path to a folder to put this datastore in.\nThis is a path relative to the datacenter you are deploying the datastore to.\nExample: for the `dc1` datacenter, and a provided `folder` of `foo/bar`,\nTerraform will place a datastore named `terraform-test` in a datastore folder\nlocated at `/dc1/datastore/foo/bar`, with the final inventory path being\n`/dc1/datastore/foo/bar/terraform-test`. Conflicts with\n`datastore_cluster_id`."
+        },
+        "FreeSpace": {
+            "type": "number"
+        },
+        "HostSystemIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The [managed object IDs][docs-about-morefs] of\nthe hosts to mount the datastore on."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceMode": {
+            "type": "string"
+        },
+        "MultipleHostAccess": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the datastore. Forces a new resource if\nchanged."
+        },
+        "ProtocolEndpoint": {
+            "type": "boolean"
+        },
+        "RemoteHosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The hostnames or IP addresses of the remote\nserver or servers. Only one element should be present for NFS v3 but multiple\ncan be present for NFS v4.1. Forces a new resource if changed."
+        },
+        "RemotePath": {
+            "type": "string",
+            "description": "The remote path of the mount point. Forces a new\nresource if changed."
+        },
+        "SecurityType": {
+            "type": "string",
+            "description": "The security type to use when using NFS v4.1.\nCan be one of `AUTH_SYS`, `SEC_KRB5`, or `SEC_KRB5I`. Forces a new resource\nif changed."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of NAS volume. Can be one of `NFS` (to denote\nv3) or `NFS41` (to denote NFS v4.1). Default: `NFS`. Forces a new resource if\nchanged."
+        },
+        "UncommittedSpace": {
+            "type": "number"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HostSystemIds",
+        "Name",
+        "RemoteHosts",
+        "RemotePath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessible",
+        "/properties/Capacity",
+        "/properties/FreeSpace",
+        "/properties/Id",
+        "/properties/MaintenanceMode",
+        "/properties/MultipleHostAccess",
+        "/properties/ProtocolEndpoint",
+        "/properties/UncommittedSpace",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

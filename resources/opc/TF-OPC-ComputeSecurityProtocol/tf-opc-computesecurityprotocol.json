@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::OPC::ComputeSecurityProtocol",
+    "description": "The ``opc_compute_security_protocol`` resource creates and manages a security protocol in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeSecurityProtocol/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the security protocol."
+        },
+        "DstPorts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpProtocol": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the security protocol."
+        },
+        "SrcPorts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that may be applied to the security protocol."
+        },
+        "Uri": {
+            "type": "string",
+            "description": "The Uniform Resource Identifier for the Security Protocol."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

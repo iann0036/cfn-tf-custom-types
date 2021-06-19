@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::FortiOS::FmgJsonrpcRequest",
+    "description": "This resource supports handling JSON RPC request for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgJsonrpcRequest/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JsonContent": {
+            "type": "string",
+            "description": "JSON RPC request, which should contain 'method' and 'params' parameters."
+        },
+        "Response": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "JsonContent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Response"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

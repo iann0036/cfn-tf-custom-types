@@ -1,0 +1,273 @@
+{
+    "typeName": "TF::OCI::ObjectstorageBucket",
+    "description": "This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.\n\nCreates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering\nconfidential information in bucket names.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ObjectstorageBucket/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RetentionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "TimeRuleLocked": {
+                    "type": "string"
+                },
+                "Duration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DisplayName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeAmount": {
+                    "type": "string"
+                },
+                "TimeUnit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TimeAmount",
+                "TimeUnit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessType": {
+            "type": "string",
+            "description": "(Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations."
+        },
+        "ApproximateCount": {
+            "type": "string"
+        },
+        "ApproximateSize": {
+            "type": "string"
+        },
+        "AutoTiering": {
+            "type": "string",
+            "description": "(Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects."
+        },
+        "BucketId": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The ID of the compartment in which to create the bucket."
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsReadOnly": {
+            "type": "boolean"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "(Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The Object Storage namespace used for the request."
+        },
+        "ObjectEventsEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm)."
+        },
+        "ObjectLifecyclePolicyEtag": {
+            "type": "string"
+        },
+        "ReplicationEnabled": {
+            "type": "boolean"
+        },
+        "StorageTier": {
+            "type": "string",
+            "description": "The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Versioning": {
+            "type": "string",
+            "description": "(Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended."
+        },
+        "RetentionRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RetentionRulesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApproximateCount",
+        "/properties/ApproximateSize",
+        "/properties/BucketId",
+        "/properties/CreatedBy",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/IsReadOnly",
+        "/properties/ObjectLifecyclePolicyEtag",
+        "/properties/ReplicationEnabled",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

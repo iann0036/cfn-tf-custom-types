@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::FortiOS::DnsfilterDomainfilter",
+    "description": "Configure DNS domain filters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-DnsfilterDomainfilter/docs/README.md",
+    "definitions": {
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take for domain filter matches. Valid values: `block`, `allow`, `monitor`."
+                },
+                "Domain": {
+                    "type": "string",
+                    "description": "Domain entries to be filtered."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Id."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this domain filter. Valid values: `enable`, `disable`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "DNS domain filter type. Valid values: `simple`, `regex`, `wildcard`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of table."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Entries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EntriesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fosid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

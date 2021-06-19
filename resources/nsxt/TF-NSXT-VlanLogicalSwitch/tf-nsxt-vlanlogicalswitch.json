@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::NSXT::VlanLogicalSwitch",
+    "description": "This resource provides a method to create vlan logical switch in NSX. Virtual machines can then be connected to the appropriate logical switch for the desired topology and network connectivity.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-VlanLogicalSwitch/docs/README.md",
+    "definitions": {
+        "AddressBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SwitchingProfileIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminState": {
+            "type": "string",
+            "description": "Admin state for the logical switch. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpPoolId": {
+            "type": "string",
+            "description": "Ip Pool ID to be associated with the logical switch."
+        },
+        "MacPoolId": {
+            "type": "string",
+            "description": "Mac Pool ID to be associated with the logical switch."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "TransportZoneId": {
+            "type": "string",
+            "description": "Transport Zone ID for the logical switch."
+        },
+        "Vlan": {
+            "type": "number",
+            "description": "Vlan for the logical switch."
+        },
+        "AddressBinding": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AddressBindingDefinition"
+            }
+        },
+        "SwitchingProfileId": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SwitchingProfileIdDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TransportZoneId",
+        "Vlan"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

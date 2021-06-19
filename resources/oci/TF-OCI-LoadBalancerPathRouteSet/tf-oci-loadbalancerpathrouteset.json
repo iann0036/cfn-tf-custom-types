@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::OCI::LoadBalancerPathRouteSet",
+    "description": "This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.\n\nAdds a path route set to a load balancer. For more information, see\n[Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LoadBalancerPathRouteSet/docs/README.md",
+    "definitions": {
+        "PathRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendSetName": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "PathMatchType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PathMatchTypeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "BackendSetName",
+                "Path"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PathMatchTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "PathRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PathRoutesDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

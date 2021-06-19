@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::PinpointAdmChannel",
+    "description": "Provides a Pinpoint ADM (Amazon Device Messaging) Channel resource.\n\n~> **Note:** All arguments including the Client ID and Client Secret will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-PinpointAdmChannel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string",
+            "description": "The application ID."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Client ID (part of OAuth Credentials) obtained via Amazon Developer Account."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "Client Secret (part of OAuth Credentials) obtained via Amazon Developer Account."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Specifies whether to enable the channel. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationId",
+        "ClientId",
+        "ClientSecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientId",
+        "/properties/ClientSecret"
+    ]
+}

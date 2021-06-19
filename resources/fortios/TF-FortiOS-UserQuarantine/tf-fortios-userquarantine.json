@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::FortiOS::UserQuarantine",
+    "description": "Configure quarantine support.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserQuarantine/docs/README.md",
+    "definitions": {
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description for the quarantine entry."
+                },
+                "Entry": {
+                    "type": "string",
+                    "description": "Quarantine entry name."
+                },
+                "Macs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MacsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MacsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description for the quarantine MAC."
+                },
+                "Drop": {
+                    "type": "string",
+                    "description": "Enable/Disable dropping of quarantined device traffic Valid values: `disable`, `enable`."
+                },
+                "EntryId": {
+                    "type": "number",
+                    "description": "FSW entry id for the quarantine MAC."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "Quarantine MAC."
+                },
+                "Parent": {
+                    "type": "string",
+                    "description": "Parent entry name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "FirewallGroups": {
+            "type": "string",
+            "description": "Firewall address group which includes all quarantine MAC address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Quarantine": {
+            "type": "string",
+            "description": "Enable/disable quarantine. Valid values: `enable`, `disable`."
+        },
+        "TrafficPolicy": {
+            "type": "string",
+            "description": "Traffic policy for quarantined MACs."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,258 @@
+{
+    "typeName": "TF::Panos::SecurityPolicy",
+    "description": "This resource allows you to manage the full security posture.\n\n-> **Note:** `panos_security_policies` is known as `panos_security_policy`.\n\nThis resource manages the full set of security rules in a vsys, enforcing both\nthe contents of individual rules as well as their ordering.  Rules are defined\nin a `rule` config block.\n\n!> **Warning**: This resource will remove any security rule not defined in your plan file.\n\nFor each security rule, there are three styles of profile settings:\n\n* `None` (the default)\n* `Group`\n* `Profiles`\n\nThe Profile Setting is implicitly chosen based on what params are configured\nfor the security rule.  If you want a Profile Setting of `Group`, then the\n`group` param should be set to the desired Group Profile.  If you want a\nProfile Setting of `Profiles`, then you will need to specify one or more of\nthe following params:\n\n* `virus`\n* `spyware`\n* `vulnerability`\n* `url_filtering`\n* `file_blocking`\n* `wildfire_analysis`\n* `data_filtering`\n\nIf the `group` param and none of the `Profile...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-SecurityPolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action for the matched traffic.  This can be `allow`\n(default), `deny`, `drop`, `reset-client`, `reset-server`, or `reset-both`."
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of applications."
+                },
+                "Categories": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of categories."
+                },
+                "DataFiltering": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The Data\nFiltering setting."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "The description."
+                },
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of destination addresses."
+                },
+                "DestinationZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of destination zones."
+                },
+                "DisableServerResponseInspection": {
+                    "type": "boolean",
+                    "description": "Set to `true` to disable\nserver response inspection."
+                },
+                "Disabled": {
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
+                },
+                "FileBlocking": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The file blocking\nsetting."
+                },
+                "Group": {
+                    "type": "string",
+                    "description": "Profile Setting: `Group` - The group profile name."
+                },
+                "HipProfiles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of HIP profiles."
+                },
+                "IcmpUnreachable": {
+                    "type": "boolean",
+                    "description": "Set to `true` to enable ICMP unreachable."
+                },
+                "LogEnd": {
+                    "type": "boolean",
+                    "description": "Log the end of the traffic flow (default: `true`)."
+                },
+                "LogSetting": {
+                    "type": "string",
+                    "description": "Log forwarding profile."
+                },
+                "LogStart": {
+                    "type": "boolean",
+                    "description": "Log the start of the traffic flow."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The security rule name."
+                },
+                "NegateDestination": {
+                    "type": "boolean",
+                    "description": "If the destination should be negated."
+                },
+                "NegateSource": {
+                    "type": "boolean",
+                    "description": "If the source should be negated."
+                },
+                "Schedule": {
+                    "type": "string",
+                    "description": "The security policy schedule."
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of services."
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source addresses."
+                },
+                "SourceUsers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source users."
+                },
+                "SourceZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source zones."
+                },
+                "Spyware": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The anti-spyware\nsetting."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of tags for this security rule."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Rule type.  This can be `universal` (default),\n`interzone`, or `intrazone`."
+                },
+                "UrlFiltering": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The URL filtering\nsetting."
+                },
+                "Virus": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The antivirus setting."
+                },
+                "Vulnerability": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The Vulnerability\nProtection setting."
+                },
+                "WildfireAnalysis": {
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The WildFire\nAnalysis setting."
+                }
+            },
+            "required": [
+                "Applications",
+                "Categories",
+                "DestinationAddresses",
+                "DestinationZones",
+                "HipProfiles",
+                "Name",
+                "Services",
+                "SourceAddresses",
+                "SourceUsers",
+                "SourceZones"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Rulebase": {
+            "type": "string",
+            "description": "The rulebase.  For firewalls, there is only the\n`rulebase` value (default), but on Panorama, there is also `pre-rulebase`\nand `post-rulebase`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the security policy into (default:\n`vsys1`)."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

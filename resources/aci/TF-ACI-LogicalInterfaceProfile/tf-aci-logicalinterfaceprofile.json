@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::ACI::LogicalInterfaceProfile",
+    "description": "Manages ACI Logical Interface Profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-LogicalInterfaceProfile/docs/README.md",
+    "definitions": {
+        "RelationL3extRsLIfPToNetflowMonitorPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FltType": {
+                    "type": "string"
+                },
+                "TnNetflowMonitorPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FltType",
+                "TnNetflowMonitorPolName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "annotation for object logical_interface_profile.\n- `name_alias` - (Optional) name_alias for object logical_interface_profile.\n- `prio` - (Optional) qos priority class id. Allowed values are \"unspecified\", \"level1\", \"level2\", \"level3\", \"level4\", \"level5\" and \"level6\". Default is \"unspecified.\n- `tag` - (Optional) Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalNodeProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent LogicalNodeProfile object.\n- `name` - (Required) name of Object logical_interface_profile.\n- `annotation` - (Optional) annotation for object logical_interface_profile.\n- `name_alias` - (Optional) name_alias for object logical_interface_profile.\n- `prio` - (Optional) qos priority class id. Allowed values are \"unspecified\", \"level1\", \"level2\", \"level3\", \"level4\", \"level5\" and \"level6\". Default is \"unspecified.\n- `tag` - (Optional) Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "name of Object logical_interface_profile.\n- `annotation` - (Optional) annotation for object logical_interface_profile.\n- `name_alias` - (Optional) name_alias for object logical_interface_profile.\n- `prio` - (Optional) qos priority class id. Allowed values are \"unspecified\", \"level1\", \"level2\", \"level3\", \"level4\", \"level5\" and \"level6\". Default is \"unspecified.\n- `tag` - (Optional) Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "name_alias for object logical_interface_profile.\n- `prio` - (Optional) qos priority class id. Allowed values are \"unspecified\", \"level1\", \"level2\", \"level3\", \"level4\", \"level5\" and \"level6\". Default is \"unspecified.\n- `tag` - (Optional) Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "Prio": {
+            "type": "string",
+            "description": "qos priority class id. Allowed values are \"unspecified\", \"level1\", \"level2\", \"level3\", \"level4\", \"level5\" and \"level6\". Default is \"unspecified.\n- `tag` - (Optional) Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "RelationL3extRsArpIfPol": {
+            "type": "string",
+            "description": "Relation to class arpIfPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_nd_if_pol` - (Optional) Relation to class ndIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsEgressQosDppPol": {
+            "type": "string",
+            "description": "Relation to class qosDppPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_ingress_qos_dpp_pol` - (Optional) Relation to class qosDppPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_l_if_p_cust_qos_pol` - (Optional) Relation to class qosCustomPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_arp_if_pol` - (Optional) Relation to class arpIfPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_nd_if_pol` - (Optional) Relation to class ndIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsIngressQosDppPol": {
+            "type": "string",
+            "description": "Relation to class qosDppPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_l_if_p_cust_qos_pol` - (Optional) Relation to class qosCustomPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_arp_if_pol` - (Optional) Relation to class arpIfPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_nd_if_pol` - (Optional) Relation to class ndIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsLIfPCustQosPol": {
+            "type": "string",
+            "description": "Relation to class qosCustomPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_arp_if_pol` - (Optional) Relation to class arpIfPol. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_nd_if_pol` - (Optional) Relation to class ndIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsNdIfPol": {
+            "type": "string",
+            "description": "Relation to class ndIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Specifies the color of a policy label. Allowed values are \"black\", \"navy\", \"dark-blue\", \"medium-blue\", \"blue\", \"dark-green\", \"green\", \"teal\", \"dark-cyan\", \"deep-sky-blue\", \"dark-turquoise\", \"medium-spring-green\", \"lime\", \"spring-green\", \"aqua\", \"cyan\", \"midnight-blue\", \"dodger-blue\", \"light-sea-green\", \"forest-green\", \"sea-green\", \"dark-slate-gray\", \"lime-green\", \"medium-sea-green\", \"turquoise\", \"royal-blue\", \"steel-blue\", \"dark-slate-blue\", \"medium-turquoise\", \"indigo\", \"dark-olive-green\", \"cadet-blue\", \"cornflower-blue\", \"medium-aquamarine\", \"dim-gray\", \"slate-blue\", \"olive-drab\", \"slate-gray\", \"light-slate-gray\", \"medium-slate-blue\", \"lawn-green\", \"chartreuse\", \"aquamarine\", \"maroon\", \"purple\", \"olive\", \"gray\", \"sky-blue\", \"light-sky-blue\", \"blue-violet\", \"dark-red\", \"dark-magenta\", \"saddle-brown\", \"dark-sea-green\", \"light-green\", \"medium-purple\", \"dark-violet\", \"pale-green\", \"dark-orchid\", \"yellow-green\", \"sienna\", \"brown\", \"dark-gray\", \"light-blue\", \"green-yellow\", \"pale-turquoise\", \"light-steel-blue\", \"powder-blue\", \"fire-brick\", \"dark-goldenrod\", \"medium-orchid\", \"rosy-brown\", \"dark-khaki\", \"silver\", \"medium-violet-red\", \"indian-red\", \"peru\", \"chocolate\", \"tan\", \"light-gray\", \"thistle\", \"orchid\", \"goldenrod\", \"pale-violet-red\", \"crimson\", \"gainsboro\", \"plum\", \"burlywood\", \"light-cyan\", \"lavender\", \"dark-salmon\", \"violet\", \"pale-goldenrod\", \"light-coral\", \"khaki\", \"alice-blue\", \"honeydew\", \"azure\", \"sandy-brown\", \"wheat\", \"beige\", \"white-smoke\", \"mint-cream\", \"ghost-white\", \"salmon\", \"antique-white\", \"linen\", \"light-goldenrod-yellow\", \"old-lace\", \"red\", \"fuchsia\", \"magenta\", \"deep-pink\", \"orange-red\", \"tomato\", \"hot-pink\", \"coral\", \"dark-orange\", \"light-salmon\", \"orange\", \"light-pink\", \"pink\", \"gold\", \"peachpuff\", \"navajo-white\", \"moccasin\", \"bisque\", \"misty-rose\", \"blanched-almond\", \"papaya-whip\", \"lavender-blush\", \"seashell\", \"cornsilk\", \"lemon-chiffon\", \"floral-white\", \"snow\", \"yellow\", \"light-yellow\", \"ivory\" and \"white\". Default is \"black\"."
+        },
+        "RelationL3extRsLIfPToNetflowMonitorPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationL3extRsLIfPToNetflowMonitorPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicalNodeProfileDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

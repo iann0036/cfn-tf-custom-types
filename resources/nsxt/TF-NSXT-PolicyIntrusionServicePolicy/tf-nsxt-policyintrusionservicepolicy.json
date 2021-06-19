@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::NSXT::PolicyIntrusionServicePolicy",
+    "description": "This resource provides a method for the management of Intrusion Service (IDS) Policy and rules under it.\n\nThis resource is applicable to NSX Policy Manager and VMC (NSX version 3.1.0 and up).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyIntrusionServicePolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationsExcluded": {
+                    "type": "boolean"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IdsProfiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpVersion": {
+                    "type": "string"
+                },
+                "LogLabel": {
+                    "type": "string"
+                },
+                "Logged": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "NsxId": {
+                    "type": "string"
+                },
+                "Profiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SequenceNumber": {
+                    "type": "number"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourcesExcluded": {
+                    "type": "boolean"
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DisplayName",
+                "IdsProfiles"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments for IDS policy lock/unlock."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource.\n* `action` - (Optional) Rule action, one of `DETECT`, `DETECT_PREVENT`. Default is `DETECT`.\n* `destination_groups` - (Optional) Set of group paths that serve as destination for this rule.\n* `source_groups` - (Optional) Set of group paths that serve as source for this rule.\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `sources_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `direction` - (Optional) Traffic direction, one of `IN`, `OUT` or `IN_OUT`. Default is `IN_OUT`.\n* `disabled` - (Optional) Flag to disable this rule. Default is false.\n* `ip_version` - (Optional) Version of IP protocol, one of `IPV4`, `IPV6`, `IPV4_IPV6`. Default is `IPV4_IPV6`.\n* `logged` - (Optional) Flag to enable packet logging. Default is false.\n* `notes` - (Optional) Additional notes on changes.\n* `ids_profiles` - (Required) Set of IDS profile paths relevant for this rule.\n* `services` - (Optional) Set of service paths to match.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource.\n* `description` - (Optional) Description of the resource.\n* `action` - (Optional) Rule action, one of `DETECT`, `DETECT_PREVENT`. Default is `DETECT`.\n* `destination_groups` - (Optional) Set of group paths that serve as destination for this rule.\n* `source_groups` - (Optional) Set of group paths that serve as source for this rule.\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `sources_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `direction` - (Optional) Traffic direction, one of `IN`, `OUT` or `IN_OUT`. Default is `IN_OUT`.\n* `disabled` - (Optional) Flag to disable this rule. Default is false.\n* `ip_version` - (Optional) Version of IP protocol, one of `IPV4`, `IPV6`, `IPV4_IPV6`. Default is `IPV4_IPV6`.\n* `logged` - (Optional) Flag to enable packet logging. Default is false.\n* `notes` - (Optional) Additional notes on changes.\n* `ids_profiles` - (Required) Set of IDS profile paths relevant for this rule.\n* `services` - (Optional) Set of service paths to match.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to use for the resource. This domain must already exist. For VMware Cloud on AWS use `cgw`. If not specified, this field is default to `default`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean",
+            "description": "Indicates whether the policy should be locked. If locked by a user, no other user would be able to modify this policy."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SequenceNumber": {
+            "type": "number",
+            "description": "This field is used to resolve conflicts between IDS policies across domains."
+        },
+        "Stateful": {
+            "type": "boolean",
+            "description": "If true, state of the network connects are tracked and a stateful packet inspection is performed. Default is true."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1000
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

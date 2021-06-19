@@ -1,0 +1,413 @@
+{
+    "typeName": "TF::AD::GpoSecurity",
+    "description": "CloudFormation equivalent of ad_gpo_security",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ad/TF-AD-GpoSecurity/docs/README.md",
+    "definitions": {
+        "AccountLockoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForceLogoffWhenHourExpire": {
+                    "type": "string"
+                },
+                "LockoutBadCount": {
+                    "type": "string"
+                },
+                "LockoutDuration": {
+                    "type": "string"
+                },
+                "ResetLockoutCount": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ApplicationLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuditLogRetentionPeriod": {
+                    "type": "string"
+                },
+                "MaximumLogSize": {
+                    "type": "string"
+                },
+                "RestrictGuestAccess": {
+                    "type": "string"
+                },
+                "RetentionDays": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuditLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuditLogRetentionPeriod": {
+                    "type": "string"
+                },
+                "MaximumLogSize": {
+                    "type": "string"
+                },
+                "RestrictGuestAccess": {
+                    "type": "string"
+                },
+                "RetentionDays": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EventAuditDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuditAccountLogon": {
+                    "type": "string"
+                },
+                "AuditAccountManage": {
+                    "type": "string"
+                },
+                "AuditDsAccess": {
+                    "type": "string"
+                },
+                "AuditLogonEvents": {
+                    "type": "string"
+                },
+                "AuditObjectAccess": {
+                    "type": "string"
+                },
+                "AuditPolicyChange": {
+                    "type": "string"
+                },
+                "AuditPrivilegeUse": {
+                    "type": "string"
+                },
+                "AuditProcessTracking": {
+                    "type": "string"
+                },
+                "AuditSystemEvents": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FilesystemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Acl": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "PropagationMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Acl",
+                "Path",
+                "PropagationMode"
+            ]
+        },
+        "KerberosPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxClockSkew": {
+                    "type": "string"
+                },
+                "MaxRenewAge": {
+                    "type": "string"
+                },
+                "MaxServiceAge": {
+                    "type": "string"
+                },
+                "MaxTicketAge": {
+                    "type": "string"
+                },
+                "TicketValidateClient": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PasswordPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClearTextPassword": {
+                    "type": "string"
+                },
+                "MaximumPasswordAge": {
+                    "type": "string"
+                },
+                "MinimumPasswordAge": {
+                    "type": "string"
+                },
+                "MinimumPasswordLength": {
+                    "type": "string"
+                },
+                "PasswordComplexity": {
+                    "type": "string"
+                },
+                "PasswordHistorySize": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RegistryKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Acl": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "PropagationMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Acl",
+                "KeyName",
+                "PropagationMode"
+            ]
+        },
+        "RegistryValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyName": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KeyName",
+                "Value",
+                "ValueType"
+            ]
+        },
+        "RestrictedGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupMemberof": {
+                    "type": "string"
+                },
+                "GroupMembers": {
+                    "type": "string"
+                },
+                "GroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GroupMemberof",
+                "GroupMembers",
+                "GroupName"
+            ]
+        },
+        "SystemLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuditLogRetentionPeriod": {
+                    "type": "string"
+                },
+                "MaximumLogSize": {
+                    "type": "string"
+                },
+                "RestrictGuestAccess": {
+                    "type": "string"
+                },
+                "RetentionDays": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SystemServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Acl": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "StartupMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Acl",
+                "ServiceName",
+                "StartupMode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GpoContainer": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "AccountLockout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccountLockoutDefinition"
+            },
+            "maxItems": 1
+        },
+        "ApplicationLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationLogDefinition"
+            },
+            "maxItems": 1
+        },
+        "AuditLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuditLogDefinition"
+            },
+            "maxItems": 1
+        },
+        "EventAudit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventAuditDefinition"
+            },
+            "maxItems": 1
+        },
+        "Filesystem": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilesystemDefinition"
+            }
+        },
+        "KerberosPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KerberosPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "PasswordPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PasswordPoliciesDefinition"
+            },
+            "maxItems": 1
+        },
+        "RegistryKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RegistryKeysDefinition"
+            }
+        },
+        "RegistryValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RegistryValuesDefinition"
+            }
+        },
+        "RestrictedGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RestrictedGroupsDefinition"
+            }
+        },
+        "SystemLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SystemLogDefinition"
+            },
+            "maxItems": 1
+        },
+        "SystemServices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemServicesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GpoContainer"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

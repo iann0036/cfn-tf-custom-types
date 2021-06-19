@@ -1,0 +1,76 @@
+{
+    "typeName": "TF::Tfe::OrganizationToken",
+    "description": "Generates a new organization token, replacing any existing token. This token\ncan be used to act as the organization service account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-OrganizationToken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ForceRegenerate": {
+            "type": "boolean",
+            "description": "If set to `true`, a new token will be\ngenerated even if a token already exists. This will invalidate the existing\ntoken!."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "Token": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Token"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

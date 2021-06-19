@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleContainerAnalysisNote",
+    "description": "CloudFormation equivalent of google_container_analysis_note",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleContainerAnalysisNote/docs/README.md",
+    "definitions": {
+        "AttestationAuthorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hint": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HintDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RelatedUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HumanReadableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HumanReadableName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "LongDescription": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RelatedNoteNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ShortDescription": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "AttestationAuthority": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttestationAuthorityDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RelatedUrl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelatedUrlDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Kind",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::AWS::ImagebuilderInfrastructureConfiguration",
+    "description": "Manages an Image Builder Infrastructure Configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ImagebuilderInfrastructureConfiguration/docs/README.md",
+    "definitions": {
+        "ResourceTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3Logs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3LogsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "S3LogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3BucketName": {
+                    "type": "string"
+                },
+                "S3KeyPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "S3BucketName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DateUpdated": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceProfileName": {
+            "type": "string",
+            "description": "Name of IAM Instance Profile."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of EC2 Instance Types."
+        },
+        "KeyPair": {
+            "type": "string",
+            "description": "Name of EC2 Key Pair."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the configuration."
+        },
+        "ResourceTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceTagsDefinition"
+            },
+            "description": "Key-value map of resource tags to assign to infrastructure created by the configuration."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of EC2 Security Group identifiers."
+        },
+        "SnsTopicArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of SNS Topic."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "EC2 Subnet identifier. Also requires `security_group_ids` argument."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags to assign to the configuration. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TerminateInstanceOnFailure": {
+            "type": "boolean",
+            "description": "Enable if the instance should be terminated when the pipeline fails. Defaults to `false`."
+        },
+        "Logging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceProfileName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DateCreated",
+        "/properties/DateUpdated",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

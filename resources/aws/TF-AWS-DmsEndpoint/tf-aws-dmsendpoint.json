@@ -1,0 +1,319 @@
+{
+    "typeName": "TF::AWS::DmsEndpoint",
+    "description": "Provides a DMS (Data Migration Service) endpoint resource. DMS endpoints can be created, updated, deleted, and imported.\n\n~> **Note:** All arguments including the password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DmsEndpoint/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ElasticsearchSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointUri": {
+                    "type": "string"
+                },
+                "ErrorRetryDuration": {
+                    "type": "number"
+                },
+                "FullLoadErrorPercentage": {
+                    "type": "number"
+                },
+                "ServiceAccessRoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndpointUri",
+                "ServiceAccessRoleArn"
+            ]
+        },
+        "KafkaSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Broker": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Broker"
+            ]
+        },
+        "KinesisSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageFormat": {
+                    "type": "string"
+                },
+                "ServiceAccessRoleArn": {
+                    "type": "string"
+                },
+                "StreamArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MongodbSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMechanism": {
+                    "type": "string"
+                },
+                "AuthSource": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "DocsToInvestigate": {
+                    "type": "string"
+                },
+                "ExtractDocId": {
+                    "type": "string"
+                },
+                "NestingLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketFolder": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionType": {
+                    "type": "string"
+                },
+                "CsvDelimiter": {
+                    "type": "string"
+                },
+                "CsvRowDelimiter": {
+                    "type": "string"
+                },
+                "DatePartitionEnabled": {
+                    "type": "boolean"
+                },
+                "ExternalTableDefinition": {
+                    "type": "string"
+                },
+                "ServiceAccessRoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) for the certificate."
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "The name of the endpoint database."
+        },
+        "EndpointArn": {
+            "type": "string"
+        },
+        "EndpointId": {
+            "type": "string",
+            "description": "The database endpoint identifier."
+        },
+        "EndpointType": {
+            "type": "string",
+            "description": "The type of endpoint. Can be one of `source | target`."
+        },
+        "EngineName": {
+            "type": "string",
+            "description": "The type of engine for the endpoint. Can be one of `aurora | aurora-postgresql| azuredb | db2 | docdb | dynamodb | elasticsearch | kafka | kinesis | mariadb | mongodb | mysql | oracle | postgres | redshift | s3 | sqlserver | sybase`."
+        },
+        "ExtraConnectionAttributes": {
+            "type": "string",
+            "description": "Additional attributes associated with the connection. For available attributes see [Using Extra Connection Attributes with AWS Database Migration Service](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.ConnectionAttributes.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) for the KMS key that will be used to encrypt the connection parameters. If you do not specify a value for `kms_key_arn`, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password to be used to login to the endpoint database."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port used by the endpoint database."
+        },
+        "ServerName": {
+            "type": "string",
+            "description": "The host name of the server."
+        },
+        "ServiceAccessRole": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) used by the service access IAM role for dynamodb endpoints."
+        },
+        "SslMode": {
+            "type": "string",
+            "description": "The SSL mode to use for the connection. Can be one of `none | require | verify-ca | verify-full`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Username": {
+            "type": "string",
+            "description": "The user name to be used to login to the endpoint database."
+        },
+        "ElasticsearchSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "KafkaSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KafkaSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "KinesisSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KinesisSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MongodbSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongodbSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "S3Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3SettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndpointId",
+        "EndpointType",
+        "EngineName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointArn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

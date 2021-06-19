@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::AWS::CloudformationType",
+    "description": "Manages a version of a CloudFormation Type.\n\n~> **NOTE:** The destroy operation of this resource marks the version as deprecated. If this was the only `LIVE` version, the type is marked as deprecated. It is recommended to enable the [resource `lifecycle` configuration block `create_before_destroy` argument](https://www.terraform.io/docs/configuration/resources.html#create_before_destroy) in this resource configuration to properly order redeployments in Terraform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudformationType/docs/README.md",
+    "definitions": {
+        "LoggingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogGroupName": {
+                    "type": "string"
+                },
+                "LogRoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogGroupName",
+                "LogRoleArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DefaultVersionId": {
+            "type": "string"
+        },
+        "DeprecatedStatus": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DocumentationUrl": {
+            "type": "string"
+        },
+        "ExecutionRoleArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the IAM Role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefaultVersion": {
+            "type": "boolean"
+        },
+        "ProvisioningType": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "SchemaHandlerPackage": {
+            "type": "string",
+            "description": "URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register. Must begin with `s3://` or `https://`. For example, `s3://example-bucket/example-object`."
+        },
+        "SourceUrl": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "CloudFormation Registry Type. For example, `RESOURCE` or `MODULE`."
+        },
+        "TypeArn": {
+            "type": "string"
+        },
+        "TypeName": {
+            "type": "string",
+            "description": "CloudFormation Type name. For example, `ExampleCompany::ExampleService::ExampleResource`."
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "Visibility": {
+            "type": "string"
+        },
+        "LoggingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SchemaHandlerPackage",
+        "TypeName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DefaultVersionId",
+        "/properties/DeprecatedStatus",
+        "/properties/Description",
+        "/properties/DocumentationUrl",
+        "/properties/Id",
+        "/properties/IsDefaultVersion",
+        "/properties/ProvisioningType",
+        "/properties/Schema",
+        "/properties/SourceUrl",
+        "/properties/TypeArn",
+        "/properties/VersionId",
+        "/properties/Visibility"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

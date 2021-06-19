@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::AVI::Prioritylabels",
+    "description": "The PriorityLabels resource allows the creation and management of Avi PriorityLabels",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Prioritylabels/docs/README.md",
+    "definitions": {
+        "EquivalentLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the priority labels."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the priority labels."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "EquivalentLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EquivalentLabelsDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

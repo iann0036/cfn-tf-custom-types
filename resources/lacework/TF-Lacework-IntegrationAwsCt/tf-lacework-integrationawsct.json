@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::Lacework::IntegrationAwsCt",
+    "description": "Use this resource to configure an AWS CloudTrail integration to analyze CloudTrail\nactivity for monitoring cloud account security.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationAwsCt/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExternalId",
+                "RoleArn"
+            ]
+        },
+        "OrgAccountMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultLaceworkAccount": {
+                    "type": "string"
+                },
+                "Mapping": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MappingDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DefaultLaceworkAccount"
+            ]
+        },
+        "MappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsAccounts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LaceworkAccount": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AwsAccounts",
+                "LaceworkAccount"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The AWS CloudTrail integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "QueueUrl": {
+            "type": "string",
+            "description": "The SQS Queue URL."
+        },
+        "Retries": {
+            "type": "number",
+            "description": "The number of attempts to create the external integration. Defaults to `5`."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "OrgAccountMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrgAccountMappingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "QueueUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

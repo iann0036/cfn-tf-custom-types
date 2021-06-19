@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::AWS::GlueDataCatalogEncryptionSettings",
+    "description": "Provides a Glue Data Catalog Encryption Settings resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlueDataCatalogEncryptionSettings/docs/README.md",
+    "definitions": {
+        "DataCatalogEncryptionSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionPasswordEncryption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConnectionPasswordEncryptionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "EncryptionAtRest": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionAtRestDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConnectionPasswordEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsKmsKeyId": {
+                    "type": "string"
+                },
+                "ReturnConnectionPasswordEncrypted": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ReturnConnectionPasswordEncrypted"
+            ]
+        },
+        "EncryptionAtRestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CatalogEncryptionMode": {
+                    "type": "string"
+                },
+                "SseAwsKmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CatalogEncryptionMode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "DataCatalogEncryptionSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataCatalogEncryptionSettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

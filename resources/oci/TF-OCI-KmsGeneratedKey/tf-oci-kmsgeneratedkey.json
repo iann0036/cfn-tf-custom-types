@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::OCI::KmsGeneratedKey",
+    "description": "This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.\n\nGenerates a key that you can use to encrypt or decrypt data.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-KmsGeneratedKey/docs/README.md",
+    "definitions": {
+        "AssociatedDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoggingContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KeyShapeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "CurveId": {
+                    "type": "string"
+                },
+                "Length": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Algorithm",
+                "Length"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedData": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssociatedDataDefinition"
+            },
+            "description": "Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters."
+        },
+        "Ciphertext": {
+            "type": "string"
+        },
+        "CryptoEndpoint": {
+            "type": "string",
+            "description": "The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludePlaintextKey": {
+            "type": "boolean",
+            "description": "If true, the generated key is also returned unencrypted."
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "The OCID of the master encryption key to encrypt the generated data encryption key with."
+        },
+        "LoggingContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingContextDefinition"
+            },
+            "description": "Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled."
+        },
+        "Plaintext": {
+            "type": "string"
+        },
+        "PlaintextChecksum": {
+            "type": "string"
+        },
+        "KeyShape": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyShapeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CryptoEndpoint",
+        "IncludePlaintextKey",
+        "KeyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Ciphertext",
+        "/properties/Id",
+        "/properties/Plaintext",
+        "/properties/PlaintextChecksum"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

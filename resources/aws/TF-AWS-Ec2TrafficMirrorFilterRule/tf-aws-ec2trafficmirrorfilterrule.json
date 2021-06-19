@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::AWS::Ec2TrafficMirrorFilterRule",
+    "description": "Provides an Traffic mirror filter rule.  \nRead [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2TrafficMirrorFilterRule/docs/README.md",
+    "definitions": {
+        "DestinationPortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SourcePortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the traffic mirror filter rule."
+        },
+        "DestinationCidrBlock": {
+            "type": "string",
+            "description": "Destination CIDR block to assign to the Traffic Mirror rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "number",
+            "description": "Protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website."
+        },
+        "RuleAction": {
+            "type": "string",
+            "description": "Action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`."
+        },
+        "RuleNumber": {
+            "type": "number",
+            "description": "Number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number."
+        },
+        "SourceCidrBlock": {
+            "type": "string",
+            "description": "Source CIDR block to assign to the Traffic Mirror rule."
+        },
+        "TrafficDirection": {
+            "type": "string",
+            "description": "Direction of traffic to be captured. Valid values are `ingress` and `egress`."
+        },
+        "TrafficMirrorFilterId": {
+            "type": "string",
+            "description": "ID of the traffic mirror filter to which this rule should be added."
+        },
+        "DestinationPortRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationPortRangeDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourcePortRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourcePortRangeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationCidrBlock",
+        "RuleAction",
+        "RuleNumber",
+        "SourceCidrBlock",
+        "TrafficDirection",
+        "TrafficMirrorFilterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

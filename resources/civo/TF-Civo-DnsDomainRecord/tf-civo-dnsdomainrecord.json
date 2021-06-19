@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Civo::DnsDomainRecord",
+    "description": "Provides a Civo dns domain record resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-DnsDomainRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string",
+            "description": "The id of the domain."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The portion before the domain name (e.g. www) or an @ for the apex/root domain (you cannot use an A record with an amex/root domain)."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Useful for MX records only, the priority mail should be attempted it (defaults to 10)."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "How long caching DNS servers should cache this record for, in seconds (the minimum is 600 and the default if unspecified is 600)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The choice of record type from A, CNAME, MX, SRV or TXT."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string",
+            "description": "The IP address (A or MX), hostname (CNAME or MX) or text value (TXT) to serve for this record."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "Name",
+        "Ttl",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountId",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

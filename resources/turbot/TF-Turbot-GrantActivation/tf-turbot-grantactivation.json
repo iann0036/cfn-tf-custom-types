@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Turbot::GrantActivation",
+    "description": "The `Turbot Grant Activation` resource helps activate grants for Turbot users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-GrantActivation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Grant": {
+            "type": "string",
+            "description": "The `aka` of the grant to activate."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Resource": {
+            "type": "string",
+            "description": "The id or `aka` of the resource for which the grant is activated.\n- `grant` - (Required) The `aka` of the grant to activate."
+        },
+        "ResourceAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Grant",
+        "Resource"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourceAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

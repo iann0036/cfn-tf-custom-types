@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::Wafv2WebAclAssociation",
+    "description": "Creates a WAFv2 Web ACL Association.\n\n~> **NOTE on associating a WAFv2 Web ACL with a Cloudfront distribution:** Do not use this resource to associate a WAFv2 Web ACL with a Cloudfront Distribution. The [AWS API call backing this resource][1] notes that you should use the [`web_acl_id`][2] property on the [`cloudfront_distribution`][2] instead.\n\n[1]: https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html\n[2]: /docs/providers/aws/r/cloudfront_distribution.html#web_acl_id",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Wafv2WebAclAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the resource to associate with the web ACL. This must be an ARN of an Application Load Balancer or an Amazon API Gateway stage."
+        },
+        "WebAclArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceArn",
+        "WebAclArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

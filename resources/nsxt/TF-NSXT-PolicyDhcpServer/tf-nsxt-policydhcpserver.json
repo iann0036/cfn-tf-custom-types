@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::NSXT::PolicyDhcpServer",
+    "description": "This resource provides a method for the management of a DHCP Server configurations.\n\nThis resource is applicable to NSX Global Manager, and NSX Policy Manager.\n\nThis resource is supported with NSX 3.0.0 onwards.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyDhcpServer/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "EdgeClusterPath": {
+            "type": "string",
+            "description": "The Policy path to the edge cluster for this DHCP Server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaseTime": {
+            "type": "number",
+            "description": "IP address lease time in seconds. Valid values from `60` to `4294967295`. Default is `86400`."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PreferredEdgePaths": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Policy paths to edge nodes. The first edge node is assigned as active edge, and second one as standby edge."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "ServerAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "DHCP server address in CIDR format. At most 2 supported; one IPv4 and one IPv6 address. Server address can also be specified on segment subnet level."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

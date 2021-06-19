@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::DigitalOcean::DropletSnapshot",
+    "description": "Provides a resource which can be used to create a snapshot from an existing DigitalOcean Droplet.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-DropletSnapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DropletId": {
+            "type": "string",
+            "description": "The ID of the Droplet from which the snapshot will be taken."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinDiskSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the Droplet snapshot."
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Size": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DropletId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/MinDiskSize",
+        "/properties/Regions",
+        "/properties/Size"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

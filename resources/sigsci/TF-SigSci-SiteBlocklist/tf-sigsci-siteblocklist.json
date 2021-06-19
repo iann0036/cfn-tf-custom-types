@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::SigSci::SiteBlocklist",
+    "description": "CloudFormation equivalent of sigsci_site_blocklist",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sigsci/TF-SigSci-SiteBlocklist/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Expires": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "SiteShortName": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Note",
+        "SiteShortName",
+        "Source"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

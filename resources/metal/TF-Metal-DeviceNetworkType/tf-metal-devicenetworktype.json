@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Metal::DeviceNetworkType",
+    "description": "This resource controls network type of Equinix Metal devices.\n\nTo learn more about Layer 2 networking in Equinix Metal, refer to\n\n* <https://metal.equinix.com/developers/docs/networking/layer2/>\n* <https://metal.equinix.com/developers/docs/networking/layer2-configs/>\n\nIf you are attaching VLAN to a device (i.e. using metal_port_vlan_attachment), link the device ID from this resource, in order to make the port attachment implicitly dependent on the state of the network type. If you link the device ID from the metal_device resource, Terraform will not wait for the network type change. See examples in [metal_port_vlan_attachment](port_vlan_attachment).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-DeviceNetworkType/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "The ID of the device on which the network type should be set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Network type to set. Must be one of `layer3`, `hybrid`, `layer2-individual` and `layer2-bonded`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

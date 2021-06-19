@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AWS::ServicecatalogServiceAction",
+    "description": "Manages a Service Catalog self-service action.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogServiceAction/docs/README.md",
+    "definitions": {
+        "DefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssumeRole": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Version"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptLanguage": {
+            "type": "string",
+            "description": "Language code. Valid values are `en` (English), `jp` (Japanese), and `zh` (Chinese). Default is `en`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Self-service action description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Self-service action name."
+        },
+        "Definition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefinitionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

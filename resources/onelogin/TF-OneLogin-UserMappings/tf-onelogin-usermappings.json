@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::OneLogin::UserMappings",
+    "description": "Manage User Mappings resources.\n\nThis resource allows you to create and configure User Mappings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-UserMappings/docs/README.md",
+    "definitions": {
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Action",
+                "Value"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Source",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Indicates if a mapping is enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Match": {
+            "type": "string",
+            "description": "Indicates how conditions should be matched. Must be one of `all` or `any`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The resource's name."
+        },
+        "Position": {
+            "type": "number",
+            "description": "Indicates the ordering of the mapping. When `null` this will be placed last."
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionsDefinition"
+            }
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Match",
+        "Name",
+        "Position"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

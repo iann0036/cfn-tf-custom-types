@@ -1,0 +1,242 @@
+# TF::GoogleBeta::GoogleContainerCluster NodeConfigDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#bootdiskkmskey" title="BootDiskKmsKey">BootDiskKmsKey</a>" : <i>String</i>,
+    "<a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>" : <i>Double</i>,
+    "<a href="#disktype" title="DiskType">DiskType</a>" : <i>String</i>,
+    "<a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>" : <i>[ <a href="guestacceleratordefinition2.md">GuestAcceleratorDefinition2</a>, ... ]</i>,
+    "<a href="#imagetype" title="ImageType">ImageType</a>" : <i>String</i>,
+    "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labelsdefinition2.md">LabelsDefinition2</a>, ... ]</i>,
+    "<a href="#localssdcount" title="LocalSsdCount">LocalSsdCount</a>" : <i>Double</i>,
+    "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
+    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadatadefinition2.md">MetadataDefinition2</a>, ... ]</i>,
+    "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
+    "<a href="#oauthscopes" title="OauthScopes">OauthScopes</a>" : <i>[ String, ... ]</i>,
+    "<a href="#preemptible" title="Preemptible">Preemptible</a>" : <i>Boolean</i>,
+    "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>String</i>,
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+    "<a href="#taint" title="Taint">Taint</a>" : <i>[ <a href="taintdefinition2.md">TaintDefinition2</a>, ... ]</i>,
+    "<a href="#ephemeralstorageconfig" title="EphemeralStorageConfig">EphemeralStorageConfig</a>" : <i>[ <a href="ephemeralstorageconfigdefinition.md">EphemeralStorageConfigDefinition</a>, ... ]</i>,
+    "<a href="#kubeletconfig" title="KubeletConfig">KubeletConfig</a>" : <i>[ <a href="kubeletconfigdefinition.md">KubeletConfigDefinition</a>, ... ]</i>,
+    "<a href="#linuxnodeconfig" title="LinuxNodeConfig">LinuxNodeConfig</a>" : <i>[ <a href="linuxnodeconfigdefinition.md">LinuxNodeConfigDefinition</a>, ... ]</i>,
+    "<a href="#sandboxconfig" title="SandboxConfig">SandboxConfig</a>" : <i>[ <a href="sandboxconfigdefinition.md">SandboxConfigDefinition</a>, ... ]</i>,
+    "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a>, ... ]</i>,
+    "<a href="#workloadmetadataconfig" title="WorkloadMetadataConfig">WorkloadMetadataConfig</a>" : <i>[ <a href="workloadmetadataconfigdefinition.md">WorkloadMetadataConfigDefinition</a>, ... ]</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#bootdiskkmskey" title="BootDiskKmsKey">BootDiskKmsKey</a>: <i>String</i>
+<a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>: <i>Double</i>
+<a href="#disktype" title="DiskType">DiskType</a>: <i>String</i>
+<a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>: <i>
+      - <a href="guestacceleratordefinition2.md">GuestAcceleratorDefinition2</a></i>
+<a href="#imagetype" title="ImageType">ImageType</a>: <i>String</i>
+<a href="#labels" title="Labels">Labels</a>: <i>
+      - <a href="labelsdefinition2.md">LabelsDefinition2</a></i>
+<a href="#localssdcount" title="LocalSsdCount">LocalSsdCount</a>: <i>Double</i>
+<a href="#machinetype" title="MachineType">MachineType</a>: <i>String</i>
+<a href="#metadata" title="Metadata">Metadata</a>: <i>
+      - <a href="metadatadefinition2.md">MetadataDefinition2</a></i>
+<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
+<a href="#oauthscopes" title="OauthScopes">OauthScopes</a>: <i>
+      - String</i>
+<a href="#preemptible" title="Preemptible">Preemptible</a>: <i>Boolean</i>
+<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>String</i>
+<a href="#tags" title="Tags">Tags</a>: <i>
+      - String</i>
+<a href="#taint" title="Taint">Taint</a>: <i>
+      - <a href="taintdefinition2.md">TaintDefinition2</a></i>
+<a href="#ephemeralstorageconfig" title="EphemeralStorageConfig">EphemeralStorageConfig</a>: <i>
+      - <a href="ephemeralstorageconfigdefinition.md">EphemeralStorageConfigDefinition</a></i>
+<a href="#kubeletconfig" title="KubeletConfig">KubeletConfig</a>: <i>
+      - <a href="kubeletconfigdefinition.md">KubeletConfigDefinition</a></i>
+<a href="#linuxnodeconfig" title="LinuxNodeConfig">LinuxNodeConfig</a>: <i>
+      - <a href="linuxnodeconfigdefinition.md">LinuxNodeConfigDefinition</a></i>
+<a href="#sandboxconfig" title="SandboxConfig">SandboxConfig</a>: <i>
+      - <a href="sandboxconfigdefinition.md">SandboxConfigDefinition</a></i>
+<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>: <i>
+      - <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a></i>
+<a href="#workloadmetadataconfig" title="WorkloadMetadataConfig">WorkloadMetadataConfig</a>: <i>
+      - <a href="workloadmetadataconfigdefinition.md">WorkloadMetadataConfigDefinition</a></i>
+</pre>
+
+## Properties
+
+#### BootDiskKmsKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DiskSizeGb
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DiskType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GuestAccelerator
+
+_Required_: No
+
+_Type_: List of <a href="guestacceleratordefinition2.md">GuestAcceleratorDefinition2</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ImageType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Labels
+
+_Required_: No
+
+_Type_: List of <a href="labelsdefinition2.md">LabelsDefinition2</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LocalSsdCount
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MachineType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Metadata
+
+_Required_: No
+
+_Type_: List of <a href="metadatadefinition2.md">MetadataDefinition2</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MinCpuPlatform
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OauthScopes
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Preemptible
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServiceAccount
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Tags
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Taint
+
+_Required_: No
+
+_Type_: List of <a href="taintdefinition2.md">TaintDefinition2</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EphemeralStorageConfig
+
+_Required_: No
+
+_Type_: List of <a href="ephemeralstorageconfigdefinition.md">EphemeralStorageConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### KubeletConfig
+
+_Required_: No
+
+_Type_: List of <a href="kubeletconfigdefinition.md">KubeletConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LinuxNodeConfig
+
+_Required_: No
+
+_Type_: List of <a href="linuxnodeconfigdefinition.md">LinuxNodeConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SandboxConfig
+
+_Required_: No
+
+_Type_: List of <a href="sandboxconfigdefinition.md">SandboxConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ShieldedInstanceConfig
+
+_Required_: No
+
+_Type_: List of <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WorkloadMetadataConfig
+
+_Required_: No
+
+_Type_: List of <a href="workloadmetadataconfigdefinition.md">WorkloadMetadataConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

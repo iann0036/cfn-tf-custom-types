@@ -1,0 +1,600 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataprocCluster",
+    "description": "CloudFormation equivalent of google_dataproc_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataprocCluster/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StagingBucket": {
+                    "type": "string"
+                },
+                "TempBucket": {
+                    "type": "string"
+                },
+                "AutoscalingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscalingConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EncryptionConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EndpointConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GceClusterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GceClusterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InitializationAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitializationActionDefinition"
+                    }
+                },
+                "LifecycleConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MasterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MasterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PreemptibleWorkerConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreemptibleWorkerConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecurityConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SoftwareConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SoftwareConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkerConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkerConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AutoscalingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PolicyUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PolicyUri"
+            ]
+        },
+        "EncryptionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "EndpointConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableHttpPortAccess": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnableHttpPortAccess"
+            ]
+        },
+        "GceClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InternalIpOnly": {
+                    "type": "boolean"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "ServiceAccountScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnetwork": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zone": {
+                    "type": "string"
+                },
+                "ShieldedInstanceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InitializationActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Script": {
+                    "type": "string"
+                },
+                "TimeoutSec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Script"
+            ]
+        },
+        "LifecycleConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDeleteTime": {
+                    "type": "string"
+                },
+                "IdleDeleteTtl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MasterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageUri": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "NumInstances": {
+                    "type": "number"
+                },
+                "Accelerators": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AcceleratorsDefinition"
+                    }
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PreemptibleWorkerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumInstances": {
+                    "type": "number"
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SecurityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KerberosConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KerberosConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SoftwareConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageVersion": {
+                    "type": "string"
+                },
+                "OptionalComponents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OverrideProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverridePropertiesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OverridePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WorkerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageUri": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "NumInstances": {
+                    "type": "number"
+                },
+                "Accelerators": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AcceleratorsDefinition"
+                    }
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                },
+                "EnableVtpm": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AcceleratorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceleratorCount": {
+                    "type": "number"
+                },
+                "AcceleratorType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AcceleratorCount",
+                "AcceleratorType"
+            ]
+        },
+        "DiskConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootDiskSizeGb": {
+                    "type": "number"
+                },
+                "BootDiskType": {
+                    "type": "string"
+                },
+                "NumLocalSsds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "KerberosConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CrossRealmTrustAdminServer": {
+                    "type": "string"
+                },
+                "CrossRealmTrustKdc": {
+                    "type": "string"
+                },
+                "CrossRealmTrustRealm": {
+                    "type": "string"
+                },
+                "CrossRealmTrustSharedPasswordUri": {
+                    "type": "string"
+                },
+                "EnableKerberos": {
+                    "type": "boolean"
+                },
+                "KdcDbKeyUri": {
+                    "type": "string"
+                },
+                "KeyPasswordUri": {
+                    "type": "string"
+                },
+                "KeystorePasswordUri": {
+                    "type": "string"
+                },
+                "KeystoreUri": {
+                    "type": "string"
+                },
+                "KmsKeyUri": {
+                    "type": "string"
+                },
+                "Realm": {
+                    "type": "string"
+                },
+                "RootPrincipalPasswordUri": {
+                    "type": "string"
+                },
+                "TgtLifetimeHours": {
+                    "type": "number"
+                },
+                "TruststorePasswordUri": {
+                    "type": "string"
+                },
+                "TruststoreUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyUri",
+                "RootPrincipalPasswordUri"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GracefulDecommissionTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ClusterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::OCI::NetworkLoadBalancerBackendSet",
+    "description": "This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.\n\nAdds a backend set to a network load balancer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-NetworkLoadBalancerBackendSet/docs/README.md",
+    "definitions": {
+        "BackendsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IsBackup": {
+                    "type": "boolean"
+                },
+                "IsDrain": {
+                    "type": "boolean"
+                },
+                "IsOffline": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "TargetId": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            }
+        },
+        "HealthCheckerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntervalInMillis": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RequestData": {
+                    "type": "string"
+                },
+                "ResponseBodyRegex": {
+                    "type": "string"
+                },
+                "ResponseData": {
+                    "type": "string"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "ReturnCode": {
+                    "type": "number"
+                },
+                "TimeoutInMillis": {
+                    "type": "number"
+                },
+                "UrlPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backends": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsPreserveSource": {
+            "type": "boolean",
+            "description": "(Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user-friendly name for the backend set that must be unique and cannot be changed."
+        },
+        "NetworkLoadBalancerId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "(Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``."
+        },
+        "HealthChecker": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckerDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NetworkLoadBalancerId",
+        "Policy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Backends",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

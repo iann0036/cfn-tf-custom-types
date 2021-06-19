@@ -1,0 +1,576 @@
+{
+    "typeName": "TF::Aiven::Kafka",
+    "description": "CloudFormation equivalent of aiven_kafka",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-Kafka/docs/README.md",
+    "definitions": {
+        "ComponentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Component": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "KafkaAuthenticationMethod": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Route": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "boolean"
+                },
+                "Usage": {
+                    "type": "string"
+                }
+            }
+        },
+        "KafkaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoCreateTopicsEnable": {
+                    "type": "string"
+                },
+                "CompressionType": {
+                    "type": "string"
+                },
+                "ConnectionsMaxIdleMs": {
+                    "type": "string"
+                },
+                "DefaultReplicationFactor": {
+                    "type": "string"
+                },
+                "GroupInitialRebalanceDelayMs": {
+                    "type": "string"
+                },
+                "GroupMaxSessionTimeoutMs": {
+                    "type": "string"
+                },
+                "GroupMinSessionTimeoutMs": {
+                    "type": "string"
+                },
+                "LogCleanerDeleteRetentionMs": {
+                    "type": "string"
+                },
+                "LogCleanerMaxCompactionLagMs": {
+                    "type": "string"
+                },
+                "LogCleanerMinCleanableRatio": {
+                    "type": "string"
+                },
+                "LogCleanerMinCompactionLagMs": {
+                    "type": "string"
+                },
+                "LogCleanupPolicy": {
+                    "type": "string"
+                },
+                "LogFlushIntervalMessages": {
+                    "type": "string"
+                },
+                "LogFlushIntervalMs": {
+                    "type": "string"
+                },
+                "LogIndexIntervalBytes": {
+                    "type": "string"
+                },
+                "LogIndexSizeMaxBytes": {
+                    "type": "string"
+                },
+                "LogMessageDownconversionEnable": {
+                    "type": "string"
+                },
+                "LogMessageTimestampDifferenceMaxMs": {
+                    "type": "string"
+                },
+                "LogMessageTimestampType": {
+                    "type": "string"
+                },
+                "LogPreallocate": {
+                    "type": "string"
+                },
+                "LogRetentionBytes": {
+                    "type": "string"
+                },
+                "LogRetentionHours": {
+                    "type": "string"
+                },
+                "LogRetentionMs": {
+                    "type": "string"
+                },
+                "LogRollJitterMs": {
+                    "type": "string"
+                },
+                "LogRollMs": {
+                    "type": "string"
+                },
+                "LogSegmentBytes": {
+                    "type": "string"
+                },
+                "LogSegmentDeleteDelayMs": {
+                    "type": "string"
+                },
+                "MaxConnectionsPerIp": {
+                    "type": "string"
+                },
+                "MaxIncrementalFetchSessionCacheSlots": {
+                    "type": "string"
+                },
+                "MessageMaxBytes": {
+                    "type": "string"
+                },
+                "MinInsyncReplicas": {
+                    "type": "string"
+                },
+                "NumPartitions": {
+                    "type": "string"
+                },
+                "OffsetsRetentionMinutes": {
+                    "type": "string"
+                },
+                "ProducerPurgatoryPurgeIntervalRequests": {
+                    "type": "string"
+                },
+                "ReplicaFetchMaxBytes": {
+                    "type": "string"
+                },
+                "ReplicaFetchResponseMaxBytes": {
+                    "type": "string"
+                },
+                "SocketRequestMaxBytes": {
+                    "type": "string"
+                },
+                "TransactionRemoveExpiredTransactionCleanupIntervalMs": {
+                    "type": "string"
+                },
+                "TransactionStateLogSegmentBytes": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KafkaUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomDomain": {
+                    "type": "string"
+                },
+                "IpFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "KafkaConnect": {
+                    "type": "string"
+                },
+                "KafkaRest": {
+                    "type": "string"
+                },
+                "KafkaVersion": {
+                    "type": "string"
+                },
+                "SchemaRegistry": {
+                    "type": "string"
+                },
+                "Kafka": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KafkaDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KafkaAuthenticationMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KafkaAuthenticationMethodsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KafkaConnectConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KafkaConnectConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KafkaRestConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KafkaRestConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivateAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivateAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivatelinkAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivatelinkAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PublicAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SchemaRegistryConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchemaRegistryConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ServiceIntegrationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntegrationType": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntegrationType",
+                "SourceServiceName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KafkaAuthenticationMethodsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "Sasl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KafkaConnectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectorClientConfigOverridePolicy": {
+                    "type": "string"
+                },
+                "ConsumerAutoOffsetReset": {
+                    "type": "string"
+                },
+                "ConsumerFetchMaxBytes": {
+                    "type": "string"
+                },
+                "ConsumerIsolationLevel": {
+                    "type": "string"
+                },
+                "ConsumerMaxPartitionFetchBytes": {
+                    "type": "string"
+                },
+                "ConsumerMaxPollIntervalMs": {
+                    "type": "string"
+                },
+                "ConsumerMaxPollRecords": {
+                    "type": "string"
+                },
+                "OffsetFlushIntervalMs": {
+                    "type": "string"
+                },
+                "OffsetFlushTimeoutMs": {
+                    "type": "string"
+                },
+                "ProducerMaxRequestSize": {
+                    "type": "string"
+                },
+                "SessionTimeoutMs": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KafkaRestConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsumerEnableAutoCommit": {
+                    "type": "string"
+                },
+                "ConsumerRequestMaxBytes": {
+                    "type": "string"
+                },
+                "ConsumerRequestTimeoutMs": {
+                    "type": "string"
+                },
+                "ProducerAcks": {
+                    "type": "string"
+                },
+                "ProducerLingerMs": {
+                    "type": "string"
+                },
+                "SimpleconsumerPoolSizeMax": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prometheus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivatelinkAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kafka": {
+                    "type": "string"
+                },
+                "KafkaConnect": {
+                    "type": "string"
+                },
+                "KafkaRest": {
+                    "type": "string"
+                },
+                "SchemaRegistry": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kafka": {
+                    "type": "string"
+                },
+                "KafkaConnect": {
+                    "type": "string"
+                },
+                "KafkaRest": {
+                    "type": "string"
+                },
+                "Prometheus": {
+                    "type": "string"
+                },
+                "SchemaRegistry": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SchemaRegistryConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LeaderEligibility": {
+                    "type": "string"
+                },
+                "TopicName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudName": {
+            "type": "string"
+        },
+        "Components": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentsDefinition"
+            }
+        },
+        "DefaultAcl": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceWindowDow": {
+            "type": "string"
+        },
+        "MaintenanceWindowTime": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ProjectVpcId": {
+            "type": "string"
+        },
+        "ServiceHost": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "ServicePassword": {
+            "type": "string"
+        },
+        "ServicePort": {
+            "type": "number"
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "ServiceUri": {
+            "type": "string"
+        },
+        "ServiceUsername": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TerminationProtection": {
+            "type": "boolean"
+        },
+        "Kafka": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KafkaDefinition"
+            },
+            "maxItems": 1
+        },
+        "KafkaUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KafkaUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceIntegrations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceIntegrationsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Components",
+        "/properties/Id",
+        "/properties/ServiceHost",
+        "/properties/ServicePassword",
+        "/properties/ServicePort",
+        "/properties/ServiceType",
+        "/properties/ServiceUri",
+        "/properties/ServiceUsername",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ServicePassword",
+        "/properties/ServiceUri",
+        "/definitions/KafkaDefinition/AccessCert",
+        "/definitions/KafkaDefinition/AccessKey",
+        "/definitions/KafkaDefinition/ConnectUri",
+        "/definitions/KafkaDefinition/RestUri",
+        "/definitions/KafkaDefinition/SchemaRegistryUri"
+    ]
+}

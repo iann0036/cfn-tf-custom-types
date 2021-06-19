@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::FortiOS::FmgFirewallObjectService",
+    "description": "This resource supports Create/Read/Update/Delete firewall object service for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgFirewallObjectService/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "ADOM name. default is 'root'."
+        },
+        "Category": {
+            "type": "string",
+            "description": "Service category. Enum: [\"\", \"File Access\", \"Authentication\", \"Email\", \"General\", \"Network Services\", \"Remote Access\", \"Tunneling\", \"VoIP, Messaging & Other Applications\", \"Web Access\", \"Web Proxy\"]."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comments."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully qualified domain name."
+        },
+        "IcmpCode": {
+            "type": "number",
+            "description": "ICMP Code."
+        },
+        "IcmpType": {
+            "type": "number",
+            "description": "ICMP Type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iprange": {
+            "type": "string",
+            "description": "Start and end of the IP range associated with service. Ip or Ip range(eg: 1.1.1.1-1.1.1.100)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Custom service name."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol type. Enum: [\"TCP/UDP/SCTP\", \"ICMP\", \"ICMP6\", \"IP\"]."
+        },
+        "ProtocolNumber": {
+            "type": "number",
+            "description": "IP protocol number."
+        },
+        "Proxy": {
+            "type": "string"
+        },
+        "SctpPortrange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "SCTP port ranges. e.g: [\"dst-port-range:src-port-range\"]."
+        },
+        "TcpPortrange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "TCP port ranges. e.g: [\"dst-port-range:src-port-range\"]."
+        },
+        "UdpPortrange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "UDP port ranges. e.g: [\"dst-port-range:src-port-range\"]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,198 @@
+{
+    "typeName": "TF::AzureRM::LogicAppWorkflow",
+    "description": "Manages a Logic App Workflow.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LogicAppWorkflow/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessEndpoint": {
+            "type": "string"
+        },
+        "ConnectorEndpointIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ConnectorOutboundIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationServiceEnvironmentId": {
+            "type": "string",
+            "description": "The ID of the Integration Service Environment to which this Logic App Workflow belongs.  Changing this forces a new Logic App Workflow to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Logic App Workflow exists. Changing this forces a new resource to be created."
+        },
+        "LogicAppIntegrationAccountId": {
+            "type": "string",
+            "description": "The ID of the integration account linked by this Logic App Workflow."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Logic App Workflow. Changing this forces a new resource to be created."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A map of Key-Value pairs."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Logic App Workflow should be created. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "WorkflowEndpointIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WorkflowOutboundIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WorkflowSchema": {
+            "type": "string",
+            "description": "Specifies the Schema to use for this Logic App Workflow. Defaults to `https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#`. Changing this forces a new resource to be created."
+        },
+        "WorkflowVersion": {
+            "type": "string",
+            "description": "Specifies the version of the Schema used for this Logic App Workflow. Defaults to `1.0.0.0`. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessEndpoint",
+        "/properties/ConnectorEndpointIpAddresses",
+        "/properties/ConnectorOutboundIpAddresses",
+        "/properties/Id",
+        "/properties/WorkflowEndpointIpAddresses",
+        "/properties/WorkflowOutboundIpAddresses"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

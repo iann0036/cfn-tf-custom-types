@@ -1,0 +1,347 @@
+{
+    "typeName": "TF::AVI::Hardwaresecuritymodulegroup",
+    "description": "The HardwareSecurityModuleGroup resource allows the creation and management of Avi HardwareSecurityModuleGroup",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Hardwaresecuritymodulegroup/docs/README.md",
+    "definitions": {
+        "HsmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Cloudhsm": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CloudhsmDefinition"
+                    }
+                },
+                "Nethsm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NethsmDefinition"
+                    }
+                },
+                "Rfs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RfsDefinition"
+                    }
+                },
+                "Sluna": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SlunaDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "CloudhsmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterCert": {
+                    "type": "string"
+                },
+                "CryptoUserName": {
+                    "type": "string"
+                },
+                "CryptoUserPassword": {
+                    "type": "string"
+                },
+                "HsmIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NethsmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Esn": {
+                    "type": "string"
+                },
+                "Keyhash": {
+                    "type": "string"
+                },
+                "ModuleId": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "RemotePort": {
+                    "type": "number"
+                },
+                "RemoteIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RemoteIpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Esn",
+                "Keyhash",
+                "Priority"
+            ]
+        },
+        "RfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SlunaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HaGroupNum": {
+                    "type": "number"
+                },
+                "IsHa": {
+                    "type": "boolean"
+                },
+                "ServerPem": {
+                    "type": "string"
+                },
+                "UseDedicatedNetwork": {
+                    "type": "boolean"
+                },
+                "NodeInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeInfoDefinition"
+                    }
+                },
+                "Server": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IsHa"
+            ]
+        },
+        "RemoteIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "NodeInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChrystokiConf": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientIp": {
+                    "type": "string"
+                },
+                "ClientPrivKey": {
+                    "type": "string"
+                },
+                "SessionMajorNumber": {
+                    "type": "number"
+                },
+                "SessionMinorNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ClientIp"
+            ]
+        },
+        "ServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "PartitionPasswd": {
+                    "type": "string"
+                },
+                "PartitionSerialNumber": {
+                    "type": "string"
+                },
+                "RemoteIp": {
+                    "type": "string"
+                },
+                "ServerCert": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "RemoteIp",
+                "ServerCert"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the hsm group configuration object."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Hsm": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HsmDefinition"
+            },
+            "minItems": 1
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CloudhsmDefinition/CryptoUserPassword",
+        "/definitions/NodeInfoDefinition/ClientPrivKey",
+        "/definitions/ServerDefinition/PartitionPasswd"
+    ]
+}

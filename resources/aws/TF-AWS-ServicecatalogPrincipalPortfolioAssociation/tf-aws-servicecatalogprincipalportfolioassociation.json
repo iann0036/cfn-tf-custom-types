@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::ServicecatalogPrincipalPortfolioAssociation",
+    "description": "Manages a Service Catalog Principal Portfolio Association.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogPrincipalPortfolioAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptLanguage": {
+            "type": "string",
+            "description": "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PortfolioId": {
+            "type": "string",
+            "description": "Portfolio identifier."
+        },
+        "PrincipalArn": {
+            "type": "string",
+            "description": "Principal ARN."
+        },
+        "PrincipalType": {
+            "type": "string",
+            "description": "Principal type. Setting this argument empty (e.g., `principal_type = \"\"`) will result in an error. Valid value is `IAM`. Default is `IAM`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PortfolioId",
+        "PrincipalArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

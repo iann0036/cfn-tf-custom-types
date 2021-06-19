@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::AzureStack::LbBackendAddressPool",
+    "description": "Manages a LoadBalancer Backend Address Pool.\n\n~> **NOTE:** When using this resource, the LoadBalancer needs to have a FrontEnd IP Configuration Attached",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurestack/TF-AzureStack-LbBackendAddressPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendIpConfigurations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancingRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LoadbalancerId": {
+            "type": "string",
+            "description": "The ID of the LoadBalancer in which to create the Backend Address Pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Backend Address Pool."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadbalancerId",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackendIpConfigurations",
+        "/properties/Id",
+        "/properties/LoadBalancingRules"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

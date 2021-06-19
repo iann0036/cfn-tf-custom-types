@@ -1,0 +1,243 @@
+{
+    "typeName": "TF::OCI::CoreInstancePool",
+    "description": "This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.\n\nCreate an instance pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreInstancePool/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoadBalancersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendSetName": {
+                    "type": "string"
+                },
+                "LoadBalancerId": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "VnicSelection": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackendSetName",
+                "LoadBalancerId",
+                "Port",
+                "VnicSelection"
+            ]
+        },
+        "PlacementConfigurationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "FaultDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrimarySubnetId": {
+                    "type": "string"
+                },
+                "SecondaryVnicSubnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecondaryVnicSubnetsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AvailabilityDomain",
+                "PrimarySubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SecondaryVnicSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActualSize": {
+            "type": "number"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.\n* `subnet_id` - (Required) (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceConfigurationId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool."
+        },
+        "Size": {
+            "type": "number",
+            "description": "(Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration. For the actual size of the instance pool, refer to the `actual_size` attribute."
+        },
+        "State": {
+            "type": "string",
+            "description": "(Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancersDefinition"
+            }
+        },
+        "PlacementConfigurations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlacementConfigurationsDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "InstanceConfigurationId",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActualSize",
+        "/properties/Id",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

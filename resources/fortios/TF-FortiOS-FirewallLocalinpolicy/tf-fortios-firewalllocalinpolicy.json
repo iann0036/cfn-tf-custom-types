@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::FortiOS::FirewallLocalinpolicy",
+    "description": "Configure user defined IPv4 local-in policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallLocalinpolicy/docs/README.md",
+    "definitions": {
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Service name."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action performed on traffic matching the policy (default = deny). Valid values: `accept`, `deny`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "HaMgmtIntfOnly": {
+            "type": "string",
+            "description": "Enable/disable dedicating the HA management interface only for local-in policy. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Intf": {
+            "type": "string",
+            "description": "Incoming interface name from available options."
+        },
+        "Policyid": {
+            "type": "number",
+            "description": "User defined local in policy ID."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Schedule object from available options."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this local-in policy. Valid values: `enable`, `disable`."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Dstaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstaddrDefinition"
+            },
+            "minItems": 1
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            }
+        },
+        "Srcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcaddrDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Schedule"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

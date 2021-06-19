@@ -1,0 +1,263 @@
+{
+    "typeName": "TF::Skytap::Vm",
+    "description": "CloudFormation equivalent of skytap_vm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/skytap/TF-Skytap-Vm/docs/README.md",
+    "definitions": {
+        "ServiceIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServicePortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Size"
+            ]
+        },
+        "LabelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Category",
+                "Value"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "InterfaceType": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "PublishedService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublishedServiceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "InterfaceType",
+                "Ip",
+                "NetworkId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublishedServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InternalPort": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InternalPort",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cpus": {
+            "type": "number"
+        },
+        "EnvironmentId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxCpus": {
+            "type": "number"
+        },
+        "MaxRam": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsDiskSize": {
+            "type": "number"
+        },
+        "Ram": {
+            "type": "number"
+        },
+        "ServiceIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceIpsDefinition"
+            }
+        },
+        "ServicePorts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServicePortsDefinition"
+            }
+        },
+        "TemplateId": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "VmId": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Label": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelDefinition"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvironmentId",
+        "TemplateId",
+        "VmId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MaxCpus",
+        "/properties/MaxRam",
+        "/properties/ServiceIps",
+        "/properties/ServicePorts"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

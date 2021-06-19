@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::FortiOS::FirewallShapingprofile",
+    "description": "Configure shaping profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallShapingprofile/docs/README.md",
+    "definitions": {
+        "ShapingEntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstInMsec": {
+                    "type": "number",
+                    "description": "Number of bytes that can be burst at maximum-bandwidth speed. Formula: burst = maximum-bandwidth*burst-in-msec."
+                },
+                "CburstInMsec": {
+                    "type": "number",
+                    "description": "Number of bytes that can be burst as fast as the interface can transmit. Formula: cburst = maximum-bandwidth*cburst-in-msec."
+                },
+                "ClassId": {
+                    "type": "number",
+                    "description": "Class ID."
+                },
+                "GuaranteedBandwidthPercentage": {
+                    "type": "number",
+                    "description": "Guaranteed bandwith in percentage."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID number."
+                },
+                "Limit": {
+                    "type": "number",
+                    "description": "Hard limit on the real queue size in packets."
+                },
+                "Max": {
+                    "type": "number",
+                    "description": "Average queue size in packets at which RED drop probability is maximal."
+                },
+                "MaximumBandwidthPercentage": {
+                    "type": "number",
+                    "description": "Maximum bandwith in percentage."
+                },
+                "Min": {
+                    "type": "number",
+                    "description": "Average queue size in packets at which RED drop becomes a possibility."
+                },
+                "Priority": {
+                    "type": "string",
+                    "description": "Priority."
+                },
+                "RedProbability": {
+                    "type": "number",
+                    "description": "Maximum probability (in percentage) for RED marking."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DefaultClassId": {
+            "type": "number",
+            "description": "Default class ID to handle unclassified packets (including all local traffic)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProfileName": {
+            "type": "string",
+            "description": "Shaping profile name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Select shaping profile type: policing / queuing. Valid values: `policing`, `queuing`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ShapingEntries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShapingEntriesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultClassId",
+        "ProfileName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

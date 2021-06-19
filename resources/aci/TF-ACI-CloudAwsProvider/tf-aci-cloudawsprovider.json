@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::ACI::CloudAwsProvider",
+    "description": "CloudFormation equivalent of aci_cloud_aws_provider",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-CloudAwsProvider/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKeyId": {
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "HttpProxy": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAccountInOrg": {
+            "type": "string"
+        },
+        "IsTrusted": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "ProviderId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SecretAccessKey": {
+            "type": "string"
+        },
+        "TenantDn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

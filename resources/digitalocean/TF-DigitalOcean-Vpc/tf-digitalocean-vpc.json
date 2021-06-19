@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::DigitalOcean::Vpc",
+    "description": "Provides a [DigitalOcean VPC](https://developers.digitalocean.com/documentation/v2/#vpcs) resource.\n\nVPCs are virtual networks containing resources that can communicate with each\nother in full isolation, using private IP addresses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Vpc/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Default": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A free-form text field up to a limit of 255 characters to describe the VPC."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpRange": {
+            "type": "string",
+            "description": "The range of IP addresses for the VPC in CIDR notation. Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918. It may not be larger than `/16` or smaller than `/24`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the VPC. Must be unique and contain alphanumeric characters, dashes, and periods only."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The DigitalOcean region slug for the VPC's location."
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Default",
+        "/properties/Id",
+        "/properties/Urn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

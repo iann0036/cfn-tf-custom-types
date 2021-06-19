@@ -1,0 +1,646 @@
+{
+    "typeName": "TF::AzureRM::Frontdoor",
+    "description": "Manages an Azure Front Door instance.\n\nAzure Front Door Service is Microsoft's highly available and scalable web application acceleration platform and global HTTP(s) load balancer. It provides built-in DDoS protection and application layer security and caching. Front Door enables you to build applications that maximize and automate high-availability and performance for your end-users. Use Front Door with Azure services including Web/Mobile Apps, Cloud Services and Virtual Machines \u2013 or combine it with on-premises services for hybrid deployments and smooth cloud migration.\n\nBelow are some of the key scenarios that Azure Front Door Service addresses:\n* Use Front Door to improve application scale and availability with instant multi-region failover\n* Use Front Door to improve application performance with SSL offload and routing requests to the fastest available application backend.\n* Use Front Door for application layer security and DDoS protection for your application.\n\n!> **Be Aware:** Azure is rolling out ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-Frontdoor/docs/README.md",
+    "definitions": {
+        "BackendPoolHealthProbesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BackendPoolLoadBalancingSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BackendPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ExplicitResourceOrderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPoolHealthProbeIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BackendPoolIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BackendPoolLoadBalancingIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FrontendEndpointIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RoutingRuleIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "FrontendEndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RoutingRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BackendPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthProbeName": {
+                    "type": "string",
+                    "description": "Specifies the name of the `backend_pool_health_probe` block within this resource to use for this `Backend Pool`."
+                },
+                "LoadBalancingName": {
+                    "type": "string",
+                    "description": "Specifies the name of the `backend_pool_load_balancing` block within this resource to use for this `Backend Pool`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the Backend Pool."
+                },
+                "Backend": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackendDefinition"
+                    },
+                    "maxItems": 500,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "HealthProbeName",
+                "LoadBalancingName",
+                "Name"
+            ]
+        },
+        "BackendPoolHealthProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is this health probe enabled? Dafaults to `true`."
+                },
+                "IntervalInSeconds": {
+                    "type": "number",
+                    "description": "The number of seconds between each Health Probe. Defaults to `120`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the Health Probe."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "The path to use for the Health Probe. Default is `/`."
+                },
+                "ProbeMethod": {
+                    "type": "string",
+                    "description": "Specifies HTTP method the health probe uses when querying the backend pool instances. Possible values include: `Get` and `Head`. Defaults to `Get`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol scheme to use for the Health Probe. Defaults to `Http`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "BackendPoolLoadBalancingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalLatencyMilliseconds": {
+                    "type": "number",
+                    "description": "The additional latency in milliseconds for probes to fall into the lowest latency bucket. Defaults to `0`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the Load Balancer."
+                },
+                "SampleSize": {
+                    "type": "number",
+                    "description": "The number of samples to consider for load balancing decisions. Defaults to `4`."
+                },
+                "SuccessfulSamplesRequired": {
+                    "type": "number",
+                    "description": "The number of samples within the sample period that must succeed. Defaults to `2`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FrontendEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostName": {
+                    "type": "string",
+                    "description": "Specifies the host name of the `frontend_endpoint`. Must be a domain name. In order to use a name.azurefd.net domain, the name value must match the Front Door name."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the `frontend_endpoint`."
+                },
+                "SessionAffinityEnabled": {
+                    "type": "boolean",
+                    "description": "Whether to allow session affinity on this host. Valid options are `true` or `false` Defaults to `false`."
+                },
+                "SessionAffinityTtlSeconds": {
+                    "type": "number",
+                    "description": "The TTL to use in seconds for session affinity, if applicable. Defaults to `0`."
+                },
+                "WebApplicationFirewallPolicyLinkId": {
+                    "type": "string",
+                    "description": "Defines the Web Application Firewall policy `ID` for each host."
+                }
+            },
+            "required": [
+                "HostName",
+                "Name"
+            ]
+        },
+        "RoutingRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptedProtocols": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Protocol schemes to match for the Backend Routing Rule. Defaults to `Http`."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "`Enable` or `Disable` use of this Backend Routing Rule. Permitted values are `true` or `false`. Defaults to `true`."
+                },
+                "FrontendEndpoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The names of the `frontend_endpoint` blocks within this resource to associate with this `routing_rule`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the Routing Rule."
+                },
+                "PatternsToMatch": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The route patterns for the Backend Routing Rule. Defaults to `/*`."
+                },
+                "ForwardingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RedirectConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedirectConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "AcceptedProtocols",
+                "FrontendEndpoints",
+                "Name",
+                "PatternsToMatch"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Location of the backend (IP address or FQDN)."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Specifies if the backend is enabled or not. Valid options are `true` or `false`. Defaults to `true`."
+                },
+                "HostHeader": {
+                    "type": "string",
+                    "description": "The value to use as the host header sent to the backend."
+                },
+                "HttpPort": {
+                    "type": "number",
+                    "description": "The HTTP TCP port number. Possible values are between `1` - `65535`."
+                },
+                "HttpsPort": {
+                    "type": "number",
+                    "description": "The HTTPS TCP port number. Possible values are between `1` - `65535`."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy. Defaults to `1`."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Weight of this endpoint for load balancing purposes. Defaults to `50`."
+                }
+            },
+            "required": [
+                "Address",
+                "HostHeader",
+                "HttpPort",
+                "HttpsPort"
+            ]
+        },
+        "ForwardingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPoolName": {
+                    "type": "string",
+                    "description": "Specifies the name of the Backend Pool to forward the incoming traffic to."
+                },
+                "CacheEnabled": {
+                    "type": "boolean",
+                    "description": "Specifies whether to Enable caching or not. Valid options are `true` or `false`. Defaults to `false`."
+                },
+                "CacheQueryParameterStripDirective": {
+                    "type": "string",
+                    "description": "Defines cache behaviour in relation to query string parameters. Valid options are `StripAll` or `StripNone`. Defaults to `StripAll`."
+                },
+                "CacheUseDynamicCompression": {
+                    "type": "boolean",
+                    "description": "Whether to use dynamic compression when caching. Valid options are `true` or `false`. Defaults to `false`."
+                },
+                "CustomForwardingPath": {
+                    "type": "string",
+                    "description": "Path to use when constructing the request to forward to the backend. This functions as a URL Rewrite. Default behaviour preserves the URL path."
+                },
+                "ForwardingProtocol": {
+                    "type": "string",
+                    "description": "Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `HttpsOnly`."
+                }
+            },
+            "required": [
+                "BackendPoolName"
+            ]
+        },
+        "RedirectConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomFragment": {
+                    "type": "string",
+                    "description": "The destination fragment in the portion of URL after '#'. Set this to add a fragment to the redirect URL."
+                },
+                "CustomHost": {
+                    "type": "string",
+                    "description": "Set this to change the URL for the redirection."
+                },
+                "CustomPath": {
+                    "type": "string",
+                    "description": "The path to retain as per the incoming request, or update in the URL for the redirection."
+                },
+                "CustomQueryString": {
+                    "type": "string",
+                    "description": "Replace any existing query string from the incoming request URL."
+                },
+                "RedirectProtocol": {
+                    "type": "string",
+                    "description": "Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `MatchRequest`."
+                },
+                "RedirectType": {
+                    "type": "string",
+                    "description": "Status code for the redirect. Valida options are `Moved`, `Found`, `TemporaryRedirect`, `PermanentRedirect`."
+                }
+            },
+            "required": [
+                "RedirectProtocol",
+                "RedirectType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendPoolHealthProbes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendPoolHealthProbesDefinition"
+            }
+        },
+        "BackendPoolLoadBalancingSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendPoolLoadBalancingSettingsDefinition"
+            }
+        },
+        "BackendPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendPoolsDefinition"
+            }
+        },
+        "BackendPoolsSendReceiveTimeoutSeconds": {
+            "type": "number",
+            "description": "Specifies the send and receive timeout on forwarding request to the backend. When the timeout is reached, the request fails and returns. Possible values are between `0` - `240`. Defaults to `60`."
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "EnforceBackendPoolsCertificateNameCheck": {
+            "type": "boolean",
+            "description": "Enforce certificate name check on `HTTPS` requests to all backend pools, this setting will have no effect on `HTTP` requests. Permitted values are `true` or `false`."
+        },
+        "ExplicitResourceOrder": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExplicitResourceOrderDefinition"
+            }
+        },
+        "FriendlyName": {
+            "type": "string",
+            "description": "A friendly name for the Front Door service."
+        },
+        "FrontendEndpoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FrontendEndpointsDefinition"
+            }
+        },
+        "HeaderFrontdoorId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerEnabled": {
+            "type": "boolean",
+            "description": "Should the Front Door Load Balancer be Enabled? Defaults to `true`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Front Door service. Must be globally unique. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Front Door service should exist. Changing this forces a new resource to be created."
+        },
+        "RoutingRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoutingRulesDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "BackendPool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPoolDefinition"
+            },
+            "minItems": 1
+        },
+        "BackendPoolHealthProbe": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPoolHealthProbeDefinition"
+            },
+            "maxItems": 5000,
+            "minItems": 1
+        },
+        "BackendPoolLoadBalancing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPoolLoadBalancingDefinition"
+            },
+            "maxItems": 5000,
+            "minItems": 1
+        },
+        "FrontendEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendEndpointDefinition"
+            },
+            "maxItems": 500,
+            "minItems": 1
+        },
+        "RoutingRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingRuleDefinition"
+            },
+            "maxItems": 500,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnforceBackendPoolsCertificateNameCheck",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackendPoolHealthProbes",
+        "/properties/BackendPoolLoadBalancingSettings",
+        "/properties/BackendPools",
+        "/properties/Cname",
+        "/properties/ExplicitResourceOrder",
+        "/properties/FrontendEndpoints",
+        "/properties/HeaderFrontdoorId",
+        "/properties/Id",
+        "/properties/RoutingRules"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::OCI::DatabaseAutonomousDatabaseInstanceWalletManagement",
+    "description": "This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.\n\nUpdates the wallet for the specified Autonomous Database.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseAutonomousDatabaseInstanceWalletManagement/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutonomousDatabaseId": {
+            "type": "string",
+            "description": "(Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ShouldRotate": {
+            "type": "boolean",
+            "description": "(Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeRotated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutonomousDatabaseId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeRotated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

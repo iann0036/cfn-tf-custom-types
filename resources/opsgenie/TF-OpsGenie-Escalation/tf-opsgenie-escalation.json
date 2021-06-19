@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::OpsGenie::Escalation",
+    "description": "Manages an Escalation within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-Escalation/docs/README.md",
+    "definitions": {
+        "RepeatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloseAlertAfterAll": {
+                    "type": "boolean"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "ResetRecipientStates": {
+                    "type": "boolean"
+                },
+                "WaitInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string",
+                    "description": "The condition for notifying the recipient of escalation rule that is based on the alert state. Possible values are: `if-not-acked` and `if-not-closed`. Default: `if-not-acked`."
+                },
+                "Delay": {
+                    "type": "number"
+                },
+                "NotifyType": {
+                    "type": "string",
+                    "description": "Recipient calculation logic for schedules. Possible values are:."
+                },
+                "Recipient": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecipientDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Condition",
+                "Delay",
+                "NotifyType"
+            ]
+        },
+        "RecipientDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the escalation."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the escalation."
+        },
+        "OwnerTeamId": {
+            "type": "string",
+            "description": "Owner team id of the escalation."
+        },
+        "Repeat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RepeatDefinition"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleFolderIamAuditConfig",
+    "description": "CloudFormation equivalent of google_folder_iam_audit_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleFolderIamAuditConfig/docs/README.md",
+    "definitions": {
+        "AuditLogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExemptedMembers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LogType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "AuditLogConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuditLogConfigDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Folder",
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

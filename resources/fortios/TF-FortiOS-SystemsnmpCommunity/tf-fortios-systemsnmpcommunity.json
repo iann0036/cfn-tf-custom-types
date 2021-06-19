@@ -1,0 +1,195 @@
+{
+    "typeName": "TF::FortiOS::SystemsnmpCommunity",
+    "description": "SNMP community configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemsnmpCommunity/docs/README.md",
+    "definitions": {
+        "HostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HaDirect": {
+                    "type": "string",
+                    "description": "Enable/disable direct management of HA cluster members. Valid values: `enable`, `disable`."
+                },
+                "HostType": {
+                    "type": "string",
+                    "description": "Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both. Valid values: `any`, `query`, `trap`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Host entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the SNMP manager (host)."
+                },
+                "SourceIp": {
+                    "type": "string",
+                    "description": "Source IPv4 address for SNMP traps."
+                }
+            },
+            "required": []
+        },
+        "Hosts6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HaDirect": {
+                    "type": "string",
+                    "description": "Enable/disable direct management of HA cluster members. Valid values: `enable`, `disable`."
+                },
+                "HostType": {
+                    "type": "string",
+                    "description": "Control whether the SNMP manager sends SNMP queries, receives SNMP traps, or both. Valid values: `any`, `query`, `trap`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Host6 entry ID."
+                },
+                "Ipv6": {
+                    "type": "string",
+                    "description": "SNMP manager IPv6 address prefix."
+                },
+                "SourceIpv6": {
+                    "type": "string",
+                    "description": "Source IPv6 address for SNMP traps."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Events": {
+            "type": "string",
+            "description": "SNMP trap events."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Community ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Community name."
+        },
+        "QueryV1Port": {
+            "type": "number",
+            "description": "SNMP v1 query port (default = 161)."
+        },
+        "QueryV1Status": {
+            "type": "string",
+            "description": "Enable/disable SNMP v1 queries. Valid values: `enable`, `disable`."
+        },
+        "QueryV2cPort": {
+            "type": "number",
+            "description": "SNMP v2c query port (default = 161)."
+        },
+        "QueryV2cStatus": {
+            "type": "string",
+            "description": "Enable/disable SNMP v2c queries. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this SNMP community. Valid values: `enable`, `disable`."
+        },
+        "TrapV1Lport": {
+            "type": "number",
+            "description": "SNMP v1 trap local port (default = 162)."
+        },
+        "TrapV1Rport": {
+            "type": "number",
+            "description": "SNMP v1 trap remote port (default = 162)."
+        },
+        "TrapV1Status": {
+            "type": "string",
+            "description": "Enable/disable SNMP v1 traps. Valid values: `enable`, `disable`."
+        },
+        "TrapV2cLport": {
+            "type": "number",
+            "description": "SNMP v2c trap local port (default = 162)."
+        },
+        "TrapV2cRport": {
+            "type": "number",
+            "description": "SNMP v2c trap remote port (default = 162)."
+        },
+        "TrapV2cStatus": {
+            "type": "string",
+            "description": "Enable/disable SNMP v2c traps. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Hosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostsDefinition"
+            }
+        },
+        "Hosts6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Hosts6Definition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fosid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Alicloud::DbConnection",
+    "description": "Provides an RDS connection resource to allocate an Internet connection string for RDS instance.\n\n-> **NOTE:** Each RDS instance will allocate a intranet connnection string automatically and its prifix is RDS instance ID.\n To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DbConnection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionPrefix": {
+            "type": "string",
+            "description": "Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <instance_id> + 'tf'."
+        },
+        "ConnectionString": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The Id of instance that can run database."
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string",
+            "description": "Internet connection port. Valid value: [3001-3999]. Default to 3306."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectionString",
+        "/properties/Id",
+        "/properties/IpAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

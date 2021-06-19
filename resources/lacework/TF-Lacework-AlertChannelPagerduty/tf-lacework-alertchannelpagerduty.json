@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Lacework::AlertChannelPagerduty",
+    "description": "Configure Lacework to forward alerts to PagerDuty through an API integration key.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelPagerduty/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationKey": {
+            "type": "string",
+            "description": "The PagerDuty service integration key."
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "TypeName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IntegrationKey",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/IntegrationKey"
+    ]
+}

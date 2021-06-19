@@ -1,0 +1,192 @@
+{
+    "typeName": "TF::CheckPoint::ManagementThreatIndicator",
+    "description": "This resource allows you to add/update/delete Check Point Threat Indicator.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementThreatIndicator/docs/README.md",
+    "definitions": {
+        "ObservablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Confidence": {
+                    "type": "string",
+                    "description": "The confidence level the indicator has that a real threat has been uncovered."
+                },
+                "Domain": {
+                    "type": "string",
+                    "description": "The name of a domain."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "A valid IP-Address."
+                },
+                "IpAddressFirst": {
+                    "type": "string",
+                    "description": "A valid IP-Address, the beginning of the range. If you configure this parameter with a value, you must also configure the value of the 'ip-address-last' parameter."
+                },
+                "IpAddressLast": {
+                    "type": "string",
+                    "description": "A valid IP-Address, the end of the range. If you configure this parameter with a value, you must also configure the value of the 'ip-address-first' parameter."
+                },
+                "MailCc": {
+                    "type": "string",
+                    "description": "A valid E-Mail address, cc field."
+                },
+                "MailFrom": {
+                    "type": "string",
+                    "description": "A valid E-Mail address, sender field."
+                },
+                "MailReplyTo": {
+                    "type": "string",
+                    "description": "A valid E-Mail address, reply-to field."
+                },
+                "MailSubject": {
+                    "type": "string",
+                    "description": "Subject of E-Mail."
+                },
+                "MailTo": {
+                    "type": "string",
+                    "description": "A valid E-Mail address, recipient filed."
+                },
+                "Md5": {
+                    "type": "string",
+                    "description": "A valid MD5 sequence."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Object name. Should be unique in the domain."
+                },
+                "Product": {
+                    "type": "string",
+                    "description": "The software blade that processes the observable: AV - AntiVirus, AB - AntiBot."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "The severity level of the threat."
+                },
+                "Url": {
+                    "type": "string",
+                    "description": "A valid URL."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ProfileOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The indicator's action in this profile."
+                },
+                "Profile": {
+                    "type": "string",
+                    "description": "The profile in which to override the indicator's action."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "The indicator's action."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name. Should be unique in the domain."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "Observables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ObservablesDefinition"
+            }
+        },
+        "ProfileOverrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProfileOverridesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

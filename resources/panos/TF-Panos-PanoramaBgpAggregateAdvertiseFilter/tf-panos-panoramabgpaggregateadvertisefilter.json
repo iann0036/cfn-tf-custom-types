@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Panos::PanoramaBgpAggregateAdvertiseFilter",
+    "description": "This resource allows you to add/update/delete a Panorama route advertise filter for a\nBGP address aggregation rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaBgpAggregateAdvertiseFilter/docs/README.md",
+    "definitions": {
+        "AddressPrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exact": {
+                    "type": "boolean",
+                    "description": "Match exact prefix length."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Address prefix."
+                }
+            },
+            "required": [
+                "Prefix"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AsPathRegex": {
+            "type": "string",
+            "description": "AS path to match."
+        },
+        "BgpAggregate": {
+            "type": "string",
+            "description": "The BGP address aggregation rule."
+        },
+        "CommunityRegex": {
+            "type": "string",
+            "description": "Community to match."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
+        },
+        "ExtendedCommunityRegex": {
+            "type": "string",
+            "description": "Extended community to match."
+        },
+        "FromPeers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of peers that advertised the route entry."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Med": {
+            "type": "string",
+            "description": "Match MED."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "NextHops": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of next hop attributes."
+        },
+        "RouteTable": {
+            "type": "string",
+            "description": "Route table to match rule.  Valid\nvalues are `unicast`, `multicast`, or `both`."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this filter to."
+        },
+        "AddressPrefix": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AddressPrefixDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BgpAggregate",
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,182 @@
+{
+    "typeName": "TF::Circonus::RuleSetGroup",
+    "description": "The ``circonus_rule_set_group`` resource creates and manages a\n[Circonus Rule Set Group](https://login.circonus.com/resources/api/calls/rule_set_group).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-RuleSetGroup/docs/README.md",
+    "definitions": {
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "MatchingSeverities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RuleSet": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "MatchingSeverities",
+                "RuleSet"
+            ]
+        },
+        "FormulaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "RaiseSeverity": {
+                    "type": "number"
+                },
+                "Wait": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Expression",
+                "RaiseSeverity",
+                "Wait"
+            ]
+        },
+        "NotifyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sev1": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Sev2": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Sev3": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Sev4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Sev5": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule set group, must be unique across\nall rule set groups within the account."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConditionDefinition"
+            },
+            "minItems": 1
+        },
+        "Formula": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FormulaDefinition"
+            },
+            "minItems": 1
+        },
+        "Notify": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NotifyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

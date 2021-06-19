@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::AWS::AmplifyDomainAssociation",
+    "description": "Provides an Amplify Domain Association resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AmplifyDomainAssociation/docs/README.md",
+    "definitions": {
+        "SubDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BranchName": {
+                    "type": "string",
+                    "description": "The branch name setting for the subdomain."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "The prefix setting for the subdomain."
+                }
+            },
+            "required": [
+                "BranchName",
+                "Prefix"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The unique ID for an Amplify app."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateVerificationDnsRecord": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The domain name for the domain association."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WaitForVerification": {
+            "type": "boolean",
+            "description": "If enabled, the resource will wait for the domain association status to change to `PENDING_DEPLOYMENT` or `AVAILABLE`. Setting this to `false` will skip the process. Default: `true`."
+        },
+        "SubDomain": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubDomainDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CertificateVerificationDnsRecord",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

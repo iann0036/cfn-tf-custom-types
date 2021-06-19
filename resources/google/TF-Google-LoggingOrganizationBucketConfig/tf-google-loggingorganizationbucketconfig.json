@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Google::LoggingOrganizationBucketConfig",
+    "description": "Manages a organization-level logging bucket config. For more information see\n[the official logging documentation](https://cloud.google.com/logging/docs/) and\n[Storing Logs](https://cloud.google.com/logging/docs/storage).\n\n~> **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your terraform state but will leave the logging bucket unchanged. The buckets that are currently automatically created are \"_Default\" and \"_Required\".",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-LoggingOrganizationBucketConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BucketId": {
+            "type": "string",
+            "description": "The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Describes this bucket."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleState": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location of the bucket. The supported locations are: \"global\" \"us-central1\"."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "string",
+            "description": "The parent resource that contains the logging bucket."
+        },
+        "RetentionDays": {
+            "type": "number",
+            "description": "Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketId",
+        "Location",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LifecycleState",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

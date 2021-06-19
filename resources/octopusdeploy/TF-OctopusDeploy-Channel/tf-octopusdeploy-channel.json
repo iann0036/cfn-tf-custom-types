@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::OctopusDeploy::Channel",
+    "description": "CloudFormation equivalent of octopusdeploy_channel",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-Channel/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                },
+                "VersionRange": {
+                    "type": "string"
+                },
+                "ActionPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionPackageDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ActionPackageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentAction": {
+                    "type": "string"
+                },
+                "PackageReference": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "LifecycleId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "TenantTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

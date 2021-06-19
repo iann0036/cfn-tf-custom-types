@@ -1,0 +1,253 @@
+{
+    "typeName": "TF::Artifactory::RemoteRepository",
+    "description": "CloudFormation equivalent of artifactory_remote_repository",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-RemoteRepository/docs/README.md",
+    "definitions": {
+        "ContentSynchronisationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NugetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DownloadContextPath": {
+                    "type": "string"
+                },
+                "FeedContextPath": {
+                    "type": "string"
+                },
+                "V3FeedUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAnyHostAuth": {
+            "type": "boolean"
+        },
+        "BlackedOut": {
+            "type": "boolean"
+        },
+        "BlockMismatchingMimeTypes": {
+            "type": "boolean"
+        },
+        "BowerRegistryUrl": {
+            "type": "string"
+        },
+        "BypassHeadRequests": {
+            "type": "boolean"
+        },
+        "ClientTlsCertificate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DownloadContextPath": {
+            "type": "string"
+        },
+        "EnableCookieManagement": {
+            "type": "boolean"
+        },
+        "EnableTokenAuthentication": {
+            "type": "boolean"
+        },
+        "ExcludesPattern": {
+            "type": "string"
+        },
+        "FeedContextPath": {
+            "type": "string"
+        },
+        "FetchJarsEagerly": {
+            "type": "boolean"
+        },
+        "FetchSourcesEagerly": {
+            "type": "boolean"
+        },
+        "ForceNugetAuthentication": {
+            "type": "boolean"
+        },
+        "HandleReleases": {
+            "type": "boolean"
+        },
+        "HandleSnapshots": {
+            "type": "boolean"
+        },
+        "HardFail": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludesPattern": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "LocalAddress": {
+            "type": "string"
+        },
+        "MaxUniqueSnapshots": {
+            "type": "number"
+        },
+        "MissedCachePeriodSeconds": {
+            "type": "number"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "Offline": {
+            "type": "boolean"
+        },
+        "PackageType": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PropagateQueryParams": {
+            "type": "boolean"
+        },
+        "PropertySets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Proxy": {
+            "type": "string"
+        },
+        "PypiRegistryUrl": {
+            "type": "string"
+        },
+        "RemoteRepoChecksumPolicyType": {
+            "type": "string"
+        },
+        "RepoLayoutRef": {
+            "type": "string"
+        },
+        "RetrievalCachePeriodSeconds": {
+            "type": "number"
+        },
+        "ShareConfiguration": {
+            "type": "boolean"
+        },
+        "SocketTimeoutMillis": {
+            "type": "number"
+        },
+        "StoreArtifactsLocally": {
+            "type": "boolean"
+        },
+        "SuppressPomConsistencyChecks": {
+            "type": "boolean"
+        },
+        "SynchronizeProperties": {
+            "type": "boolean"
+        },
+        "UnusedArtifactsCleanupPeriodHours": {
+            "type": "number"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "V3FeedUrl": {
+            "type": "string"
+        },
+        "VcsGitDownloadUrl": {
+            "type": "string"
+        },
+        "VcsGitProvider": {
+            "type": "string"
+        },
+        "VcsType": {
+            "type": "string"
+        },
+        "XrayIndex": {
+            "type": "boolean"
+        },
+        "ContentSynchronisation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContentSynchronisationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nuget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NugetDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

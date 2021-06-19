@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::GoogleBeta::GooglePubsubLiteTopic",
+    "description": "CloudFormation equivalent of google_pubsub_lite_topic",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GooglePubsubLiteTopic/docs/README.md",
+    "definitions": {
+        "PartitionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Capacity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Count"
+            ]
+        },
+        "RetentionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerPartitionBytes": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PerPartitionBytes"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CapacityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublishMibPerSec": {
+                    "type": "number"
+                },
+                "SubscribeMibPerSec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "PublishMibPerSec",
+                "SubscribeMibPerSec"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "PartitionConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PartitionConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetentionConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::DigitalOcean::Certificate",
+    "description": "Provides a DigitalOcean Certificate resource that allows you to manage\ncertificates for configuring TLS termination in Load Balancers.\nCertificates created with this resource can be referenced in your\nLoad Balancer configuration via their ID. The certificate can either\nbe a custom one provided by you or automatically generated one with\nLet's Encrypt.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Certificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string",
+            "description": "The full PEM-formatted trust chain\nbetween the certificate authority's certificate and your domain's TLS\ncertificate. Only valid when type is `custom`."
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of fully qualified domain names (FQDNs) for\nwhich the certificate will be issued. The domains must be managed using\nDigitalOcean's DNS. Only valid when type is `lets_encrypt`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeafCertificate": {
+            "type": "string",
+            "description": "The contents of a PEM-formatted public\nTLS certificate. Only valid when type is `custom`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the certificate for identification."
+        },
+        "NotAfter": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "The contents of a PEM-formatted private-key\ncorresponding to the SSL certificate. Only valid when type is `custom`."
+        },
+        "Sha1Fingerprint": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of certificate to provision. Can be either\n`custom` or `lets_encrypt`. Defaults to `custom`."
+        },
+        "Uuid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NotAfter",
+        "/properties/Sha1Fingerprint",
+        "/properties/State",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKey"
+    ]
+}

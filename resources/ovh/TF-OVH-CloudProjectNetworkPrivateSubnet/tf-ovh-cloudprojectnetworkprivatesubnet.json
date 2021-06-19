@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::OVH::CloudProjectNetworkPrivateSubnet",
+    "description": "Creates a subnet in a private network of a public cloud project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-CloudProjectNetworkPrivateSubnet/docs/README.md",
+    "definitions": {
+        "IpPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dhcp": {
+                    "type": "boolean"
+                },
+                "End": {
+                    "type": "string"
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string"
+        },
+        "Dhcp": {
+            "type": "boolean",
+            "description": "Enable DHCP.\nChanging this forces a new resource to be created. Defaults to false.\n_."
+        },
+        "End": {
+            "type": "string",
+            "description": "Last ip for this region.\nChanging this value recreates the subnet."
+        },
+        "GatewayIp": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpPoolsDefinition"
+            }
+        },
+        "Network": {
+            "type": "string",
+            "description": "Global network in CIDR format.\nChanging this value recreates the subnet."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "The id of the network.\nChanging this forces a new resource to be created."
+        },
+        "NoGateway": {
+            "type": "boolean",
+            "description": "Set to true if you don't want to set a default gateway IP.\nChanging this value recreates the resource. Defaults to false."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which the network subnet will be created.\nEx.: \"GRA1\". Changing this value recreates the resource."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_CLOUD_PROJECT_SERVICE` environment variable is used."
+        },
+        "Start": {
+            "type": "string",
+            "description": "First ip for this region.\nChanging this value recreates the subnet."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "End",
+        "Network",
+        "NetworkId",
+        "Region",
+        "ServiceName",
+        "Start"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cidr",
+        "/properties/GatewayIp",
+        "/properties/Id",
+        "/properties/IpPools"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

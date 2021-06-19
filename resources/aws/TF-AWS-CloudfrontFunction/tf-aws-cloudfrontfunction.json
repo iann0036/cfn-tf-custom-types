@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::AWS::CloudfrontFunction",
+    "description": "Provides a CloudFront Function resource. With CloudFront Functions in Amazon CloudFront, you can write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.\n\nSee [CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html)\n\n~> **NOTE:** You cannot delete a function if it\u2019s associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudfrontFunction/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Code": {
+            "type": "string",
+            "description": "Source code of the function."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Unique name for your CloudFront Function."
+        },
+        "Publish": {
+            "type": "boolean",
+            "description": "Whether to publish creation/change as Live CloudFront Function Version. Defaults to `true`."
+        },
+        "Runtime": {
+            "type": "string",
+            "description": "Identifier of the function's runtime. Currently only `cloudfront-js-1.0` is valid."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Code",
+        "Name",
+        "Runtime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

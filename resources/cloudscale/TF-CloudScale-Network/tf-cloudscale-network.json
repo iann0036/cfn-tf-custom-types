@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::CloudScale::Network",
+    "description": "Provides a cloudscale.ch Private Network resource. This can be used to create, modify, and delete networks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-Network/docs/README.md",
+    "definitions": {
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Href": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoCreateIpv4Subnet": {
+            "type": "boolean",
+            "description": "Automatically create an IPv4 Subnet on the network. Can be `true` (default) or `false`."
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "You can specify the MTU size for the network, defaults to 9000."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the network."
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetsDefinition"
+            }
+        },
+        "ZoneSlug": {
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id",
+        "/properties/Subnets"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::NewRelic::SyntheticsAlertCondition",
+    "description": "Use this resource to create and manage synthetics alert conditions in New Relic.\n\n-> **NOTE:** The [newrelic_nrql_alert_condition](nrql_alert_condition.html) resource is preferred for configuring alerts conditions. In most cases feature parity can be achieved with a NRQL query. Other condition types may be deprecated in the future and receive fewer product updates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-SyntheticsAlertCondition/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Set whether to enable the alert condition. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MonitorId": {
+            "type": "string",
+            "description": "The ID of the Synthetics monitor to be referenced in the alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition. Defaults to `true`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of this condition.\n* `monitor_id` - (Required) The ID of the Synthetics monitor to be referenced in the alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition. Defaults to `true`."
+        },
+        "PolicyId": {
+            "type": "number",
+            "description": "The ID of the policy where this condition should be used.\n* `name` - (Required) The title of this condition.\n* `monitor_id` - (Required) The ID of the Synthetics monitor to be referenced in the alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition. Defaults to `true`."
+        },
+        "RunbookUrl": {
+            "type": "string",
+            "description": "Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition. Defaults to `true`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MonitorId",
+        "Name",
+        "PolicyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

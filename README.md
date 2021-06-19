@@ -1,6 +1,6 @@
 # CloudFormation Custom Types for Terraform
 
-[![Resource Count](https://img.shields.io/badge/resource%20count-6131-blue.svg)](docs/README.md)
+[![Resource Count](https://img.shields.io/badge/resource%20count-6984-blue.svg)](docs/README.md)
 
 > Deploy over 6,000 new resource types with CloudFormation custom types.
 
@@ -22,6 +22,9 @@ To use the types, you must first deploy the Execution Infrastructure (which is r
 Click the above link to deploy the stack to your environment. This stack creates a single bucket in your account for the storage of state data, as well as a Lambda function that is used to execute the Terraform actions.
 
 If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cfn-tf-custom-types/blob/master/template.yml) stack from source.
+
+<details>
+  <summary>For resource generation instructions:</summary>
 
 ### Resource Generation
 
@@ -60,6 +63,8 @@ python3 submit.py TF::AWS::Instance
 ```
 
 Note that resource submission will also generally take several minutes.
+
+</details>
 
 ## Resource Usage
 

@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::CheckPoint::ManagementThreatException",
+    "description": "This resource allows you to add/update/delete Check Point Threat Exception.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementThreatException/docs/README.md",
+    "definitions": {
+        "PositionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action-the enforced profile."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "DestinationNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for destination."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable/Disable the rule."
+        },
+        "ExceptionGroupName": {
+            "type": "string",
+            "description": "The name of the exception-group."
+        },
+        "ExceptionGroupUid": {
+            "type": "string",
+            "description": "The UID of the exception-group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "InstallOn": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Which Gateways identified by the name or UID to install the policy on."
+        },
+        "Layer": {
+            "type": "string",
+            "description": "Layer that the rule belongs to identified by the name or UID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the exception."
+        },
+        "Owner": {
+            "type": "string",
+            "description": "Owner UID."
+        },
+        "Position": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PositionDefinition"
+            },
+            "description": "Position in the rulebase. Position blocks are documented below."
+        },
+        "ProtectedScope": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of objects defining Protected Scope identified by the name or UID."
+        },
+        "ProtectedScopeNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for Protected Scope."
+        },
+        "ProtectionOrSite": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of protection or site objects identified by the name or UID."
+        },
+        "RuleName": {
+            "type": "string",
+            "description": "The name of the parent rule."
+        },
+        "RuleUid": {
+            "type": "string",
+            "description": "The UID of the parent rule."
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "ServiceNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for service."
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "SourceNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for source."
+        },
+        "Track": {
+            "type": "string",
+            "description": "Packet tracking."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Layer",
+        "Name",
+        "Position"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Owner"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

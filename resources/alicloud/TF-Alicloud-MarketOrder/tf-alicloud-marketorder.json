@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Alicloud::MarketOrder",
+    "description": "Provides a market order resource.\n\n-> **NOTE:** Terraform will auto build a market order  while it uses `alicloud_market_order` to build a market order resource.\n\n-> **NOTE:** Available in 1.69.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-MarketOrder/docs/README.md",
+    "definitions": {
+        "ComponentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Components": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ComponentsDefinition"
+            },
+            "description": "Service providers customize additional components."
+        },
+        "CouponId": {
+            "type": "string",
+            "description": "The coupon id of the market product."
+        },
+        "Duration": {
+            "type": "number",
+            "description": "The number of purchase cycles."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PackageVersion": {
+            "type": "string",
+            "description": "The package version of the market product."
+        },
+        "PayType": {
+            "type": "string",
+            "description": "Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`."
+        },
+        "PricingCycle": {
+            "type": "string",
+            "description": "The purchase cycle of the product, valid values are `Day`, `Month` and `Year`."
+        },
+        "ProductCode": {
+            "type": "string",
+            "description": "The product_code of market place product."
+        },
+        "Quantity": {
+            "type": "number",
+            "description": "The quantity of the market product will be purchased."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PackageVersion",
+        "PricingCycle",
+        "ProductCode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

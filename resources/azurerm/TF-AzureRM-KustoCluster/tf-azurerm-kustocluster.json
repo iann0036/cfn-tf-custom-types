@@ -1,0 +1,286 @@
+{
+    "typeName": "TF::AzureRM::KustoCluster",
+    "description": "Manages a Kusto (also known as Azure Data Explorer) Cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-KustoCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of IDs for User Assigned Managed Identity resources to be assigned."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the type of Managed Service Identity that is configured on this Kusto Cluster. Possible values are: `SystemAssigned`, `UserAssigned` and `SystemAssigned, UserAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OptimizedAutoScaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaximumInstances": {
+                    "type": "number",
+                    "description": "The maximum number of allowed instances. Must between `0` and `1000`."
+                },
+                "MinimumInstances": {
+                    "type": "number",
+                    "description": "The minimum number of allowed instances. Must between `0` and `1000`."
+                }
+            },
+            "required": [
+                "MaximumInstances",
+                "MinimumInstances"
+            ]
+        },
+        "SkuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capacity": {
+                    "type": "number",
+                    "description": "Specifies the node count for the cluster. Boundaries depend on the sku name."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the SKU. Valid values are: `Dev(No SLA)_Standard_D11_v2`, `Dev(No SLA)_Standard_E2a_v4`, `Standard_D11_v2`, `Standard_D12_v2`, `Standard_D13_v2`, `Standard_D14_v2`, `Standard_DS13_v2+1TB_PS`, `Standard_DS13_v2+2TB_PS`, `Standard_DS14_v2+3TB_PS`, `Standard_DS14_v2+4TB_PS`, `Standard_E16as_v4+3TB_PS`, `Standard_E16as_v4+4TB_PS`, `Standard_E16a_v4`, `Standard_E2a_v4`, `Standard_E4a_v4`, `Standard_E64i_v3`, `Standard_E8as_v4+1TB_PS`, `Standard_E8as_v4+2TB_PS`, `Standard_E8a_v4`, `Standard_L16s`, `Standard_L4s` and `Standard_L8s`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualNetworkConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataManagementPublicIpId": {
+                    "type": "string",
+                    "description": "Data management's service public IP address resource id."
+                },
+                "EnginePublicIpId": {
+                    "type": "string",
+                    "description": "Engine service's public IP address resource id."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The subnet resource id."
+                }
+            },
+            "required": [
+                "DataManagementPublicIpId",
+                "EnginePublicIpId",
+                "SubnetId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataIngestionUri": {
+            "type": "string"
+        },
+        "DoubleEncryptionEnabled": {
+            "type": "boolean",
+            "description": "Is the cluster's double encryption enabled? Defaults to `false`. Changing this forces a new resource to be created."
+        },
+        "EnableDiskEncryption": {
+            "type": "boolean",
+            "description": "Specifies if the cluster's disks are encrypted."
+        },
+        "EnablePurge": {
+            "type": "boolean",
+            "description": "Specifies if the purge operations are enabled."
+        },
+        "EnableStreamingIngest": {
+            "type": "boolean",
+            "description": "Specifies if the streaming ingest is enabled."
+        },
+        "Engine": {
+            "type": "string",
+            "description": ". The engine type that should be used. Possible values are `V2` and `V3`. Defaults to `V2`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LanguageExtensions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An list of `language_extensions` to enable. Valid values are: `PYTHON` and `R`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the Kusto Cluster should be created. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Kusto Cluster to create. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the Resource Group where the Kusto Cluster should exist. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TrustedExternalTenants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a list of tenant IDs that are trusted by the cluster."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Availability Zones in which the cluster instances should be created in. Changing this forces a new resource to be created."
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "OptimizedAutoScale": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptimizedAutoScaleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sku": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SkuDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VirtualNetworkConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualNetworkConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DataIngestionUri",
+        "/properties/Id",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

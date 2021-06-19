@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::ACI::L3outVpcMember",
+    "description": "Manages ACI L3out VPC Member",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outVpcMember/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Addr": {
+            "type": "string",
+            "description": "Peer IP address.\n- `description` - (Optional) Description for object l3out VPC member.\n- `annotation` - (Optional) Annotation for object l3out VPC member.\n- `ipv6_dad` - (Optional) IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object l3out VPC member.\n- `ipv6_dad` - (Optional) IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object l3out VPC member.\n- `annotation` - (Optional) Annotation for object l3out VPC member.\n- `ipv6_dad` - (Optional) IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6Dad": {
+            "type": "string",
+            "description": "IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "LeafPortDn": {
+            "type": "string",
+            "description": "Distinguished name of parent leaf port object.\n- `side` - (Required) Side of Object l3out VPC member.\nAllowed values: \"A\" and \"B\". Default value: \"A\".\n- `addr` - (Optional) Peer IP address.\n- `description` - (Optional) Description for object l3out VPC member.\n- `annotation` - (Optional) Annotation for object l3out VPC member.\n- `ipv6_dad` - (Optional) IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "LlAddr": {
+            "type": "string",
+            "description": "Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object l3out vpc member."
+        },
+        "Side": {
+            "type": "string",
+            "description": "Side of Object l3out VPC member.\nAllowed values: \"A\" and \"B\". Default value: \"A\".\n- `addr` - (Optional) Peer IP address.\n- `description` - (Optional) Description for object l3out VPC member.\n- `annotation` - (Optional) Annotation for object l3out VPC member.\n- `ipv6_dad` - (Optional) IPv6 DAD feature of l3out VPC member.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) Override of system generated IPv6 link-local address.\n- `name_alias` - (Optional) Name alias for object l3out vpc member."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LeafPortDn",
+        "Side"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2IntegrationResponse",
+    "description": "Manages an Amazon API Gateway Version 2 integration response.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2IntegrationResponse/docs/README.md",
+    "definitions": {
+        "ResponseTemplatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API identifier."
+        },
+        "ContentHandlingStrategy": {
+            "type": "string",
+            "description": "How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationId": {
+            "type": "string",
+            "description": "The identifier of the [`aws_apigatewayv2_integration`](/docs/providers/aws/r/apigatewayv2_integration.html)."
+        },
+        "IntegrationResponseKey": {
+            "type": "string",
+            "description": "The integration response key."
+        },
+        "ResponseTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseTemplatesDefinition"
+            },
+            "description": "A map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client."
+        },
+        "TemplateSelectionExpression": {
+            "type": "string",
+            "description": "The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration response."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "IntegrationId",
+        "IntegrationResponseKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

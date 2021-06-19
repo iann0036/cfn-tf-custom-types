@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Cloudflare::WorkerCronTrigger",
+    "description": "Worker Cron Triggers allow users to map a cron expression to a Worker script\nusing a `ScheduledEvent` listener that enables Workers to be executed on a\nschedule. Worker Cron Triggers are ideal for running periodic jobs for\nmaintenance or calling third-party APIs to collect up-to-date data.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-WorkerCronTrigger/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Schedules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of cron expressions to execute the Worker Script."
+        },
+        "ScriptName": {
+            "type": "string",
+            "description": "Worker script to target for the schedules."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Schedules",
+        "ScriptName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

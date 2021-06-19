@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Thunder::NtpServerHostname",
+    "description": "`thunder_ntp_server_hostname` Provides details about thunder ntp server hostname",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-NtpServerHostname/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable this NTP server; \u2018disable\u2019: Disable this NTP server;."
+        },
+        "HostServername": {
+            "type": "string",
+            "description": "IPV4 address, IPV6 address or host name of NTP server(string1~63)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "number",
+            "description": "Use trusted key to authenticate this NTP server (The trusted key number to use)."
+        },
+        "Prefer": {
+            "type": "number",
+            "description": "Set this NTP server as preferred."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

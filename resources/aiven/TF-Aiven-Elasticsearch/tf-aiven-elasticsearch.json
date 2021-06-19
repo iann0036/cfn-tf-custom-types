@@ -1,0 +1,479 @@
+{
+    "typeName": "TF::Aiven::Elasticsearch",
+    "description": "CloudFormation equivalent of aiven_elasticsearch",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-Elasticsearch/docs/README.md",
+    "definitions": {
+        "ComponentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Component": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "KafkaAuthenticationMethod": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Route": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "boolean"
+                },
+                "Usage": {
+                    "type": "string"
+                }
+            }
+        },
+        "ElasticsearchUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomDomain": {
+                    "type": "string"
+                },
+                "DisableReplicationFactorAdjustment": {
+                    "type": "string"
+                },
+                "ElasticsearchVersion": {
+                    "type": "string"
+                },
+                "IpFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxIndexCount": {
+                    "type": "string"
+                },
+                "ProjectToForkFrom": {
+                    "type": "string"
+                },
+                "RecoveryBasebackupName": {
+                    "type": "string"
+                },
+                "ServiceToForkFrom": {
+                    "type": "string"
+                },
+                "Elasticsearch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ElasticsearchDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IndexPatterns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexPatternsDefinition"
+                    },
+                    "maxItems": 512
+                },
+                "IndexTemplate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Kibana": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KibanaDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivateAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivateAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivatelinkAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivatelinkAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PublicAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicAccessDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ServiceIntegrationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntegrationType": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntegrationType",
+                "SourceServiceName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ElasticsearchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionAutoCreateIndexEnabled": {
+                    "type": "string"
+                },
+                "ActionDestructiveRequiresName": {
+                    "type": "string"
+                },
+                "ClusterMaxShardsPerNode": {
+                    "type": "string"
+                },
+                "HttpMaxContentLength": {
+                    "type": "string"
+                },
+                "HttpMaxHeaderSize": {
+                    "type": "string"
+                },
+                "HttpMaxInitialLineLength": {
+                    "type": "string"
+                },
+                "IndicesFielddataCacheSize": {
+                    "type": "string"
+                },
+                "IndicesMemoryIndexBufferSize": {
+                    "type": "string"
+                },
+                "IndicesQueriesCacheSize": {
+                    "type": "string"
+                },
+                "IndicesQueryBoolMaxClauseCount": {
+                    "type": "string"
+                },
+                "ReindexRemoteWhitelist": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SearchMaxBuckets": {
+                    "type": "string"
+                },
+                "ThreadPoolAnalyzeQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolAnalyzeSize": {
+                    "type": "string"
+                },
+                "ThreadPoolForceMergeSize": {
+                    "type": "string"
+                },
+                "ThreadPoolGetQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolGetSize": {
+                    "type": "string"
+                },
+                "ThreadPoolIndexQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolIndexSize": {
+                    "type": "string"
+                },
+                "ThreadPoolSearchQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolSearchSize": {
+                    "type": "string"
+                },
+                "ThreadPoolSearchThrottledQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolSearchThrottledSize": {
+                    "type": "string"
+                },
+                "ThreadPoolWriteQueueSize": {
+                    "type": "string"
+                },
+                "ThreadPoolWriteSize": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IndexPatternsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxIndexCount": {
+                    "type": "string"
+                },
+                "Pattern": {
+                    "type": "string"
+                },
+                "SortingAlgorithm": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IndexTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MappingNestedObjectsLimit": {
+                    "type": "string"
+                },
+                "NumberOfReplicas": {
+                    "type": "string"
+                },
+                "NumberOfShards": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KibanaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ElasticsearchRequestTimeout": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "string"
+                },
+                "MaxOldSpaceSize": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Elasticsearch": {
+                    "type": "string"
+                },
+                "Kibana": {
+                    "type": "string"
+                },
+                "Prometheus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivatelinkAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Elasticsearch": {
+                    "type": "string"
+                },
+                "Kibana": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Elasticsearch": {
+                    "type": "string"
+                },
+                "Kibana": {
+                    "type": "string"
+                },
+                "Prometheus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudName": {
+            "type": "string"
+        },
+        "Components": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceWindowDow": {
+            "type": "string"
+        },
+        "MaintenanceWindowTime": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ProjectVpcId": {
+            "type": "string"
+        },
+        "ServiceHost": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "ServicePassword": {
+            "type": "string"
+        },
+        "ServicePort": {
+            "type": "number"
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "ServiceUri": {
+            "type": "string"
+        },
+        "ServiceUsername": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TerminationProtection": {
+            "type": "boolean"
+        },
+        "Elasticsearch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElasticsearchUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceIntegrations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceIntegrationsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Components",
+        "/properties/Id",
+        "/properties/ServiceHost",
+        "/properties/ServicePassword",
+        "/properties/ServicePort",
+        "/properties/ServiceType",
+        "/properties/ServiceUri",
+        "/properties/ServiceUsername",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ServicePassword",
+        "/properties/ServiceUri"
+    ]
+}

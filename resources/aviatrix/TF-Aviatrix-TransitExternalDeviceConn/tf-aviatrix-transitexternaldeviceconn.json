@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::Aviatrix::TransitExternalDeviceConn",
+    "description": "The **aviatrix_transit_external_device_conn** resource creates and manages the connection between the Aviatrix transit gateway and an External Device for purposes of Transit Network.\n\nFor more information on this feature, please see documentation [here](https://docs.aviatrix.com/HowTos/transitgw_external.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-TransitExternalDeviceConn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApprovedCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackupBgpRemoteAsNum": {
+            "type": "string"
+        },
+        "BackupDirectConnect": {
+            "type": "boolean"
+        },
+        "BackupLocalLanIp": {
+            "type": "string"
+        },
+        "BackupLocalTunnelCidr": {
+            "type": "string"
+        },
+        "BackupPreSharedKey": {
+            "type": "string"
+        },
+        "BackupRemoteGatewayIp": {
+            "type": "string"
+        },
+        "BackupRemoteLanIp": {
+            "type": "string"
+        },
+        "BackupRemoteTunnelCidr": {
+            "type": "string"
+        },
+        "BgpLocalAsNum": {
+            "type": "string"
+        },
+        "BgpRemoteAsNum": {
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "ConnectionType": {
+            "type": "string"
+        },
+        "CustomAlgorithms": {
+            "type": "boolean"
+        },
+        "DirectConnect": {
+            "type": "boolean"
+        },
+        "EnableEdgeSegmentation": {
+            "type": "boolean"
+        },
+        "EnableEventTriggeredHa": {
+            "type": "boolean"
+        },
+        "EnableIkev2": {
+            "type": "boolean"
+        },
+        "EnableLearnedCidrsApproval": {
+            "type": "boolean"
+        },
+        "GwName": {
+            "type": "string"
+        },
+        "HaEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalLanIp": {
+            "type": "string"
+        },
+        "LocalTunnelCidr": {
+            "type": "string"
+        },
+        "ManualBgpAdvertisedCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Phase1RemoteIdentifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Phase1Authentication": {
+            "type": "string"
+        },
+        "Phase1DhGroups": {
+            "type": "string"
+        },
+        "Phase1Encryption": {
+            "type": "string"
+        },
+        "Phase2Authentication": {
+            "type": "string"
+        },
+        "Phase2DhGroups": {
+            "type": "string"
+        },
+        "Phase2Encryption": {
+            "type": "string"
+        },
+        "PreSharedKey": {
+            "type": "string"
+        },
+        "RemoteGatewayIp": {
+            "type": "string"
+        },
+        "RemoteLanIp": {
+            "type": "string"
+        },
+        "RemoteSubnet": {
+            "type": "string"
+        },
+        "RemoteTunnelCidr": {
+            "type": "string"
+        },
+        "RemoteVpcName": {
+            "type": "string"
+        },
+        "SwitchToHaStandbyGateway": {
+            "type": "boolean"
+        },
+        "TunnelProtocol": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionName",
+        "GwName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BackupPreSharedKey",
+        "/properties/PreSharedKey"
+    ]
+}

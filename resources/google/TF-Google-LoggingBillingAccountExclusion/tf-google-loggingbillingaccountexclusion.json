@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Google::LoggingBillingAccountExclusion",
+    "description": "Manages a billing account logging exclusion. For more information see:\n\n* [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/billingAccounts.exclusions)\n* How-to Guides\n    * [Excluding Logs](https://cloud.google.com/logging/docs/exclusions)\n\n~> You can specify exclusions for log sinks created by terraform by using the exclusions field of `google_logging_billing_account_sink`",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-LoggingBillingAccountExclusion/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingAccount": {
+            "type": "string",
+            "description": "The billing account to create the exclusion for."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-readable description."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Whether this exclusion rule should be disabled or not. This defaults to\nfalse."
+        },
+        "Filter": {
+            "type": "string",
+            "description": "The filter to apply when excluding logs. Only log entries that match the filter are excluded.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to\nwrite a filter."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the logging exclusion."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BillingAccount",
+        "Filter",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

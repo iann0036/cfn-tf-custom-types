@@ -1,0 +1,190 @@
+{
+    "typeName": "TF::Alicloud::LogAlert",
+    "description": "Log alert is a unit of log service, which is used to monitor and alert the user's logstore status information. \nLog Service enables you to configure alerts based on the charts in a dashboard to monitor the service status in real time.\n\n-> **NOTE:** Available in 1.78.0",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-LogAlert/docs/README.md",
+    "definitions": {
+        "NotificationListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "EmailList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MobileList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceUri": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Type"
+            ]
+        },
+        "QueryListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChartTitle": {
+                    "type": "string"
+                },
+                "End": {
+                    "type": "string"
+                },
+                "Logstore": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "TimeSpanType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ChartTitle",
+                "End",
+                "Logstore",
+                "Query",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertDescription": {
+            "type": "string",
+            "description": "Alert description."
+        },
+        "AlertDisplayname": {
+            "type": "string",
+            "description": "Alert displayname."
+        },
+        "AlertName": {
+            "type": "string",
+            "description": "Name of logstore for configuring alarm service."
+        },
+        "Condition": {
+            "type": "string",
+            "description": "Conditional expression, such as: count> 100."
+        },
+        "Dashboard": {
+            "type": "string",
+            "description": "The name of the dashboard associated with the alarm. The name of the instrument cluster associated with the alarm. If there is no such instrument cluster, terraform will help you create an empty instrument cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MuteUntil": {
+            "type": "number",
+            "description": "Timestamp, notifications before closing again."
+        },
+        "NotifyThreshold": {
+            "type": "number",
+            "description": "Notification threshold, which is not notified until the number of triggers is reached. The default is 1."
+        },
+        "ProjectName": {
+            "type": "string",
+            "description": "The project name."
+        },
+        "ScheduleInterval": {
+            "type": "string",
+            "description": "Execution interval. 60 seconds minimum, such as 60s, 1h."
+        },
+        "ScheduleType": {
+            "type": "string",
+            "description": "Default FixedRate. No need to configure this parameter."
+        },
+        "Throttling": {
+            "type": "string",
+            "description": "Notification interval, default is no interval. Support number + unit type, for example 60s, 1h."
+        },
+        "NotificationList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationListDefinition"
+            },
+            "minItems": 1
+        },
+        "QueryList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryListDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlertDisplayname",
+        "AlertName",
+        "Condition",
+        "Dashboard",
+        "ProjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

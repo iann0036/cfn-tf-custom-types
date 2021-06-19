@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::VRA::CatalogSourceBlueprint",
+    "description": "Creates a VMware vRealize Automation catalog source resource of type cloud template, formerly known as a blueprint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-CatalogSourceBlueprint/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "description": "Custom configuration of the catalog source as a map of key values."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description."
+        },
+        "Global": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ItemsFound": {
+            "type": "string"
+        },
+        "ItemsImported": {
+            "type": "string"
+        },
+        "LastImportCompletedAt": {
+            "type": "string"
+        },
+        "LastImportErrors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LastImportStartedAt": {
+            "type": "string"
+        },
+        "LastUpdatedBy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human-friendly name used as an identifier in APIs that support this option."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "ID of the project this entity belongs to."
+        },
+        "TypeId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Global",
+        "/properties/Id",
+        "/properties/ItemsFound",
+        "/properties/ItemsImported",
+        "/properties/LastImportCompletedAt",
+        "/properties/LastImportErrors",
+        "/properties/LastImportStartedAt",
+        "/properties/LastUpdatedBy",
+        "/properties/TypeId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

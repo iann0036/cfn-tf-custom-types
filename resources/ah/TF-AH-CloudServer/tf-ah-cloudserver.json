@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::AH::CloudServer",
+    "description": "CloudFormation equivalent of ah_cloud_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ah/TF-AH-CloudServer/docs/README.md",
+    "definitions": {
+        "IpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignmentId": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                },
+                "ReverseDns": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backups": {
+            "type": "boolean"
+        },
+        "CreatePublicIpAddress": {
+            "type": "boolean"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Datacenter": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "Ips": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Product": {
+            "type": "string"
+        },
+        "Ram": {
+            "type": "number"
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "UsePassword": {
+            "type": "boolean"
+        },
+        "Vcpu": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Datacenter",
+        "Image",
+        "Name",
+        "Product"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Disk",
+        "/properties/Id",
+        "/properties/Ips",
+        "/properties/Ram",
+        "/properties/State",
+        "/properties/Vcpu"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

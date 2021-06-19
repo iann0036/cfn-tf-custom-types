@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::Aviatrix::ControllerConfig",
+    "description": "The **aviatrix_controller_config** resource allows management of an Aviatrix Controller's configurations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-ControllerConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsGuardDutyScanningInterval": {
+            "type": "number"
+        },
+        "BackupAccountName": {
+            "type": "string"
+        },
+        "BackupBucketName": {
+            "type": "string"
+        },
+        "BackupCloudType": {
+            "type": "number"
+        },
+        "BackupConfiguration": {
+            "type": "boolean"
+        },
+        "BackupContainerName": {
+            "type": "string"
+        },
+        "BackupRegion": {
+            "type": "string"
+        },
+        "BackupStorageName": {
+            "type": "string"
+        },
+        "CaCertificateFilePath": {
+            "type": "string"
+        },
+        "EnableVpcDnsServer": {
+            "type": "boolean"
+        },
+        "FqdnExceptionRule": {
+            "type": "boolean"
+        },
+        "HttpAccess": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MultipleBackups": {
+            "type": "boolean"
+        },
+        "SecurityGroupManagement": {
+            "type": "boolean"
+        },
+        "ServerPrivateKeyFilePath": {
+            "type": "string"
+        },
+        "ServerPublicCertificateFilePath": {
+            "type": "string"
+        },
+        "SgManagementAccountName": {
+            "type": "string"
+        },
+        "TargetVersion": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

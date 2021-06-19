@@ -1,0 +1,210 @@
+{
+    "typeName": "TF::Thunder::RouterBgpAddressFamilyIpv6NeighborIpv6Neighbor",
+    "description": "`thunder_router_bgp_address_family_ipv6_neighbor_ipv6_neighbor` Provides details about thunder router bgp address family ipv6 neighbor ipv6 neighbor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterBgpAddressFamilyIpv6NeighborIpv6Neighbor/docs/README.md",
+    "definitions": {
+        "DistributeListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistributeList": {
+                    "type": "string"
+                },
+                "DistributeListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborFilterListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterList": {
+                    "type": "string"
+                },
+                "FilterListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborPrefixListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NbrPrefixList": {
+                    "type": "string"
+                },
+                "NbrPrefixListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborRouteMapListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NbrRmapDirection": {
+                    "type": "string"
+                },
+                "NbrRouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "Activate": {
+            "type": "number",
+            "description": "Enable the Address Family for this Neighbor."
+        },
+        "AllowasIn": {
+            "type": "number"
+        },
+        "AllowasInCount": {
+            "type": "number"
+        },
+        "AsNumber": {
+            "type": "number"
+        },
+        "DefaultOriginate": {
+            "type": "number"
+        },
+        "GracefulRestart": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Inbound": {
+            "type": "number",
+            "description": "Allow inbound soft reconfiguration for this neighbor."
+        },
+        "MaximumPrefix": {
+            "type": "number"
+        },
+        "MaximumPrefixThres": {
+            "type": "number"
+        },
+        "NeighborIpv6": {
+            "type": "string"
+        },
+        "NextHopSelf": {
+            "type": "number"
+        },
+        "PeerGroupName": {
+            "type": "string"
+        },
+        "PrefixListDirection": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "RemovePrivateAs": {
+            "type": "number"
+        },
+        "RouteMap": {
+            "type": "string"
+        },
+        "SendCommunityVal": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "UnsuppressMap": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Set default weight for routes from this neighbor."
+        },
+        "DistributeLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeListsDefinition"
+            }
+        },
+        "NeighborFilterLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborFilterListsDefinition"
+            }
+        },
+        "NeighborPrefixLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborPrefixListsDefinition"
+            }
+        },
+        "NeighborRouteMapLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborRouteMapListsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

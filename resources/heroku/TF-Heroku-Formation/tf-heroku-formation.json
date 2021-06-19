@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Heroku::Formation",
+    "description": "Provides a [Heroku Formation](https://devcenter.heroku.com/articles/platform-api-reference#formation)\nresource.\n\nA formation represents the formation of processes that should be set for an application.\n\nPlease note the following:\n* The application must have a dyno in order to update its formation.\n* If the heroku formation resource is removed and deleted, this will be a no-op action in Heroku.\nThe Heroku Platform does not have a `DELETE` endpoint for `formation`.\n* This resource works well with the `heroku_app_release` resource, which allows you to deploy a slug/release to an application\nbefore the formation can be updated.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-Formation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "App": {
+            "type": "string",
+            "description": "The name of the application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Quantity": {
+            "type": "number",
+            "description": "number of processes to maintain."
+        },
+        "Size": {
+            "type": "string",
+            "description": "dyno size (Example: \u201cstandard-1X\u201d). Capitalization does not matter."
+        },
+        "Type": {
+            "type": "string",
+            "description": "type of process such as \"web\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "App",
+        "Quantity",
+        "Size",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

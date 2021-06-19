@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::NewRelic::ApplicationSettings",
+    "description": "-> **NOTE:** Applications are not created by this resource, but are created by\na reporting agent.\n\nUse this resource to manage configuration for an application that already\nexists in New Relic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-ApplicationSettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppApdexThreshold": {
+            "type": "number",
+            "description": "The appex threshold for the New Relic application."
+        },
+        "EnableRealUserMonitoring": {
+            "type": "boolean",
+            "description": "Enable or disable real user monitoring for the New Relic application."
+        },
+        "EndUserApdexThreshold": {
+            "type": "number",
+            "description": "The user's apdex threshold for the New Relic application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the application in New Relic APM."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppApdexThreshold",
+        "EnableRealUserMonitoring",
+        "EndUserApdexThreshold",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

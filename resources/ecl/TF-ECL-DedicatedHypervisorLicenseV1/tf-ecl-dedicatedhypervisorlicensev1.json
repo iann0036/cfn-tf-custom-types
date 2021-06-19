@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::ECL::DedicatedHypervisorLicenseV1",
+    "description": "Manages a dedicated hypervisor v1 License resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-DedicatedHypervisorLicenseV1/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssignedFrom": {
+            "type": "string"
+        },
+        "ExpiresAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "Name of your Guest Image license type as a string."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LicenseType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssignedFrom",
+        "/properties/ExpiresAt",
+        "/properties/Id",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

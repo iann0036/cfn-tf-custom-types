@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::PrismaCloud::ComplianceStandard",
+    "description": "Manage a compliance standard.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-ComplianceStandard/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedOn": {
+            "type": "number"
+        },
+        "CsId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedOn": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Compliance standard name."
+        },
+        "PoliciesAssignedCount": {
+            "type": "number"
+        },
+        "SystemDefault": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudTypes",
+        "/properties/CreatedBy",
+        "/properties/CreatedOn",
+        "/properties/CsId",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedOn",
+        "/properties/PoliciesAssignedCount",
+        "/properties/SystemDefault"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

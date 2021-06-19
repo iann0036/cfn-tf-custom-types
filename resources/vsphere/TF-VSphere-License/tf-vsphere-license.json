@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::VSphere::License",
+    "description": "Provides a VMware vSphere license resource. This can be used to add and remove license keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-License/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EditionKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A map of key/value pairs to be attached as labels (tags) to the license key."
+        },
+        "LicenseKey": {
+            "type": "string",
+            "description": "The license key to add."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Total": {
+            "type": "number"
+        },
+        "Used": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LicenseKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EditionKey",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Total",
+        "/properties/Used"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

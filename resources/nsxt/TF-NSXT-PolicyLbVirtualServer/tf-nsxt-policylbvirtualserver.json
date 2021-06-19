@@ -1,0 +1,283 @@
+{
+    "typeName": "TF::NSXT::PolicyLbVirtualServer",
+    "description": "This resource provides a method for the management of a Load Balancer Virtual Server.\n\nThis resource is applicable to NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyLbVirtualServer/docs/README.md",
+    "definitions": {
+        "AccessListControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "GroupPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "GroupPath"
+            ]
+        },
+        "ClientSslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientAuth": {
+                    "type": "string"
+                },
+                "CrlPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultCertificatePath": {
+                    "type": "string"
+                },
+                "SniPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SslProfilePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DefaultCertificatePath"
+            ]
+        },
+        "ServerSslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientCertificatePath": {
+                    "type": "string"
+                },
+                "CrlPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServerAuth": {
+                    "type": "string"
+                },
+                "SslProfilePath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessLogEnabled": {
+            "type": "boolean",
+            "description": "If set, all connections/requests sent to the virtual server are logged to access log."
+        },
+        "ApplicationProfilePath": {
+            "type": "string",
+            "description": "Application profile path for this virtual server."
+        },
+        "DefaultPoolMemberPorts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Default pool member ports to use when member port is not defined on the pool."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Indicates whether to enable access list control option. Default is true."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "Virtual Server IP address."
+        },
+        "LogSignificantEventOnly": {
+            "type": "boolean",
+            "description": "If true, significant events are logged in access log. This flag is supported since NSX 3.0.0."
+        },
+        "MaxConcurrentConnections": {
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, connections to Virtual Server can be capped."
+        },
+        "MaxNewConnectionRate": {
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, connections to a member can be rate limited."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PersistenceProfilePath": {
+            "type": "string",
+            "description": "Path to persistence profile allowing related client connections to be sent to the same backend server."
+        },
+        "PoolPath": {
+            "type": "string",
+            "description": "Path for Load Balancer Pool."
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Virtual Server Ports."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "ServicePath": {
+            "type": "string",
+            "description": "Virtual Server can be associated with Load Balancer Service."
+        },
+        "SorryPoolPath": {
+            "type": "string",
+            "description": "When load balancer can not select server in pool, the request would be served by sorry pool."
+        },
+        "AccessListControl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessListControlDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClientSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientSslDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServerSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSslDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationProfilePath",
+        "DisplayName",
+        "IpAddress",
+        "Ports"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

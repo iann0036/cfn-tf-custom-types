@@ -1,0 +1,253 @@
+{
+    "typeName": "TF::FortiOS::UserGroup",
+    "description": "Configure user groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserGroup/docs/README.md",
+    "definitions": {
+        "GuestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string",
+                    "description": "Comment."
+                },
+                "Company": {
+                    "type": "string",
+                    "description": "Set the action for the company guest user field."
+                },
+                "Email": {
+                    "type": "string",
+                    "description": "Email."
+                },
+                "Expiration": {
+                    "type": "string",
+                    "description": "Expire time."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Guest ID."
+                },
+                "MobilePhone": {
+                    "type": "string",
+                    "description": "Mobile phone."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Guest name."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Guest password."
+                },
+                "Sponsor": {
+                    "type": "string",
+                    "description": "Set the action for the sponsor guest user field."
+                },
+                "UserId": {
+                    "type": "string",
+                    "description": "Guest ID."
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupName": {
+                    "type": "string",
+                    "description": "Name of matching group on remote auththentication server."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "ServerName": {
+                    "type": "string",
+                    "description": "Name of remote auth server."
+                }
+            },
+            "required": []
+        },
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Group member name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthConcurrentOverride": {
+            "type": "string",
+            "description": "Enable/disable overriding the global number of concurrent authentication sessions for this user group. Valid values: `enable`, `disable`."
+        },
+        "AuthConcurrentValue": {
+            "type": "number",
+            "description": "Maximum number of concurrent authenticated connections per user (0 - 100)."
+        },
+        "Authtimeout": {
+            "type": "number",
+            "description": "Authentication timeout in minutes for this user group. 0 to use the global user setting auth-timeout."
+        },
+        "Company": {
+            "type": "string",
+            "description": "Set the action for the company guest user field. Valid values: `optional`, `mandatory`, `disabled`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Enable/disable the guest user email address field. Valid values: `disable`, `enable`."
+        },
+        "Expire": {
+            "type": "number",
+            "description": "Time in seconds before guest user accounts expire. (1 - 31536000 sec)."
+        },
+        "ExpireType": {
+            "type": "string",
+            "description": "Determine when the expiration countdown begins. Valid values: `immediately`, `first-successful-login`."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Group ID."
+        },
+        "GroupType": {
+            "type": "string",
+            "description": "Set the group to be for firewall authentication, FSSO, RSSO, or guest users. Valid values: `firewall`, `fsso-service`, `rsso`, `guest`."
+        },
+        "HttpDigestRealm": {
+            "type": "string",
+            "description": "Realm attribute for MD5-digest authentication."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxAccounts": {
+            "type": "number",
+            "description": "Maximum number of guest accounts that can be created for this group (0 means unlimited)."
+        },
+        "MobilePhone": {
+            "type": "string",
+            "description": "Enable/disable the guest user mobile phone number field. Valid values: `disable`, `enable`."
+        },
+        "MultipleGuestAdd": {
+            "type": "string",
+            "description": "Enable/disable addition of multiple guests. Valid values: `disable`, `enable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Group name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Guest user password type. Valid values: `auto-generate`, `specify`, `disable`."
+        },
+        "SmsCustomServer": {
+            "type": "string",
+            "description": "SMS server."
+        },
+        "SmsServer": {
+            "type": "string",
+            "description": "Send SMS through FortiGuard or other external server. Valid values: `fortiguard`, `custom`."
+        },
+        "Sponsor": {
+            "type": "string",
+            "description": "Set the action for the sponsor guest user field. Valid values: `optional`, `mandatory`, `disabled`."
+        },
+        "SsoAttributeValue": {
+            "type": "string",
+            "description": "Name of the RADIUS user group that this local user group represents."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "Guest user ID type. Valid values: `email`, `auto-generate`, `specify`."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "Enable/disable the guest user name entry. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Guest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuestDefinition"
+            }
+        },
+        "Match": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchDefinition"
+            }
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/GuestDefinition/Password"
+    ]
+}

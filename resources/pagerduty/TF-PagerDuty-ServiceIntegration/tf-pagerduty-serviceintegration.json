@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::PagerDuty::ServiceIntegration",
+    "description": "A [service integration](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Services/post_services_id_integrations) is an integration that belongs to a service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-ServiceIntegration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationEmail": {
+            "type": "string",
+            "description": "This is the unique fully-qualified email address used for routing emails to this integration for processing."
+        },
+        "IntegrationKey": {
+            "type": "string",
+            "description": "This is the unique key used to route events to this integration when received via the PagerDuty Events API.\n* `integration_email` - (Optional) This is the unique fully-qualified email address used for routing emails to this integration for processing."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service integration.\n* `type` - (Optional) The service type. Can be:\n`aws_cloudwatch_inbound_integration`,\n`cloudkick_inbound_integration`,\n`event_transformer_api_inbound_integration`,\n`events_api_v2_inbound_integration` (requires service `alert_creation` to be `create_alerts_and_incidents`),\n`generic_email_inbound_integration`,\n`generic_events_api_inbound_integration`,\n`keynote_inbound_integration`,\n`nagios_inbound_integration`,\n`pingdom_inbound_integration`or `sql_monitor_inbound_integration`."
+        },
+        "Service": {
+            "type": "string",
+            "description": "The ID of the service the integration should belong to.\n* `name` - (Optional) The name of the service integration.\n* `type` - (Optional) The service type. Can be:\n`aws_cloudwatch_inbound_integration`,\n`cloudkick_inbound_integration`,\n`event_transformer_api_inbound_integration`,\n`events_api_v2_inbound_integration` (requires service `alert_creation` to be `create_alerts_and_incidents`),\n`generic_email_inbound_integration`,\n`generic_events_api_inbound_integration`,\n`keynote_inbound_integration`,\n`nagios_inbound_integration`,\n`pingdom_inbound_integration`or `sql_monitor_inbound_integration`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The service type. Can be:\n`aws_cloudwatch_inbound_integration`,\n`cloudkick_inbound_integration`,\n`event_transformer_api_inbound_integration`,\n`events_api_v2_inbound_integration` (requires service `alert_creation` to be `create_alerts_and_incidents`),\n`generic_email_inbound_integration`,\n`generic_events_api_inbound_integration`,\n`keynote_inbound_integration`,\n`nagios_inbound_integration`,\n`pingdom_inbound_integration`or `sql_monitor_inbound_integration`."
+        },
+        "Vendor": {
+            "type": "string",
+            "description": "The ID of the vendor the integration should integrate with (e.g Datadog or Amazon Cloudwatch).\n* `integration_key` - (Optional) This is the unique key used to route events to this integration when received via the PagerDuty Events API.\n* `integration_email` - (Optional) This is the unique fully-qualified email address used for routing emails to this integration for processing."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HtmlUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

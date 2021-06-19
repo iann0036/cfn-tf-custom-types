@@ -1,0 +1,261 @@
+{
+    "typeName": "TF::AzureRM::MediaStreamingPolicy",
+    "description": "Manages a Streaming Policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MediaStreamingPolicy/docs/README.md",
+    "definitions": {
+        "CommonEncryptionCbcsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultContentKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultContentKeyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DrmFairplay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DrmFairplayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EnabledProtocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnabledProtocolsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CommonEncryptionCencDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DrmWidevineCustomLicenseAcquisitionUrlTemplate": {
+                    "type": "string"
+                },
+                "DefaultContentKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultContentKeyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DrmPlayready": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DrmPlayreadyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EnabledProtocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnabledProtocolsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NoEncryptionEnabledProtocolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dash": {
+                    "type": "boolean"
+                },
+                "Download": {
+                    "type": "boolean"
+                },
+                "Hls": {
+                    "type": "boolean"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefaultContentKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "PolicyName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DrmFairplayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowPersistentLicense": {
+                    "type": "boolean"
+                },
+                "CustomLicenseAcquisitionUrlTemplate": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EnabledProtocolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dash": {
+                    "type": "boolean"
+                },
+                "Download": {
+                    "type": "boolean"
+                },
+                "Hls": {
+                    "type": "boolean"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DrmPlayreadyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomAttributes": {
+                    "type": "string"
+                },
+                "CustomLicenseAcquisitionUrlTemplate": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultContentKeyPolicyName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MediaServicesAccountName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "CommonEncryptionCbcs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CommonEncryptionCbcsDefinition"
+            },
+            "maxItems": 1
+        },
+        "CommonEncryptionCenc": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CommonEncryptionCencDefinition"
+            },
+            "maxItems": 1
+        },
+        "NoEncryptionEnabledProtocols": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NoEncryptionEnabledProtocolsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MediaServicesAccountName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

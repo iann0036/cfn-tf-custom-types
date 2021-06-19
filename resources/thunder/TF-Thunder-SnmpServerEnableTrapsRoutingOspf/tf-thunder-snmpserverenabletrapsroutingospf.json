@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsRoutingOspf",
+    "description": "`thunder_snmp_server_enable_traps_routing_ospf` Provides details about thunder snmp server enable traps routing ospf",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsRoutingOspf/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OspfIfAuthFailure": {
+            "type": "number",
+            "description": "Enable ospfIfAuthFailure traps."
+        },
+        "OspfIfConfigError": {
+            "type": "number",
+            "description": "Enable ospfIfConfigError traps."
+        },
+        "OspfIfRxBadPacket": {
+            "type": "number",
+            "description": "Enable ospfIfRxBadPacket traps."
+        },
+        "OspfIfStateChange": {
+            "type": "number",
+            "description": "Enable ospfIfStateChange traps."
+        },
+        "OspfLsdbApproachingOverflow": {
+            "type": "number",
+            "description": "Enable ospfLsdbApproachingOverflow traps."
+        },
+        "OspfLsdbOverflow": {
+            "type": "number",
+            "description": "Enable ospfLsdbOverflow traps."
+        },
+        "OspfMaxAgeLsa": {
+            "type": "number",
+            "description": "Enable ospfMaxAgeLsa traps."
+        },
+        "OspfNbrStateChange": {
+            "type": "number",
+            "description": "Enable ospfNbrStateChange traps."
+        },
+        "OspfOriginateLsa": {
+            "type": "number",
+            "description": "Enable ospfOriginateLsa traps."
+        },
+        "OspfTxRetransmit": {
+            "type": "number",
+            "description": "Enable ospfTxRetransmit traps."
+        },
+        "OspfVirtIfAuthFailure": {
+            "type": "number",
+            "description": "Enable ospfVirtIfAuthFailure traps."
+        },
+        "OspfVirtIfConfigError": {
+            "type": "number",
+            "description": "Enable ospfVirtIfConfigError traps."
+        },
+        "OspfVirtIfRxBadPacket": {
+            "type": "number",
+            "description": "Enable ospfVirtIfRxBadPacket traps."
+        },
+        "OspfVirtIfStateChange": {
+            "type": "number",
+            "description": "Enable ospfVirtIfStateChange traps."
+        },
+        "OspfVirtIfTxRetransmit": {
+            "type": "number",
+            "description": "Enable ospfVirtIfTxRetransmit traps."
+        },
+        "OspfVirtNbrStateChange": {
+            "type": "number",
+            "description": "Enable ospfVirtNbrStateChange traps."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

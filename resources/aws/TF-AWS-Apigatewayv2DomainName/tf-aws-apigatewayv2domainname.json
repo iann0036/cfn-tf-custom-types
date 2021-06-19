@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2DomainName",
+    "description": "Manages an Amazon API Gateway Version 2 domain name.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).\n\n-> **Note:** This resource establishes ownership of and the TLS settings for\na particular domain name. An API stage can be associated with the domain name using the `aws_apigatewayv2_api_mapping` resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2DomainName/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DomainNameConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateArn": {
+                    "type": "string",
+                    "description": "The ARN of an AWS-managed certificate that will be used by the endpoint for the domain name. AWS Certificate Manager is the only supported source.\nUse the [`aws_acm_certificate`](/docs/providers/aws/r/acm_certificate.html) resource to configure an ACM certificate."
+                },
+                "EndpointType": {
+                    "type": "string",
+                    "description": "The endpoint type. Valid values: `REGIONAL`."
+                },
+                "SecurityPolicy": {
+                    "type": "string",
+                    "description": "The Transport Layer Security (TLS) version of the [security policy](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-custom-domain-tls-version.html) for the domain name. Valid values: `TLS_1_2`."
+                }
+            },
+            "required": [
+                "CertificateArn",
+                "EndpointType",
+                "SecurityPolicy"
+            ]
+        },
+        "MutualTlsAuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TruststoreUri": {
+                    "type": "string",
+                    "description": "An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example, `s3://bucket-name/key-name`.\nThe truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version."
+                },
+                "TruststoreVersion": {
+                    "type": "string",
+                    "description": "The version of the S3 object that contains the truststore. To specify a version, you must have versioning enabled for the S3 bucket."
+                }
+            },
+            "required": [
+                "TruststoreUri"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiMappingSelectionExpression": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The domain name. Must be between 1 and 512 characters in length."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the domain name. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "DomainNameConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DomainNameConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "MutualTlsAuthentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MutualTlsAuthenticationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiMappingSelectionExpression",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

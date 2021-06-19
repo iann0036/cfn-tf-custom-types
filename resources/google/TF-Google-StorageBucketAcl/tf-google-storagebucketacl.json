@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Google::StorageBucketAcl",
+    "description": "Authoritatively manages a bucket's ACLs in Google cloud storage service (GCS). For more information see\n[the official documentation](https://cloud.google.com/storage/docs/access-control/lists)\nand\n[API](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls).\n\nBucket ACLs can be managed non authoritatively using the [`storage_bucket_access_control`](https://www.terraform.io/docs/providers/google/r/storage_bucket_access_control.html) resource. Do not use these two resources in conjunction to manage the same bucket.\n\nPermissions can be granted either by ACLs or Cloud IAM policies. In general, permissions granted by Cloud IAM policies do not appear in ACLs, and permissions granted by ACLs do not appear in Cloud IAM policies. The only exception is for ACLs applied directly on a bucket and certain bucket-level Cloud IAM policies, as described in [Cloud IAM relation to ACLs](https://cloud.google.com/storage/docs/access-control/iam#acls).\n\n**NOTE** This resource will not remove the `project-owner...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-StorageBucketAcl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of the bucket it applies to."
+        },
+        "DefaultAcl": {
+            "type": "string",
+            "description": "Configure this ACL to be the default ACL."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PredefinedAcl": {
+            "type": "string",
+            "description": "The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not."
+        },
+        "RoleEntity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

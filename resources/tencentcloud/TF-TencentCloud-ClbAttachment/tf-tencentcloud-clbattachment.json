@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::TencentCloud::ClbAttachment",
+    "description": "Provides a resource to create a CLB attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbAttachment/docs/README.md",
+    "definitions": {
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string",
+                    "description": "Id of the backend server."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port of the backend server. Valid value ranges: (0~65535)."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Forwarding weight of the backend service. Valid value ranges: (0~100). defaults to `10`."
+                }
+            },
+            "required": [
+                "InstanceId",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClbId": {
+            "type": "string",
+            "description": "ID of the CLB."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "ID of the CLB listener."
+        },
+        "ProtocolType": {
+            "type": "string"
+        },
+        "RuleId": {
+            "type": "string",
+            "description": "ID of the CLB listener rule. Only supports listeners of `HTTPS` and `HTTP` protocol."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbId",
+        "ListenerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProtocolType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::VRA::CatalogSourceEntitlement",
+    "description": "This resource provides a way to create a vRealize Automation(vRA) catalog source entitlement.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-CatalogSourceEntitlement/docs/README.md",
+    "definitions": {
+        "DefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NumberOfItems": {
+                    "type": "number"
+                },
+                "SourceType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CatalogSourceId": {
+            "type": "string",
+            "description": "The id of the catalog source to create the entitlement."
+        },
+        "Definition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinitionDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The id of the project this entity belongs to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CatalogSourceId",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Definition",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

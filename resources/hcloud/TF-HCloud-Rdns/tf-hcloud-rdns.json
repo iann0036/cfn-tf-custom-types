@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::HCloud::Rdns",
+    "description": "Provides a Hetzner Cloud Reverse DNS Entry to create, modify and reset reverse dns entries for Hetzner Cloud Floating IPs or servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-Rdns/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsPtr": {
+            "type": "string",
+            "description": "The DNS address the `ip_address` should resolve to.\n- `ip_address` - (Required, string) The IP address that should point to `dns_ptr`.\n- `server_id` - (Required, int) The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
+        },
+        "FloatingIpId": {
+            "type": "number",
+            "description": "The Floating IP the `ip_address` belongs to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "The IP address that should point to `dns_ptr`.\n- `server_id` - (Required, int) The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
+        },
+        "ServerId": {
+            "type": "number",
+            "description": "The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DnsPtr",
+        "IpAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

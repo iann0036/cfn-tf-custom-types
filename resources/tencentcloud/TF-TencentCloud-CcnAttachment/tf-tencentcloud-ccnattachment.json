@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::TencentCloud::CcnAttachment",
+    "description": "Provides a CCN attaching resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CcnAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachedTime": {
+            "type": "string"
+        },
+        "CcnId": {
+            "type": "string",
+            "description": "ID of the CCN."
+        },
+        "CcnUin": {
+            "type": "string",
+            "description": "Uin of the ccn attached. Default is ``, which means the uin of this account. This parameter is used with case when attaching ccn of other account to the instance of this account. For now only support instance type `VPC`."
+        },
+        "CidrBlock": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of instance is attached."
+        },
+        "InstanceRegion": {
+            "type": "string",
+            "description": "The region that the instance locates at."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Type of attached instance network, and available values include `VPC`, `DIRECTCONNECT`, `BMVPC` and `VPNGW`. Note: `VPNGW` type is only for whitelist customer now."
+        },
+        "State": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CcnId",
+        "InstanceId",
+        "InstanceRegion",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AttachedTime",
+        "/properties/CidrBlock",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

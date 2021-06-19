@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::SDM::Node",
+    "description": "Nodes make up the strongDM network, and allow your users to connect securely to your resources.\n There are two types of nodes:\n 1. **Relay:** creates connectivity to your datasources, while maintaining the egress-only nature of your firewall\n 1. **Gateways:** a relay that also listens for connections from strongDM clients",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sdm/TF-SDM-Node/docs/README.md",
+    "definitions": {
+        "GatewayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindAddress": {
+                    "type": "string"
+                },
+                "GatewayFilter": {
+                    "type": "string"
+                },
+                "ListenAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ListenAddress"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RelayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GatewayFilter": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GatewayDefinition"
+            }
+        },
+        "Relay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RelayDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

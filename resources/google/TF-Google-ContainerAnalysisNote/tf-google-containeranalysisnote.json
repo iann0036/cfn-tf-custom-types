@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::Google::ContainerAnalysisNote",
+    "description": "A Container Analysis note is a high-level piece of metadata that\ndescribes a type of analysis that can be done for a resource.\n\n\nTo get more information about Note, see:\n\n* [API documentation](https://cloud.google.com/container-analysis/api/reference/rest/)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/container-analysis/)\n    * [Creating Attestations (Occurrences)](https://cloud.google.com/binary-authorization/docs/making-attestations)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=container_analysis_note_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ContainerAnalysisNote/docs/README.md",
+    "definitions": {
+        "AttestationAuthorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hint": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HintDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RelatedUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HumanReadableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HumanReadableName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "LongDescription": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RelatedNoteNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ShortDescription": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "AttestationAuthority": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttestationAuthorityDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RelatedUrl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelatedUrlDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Kind",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

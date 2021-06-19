@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::LogicMonitor::Device",
+    "description": "Provides a LogicMonitor device resource. This can be used to create and manage LogicMonitor devices",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logicmonitor/TF-LogicMonitor-Device/docs/README.md",
+    "definitions": {
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Collector": {
+            "type": "number",
+            "description": "The id of the collector that will monitoring the device."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisableAlerting": {
+            "type": "boolean",
+            "description": "The host is created with alerting disabled (default is true)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of device, (default is ip_addr)."
+        },
+        "HostgroupId": {
+            "type": "string",
+            "description": "The host group id that specifies which group the device belongs to (multiple host group ids can be added, represented by a comma separated string)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddr": {
+            "type": "string",
+            "description": "Ip Address/Hostname of device."
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            },
+            "description": "The properties associated with this device group. Any string value pair will work (see example)."
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Collector",
+        "IpAddr"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::Cloudflare::WafOverride",
+    "description": "Provides a Cloudflare WAF override resource. This enables the ability to toggle\nWAF rules and groups on or off based on URIs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-WafOverride/docs/README.md",
+    "definitions": {
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RewriteActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of what the WAF override does."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            },
+            "description": "Similar to `rules`; which WAF groups you want to alter."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OverrideId": {
+            "type": "string"
+        },
+        "Paused": {
+            "type": "boolean",
+            "description": "Whether this package is currently paused."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Relative priority of this configuration when multiple configurations match a single URL."
+        },
+        "RewriteAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RewriteActionDefinition"
+            },
+            "description": "When a WAF rule matches, substitute its configured action for a different action specified by this definition."
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            },
+            "description": "A list of WAF rule ID to rule action you intend to apply."
+        },
+        "Urls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of URLs to apply the WAF override to."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone to which the WAF override condition should be added."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Rules",
+        "Urls",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OverrideId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

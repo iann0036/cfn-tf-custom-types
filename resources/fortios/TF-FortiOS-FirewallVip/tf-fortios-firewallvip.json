@@ -1,0 +1,562 @@
+{
+    "typeName": "TF::FortiOS::FirewallVip",
+    "description": "Configure virtual IP for IPv4.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallVip/docs/README.md",
+    "definitions": {
+        "ExtaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "MappedipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string",
+                    "description": "Mapped IP range."
+                }
+            },
+            "required": []
+        },
+        "MonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Health monitor name."
+                }
+            },
+            "required": []
+        },
+        "RealserversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Dynamic address of the real server."
+                },
+                "ClientIp": {
+                    "type": "string",
+                    "description": "Only clients in this IP range can connect to this real server."
+                },
+                "Healthcheck": {
+                    "type": "string",
+                    "description": "Enable to check the responsiveness of the real server before forwarding traffic. Valid values: `disable`, `enable`, `vip`."
+                },
+                "HolddownInterval": {
+                    "type": "number",
+                    "description": "Time in seconds that the health check monitor continues to monitor and unresponsive server that should be active."
+                },
+                "HttpHost": {
+                    "type": "string",
+                    "description": "HTTP server domain name in HTTP header."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Real server ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP address of the real server."
+                },
+                "MaxConnections": {
+                    "type": "number",
+                    "description": "Max number of active connections that can be directed to the real server. When reached, sessions are sent to other real servers."
+                },
+                "Monitor": {
+                    "type": "string",
+                    "description": "Name of the health check monitor to use when polling to determine a virtual server's connectivity status."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port for communicating with the real server. Required if port forwarding is enabled."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Set the status of the real server to active so that it can accept traffic, or on standby or disabled so no traffic is sent. Valid values: `active`, `standby`, `disable`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type of address. Valid values: `ip`, `address`."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Weight of the real server. If weighted load balancing is enabled, the server with the highest weight gets more connections."
+                }
+            },
+            "required": []
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Service name."
+                }
+            },
+            "required": []
+        },
+        "SrcFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string",
+                    "description": "Source-filter range."
+                }
+            },
+            "required": []
+        },
+        "SrcintfFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceName": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "SslCipherSuitesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cipher": {
+                    "type": "string",
+                    "description": "Cipher suite name."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "SSL/TLS cipher suites priority."
+                },
+                "Versions": {
+                    "type": "string",
+                    "description": "SSL/TLS versions that the cipher suite can be used with."
+                }
+            },
+            "required": []
+        },
+        "SslServerCipherSuitesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cipher": {
+                    "type": "string",
+                    "description": "Cipher suite name."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "SSL/TLS cipher suites priority."
+                },
+                "Versions": {
+                    "type": "string",
+                    "description": "SSL/TLS versions that the cipher suite can be used with."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable to respond to ARP requests for this virtual IP address. Enabled by default. Valid values: `disable`, `enable`."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DnsMappingTtl": {
+            "type": "number",
+            "description": "DNS mapping TTL (Set to zero to use TTL in DNS response, default = 0)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Extintf": {
+            "type": "string",
+            "description": "Interface connected to the source network that receives the packets that will be forwarded to the destination network."
+        },
+        "Extip": {
+            "type": "string",
+            "description": "IP address or address range on the external interface that you want to map to an address or address range on the destination network."
+        },
+        "Extport": {
+            "type": "string",
+            "description": "Incoming port number range that you want to map to a port number range on the destination network."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Custom defined ID."
+        },
+        "GratuitousArpInterval": {
+            "type": "number",
+            "description": "Enable to have the VIP send gratuitous ARPs. 0=disabled. Set from 5 up to 8640000 seconds to enable."
+        },
+        "HttpCookieAge": {
+            "type": "number",
+            "description": "Time in minutes that client web browsers should keep a cookie. Default is 60 seconds. 0 = no time limit."
+        },
+        "HttpCookieDomain": {
+            "type": "string",
+            "description": "Domain that HTTP cookie persistence should apply to."
+        },
+        "HttpCookieDomainFromHost": {
+            "type": "string",
+            "description": "Enable/disable use of HTTP cookie domain from host field in HTTP. Valid values: `disable`, `enable`."
+        },
+        "HttpCookieGeneration": {
+            "type": "number",
+            "description": "Generation of HTTP cookie to be accepted. Changing invalidates all existing cookies."
+        },
+        "HttpCookiePath": {
+            "type": "string",
+            "description": "Limit HTTP cookie persistence to the specified path."
+        },
+        "HttpCookieShare": {
+            "type": "string",
+            "description": "Control sharing of cookies across virtual servers. same-ip means a cookie from one virtual server can be used by another. Disable stops cookie sharing. Valid values: `disable`, `same-ip`."
+        },
+        "HttpIpHeader": {
+            "type": "string",
+            "description": "For HTTP multiplexing, enable to add the original client IP address in the XForwarded-For HTTP header. Valid values: `enable`, `disable`."
+        },
+        "HttpIpHeaderName": {
+            "type": "string",
+            "description": "For HTTP multiplexing, enter a custom HTTPS header name. The original client IP address is added to this header. If empty, X-Forwarded-For is used."
+        },
+        "HttpMultiplex": {
+            "type": "string",
+            "description": "Enable/disable HTTP multiplexing. Valid values: `enable`, `disable`."
+        },
+        "HttpRedirect": {
+            "type": "string",
+            "description": "Enable/disable redirection of HTTP to HTTPS Valid values: `enable`, `disable`."
+        },
+        "HttpsCookieSecure": {
+            "type": "string",
+            "description": "Enable/disable verification that inserted HTTPS cookies are secure. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdbMethod": {
+            "type": "string",
+            "description": "Method used to distribute sessions to real servers. Valid values: `static`, `round-robin`, `weighted`, `least-session`, `least-rtt`, `first-alive`, `http-host`."
+        },
+        "MappedAddr": {
+            "type": "string",
+            "description": "Mapped FQDN address name."
+        },
+        "Mappedport": {
+            "type": "string",
+            "description": "Port number range on the destination network to which the external port number range is mapped."
+        },
+        "MaxEmbryonicConnections": {
+            "type": "number",
+            "description": "Maximum number of incomplete connections."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual IP name."
+        },
+        "NatSourceVip": {
+            "type": "string",
+            "description": "Enable/disable forcing the source NAT mapped IP to the external IP for all traffic. Valid values: `disable`, `enable`."
+        },
+        "OutlookWebAccess": {
+            "type": "string",
+            "description": "Enable to add the Front-End-Https header for Microsoft Outlook Web Access. Valid values: `disable`, `enable`."
+        },
+        "Persistence": {
+            "type": "string",
+            "description": "Configure how to make sure that clients connect to the same server every time they make a request that is part of the same session. Valid values: `none`, `http-cookie`, `ssl-session-id`."
+        },
+        "Portforward": {
+            "type": "string",
+            "description": "Enable/disable port forwarding. Valid values: `disable`, `enable`."
+        },
+        "PortmappingType": {
+            "type": "string",
+            "description": "Port mapping type. Valid values: `1-to-1`, `m-to-n`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol to use when forwarding packets. Valid values: `tcp`, `udp`, `sctp`, `icmp`."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Protocol to be load balanced by the virtual server (also called the server load balance virtual IP). Valid values: `http`, `https`, `imaps`, `pop3s`, `smtps`, `ssl`, `tcp`, `udp`, `ip`."
+        },
+        "SslAlgorithm": {
+            "type": "string",
+            "description": "Permitted encryption algorithms for SSL sessions according to encryption strength. Valid values: `high`, `medium`, `low`, `custom`."
+        },
+        "SslCertificate": {
+            "type": "string",
+            "description": "The name of the SSL certificate to use for SSL acceleration."
+        },
+        "SslClientFallback": {
+            "type": "string",
+            "description": "Enable/disable support for preventing Downgrade Attacks on client connections (RFC 7507). Valid values: `disable`, `enable`."
+        },
+        "SslClientRekeyCount": {
+            "type": "number",
+            "description": "Maximum length of data in MB before triggering a client rekey (0 = disable)."
+        },
+        "SslClientRenegotiation": {
+            "type": "string",
+            "description": "Allow, deny, or require secure renegotiation of client sessions to comply with RFC 5746. Valid values: `allow`, `deny`, `secure`."
+        },
+        "SslClientSessionStateMax": {
+            "type": "number",
+            "description": "Maximum number of client to FortiGate SSL session states to keep."
+        },
+        "SslClientSessionStateTimeout": {
+            "type": "number",
+            "description": "Number of minutes to keep client to FortiGate SSL session state."
+        },
+        "SslClientSessionStateType": {
+            "type": "string",
+            "description": "How to expire SSL sessions for the segment of the SSL connection between the client and the FortiGate. Valid values: `disable`, `time`, `count`, `both`."
+        },
+        "SslDhBits": {
+            "type": "string",
+            "description": "Number of bits to use in the Diffie-Hellman exchange for RSA encryption of SSL sessions. Valid values: `768`, `1024`, `1536`, `2048`, `3072`, `4096`."
+        },
+        "SslHpkp": {
+            "type": "string",
+            "description": "Enable/disable including HPKP header in response. Valid values: `disable`, `enable`, `report-only`."
+        },
+        "SslHpkpAge": {
+            "type": "number",
+            "description": "Number of seconds the client should honour the HPKP setting."
+        },
+        "SslHpkpBackup": {
+            "type": "string",
+            "description": "Certificate to generate backup HPKP pin from."
+        },
+        "SslHpkpIncludeSubdomains": {
+            "type": "string",
+            "description": "Indicate that HPKP header applies to all subdomains. Valid values: `disable`, `enable`."
+        },
+        "SslHpkpPrimary": {
+            "type": "string",
+            "description": "Certificate to generate primary HPKP pin from."
+        },
+        "SslHpkpReportUri": {
+            "type": "string",
+            "description": "URL to report HPKP violations to."
+        },
+        "SslHsts": {
+            "type": "string",
+            "description": "Enable/disable including HSTS header in response. Valid values: `disable`, `enable`."
+        },
+        "SslHstsAge": {
+            "type": "number",
+            "description": "Number of seconds the client should honour the HSTS setting."
+        },
+        "SslHstsIncludeSubdomains": {
+            "type": "string",
+            "description": "Indicate that HSTS header applies to all subdomains. Valid values: `disable`, `enable`."
+        },
+        "SslHttpLocationConversion": {
+            "type": "string",
+            "description": "Enable to replace HTTP with HTTPS in the reply's Location HTTP header field. Valid values: `enable`, `disable`."
+        },
+        "SslHttpMatchHost": {
+            "type": "string",
+            "description": "Enable/disable HTTP host matching for location conversion. Valid values: `enable`, `disable`."
+        },
+        "SslMaxVersion": {
+            "type": "string",
+            "description": "Highest SSL/TLS version acceptable from a client."
+        },
+        "SslMinVersion": {
+            "type": "string",
+            "description": "Lowest SSL/TLS version acceptable from a client."
+        },
+        "SslMode": {
+            "type": "string",
+            "description": "Apply SSL offloading between the client and the FortiGate (half) or from the client to the FortiGate and from the FortiGate to the server (full). Valid values: `half`, `full`."
+        },
+        "SslPfs": {
+            "type": "string",
+            "description": "Select the cipher suites that can be used for SSL perfect forward secrecy (PFS). Applies to both client and server sessions. Valid values: `require`, `deny`, `allow`."
+        },
+        "SslSendEmptyFrags": {
+            "type": "string",
+            "description": "Enable/disable sending empty fragments to avoid CBC IV attacks (SSL 3.0 & TLS 1.0 only). May need to be disabled for compatibility with older systems. Valid values: `enable`, `disable`."
+        },
+        "SslServerAlgorithm": {
+            "type": "string",
+            "description": "Permitted encryption algorithms for the server side of SSL full mode sessions according to encryption strength. Valid values: `high`, `medium`, `low`, `custom`, `client`."
+        },
+        "SslServerMaxVersion": {
+            "type": "string",
+            "description": "Highest SSL/TLS version acceptable from a server. Use the client setting by default."
+        },
+        "SslServerMinVersion": {
+            "type": "string",
+            "description": "Lowest SSL/TLS version acceptable from a server. Use the client setting by default."
+        },
+        "SslServerSessionStateMax": {
+            "type": "number",
+            "description": "Maximum number of FortiGate to Server SSL session states to keep."
+        },
+        "SslServerSessionStateTimeout": {
+            "type": "number",
+            "description": "Number of minutes to keep FortiGate to Server SSL session state."
+        },
+        "SslServerSessionStateType": {
+            "type": "string",
+            "description": "How to expire SSL sessions for the segment of the SSL connection between the server and the FortiGate. Valid values: `disable`, `time`, `count`, `both`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Configure a static NAT, load balance, server load balance, DNS translation, or FQDN VIP. Valid values: `static-nat`, `load-balance`, `server-load-balance`, `dns-translation`, `fqdn`."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WeblogicServer": {
+            "type": "string",
+            "description": "Enable to add an HTTP header to indicate SSL offloading for a WebLogic server. Valid values: `disable`, `enable`."
+        },
+        "WebsphereServer": {
+            "type": "string",
+            "description": "Enable to add an HTTP header to indicate SSL offloading for a WebSphere server. Valid values: `disable`, `enable`."
+        },
+        "Extaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtaddrDefinition"
+            }
+        },
+        "Mappedip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MappedipDefinition"
+            }
+        },
+        "Monitor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorDefinition"
+            }
+        },
+        "Realservers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RealserversDefinition"
+            }
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            }
+        },
+        "SrcFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcFilterDefinition"
+            }
+        },
+        "SrcintfFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcintfFilterDefinition"
+            }
+        },
+        "SslCipherSuites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslCipherSuitesDefinition"
+            }
+        },
+        "SslServerCipherSuites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslServerCipherSuitesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

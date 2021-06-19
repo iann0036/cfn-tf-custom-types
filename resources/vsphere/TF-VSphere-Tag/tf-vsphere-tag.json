@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::VSphere::Tag",
+    "description": "The `vsphere_tag` resource can be used to create and manage tags, which allow\nyou to attach metadata to objects in the vSphere inventory to make these\nobjects more sortable and searchable.\n\nFor more information about tags, click [here][ext-tags-general].\n\n[ext-tags-general]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vcenterhost.doc/GUID-E8E854DD-AA97-4E0C-8419-CE84F93C4058.html\n\n~> **NOTE:** Tagging support is unsupported on direct ESXi connections and\nrequires vCenter 6.0 or higher.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-Tag/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CategoryId": {
+            "type": "string",
+            "description": "The unique identifier of the parent category in\nwhich this tag will be created. Forces a new resource if changed."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the tag."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The display name of the tag. The name must be unique\nwithin its category."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CategoryId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

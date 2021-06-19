@@ -1,0 +1,329 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDnsManagedZone",
+    "description": "CloudFormation equivalent of google_dns_managed_zone",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDnsManagedZone/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DnssecConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "NonExistence": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "DefaultKeySpecs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultKeySpecsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForwardingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetNameServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetNameServersDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "PeeringConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetNetwork": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetNetworkDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "PrivateVisibilityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Networks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworksDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ServiceDirectoryConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespace": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NamespaceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefaultKeySpecsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "KeyLength": {
+                    "type": "number"
+                },
+                "KeyType": {
+                    "type": "string"
+                },
+                "Kind": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetNameServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForwardingPath": {
+                    "type": "string"
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ipv4Address"
+            ]
+        },
+        "TargetNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NetworkUrl"
+            ]
+        },
+        "NetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NetworkUrl"
+            ]
+        },
+        "NamespaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamespaceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NamespaceUrl"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ReverseLookup": {
+            "type": "boolean"
+        },
+        "Visibility": {
+            "type": "string"
+        },
+        "DnssecConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnssecConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ForwardingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardingConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PeeringConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PeeringConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PrivateVisibilityConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateVisibilityConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceDirectoryConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDirectoryConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DnsName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NameServers"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

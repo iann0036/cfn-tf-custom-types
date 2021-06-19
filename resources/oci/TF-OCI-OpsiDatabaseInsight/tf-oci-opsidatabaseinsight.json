@@ -1,0 +1,233 @@
+{
+    "typeName": "TF::OCI::OpsiDatabaseInsight",
+    "description": "This resource provides the Database Insight resource in Oracle Cloud Infrastructure Opsi service.\n\nCreate a Database Insight resource for a Enterprise Manager(EM) managed database in Operations Insights. The database will be enabled in Operations Insights. Database metric collection and analysis will be started. The Database Insight resource for Autonomous Database and Management Agent managed external Database needs to be created by Database service terraform provider.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OpsiDatabaseInsight/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SystemTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier of database."
+        },
+        "DatabaseDisplayName": {
+            "type": "string"
+        },
+        "DatabaseId": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "DatabaseType": {
+            "type": "string"
+        },
+        "DatabaseVersion": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "EnterpriseManagerBridgeId": {
+            "type": "string",
+            "description": "OPSI Enterprise Manager Bridge OCID."
+        },
+        "EnterpriseManagerEntityDisplayName": {
+            "type": "string"
+        },
+        "EnterpriseManagerEntityIdentifier": {
+            "type": "string",
+            "description": "Enterprise Manager Entity Unique Identifier."
+        },
+        "EnterpriseManagerEntityName": {
+            "type": "string"
+        },
+        "EnterpriseManagerEntityType": {
+            "type": "string"
+        },
+        "EnterpriseManagerIdentifier": {
+            "type": "string",
+            "description": "Enterprise Manager Unqiue Identifier."
+        },
+        "EntitySource": {
+            "type": "string",
+            "description": "(Updatable) Source of the database entity. The supported type is \"EM_MANAGED_EXTERNAL_DATABASE\"."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "ProcessorCount": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "(Updatable) Status of the resource. Example: \"ENABLED\", \"DISABLED\". Resource can be either enabled or disabled by updating the value of status field to either \"ENABLED\" or \"DISABLED\"."
+        },
+        "SystemTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemTagsDefinition"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "EnterpriseManagerBridgeId",
+        "EnterpriseManagerEntityIdentifier",
+        "EnterpriseManagerIdentifier",
+        "EntitySource"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DatabaseDisplayName",
+        "/properties/DatabaseId",
+        "/properties/DatabaseName",
+        "/properties/DatabaseType",
+        "/properties/DatabaseVersion",
+        "/properties/EnterpriseManagerEntityDisplayName",
+        "/properties/EnterpriseManagerEntityName",
+        "/properties/EnterpriseManagerEntityType",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/ProcessorCount",
+        "/properties/State",
+        "/properties/SystemTags",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

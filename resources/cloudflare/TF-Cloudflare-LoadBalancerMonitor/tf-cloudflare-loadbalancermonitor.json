@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Cloudflare::LoadBalancerMonitor",
+    "description": "If you're using Cloudflare's Load Balancing to load-balance across multiple origin servers or data centers, you configure one of these Monitors to actively check the availability of those servers over HTTP(S) or TCP.\n\n-> **Note:** When creating a monitor, you have to pass `account_id` to the provider configuration in order to create account level resources. Otherwise, by default, it will be a user level resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-LoadBalancerMonitor/docs/README.md",
+    "definitions": {
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Header",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowInsecure": {
+            "type": "boolean",
+            "description": "Do not validate the certificate when monitor use HTTPS. Only valid if `type` is \"http\" or \"https\"."
+        },
+        "CreatedOn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Free text description."
+        },
+        "ExpectedBody": {
+            "type": "string",
+            "description": "A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy. Only valid if `type` is \"http\" or \"https\". Default: \"\"."
+        },
+        "ExpectedCodes": {
+            "type": "string",
+            "description": "The expected HTTP response code or code range of the health check. Eg `2xx`. Only valid and required if `type` is \"http\" or \"https\"."
+        },
+        "FollowRedirects": {
+            "type": "boolean",
+            "description": "Follow redirects if returned by the origin. Only valid if `type` is \"http\" or \"https\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations. Default: 60."
+        },
+        "Method": {
+            "type": "string",
+            "description": "The method to use for the health check. Valid values are any valid HTTP verb if `type` is \"http\" or \"https\", or `connection_established` if `type` is \"tcp\". Default: \"GET\" if `type` is \"http\" or \"https\", or \"connection_established\" if `type` is \"tcp\" ."
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string",
+            "description": "The endpoint path to health check against. Default: \"/\". Only valid if `type` is \"http\" or \"https\"."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port number to use for the healthcheck, required when creating a TCP monitor. Valid values are in the range `0-65535`."
+        },
+        "ProbeZone": {
+            "type": "string",
+            "description": "Assign this monitor to emulate the specified zone while probing. Only valid if `type` is \"http\" or \"https\"."
+        },
+        "Retries": {
+            "type": "number",
+            "description": "The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. Default: 2."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "The timeout (in seconds) before marking the health check as failed. Default: 5."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The protocol to use for the healthcheck. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'. Default: \"http\"."
+        },
+        "Header": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOn",
+        "/properties/Id",
+        "/properties/ModifiedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::TencentCloud::AsSchedule",
+    "description": "Provides a resource for an AS (Auto scaling) schedule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AsSchedule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The desired number of CVM instances that should be running in the group."
+        },
+        "EndTime": {
+            "type": "string",
+            "description": "The time for this action to end, in \"YYYY-MM-DDThh:mm:ss+08:00\" format (UTC+8)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum size for the Auto Scaling group."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum size for the Auto Scaling group."
+        },
+        "Recurrence": {
+            "type": "string",
+            "description": "The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. And this argument should be set with end_time together."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "ID of a scaling group."
+        },
+        "ScheduleActionName": {
+            "type": "string",
+            "description": "The name of this scaling action."
+        },
+        "StartTime": {
+            "type": "string",
+            "description": "The time for this action to start, in \"YYYY-MM-DDThh:mm:ss+08:00\" format (UTC+8)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredCapacity",
+        "MaxSize",
+        "MinSize",
+        "ScalingGroupId",
+        "ScheduleActionName",
+        "StartTime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

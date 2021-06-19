@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::Google::DatastoreIndex",
+    "description": "Describes a composite index for Cloud Datastore.\n\n\nTo get more information about Index, see:\n\n* [API documentation](https://cloud.google.com/datastore/docs/reference/admin/rest/v1/projects.indexes)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/datastore/docs/concepts/indexes)\n\n~> **Warning:** This resource creates a Datastore Index on a project that has already\nenabled a Datastore-compatible database. If you haven't already enabled\none, you can create a `google_app_engine_application` resource with\n`database_type` set to `\"CLOUD_DATASTORE_COMPATIBILITY\"` to do so. Your\nDatastore location will be the same as the App Engine location specified.\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=datastore_index&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_e...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DatastoreIndex/docs/README.md",
+    "definitions": {
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Direction",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ancestor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IndexId": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Kind"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IndexId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,238 @@
+{
+    "typeName": "TF::OCI::OceOceInstance",
+    "description": "This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.\n\nCreates a new OceInstance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OceOceInstance/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminEmail": {
+            "type": "string",
+            "description": "Admin Email for Notification."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) OceInstance description."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Guid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdcsAccessToken": {
+            "type": "string",
+            "description": "Identity Cloud Service access token identifying a stripe and service administrator user."
+        },
+        "IdcsTenancy": {
+            "type": "string"
+        },
+        "InstanceAccessType": {
+            "type": "string",
+            "description": "Flag indicating whether the instance access is private or public."
+        },
+        "InstanceLicenseType": {
+            "type": "string",
+            "description": "(Updatable) Flag indicating whether the instance license is new cloud or bring your own license."
+        },
+        "InstanceUsageType": {
+            "type": "string",
+            "description": "(Updatable) Instance type based on its usage."
+        },
+        "Name": {
+            "type": "string",
+            "description": "OceInstance Name."
+        },
+        "ObjectStorageNamespace": {
+            "type": "string",
+            "description": "Object Storage Namespace of Tenancy."
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "StateMessage": {
+            "type": "string"
+        },
+        "TenancyId": {
+            "type": "string",
+            "description": "Tenancy Identifier."
+        },
+        "TenancyName": {
+            "type": "string",
+            "description": "Tenancy Name."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "UpgradeSchedule": {
+            "type": "string",
+            "description": "Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version."
+        },
+        "WafPrimaryDomain": {
+            "type": "string",
+            "description": "(Updatable) Web Application Firewall(WAF) primary domain."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdminEmail",
+        "CompartmentId",
+        "IdcsAccessToken",
+        "Name",
+        "ObjectStorageNamespace",
+        "TenancyId",
+        "TenancyName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Guid",
+        "/properties/Id",
+        "/properties/IdcsTenancy",
+        "/properties/Service",
+        "/properties/State",
+        "/properties/StateMessage",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/IdcsAccessToken"
+    ]
+}

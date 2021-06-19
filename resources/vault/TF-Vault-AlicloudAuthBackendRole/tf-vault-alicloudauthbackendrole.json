@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Vault::AlicloudAuthBackendRole",
+    "description": "Provides a resource to create a role in an [AliCloud auth backend within Vault](https://www.vaultproject.io/docs/auth/alicloud.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-AlicloudAuthBackendRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string",
+            "description": "The role's arn."
+        },
+        "Backend": {
+            "type": "string",
+            "description": "Path to the mounted AliCloud auth backend.\nDefaults to `alicloud`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string",
+            "description": "Name of the role. Must correspond with the name of\nthe role reflected in the arn."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Arn",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

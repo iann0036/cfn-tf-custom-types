@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::OpenNebula::Image",
+    "description": "Provides an OpenNebula image resource.\n\nThis resource allows you to manage images on your OpenNebula clusters. When applied,\na new image is created. When destroyed, this image is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-Image/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloneFromImage": {
+            "type": "string",
+            "description": "ID or name of the image to clone from. Conflicts with `path`, `size` and `type`."
+        },
+        "DatastoreId": {
+            "type": "number",
+            "description": "ID of the datastore used to store the image. The `datastore_id` must be an active `IMAGE` datastore."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the image."
+        },
+        "DevPrefix": {
+            "type": "string",
+            "description": "Device prefix on Virtual Machine. Usually one of these: `hd`, `sd` or `vd`."
+        },
+        "Driver": {
+            "type": "string",
+            "description": "OpenNebula Driver to use."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Image format. Example: `raw`, `qcow2`."
+        },
+        "Gid": {
+            "type": "number"
+        },
+        "Gname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "Name of the group which owns the image. Defaults to the caller primary group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lock": {
+            "type": "string",
+            "description": "Lock the image with a specific lock level. Supported values: `USE`, `MANAGE`, `ADMIN`, `ALL` or `UNLOCK`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the image."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path or URL of the original image to use. Conflicts with `clone_from_image`."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied to the image. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "Persistent": {
+            "type": "boolean",
+            "description": "Flag which indicates if the Image has to be persistent. Defaults to `false`."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Size of the image in MB. Conflicts with `clone_from_image`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Image tags (Key = value)."
+        },
+        "Target": {
+            "type": "string",
+            "description": "Device target on Virtual Machine."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout (in Minutes) for Image availability. Defaults to 10 minutes."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the image. Supported values: `OS`, `CDROM`, `DATABLOCK`, `KERNEL`, `RAMDISK` or `CONTEXT`. Conflicts with `clone_from_image`."
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uname": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatastoreId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gid",
+        "/properties/Gname",
+        "/properties/Id",
+        "/properties/Uid",
+        "/properties/Uname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

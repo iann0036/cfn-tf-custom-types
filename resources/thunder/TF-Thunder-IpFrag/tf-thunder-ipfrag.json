@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::Thunder::IpFrag",
+    "description": "`thunder_ip_frag` Provides details about thunder ip frag",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-IpFrag/docs/README.md",
+    "definitions": {
+        "CpuThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "High": {
+                    "type": "number"
+                },
+                "Low": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Buff": {
+            "type": "number",
+            "description": "Max buff used for fragmentation (Buffer Value(10000-3000000))."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxPacketsPerReassembly": {
+            "type": "number",
+            "description": "Max number of fragmented packets allowed per reassembly(0 is unlimited) (default 0)."
+        },
+        "MaxReassemblySessions": {
+            "type": "number",
+            "description": "Max number of pending reassembly sessions allowed (default 100000)."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Fragmentation timeout (in milliseconds 4 - 16000 (default is 1000))."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "CpuThreshold": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CpuThresholdDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

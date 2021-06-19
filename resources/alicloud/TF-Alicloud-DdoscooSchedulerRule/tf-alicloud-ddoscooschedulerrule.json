@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::Alicloud::DdoscooSchedulerRule",
+    "description": "Provides a DdosCoo Scheduler Rule resource. For information about DdosCoo Scheduler Rule and how to use it, see[What is DdosCoo Scheduler Rule](https://www.alibabacloud.com/help/en/doc-detail/157481.htm).\n\n-> **NOTE:** Available in 1.86.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DdoscooSchedulerRule/docs/README.md",
+    "definitions": {
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number"
+                },
+                "RegionId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Param": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group to which the anti-DDoS pro instance belongs in resource management. By default, no value is specified, indicating that the domains in the default resource group are listed."
+        },
+        "RuleName": {
+            "type": "string",
+            "description": "The name of the rule."
+        },
+        "RuleType": {
+            "type": "number",
+            "description": "The rule type. Valid values:\n`2`: tiered protection.\n`3`: globalization acceleration.\n`6`: Cloud product interaction."
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RuleName",
+        "RuleType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

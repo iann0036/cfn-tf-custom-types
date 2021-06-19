@@ -1,0 +1,242 @@
+{
+    "typeName": "TF::HCS::Cluster",
+    "description": "CloudFormation equivalent of hcs_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcs/TF-HCS-Cluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuditLogStorageContainerUrl": {
+            "type": "string"
+        },
+        "AuditLoggingEnabled": {
+            "type": "boolean"
+        },
+        "BlobContainerName": {
+            "type": "string"
+        },
+        "ClusterMode": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "ConsulAutomaticUpgrades": {
+            "type": "boolean"
+        },
+        "ConsulCaFile": {
+            "type": "string"
+        },
+        "ConsulClusterId": {
+            "type": "string"
+        },
+        "ConsulConfigFile": {
+            "type": "string"
+        },
+        "ConsulConnect": {
+            "type": "boolean"
+        },
+        "ConsulDatacenter": {
+            "type": "string"
+        },
+        "ConsulExternalEndpoint": {
+            "type": "boolean"
+        },
+        "ConsulExternalEndpointUrl": {
+            "type": "string"
+        },
+        "ConsulFederationToken": {
+            "type": "string"
+        },
+        "ConsulPrivateEndpointUrl": {
+            "type": "string"
+        },
+        "ConsulRootTokenAccessorId": {
+            "type": "string"
+        },
+        "ConsulRootTokenSecretId": {
+            "type": "string"
+        },
+        "ConsulSnapshotInterval": {
+            "type": "string"
+        },
+        "ConsulSnapshotRetention": {
+            "type": "string"
+        },
+        "ConsulVersion": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "ManagedApplicationId": {
+            "type": "string"
+        },
+        "ManagedApplicationName": {
+            "type": "string"
+        },
+        "ManagedIdentityName": {
+            "type": "string"
+        },
+        "ManagedResourceGroupName": {
+            "type": "string"
+        },
+        "MinConsulVersion": {
+            "type": "string"
+        },
+        "PlanName": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "StorageAccountName": {
+            "type": "string"
+        },
+        "StorageAccountResourceGroup": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VnetCidr": {
+            "type": "string"
+        },
+        "VnetId": {
+            "type": "string"
+        },
+        "VnetName": {
+            "type": "string"
+        },
+        "VnetResourceGroupName": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterMode",
+        "Email",
+        "ManagedApplicationName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BlobContainerName",
+        "/properties/ConsulAutomaticUpgrades",
+        "/properties/ConsulCaFile",
+        "/properties/ConsulClusterId",
+        "/properties/ConsulConfigFile",
+        "/properties/ConsulConnect",
+        "/properties/ConsulExternalEndpointUrl",
+        "/properties/ConsulPrivateEndpointUrl",
+        "/properties/ConsulRootTokenAccessorId",
+        "/properties/ConsulRootTokenSecretId",
+        "/properties/ConsulSnapshotInterval",
+        "/properties/ConsulSnapshotRetention",
+        "/properties/ConsulVersion",
+        "/properties/Id",
+        "/properties/ManagedApplicationId",
+        "/properties/ManagedIdentityName",
+        "/properties/State",
+        "/properties/StorageAccountName",
+        "/properties/StorageAccountResourceGroup",
+        "/properties/VnetId",
+        "/properties/VnetName",
+        "/properties/VnetResourceGroupName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ConsulRootTokenSecretId"
+    ]
+}

@@ -1,0 +1,267 @@
+{
+    "typeName": "TF::Rancher2::ClusterSync",
+    "description": "CloudFormation equivalent of rancher2_cluster_sync",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-ClusterSync/docs/README.md",
+    "definitions": {
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition"
+                    }
+                },
+                "Capacity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition2"
+                    }
+                },
+                "ClusterId": {
+                    "type": "string"
+                },
+                "ExternalIpAddress": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition3"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NodePoolId": {
+                    "type": "string"
+                },
+                "NodeTemplateId": {
+                    "type": "string"
+                },
+                "ProviderId": {
+                    "type": "string"
+                },
+                "RequestedHostname": {
+                    "type": "string"
+                },
+                "Roles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SshUser": {
+                    "type": "string"
+                },
+                "SystemInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition4"
+                    }
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "DefaultProjectId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubeConfig": {
+            "type": "string"
+        },
+        "NodePoolIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodesDefinition5"
+            }
+        },
+        "StateConfirm": {
+            "type": "number"
+        },
+        "Synced": {
+            "type": "boolean"
+        },
+        "SystemProjectId": {
+            "type": "string"
+        },
+        "WaitAlerting": {
+            "type": "boolean"
+        },
+        "WaitCatalogs": {
+            "type": "boolean"
+        },
+        "WaitMonitoring": {
+            "type": "boolean"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultProjectId",
+        "/properties/Id",
+        "/properties/KubeConfig",
+        "/properties/Nodes",
+        "/properties/SystemProjectId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KubeConfig"
+    ]
+}

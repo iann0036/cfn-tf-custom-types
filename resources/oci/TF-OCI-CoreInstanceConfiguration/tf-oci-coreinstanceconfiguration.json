@@ -1,0 +1,805 @@
+{
+    "typeName": "TF::OCI::CoreInstanceConfiguration",
+    "description": "This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.\n\nCreates an instance configuration. An instance configuration is a template that defines the\nsettings to use when creating Compute instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreInstanceConfiguration/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InstanceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "BlockVolumes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BlockVolumesDefinition"
+                    }
+                },
+                "LaunchDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchDetailsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecondaryVnics": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecondaryVnicsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlockVolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VolumeId": {
+                    "type": "string"
+                },
+                "AttachDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttachDetailsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CreateDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CreateDetailsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LaunchDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "CapacityReservationId": {
+                    "type": "string"
+                },
+                "CompartmentId": {
+                    "type": "string"
+                },
+                "DedicatedVmHostId": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition2"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "ExtendedMetadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtendedMetadataDefinition"
+                    }
+                },
+                "FaultDomain": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition2"
+                    }
+                },
+                "IpxeScript": {
+                    "type": "string"
+                },
+                "IsPvEncryptionInTransitEnabled": {
+                    "type": "boolean"
+                },
+                "LaunchMode": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "PreferredMaintenanceAction": {
+                    "type": "string"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "AgentConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AgentConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AvailabilityConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AvailabilityConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CreateVnicDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CreateVnicDetailsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InstanceOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstanceOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LaunchOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PlatformConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlatformConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PreemptibleInstanceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreemptibleInstanceConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ShapeConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShapeConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourceDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDetailsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ExtendedMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecondaryVnicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "NicIndex": {
+                    "type": "number"
+                },
+                "CreateVnicDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CreateVnicDetailsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AttachDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Device": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IsPvEncryptionInTransitEnabled": {
+                    "type": "boolean"
+                },
+                "IsReadOnly": {
+                    "type": "boolean"
+                },
+                "IsShareable": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UseChap": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "CreateDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "BackupPolicyId": {
+                    "type": "string"
+                },
+                "CompartmentId": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition3"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition3"
+                    }
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SizeInGbs": {
+                    "type": "string"
+                },
+                "VpusPerGb": {
+                    "type": "string"
+                },
+                "SourceDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDetailsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AgentConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreAllPluginsDisabled": {
+                    "type": "boolean"
+                },
+                "IsManagementDisabled": {
+                    "type": "boolean"
+                },
+                "IsMonitoringDisabled": {
+                    "type": "boolean"
+                },
+                "PluginsConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PluginsConfigDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AvailabilityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoveryAction": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CreateVnicDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPrivateDnsRecord": {
+                    "type": "boolean"
+                },
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition4"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition4"
+                    }
+                },
+                "HostnameLabel": {
+                    "type": "string"
+                },
+                "NsgIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrivateIp": {
+                    "type": "string"
+                },
+                "SkipSourceDestCheck": {
+                    "type": "boolean"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InstanceOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreLegacyImdsEndpointsDisabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "LaunchOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootVolumeType": {
+                    "type": "string"
+                },
+                "Firmware": {
+                    "type": "string"
+                },
+                "IsConsistentVolumeNamingEnabled": {
+                    "type": "boolean"
+                },
+                "IsPvEncryptionInTransitEnabled": {
+                    "type": "boolean"
+                },
+                "NetworkType": {
+                    "type": "string"
+                },
+                "RemoteDataVolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PlatformConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumaNodesPerSocket": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PreemptibleInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreemptionAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreemptionActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ShapeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaselineOcpuUtilization": {
+                    "type": "string"
+                },
+                "MemoryInGbs": {
+                    "type": "number"
+                },
+                "Ocpus": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SourceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PluginsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredState": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DesiredState",
+                "Name"
+            ]
+        },
+        "PreemptionActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreserveBootVolume": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment.\n* `create_vnic_details` - (Optional) Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.\n* `assign_private_dns_record` - (Optional) Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.\n* `assign_public_ip` - (Optional) Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `defined_tags` - (Optional) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`\n* `display_name` - (Optional) A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.\n* `freeform_tags` - (Optional) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`\n* `hostname_label` - (Optional) The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `nsg_ids` - (Optional) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).\n* `private_ip` - (Optional) A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `skip_source_dest_check` - (Optional) Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `subnet_id` - (Optional) The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `dedicated_vm_host_id` - (Optional) The OCID of dedicated VM host."
+        },
+        "DeferredFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`\n* `display_name` - (Optional) A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.\n* `freeform_tags` - (Optional) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`\n* `hostname_label` - (Optional) The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `nsg_ids` - (Optional) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).\n* `private_ip` - (Optional) A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `skip_source_dest_check` - (Optional) Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `subnet_id` - (Optional) The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `display_name` - (Optional) A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.\n* `nic_index` - (Optional) Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.\n* `nic_index` - (Optional) Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm)."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`\n* `hostname_label` - (Optional) The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `nsg_ids` - (Optional) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).\n* `private_ip` - (Optional) A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `skip_source_dest_check` - (Optional) Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `subnet_id` - (Optional) The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.\n* `display_name` - (Optional) A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.\n* `nic_index` - (Optional) Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm)."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The OCID of the volume backup.\n* `type` - (Required) The type can be one of these values: `volume`, `volumeBackup`\n* `vpus_per_gb` - (Optional) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information."
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration."
+        },
+        "Source": {
+            "type": "string",
+            "description": "The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "InstanceDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeferredFields",
+        "/properties/Id",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

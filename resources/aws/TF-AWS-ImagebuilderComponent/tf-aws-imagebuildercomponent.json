@@ -1,0 +1,171 @@
+{
+    "typeName": "TF::AWS::ImagebuilderComponent",
+    "description": "Manages an Image Builder Component.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ImagebuilderComponent/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ChangeDescription": {
+            "type": "string",
+            "description": "Change description of the component."
+        },
+        "Data": {
+            "type": "string",
+            "description": "Inline YAML string with data of the component. Exactly one of `data` and `uri` can be specified. Terraform will only perform drift detection of its value when present in a configuration."
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the component."
+        },
+        "Encrypted": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Key Management Service (KMS) Key used to encrypt the component."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the component."
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string",
+            "description": "Platform of the component."
+        },
+        "SupportedOsVersions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of Operating Systems (OS) supported by the component."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags for the component. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string",
+            "description": "S3 URI with data of the component. Exactly one of `data` and `uri` can be specified."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Version of the component."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Platform",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DateCreated",
+        "/properties/Encrypted",
+        "/properties/Id",
+        "/properties/Owner",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::Anxcloud::Vlan",
+    "description": "CloudFormation equivalent of anxcloud_vlan",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/anxcloud/TF-Anxcloud-Vlan/docs/README.md",
+    "definitions": {
+        "LocationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CityCode": {
+                    "type": "string"
+                },
+                "Code": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "Identifier": {
+                    "type": "string"
+                },
+                "Lat": {
+                    "type": "string"
+                },
+                "Lon": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DescriptionCustomer": {
+            "type": "string"
+        },
+        "DescriptionInternal": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocationId": {
+            "type": "string"
+        },
+        "Locations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LocationsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RoleText": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VmProvisioning": {
+            "type": "boolean"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LocationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DescriptionInternal",
+        "/properties/Id",
+        "/properties/Locations",
+        "/properties/Name",
+        "/properties/RoleText",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

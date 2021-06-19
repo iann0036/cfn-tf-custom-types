@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Metal::ReservedIpBlock",
+    "description": "Provides a resource to create and manage blocks of reserved IP addresses in a project.\n\nWhen a user provisions first device in a facility, Equinix Metal API automatically allocates IPv6/56 and private IPv4/25 blocks.\nThe new device then gets IPv6 and private IPv4 addresses from those block. It also gets a public IPv4/31 address.\nEvery new device in the project and facility will automatically get IPv6 and private IPv4 addresses from these pre-allocated blocks.\nThe IPv6 and private IPv4 blocks can't be created, only imported. With this resource, it's possible to create either public IPv4 blocks or global IPv4 blocks.\n\nPublic blocks are allocated in a facility. Addresses from public blocks can only be assigned to devices in the facility. Public blocks can have mask from /24 (256 addresses) to /32 (1 address). If you create public block with this resource, you must fill the facility argmument.\n\nAddresses from global blocks can be assigned in any facility. Global blocks can have mask from /30 (4 addresses), to...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-ReservedIpBlock/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "number"
+        },
+        "Cidr": {
+            "type": "number"
+        },
+        "CidrNotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Arbitrary description."
+        },
+        "Facility": {
+            "type": "string",
+            "description": "Facility where to allocate the public IP address block, makes sense only for type==public_ipv4, must be empty for type==global_ipv4, conflicts with `metro`."
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Global": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Manageable": {
+            "type": "boolean"
+        },
+        "Management": {
+            "type": "boolean"
+        },
+        "Metro": {
+            "type": "string",
+            "description": "Metro where to allocate the public IP address block, makes sense only for type==public_ipv4, must be empty for type==global_ipv4, conflicts with `facility`."
+        },
+        "Netmask": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The metal project ID where to allocate the address block."
+        },
+        "Public": {
+            "type": "boolean"
+        },
+        "Quantity": {
+            "type": "number",
+            "description": "The number of allocated /32 addresses, a power of 2."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Either \"global_ipv4\" or \"public_ipv4\", defaults to \"public_ipv4\" for backward compatibility."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "Quantity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/AddressFamily",
+        "/properties/Cidr",
+        "/properties/CidrNotation",
+        "/properties/Gateway",
+        "/properties/Global",
+        "/properties/Id",
+        "/properties/Manageable",
+        "/properties/Management",
+        "/properties/Netmask",
+        "/properties/Network",
+        "/properties/Public"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

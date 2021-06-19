@@ -1,0 +1,281 @@
+{
+    "typeName": "TF::AVI::Systemlimits",
+    "description": "The SystemLimits resource allows the creation and management of Avi SystemLimits",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Systemlimits/docs/README.md",
+    "definitions": {
+        "ControllerLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificatesPerVirtualservice": {
+                    "type": "number"
+                },
+                "DefaultRoutesPerVrfcontext": {
+                    "type": "number"
+                },
+                "IpsPerIpgroup": {
+                    "type": "number"
+                },
+                "PoolgroupsPerVirtualservice": {
+                    "type": "number"
+                },
+                "PoolsPerPoolgroup": {
+                    "type": "number"
+                },
+                "PoolsPerVirtualservice": {
+                    "type": "number"
+                },
+                "RoutesPerVrfcontext": {
+                    "type": "number"
+                },
+                "RulesPerHttppolicy": {
+                    "type": "number"
+                },
+                "RulesPerNetworksecuritypolicy": {
+                    "type": "number"
+                },
+                "ServersPerPool": {
+                    "type": "number"
+                },
+                "SniChildrenPerParent": {
+                    "type": "number"
+                },
+                "StringsPerStringgroup": {
+                    "type": "number"
+                },
+                "VsBgpScaleout": {
+                    "type": "number"
+                },
+                "VsL2Scaleout": {
+                    "type": "number"
+                },
+                "ControllerCloudLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerCloudLimitsDefinition"
+                    }
+                },
+                "ControllerSizingLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerSizingLimitsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ControllerSizesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Flavor": {
+                    "type": "string"
+                },
+                "MinCpus": {
+                    "type": "number"
+                },
+                "MinMemory": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ServiceengineLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllVirtualservicesPerServiceengine": {
+                    "type": "number"
+                },
+                "EwVirtualservicesPerServiceengine": {
+                    "type": "number"
+                },
+                "NsVirtualservicesPerServiceengine": {
+                    "type": "number"
+                },
+                "NumLogicalIntfPerSe": {
+                    "type": "number"
+                },
+                "NumPhyIntfPerSe": {
+                    "type": "number"
+                },
+                "NumVirtualservicesRtMetrics": {
+                    "type": "number"
+                },
+                "NumVlanIntfPerPhyIntf": {
+                    "type": "number"
+                },
+                "NumVlanIntfPerSe": {
+                    "type": "number"
+                },
+                "ServiceengineCloudLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceengineCloudLimitsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ControllerCloudLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumClouds": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ControllerSizingLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Flavor": {
+                    "type": "string"
+                },
+                "NumClouds": {
+                    "type": "number"
+                },
+                "NumEastWestVirtualservices": {
+                    "type": "number"
+                },
+                "NumServers": {
+                    "type": "number"
+                },
+                "NumServiceengines": {
+                    "type": "number"
+                },
+                "NumTenants": {
+                    "type": "number"
+                },
+                "NumVirtualservices": {
+                    "type": "number"
+                },
+                "NumVirtualservicesRtMetrics": {
+                    "type": "number"
+                },
+                "NumVrfs": {
+                    "type": "number"
+                },
+                "ControllerSizingCloudLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerSizingCloudLimitsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceengineCloudLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "VrfsPerServiceengine": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ControllerSizingCloudLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumClouds": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "ControllerLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ControllerLimitsDefinition"
+            }
+        },
+        "ControllerSizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ControllerSizesDefinition"
+            }
+        },
+        "ServiceengineLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceengineLimitsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

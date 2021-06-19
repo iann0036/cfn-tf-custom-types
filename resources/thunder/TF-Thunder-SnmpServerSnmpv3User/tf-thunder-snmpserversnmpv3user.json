@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Thunder::SnmpServerSnmpv3User",
+    "description": "CloudFormation equivalent of thunder_snmp_server_snmpv3_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerSnmpv3User/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthVal": {
+            "type": "string"
+        },
+        "Encpasswd": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Passwd": {
+            "type": "string"
+        },
+        "Priv": {
+            "type": "string"
+        },
+        "PrivPwEncrypted": {
+            "type": "string"
+        },
+        "PwEncrypted": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "V3": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

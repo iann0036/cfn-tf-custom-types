@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::NetAppCloudManager::Snapmirror",
+    "description": "Provides a netapp-cloudmanager_snapmirror resource. This can be used to create a new snapmirror relationship on Cloud Volumes ONTAP.\nRequires existence of a Cloud Manager Connector and a Cloud Volumes ONTAP system.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-Snapmirror/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CapacityTier": {
+            "type": "string",
+            "description": "The volume's capacity tier for tiering cold data to object storage: ['S3', 'Blob', 'cloudStorage']. The default values for each cloud provider are as follows: Amazon => 'S3', Azure => 'Blob', GCP => 'cloudStorage'. If none, the capacity tier won't be set on volume creation."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "DestinationAggregateName": {
+            "type": "string",
+            "description": "The aggregate in which the volume will be created. If not provided, Cloud Manager chooses the best aggregate for you."
+        },
+        "DestinationSvmName": {
+            "type": "string",
+            "description": "The name of the destination SVM. The default SVM name is used, if a name isn't provided."
+        },
+        "DestinationVolumeName": {
+            "type": "string",
+            "description": "The name of the destination volume to be created for snapmirror relationship."
+        },
+        "DestinationWorkingEnvironmentId": {
+            "type": "string",
+            "description": "The public ID of the destination working environment where the snapmirror relationship will be created."
+        },
+        "DestinationWorkingEnvironmentName": {
+            "type": "string",
+            "description": "The destination working environment name where the snapmirror relationship will be created. It will be ignored if working_environment_id is provided."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number"
+        },
+        "MaxTransferRate": {
+            "type": "number",
+            "description": "Maximum transfer rate limit (KB/s). Use 0 for no limit, otherwise use number between 1024 and 2,147,482,624.  The default is 100000."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "The SnapMirror policy name. The default is 'MirrorAllSnapshots'."
+        },
+        "ProviderVolumeType": {
+            "type": "string",
+            "description": "The underlying cloud provider volume type. For AWS: ['gp3', 'gp2', 'io1', 'st1', 'sc1']. For Azure: ['Premium_LRS','Standard_LRS','StandardSSD_LRS']. For GCP: ['pd-ssd','pd-standard']."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Schedule name. The default is '1hour'."
+        },
+        "SourceSvmName": {
+            "type": "string",
+            "description": "The name of the source SVM. The default SVM name is used, if a name isn't provided."
+        },
+        "SourceVolumeName": {
+            "type": "string",
+            "description": "The name of the source volume."
+        },
+        "SourceWorkingEnvironmentId": {
+            "type": "string",
+            "description": "The public ID of the source working environment where the snapmirror relationship will be created."
+        },
+        "SourceWorkingEnvironmentName": {
+            "type": "string",
+            "description": "The source working environment name where the snapmirror relationship will be created. It will be ignored if working_environment_id is provided."
+        },
+        "Throughput": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "DestinationVolumeName",
+        "SourceVolumeName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

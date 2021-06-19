@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::TencentCloud::SqlserverAccount",
+    "description": "Use this resource to create SQL Server account",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SqlserverAccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "Instance ID that the account belongs to."
+        },
+        "IsAdmin": {
+            "type": "boolean",
+            "description": "Indicate that the account is root account or not."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the SQL Server account."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of the SQL Server account."
+        },
+        "Remark": {
+            "type": "string",
+            "description": "Remark of the SQL Server account."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "UpdateTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "Name",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

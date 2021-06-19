@@ -1,0 +1,189 @@
+{
+    "typeName": "TF::AzureRM::CosmosdbMongoCollection",
+    "description": "Manages a Mongo Collection within a Cosmos DB Account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-CosmosdbMongoCollection/docs/README.md",
+    "definitions": {
+        "SystemIndexesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Unique": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "AutoscaleSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxThroughput": {
+                    "type": "number",
+                    "description": "The maximum throughput of the MongoDB collection (RU/s). Must be between `4,000` and `1,000,000`. Must be set in increments of `1,000`. Conflicts with `throughput`."
+                }
+            },
+            "required": []
+        },
+        "IndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies the list of user settable keys for each Cosmos DB Mongo Collection."
+                },
+                "Unique": {
+                    "type": "boolean",
+                    "description": "Is the index unique or not? Defaults to `false`."
+                }
+            },
+            "required": [
+                "Keys"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AnalyticalStorageTtl": {
+            "type": "number",
+            "description": "The default time to live of Analytical Storage for this Mongo Collection. If present and the value is set to `-1`, it is equal to infinity, and items don\u2019t expire by default. If present and the value is set to some number `n` \u2013 items will expire `n` seconds after their last modified time."
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "The name of the Cosmos DB Mongo Database in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created."
+        },
+        "DefaultTtlSeconds": {
+            "type": "number",
+            "description": "The default Time To Live in seconds. If the value is `-1` or `0`, items are not automatically expired."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Cosmos DB Mongo Collection. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created."
+        },
+        "ShardKey": {
+            "type": "string",
+            "description": "The name of the key to partition on for sharding. There must not be any other unique index keys."
+        },
+        "SystemIndexes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SystemIndexesDefinition"
+            }
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual terraform destroy-apply."
+        },
+        "AutoscaleSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscaleSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Index": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IndexDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "DatabaseName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SystemIndexes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

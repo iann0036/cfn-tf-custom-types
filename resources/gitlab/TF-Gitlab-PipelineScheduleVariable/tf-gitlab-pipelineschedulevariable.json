@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Gitlab::PipelineScheduleVariable",
+    "description": "This resource allows you to create and manage variables for pipeline schedules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-PipelineScheduleVariable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Name of the variable."
+        },
+        "PipelineScheduleId": {
+            "type": "number",
+            "description": "The id of the pipeline schedule."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The id of the project to add the schedule to."
+        },
+        "Value": {
+            "type": "string",
+            "description": "Value of the variable."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "PipelineScheduleId",
+        "Project",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

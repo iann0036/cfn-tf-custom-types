@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::GitHub::Team",
+    "description": "Provides a GitHub team resource.\n\nThis resource allows you to add/remove teams from your organization. When applied,\na new team will be created. When destroyed, that team will be removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-Team/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateDefaultMaintainer": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the team."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdapDn": {
+            "type": "string",
+            "description": "The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise Server."
+        },
+        "MembersCount": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the team."
+        },
+        "NodeId": {
+            "type": "string"
+        },
+        "ParentTeamId": {
+            "type": "number",
+            "description": "The ID of the parent team, if this is a nested team."
+        },
+        "Privacy": {
+            "type": "string",
+            "description": "The level of privacy for the team. Must be one of `secret` or `closed`.\nDefaults to `secret`."
+        },
+        "Slug": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/MembersCount",
+        "/properties/NodeId",
+        "/properties/Slug"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

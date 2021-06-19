@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::FortiOS::Systemdhcp6Server",
+    "description": "Configure DHCPv6 servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Systemdhcp6Server/docs/README.md",
+    "definitions": {
+        "IpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIp": {
+                    "type": "string",
+                    "description": "End of IP range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "StartIp": {
+                    "type": "string",
+                    "description": "Start of IP range."
+                }
+            },
+            "required": []
+        },
+        "PrefixRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPrefix": {
+                    "type": "string",
+                    "description": "End of prefix range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "PrefixLength": {
+                    "type": "number",
+                    "description": "Prefix length."
+                },
+                "StartPrefix": {
+                    "type": "string",
+                    "description": "Start of prefix range."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsSearchList": {
+            "type": "string",
+            "description": "DNS search list options. Valid values: `delegated`, `specify`."
+        },
+        "DnsServer1": {
+            "type": "string",
+            "description": "DNS server 1."
+        },
+        "DnsServer2": {
+            "type": "string",
+            "description": "DNS server 2."
+        },
+        "DnsServer3": {
+            "type": "string",
+            "description": "DNS server 3."
+        },
+        "DnsServer4": {
+            "type": "string",
+            "description": "DNS server 4."
+        },
+        "DnsService": {
+            "type": "string",
+            "description": "Options for assigning DNS servers to DHCPv6 clients. Valid values: `delegated`, `default`, `specify`."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name suffix for the IP addresses that the DHCP server assigns to clients."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "DHCP server can assign IP configurations to clients connected to this interface."
+        },
+        "IpMode": {
+            "type": "string",
+            "description": "Method used to assign client IP. Valid values: `range`, `delegated`."
+        },
+        "LeaseTime": {
+            "type": "number",
+            "description": "Lease time in seconds, 0 means unlimited."
+        },
+        "Option1": {
+            "type": "string",
+            "description": "Option 1."
+        },
+        "Option2": {
+            "type": "string",
+            "description": "Option 2."
+        },
+        "Option3": {
+            "type": "string",
+            "description": "Option 3."
+        },
+        "PrefixMode": {
+            "type": "string",
+            "description": "Assigning a prefix from a DHCPv6 client or RA. Valid values: `dhcp6`, `ra`."
+        },
+        "RapidCommit": {
+            "type": "string",
+            "description": "Enable/disable allow/disallow rapid commit. Valid values: `disable`, `enable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this DHCPv6 configuration. Valid values: `disable`, `enable`."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Subnet or subnet-id if the IP mode is delegated."
+        },
+        "UpstreamInterface": {
+            "type": "string",
+            "description": "Interface name from where delegated information is provided."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "IpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpRangeDefinition"
+            }
+        },
+        "PrefixRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrefixRangeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fosid",
+        "Interface",
+        "Subnet"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

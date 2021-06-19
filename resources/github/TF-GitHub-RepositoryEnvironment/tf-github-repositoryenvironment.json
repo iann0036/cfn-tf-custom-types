@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::GitHub::RepositoryEnvironment",
+    "description": "CloudFormation equivalent of github_repository_environment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryEnvironment/docs/README.md",
+    "definitions": {
+        "DeploymentBranchPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomBranchPolicies": {
+                    "type": "boolean"
+                },
+                "ProtectedBranches": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CustomBranchPolicies",
+                "ProtectedBranches"
+            ]
+        },
+        "ReviewersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Teams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Environment": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string"
+        },
+        "WaitTimer": {
+            "type": "number"
+        },
+        "DeploymentBranchPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentBranchPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Reviewers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReviewersDefinition"
+            },
+            "maxItems": 6
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Environment",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Tfe::RunTrigger",
+    "description": "Terraform Cloud provides a way to connect your workspace to one or more workspaces within your organization, \nknown as \"source workspaces\". These connections, called run triggers, allow runs to queue automatically in \nyour workspace on successful apply of runs in any of the source workspaces. You can connect your workspace \nto up to 20 source workspaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-RunTrigger/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SourceableId": {
+            "type": "string",
+            "description": "The id of the sourceable. The sourceable must be a workspace."
+        },
+        "WorkspaceId": {
+            "type": "string",
+            "description": "The id of the workspace that owns the run trigger. This is the\nworkspace where runs will be triggered."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SourceableId",
+        "WorkspaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::AWS::AcmpcaCertificate",
+    "description": "Provides a resource to issue a certificate using AWS Certificate Manager Private Certificate Authority (ACM PCA).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AcmpcaCertificate/docs/README.md",
+    "definitions": {
+        "ValidityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "CertificateAuthorityArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the certificate authority."
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "CertificateSigningRequest": {
+            "type": "string",
+            "description": "Certificate Signing Request in PEM format."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SigningAlgorithm": {
+            "type": "string",
+            "description": "Algorithm to use to sign certificate requests. Valid values: `SHA256WITHRSA`, `SHA256WITHECDSA`, `SHA384WITHRSA`, `SHA384WITHECDSA`, `SHA512WITHRSA`, `SHA512WITHECDSA`."
+        },
+        "TemplateArn": {
+            "type": "string",
+            "description": "The template to use when issuing a certificate. See [ACM PCA Documentation](https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html) for more information."
+        },
+        "Validity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ValidityDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateAuthorityArn",
+        "CertificateSigningRequest",
+        "SigningAlgorithm"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Certificate",
+        "/properties/CertificateChain",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

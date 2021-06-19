@@ -1,0 +1,223 @@
+{
+    "typeName": "TF::OCI::OsmanagementSoftwareSource",
+    "description": "This resource provides the Software Source resource in Oracle Cloud Infrastructure OS Management service.\n\nCreates a new custom Software Source on the management system.\nThis will not contain any packages after it is first created,\nand they must be added later.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OsmanagementSoftwareSource/docs/README.md",
+    "definitions": {
+        "AssociatedManagedInstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArchType": {
+            "type": "string",
+            "description": "The architecture type supported by the Software Source."
+        },
+        "AssociatedManagedInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AssociatedManagedInstancesDefinition"
+            }
+        },
+        "ChecksumType": {
+            "type": "string",
+            "description": "(Updatable) The yum repository checksum type used by this software source."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) OCID for the Compartment."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) Information specified by the user about the software source."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) User friendly name for the software source."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "GpgKeyFingerprint": {
+            "type": "string"
+        },
+        "GpgKeyId": {
+            "type": "string"
+        },
+        "GpgKeyUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintainerEmail": {
+            "type": "string",
+            "description": "(Updatable) Email address of the person maintaining this software source."
+        },
+        "MaintainerName": {
+            "type": "string",
+            "description": "(Updatable) Name of the person maintaining this software source."
+        },
+        "MaintainerPhone": {
+            "type": "string",
+            "description": "(Updatable) Phone number of the person maintaining this software source."
+        },
+        "Packages": {
+            "type": "number"
+        },
+        "ParentId": {
+            "type": "string",
+            "description": "OCID for the parent software source, if there is one."
+        },
+        "ParentName": {
+            "type": "string"
+        },
+        "RepoType": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ArchType",
+        "CompartmentId",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedManagedInstances",
+        "/properties/GpgKeyFingerprint",
+        "/properties/GpgKeyId",
+        "/properties/GpgKeyUrl",
+        "/properties/Id",
+        "/properties/Packages",
+        "/properties/ParentName",
+        "/properties/RepoType",
+        "/properties/State",
+        "/properties/Status",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

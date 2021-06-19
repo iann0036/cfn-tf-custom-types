@@ -1,0 +1,232 @@
+{
+    "typeName": "TF::Okta::User",
+    "description": "Creates an Okta User.\n\nThis resource allows you to create and configure an Okta User.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-User/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Administrator roles assigned to User."
+        },
+        "City": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "CostCenter": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "CountryCode": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "CustomProfileAttributes": {
+            "type": "string",
+            "description": "raw JSON containing all custom profile attributes."
+        },
+        "Department": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Division": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Email": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "EmployeeNumber": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "FirstName": {
+            "type": "string",
+            "description": "User's First Name, required by default."
+        },
+        "GroupMemberships": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "User profile property."
+        },
+        "HonorificPrefix": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "HonorificSuffix": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string",
+            "description": "User's Last Name, required by default."
+        },
+        "Locale": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Login": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Manager": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "ManagerId": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "MiddleName": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "MobilePhone": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "NickName": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Password": {
+            "type": "string",
+            "description": "User password."
+        },
+        "PostalAddress": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "PreferredLanguage": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "PrimaryPhone": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "ProfileUrl": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "RawStatus": {
+            "type": "string"
+        },
+        "RecoveryAnswer": {
+            "type": "string",
+            "description": "User password recovery answer."
+        },
+        "RecoveryQuestion": {
+            "type": "string",
+            "description": "User password recovery question."
+        },
+        "SecondEmail": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "State": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Status": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "StreetAddress": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "Title": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "UserType": {
+            "type": "string",
+            "description": "User profile property."
+        },
+        "ZipCode": {
+            "type": "string",
+            "description": "User profile property."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "FirstName",
+        "LastName",
+        "Login"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RawStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/RecoveryAnswer"
+    ]
+}

@@ -1,0 +1,237 @@
+{
+    "typeName": "TF::TencentCloud::SslPayCertificate",
+    "description": "Provide a resource to create a payment SSL.\n\n~> **NOTE:** Provides the creation of a paid certificate, including the submission of certificate information and order functions;\ncurrently, it does not support re-issuing certificates, revoking certificates, and deleting certificates; the certificate remarks\nand belonging items can be updated. The Destroy operation will only cancel the certificate order, and will not delete the\ncertificate and refund the fee. If you need a refund, you need to check the current certificate status in the console\nas `Review Cancel`, and then you can click `Request a refund` to refund the fee.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SslPayCertificate/docs/README.md",
+    "definitions": {
+        "InformationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminEmail": {
+                    "type": "string",
+                    "description": "The administrator's email address."
+                },
+                "AdminFirstName": {
+                    "type": "string",
+                    "description": "The first name of the administrator."
+                },
+                "AdminLastName": {
+                    "type": "string",
+                    "description": "The last name of the administrator."
+                },
+                "AdminPhoneNum": {
+                    "type": "string",
+                    "description": "Manager mobile phone number."
+                },
+                "AdminPosition": {
+                    "type": "string",
+                    "description": "Manager position."
+                },
+                "CertificateDomain": {
+                    "type": "string",
+                    "description": "Domain name for binding certificate."
+                },
+                "ContactEmail": {
+                    "type": "string",
+                    "description": "Contact email address."
+                },
+                "ContactFirstName": {
+                    "type": "string",
+                    "description": "Contact first name."
+                },
+                "ContactLastName": {
+                    "type": "string",
+                    "description": "Contact last name."
+                },
+                "ContactNumber": {
+                    "type": "string",
+                    "description": "Contact phone number."
+                },
+                "ContactPosition": {
+                    "type": "string",
+                    "description": "Contact position."
+                },
+                "CsrContent": {
+                    "type": "string",
+                    "description": "CSR content uploaded."
+                },
+                "CsrType": {
+                    "type": "string",
+                    "description": "CSR generation method. Valid values: `online`, `parse`. `online` means online generation, `parse` means manual upload."
+                },
+                "DomainList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Array of uploaded domain names, multi-domain certificates can be uploaded."
+                },
+                "KeyPassword": {
+                    "type": "string",
+                    "description": "Private key password."
+                },
+                "OrganizationAddress": {
+                    "type": "string",
+                    "description": "Company address."
+                },
+                "OrganizationCity": {
+                    "type": "string",
+                    "description": "Company city."
+                },
+                "OrganizationCountry": {
+                    "type": "string",
+                    "description": "Country name, such as China: CN."
+                },
+                "OrganizationDivision": {
+                    "type": "string",
+                    "description": "Department name."
+                },
+                "OrganizationName": {
+                    "type": "string",
+                    "description": "Company name."
+                },
+                "OrganizationRegion": {
+                    "type": "string",
+                    "description": "The province where the company is located."
+                },
+                "PhoneAreaCode": {
+                    "type": "string",
+                    "description": "Company landline area code."
+                },
+                "PhoneNumber": {
+                    "type": "string",
+                    "description": "Company landline number."
+                },
+                "PostalCode": {
+                    "type": "string",
+                    "description": "Company postal code."
+                },
+                "VerifyType": {
+                    "type": "string",
+                    "description": "Certificate verification method. Valid values: `DNS_AUTO`, `DNS`, `FILE`. `DNS_AUTO` means automatic DNS verification, this verification type is only supported for domain names resolved by Tencent Cloud and the resolution status is normal, `DNS` means manual DNS verification, `FILE` means file verification."
+                }
+            },
+            "required": [
+                "AdminEmail",
+                "AdminFirstName",
+                "AdminLastName",
+                "AdminPhoneNum",
+                "AdminPosition",
+                "CertificateDomain",
+                "ContactEmail",
+                "ContactFirstName",
+                "ContactLastName",
+                "ContactNumber",
+                "ContactPosition",
+                "OrganizationAddress",
+                "OrganizationCity",
+                "OrganizationCountry",
+                "OrganizationDivision",
+                "OrganizationName",
+                "OrganizationRegion",
+                "PhoneAreaCode",
+                "PhoneNumber",
+                "PostalCode",
+                "VerifyType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string",
+            "description": "Remark name."
+        },
+        "CertificateId": {
+            "type": "string"
+        },
+        "DomainNum": {
+            "type": "number",
+            "description": "Number of domain names included in the certificate."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OrderId": {
+            "type": "string"
+        },
+        "ProductId": {
+            "type": "number",
+            "description": "Certificate commodity ID. Valid value ranges: (3~42). `3` means SecureSite Enhanced Enterprise Edition (EV Pro), `4` means SecureSite Enhanced (EV), `5` means SecureSite Enterprise Professional Edition (OV Pro), `6` means SecureSite Enterprise (OV), `7` means SecureSite Enterprise Type (OV) wildcard, `8` means Geotrust enhanced (EV), `9` means Geotrust enterprise (OV), `10` means Geotrust enterprise (OV) wildcard, `11` means TrustAsia domain type multi-domain SSL certificate, `12` means TrustAsia domain type ( DV) wildcard, `13` means TrustAsia enterprise wildcard (OV) SSL certificate (D3), `14` means TrustAsia enterprise (OV) SSL certificate (D3), `15` means TrustAsia enterprise multi-domain (OV) SSL certificate (D3), `16` means TrustAsia Enhanced (EV) SSL Certificate (D3), `17` means TrustAsia Enhanced Multiple Domain (EV) SSL Certificate (D3), `18` means GlobalSign Enterprise (OV) SSL Certificate, `19` means GlobalSign Enterprise Wildcard (OV) SSL Certificate, `20` means GlobalSign Enhanced (EV) SSL Certificate, `21` means TrustAsia Enterprise Wildcard Multiple Domain (OV) SSL Certificate (D3), `22` means GlobalSign Enterprise Multiple Domain (OV) SSL Certificate, `23` means GlobalSign Enterprise Multiple Wildcard Domain name (OV) SSL certificate, `24` means GlobalSign enhanced multi-domain (EV) SSL certificate, `25` means Wotrus domain type certificate, `26` means Wotrus domain type multi-domain certificate, `27` means Wotrus domain type wildcard certificate, `28` means Wotrus enterprise type certificate, `29` means Wotrus enterprise multi-domain certificate, `30` means Wotrus enterprise wildcard certificate, `31` means Wotrus enhanced certificate, `32` means Wotrus enhanced multi-domain certificate, `33` means DNSPod national secret domain name certificate, `34` means DNSPod national secret domain name certificate Multi-domain certificate, `35` means DNSPod national secret domain name wildcard certificate, `37` means DNSPod national secret enterprise certificate, `38` means DNSPod national secret enterprise multi-domain certificate, `39` means DNSPod national secret enterprise wildcard certificate, `40` means DNSPod national secret increase Strong certificate, `41` means DNSPod national secret enhanced multi-domain certificate, `42` means TrustAsia domain-type wildcard multi-domain certificate."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "The ID of project."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "TimeSpan": {
+            "type": "number",
+            "description": "Certificate period, currently only supports 1 year certificate purchase."
+        },
+        "Information": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InformationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainNum",
+        "ProductId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateId",
+        "/properties/Id",
+        "/properties/OrderId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

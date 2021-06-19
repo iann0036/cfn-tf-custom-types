@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::PagerDuty::Extension",
+    "description": "An [extension](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Extensions/post_extensions) can be associated with a service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-Extension/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Config": {
+            "type": "string",
+            "description": "The configuration of the service extension as string containing plain JSON-encoded data."
+        },
+        "EndpointUrl": {
+            "type": "string",
+            "description": "The url of the extension.\n**Note:** The [endpoint URL is Optional API wise](https://api-reference.pagerduty.com/#!/Extensions/post_extensions) in most cases. But in some cases it is a _Required_ parameter. For example, `pagerduty_extension_schema` named `Generic V2 Webhook` doesn't accept `pagerduty_extension` with no `endpoint_url`, but one with named `Slack` accepts.\n* `extension_schema` - (Required) This is the schema for this extension.\n* `extension_objects` - (Required) This is the objects for which the extension applies (An array of service ids).\n* `config` - (Optional) The configuration of the service extension as string containing plain JSON-encoded data."
+        },
+        "ExtensionObjects": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "This is the objects for which the extension applies (An array of service ids).\n* `config` - (Optional) The configuration of the service extension as string containing plain JSON-encoded data."
+        },
+        "ExtensionSchema": {
+            "type": "string",
+            "description": "This is the schema for this extension.\n* `extension_objects` - (Required) This is the objects for which the extension applies (An array of service ids).\n* `config` - (Optional) The configuration of the service extension as string containing plain JSON-encoded data."
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service extension.\n* `endpoint_url` - (Required|Optional) The url of the extension.\n**Note:** The [endpoint URL is Optional API wise](https://api-reference.pagerduty.com/#!/Extensions/post_extensions) in most cases. But in some cases it is a _Required_ parameter. For example, `pagerduty_extension_schema` named `Generic V2 Webhook` doesn't accept `pagerduty_extension` with no `endpoint_url`, but one with named `Slack` accepts.\n* `extension_schema` - (Required) This is the schema for this extension.\n* `extension_objects` - (Required) This is the objects for which the extension applies (An array of service ids).\n* `config` - (Optional) The configuration of the service extension as string containing plain JSON-encoded data."
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExtensionObjects",
+        "ExtensionSchema"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HtmlUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/EndpointUrl"
+    ]
+}

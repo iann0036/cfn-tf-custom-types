@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::VolumeAttachment",
+    "description": "Provides an AWS EBS Volume Attachment as a top level resource, to attach and\ndetach volumes from AWS Instances.\n\n~> **NOTE on EBS block devices:** If you use `ebs_block_device` on an `aws_instance`, Terraform will assume management over the full set of non-root EBS block devices for the instance, and treats additional block devices as drift. For this reason, `ebs_block_device` cannot be mixed with external `aws_ebs_volume` + `aws_ebs_volume_attachment` resources for a given instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VolumeAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceName": {
+            "type": "string",
+            "description": "The device name to expose to the instance (for\nexample, `/dev/sdh` or `xvdh`).  See [Device Naming on Linux Instances][1] and [Device Naming on Windows Instances][2] for more information."
+        },
+        "ForceDetach": {
+            "type": "boolean",
+            "description": "Set to `true` if you want to force the\nvolume to detach. Useful if previous attempts failed, but use this option only\nas a last resort, as this can result in **data loss**. See\n[Detaching an Amazon EBS Volume from an Instance][3] for more information."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of the Instance to attach to."
+        },
+        "SkipDestroy": {
+            "type": "boolean",
+            "description": "Set this to true if you do not wish\nto detach the volume from the instance to which it is attached at destroy\ntime, and instead just remove the attachment from Terraform state. This is\nuseful when destroying an instance which has volumes created by some other\nmeans attached."
+        },
+        "VolumeId": {
+            "type": "string",
+            "description": "ID of the Volume to be attached."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceName",
+        "InstanceId",
+        "VolumeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

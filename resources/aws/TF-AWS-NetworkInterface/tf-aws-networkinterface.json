@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::AWS::NetworkInterface",
+    "description": "Provides an Elastic network interface (ENI) resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkInterface/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AttachmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceIndex": {
+                    "type": "number",
+                    "description": "Integer to define the devices index."
+                },
+                "Instance": {
+                    "type": "string",
+                    "description": "ID of the instance to attach to."
+                }
+            },
+            "required": [
+                "DeviceIndex",
+                "Instance"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the network interface."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterfaceType": {
+            "type": "string",
+            "description": "Type of network interface to create. Set to `efa` for Elastic Fabric Adapter."
+        },
+        "Ipv6AddressCount": {
+            "type": "number",
+            "description": "The number of IPv6 addresses to assign to a network interface. You can't use this option if specifying specific `ipv6_addresses`. If your subnet has the AssignIpv6AddressOnCreation attribute set to `true`, you can specify `0` to override this setting."
+        },
+        "Ipv6Addresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying `ipv6_address_count`."
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "OutpostArn": {
+            "type": "string"
+        },
+        "PrivateDnsName": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PrivateIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of private IPs to assign to the ENI."
+        },
+        "PrivateIpsCount": {
+            "type": "number",
+            "description": "Number of secondary private IPs to assign to the ENI. The total number of private IPs will be 1 + private_ips_count, as a primary private IP will be assiged to an ENI by default."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of security group IDs to assign to the ENI."
+        },
+        "SourceDestCheck": {
+            "type": "boolean",
+            "description": "Whether to enable source destination checking for the ENI. Default true."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Subnet ID to create the ENI in."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Attachment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttachmentDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MacAddress",
+        "/properties/OutpostArn",
+        "/properties/PrivateDnsName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

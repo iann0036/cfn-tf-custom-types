@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::GitHub::RepositoryDeployKey",
+    "description": "Provides a GitHub repository deploy key resource.\n\nA deploy key is an SSH key that is stored on your server and grants\naccess to a single GitHub repository. This key is attached directly to the repository instead of to a personal user\naccount.\n\nThis resource allows you to add/remove repository deploy keys.\n\nFurther documentation on GitHub repository deploy keys:\n- [About deploy keys](https://developer.github.com/guides/managing-deploy-keys/#deploy-keys)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryDeployKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "A SSH key."
+        },
+        "ReadOnly": {
+            "type": "boolean",
+            "description": "A boolean qualifying the key to be either read only or read/write."
+        },
+        "Repository": {
+            "type": "string",
+            "description": "Name of the GitHub repository."
+        },
+        "Title": {
+            "type": "string",
+            "description": "A title."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "Repository",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

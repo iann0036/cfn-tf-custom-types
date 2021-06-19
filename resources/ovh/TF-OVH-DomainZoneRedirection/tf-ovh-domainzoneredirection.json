@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::OVH::DomainZoneRedirection",
+    "description": "Provides a OVH domain zone redirection.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DomainZoneRedirection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this redirection."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keywords": {
+            "type": "string",
+            "description": "Keywords to describe this redirection."
+        },
+        "Subdomain": {
+            "type": "string",
+            "description": "The name of the redirection."
+        },
+        "Target": {
+            "type": "string",
+            "description": "The value of the redirection."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Title of this redirection."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the redirection, with values:\n* `visible` -> Redirection by http code 302\n* `visiblePermanent` -> Redirection by http code 301\n* `invisible` -> Redirection by html frame."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The domain to add the redirection to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Target",
+        "Type",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,318 @@
+{
+    "typeName": "TF::VRA::BlockDevice",
+    "description": "Creates a VMware vRealize Automation block device resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-BlockDevice/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "SnapshotsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "SnapshotsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsCurrent": {
+                    "type": "boolean"
+                },
+                "Links": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnapshotsDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OrgId": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CapacityInGb": {
+            "type": "number",
+            "description": "Capacity of block device in GB."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            }
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Describes machine within the scope of your organization and is not propagated to the cloud."
+        },
+        "DiskContentBase64": {
+            "type": "string",
+            "description": "Content of a disk, base64 encoded."
+        },
+        "Encrypted": {
+            "type": "boolean",
+            "description": "Indicates whether block device should be encrypted or not."
+        },
+        "ExpandSnapshots": {
+            "type": "boolean",
+            "description": "Indicates whether snapshots of block devices should be included in the state. Applies only to first class block devices."
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "ExternalZoneId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Persistent": {
+            "type": "boolean",
+            "description": "Indicates whether block device survives a delete action."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "ID of project that current user belongs to."
+        },
+        "Purge": {
+            "type": "boolean",
+            "description": "Indicates if the disk must be completely destroyed or should be kept in the system. Valid only for block devices with \u2018persistent\u2019 set to true. Used to destroy the resource."
+        },
+        "Snapshots": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotsDefinition2"
+            }
+        },
+        "SourceReference": {
+            "type": "string",
+            "description": "URI to use for block device. Example: ami-0d4cfd66."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Constraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConstraintsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CapacityInGb",
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/ExternalId",
+        "/properties/ExternalRegionId",
+        "/properties/ExternalZoneId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/Snapshots",
+        "/properties/Status",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

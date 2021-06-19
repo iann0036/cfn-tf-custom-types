@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::ApiGatewayResource",
+    "description": "Provides an API Gateway Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayResource/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ParentId": {
+            "type": "string",
+            "description": "The ID of the parent API resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PathPart": {
+            "type": "string",
+            "description": "The last path segment of this API resource."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated REST API."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ParentId",
+        "PathPart",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

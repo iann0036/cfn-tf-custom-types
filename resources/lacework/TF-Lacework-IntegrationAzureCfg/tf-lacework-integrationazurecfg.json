@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Lacework::IntegrationAzureCfg",
+    "description": "Use this resource to configure an Azure Config integration to analyze configuration compliance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationAzureCfg/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Azure Config integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Retries": {
+            "type": "number",
+            "description": "The number of attempts to create the external integration. Defaults to `5`."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The directory tenant ID."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/ClientSecret"
+    ]
+}

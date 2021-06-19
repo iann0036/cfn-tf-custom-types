@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::Panos::PanoramaBgpRedistRule",
+    "description": "This resource allows you to add/update/delete a Panorama BGP redistribution rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaBgpRedistRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "string",
+            "description": "The address family.  Valid values are\n`ipv4` (default) or `ipv6`."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable this rule or not (default: `true`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metric": {
+            "type": "number",
+            "description": "Metric value."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A subnet or a redistribution profile."
+        },
+        "RouteTable": {
+            "type": "string",
+            "description": "Route table to match rule.  Valid\nvalues are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't\nseem to be a way to configure this in the GUI, it is always set to `unicast`.\nThus, if you're running this resource against PAN-OS 8.0+, the appropriate\nthing to do is set this value to `unicast` as well to match the GUI functionality."
+        },
+        "SetAsPathLimit": {
+            "type": "number",
+            "description": "Add the AS_PATHLIMIT path attribute."
+        },
+        "SetCommunities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of COMMUNITY path attributes to add."
+        },
+        "SetExtendedCommunities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of EXTENDED COMMUNITY path attributes to add."
+        },
+        "SetLocalPreference": {
+            "type": "string",
+            "description": "Add the LOCAL_PREF path attribute."
+        },
+        "SetMed": {
+            "type": "string",
+            "description": "Add the MULTI_EXIT_DISC path attribute."
+        },
+        "SetOrigin": {
+            "type": "string",
+            "description": "Add the origin path attribute.  Valid values are\n`incomplete` (default), `igp`, or `egp`."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this BGP\nredist rule to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

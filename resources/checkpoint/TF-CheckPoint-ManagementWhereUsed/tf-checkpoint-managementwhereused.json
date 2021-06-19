@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::CheckPoint::ManagementWhereUsed",
+    "description": "This command resource allows you to execute Check Point Where Used.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementWhereUsed/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DereferenceGroupMembers": {
+            "type": "boolean",
+            "description": "Indicates whether to dereference \"members\" field by details level for every object in reply."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Indirect": {
+            "type": "boolean",
+            "description": "Search for indirect usage."
+        },
+        "IndirectMaxDepth": {
+            "type": "number",
+            "description": "Maximum nesting level during indirect usage search."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "ShowMembership": {
+            "type": "boolean",
+            "description": "Indicates whether to calculate and show \"groups\" field for every object in reply."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

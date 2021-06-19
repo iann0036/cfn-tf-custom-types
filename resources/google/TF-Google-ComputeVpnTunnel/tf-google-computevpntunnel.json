@@ -1,0 +1,159 @@
+{
+    "typeName": "TF::Google::ComputeVpnTunnel",
+    "description": "VPN tunnel resource.\n\n\nTo get more information about VpnTunnel, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/vpnTunnels)\n* How-to Guides\n    * [Cloud VPN Overview](https://cloud.google.com/vpn/docs/concepts/overview)\n    * [Networks and Tunnel Routing](https://cloud.google.com/vpn/docs/concepts/choosing-networks-routing)\n\n~> **Warning:** All arguments including `shared_secret` will be stored in the raw\nstate as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=vpn_tunnel_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeVpnTunnel/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DetailedStatus": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeVersion": {
+            "type": "number"
+        },
+        "LocalTrafficSelector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PeerExternalGateway": {
+            "type": "string"
+        },
+        "PeerExternalGatewayInterface": {
+            "type": "number"
+        },
+        "PeerGcpGateway": {
+            "type": "string"
+        },
+        "PeerIp": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RemoteTrafficSelector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Router": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SharedSecret": {
+            "type": "string"
+        },
+        "SharedSecretHash": {
+            "type": "string"
+        },
+        "TargetVpnGateway": {
+            "type": "string"
+        },
+        "TunnelId": {
+            "type": "string"
+        },
+        "VpnGateway": {
+            "type": "string"
+        },
+        "VpnGatewayInterface": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SharedSecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/DetailedStatus",
+        "/properties/Id",
+        "/properties/SelfLink",
+        "/properties/SharedSecretHash",
+        "/properties/TunnelId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SharedSecret"
+    ]
+}

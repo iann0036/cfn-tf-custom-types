@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Splunk::AuthorizationRoles",
+    "description": "Create and update role information.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-AuthorizationRoles/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Capabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of capabilities assigned to role."
+        },
+        "CumulativeRealtimeSearchJobsQuota": {
+            "type": "number",
+            "description": "Maximum number of concurrently running real-time searches that all members of this role can have."
+        },
+        "CumulativeSearchJobsQuota": {
+            "type": "number",
+            "description": "Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached."
+        },
+        "DefaultApp": {
+            "type": "string",
+            "description": "Specify the folder name of the default app to use for this role. A user-specific default app overrides this."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportedRoles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the user role to create."
+        },
+        "RealtimeSearchJobsQuota": {
+            "type": "number",
+            "description": "Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit."
+        },
+        "SearchDiskQuota": {
+            "type": "number",
+            "description": "Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total."
+        },
+        "SearchFilter": {
+            "type": "string",
+            "description": "Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR."
+        },
+        "SearchIndexesAllowed": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes."
+        },
+        "SearchIndexesDefault": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using \"index= \"."
+        },
+        "SearchJobsQuota": {
+            "type": "number",
+            "description": "The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies."
+        },
+        "SearchTimeWin": {
+            "type": "number",
+            "description": "Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

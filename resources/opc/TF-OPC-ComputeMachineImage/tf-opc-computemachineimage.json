@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::OPC::ComputeMachineImage",
+    "description": "The ``opc_compute_machine_image`` resource creates and manages a machine image template of a virtual hard disk of a specific size with an installed operating system.\n\nBefore performing this creating the Machine Image, you must upload your machine image file to Oracle Cloud Infrastructure Object Storage Classic `compute_images` container",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeMachineImage/docs/README.md",
+    "definitions": {
+        "HypervisorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string",
+            "description": "The two part name of the compute object storage account in the format `/Compute-{identity_domain}/cloud_storage`."
+        },
+        "Attributes": {
+            "type": "string",
+            "description": "An optional JSON object of arbitrary attributes to be made available to the instance. These are user-defined tags. After defining attributes, you can view them from within an instance at http://192.0.0.192/."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the Machine Image."
+        },
+        "ErrorReason": {
+            "type": "string",
+            "description": "Description of the state of the machine image if there is an error."
+        },
+        "File": {
+            "type": "string",
+            "description": "The name of the Machine Image .tar.gz file in the `compute_images` storage container."
+        },
+        "Hypervisor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HypervisorDefinition"
+            },
+            "description": "Dictionary of hypervisor-specific attributes."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageFormat": {
+            "type": "string",
+            "description": "The format of the image."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Machine Image."
+        },
+        "NoUpload": {
+            "type": "boolean"
+        },
+        "Platform": {
+            "type": "string",
+            "description": "The OS platform of the image."
+        },
+        "State": {
+            "type": "string",
+            "description": "The state of the uploaded machine image."
+        },
+        "Uri": {
+            "type": "string",
+            "description": "The Uniform Resource Identifier for the Machine Image."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Account",
+        "File",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ErrorReason",
+        "/properties/Hypervisor",
+        "/properties/Id",
+        "/properties/ImageFormat",
+        "/properties/NoUpload",
+        "/properties/Platform",
+        "/properties/State",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

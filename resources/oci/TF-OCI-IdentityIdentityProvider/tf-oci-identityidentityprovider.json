@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::OCI::IdentityIdentityProvider",
+    "description": "This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a new identity provider in your tenancy. For more information, see\n[Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).\n\nYou must specify your tenancy's OCID as the compartment ID in the request object.\nRemember that the tenancy is simply the root compartment. For information about\nOCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou must also specify a *name* for the `IdentityProvider`, which must be unique\nacross all `IdentityProvider` objects in your tenancy and cannot be changed.\n\nYou must also specify a *description* for the `IdentityProvider` (although\nit can be an empty string). It does not have to be unique, and you can change\nit anytime with\n[UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvid...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-IdentityIdentityProvider/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of your tenancy."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable."
+        },
+        "FreeformAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformAttributesDefinition"
+            },
+            "description": "(Updatable) Extra name value pairs associated with this identity provider. Example: `{\"clientId\": \"app_sf3kdjf3\"}`."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InactiveState": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "string",
+            "description": "(Updatable) The XML that contains the information required for federating."
+        },
+        "MetadataUrl": {
+            "type": "string",
+            "description": "(Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed."
+        },
+        "ProductType": {
+            "type": "string",
+            "description": "The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "(Updatable) The protocol used for federation.  Example: `SAML2`."
+        },
+        "RedirectUrl": {
+            "type": "string"
+        },
+        "SigningCertificate": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "Description",
+        "Metadata",
+        "MetadataUrl",
+        "Name",
+        "ProductType",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InactiveState",
+        "/properties/RedirectUrl",
+        "/properties/SigningCertificate",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1337 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerWtpprofile",
+    "description": "Configure WTP profiles or FortiAP profiles that define radio settings for manageable FortiAP platforms.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerWtpprofile/docs/README.md",
+    "definitions": {
+        "DenyMacListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "A WiFi device with this MAC address is denied access to this WTP, FortiAP or AP."
+                }
+            },
+            "required": []
+        },
+        "LanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port1Mode": {
+                    "type": "string",
+                    "description": "LAN port 1 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port1Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 1 to SSID."
+                },
+                "Port2Mode": {
+                    "type": "string",
+                    "description": "LAN port 2 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port2Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 2 to SSID."
+                },
+                "Port3Mode": {
+                    "type": "string",
+                    "description": "LAN port 3 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port3Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 3 to SSID."
+                },
+                "Port4Mode": {
+                    "type": "string",
+                    "description": "LAN port 4 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port4Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 4 to SSID."
+                },
+                "Port5Mode": {
+                    "type": "string",
+                    "description": "LAN port 5 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port5Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 5 to SSID."
+                },
+                "Port6Mode": {
+                    "type": "string",
+                    "description": "LAN port 6 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port6Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 6 to SSID."
+                },
+                "Port7Mode": {
+                    "type": "string",
+                    "description": "LAN port 7 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port7Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 7 to SSID."
+                },
+                "Port8Mode": {
+                    "type": "string",
+                    "description": "LAN port 8 mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "Port8Ssid": {
+                    "type": "string",
+                    "description": "Bridge LAN port 8 to SSID."
+                },
+                "PortEslMode": {
+                    "type": "string",
+                    "description": "ESL port mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "PortEslSsid": {
+                    "type": "string",
+                    "description": "Bridge ESL port to SSID."
+                },
+                "PortMode": {
+                    "type": "string",
+                    "description": "LAN port mode. Valid values: `offline`, `nat-to-wan`, `bridge-to-wan`, `bridge-to-ssid`."
+                },
+                "PortSsid": {
+                    "type": "string",
+                    "description": "Bridge LAN port to SSID."
+                }
+            },
+            "required": []
+        },
+        "LbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aeroscout": {
+                    "type": "string",
+                    "description": "Enable/disable AeroScout Real Time Location Service (RTLS) support. Valid values: `enable`, `disable`."
+                },
+                "AeroscoutApMac": {
+                    "type": "string",
+                    "description": "Use BSSID or board MAC address as AP MAC address in the Aeroscout AP message. Valid values: `bssid`, `board-mac`."
+                },
+                "AeroscoutMmuReport": {
+                    "type": "string",
+                    "description": "Enable/disable MU compounded report. Valid values: `enable`, `disable`."
+                },
+                "AeroscoutMu": {
+                    "type": "string",
+                    "description": "Enable/disable AeroScout support. Valid values: `enable`, `disable`."
+                },
+                "AeroscoutMuFactor": {
+                    "type": "number",
+                    "description": "AeroScout Mobile Unit (MU) mode dilution factor (default = 20)."
+                },
+                "AeroscoutMuTimeout": {
+                    "type": "number",
+                    "description": "AeroScout MU mode timeout (0 - 65535 sec, default = 5)."
+                },
+                "AeroscoutServerIp": {
+                    "type": "string",
+                    "description": "IP address of AeroScout server."
+                },
+                "AeroscoutServerPort": {
+                    "type": "number",
+                    "description": "AeroScout server UDP listening port."
+                },
+                "EkahauBlinkMode": {
+                    "type": "string",
+                    "description": "Enable/disable Ekahua blink mode (also called AiRISTA Flow Blink Mode) to find the location of devices connected to a wireless LAN (default = disable). Valid values: `enable`, `disable`."
+                },
+                "EkahauTag": {
+                    "type": "string",
+                    "description": "WiFi frame MAC address or WiFi Tag."
+                },
+                "ErcServerIp": {
+                    "type": "string",
+                    "description": "IP address of Ekahua RTLS Controller (ERC)."
+                },
+                "ErcServerPort": {
+                    "type": "number",
+                    "description": "Ekahua RTLS Controller (ERC) UDP listening port."
+                },
+                "Fortipresence": {
+                    "type": "string",
+                    "description": "Enable/disable FortiPresence to monitor the location and activity of WiFi clients even if they don't connect to this WiFi network (default = disable). Valid values: `foreign`, `both`, `disable`."
+                },
+                "FortipresenceBle": {
+                    "type": "string",
+                    "description": "Enable/disable FortiPresence finding and reporting BLE devices. Valid values: `enable`, `disable`."
+                },
+                "FortipresenceFrequency": {
+                    "type": "number",
+                    "description": "FortiPresence report transmit frequency (5 - 65535 sec, default = 30)."
+                },
+                "FortipresencePort": {
+                    "type": "number",
+                    "description": "FortiPresence server UDP listening port (default = 3000)."
+                },
+                "FortipresenceProject": {
+                    "type": "string",
+                    "description": "FortiPresence project name (max. 16 characters, default = fortipresence)."
+                },
+                "FortipresenceRogue": {
+                    "type": "string",
+                    "description": "Enable/disable FortiPresence finding and reporting rogue APs. Valid values: `enable`, `disable`."
+                },
+                "FortipresenceSecret": {
+                    "type": "string",
+                    "description": "FortiPresence secret password (max. 16 characters)."
+                },
+                "FortipresenceServer": {
+                    "type": "string",
+                    "description": "FortiPresence server IP address."
+                },
+                "FortipresenceUnassoc": {
+                    "type": "string",
+                    "description": "Enable/disable FortiPresence finding and reporting unassociated stations. Valid values: `enable`, `disable`."
+                },
+                "StationLocate": {
+                    "type": "string",
+                    "description": "Enable/disable client station locating services for all clients, whether associated or not (default = disable). Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "LedSchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "LED schedule name."
+                }
+            },
+            "required": []
+        },
+        "PlatformDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ddscan": {
+                    "type": "string",
+                    "description": "Enable/disable use of one radio for dedicated dual-band scanning to detect RF characterization and wireless threat management. Valid values: `enable`, `disable`."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Configure operation mode of 5G radios (default = single-5G). Valid values: `single-5G`, `dual-5G`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "WTP, FortiAP or AP platform type. There are built-in WTP profiles for all supported FortiAP models. You can select a built-in profile and customize it or create a new profile."
+                }
+            },
+            "required": []
+        },
+        "Radio1Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AirtimeFairness": {
+                    "type": "string",
+                    "description": "Enable/disable airtime fairness (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Amsdu": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11n AMSDU support. AMSDU can improve performance if supported by your WiFi clients (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable AP handoff of clients to other APs (default = disable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferAddr": {
+                    "type": "string",
+                    "description": "MAC address to monitor."
+                },
+                "ApSnifferBufsize": {
+                    "type": "number",
+                    "description": "Sniffer buffer size (1 - 32 MB, default = 16)."
+                },
+                "ApSnifferChan": {
+                    "type": "number",
+                    "description": "Channel on which to operate the sniffer (default = 6)."
+                },
+                "ApSnifferCtl": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi control frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferData": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi data frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtBeacon": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management Beacon frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtOther": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management other frames  (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtProbe": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management probe frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerHigh": {
+                    "type": "number",
+                    "description": "Automatic transmit power high limit in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerLevel": {
+                    "type": "string",
+                    "description": "Enable/disable automatic power-level adjustment to prevent co-channel interference (default = disable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerLow": {
+                    "type": "number",
+                    "description": "Automatic transmission power low limit in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerTarget": {
+                    "type": "string",
+                    "description": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70)."
+                },
+                "Band": {
+                    "type": "string",
+                    "description": "WiFi band that Radio 1 operates on."
+                },
+                "Band5gType": {
+                    "type": "string",
+                    "description": "WiFi 5G band type. Valid values: `5g-full`, `5g-high`, `5g-low`."
+                },
+                "BandwidthAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) bandwidth admission control to optimize WiFi bandwidth use. A request to join the wireless network is only allowed if the access point has enough bandwidth to support it. Valid values: `enable`, `disable`."
+                },
+                "BandwidthCapacity": {
+                    "type": "number",
+                    "description": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000)."
+                },
+                "BeaconInterval": {
+                    "type": "number",
+                    "description": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100)."
+                },
+                "BssColor": {
+                    "type": "number",
+                    "description": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0)."
+                },
+                "CallAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) call admission control to optimize WiFi bandwidth use for VoIP calls. New VoIP calls are only accepted if there is enough bandwidth available to support them. Valid values: `enable`, `disable`."
+                },
+                "CallCapacity": {
+                    "type": "number",
+                    "description": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10)."
+                },
+                "ChannelBonding": {
+                    "type": "string",
+                    "description": "Channel bandwidth: 80, 40, or 20MHz. Channels may use both 20 and 40 by enabling coexistence."
+                },
+                "ChannelUtilization": {
+                    "type": "string",
+                    "description": "Enable/disable measuring channel utilization. Valid values: `enable`, `disable`."
+                },
+                "Coexistence": {
+                    "type": "string",
+                    "description": "Enable/disable allowing both HT20 and HT40 on the same radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Darrp": {
+                    "type": "string",
+                    "description": "Enable/disable Distributed Automatic Radio Resource Provisioning (DARRP) to make sure the radio is always using the most optimal channel (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Drma": {
+                    "type": "string",
+                    "description": "Enable/disable dynamic radio mode assignment (DRMA) (default = disable). Valid values: `disable`, `enable`."
+                },
+                "DrmaSensitivity": {
+                    "type": "string",
+                    "description": "Network Coverage Factor (NCF) percentage required to consider a radio as redundant (default = low). Valid values: `low`, `medium`, `high`."
+                },
+                "Dtim": {
+                    "type": "number",
+                    "description": "DTIM interval. The frequency to transmit Delivery Traffic Indication Message (or Map) (DTIM) messages (1 - 255, default = 1). Set higher to save client battery life."
+                },
+                "FragThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346)."
+                },
+                "FrequencyHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable frequency handoff of clients to other channels (default = disable). Valid values: `enable`, `disable`."
+                },
+                "MaxClients": {
+                    "type": "number",
+                    "description": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware."
+                },
+                "MaxDistance": {
+                    "type": "number",
+                    "description": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0)."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Mode of radio 1. Radio 1 can be disabled, configured as an access point, a rogue AP monitor, or a sniffer. Valid values: `disabled`, `ap`, `monitor`, `sniffer`."
+                },
+                "PowerLevel": {
+                    "type": "number",
+                    "description": "Radio power level as a percentage of the maximum transmit power (0 - 100, default = 100)."
+                },
+                "PowersaveOptimize": {
+                    "type": "string",
+                    "description": "Enable client power-saving features such as TIM, AC VO, and OBSS etc. Valid values: `tim`, `ac-vo`, `no-obss-scan`, `no-11b-rate`, `client-rate-follow`."
+                },
+                "ProtectionMode": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11g protection modes to support backwards compatibility with older clients (rtscts, ctsonly, disable). Valid values: `rtscts`, `ctsonly`, `disable`."
+                },
+                "RadioId": {
+                    "type": "number",
+                    "description": "radio-id."
+                },
+                "RtsThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346)."
+                },
+                "ShortGuardInterval": {
+                    "type": "string",
+                    "description": "Use either the short guard interval (Short GI) of 400 ns or the long guard interval (Long GI) of 800 ns. Valid values: `enable`, `disable`."
+                },
+                "SpectrumAnalysis": {
+                    "type": "string",
+                    "description": "Enable/disable spectrum analysis to find interference that would negatively impact wireless performance."
+                },
+                "TransmitOptimize": {
+                    "type": "string",
+                    "description": "Packet transmission optimization options including power saving, aggregation limiting, retry limiting, etc. All are enabled by default. Valid values: `disable`, `power-save`, `aggr-limit`, `retry-limit`, `send-bar`."
+                },
+                "VapAll": {
+                    "type": "string",
+                    "description": "Enable/disable the automatic inheritance of all Virtual Access Points (VAPs) (default = enable)."
+                },
+                "WidsProfile": {
+                    "type": "string",
+                    "description": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio."
+                },
+                "ZeroWaitDfs": {
+                    "type": "string",
+                    "description": "Enable/disable zero wait DFS on radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Channel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelDefinition"
+                    }
+                },
+                "Vaps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VapsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Radio2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AirtimeFairness": {
+                    "type": "string",
+                    "description": "Enable/disable airtime fairness (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Amsdu": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11n AMSDU support. AMSDU can improve performance if supported by your WiFi clients (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable AP handoff of clients to other APs (default = disable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferAddr": {
+                    "type": "string",
+                    "description": "MAC address to monitor."
+                },
+                "ApSnifferBufsize": {
+                    "type": "number",
+                    "description": "Sniffer buffer size (1 - 32 MB, default = 16)."
+                },
+                "ApSnifferChan": {
+                    "type": "number",
+                    "description": "Channel on which to operate the sniffer (default = 6)."
+                },
+                "ApSnifferCtl": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi control frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferData": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi data frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtBeacon": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management Beacon frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtOther": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management other frames  (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtProbe": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management probe frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerHigh": {
+                    "type": "number",
+                    "description": "Automatic transmit power high limit in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerLevel": {
+                    "type": "string",
+                    "description": "Enable/disable automatic power-level adjustment to prevent co-channel interference (default = disable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerLow": {
+                    "type": "number",
+                    "description": "Automatic transmission power low limit in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerTarget": {
+                    "type": "string",
+                    "description": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70)."
+                },
+                "Band": {
+                    "type": "string",
+                    "description": "WiFi band that Radio 2 operates on."
+                },
+                "Band5gType": {
+                    "type": "string",
+                    "description": "WiFi 5G band type. Valid values: `5g-full`, `5g-high`, `5g-low`."
+                },
+                "BandwidthAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) bandwidth admission control to optimize WiFi bandwidth use. A request to join the wireless network is only allowed if the access point has enough bandwidth to support it. Valid values: `enable`, `disable`."
+                },
+                "BandwidthCapacity": {
+                    "type": "number",
+                    "description": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000)."
+                },
+                "BeaconInterval": {
+                    "type": "number",
+                    "description": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100)."
+                },
+                "BssColor": {
+                    "type": "number",
+                    "description": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0)."
+                },
+                "CallAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) call admission control to optimize WiFi bandwidth use for VoIP calls. New VoIP calls are only accepted if there is enough bandwidth available to support them. Valid values: `enable`, `disable`."
+                },
+                "CallCapacity": {
+                    "type": "number",
+                    "description": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10)."
+                },
+                "ChannelBonding": {
+                    "type": "string",
+                    "description": "Channel bandwidth: 80, 40, or 20MHz. Channels may use both 20 and 40 by enabling coexistence."
+                },
+                "ChannelUtilization": {
+                    "type": "string",
+                    "description": "Enable/disable measuring channel utilization. Valid values: `enable`, `disable`."
+                },
+                "Coexistence": {
+                    "type": "string",
+                    "description": "Enable/disable allowing both HT20 and HT40 on the same radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Darrp": {
+                    "type": "string",
+                    "description": "Enable/disable Distributed Automatic Radio Resource Provisioning (DARRP) to make sure the radio is always using the most optimal channel (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Drma": {
+                    "type": "string",
+                    "description": "Enable/disable dynamic radio mode assignment (DRMA) (default = disable). Valid values: `disable`, `enable`."
+                },
+                "DrmaSensitivity": {
+                    "type": "string",
+                    "description": "Network Coverage Factor (NCF) percentage required to consider a radio as redundant (default = low). Valid values: `low`, `medium`, `high`."
+                },
+                "Dtim": {
+                    "type": "number",
+                    "description": "DTIM interval. The frequency to transmit Delivery Traffic Indication Message (or Map) (DTIM) messages (1 - 255, default = 1). Set higher to save client battery life."
+                },
+                "FragThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346)."
+                },
+                "FrequencyHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable frequency handoff of clients to other channels (default = disable). Valid values: `enable`, `disable`."
+                },
+                "MaxClients": {
+                    "type": "number",
+                    "description": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware."
+                },
+                "MaxDistance": {
+                    "type": "number",
+                    "description": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0)."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Mode of radio 2. Radio 2 can be disabled, configured as an access point, a rogue AP monitor, or a sniffer. Valid values: `disabled`, `ap`, `monitor`, `sniffer`."
+                },
+                "PowerLevel": {
+                    "type": "number",
+                    "description": "Radio power level as a percentage of the maximum transmit power (0 - 100, default = 100)."
+                },
+                "PowersaveOptimize": {
+                    "type": "string",
+                    "description": "Enable client power-saving features such as TIM, AC VO, and OBSS etc. Valid values: `tim`, `ac-vo`, `no-obss-scan`, `no-11b-rate`, `client-rate-follow`."
+                },
+                "ProtectionMode": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11g protection modes to support backwards compatibility with older clients (rtscts, ctsonly, disable). Valid values: `rtscts`, `ctsonly`, `disable`."
+                },
+                "RadioId": {
+                    "type": "number",
+                    "description": "radio-id."
+                },
+                "RtsThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346)."
+                },
+                "ShortGuardInterval": {
+                    "type": "string",
+                    "description": "Use either the short guard interval (Short GI) of 400 ns or the long guard interval (Long GI) of 800 ns. Valid values: `enable`, `disable`."
+                },
+                "SpectrumAnalysis": {
+                    "type": "string",
+                    "description": "Enable/disable spectrum analysis to find interference that would negatively impact wireless performance."
+                },
+                "TransmitOptimize": {
+                    "type": "string",
+                    "description": "Packet transmission optimization options including power saving, aggregation limiting, retry limiting, etc. All are enabled by default. Valid values: `disable`, `power-save`, `aggr-limit`, `retry-limit`, `send-bar`."
+                },
+                "VapAll": {
+                    "type": "string",
+                    "description": "Enable/disable the automatic inheritance of all Virtual Access Points (VAPs) (default = enable)."
+                },
+                "WidsProfile": {
+                    "type": "string",
+                    "description": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio."
+                },
+                "ZeroWaitDfs": {
+                    "type": "string",
+                    "description": "Enable/disable zero wait DFS on radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Channel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelDefinition"
+                    }
+                },
+                "Vaps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VapsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Radio3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AirtimeFairness": {
+                    "type": "string",
+                    "description": "Enable/disable airtime fairness (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Amsdu": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11n AMSDU support. AMSDU can improve performance if supported by your WiFi clients (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable AP handoff of clients to other APs (default = disable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferAddr": {
+                    "type": "string",
+                    "description": "MAC address to monitor."
+                },
+                "ApSnifferBufsize": {
+                    "type": "number",
+                    "description": "Sniffer buffer size (1 - 32 MB, default = 16)."
+                },
+                "ApSnifferChan": {
+                    "type": "number",
+                    "description": "Channel on which to operate the sniffer (default = 6)."
+                },
+                "ApSnifferCtl": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi control frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferData": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi data frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtBeacon": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management Beacon frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtOther": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management other frames  (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtProbe": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management probe frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerHigh": {
+                    "type": "number",
+                    "description": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerLevel": {
+                    "type": "string",
+                    "description": "Enable/disable automatic power-level adjustment to prevent co-channel interference (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerLow": {
+                    "type": "number",
+                    "description": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerTarget": {
+                    "type": "string",
+                    "description": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70)."
+                },
+                "Band": {
+                    "type": "string",
+                    "description": "WiFi band that Radio 3 operates on."
+                },
+                "Band5gType": {
+                    "type": "string",
+                    "description": "WiFi 5G band type. Valid values: `5g-full`, `5g-high`, `5g-low`."
+                },
+                "BandwidthAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) bandwidth admission control to optimize WiFi bandwidth use. A request to join the wireless network is only allowed if the access point has enough bandwidth to support it. Valid values: `enable`, `disable`."
+                },
+                "BandwidthCapacity": {
+                    "type": "number",
+                    "description": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000)."
+                },
+                "BeaconInterval": {
+                    "type": "number",
+                    "description": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100)."
+                },
+                "BssColor": {
+                    "type": "number",
+                    "description": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0)."
+                },
+                "CallAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) call admission control to optimize WiFi bandwidth use for VoIP calls. New VoIP calls are only accepted if there is enough bandwidth available to support them. Valid values: `enable`, `disable`."
+                },
+                "CallCapacity": {
+                    "type": "number",
+                    "description": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10)."
+                },
+                "ChannelBonding": {
+                    "type": "string",
+                    "description": "Channel bandwidth: 160,80, 40, or 20MHz. Channels may use both 20 and 40 by enabling coexistence. Valid values: `160MHz`, `80MHz`, `40MHz`, `20MHz`."
+                },
+                "ChannelUtilization": {
+                    "type": "string",
+                    "description": "Enable/disable measuring channel utilization. Valid values: `enable`, `disable`."
+                },
+                "Coexistence": {
+                    "type": "string",
+                    "description": "Enable/disable allowing both HT20 and HT40 on the same radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Darrp": {
+                    "type": "string",
+                    "description": "Enable/disable Distributed Automatic Radio Resource Provisioning (DARRP) to make sure the radio is always using the most optimal channel (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Drma": {
+                    "type": "string",
+                    "description": "Enable/disable dynamic radio mode assignment (DRMA) (default = disable). Valid values: `disable`, `enable`."
+                },
+                "DrmaSensitivity": {
+                    "type": "string",
+                    "description": "Network Coverage Factor (NCF) percentage required to consider a radio as redundant (default = low). Valid values: `low`, `medium`, `high`."
+                },
+                "Dtim": {
+                    "type": "number",
+                    "description": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode."
+                },
+                "FragThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346)."
+                },
+                "FrequencyHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable frequency handoff of clients to other channels (default = disable). Valid values: `enable`, `disable`."
+                },
+                "MaxClients": {
+                    "type": "number",
+                    "description": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware."
+                },
+                "MaxDistance": {
+                    "type": "number",
+                    "description": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0)."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Mode of radio 3. Radio 3 can be disabled, configured as an access point, a rogue AP monitor, or a sniffer. Valid values: `disabled`, `ap`, `monitor`, `sniffer`."
+                },
+                "PowerLevel": {
+                    "type": "number",
+                    "description": "Radio power level as a percentage of the maximum transmit power (0 - 100, default = 100)."
+                },
+                "PowersaveOptimize": {
+                    "type": "string",
+                    "description": "Enable client power-saving features such as TIM, AC VO, and OBSS etc. Valid values: `tim`, `ac-vo`, `no-obss-scan`, `no-11b-rate`, `client-rate-follow`."
+                },
+                "ProtectionMode": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11g protection modes to support backwards compatibility with older clients (rtscts, ctsonly, disable). Valid values: `rtscts`, `ctsonly`, `disable`."
+                },
+                "RtsThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346)."
+                },
+                "ShortGuardInterval": {
+                    "type": "string",
+                    "description": "Use either the short guard interval (Short GI) of 400 ns or the long guard interval (Long GI) of 800 ns. Valid values: `enable`, `disable`."
+                },
+                "SpectrumAnalysis": {
+                    "type": "string",
+                    "description": "Enable/disable spectrum analysis to find interference that would negatively impact wireless performance."
+                },
+                "TransmitOptimize": {
+                    "type": "string",
+                    "description": "Packet transmission optimization options including power saving, aggregation limiting, retry limiting, etc. All are enabled by default. Valid values: `disable`, `power-save`, `aggr-limit`, `retry-limit`, `send-bar`."
+                },
+                "VapAll": {
+                    "type": "string",
+                    "description": "Enable/disable the automatic inheritance of all Virtual Access Points (VAPs) (default = enable)."
+                },
+                "WidsProfile": {
+                    "type": "string",
+                    "description": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio."
+                },
+                "ZeroWaitDfs": {
+                    "type": "string",
+                    "description": "Enable/disable zero wait DFS on radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Channel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelDefinition"
+                    }
+                },
+                "Vaps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VapsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Radio4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AirtimeFairness": {
+                    "type": "string",
+                    "description": "Enable/disable airtime fairness (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Amsdu": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11n AMSDU support. AMSDU can improve performance if supported by your WiFi clients (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable AP handoff of clients to other APs (default = disable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferAddr": {
+                    "type": "string",
+                    "description": "MAC address to monitor."
+                },
+                "ApSnifferBufsize": {
+                    "type": "number",
+                    "description": "Sniffer buffer size (1 - 32 MB, default = 16)."
+                },
+                "ApSnifferChan": {
+                    "type": "number",
+                    "description": "Channel on which to operate the sniffer (default = 6)."
+                },
+                "ApSnifferCtl": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi control frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferData": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi data frame (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtBeacon": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management Beacon frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtOther": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management other frames  (default = enable). Valid values: `enable`, `disable`."
+                },
+                "ApSnifferMgmtProbe": {
+                    "type": "string",
+                    "description": "Enable/disable sniffer on WiFi management probe frames (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerHigh": {
+                    "type": "number",
+                    "description": "The upper bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerLevel": {
+                    "type": "string",
+                    "description": "Enable/disable automatic power-level adjustment to prevent co-channel interference (default = enable). Valid values: `enable`, `disable`."
+                },
+                "AutoPowerLow": {
+                    "type": "number",
+                    "description": "The lower bound of automatic transmit power adjustment in dBm (the actual range of transmit power depends on the AP platform type)."
+                },
+                "AutoPowerTarget": {
+                    "type": "string",
+                    "description": "The target of automatic transmit power adjustment in dBm. (-95 to -20, default = -70)."
+                },
+                "Band": {
+                    "type": "string",
+                    "description": "WiFi band that Radio 3 operates on."
+                },
+                "Band5gType": {
+                    "type": "string",
+                    "description": "WiFi 5G band type. Valid values: `5g-full`, `5g-high`, `5g-low`."
+                },
+                "BandwidthAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) bandwidth admission control to optimize WiFi bandwidth use. A request to join the wireless network is only allowed if the access point has enough bandwidth to support it. Valid values: `enable`, `disable`."
+                },
+                "BandwidthCapacity": {
+                    "type": "number",
+                    "description": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000)."
+                },
+                "BeaconInterval": {
+                    "type": "number",
+                    "description": "Beacon interval. The time between beacon frames in msec (the actual range of beacon interval depends on the AP platform type, default = 100)."
+                },
+                "BssColor": {
+                    "type": "number",
+                    "description": "BSS color value for this 11ax radio (0 - 63, 0 means disable. default = 0)."
+                },
+                "CallAdmissionControl": {
+                    "type": "string",
+                    "description": "Enable/disable WiFi multimedia (WMM) call admission control to optimize WiFi bandwidth use for VoIP calls. New VoIP calls are only accepted if there is enough bandwidth available to support them. Valid values: `enable`, `disable`."
+                },
+                "CallCapacity": {
+                    "type": "number",
+                    "description": "Maximum number of Voice over WLAN (VoWLAN) phones supported by the radio (0 - 60, default = 10)."
+                },
+                "ChannelBonding": {
+                    "type": "string",
+                    "description": "Channel bandwidth: 160,80, 40, or 20MHz. Channels may use both 20 and 40 by enabling coexistence. Valid values: `160MHz`, `80MHz`, `40MHz`, `20MHz`."
+                },
+                "ChannelUtilization": {
+                    "type": "string",
+                    "description": "Enable/disable measuring channel utilization. Valid values: `enable`, `disable`."
+                },
+                "Coexistence": {
+                    "type": "string",
+                    "description": "Enable/disable allowing both HT20 and HT40 on the same radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Darrp": {
+                    "type": "string",
+                    "description": "Enable/disable Distributed Automatic Radio Resource Provisioning (DARRP) to make sure the radio is always using the most optimal channel (default = disable). Valid values: `enable`, `disable`."
+                },
+                "Drma": {
+                    "type": "string",
+                    "description": "Enable/disable dynamic radio mode assignment (DRMA) (default = disable). Valid values: `disable`, `enable`."
+                },
+                "DrmaSensitivity": {
+                    "type": "string",
+                    "description": "Network Coverage Factor (NCF) percentage required to consider a radio as redundant (default = low). Valid values: `low`, `medium`, `high`."
+                },
+                "Dtim": {
+                    "type": "number",
+                    "description": "Delivery Traffic Indication Map (DTIM) period (1 - 255, default = 1). Set higher to save battery life of WiFi client in power-save mode."
+                },
+                "FragThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size that can be sent without fragmentation (800 - 2346 bytes, default = 2346)."
+                },
+                "FrequencyHandoff": {
+                    "type": "string",
+                    "description": "Enable/disable frequency handoff of clients to other channels (default = disable). Valid values: `enable`, `disable`."
+                },
+                "MaxClients": {
+                    "type": "number",
+                    "description": "Maximum number of stations (STAs) or WiFi clients supported by the radio. Range depends on the hardware."
+                },
+                "MaxDistance": {
+                    "type": "number",
+                    "description": "Maximum expected distance between the AP and clients (0 - 54000 m, default = 0)."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Mode of radio 3. Radio 3 can be disabled, configured as an access point, a rogue AP monitor, or a sniffer. Valid values: `disabled`, `ap`, `monitor`, `sniffer`."
+                },
+                "PowerLevel": {
+                    "type": "number",
+                    "description": "Radio power level as a percentage of the maximum transmit power (0 - 100, default = 100)."
+                },
+                "PowersaveOptimize": {
+                    "type": "string",
+                    "description": "Enable client power-saving features such as TIM, AC VO, and OBSS etc. Valid values: `tim`, `ac-vo`, `no-obss-scan`, `no-11b-rate`, `client-rate-follow`."
+                },
+                "ProtectionMode": {
+                    "type": "string",
+                    "description": "Enable/disable 802.11g protection modes to support backwards compatibility with older clients (rtscts, ctsonly, disable). Valid values: `rtscts`, `ctsonly`, `disable`."
+                },
+                "RtsThreshold": {
+                    "type": "number",
+                    "description": "Maximum packet size for RTS transmissions, specifying the maximum size of a data packet before RTS/CTS (256 - 2346 bytes, default = 2346)."
+                },
+                "ShortGuardInterval": {
+                    "type": "string",
+                    "description": "Use either the short guard interval (Short GI) of 400 ns or the long guard interval (Long GI) of 800 ns. Valid values: `enable`, `disable`."
+                },
+                "SpectrumAnalysis": {
+                    "type": "string",
+                    "description": "Enable/disable spectrum analysis to find interference that would negatively impact wireless performance."
+                },
+                "TransmitOptimize": {
+                    "type": "string",
+                    "description": "Packet transmission optimization options including power saving, aggregation limiting, retry limiting, etc. All are enabled by default. Valid values: `disable`, `power-save`, `aggr-limit`, `retry-limit`, `send-bar`."
+                },
+                "VapAll": {
+                    "type": "string",
+                    "description": "Enable/disable the automatic inheritance of all Virtual Access Points (VAPs) (default = enable)."
+                },
+                "WidsProfile": {
+                    "type": "string",
+                    "description": "Wireless Intrusion Detection System (WIDS) profile name to assign to the radio."
+                },
+                "ZeroWaitDfs": {
+                    "type": "string",
+                    "description": "Enable/disable zero wait DFS on radio (default = enable). Valid values: `enable`, `disable`."
+                },
+                "Channel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelDefinition"
+                    }
+                },
+                "Vaps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VapsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SplitTunnelingAclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestIp": {
+                    "type": "string",
+                    "description": "Destination IP and mask for the split-tunneling subnet."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                }
+            },
+            "required": []
+        },
+        "ChannelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Chan": {
+                    "type": "string",
+                    "description": "Channel number."
+                }
+            },
+            "required": []
+        },
+        "VapsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Virtual Access Point (VAP) name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Allowaccess": {
+            "type": "string",
+            "description": "Control management access to the managed WTP, FortiAP, or AP. Separate entries with a space."
+        },
+        "ApCountry": {
+            "type": "string",
+            "description": "Country in which this WTP, FortiAP or AP will operate (default = NA, automatically use the country configured for the current VDOM)."
+        },
+        "ApHandoff": {
+            "type": "string",
+            "description": "Enable/disable AP handoff of clients to other APs (default = disable). Valid values: `enable`, `disable`."
+        },
+        "ApcfgProfile": {
+            "type": "string",
+            "description": "AP local configuration profile name."
+        },
+        "BleProfile": {
+            "type": "string",
+            "description": "Bluetooth Low Energy profile name."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "ControlMessageOffload": {
+            "type": "string",
+            "description": "Enable/disable CAPWAP control message data channel offload."
+        },
+        "DtlsInKernel": {
+            "type": "string",
+            "description": "Enable/disable data channel DTLS in kernel. Valid values: `enable`, `disable`."
+        },
+        "DtlsPolicy": {
+            "type": "string",
+            "description": "WTP data channel DTLS policy (default = clear-text). Valid values: `clear-text`, `dtls-enabled`, `ipsec-vpn`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EnergyEfficientEthernet": {
+            "type": "string",
+            "description": "Enable/disable use of energy efficient Ethernet on WTP. Valid values: `enable`, `disable`."
+        },
+        "ExtInfoEnable": {
+            "type": "string",
+            "description": "Enable/disable station/VAP/radio extension information. Valid values: `enable`, `disable`."
+        },
+        "FrequencyHandoff": {
+            "type": "string",
+            "description": "Enable/disable frequency handoff of clients to other channels (default = disable). Valid values: `enable`, `disable`."
+        },
+        "HandoffRoaming": {
+            "type": "string",
+            "description": "Enable/disable client load balancing during roaming to avoid roaming delay (default = disable). Valid values: `enable`, `disable`."
+        },
+        "HandoffRssi": {
+            "type": "number",
+            "description": "Minimum received signal strength indicator (RSSI) value for handoff (20 - 30, default = 25)."
+        },
+        "HandoffStaThresh": {
+            "type": "number",
+            "description": "Threshold value for AP handoff."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpFragmentPreventing": {
+            "type": "string",
+            "description": "Select how to prevent IP fragmentation for CAPWAP tunneled control and data packets (default = tcp-mss-adjust). Valid values: `tcp-mss-adjust`, `icmp-unreachable`."
+        },
+        "LedState": {
+            "type": "string",
+            "description": "Enable/disable use of LEDs on WTP (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Lldp": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) for the WTP, FortiAP, or AP (default = disable). Valid values: `enable`, `disable`."
+        },
+        "LoginPasswd": {
+            "type": "string",
+            "description": "Set the managed WTP, FortiAP, or AP's administrator password."
+        },
+        "LoginPasswdChange": {
+            "type": "string",
+            "description": "Change or reset the administrator password of a managed WTP, FortiAP or AP (yes, default, or no, default = no). Valid values: `yes`, `default`, `no`."
+        },
+        "MaxClients": {
+            "type": "number",
+            "description": "Maximum number of stations (STAs) supported by the WTP (default = 0, meaning no client limitation)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "WTP (or FortiAP or AP) profile name."
+        },
+        "PoeMode": {
+            "type": "string",
+            "description": "Set the WTP, FortiAP, or AP's PoE mode."
+        },
+        "SplitTunnelingAclLocalApSubnet": {
+            "type": "string",
+            "description": "Enable/disable automatically adding local subnetwork of FortiAP to split-tunneling ACL (default = disable). Valid values: `enable`, `disable`."
+        },
+        "SplitTunnelingAclPath": {
+            "type": "string",
+            "description": "Split tunneling ACL path is local/tunnel. Valid values: `tunnel`, `local`."
+        },
+        "TunMtuDownlink": {
+            "type": "number",
+            "description": "Downlink CAPWAP tunnel MTU (0, 576, or 1500 bytes, default = 0)."
+        },
+        "TunMtuUplink": {
+            "type": "number",
+            "description": "Uplink CAPWAP tunnel MTU (0, 576, or 1500 bytes, default = 0)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WanPortMode": {
+            "type": "string",
+            "description": "Enable/disable using a WAN port as a LAN port. Valid values: `wan-lan`, `wan-only`."
+        },
+        "DenyMacList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DenyMacListDefinition"
+            }
+        },
+        "Lan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LanDefinition"
+            },
+            "maxItems": 1
+        },
+        "Lbs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LbsDefinition"
+            },
+            "maxItems": 1
+        },
+        "LedSchedules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LedSchedulesDefinition"
+            }
+        },
+        "Platform": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlatformDefinition"
+            },
+            "maxItems": 1
+        },
+        "Radio1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Radio1Definition"
+            },
+            "maxItems": 1
+        },
+        "Radio2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Radio2Definition"
+            },
+            "maxItems": 1
+        },
+        "Radio3": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Radio3Definition"
+            },
+            "maxItems": 1
+        },
+        "Radio4": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Radio4Definition"
+            },
+            "maxItems": 1
+        },
+        "SplitTunnelingAcl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SplitTunnelingAclDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/LoginPasswd",
+        "/definitions/LbsDefinition/FortipresenceSecret"
+    ]
+}

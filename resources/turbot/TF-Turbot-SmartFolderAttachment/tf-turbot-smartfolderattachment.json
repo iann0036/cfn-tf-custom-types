@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Turbot::SmartFolderAttachment",
+    "description": "The `Turbot Smart Folder Attachment` resource attaches the smart folder to specific Turbot resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-SmartFolderAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Resource": {
+            "type": "string",
+            "description": "The id of the resource to which a smart folder will be attached.\n- `smart_folder` - (Required) The id of the smart folder to be attached."
+        },
+        "ResourceAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SmartFolder": {
+            "type": "string",
+            "description": "The id of the smart folder to be attached."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Resource",
+        "SmartFolder"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourceAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Thunder::FwGlobal",
+    "description": "`thunder_fw_global` Provides details about thunder fw global",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-FwGlobal/docs/README.md",
+    "definitions": {
+        "DisableAppListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableApplicationCategory": {
+                    "type": "string"
+                },
+                "DisableApplicationProtocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlgProcessing": {
+            "type": "string",
+            "description": "\u2018honor-rule-set\u2019: Honors firewall rule-sets; \u2018override-rule-set\u2019: Override firewall rule-sets;."
+        },
+        "DisableIpFwSessions": {
+            "type": "number",
+            "description": "disable create sessions for non TCP/UDP/ICMP."
+        },
+        "ExtendedMatching": {
+            "type": "string",
+            "description": "\u2018disable\u2019: Disable extended matching;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenOnPortTimeout": {
+            "type": "number",
+            "description": "STUN timeout (default: 2 minutes)."
+        },
+        "NatipDdosProtection": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable; \u2018disable\u2019: Disable;."
+        },
+        "PermitDefaultAction": {
+            "type": "string",
+            "description": "\u2018forward\u2019: Forward; \u2018next-service-mode\u2019: Service to be applied chosen based on configuration;."
+        },
+        "RespondToUserMac": {
+            "type": "number",
+            "description": "Use the user\u2019s source MAC for the next hop rather than the routing table (default: off)."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "DisableAppList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DisableAppListDefinition"
+            }
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

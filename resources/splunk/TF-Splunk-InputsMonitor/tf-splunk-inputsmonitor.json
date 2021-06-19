@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::Splunk::InputsMonitor",
+    "description": "Create or update a new file or directory monitor input.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-InputsMonitor/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blacklist": {
+            "type": "string",
+            "description": "Specify a regular expression for a file path. The file path that matches this regular expression is not indexed."
+        },
+        "CrcSalt": {
+            "type": "string",
+            "description": "A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates if input monitoring is disabled."
+        },
+        "FollowTail": {
+            "type": "boolean",
+            "description": "If set to true, files that are seen for the first time is read from the end."
+        },
+        "Host": {
+            "type": "string",
+            "description": "The value to populate in the host field for events from this data input."
+        },
+        "HostRegex": {
+            "type": "string",
+            "description": "Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group."
+        },
+        "HostSegment": {
+            "type": "number",
+            "description": "Use the specified slash-separate segment of the filepath as the host field value."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreOlderThan": {
+            "type": "string",
+            "description": "Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored."
+        },
+        "Index": {
+            "type": "string",
+            "description": "Which index events from this input should be stored in. Defaults to default."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The file or directory path to monitor on the system."
+        },
+        "Recursive": {
+            "type": "boolean",
+            "description": "Setting this to false prevents monitoring of any subdirectories encountered within this data input."
+        },
+        "RenameSource": {
+            "type": "string",
+            "description": "The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs."
+        },
+        "Sourcetype": {
+            "type": "string",
+            "description": "The value to populate in the sourcetype field for incoming events."
+        },
+        "TimeBeforeClose": {
+            "type": "number",
+            "description": "When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data."
+        },
+        "Whitelist": {
+            "type": "string",
+            "description": "Specify a regular expression for a file path. Only file paths that match this regular expression are indexed."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

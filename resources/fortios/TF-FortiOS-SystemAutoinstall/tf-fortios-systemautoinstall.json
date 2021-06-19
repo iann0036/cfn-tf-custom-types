@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::FortiOS::SystemAutoinstall",
+    "description": "Configure USB auto installation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAutoinstall/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoInstallConfig": {
+            "type": "string",
+            "description": "Enable/disable auto install the config in USB disk. Valid values: `enable`, `disable`."
+        },
+        "AutoInstallImage": {
+            "type": "string",
+            "description": "Enable/disable auto install the image in USB disk. Valid values: `enable`, `disable`."
+        },
+        "DefaultConfigFile": {
+            "type": "string",
+            "description": "Default config file name in USB disk."
+        },
+        "DefaultImageFile": {
+            "type": "string",
+            "description": "Default image file name in USB disk."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

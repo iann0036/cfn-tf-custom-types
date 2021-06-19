@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::AzureDevOps::BuildDefinitionPermissions",
+    "description": "Manages permissions for a Build Definition\n\n~> **Note** Permissions can be assigned to group principals and not to single user principals.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-BuildDefinitionPermissions/docs/README.md",
+    "definitions": {
+        "PermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BuildDefinitionId": {
+            "type": "string",
+            "description": "The id of the build definition to assign the permissions."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PermissionsDefinition"
+            },
+            "description": "the permissions to assign. The following permissions are available."
+        },
+        "Principal": {
+            "type": "string",
+            "description": "The **group** principal to assign the permissions."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project to assign the permissions."
+        },
+        "Replace": {
+            "type": "boolean",
+            "description": "Replace (`true`) or merge (`false`) the permissions. Default: `true`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BuildDefinitionId",
+        "Permissions",
+        "Principal",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

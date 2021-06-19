@@ -1,0 +1,169 @@
+{
+    "typeName": "TF::NSXT::PolicyNatRule",
+    "description": "This resource provides a method for the management of a NAT Rule.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyNatRule/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "The action for the NAT Rule. One of `SNAT`, `DNAT`, `REFLEXIVE`, `NO_SNAT`, `NO_DNAT`, `NAT64`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DestinationNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of destination network IP addresses or CIDR."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable/disable the Rule. Defaults to `true`."
+        },
+        "FirewallMatch": {
+            "type": "string",
+            "description": "Firewall match flag. One of `MATCH_EXTERNAL_ADDRESS`, `MATCH_INTERNAL_ADDRESS`, `BYPASS`."
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "The NSX Policy path to the Tier0 or Tier1 Gateway for this NAT Rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Logging": {
+            "type": "boolean",
+            "description": "Enable/disable rule logging. Defaults to `false`."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RulePriority": {
+            "type": "number",
+            "description": "The priority of the rule. Valid values between 0 to 2147483647. Defaults to `100`."
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of paths to interfaces and/or labels where the NAT Rule is enforced."
+        },
+        "Service": {
+            "type": "string",
+            "description": "Policy path of Service on which the NAT rule will be applied."
+        },
+        "SourceNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of source network IP addresses or CIDR."
+        },
+        "TranslatedNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of translated network IP addresses or CIDR."
+        },
+        "TranslatedPorts": {
+            "type": "string",
+            "description": "Port number or port range. For use with `DNAT` action only."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "DisplayName",
+        "GatewayPath",
+        "TranslatedNetworks"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::ACI::ExternalNetworkInstanceProfile",
+    "description": "CloudFormation equivalent of aci_external_network_instance_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-ExternalNetworkInstanceProfile/docs/README.md",
+    "definitions": {
+        "RelationL3extRsInstPToProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string"
+                },
+                "TnRtctrlProfileName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Direction",
+                "TnRtctrlProfileName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExceptionTag": {
+            "type": "string"
+        },
+        "FloodOnEncap": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L3OutsideDn": {
+            "type": "string"
+        },
+        "MatchT": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PrefGrMemb": {
+            "type": "string"
+        },
+        "Prio": {
+            "type": "string"
+        },
+        "RelationFvRsCons": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsConsIf": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsCustQosPol": {
+            "type": "string"
+        },
+        "RelationFvRsIntraEpg": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProtBy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsSecInherited": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationL3extRsInstPToNatMappingEpg": {
+            "type": "string"
+        },
+        "RelationL3extRsL3InstPToDomP": {
+            "type": "string"
+        },
+        "TargetDscp": {
+            "type": "string"
+        },
+        "RelationL3extRsInstPToProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationL3extRsInstPToProfileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "L3OutsideDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,175 @@
+{
+    "typeName": "TF::AWS::S3controlBucketLifecycleConfiguration",
+    "description": "Provides a resource to manage an S3 Control Bucket Lifecycle Configuration.\n\n~> **NOTE:** Each S3 Control Bucket can only have one Lifecycle Configuration. Using multiple of this resource against the same S3 Control Bucket will result in perpetual differences each Terraform run.\n\n-> This functionality is for managing [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html). To manage S3 Bucket Lifecycle Configurations in an AWS Partition, see the [`aws_s3_bucket` resource](/docs/providers/aws/r/s3_bucket.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-S3controlBucketLifecycleConfiguration/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "AbortIncompleteMultipartUpload": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AbortIncompleteMultipartUploadDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Expiration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExpirationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "AbortIncompleteMultipartUploadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysAfterInitiation": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DaysAfterInitiation"
+            ]
+        },
+        "ExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string"
+                },
+                "Days": {
+                    "type": "number"
+                },
+                "ExpiredObjectDeleteMarker": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the bucket."
+        },
+        "Id": {
+            "type": "string",
+            "description": "Unique identifier for the rule.\n* `status` - (Optional) Status of the rule. Valid values: `Enabled` and `Disabled`. Defaults to `Enabled`."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

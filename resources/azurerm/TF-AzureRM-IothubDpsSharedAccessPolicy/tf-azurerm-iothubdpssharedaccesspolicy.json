@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::AzureRM::IothubDpsSharedAccessPolicy",
+    "description": "Manages an IotHub Device Provisioning Service Shared Access Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-IothubDpsSharedAccessPolicy/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnrollmentRead": {
+            "type": "boolean",
+            "description": "Adds `EnrollmentRead` permission to this Shared Access Account. It allows read access to enrollment data."
+        },
+        "EnrollmentWrite": {
+            "type": "boolean",
+            "description": "Adds `EnrollmentWrite` permission to this Shared Access Account. It allows write access to enrollment data."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IothubDpsName": {
+            "type": "string",
+            "description": "The name of the IoT Hub Device Provisioning service to which this Shared Access Policy belongs. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the IotHub Shared Access Policy resource. Changing this forces a new resource to be created."
+        },
+        "PrimaryConnectionString": {
+            "type": "string"
+        },
+        "PrimaryKey": {
+            "type": "string"
+        },
+        "RegistrationRead": {
+            "type": "boolean",
+            "description": "Adds `RegistrationStatusRead` permission to this Shared Access Account. It allows read access to device registrations."
+        },
+        "RegistrationWrite": {
+            "type": "boolean",
+            "description": "Adds `RegistrationStatusWrite` permission to this Shared Access Account. It allows write access to device registrations."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group under which the IotHub Shared Access Policy resource has to be created. Changing this forces a new resource to be created."
+        },
+        "SecondaryConnectionString": {
+            "type": "string"
+        },
+        "SecondaryKey": {
+            "type": "string"
+        },
+        "ServiceConfig": {
+            "type": "boolean",
+            "description": "Adds `ServiceConfig` permission to this Shared Access Account. It allows configuration of the Device Provisioning Service."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IothubDpsName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PrimaryConnectionString",
+        "/properties/PrimaryKey",
+        "/properties/SecondaryConnectionString",
+        "/properties/SecondaryKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrimaryConnectionString",
+        "/properties/PrimaryKey",
+        "/properties/SecondaryConnectionString",
+        "/properties/SecondaryKey"
+    ]
+}

@@ -1,0 +1,488 @@
+{
+    "typeName": "TF::Intersight::HyperflexNodeConfigPolicy",
+    "description": "A policy specifying node details such as management and storage data IP ranges. For HyperFlex Edge, storage data IP range is pre-defined.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-HyperflexNodeConfigPolicy/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ClusterProfilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "DataIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "EndAddr": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "StartAddr": {
+                    "type": "string"
+                }
+            }
+        },
+        "HxdpIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "EndAddr": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "StartAddr": {
+                    "type": "string"
+                }
+            }
+        },
+        "HypervisorControlIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "EndAddr": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "StartAddr": {
+                    "type": "string"
+                }
+            }
+        },
+        "MgmtIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "EndAddr": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "StartAddr": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "ClusterProfiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterProfilesDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DataIpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataIpRangeDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "HxdpIpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HxdpIpRangeDefinition"
+            }
+        },
+        "HypervisorControlIpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HypervisorControlIpRangeDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MgmtIpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MgmtIpRangeDefinition"
+            }
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeNamePrefix": {
+            "type": "string"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            }
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

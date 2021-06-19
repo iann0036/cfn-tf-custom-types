@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::GitHub::BranchProtectionV3",
+    "description": "CloudFormation equivalent of github_branch_protection_v3",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-BranchProtectionV3/docs/README.md",
+    "definitions": {
+        "RequiredPullRequestReviewsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DismissStaleReviews": {
+                    "type": "boolean"
+                },
+                "DismissalTeams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DismissalUsers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludeAdmins": {
+                    "type": "boolean"
+                },
+                "RequireCodeOwnerReviews": {
+                    "type": "boolean"
+                },
+                "RequiredApprovingReviewCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RequiredStatusChecksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Contexts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludeAdmins": {
+                    "type": "boolean"
+                },
+                "Strict": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Apps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Teams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Branch": {
+            "type": "string"
+        },
+        "EnforceAdmins": {
+            "type": "boolean"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string"
+        },
+        "RequireSignedCommits": {
+            "type": "boolean"
+        },
+        "RequiredPullRequestReviews": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequiredPullRequestReviewsDefinition"
+            },
+            "maxItems": 1
+        },
+        "RequiredStatusChecks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequiredStatusChecksDefinition"
+            },
+            "maxItems": 1
+        },
+        "Restrictions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestrictionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Branch",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

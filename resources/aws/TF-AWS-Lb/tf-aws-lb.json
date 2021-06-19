@@ -1,0 +1,267 @@
+{
+    "typeName": "TF::AWS::Lb",
+    "description": "Provides a Load Balancer resource.\n\n~> **Note:** `aws_alb` is known as `aws_lb`. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Lb/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccessLogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string",
+                    "description": "The S3 bucket name to store the logs in."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Boolean to enable / disable `access_logs`. Defaults to `false`, even when `bucket` is specified."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "The S3 bucket prefix. Logs are stored in the root if not configured."
+                }
+            },
+            "required": [
+                "Bucket"
+            ]
+        },
+        "SubnetMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationId": {
+                    "type": "string",
+                    "description": "The allocation ID of the Elastic IP address."
+                },
+                "Ipv6Address": {
+                    "type": "string",
+                    "description": "An ipv6 address within the subnet to assign to the internet-facing load balancer."
+                },
+                "PrivateIpv4Address": {
+                    "type": "string",
+                    "description": "A private ipv4 address within the subnet to assign to the internal-facing load balancer."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The id of the subnet of which to attach to the load balancer. You can specify only one subnet per Availability Zone."
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ArnSuffix": {
+            "type": "string"
+        },
+        "CustomerOwnedIpv4Pool": {
+            "type": "string",
+            "description": "The ID of the customer owned ipv4 pool to use for this load balancer."
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "DropInvalidHeaderFields": {
+            "type": "boolean",
+            "description": "Indicates whether HTTP headers with header fields that are not valid are removed by the load balancer (true) or routed to targets (false). The default is false. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens. Only valid for Load Balancers of type `application`."
+        },
+        "EnableCrossZoneLoadBalancing": {
+            "type": "boolean",
+            "description": "If true, cross-zone load balancing of the load balancer will be enabled.\nThis is a `network` load balancer feature. Defaults to `false`."
+        },
+        "EnableDeletionProtection": {
+            "type": "boolean",
+            "description": "If true, deletion of the load balancer will be disabled via\nthe AWS API. This will prevent Terraform from deleting the load balancer. Defaults to `false`."
+        },
+        "EnableHttp2": {
+            "type": "boolean",
+            "description": "Indicates whether HTTP/2 is enabled in `application` load balancers. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "The time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type `application`. Default: 60."
+        },
+        "Internal": {
+            "type": "boolean",
+            "description": "If true, the LB will be internal."
+        },
+        "IpAddressType": {
+            "type": "string",
+            "description": "The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`."
+        },
+        "LoadBalancerType": {
+            "type": "string",
+            "description": "The type of load balancer to create. Possible values are `application`, `gateway`, or `network`. The default value is `application`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the LB. This name must be unique within your AWS account, can have a maximum of 32 characters,\nmust contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen. If not specified,\nTerraform will autogenerate a name beginning with `tf-lb`."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type `application`."
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of subnet IDs to attach to the LB. Subnets\ncannot be updated for Load Balancers of type `network`. Changing this value\nfor load balancers of type `network` will force a recreation of the resource."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "AccessLogs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLogsDefinition"
+            },
+            "maxItems": 1
+        },
+        "SubnetMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubnetMappingDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ArnSuffix",
+        "/properties/DnsName",
+        "/properties/Id",
+        "/properties/VpcId",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

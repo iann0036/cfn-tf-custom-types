@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointGithub",
+    "description": "Manages a GitHub service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointGithub/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthOauthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OauthConfigurationId": {
+                    "type": "string",
+                    "description": "**NOTE: Github OAuth flow can not be performed via terraform. You must create this on Azure DevOps and then import it.** The OAuth Configuration ID."
+                }
+            },
+            "required": [
+                "OauthConfigurationId"
+            ]
+        },
+        "AuthPersonalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PersonalAccessToken": {
+                    "type": "string",
+                    "description": "The Personal Access Token for Github."
+                }
+            },
+            "required": [
+                "PersonalAccessToken"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token.\n- `auth_oauth` - (Optional) An `auth_oauth` block as documented below. Allows connecting using an Oauth token."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The Service Endpoint name.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token.\n- `auth_oauth` - (Optional) An `auth_oauth` block as documented below. Allows connecting using an Oauth token."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token.\n- `auth_oauth` - (Optional) An `auth_oauth` block as documented below. Allows connecting using an Oauth token."
+        },
+        "AuthOauth": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthOauthDefinition"
+            },
+            "maxItems": 1
+        },
+        "AuthPersonal": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthPersonalDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthPersonalDefinition/PersonalAccessToken"
+    ]
+}

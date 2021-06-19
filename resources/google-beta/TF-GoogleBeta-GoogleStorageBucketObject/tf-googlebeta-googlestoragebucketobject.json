@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleStorageBucketObject",
+    "description": "CloudFormation equivalent of google_storage_bucket_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleStorageBucketObject/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "CacheControl": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string"
+        },
+        "ContentEncoding": {
+            "type": "string"
+        },
+        "ContentLanguage": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "Crc32c": {
+            "type": "string"
+        },
+        "DetectMd5hash": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyName": {
+            "type": "string"
+        },
+        "Md5hash": {
+            "type": "string"
+        },
+        "MediaLink": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OutputName": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "StorageClass": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Crc32c",
+        "/properties/Id",
+        "/properties/Md5hash",
+        "/properties/MediaLink",
+        "/properties/OutputName",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Content"
+    ]
+}

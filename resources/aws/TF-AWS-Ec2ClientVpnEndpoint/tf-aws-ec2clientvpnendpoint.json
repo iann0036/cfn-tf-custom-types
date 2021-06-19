@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AWS::Ec2ClientVpnEndpoint",
+    "description": "Provides an AWS Client VPN endpoint for OpenVPN clients. For more information on usage, please see the\n[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2ClientVpnEndpoint/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthenticationOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveDirectoryId": {
+                    "type": "string"
+                },
+                "RootCertificateChainArn": {
+                    "type": "string"
+                },
+                "SamlProviderArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConnectionLogOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogGroup": {
+                    "type": "string"
+                },
+                "CloudwatchLogStream": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ClientCidrBlock": {
+            "type": "string",
+            "description": "The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Name of the repository."
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN endpoint is used as the DNS server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerCertificateArn": {
+            "type": "string",
+            "description": "The ARN of the ACM server certificate."
+        },
+        "SplitTunnel": {
+            "type": "boolean",
+            "description": "Indicates whether split-tunnel is enabled on VPN endpoint. Default value is `false`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TransportProtocol": {
+            "type": "string",
+            "description": "The transport protocol to be used by the VPN session. Default value is `udp`."
+        },
+        "AuthenticationOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationOptionsDefinition"
+            },
+            "maxItems": 2,
+            "minItems": 1
+        },
+        "ConnectionLogOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectionLogOptionsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientCidrBlock",
+        "ServerCertificateArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DnsName",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

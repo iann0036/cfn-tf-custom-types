@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::FortiOS::FirewallCentralsnatmapSort",
+    "description": "Provides a resource to sort firewall centralsnatmap policy\n\n```hcl\n\nresource \"fortios_firewall_centralsnatmap_sort\" \"test\" {\n  sortby        = \"policyid\"\n  sortdirection = \"descending\"\n}\n\t\t\n```\n\nThe following arguments are supported:\n\n* `sortby` - (Required) Sort security policies by the value, it currently supports \"policyid\".\n* `sortdirection` - (Required) Sort dirction, supports \"ascending\" and \"descending\".\n* `force_recreate` - The argument is optional, if it is set, when the value changes, the resource will be re-created. It is usually used when new policies are added, or old policies are deleted.\n* `comment` - Comment.\n* `vdomparam` - Specifies the vdom to which the data source will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter.\n\nThe following attributes are exported:\n\n* `id` - an identifier for the resource.\n* `sortby` - Sort security policies by the value, i...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallCentralsnatmapSort/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "ForceRecreate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Sortby": {
+            "type": "string"
+        },
+        "Sortdirection": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Sortby",
+        "Sortdirection"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::Wavefront::CloudIntegrationGcpBilling",
+    "description": "CloudFormation equivalent of wavefront_cloud_integration_gcp_billing",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-CloudIntegrationGcpBilling/docs/README.md",
+    "definitions": {
+        "AdditionalTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalTagsDefinition"
+            }
+        },
+        "ApiKey": {
+            "type": "string"
+        },
+        "ForceSave": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JsonKey": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "ServiceRefreshRateInMinutes": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiKey",
+        "JsonKey",
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey",
+        "/properties/JsonKey"
+    ]
+}

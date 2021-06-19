@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::FortiOS::FirewallAddrgrp",
+    "description": "Configure IPv4 address groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallAddrgrp/docs/README.md",
+    "definitions": {
+        "ExcludeMemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "TaggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Tag category."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Tagging entry name."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Tag name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowRouting": {
+            "type": "string",
+            "description": "Enable/disable use of this group in the static route configuration. Valid values: `enable`, `disable`."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Exclude": {
+            "type": "string",
+            "description": "Enable/disable address exclusion. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Address group name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Address group type. Valid values: `default`, `folder`."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Enable/disable address visibility in the GUI. Valid values: `enable`, `disable`."
+        },
+        "ExcludeMember": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExcludeMemberDefinition"
+            }
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberDefinition"
+            },
+            "minItems": 1
+        },
+        "Tagging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaggingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

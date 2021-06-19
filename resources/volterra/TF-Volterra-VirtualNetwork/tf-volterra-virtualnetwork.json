@@ -1,0 +1,594 @@
+{
+    "typeName": "TF::Volterra::VirtualNetwork",
+    "description": "CloudFormation equivalent of volterra_virtual_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-VirtualNetwork/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Srv6NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnycastVip": {
+                    "type": "string"
+                },
+                "InterfaceIpSnatPool": {
+                    "type": "boolean"
+                },
+                "InterfaceIpVip": {
+                    "type": "boolean"
+                },
+                "NoNamespaceNetwork": {
+                    "type": "boolean"
+                },
+                "RemoteSidStatsPlen": {
+                    "type": "number"
+                },
+                "AccessNetworkRtargets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessNetworkRtargetsDefinition"
+                    }
+                },
+                "EnterpriseNetworkRtargets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnterpriseNetworkRtargetsDefinition"
+                    }
+                },
+                "ExportRtargets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExportRtargetsDefinition"
+                    }
+                },
+                "FleetSnatPool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FleetSnatPoolDefinition"
+                    }
+                },
+                "FleetVip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FleetVipDefinition"
+                    }
+                },
+                "Fleets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FleetsDefinition"
+                    }
+                },
+                "InternetRtargets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InternetRtargetsDefinition"
+                    }
+                },
+                "SiteSnatPool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteSnatPoolDefinition"
+                    }
+                },
+                "Slice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SliceDefinition"
+                    }
+                },
+                "Srv6NetworkNsParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Srv6NetworkNsParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StaticRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultGateway": {
+                    "type": "boolean"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IpPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IpPrefixes"
+            ]
+        },
+        "AccessNetworkRtargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn2byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn2byteRtargetDefinition"
+                    }
+                },
+                "Asn4byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn4byteRtargetDefinition"
+                    }
+                },
+                "Ipv4AddrRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4AddrRtargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EnterpriseNetworkRtargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn2byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn2byteRtargetDefinition"
+                    }
+                },
+                "Asn4byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn4byteRtargetDefinition"
+                    }
+                },
+                "Ipv4AddrRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4AddrRtargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ExportRtargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn2byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn2byteRtargetDefinition"
+                    }
+                },
+                "Asn4byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn4byteRtargetDefinition"
+                    }
+                },
+                "Ipv4AddrRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4AddrRtargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FleetSnatPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SnatPoolAllocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnatPoolAllocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FleetVipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VipAllocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VipAllocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FleetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InternetRtargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn2byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn2byteRtargetDefinition"
+                    }
+                },
+                "Asn4byteRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Asn4byteRtargetDefinition"
+                    }
+                },
+                "Ipv4AddrRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4AddrRtargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteSnatPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeSnatPool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NodeSnatPoolDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SliceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Srv6NetworkNsParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Asn2byteRtargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumber": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Asn4byteRtargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumber": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Ipv4AddrRtargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SnatPoolAllocatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VipAllocatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodeSnatPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Prefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Ipv4Prefixes"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "GlobalNetwork": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LegacyType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "SiteLocalInsideNetwork": {
+            "type": "boolean"
+        },
+        "SiteLocalNetwork": {
+            "type": "boolean"
+        },
+        "Srv6Network": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Srv6NetworkDefinition"
+            }
+        },
+        "StaticRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticRoutesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

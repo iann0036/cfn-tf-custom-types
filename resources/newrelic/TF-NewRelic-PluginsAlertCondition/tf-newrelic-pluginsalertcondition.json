@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::NewRelic::PluginsAlertCondition",
+    "description": "~> **DEPRECATED** Use at your own risk. Use the [`newrelic_nrql_alert_condition`](nrql_alert_condition.html) resource instead. This feature will stop being supported as of June 16, 2021. For more information, check out [https://discuss.newrelic.com/t/new-relic-plugin-eol-wednesday-june-16th-2021/127267](https://discuss.newrelic.com/t/new-relic-plugin-eol-wednesday-june-16th-2021/127267)\n\nUse this resource to create and manage plugins alert conditions in New Relic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-PluginsAlertCondition/docs/README.md",
+    "definitions": {
+        "TermDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Duration",
+                "Threshold",
+                "TimeFunction"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "Entities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "The plugin component IDs to target.\n* `plugin_id` - (Required) The ID of the installed plugin instance which produces the metric.\n* `plugin_guid` - (Required) The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metric": {
+            "type": "string",
+            "description": "The plugin metric to evaluate.\n* `entities` - (Required) The plugin component IDs to target.\n* `plugin_id` - (Required) The ID of the installed plugin instance which produces the metric.\n* `plugin_guid` - (Required) The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "MetricDescription": {
+            "type": "string",
+            "description": "The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of the condition. Must be between 1 and 64 characters, inclusive.\n* `metric` - (Required) The plugin metric to evaluate.\n* `entities` - (Required) The plugin component IDs to target.\n* `plugin_id` - (Required) The ID of the installed plugin instance which produces the metric.\n* `plugin_guid` - (Required) The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "PluginGuid": {
+            "type": "string",
+            "description": "The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "PluginId": {
+            "type": "string",
+            "description": "The ID of the installed plugin instance which produces the metric.\n* `plugin_guid` - (Required) The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "PolicyId": {
+            "type": "number",
+            "description": "The ID of the policy where this condition should be used.\n* `name` - (Required) The title of the condition. Must be between 1 and 64 characters, inclusive.\n* `metric` - (Required) The plugin metric to evaluate.\n* `entities` - (Required) The plugin component IDs to target.\n* `plugin_id` - (Required) The ID of the installed plugin instance which produces the metric.\n* `plugin_guid` - (Required) The GUID of the plugin which produces the metric.\n* `metric_description` - (Required) The metric description.\n* `value_function` - (Required) The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "RunbookUrl": {
+            "type": "string",
+            "description": "Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "ValueFunction": {
+            "type": "string",
+            "description": "The value function to apply to the metric data.  One of `min`, `max`, `average`, `sample_size`, `total`, or `percent`.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Whether or not this condition is enabled.\n* `term` - (Required) A list of terms for this condition. See [Terms](#terms) below for details."
+        },
+        "Term": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TermDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Entities",
+        "Metric",
+        "MetricDescription",
+        "Name",
+        "PluginGuid",
+        "PluginId",
+        "PolicyId",
+        "ValueFunction"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

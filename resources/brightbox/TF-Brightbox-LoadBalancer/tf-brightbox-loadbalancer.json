@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::Brightbox::LoadBalancer",
+    "description": "Provides a Brightbox Load Balancer resource. This can be used to create,\nmodify, and delete Load Balancers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/brightbox/TF-Brightbox-LoadBalancer/docs/README.md",
+    "definitions": {
+        "HealthcheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Request": {
+                    "type": "string"
+                },
+                "ThresholdDown": {
+                    "type": "number"
+                },
+                "ThresholdUp": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Port",
+                "Type"
+            ]
+        },
+        "ListenerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "In": {
+                    "type": "number"
+                },
+                "Out": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "ProxyProtocol": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "In",
+                "Out",
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BufferSize": {
+            "type": "number",
+            "description": "Buffer size in bytes."
+        },
+        "CertificatePem": {
+            "type": "string",
+            "description": "A X509 SSL certificate in PEM format. Must be included along with `certificate_key`. If intermediate certificates are required they should be concatenated after the main certificate."
+        },
+        "CertificatePrivateKey": {
+            "type": "string",
+            "description": "The RSA private key used to sign the certificate in PEM format. Must be included along with `certificate_pem`."
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of domain names to attempt to register with ACME. Conflicts with `certificate_pem` and `certificate_private_key`."
+        },
+        "HttpsRedirect": {
+            "type": "boolean",
+            "description": "Redirect any requests on port 80 automatically to port 443."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean",
+            "description": "Set to true to stop the load balancer from being deleted."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A label assigned to the Load Balancer."
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of Server IDs."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "Method of load balancing to use, either `least-connections` or `round-robin`."
+        },
+        "SslMinimumVersion": {
+            "type": "string",
+            "description": "The minimum TLS/SSL version for the load balancer to accept. Supports `TLSv1.0`, `TLSv1.1`, `TLSv1.2`, `TLSv1.3` and `SSLv3`."
+        },
+        "Sslv3": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthcheckDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Listener": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ListenerDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

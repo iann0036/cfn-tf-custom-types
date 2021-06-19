@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::AzureRM::BlueprintAssignment",
+    "description": "Manages a Blueprint Assignment resource\n\n~> **NOTE:** Azure Blueprints are in Preview and potentially subject to breaking change without notice.\n\n~> **NOTE:** Azure Blueprint Assignments can only be applied to Subscriptions.  Assignments to Management Groups is not currently supported by the service or by Terraform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-BlueprintAssignment/docs/README.md",
+    "definitions": {
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IdentityIds",
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlueprintName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure location of the Assignment."
+        },
+        "LockExcludePrincipals": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "a list of up to 5 Principal IDs that are permitted to bypass the locks applied by the Blueprint."
+        },
+        "LockMode": {
+            "type": "string",
+            "description": "The locking mode of the Blueprint Assignment.  One of `None` (Default), `AllResourcesReadOnly`, or `AlResourcesDoNotDelete`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Blueprint Assignment."
+        },
+        "ParameterValues": {
+            "type": "string",
+            "description": "a JSON string to supply Blueprint Assignment parameter values."
+        },
+        "ResourceGroups": {
+            "type": "string",
+            "description": "a JSON string to supply the Blueprint Resource Group information."
+        },
+        "TargetSubscriptionId": {
+            "type": "string",
+            "description": "The Subscription ID the Blueprint Published Version is to be applied to."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The Identity type for the Managed Service Identity. Currently only `UserAssigned` is supported."
+        },
+        "VersionId": {
+            "type": "string",
+            "description": "The ID of the Published Version of the blueprint to be assigned."
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "TargetSubscriptionId",
+        "VersionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BlueprintName",
+        "/properties/Description",
+        "/properties/DisplayName",
+        "/properties/Id",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

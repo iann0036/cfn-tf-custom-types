@@ -1,0 +1,272 @@
+{
+    "typeName": "TF::B2::Bucket",
+    "description": "CloudFormation equivalent of b2_bucket",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/b2/TF-B2-Bucket/docs/README.md",
+    "definitions": {
+        "BucketInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CorsRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOperations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CorsRuleName": {
+                    "type": "string"
+                },
+                "ExposeHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxAgeSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllowedOperations",
+                "AllowedOrigins",
+                "CorsRuleName",
+                "MaxAgeSeconds"
+            ]
+        },
+        "DefaultServerSideEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FileLockConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsFileLockEnabled": {
+                    "type": "boolean"
+                },
+                "DefaultRetention": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultRetentionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LifecycleRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysFromHidingToDeleting": {
+                    "type": "number"
+                },
+                "DaysFromUploadingToHiding": {
+                    "type": "number"
+                },
+                "FileNamePrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FileNamePrefix"
+            ]
+        },
+        "DefaultRetentionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PeriodDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "PeriodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Duration",
+                "Unit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "BucketId": {
+            "type": "string"
+        },
+        "BucketInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BucketInfoDefinition"
+            }
+        },
+        "BucketName": {
+            "type": "string"
+        },
+        "BucketType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "CorsRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsRulesDefinition"
+            }
+        },
+        "DefaultServerSideEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultServerSideEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "FileLockConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FileLockConfigurationDefinition"
+            }
+        },
+        "LifecycleRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketName",
+        "BucketType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountId",
+        "/properties/BucketId",
+        "/properties/Id",
+        "/properties/Options",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

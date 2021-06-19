@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::OpsGenie::Heartbeat",
+    "description": "Manages heartbeat within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-Heartbeat/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertMessage": {
+            "type": "string",
+            "description": "Specifies the alert message for heartbeat expiration alert. If this is not provided, default alert message is \"HeartbeatName is expired\"."
+        },
+        "AlertPriority": {
+            "type": "string",
+            "description": "Specifies the alert priority for heartbeat expiration alert. If this is not provided, default priority is P3."
+        },
+        "AlertTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the alert tags for heartbeat expiration alert."
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description of the heartbeat."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable/disable heartbeat monitoring."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Specifies how often a heartbeat message should be expected."
+        },
+        "IntervalUnit": {
+            "type": "string",
+            "description": "Interval specified as minutes, hours or days."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the heartbeat."
+        },
+        "OwnerTeamId": {
+            "type": "string",
+            "description": "Owner team of the heartbeat."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Interval",
+        "IntervalUnit",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

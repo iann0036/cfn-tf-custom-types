@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::Dome9::Ruleset",
+    "description": "This resource is used to create and manage Organizational Unit in Dome9. An Organizational Unit is a group of cloud accounts representing, for example, a business unit or geographical region.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-Ruleset/docs/README.md",
+    "definitions": {
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComplianceTag": {
+                    "type": "string"
+                },
+                "ControlTitle": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "IsDefault": {
+                    "type": "boolean"
+                },
+                "Logic": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Remediation": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudVendor": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HideInCompliance": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsTemplate": {
+            "type": "boolean"
+        },
+        "Language": {
+            "type": "string"
+        },
+        "MinFeatureTier": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the organizational unit in Dome9."
+        },
+        "UpdatedTime": {
+            "type": "string"
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudVendor",
+        "HideInCompliance",
+        "Language",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedTime",
+        "/properties/Id",
+        "/properties/MinFeatureTier",
+        "/properties/UpdatedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

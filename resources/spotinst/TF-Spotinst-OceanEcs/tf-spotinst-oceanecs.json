@@ -1,0 +1,494 @@
+{
+    "typeName": "TF::Spotinst::OceanEcs",
+    "description": "Manages a Spotinst Ocean ECS resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanEcs/docs/README.md",
+    "definitions": {
+        "AutoscalerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cooldown": {
+                    "type": "number"
+                },
+                "IsAutoConfig": {
+                    "type": "boolean"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Down": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Headroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimitsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BlockDeviceMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EbsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "OptimizeImagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                },
+                "ShouldOptimizeEcsAmi": {
+                    "type": "boolean"
+                },
+                "TimeWindows": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "PerformAt",
+                "ShouldOptimizeEcsAmi"
+            ]
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShutdownHours": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShutdownHoursDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tasks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TasksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "UpdatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShouldRoll": {
+                    "type": "boolean"
+                },
+                "RollConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ShouldRoll"
+            ]
+        },
+        "DownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxScaleDownPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxMemoryGib": {
+                    "type": "number"
+                },
+                "MaxVcpu": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "DynamicVolumeSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicVolumeSizeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ShutdownHoursDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "TimeWindows": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "TimeWindows"
+            ]
+        },
+        "TasksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CronExpression": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CronExpression",
+                "IsEnabled",
+                "TaskType"
+            ]
+        },
+        "RollConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchSizePercentage": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BatchSizePercentage"
+            ]
+        },
+        "DynamicVolumeSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseSize": {
+                    "type": "number"
+                },
+                "Resource": {
+                    "type": "string"
+                },
+                "SizePerResourceUnit": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BaseSize",
+                "Resource",
+                "SizePerResourceUnit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean",
+            "description": "Configure public IP address allocation."
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The ocean cluster name."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The number of instances to launch and maintain in the cluster."
+        },
+        "DrainingTimeout": {
+            "type": "number",
+            "description": "The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "Enable EBS optimized for cluster. Flag will enable optimized capacity for high bandwidth connectivity to the EB service for non EBS optimized instance types. For instances that are EBS optimized this flag will be ignored."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "The instance profile iam role."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
+        },
+        "KeyPair": {
+            "type": "string",
+            "description": "The key pair to attach the instances."
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The upper limit of instances the cluster can scale up to."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The lower limit of instances the cluster can scale down to."
+        },
+        "Monitoring": {
+            "type": "boolean",
+            "description": "Enable detailed monitoring for cluster. Flag will enable Cloud Watch detailed monitoring (one minute increments). Note: there are additional hourly costs for this service based on the region used."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Ocean cluster name."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region the cluster will run in."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more security group ids."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
+        },
+        "UtilizeCommitments": {
+            "type": "boolean"
+        },
+        "UtilizeReservedInstances": {
+            "type": "boolean",
+            "description": "If Reserved instances exist, Ocean will utilize them before launching Spot instances."
+        },
+        "Whitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Instance types allowed in the Ocean cluster, Cannot be configured if blacklist is configured."
+        },
+        "Autoscaler": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalerDefinition"
+            },
+            "maxItems": 1
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappingsDefinition"
+            }
+        },
+        "OptimizeImages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptimizeImagesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "Name",
+        "Region",
+        "SecurityGroupIds",
+        "SubnetIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

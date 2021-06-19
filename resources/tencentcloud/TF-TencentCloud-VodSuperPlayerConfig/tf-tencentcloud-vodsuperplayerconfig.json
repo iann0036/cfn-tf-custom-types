@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::TencentCloud::VodSuperPlayerConfig",
+    "description": "Provide a resource to create a VOD super player config.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-VodSuperPlayerConfig/docs/README.md",
+    "definitions": {
+        "DrmStreamingInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SimpleAesDefinition": {
+                    "type": "string",
+                    "description": "ID of the adaptive dynamic streaming template whose protection type is `SimpleAES`."
+                }
+            },
+            "required": []
+        },
+        "ResolutionNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinEdgeLength": {
+                    "type": "number",
+                    "description": "Length of video short side in px."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Display name."
+                }
+            },
+            "required": [
+                "MinEdgeLength",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdaptiveDynamicStreamingDefinition": {
+            "type": "string",
+            "description": "ID of the unencrypted adaptive bitrate streaming template that allows output, which is required if `drm_switch` is `false`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Template description. Length limit: 256 characters."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name used for playback. If it is left empty or set to `Default`, the domain name configured in [Default Distribution Configuration](https://cloud.tencent.com/document/product/266/33373) will be used. `Default` by default."
+        },
+        "DrmSwitch": {
+            "type": "boolean",
+            "description": "Switch of DRM-protected adaptive bitstream playback: `true`: enabled, indicating to play back only output adaptive bitstreams protected by DRM; `false`: disabled, indicating to play back unencrypted output adaptive bitstreams. Default value: `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageSpriteDefinition": {
+            "type": "string",
+            "description": "ID of the image sprite template that allows output."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Player configuration name, which can contain up to 64 letters, digits, underscores, and hyphens (such as test_ABC-123) and must be unique under a user."
+        },
+        "Scheme": {
+            "type": "string",
+            "description": "Scheme used for playback. If it is left empty or set to `Default`, the scheme configured in [Default Distribution Configuration](https://cloud.tencent.com/document/product/266/33373) will be used. Other valid values: `HTTP`; `HTTPS`."
+        },
+        "SubAppId": {
+            "type": "number",
+            "description": "Subapplication ID in VOD. If you need to access a resource in a subapplication, enter the subapplication ID in this field; otherwise, leave it empty."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "DrmStreamingInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DrmStreamingInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResolutionNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResolutionNamesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::AzureRM::PublicIp",
+    "description": "Manages a Public IP Address.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-PublicIp/docs/README.md",
+    "definitions": {
+        "IpTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationMethod": {
+            "type": "string",
+            "description": "Defines the allocation method for this IP address. Possible values are `Static` or `Dynamic`."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The availability zone to allocate the Public IP in. Possible values are `Zone-Redundant`, `1`, `2`, `3`, and `No-Zone`. Defaults to `Zone-Redundant`."
+        },
+        "DomainNameLabel": {
+            "type": "string",
+            "description": "Label for the Domain Name. Will be used to make up the FQDN.  If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeoutInMinutes": {
+            "type": "number",
+            "description": "Specifies the timeout for the TCP idle connection. The value can be set between 4 and 30 minutes."
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "IpTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpTagsDefinition"
+            },
+            "description": "A mapping of IP tags to assign to the public IP."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "The IP Version to use, IPv6 or IPv4."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Public IP resource . Changing this forces a\nnew resource to be created."
+        },
+        "PublicIpPrefixId": {
+            "type": "string",
+            "description": "If specified then public IP address allocated will be provided from the public IP prefix resource."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the public ip."
+        },
+        "ReverseFqdn": {
+            "type": "string",
+            "description": "A fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The SKU of the Public IP. Accepted values are `Basic` and `Standard`. Defaults to `Basic`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllocationMethod",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id",
+        "/properties/IpAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

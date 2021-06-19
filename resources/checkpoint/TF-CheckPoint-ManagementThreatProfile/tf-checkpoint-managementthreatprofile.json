@@ -1,0 +1,330 @@
+{
+    "typeName": "TF::CheckPoint::ManagementThreatProfile",
+    "description": "This resource allows you to add/update/delete Check Point Threat Profile.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementThreatProfile/docs/README.md",
+    "definitions": {
+        "ActivateProtectionsByExtendedAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Uid": {
+                    "type": "string"
+                }
+            }
+        },
+        "ActivateProtectionsByExtendedAttributesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uid": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActivateProtectionsByExtendedAttributesDefinition"
+                    }
+                }
+            }
+        },
+        "IpsSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MaliciousMailPolicySettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScanMaliciousLinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeactivateProtectionsByExtendedAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "IPS tag category name."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "IPS tag name."
+                },
+                "Uid": {
+                    "type": "string",
+                    "description": "IPS tag unique identifier."
+                }
+            },
+            "required": []
+        },
+        "IndicatorOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The indicator's action in this profile."
+                },
+                "Indicator": {
+                    "type": "string",
+                    "description": "The indicator whose action is to be overriden."
+                }
+            },
+            "required": []
+        },
+        "OverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Protection action."
+                },
+                "CapturePackets": {
+                    "type": "boolean",
+                    "description": "Capture packets."
+                },
+                "Protection": {
+                    "type": "string",
+                    "description": "IPS protection identified by name."
+                },
+                "Track": {
+                    "type": "string",
+                    "description": "Tracking method for protection."
+                }
+            },
+            "required": [
+                "Action",
+                "Protection"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivateProtectionsByExtendedAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActivateProtectionsByExtendedAttributesDefinition2"
+            },
+            "description": "Activate protections by these extended attributes. activate_protections_by_extended_attributes blocks are documented below."
+        },
+        "ActiveProtectionsPerformanceImpact": {
+            "type": "string",
+            "description": "Protections with this performance impact only will be activated in the profile."
+        },
+        "ActiveProtectionsSeverity": {
+            "type": "string",
+            "description": "Protections with this severity only will be activated in the profile."
+        },
+        "AntiBot": {
+            "type": "boolean",
+            "description": "Is Anti-Bot blade activated."
+        },
+        "AntiVirus": {
+            "type": "boolean",
+            "description": "Is Anti-Virus blade activated."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "ConfidenceLevelHigh": {
+            "type": "string",
+            "description": "Action for protections with high confidence level."
+        },
+        "ConfidenceLevelLow": {
+            "type": "string",
+            "description": "Action for protections with low confidence level."
+        },
+        "ConfidenceLevelMedium": {
+            "type": "string",
+            "description": "Action for protections with medium confidence level."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Ips": {
+            "type": "boolean",
+            "description": "Is IPS blade activated."
+        },
+        "IpsSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpsSettingsDefinition"
+            },
+            "description": "IPS blade settings. ips_settings blocks are documented below."
+        },
+        "MaliciousMailPolicySettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MaliciousMailPolicySettingsDefinition"
+            },
+            "description": "Malicious Mail Policy for MTA Gateways. malicious_mail_policy_settings blocks are documented below."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name. Should be unique in the domain."
+        },
+        "ScanMaliciousLinks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScanMaliciousLinksDefinition"
+            },
+            "description": "Scans malicious links (URLs) inside email messages. scan_malicious_links blocks are documented below."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "ThreatEmulation": {
+            "type": "boolean",
+            "description": "Is Threat Emulation blade activated."
+        },
+        "UseExtendedAttributes": {
+            "type": "boolean",
+            "description": "Whether to activate/deactivate IPS protections according to the extended attributes."
+        },
+        "UseIndicators": {
+            "type": "boolean",
+            "description": "Indicates whether the profile should make use of indicators."
+        },
+        "DeactivateProtectionsByExtendedAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeactivateProtectionsByExtendedAttributesDefinition"
+            }
+        },
+        "IndicatorOverrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IndicatorOverridesDefinition"
+            }
+        },
+        "Overrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OverridesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActivateProtectionsByExtendedAttributes",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

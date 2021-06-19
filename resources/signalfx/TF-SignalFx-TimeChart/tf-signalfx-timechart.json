@@ -1,0 +1,363 @@
+{
+    "typeName": "TF::SignalFx::TimeChart",
+    "description": "Provides a SignalFx time chart resource. This can be used to create and manage the different types of time charts.\n\nTime charts display data points over a period of time.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-TimeChart/docs/README.md",
+    "definitions": {
+        "AxisLeftDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HighWatermark": {
+                    "type": "number"
+                },
+                "HighWatermarkLabel": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "LowWatermark": {
+                    "type": "number"
+                },
+                "LowWatermarkLabel": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                },
+                "Watermarks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WatermarksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AxisRightDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HighWatermark": {
+                    "type": "number"
+                },
+                "HighWatermarkLabel": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "LowWatermark": {
+                    "type": "number"
+                },
+                "LowWatermarkLabel": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                },
+                "Watermarks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WatermarksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EventOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "HistogramOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColorTheme": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LegendOptionsFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Property"
+            ]
+        },
+        "VizOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Axis": {
+                    "type": "string"
+                },
+                "Color": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "PlotType": {
+                    "type": "string"
+                },
+                "ValuePrefix": {
+                    "type": "string"
+                },
+                "ValueSuffix": {
+                    "type": "string"
+                },
+                "ValueUnit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "WatermarksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AxesIncludeZero": {
+            "type": "boolean",
+            "description": "Force the chart to display zero on the y-axes, even if none of the data is near zero."
+        },
+        "AxesPrecision": {
+            "type": "number",
+            "description": "Specifies the digits SignalFx displays for values plotted on the chart. Defaults to `3`."
+        },
+        "ColorBy": {
+            "type": "string",
+            "description": "Must be `\"Dimension\"` or `\"Metric\"`. `\"Dimension\"` by default."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the chart."
+        },
+        "DisableSampling": {
+            "type": "boolean",
+            "description": "If `false`, samples a subset of the output MTS, which improves UI performance. `false` by default."
+        },
+        "EndTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LegendFieldsToHide": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of properties that should not be displayed in the chart legend (i.e. dimension names). All the properties are visible by default. Deprecated, please use `legend_options_fields`."
+        },
+        "MaxDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait for late datapoints."
+        },
+        "MinimumResolution": {
+            "type": "number",
+            "description": "The minimum resolution (in seconds) to use for computing the underlying program."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the chart."
+        },
+        "OnChartLegendDimension": {
+            "type": "string",
+            "description": "Dimensions to show in the on-chart legend. On-chart legend is off unless a dimension is specified. Allowed: `\"metric\"`, `\"plot_label\"` and any dimension."
+        },
+        "PlotType": {
+            "type": "string",
+            "description": "The visualization style to use. Must be `\"LineChart\"`, `\"AreaChart\"`, `\"ColumnChart\"`, or `\"Histogram\"`. Chart level `plot_type` by default.\n* `value_unit` - (Optional) A unit to attach to this plot. Units support automatic scaling (eg thousands of bytes will be displayed as kilobytes). Values values are `Bit, Kilobit, Megabit, Gigabit, Terabit, Petabit, Exabit, Zettabit, Yottabit, Byte, Kibibyte, Mebibyte, Gigibyte, Tebibyte, Pebibyte, Exbibyte, Zebibyte, Yobibyte, Nanosecond, Microsecond, Millisecond, Second, Minute, Hour, Day, Week`.\n* `value_prefix`, `value_suffix` - (Optional) Arbitrary prefix/suffix to display with the value of this plot."
+        },
+        "ProgramText": {
+            "type": "string",
+            "description": "Signalflow program text for the chart. More info [in the SignalFx docs](https://developers.signalfx.com/signalflow_analytics/signalflow_overview.html#_signalflow_programming_language)."
+        },
+        "ShowDataMarkers": {
+            "type": "boolean",
+            "description": "Show markers (circles) for each datapoint used to draw line or area charts. `false` by default."
+        },
+        "ShowEventLines": {
+            "type": "boolean",
+            "description": "Whether vertical highlight lines should be drawn in the visualizations at times when events occurred. `false` by default."
+        },
+        "Stacked": {
+            "type": "boolean",
+            "description": "Whether area and bar charts in the visualization should be stacked. `false` by default."
+        },
+        "StartTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TimeRange": {
+            "type": "number",
+            "description": "How many seconds ago from which to display data. For example, the last hour would be `3600`, etc. Conflicts with `start_time` and `end_time`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Time zone that SignalFlow uses as the basis of calendar window transformation methods. For example, if you set \"timezone\": \"Europe/Paris\" and then use the transformation sum(cycle=\"week\", cycle_start=\"Monday\") in your chart's SignalFlow program, the calendar window starts on Monday, Paris time. See the [full list of timezones for more](https://developers.signalfx.com/signalflow_analytics/signalflow_overview.html#_supported_signalflow_time_zones). `\"UTC\"` by default."
+        },
+        "UnitPrefix": {
+            "type": "string",
+            "description": "Must be `\"Metric\"` or `\"Binary`\". `\"Metric\"` by default."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "AxisLeft": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AxisLeftDefinition"
+            },
+            "maxItems": 1
+        },
+        "AxisRight": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AxisRightDefinition"
+            },
+            "maxItems": 1
+        },
+        "EventOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EventOptionsDefinition"
+            }
+        },
+        "HistogramOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HistogramOptionsDefinition"
+            }
+        },
+        "LegendOptionsFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LegendOptionsFieldsDefinition"
+            }
+        },
+        "VizOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VizOptionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProgramText"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

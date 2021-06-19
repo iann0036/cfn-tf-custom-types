@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::Turbot::Folder",
+    "description": "The `Turbot Folder` resource adds support for folders. Turbot folders define a top level hierarchy to arrange resources and their policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-Folder/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Akas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Unique identifier of the resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Brief description of the purpose and details of the folder.\n- `parent` - (Required) ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the folder. This appears as the folder name in the Turbot Console.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this folder.\n- `akas` - (Optional) Unique identifier of the resource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string",
+            "description": "ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the folder. This appears as the folder name in the Turbot Console.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this folder.\n- `akas` - (Optional) Unique identifier of the resource."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Labels that can be used to manage, group, categorize, search, and save metadata for this folder.\n- `akas` - (Optional) Unique identifier of the resource."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Short descriptive name for the folder. This appears as the folder name in the Turbot Console.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this folder.\n- `akas` - (Optional) Unique identifier of the resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ParentAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

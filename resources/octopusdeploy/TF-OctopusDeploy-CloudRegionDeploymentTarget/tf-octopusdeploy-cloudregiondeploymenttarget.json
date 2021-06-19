@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::OctopusDeploy::CloudRegionDeploymentTarget",
+    "description": "CloudFormation equivalent of octopusdeploy_cloud_region_deployment_target",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-CloudRegionDeploymentTarget/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultWorkerPoolId": {
+            "type": "string"
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HasLatestCalamari": {
+            "type": "boolean"
+        },
+        "HealthStatus": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDisabled": {
+            "type": "boolean"
+        },
+        "IsInProcess": {
+            "type": "boolean"
+        },
+        "MachinePolicyId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OperatingSystem": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ShellName": {
+            "type": "string"
+        },
+        "ShellVersion": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusSummary": {
+            "type": "string"
+        },
+        "TenantTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TenantedDeploymentParticipation": {
+            "type": "string"
+        },
+        "Tenants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Environments",
+        "Name",
+        "Roles"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HasLatestCalamari",
+        "/properties/Id",
+        "/properties/IsInProcess"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

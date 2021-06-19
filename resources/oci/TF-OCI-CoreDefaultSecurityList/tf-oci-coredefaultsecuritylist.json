@@ -1,0 +1,329 @@
+{
+    "typeName": "TF::OCI::CoreDefaultSecurityList",
+    "description": "CloudFormation equivalent of oci_core_default_security_list",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreDefaultSecurityList/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EgressSecurityRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "DestinationType": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Stateless": {
+                    "type": "boolean"
+                },
+                "IcmpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UdpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UdpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Destination",
+                "Protocol"
+            ]
+        },
+        "IngressSecurityRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourceType": {
+                    "type": "string"
+                },
+                "Stateless": {
+                    "type": "boolean"
+                },
+                "IcmpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UdpOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UdpOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Protocol",
+                "Source"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IcmpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TcpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                },
+                "SourcePortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcePortRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "UdpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                },
+                "SourcePortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcePortRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SourcePortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Max",
+                "Min"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageDefaultResourceId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "EgressSecurityRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EgressSecurityRulesDefinition"
+            }
+        },
+        "IngressSecurityRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IngressSecurityRulesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ManageDefaultResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

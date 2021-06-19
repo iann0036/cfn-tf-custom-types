@@ -1,0 +1,269 @@
+{
+    "typeName": "TF::AWS::BudgetsBudgetAction",
+    "description": "Provides a budget action resource. Budget actions are cost savings controls that run either automatically on your behalf or by using a workflow approval process.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-BudgetsBudgetAction/docs/README.md",
+    "definitions": {
+        "ActionThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionThresholdType": {
+                    "type": "string"
+                },
+                "ActionThresholdValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ActionThresholdType",
+                "ActionThresholdValue"
+            ]
+        },
+        "DefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IamActionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IamActionDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScpActionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScpActionDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SsmActionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SsmActionDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SubscriberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "SubscriptionType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address",
+                "SubscriptionType"
+            ]
+        },
+        "IamActionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Groups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PolicyArn": {
+                    "type": "string"
+                },
+                "Roles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "PolicyArn"
+            ]
+        },
+        "ScpActionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PolicyId": {
+                    "type": "string"
+                },
+                "TargetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "PolicyId",
+                "TargetIds"
+            ]
+        },
+        "SsmActionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionSubType": {
+                    "type": "string"
+                },
+                "InstanceIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ActionSubType",
+                "InstanceIds",
+                "Region"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The ID of the target account for budget. Will use current user's account_id by default if omitted."
+        },
+        "ActionId": {
+            "type": "string"
+        },
+        "ActionType": {
+            "type": "string",
+            "description": "The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. Valid values are `APPLY_IAM_POLICY`, `APPLY_SCP_POLICY`, and `RUN_SSM_DOCUMENTS`."
+        },
+        "ApprovalModel": {
+            "type": "string",
+            "description": "This specifies if the action needs manual or automatic approval. Valid values are `AUTOMATIC` and `MANUAL`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BudgetName": {
+            "type": "string",
+            "description": "The name of a budget."
+        },
+        "ExecutionRoleArn": {
+            "type": "string",
+            "description": "The role passed for action execution and reversion. Roles and actions must be in the same account."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotificationType": {
+            "type": "string",
+            "description": "The type of a notification. Valid values are `ACTUAL` or `FORECASTED`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "ActionThreshold": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionThresholdDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Definition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefinitionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Subscriber": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubscriberDefinition"
+            },
+            "maxItems": 11,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ActionType",
+        "ApprovalModel",
+        "BudgetName",
+        "ExecutionRoleArn",
+        "NotificationType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActionId",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

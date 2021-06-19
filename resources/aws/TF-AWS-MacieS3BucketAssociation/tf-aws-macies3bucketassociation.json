@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::AWS::MacieS3BucketAssociation",
+    "description": "~> **NOTE:** This resource interacts with [Amazon Macie Classic](https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html). Macie Classic cannot be activated in new accounts. See the [FAQ](https://aws.amazon.com/macie/classic-faqs/) for more details.\n\nAssociates an S3 resource with Amazon Macie for monitoring and data classification.\n\n~> **NOTE:** Before using Amazon Macie for the first time it must be enabled manually. Instructions are [here](https://docs.aws.amazon.com/macie/latest/userguide/macie-setting-up.html#macie-setting-up-enable).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-MacieS3BucketAssociation/docs/README.md",
+    "definitions": {
+        "ClassificationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Continuous": {
+                    "type": "string",
+                    "description": "A string value indicating that Macie perform a one-time classification of all of the existing objects in the bucket.\nThe only valid value is the default value, `FULL`."
+                },
+                "OneTime": {
+                    "type": "string",
+                    "description": "A string value indicating whether or not Macie performs a one-time classification of all of the existing objects in the bucket.\nValid values are `NONE` and `FULL`. Defaults to `NONE` indicating that Macie only classifies objects that are added after the association was created."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BucketName": {
+            "type": "string",
+            "description": "The name of the S3 bucket that you want to associate with Amazon Macie."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MemberAccountId": {
+            "type": "string",
+            "description": "The ID of the Amazon Macie member account whose S3 resources you want to associate with Macie. If `member_account_id` isn't specified, the action associates specified S3 resources with Macie for the current master account."
+        },
+        "Prefix": {
+            "type": "string",
+            "description": "Object key prefix identifying one or more S3 objects to which the association applies."
+        },
+        "ClassificationType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClassificationTypeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

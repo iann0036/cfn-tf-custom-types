@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::FortiOS::Logsyslogd2Overridefilter",
+    "description": "Override filters for remote system server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Logsyslogd2Overridefilter/docs/README.md",
+    "definitions": {
+        "FreeStyleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Log category. Valid values: `traffic`, `event`, `virus`, `webfilter`, `attack`, `spam`, `anomaly`, `voip`, `dlp`, `app-ctrl`, `waf`, `gtp`, `dns`, `ssh`, `ssl`, `file-filter`, `icap`."
+                },
+                "Filter": {
+                    "type": "string",
+                    "description": "Free style filter string."
+                },
+                "FilterType": {
+                    "type": "string",
+                    "description": "Include/exclude logs that match the filter. Valid values: `include`, `exclude`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Anomaly": {
+            "type": "string",
+            "description": "Enable/disable anomaly logging. Valid values: `enable`, `disable`."
+        },
+        "Dns": {
+            "type": "string",
+            "description": "Enable/disable detailed DNS event logging. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Filter": {
+            "type": "string",
+            "description": "Syslog 2 filter."
+        },
+        "FilterType": {
+            "type": "string",
+            "description": "Include/exclude logs that match the filter. Valid values: `include`, `exclude`."
+        },
+        "ForwardTraffic": {
+            "type": "string",
+            "description": "Enable/disable forward traffic logging. Valid values: `enable`, `disable`."
+        },
+        "Gtp": {
+            "type": "string",
+            "description": "Enable/disable GTP messages logging. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalTraffic": {
+            "type": "string",
+            "description": "Enable/disable local in or out traffic logging. Valid values: `enable`, `disable`."
+        },
+        "MulticastTraffic": {
+            "type": "string",
+            "description": "Enable/disable multicast traffic logging. Valid values: `enable`, `disable`."
+        },
+        "NetscanDiscovery": {
+            "type": "string",
+            "description": "Enable/disable netscan discovery event logging."
+        },
+        "NetscanVulnerability": {
+            "type": "string",
+            "description": "Enable/disable netscan vulnerability event logging."
+        },
+        "Severity": {
+            "type": "string",
+            "description": "Lowest severity level to log. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "SnifferTraffic": {
+            "type": "string",
+            "description": "Enable/disable sniffer traffic logging. Valid values: `enable`, `disable`."
+        },
+        "Ssh": {
+            "type": "string",
+            "description": "Enable/disable SSH logging. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Voip": {
+            "type": "string",
+            "description": "Enable/disable VoIP logging. Valid values: `enable`, `disable`."
+        },
+        "FreeStyle": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FreeStyleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

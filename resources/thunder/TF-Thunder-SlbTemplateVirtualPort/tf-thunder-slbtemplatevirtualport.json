@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateVirtualPort",
+    "description": "`thunder_slb_template_virtual_port` Provides details about thunder slb template virtual port",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateVirtualPort/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aflow": {
+            "type": "number",
+            "description": "Use aFlow to eliminate the traffic surge."
+        },
+        "AllowSynOtherflags": {
+            "type": "number",
+            "description": "Allow initial SYN packet with other flags."
+        },
+        "AllowVipToRportMapping": {
+            "type": "number",
+            "description": "Allow mapping of VIP to real port."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection limit."
+        },
+        "ConnLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnLimitReset": {
+            "type": "number",
+            "description": "Send client reset when connection over limit."
+        },
+        "ConnRateLimit": {
+            "type": "number",
+            "description": "Connection rate limit."
+        },
+        "ConnRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnRateLimitReset": {
+            "type": "number",
+            "description": "Send client reset when connection rate over limit."
+        },
+        "DropUnknownConn": {
+            "type": "number",
+            "description": "Drop conection if receives TCP packet without SYN or RST flag and it does not belong to any existing connections."
+        },
+        "Dscp": {
+            "type": "number",
+            "description": "Differentiated Services Code Point (DSCP to Real Server IP Mapping Value)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreTcpMsl": {
+            "type": "number",
+            "description": "reclaim TCP resource immediately without MSL."
+        },
+        "LogOptions": {
+            "type": "string",
+            "description": "\u2018no-logging\u2019: Do not log over limit event; \u2018no-repeat-logging\u2019: log once for over limit event. Default is log once per minute;."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual port template name."
+        },
+        "NonSynInitiation": {
+            "type": "number",
+            "description": "Allow initial TCP packet to be non-SYN."
+        },
+        "PktRateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Source IP and port rate limit per 100ms; \u2018second\u2019: Source IP and port rate limit per second (default);."
+        },
+        "PktRateLimitReset": {
+            "type": "number",
+            "description": "send client-side reset (reset after packet limit)."
+        },
+        "PktRateType": {
+            "type": "string",
+            "description": "\u2018src-ip-port\u2019: Source IP and port rate limit; \u2018src-port\u2019: Source port rate limit;."
+        },
+        "Rate": {
+            "type": "number",
+            "description": "Source IP and port rate limit (Packet rate limit)."
+        },
+        "RateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Use 100 ms as sampling interval; \u2018second\u2019: Use 1 second as sampling interval;."
+        },
+        "ResetL7OnFailover": {
+            "type": "number",
+            "description": "Send reset to L7 client and server connection upon a failover."
+        },
+        "ResetUnknownConn": {
+            "type": "number",
+            "description": "Send reset back if receives TCP packet without SYN or RST flag and it does not belong to any existing connections."
+        },
+        "SnatMsl": {
+            "type": "number",
+            "description": "Source NAT MSL (Source NAT MSL value)."
+        },
+        "SnatPortPreserve": {
+            "type": "number",
+            "description": "Source NAT Port Preservation."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "WhenRrEnable": {
+            "type": "number",
+            "description": "Only do rate limit if CPU RR triggered."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

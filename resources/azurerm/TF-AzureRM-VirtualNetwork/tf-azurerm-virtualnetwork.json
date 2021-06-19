@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::AzureRM::VirtualNetwork",
+    "description": "Manages a virtual network including any configured subnets. Each subnet can\noptionally be configured with a security group to be associated with the subnet.\n\n~> **NOTE on Virtual Networks and Subnet's:** Terraform currently\nprovides both a standalone [Subnet resource](subnet.html), and allows for Subnets to be defined in-line within the [Virtual Network resource](virtual_network.html).\nAt this time you cannot use a Virtual Network with in-line Subnets in conjunction with any Subnet resources. Doing so will cause a conflict of Subnet configurations and will overwrite Subnet's.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualNetwork/docs/README.md",
+    "definitions": {
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressPrefix": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecurityGroup": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DdosProtectionPlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean",
+                    "description": "Enable/disable DDoS Protection Plan on Virtual Network."
+                },
+                "Id": {
+                    "type": "string",
+                    "description": "The ID of DDoS Protection Plan."
+                }
+            },
+            "required": [
+                "Enable",
+                "Id"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressSpace": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The address space that is used the virtual network. You can supply more than one address space."
+        },
+        "BgpCommunity": {
+            "type": "string",
+            "description": "The BGP community attribute in format `<as-number>:<community-value>`."
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of IP addresses of DNS servers."
+        },
+        "Guid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location/region where the virtual network is created. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual network. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the virtual network."
+        },
+        "Subnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubnetDefinition"
+            },
+            "description": "Can be specified multiple times to define multiple subnets. Each `subnet` block supports fields documented below."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VmProtectionEnabled": {
+            "type": "boolean"
+        },
+        "DdosProtectionPlan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DdosProtectionPlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AddressSpace",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Guid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

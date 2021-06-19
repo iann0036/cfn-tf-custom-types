@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::AWS::Subnet",
+    "description": "Provides an VPC subnet resource.\n\n~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), subnets associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the [customizable deletion timeout](#timeouts) to 45 minutes (`delete = \"45m\"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/hashicorp/terraform-provider-aws/issues/10329).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Subnet/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssignIpv6AddressOnCreation": {
+            "type": "boolean",
+            "description": "Specify true to indicate\nthat network interfaces created in the specified subnet should be\nassigned an IPv6 address. Default is `false`."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The AZ for the subnet."
+        },
+        "AvailabilityZoneId": {
+            "type": "string",
+            "description": "The AZ ID of the subnet."
+        },
+        "CidrBlock": {
+            "type": "string",
+            "description": "The CIDR block for the subnet."
+        },
+        "CustomerOwnedIpv4Pool": {
+            "type": "string",
+            "description": "The customer owned IPv4 address pool. Typically used with the `map_customer_owned_ip_on_launch` argument. The `outpost_arn` argument must be specified when configured."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6CidrBlock": {
+            "type": "string",
+            "description": "The IPv6 network range for the subnet,\nin CIDR notation. The subnet size must use a /64 prefix length."
+        },
+        "Ipv6CidrBlockAssociationId": {
+            "type": "string"
+        },
+        "MapCustomerOwnedIpOnLaunch": {
+            "type": "boolean",
+            "description": "Specify `true` to indicate that network interfaces created in the subnet should be assigned a customer owned IP address. The `customer_owned_ipv4_pool` and `outpost_arn` arguments must be specified when set to `true`. Default is `false`."
+        },
+        "MapPublicIpOnLaunch": {
+            "type": "boolean",
+            "description": "Specify true to indicate\nthat instances launched into the subnet should be assigned\na public IP address. Default is `false`."
+        },
+        "OutpostArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Outpost."
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Ipv6CidrBlockAssociationId",
+        "/properties/OwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

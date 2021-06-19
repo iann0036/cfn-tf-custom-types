@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AWS::ImagebuilderImagePipeline",
+    "description": "Manages an Image Builder Image Pipeline.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ImagebuilderImagePipeline/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ImageTestsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageTestsEnabled": {
+                    "type": "boolean"
+                },
+                "TimeoutMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PipelineExecutionStartCondition": {
+                    "type": "string"
+                },
+                "ScheduleExpression": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ScheduleExpression"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DateLastRun": {
+            "type": "string"
+        },
+        "DateNextRun": {
+            "type": "string"
+        },
+        "DateUpdated": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the image pipeline."
+        },
+        "DistributionConfigurationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Distribution Configuration."
+        },
+        "EnhancedImageMetadataEnabled": {
+            "type": "boolean",
+            "description": "Whether additional information about the image being created is collected. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageRecipeArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Infrastructure Recipe."
+        },
+        "InfrastructureConfigurationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the image pipeline."
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the image pipeline. Valid values are `DISABLED` and `ENABLED`. Defaults to `ENABLED`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags for the image pipeline. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ImageTestsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImageTestsConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageRecipeArn",
+        "InfrastructureConfigurationArn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DateCreated",
+        "/properties/DateLastRun",
+        "/properties/DateNextRun",
+        "/properties/DateUpdated",
+        "/properties/Id",
+        "/properties/Platform"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

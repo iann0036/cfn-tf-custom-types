@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerArrpprofile",
+    "description": "Configure WiFi Automatic Radio Resource Provisioning (ARRP) profiles. Applies to FortiOS Version `>= 6.4.2`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerArrpprofile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeDfsChannel": {
+            "type": "string",
+            "description": "Enable/disable use of DFS channel in DARRP channel selection phase 1 (default = disable)."
+        },
+        "IncludeWeatherChannel": {
+            "type": "string",
+            "description": "Enable/disable use of weather channel in DARRP channel selection phase 1 (default = disable)."
+        },
+        "MonitorPeriod": {
+            "type": "number",
+            "description": "Period in seconds to measure average transmit retries and receive errors (default = 300)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "WiFi ARRP profile name."
+        },
+        "SelectionPeriod": {
+            "type": "number",
+            "description": "Period in seconds to measure average channel load, noise floor, spectral RSSI (default = 3600)."
+        },
+        "ThresholdAp": {
+            "type": "number",
+            "description": "Threshold to reject channel in DARRP channel selection phase 1 due to surrounding APs (0 - 500, default = 250)."
+        },
+        "ThresholdChannelLoad": {
+            "type": "number",
+            "description": "Threshold in percentage to reject channel in DARRP channel selection phase 1 due to channel load (0 - 100, default = 60)."
+        },
+        "ThresholdNoiseFloor": {
+            "type": "string",
+            "description": "Threshold in dBm to reject channel in DARRP channel selection phase 1 due to noise floor (-95 to -20, default = -85)."
+        },
+        "ThresholdRxErrors": {
+            "type": "number",
+            "description": "Threshold in percentage for receive errors to trigger channel reselection in DARRP monitor stage (0 - 100, default = 50)."
+        },
+        "ThresholdSpectralRssi": {
+            "type": "string",
+            "description": "Threshold in dBm to reject channel in DARRP channel selection phase 1 due to spectral RSSI (-95 to -20, default = -65)."
+        },
+        "ThresholdTxRetries": {
+            "type": "number",
+            "description": "Threshold in percentage for transmit retries to trigger channel reselection in DARRP monitor stage (0 - 1000, default = 300)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WeightChannelLoad": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for channel load (0 - 2000, default = 20)."
+        },
+        "WeightDfsChannel": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for DFS channel (0 - 2000, default = 500)."
+        },
+        "WeightManagedAp": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for managed APs (0 - 2000, default = 50)."
+        },
+        "WeightNoiseFloor": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for noise floor (0 - 2000, default = 40)."
+        },
+        "WeightRogueAp": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for rogue APs (0 - 2000, default = 10)."
+        },
+        "WeightSpectralRssi": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for spectral RSSI (0 - 2000, default = 40)."
+        },
+        "WeightWeatherChannel": {
+            "type": "number",
+            "description": "Weight in DARRP channel score calculation for weather channel (0 - 2000, default = 1000)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

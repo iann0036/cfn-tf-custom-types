@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::AWS::Route53KeySigningKey",
+    "description": "Manages a Route 53 Key Signing Key. To manage Domain Name System Security Extensions (DNSSEC) for a Hosted Zone, see the [`aws_route53_hosted_zone_dnssec` resource](route53_hosted_zone_dnssec.html). For more information about managing DNSSEC in Route 53, see the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Route53KeySigningKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DigestAlgorithmMnemonic": {
+            "type": "string"
+        },
+        "DigestAlgorithmType": {
+            "type": "number"
+        },
+        "DigestValue": {
+            "type": "string"
+        },
+        "DnskeyRecord": {
+            "type": "string"
+        },
+        "DsRecord": {
+            "type": "string"
+        },
+        "Flag": {
+            "type": "number"
+        },
+        "HostedZoneId": {
+            "type": "string",
+            "description": "Identifier of the Route 53 Hosted Zone."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyManagementServiceArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Key Management Service (KMS) Key. This must be unique for each key-signing key (KSK) in a single hosted zone. This key must be in the `us-east-1` Region and meet certain requirements, which are described in the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-cmk-requirements.html) and [Route 53 API Reference](https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateKeySigningKey.html)."
+        },
+        "KeyTag": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the key-signing key (KSK). Must be unique for each key-singing key in the same hosted zone."
+        },
+        "PublicKey": {
+            "type": "string"
+        },
+        "SigningAlgorithmMnemonic": {
+            "type": "string"
+        },
+        "SigningAlgorithmType": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the key-signing key (KSK). Valid values: `ACTIVE`, `INACTIVE`. Defaults to `ACTIVE`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HostedZoneId",
+        "KeyManagementServiceArn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DigestAlgorithmMnemonic",
+        "/properties/DigestAlgorithmType",
+        "/properties/DigestValue",
+        "/properties/DnskeyRecord",
+        "/properties/DsRecord",
+        "/properties/Flag",
+        "/properties/Id",
+        "/properties/KeyTag",
+        "/properties/PublicKey",
+        "/properties/SigningAlgorithmMnemonic",
+        "/properties/SigningAlgorithmType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

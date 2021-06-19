@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::ACI::LeafAccessBundlePolicyGroup",
+    "description": "CloudFormation equivalent of aci_leaf_access_bundle_policy_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-LeafAccessBundlePolicyGroup/docs/README.md",
+    "definitions": {
+        "RelationInfraRsNetflowMonitorPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FltType": {
+                    "type": "string"
+                },
+                "TnNetflowMonitorPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FltType",
+                "TnNetflowMonitorPolName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LagT": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "RelationInfraRsAttEntP": {
+            "type": "string"
+        },
+        "RelationInfraRsCdpIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsCoppIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsFcIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsHIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsL2IfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsL2InstPol": {
+            "type": "string"
+        },
+        "RelationInfraRsL2PortAuthPol": {
+            "type": "string"
+        },
+        "RelationInfraRsL2PortSecurityPol": {
+            "type": "string"
+        },
+        "RelationInfraRsLacpPol": {
+            "type": "string"
+        },
+        "RelationInfraRsLldpIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsMacsecIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsMcpIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsMonIfInfraPol": {
+            "type": "string"
+        },
+        "RelationInfraRsQosDppIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsQosEgressDppIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsQosIngressDppIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsQosPfcIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsQosSdIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsSpanVDestGrp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationInfraRsSpanVSrcGrp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationInfraRsStormctrlIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsStpIfPol": {
+            "type": "string"
+        },
+        "RelationInfraRsNetflowMonitorPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationInfraRsNetflowMonitorPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "typeName": "TF::AzureRM::DevTestLinuxVirtualMachine",
+    "description": "Manages a Linux Virtual Machine within a Dev Test Lab.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DevTestLinuxVirtualMachine/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GalleryImageReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string",
+                    "description": "The Offer of the Gallery Image. Changing this forces a new resource to be created."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "The Publisher of the Gallery Image. Changing this forces a new resource to be created."
+                },
+                "Sku": {
+                    "type": "string",
+                    "description": "The SKU of the Gallery Image. Changing this forces a new resource to be created."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "The Version of the Gallery Image. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku",
+                "Version"
+            ]
+        },
+        "InboundNatRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPort": {
+                    "type": "number",
+                    "description": "The Backend Port associated with this NAT Rule. Changing this forces a new resource to be created."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The Protocol used for this NAT Rule. Possible values are `Tcp` and `Udp`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "BackendPort",
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowClaim": {
+            "type": "boolean",
+            "description": "Can this Virtual Machine be claimed by users? Defaults to `true`."
+        },
+        "DisallowPublicIpAddress": {
+            "type": "boolean",
+            "description": "Should the Virtual Machine be created without a Public IP Address? Changing this forces a new resource to be created."
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabName": {
+            "type": "string",
+            "description": "Specifies the name of the Dev Test Lab in which the Virtual Machine should be created. Changing this forces a new resource to be created."
+        },
+        "LabSubnetName": {
+            "type": "string",
+            "description": "The name of a Subnet within the Dev Test Virtual Network where this machine should exist. Changing this forces a new resource to be created."
+        },
+        "LabVirtualNetworkId": {
+            "type": "string",
+            "description": "The ID of the Dev Test Virtual Network where this Virtual Machine should be created. Changing this forces a new resource to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Dev Test Lab exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Dev Test Machine. Changing this forces a new resource to be created."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Any notes about the Virtual Machine."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The Password associated with the `username` used to login to this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Dev Test Lab resource exists. Changing this forces a new resource to be created."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The Machine Size to use for this Virtual Machine, such as `Standard_F2`. Changing this forces a new resource to be created."
+        },
+        "SshKey": {
+            "type": "string",
+            "description": "The SSH Key associated with the `username` used to login to this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "The type of Storage to use on this Virtual Machine. Possible values are `Standard` and `Premium`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "UniqueIdentifier": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "The Username associated with the local administrator on this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "GalleryImageReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GalleryImageReferenceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "InboundNatRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InboundNatRuleDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LabName",
+        "LabSubnetName",
+        "LabVirtualNetworkId",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Size",
+        "StorageType",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id",
+        "/properties/UniqueIdentifier"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

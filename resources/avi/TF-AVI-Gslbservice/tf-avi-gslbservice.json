@@ -1,0 +1,399 @@
+{
+    "typeName": "TF::AVI::Gslbservice",
+    "description": "The GslbService resource allows the creation and management of Avi GslbService",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Gslbservice/docs/README.md",
+    "definitions": {
+        "DownResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "FallbackIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FallbackIpDefinition"
+                    }
+                },
+                "FallbackIp6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FallbackIp6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "ConsistentHashMask": {
+                    "type": "number"
+                },
+                "ConsistentHashMask6": {
+                    "type": "number"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "FallbackAlgorithm": {
+                    "type": "string"
+                },
+                "MinHealthMonitorsUp": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Members": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MembersDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "FallbackIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "FallbackIp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudUuid": {
+                    "type": "string"
+                },
+                "ClusterUuid": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Fqdn": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Ratio": {
+                    "type": "number"
+                },
+                "ResolveFqdnToV6": {
+                    "type": "boolean"
+                },
+                "VsUuid": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    }
+                },
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocationDefinition"
+                    }
+                },
+                "PublicIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationPersistenceProfileRef": {
+            "type": "string",
+            "description": "The federated application persistence associated with gslbservice site persistence functionality. It is a reference to an object of type applicationpersistenceprofile. Field introduced in 17.2.1."
+        },
+        "ControllerHealthStatusEnabled": {
+            "type": "boolean",
+            "description": "Gs member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator name. Field introduced in 17.1.2."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "DomainNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Fully qualified domain name of the gslb service. Minimum of 1 items required."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable or disable the gslb service. If the gslb service is enabled, then the vips are sent in the dns responses based on reachability and configured algorithm. If the gslb service is disabled, then the vips are no longer available in the dns response."
+        },
+        "HealthMonitorRefs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Verify vs health by applying one or more health monitors. Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response. It is a reference to an object of type healthmonitor. Maximum of 6 items allowed."
+        },
+        "HealthMonitorScope": {
+            "type": "string",
+            "description": "Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS."
+        },
+        "HmOff": {
+            "type": "boolean",
+            "description": "This field is an internal field and is used in se. Field introduced in 18.2.2."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFederated": {
+            "type": "boolean",
+            "description": "This field indicates that this object is replicated across gslb federation. Field introduced in 17.1.3."
+        },
+        "MinMembers": {
+            "type": "number",
+            "description": "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'disable'. Field introduced in 17.2.4."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the gslb service."
+        },
+        "NumDnsIp": {
+            "type": "number",
+            "description": "Number of ip addresses of this gslb service to be returned by the dns service. Enter 0 to return all ip addresses. Allowed values are 1-20. Special values are 0- 'return all ip addresses'."
+        },
+        "PoolAlgorithm": {
+            "type": "string",
+            "description": "The load balancing algorithm will pick a gslb pool within the gslb service list of available pools. Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO. Field introduced in 17.2.3."
+        },
+        "ResolveCname": {
+            "type": "boolean",
+            "description": "This field indicates that for a cname query, respond with resolved cnames in the additional section with a records. Field introduced in 18.2.5."
+        },
+        "SitePersistenceEnabled": {
+            "type": "boolean",
+            "description": "Enable site-persistence for the gslbservice. Field introduced in 17.2.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "Ttl value (in seconds) for records served for this gslb service by the dns service. Allowed values are 0-86400. Unit is sec."
+        },
+        "UseEdnsClientSubnet": {
+            "type": "boolean",
+            "description": "Use the client ip subnet from the edns option as source ipaddress for client geo-location and consistent hash algorithm. Default is true. Field introduced in 17.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "WildcardMatch": {
+            "type": "boolean",
+            "description": "Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns request. Default is false. Field introduced in 17.1.1."
+        },
+        "DownResponse": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DownResponseDefinition"
+            }
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            },
+            "minItems": 1
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainNames",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

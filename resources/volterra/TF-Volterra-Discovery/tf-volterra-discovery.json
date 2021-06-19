@@ -1,0 +1,667 @@
+{
+    "typeName": "TF::Volterra::Discovery",
+    "description": "CloudFormation equivalent of volterra_discovery",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-Discovery/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DiscoveryConsulDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessInfoDefinition"
+                    }
+                },
+                "PublishInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublishInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DiscoveryK8sDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessInfoDefinition"
+                    }
+                },
+                "PublishInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublishInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WhereDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Site": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteDefinition"
+                    }
+                },
+                "VirtualNetwork": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkDefinition"
+                    }
+                },
+                "VirtualSite": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualSiteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AccessInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InCluster": {
+                    "type": "boolean"
+                },
+                "Isolated": {
+                    "type": "boolean"
+                },
+                "Reachable": {
+                    "type": "boolean"
+                },
+                "ConnectionInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConnectionInfoDefinition"
+                    }
+                },
+                "KubeconfigUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/KubeconfigUrlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PublishInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "PublishFqdns": {
+                    "type": "boolean"
+                },
+                "DnsDelegation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DnsDelegationDefinition"
+                    }
+                },
+                "Publish": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublishDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkType": {
+                    "type": "string"
+                },
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VirtualNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VirtualSiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkType": {
+                    "type": "string"
+                },
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConnectionInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiServer": {
+                    "type": "string"
+                },
+                "TlsInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "KubeconfigUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DnsDelegationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsMode": {
+                    "type": "string"
+                },
+                "Subdomain": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublishDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TlsInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ServerName": {
+                    "type": "string"
+                },
+                "TrustedCaUrl": {
+                    "type": "string"
+                },
+                "CaCertificateUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CaCertificateUrlDefinition"
+                    }
+                },
+                "CertificateUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateUrlDefinition"
+                    }
+                },
+                "KeyUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/KeyUrlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CaCertificateUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CertificateUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "KeyUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "DiscoveryConsul": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiscoveryConsulDefinition"
+            }
+        },
+        "DiscoveryK8s": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiscoveryK8sDefinition"
+            }
+        },
+        "Where": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WhereDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

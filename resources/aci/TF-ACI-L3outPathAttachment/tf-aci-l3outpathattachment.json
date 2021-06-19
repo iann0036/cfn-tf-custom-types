@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::ACI::L3outPathAttachment",
+    "description": "Manages ACI L3-out Path Attachment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outPathAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Addr": {
+            "type": "string",
+            "description": "The IP address of the path attached to the layer 3 outside profile."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3-out Path Attachment."
+        },
+        "Autostate": {
+            "type": "string",
+            "description": "Autostate for object L3-out Path Attachment.\nAllowed values: \"disabled\", \"enabled\". Default value: \"disabled\".\n- `encap` - (Optional) The encapsulation of the path attached to the layer 3 outside profile. Encap should be set to \"unknown\" if the value of if_inst_t is \"l3-port\"."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Encap": {
+            "type": "string",
+            "description": "The encapsulation of the path attached to the layer 3 outside profile. Encap should be set to \"unknown\" if the value of if_inst_t is \"l3-port\"."
+        },
+        "EncapScope": {
+            "type": "string",
+            "description": "The encapsulation scope for object L3-out Path Attachment.\nAllowed values: \"ctx\", \"local\". Default value: \"local\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IfInstT": {
+            "type": "string",
+            "description": "Interface type.\nAllowed values: \"ext-svi\", \"l3-port\", \"sub-interface\", \"unspecified\".\n- `addr` - (Optional) The IP address of the path attached to the layer 3 outside profile."
+        },
+        "Ipv6Dad": {
+            "type": "string",
+            "description": "IPv6-Dad for object L3-out Path Attachment.\nAllowed values: \"disabled\", \"enabled\". Default value: \"enabled\".\n- `ll_addr` - (Optional) The override of the system generated IPv6 link-local address."
+        },
+        "LlAddr": {
+            "type": "string",
+            "description": "The override of the system generated IPv6 link-local address."
+        },
+        "LogicalInterfaceProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent logical interface profile object.\n- `target_dn` - (Required) The logical interface identifier.\n- `if_inst_t` - (Required) Interface type.\nAllowed values: \"ext-svi\", \"l3-port\", \"sub-interface\", \"unspecified\".\n- `addr` - (Optional) The IP address of the path attached to the layer 3 outside profile."
+        },
+        "Mac": {
+            "type": "string",
+            "description": "The MAC address of the path attached to the layer 3 outside profile."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "BGP Domain mode.\nAllowed values: \"native\", \"regular\", \"untagged\". Default value: \"regular\".\n- `mtu` - (Optional) The maximum transmit unit of the external network.\nDefault value: \"inherit\"."
+        },
+        "Mtu": {
+            "type": "string",
+            "description": "The maximum transmit unit of the external network.\nDefault value: \"inherit\"."
+        },
+        "TargetDn": {
+            "type": "string",
+            "description": "The logical interface identifier.\n- `if_inst_t` - (Required) Interface type.\nAllowed values: \"ext-svi\", \"l3-port\", \"sub-interface\", \"unspecified\".\n- `addr` - (Optional) The IP address of the path attached to the layer 3 outside profile."
+        },
+        "TargetDscp": {
+            "type": "string",
+            "description": "The target differentiated service code point (DSCP) of the path attached to the layer 3 outside profile. Default value: \"unspecified\".\nAllowed values: \"AF11\", \"AF12\", \"AF13\", \"AF21\", \"AF22\", \"AF23\", \"AF31\", \"AF32\", \"AF33\", \"AF41\", \"AF42\", \"AF43\", \"CS0\", \"CS1\", \"CS2\", \"CS3\", \"CS4\", \"CS5\", \"CS6\", \"CS7\", \"EF\", \"VA\", \"unspecified\". Default value: \"unspecified\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IfInstT",
+        "LogicalInterfaceProfileDn",
+        "TargetDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

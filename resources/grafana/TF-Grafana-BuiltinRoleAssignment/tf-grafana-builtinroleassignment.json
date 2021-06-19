@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Grafana::BuiltinRoleAssignment",
+    "description": "CloudFormation equivalent of grafana_builtin_role_assignment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/grafana/TF-Grafana-BuiltinRoleAssignment/docs/README.md",
+    "definitions": {
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Global": {
+                    "type": "boolean"
+                },
+                "Uid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uid"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BuiltinRole": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BuiltinRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

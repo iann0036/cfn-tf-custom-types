@@ -1,0 +1,893 @@
+{
+    "typeName": "TF::AWS::CloudfrontDistribution",
+    "description": "Creates an Amazon CloudFront web distribution.\n\nFor information about CloudFront distributions, see the\n[Amazon CloudFront Developer Guide][1]. For specific information about creating\nCloudFront web distributions, see the [POST Distribution][2] page in the Amazon\nCloudFront API Reference.\n\n~> **NOTE:** CloudFront distributions take about 15 minutes to a deployed state\nafter creation or modification. During this time, deletes to resources will be\nblocked. If you need to delete a distribution that is enabled and you do not\nwant to wait, you need to use the `retain_on_delete` flag.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudfrontDistribution/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TrustedKeyGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyGroupId": {
+                    "type": "string"
+                },
+                "KeyPairIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "TrustedKeyGroupsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TrustedKeyGroupsDefinition"
+                    }
+                }
+            }
+        },
+        "TrustedSignersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsAccountNumber": {
+                    "type": "string"
+                },
+                "KeyPairIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "TrustedSignersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TrustedSignersDefinition"
+                    }
+                }
+            }
+        },
+        "CustomErrorResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorCachingMinTtl": {
+                    "type": "number"
+                },
+                "ErrorCode": {
+                    "type": "number"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                },
+                "ResponsePagePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ErrorCode"
+            ]
+        },
+        "DefaultCacheBehaviorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CachePolicyId": {
+                    "type": "string"
+                },
+                "CachedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "FieldLevelEncryptionId": {
+                    "type": "string"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "OriginRequestPolicyId": {
+                    "type": "string"
+                },
+                "RealtimeLogConfigArn": {
+                    "type": "string"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                },
+                "TargetOriginId": {
+                    "type": "string"
+                },
+                "TrustedKeyGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TrustedSigners": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ViewerProtocolPolicy": {
+                    "type": "string"
+                },
+                "ForwardedValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardedValuesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FunctionAssociationDefinition"
+                    },
+                    "maxItems": 2
+                },
+                "LambdaFunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LambdaFunctionAssociationDefinition"
+                    },
+                    "maxItems": 4
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "CachedMethods",
+                "TargetOriginId",
+                "ViewerProtocolPolicy"
+            ]
+        },
+        "LoggingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "IncludeCookies": {
+                    "type": "boolean"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket"
+            ]
+        },
+        "OrderedCacheBehaviorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CachePolicyId": {
+                    "type": "string"
+                },
+                "CachedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "FieldLevelEncryptionId": {
+                    "type": "string"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "OriginRequestPolicyId": {
+                    "type": "string"
+                },
+                "PathPattern": {
+                    "type": "string"
+                },
+                "RealtimeLogConfigArn": {
+                    "type": "string"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                },
+                "TargetOriginId": {
+                    "type": "string"
+                },
+                "TrustedKeyGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TrustedSigners": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ViewerProtocolPolicy": {
+                    "type": "string"
+                },
+                "ForwardedValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardedValuesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FunctionAssociationDefinition"
+                    },
+                    "maxItems": 2
+                },
+                "LambdaFunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LambdaFunctionAssociationDefinition"
+                    },
+                    "maxItems": 4
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "CachedMethods",
+                "PathPattern",
+                "TargetOriginId",
+                "ViewerProtocolPolicy"
+            ]
+        },
+        "OriginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionAttempts": {
+                    "type": "number"
+                },
+                "ConnectionTimeout": {
+                    "type": "number"
+                },
+                "DomainName": {
+                    "type": "string"
+                },
+                "OriginId": {
+                    "type": "string"
+                },
+                "OriginPath": {
+                    "type": "string"
+                },
+                "CustomHeader": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomHeaderDefinition"
+                    }
+                },
+                "CustomOriginConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomOriginConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OriginShield": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginShieldDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3OriginConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3OriginConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DomainName",
+                "OriginId"
+            ]
+        },
+        "OriginGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginId": {
+                    "type": "string"
+                },
+                "FailoverCriteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FailoverCriteriaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Member": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MemberDefinition"
+                    },
+                    "maxItems": 2,
+                    "minItems": 2
+                }
+            },
+            "required": [
+                "OriginId"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GeoRestriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GeoRestrictionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ViewerCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcmCertificateArn": {
+                    "type": "string"
+                },
+                "CloudfrontDefaultCertificate": {
+                    "type": "boolean"
+                },
+                "IamCertificateId": {
+                    "type": "string"
+                },
+                "MinimumProtocolVersion": {
+                    "type": "string"
+                },
+                "SslSupportMethod": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ForwardedValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "QueryString": {
+                    "type": "boolean"
+                },
+                "QueryStringCacheKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Cookies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookiesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "QueryString"
+            ]
+        },
+        "FunctionAssociationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventType": {
+                    "type": "string"
+                },
+                "FunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EventType",
+                "FunctionArn"
+            ]
+        },
+        "LambdaFunctionAssociationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventType": {
+                    "type": "string"
+                },
+                "IncludeBody": {
+                    "type": "boolean"
+                },
+                "LambdaArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EventType",
+                "LambdaArn"
+            ]
+        },
+        "CustomHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "CustomOriginConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpPort": {
+                    "type": "number"
+                },
+                "HttpsPort": {
+                    "type": "number"
+                },
+                "OriginKeepaliveTimeout": {
+                    "type": "number"
+                },
+                "OriginProtocolPolicy": {
+                    "type": "string"
+                },
+                "OriginReadTimeout": {
+                    "type": "number"
+                },
+                "OriginSslProtocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "HttpPort",
+                "HttpsPort",
+                "OriginProtocolPolicy",
+                "OriginSslProtocols"
+            ]
+        },
+        "OriginShieldDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "OriginShieldRegion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled",
+                "OriginShieldRegion"
+            ]
+        },
+        "S3OriginConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginAccessIdentity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OriginAccessIdentity"
+            ]
+        },
+        "FailoverCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "StatusCodes"
+            ]
+        },
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OriginId"
+            ]
+        },
+        "GeoRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Locations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RestrictionType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RestrictionType"
+            ]
+        },
+        "CookiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Forward": {
+                    "type": "string"
+                },
+                "WhitelistedNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Forward"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aliases": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CallerReference": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "DefaultRootObject": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "HttpVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InProgressValidationBatches": {
+            "type": "number"
+        },
+        "IsIpv6Enabled": {
+            "type": "boolean"
+        },
+        "LastModifiedTime": {
+            "type": "string"
+        },
+        "PriceClass": {
+            "type": "string"
+        },
+        "RetainOnDelete": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TrustedKeyGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedKeyGroupsDefinition2"
+            }
+        },
+        "TrustedSigners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedSignersDefinition2"
+            }
+        },
+        "WaitForDeployment": {
+            "type": "boolean"
+        },
+        "WebAclId": {
+            "type": "string"
+        },
+        "CustomErrorResponse": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomErrorResponseDefinition"
+            }
+        },
+        "DefaultCacheBehavior": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultCacheBehaviorDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LoggingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OrderedCacheBehavior": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrderedCacheBehaviorDefinition"
+            }
+        },
+        "Origin": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginDefinition"
+            },
+            "minItems": 1
+        },
+        "OriginGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginGroupDefinition"
+            }
+        },
+        "Restrictions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestrictionsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ViewerCertificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewerCertificateDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CallerReference",
+        "/properties/DomainName",
+        "/properties/Etag",
+        "/properties/HostedZoneId",
+        "/properties/Id",
+        "/properties/InProgressValidationBatches",
+        "/properties/LastModifiedTime",
+        "/properties/Status",
+        "/properties/TrustedKeyGroups",
+        "/properties/TrustedSigners"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

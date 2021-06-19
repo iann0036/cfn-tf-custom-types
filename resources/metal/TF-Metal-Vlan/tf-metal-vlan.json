@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Metal::Vlan",
+    "description": "Provides a resource to allow users to manage Virtual Networks in their projects.\n\nTo learn more about Layer 2 networking in Equinix Metal, refer to\n\n* <https://metal.equinix.com/developers/docs/networking/layer2/>\n* <https://metal.equinix.com/developers/docs/networking/layer2-configs/>",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-Vlan/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description string."
+        },
+        "Facility": {
+            "type": "string",
+            "description": "Facility where to create the VLAN."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metro": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "ID of parent project."
+        },
+        "Vxlan": {
+            "type": "number",
+            "description": "VLAN ID, must be unique in metro."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

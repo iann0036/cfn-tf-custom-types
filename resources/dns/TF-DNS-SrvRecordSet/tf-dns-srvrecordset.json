@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::DNS::SrvRecordSet",
+    "description": "Creates an SRV type DNS record set.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dns/TF-DNS-SrvRecordSet/docs/README.md",
+    "definitions": {
+        "SrvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number",
+                    "description": "The port for the service on the target."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "The priority for the record."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "The FQDN of the target, include the trailing dot."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "The weight for the record."
+                }
+            },
+            "required": [
+                "Port",
+                "Priority",
+                "Target",
+                "Weight"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
+        },
+        "Srv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SrvDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

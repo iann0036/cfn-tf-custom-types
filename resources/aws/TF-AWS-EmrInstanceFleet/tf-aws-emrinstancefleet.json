@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::AWS::EmrInstanceFleet",
+    "description": "Provides an Elastic MapReduce Cluster Instance Fleet configuration.\nSee [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/emr/) for more information.\n\n~> **NOTE:** At this time, Instance Fleets cannot be destroyed through the API nor\nweb interface. Instance Fleets are destroyed when the EMR Cluster is destroyed.\nTerraform will resize any Instance Fleet to zero when destroying the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EmrInstanceFleet/docs/README.md",
+    "definitions": {
+        "InstanceTypeConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BidPrice": {
+                    "type": "string"
+                },
+                "BidPriceAsPercentageOfOnDemandPrice": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "number"
+                },
+                "Configurations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationsDefinition"
+                    }
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "LaunchSpecificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnDemandSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnDemandSpecificationDefinition"
+                    }
+                },
+                "SpotSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpotSpecificationDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConfigurationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classification": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EbsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Size",
+                "Type"
+            ]
+        },
+        "OnDemandSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AllocationStrategy"
+            ]
+        },
+        "SpotSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                },
+                "BlockDurationMinutes": {
+                    "type": "number"
+                },
+                "TimeoutAction": {
+                    "type": "string"
+                },
+                "TimeoutDurationMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllocationStrategy",
+                "TimeoutAction",
+                "TimeoutDurationMinutes"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "ID of the EMR Cluster to attach to. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Friendly name given to the instance fleet."
+        },
+        "ProvisionedOnDemandCapacity": {
+            "type": "number"
+        },
+        "ProvisionedSpotCapacity": {
+            "type": "number"
+        },
+        "TargetOnDemandCapacity": {
+            "type": "number",
+            "description": "The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision."
+        },
+        "TargetSpotCapacity": {
+            "type": "number",
+            "description": "The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision."
+        },
+        "InstanceTypeConfigs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceTypeConfigsDefinition"
+            }
+        },
+        "LaunchSpecifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchSpecificationsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProvisionedOnDemandCapacity",
+        "/properties/ProvisionedSpotCapacity"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

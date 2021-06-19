@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Packet::PortVlanAttachment",
+    "description": "Provides a resource to attach device ports to VLANs.\n\nDevice and VLAN must be in the same facility.\n\nIf you need this resource to add the port back to bond on removal, set `force_bond = true`.\n\nTo learn more about Layer 2 networking in Equinix Metal, refer to\n\n* <https://metal.equinix.com/developers/docs/networking/layer2/>\n* <https://metal.equinix.com/developers/docs/networking/layer2-configs/>",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/packet/TF-Packet-PortVlanAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "ID of device to be assigned to the VLAN."
+        },
+        "ForceBond": {
+            "type": "boolean",
+            "description": "Add port back to the bond when this resource is removed. Default is false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Native": {
+            "type": "boolean",
+            "description": "Mark this VLAN a native VLAN on the port. This can be used only if this assignment assigns second or further VLAN to the port. To ensure that this attachment is not first on a port, you can use `depends_on` pointing to another packet_port_vlan_attachment, just like in the layer2-individual example above."
+        },
+        "PortId": {
+            "type": "string"
+        },
+        "PortName": {
+            "type": "string",
+            "description": "Name of network port to be assigned to the VLAN."
+        },
+        "VlanId": {
+            "type": "string"
+        },
+        "VlanVnid": {
+            "type": "number",
+            "description": "VXLAN Network Identifier, integer."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceId",
+        "PortName",
+        "VlanVnid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PortId",
+        "/properties/VlanId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

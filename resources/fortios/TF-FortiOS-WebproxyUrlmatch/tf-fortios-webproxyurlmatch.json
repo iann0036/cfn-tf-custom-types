@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::FortiOS::WebproxyUrlmatch",
+    "description": "Exempt URLs from web proxy forwarding and caching.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyUrlmatch/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheExemption": {
+            "type": "string",
+            "description": "Enable/disable exempting this URL pattern from caching. Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "ForwardServer": {
+            "type": "string",
+            "description": "Forward server name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Configure a name for the URL to be exempted."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable exempting the URLs matching the URL pattern from web proxy forwarding and caching. Valid values: `enable`, `disable`."
+        },
+        "UrlPattern": {
+            "type": "string",
+            "description": "URL pattern to be exempted from web proxy forwarding and caching."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "UrlPattern"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Vultr::BlockStorage",
+    "description": "Provides a Vultr Block Storage resource. This can be used to create, read, modify, and delete Block Storage.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-BlockStorage/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachedToInstance": {
+            "type": "string",
+            "description": "VPS ID that you want to have this block storage attached to."
+        },
+        "Cost": {
+            "type": "number"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "Label that is given to your block storage."
+        },
+        "Live": {
+            "type": "boolean",
+            "description": "Boolean value that will allow attachment of the volume to an instance without a restart. Default is false."
+        },
+        "MountId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Region in which this block storage will reside in. (Currently only NJ/NY supported region \"ewr\")."
+        },
+        "SizeGb": {
+            "type": "number",
+            "description": "The size of the given block storage."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region",
+        "SizeGb"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cost",
+        "/properties/DateCreated",
+        "/properties/Id",
+        "/properties/MountId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

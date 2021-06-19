@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::Datadog::LogsIndex",
+    "description": "CloudFormation equivalent of datadog_logs_index",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-LogsIndex/docs/README.md",
+    "definitions": {
+        "ExclusionFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "SampleRate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DailyLimit": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RetentionDays": {
+            "type": "string"
+        },
+        "ExclusionFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExclusionFilterDefinition"
+            }
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DailyLimit",
+        "Name",
+        "RetentionDays"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

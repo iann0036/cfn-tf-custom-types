@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::AWS::SesConfigurationSet",
+    "description": "Provides an SES configuration set resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SesConfigurationSet/docs/README.md",
+    "definitions": {
+        "DeliveryOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TlsPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastFreshStart": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the configuration set."
+        },
+        "ReputationMetricsEnabled": {
+            "type": "boolean",
+            "description": "Whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch. The default value is `false`."
+        },
+        "SendingEnabled": {
+            "type": "boolean",
+            "description": "Whether email sending is enabled or disabled for the configuration set. The default value is `true`."
+        },
+        "DeliveryOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeliveryOptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/LastFreshStart"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

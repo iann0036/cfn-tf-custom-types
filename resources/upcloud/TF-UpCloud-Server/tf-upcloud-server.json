@@ -1,0 +1,249 @@
+{
+    "typeName": "TF::UpCloud::Server",
+    "description": "CloudFormation equivalent of upcloud_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/upcloud/TF-UpCloud-Server/docs/README.md",
+    "definitions": {
+        "LoginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatePassword": {
+                    "type": "boolean"
+                },
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PasswordDelivery": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bootable": {
+                    "type": "boolean"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IpAddressFamily": {
+                    "type": "string"
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "SourceIpFiltering": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "StorageDevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Storage": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Storage"
+            ]
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Storage": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "BackupRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackupRuleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Storage"
+            ]
+        },
+        "BackupRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "string"
+                },
+                "Retention": {
+                    "type": "number"
+                },
+                "Time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Interval",
+                "Retention",
+                "Time"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "number"
+        },
+        "Firewall": {
+            "type": "boolean"
+        },
+        "Host": {
+            "type": "number"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mem": {
+            "type": "number"
+        },
+        "Metadata": {
+            "type": "boolean"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Login": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoginDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            },
+            "minItems": 1
+        },
+        "StorageDevices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageDevicesDefinition"
+            }
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hostname",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Title"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

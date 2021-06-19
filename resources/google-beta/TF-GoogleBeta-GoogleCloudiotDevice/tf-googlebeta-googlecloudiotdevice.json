@@ -1,0 +1,302 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleCloudiotDevice",
+    "description": "CloudFormation equivalent of google_cloudiot_device",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleCloudiotDevice/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BinaryData": {
+                    "type": "string"
+                },
+                "CloudUpdateTime": {
+                    "type": "string"
+                },
+                "DeviceAckTime": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            }
+        },
+        "LastErrorStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LastErrorStatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "$ref": "#/definitions/LastErrorStatusDefinition"
+                        }
+                    }
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Number": {
+                    "type": "number"
+                }
+            }
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BinaryData": {
+                    "type": "string"
+                },
+                "UpdateTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationTime": {
+                    "type": "string"
+                },
+                "PublicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "GatewayConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GatewayAuthMethod": {
+                    "type": "string"
+                },
+                "GatewayType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Format",
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blocked": {
+            "type": "boolean"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastConfigAckTime": {
+            "type": "string"
+        },
+        "LastConfigSendTime": {
+            "type": "string"
+        },
+        "LastErrorStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LastErrorStatusDefinition2"
+            }
+        },
+        "LastErrorTime": {
+            "type": "string"
+        },
+        "LastEventTime": {
+            "type": "string"
+        },
+        "LastHeartbeatTime": {
+            "type": "string"
+        },
+        "LastStateTime": {
+            "type": "string"
+        },
+        "LogLevel": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NumId": {
+            "type": "string"
+        },
+        "Registry": {
+            "type": "string"
+        },
+        "State": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StateDefinition"
+            }
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 3
+        },
+        "GatewayConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GatewayConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Registry"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Config",
+        "/properties/Id",
+        "/properties/LastConfigAckTime",
+        "/properties/LastConfigSendTime",
+        "/properties/LastErrorStatus",
+        "/properties/LastErrorTime",
+        "/properties/LastEventTime",
+        "/properties/LastHeartbeatTime",
+        "/properties/LastStateTime",
+        "/properties/NumId",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

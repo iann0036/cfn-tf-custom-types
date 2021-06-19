@@ -1,0 +1,334 @@
+{
+    "typeName": "TF::Akamai::GtmProperty",
+    "description": "Use the `akamai_gtm_property` resource provides the resource for creating, configuring and importing a GTM property, a set of IP addresses or CNAMEs that GTM provides in response to DNS queries based on a set of rules. \n\n~> **Note** Import requires an ID with this format: `existing_domain_name`:`existing_property_name`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmProperty/docs/README.md",
+    "definitions": {
+        "LivenessTestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnswersRequired": {
+                    "type": "boolean"
+                },
+                "DisableNonstandardPortWarning": {
+                    "type": "boolean"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "ErrorPenalty": {
+                    "type": "number"
+                },
+                "HttpError3xx": {
+                    "type": "boolean"
+                },
+                "HttpError4xx": {
+                    "type": "boolean"
+                },
+                "HttpError5xx": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PeerCertificateVerification": {
+                    "type": "boolean"
+                },
+                "RecursionRequested": {
+                    "type": "boolean"
+                },
+                "RequestString": {
+                    "type": "string"
+                },
+                "ResourceType": {
+                    "type": "string"
+                },
+                "ResponseString": {
+                    "type": "string"
+                },
+                "SslClientCertificate": {
+                    "type": "string"
+                },
+                "SslClientPrivateKey": {
+                    "type": "string"
+                },
+                "TestInterval": {
+                    "type": "number"
+                },
+                "TestObject": {
+                    "type": "string"
+                },
+                "TestObjectPassword": {
+                    "type": "string"
+                },
+                "TestObjectPort": {
+                    "type": "number"
+                },
+                "TestObjectProtocol": {
+                    "type": "string"
+                },
+                "TestObjectUsername": {
+                    "type": "string"
+                },
+                "TestTimeout": {
+                    "type": "number"
+                },
+                "TimeoutPenalty": {
+                    "type": "number"
+                },
+                "HttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "TestInterval",
+                "TestObject",
+                "TestObjectProtocol",
+                "TestTimeout"
+            ]
+        },
+        "StaticRrSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rdata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrafficTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HandoutCname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Servers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HttpHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupCname": {
+            "type": "string"
+        },
+        "BackupIp": {
+            "type": "string"
+        },
+        "BalanceByDownloadScore": {
+            "type": "boolean"
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "Comments": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "DynamicTtl": {
+            "type": "number"
+        },
+        "FailbackDelay": {
+            "type": "number"
+        },
+        "FailoverDelay": {
+            "type": "number"
+        },
+        "GhostDemandReporting": {
+            "type": "boolean"
+        },
+        "HandoutLimit": {
+            "type": "number"
+        },
+        "HandoutMode": {
+            "type": "string"
+        },
+        "HealthMax": {
+            "type": "number"
+        },
+        "HealthMultiplier": {
+            "type": "number"
+        },
+        "HealthThreshold": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6": {
+            "type": "boolean"
+        },
+        "LoadImbalancePercentage": {
+            "type": "number"
+        },
+        "MapName": {
+            "type": "string"
+        },
+        "MaxUnreachablePenalty": {
+            "type": "number"
+        },
+        "MinLiveFraction": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ScoreAggregationType": {
+            "type": "string"
+        },
+        "StaticTtl": {
+            "type": "number"
+        },
+        "StickinessBonusConstant": {
+            "type": "number"
+        },
+        "StickinessBonusPercentage": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UnreachableThreshold": {
+            "type": "number"
+        },
+        "UseComputedTargets": {
+            "type": "boolean"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        },
+        "WeightedHashBitsForIpv4": {
+            "type": "number"
+        },
+        "WeightedHashBitsForIpv6": {
+            "type": "number"
+        },
+        "LivenessTest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LivenessTestDefinition"
+            }
+        },
+        "StaticRrSet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticRrSetDefinition"
+            }
+        },
+        "TrafficTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficTargetDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "HandoutLimit",
+        "HandoutMode",
+        "Name",
+        "ScoreAggregationType",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/WeightedHashBitsForIpv4",
+        "/properties/WeightedHashBitsForIpv6"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

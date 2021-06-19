@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::Artifactory::LocalRepository",
+    "description": "CloudFormation equivalent of artifactory_local_repository",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-LocalRepository/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArchiveBrowsingEnabled": {
+            "type": "boolean"
+        },
+        "BlackedOut": {
+            "type": "boolean"
+        },
+        "CalculateYumMetadata": {
+            "type": "boolean"
+        },
+        "ChecksumPolicyType": {
+            "type": "string"
+        },
+        "DebianTrivialLayout": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DockerApiVersion": {
+            "type": "string"
+        },
+        "EnableFileListsIndexing": {
+            "type": "boolean"
+        },
+        "ExcludesPattern": {
+            "type": "string"
+        },
+        "ForceNugetAuthentication": {
+            "type": "boolean"
+        },
+        "HandleReleases": {
+            "type": "boolean"
+        },
+        "HandleSnapshots": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludesPattern": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "MaxUniqueSnapshots": {
+            "type": "number"
+        },
+        "MaxUniqueTags": {
+            "type": "number"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "PackageType": {
+            "type": "string"
+        },
+        "PropertySets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RepoLayoutRef": {
+            "type": "string"
+        },
+        "SnapshotVersionBehavior": {
+            "type": "string"
+        },
+        "SuppressPomConsistencyChecks": {
+            "type": "boolean"
+        },
+        "XrayIndex": {
+            "type": "boolean"
+        },
+        "YumRootDepth": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

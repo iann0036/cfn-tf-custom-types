@@ -1,0 +1,46 @@
+# TF::AWS::SagemakerEndpointConfiguration CaptureContentTypeHeaderDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#csvcontenttypes" title="CsvContentTypes">CsvContentTypes</a>" : <i>[ String, ... ]</i>,
+    "<a href="#jsoncontenttypes" title="JsonContentTypes">JsonContentTypes</a>" : <i>[ String, ... ]</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#csvcontenttypes" title="CsvContentTypes">CsvContentTypes</a>: <i>
+      - String</i>
+<a href="#jsoncontenttypes" title="JsonContentTypes">JsonContentTypes</a>: <i>
+      - String</i>
+</pre>
+
+## Properties
+
+#### CsvContentTypes
+
+The CSV content type headers to capture.
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### JsonContentTypes
+
+The JSON content type headers to capture.
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

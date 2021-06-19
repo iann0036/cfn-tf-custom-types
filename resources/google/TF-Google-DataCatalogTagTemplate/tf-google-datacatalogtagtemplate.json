@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::Google::DataCatalogTagTemplate",
+    "description": "A tag template defines a tag, which can have one or more typed fields.\nThe template is used to create and attach the tag to GCP resources.\n\n\nTo get more information about TagTemplate, see:\n\n* [API documentation](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/data-catalog/docs)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=data_catalog_tag_template_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataCatalogTagTemplate/docs/README.md",
+    "definitions": {
+        "FieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FieldId": {
+                    "type": "string",
+                    "description": "The identifier for this object. Format specified above."
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TypeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "FieldId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PrimitiveType": {
+                    "type": "string"
+                },
+                "EnumType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnumTypeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "EnumTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AllowedValuesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AllowedValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DisplayName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "ForceDelete": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "TagTemplateId": {
+            "type": "string"
+        },
+        "Fields": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FieldsDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TagTemplateId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::DCNM::Vrf",
+    "description": "CloudFormation equivalent of dcnm_vrf",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dcnm/TF-DCNM-Vrf/docs/README.md",
+    "definitions": {
+        "AttachmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attach": {
+                    "type": "boolean"
+                },
+                "ExtensionValues": {
+                    "type": "string"
+                },
+                "FreeFormConfig": {
+                    "type": "string"
+                },
+                "LoopbackId": {
+                    "type": "number"
+                },
+                "LoopbackIpv4": {
+                    "type": "string"
+                },
+                "LoopbackIpv6": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "SerialNumber"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertiseDefaultRoute": {
+            "type": "string"
+        },
+        "AdvertiseHostRoute": {
+            "type": "string"
+        },
+        "Deploy": {
+            "type": "boolean"
+        },
+        "DeployTimeout": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExtensionTemplate": {
+            "type": "string"
+        },
+        "FabricName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntfDescription": {
+            "type": "string"
+        },
+        "Ipv6LinkLocalFlag": {
+            "type": "string"
+        },
+        "LoopbackId": {
+            "type": "number"
+        },
+        "MaxBgpPath": {
+            "type": "number"
+        },
+        "MaxIbgpPath": {
+            "type": "number"
+        },
+        "Mtu": {
+            "type": "number"
+        },
+        "MutlicastAddress": {
+            "type": "string"
+        },
+        "MutlicastGroup": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RpAddress": {
+            "type": "string"
+        },
+        "RpExternalFlag": {
+            "type": "string"
+        },
+        "SegmentId": {
+            "type": "string"
+        },
+        "ServiceTemplate": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "StaticDefaultRoute": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TrmBgwMsiteFlag": {
+            "type": "string"
+        },
+        "TrmEnable": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "number"
+        },
+        "VlanName": {
+            "type": "string"
+        },
+        "Attachments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttachmentsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FabricName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

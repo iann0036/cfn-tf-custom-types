@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Lacework::AlertChannelCiscoWebex",
+    "description": "You can configure a Lacework alert channel to forward alerts to a Cisco Webex Teams space as an incoming webhook.\n\nTo find more information about the Cisco Webex alert channel integration, see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360005840154-Cisco-Webex-Teams).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelCiscoWebex/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "WebhookUrl": {
+            "type": "string",
+            "description": "The Cisco Webex webhook URL."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "WebhookUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

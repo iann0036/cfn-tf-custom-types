@@ -1,0 +1,1021 @@
+{
+    "typeName": "TF::OCI::WaasWaasPolicy",
+    "description": "This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.\n\nCreates a new Web Application Acceleration and Security (WAAS) policy in the specified compartment. A WAAS policy must be established before creating Web Application Firewall (WAF) rules. To use WAF rules, your web application's origin servers must defined in the `WaasPolicy` schema.\n\nA domain name must be specified when creating a WAAS policy. The domain name should be different from the origins specified in your `WaasPolicy`. Once domain name is entered and stored, it is unchangeable.\n\nUse the record data returned in the `cname` field of the `WaasPolicy` object to create a CNAME record in your DNS configuration that will direct your domain's traffic through the WAF.\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the service to reside. For information about access control and compartments, see [Overview of the IAM Service](htt...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-WaasWaasPolicy/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OriginGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "OriginGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginGroupDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "OriginsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpPort": {
+                    "type": "number"
+                },
+                "HttpsPort": {
+                    "type": "number"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "CustomHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomHeadersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Label",
+                "Uri"
+            ]
+        },
+        "PolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateId": {
+                    "type": "string"
+                },
+                "CipherGroup": {
+                    "type": "string"
+                },
+                "ClientAddressHeader": {
+                    "type": "string"
+                },
+                "IsBehindCdn": {
+                    "type": "boolean"
+                },
+                "IsCacheControlRespected": {
+                    "type": "boolean"
+                },
+                "IsHttpsEnabled": {
+                    "type": "boolean"
+                },
+                "IsHttpsForced": {
+                    "type": "boolean"
+                },
+                "IsOriginCompressionEnabled": {
+                    "type": "boolean"
+                },
+                "IsResponseBufferingEnabled": {
+                    "type": "boolean"
+                },
+                "IsSniEnabled": {
+                    "type": "boolean"
+                },
+                "TlsProtocols": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WebsocketPathPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HealthChecks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthChecksDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LoadBalancingMethod": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoadBalancingMethodDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WafConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Origin": {
+                    "type": "string"
+                },
+                "OriginGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AccessRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessRulesDefinition"
+                    }
+                },
+                "AddressRateLimiting": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressRateLimitingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CachingRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CachingRulesDefinition"
+                    }
+                },
+                "Captchas": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CaptchasDefinition"
+                    }
+                },
+                "CustomProtectionRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomProtectionRulesDefinition"
+                    }
+                },
+                "DeviceFingerprintChallenge": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeviceFingerprintChallengeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HumanInteractionChallenge": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HumanInteractionChallengeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "JsChallenge": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JsChallengeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProtectionSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProtectionSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Whitelists": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WhitelistsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OriginGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Origin": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Origin"
+            ]
+        },
+        "CustomHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "HealthChecksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedResponseCodeGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExpectedResponseText": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "IntervalInSeconds": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsResponseTextCheckEnabled": {
+                    "type": "boolean"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "TimeoutInSeconds": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoadBalancingMethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string"
+                },
+                "ExpirationTimeInSeconds": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "AccessRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "BlockAction": {
+                    "type": "string"
+                },
+                "BlockErrorPageCode": {
+                    "type": "string"
+                },
+                "BlockErrorPageDescription": {
+                    "type": "string"
+                },
+                "BlockErrorPageMessage": {
+                    "type": "string"
+                },
+                "BlockResponseCode": {
+                    "type": "number"
+                },
+                "BypassChallenges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CaptchaFooter": {
+                    "type": "string"
+                },
+                "CaptchaHeader": {
+                    "type": "string"
+                },
+                "CaptchaSubmitLabel": {
+                    "type": "string"
+                },
+                "CaptchaTitle": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RedirectResponseCode": {
+                    "type": "string"
+                },
+                "RedirectUrl": {
+                    "type": "string"
+                },
+                "Criteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CriteriaDefinition"
+                    },
+                    "minItems": 1
+                },
+                "ResponseHeaderManipulation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseHeaderManipulationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Action",
+                "Name"
+            ]
+        },
+        "AddressRateLimitingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedRatePerAddress": {
+                    "type": "number"
+                },
+                "BlockResponseCode": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxDelayedCountPerAddress": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "IsEnabled"
+            ]
+        },
+        "CachingRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CachingDuration": {
+                    "type": "string"
+                },
+                "ClientCachingDuration": {
+                    "type": "string"
+                },
+                "IsClientCachingEnabled": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Criteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CriteriaDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Name"
+            ]
+        },
+        "CaptchasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureMessage": {
+                    "type": "string"
+                },
+                "FooterText": {
+                    "type": "string"
+                },
+                "HeaderText": {
+                    "type": "string"
+                },
+                "SessionExpirationInSeconds": {
+                    "type": "number"
+                },
+                "SubmitLabel": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FailureMessage",
+                "SessionExpirationInSeconds",
+                "SubmitLabel",
+                "Title",
+                "Url"
+            ]
+        },
+        "CustomProtectionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DeviceFingerprintChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ActionExpirationInSeconds": {
+                    "type": "number"
+                },
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "FailureThresholdExpirationInSeconds": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxAddressCount": {
+                    "type": "number"
+                },
+                "MaxAddressCountExpirationInSeconds": {
+                    "type": "number"
+                },
+                "ChallengeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChallengeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "IsEnabled"
+            ]
+        },
+        "HumanInteractionChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ActionExpirationInSeconds": {
+                    "type": "number"
+                },
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "FailureThresholdExpirationInSeconds": {
+                    "type": "number"
+                },
+                "InteractionThreshold": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsNatEnabled": {
+                    "type": "boolean"
+                },
+                "RecordingPeriodInSeconds": {
+                    "type": "number"
+                },
+                "ChallengeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChallengeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SetHttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetHttpHeaderDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "IsEnabled"
+            ]
+        },
+        "JsChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ActionExpirationInSeconds": {
+                    "type": "number"
+                },
+                "AreRedirectsChallenged": {
+                    "type": "boolean"
+                },
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsNatEnabled": {
+                    "type": "boolean"
+                },
+                "ChallengeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChallengeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Criteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CriteriaDefinition"
+                    }
+                },
+                "SetHttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetHttpHeaderDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "IsEnabled"
+            ]
+        },
+        "ProtectionSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHttpMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BlockAction": {
+                    "type": "string"
+                },
+                "BlockErrorPageCode": {
+                    "type": "string"
+                },
+                "BlockErrorPageDescription": {
+                    "type": "string"
+                },
+                "BlockErrorPageMessage": {
+                    "type": "string"
+                },
+                "BlockResponseCode": {
+                    "type": "number"
+                },
+                "IsResponseInspected": {
+                    "type": "boolean"
+                },
+                "MaxArgumentCount": {
+                    "type": "number"
+                },
+                "MaxNameLengthPerArgument": {
+                    "type": "number"
+                },
+                "MaxResponseSizeInKiB": {
+                    "type": "number"
+                },
+                "MaxTotalNameLengthOfArguments": {
+                    "type": "number"
+                },
+                "MediaTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RecommendationsPeriodInDays": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WhitelistsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressLists": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "IsCaseSensitive": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Condition",
+                "Value"
+            ]
+        },
+        "ResponseHeaderManipulationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Header": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Header"
+            ]
+        },
+        "ExclusionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ChallengeSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockAction": {
+                    "type": "string"
+                },
+                "BlockErrorPageCode": {
+                    "type": "string"
+                },
+                "BlockErrorPageDescription": {
+                    "type": "string"
+                },
+                "BlockErrorPageMessage": {
+                    "type": "string"
+                },
+                "BlockResponseCode": {
+                    "type": "number"
+                },
+                "CaptchaFooter": {
+                    "type": "string"
+                },
+                "CaptchaHeader": {
+                    "type": "string"
+                },
+                "CaptchaSubmitLabel": {
+                    "type": "string"
+                },
+                "CaptchaTitle": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SetHttpHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalDomains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) An array of additional domains for the specified web application."
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "(Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.\n* `expiration_time_in_seconds` - (Applicable when method=STICKY_COOKIE) (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.\n* `method` - (Required) (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.\n* **[IP_HASH](/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.\n* **[ROUND_ROBIN](/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.\n* **[STICKY_COOKIE](/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.\n* `name` - (Applicable when method=STICKY_COOKIE) (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.\n* `tls_protocols` - (Optional) (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.\n* **TLS_V1:** corresponds to TLS 1.0 specification.\n* **TLS_V1_1:** corresponds to TLS 1.1 specification.\n* **TLS_V1_2:** corresponds to TLS 1.2 specification.\n* **TLS_V1_3:** corresponds to TLS 1.3 specification."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.\n* `device_fingerprint_challenge` - (Optional) (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.\n* `action` - (Optional) (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.\n* `action_expiration_in_seconds` - (Optional) (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.\n* `challenge_settings` - (Optional) (Updatable) The challenge settings if `action` is set to `BLOCK`.\n* `block_action` - (Optional) (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.\n* `block_error_page_code` - (Optional) (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.\n* `block_error_page_description` - (Optional) (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`\n* `block_error_page_message` - (Optional) (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.\n* `block_response_code` - (Optional) (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.\n* `captcha_footer` - (Optional) (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.\n* `captcha_header` - (Optional) (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`\n* `captcha_submit_label` - (Optional) (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.\n* `captcha_title` - (Optional) (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`\n* `failure_threshold` - (Optional) (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.\n* `failure_threshold_expiration_in_seconds` - (Optional) (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.\n* `is_enabled` - (Required) (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.\n* `max_address_count` - (Optional) (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.\n* `max_address_count_expiration_in_seconds` - (Optional) (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.\n* `human_interaction_challenge` - (Optional) (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.\n* `action` - (Optional) (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.\n* `action_expiration_in_seconds` - (Optional) (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.\n* `challenge_settings` - (Optional) (Updatable) The challenge settings if `action` is set to `BLOCK`.\n* `block_action` - (Optional) (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.\n* `block_error_page_code` - (Optional) (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.\n* `block_error_page_description` - (Optional) (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`\n* `block_error_page_message` - (Optional) (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.\n* `block_response_code` - (Optional) (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.\n* `captcha_footer` - (Optional) (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.\n* `captcha_header` - (Optional) (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`\n* `captcha_submit_label` - (Optional) (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.\n* `captcha_title` - (Optional) (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`\n* `failure_threshold` - (Optional) (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.\n* `failure_threshold_expiration_in_seconds` - (Optional) (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.\n* `interaction_threshold` - (Optional) (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.\n* `is_enabled` - (Required) (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.\n* `is_nat_enabled` - (Optional) (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.\n* `recording_period_in_seconds` - (Optional) (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.\n* `set_http_header` - (Optional) (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.\n* `name` - (Required) (Updatable) The name of the header.\n* `value` - (Required) (Updatable) The value of the header.\n* `js_challenge` - (Optional) (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.\n* `action` - (Optional) (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.\n* `action_expiration_in_seconds` - (Optional) (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.\n* `are_redirects_challenged` - (Optional) (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.\n* `challenge_settings` - (Optional) (Updatable) The challenge settings if `action` is set to `BLOCK`.\n* `block_action` - (Optional) (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.\n* `block_error_page_code` - (Optional) (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.\n* `block_error_page_description` - (Optional) (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`\n* `block_error_page_message` - (Optional) (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.\n* `block_response_code` - (Optional) (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.\n* `captcha_footer` - (Optional) (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.\n* `captcha_header` - (Optional) (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`\n* `captcha_submit_label` - (Optional) (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.\n* `captcha_title` - (Optional) (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`\n* `criteria` - (Optional) (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.\n* `condition` - (Required) (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.\n* **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.\n* **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.\n* **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.\n* **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.\n* **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.\n* **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).\n* **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).\n* **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.\n* **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.\n* **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.\n* **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* \"1.1.1.1\\n1.1.1.2\\n1.2.2.1/30\"\n* **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* \"1.1.1.1\\n1.1.1.2\\n1.2.2.1/30\"\n* **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.\n* **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.\n* **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.\n* **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "OriginGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginGroupsDefinition"
+            }
+        },
+        "Origins": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginsDefinition"
+            }
+        },
+        "PolicyConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicyConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WafConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WafConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "Domain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

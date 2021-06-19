@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Icinga2::Notification",
+    "description": "Configures an Icinga2 notification resource. This allows notifications to be configured, updated,\nand deleted.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/icinga2/TF-Icinga2-Notification/docs/README.md",
+    "definitions": {
+        "VarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Command": {
+            "type": "string",
+            "description": "Notification command to use."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname the notification applies to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number"
+        },
+        "Servicename": {
+            "type": "string",
+            "description": "Service to send notification for."
+        },
+        "Templates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of users to notification."
+        },
+        "Vars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VarsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Command",
+        "Hostname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

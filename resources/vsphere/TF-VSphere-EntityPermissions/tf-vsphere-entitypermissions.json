@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::VSphere::EntityPermissions",
+    "description": "The `vsphere_entity_permissions` resource can be used to create and manage entity permissions. \nPermissions can be created on an entity for a given user or group with the specified role.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-EntityPermissions/docs/README.md",
+    "definitions": {
+        "PermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsGroup": {
+                    "type": "boolean"
+                },
+                "Propagate": {
+                    "type": "boolean"
+                },
+                "RoleId": {
+                    "type": "string"
+                },
+                "UserOrGroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IsGroup",
+                "Propagate",
+                "RoleId",
+                "UserOrGroup"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EntityId": {
+            "type": "string",
+            "description": "The managed object id (uuid for some entities) on which permissions are to be created."
+        },
+        "EntityType": {
+            "type": "string",
+            "description": "The managed object type, types can be found in the managed object type section\n[here](https://code.vmware.com/apis/968/vsphere)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EntityId",
+        "EntityType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

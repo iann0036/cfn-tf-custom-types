@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::RedshiftSnapshotScheduleAssociation",
+    "description": "CloudFormation equivalent of aws_redshift_snapshot_schedule_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-RedshiftSnapshotScheduleAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterIdentifier": {
+            "type": "string",
+            "description": "The cluster identifier."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ScheduleIdentifier": {
+            "type": "string",
+            "description": "The snapshot schedule identifier."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterIdentifier",
+        "ScheduleIdentifier"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "typeName": "TF::Aviatrix::FirewallInstance",
+    "description": "The **aviatrix_firewall_instance** resource allows the creation and management of Aviatrix Firewall Instances.\n\nThis resource is used in [Aviatrix FireNet](https://docs.aviatrix.com/HowTos/firewall_network_faq.html) and [Aviatrix Transit FireNet](https://docs.aviatrix.com/HowTos/transit_firenet_faq.html) solutions, in conjunction with other resources that may include, and are not limited to: **firenet**, **firewall_instance_association**, **aws_tgw** and **transit_gateway** resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FirewallInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "BootstrapBucketName": {
+            "type": "string"
+        },
+        "BootstrapStorageName": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "ContainerFolder": {
+            "type": "string"
+        },
+        "EgressInterface": {
+            "type": "string"
+        },
+        "EgressSubnet": {
+            "type": "string"
+        },
+        "EgressVpcId": {
+            "type": "string"
+        },
+        "FaultDomain": {
+            "type": "string"
+        },
+        "FileShareFolder": {
+            "type": "string"
+        },
+        "FirenetGwName": {
+            "type": "string"
+        },
+        "FirewallImage": {
+            "type": "string"
+        },
+        "FirewallImageId": {
+            "type": "string"
+        },
+        "FirewallImageVersion": {
+            "type": "string"
+        },
+        "FirewallName": {
+            "type": "string"
+        },
+        "FirewallSize": {
+            "type": "string"
+        },
+        "GcpVpcId": {
+            "type": "string"
+        },
+        "IamRole": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "LanInterface": {
+            "type": "string"
+        },
+        "ManagementInterface": {
+            "type": "string"
+        },
+        "ManagementSubnet": {
+            "type": "string"
+        },
+        "ManagementVpcId": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "SasUrlConfig": {
+            "type": "string"
+        },
+        "SasUrlLicense": {
+            "type": "string"
+        },
+        "ShareDirectory": {
+            "type": "string"
+        },
+        "SicKey": {
+            "type": "string"
+        },
+        "SshPublicKey": {
+            "type": "string"
+        },
+        "StorageAccessKey": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EgressSubnet",
+        "FirewallImage",
+        "FirewallName",
+        "FirewallSize",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudType",
+        "/properties/EgressInterface",
+        "/properties/GcpVpcId",
+        "/properties/Id",
+        "/properties/InstanceId",
+        "/properties/LanInterface",
+        "/properties/ManagementInterface",
+        "/properties/PublicIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/SicKey",
+        "/properties/SshPublicKey",
+        "/properties/StorageAccessKey"
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "typeName": "TF::AWS::ImagebuilderImage",
+    "description": "Manages an Image Builder Image.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ImagebuilderImage/docs/README.md",
+    "definitions": {
+        "OutputResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            }
+        },
+        "OutputResourcesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Amis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutputResourcesDefinition"
+                    }
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ImageTestsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageTestsEnabled": {
+                    "type": "boolean"
+                },
+                "TimeoutMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DistributionConfigurationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Distribution Configuration."
+        },
+        "EnhancedImageMetadataEnabled": {
+            "type": "boolean",
+            "description": "Whether additional information about the image being created is collected. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageRecipeArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Infrastructure Recipe."
+        },
+        "InfrastructureConfigurationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsVersion": {
+            "type": "string"
+        },
+        "OutputResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutputResourcesDefinition2"
+            }
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags for the Image Builder Image. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Version": {
+            "type": "string"
+        },
+        "ImageTestsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImageTestsConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageRecipeArn",
+        "InfrastructureConfigurationArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DateCreated",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/OsVersion",
+        "/properties/OutputResources",
+        "/properties/Platform",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

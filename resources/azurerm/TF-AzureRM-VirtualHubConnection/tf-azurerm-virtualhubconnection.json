@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::AzureRM::VirtualHubConnection",
+    "description": "Manages a Connection for a Virtual Hub.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualHubConnection/docs/README.md",
+    "definitions": {
+        "RoutingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociatedRouteTableId": {
+                    "type": "string",
+                    "description": "The ID of the route table associated with this Virtual Hub connection."
+                },
+                "PropagatedRouteTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropagatedRouteTableDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StaticVnetRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticVnetRouteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PropagatedRouteTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of labels to assign to this route table."
+                },
+                "RouteTableIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Route Table ID's to associated with this Virtual Hub Connection."
+                }
+            },
+            "required": []
+        },
+        "StaticVnetRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressPrefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of CIDR Ranges which should be used as Address Prefixes."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name which should be used for this Static Route."
+                },
+                "NextHopIpAddress": {
+                    "type": "string",
+                    "description": "The IP Address which should be used for the Next Hop."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HubToVitualNetworkTrafficAllowed": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetSecurityEnabled": {
+            "type": "boolean",
+            "description": "Should Internet Security be enabled to secure internet traffic? Changing this forces a new resource to be created. Defaults to `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Name which should be used for this Connection, which must be unique within the Virtual Hub. Changing this forces a new resource to be created."
+        },
+        "RemoteVirtualNetworkId": {
+            "type": "string",
+            "description": "The ID of the Virtual Network which the Virtual Hub should be connected to. Changing this forces a new resource to be created."
+        },
+        "VirtualHubId": {
+            "type": "string",
+            "description": "The ID of the Virtual Hub within which this connection should be created. Changing this forces a new resource to be created."
+        },
+        "VitualNetworkToHubGatewaysTrafficAllowed": {
+            "type": "boolean"
+        },
+        "Routing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RemoteVirtualNetworkId",
+        "VirtualHubId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

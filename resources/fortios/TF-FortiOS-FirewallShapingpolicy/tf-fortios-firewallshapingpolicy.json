@@ -1,0 +1,562 @@
+{
+    "typeName": "TF::FortiOS::FirewallShapingpolicy",
+    "description": "Configure shaping policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallShapingpolicy/docs/README.md",
+    "definitions": {
+        "AppCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Category IDs."
+                }
+            },
+            "required": []
+        },
+        "AppGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Application group name."
+                }
+            },
+            "required": []
+        },
+        "ApplicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application IDs."
+                }
+            },
+            "required": []
+        },
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Dstaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "DstintfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceCustomGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Internet Service ID."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcCustomGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Internet Service ID."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Service name."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Srcaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "SrcintfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "UrlCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "URL category ID."
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClassId": {
+            "type": "number",
+            "description": "Traffic class ID."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comments."
+        },
+        "DiffservForward": {
+            "type": "string",
+            "description": "Enable to change packet's DiffServ values to the specified diffservcode-forward value. Valid values: `enable`, `disable`."
+        },
+        "DiffservReverse": {
+            "type": "string",
+            "description": "Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value. Valid values: `enable`, `disable`."
+        },
+        "DiffservcodeForward": {
+            "type": "string",
+            "description": "Change packet's DiffServ to this value."
+        },
+        "DiffservcodeRev": {
+            "type": "string",
+            "description": "Change packet's reverse (reply) DiffServ to this value."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Shaping policy ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetService": {
+            "type": "string",
+            "description": "Enable/disable use of Internet Services for this policy. If enabled, destination address and service are not used.  Valid values: `enable`, `disable`."
+        },
+        "InternetServiceSrc": {
+            "type": "string",
+            "description": "Enable/disable use of Internet Services in source for this policy. If enabled, source address is not used.  Valid values: `enable`, `disable`."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "Apply this traffic shaping policy to IPv4 or IPv6 traffic. Valid values: `4`, `6`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Shaping policy name."
+        },
+        "PerIpShaper": {
+            "type": "string",
+            "description": "Per-IP traffic shaper to apply with this policy."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Schedule name."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this traffic shaping policy. Valid values: `enable`, `disable`."
+        },
+        "Tos": {
+            "type": "string",
+            "description": "ToS (Type of Service) value used for comparison."
+        },
+        "TosMask": {
+            "type": "string",
+            "description": "Non-zero bit positions are used for comparison while zero bit positions are ignored."
+        },
+        "TosNegate": {
+            "type": "string",
+            "description": "Enable negated TOS match. Valid values: `enable`, `disable`."
+        },
+        "TrafficShaper": {
+            "type": "string",
+            "description": "Traffic shaper to apply to traffic forwarded by the firewall policy."
+        },
+        "TrafficShaperReverse": {
+            "type": "string",
+            "description": "Traffic shaper to apply to response traffic received by the firewall policy."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "AppCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppCategoryDefinition"
+            }
+        },
+        "AppGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppGroupDefinition"
+            }
+        },
+        "Application": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationDefinition"
+            }
+        },
+        "Dstaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstaddrDefinition"
+            },
+            "minItems": 1
+        },
+        "Dstaddr6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Dstaddr6Definition"
+            }
+        },
+        "Dstintf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstintfDefinition"
+            },
+            "minItems": 1
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            }
+        },
+        "InternetServiceCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceCustomDefinition"
+            }
+        },
+        "InternetServiceCustomGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceCustomGroupDefinition"
+            }
+        },
+        "InternetServiceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceGroupDefinition"
+            }
+        },
+        "InternetServiceId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceIdDefinition"
+            }
+        },
+        "InternetServiceName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceNameDefinition"
+            }
+        },
+        "InternetServiceSrcCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcCustomDefinition"
+            }
+        },
+        "InternetServiceSrcCustomGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcCustomGroupDefinition"
+            }
+        },
+        "InternetServiceSrcGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcGroupDefinition"
+            }
+        },
+        "InternetServiceSrcId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcIdDefinition"
+            }
+        },
+        "InternetServiceSrcName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcNameDefinition"
+            }
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            },
+            "minItems": 1
+        },
+        "Srcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcaddrDefinition"
+            },
+            "minItems": 1
+        },
+        "Srcaddr6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Srcaddr6Definition"
+            }
+        },
+        "Srcintf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcintfDefinition"
+            }
+        },
+        "UrlCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlCategoryDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

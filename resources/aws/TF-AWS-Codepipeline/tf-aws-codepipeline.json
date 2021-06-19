@@ -1,0 +1,296 @@
+{
+    "typeName": "TF::AWS::Codepipeline",
+    "description": "Provides a CodePipeline.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Codepipeline/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ArtifactStoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string",
+                    "description": "The location where AWS CodePipeline stores artifacts for a pipeline; currently only `S3` is supported."
+                },
+                "Region": {
+                    "type": "string",
+                    "description": "The region where the artifact store is located. Required for a cross-region CodePipeline, do not provide for a single-region CodePipeline."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of the artifact store, such as Amazon S3."
+                },
+                "EncryptionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionKeyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Location",
+                "Type"
+            ]
+        },
+        "StageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the stage."
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "EncryptionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "The KMS key ARN or ID."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of key; currently only `KMS` is supported."
+                }
+            },
+            "required": [
+                "Id",
+                "Type"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Possible values are `Approval`, `Build`, `Deploy`, `Invoke`, `Source` and `Test`."
+                },
+                "Configuration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationDefinition"
+                    },
+                    "description": "A map of the action declaration's configuration. Configurations options for action types and providers can be found in the [Pipeline Structure Reference](http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements) and [Action Structure Reference](https://docs.aws.amazon.com/codepipeline/latest/userguide/action-reference.html) documentation."
+                },
+                "InputArtifacts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of artifact names to be worked on."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The action declaration's name."
+                },
+                "Namespace": {
+                    "type": "string",
+                    "description": "The namespace all output variables will be accessed from."
+                },
+                "OutputArtifacts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of artifact names to output. Output artifact names must be unique within a pipeline."
+                },
+                "Owner": {
+                    "type": "string",
+                    "description": "The creator of the action being called. Possible values are `AWS`, `Custom` and `ThirdParty`."
+                },
+                "Provider": {
+                    "type": "string",
+                    "description": "The provider of the service being called by the action. Valid providers are determined by the action category. Provider names are listed in the [Action Structure Reference](https://docs.aws.amazon.com/codepipeline/latest/userguide/action-reference.html) documentation."
+                },
+                "Region": {
+                    "type": "string",
+                    "description": "The region in which to run the action."
+                },
+                "RoleArn": {
+                    "type": "string",
+                    "description": "The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline."
+                },
+                "RunOrder": {
+                    "type": "number",
+                    "description": "The order in which actions are run."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "A string that identifies the action type."
+                }
+            },
+            "required": [
+                "Category",
+                "Name",
+                "Owner",
+                "Provider",
+                "Version"
+            ]
+        },
+        "ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the pipeline."
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "A service role Amazon Resource Name (ARN) that grants AWS CodePipeline permission to make calls to AWS services on your behalf."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ArtifactStore": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ArtifactStoreDefinition"
+            },
+            "minItems": 1
+        },
+        "Stage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StageDefinition"
+            },
+            "minItems": 2
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

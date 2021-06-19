@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwVpcAttachment",
+    "description": "The **aviatrix_aws_tgw_vpc_attachment** resource manages the attaching & detaching of the VPC to & from an AWS TGW, and FireNet Gateway to TGW Firewall Domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwVpcAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomizedRouteAdvertisement": {
+            "type": "string"
+        },
+        "CustomizedRoutes": {
+            "type": "string"
+        },
+        "DisableLocalRoutePropagation": {
+            "type": "boolean"
+        },
+        "EdgeAttachment": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RouteTables": {
+            "type": "string"
+        },
+        "SecurityDomainName": {
+            "type": "string"
+        },
+        "Subnets": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        },
+        "VpcAccountName": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region",
+        "SecurityDomainName",
+        "TgwName",
+        "VpcAccountName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

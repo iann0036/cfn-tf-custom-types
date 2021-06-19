@@ -1,0 +1,224 @@
+{
+    "typeName": "TF::OCI::LogAnalyticsLogAnalyticsEntity",
+    "description": "This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.\n\nCreate a new log analytics entity.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LogAnalyticsLogAnalyticsEntity/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AreLogsCollected": {
+            "type": "boolean"
+        },
+        "CloudResourceId": {
+            "type": "string",
+            "description": "The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "EntityTypeInternalName": {
+            "type": "string"
+        },
+        "EntityTypeName": {
+            "type": "string",
+            "description": "Log analytics entity type name."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "(Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "ManagementAgentCompartmentId": {
+            "type": "string"
+        },
+        "ManagementAgentDisplayName": {
+            "type": "string"
+        },
+        "ManagementAgentId": {
+            "type": "string",
+            "description": "(Updatable) The OCID of the Management Agent."
+        },
+        "Name": {
+            "type": "string",
+            "description": "(Updatable) Log analytics entity name."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The Logging Analytics namespace used for the request."
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            },
+            "description": "(Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources."
+        },
+        "SourceId": {
+            "type": "string",
+            "description": "This indicates the type of source. It is primarily for Enterprise Manager Repository ID."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "TimezoneRegion": {
+            "type": "string",
+            "description": "(Updatable) The timezone region of the log analytics entity."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "EntityTypeName",
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AreLogsCollected",
+        "/properties/EntityTypeInternalName",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/ManagementAgentCompartmentId",
+        "/properties/ManagementAgentDisplayName",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

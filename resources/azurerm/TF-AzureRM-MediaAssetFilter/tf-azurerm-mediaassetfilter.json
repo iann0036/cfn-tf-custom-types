@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::AzureRM::MediaAssetFilter",
+    "description": "Manages an Azure Media Asset Filter.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MediaAssetFilter/docs/README.md",
+    "definitions": {
+        "PresentationTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndInUnits": {
+                    "type": "number"
+                },
+                "ForceEnd": {
+                    "type": "boolean"
+                },
+                "LiveBackoffInUnits": {
+                    "type": "number"
+                },
+                "PresentationWindowInUnits": {
+                    "type": "number"
+                },
+                "StartInUnits": {
+                    "type": "number"
+                },
+                "UnitTimescaleInMiliseconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrackSelectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operation": {
+                    "type": "string"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssetId": {
+            "type": "string"
+        },
+        "FirstQualityBitrate": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PresentationTimeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PresentationTimeRangeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "TrackSelection": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrackSelectionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AssetId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

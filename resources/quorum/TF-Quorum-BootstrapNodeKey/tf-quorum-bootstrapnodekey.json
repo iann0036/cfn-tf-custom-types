@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Quorum::BootstrapNodeKey",
+    "description": "Use this resource to create a node key for a new Quorum node.\n\nNode key encodes a private key that defines an identity of a Quorum node in the network. It is primarily used in P2P networking.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/quorum/TF-Quorum-BootstrapNodeKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HexNodeId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IstanbulAddress": {
+            "type": "string"
+        },
+        "NodeId": {
+            "type": "string"
+        },
+        "NodeKeyHex": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HexNodeId",
+        "/properties/Id",
+        "/properties/IstanbulAddress",
+        "/properties/NodeId",
+        "/properties/NodeKeyHex"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/NodeKeyHex"
+    ]
+}

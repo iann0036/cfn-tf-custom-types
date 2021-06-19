@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Linode::Image",
+    "description": "Provides a Linode Image resource.  This can be used to create, modify, and delete Linodes Images.  Linode Images are snapshots of a Linode Instance Disk which can then be used to provision more Linode Instances.  Images can be used across regions.\n\nFor more information, see [Linode's documentation on Images](https://www.linode.com/docs/platform/disk-images/linode-images/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createImage).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-Image/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Deprecated": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A detailed description of this Image."
+        },
+        "DiskId": {
+            "type": "number",
+            "description": "The ID of the Linode Disk that this Image will be created from."
+        },
+        "Expiry": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsPublic": {
+            "type": "boolean"
+        },
+        "Label": {
+            "type": "string",
+            "description": "A short description of the Image. Labels cannot contain special characters."
+        },
+        "LinodeId": {
+            "type": "number",
+            "description": "The ID of the Linode that this Image will be created from."
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Vendor": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DiskId",
+        "Label",
+        "LinodeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/CreatedBy",
+        "/properties/Deprecated",
+        "/properties/Expiry",
+        "/properties/Id",
+        "/properties/IsPublic",
+        "/properties/Size",
+        "/properties/Type",
+        "/properties/Vendor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

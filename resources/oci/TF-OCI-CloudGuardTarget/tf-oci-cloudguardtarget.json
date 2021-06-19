@@ -1,0 +1,338 @@
+{
+    "typeName": "TF::OCI::CloudGuardTarget",
+    "description": "This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.\n\nCreates a new Target",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CloudGuardTarget/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SystemTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TargetDetectorRecipesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DetectorRecipeId": {
+                    "type": "string"
+                },
+                "DetectorRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DetectorRulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DetectorRecipeId"
+            ]
+        },
+        "TargetResponderRecipesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponderRecipeId": {
+                    "type": "string"
+                },
+                "ResponderRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponderRulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ResponderRecipeId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DetectorRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DetectorRuleId": {
+                    "type": "string"
+                },
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DetailsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DetectorRuleId"
+            ]
+        },
+        "ResponderRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponderRuleId": {
+                    "type": "string"
+                },
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DetailsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ResponderRuleId"
+            ]
+        },
+        "DetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Configurations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConfigurationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigKey": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConfigKey",
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) compartment associated with condition\n* `condition` - (Required) (Updatable)\n* `detector_rule_id` - (Required) (Updatable) Identifier for DetectorRule."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The target description."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) DetectorTemplate Identifier."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InheritedByCompartments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LifecyleDetails": {
+            "type": "string"
+        },
+        "RecipeCount": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string",
+            "description": "(Updatable) The current state of the DetectorRule."
+        },
+        "SystemTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemTagsDefinition"
+            }
+        },
+        "TargetResourceId": {
+            "type": "string",
+            "description": "Resource ID which the target uses to monitor."
+        },
+        "TargetResourceType": {
+            "type": "string",
+            "description": "possible type of targets(compartment/HCMCloud/ERPCloud)."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "TargetDetectorRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetDetectorRecipesDefinition"
+            }
+        },
+        "TargetResponderRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetResponderRecipesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "TargetResourceId",
+        "TargetResourceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InheritedByCompartments",
+        "/properties/LifecyleDetails",
+        "/properties/RecipeCount",
+        "/properties/SystemTags",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

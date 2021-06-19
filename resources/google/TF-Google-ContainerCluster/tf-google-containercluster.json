@@ -1,0 +1,1259 @@
+{
+    "typeName": "TF::Google::ContainerCluster",
+    "description": "-> Visit the [Provision a GKE Cluster (Google Cloud)](https://learn.hashicorp.com/tutorials/terraform/gke?in=terraform/kubernetes&utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS) Learn tutorial to learn how to provision and interact\nwith a GKE cluster.\n\n-> See the [Using GKE with Terraform](/docs/providers/google/guides/using_gke_with_terraform.html)\nguide for more information about using GKE with Terraform.\n\nManages a Google Kubernetes Engine (GKE) cluster. For more information see\n[the official documentation](https://cloud.google.com/container-engine/docs/clusters)\nand [the API reference](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters).\n\n~> **Note:** All arguments and attributes, including basic auth username and\npasswords as well as certificate outputs will be stored in the raw state as\nplaintext. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ContainerCluster/docs/README.md",
+    "definitions": {
+        "ResourceLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AddonsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudrunConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudrunConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HorizontalPodAutoscaling": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HorizontalPodAutoscalingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpLoadBalancing": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpLoadBalancingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NetworkPolicyConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkPolicyConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthenticatorGroupsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroup": {
+                    "type": "string",
+                    "description": "The name of the RBAC security group for use with Google security groups in Kubernetes RBAC. Group name must be in format `gke-security-groups@yourdomain.com`."
+                }
+            },
+            "required": [
+                "SecurityGroup"
+            ]
+        },
+        "ClusterAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Whether node auto-provisioning is enabled. Resource\nlimits for `cpu` and `memory` must be defined to enable node auto-provisioning."
+                },
+                "AutoProvisioningDefaults": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoProvisioningDefaultsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimitsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "DatabaseEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyName": {
+                    "type": "string",
+                    "description": "the key to use to encrypt/decrypt secrets.  See the [DatabaseEncryption definition](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#Cluster.DatabaseEncryption) for more information."
+                },
+                "State": {
+                    "type": "string",
+                    "description": "`ENCRYPTED` or `DECRYPTED`."
+                }
+            },
+            "required": [
+                "State"
+            ]
+        },
+        "DefaultSnatStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "IpAllocationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterIpv4CidrBlock": {
+                    "type": "string",
+                    "description": "The IP address range for the cluster pod IPs.\nSet to blank to have a range chosen with the default size. Set to /netmask (e.g. /14)\nto have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14)\nfrom the RFC-1918 private networks (e.g. 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to\npick a specific range to use."
+                },
+                "ClusterSecondaryRangeName": {
+                    "type": "string",
+                    "description": "The name of the existing secondary\nrange in the cluster's subnetwork to use for pod IP addresses. Alternatively,\n`cluster_ipv4_cidr_block` can be used to automatically create a GKE-managed one."
+                },
+                "ServicesIpv4CidrBlock": {
+                    "type": "string",
+                    "description": "The IP address range of the services IPs in this cluster.\nSet to blank to have a range chosen with the default size. Set to /netmask (e.g. /14)\nto have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14)\nfrom the RFC-1918 private networks (e.g. 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) to\npick a specific range to use."
+                },
+                "ServicesSecondaryRangeName": {
+                    "type": "string",
+                    "description": "The name of the existing\nsecondary range in the cluster's subnetwork to use for service `ClusterIP`s.\nAlternatively, `services_ipv4_cidr_block` can be used to automatically create a\nGKE-managed one."
+                }
+            },
+            "required": []
+        },
+        "MaintenancePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DailyMaintenanceWindow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailyMaintenanceWindowDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaintenanceExclusion": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceExclusionDefinition"
+                    },
+                    "maxItems": 3
+                },
+                "RecurringWindow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecurringWindowDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MasterAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "The password to use for HTTP basic authentication when accessing\nthe Kubernetes master endpoint. This has been deprecated as of GKE 1.19."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The username to use for HTTP basic authentication when accessing\nthe Kubernetes master endpoint. If not present basic auth will be disabled. This has been deprecated as of GKE 1.19."
+                },
+                "ClientCertificateConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientCertificateConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MasterAuthorizedNetworksConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrBlocks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CidrBlocksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworkPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Whether network policy is enabled on the cluster."
+                },
+                "Provider": {
+                    "type": "string",
+                    "description": "The selected network policy provider. Defaults to PROVIDER_UNSPECIFIED."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "NodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "Size of the disk attached to each node, specified\nin GB. The smallest allowed disk size is 10GB. Defaults to 100GB."
+                },
+                "DiskType": {
+                    "type": "string",
+                    "description": "Type of the disk attached to each node\n(e.g. 'pd-standard', 'pd-balanced' or 'pd-ssd'). If unspecified, the default disk type is 'pd-standard'."
+                },
+                "GuestAccelerator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GuestAcceleratorDefinition2"
+                    },
+                    "description": "List of the type and count of accelerator cards attached to the instance.\nStructure documented below.\nTo support removal of guest_accelerators in Terraform 0.12 this field is an\n[Attribute as Block](/docs/configuration/attr-as-blocks.html)."
+                },
+                "ImageType": {
+                    "type": "string",
+                    "description": "The image type to use for this node. Note that changing the image type\nwill delete and recreate all nodes in the node pool."
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    },
+                    "description": "The Kubernetes labels (key/value pairs) to be applied to each node. The kubernetes.io/ and k8s.io/ prefixes are\nreserved by Kubernetes Core components and cannot be specified."
+                },
+                "LocalSsdCount": {
+                    "type": "number",
+                    "description": "The amount of local SSD disks that will be\nattached to each cluster node. Defaults to 0."
+                },
+                "MachineType": {
+                    "type": "string",
+                    "description": "The name of a Google Compute Engine machine type.\nDefaults to `e2-medium`. To create a custom machine type, value should be set as specified\n[here](https://cloud.google.com/compute/docs/reference/latest/instances#machineType)."
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition2"
+                    },
+                    "description": "The metadata key/value pairs assigned to instances in\nthe cluster. From GKE `1.12` onwards, `disable-legacy-endpoints` is set to\n`true` by the API; if `metadata` is set but that default value is not\nincluded, Terraform will attempt to unset the value. To avoid this, set the\nvalue in your config."
+                },
+                "MinCpuPlatform": {
+                    "type": "string",
+                    "description": "Minimum CPU platform to be used by this instance.\nThe instance may be scheduled on the specified or newer CPU platform. Applicable\nvalues are the friendly names of CPU platforms, such as `Intel Haswell`. See the\n[official documentation](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)\nfor more information."
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of Google API scopes to be made available\non all of the node VMs under the \"default\" service account.\nUse the \"https://www.googleapis.com/auth/cloud-platform\" scope to grant access to all APIs. It is recommended that you set `service_account` to a non-default service account and grant IAM roles to that service account for only the resources that it needs."
+                },
+                "Preemptible": {
+                    "type": "boolean",
+                    "description": "A boolean that represents whether or not the underlying node VMs\nare preemptible. See the [official documentation](https://cloud.google.com/container-engine/docs/preemptible-vm)\nfor more information. Defaults to false."
+                },
+                "ServiceAccount": {
+                    "type": "string",
+                    "description": "The service account to be used by the Node VMs.\nIf not specified, the \"default\" service account is used."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of instance tags applied to all nodes. Tags are used to identify\nvalid sources or targets for network firewalls."
+                },
+                "Taint": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaintDefinition2"
+                    },
+                    "description": "A list of [Kubernetes taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/)\nto apply to nodes. GKE's API can only set this field on cluster creation.\nHowever, GKE will add taints to your nodes if you enable certain features such\nas GPUs. If this field is set, any diffs on this field will cause Terraform to\nrecreate the underlying resource. Taint values can be updated safely in\nKubernetes (eg. through `kubectl`), and it's recommended that you do not use\nthis field to manage taints. If you do, `lifecycle.ignore_changes` is\nrecommended. Structure is documented below."
+                },
+                "ShieldedInstanceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkloadMetadataConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkloadMetadataConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GuestAcceleratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "NodePoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InitialNodeCount": {
+                    "type": "number"
+                },
+                "MaxPodsPerNode": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamePrefix": {
+                    "type": "string"
+                },
+                "NodeCount": {
+                    "type": "number"
+                },
+                "NodeLocations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Autoscaling": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscalingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Management": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagementDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UpgradeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UpgradeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PodSecurityPolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "PrivateClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnablePrivateEndpoint": {
+                    "type": "boolean"
+                },
+                "EnablePrivateNodes": {
+                    "type": "boolean"
+                },
+                "MasterIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "MasterGlobalAccessConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MasterGlobalAccessConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "EnablePrivateEndpoint"
+            ]
+        },
+        "ReleaseChannelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Channel": {
+                    "type": "string",
+                    "description": "The selected release channel.\nAccepted values are:\n* UNSPECIFIED: Not set.\n* RAPID: Weekly upgrade cadence; Early testers and developers who requires new features.\n* REGULAR: Multiple per month upgrade cadence; Production users who need features not yet offered in the Stable channel.\n* STABLE: Every few months upgrade cadence; Production users who need stability above all else, and for whom frequent upgrades are too risky."
+                }
+            },
+            "required": [
+                "Channel"
+            ]
+        },
+        "ResourceUsageExportConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableNetworkEgressMetering": {
+                    "type": "boolean"
+                },
+                "EnableResourceConsumptionMetering": {
+                    "type": "boolean"
+                },
+                "BigqueryDestination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BigqueryDestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VerticalPodAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "WorkloadIdentityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityNamespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IdentityNamespace"
+            ]
+        },
+        "CloudrunConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean",
+                    "description": "The status of the CloudRun addon. It is disabled by default. Set `disabled=false` to enable."
+                },
+                "LoadBalancerType": {
+                    "type": "string",
+                    "description": "The load balancer type of CloudRun ingress service. It is external load balancer by default.\nSet `load_balancer_type=LOAD_BALANCER_TYPE_INTERNAL` to configure it as internal load balancer."
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "HorizontalPodAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "HttpLoadBalancingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "NetworkPolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "AutoProvisioningDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Scopes that are used by NAP when creating node pools. Use the \"https://www.googleapis.com/auth/cloud-platform\" scope to grant access to all APIs. It is recommended that you set `service_account` to a non-default service account and grant IAM roles to that service account for only the resources that it needs."
+                },
+                "ServiceAccount": {
+                    "type": "string",
+                    "description": "The Google Cloud Platform Service Account to be used by the node VMs."
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Maximum": {
+                    "type": "number",
+                    "description": "Maximum amount of the resource in the cluster."
+                },
+                "Minimum": {
+                    "type": "number",
+                    "description": "Minimum amount of the resource in the cluster."
+                },
+                "ResourceType": {
+                    "type": "string",
+                    "description": "The type of the resource. For example, `cpu` and\n`memory`.  See the [guide to using Node Auto-Provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)\nfor a list of types."
+                }
+            },
+            "required": [
+                "ResourceType"
+            ]
+        },
+        "DailyMaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StartTime"
+            ]
+        },
+        "MaintenanceExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "ExclusionName": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndTime",
+                "ExclusionName",
+                "StartTime"
+            ]
+        },
+        "RecurringWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "Recurrence": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndTime",
+                "Recurrence",
+                "StartTime"
+            ]
+        },
+        "ClientCertificateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IssueClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "IssueClientCertificate"
+            ]
+        },
+        "CidrBlocksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CidrBlock"
+            ]
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "WorkloadMetadataConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeMetadata": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NodeMetadata"
+            ]
+        },
+        "AutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodeCount": {
+                    "type": "number"
+                },
+                "MinNodeCount": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxNodeCount",
+                "MinNodeCount"
+            ]
+        },
+        "ManagementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRepair": {
+                    "type": "boolean"
+                },
+                "AutoUpgrade": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "GuestAcceleratorDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaintDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "UpgradeSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "number"
+                },
+                "MaxUnavailable": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxSurge",
+                "MaxUnavailable"
+            ]
+        },
+        "MasterGlobalAccessConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "BigqueryDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterIpv4Cidr": {
+            "type": "string",
+            "description": "The IP address range of the Kubernetes pods\nin this cluster in CIDR notation (e.g. `10.96.0.0/14`). Leave blank to have one\nautomatically chosen or specify a `/14` block in `10.0.0.0/8`. This field will\nonly work for routes-based clusters, where `ip_allocation_policy` is not defined."
+        },
+        "DatapathProvider": {
+            "type": "string",
+            "description": "The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation."
+        },
+        "DefaultMaxPodsPerNode": {
+            "type": "number",
+            "description": "The default maximum number of pods\nper node in this cluster. This doesn't work on \"routes-based\" clusters, clusters\nthat don't have IP Aliasing enabled. See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)\nfor more information."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the cluster."
+        },
+        "EnableAutopilot": {
+            "type": "boolean",
+            "description": "Enable Autopilot for this cluster. Defaults to `false`.\nNote that when this option is enabled, certain features of Standard GKE are not available.\nSee the [official documentation](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview#comparison)\nfor available features."
+        },
+        "EnableBinaryAuthorization": {
+            "type": "boolean",
+            "description": "Enable Binary Authorization for this cluster.\nIf enabled, all container images will be validated by Google Binary Authorization."
+        },
+        "EnableIntranodeVisibility": {
+            "type": "boolean",
+            "description": "Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network."
+        },
+        "EnableKubernetesAlpha": {
+            "type": "boolean",
+            "description": "Whether to enable Kubernetes Alpha features for\nthis cluster. Note that when this option is enabled, the cluster cannot be upgraded\nand will be automatically deleted after 30 days."
+        },
+        "EnableLegacyAbac": {
+            "type": "boolean",
+            "description": "Whether the ABAC authorizer is enabled for this cluster.\nWhen enabled, identities in the system, including service accounts, nodes, and controllers,\nwill have statically granted permissions beyond those provided by the RBAC configuration or IAM.\nDefaults to `false`."
+        },
+        "EnableShieldedNodes": {
+            "type": "boolean",
+            "description": "Enable Shielded Nodes features on all nodes in this cluster.  Defaults to `false`."
+        },
+        "EnableTpu": {
+            "type": "boolean",
+            "description": "Whether to enable Cloud TPU resources in this cluster.\nSee the [official documentation](https://cloud.google.com/tpu/docs/kubernetes-engine-setup)."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialNodeCount": {
+            "type": "number",
+            "description": "The number of nodes to create in this\ncluster's default node pool. In regional or multi-zonal clusters, this is the\nnumber of nodes per zone. Must be set if `node_pool` is not set. If you're using\n`google_container_node_pool` objects with no default node pool, you'll need to\nset this to a value of at least `1`, alongside setting\n`remove_default_node_pool` to `true`."
+        },
+        "InstanceGroupUrls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location (region or zone) in which the cluster\nmaster will be created, as well as the default node location. If you specify a\nzone (such as `us-central1-a`), the cluster will be a zonal cluster with a\nsingle cluster master. If you specify a region (such as `us-west1`), the\ncluster will be a regional cluster with multiple masters spread across zones in\nthe region, and with default node locations in those zones as well."
+        },
+        "LoggingService": {
+            "type": "string",
+            "description": "The logging service that the cluster should\nwrite logs to. Available options include `logging.googleapis.com`(Legacy Stackdriver),\n`logging.googleapis.com/kubernetes`(Stackdriver Kubernetes Engine Logging), and `none`. Defaults to `logging.googleapis.com/kubernetes`."
+        },
+        "MasterVersion": {
+            "type": "string"
+        },
+        "MinMasterVersion": {
+            "type": "string",
+            "description": "The minimum version of the master. GKE\nwill auto-update the master to new versions, so this does not guarantee the\ncurrent master version--use the read-only `master_version` field to obtain that.\nIf unset, the cluster's version will be set by GKE to the version of the most recent\nofficial release (which is not necessarily the latest version).  Most users will find\nthe `google_container_engine_versions` data source useful - it indicates which versions\nare available, and can be use to approximate fuzzy versions in a\nTerraform-compatible way. If you intend to specify versions manually,\n[the docs](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#specifying_cluster_version)\ndescribe the various acceptable formats for this field."
+        },
+        "MonitoringService": {
+            "type": "string",
+            "description": "The monitoring service that the cluster\nshould write metrics to.\nAutomatically send metrics from pods in the cluster to the Google Cloud Monitoring API.\nVM metrics will be collected by Google Compute Engine regardless of this setting\nAvailable options include\n`monitoring.googleapis.com`(Legacy Stackdriver), `monitoring.googleapis.com/kubernetes`(Stackdriver Kubernetes Engine Monitoring), and `none`.\nDefaults to `monitoring.googleapis.com/kubernetes`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the cluster, unique within the project and\nlocation."
+        },
+        "Network": {
+            "type": "string",
+            "description": "The name or self_link of the Google Compute Engine\nnetwork to which the cluster is connected. For Shared VPC, set this to the self link of the\nshared network."
+        },
+        "NetworkingMode": {
+            "type": "string",
+            "description": "Determines whether alias IPs or routes will be used for pod IPs in the cluster.\nOptions are `VPC_NATIVE` or `ROUTES`. `VPC_NATIVE` enables [IP aliasing](https://cloud.google.com/kubernetes-engine/docs/how-to/ip-aliases),\nand requires the `ip_allocation_policy` block to be defined. By default when this field is unspecified, GKE will create a `ROUTES`-based cluster."
+        },
+        "NodeLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of zones in which the cluster's nodes\nare located. Nodes must be in the region of their regional cluster or in the\nsame region as their cluster's zone for zonal clusters. If this is specified for\na zonal cluster, omit the cluster's zone."
+        },
+        "NodeVersion": {
+            "type": "string",
+            "description": "The Kubernetes version on the nodes. Must either be unset\nor set to the same value as `min_master_version` on create. Defaults to the default\nversion set by GKE which is not necessarily the latest version. This only affects\nnodes in the default node pool. While a fuzzy version can be specified, it's\nrecommended that you specify explicit versions as Terraform will see spurious diffs\nwhen fuzzy versions are used. See the `google_container_engine_versions` data source's\n`version_prefix` field to approximate fuzzy versions in a Terraform-compatible way.\nTo update nodes in other node pools, use the `version` attribute on the node pool."
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "PrivateIpv6GoogleAccess": {
+            "type": "string",
+            "description": "The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "RemoveDefaultNodePool": {
+            "type": "boolean",
+            "description": "If `true`, deletes the default node\npool upon cluster creation. If you're using `google_container_node_pool`\nresources with no default node pool, this should be set to `true`, alongside\nsetting `initial_node_count` to at least `1`."
+        },
+        "ResourceLabels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceLabelsDefinition"
+            },
+            "description": "The GCE resource labels (a map of key/value pairs) to be applied to the cluster."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "ServicesIpv4Cidr": {
+            "type": "string"
+        },
+        "Subnetwork": {
+            "type": "string",
+            "description": "The name or self_link of the Google Compute Engine\nsubnetwork in which the cluster's instances are launched."
+        },
+        "TpuIpv4CidrBlock": {
+            "type": "string"
+        },
+        "AddonsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddonsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "AuthenticatorGroupsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticatorGroupsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClusterAutoscaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterAutoscalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "DatabaseEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "DefaultSnatStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultSnatStatusDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpAllocationPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpAllocationPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenancePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenancePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterAuthDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterAuthorizedNetworksConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterAuthorizedNetworksConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodePool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodePoolDefinition"
+            }
+        },
+        "PodSecurityPolicyConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PodSecurityPolicyConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PrivateClusterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateClusterConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ReleaseChannel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReleaseChannelDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResourceUsageExportConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceUsageExportConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VerticalPodAutoscaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VerticalPodAutoscalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "WorkloadIdentityConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkloadIdentityConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/InstanceGroupUrls",
+        "/properties/LabelFingerprint",
+        "/properties/MasterVersion",
+        "/properties/Operation",
+        "/properties/SelfLink",
+        "/properties/ServicesIpv4Cidr",
+        "/properties/TpuIpv4CidrBlock"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/MasterAuthDefinition/Password"
+    ]
+}

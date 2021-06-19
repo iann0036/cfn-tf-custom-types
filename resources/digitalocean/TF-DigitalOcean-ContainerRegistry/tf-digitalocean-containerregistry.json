@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::DigitalOcean::ContainerRegistry",
+    "description": "Provides a DigitalOcean Container Registry resource. A Container Registry is\na secure, private location to store your containers for rapid deployment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-ContainerRegistry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the container_registry."
+        },
+        "ServerUrl": {
+            "type": "string"
+        },
+        "SubscriptionTierSlug": {
+            "type": "string",
+            "description": "The slug identifier for the subscription tier to use (`starter`, `basic`, or `professional`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SubscriptionTierSlug"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/ServerUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

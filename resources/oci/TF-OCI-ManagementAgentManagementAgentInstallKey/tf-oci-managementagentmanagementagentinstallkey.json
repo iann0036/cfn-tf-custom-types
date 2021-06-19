@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::OCI::ManagementAgentManagementAgentInstallKey",
+    "description": "This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.\n\nUser creates a new install key as part of this API.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ManagementAgentManagementAgentInstallKey/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedKeyInstallCount": {
+            "type": "number",
+            "description": "Total number of install for this keys."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "Compartment Identifier."
+        },
+        "CreatedByPrincipalId": {
+            "type": "string"
+        },
+        "CurrentKeyInstallCount": {
+            "type": "number"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) Management Agent install Key Name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeExpires": {
+            "type": "string",
+            "description": "date after which key would expire after creation."
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedByPrincipalId",
+        "/properties/CurrentKeyInstallCount",
+        "/properties/Id",
+        "/properties/Key",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

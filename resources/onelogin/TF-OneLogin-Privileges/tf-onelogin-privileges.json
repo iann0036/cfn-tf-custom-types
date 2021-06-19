@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::OneLogin::Privileges",
+    "description": "Manage Privilege resources.\n\nThis resource allows you to create and configure Privilege.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-Privileges/docs/README.md",
+    "definitions": {
+        "PrivilegeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Version": {
+                    "type": "string"
+                },
+                "Statement": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatementDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "StatementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Effect": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Action",
+                "Effect",
+                "Scope"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the Privilege."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the privilege."
+        },
+        "RoleIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of role IDs for whom the role applies."
+        },
+        "UserIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of user IDs for whom the privilege applies."
+        },
+        "Privilege": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PrivilegeDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

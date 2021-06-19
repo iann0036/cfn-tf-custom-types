@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerTrafficsniffer",
+    "description": "Configure FortiSwitch RSPAN/ERSPAN traffic sniffing parameters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerTrafficsniffer/docs/README.md",
+    "definitions": {
+        "TargetIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description for the sniffer IP."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Sniffer IP."
+                }
+            },
+            "required": []
+        },
+        "TargetMacDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description for the sniffer MAC."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "Sniffer MAC."
+                }
+            },
+            "required": []
+        },
+        "TargetPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description for the sniffer port entry."
+                },
+                "SwitchId": {
+                    "type": "string",
+                    "description": "Managed-switch ID."
+                },
+                "InPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InPortsDefinition"
+                    }
+                },
+                "OutPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutPortsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "OutPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ErspanIp": {
+            "type": "string",
+            "description": "Configure ERSPAN collector IP address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Configure traffic sniffer mode. Valid values: `erspan-auto`, `rspan`, `none`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "TargetIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetIpDefinition"
+            }
+        },
+        "TargetMac": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetMacDefinition"
+            }
+        },
+        "TargetPort": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetPortDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

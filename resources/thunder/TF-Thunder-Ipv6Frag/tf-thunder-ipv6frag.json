@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::Thunder::Ipv6Frag",
+    "description": "`thunder_ipv6_frag` Provides details about thunder ipv6 frag",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Ipv6Frag/docs/README.md",
+    "definitions": {
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FragTimeout": {
+            "type": "number",
+            "description": "in milliseconds 4 - 16000 (default is 1000)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

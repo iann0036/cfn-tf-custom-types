@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Alicloud::CrRepo",
+    "description": "This resource will help you to manager Container Registry repositories.\n\n-> **NOTE:** Available in v1.35.0+.\n\n-> **NOTE:** You need to set your registry password in Container Registry console before use this resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CrRepo/docs/README.md",
+    "definitions": {
+        "DomainListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Detail": {
+            "type": "string",
+            "description": "The repository specific information. MarkDown format is supported, and the length limit is 2000."
+        },
+        "DomainList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DomainListDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of container registry repository."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "Name of container registry namespace where repository is located."
+        },
+        "RepoType": {
+            "type": "string",
+            "description": "`PUBLIC` or `PRIVATE`, repo's visibility."
+        },
+        "Summary": {
+            "type": "string",
+            "description": "The repository general information. It can contain 1 to 80 characters."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace",
+        "RepoType",
+        "Summary"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DomainList",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

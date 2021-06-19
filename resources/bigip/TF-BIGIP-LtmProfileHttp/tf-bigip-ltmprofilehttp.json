@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::BIGIP::LtmProfileHttp",
+    "description": "`bigip_ltm_profile_http` Configures a custom profile_http for use by health checks.\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmProfileHttp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptXff": {
+            "type": "string"
+        },
+        "AppService": {
+            "type": "string"
+        },
+        "BasicAuthRealm": {
+            "type": "string",
+            "description": "Specifies a quoted string for the basic authentication realm. The system sends this string to a client whenever authorization fails. The default value is none."
+        },
+        "DefaultsFrom": {
+            "type": "string",
+            "description": "Specifies the profile that you want to use as the parent profile. Your new profile inherits all settings and values from the parent profile specified."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EncryptCookieSecret": {
+            "type": "string"
+        },
+        "EncryptCookies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FallbackHost": {
+            "type": "string",
+            "description": "Specifies an HTTP fallback host. HTTP redirection allows you to redirect HTTP traffic to another protocol identifier, host name, port number."
+        },
+        "FallbackStatusCodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies one or more three-digit status codes that can be returned by an HTTP server."
+        },
+        "HeadErase": {
+            "type": "string"
+        },
+        "HeadInsert": {
+            "type": "string",
+            "description": "Specifies a quoted header string that you want to insert into an HTTP request."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertXforwardedFor": {
+            "type": "string",
+            "description": "When using connection pooling, which allows clients to make use of other client requests' server-side connections, you can insert the X-Forwarded-For header and specify a client IP address."
+        },
+        "LwsSeparator": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OneconnectTransformations": {
+            "type": "string",
+            "description": "Enables the system to perform HTTP header transformations for the purpose of  keeping server-side connections open. This feature requires configuration of a OneConnect profile."
+        },
+        "ProxyType": {
+            "type": "string"
+        },
+        "RedirectRewrite": {
+            "type": "string"
+        },
+        "RequestChunking": {
+            "type": "string"
+        },
+        "ResponseChunking": {
+            "type": "string"
+        },
+        "ResponseHeadersPermitted": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServerAgentName": {
+            "type": "string"
+        },
+        "TmPartition": {
+            "type": "string"
+        },
+        "ViaHostName": {
+            "type": "string"
+        },
+        "ViaRequest": {
+            "type": "string"
+        },
+        "ViaResponse": {
+            "type": "string"
+        },
+        "XffAlternativeNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

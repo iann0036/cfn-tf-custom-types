@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Transloadit::Template",
+    "description": "Manages Transloadit Templates. \nFor additional details please refer to the [Transloadit documentation](https://transloadit.com/docs/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/transloadit/TF-Transloadit-Template/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "name of the Template to be added\n- `template` - (Required) JSON string of the Template's Assembly Instructions. The top-level object must be the JSON object with a `\"steps\"` key. For more details, see [Assembly Instructions](https://transloadit.com/docs/#assembly-instructions)\n- `require_signature_auth` - (Optional - boolean) Use true to deny requests that do not include a signature. With [Signature Authentication](https://transloadit.com/docs/#signature-authentication) you can ensure no one else is sending requests on your behalf. Default value: false."
+        },
+        "RequireSignatureAuth": {
+            "type": "boolean",
+            "description": "Use true to deny requests that do not include a signature. With [Signature Authentication](https://transloadit.com/docs/#signature-authentication) you can ensure no one else is sending requests on your behalf. Default value: false."
+        },
+        "Template": {
+            "type": "string",
+            "description": "JSON string of the Template's Assembly Instructions. The top-level object must be the JSON object with a `\"steps\"` key. For more details, see [Assembly Instructions](https://transloadit.com/docs/#assembly-instructions)\n- `require_signature_auth` - (Optional - boolean) Use true to deny requests that do not include a signature. With [Signature Authentication](https://transloadit.com/docs/#signature-authentication) you can ensure no one else is sending requests on your behalf. Default value: false."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1049 @@
+{
+    "typeName": "TF::AWS::KinesisFirehoseDeliveryStream",
+    "description": "Provides a Kinesis Firehose Delivery Stream resource. Amazon Kinesis Firehose is a fully managed, elastic service to easily deliver real-time data streams to destinations such as Amazon S3 and Amazon Redshift.\n\nFor more details, see the [Amazon Kinesis Firehose Documentation][1].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-KinesisFirehoseDeliveryStream/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ElasticsearchConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BufferingInterval": {
+                    "type": "number",
+                    "description": "Buffer incoming data for the specified period of time, in seconds between 60 to 900, before delivering it to the destination.  The default value is 300s."
+                },
+                "BufferingSize": {
+                    "type": "number",
+                    "description": "Buffer incoming data to the specified size, in MBs between 1 to 100, before delivering it to the destination.  The default value is 5MB."
+                },
+                "ClusterEndpoint": {
+                    "type": "string",
+                    "description": "The endpoint to use when communicating with the cluster. Conflicts with `domain_arn`."
+                },
+                "DomainArn": {
+                    "type": "string",
+                    "description": "The ARN of the Amazon ES domain.  The IAM role must have permission for `DescribeElasticsearchDomain`, `DescribeElasticsearchDomains`, and `DescribeElasticsearchDomainConfig` after assuming `RoleARN`.  The pattern needs to be `arn:.*`. Conflicts with `cluster_endpoint`."
+                },
+                "IndexName": {
+                    "type": "string",
+                    "description": "The Elasticsearch index name."
+                },
+                "IndexRotationPeriod": {
+                    "type": "string",
+                    "description": "The Elasticsearch index rotation period.  Index rotation appends a timestamp to the IndexName to facilitate expiration of old data.  Valid values are `NoRotation`, `OneHour`, `OneDay`, `OneWeek`, and `OneMonth`.  The default value is `OneDay`."
+                },
+                "RetryDuration": {
+                    "type": "number",
+                    "description": "After an initial failure to deliver to Amazon Elasticsearch, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0."
+                },
+                "RoleArn": {
+                    "type": "string",
+                    "description": "The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration API and for indexing documents.  The pattern needs to be `arn:.*`."
+                },
+                "S3BackupMode": {
+                    "type": "string",
+                    "description": "Defines how documents should be delivered to Amazon S3.  Valid values are `FailedDocumentsOnly` and `AllDocuments`.  Default value is `FailedDocumentsOnly`."
+                },
+                "TypeName": {
+                    "type": "string",
+                    "description": "The Elasticsearch type name with maximum length of 100 characters."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VpcConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "IndexName",
+                "RoleArn"
+            ]
+        },
+        "ExtendedS3ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string"
+                },
+                "BufferInterval": {
+                    "type": "number"
+                },
+                "BufferSize": {
+                    "type": "number"
+                },
+                "CompressionFormat": {
+                    "type": "string"
+                },
+                "ErrorOutputPrefix": {
+                    "type": "string",
+                    "description": "Prefix added to failed records before writing them to S3. This prefix appears immediately following the bucket name."
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "S3BackupMode": {
+                    "type": "string",
+                    "description": "The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DataFormatConversionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataFormatConversionConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3BackupConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3BackupConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "BucketArn",
+                "RoleArn"
+            ]
+        },
+        "HttpEndpointConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string",
+                    "description": "The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination."
+                },
+                "BufferingInterval": {
+                    "type": "number",
+                    "description": "Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes)."
+                },
+                "BufferingSize": {
+                    "type": "number",
+                    "description": "Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The HTTP endpoint name."
+                },
+                "RetryDuration": {
+                    "type": "number",
+                    "description": "Total amount of seconds Firehose spends on retries. This duration starts after the initial attempt fails, It does not include the time periods during which Firehose waits for acknowledgment from the specified destination after each attempt. Valid values between `0` and `7200`. Default is `300`."
+                },
+                "RoleArn": {
+                    "type": "string",
+                    "description": "Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs. The pattern needs to be `arn:.*`."
+                },
+                "S3BackupMode": {
+                    "type": "string",
+                    "description": "Defines how documents should be delivered to Amazon S3.  Valid values are `FailedDataOnly` and `AllData`.  Default value is `FailedDataOnly`."
+                },
+                "Url": {
+                    "type": "string",
+                    "description": "The HTTP endpoint URL to which Kinesis Firehose sends your data."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RequestConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "KinesisSourceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KinesisStreamArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KinesisStreamArn",
+                "RoleArn"
+            ]
+        },
+        "RedshiftConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterJdbcurl": {
+                    "type": "string",
+                    "description": "The jdbcurl of the redshift cluster."
+                },
+                "CopyOptions": {
+                    "type": "string",
+                    "description": "Copy options for copying the data from the s3 intermediate bucket into redshift, for example to change the default delimiter. For valid values, see the [AWS documentation](http://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html)."
+                },
+                "DataTableColumns": {
+                    "type": "string",
+                    "description": "The data table columns that will be targeted by the copy command."
+                },
+                "DataTableName": {
+                    "type": "string",
+                    "description": "The name of the table in the redshift cluster that the s3 bucket will copy to."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The password for the username above."
+                },
+                "RetryDuration": {
+                    "type": "number",
+                    "description": "The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of DurationInSeconds is 0 (zero) or if the first delivery attempt takes longer than the current value."
+                },
+                "RoleArn": {
+                    "type": "string",
+                    "description": "The arn of the role the stream assumes."
+                },
+                "S3BackupMode": {
+                    "type": "string",
+                    "description": "The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The username that the firehose delivery stream will assume. It is strongly recommended that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift INSERT permissions."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3BackupConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3BackupConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ClusterJdbcurl",
+                "DataTableName",
+                "Password",
+                "RoleArn",
+                "Username"
+            ]
+        },
+        "S3ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string",
+                    "description": "The ARN of the S3 bucket."
+                },
+                "BufferInterval": {
+                    "type": "number",
+                    "description": "Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300."
+                },
+                "BufferSize": {
+                    "type": "number",
+                    "description": "Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.\nWe recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher."
+                },
+                "CompressionFormat": {
+                    "type": "string",
+                    "description": "The compression format. If no value is specified, the default is UNCOMPRESSED. Other supported values are GZIP, ZIP & Snappy. If the destination is redshift you cannot use ZIP or Snappy."
+                },
+                "KmsKeyArn": {
+                    "type": "string",
+                    "description": "Specifies the KMS key ARN the stream will use to encrypt data. If not set, no encryption will\nbe used."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "The \"YYYY/MM/DD/HH\" time format prefix is automatically used for delivered S3 files. You can specify an extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a folder in the S3 bucket."
+                },
+                "RoleArn": {
+                    "type": "string",
+                    "description": "The ARN of the AWS credentials."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "BucketArn",
+                "RoleArn"
+            ]
+        },
+        "ServerSideEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Whether to enable encryption at rest. Default is `false`."
+                },
+                "KeyArn": {
+                    "type": "string",
+                    "description": "Amazon Resource Name (ARN) of the encryption key. Required when `key_type` is `CUSTOMER_MANAGED_CMK`."
+                },
+                "KeyType": {
+                    "type": "string",
+                    "description": "Type of encryption key. Default is `AWS_OWNED_CMK`. Valid values are `AWS_OWNED_CMK` and `CUSTOMER_MANAGED_CMK`."
+                }
+            },
+            "required": []
+        },
+        "SplunkConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HecAcknowledgmentTimeout": {
+                    "type": "number",
+                    "description": "The amount of time, in seconds between 180 and 600, that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data."
+                },
+                "HecEndpoint": {
+                    "type": "string",
+                    "description": "The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data."
+                },
+                "HecEndpointType": {
+                    "type": "string",
+                    "description": "The HEC endpoint type. Valid values are `Raw` or `Event`. The default value is `Raw`."
+                },
+                "HecToken": {
+                    "type": "string",
+                    "description": "The GUID that you obtain from your Splunk cluster when you create a new HEC endpoint."
+                },
+                "RetryDuration": {
+                    "type": "number",
+                    "description": "After an initial failure to deliver to Splunk, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0."
+                },
+                "S3BackupMode": {
+                    "type": "string",
+                    "description": "Defines how documents should be delivered to Amazon S3.  Valid values are `FailedEventsOnly` and `AllEvents`.  Default value is `FailedEventsOnly`."
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "HecEndpoint",
+                "HecToken"
+            ]
+        },
+        "CloudwatchLoggingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Enables or disables the logging. Defaults to `false`."
+                },
+                "LogGroupName": {
+                    "type": "string",
+                    "description": "The CloudWatch group name for logging. This value is required if `enabled` is true."
+                },
+                "LogStreamName": {
+                    "type": "string",
+                    "description": "The CloudWatch log stream name for logging. This value is required if `enabled` is true."
+                }
+            },
+            "required": []
+        },
+        "ProcessingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Enables or disables data processing."
+                },
+                "Processors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessorsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VpcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RoleArn": {
+                    "type": "string",
+                    "description": "The ARN of the IAM role to be assumed by Firehose for calling the Amazon EC2 configuration API and for creating network interfaces. Make sure role has necessary [IAM permissions](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-es-vpc)."
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of security group IDs to associate with Kinesis Firehose."
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of subnet IDs to associate with Kinesis Firehose."
+                }
+            },
+            "required": [
+                "RoleArn",
+                "SecurityGroupIds",
+                "SubnetIds"
+            ]
+        },
+        "DataFormatConversionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "InputFormatConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputFormatConfigurationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "OutputFormatConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutputFormatConfigurationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SchemaConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchemaConfigurationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "S3BackupConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string"
+                },
+                "BufferInterval": {
+                    "type": "number"
+                },
+                "BufferSize": {
+                    "type": "number"
+                },
+                "CompressionFormat": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "CloudwatchLoggingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "BucketArn",
+                "RoleArn"
+            ]
+        },
+        "RequestConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentEncoding": {
+                    "type": "string",
+                    "description": "Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. Valid values are `NONE` and `GZIP`.  Default value is `NONE`."
+                },
+                "CommonAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CommonAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProcessorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The type of processor. Valid Values: `Lambda`."
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "InputFormatConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Deserializer": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeserializerDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "OutputFormatConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serializer": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SerializerDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SchemaConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CatalogId": {
+                    "type": "string"
+                },
+                "DatabaseName": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                },
+                "VersionId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "RoleArn",
+                "TableName"
+            ]
+        },
+        "CommonAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the HTTP endpoint common attribute."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value of the HTTP endpoint common attribute."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ParameterName": {
+                    "type": "string",
+                    "description": "Parameter name. Valid Values: `LambdaArn`, `NumberOfRetries`, `RoleArn`, `BufferSizeInMBs`, `BufferIntervalInSeconds`."
+                },
+                "ParameterValue": {
+                    "type": "string",
+                    "description": "Parameter value. Must be between 1 and 512 length (inclusive). When providing a Lambda ARN, you should specify the resource version as well."
+                }
+            },
+            "required": [
+                "ParameterName",
+                "ParameterValue"
+            ]
+        },
+        "DeserializerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HiveJsonSerDe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HiveJsonSerDeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OpenXJsonSerDe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OpenXJsonSerDeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SerializerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OrcSerDe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OrcSerDeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ParquetSerDe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParquetSerDeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HiveJsonSerDeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimestampFormats": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OpenXJsonSerDeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseInsensitive": {
+                    "type": "boolean"
+                },
+                "ColumnToJsonKeyMappings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColumnToJsonKeyMappingsDefinition"
+                    }
+                },
+                "ConvertDotsInJsonKeysToUnderscores": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ColumnToJsonKeyMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OrcSerDeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockSizeBytes": {
+                    "type": "number"
+                },
+                "BloomFilterColumns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BloomFilterFalsePositiveProbability": {
+                    "type": "number"
+                },
+                "Compression": {
+                    "type": "string"
+                },
+                "DictionaryKeyThreshold": {
+                    "type": "number"
+                },
+                "EnablePadding": {
+                    "type": "boolean"
+                },
+                "FormatVersion": {
+                    "type": "string"
+                },
+                "PaddingTolerance": {
+                    "type": "number"
+                },
+                "RowIndexStride": {
+                    "type": "number"
+                },
+                "StripeSizeBytes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ParquetSerDeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockSizeBytes": {
+                    "type": "number"
+                },
+                "Compression": {
+                    "type": "string"
+                },
+                "EnableDictionaryCompression": {
+                    "type": "boolean"
+                },
+                "MaxPaddingBytes": {
+                    "type": "number"
+                },
+                "PageSizeBytes": {
+                    "type": "number"
+                },
+                "WriterVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "DestinationId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name to identify the stream. This is unique to the\nAWS account and region the Stream is created in."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "ElasticsearchConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExtendedS3Configuration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtendedS3ConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "HttpEndpointConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpEndpointConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "KinesisSourceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KinesisSourceConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "RedshiftConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedshiftConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "S3Configuration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3ConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServerSideEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSideEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "SplunkConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SplunkConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/HttpEndpointConfigurationDefinition/AccessKey",
+        "/definitions/RedshiftConfigurationDefinition/Password"
+    ]
+}

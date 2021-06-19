@@ -1,0 +1,180 @@
+{
+    "typeName": "TF::FortiOS::SystemAlarm",
+    "description": "Configure alarm.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAlarm/docs/README.md",
+    "definitions": {
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminAuthFailureThreshold": {
+                    "type": "number",
+                    "description": "Admin authentication failure threshold."
+                },
+                "AdminAuthLockoutThreshold": {
+                    "type": "number",
+                    "description": "Admin authentication lockout threshold."
+                },
+                "DecryptionFailureThreshold": {
+                    "type": "number",
+                    "description": "Decryption failure threshold."
+                },
+                "EncryptionFailureThreshold": {
+                    "type": "number",
+                    "description": "Encryption failure threshold."
+                },
+                "FwPolicyId": {
+                    "type": "number",
+                    "description": "Firewall policy ID."
+                },
+                "FwPolicyIdThreshold": {
+                    "type": "number",
+                    "description": "Firewall policy ID threshold."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Group ID."
+                },
+                "LogFullWarningThreshold": {
+                    "type": "number",
+                    "description": "Log full warning threshold."
+                },
+                "Period": {
+                    "type": "number",
+                    "description": "Time period in seconds (0 = from start up)."
+                },
+                "ReplayAttemptThreshold": {
+                    "type": "number",
+                    "description": "Replay attempt threshold."
+                },
+                "SelfTestFailureThreshold": {
+                    "type": "number",
+                    "description": "Self-test failure threshold."
+                },
+                "UserAuthFailureThreshold": {
+                    "type": "number",
+                    "description": "User authentication failure threshold."
+                },
+                "UserAuthLockoutThreshold": {
+                    "type": "number",
+                    "description": "User authentication lockout threshold."
+                },
+                "FwPolicyViolations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FwPolicyViolationsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FwPolicyViolationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DstIp": {
+                    "type": "string",
+                    "description": "Destination IP (0=all)."
+                },
+                "DstPort": {
+                    "type": "number",
+                    "description": "Destination port (0=all)."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Firewall policy violations ID."
+                },
+                "SrcIp": {
+                    "type": "string",
+                    "description": "Source IP (0=all)."
+                },
+                "SrcPort": {
+                    "type": "number",
+                    "description": "Source port (0=all)."
+                },
+                "Threshold": {
+                    "type": "number",
+                    "description": "Firewall policy violation threshold."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Audible": {
+            "type": "string",
+            "description": "Enable/disable audible alarm. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable alarm. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

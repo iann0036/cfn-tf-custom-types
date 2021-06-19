@@ -1,0 +1,219 @@
+{
+    "typeName": "TF::AWS::ApiGatewayDomainName",
+    "description": "Registers a custom domain name for use with AWS API Gateway. Additional information about this functionality\ncan be found in the [API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).\n\nThis resource just establishes ownership of and the TLS settings for\na particular domain name. An API can be attached to a particular path\nunder the registered domain name using\n[the `aws_api_gateway_base_path_mapping` resource](api_gateway_base_path_mapping.html).\n\nAPI Gateway domains can be defined as either 'edge-optimized' or 'regional'.  In an edge-optimized configuration,\nAPI Gateway internally creates and manages a CloudFront distribution to route requests on the given hostname. In\naddition to this resource it's necessary to create a DNS record corresponding to the given domain name which is an alias\n(either Route53 alias or traditional CNAME) to the Cloudfront domain name exported in the `cloudfront_domain_name`\nattribute.\n\nIn a regional configuration,...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayDomainName/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EndpointConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Types": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Types"
+            ]
+        },
+        "MutualTlsAuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TruststoreUri": {
+                    "type": "string"
+                },
+                "TruststoreVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TruststoreUri"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string",
+            "description": "The ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`."
+        },
+        "CertificateBody": {
+            "type": "string",
+            "description": "The certificate issued for the domain name\nbeing registered, in PEM format. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and\n`regional_certificate_name`."
+        },
+        "CertificateChain": {
+            "type": "string",
+            "description": "The certificate for the CA that issued the\ncertificate, along with any intermediate CA certificates required to\ncreate an unbroken chain to a certificate trusted by the intended API clients. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`,\n`regional_certificate_arn`, and `regional_certificate_name`."
+        },
+        "CertificateName": {
+            "type": "string",
+            "description": "The unique name to use when registering this\ncertificate as an IAM server certificate. Conflicts with `certificate_arn`, `regional_certificate_arn`, and\n`regional_certificate_name`. Required if `certificate_arn` is not set."
+        },
+        "CertificatePrivateKey": {
+            "type": "string",
+            "description": "The private key associated with the\ndomain certificate given in `certificate_body`. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`."
+        },
+        "CertificateUploadDate": {
+            "type": "string"
+        },
+        "CloudfrontDomainName": {
+            "type": "string"
+        },
+        "CloudfrontZoneId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The fully-qualified domain name to register."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RegionalCertificateArn": {
+            "type": "string",
+            "description": "The ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when a regional domain name is desired. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`."
+        },
+        "RegionalCertificateName": {
+            "type": "string",
+            "description": "The user-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and\n`certificate_private_key`."
+        },
+        "RegionalDomainName": {
+            "type": "string"
+        },
+        "RegionalZoneId": {
+            "type": "string"
+        },
+        "SecurityPolicy": {
+            "type": "string",
+            "description": "The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "EndpointConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "MutualTlsAuthentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MutualTlsAuthenticationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CertificateUploadDate",
+        "/properties/CloudfrontDomainName",
+        "/properties/CloudfrontZoneId",
+        "/properties/Id",
+        "/properties/RegionalDomainName",
+        "/properties/RegionalZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CertificatePrivateKey"
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Quorum::TransactionManagerKeypair",
+    "description": "Use this resource to create a key pair used in a transaction manager.\n\nThis key pair provides attributes which are useful when building the configuration for a transaction manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/quorum/TF-Quorum-TransactionManagerKeypair/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iterations": {
+                    "type": "number"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Parallelism": {
+                    "type": "number"
+                },
+                "Variant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyData": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "A password to protect the keypair."
+        },
+        "PrivateKeyJson": {
+            "type": "string"
+        },
+        "PublicKeyB64": {
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/KeyData",
+        "/properties/PrivateKeyJson",
+        "/properties/PublicKeyB64"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KeyData",
+        "/properties/Password",
+        "/properties/PrivateKeyJson"
+    ]
+}

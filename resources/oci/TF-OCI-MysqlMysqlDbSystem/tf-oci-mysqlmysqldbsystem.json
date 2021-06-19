@@ -1,0 +1,618 @@
+{
+    "typeName": "TF::OCI::MysqlMysqlDbSystem",
+    "description": "This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.\n\nCreates and launches a DB System.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-MysqlMysqlDbSystem/docs/README.md",
+    "definitions": {
+        "AnalyticsClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterSize": {
+                    "type": "number"
+                },
+                "ShapeName": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "TimeCreated": {
+                    "type": "string"
+                },
+                "TimeUpdated": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChannelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ChannelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ChannelsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateType": {
+                    "type": "string"
+                },
+                "Contents": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChannelsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SourceType": {
+                    "type": "string"
+                },
+                "SslCaCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ChannelsDefinition3"
+                    }
+                },
+                "SslMode": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChannelsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplierUsername": {
+                    "type": "string"
+                },
+                "ChannelName": {
+                    "type": "string"
+                },
+                "DbSystemId": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChannelsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CompartmentId": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelsDefinition"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChannelsDefinition2"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "LifecycleDetails": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ChannelsDefinition4"
+                    }
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ChannelsDefinition5"
+                    }
+                },
+                "TimeCreated": {
+                    "type": "string"
+                },
+                "TimeUpdated": {
+                    "type": "string"
+                }
+            }
+        },
+        "CurrentPlacementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "FaultDomain": {
+                    "type": "string"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Modes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortX": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StatusDetails": {
+                    "type": "string"
+                }
+            }
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HeatWaveClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterSize": {
+                    "type": "number"
+                },
+                "ShapeName": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "TimeCreated": {
+                    "type": "string"
+                },
+                "TimeUpdated": {
+                    "type": "string"
+                }
+            }
+        },
+        "BackupPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition2"
+                    }
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition2"
+                    }
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "RetentionInDays": {
+                    "type": "number"
+                },
+                "WindowStartTime": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MaintenanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WindowStartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "WindowStartTime"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackupId": {
+                    "type": "string"
+                },
+                "SourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "string",
+            "description": "The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character."
+        },
+        "AdminUsername": {
+            "type": "string",
+            "description": "The username for the administrative user."
+        },
+        "AnalyticsCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnalyticsClusterDefinition"
+            }
+        },
+        "AvailabilityDomain": {
+            "type": "string",
+            "description": "The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance."
+        },
+        "Channels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ChannelsDefinition6"
+            }
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment."
+        },
+        "ConfigurationId": {
+            "type": "string",
+            "description": "The OCID of the Configuration to be used for this DB System."
+        },
+        "CurrentPlacement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CurrentPlacementDefinition"
+            }
+        },
+        "DataStorageSizeInGb": {
+            "type": "number",
+            "description": "Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) User-provided data about the DB System."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The user-friendly name for the DB System. It does not have to be unique."
+        },
+        "Endpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointsDefinition"
+            }
+        },
+        "FaultDomain": {
+            "type": "string",
+            "description": "The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "HeatWaveCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeatWaveClusterDefinition"
+            }
+        },
+        "HostnameLabel": {
+            "type": "string",
+            "description": "The hostname for the primary endpoint of the DB System. Used for DNS."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a \"dotted-quad\" style IPv4 address."
+        },
+        "IsAnalyticsClusterAttached": {
+            "type": "boolean"
+        },
+        "IsHeatWaveClusterAttached": {
+            "type": "boolean"
+        },
+        "IsHighlyAvailable": {
+            "type": "boolean",
+            "description": "(Updatable) Specifies if the DB System is highly available."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "MysqlVersion": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port for primary endpoint of the DB System to listen on."
+        },
+        "PortX": {
+            "type": "number",
+            "description": "The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port."
+        },
+        "ShapeName": {
+            "type": "string",
+            "description": "The name of the shape. The shape determines the resources allocated\n* CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation."
+        },
+        "ShutdownType": {
+            "type": "string",
+            "description": "It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`."
+        },
+        "State": {
+            "type": "string",
+            "description": "(Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The OCID of the subnet the DB System is associated with."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "BackupPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Maintenance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdminPassword",
+        "AdminUsername",
+        "AvailabilityDomain",
+        "CompartmentId",
+        "ShapeName",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AnalyticsCluster",
+        "/properties/Channels",
+        "/properties/CurrentPlacement",
+        "/properties/Endpoints",
+        "/properties/HeatWaveCluster",
+        "/properties/Id",
+        "/properties/IsAnalyticsClusterAttached",
+        "/properties/IsHeatWaveClusterAttached",
+        "/properties/LifecycleDetails",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword"
+    ]
+}

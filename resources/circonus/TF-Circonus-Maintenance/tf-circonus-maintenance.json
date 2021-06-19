@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::Circonus::Maintenance",
+    "description": "The ``circonus_maintenance`` resource creates and manages a\nsingle [maintenance window resource](https://login.circonus.com/resources/docs/user/Alerting/Maintenance.html)\nwhich can reference a check, ruleset, target or entire account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-Maintenance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string",
+            "description": "A string referencing the account CID to have maintenance on, mutually exclusive\nwith `check`, `rule_set`, and `target`."
+        },
+        "Check": {
+            "type": "string",
+            "description": "A string referencing the check CID to have maintenance on, mutually exclusive\nwith `account`, `rule_set`, and `target`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "RuleSet": {
+            "type": "string",
+            "description": "A string referencing the rule_set CID to have maintenance on, mutually exclusive\nwith `account`, `check`, and `target`."
+        },
+        "Severities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of strings determining which severities to put into maintenance.\nMust be in the range: \"1\"-\"5\"."
+        },
+        "Start": {
+            "type": "string",
+            "description": "An RFC3339 timestamp string which indicates the start of the maintenance window."
+        },
+        "Stop": {
+            "type": "string",
+            "description": "An RFC3339 timestamp string which indicates the end of the maintenance window."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags assigned to the maintenance window."
+        },
+        "Target": {
+            "type": "string",
+            "description": "A string referencing the check target (host) to have maintenance on, mutually exclusive\nwith `account`, `rule_set`, and `check`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Severities",
+        "Start",
+        "Stop"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

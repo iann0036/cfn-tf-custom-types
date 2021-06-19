@@ -1,0 +1,723 @@
+{
+    "typeName": "TF::BIGIP::LtmPolicy",
+    "description": "`bigip_ltm_policy` Configures ltm policies to manage traffic assigned to a virtual server\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmPolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppService": {
+                    "type": "string"
+                },
+                "Application": {
+                    "type": "string"
+                },
+                "Asm": {
+                    "type": "boolean"
+                },
+                "Avr": {
+                    "type": "boolean"
+                },
+                "Cache": {
+                    "type": "boolean"
+                },
+                "Carp": {
+                    "type": "boolean"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "Classify": {
+                    "type": "boolean"
+                },
+                "ClonePool": {
+                    "type": "string"
+                },
+                "Code": {
+                    "type": "number"
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "Connection": {
+                    "type": "boolean"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "CookieHash": {
+                    "type": "boolean"
+                },
+                "CookieInsert": {
+                    "type": "boolean"
+                },
+                "CookiePassive": {
+                    "type": "boolean"
+                },
+                "CookieRewrite": {
+                    "type": "boolean"
+                },
+                "Decompress": {
+                    "type": "boolean"
+                },
+                "Defer": {
+                    "type": "boolean"
+                },
+                "DestinationAddress": {
+                    "type": "boolean"
+                },
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Expiry": {
+                    "type": "string"
+                },
+                "ExpirySecs": {
+                    "type": "number"
+                },
+                "Expression": {
+                    "type": "string"
+                },
+                "Extension": {
+                    "type": "string"
+                },
+                "Facility": {
+                    "type": "string"
+                },
+                "Forward": {
+                    "type": "boolean"
+                },
+                "FromProfile": {
+                    "type": "string"
+                },
+                "Hash": {
+                    "type": "boolean"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Http": {
+                    "type": "boolean"
+                },
+                "HttpBasicAuth": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "boolean"
+                },
+                "HttpHeader": {
+                    "type": "boolean"
+                },
+                "HttpHost": {
+                    "type": "boolean"
+                },
+                "HttpReferer": {
+                    "type": "boolean"
+                },
+                "HttpReply": {
+                    "type": "boolean"
+                },
+                "HttpSetCookie": {
+                    "type": "boolean"
+                },
+                "HttpUri": {
+                    "type": "boolean"
+                },
+                "Ifile": {
+                    "type": "string"
+                },
+                "Insert": {
+                    "type": "boolean"
+                },
+                "InternalVirtual": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "L7dos": {
+                    "type": "boolean"
+                },
+                "Length": {
+                    "type": "number"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Log": {
+                    "type": "boolean"
+                },
+                "LtmPolicy": {
+                    "type": "boolean"
+                },
+                "Member": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "Nexthop": {
+                    "type": "string"
+                },
+                "Node": {
+                    "type": "string"
+                },
+                "Offset": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Pem": {
+                    "type": "boolean"
+                },
+                "Persist": {
+                    "type": "boolean"
+                },
+                "Pin": {
+                    "type": "boolean"
+                },
+                "Policy": {
+                    "type": "string"
+                },
+                "Pool": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Profile": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "QueryString": {
+                    "type": "string"
+                },
+                "Rateclass": {
+                    "type": "string"
+                },
+                "Redirect": {
+                    "type": "boolean"
+                },
+                "Remove": {
+                    "type": "boolean"
+                },
+                "Replace": {
+                    "type": "boolean"
+                },
+                "Request": {
+                    "type": "boolean"
+                },
+                "RequestAdapt": {
+                    "type": "boolean"
+                },
+                "Reset": {
+                    "type": "boolean"
+                },
+                "Response": {
+                    "type": "boolean"
+                },
+                "ResponseAdapt": {
+                    "type": "boolean"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "Script": {
+                    "type": "string"
+                },
+                "Select": {
+                    "type": "boolean"
+                },
+                "ServerSsl": {
+                    "type": "boolean"
+                },
+                "SetVariable": {
+                    "type": "boolean"
+                },
+                "Shutdown": {
+                    "type": "boolean"
+                },
+                "Snat": {
+                    "type": "string"
+                },
+                "Snatpool": {
+                    "type": "string"
+                },
+                "SourceAddress": {
+                    "type": "boolean"
+                },
+                "SslClientHello": {
+                    "type": "boolean"
+                },
+                "SslServerHandshake": {
+                    "type": "boolean"
+                },
+                "SslServerHello": {
+                    "type": "boolean"
+                },
+                "SslSessionId": {
+                    "type": "boolean"
+                },
+                "Status": {
+                    "type": "number"
+                },
+                "Tcl": {
+                    "type": "boolean"
+                },
+                "TcpNagle": {
+                    "type": "boolean"
+                },
+                "Text": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "TmName": {
+                    "type": "string"
+                },
+                "Uie": {
+                    "type": "boolean"
+                },
+                "Universal": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Virtual": {
+                    "type": "string"
+                },
+                "Vlan": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "number"
+                },
+                "Wam": {
+                    "type": "boolean"
+                },
+                "Write": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "boolean"
+                },
+                "All": {
+                    "type": "boolean"
+                },
+                "AppService": {
+                    "type": "string"
+                },
+                "BrowserType": {
+                    "type": "boolean"
+                },
+                "BrowserVersion": {
+                    "type": "boolean"
+                },
+                "CaseInsensitive": {
+                    "type": "boolean"
+                },
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Cipher": {
+                    "type": "boolean"
+                },
+                "CipherBits": {
+                    "type": "boolean"
+                },
+                "ClientSsl": {
+                    "type": "boolean"
+                },
+                "Code": {
+                    "type": "boolean"
+                },
+                "CommonName": {
+                    "type": "boolean"
+                },
+                "Contains": {
+                    "type": "boolean"
+                },
+                "Continent": {
+                    "type": "boolean"
+                },
+                "CountryCode": {
+                    "type": "boolean"
+                },
+                "CountryName": {
+                    "type": "boolean"
+                },
+                "CpuUsage": {
+                    "type": "boolean"
+                },
+                "DeviceMake": {
+                    "type": "boolean"
+                },
+                "DeviceModel": {
+                    "type": "boolean"
+                },
+                "Domain": {
+                    "type": "boolean"
+                },
+                "EndsWith": {
+                    "type": "boolean"
+                },
+                "Equals": {
+                    "type": "boolean"
+                },
+                "Expiry": {
+                    "type": "boolean"
+                },
+                "Extension": {
+                    "type": "boolean"
+                },
+                "External": {
+                    "type": "boolean"
+                },
+                "Geoip": {
+                    "type": "boolean"
+                },
+                "Greater": {
+                    "type": "boolean"
+                },
+                "GreaterOrEqual": {
+                    "type": "boolean"
+                },
+                "Host": {
+                    "type": "boolean"
+                },
+                "HttpBasicAuth": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "boolean"
+                },
+                "HttpHeader": {
+                    "type": "boolean"
+                },
+                "HttpHost": {
+                    "type": "boolean"
+                },
+                "HttpMethod": {
+                    "type": "boolean"
+                },
+                "HttpReferer": {
+                    "type": "boolean"
+                },
+                "HttpSetCookie": {
+                    "type": "boolean"
+                },
+                "HttpStatus": {
+                    "type": "boolean"
+                },
+                "HttpUri": {
+                    "type": "boolean"
+                },
+                "HttpUserAgent": {
+                    "type": "boolean"
+                },
+                "HttpVersion": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Internal": {
+                    "type": "boolean"
+                },
+                "Isp": {
+                    "type": "boolean"
+                },
+                "Last15secs": {
+                    "type": "boolean"
+                },
+                "Last1min": {
+                    "type": "boolean"
+                },
+                "Last5mins": {
+                    "type": "boolean"
+                },
+                "Less": {
+                    "type": "boolean"
+                },
+                "LessOrEqual": {
+                    "type": "boolean"
+                },
+                "Local": {
+                    "type": "boolean"
+                },
+                "Major": {
+                    "type": "boolean"
+                },
+                "Matches": {
+                    "type": "boolean"
+                },
+                "Minor": {
+                    "type": "boolean"
+                },
+                "Missing": {
+                    "type": "boolean"
+                },
+                "Mss": {
+                    "type": "boolean"
+                },
+                "Not": {
+                    "type": "boolean"
+                },
+                "Org": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "boolean"
+                },
+                "Path": {
+                    "type": "boolean"
+                },
+                "PathSegment": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "boolean"
+                },
+                "Present": {
+                    "type": "boolean"
+                },
+                "Protocol": {
+                    "type": "boolean"
+                },
+                "QueryParameter": {
+                    "type": "boolean"
+                },
+                "QueryString": {
+                    "type": "boolean"
+                },
+                "RegionCode": {
+                    "type": "boolean"
+                },
+                "RegionName": {
+                    "type": "boolean"
+                },
+                "Remote": {
+                    "type": "boolean"
+                },
+                "Request": {
+                    "type": "boolean"
+                },
+                "Response": {
+                    "type": "boolean"
+                },
+                "RouteDomain": {
+                    "type": "boolean"
+                },
+                "Rtt": {
+                    "type": "boolean"
+                },
+                "Scheme": {
+                    "type": "boolean"
+                },
+                "ServerName": {
+                    "type": "boolean"
+                },
+                "SslCert": {
+                    "type": "boolean"
+                },
+                "SslClientHello": {
+                    "type": "boolean"
+                },
+                "SslExtension": {
+                    "type": "boolean"
+                },
+                "SslServerHandshake": {
+                    "type": "boolean"
+                },
+                "SslServerHello": {
+                    "type": "boolean"
+                },
+                "StartsWith": {
+                    "type": "boolean"
+                },
+                "Tcp": {
+                    "type": "boolean"
+                },
+                "Text": {
+                    "type": "boolean"
+                },
+                "TmName": {
+                    "type": "string"
+                },
+                "UnnamedQueryParameter": {
+                    "type": "boolean"
+                },
+                "UserAgentToken": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Version": {
+                    "type": "boolean"
+                },
+                "Vlan": {
+                    "type": "boolean"
+                },
+                "VlanId": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Controls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the controls."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Policy ( policy name should be in full path which is combination of partition and policy name )."
+        },
+        "PublishedCopy": {
+            "type": "string",
+            "description": "If you want to publish the policy else it will be deployed in Drafts mode."
+        },
+        "Requires": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the protocol."
+        },
+        "Strategy": {
+            "type": "string",
+            "description": "Specifies the match strategy."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

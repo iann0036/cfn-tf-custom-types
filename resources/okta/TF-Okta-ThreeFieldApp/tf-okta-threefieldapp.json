@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::Okta::ThreeFieldApp",
+    "description": "CloudFormation equivalent of okta_three_field_app",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-ThreeFieldApp/docs/README.md",
+    "definitions": {
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessibilityErrorRedirectUrl": {
+            "type": "string"
+        },
+        "AccessibilitySelfService": {
+            "type": "boolean"
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean"
+        },
+        "ButtonSelector": {
+            "type": "string"
+        },
+        "ExtraFieldSelector": {
+            "type": "string"
+        },
+        "ExtraFieldValue": {
+            "type": "string"
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HideIos": {
+            "type": "boolean"
+        },
+        "HideWeb": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PasswordSelector": {
+            "type": "string"
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "UrlRegex": {
+            "type": "string"
+        },
+        "UserNameTemplate": {
+            "type": "string"
+        },
+        "UserNameTemplateSuffix": {
+            "type": "string"
+        },
+        "UserNameTemplateType": {
+            "type": "string"
+        },
+        "UsernameSelector": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ButtonSelector",
+        "ExtraFieldSelector",
+        "ExtraFieldValue",
+        "Label",
+        "PasswordSelector",
+        "Url",
+        "UsernameSelector"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

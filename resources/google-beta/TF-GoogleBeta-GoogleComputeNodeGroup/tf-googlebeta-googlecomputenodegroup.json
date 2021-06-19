@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeNodeGroup",
+    "description": "CloudFormation equivalent of google_compute_node_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeNodeGroup/docs/README.md",
+    "definitions": {
+        "AutoscalingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodes": {
+                    "type": "number"
+                },
+                "MinNodes": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StartTime"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialSize": {
+            "type": "number"
+        },
+        "MaintenancePolicy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeTemplate": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "AutoscalingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalingPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NodeTemplate"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

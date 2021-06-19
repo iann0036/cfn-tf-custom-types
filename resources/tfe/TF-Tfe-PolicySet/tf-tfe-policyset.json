@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::Tfe::PolicySet",
+    "description": "Sentinel Policy as Code is an embedded policy as code framework integrated\nwith Terraform Enterprise.\n\nPolicy sets are groups of policies that are applied together to related workspaces.\nBy using policy sets, you can group your policies by attributes such as environment\nor region. Individual policies that are members of policy sets will only be checked\nfor workspaces that the policy set is attached to.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-PolicySet/docs/README.md",
+    "definitions": {
+        "VcsRepoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string",
+                    "description": "The repository branch that Terraform will execute from.\nThis defaults to the repository's default branch (e.g. main)."
+                },
+                "Identifier": {
+                    "type": "string",
+                    "description": "A reference to your VCS repository in the format\n`<organization>/<repository>` where `<organization>` and `<repository>` refer to the organization and repository\nin your VCS provider."
+                },
+                "IngressSubmodules": {
+                    "type": "boolean",
+                    "description": "Whether submodules should be fetched when\ncloning the VCS repository. Defaults to `false`."
+                },
+                "OauthTokenId": {
+                    "type": "string",
+                    "description": "Token ID of the VCS Connection (OAuth Connection Token)\nto use."
+                }
+            },
+            "required": [
+                "Identifier",
+                "OauthTokenId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the policy set's purpose."
+        },
+        "Global": {
+            "type": "boolean",
+            "description": "Whether or not policies in this set will apply to\nall workspaces. Defaults to `false`. This value _must not_ be provided if\n`workspace_ids` is provided."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the policy set."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "PoliciesPath": {
+            "type": "string",
+            "description": "The sub-path within the attached VCS repository\nto ingress when using `vcs_repo`. All files and directories outside of this\nsub-path will be ignored. This option can only be supplied when `vcs_repo` is\npresent. Forces a new resource if changed."
+        },
+        "PolicyIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Sentinel policy IDs. This value _must not_ be provided\nif `vcs_repo` is provided."
+        },
+        "WorkspaceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of workspace IDs. This value _must not_ be provided\nif `global` is provided."
+        },
+        "VcsRepo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VcsRepoDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

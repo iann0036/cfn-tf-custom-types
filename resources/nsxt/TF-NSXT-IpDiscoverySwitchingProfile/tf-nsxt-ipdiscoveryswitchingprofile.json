@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::NSXT::IpDiscoverySwitchingProfile",
+    "description": "Provides a resource to configure IP discovery switching profile on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-IpDiscoverySwitchingProfile/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpBindingsLimit": {
+            "type": "number",
+            "description": "Limit for the amount of ARP bindings."
+        },
+        "ArpSnoopingEnabled": {
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether ARP snooping is enabled."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DhcpSnoopingEnabled": {
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether DHCP snooping is enabled."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "VmToolsEnabled": {
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether VM tools will be enabled. This option is only supported on ESX where vm-tools is installed."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

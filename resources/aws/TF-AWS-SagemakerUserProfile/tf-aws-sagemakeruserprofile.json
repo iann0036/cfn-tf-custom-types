@@ -1,0 +1,297 @@
+{
+    "typeName": "TF::AWS::SagemakerUserProfile",
+    "description": "Provides a Sagemaker User Profile resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SagemakerUserProfile/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UserSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExecutionRole": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JupyterServerAppSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JupyterServerAppSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KernelGatewayAppSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KernelGatewayAppSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SharingSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SharingSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TensorBoardAppSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TensorBoardAppSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ExecutionRole"
+            ]
+        },
+        "JupyterServerAppSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultResourceSpec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultResourceSpecDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "KernelGatewayAppSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomImage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomImageDefinition"
+                    },
+                    "maxItems": 30
+                },
+                "DefaultResourceSpec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultResourceSpecDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SharingSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotebookOutputOption": {
+                    "type": "string"
+                },
+                "S3KmsKeyId": {
+                    "type": "string"
+                },
+                "S3OutputPath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TensorBoardAppSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultResourceSpec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultResourceSpecDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DefaultResourceSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "SagemakerImageArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppImageConfigName": {
+                    "type": "string"
+                },
+                "ImageName": {
+                    "type": "string"
+                },
+                "ImageVersionNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AppImageConfigName",
+                "ImageName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string",
+            "description": "The ID of the associated Domain."
+        },
+        "HomeEfsFileSystemUid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SingleSignOnUserIdentifier": {
+            "type": "string",
+            "description": "A specifier for the type of value specified in `single_sign_on_user_value`. Currently, the only supported value is `UserName`. If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified."
+        },
+        "SingleSignOnUserValue": {
+            "type": "string",
+            "description": "The username of the associated AWS Single Sign-On User for this User Profile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UserProfileName": {
+            "type": "string",
+            "description": "The name for the User Profile."
+        },
+        "UserSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "UserProfileName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/HomeEfsFileSystemUid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

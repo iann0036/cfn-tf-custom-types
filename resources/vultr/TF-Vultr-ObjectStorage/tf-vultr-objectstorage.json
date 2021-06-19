@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Vultr::ObjectStorage",
+    "description": "Provides a Vultr private object storage resource. This can be used to create, read, update and delete object storage resources on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-ObjectStorage/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "number",
+            "description": "The region ID that you want the network to be created in."
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The description you want to give your network."
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "S3AccessKey": {
+            "type": "string"
+        },
+        "S3Hostname": {
+            "type": "string"
+        },
+        "S3SecretKey": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DateCreated",
+        "/properties/Id",
+        "/properties/Location",
+        "/properties/Region",
+        "/properties/S3AccessKey",
+        "/properties/S3Hostname",
+        "/properties/S3SecretKey",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/S3AccessKey",
+        "/properties/S3SecretKey"
+    ]
+}

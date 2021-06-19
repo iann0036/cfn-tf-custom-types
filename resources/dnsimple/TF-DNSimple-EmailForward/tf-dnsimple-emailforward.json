@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::DNSimple::EmailForward",
+    "description": "Provides a DNSimple email forward resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dnsimple/TF-DNSimple-EmailForward/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AliasName": {
+            "type": "string",
+            "description": "The name part (the part before the @) of the source email address on the domain."
+        },
+        "DestinationEmail": {
+            "type": "string",
+            "description": "The destination email address on another domain."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to add the email forwarding rule to."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AliasName",
+        "DestinationEmail",
+        "Domain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

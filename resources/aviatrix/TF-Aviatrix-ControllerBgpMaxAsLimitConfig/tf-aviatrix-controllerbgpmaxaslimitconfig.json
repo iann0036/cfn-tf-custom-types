@@ -1,0 +1,65 @@
+{
+    "typeName": "TF::Aviatrix::ControllerBgpMaxAsLimitConfig",
+    "description": "The **aviatrix_controller_bgp_max_as_limit_config** resource allows management of an Aviatrix Controller's BGP max AS limit for transit gateways. This resource is available as of provider version R2.18.1+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-ControllerBgpMaxAsLimitConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxAsLimit": {
+            "type": "number",
+            "description": "The maximum AS path limit allowed by transit gateways when handling BGP/Peering route propagation. Must be a number in the range [1-254]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxAsLimit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

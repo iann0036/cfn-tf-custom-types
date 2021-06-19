@@ -1,0 +1,899 @@
+{
+    "typeName": "TF::FortiOS::SystemGlobal",
+    "description": "Configure global attributes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemGlobal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminConcurrent": {
+            "type": "string",
+            "description": "Enable/disable concurrent administrator logins. (Use policy-auth-concurrent for firewall authenticated users.) Valid values: `enable`, `disable`."
+        },
+        "AdminConsoleTimeout": {
+            "type": "number",
+            "description": "Console login timeout that overrides the admintimeout value. (15 - 300 seconds) (15 seconds to 5 minutes). 0 the default, disables this timeout."
+        },
+        "AdminHstsMaxAge": {
+            "type": "number",
+            "description": "HTTPS Strict-Transport-Security header max-age in seconds. A value of 0 will reset any HSTS records in the browser.When admin-https-redirect is disabled the header max-age will be 0."
+        },
+        "AdminHttpsPkiRequired": {
+            "type": "string",
+            "description": "Enable/disable admin login method. Enable to force administrators to provide a valid certificate to log in if PKI is enabled. Disable to allow administrators to log in with a certificate or password. Valid values: `enable`, `disable`."
+        },
+        "AdminHttpsRedirect": {
+            "type": "string",
+            "description": "Enable/disable redirection of HTTP administration access to HTTPS. Valid values: `enable`, `disable`."
+        },
+        "AdminHttpsSslVersions": {
+            "type": "string",
+            "description": "Allowed TLS versions for web administration."
+        },
+        "AdminLockoutDuration": {
+            "type": "number",
+            "description": "Amount of time in seconds that an administrator account is locked out after reaching the admin-lockout-threshold for repeated failed login attempts."
+        },
+        "AdminLockoutThreshold": {
+            "type": "number",
+            "description": "Number of failed login attempts before an administrator account is locked out for the admin-lockout-duration."
+        },
+        "AdminLoginMax": {
+            "type": "number",
+            "description": "Maximum number of administrators who can be logged in at the same time (1 - 100, default = 100)."
+        },
+        "AdminMaintainer": {
+            "type": "string",
+            "description": "Enable/disable maintainer administrator login. When enabled, the maintainer account can be used to log in from the console after a hard reboot. The password is \"bcpb\" followed by the FortiGate unit serial number. You have limited time to complete this login. Valid values: `enable`, `disable`."
+        },
+        "AdminPort": {
+            "type": "number",
+            "description": "Administrative access port for HTTP. (1 - 65535, default = 80)."
+        },
+        "AdminRestrictLocal": {
+            "type": "string",
+            "description": "Enable/disable local admin authentication restriction when remote authenticator is up and running. (default = disable) Valid values: `enable`, `disable`."
+        },
+        "AdminScp": {
+            "type": "string",
+            "description": "Enable/disable using SCP to download the system configuration. You can use SCP as an alternative method for backing up the configuration. Valid values: `enable`, `disable`."
+        },
+        "AdminServerCert": {
+            "type": "string",
+            "description": "Server certificate that the FortiGate uses for HTTPS administrative connections."
+        },
+        "AdminSport": {
+            "type": "number",
+            "description": "Administrative access port for HTTPS. (1 - 65535, default = 443)."
+        },
+        "AdminSshGraceTime": {
+            "type": "number",
+            "description": "Maximum time in seconds permitted between making an SSH connection to the FortiGate unit and authenticating (10 - 3600 sec (1 hour), default 120)."
+        },
+        "AdminSshPassword": {
+            "type": "string",
+            "description": "Enable/disable password authentication for SSH admin access. Valid values: `enable`, `disable`."
+        },
+        "AdminSshPort": {
+            "type": "number",
+            "description": "Administrative access port for SSH. (1 - 65535, default = 22)."
+        },
+        "AdminSshV1": {
+            "type": "string",
+            "description": "Enable/disable SSH v1 compatibility. Valid values: `enable`, `disable`."
+        },
+        "AdminTelnet": {
+            "type": "string",
+            "description": "Enable/disable TELNET service. Valid values: `enable`, `disable`."
+        },
+        "AdminTelnetPort": {
+            "type": "number",
+            "description": "Administrative access port for TELNET. (1 - 65535, default = 23)."
+        },
+        "Admintimeout": {
+            "type": "number",
+            "description": "Number of minutes before an idle administrator session times out (5 - 480 minutes (8 hours), default = 5). A shorter idle timeout is more secure."
+        },
+        "Alias": {
+            "type": "string",
+            "description": "Alias for your FortiGate unit."
+        },
+        "AllowTrafficRedirect": {
+            "type": "string",
+            "description": "Disable to allow traffic to be routed back on a different interface. Valid values: `enable`, `disable`."
+        },
+        "AntiReplay": {
+            "type": "string",
+            "description": "Level of checking for packet replay and TCP sequence checking. Valid values: `disable`, `loose`, `strict`."
+        },
+        "ArpMaxEntry": {
+            "type": "number",
+            "description": "Maximum number of dynamically learned MAC addresses that can be added to the ARP table (131072 - 2147483647, default = 131072)."
+        },
+        "Asymroute": {
+            "type": "string",
+            "description": "Enable/disable asymmetric route. Valid values: `enable`, `disable`."
+        },
+        "AuthCert": {
+            "type": "string",
+            "description": "Server certificate that the FortiGate uses for HTTPS firewall authentication connections."
+        },
+        "AuthHttpPort": {
+            "type": "number",
+            "description": "User authentication HTTP port. (1 - 65535, default = 80)."
+        },
+        "AuthHttpsPort": {
+            "type": "number",
+            "description": "User authentication HTTPS port. (1 - 65535, default = 443)."
+        },
+        "AuthKeepalive": {
+            "type": "string",
+            "description": "Enable to prevent user authentication sessions from timing out when idle. Valid values: `enable`, `disable`."
+        },
+        "AuthSessionLimit": {
+            "type": "string",
+            "description": "Action to take when the number of allowed user authenticated sessions is reached. Valid values: `block-new`, `logout-inactive`."
+        },
+        "AutoAuthExtensionDevice": {
+            "type": "string",
+            "description": "Enable/disable automatic authorization of dedicated Fortinet extension devices. Valid values: `enable`, `disable`."
+        },
+        "AutorunLogFsck": {
+            "type": "string",
+            "description": "Enable/disable automatic log partition check after ungraceful shutdown. Valid values: `enable`, `disable`."
+        },
+        "AvAffinity": {
+            "type": "string",
+            "description": "Affinity setting for AV scanning (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx)."
+        },
+        "AvFailopen": {
+            "type": "string",
+            "description": "Set the action to take if the FortiGate is running low on memory or the proxy connection limit has been reached. Valid values: `pass`, `off`, `one-shot`."
+        },
+        "AvFailopenSession": {
+            "type": "string",
+            "description": "When enabled and a proxy for a protocol runs out of room in its session table, that protocol goes into failopen mode and enacts the action specified by av-failopen. Valid values: `enable`, `disable`."
+        },
+        "BatchCmdb": {
+            "type": "string",
+            "description": "Enable/disable batch mode, allowing you to enter a series of CLI commands that will execute as a group once they are loaded. Valid values: `enable`, `disable`."
+        },
+        "BlockSessionTimer": {
+            "type": "number",
+            "description": "Duration in seconds for blocked sessions (1 - 300 sec  (5 minutes), default = 30)."
+        },
+        "BrFdbMaxEntry": {
+            "type": "number",
+            "description": "Maximum number of bridge forwarding database (FDB) entries."
+        },
+        "CertChainMax": {
+            "type": "number",
+            "description": "Maximum number of certificates that can be traversed in a certificate chain."
+        },
+        "CfgRevertTimeout": {
+            "type": "number",
+            "description": "Time-out for reverting to the last saved configuration."
+        },
+        "CfgSave": {
+            "type": "string",
+            "description": "Configuration file save mode for CLI changes. Valid values: `automatic`, `manual`, `revert`."
+        },
+        "CheckProtocolHeader": {
+            "type": "string",
+            "description": "Level of checking performed on protocol headers. Strict checking is more thorough but may affect performance. Loose checking is ok in most cases. Valid values: `loose`, `strict`."
+        },
+        "CheckResetRange": {
+            "type": "string",
+            "description": "Configure ICMP error message verification. You can either apply strict RST range checking or disable it. Valid values: `strict`, `disable`."
+        },
+        "CliAuditLog": {
+            "type": "string",
+            "description": "Enable/disable CLI audit log. Valid values: `enable`, `disable`."
+        },
+        "CloudCommunication": {
+            "type": "string",
+            "description": "Enable/disable all cloud communication. Valid values: `enable`, `disable`."
+        },
+        "CltCertReq": {
+            "type": "string",
+            "description": "Enable/disable requiring administrators to have a client certificate to log into the GUI using HTTPS. Valid values: `enable`, `disable`."
+        },
+        "ComplianceCheck": {
+            "type": "string",
+            "description": "Enable/disable global PCI DSS compliance check. Valid values: `enable`, `disable`."
+        },
+        "ComplianceCheckTime": {
+            "type": "string",
+            "description": "Time of day to run scheduled PCI DSS compliance checks."
+        },
+        "CpuUseThreshold": {
+            "type": "number",
+            "description": "Threshold at which CPU usage is reported. (% of total CPU, default = 90)."
+        },
+        "CsrCaAttribute": {
+            "type": "string",
+            "description": "Enable/disable the CA attribute in certificates. Some CA servers reject CSRs that have the CA attribute. Valid values: `enable`, `disable`."
+        },
+        "DailyRestart": {
+            "type": "string",
+            "description": "Enable/disable daily restart of FortiGate unit. Use the restart-time option to set the time of day for the restart. Valid values: `enable`, `disable`."
+        },
+        "DefaultServiceSourcePort": {
+            "type": "string",
+            "description": "Default service source port range. (default=1-65535)."
+        },
+        "DeviceIdentificationActiveScanDelay": {
+            "type": "number",
+            "description": "Number of seconds to passively scan a device before performing an active scan. (20 - 3600 sec, (20 sec to 1 hour), default = 90)."
+        },
+        "DeviceIdleTimeout": {
+            "type": "number",
+            "description": "Time in seconds that a device must be idle to automatically log the device user out. (30 - 31536000 sec (30 sec to 1 year), default = 300)."
+        },
+        "DhParams": {
+            "type": "string",
+            "description": "Number of bits to use in the Diffie-Hellman exchange for HTTPS/SSH protocols. Valid values: `1024`, `1536`, `2048`, `3072`, `4096`, `6144`, `8192`."
+        },
+        "DnsproxyWorkerCount": {
+            "type": "number",
+            "description": "DNS proxy worker count."
+        },
+        "Dst": {
+            "type": "string",
+            "description": "Enable/disable daylight saving time. Valid values: `enable`, `disable`."
+        },
+        "EndpointControlFdsAccess": {
+            "type": "string",
+            "description": "Enable/disable access to the FortiGuard network for non-compliant endpoints. Valid values: `enable`, `disable`."
+        },
+        "EndpointControlPortalPort": {
+            "type": "number",
+            "description": "Endpoint control portal port (1 - 65535)."
+        },
+        "Failtime": {
+            "type": "number",
+            "description": "Fail-time for server lost."
+        },
+        "FazDiskBufferSize": {
+            "type": "number",
+            "description": "Maximum disk buffer size to temporarily store logs destined for FortiAnalyzer. To be used in the event that FortiAnalyzer is unavailalble."
+        },
+        "FdsStatistics": {
+            "type": "string",
+            "description": "Enable/disable sending IPS, Application Control, and AntiVirus data to FortiGuard. This data is used to improve FortiGuard services and is not shared with external parties and is protected by Fortinet's privacy policy. Valid values: `enable`, `disable`."
+        },
+        "FdsStatisticsPeriod": {
+            "type": "number",
+            "description": "FortiGuard statistics collection period in minutes. (1 - 1440 min (1 min to 24 hours), default = 60)."
+        },
+        "FecPort": {
+            "type": "number",
+            "description": "Local UDP port for Forward Error Correction (49152 - 65535)."
+        },
+        "FgdAlertSubscription": {
+            "type": "string",
+            "description": "Type of alert to retrieve from FortiGuard. Valid values: `advisory`, `latest-threat`, `latest-virus`, `latest-attack`, `new-antivirus-db`, `new-attack-db`."
+        },
+        "Fortiextender": {
+            "type": "string",
+            "description": "Enable/disable FortiExtender. Valid values: `enable`, `disable`."
+        },
+        "FortiextenderDataPort": {
+            "type": "number",
+            "description": "FortiExtender data port (1024 - 49150, default = 25246)."
+        },
+        "FortiextenderVlanMode": {
+            "type": "string",
+            "description": "Enable/disable FortiExtender VLAN mode. Valid values: `enable`, `disable`."
+        },
+        "FortiipamIntegration": {
+            "type": "string",
+            "description": "Enable/disable integration with the FortiIPAM cloud service. Valid values: `enable`, `disable`."
+        },
+        "FortiservicePort": {
+            "type": "number",
+            "description": "FortiService port (1 - 65535, default = 8013). Used by FortiClient endpoint compliance. Older versions of FortiClient used a different port."
+        },
+        "FortitokenCloud": {
+            "type": "string",
+            "description": "Enable/disable FortiToken Cloud service. Valid values: `enable`, `disable`."
+        },
+        "GuiAllowDefaultHostname": {
+            "type": "string",
+            "description": "Enable/disable the GUI warning about using a default hostname Valid values: `enable`, `disable`."
+        },
+        "GuiCertificates": {
+            "type": "string",
+            "description": "Enable/disable the System > Certificate GUI page, allowing you to add and configure certificates from the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiCustomLanguage": {
+            "type": "string",
+            "description": "Enable/disable custom languages in GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDateFormat": {
+            "type": "string",
+            "description": "Default date format used throughout GUI. Valid values: `yyyy/MM/dd`, `dd/MM/yyyy`, `MM/dd/yyyy`, `yyyy-MM-dd`, `dd-MM-yyyy`, `MM-dd-yyyy`."
+        },
+        "GuiDateTimeSource": {
+            "type": "string",
+            "description": "Source from which the FortiGate GUI uses to display date and time entries. Valid values: `system`, `browser`."
+        },
+        "GuiDeviceLatitude": {
+            "type": "string",
+            "description": "Add the latitude of the location of this FortiGate to position it on the Threat Map."
+        },
+        "GuiDeviceLongitude": {
+            "type": "string",
+            "description": "Add the longitude of the location of this FortiGate to position it on the Threat Map."
+        },
+        "GuiDisplayHostname": {
+            "type": "string",
+            "description": "Enable/disable displaying the FortiGate's hostname on the GUI login page. Valid values: `enable`, `disable`."
+        },
+        "GuiFirmwareUpgradeSetupWarning": {
+            "type": "string",
+            "description": "Enable/disable the firmware upgrade warning on GUI setup wizard. Valid values: `enable`, `disable`."
+        },
+        "GuiFirmwareUpgradeWarning": {
+            "type": "string",
+            "description": "Enable/disable the firmware upgrade warning on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiForticareRegistrationSetupWarning": {
+            "type": "string",
+            "description": "Enable/disable the FortiCare registration setup warning on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiFortigateCloudSandbox": {
+            "type": "string",
+            "description": "Enable/disable displaying FortiGate Cloud Sandbox on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiFortisandboxCloud": {
+            "type": "string",
+            "description": "Enable/disable displaying FortiSandbox Cloud on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiIpv6": {
+            "type": "string",
+            "description": "Enable/disable IPv6 settings on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiLinesPerPage": {
+            "type": "number",
+            "description": "Number of lines to display per page for web administration."
+        },
+        "GuiTheme": {
+            "type": "string",
+            "description": "Color scheme for the administration GUI."
+        },
+        "GuiWirelessOpensecurity": {
+            "type": "string",
+            "description": "Enable/disable wireless open security option on the GUI. Valid values: `enable`, `disable`."
+        },
+        "HonorDf": {
+            "type": "string",
+            "description": "Enable/disable honoring of Don't-Fragment (DF) flag. Valid values: `enable`, `disable`."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "FortiGate unit's hostname. Most models will truncate names longer than 24 characters. Some models support hostnames up to 35 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgmpStateLimit": {
+            "type": "number",
+            "description": "Maximum number of IGMP memberships (96 - 64000, default = 3200)."
+        },
+        "IkeEmbryonicLimit": {
+            "type": "number",
+            "description": "Maximum number of IPsec tunnels to negotiate simultaneously."
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Dead gateway detection interval."
+        },
+        "IpSrcPortRange": {
+            "type": "string",
+            "description": "IP source port range used for traffic originating from the FortiGate unit."
+        },
+        "IpsAffinity": {
+            "type": "string",
+            "description": "Affinity setting for IPS (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx; allowed CPUs must be less than total number of IPS engine daemons)."
+        },
+        "IpsecAsicOffload": {
+            "type": "string",
+            "description": "Enable/disable ASIC offloading (hardware acceleration) for IPsec VPN traffic. Hardware acceleration can offload IPsec VPN sessions and accelerate encryption and decryption. Valid values: `enable`, `disable`."
+        },
+        "IpsecHmacOffload": {
+            "type": "string",
+            "description": "Enable/disable offloading (hardware acceleration) of HMAC processing for IPsec VPN. Valid values: `enable`, `disable`."
+        },
+        "IpsecSoftDecAsync": {
+            "type": "string",
+            "description": "Enable/disable software decryption asynchronization (using multiple CPUs to do decryption) for IPsec VPN traffic. Valid values: `enable`, `disable`."
+        },
+        "Ipv6AcceptDad": {
+            "type": "number",
+            "description": "Enable/disable acceptance of IPv6 Duplicate Address Detection (DAD)."
+        },
+        "Ipv6AllowAnycastProbe": {
+            "type": "string",
+            "description": "Enable/disable IPv6 address probe through Anycast. Valid values: `enable`, `disable`."
+        },
+        "Ipv6AllowTrafficRedirect": {
+            "type": "string",
+            "description": "Disable to prevent IPv6 traffic with same local ingress and egress interface from being forwarded without policy check. Valid values: `enable`, `disable`."
+        },
+        "IrqTimeAccounting": {
+            "type": "string",
+            "description": "Configure CPU IRQ time accounting mode. Valid values: `auto`, `force`."
+        },
+        "Language": {
+            "type": "string",
+            "description": "GUI display language. Valid values: `english`, `french`, `spanish`, `portuguese`, `japanese`, `trach`, `simch`, `korean`."
+        },
+        "Ldapconntimeout": {
+            "type": "number",
+            "description": "Global timeout for connections with remote LDAP servers in milliseconds (1 - 300000, default 500)."
+        },
+        "LldpReception": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) reception. Valid values: `enable`, `disable`."
+        },
+        "LldpTransmission": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) transmission. Valid values: `enable`, `disable`."
+        },
+        "LogSslConnection": {
+            "type": "string",
+            "description": "Enable/disable logging of SSL connection events. Valid values: `enable`, `disable`."
+        },
+        "LogUuidAddress": {
+            "type": "string",
+            "description": "Enable/disable insertion of address UUIDs to traffic logs. Valid values: `enable`, `disable`."
+        },
+        "LogUuidPolicy": {
+            "type": "string",
+            "description": "Enable/disable insertion of policy UUIDs to traffic logs. Valid values: `enable`, `disable`."
+        },
+        "LoginTimestamp": {
+            "type": "string",
+            "description": "Enable/disable login time recording. Valid values: `enable`, `disable`."
+        },
+        "LongVdomName": {
+            "type": "string",
+            "description": "Enable/disable long VDOM name support. Valid values: `enable`, `disable`."
+        },
+        "ManagementVdom": {
+            "type": "string",
+            "description": "Management virtual domain name."
+        },
+        "MaxDlpstatMemory": {
+            "type": "number",
+            "description": "Maximum DLP stat memory (0 - 4294967295)."
+        },
+        "MaxRouteCacheSize": {
+            "type": "number",
+            "description": "Maximum number of IP route cache entries (0 - 2147483647)."
+        },
+        "McTtlNotchange": {
+            "type": "string",
+            "description": "Enable/disable no modification of multicast TTL. Valid values: `enable`, `disable`."
+        },
+        "MemoryUseThresholdExtreme": {
+            "type": "number",
+            "description": "Threshold at which memory usage is considered extreme (new sessions are dropped) (% of total RAM, default = 95)."
+        },
+        "MemoryUseThresholdGreen": {
+            "type": "number",
+            "description": "Threshold at which memory usage forces the FortiGate to exit conserve mode (% of total RAM, default = 82)."
+        },
+        "MemoryUseThresholdRed": {
+            "type": "number",
+            "description": "Threshold at which memory usage forces the FortiGate to enter conserve mode (% of total RAM, default = 88)."
+        },
+        "MiglogAffinity": {
+            "type": "string",
+            "description": "Affinity setting for logging (64-bit hexadecimal value in the format of xxxxxxxxxxxxxxxx)."
+        },
+        "MiglogdChildren": {
+            "type": "number",
+            "description": "Number of logging (miglogd) processes to be allowed to run. Higher number can reduce performance; lower number can slow log processing time. No logs will be dropped or lost if the number is changed."
+        },
+        "MultiFactorAuthentication": {
+            "type": "string",
+            "description": "Enforce all login methods to require an additional authentication factor (default = optional). Valid values: `optional`, `mandatory`."
+        },
+        "MulticastForward": {
+            "type": "string",
+            "description": "Enable/disable multicast forwarding. Valid values: `enable`, `disable`."
+        },
+        "NdpMaxEntry": {
+            "type": "number",
+            "description": "Maximum number of NDP table entries (set to 65,536 or higher; if set to 0, kernel holds 65,536 entries)."
+        },
+        "PerUserBal": {
+            "type": "string",
+            "description": "Enable/disable per-user block/allow list filter. Valid values: `enable`, `disable`."
+        },
+        "PerUserBwl": {
+            "type": "string",
+            "description": "Enable/disable per-user black/white list filter. Valid values: `enable`, `disable`."
+        },
+        "PolicyAuthConcurrent": {
+            "type": "number",
+            "description": "Number of concurrent firewall use logins from the same user (1 - 100, default = 0 means no limit)."
+        },
+        "PostLoginBanner": {
+            "type": "string",
+            "description": "Enable/disable displaying the administrator access disclaimer message after an administrator successfully logs in. Valid values: `disable`, `enable`."
+        },
+        "PreLoginBanner": {
+            "type": "string",
+            "description": "Enable/disable displaying the administrator access disclaimer message on the login page before an administrator logs in. Valid values: `enable`, `disable`."
+        },
+        "PrivateDataEncryption": {
+            "type": "string",
+            "description": "Enable/disable private data encryption using an AES 128-bit key. Valid values: `disable`, `enable`."
+        },
+        "ProxyAuthLifetime": {
+            "type": "string",
+            "description": "Enable/disable authenticated users lifetime control.  This is a cap on the total time a proxy user can be authenticated for after which re-authentication will take place. Valid values: `enable`, `disable`."
+        },
+        "ProxyAuthLifetimeTimeout": {
+            "type": "number",
+            "description": "Lifetime timeout in minutes for authenticated users (5  - 65535 min, default=480 (8 hours))."
+        },
+        "ProxyAuthTimeout": {
+            "type": "number",
+            "description": "Authentication timeout in minutes for authenticated users (1 - 300 min, default = 10)."
+        },
+        "ProxyCipherHardwareAcceleration": {
+            "type": "string",
+            "description": "Enable/disable using content processor (CP8 or CP9) hardware acceleration to encrypt and decrypt IPsec and SSL traffic. Valid values: `disable`, `enable`."
+        },
+        "ProxyKxpHardwareAcceleration": {
+            "type": "string",
+            "description": "Enable/disable using the content processor to accelerate KXP traffic. Valid values: `disable`, `enable`."
+        },
+        "ProxyReAuthenticationMode": {
+            "type": "string",
+            "description": "Control if users must re-authenticate after a session is closed, traffic has been idle, or from the point at which the user was first created. Valid values: `session`, `traffic`, `absolute`."
+        },
+        "ProxyWorkerCount": {
+            "type": "number",
+            "description": "Proxy worker count."
+        },
+        "RadiusPort": {
+            "type": "number",
+            "description": "RADIUS service port number."
+        },
+        "RebootUponConfigRestore": {
+            "type": "string",
+            "description": "Enable/disable reboot of system upon restoring configuration. Valid values: `enable`, `disable`."
+        },
+        "Refresh": {
+            "type": "number",
+            "description": "Statistics refresh interval in GUI."
+        },
+        "Remoteauthtimeout": {
+            "type": "number",
+            "description": "Number of seconds that the FortiGate waits for responses from remote RADIUS, LDAP, or TACACS+ authentication servers. (0-300 sec, default = 5, 0 means no timeout)."
+        },
+        "ResetSessionlessTcp": {
+            "type": "string",
+            "description": "Action to perform if the FortiGate receives a TCP packet but cannot find a corresponding session in its session table. NAT/Route mode only. Valid values: `enable`, `disable`."
+        },
+        "RestartTime": {
+            "type": "string",
+            "description": "Daily restart time (hh:mm)."
+        },
+        "RevisionBackupOnLogout": {
+            "type": "string",
+            "description": "Enable/disable back-up of the latest configuration revision when an administrator logs out of the CLI or GUI. Valid values: `enable`, `disable`."
+        },
+        "RevisionImageAutoBackup": {
+            "type": "string",
+            "description": "Enable/disable back-up of the latest configuration revision after the firmware is upgraded. Valid values: `enable`, `disable`."
+        },
+        "ScanunitCount": {
+            "type": "number",
+            "description": "Number of scanunits. The range and the default depend on the number of CPUs. Only available on FortiGate units with multiple CPUs."
+        },
+        "SecurityRatingResultSubmission": {
+            "type": "string",
+            "description": "Enable/disable the submission of Security Rating results to FortiGuard. Valid values: `enable`, `disable`."
+        },
+        "SecurityRatingRunOnSchedule": {
+            "type": "string",
+            "description": "Enable/disable scheduled runs of Security Rating. Valid values: `enable`, `disable`."
+        },
+        "SendPmtuIcmp": {
+            "type": "string",
+            "description": "Enable/disable sending of path maximum transmission unit (PMTU) - ICMP destination unreachable packet and to support PMTUD protocol on your network to reduce fragmentation of packets. Valid values: `enable`, `disable`."
+        },
+        "SnatRouteChange": {
+            "type": "string",
+            "description": "Enable/disable the ability to change the static NAT route. Valid values: `enable`, `disable`."
+        },
+        "SpecialFile23Support": {
+            "type": "string",
+            "description": "Enable/disable IPS detection of HIBUN format files when using Data Leak Protection. Valid values: `disable`, `enable`."
+        },
+        "SsdTrimDate": {
+            "type": "number",
+            "description": "Date within a month to run ssd trim."
+        },
+        "SsdTrimFreq": {
+            "type": "string",
+            "description": "How often to run SSD Trim (default = weekly). SSD Trim prevents SSD drive data loss by finding and isolating errors. Valid values: `never`, `hourly`, `daily`, `weekly`, `monthly`."
+        },
+        "SsdTrimHour": {
+            "type": "number",
+            "description": "Hour of the day on which to run SSD Trim (0 - 23, default = 1)."
+        },
+        "SsdTrimMin": {
+            "type": "number",
+            "description": "Minute of the hour on which to run SSD Trim (0 - 59, 60 for random)."
+        },
+        "SsdTrimWeekday": {
+            "type": "string",
+            "description": "Day of week to run SSD Trim. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        },
+        "SshCbcCipher": {
+            "type": "string",
+            "description": "Enable/disable CBC cipher for SSH access. Valid values: `enable`, `disable`."
+        },
+        "SshHmacMd5": {
+            "type": "string",
+            "description": "Enable/disable HMAC-MD5 for SSH access. Valid values: `enable`, `disable`."
+        },
+        "SshKexSha1": {
+            "type": "string",
+            "description": "Enable/disable SHA1 key exchange for SSH access. Valid values: `enable`, `disable`."
+        },
+        "SshMacWeak": {
+            "type": "string",
+            "description": "Enable/disable HMAC-SHA1 and UMAC-64-ETM for SSH access. Valid values: `enable`, `disable`."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default = TLSv1.2)."
+        },
+        "SslStaticKeyCiphers": {
+            "type": "string",
+            "description": "Enable/disable static key ciphers in SSL/TLS connections (e.g. AES128-SHA, AES256-SHA, AES128-SHA256, AES256-SHA256). Valid values: `enable`, `disable`."
+        },
+        "SslvpnCipherHardwareAcceleration": {
+            "type": "string",
+            "description": "Enable/disable SSL VPN hardware acceleration. Valid values: `enable`, `disable`."
+        },
+        "SslvpnEmsSnCheck": {
+            "type": "string",
+            "description": "Enable/disable verification of EMS serial number in SSL-VPN connection. Valid values: `enable`, `disable`."
+        },
+        "SslvpnKxpHardwareAcceleration": {
+            "type": "string",
+            "description": "Enable/disable SSL VPN KXP hardware acceleration. Valid values: `enable`, `disable`."
+        },
+        "SslvpnMaxWorkerCount": {
+            "type": "number",
+            "description": "Maximum number of SSL VPN processes. Upper limit for this value is the number of CPUs and depends on the model."
+        },
+        "SslvpnPluginVersionCheck": {
+            "type": "string",
+            "description": "Enable/disable checking browser's plugin version by SSL VPN. Valid values: `enable`, `disable`."
+        },
+        "StrictDirtySessionCheck": {
+            "type": "string",
+            "description": "Enable to check the session against the original policy when revalidating. This can prevent dropping of redirected sessions when web-filtering and authentication are enabled together. If this option is enabled, the FortiGate unit deletes a session if a routing or policy change causes the session to no longer match the policy that originally allowed the session. Valid values: `enable`, `disable`."
+        },
+        "StrongCrypto": {
+            "type": "string",
+            "description": "Enable to use strong encryption and only allow strong ciphers (AES, 3DES) and digest (SHA1) for HTTPS/SSH/TLS/SSL functions. Valid values: `enable`, `disable`."
+        },
+        "SwitchController": {
+            "type": "string",
+            "description": "Enable/disable switch controller feature. Switch controller allows you to manage FortiSwitch from the FortiGate itself. Valid values: `disable`, `enable`."
+        },
+        "SwitchControllerReservedNetwork": {
+            "type": "string",
+            "description": "Enable reserved network subnet for controlled switches. This is available when the switch controller is enabled."
+        },
+        "SysPerfLogInterval": {
+            "type": "number",
+            "description": "Time in minutes between updates of performance statistics logging. (1 - 15 min, default = 5, 0 = disabled)."
+        },
+        "TcpHalfcloseTimer": {
+            "type": "number",
+            "description": "Number of seconds the FortiGate unit should wait to close a session after one peer has sent a FIN packet but the other has not responded (1 - 86400 sec (1 day), default = 120)."
+        },
+        "TcpHalfopenTimer": {
+            "type": "number",
+            "description": "Number of seconds the FortiGate unit should wait to close a session after one peer has sent an open session packet but the other has not responded (1 - 86400 sec (1 day), default = 10)."
+        },
+        "TcpOption": {
+            "type": "string",
+            "description": "Enable SACK, timestamp and MSS TCP options. Valid values: `enable`, `disable`."
+        },
+        "TcpTimewaitTimer": {
+            "type": "number",
+            "description": "Length of the TCP TIME-WAIT state in seconds."
+        },
+        "Tftp": {
+            "type": "string",
+            "description": "Enable/disable TFTP. Valid values: `enable`, `disable`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Number corresponding to your time zone from 00 to 86. Enter set timezone ? to view the list of time zones and the numbers that represent them. Valid values: `01`, `02`, `03`, `04`, `05`, `81`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `74`, `14`, `77`, `15`, `87`, `16`, `17`, `18`, `19`, `20`, `75`, `21`, `22`, `23`, `24`, `80`, `79`, `25`, `26`, `27`, `28`, `78`, `29`, `30`, `31`, `32`, `33`, `34`, `35`, `36`, `37`, `38`, `83`, `84`, `40`, `85`, `41`, `42`, `43`, `39`, `44`, `46`, `47`, `51`, `48`, `45`, `49`, `50`, `52`, `53`, `54`, `55`, `56`, `57`, `58`, `59`, `60`, `62`, `63`, `61`, `64`, `65`, `66`, `67`, `68`, `69`, `70`, `71`, `72`, `00`, `82`, `73`, `86`, `76`."
+        },
+        "TpMcSkipPolicy": {
+            "type": "string",
+            "description": "Enable/disable skip policy check and allow multicast through. Valid values: `enable`, `disable`."
+        },
+        "TrafficPriority": {
+            "type": "string",
+            "description": "Choose Type of Service (ToS) or Differentiated Services Code Point (DSCP) for traffic prioritization in traffic shaping. Valid values: `tos`, `dscp`."
+        },
+        "TrafficPriorityLevel": {
+            "type": "string",
+            "description": "Default system-wide level of priority for traffic prioritization. Valid values: `low`, `medium`, `high`."
+        },
+        "TwoFactorEmailExpiry": {
+            "type": "number",
+            "description": "Email-based two-factor authentication session timeout (30 - 300 seconds (5 minutes), default = 60)."
+        },
+        "TwoFactorFacExpiry": {
+            "type": "number",
+            "description": "FortiAuthenticator token authentication session timeout (10 - 3600 seconds (1 hour), default = 60)."
+        },
+        "TwoFactorFtkExpiry": {
+            "type": "number",
+            "description": "FortiToken authentication session timeout (60 - 600 sec (10 minutes), default = 60)."
+        },
+        "TwoFactorFtmExpiry": {
+            "type": "number",
+            "description": "FortiToken Mobile session timeout (1 - 168 hours (7 days), default = 72)."
+        },
+        "TwoFactorSmsExpiry": {
+            "type": "number",
+            "description": "SMS-based two-factor authentication session timeout (30 - 300 sec, default = 60)."
+        },
+        "UdpIdleTimer": {
+            "type": "number",
+            "description": "UDP connection session timeout. This command can be useful in managing CPU and memory resources (1 - 86400 seconds (1 day), default = 60)."
+        },
+        "UrlFilterAffinity": {
+            "type": "string",
+            "description": "URL filter CPU affinity."
+        },
+        "UrlFilterCount": {
+            "type": "number",
+            "description": "URL filter daemon count."
+        },
+        "UserDeviceStoreMaxDevices": {
+            "type": "number",
+            "description": "Maximum number of devices allowed in user device store."
+        },
+        "UserDeviceStoreMaxUsers": {
+            "type": "number",
+            "description": "Maximum number of users allowed in user device store."
+        },
+        "UserServerCert": {
+            "type": "string",
+            "description": "Certificate to use for https user authentication."
+        },
+        "VdomAdmin": {
+            "type": "string",
+            "description": "Enable/disable support for multiple virtual domains (VDOMs). Valid values: `enable`, `disable`."
+        },
+        "VdomMode": {
+            "type": "string",
+            "description": "Enable/disable support for split/multiple virtual domains (VDOMs). no-vdom:Disable split/multiple VDOMs mode. split-vdom:Enable split VDOMs mode. multi-vdom:Enable multiple VDOMs mode."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VipArpRange": {
+            "type": "string",
+            "description": "Controls the number of ARPs that the FortiGate sends for a Virtual IP (VIP) address range. Valid values: `unlimited`, `restricted`."
+        },
+        "VirtualServerCount": {
+            "type": "number",
+            "description": "Maximum number of virtual server processes to create. The maximum is the number of CPU cores. This is not available on single-core CPUs."
+        },
+        "VirtualServerHardwareAcceleration": {
+            "type": "string",
+            "description": "Enable/disable virtual server hardware acceleration. Valid values: `disable`, `enable`."
+        },
+        "WadAffinity": {
+            "type": "string",
+            "description": "Affinity setting for wad (hexadecimal value up to 256 bits in the format of xxxxxxxxxxxxxxxx)."
+        },
+        "WadCsvcCsCount": {
+            "type": "number",
+            "description": "Number of concurrent WAD-cache-service object-cache processes."
+        },
+        "WadCsvcDbCount": {
+            "type": "number",
+            "description": "Number of concurrent WAD-cache-service byte-cache processes."
+        },
+        "WadMemoryChangeGranularity": {
+            "type": "number",
+            "description": "Minimum percentage change in system memory usage detected by the wad daemon prior to adjusting TCP window size for any active connection."
+        },
+        "WadSourceAffinity": {
+            "type": "string",
+            "description": "Enable/disable dispatching traffic to WAD workers based on source affinity. Valid values: `disable`, `enable`."
+        },
+        "WadWorkerCount": {
+            "type": "number",
+            "description": "Number of explicit proxy WAN optimization daemon (WAD) processes. By default WAN optimization, explicit proxy, and web caching is handled by all of the CPU cores in a FortiGate unit."
+        },
+        "WifiCaCertificate": {
+            "type": "string",
+            "description": "CA certificate that verifies the WiFi certificate."
+        },
+        "WifiCertificate": {
+            "type": "string",
+            "description": "Certificate to use for WiFi authentication."
+        },
+        "Wimax4gUsb": {
+            "type": "string",
+            "description": "Enable/disable comparability with WiMAX 4G USB devices. Valid values: `enable`, `disable`."
+        },
+        "WirelessController": {
+            "type": "string",
+            "description": "Enable/disable the wireless controller feature to use the FortiGate unit to manage FortiAPs. Valid values: `enable`, `disable`."
+        },
+        "WirelessControllerPort": {
+            "type": "number",
+            "description": "Port used for the control channel in wireless controller mode (wireless-mode is ac). The data channel port is the control channel port number plus one (1024 - 49150, default = 5246)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

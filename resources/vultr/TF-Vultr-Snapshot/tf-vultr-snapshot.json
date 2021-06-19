@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Vultr::Snapshot",
+    "description": "Provides a Vultr Snapshot resource. This can be used to create, read, modify, and delete Snapshot.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-Snapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "number"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the given snapshot."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "OsId": {
+            "type": "number"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppId",
+        "/properties/DateCreated",
+        "/properties/Id",
+        "/properties/OsId",
+        "/properties/Size",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

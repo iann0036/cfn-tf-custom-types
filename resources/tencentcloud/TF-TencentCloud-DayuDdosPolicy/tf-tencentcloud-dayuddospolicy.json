@@ -1,0 +1,381 @@
+{
+    "typeName": "TF::TencentCloud::DayuDdosPolicy",
+    "description": "Use this resource to create dayu DDoS policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-DayuDdosPolicy/docs/README.md",
+    "definitions": {
+        "WatermarkKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "CreateTime": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "OpenSwitch": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "DropOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BadConnThreshold": {
+                    "type": "number",
+                    "description": "The number of new connections based on destination IP that trigger suppression of connections. Valid value ranges: (0~4294967295)."
+                },
+                "CheckSyncConn": {
+                    "type": "boolean",
+                    "description": "Indicate whether to check null connection or not."
+                },
+                "ConnTimeout": {
+                    "type": "number",
+                    "description": "Connection timeout of abnormal connection check. Valid value ranges: (0~65535)."
+                },
+                "DConnLimit": {
+                    "type": "number",
+                    "description": "The limit of concurrent connections based on destination IP. Valid value ranges: (0~4294967295)."
+                },
+                "DNewLimit": {
+                    "type": "number",
+                    "description": "The limit of new connections based on destination IP. Valid value ranges: (0~4294967295)."
+                },
+                "DropAbroad": {
+                    "type": "boolean",
+                    "description": "Indicate whether to drop abroad traffic or not."
+                },
+                "DropIcmp": {
+                    "type": "boolean",
+                    "description": "Indicate whether to drop ICMP protocol or not."
+                },
+                "DropOther": {
+                    "type": "boolean",
+                    "description": "Indicate whether to drop other protocols(exclude TCP/UDP/ICMP) or not."
+                },
+                "DropTcp": {
+                    "type": "boolean",
+                    "description": "Indicate whether to drop TCP protocol or not."
+                },
+                "DropUdp": {
+                    "type": "boolean",
+                    "description": "Indicate to drop UDP protocol or not."
+                },
+                "IcmpMbpsLimit": {
+                    "type": "number",
+                    "description": "The limit of ICMP traffic rate. Valid value ranges: (0~4294967295)(Mbps)."
+                },
+                "NullConnEnable": {
+                    "type": "boolean",
+                    "description": "Indicate to enable null connection or not."
+                },
+                "OtherMbpsLimit": {
+                    "type": "number",
+                    "description": "The limit of other protocols(exclude TCP/UDP/ICMP) traffic rate. Valid value ranges: (0~4294967295)(Mbps)."
+                },
+                "SConnLimit": {
+                    "type": "number",
+                    "description": "The limit of concurrent connections based on source IP. Valid value ranges: (0~4294967295)."
+                },
+                "SNewLimit": {
+                    "type": "number",
+                    "description": "The limit of new connections based on source IP. Valid value ranges: (0~4294967295)."
+                },
+                "SynLimit": {
+                    "type": "number",
+                    "description": "The limit of syn of abnormal connection check. Valid value ranges: (0~100)."
+                },
+                "SynRate": {
+                    "type": "number",
+                    "description": "The percentage of syn in ack of abnormal connection check. Valid value ranges: (0~100)."
+                },
+                "TcpMbpsLimit": {
+                    "type": "number",
+                    "description": "The limit of TCP traffic. Valid value ranges: (0~4294967295)(Mbps)."
+                },
+                "UdpMbpsLimit": {
+                    "type": "number",
+                    "description": "The limit of UDP traffic rate. Valid value ranges: (0~4294967295)(Mbps)."
+                }
+            },
+            "required": [
+                "BadConnThreshold",
+                "CheckSyncConn",
+                "ConnTimeout",
+                "DConnLimit",
+                "DNewLimit",
+                "DropAbroad",
+                "DropIcmp",
+                "DropOther",
+                "DropTcp",
+                "DropUdp",
+                "IcmpMbpsLimit",
+                "NullConnEnable",
+                "OtherMbpsLimit",
+                "SConnLimit",
+                "SNewLimit",
+                "SynLimit",
+                "TcpMbpsLimit",
+                "UdpMbpsLimit"
+            ]
+        },
+        "PacketFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action of port to take. Valid values: `drop`, `drop_black`,`drop_rst`,`drop_black_rst`,`transmit`.`drop`(drop the packet), `drop_black`(drop the packet and black the ip),`drop_rst`(drop the packet and disconnect),`drop_black_rst`(drop the packet, black the ip and disconnect),`transmit`(transmit the packet)."
+                },
+                "DEndPort": {
+                    "type": "number",
+                    "description": "End port of the destination. Valid value ranges: (0~65535). It must be greater than `d_start_port`."
+                },
+                "DStartPort": {
+                    "type": "number",
+                    "description": "Start port of the destination. Valid value ranges: (0~65535)."
+                },
+                "Depth": {
+                    "type": "number",
+                    "description": "The depth of match. Valid value ranges: (0~1500)."
+                },
+                "IsInclude": {
+                    "type": "boolean",
+                    "description": "Indicate whether to include the key word/regular expression or not."
+                },
+                "MatchBegin": {
+                    "type": "string",
+                    "description": "Indicate whether to check load or not, `begin_l5` means to match and `no_match` means not."
+                },
+                "MatchStr": {
+                    "type": "string",
+                    "description": "The key word or regular expression."
+                },
+                "MatchType": {
+                    "type": "string",
+                    "description": "Match type. Valid values: `sunday` and `pcre`. `sunday` means key word match while `pcre` means regular match."
+                },
+                "Offset": {
+                    "type": "number",
+                    "description": "The offset of match. Valid value ranges: (0~1500)."
+                },
+                "PktLengthMax": {
+                    "type": "number",
+                    "description": "The max length of the packet. Valid value ranges: (0~1500)(Mbps). It must be greater than `pkt_length_min`."
+                },
+                "PktLengthMin": {
+                    "type": "number",
+                    "description": "The minimum length of the packet. Valid value ranges: (0~1500)(Mbps)."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol. Valid values: `tcp`, `udp`, `icmp`, `all`."
+                },
+                "SEndPort": {
+                    "type": "number",
+                    "description": "End port of the source. Valid value ranges: (0~65535). It must be greater than `s_start_port`."
+                },
+                "SStartPort": {
+                    "type": "number",
+                    "description": "Start port of the source. Valid value ranges: (0~65535)."
+                }
+            },
+            "required": []
+        },
+        "PortFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action of port to take. Valid values: `drop`, `transmit`."
+                },
+                "EndPort": {
+                    "type": "number",
+                    "description": "End port. Valid value ranges: (0~65535). It must be greater than `start_port`."
+                },
+                "Kind": {
+                    "type": "number",
+                    "description": "The type of forbidden port. Valid values: `0`, `1`, `2`. `0` for destination ports make effect, `1` for source ports make effect. `2` for both destination and source ports."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol. Valid values are `tcp`, `udp`, `icmp`, `all`."
+                },
+                "StartPort": {
+                    "type": "number",
+                    "description": "Start port. Valid value ranges: (0~65535)."
+                }
+            },
+            "required": []
+        },
+        "WatermarkFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRemove": {
+                    "type": "boolean",
+                    "description": "Indicate whether to auto-remove the watermark or not."
+                },
+                "Offset": {
+                    "type": "number",
+                    "description": "The offset of watermark. Valid value ranges: (0~1500)."
+                },
+                "OpenSwitch": {
+                    "type": "boolean",
+                    "description": "Indicate whether to open watermark or not. It muse be set `true` when any field of watermark was set."
+                },
+                "TcpPortList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Port range of TCP, the format is like `2000-3000`."
+                },
+                "UdpPortList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Port range of TCP, the format is like `2000-3000`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlackIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Black IP list."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DDoS policy. Length should between 1 and 32."
+        },
+        "PolicyId": {
+            "type": "string"
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "Type of the resource that the DDoS policy works for. Valid values: `bgpip`, `bgp`, `bgp-multip` and `net`."
+        },
+        "SceneId": {
+            "type": "string"
+        },
+        "WatermarkKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WatermarkKeyDefinition"
+            }
+        },
+        "WhiteIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "White IP list."
+        },
+        "DropOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DropOptionsDefinition"
+            },
+            "minItems": 1
+        },
+        "PacketFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PacketFiltersDefinition"
+            }
+        },
+        "PortFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortFiltersDefinition"
+            }
+        },
+        "WatermarkFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WatermarkFiltersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/PolicyId",
+        "/properties/SceneId",
+        "/properties/WatermarkKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::AzureRM::BotChannelsRegistration",
+    "description": "Manages a Bot Channels Registration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-BotChannelsRegistration/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeveloperAppInsightsApiKey": {
+            "type": "string",
+            "description": "The Application Insights API Key to associate with the Bot Channels Registration."
+        },
+        "DeveloperAppInsightsApplicationId": {
+            "type": "string",
+            "description": "The Application Insights Application ID to associate with the Bot Channels Registration."
+        },
+        "DeveloperAppInsightsKey": {
+            "type": "string",
+            "description": "The Application Insights Key to associate with the Bot Channels Registration."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The name of the Bot Channels Registration will be displayed as. This defaults to `name` if not specified."
+        },
+        "Endpoint": {
+            "type": "string",
+            "description": "The Bot Channels Registration endpoint."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "MicrosoftAppId": {
+            "type": "string",
+            "description": "The Microsoft Application ID for the Bot Channels Registration. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Bot Channels Registration. Changing this forces a new resource to be created. Must be globally unique."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Bot Channels Registration. Changing this forces a new resource to be created."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The SKU of the Bot Channels Registration. Valid values include `F0` or `S1`. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "MicrosoftAppId",
+        "Name",
+        "ResourceGroupName",
+        "Sku"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DeveloperAppInsightsApiKey"
+    ]
+}

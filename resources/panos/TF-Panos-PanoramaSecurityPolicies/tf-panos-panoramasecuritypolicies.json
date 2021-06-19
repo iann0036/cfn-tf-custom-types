@@ -1,0 +1,254 @@
+{
+    "typeName": "TF::Panos::PanoramaSecurityPolicies",
+    "description": "CloudFormation equivalent of panos_panorama_security_policies",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaSecurityPolicies/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Categories": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DataFiltering": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DisableServerResponseInspection": {
+                    "type": "boolean"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "FileBlocking": {
+                    "type": "string"
+                },
+                "Group": {
+                    "type": "string"
+                },
+                "HipProfiles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IcmpUnreachable": {
+                    "type": "boolean"
+                },
+                "LogEnd": {
+                    "type": "boolean"
+                },
+                "LogSetting": {
+                    "type": "string"
+                },
+                "LogStart": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NegateDestination": {
+                    "type": "boolean"
+                },
+                "NegateSource": {
+                    "type": "boolean"
+                },
+                "NegateTarget": {
+                    "type": "boolean"
+                },
+                "Schedule": {
+                    "type": "string"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceUsers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Spyware": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UrlFiltering": {
+                    "type": "string"
+                },
+                "Virus": {
+                    "type": "string"
+                },
+                "Vulnerability": {
+                    "type": "string"
+                },
+                "WildfireAnalysis": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Applications",
+                "Categories",
+                "DestinationAddresses",
+                "DestinationZones",
+                "HipProfiles",
+                "Name",
+                "Services",
+                "SourceAddresses",
+                "SourceUsers",
+                "SourceZones"
+            ]
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serial": {
+                    "type": "string"
+                },
+                "VsysList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Serial"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceGroup": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Rulebase": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

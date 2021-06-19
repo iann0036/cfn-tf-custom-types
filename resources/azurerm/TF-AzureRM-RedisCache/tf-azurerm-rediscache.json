@@ -1,0 +1,299 @@
+{
+    "typeName": "TF::AzureRM::RedisCache",
+    "description": "Manages a Redis Cache.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-RedisCache/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PatchScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "StartHourUtc": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DayOfWeek"
+            ]
+        },
+        "RedisConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AofBackupEnabled": {
+                    "type": "boolean",
+                    "description": "Enable or disable AOF persistence for this Redis Cache."
+                },
+                "AofStorageConnectionString0": {
+                    "type": "string",
+                    "description": "First Storage Account connection string for AOF persistence."
+                },
+                "AofStorageConnectionString1": {
+                    "type": "string",
+                    "description": "Second Storage Account connection string for AOF persistence."
+                },
+                "EnableAuthentication": {
+                    "type": "boolean",
+                    "description": "If set to `false`, the Redis instance will be accessible without authentication. Defaults to `true`."
+                },
+                "MaxfragmentationmemoryReserved": {
+                    "type": "number",
+                    "description": "Value in megabytes reserved to accommodate for memory fragmentation. Defaults are shown below."
+                },
+                "MaxmemoryDelta": {
+                    "type": "number",
+                    "description": "The max-memory delta for this Redis instance. Defaults are shown below."
+                },
+                "MaxmemoryPolicy": {
+                    "type": "string",
+                    "description": "How Redis will select what to remove when `maxmemory` is reached. Defaults are shown below."
+                },
+                "MaxmemoryReserved": {
+                    "type": "number",
+                    "description": "Value in megabytes reserved for non-cache usage e.g. failover. Defaults are shown below."
+                },
+                "NotifyKeyspaceEvents": {
+                    "type": "string",
+                    "description": "Keyspace notifications allows clients to subscribe to Pub/Sub channels in order to receive events affecting the Redis data set in some way. [Reference](https://redis.io/topics/notifications#configuration)."
+                },
+                "RdbBackupEnabled": {
+                    "type": "boolean",
+                    "description": "Is Backup Enabled? Only supported on Premium SKU's."
+                },
+                "RdbBackupFrequency": {
+                    "type": "number",
+                    "description": "The Backup Frequency in Minutes. Only supported on Premium SKU's. Possible values are: `15`, `30`, `60`, `360`, `720` and `1440`."
+                },
+                "RdbBackupMaxSnapshotCount": {
+                    "type": "number",
+                    "description": "The maximum number of snapshots to create as a backup. Only supported for Premium SKU's."
+                },
+                "RdbStorageConnectionString": {
+                    "type": "string",
+                    "description": "The Connection String to the Storage Account. Only supported for Premium SKU's. In the format: `DefaultEndpointsProtocol=https;BlobEndpoint=${azurerm_storage_account.example.primary_blob_endpoint};AccountName=${azurerm_storage_account.example.name};AccountKey=${azurerm_storage_account.example.primary_access_key}`."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Capacity": {
+            "type": "number",
+            "description": "The size of the Redis cache to deploy. Valid values for a SKU `family` of C (Basic/Standard) are `0, 1, 2, 3, 4, 5, 6`, and for P (Premium) `family` are `1, 2, 3, 4`."
+        },
+        "EnableNonSslPort": {
+            "type": "boolean",
+            "description": "Enable the non-SSL port (6379) - disabled by default."
+        },
+        "Family": {
+            "type": "string",
+            "description": "The SKU family/pricing group to use. Valid values are `C` (for Basic/Standard SKU family) and `P` (for `Premium`)."
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location of the resource group."
+        },
+        "MinimumTlsVersion": {
+            "type": "string",
+            "description": "The minimum TLS version.  Defaults to `1.0`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Redis instance. Changing this forces a\nnew resource to be created."
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrimaryAccessKey": {
+            "type": "string"
+        },
+        "PrimaryConnectionString": {
+            "type": "string"
+        },
+        "PrivateStaticIpAddress": {
+            "type": "string",
+            "description": "The Static IP Address to assign to the Redis Cache when hosted inside the Virtual Network. Changing this forces a new resource to be created."
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Whether or not public network access is allowed for this Redis Cache. `true` means this resource could be accessed by both public and private endpoint. `false` means only private endpoint access is allowed. Defaults to `true`."
+        },
+        "ReplicasPerMaster": {
+            "type": "number",
+            "description": "Amount of replicas to create per master for this Redis Cache."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Redis instance."
+        },
+        "SecondaryAccessKey": {
+            "type": "string"
+        },
+        "SecondaryConnectionString": {
+            "type": "string"
+        },
+        "ShardCount": {
+            "type": "number",
+            "description": "*Only available when using the Premium SKU* The number of Shards to create on the Redis Cluster."
+        },
+        "SkuName": {
+            "type": "string",
+            "description": "The SKU of Redis to use. Possible values are `Basic`, `Standard` and `Premium`."
+        },
+        "SslPort": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "*Only available when using the Premium SKU* The ID of the Subnet within which the Redis Cache should be deployed. This Subnet must only contain Azure Cache for Redis instances without any other type of resources. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of a one or more Availability Zones, where the Redis Cache should be allocated."
+        },
+        "PatchSchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PatchScheduleDefinition"
+            }
+        },
+        "RedisConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedisConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Capacity",
+        "Family",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "SkuName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Hostname",
+        "/properties/Id",
+        "/properties/Port",
+        "/properties/PrimaryAccessKey",
+        "/properties/PrimaryConnectionString",
+        "/properties/SecondaryAccessKey",
+        "/properties/SecondaryConnectionString",
+        "/properties/SslPort"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrimaryAccessKey",
+        "/properties/PrimaryConnectionString",
+        "/properties/SecondaryAccessKey",
+        "/properties/SecondaryConnectionString",
+        "/definitions/RedisConfigurationDefinition/AofStorageConnectionString0",
+        "/definitions/RedisConfigurationDefinition/AofStorageConnectionString1",
+        "/definitions/RedisConfigurationDefinition/RdbStorageConnectionString"
+    ]
+}

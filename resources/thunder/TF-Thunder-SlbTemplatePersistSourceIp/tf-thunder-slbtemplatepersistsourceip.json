@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Thunder::SlbTemplatePersistSourceIp",
+    "description": "`thunder_slb_template_persist_source_ip` Provides details about thunder slb template persist source ip",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplatePersistSourceIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DontHonorConnRules": {
+            "type": "number",
+            "description": "Do not observe connection rate rules."
+        },
+        "EnforceHigherPriority": {
+            "type": "number",
+            "description": "Enforce to use high priority node if available."
+        },
+        "HashPersist": {
+            "type": "number",
+            "description": "Use hash value of source IP address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InclDstIp": {
+            "type": "number",
+            "description": "Include destination IP on the persist."
+        },
+        "InclSport": {
+            "type": "number",
+            "description": "Include source port on the persist."
+        },
+        "MatchType": {
+            "type": "number",
+            "description": "Persistence type."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Source IP persistence template name."
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "IP subnet mask."
+        },
+        "Netmask6": {
+            "type": "number",
+            "description": "IPV6 subnet mask."
+        },
+        "PrimaryPort": {
+            "type": "number",
+            "description": "Primary port to create the persist session."
+        },
+        "ScanAllMembers": {
+            "type": "number",
+            "description": "Persist with SCAN of all members."
+        },
+        "Server": {
+            "type": "number",
+            "description": "Persist to the same server, default is port."
+        },
+        "ServiceGroup": {
+            "type": "number",
+            "description": "Persist within the same service group."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Persistence timeout (in minutes)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

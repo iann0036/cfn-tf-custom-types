@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::AzureDevOps::Project",
+    "description": "Manages a project within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-Project/docs/README.md",
+    "definitions": {
+        "FeaturesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Description of the Project.\n- `visibility` - (Optional) Specifies the visibility of the Project. Valid values: `private` or `public`. Defaults to `private`.\n- `version_control` - (Optional) Specifies the version control system. Valid values: `Git` or `Tfvc`. Defaults to `Git`.\n- `work_item_template` - (Optional) Specifies the work item template. Valid values: `Agile`, `Basic`, `CMMI` or `Scrum`. Defaults to `Agile`.\n- `features` - (Optional) Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "Features": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FeaturesDefinition"
+            },
+            "description": "Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Project Name.\n- `description` - (Optional) The Description of the Project.\n- `visibility` - (Optional) Specifies the visibility of the Project. Valid values: `private` or `public`. Defaults to `private`.\n- `version_control` - (Optional) Specifies the version control system. Valid values: `Git` or `Tfvc`. Defaults to `Git`.\n- `work_item_template` - (Optional) Specifies the work item template. Valid values: `Agile`, `Basic`, `CMMI` or `Scrum`. Defaults to `Agile`.\n- `features` - (Optional) Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "ProcessTemplateId": {
+            "type": "string"
+        },
+        "VersionControl": {
+            "type": "string",
+            "description": "Specifies the version control system. Valid values: `Git` or `Tfvc`. Defaults to `Git`.\n- `work_item_template` - (Optional) Specifies the work item template. Valid values: `Agile`, `Basic`, `CMMI` or `Scrum`. Defaults to `Agile`.\n- `features` - (Optional) Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Specifies the visibility of the Project. Valid values: `private` or `public`. Defaults to `private`.\n- `version_control` - (Optional) Specifies the version control system. Valid values: `Git` or `Tfvc`. Defaults to `Git`.\n- `work_item_template` - (Optional) Specifies the work item template. Valid values: `Agile`, `Basic`, `CMMI` or `Scrum`. Defaults to `Agile`.\n- `features` - (Optional) Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "WorkItemTemplate": {
+            "type": "string",
+            "description": "Specifies the work item template. Valid values: `Agile`, `Basic`, `CMMI` or `Scrum`. Defaults to `Agile`.\n- `features` - (Optional) Defines the status (`enabled`, `disabled`) of the project features.\nValid features are `boards`, `repositories`, `pipelines`, `testplans`, `artifacts`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProcessTemplateId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

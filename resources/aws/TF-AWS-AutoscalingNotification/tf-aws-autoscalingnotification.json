@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::AutoscalingNotification",
+    "description": "Provides an AutoScaling Group with Notification support, via SNS Topics. Each of\nthe `notifications` map to a [Notification Configuration][2] inside Amazon Web\nServices, and are applied to each AutoScaling Group you supply.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AutoscalingNotification/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of AutoScaling Group Names."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Notification Types that trigger\nnotifications. Acceptable values are documented [in the AWS documentation here][1]."
+        },
+        "TopicArn": {
+            "type": "string",
+            "description": "The Topic ARN for notifications to be sent through."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupNames",
+        "Notifications",
+        "TopicArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

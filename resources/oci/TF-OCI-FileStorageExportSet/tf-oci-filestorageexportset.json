@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::OCI::FileStorageExportSet",
+    "description": "This resource provides the Export Set resource in Oracle Cloud Infrastructure File Storage service.\n\nThe export_set resource cannot be directly created or destroyed. An export set is created by the service automatically when a mount target is created. \nWhen a mount target is deleted, the export set associated with it is also deleted automatically.\n\nYou can use this resource for managing existing export sets from within Terraform. The resource exposes the following updatable attributes:\n\n    display_name\n    max_fs_stat_bytes\n    max_fs_stat_files\n\nAny other updates to the behavior of export_set require updating the parent mount target. If you intend to manage export_set with Terraform, you should import the mount_target resource as well. \nThe mount_target resource includes the mount_target_id attribute, which is required for updates to export_set.\n\nOnly one export set resource should be created per mount target.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-FileStorageExportSet/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxFsStatBytes": {
+            "type": "string",
+            "description": "(Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'."
+        },
+        "MaxFsStatFiles": {
+            "type": "string",
+            "description": "(Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'."
+        },
+        "MountTargetId": {
+            "type": "string",
+            "description": "(Updatable) The OCID of the mount target that the export set is associated with."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "VcnId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MountTargetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityDomain",
+        "/properties/CompartmentId",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/VcnId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

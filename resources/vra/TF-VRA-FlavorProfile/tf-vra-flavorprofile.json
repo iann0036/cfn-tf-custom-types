@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::VRA::FlavorProfile",
+    "description": "CloudFormation equivalent of vra_flavor_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-FlavorProfile/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "FlavorMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudAccountId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "RegionId": {
+            "type": "string",
+            "description": "The id of the region for which this profile is defined as in vRealize Automation(vRA)."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "FlavorMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FlavorMappingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudAccountId",
+        "/properties/CreatedAt",
+        "/properties/ExternalRegionId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

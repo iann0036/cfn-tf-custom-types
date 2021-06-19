@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::OVH::IploadbalancingHttpRoute",
+    "description": "Manage http route for a loadbalancer service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IploadbalancingHttpRoute/docs/README.md",
+    "definitions": {
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Status": {
+                    "type": "number"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Human readable name for your route, this field is for you."
+        },
+        "FrontendId": {
+            "type": "number",
+            "description": "Route traffic for this frontend."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Route priority ([0..255]). 0 if null. Highest priority routes are evaluated first. Only the first matching route will trigger an action."
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

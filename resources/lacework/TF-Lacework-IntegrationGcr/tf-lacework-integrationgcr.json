@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Lacework::IntegrationGcr",
+    "description": "Use this resource to integrate a Google Container Registry (GCR) with Lacework to assess, identify,\nand report vulnerabilities found in the operating system software packages in a Docker container\nimage.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationGcr/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientEmail": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "PrivateKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientEmail",
+                "ClientId",
+                "PrivateKey",
+                "PrivateKeyId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "LimitByLabel": {
+            "type": "string",
+            "description": "An image label to limit the assessment of images with matching label. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "LimitByRepos": {
+            "type": "string",
+            "description": "A comma-separated list of repositories to assess. (without spaces recommended)."
+        },
+        "LimitByTag": {
+            "type": "string",
+            "description": "An image tag to limit the assessment of images with matching tag. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "LimitNumImgs": {
+            "type": "number",
+            "description": "The maximum number of newest container images to assess per repository. Must be one of `5`, `10`, or `15`. Defaults to `5`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The GCR integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "RegistryDomain": {
+            "type": "string",
+            "description": "The GCR domain, which specifies the location where you store the images. Supported domains are `gcr.io`, `us.gcr.io`, `eu.gcr.io`, or `asia.gcr.io`."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RegistryDomain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/PrivateKey"
+    ]
+}

@@ -1,0 +1,212 @@
+{
+    "typeName": "TF::OpsGenie::ServiceIncidentRule",
+    "description": "Manages a Service Incident Rule within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-ServiceIncidentRule/docs/README.md",
+    "definitions": {
+        "IncidentRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConditionMatchType": {
+                    "type": "string",
+                    "description": "A Condition type, supported types are: `match-all`, `match-any-condition`, `match-all-conditions`. Default: `match-all`."
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                },
+                "IncidentProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IncidentPropertiesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string",
+                    "description": "User defined value that will be compared with alert field according to the operation. Default: empty string."
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "Specifies which alert field will be used in condition. Possible values are `message`, `alias`, `description`, `source`, `entity`, `tags`, `actions`, `details`, `extra-properties`, `recipients`, `teams`, `priority`."
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Not": {
+                    "type": "boolean",
+                    "description": "Indicates behaviour of the given operation. Default: false."
+                },
+                "Operation": {
+                    "type": "string",
+                    "description": "It is the operation that will be executed for the given field and key. Possible operations are `matches`, `contains`, `starts-with`, `ends-with`, `equals`, `contains-key`, `contains-value`, `greater-than`, `less-than`, `is-empty`, `equals-ignore-whitespace`."
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        },
+        "IncidentPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description field of the incident rule."
+                },
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DetailsDefinition"
+                    },
+                    "description": "Map of key-value pairs to use as custom properties of the alert."
+                },
+                "Message": {
+                    "type": "string",
+                    "description": "Message of the related incident rule."
+                },
+                "Priority": {
+                    "type": "string",
+                    "description": "Priority level of the alert. Possible values are `P1`, `P2`, `P3`, `P4` and `P5`."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags of the alert."
+                },
+                "StakeholderProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StakeholderPropertiesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Message",
+                "Priority"
+            ]
+        },
+        "DetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StakeholderPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description that is generally used to provide a detailed information about the alert."
+                },
+                "Enable": {
+                    "type": "boolean",
+                    "description": "Option to enable stakeholder notifications.Default value is true."
+                },
+                "Message": {
+                    "type": "string",
+                    "description": "Message that is to be passed to audience that is generally used to provide a content information about the alert."
+                }
+            },
+            "required": [
+                "Message"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "ID of the service associated."
+        },
+        "IncidentRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncidentRuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

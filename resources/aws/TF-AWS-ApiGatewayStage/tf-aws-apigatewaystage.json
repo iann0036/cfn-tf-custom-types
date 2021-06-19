@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AWS::ApiGatewayStage",
+    "description": "Manages an API Gateway Stage. A stage is a named reference to a deployment, which can be done via the [`aws_api_gateway_deployment` resource](api_gateway_deployment.html). Stages can be optionally managed further with the [`aws_api_gateway_base_path_mapping` resource](api_gateway_base_path_mapping.html), [`aws_api_gateway_domain_name` resource](api_gateway_domain_name.html), and [`aws_api_method_settings` resource](api_gateway_method_settings.html). For more information, see the [API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayStage/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccessLogSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationArn": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DestinationArn",
+                "Format"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CacheClusterEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether a cache cluster is enabled for the stage."
+        },
+        "CacheClusterSize": {
+            "type": "string",
+            "description": "The size of the cache cluster for the stage, if enabled. Allowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`."
+        },
+        "ClientCertificateId": {
+            "type": "string",
+            "description": "The identifier of a client certificate for the stage."
+        },
+        "DeploymentId": {
+            "type": "string",
+            "description": "The ID of the deployment that the stage points to."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the stage."
+        },
+        "DocumentationVersion": {
+            "type": "string",
+            "description": "The version of the associated API documentation."
+        },
+        "ExecutionArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeUrl": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated REST API."
+        },
+        "StageName": {
+            "type": "string",
+            "description": "The name of the stage."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VariablesDefinition"
+            },
+            "description": "A map that defines the stage variables."
+        },
+        "XrayTracingEnabled": {
+            "type": "boolean",
+            "description": "Whether active tracing with X-ray is enabled. Defaults to `false`."
+        },
+        "AccessLogSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLogSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeploymentId",
+        "RestApiId",
+        "StageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ExecutionArn",
+        "/properties/Id",
+        "/properties/InvokeUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

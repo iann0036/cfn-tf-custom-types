@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Thunder::InterfaceEthernetTrunkGroup",
+    "description": "`thunder_interface_ethernet_trunk_group` Provides details about thunder interface ethernet trunk group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceEthernetTrunkGroup/docs/README.md",
+    "definitions": {
+        "UdldTimeoutCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fast": {
+                    "type": "number"
+                },
+                "Slow": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminKey": {
+            "type": "number",
+            "description": "LACP admin key (Admin key value)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifnum": {
+            "type": "number"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "\u2018active\u2019: enable initiation of LACP negotiation on a port(default); \u2018passive\u2019: disable initiation of LACP negotiation on a port;."
+        },
+        "PortPriority": {
+            "type": "number",
+            "description": "Set LACP priority for a port (LACP port priority)."
+        },
+        "Timeout": {
+            "type": "string",
+            "description": "\u2018long\u2019: Set LACP long timeout (default); \u2018short\u2019: Set LACP short timeout;."
+        },
+        "TrunkNumber": {
+            "type": "number",
+            "description": "Trunk Number."
+        },
+        "Type": {
+            "type": "string",
+            "description": "\u2018static\u2019: Static (default); \u2018lacp\u2019: lacp; \u2018lacp-udld\u2019: lacp-udld;."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "UdldTimeoutCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UdldTimeoutCfgDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

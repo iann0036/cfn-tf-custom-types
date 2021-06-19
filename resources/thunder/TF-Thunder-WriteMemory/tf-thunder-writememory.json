@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Thunder::WriteMemory",
+    "description": "`thunder_write_memory` Provides details about thunder write memory",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-WriteMemory/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string",
+            "description": "\u2018primary\u2019: Write to default Primary Configuration; \u2018secondary\u2019: Write to default Secondary Configuration; \u2018local\u2019: Local Configuration Profile Name;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string",
+            "description": "\u2018all\u2019: All partition configurations; \u2018shared\u2019: Shared partition; \u2018specified\u2019: Specified partition;."
+        },
+        "Profile": {
+            "type": "string",
+            "description": "Local Configuration Profile Name."
+        },
+        "SpecifiedPartition": {
+            "type": "string",
+            "description": "Specified partition."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

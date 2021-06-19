@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::NewRelic::Workload",
+    "description": "Use this resource to create, update, and delete a New Relic One workload.\n\nA New Relic User API key is required to provision this resource.  Set the `api_key`\nattribute in the `provider` block or the `NEW_RELIC_API_KEY` environment\nvariable with your User API key.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-Workload/docs/README.md",
+    "definitions": {
+        "EntitySearchQueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "number",
+            "description": "The New Relic account ID where you want to create the workload.\n* `entity_guids` - (Optional) A list of entity GUIDs manually assigned to this workload.\n* `entity_search_query` - (Optional) A list of search queries that define a dynamic workload.  See [Nested entity_search_query blocks](#nested-entity_search_query-blocks) below for details.\n* `scope_account_ids` - (Optional) A list of account IDs that will be used to get entities from."
+        },
+        "CompositeEntitySearchQuery": {
+            "type": "string"
+        },
+        "EntityGuids": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of entity GUIDs manually assigned to this workload.\n* `entity_search_query` - (Optional) A list of search queries that define a dynamic workload.  See [Nested entity_search_query blocks](#nested-entity_search_query-blocks) below for details.\n* `scope_account_ids` - (Optional) A list of account IDs that will be used to get entities from."
+        },
+        "Guid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The workload's name.\n* `account_id` - (Required) The New Relic account ID where you want to create the workload.\n* `entity_guids` - (Optional) A list of entity GUIDs manually assigned to this workload.\n* `entity_search_query` - (Optional) A list of search queries that define a dynamic workload.  See [Nested entity_search_query blocks](#nested-entity_search_query-blocks) below for details.\n* `scope_account_ids` - (Optional) A list of account IDs that will be used to get entities from."
+        },
+        "Permalink": {
+            "type": "string"
+        },
+        "ScopeAccountIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of account IDs that will be used to get entities from."
+        },
+        "WorkloadId": {
+            "type": "number"
+        },
+        "EntitySearchQuery": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EntitySearchQueryDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompositeEntitySearchQuery",
+        "/properties/Guid",
+        "/properties/Id",
+        "/properties/Permalink",
+        "/properties/WorkloadId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

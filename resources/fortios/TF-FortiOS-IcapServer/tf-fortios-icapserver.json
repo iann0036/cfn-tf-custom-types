@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::IcapServer",
+    "description": "Configure ICAP servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-IcapServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip6Address": {
+            "type": "string",
+            "description": "IPv6 address of the ICAP server."
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "IPv4 address of the ICAP server."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "IP version. Valid values: `4`, `6`."
+        },
+        "MaxConnections": {
+            "type": "number",
+            "description": "Maximum number of concurrent connections to ICAP server."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server name."
+        },
+        "Port": {
+            "type": "number",
+            "description": "ICAP server port."
+        },
+        "Secure": {
+            "type": "string",
+            "description": "Enable/disable secure connection to ICAP server. Valid values: `enable`, `disable`."
+        },
+        "SslCert": {
+            "type": "string",
+            "description": "CA certificate name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

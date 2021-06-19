@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::AWS::DbProxyTarget",
+    "description": "Provides an RDS DB proxy target resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DbProxyTarget/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DbClusterIdentifier": {
+            "type": "string",
+            "description": "DB cluster identifier."
+        },
+        "DbInstanceIdentifier": {
+            "type": "string",
+            "description": "DB instance identifier."
+        },
+        "DbProxyName": {
+            "type": "string",
+            "description": "The name of the DB proxy."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "RdsResourceId": {
+            "type": "string"
+        },
+        "TargetArn": {
+            "type": "string"
+        },
+        "TargetGroupName": {
+            "type": "string",
+            "description": "The name of the target group."
+        },
+        "TrackedClusterId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbProxyName",
+        "TargetGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/Port",
+        "/properties/RdsResourceId",
+        "/properties/TargetArn",
+        "/properties/TrackedClusterId",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

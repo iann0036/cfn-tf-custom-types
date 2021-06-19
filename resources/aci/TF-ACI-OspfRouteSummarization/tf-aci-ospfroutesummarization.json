@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::ACI::OspfRouteSummarization",
+    "description": "Manages ACI OSPF Route Summarization",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-OspfRouteSummarization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object OSPF route summarization.\n- `description` - Description for for object OSPF route summarization.\n- `cost` - (Optional) The OSPF Area cost for the default summary LSAs. The Area cost is used with NSSA and stub area types only. Default value: \"unspecified\".\n- `inter_area_enabled` - (Optional) Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "Cost": {
+            "type": "string",
+            "description": "The OSPF Area cost for the default summary LSAs. The Area cost is used with NSSA and stub area types only. Default value: \"unspecified\".\n- `inter_area_enabled` - (Optional) Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for for object OSPF route summarization.\n- `cost` - (Optional) The OSPF Area cost for the default summary LSAs. The Area cost is used with NSSA and stub area types only. Default value: \"unspecified\".\n- `inter_area_enabled` - (Optional) Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterAreaEnabled": {
+            "type": "string",
+            "description": "Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of object OSPF route summarization.\n- `annotation` - (Optional) Annotation for object OSPF route summarization.\n- `description` - Description for for object OSPF route summarization.\n- `cost` - (Optional) The OSPF Area cost for the default summary LSAs. The Area cost is used with NSSA and stub area types only. Default value: \"unspecified\".\n- `inter_area_enabled` - (Optional) Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "The color of a policy label. Default value: \"0\"."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent tenant object.\n- `name` - (Required) Name of object OSPF route summarization.\n- `annotation` - (Optional) Annotation for object OSPF route summarization.\n- `description` - Description for for object OSPF route summarization.\n- `cost` - (Optional) The OSPF Area cost for the default summary LSAs. The Area cost is used with NSSA and stub area types only. Default value: \"unspecified\".\n- `inter_area_enabled` - (Optional) Inter area enabled flag for object OSPF route summarization.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object OSPF route summarization.\n- `tag` - (Optional) The color of a policy label. Default value: \"0\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

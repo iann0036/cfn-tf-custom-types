@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDnsPolicy",
+    "description": "CloudFormation equivalent of google_dns_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDnsPolicy/docs/README.md",
+    "definitions": {
+        "AlternativeNameServerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetNameServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetNameServersDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "NetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NetworkUrl"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetNameServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForwardingPath": {
+                    "type": "string"
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ipv4Address"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableInboundForwarding": {
+            "type": "boolean"
+        },
+        "EnableLogging": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "AlternativeNameServerConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlternativeNameServerConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworksDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

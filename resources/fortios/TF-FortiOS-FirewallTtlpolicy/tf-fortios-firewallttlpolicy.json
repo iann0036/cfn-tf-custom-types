@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::FortiOS::FirewallTtlpolicy",
+    "description": "Configure TTL policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallTtlpolicy/docs/README.md",
+    "definitions": {
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Service name."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action to be performed on traffic matching this policy (default = deny). Valid values: `accept`, `deny`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Schedule object from available options."
+        },
+        "Srcintf": {
+            "type": "string",
+            "description": "Source interface name from available interfaces."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this TTL policy. Valid values: `enable`, `disable`."
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "Value/range to match against the packet's Time to Live value (format: ttl[ - ttl_high], 1 - 255)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            },
+            "minItems": 1
+        },
+        "Srcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcaddrDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fosid",
+        "Schedule",
+        "Srcintf",
+        "Ttl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

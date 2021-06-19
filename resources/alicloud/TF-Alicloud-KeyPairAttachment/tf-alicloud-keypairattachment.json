@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Alicloud::KeyPairAttachment",
+    "description": "Provides a key pair attachment resource to bind key pair for several ECS instances.\n\n-> **NOTE:** After the key pair is attached with sone instances, there instances must be rebooted to make the key pair affect.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-KeyPairAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Force": {
+            "type": "boolean",
+            "description": "Set it to true and it will reboot instances which attached with the key pair to make key pair affect immediately."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of ECS instance's IDs."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The name of key pair used to bind."
+        },
+        "KeyPairName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

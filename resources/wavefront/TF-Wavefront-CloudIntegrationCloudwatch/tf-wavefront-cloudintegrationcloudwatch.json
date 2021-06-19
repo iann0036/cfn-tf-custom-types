@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::Wavefront::CloudIntegrationCloudwatch",
+    "description": "CloudFormation equivalent of wavefront_cloud_integration_cloudwatch",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-CloudIntegrationCloudwatch/docs/README.md",
+    "definitions": {
+        "AdditionalTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InstanceSelectionTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeSelectionTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalTagsDefinition"
+            }
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "ForceSave": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceSelectionTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceSelectionTagsDefinition"
+            }
+        },
+        "MetricFilterRegex": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PointTagFilterRegex": {
+            "type": "string"
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "ServiceRefreshRateInMinutes": {
+            "type": "number"
+        },
+        "VolumeSelectionTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VolumeSelectionTagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalId",
+        "Name",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

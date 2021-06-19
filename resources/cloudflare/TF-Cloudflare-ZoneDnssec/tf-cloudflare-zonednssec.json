@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Cloudflare::ZoneDnssec",
+    "description": "CloudFormation equivalent of cloudflare_zone_dnssec",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-ZoneDnssec/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string"
+        },
+        "Digest": {
+            "type": "string"
+        },
+        "DigestAlgorithm": {
+            "type": "string"
+        },
+        "DigestType": {
+            "type": "string"
+        },
+        "Ds": {
+            "type": "string"
+        },
+        "Flags": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyTag": {
+            "type": "number"
+        },
+        "KeyType": {
+            "type": "string"
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "PublicKey": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Algorithm",
+        "/properties/Digest",
+        "/properties/DigestAlgorithm",
+        "/properties/DigestType",
+        "/properties/Ds",
+        "/properties/Flags",
+        "/properties/Id",
+        "/properties/KeyTag",
+        "/properties/KeyType",
+        "/properties/PublicKey",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

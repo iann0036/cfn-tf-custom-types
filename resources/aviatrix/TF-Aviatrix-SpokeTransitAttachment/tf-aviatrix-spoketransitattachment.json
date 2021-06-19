@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Aviatrix::SpokeTransitAttachment",
+    "description": "The **aviatrix_spoke_transit_attachment** resource allows the creation and management of Aviatrix Spoke-to-Transit gateway attachments.\n\n~> **NOTE:** Terraform currently provides both a standalone spoke-to-transit attachment resource and a spoke gateway with `transit_gw` attachment(s) defined in-line. At this time, you cannot use a spoke gateway resource with transit attachments defined in conjunction with the spoke-to-transit attachment resources. Doing so will cause a conflict of settings. In order to use this resource, please set `manage_transit_gateway_attachment` in the **aviatrix_spoke_gateway** to false.\n\n~> **NOTE:** This resource should only be used to manage the primary gateway attachments. The HA gateway attachments will be handled automatically by the backend.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-SpokeTransitAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RouteTables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SpokeGwName": {
+            "type": "string"
+        },
+        "TransitGwName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SpokeGwName",
+        "TransitGwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

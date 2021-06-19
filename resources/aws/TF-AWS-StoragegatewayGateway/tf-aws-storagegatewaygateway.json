@@ -1,0 +1,261 @@
+{
+    "typeName": "TF::AWS::StoragegatewayGateway",
+    "description": "Manages an AWS Storage Gateway file, tape, or volume gateway in the provider region.\n\n~> NOTE: The Storage Gateway API requires the gateway to be connected to properly return information after activation. If you are receiving `The specified gateway is not connected` errors during resource creation (gateway activation), ensure your gateway instance meets the [Storage Gateway requirements](https://docs.aws.amazon.com/storagegateway/latest/userguide/Requirements.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-StoragegatewayGateway/docs/README.md",
+    "definitions": {
+        "GatewayNetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Address": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SmbActiveDirectorySettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainControllers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DomainName": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "TimeoutInSeconds": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DomainName",
+                "Password",
+                "Username"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationKey": {
+            "type": "string",
+            "description": "Gateway activation key during resource creation. Conflicts with `gateway_ip_address`. Additional information is available in the [Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html)."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AverageDownloadRateLimitInBitsPerSec": {
+            "type": "number",
+            "description": "The average download bandwidth rate limit in bits per second. This is supported for the `CACHED`, `STORED`, and `VTL` gateway types."
+        },
+        "AverageUploadRateLimitInBitsPerSec": {
+            "type": "number",
+            "description": "The average upload bandwidth rate limit in bits per second. This is supported for the `CACHED`, `STORED`, and `VTL` gateway types."
+        },
+        "CloudwatchLogGroupArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Amazon CloudWatch log group to use to monitor and log events in the gateway."
+        },
+        "Ec2InstanceId": {
+            "type": "string"
+        },
+        "EndpointType": {
+            "type": "string"
+        },
+        "GatewayId": {
+            "type": "string"
+        },
+        "GatewayIpAddress": {
+            "type": "string",
+            "description": "Gateway IP address to retrieve activation key during resource creation. Conflicts with `activation_key`. Gateway must be accessible on port 80 from where Terraform is running. Additional information is available in the [Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html)."
+        },
+        "GatewayName": {
+            "type": "string",
+            "description": "Name of the gateway."
+        },
+        "GatewayNetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GatewayNetworkInterfaceDefinition"
+            }
+        },
+        "GatewayTimezone": {
+            "type": "string",
+            "description": "Time zone for the gateway. The time zone is of the format \"GMT\", \"GMT-hr:mm\", or \"GMT+hr:mm\". For example, `GMT-4:00` indicates the time is 4 hours behind GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule."
+        },
+        "GatewayType": {
+            "type": "string",
+            "description": "Type of the gateway. The default value is `STORED`. Valid values: `CACHED`, `FILE_S3`, `STORED`, `VTL`."
+        },
+        "GatewayVpcEndpoint": {
+            "type": "string",
+            "description": "VPC endpoint address to be used when activating your gateway. This should be used when your instance is in a private subnet. Requires HTTP access from client computer running terraform. More info on what ports are required by your VPC Endpoint Security group in [Activating a Gateway in a Virtual Private Cloud](https://docs.aws.amazon.com/storagegateway/latest/userguide/gateway-private-link.html)."
+        },
+        "HostEnvironment": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MediumChangerType": {
+            "type": "string",
+            "description": "Type of medium changer to use for tape gateway. Terraform cannot detect drift of this argument. Valid values: `STK-L700`, `AWS-Gateway-VTL`, `IBM-03584L32-0402`."
+        },
+        "SmbFileShareVisibility": {
+            "type": "boolean",
+            "description": "Specifies whether the shares on this gateway appear when listing shares."
+        },
+        "SmbGuestPassword": {
+            "type": "string",
+            "description": "Guest password for Server Message Block (SMB) file shares. Only valid for `FILE_S3` gateway type. Must be set before creating `GuestAccess` authentication SMB file shares. Terraform can only detect drift of the existence of a guest password, not its actual value from the gateway. Terraform can however update the password with changing the argument."
+        },
+        "SmbSecurityStrategy": {
+            "type": "string",
+            "description": "Specifies the type of security strategy. Valid values are: `ClientSpecified`, `MandatorySigning`, and `MandatoryEncryption`. See [Setting a Security Level for Your Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-gateway-file.html#security-strategy) for more information."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TapeDriveType": {
+            "type": "string",
+            "description": "Type of tape drive to use for tape gateway. Terraform cannot detect drift of this argument. Valid values: `IBM-ULT3580-TD5`."
+        },
+        "SmbActiveDirectorySettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmbActiveDirectorySettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GatewayName",
+        "GatewayTimezone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Ec2InstanceId",
+        "/properties/EndpointType",
+        "/properties/GatewayId",
+        "/properties/GatewayNetworkInterface",
+        "/properties/HostEnvironment",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SmbGuestPassword",
+        "/definitions/SmbActiveDirectorySettingsDefinition/Password"
+    ]
+}

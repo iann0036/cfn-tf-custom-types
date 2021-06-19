@@ -1,0 +1,257 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementCustomDomain",
+    "description": "Manages a API Management Custom Domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementCustomDomain/docs/README.md",
+    "definitions": {
+        "DeveloperPortalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ManagementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "PortalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "DefaultSslBinding": {
+                    "type": "boolean"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ScmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "DeveloperPortal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeveloperPortalDefinition"
+            }
+        },
+        "Management": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagementDefinition"
+            }
+        },
+        "Portal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortalDefinition"
+            }
+        },
+        "Proxy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProxyDefinition"
+            }
+        },
+        "Scm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScmDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DeveloperPortalDefinition/Certificate",
+        "/definitions/DeveloperPortalDefinition/CertificatePassword",
+        "/definitions/ManagementDefinition/Certificate",
+        "/definitions/ManagementDefinition/CertificatePassword",
+        "/definitions/PortalDefinition/Certificate",
+        "/definitions/PortalDefinition/CertificatePassword",
+        "/definitions/ProxyDefinition/Certificate",
+        "/definitions/ProxyDefinition/CertificatePassword",
+        "/definitions/ScmDefinition/Certificate",
+        "/definitions/ScmDefinition/CertificatePassword"
+    ]
+}

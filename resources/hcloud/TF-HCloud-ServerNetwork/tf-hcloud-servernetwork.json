@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::HCloud::ServerNetwork",
+    "description": "Provides a Hetzner Cloud Server Network to represent a private network on a server in the Hetzner Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-ServerNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AliasIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Additional IPs to be assigned\nto this server.\n- `network_id` - (Optional, int) ID of the network which should be added\nto the server. Required if `subnet_id` is not set. Successful creation\nof the resource depends on the existence of a subnet in the Hetzner\nCloud Backend. Using `network_id` will not create an explicit\ndependency between server and subnet. Therefore `depends_on` may need\nto be used. Alternatively the `subnet_id` property can be used, which\nwill create an explicit dependency between `hcloud_server_network` and\nthe existence of a subnet.\n- `subnet_id` - (Optional, string) ID of the sub-network which should be\nadded to the Server. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Server is currently added\nto the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this server.\nIf you do not provide this then you will be auto assigned an IP\naddress."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IP to request to be assigned to this server.\nIf you do not provide this then you will be auto assigned an IP\naddress."
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "number",
+            "description": "ID of the network which should be added\nto the server. Required if `subnet_id` is not set. Successful creation\nof the resource depends on the existence of a subnet in the Hetzner\nCloud Backend. Using `network_id` will not create an explicit\ndependency between server and subnet. Therefore `depends_on` may need\nto be used. Alternatively the `subnet_id` property can be used, which\nwill create an explicit dependency between `hcloud_server_network` and\nthe existence of a subnet.\n- `subnet_id` - (Optional, string) ID of the sub-network which should be\nadded to the Server. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Server is currently added\nto the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this server.\nIf you do not provide this then you will be auto assigned an IP\naddress."
+        },
+        "ServerId": {
+            "type": "number",
+            "description": "ID of the server.\n- `alias_ips` - (Required, list[string]) Additional IPs to be assigned\nto this server.\n- `network_id` - (Optional, int) ID of the network which should be added\nto the server. Required if `subnet_id` is not set. Successful creation\nof the resource depends on the existence of a subnet in the Hetzner\nCloud Backend. Using `network_id` will not create an explicit\ndependency between server and subnet. Therefore `depends_on` may need\nto be used. Alternatively the `subnet_id` property can be used, which\nwill create an explicit dependency between `hcloud_server_network` and\nthe existence of a subnet.\n- `subnet_id` - (Optional, string) ID of the sub-network which should be\nadded to the Server. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Server is currently added\nto the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this server.\nIf you do not provide this then you will be auto assigned an IP\naddress."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of the sub-network which should be\nadded to the Server. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Server is currently added\nto the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this server.\nIf you do not provide this then you will be auto assigned an IP\naddress."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MacAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

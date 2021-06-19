@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::VSphere::HostVirtualSwitch",
+    "description": "The `vsphere_host_virtual_switch` resource can be used to manage vSphere\nstandard switches on an ESXi host. These switches can be used as a backing for\nstandard port groups, which can be managed by the\n[`vsphere_host_port_group`][host-port-group] resource.\n\nFor an overview on vSphere networking concepts, see [this\npage][ref-vsphere-net-concepts].\n\n[host-port-group]: /docs/providers/vsphere/r/host_port_group.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-HostVirtualSwitch/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "BeaconInterval": {
+            "type": "number"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "HostSystemId": {
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the virtual switch up on. Forces a new resource if changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinkDiscoveryOperation": {
+            "type": "string"
+        },
+        "LinkDiscoveryProtocol": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "The maximum transmission unit (MTU) for the virtual\nswitch. Default: `1500`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual switch. Forces a new resource if\nchanged."
+        },
+        "NetworkAdapters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "NumberOfPorts": {
+            "type": "number",
+            "description": "The number of ports to create with this\nvirtual switch. Default: `128`."
+        },
+        "ShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "ShapingBurstSize": {
+            "type": "number"
+        },
+        "ShapingEnabled": {
+            "type": "boolean"
+        },
+        "ShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "StandbyNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ActiveNics",
+        "HostSystemId",
+        "Name",
+        "NetworkAdapters",
+        "StandbyNics"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

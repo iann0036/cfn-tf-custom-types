@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::AWS::PinpointSmsChannel",
+    "description": "Provides a Pinpoint SMS Channel resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-PinpointSmsChannel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string",
+            "description": "The application ID."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the channel is enabled or disabled. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PromotionalMessagesPerSecond": {
+            "type": "number"
+        },
+        "SenderId": {
+            "type": "string",
+            "description": "Sender identifier of your messages."
+        },
+        "ShortCode": {
+            "type": "string",
+            "description": "The Short Code registered with the phone provider."
+        },
+        "TransactionalMessagesPerSecond": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PromotionalMessagesPerSecond",
+        "/properties/TransactionalMessagesPerSecond"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

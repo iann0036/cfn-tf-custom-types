@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::TencentCloud::GaapHttpRule",
+    "description": "Provides a resource to create a forward rule of layer7 listener.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapHttpRule/docs/README.md",
+    "definitions": {
+        "RealserversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "ID of the GAAP realserver."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP of the GAAP realserver."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port of the GAAP realserver."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Scheduling weight, default value is `1`. Valid value ranges: (1~100)."
+                }
+            },
+            "required": [
+                "Id",
+                "Ip",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectTimeout": {
+            "type": "number",
+            "description": "Timeout of the health check response, default value is 2s."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Forward domain of the forward rule."
+        },
+        "ForwardHost": {
+            "type": "string",
+            "description": "The default value of requested host which is forwarded to the realserver by the listener is `default`."
+        },
+        "HealthCheck": {
+            "type": "boolean",
+            "description": "Indicates whether health check is enable."
+        },
+        "HealthCheckMethod": {
+            "type": "string",
+            "description": "Method of the health check. Valid value: `GET` and `HEAD`."
+        },
+        "HealthCheckPath": {
+            "type": "string",
+            "description": "Path of health check. Maximum length is 80."
+        },
+        "HealthCheckStatusCodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "Return code of confirmed normal. Valid value: `100`, `200`, `300`, `400` and `500`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Interval of the health check, default value is 5s."
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "ID of the layer7 listener."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path of the forward rule. Maximum length is 80."
+        },
+        "RealserverType": {
+            "type": "string",
+            "description": "Type of the realserver. Valid value: `IP` and `DOMAIN`."
+        },
+        "Scheduler": {
+            "type": "string",
+            "description": "Scheduling policy of the forward rule, default value is `rr`. Valid value: `rr`, `wrr` and `lc`."
+        },
+        "Realservers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RealserversDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "HealthCheck",
+        "ListenerId",
+        "Path",
+        "RealserverType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateCsv",
+    "description": "`thunder_slb_template_csv` provides details about slb template csv",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateCsv/docs/README.md",
+    "definitions": {
+        "MultipleFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CsvType": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CsvName": {
+            "type": "string",
+            "description": "Specify name of csv template."
+        },
+        "DelimChar": {
+            "type": "string"
+        },
+        "DelimNum": {
+            "type": "number",
+            "description": "enter a delimiter number, default 44 (\u201c,\u201d)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6Enable": {
+            "type": "number",
+            "description": "Support IPv6 IP ranges."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "MultipleFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MultipleFieldsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

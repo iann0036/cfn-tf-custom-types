@@ -1,0 +1,1469 @@
+{
+    "typeName": "TF::AVI::Applicationprofile",
+    "description": "The ApplicationProfile resource allows the creation and management of Avi ApplicationProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Applicationprofile/docs/README.md",
+    "definitions": {
+        "DnsServiceProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AaaaEmptyResponse": {
+                    "type": "boolean"
+                },
+                "AdminEmail": {
+                    "type": "string"
+                },
+                "DnsOverTcpEnabled": {
+                    "type": "boolean"
+                },
+                "DomainNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EcsStrippingEnabled": {
+                    "type": "boolean"
+                },
+                "Edns": {
+                    "type": "boolean"
+                },
+                "EdnsClientSubnetPrefixLen": {
+                    "type": "number"
+                },
+                "ErrorResponse": {
+                    "type": "string"
+                },
+                "NameServer": {
+                    "type": "string"
+                },
+                "NegativeCachingTtl": {
+                    "type": "number"
+                },
+                "NumDnsIp": {
+                    "type": "number"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "DnsZones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsZonesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DosRlProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DosProfile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DosProfileDefinition"
+                    }
+                },
+                "RlProfile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RlProfileDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowDotsInHeaderName": {
+                    "type": "boolean"
+                },
+                "ClientBodyTimeout": {
+                    "type": "number"
+                },
+                "ClientHeaderTimeout": {
+                    "type": "number"
+                },
+                "ClientMaxBodySize": {
+                    "type": "number"
+                },
+                "ClientMaxHeaderSize": {
+                    "type": "number"
+                },
+                "ClientMaxRequestSize": {
+                    "type": "number"
+                },
+                "ConnectionMultiplexingEnabled": {
+                    "type": "boolean"
+                },
+                "DetectNtlmApp": {
+                    "type": "boolean"
+                },
+                "DisableKeepalivePostsMsie6": {
+                    "type": "boolean"
+                },
+                "DisableSniHostnameCheck": {
+                    "type": "boolean"
+                },
+                "EnableChunkMerge": {
+                    "type": "boolean"
+                },
+                "EnableFireAndForget": {
+                    "type": "boolean"
+                },
+                "EnableRequestBodyBuffering": {
+                    "type": "boolean"
+                },
+                "EnableRequestBodyMetrics": {
+                    "type": "boolean"
+                },
+                "FwdCloseHdrForBoundConnections": {
+                    "type": "boolean"
+                },
+                "HstsEnabled": {
+                    "type": "boolean"
+                },
+                "HstsMaxAge": {
+                    "type": "number"
+                },
+                "HstsSubdomainsEnabled": {
+                    "type": "boolean"
+                },
+                "HttpToHttps": {
+                    "type": "boolean"
+                },
+                "HttpUpstreamBufferSize": {
+                    "type": "number"
+                },
+                "HttponlyEnabled": {
+                    "type": "boolean"
+                },
+                "KeepaliveHeader": {
+                    "type": "boolean"
+                },
+                "KeepaliveTimeout": {
+                    "type": "number"
+                },
+                "MaxBadRpsCip": {
+                    "type": "number"
+                },
+                "MaxBadRpsCipUri": {
+                    "type": "number"
+                },
+                "MaxBadRpsUri": {
+                    "type": "number"
+                },
+                "MaxKeepaliveRequests": {
+                    "type": "number"
+                },
+                "MaxResponseHeadersSize": {
+                    "type": "number"
+                },
+                "MaxRpsCip": {
+                    "type": "number"
+                },
+                "MaxRpsCipUri": {
+                    "type": "number"
+                },
+                "MaxRpsUnknownCip": {
+                    "type": "number"
+                },
+                "MaxRpsUnknownUri": {
+                    "type": "number"
+                },
+                "MaxRpsUri": {
+                    "type": "number"
+                },
+                "PkiProfileRef": {
+                    "type": "string"
+                },
+                "PostAcceptTimeout": {
+                    "type": "number"
+                },
+                "ResetConnHttpOnSslPort": {
+                    "type": "boolean"
+                },
+                "RespondWith100Continue": {
+                    "type": "boolean"
+                },
+                "SecureCookieEnabled": {
+                    "type": "boolean"
+                },
+                "ServerSideRedirectToHttps": {
+                    "type": "boolean"
+                },
+                "SslClientCertificateMode": {
+                    "type": "string"
+                },
+                "UseAppKeepaliveTimeout": {
+                    "type": "boolean"
+                },
+                "WebsocketsEnabled": {
+                    "type": "boolean"
+                },
+                "XForwardedProtoEnabled": {
+                    "type": "boolean"
+                },
+                "XffAlternateName": {
+                    "type": "string"
+                },
+                "XffEnabled": {
+                    "type": "boolean"
+                },
+                "CacheConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CacheConfigDefinition"
+                    }
+                },
+                "CompressionProfile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CompressionProfileDefinition"
+                    }
+                },
+                "Http2Profile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Http2ProfileDefinition"
+                    }
+                },
+                "SslClientCertificateAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslClientCertificateActionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "SipServiceProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TransactionTimeout": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TcpAppProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PkiProfileRef": {
+                    "type": "string"
+                },
+                "ProxyProtocolEnabled": {
+                    "type": "boolean"
+                },
+                "ProxyProtocolVersion": {
+                    "type": "string"
+                },
+                "SslClientCertificateMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DnsZonesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminEmail": {
+                    "type": "string"
+                },
+                "DomainName": {
+                    "type": "string"
+                },
+                "NameServer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DomainName"
+            ]
+        },
+        "DosProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ThreshPeriod": {
+                    "type": "number"
+                },
+                "ThreshInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThreshInfoDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ThreshPeriod"
+            ]
+        },
+        "RlProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIpConnectionsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpConnectionsRateLimitDefinition"
+                    }
+                },
+                "ClientIpFailedRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpFailedRequestsRateLimitDefinition"
+                    }
+                },
+                "ClientIpRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpRequestsRateLimitDefinition"
+                    }
+                },
+                "ClientIpScannersRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpScannersRequestsRateLimitDefinition"
+                    }
+                },
+                "ClientIpToUriFailedRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpToUriFailedRequestsRateLimitDefinition"
+                    }
+                },
+                "ClientIpToUriRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpToUriRequestsRateLimitDefinition"
+                    }
+                },
+                "CustomRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomRequestsRateLimitDefinition"
+                    }
+                },
+                "HttpHeaderRateLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeaderRateLimitsDefinition"
+                    }
+                },
+                "UriFailedRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriFailedRequestsRateLimitDefinition"
+                    }
+                },
+                "UriRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriRequestsRateLimitDefinition"
+                    }
+                },
+                "UriScannersRequestsRateLimit": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriScannersRequestsRateLimitDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CacheConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AgeHeader": {
+                    "type": "boolean"
+                },
+                "Aggressive": {
+                    "type": "boolean"
+                },
+                "DateHeader": {
+                    "type": "boolean"
+                },
+                "DefaultExpire": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HeuristicExpire": {
+                    "type": "boolean"
+                },
+                "IgnoreRequestCacheControl": {
+                    "type": "boolean"
+                },
+                "MaxCacheSize": {
+                    "type": "number"
+                },
+                "MaxObjectSize": {
+                    "type": "number"
+                },
+                "MimeTypesBlockGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MimeTypesBlockLists": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MimeTypesGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MimeTypesList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MinObjectSize": {
+                    "type": "number"
+                },
+                "QueryCacheable": {
+                    "type": "boolean"
+                },
+                "XcacheHeader": {
+                    "type": "boolean"
+                },
+                "UriNonCacheable": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriNonCacheableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CompressionProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CompressibleContentRef": {
+                    "type": "string"
+                },
+                "Compression": {
+                    "type": "boolean"
+                },
+                "RemoveAcceptEncodingHeader": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Compression",
+                "RemoveAcceptEncodingHeader",
+                "Type"
+            ]
+        },
+        "Http2ProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Http2InitialWindowSize": {
+                    "type": "number"
+                },
+                "MaxHttp2ConcurrentStreamsPerConnection": {
+                    "type": "number"
+                },
+                "MaxHttp2ControlFramesPerConnection": {
+                    "type": "number"
+                },
+                "MaxHttp2EmptyDataFramesPerConnection": {
+                    "type": "number"
+                },
+                "MaxHttp2HeaderFieldSize": {
+                    "type": "number"
+                },
+                "MaxHttp2QueuedFramesToClientPerConnection": {
+                    "type": "number"
+                },
+                "MaxHttp2RequestsPerConnection": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SslClientCertificateActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloseConnection": {
+                    "type": "boolean"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ThreshInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attack": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Attack",
+                "MaxValue",
+                "MinValue"
+            ]
+        },
+        "ClientIpConnectionsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpFailedRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpScannersRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpToUriFailedRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpToUriRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpHeaderRateLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UriFailedRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UriRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UriScannersRequestsRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UriNonCacheableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DevicesRef": {
+                    "type": "string"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IpAddrsRef": {
+                    "type": "string"
+                },
+                "Level": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UserAgent": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddrPrefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrPrefixesDefinition"
+                    }
+                },
+                "IpAddrRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrRangesDefinition"
+                    }
+                },
+                "IpAddrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Level",
+                "Name"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestHeader": {
+                    "type": "string"
+                },
+                "RequestHeaderValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RateLimiterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSz": {
+                    "type": "number"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpAddrPrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpAddrRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BeginDefinition"
+                    },
+                    "minItems": 1
+                },
+                "End": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EndDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpAddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "FileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType",
+                "FileContent"
+            ]
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeepQuery": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "BeginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "EndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TokensDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIndex": {
+                    "type": "number"
+                },
+                "StartIndex": {
+                    "type": "number"
+                },
+                "StrValue": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudConfigCksum": {
+            "type": "string",
+            "description": "Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Name of the application profile creator. Field introduced in 17.2.14, 18.1.5, 18.2.1."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the application profile."
+        },
+        "PreserveClientIp": {
+            "type": "boolean",
+            "description": "Specifies if client ip needs to be preserved for backend connection. Not compatible with connection multiplexing."
+        },
+        "PreserveClientPort": {
+            "type": "boolean",
+            "description": "Specifies if we need to preserve client port while preserving client ip for backend connections. Field introduced in 17.2.7."
+        },
+        "PreserveDestIpPort": {
+            "type": "boolean",
+            "description": "Specifies if destination ip and port needs to be preserved for backend connection. Field introduced in 20.1.1. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP. Allowed in basic(allowed values- application_profile_type_l4,application_profile_type_http) edition, essentials(allowed values- application_profile_type_l4) edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "DnsServiceProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DnsServiceProfileDefinition"
+            }
+        },
+        "DosRlProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DosRlProfileDefinition"
+            }
+        },
+        "HttpProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpProfileDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "SipServiceProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SipServiceProfileDefinition"
+            }
+        },
+        "TcpAppProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpAppProfileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

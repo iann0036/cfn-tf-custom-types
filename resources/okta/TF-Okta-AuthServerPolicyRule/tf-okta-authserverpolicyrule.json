@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::Okta::AuthServerPolicyRule",
+    "description": "Creates an Authorization Server Policy Rule.\n\nThis resource allows you to create and configure an Authorization Server Policy Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServerPolicyRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessTokenLifetimeMinutes": {
+            "type": "number",
+            "description": "Lifetime of access token. Can be set to a value between 5 and 1440 minutes."
+        },
+        "AuthServerId": {
+            "type": "string",
+            "description": "Auth Server ID."
+        },
+        "GrantTypeWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Accepted grant type values, `\"authorization_code\"`, `\"implicit\"`, `\"password\"` or `\"client_credentials\"`. For `\"implicit\"` value either `user_whitelist` or `group_whitelist` should be set."
+        },
+        "GroupBlacklist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a set of Groups whose Users are to be excluded."
+        },
+        "GroupWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a set of Groups whose Users are to be included. Can be set to Group ID or to the following: \"EVERYONE\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InlineHookId": {
+            "type": "string",
+            "description": "The ID of the inline token to trigger."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Auth Server Policy Rule name."
+        },
+        "PolicyId": {
+            "type": "string",
+            "description": "Auth Server Policy ID."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Priority of the auth server policy rule."
+        },
+        "RefreshTokenLifetimeMinutes": {
+            "type": "number",
+            "description": "Lifetime of refresh token."
+        },
+        "RefreshTokenWindowMinutes": {
+            "type": "number",
+            "description": "Window in which a refresh token can be used. It can be a value between 5 and 2628000 (5 years) minutes.\n`\"refresh_token_window_minutes\"` must be between `\"access_token_lifetime_minutes\"` and `\"refresh_token_lifetime_minutes\"`."
+        },
+        "ScopeWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Scopes allowed for this policy rule. They can be whitelisted by name or all can be whitelisted with `\"*\"`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the Auth Server Policy Rule."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserBlacklist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a set of Users to be excluded."
+        },
+        "UserWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a set of Users to be included."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthServerId",
+        "GrantTypeWhitelist",
+        "Name",
+        "PolicyId",
+        "Priority"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

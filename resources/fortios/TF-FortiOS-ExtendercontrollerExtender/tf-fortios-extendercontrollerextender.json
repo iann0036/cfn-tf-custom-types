@@ -1,0 +1,222 @@
+{
+    "typeName": "TF::FortiOS::ExtendercontrollerExtender",
+    "description": "Extender controller configuration.\n\n-> The resource applies to FortiOS Version < 6.4.2. For FortiOS Version >= 6.4.2, see `fortios_extendercontroller_extender1`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ExtendercontrollerExtender/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AaaSharedSecret": {
+            "type": "string",
+            "description": "AAA shared secret."
+        },
+        "AccessPointName": {
+            "type": "string",
+            "description": "Access point name(APN)."
+        },
+        "Admin": {
+            "type": "string",
+            "description": "FortiExtender Administration (enable or disable). Valid values: `disable`, `discovered`, `enable`."
+        },
+        "AtDialScript": {
+            "type": "string",
+            "description": "Initialization AT commands specific to the MODEM."
+        },
+        "BillingStartDay": {
+            "type": "number",
+            "description": "Billing start day."
+        },
+        "CdmaAaaSpi": {
+            "type": "string",
+            "description": "CDMA AAA SPI."
+        },
+        "CdmaHaSpi": {
+            "type": "string",
+            "description": "CDMA HA SPI."
+        },
+        "CdmaNai": {
+            "type": "string",
+            "description": "NAI for CDMA MODEMS."
+        },
+        "ConnStatus": {
+            "type": "number",
+            "description": "Connection status."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DialMode": {
+            "type": "string",
+            "description": "Dial mode (dial-on-demand or always-connect). Valid values: `dial-on-demand`, `always-connect`."
+        },
+        "DialStatus": {
+            "type": "number",
+            "description": "Dial status."
+        },
+        "ExtName": {
+            "type": "string",
+            "description": "FortiExtender name."
+        },
+        "Fosid": {
+            "type": "string",
+            "description": "FortiExtender serial number."
+        },
+        "HaSharedSecret": {
+            "type": "string",
+            "description": "HA shared secret."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifname": {
+            "type": "string",
+            "description": "FortiExtender interface name."
+        },
+        "InitiatedUpdate": {
+            "type": "string",
+            "description": "Allow/disallow network initiated updates to the MODEM. Valid values: `enable`, `disable`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "FortiExtender mode. Valid values: `standalone`, `redundant`."
+        },
+        "ModemPasswd": {
+            "type": "string",
+            "description": "MODEM password."
+        },
+        "ModemType": {
+            "type": "string",
+            "description": "MODEM type (CDMA, GSM/LTE or WIMAX). Valid values: `cdma`, `gsm/lte`, `wimax`."
+        },
+        "MultiMode": {
+            "type": "string",
+            "description": "MODEM mode of operation(3G,LTE,etc). Valid values: `auto`, `auto-3g`, `force-lte`, `force-3g`, `force-2g`."
+        },
+        "PppAuthProtocol": {
+            "type": "string",
+            "description": "PPP authentication protocol (PAP,CHAP or auto). Valid values: `auto`, `pap`, `chap`."
+        },
+        "PppEchoRequest": {
+            "type": "string",
+            "description": "Enable/disable PPP echo request. Valid values: `enable`, `disable`."
+        },
+        "PppPassword": {
+            "type": "string",
+            "description": "PPP password."
+        },
+        "PppUsername": {
+            "type": "string",
+            "description": "PPP username."
+        },
+        "PrimaryHa": {
+            "type": "string",
+            "description": "Primary HA."
+        },
+        "QuotaLimitMb": {
+            "type": "number",
+            "description": "Monthly quota limit (MB)."
+        },
+        "Redial": {
+            "type": "string",
+            "description": "Number of redials allowed based on failed attempts. Valid values: `none`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`."
+        },
+        "RedundantIntf": {
+            "type": "string",
+            "description": "Redundant interface."
+        },
+        "Roaming": {
+            "type": "string",
+            "description": "Enable/disable MODEM roaming. Valid values: `enable`, `disable`."
+        },
+        "Role": {
+            "type": "string",
+            "description": "FortiExtender work role(Primary, Secondary, None). Valid values: `none`, `primary`, `secondary`."
+        },
+        "SecondaryHa": {
+            "type": "string",
+            "description": "Secondary HA."
+        },
+        "SimPin": {
+            "type": "string",
+            "description": "SIM PIN."
+        },
+        "Vdom": {
+            "type": "number",
+            "description": "VDOM."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WimaxAuthProtocol": {
+            "type": "string",
+            "description": "WiMax authentication protocol(TLS or TTLS). Valid values: `tls`, `ttls`."
+        },
+        "WimaxCarrier": {
+            "type": "string",
+            "description": "WiMax carrier."
+        },
+        "WimaxRealm": {
+            "type": "string",
+            "description": "WiMax realm."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Admin",
+        "Fosid",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AaaSharedSecret",
+        "/properties/HaSharedSecret",
+        "/properties/ModemPasswd",
+        "/properties/PppPassword",
+        "/properties/SimPin"
+    ]
+}

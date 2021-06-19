@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Fastly::TlsPrivateKey",
+    "description": "Uploads a Custom TLS Private Key to Fastly. This can be combined with a `fastly_tls_custom_certificate` resource to provide a TLS Certificate able to be applied to a Fastly Service.\n\nThe Private Key resource requires a key in PEM format, and a name to identify it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-TlsPrivateKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyLength": {
+            "type": "number"
+        },
+        "KeyPem": {
+            "type": "string"
+        },
+        "KeyType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PublicKeySha1": {
+            "type": "string"
+        },
+        "Replace": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyPem",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/KeyLength",
+        "/properties/KeyType",
+        "/properties/PublicKeySha1",
+        "/properties/Replace"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KeyPem"
+    ]
+}

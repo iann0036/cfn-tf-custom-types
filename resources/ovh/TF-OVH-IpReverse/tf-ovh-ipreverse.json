@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::OVH::IpReverse",
+    "description": "Provides a OVH IP reverse.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IpReverse/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "The IP block to which the IP belongs."
+        },
+        "Ipreverse": {
+            "type": "string",
+            "description": "The IP to set the reverse of, default to `ip` if `ip` is a /32 (IPv4) or a /128 (IPv6)."
+        },
+        "Reverse": {
+            "type": "string",
+            "description": "The value of the reverse."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip",
+        "Reverse"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

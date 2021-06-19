@@ -1,0 +1,231 @@
+{
+    "typeName": "TF::NSXT::PolicyPredefinedGatewayPolicy",
+    "description": "This resource provides a method to fine-tune a pre-created Gateway Policy and its rules.\nThere are two separate use cases for this resource:\n* Modify certain settings of default Gateway Policy and its Default Rule.\n* Modify predefined Gateway Policy that is not listed under Default category, and add rules to it.\n  This use case is relevant for VMC.\n\n~> **NOTE:** Importing the resource first is recommended if you with to reconfigure the policy from scratch. Terraform state does is not aware of attributes/rules that are already configured on your NSX!\n\n~> **NOTE:** An absolute path can be provided for this resource (this approach will work slightly faster, as the roundtrip for data source retrieval will be spared). In one of the examples below a data source is used in order to pull the predefined policy, while the other uses absolute path.\n\n~> **NOTE:** Default gateway policy generation behavior have changed in NSX 3.1.0. Below this version, there is a single default policy, while default rules are created ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyPredefinedGatewayPolicy/docs/README.md",
+    "definitions": {
+        "DefaultRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "LogLabel": {
+                    "type": "string"
+                },
+                "Logged": {
+                    "type": "boolean"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Scope"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationsExcluded": {
+                    "type": "boolean"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IpVersion": {
+                    "type": "string"
+                },
+                "LogLabel": {
+                    "type": "string"
+                },
+                "Logged": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "NsxId": {
+                    "type": "string"
+                },
+                "Profiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SequenceNumber": {
+                    "type": "number"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourcesExcluded": {
+                    "type": "boolean"
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DisplayName",
+                "Scope"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource.\n* `logged` - (Optional) A boolean flag to enable packet logging.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule.\n* `action` - (Optional) The action for the Rule. Must be one of: `ALLOW`, `DROP` or `REJECT`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string",
+            "description": "Policy path for the predefined Gateway Policy to modify."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "DefaultRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultRuleDefinition"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1000
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Path"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

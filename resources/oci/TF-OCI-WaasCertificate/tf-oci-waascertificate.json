@@ -1,0 +1,302 @@
+{
+    "typeName": "TF::OCI::WaasCertificate",
+    "description": "This resource provides the Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.\n\nAllows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.\n\nFor more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-WaasCertificate/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ExtensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsCritical": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IssuerNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "StateProvince": {
+                    "type": "string"
+                }
+            }
+        },
+        "PublicKeyInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Exponent": {
+                    "type": "number"
+                },
+                "KeySize": {
+                    "type": "number"
+                }
+            }
+        },
+        "SubjectNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "StateProvince": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateData": {
+            "type": "string",
+            "description": "The data of the SSL certificate."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique."
+        },
+        "Extensions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtensionsDefinition"
+            }
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsTrustVerificationDisabled": {
+            "type": "boolean",
+            "description": "Set to `true` if the SSL certificate is self-signed."
+        },
+        "IssuedBy": {
+            "type": "string"
+        },
+        "IssuerName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IssuerNameDefinition"
+            }
+        },
+        "PrivateKeyData": {
+            "type": "string",
+            "description": "The private key of the SSL certificate."
+        },
+        "PublicKeyInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicKeyInfoDefinition"
+            }
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "SignatureAlgorithm": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubjectName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubjectNameDefinition"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeNotValidAfter": {
+            "type": "string"
+        },
+        "TimeNotValidBefore": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateData",
+        "CompartmentId",
+        "PrivateKeyData"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Extensions",
+        "/properties/Id",
+        "/properties/IssuedBy",
+        "/properties/IssuerName",
+        "/properties/PublicKeyInfo",
+        "/properties/SerialNumber",
+        "/properties/SignatureAlgorithm",
+        "/properties/State",
+        "/properties/SubjectName",
+        "/properties/TimeCreated",
+        "/properties/TimeNotValidAfter",
+        "/properties/TimeNotValidBefore",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKeyData"
+    ]
+}

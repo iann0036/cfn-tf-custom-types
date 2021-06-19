@@ -1,0 +1,254 @@
+{
+    "typeName": "TF::FortiOS::FirewallSniffer",
+    "description": "Configure sniffer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallSniffer/docs/README.md",
+    "definitions": {
+        "AnomalyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action taken when the threshold is reached. Valid values: `pass`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable anomaly logging. Valid values: `enable`, `disable`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Anomaly name."
+                },
+                "Quarantine": {
+                    "type": "string",
+                    "description": "Quarantine method. Valid values: `none`, `attacker`."
+                },
+                "QuarantineExpiry": {
+                    "type": "string",
+                    "description": "Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker."
+                },
+                "QuarantineLog": {
+                    "type": "string",
+                    "description": "Enable/disable quarantine logging. Valid values: `disable`, `enable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this anomaly. Valid values: `disable`, `enable`."
+                },
+                "Threshold": {
+                    "type": "number",
+                    "description": "Anomaly threshold. Number of detected instances per minute that triggers the anomaly action."
+                },
+                "Thresholddefault": {
+                    "type": "number",
+                    "description": "Number of detected instances per minute which triggers action (1 - 2147483647, default = 1000). Note that each anomaly has a different threshold value assigned to it."
+                }
+            },
+            "required": []
+        },
+        "IpThreatfeedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Threat feed name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationList": {
+            "type": "string",
+            "description": "Name of an existing application list."
+        },
+        "ApplicationListStatus": {
+            "type": "string",
+            "description": "Enable/disable application control profile. Valid values: `enable`, `disable`."
+        },
+        "AvProfile": {
+            "type": "string",
+            "description": "Name of an existing antivirus profile."
+        },
+        "AvProfileStatus": {
+            "type": "string",
+            "description": "Enable/disable antivirus profile. Valid values: `enable`, `disable`."
+        },
+        "DlpSensor": {
+            "type": "string",
+            "description": "Name of an existing DLP sensor."
+        },
+        "DlpSensorStatus": {
+            "type": "string",
+            "description": "Enable/disable DLP sensor. Valid values: `enable`, `disable`."
+        },
+        "Dsri": {
+            "type": "string",
+            "description": "Enable/disable DSRI. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmailfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing email filter profile."
+        },
+        "EmailfilterProfileStatus": {
+            "type": "string",
+            "description": "Enable/disable emailfilter. Valid values: `enable`, `disable`."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Sniffer ID."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Hosts to filter for in sniffer traffic (Format examples: 1.1.1.1, 2.2.2.0/24, 3.3.3.3/255.255.255.0, 4.4.4.0-4.4.4.240)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface name that traffic sniffing will take place on."
+        },
+        "IpThreatfeedStatus": {
+            "type": "string",
+            "description": "Enable/disable IP threat feed. Valid values: `enable`, `disable`."
+        },
+        "IpsDosStatus": {
+            "type": "string",
+            "description": "Enable/disable IPS DoS anomaly detection. Valid values: `enable`, `disable`."
+        },
+        "IpsSensor": {
+            "type": "string",
+            "description": "Name of an existing IPS sensor."
+        },
+        "IpsSensorStatus": {
+            "type": "string",
+            "description": "Enable/disable IPS sensor. Valid values: `enable`, `disable`."
+        },
+        "Ipv6": {
+            "type": "string",
+            "description": "Enable/disable sniffing IPv6 packets. Valid values: `enable`, `disable`."
+        },
+        "Logtraffic": {
+            "type": "string",
+            "description": "Either log all sessions, only sessions that have a security profile applied, or disable all logging for this policy. Valid values: `all`, `utm`, `disable`."
+        },
+        "MaxPacketCount": {
+            "type": "number",
+            "description": "Maximum packet count (1 - 1000000, default = 10000)."
+        },
+        "NonIp": {
+            "type": "string",
+            "description": "Enable/disable sniffing non-IP packets. Valid values: `enable`, `disable`."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Ports to sniff (Format examples: 10, :20, 30:40, 50-, 100-200)."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Integer value for the protocol type as defined by IANA (0 - 255)."
+        },
+        "ScanBotnetConnections": {
+            "type": "string",
+            "description": "Enable/disable scanning of connections to Botnet servers. Valid values: `disable`, `block`, `monitor`."
+        },
+        "SpamfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing spam filter profile."
+        },
+        "SpamfilterProfileStatus": {
+            "type": "string",
+            "description": "Enable/disable spam filter. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable the active status of the sniffer. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vlan": {
+            "type": "string",
+            "description": "List of VLANs to sniff."
+        },
+        "WebfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing web filter profile."
+        },
+        "WebfilterProfileStatus": {
+            "type": "string",
+            "description": "Enable/disable web filter profile. Valid values: `enable`, `disable`."
+        },
+        "Anomaly": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnomalyDefinition"
+            }
+        },
+        "IpThreatfeed": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpThreatfeedDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

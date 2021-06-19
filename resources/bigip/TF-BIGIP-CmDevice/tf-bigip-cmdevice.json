@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::BIGIP::CmDevice",
+    "description": "`bigip_cm_device` provides details about a specific bigip\n\nThis resource is helpful when configuring the BIG-IP device in cluster or in HA mode.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-CmDevice/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigsyncIp": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MirrorIp": {
+            "type": "string"
+        },
+        "MirrorSecondaryIp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigsyncIp",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

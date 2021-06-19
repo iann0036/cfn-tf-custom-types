@@ -1,0 +1,76 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwPeeringDomainConn",
+    "description": "The **aviatrix_aws_tgw_peering_domain_conn** resource allows the creation and management of Aviatrix domain connections between peered AWS TGWs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwPeeringDomainConn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainName1": {
+            "type": "string"
+        },
+        "DomainName2": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TgwName1": {
+            "type": "string"
+        },
+        "TgwName2": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName1",
+        "DomainName2",
+        "TgwName1",
+        "TgwName2"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

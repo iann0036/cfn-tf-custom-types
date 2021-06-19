@@ -1,0 +1,222 @@
+{
+    "typeName": "TF::Circonus::RuleSet",
+    "description": "The ``circonus_rule_set`` resource creates and manages a\n[Circonus Rule Set](https://login.circonus.com/resources/api/calls/rule_set).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-RuleSet/docs/README.md",
+    "definitions": {
+        "IfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Then": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThenDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ThenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "After": {
+                    "type": "string"
+                },
+                "Notify": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Severity": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Absent": {
+                    "type": "string"
+                },
+                "Changed": {
+                    "type": "string"
+                },
+                "Contains": {
+                    "type": "string"
+                },
+                "EqValue": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "string"
+                },
+                "MinValue": {
+                    "type": "string"
+                },
+                "NeqValue": {
+                    "type": "string"
+                },
+                "NotContain": {
+                    "type": "string"
+                },
+                "NotMatch": {
+                    "type": "string"
+                },
+                "Over": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Atleast": {
+                    "type": "string"
+                },
+                "Last": {
+                    "type": "string"
+                },
+                "Using": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Check": {
+            "type": "string",
+            "description": "The Circonus ID that this Rule Set will use to search for\na metric stream to alert on."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string",
+            "description": "A link to external documentation (or anything else you\nfeel is important) when a notification is sent.  This value will show up in\nemail alerts and the Circonus UI."
+        },
+        "MetricFilter": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string",
+            "description": "The name of the metric stream within a given check\nthat this rule set is active on."
+        },
+        "MetricPattern": {
+            "type": "string"
+        },
+        "MetricType": {
+            "type": "string",
+            "description": "The type of metric this rule set will operate on.\nValid values are `numeric` (the default) and `text`."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Notes about this rule set."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "A Circonus Metric ID that, if specified and active with\na severity 1 alert, will silence this rule set until all of the severity 1\nalerts on the parent clear.  This value must match the format\n`${check_id}_${metric_name}`."
+        },
+        "RuleSetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags assigned to this rule set."
+        },
+        "UserJson": {
+            "type": "string"
+        },
+        "If": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IfDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Check"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RuleSetId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

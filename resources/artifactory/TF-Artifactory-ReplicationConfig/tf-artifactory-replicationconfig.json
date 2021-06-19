@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::Artifactory::ReplicationConfig",
+    "description": "CloudFormation equivalent of artifactory_replication_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-ReplicationConfig/docs/README.md",
+    "definitions": {
+        "ReplicationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PathPrefix": {
+                    "type": "string"
+                },
+                "SocketTimeoutMillis": {
+                    "type": "number"
+                },
+                "SyncDeletes": {
+                    "type": "boolean"
+                },
+                "SyncProperties": {
+                    "type": "boolean"
+                },
+                "SyncStatistics": {
+                    "type": "boolean"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CronExp": {
+            "type": "string"
+        },
+        "EnableEventReplication": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RepoKey": {
+            "type": "string"
+        },
+        "Replications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReplicationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CronExp",
+        "RepoKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ReplicationsDefinition/Password"
+    ]
+}

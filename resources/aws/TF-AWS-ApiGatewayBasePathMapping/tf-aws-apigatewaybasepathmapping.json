@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::ApiGatewayBasePathMapping",
+    "description": "Connects a custom domain name registered via `aws_api_gateway_domain_name`\nwith a deployed API so that its methods can be called via the\ncustom domain name.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayBasePathMapping/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The id of the API to connect."
+        },
+        "BasePath": {
+            "type": "string",
+            "description": "Path segment that must be prepended to the path when accessing the API via this mapping. If omitted, the API is exposed at the root of the given domain."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The already-registered domain name to connect the API to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StageName": {
+            "type": "string",
+            "description": "The name of a specific deployment stage to expose at the given path. If omitted, callers may select any stage by including its name as a path element after the base path."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

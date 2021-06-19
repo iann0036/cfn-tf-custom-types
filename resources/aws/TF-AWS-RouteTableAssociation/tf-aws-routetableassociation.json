@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::AWS::RouteTableAssociation",
+    "description": "Provides a resource to create an association between a route table and a subnet or a route table and an\ninternet gateway or virtual private gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-RouteTableAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GatewayId": {
+            "type": "string",
+            "description": "The gateway ID to create an association. Conflicts with `subnet_id`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RouteTableId": {
+            "type": "string",
+            "description": "The ID of the routing table to associate with."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The subnet ID to create an association. Conflicts with `gateway_id`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RouteTableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::CiscoASA::AccessOutRules",
+    "description": "Provides a Cisco ASA outbound access rule. Outbound access rules apply to traffic as it exits an interface.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ciscoasa/TF-CiscoASA-AccessOutRules/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "DestinationService": {
+                    "type": "string"
+                },
+                "Permit": {
+                    "type": "boolean"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourceService": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination",
+                "DestinationService",
+                "Source"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string"
+        },
+        "Managed": {
+            "type": "boolean",
+            "description": "Default `false`."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

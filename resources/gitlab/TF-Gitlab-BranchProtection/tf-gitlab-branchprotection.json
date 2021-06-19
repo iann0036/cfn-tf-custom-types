@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Gitlab::BranchProtection",
+    "description": "This resource allows you to protect a specific branch by an access level so that the user with less access level cannot Merge/Push to the branch. GitLab EE features to protect by group or user are not supported.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-BranchProtection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Branch": {
+            "type": "string",
+            "description": "Name of the branch."
+        },
+        "CodeOwnerApprovalRequired": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MergeAccessLevel": {
+            "type": "string",
+            "description": "One of five levels of access to the project."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The id of the project."
+        },
+        "PushAccessLevel": {
+            "type": "string",
+            "description": "One of five levels of access to the project."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Branch",
+        "MergeAccessLevel",
+        "Project",
+        "PushAccessLevel"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

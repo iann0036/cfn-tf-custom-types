@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Thunder::Reboot",
+    "description": "`thunder_reboot` Provides details about thunder reboot",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Reboot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Reboot all devices when VCS is enabled, or only this device itself if VCS is not enabled."
+        },
+        "At": {
+            "type": "number",
+            "description": "Reboot at a Specific time/date."
+        },
+        "Cancel": {
+            "type": "number",
+            "description": "Cancel Pending Reboot."
+        },
+        "DayOfMonth": {
+            "type": "number",
+            "description": "Day of the Month."
+        },
+        "DayOfMonth2": {
+            "type": "number",
+            "description": "Day of the Month."
+        },
+        "Device": {
+            "type": "number",
+            "description": "Reboot a specific device when VCS is enabled (device id)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "In": {
+            "type": "string",
+            "description": "Reboot after a time interval (Time in hours and minutes)."
+        },
+        "Month": {
+            "type": "string",
+            "description": "\u2018January\u2019: Month of the year; \u2018February\u2019: Month of the year; \u2018March\u2019: Month of the year; \u2018April\u2019: Month of the year; \u2018May\u2019: Month of the year; \u2018June\u2019: Month of the year; \u2018July\u2019: Month of the year; \u2018August\u2019: Month of the year; \u2018September\u2019: Month of the year; \u2018October\u2019: Month of the year; \u2018November\u2019: Month of the year; \u2018December\u2019: Month of the year;."
+        },
+        "Month2": {
+            "type": "string",
+            "description": "\u2018January\u2019: Month of the year; \u2018February\u2019: Month of the year; \u2018March\u2019: Month of the year; \u2018April\u2019: Month of the year; \u2018May\u2019: Month of the year; \u2018June\u2019: Month of the year; \u2018July\u2019: Month of the r; \u2018August\u2019: Month of the year; \u2018September\u2019: Month of the year; \u2018October\u2019: Month of the year; \u2018November\u2019: Month of the year; \u2018December\u2019: Month of the year;."
+        },
+        "Reason": {
+            "type": "string",
+            "description": "Reason for Reboot."
+        },
+        "Reason2": {
+            "type": "string",
+            "description": "Reason for Reboot."
+        },
+        "Reason3": {
+            "type": "string",
+            "description": "Reason for Reboot."
+        },
+        "Time": {
+            "type": "string",
+            "description": "Time to Reboot (hh:mm)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

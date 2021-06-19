@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::PrismaCloud::Integration",
+    "description": "Manages an integration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-Integration/docs/README.md",
+    "definitions": {
+        "ReasonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Message": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "number"
+                },
+                "Subject": {
+                    "type": "string"
+                }
+            }
+        },
+        "ReasonDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ReasonDefinition"
+                    }
+                },
+                "ErrorType": {
+                    "type": "string"
+                },
+                "LastUpdated": {
+                    "type": "number"
+                },
+                "Message": {
+                    "type": "string"
+                }
+            }
+        },
+        "IntegrationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthToken": {
+                    "type": "string"
+                },
+                "BaseUrl": {
+                    "type": "string"
+                },
+                "HostUrl": {
+                    "type": "string"
+                },
+                "IntegrationKey": {
+                    "type": "string"
+                },
+                "Login": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "QueueUrl": {
+                    "type": "string"
+                },
+                "Tables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TablesDefinition"
+                    }
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Secure": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedTs": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationId": {
+            "type": "string"
+        },
+        "IntegrationType": {
+            "type": "string",
+            "description": "Integration type (valid values can be found [here](https://api.docs.prismacloud.io/reference#integrations)."
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedTs": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration."
+        },
+        "Reason": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReasonDefinition2"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Valid": {
+            "type": "boolean"
+        },
+        "IntegrationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IntegrationType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedBy",
+        "/properties/CreatedTs",
+        "/properties/Id",
+        "/properties/IntegrationId",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedTs",
+        "/properties/Reason",
+        "/properties/Status",
+        "/properties/Valid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

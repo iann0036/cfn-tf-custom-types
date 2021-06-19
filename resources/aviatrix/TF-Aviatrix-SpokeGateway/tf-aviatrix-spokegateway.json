@@ -1,0 +1,264 @@
+{
+    "typeName": "TF::Aviatrix::SpokeGateway",
+    "description": "The **aviatrix_spoke_gateway** resource allows the creation and management of Aviatrix spoke gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-SpokeGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AllocateNewEip": {
+            "type": "boolean"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "CloudInstanceId": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "CustomerManagedKeys": {
+            "type": "string"
+        },
+        "CustomizedSpokeVpcRoutes": {
+            "type": "string"
+        },
+        "Eip": {
+            "type": "string"
+        },
+        "EnableActiveMesh": {
+            "type": "boolean"
+        },
+        "EnableAutoAdvertiseS2cCidrs": {
+            "type": "boolean"
+        },
+        "EnableEncryptVolume": {
+            "type": "boolean"
+        },
+        "EnableJumboFrame": {
+            "type": "boolean"
+        },
+        "EnableMonitorGatewaySubnets": {
+            "type": "boolean"
+        },
+        "EnablePrivateOob": {
+            "type": "boolean"
+        },
+        "EnablePrivateVpcDefaultRoute": {
+            "type": "boolean"
+        },
+        "EnableSkipPublicRouteTableUpdate": {
+            "type": "boolean"
+        },
+        "EnableVpcDnsServer": {
+            "type": "boolean"
+        },
+        "FaultDomain": {
+            "type": "string"
+        },
+        "FilteredSpokeVpcRoutes": {
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string"
+        },
+        "GwSize": {
+            "type": "string"
+        },
+        "HaAvailabilityDomain": {
+            "type": "string"
+        },
+        "HaCloudInstanceId": {
+            "type": "string"
+        },
+        "HaEip": {
+            "type": "string"
+        },
+        "HaFaultDomain": {
+            "type": "string"
+        },
+        "HaGwName": {
+            "type": "string"
+        },
+        "HaGwSize": {
+            "type": "string"
+        },
+        "HaInsaneModeAz": {
+            "type": "string"
+        },
+        "HaOobAvailabilityZone": {
+            "type": "string"
+        },
+        "HaOobManagementSubnet": {
+            "type": "string"
+        },
+        "HaPrivateIp": {
+            "type": "string"
+        },
+        "HaSubnet": {
+            "type": "string"
+        },
+        "HaZone": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludedAdvertisedSpokeRoutes": {
+            "type": "string"
+        },
+        "InsaneMode": {
+            "type": "boolean"
+        },
+        "InsaneModeAz": {
+            "type": "string"
+        },
+        "ManageTransitGatewayAttachment": {
+            "type": "boolean"
+        },
+        "MonitorExcludeList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "OobAvailabilityZone": {
+            "type": "string"
+        },
+        "OobManagementSubnet": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SingleAzHa": {
+            "type": "boolean"
+        },
+        "SingleIpSnat": {
+            "type": "boolean"
+        },
+        "StorageName": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "TagList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TransitGw": {
+            "type": "string"
+        },
+        "TunnelDetectionTime": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcReg": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType",
+        "GwName",
+        "GwSize",
+        "Subnet",
+        "VpcId",
+        "VpcReg"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudInstanceId",
+        "/properties/HaCloudInstanceId",
+        "/properties/HaGwName",
+        "/properties/HaPrivateIp",
+        "/properties/Id",
+        "/properties/PrivateIp",
+        "/properties/SecurityGroupId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CustomerManagedKeys"
+    ]
+}

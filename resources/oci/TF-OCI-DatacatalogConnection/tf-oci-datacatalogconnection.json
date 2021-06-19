@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::OCI::DatacatalogConnection",
+    "description": "This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.\n\nCreates a new connection.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatacatalogConnection/docs/README.md",
+    "definitions": {
+        "EncPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string",
+            "description": "Unique catalog identifier."
+        },
+        "CreatedById": {
+            "type": "string"
+        },
+        "DataAssetKey": {
+            "type": "string",
+            "description": "Unique data asset key."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) A description of the connection."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
+        },
+        "EncProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EncPropertiesDefinition"
+            },
+            "description": "(Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the \"default\" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{\"encProperties\": { \"default\": { \"password\": \"example-password\"}}}`."
+        },
+        "ExternalKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean",
+            "description": "(Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default."
+        },
+        "Key": {
+            "type": "string"
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            },
+            "description": "(Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the \"default\" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{\"properties\": { \"default\": { \"username\": \"user1\"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this [example](https://github.com/terraform-providers/terraform-provider-oci/blob/master/examples/datacatalog/main.tf)."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeStatusUpdated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "TypeKey": {
+            "type": "string",
+            "description": "The key of the object type. Type key's can be found via the '/types' endpoint."
+        },
+        "UpdatedById": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CatalogId",
+        "DataAssetKey",
+        "DisplayName",
+        "Properties",
+        "TypeKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedById",
+        "/properties/ExternalKey",
+        "/properties/Id",
+        "/properties/Key",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeStatusUpdated",
+        "/properties/TimeUpdated",
+        "/properties/UpdatedById",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/EncProperties"
+    ]
+}

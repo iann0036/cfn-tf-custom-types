@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::FortiOS::FirewallshaperTrafficshaper",
+    "description": "Configure shared traffic shaper.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallshaperTrafficshaper/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthUnit": {
+            "type": "string",
+            "description": "Unit of measurement for guaranteed and maximum bandwidth for this shaper (Kbps, Mbps or Gbps). Valid values: `kbps`, `mbps`, `gbps`."
+        },
+        "Diffserv": {
+            "type": "string",
+            "description": "Enable/disable changing the DiffServ setting applied to traffic accepted by this shaper. Valid values: `enable`, `disable`."
+        },
+        "Diffservcode": {
+            "type": "string",
+            "description": "DiffServ setting to be applied to traffic accepted by this shaper."
+        },
+        "DscpMarkingMethod": {
+            "type": "string",
+            "description": "Select DSCP marking method. Valid values: `multi-stage`, `static`."
+        },
+        "ExceedBandwidth": {
+            "type": "number",
+            "description": "Exceed bandwidth used for DSCP multi-stage marking. Units depend on the bandwidth-unit setting."
+        },
+        "ExceedClassId": {
+            "type": "number",
+            "description": "Class ID for traffic in [guaranteed-bandwidth, maximum-bandwidth]."
+        },
+        "ExceedDscp": {
+            "type": "string",
+            "description": "DSCP mark for traffic in [guaranteed-bandwidth, exceed-bandwidth]."
+        },
+        "GuaranteedBandwidth": {
+            "type": "number",
+            "description": "Amount of bandwidth guaranteed for this shaper (0 - 16776000). Units depend on the bandwidth-unit setting."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaximumBandwidth": {
+            "type": "number",
+            "description": "Upper bandwidth limit enforced by this shaper (0 - 16776000). 0 means no limit. Units depend on the bandwidth-unit setting."
+        },
+        "MaximumDscp": {
+            "type": "string",
+            "description": "DSCP mark for traffic in [exceed-bandwidth, maximum-bandwidth]."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Traffic shaper name."
+        },
+        "Overhead": {
+            "type": "number",
+            "description": "Per-packet size overhead used in rate computations."
+        },
+        "PerPolicy": {
+            "type": "string",
+            "description": "Enable/disable applying a separate shaper for each policy. For example, if enabled the guaranteed bandwidth is applied separately for each policy. Valid values: `disable`, `enable`."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Higher priority traffic is more likely to be forwarded without delays and without compromising the guaranteed bandwidth. Valid values: `low`, `medium`, `high`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

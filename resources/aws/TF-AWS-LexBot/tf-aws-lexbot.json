@@ -1,0 +1,258 @@
+{
+    "typeName": "TF::AWS::LexBot",
+    "description": "Provides an Amazon Lex Bot resource. For more information see\n[Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LexBot/docs/README.md",
+    "definitions": {
+        "AbortStatementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ClarificationPromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxAttempts": {
+                    "type": "number"
+                },
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxAttempts"
+            ]
+        },
+        "IntentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntentName": {
+                    "type": "string"
+                },
+                "IntentVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntentName",
+                "IntentVersion"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MessageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "GroupNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Content",
+                "ContentType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Checksum": {
+            "type": "string"
+        },
+        "ChildDirected": {
+            "type": "boolean",
+            "description": "By specifying true, you confirm that your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. For more information see the [Amazon Lex FAQ](https://aws.amazon.com/lex/faqs#data-security) and the [Amazon Lex PutBot API Docs](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-childDirected)."
+        },
+        "CreateVersion": {
+            "type": "boolean",
+            "description": "Determines if a new bot version is created when the initial resource is created and on each update. Defaults to `false`."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the bot. Must be less than or equal to 200 characters in length."
+        },
+        "DetectSentiment": {
+            "type": "boolean",
+            "description": "When set to true user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify detectSentiment, the default is `false`."
+        },
+        "EnableModelImprovements": {
+            "type": "boolean",
+            "description": "Set to `true` to enable access to natural language understanding improvements. When you set the `enable_model_improvements` parameter to true you can use the `nlu_intent_confidence_threshold` parameter to configure confidence scores. For more information, see [Confidence Scores](https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html). You can only set the `enable_model_improvements` parameter in certain Regions. If you set the parameter to true, your bot has access to accuracy improvements. For more information see the [Amazon Lex Bot PutBot API Docs](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements)."
+        },
+        "FailureReason": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleSessionTtlInSeconds": {
+            "type": "number",
+            "description": "The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. Default is `300`. Must be a number between 60 and 86400 (inclusive)."
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "Locale": {
+            "type": "string",
+            "description": "Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. For available locales, see [Amazon Lex Bot PutBot API Docs](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-locale). Default is `en-US`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the bot that you want to create, case sensitive. Must be between 2 and 50 characters in length."
+        },
+        "NluIntentConfidenceThreshold": {
+            "type": "number",
+            "description": "Determines the threshold where Amazon Lex will insert the AMAZON.FallbackIntent, AMAZON.KendraSearchIntent, or both when returning alternative intents in a PostContent or PostText response. AMAZON.FallbackIntent and AMAZON.KendraSearchIntent are only inserted if they are configured for the bot. For more information see [Amazon Lex Bot PutBot API Docs](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-nluIntentConfidenceThreshold) This value requires `enable_model_improvements` to be set to `true` and the default is `0`. Must be a float between 0 and 1."
+        },
+        "ProcessBehavior": {
+            "type": "string",
+            "description": "If you set the `process_behavior` element to `BUILD`, Amazon Lex builds the bot so that it can be run. If you set the element to `SAVE` Amazon Lex saves the bot, but doesn't build it. Default is `SAVE`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "VoiceId": {
+            "type": "string",
+            "description": "The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see [Available Voices](http://docs.aws.amazon.com/polly/latest/dg/voicelist.html) in the Amazon Polly Developer Guide."
+        },
+        "AbortStatement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AbortStatementDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ClarificationPrompt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClarificationPromptDefinition"
+            },
+            "maxItems": 1
+        },
+        "Intent": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IntentDefinition"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ChildDirected",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Checksum",
+        "/properties/CreatedDate",
+        "/properties/FailureReason",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/Status",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

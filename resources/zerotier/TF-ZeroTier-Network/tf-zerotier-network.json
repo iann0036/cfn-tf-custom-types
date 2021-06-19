@@ -1,0 +1,182 @@
+{
+    "typeName": "TF::ZeroTier::Network",
+    "description": "CloudFormation equivalent of zerotier_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/zerotier/TF-ZeroTier-Network/docs/README.md",
+    "definitions": {
+        "AssignIpv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AssignIpv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AssignmentPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Target": {
+                    "type": "string"
+                },
+                "Via": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Target"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssignIpv4": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssignIpv4Definition"
+            }
+        },
+        "AssignIpv6": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssignIpv6Definition"
+            }
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableBroadcast": {
+            "type": "boolean"
+        },
+        "FlowRules": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number"
+        },
+        "MulticastLimit": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Private": {
+            "type": "boolean"
+        },
+        "TfLastUpdated": {
+            "type": "number"
+        },
+        "AssignmentPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssignmentPoolDefinition"
+            }
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Id",
+        "/properties/TfLastUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

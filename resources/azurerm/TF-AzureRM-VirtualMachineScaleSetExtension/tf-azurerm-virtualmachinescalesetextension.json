@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::AzureRM::VirtualMachineScaleSetExtension",
+    "description": "Manages an Extension for a Virtual Machine Scale Set.\n\n~> **NOTE:** This resource is not intended to be used with the `azurerm_virtual_machine_scale_set` resource - instead it's intended for this to be used with the `azurerm_linux_virtual_machine_scale_set` and `azurerm_windows_virtual_machine_scale_set` resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualMachineScaleSetExtension/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoUpgradeMinorVersion": {
+            "type": "boolean",
+            "description": "Should the latest version of the Extension be used at Deployment Time, if one is available? This won't auto-update the extension on existing installation. Defaults to `true`."
+        },
+        "ForceUpdateTag": {
+            "type": "string",
+            "description": "A value which, when different to the previous value can be used to force-run the Extension even if the Extension Configuration hasn't changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the Virtual Machine Scale Set Extension. Changing this forces a new resource to be created."
+        },
+        "ProtectedSettings": {
+            "type": "string",
+            "description": "A JSON String which specifies Sensitive Settings (such as Passwords) for the Extension."
+        },
+        "ProvisionAfterExtensions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An ordered list of Extension names which this should be provisioned after."
+        },
+        "Publisher": {
+            "type": "string",
+            "description": "Specifies the Publisher of the Extension. Changing this forces a new resource to be created."
+        },
+        "Settings": {
+            "type": "string",
+            "description": "A JSON String which specifies Settings for the Extension."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Specifies the Type of the Extension. Changing this forces a new resource to be created."
+        },
+        "TypeHandlerVersion": {
+            "type": "string",
+            "description": "Specifies the version of the extension to use, available versions can be found using the Azure CLI."
+        },
+        "VirtualMachineScaleSetId": {
+            "type": "string",
+            "description": "The ID of the Virtual Machine Scale Set. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Publisher",
+        "Type",
+        "TypeHandlerVersion",
+        "VirtualMachineScaleSetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ProtectedSettings"
+    ]
+}

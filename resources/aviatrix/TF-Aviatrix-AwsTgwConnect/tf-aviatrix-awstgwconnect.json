@@ -1,0 +1,84 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwConnect",
+    "description": "The **aviatrix_aws_tgw_connect** resource allows the creation and management of AWS TGW Connect connections. To create\nand manage TGW Connect peers, please use `aviatrix_aws_tgw_connect_peer` resources. This resource is available as of\nprovider version R2.18.1+.\n\n~> **NOTE:** Before creating an AWS TGW Connect, the AWS TGW must have an attached VPC via\nthe `aviatrix_aws_tgw_vpc_attachment` resource. Also, the AWS TGW must have configured CIDRs via\nthe `aviatrix_aws_tgw` `cidrs` attribute.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwConnect/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectAttachmentId": {
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityDomainName": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        },
+        "TransportAttachmentId": {
+            "type": "string"
+        },
+        "TransportVpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionName",
+        "SecurityDomainName",
+        "TgwName",
+        "TransportVpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectAttachmentId",
+        "/properties/Id",
+        "/properties/TransportAttachmentId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

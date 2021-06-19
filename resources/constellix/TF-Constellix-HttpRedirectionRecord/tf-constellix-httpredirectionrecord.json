@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Constellix::HttpRedirectionRecord",
+    "description": "CloudFormation equivalent of constellix_http_redirection_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/constellix/TF-Constellix-HttpRedirectionRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "GtdRegion": {
+            "type": "number"
+        },
+        "HardlinkFlag": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keywords": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Noanswer": {
+            "type": "boolean"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Parentid": {
+            "type": "number"
+        },
+        "RedirectTypeId": {
+            "type": "number"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "RedirectTypeId",
+        "SourceType",
+        "Ttl",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

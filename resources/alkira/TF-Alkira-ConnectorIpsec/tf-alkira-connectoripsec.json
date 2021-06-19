@@ -1,0 +1,304 @@
+{
+    "typeName": "TF::Alkira::ConnectorIpsec",
+    "description": "CloudFormation equivalent of alkira_connector_ipsec",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-ConnectorIpsec/docs/README.md",
+    "definitions": {
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomerGatewayAsn": {
+                    "type": "string"
+                },
+                "CustomerGatewayIp": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PresharedKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Advanced": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdvancedDefinition"
+                    }
+                }
+            },
+            "required": [
+                "CustomerGatewayIp",
+                "Name"
+            ]
+        },
+        "PolicyOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CxpPrefixListIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "OnPremPrefixListIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "CxpPrefixListIds",
+                "OnPremPrefixListIds"
+            ]
+        },
+        "RoutingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomerGatewayAsn": {
+                    "type": "string"
+                },
+                "PrefixListId": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "SegmentOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableAdvertiseOnPremRoutes": {
+                    "type": "boolean"
+                },
+                "DisableInternetExit": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AdvancedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DpdDelay": {
+                    "type": "string"
+                },
+                "DpdTimeout": {
+                    "type": "string"
+                },
+                "EspDhGroupNumbers": {
+                    "type": "string"
+                },
+                "EspEncryptionAlgorithms": {
+                    "type": "string"
+                },
+                "EspIntegrityAlgorithms": {
+                    "type": "string"
+                },
+                "EspLifeTime": {
+                    "type": "number"
+                },
+                "EspRandomTime": {
+                    "type": "string"
+                },
+                "EspRekeyTime": {
+                    "type": "string"
+                },
+                "IkeDhGroupNumbers": {
+                    "type": "string"
+                },
+                "IkeEncryptionAlgorithms": {
+                    "type": "string"
+                },
+                "IkeIntegrityAlgorithms": {
+                    "type": "string"
+                },
+                "IkeOverTime": {
+                    "type": "number"
+                },
+                "IkeRandomTime": {
+                    "type": "number"
+                },
+                "IkeRekeyTime": {
+                    "type": "number"
+                },
+                "IkeVersion": {
+                    "type": "string"
+                },
+                "Initiator": {
+                    "type": "string"
+                },
+                "LocalAuthType": {
+                    "type": "string"
+                },
+                "LocalAuthValue": {
+                    "type": "string"
+                },
+                "RemoteAuthType": {
+                    "type": "string"
+                },
+                "RemoteAuthValue": {
+                    "type": "string"
+                },
+                "ReplayWindowSize": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DpdDelay",
+                "DpdTimeout",
+                "EspDhGroupNumbers",
+                "EspEncryptionAlgorithms",
+                "EspIntegrityAlgorithms",
+                "EspLifeTime",
+                "EspRandomTime",
+                "EspRekeyTime",
+                "IkeDhGroupNumbers",
+                "IkeEncryptionAlgorithms",
+                "IkeIntegrityAlgorithms",
+                "IkeOverTime",
+                "IkeRandomTime",
+                "IkeRekeyTime",
+                "IkeVersion",
+                "Initiator",
+                "LocalAuthType",
+                "LocalAuthValue",
+                "RemoteAuthType",
+                "RemoteAuthValue",
+                "ReplayWindowSize"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Cxp": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Segment": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "string"
+        },
+        "VpnMode": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointDefinition"
+            }
+        },
+        "PolicyOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PolicyOptionsDefinition"
+            }
+        },
+        "RoutingOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoutingOptionsDefinition"
+            }
+        },
+        "SegmentOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SegmentOptionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cxp",
+        "Name",
+        "Segment",
+        "Size",
+        "VpnMode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

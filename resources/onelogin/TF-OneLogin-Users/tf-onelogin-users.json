@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::OneLogin::Users",
+    "description": "Manage User resources.\n\nThis resource allows you to create and configure Users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-Users/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "A comment about the user."
+        },
+        "Company": {
+            "type": "string",
+            "description": "The user's company."
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            }
+        },
+        "Department": {
+            "type": "string",
+            "description": "The user's department."
+        },
+        "DirectoryId": {
+            "type": "number",
+            "description": "The user's directory_id."
+        },
+        "DistinguishedName": {
+            "type": "string",
+            "description": "The user's distinguished name."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The user's email."
+        },
+        "ExternalId": {
+            "type": "number",
+            "description": "The user's external_id."
+        },
+        "Firstname": {
+            "type": "string",
+            "description": "The user's first name."
+        },
+        "GroupId": {
+            "type": "number",
+            "description": "The user's group_id."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lastname": {
+            "type": "string",
+            "description": "The user's last name."
+        },
+        "ManagerAdId": {
+            "type": "number",
+            "description": "The user's manager_ad_id."
+        },
+        "ManagerUserId": {
+            "type": "number",
+            "description": "The user's manager_user_id."
+        },
+        "MemberOf": {
+            "type": "string",
+            "description": "The user's member_of."
+        },
+        "Phone": {
+            "type": "string",
+            "description": "The user's phone number."
+        },
+        "Samaccountname": {
+            "type": "string",
+            "description": "The user's samaccount name."
+        },
+        "State": {
+            "type": "number",
+            "description": "The user's state. Must be one of `0: Unapproved` `1: Approved` `2: Rejected` `3: Unlicensed`."
+        },
+        "Status": {
+            "type": "number",
+            "description": "The user's status. Must be one of `0: Unactivated` `1: Active` `2: Suspended` `3: Locked` `4: Password expired` `5: Awaiting password reset` `7: Password Pending` `8: Security questions required`."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The user's title."
+        },
+        "TrustedIdpId": {
+            "type": "number",
+            "description": "The user's trusted_idp_id."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The user's username."
+        },
+        "Userprincipalname": {
+            "type": "string",
+            "description": "The user's user principal name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Vault::AwsAuthBackendRoleTag",
+    "description": "Reads role tag information from an AWS auth backend in Vault.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-AwsAuthBackendRoleTag/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowInstanceMigration": {
+            "type": "boolean",
+            "description": "If set, allows migration of the underlying instances where the client resides. Use with caution."
+        },
+        "Backend": {
+            "type": "string",
+            "description": "The path to the AWS auth backend to\nread role tags from, with no leading or trailing `/`s. Defaults to \"aws\"."
+        },
+        "DisallowReauthentication": {
+            "type": "boolean",
+            "description": "If set, only allows a single token to be granted per instance ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "Instance ID for which this tag is intended for. If set, the created tag can only be used by the instance with the given ID."
+        },
+        "MaxTtl": {
+            "type": "string",
+            "description": "The maximum TTL of the tokens issued using this role."
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The policies to be associated with the tag. Must be a subset of the policies associated with the role."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The name of the AWS auth backend role to read\nrole tags from, with no leading or trailing `/`s."
+        },
+        "TagKey": {
+            "type": "string"
+        },
+        "TagValue": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TagKey",
+        "/properties/TagValue"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

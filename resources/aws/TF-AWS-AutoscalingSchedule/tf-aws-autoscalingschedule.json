@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::AWS::AutoscalingSchedule",
+    "description": "Provides an AutoScaling Schedule resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AutoscalingSchedule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingGroupName": {
+            "type": "string",
+            "description": "The name or Amazon Resource Name (ARN) of the Auto Scaling group."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The number of EC2 instances that should be running in the group. Default 0.  Set to -1 if you don't want to change the desired capacity at the scheduled time."
+        },
+        "EndTime": {
+            "type": "string",
+            "description": "The time for this action to end, in \"YYYY-MM-DDThh:mm:ssZ\" format in UTC/GMT only (for example, 2014-06-01T00:00:00Z ).\nIf you try to schedule your action in the past, Auto Scaling returns an error message."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum size for the Auto Scaling group. Default 0.\nSet to -1 if you don't want to change the maximum size at the scheduled time."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum size for the Auto Scaling group. Default 0.\nSet to -1 if you don't want to change the minimum size at the scheduled time."
+        },
+        "Recurrence": {
+            "type": "string",
+            "description": "The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format."
+        },
+        "ScheduledActionName": {
+            "type": "string",
+            "description": "The name of this scaling action."
+        },
+        "StartTime": {
+            "type": "string",
+            "description": "The time for this action to start, in \"YYYY-MM-DDThh:mm:ssZ\" format in UTC/GMT only (for example, 2014-06-01T00:00:00Z ).\nIf you try to schedule your action in the past, Auto Scaling returns an error message."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutoscalingGroupName",
+        "ScheduledActionName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

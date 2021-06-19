@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::AzureRM::MediaTransform",
+    "description": "Manages a Transform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MediaTransform/docs/README.md",
+    "definitions": {
+        "OutputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnErrorAction": {
+                    "type": "string"
+                },
+                "RelativePriority": {
+                    "type": "string"
+                },
+                "AudioAnalyzerPreset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AudioAnalyzerPresetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "BuiltinPreset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BuiltinPresetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FaceDetectorPreset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FaceDetectorPresetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VideoAnalyzerPreset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VideoAnalyzerPresetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AudioAnalyzerPresetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AudioAnalysisMode": {
+                    "type": "string"
+                },
+                "AudioLanguage": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BuiltinPresetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PresetName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FaceDetectorPresetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnalysisResolution": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VideoAnalyzerPresetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AudioAnalysisMode": {
+                    "type": "string"
+                },
+                "AudioLanguage": {
+                    "type": "string"
+                },
+                "InsightsType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MediaServicesAccountName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Output": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutputDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MediaServicesAccountName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

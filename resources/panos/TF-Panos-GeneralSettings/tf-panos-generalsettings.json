@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Panos::GeneralSettings",
+    "description": "This resource allows you to update the general device settings, such as DNS\nor the hostname.\n\nAll params are optional for this resource.  If any options are not specified,\nthen whatever is already configured on the firewall is left as-is.  The\ngeneral device settings will always exist on the firewall, so `terraform\ndestroy` does not remove config from the firewall.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-GeneralSettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsPrimary": {
+            "type": "string",
+            "description": "Primary DNS server."
+        },
+        "DnsSecondary": {
+            "type": "string",
+            "description": "Secondary DNS server."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Firewall hostname."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NtpPrimaryAddress": {
+            "type": "string",
+            "description": "Primary NTP server."
+        },
+        "NtpPrimaryAlgorithm": {
+            "type": "string",
+            "description": "Primary NTP `symmetric-key` algorithm.  This can be\n`sha1` or `md5`."
+        },
+        "NtpPrimaryAuthKey": {
+            "type": "string",
+            "description": "Primary NTP `symmetric-key` auth key.  This is the\nSHA1 hash if the algorithm is `sha1`, or the md5sum if the algorithm is\n`md5`."
+        },
+        "NtpPrimaryAuthType": {
+            "type": "string",
+            "description": "Primary NTP auth type.  This can be `none`,\n`autokey`, or `symmetric-key`."
+        },
+        "NtpPrimaryKeyId": {
+            "type": "number",
+            "description": "Primary NTP `symmetric-key` key ID."
+        },
+        "NtpSecondaryAddress": {
+            "type": "string",
+            "description": "Secondary NTP server."
+        },
+        "NtpSecondaryAlgorithm": {
+            "type": "string",
+            "description": "Secondary NTP `symmetric-key` algorithm.  This\ncan be `sha1` or `md5`."
+        },
+        "NtpSecondaryAuthKey": {
+            "type": "string",
+            "description": "Secondary NTP `symmetric-key` auth key.  This is\nthe SHA1 hash if the algorithm is `sha1`, or the md5sum if the algorithm is\n`md5`."
+        },
+        "NtpSecondaryAuthType": {
+            "type": "string",
+            "description": "Secondary NTP auth type.  This can be `none`,\n`autokey`, or `symmetric-key`."
+        },
+        "NtpSecondaryKeyId": {
+            "type": "number",
+            "description": "Secondary NTP `symmetric-key` key ID."
+        },
+        "ProxyPassword": {
+            "type": "string",
+            "description": "Proxy's password."
+        },
+        "ProxyPasswordEnc": {
+            "type": "string"
+        },
+        "ProxyPort": {
+            "type": "number",
+            "description": "Proxy's port number."
+        },
+        "ProxyServer": {
+            "type": "string",
+            "description": "Specify a proxy server."
+        },
+        "ProxyUser": {
+            "type": "string"
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The timezone (e.g. - `US/Pacific`)."
+        },
+        "UpdateServer": {
+            "type": "string",
+            "description": "The update server (Default: `updates.paloaltonetworks.com`)."
+        },
+        "VerifyUpdateServer": {
+            "type": "boolean",
+            "description": "Verify update server identity (Default: `true`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProxyPasswordEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ProxyPassword",
+        "/properties/ProxyPasswordEnc"
+    ]
+}

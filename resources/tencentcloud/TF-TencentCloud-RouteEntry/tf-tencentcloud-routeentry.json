@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::TencentCloud::RouteEntry",
+    "description": "Provides a resource to create a routing entry in a VPC routing table.\n\n~> **NOTE:** It has been deprecated and replaced by tencentcloud_route_table_entry.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-RouteEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string",
+            "description": "The RouteEntry's target network segment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NextHub": {
+            "type": "string",
+            "description": "The route entry's next hub. CVM instance ID or VPC router interface ID."
+        },
+        "NextType": {
+            "type": "string",
+            "description": "The next hop type. Valid values: `public_gateway`,`vpn_gateway`,`sslvpn_gateway`,`dc_gateway`,`peering_connection`,`nat_gateway` and `instance`. `instance` points to CVM Instance."
+        },
+        "RouteTableId": {
+            "type": "string",
+            "description": "The ID of the route table."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "NextHub",
+        "NextType",
+        "RouteTableId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

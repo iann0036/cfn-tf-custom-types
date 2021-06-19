@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::AzureRM::Firewall",
+    "description": "Manages an Azure Firewall.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-Firewall/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the IP Configuration."
+                },
+                "PublicIpAddressId": {
+                    "type": "string",
+                    "description": "The ID of the Public IP Address associated with the firewall."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "Reference to the subnet associated with the IP Configuration."
+                }
+            },
+            "required": [
+                "Name",
+                "PublicIpAddressId"
+            ]
+        },
+        "ManagementIpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the IP Configuration."
+                },
+                "PublicIpAddressId": {
+                    "type": "string",
+                    "description": "The ID of the Public IP Address associated with the firewall."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "Reference to the subnet associated with the IP Configuration. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Name",
+                "PublicIpAddressId",
+                "SubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualHubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublicIpCount": {
+                    "type": "number",
+                    "description": "Specifies the number of public IPs to assign to the Firewall. Defaults to `1`."
+                },
+                "VirtualHubId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Virtual Hub where the Firewall resides in."
+                }
+            },
+            "required": [
+                "VirtualHubId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of DNS servers that the Azure Firewall will direct DNS traffic to the for name resolution."
+        },
+        "FirewallPolicyId": {
+            "type": "string",
+            "description": "The ID of the Firewall Policy applied to this Firewall."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Firewall. Changing this forces a new resource to be created."
+        },
+        "PrivateIpRanges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of SNAT private CIDR IP ranges, or the special string `IANAPrivateRanges`, which indicates Azure Firewall does not SNAT when the destination IP address is a private range per IANA RFC 1918."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource. Changing this forces a new resource to be created."
+        },
+        "SkuName": {
+            "type": "string",
+            "description": "Sku name of the Firewall. Possible values are `AZFW_Hub` and `AZFW_VNet`.  Changing this forces a new resource to be created."
+        },
+        "SkuTier": {
+            "type": "string",
+            "description": "Sku tier of the Firewall. Possible values are `Premium` and `Standard`.  Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ThreatIntelMode": {
+            "type": "string",
+            "description": "The operation mode for threat intelligence-based filtering. Possible values are: `Off`, `Alert`,`Deny` and `\"\"`(empty string). Defaults to `Alert`."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the availability zones in which the Azure Firewall should be created. Changing this forces a new resource to be created."
+        },
+        "IpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpConfigurationDefinition"
+            }
+        },
+        "ManagementIpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagementIpConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VirtualHub": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualHubDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

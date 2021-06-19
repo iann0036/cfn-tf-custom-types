@@ -1,0 +1,189 @@
+{
+    "typeName": "TF::AzureRM::FirewallApplicationRuleCollection",
+    "description": "Manages an Application Rule Collection within an Azure Firewall.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FirewallApplicationRuleCollection/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Specifies a description for the rule."
+                },
+                "FqdnTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of FQDN tags. Possible values are `AppServiceEnvironment`, `AzureBackup`, `AzureKubernetesService`, `HDInsight`, `MicrosoftActiveProtectionService`, `WindowsDiagnostics`, `WindowsUpdate` and `WindowsVirtualDesktop`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the rule."
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of source IP addresses and/or IP ranges."
+                },
+                "SourceIpGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of source IP Group IDs for the rule."
+                },
+                "TargetFqdns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of FQDNs."
+                },
+                "Protocol": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProtocolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number",
+                    "description": "Specify a port for the connection."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the type of connection. Possible values are `Http`, `Https` and `Mssql`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Specifies the action the rule will apply to matching traffic. Possible values are `Allow` and `Deny`."
+        },
+        "AzureFirewallName": {
+            "type": "string",
+            "description": "Specifies the name of the Firewall in which the Application Rule Collection should be created. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Application Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Specifies the priority of the rule collection. Possible values are between `100` - `65000`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "AzureFirewallName",
+        "Name",
+        "Priority",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

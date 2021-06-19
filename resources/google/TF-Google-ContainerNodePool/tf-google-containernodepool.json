@@ -1,0 +1,393 @@
+{
+    "typeName": "TF::Google::ContainerNodePool",
+    "description": "-> See the [Using GKE with Terraform](/docs/providers/google/guides/using_gke_with_terraform.html)\nguide for more information about using GKE with Terraform.\n\nManages a node pool in a Google Kubernetes Engine (GKE) cluster separately from\nthe cluster control plane. For more information see [the official documentation](https://cloud.google.com/container-engine/docs/node-pools)\nand [the API reference](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters.nodePools).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ContainerNodePool/docs/README.md",
+    "definitions": {
+        "AutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodeCount": {
+                    "type": "number",
+                    "description": "Maximum number of nodes in the NodePool. Must be >= min_node_count."
+                },
+                "MinNodeCount": {
+                    "type": "number",
+                    "description": "Minimum number of nodes in the NodePool. Must be >=0 and\n<= `max_node_count`."
+                }
+            },
+            "required": [
+                "MaxNodeCount",
+                "MinNodeCount"
+            ]
+        },
+        "ManagementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRepair": {
+                    "type": "boolean",
+                    "description": "Whether the nodes will be automatically repaired."
+                },
+                "AutoUpgrade": {
+                    "type": "boolean",
+                    "description": "Whether the nodes will be automatically upgraded."
+                }
+            },
+            "required": []
+        },
+        "NodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "GuestAccelerator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GuestAcceleratorDefinition"
+                    }
+                },
+                "ImageType": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "LocalSsdCount": {
+                    "type": "number"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Preemptible": {
+                    "type": "boolean"
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Taint": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaintDefinition"
+                    }
+                },
+                "ShieldedInstanceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkloadMetadataConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkloadMetadataConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GuestAcceleratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpgradeSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "number",
+                    "description": "The number of additional nodes that can be added to the node pool during\nan upgrade. Increasing `max_surge` raises the number of nodes that can be upgraded simultaneously.\nCan be set to 0 or greater."
+                },
+                "MaxUnavailable": {
+                    "type": "number",
+                    "description": "The number of nodes that can be simultaneously unavailable during\nan upgrade. Increasing `max_unavailable` raises the number of nodes that can be upgraded in\nparallel. Can be set to 0 or greater."
+                }
+            },
+            "required": [
+                "MaxSurge",
+                "MaxUnavailable"
+            ]
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "WorkloadMetadataConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeMetadata": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NodeMetadata"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cluster": {
+            "type": "string",
+            "description": "The cluster to create the node pool for. Cluster must be present in `location` provided for zonal clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialNodeCount": {
+            "type": "number",
+            "description": "The initial number of nodes for the pool. In\nregional or multi-zonal clusters, this is the number of nodes per zone. Changing\nthis will force recreation of the resource. WARNING: Resizing your node pool manually\nmay change this value in your existing cluster, which will trigger destruction\nand recreation on the next Terraform run (to rectify the discrepancy).  If you don't\nneed this value, don't set it.  If you do need it, you can [use a lifecycle block to\nignore subsqeuent changes to this field](https://github.com/hashicorp/terraform-provider-google/issues/6901#issuecomment-667369691)."
+        },
+        "InstanceGroupUrls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location (region or zone) of the cluster."
+        },
+        "MaxPodsPerNode": {
+            "type": "number",
+            "description": "The maximum number of pods per node in this node pool.\nNote that this does not work on node pools which are \"route-based\" - that is, node\npools belonging to clusters that do not have IP Aliasing enabled.\nSee the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)\nfor more information."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the node pool. If left blank, Terraform will\nauto-generate a unique name."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name for the node pool beginning\nwith the specified prefix. Conflicts with `name`."
+        },
+        "NodeCount": {
+            "type": "number",
+            "description": "The number of nodes per instance group. This field can be used to\nupdate the number of nodes per instance group but should not be used alongside `autoscaling`."
+        },
+        "NodeLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of zones in which the node pool's nodes should be located. Nodes must\nbe in the region of their regional cluster or in the same region as their\ncluster's zone for zonal clusters. If unspecified, the cluster-level\n`node_locations` will be used."
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which to create the node pool. If blank,\nthe provider-configured project will be used."
+        },
+        "Version": {
+            "type": "string",
+            "description": "The Kubernetes version for the nodes in this pool. Note that if this field\nand `auto_upgrade` are both specified, they will fight each other for what the node version should\nbe, so setting both is highly discouraged. While a fuzzy version can be specified, it's\nrecommended that you specify explicit versions as Terraform will see spurious diffs\nwhen fuzzy versions are used. See the `google_container_engine_versions` data source's\n`version_prefix` field to approximate fuzzy versions in a Terraform-compatible way."
+        },
+        "Autoscaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Management": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagementDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UpgradeSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpgradeSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cluster"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InstanceGroupUrls",
+        "/properties/Operation"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

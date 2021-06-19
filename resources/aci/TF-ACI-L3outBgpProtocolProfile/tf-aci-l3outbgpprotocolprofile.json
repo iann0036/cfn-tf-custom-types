@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::ACI::L3outBgpProtocolProfile",
+    "description": "Manages ACI L3out BGP Protocol Profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outBgpProtocolProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3out BGP Protocol Profile.\n- `description` - (Optional) Description for object L3out BGP Protocol Profile.\n- `name_alias` - (Optional) Name alias for object L3out BGP Protocol Profile.\n- `relation_bgp_rs_bgp_node_ctx_pol` - (Optional) Relation to class bgpCtxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object L3out BGP Protocol Profile.\n- `name_alias` - (Optional) Name alias for object L3out BGP Protocol Profile.\n- `relation_bgp_rs_bgp_node_ctx_pol` - (Optional) Relation to class bgpCtxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalNodeProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent logical node profile object.\n- `annotation` - (Optional) Annotation for object L3out BGP Protocol Profile.\n- `description` - (Optional) Description for object L3out BGP Protocol Profile.\n- `name_alias` - (Optional) Name alias for object L3out BGP Protocol Profile.\n- `relation_bgp_rs_bgp_node_ctx_pol` - (Optional) Relation to class bgpCtxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3out BGP Protocol Profile.\n- `relation_bgp_rs_bgp_node_ctx_pol` - (Optional) Relation to class bgpCtxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationBgpRsBgpNodeCtxPol": {
+            "type": "string",
+            "description": "Relation to class bgpCtxPol. Cardinality - N_TO_ONE. Type - String."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicalNodeProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,354 @@
+{
+    "typeName": "TF::Thunder::ServiceGroup",
+    "description": "`thunder_service_group` Provides details about thunder slb service group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-ServiceGroup/docs/README.md",
+    "definitions": {
+        "MemberListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FqdnName": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "MemberPriority": {
+                    "type": "number"
+                },
+                "MemberState": {
+                    "type": "string"
+                },
+                "MemberStatsDataDisable": {
+                    "type": "number"
+                },
+                "MemberTemplate": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ResolveAs": {
+                    "type": "string"
+                },
+                "ServerIpv6Addr": {
+                    "type": "string"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PrioritiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number"
+                },
+                "PriorityAction": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupServerEventLog": {
+            "type": "number",
+            "description": "Send log info on back up server events."
+        },
+        "ConnRate": {
+            "type": "number",
+            "description": "Dynamically enable stateless method by conn-rate (Rate to trigger stateless method(conn/sec))."
+        },
+        "ConnRateDuration": {
+            "type": "number",
+            "description": "Period that trigger condition consistently happens(seconds)."
+        },
+        "ConnRateGracePeriod": {
+            "type": "number",
+            "description": "Define the grace period during transition (Define the grace period during transition(seconds))."
+        },
+        "ConnRateLog": {
+            "type": "number",
+            "description": "Send log if transition happens."
+        },
+        "ConnRateRevertDuration": {
+            "type": "number",
+            "description": "Period that revert condition consistently happens(seconds)."
+        },
+        "ConnRevertRate": {
+            "type": "number",
+            "description": "Rate to revert to statelful method (conn/sec)."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on service group."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Health Check (Monitor Name)."
+        },
+        "HealthCheckDisable": {
+            "type": "number",
+            "description": "Disable health check."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L4SessionRevertDuration": {
+            "type": "number",
+            "description": "Period that revert condition consistently happens(seconds)."
+        },
+        "L4SessionUsage": {
+            "type": "number",
+            "description": "Dynamically enable stateless method by session usage (Usage to trigger stateless method)."
+        },
+        "L4SessionUsageDuration": {
+            "type": "number",
+            "description": "Period that trigger condition consistently happens(seconds)."
+        },
+        "L4SessionUsageGracePeriod": {
+            "type": "number",
+            "description": "Define the grace period during transition (Define the grace period during transition(seconds))."
+        },
+        "L4SessionUsageLog": {
+            "type": "number",
+            "description": "Send log if transition happens."
+        },
+        "L4SessionUsageRevertRate": {
+            "type": "number",
+            "description": "Usage to revert to statelful method."
+        },
+        "LbMethod": {
+            "type": "string",
+            "description": "\u2018dst-ip-hash\u2019: Load-balancing based on only Dst IP and Port hash; \u2018dst-ip-only-hash\u2019: Load-balancing based on only Dst IP hash; \u2018fastest-response\u2019: Fastest response time on service port level; \u2018least-request\u2019: Least request on service port level; \u2018src-ip-hash\u2019: Load-balancing based on only Src IP and Port hash; \u2018src-ip-only-hash\u2019: Load-balancing based on only Src IP hash; \u2018weighted-rr\u2019: Weighted round robin on server level; \u2018round-robin\u2019: Round robin on server level; \u2018round-robin-strict\u2019: Strict mode round robin on server level; \u2018odd-even-hash\u2019: odd/even hash based of client src-ip;."
+        },
+        "LcMethod": {
+            "type": "string",
+            "description": "\u2018least-connection\u2019: Least connection on server level; \u2018service-least-connection\u2019: Least connection on service port level; \u2018weighted-least-connection\u2019: Weighted least connection on server level; \u2018service-weighted-least-connection\u2019: Weighted least connection on service port level;."
+        },
+        "MinActiveMember": {
+            "type": "number",
+            "description": "Minimum Active Member Per Priority (Minimum Active Member before Action)."
+        },
+        "MinActiveMemberAction": {
+            "type": "string",
+            "description": "\u2018dynamic-priority\u2019: dynamic change member priority to met the min-active-member requirement; \u2018skip-pri-set\u2019: Skip Current Priority Set If Min not met;."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Member name."
+        },
+        "PriorityAffinity": {
+            "type": "number",
+            "description": "Priority affinity. Persist to the same priority if possible."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: TCP LB service; \u2018udp\u2019: UDP LB service;."
+        },
+        "PseudoRoundRobin": {
+            "type": "number",
+            "description": "PRR, select the oldest node for sub-select."
+        },
+        "ReportDelay": {
+            "type": "number",
+            "description": "Reporting frequency (in minutes)."
+        },
+        "ResetOnServerSelectionFail": {
+            "type": "number",
+            "description": "Send reset to client if server selection fails."
+        },
+        "ResetPriorityAffinity": {
+            "type": "number",
+            "description": "Reset."
+        },
+        "RptExtServer": {
+            "type": "number",
+            "description": "Report top 10 fastest/slowest servers."
+        },
+        "SampleRspTime": {
+            "type": "number",
+            "description": "sample server response time."
+        },
+        "SharedPartitionPolicyTemplate": {
+            "type": "number",
+            "description": "Reference a policy template from shared partition."
+        },
+        "SharedPartitionSvcgrpHealthCheck": {
+            "type": "number",
+            "description": "Reference a health-check from shared partition."
+        },
+        "StatelessAutoSwitch": {
+            "type": "number",
+            "description": "Enable auto stateless method."
+        },
+        "StatelessLbMethod": {
+            "type": "string",
+            "description": "\u2018stateless-dst-ip-hash\u2019: Stateless load-balancing based on Dst IP and Dst port hash; \u2018stateless-per-pkt-round-robin\u2019: Stateless load-balancing using per-packet round-robin; \u2018stateless-src-dst-ip-hash\u2019: Stateless load-balancing based on IP and port hash for both Src and Dst; \u2018stateless-src-dst-ip-only-hash\u2019: Stateless load-balancing based on only IP hash for both Src and Dst; \u2018stateless-src-ip-hash\u2019: Stateless load-balancing based on Src IP and Src port hash; \u2018stateless-src-ip-only-hash\u2019: Stateless load-balancing based on only Src IP hash;."
+        },
+        "StatelessLbMethod2": {
+            "type": "string",
+            "description": "\u2018stateless-dst-ip-hash\u2019: Stateless load-balancing based on Dst IP and Dst port hash; \u2018stateless-per-pkt-round-robin\u2019: Stateless load-balancing using per-packet round-robin; \u2018stateless-src-dst-ip-hash\u2019: Stateless load-balancing based on IP and port hash for both Src and Dst; \u2018stateless-src-dst-ip-only-hash\u2019: Stateless load-balancing based on only IP hash for both Src and Dst; \u2018stateless-src-ip-hash\u2019: Stateless load-balancing based on Src IP and Src port hash; \u2018stateless-src-ip-only-hash\u2019: Stateless load-balancing based on only Src IP hash;."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for service group; \u2018stats-data-disable\u2019: Disable statistical data collection for service group;."
+        },
+        "StrictSelect": {
+            "type": "number",
+            "description": "strict selection."
+        },
+        "SvcgrpHealthCheckShared": {
+            "type": "string",
+            "description": "Health Check (Monitor Name)."
+        },
+        "TemplatePolicy": {
+            "type": "string",
+            "description": "Policy template (Policy template name)."
+        },
+        "TemplatePolicyShared": {
+            "type": "string",
+            "description": "Policy template."
+        },
+        "TemplatePort": {
+            "type": "string",
+            "description": "Port template (Port template name)."
+        },
+        "TemplateServer": {
+            "type": "string",
+            "description": "Server template (Server template name)."
+        },
+        "TopFastest": {
+            "type": "number",
+            "description": "Report top 10 fastest servers."
+        },
+        "TopSlowest": {
+            "type": "number",
+            "description": "Report top 10 slowest servers."
+        },
+        "TrafficReplicationMirror": {
+            "type": "number",
+            "description": "Mirror Bi-directional Packet."
+        },
+        "TrafficReplicationMirrorDaRepl": {
+            "type": "number",
+            "description": "Replace Destination MAC."
+        },
+        "TrafficReplicationMirrorIpRepl": {
+            "type": "number",
+            "description": "Replaces IP with server-IP."
+        },
+        "TrafficReplicationMirrorSaDaRepl": {
+            "type": "number",
+            "description": "Replace Source MAC and Destination MAC."
+        },
+        "TrafficReplicationMirrorSaRepl": {
+            "type": "number",
+            "description": "Replace Source MAC."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "MemberList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberListDefinition"
+            }
+        },
+        "Priorities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrioritiesDefinition"
+            }
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

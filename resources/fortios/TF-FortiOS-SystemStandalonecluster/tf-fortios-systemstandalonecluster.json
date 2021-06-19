@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::FortiOS::SystemStandalonecluster",
+    "description": "Configure FortiGate Session Life Support Protocol (FGSP) cluster attributes. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemStandalonecluster/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Encryption": {
+            "type": "string",
+            "description": "Enable/disable encryption when synchronizing sessions. Valid values: `enable`, `disable`."
+        },
+        "GroupMemberId": {
+            "type": "number",
+            "description": "Cluster member ID (0 - 3)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Layer2Connection": {
+            "type": "string",
+            "description": "Indicate whether layer 2 connections are present among FGSP members. Valid values: `available`, `unavailable`."
+        },
+        "Psksecret": {
+            "type": "string",
+            "description": "Pre-shared secret for session synchronization (ASCII string or hexadecimal encoded with a leading 0x)."
+        },
+        "SessionSyncDev": {
+            "type": "string",
+            "description": "Offload session-sync process to kernel and sync sessions using connected interface(s) directly."
+        },
+        "StandaloneGroupId": {
+            "type": "number",
+            "description": "Cluster group ID (0 - 255). Must be the same for all members."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Psksecret"
+    ]
+}

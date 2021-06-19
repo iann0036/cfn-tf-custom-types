@@ -1,0 +1,238 @@
+{
+    "typeName": "TF::OneLogin::OidcApps",
+    "description": "Creates an OIDC Application.\n\nThis resource allows you to create and configure an OIDC Application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-OidcApps/docs/README.md",
+    "definitions": {
+        "ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProvisioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SsoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributesTransformations": {
+                    "type": "string"
+                },
+                "DefaultValues": {
+                    "type": "string"
+                },
+                "IncludeInSamlAssertion": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ParamKeyName": {
+                    "type": "string"
+                },
+                "ProvisionedEntitlements": {
+                    "type": "boolean"
+                },
+                "SafeEntitlementsEnabled": {
+                    "type": "boolean"
+                },
+                "SkipIfBlank": {
+                    "type": "boolean"
+                },
+                "UserAttributeMacros": {
+                    "type": "string"
+                },
+                "UserAttributeMappings": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ParamKeyName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAssumedSignin": {
+            "type": "boolean",
+            "description": "Enable sign in when user has been assumed by the account owner. Defaults to `false`."
+        },
+        "AuthMethod": {
+            "type": "number"
+        },
+        "BrandId": {
+            "type": "number"
+        },
+        "Configuration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigurationDefinition"
+            },
+            "description": "OIDC settings that control the authentication flow e.g. redirect urls and token settings.\n* `post_logout_redirect_uri` - (Optional) The redirect_uri for the app to send the user to after logout."
+        },
+        "ConnectorId": {
+            "type": "number",
+            "description": "The ID for the app connector, dictates the type of app (e.g. AWS Multi-Role App)."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "App description."
+        },
+        "IconUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The app's name."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Notes about the app."
+        },
+        "PolicyId": {
+            "type": "number"
+        },
+        "Provisioning": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProvisioningDefinition"
+            },
+            "description": "Settings regarding the app's provisioning ability.\n* `enabled` - (Required) Indicates if provisioning is enabled for this app."
+        },
+        "Sso": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SsoDefinition"
+            }
+        },
+        "TabId": {
+            "type": "number"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Visible": {
+            "type": "boolean",
+            "description": "Determine if app should be visible in OneLogin portal. Defaults to `true`."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectorId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AuthMethod",
+        "/properties/CreatedAt",
+        "/properties/IconUrl",
+        "/properties/Id",
+        "/properties/PolicyId",
+        "/properties/Sso",
+        "/properties/TabId",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Sso"
+    ]
+}

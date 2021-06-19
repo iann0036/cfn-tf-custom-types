@@ -1,0 +1,972 @@
+{
+    "typeName": "TF::Intersight::OsBulkInstallInfo",
+    "description": "This MO models the CSV file content which the user uploaded for OS installation. As part of the handler, necessary filed\nin the model can be populated along with respective validation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-OsBulkInstallInfo/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigurationFileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "GlobalConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "GlobalConfigDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ConfigurationFileName": {
+                    "type": "string"
+                },
+                "ConfigurationSource": {
+                    "type": "string"
+                },
+                "InstallMethod": {
+                    "type": "string"
+                },
+                "InstallTargetType": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "OperatingSystemParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalConfigDefinition"
+                    }
+                },
+                "OsImageName": {
+                    "type": "string"
+                },
+                "ScuImageName": {
+                    "type": "string"
+                },
+                "WindowsEdition": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "OsImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ScuImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServerConfigsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "IsValueSet": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Override": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition"
+                    }
+                }
+            }
+        },
+        "ServerConfigsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InventorySelector": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "WidgetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServerConfigsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "EnumList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition5"
+                    }
+                },
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Regex": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "DisplayAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                },
+                "ValueAttribute": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Constraints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition6"
+                    }
+                },
+                "InventorySelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition7"
+                    }
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Secure": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition2"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayMeta": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition3"
+                    }
+                },
+                "InputParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition4"
+                    }
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition8"
+                    }
+                },
+                "Required": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "ServerConfigsDefinition10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServerConfigsDefinition11": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "IsValueSet": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition9"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition10"
+                    }
+                }
+            }
+        },
+        "ServerConfigsDefinition12": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition13": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "AnswerFile": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "IpConfigType": {
+                    "type": "string"
+                },
+                "IpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition12"
+                    }
+                },
+                "IsAnswerFileSet": {
+                    "type": "boolean"
+                },
+                "IsRootPasswordCrypted": {
+                    "type": "boolean"
+                },
+                "IsRootPasswordSet": {
+                    "type": "boolean"
+                },
+                "Nameserver": {
+                    "type": "string"
+                },
+                "NrSource": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "ProductKey": {
+                    "type": "string"
+                },
+                "RootPassword": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition14": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServerConfigsDefinition15": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition11"
+                    }
+                },
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Answers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition13"
+                    }
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ErrorMsgs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "InstallTarget": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "ProcessedInstallTarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerConfigsDefinition14"
+                    }
+                },
+                "SerialNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "ValidationInfosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ErrorMsg": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StepName": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "ConfigurationFile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigurationFileDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "FileContent": {
+            "type": "string"
+        },
+        "GlobalConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GlobalConfigDefinition2"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFileContentSet": {
+            "type": "boolean"
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "OperState": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            }
+        },
+        "OsImage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsImageDefinition"
+            }
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "ScuImage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScuImageDefinition"
+            }
+        },
+        "ServerConfigs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerConfigsDefinition15"
+            }
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServersDefinition"
+            }
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "ValidationInfos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ValidationInfosDefinition"
+            }
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

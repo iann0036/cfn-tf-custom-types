@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::MSO::SchemaTemplateContractServiceGraph",
+    "description": "CloudFormation equivalent of mso_schema_template_contract_service_graph",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaTemplateContractServiceGraph/docs/README.md",
+    "definitions": {
+        "NodeRelationshipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsumerConnectorBdName": {
+                    "type": "string"
+                },
+                "ConsumerConnectorBdSchemaId": {
+                    "type": "string"
+                },
+                "ConsumerConnectorBdTemplateName": {
+                    "type": "string"
+                },
+                "ConsumerConnectorClusterInterface": {
+                    "type": "string"
+                },
+                "ConsumerConnectorRedirectPolicy": {
+                    "type": "string"
+                },
+                "ConsumerConnectorRedirectPolicyTenant": {
+                    "type": "string"
+                },
+                "ConsumerSubnetIps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProviderConnectorBdName": {
+                    "type": "string"
+                },
+                "ProviderConnectorBdSchemaId": {
+                    "type": "string"
+                },
+                "ProviderConnectorBdTemplateName": {
+                    "type": "string"
+                },
+                "ProviderConnectorClusterInterface": {
+                    "type": "string"
+                },
+                "ProviderConnectorRedirectPolicy": {
+                    "type": "string"
+                },
+                "ProviderConnectorRedirectPolicyTenant": {
+                    "type": "string"
+                },
+                "ProviderSubnetIps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ConsumerConnectorBdName",
+                "ConsumerConnectorClusterInterface",
+                "ProviderConnectorBdName",
+                "ProviderConnectorClusterInterface"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContractName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "ServiceGraphName": {
+            "type": "string"
+        },
+        "ServiceGraphSchemaId": {
+            "type": "string"
+        },
+        "ServiceGraphSiteId": {
+            "type": "string"
+        },
+        "ServiceGraphTemplateName": {
+            "type": "string"
+        },
+        "SiteId": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "NodeRelationship": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeRelationshipDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContractName",
+        "SchemaId",
+        "ServiceGraphName",
+        "SiteId",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

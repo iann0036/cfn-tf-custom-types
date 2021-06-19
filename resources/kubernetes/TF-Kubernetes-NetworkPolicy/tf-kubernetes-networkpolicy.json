@@ -1,0 +1,423 @@
+{
+    "typeName": "TF::Kubernetes::NetworkPolicy",
+    "description": "Kubernetes supports network policies to specify how groups of pods are allowed to communicate with each other and with other network endpoints.\nNetworkPolicy resources use labels to select pods and define rules which specify what traffic is allowed to the selected pods.\nRead more about network policies at https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/kubernetes/TF-Kubernetes-NetworkPolicy/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotationsDefinition"
+                    }
+                },
+                "GenerateName": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PolicyTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Egress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressDefinition"
+                    }
+                },
+                "Ingress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressDefinition"
+                    }
+                },
+                "PodSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodSelectorDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "PolicyTypes"
+            ]
+        },
+        "EgressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    }
+                },
+                "To": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ToDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IngressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "From": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FromDefinition"
+                    }
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PodSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchLabelsDefinition3"
+                    }
+                },
+                "MatchExpressions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchExpressionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpBlock": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpBlockDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NamespaceSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NamespaceSelectorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PodSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodSelectorDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "FromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpBlock": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpBlockDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NamespaceSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NamespaceSelectorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PodSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodSelectorDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchExpressionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpBlockDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Except": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NamespaceSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchLabelsDefinition2"
+                    }
+                },
+                "MatchExpressions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchExpressionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchLabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MatchLabelsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

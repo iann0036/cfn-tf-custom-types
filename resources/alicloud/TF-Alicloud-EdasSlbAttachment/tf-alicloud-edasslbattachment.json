@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::Alicloud::EdasSlbAttachment",
+    "description": "Binds SLB to an EDAS application.\n\n-> **NOTE:** Available in 1.82.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EdasSlbAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The ID of the applicaton to which you want to bind an SLB instance."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerPort": {
+            "type": "number",
+            "description": "The listening port for the bound SLB instance."
+        },
+        "SlbId": {
+            "type": "string",
+            "description": "The ID of the SLB instance that is going to be bound."
+        },
+        "SlbIp": {
+            "type": "string",
+            "description": "The IP address that is allocated to the bound SLB instance."
+        },
+        "SlbStatus": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the bound SLB instance."
+        },
+        "VserverGroupId": {
+            "type": "string",
+            "description": "The ID of the virtual server (VServer) group associated with the intranet SLB instance."
+        },
+        "VswitchId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "SlbId",
+        "SlbIp",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SlbStatus",
+        "/properties/VswitchId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

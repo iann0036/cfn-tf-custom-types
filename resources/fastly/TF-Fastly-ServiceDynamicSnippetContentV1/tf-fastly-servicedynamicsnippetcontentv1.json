@@ -1,0 +1,72 @@
+{
+    "typeName": "TF::Fastly::ServiceDynamicSnippetContentV1",
+    "description": "Defines content that represents blocks of VCL logic that is inserted into your service.  This resource will populate the content of a dynamic snippet and allow it to be manged without the creation of a new service verison. \n \n~> **Warning:** Terraform will take precedence over any changes you make through the API. Such changes are likely to be reversed if you run Terraform again.  \n\nIf Terraform is being used to populate the initial content of a dynamic snippet which you intend to manage via the API, then the lifecycle `ignore_changes` field can be used with the resource.  An example of this configuration is provided below.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-ServiceDynamicSnippetContentV1/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "SnippetId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "ServiceId",
+        "SnippetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

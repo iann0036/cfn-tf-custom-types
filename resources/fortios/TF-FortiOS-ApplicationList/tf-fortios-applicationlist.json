@@ -1,0 +1,396 @@
+{
+    "typeName": "TF::FortiOS::ApplicationList",
+    "description": "Configure application control lists.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ApplicationList/docs/README.md",
+    "definitions": {
+        "DefaultNetworkServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port number."
+                },
+                "Services": {
+                    "type": "string",
+                    "description": "Network protocols. Valid values: `http`, `ssh`, `telnet`, `ftp`, `dns`, `smtp`, `pop3`, `imap`, `snmp`, `nntp`, `https`."
+                },
+                "ViolationAction": {
+                    "type": "string",
+                    "description": "Action for protocols not white listed under selected port. Valid values: `pass`, `monitor`, `block`."
+                }
+            },
+            "required": []
+        },
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Pass or block traffic, or reset connection for traffic from this application. Valid values: `pass`, `block`, `reset`."
+                },
+                "Behavior": {
+                    "type": "string",
+                    "description": "Application behavior filter."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging for this application list. Valid values: `disable`, `enable`."
+                },
+                "LogPacket": {
+                    "type": "string",
+                    "description": "Enable/disable packet logging. Valid values: `disable`, `enable`."
+                },
+                "PerIpShaper": {
+                    "type": "string",
+                    "description": "Per-IP traffic shaper."
+                },
+                "Popularity": {
+                    "type": "string",
+                    "description": "Application popularity filter (1 - 5, from least to most popular). Valid values: `1`, `2`, `3`, `4`, `5`."
+                },
+                "Protocols": {
+                    "type": "string",
+                    "description": "Application protocol filter."
+                },
+                "Quarantine": {
+                    "type": "string",
+                    "description": "Quarantine method. Valid values: `none`, `attacker`."
+                },
+                "QuarantineExpiry": {
+                    "type": "string",
+                    "description": "Duration of quarantine. (Format ###d##h##m, minimum 1m, maximum 364d23h59m, default = 5m). Requires quarantine set to attacker."
+                },
+                "QuarantineLog": {
+                    "type": "string",
+                    "description": "Enable/disable quarantine logging. Valid values: `disable`, `enable`."
+                },
+                "RateCount": {
+                    "type": "number",
+                    "description": "Count of the rate."
+                },
+                "RateDuration": {
+                    "type": "number",
+                    "description": "Duration (sec) of the rate."
+                },
+                "RateMode": {
+                    "type": "string",
+                    "description": "Rate limit mode. Valid values: `periodical`, `continuous`."
+                },
+                "RateTrack": {
+                    "type": "string",
+                    "description": "Track the packet protocol field. Valid values: `none`, `src-ip`, `dest-ip`, `dhcp-client-mac`, `dns-domain`."
+                },
+                "SessionTtl": {
+                    "type": "number",
+                    "description": "Session TTL (0 = default)."
+                },
+                "Shaper": {
+                    "type": "string",
+                    "description": "Traffic shaper."
+                },
+                "ShaperReverse": {
+                    "type": "string",
+                    "description": "Reverse traffic shaper."
+                },
+                "Technology": {
+                    "type": "string",
+                    "description": "Application technology filter."
+                },
+                "Vendor": {
+                    "type": "string",
+                    "description": "Application vendor filter."
+                },
+                "Application": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationDefinition"
+                    }
+                },
+                "Category": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CategoryDefinition"
+                    }
+                },
+                "Exclusion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionDefinition"
+                    }
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                },
+                "Risk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RiskDefinition"
+                    }
+                },
+                "SubCategory": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubCategoryDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ApplicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application IDs."
+                }
+            },
+            "required": []
+        },
+        "CategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application category ID."
+                }
+            },
+            "required": []
+        },
+        "ExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Excluded application IDs."
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Parameter ID."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Parameter value."
+                },
+                "Members": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MembersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "number",
+                    "description": "Risk, or impact, of allowing traffic from this application to occur (1 - 5; Low, Elevated, Medium, High, and Critical)."
+                }
+            },
+            "required": []
+        },
+        "SubCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application sub-category ID."
+                }
+            },
+            "required": []
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Parameter."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Parameter name."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Parameter value."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppReplacemsg": {
+            "type": "string",
+            "description": "Enable/disable replacement messages for blocked applications. Valid values: `disable`, `enable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "comments."
+        },
+        "ControlDefaultNetworkServices": {
+            "type": "string",
+            "description": "Enable/disable enforcement of protocols over selected ports. Valid values: `disable`, `enable`."
+        },
+        "DeepAppInspection": {
+            "type": "string",
+            "description": "Enable/disable deep application inspection. Valid values: `disable`, `enable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EnforceDefaultAppPort": {
+            "type": "string",
+            "description": "Enable/disable default application port enforcement for allowed applications. Valid values: `disable`, `enable`."
+        },
+        "ExtendedLog": {
+            "type": "string",
+            "description": "Enable/disable extended logging. Valid values: `enable`, `disable`."
+        },
+        "ForceInclusionSslDiSigs": {
+            "type": "string",
+            "description": "Enable/disable forced inclusion of SSL deep inspection signatures. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "List name."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Basic application protocol signatures allowed by default. Valid values: `allow-dns`, `allow-icmp`, `allow-http`, `allow-ssl`, `allow-quic`."
+        },
+        "OtherApplicationAction": {
+            "type": "string",
+            "description": "Action for other applications. Valid values: `pass`, `block`."
+        },
+        "OtherApplicationLog": {
+            "type": "string",
+            "description": "Enable/disable logging for other applications. Valid values: `disable`, `enable`."
+        },
+        "P2pBlackList": {
+            "type": "string",
+            "description": "P2P applications to be black listed. Valid values: `skype`, `edonkey`, `bittorrent`."
+        },
+        "P2pBlockList": {
+            "type": "string",
+            "description": "P2P applications to be blocklisted. Valid values: `skype`, `edonkey`, `bittorrent`."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group."
+        },
+        "UnknownApplicationAction": {
+            "type": "string",
+            "description": "Pass or block traffic from unknown applications. Valid values: `pass`, `block`."
+        },
+        "UnknownApplicationLog": {
+            "type": "string",
+            "description": "Enable/disable logging for unknown applications. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "DefaultNetworkServices": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultNetworkServicesDefinition"
+            }
+        },
+        "Entries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EntriesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::AzureRM::StreamAnalyticsOutputMssql",
+    "description": "Manages a Stream Analytics Output to Microsoft SQL Server Database.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StreamAnalyticsOutputMssql/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Database": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Stream Output. Changing this forces a new resource to be created."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password used together with username, to login to the Microsoft SQL Server. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
+        },
+        "Server": {
+            "type": "string",
+            "description": "The SQL server url. Changing this forces a new resource to be created."
+        },
+        "StreamAnalyticsJobName": {
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
+        },
+        "Table": {
+            "type": "string",
+            "description": "Table in the database that the output points to. Changing this forces a new resource to be created."
+        },
+        "User": {
+            "type": "string",
+            "description": "Username used to login to the Microsoft SQL Server. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Database",
+        "Name",
+        "Password",
+        "ResourceGroupName",
+        "Server",
+        "StreamAnalyticsJobName",
+        "Table",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

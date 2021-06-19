@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::AzureRM::ExpressRouteCircuit",
+    "description": "Manages an ExpressRoute circuit.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ExpressRouteCircuit/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SkuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Family": {
+                    "type": "string",
+                    "description": "The billing mode for bandwidth. Possible values are `MeteredData` or `UnlimitedData`."
+                },
+                "Tier": {
+                    "type": "string",
+                    "description": "The service tier. Possible values are `Basic`, `Local`, `Standard` or `Premium`."
+                }
+            },
+            "required": [
+                "Family",
+                "Tier"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowClassicOperations": {
+            "type": "boolean",
+            "description": "Allow the circuit to interact with classic (RDFE) resources. The default value is `false`."
+        },
+        "BandwidthInMbps": {
+            "type": "number",
+            "description": "The bandwidth in Mbps of the circuit being created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the ExpressRoute circuit. Changing this forces a new resource to be created."
+        },
+        "PeeringLocation": {
+            "type": "string",
+            "description": "The name of the peering location and **not** the Azure resource location."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the ExpressRoute circuit. Changing this forces a new resource to be created."
+        },
+        "ServiceKey": {
+            "type": "string"
+        },
+        "ServiceProviderName": {
+            "type": "string",
+            "description": "The name of the ExpressRoute Service Provider."
+        },
+        "ServiceProviderProvisioningState": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Sku": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SkuDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BandwidthInMbps",
+        "Location",
+        "Name",
+        "PeeringLocation",
+        "ResourceGroupName",
+        "ServiceProviderName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ServiceKey",
+        "/properties/ServiceProviderProvisioningState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ServiceKey"
+    ]
+}

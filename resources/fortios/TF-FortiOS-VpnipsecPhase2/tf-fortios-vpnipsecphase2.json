@@ -1,0 +1,246 @@
+{
+    "typeName": "TF::FortiOS::VpnipsecPhase2",
+    "description": "Configure VPN autokey tunnel.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnipsecPhase2/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddRoute": {
+            "type": "string",
+            "description": "Enable/disable automatic route addition. Valid values: `phase1`, `enable`, `disable`."
+        },
+        "AutoNegotiate": {
+            "type": "string",
+            "description": "Enable/disable IPsec SA auto-negotiation. Valid values: `enable`, `disable`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DhcpIpsec": {
+            "type": "string",
+            "description": "Enable/disable DHCP-IPsec. Valid values: `enable`, `disable`."
+        },
+        "Dhgrp": {
+            "type": "string",
+            "description": "Phase2 DH group. Valid values: `1`, `2`, `5`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `27`, `28`, `29`, `30`, `31`, `32`."
+        },
+        "Diffserv": {
+            "type": "string",
+            "description": "Enable/disable applying DSCP value to the IPsec tunnel outer IP header. Valid values: `enable`, `disable`."
+        },
+        "Diffservcode": {
+            "type": "string",
+            "description": "DSCP value to be applied to the IPsec tunnel outer IP header."
+        },
+        "DstAddrType": {
+            "type": "string",
+            "description": "Remote proxy ID type. Valid values: `subnet`, `range`, `ip`, `name`."
+        },
+        "DstEndIp": {
+            "type": "string",
+            "description": "Remote proxy ID IPv4 end."
+        },
+        "DstEndIp6": {
+            "type": "string",
+            "description": "Remote proxy ID IPv6 end."
+        },
+        "DstName": {
+            "type": "string",
+            "description": "Remote proxy ID name."
+        },
+        "DstName6": {
+            "type": "string",
+            "description": "Remote proxy ID name."
+        },
+        "DstPort": {
+            "type": "number",
+            "description": "Quick mode destination port (1 - 65535 or 0 for all)."
+        },
+        "DstStartIp": {
+            "type": "string",
+            "description": "Remote proxy ID IPv4 start."
+        },
+        "DstStartIp6": {
+            "type": "string",
+            "description": "Remote proxy ID IPv6 start."
+        },
+        "DstSubnet": {
+            "type": "string",
+            "description": "Remote proxy ID IPv4 subnet."
+        },
+        "DstSubnet6": {
+            "type": "string",
+            "description": "Remote proxy ID IPv6 subnet."
+        },
+        "Encapsulation": {
+            "type": "string",
+            "description": "ESP encapsulation mode. Valid values: `tunnel-mode`, `transport-mode`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitiatorTsNarrow": {
+            "type": "string",
+            "description": "Enable/disable traffic selector narrowing for IKEv2 initiator. Valid values: `enable`, `disable`."
+        },
+        "Ipv4Df": {
+            "type": "string",
+            "description": "Enable/disable setting and resetting of IPv4 'Don't Fragment' bit. Valid values: `enable`, `disable`."
+        },
+        "Keepalive": {
+            "type": "string",
+            "description": "Enable/disable keep alive. Valid values: `enable`, `disable`."
+        },
+        "KeylifeType": {
+            "type": "string",
+            "description": "Keylife type. Valid values: `seconds`, `kbs`, `both`."
+        },
+        "Keylifekbs": {
+            "type": "number",
+            "description": "Phase2 key life in number of bytes of traffic (5120 - 4294967295)."
+        },
+        "Keylifeseconds": {
+            "type": "number",
+            "description": "Phase2 key life in time in seconds (120 - 172800)."
+        },
+        "L2tp": {
+            "type": "string",
+            "description": "Enable/disable L2TP over IPsec. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "IPsec tunnel name."
+        },
+        "Pfs": {
+            "type": "string",
+            "description": "Enable/disable PFS feature. Valid values: `enable`, `disable`."
+        },
+        "Phase1name": {
+            "type": "string",
+            "description": "Phase 1 determines the options required for phase 2."
+        },
+        "Proposal": {
+            "type": "string",
+            "description": "Phase2 proposal. Valid values: `null-md5`, `null-sha1`, `null-sha256`, `null-sha384`, `null-sha512`, `des-null`, `des-md5`, `des-sha1`, `des-sha256`, `des-sha384`, `des-sha512`, `3des-null`, `3des-md5`, `3des-sha1`, `3des-sha256`, `3des-sha384`, `3des-sha512`, `aes128-null`, `aes128-md5`, `aes128-sha1`, `aes128-sha256`, `aes128-sha384`, `aes128-sha512`, `aes128gcm`, `aes192-null`, `aes192-md5`, `aes192-sha1`, `aes192-sha256`, `aes192-sha384`, `aes192-sha512`, `aes256-null`, `aes256-md5`, `aes256-sha1`, `aes256-sha256`, `aes256-sha384`, `aes256-sha512`, `aes256gcm`, `chacha20poly1305`, `aria128-null`, `aria128-md5`, `aria128-sha1`, `aria128-sha256`, `aria128-sha384`, `aria128-sha512`, `aria192-null`, `aria192-md5`, `aria192-sha1`, `aria192-sha256`, `aria192-sha384`, `aria192-sha512`, `aria256-null`, `aria256-md5`, `aria256-sha1`, `aria256-sha256`, `aria256-sha384`, `aria256-sha512`, `seed-null`, `seed-md5`, `seed-sha1`, `seed-sha256`, `seed-sha384`, `seed-sha512`."
+        },
+        "Protocol": {
+            "type": "number",
+            "description": "Quick mode protocol selector (1 - 255 or 0 for all)."
+        },
+        "Replay": {
+            "type": "string",
+            "description": "Enable/disable replay detection. Valid values: `enable`, `disable`."
+        },
+        "RouteOverlap": {
+            "type": "string",
+            "description": "Action for overlapping routes. Valid values: `use-old`, `use-new`, `allow`."
+        },
+        "SelectorMatch": {
+            "type": "string",
+            "description": "Match type to use when comparing selectors. Valid values: `exact`, `subset`, `auto`."
+        },
+        "SingleSource": {
+            "type": "string",
+            "description": "Enable/disable single source IP restriction. Valid values: `enable`, `disable`."
+        },
+        "SrcAddrType": {
+            "type": "string",
+            "description": "Local proxy ID type. Valid values: `subnet`, `range`, `ip`, `name`."
+        },
+        "SrcEndIp": {
+            "type": "string",
+            "description": "Local proxy ID end."
+        },
+        "SrcEndIp6": {
+            "type": "string",
+            "description": "Local proxy ID IPv6 end."
+        },
+        "SrcName": {
+            "type": "string",
+            "description": "Local proxy ID name."
+        },
+        "SrcName6": {
+            "type": "string",
+            "description": "Local proxy ID name."
+        },
+        "SrcPort": {
+            "type": "number",
+            "description": "Quick mode source port (1 - 65535 or 0 for all)."
+        },
+        "SrcStartIp": {
+            "type": "string",
+            "description": "Local proxy ID start."
+        },
+        "SrcStartIp6": {
+            "type": "string",
+            "description": "Local proxy ID IPv6 start."
+        },
+        "SrcSubnet": {
+            "type": "string",
+            "description": "Local proxy ID subnet."
+        },
+        "SrcSubnet6": {
+            "type": "string",
+            "description": "Local proxy ID IPv6 subnet."
+        },
+        "UseNatip": {
+            "type": "string",
+            "description": "Enable to use the FortiGate public IP as the source selector when outbound NAT is used. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Phase1name",
+        "Proposal"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

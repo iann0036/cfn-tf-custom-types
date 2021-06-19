@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::CheckPoint::ManagementRunThreatEmulationFileTypesOfflineUpdate",
+    "description": "This command resource allows you to execute Check Point Run Threat Emulation File Types Offline Update.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementRunThreatEmulationFileTypesOfflineUpdate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FilePath": {
+            "type": "string",
+            "description": "File path for offline update of Threat Emulation file types, the file path should be on the management machine."
+        },
+        "FileRawData": {
+            "type": "string",
+            "description": "The contents of a file containing the Threat Emulation file types."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FilePath",
+        "FileRawData"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

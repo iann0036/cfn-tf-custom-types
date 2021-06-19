@@ -1,0 +1,250 @@
+{
+    "typeName": "TF::MongoDBAtlas::AlertConfiguration",
+    "description": "`mongodbatlas_alert_configuration` provides an Alert Configuration resource to define the conditions that trigger an alert and the methods of notification within a MongoDB Atlas project.\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find `groupId` in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-AlertConfiguration/docs/README.md",
+    "definitions": {
+        "MetricThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FieldName": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NotificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiToken": {
+                    "type": "string"
+                },
+                "ChannelName": {
+                    "type": "string"
+                },
+                "DatadogApiKey": {
+                    "type": "string"
+                },
+                "DatadogRegion": {
+                    "type": "string"
+                },
+                "DelayMin": {
+                    "type": "number"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                },
+                "EmailEnabled": {
+                    "type": "boolean"
+                },
+                "FlowName": {
+                    "type": "string"
+                },
+                "FlowdockApiToken": {
+                    "type": "string"
+                },
+                "IntervalMin": {
+                    "type": "number"
+                },
+                "MobileNumber": {
+                    "type": "string"
+                },
+                "OpsGenieApiKey": {
+                    "type": "string"
+                },
+                "OpsGenieRegion": {
+                    "type": "string"
+                },
+                "OrgName": {
+                    "type": "string"
+                },
+                "Roles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceKey": {
+                    "type": "string"
+                },
+                "SmsEnabled": {
+                    "type": "boolean"
+                },
+                "TeamId": {
+                    "type": "string"
+                },
+                "TypeName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VictorOpsApiKey": {
+                    "type": "string"
+                },
+                "VictorOpsRoutingKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertConfigurationId": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "It is not required, but If the attribute is omitted, by default will be false, and the configuration would be disabled. You must set true to enable the configuration."
+        },
+        "EventType": {
+            "type": "string",
+            "description": "The type of event that will trigger an alert."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricThreshold": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetricThresholdDefinition"
+            }
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project where the alert configuration will create."
+        },
+        "Threshold": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ThresholdDefinition"
+            }
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "Matcher": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatcherDefinition"
+            }
+        },
+        "Notification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EventType",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AlertConfigurationId",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/NotificationDefinition/ApiToken",
+        "/definitions/NotificationDefinition/DatadogApiKey",
+        "/definitions/NotificationDefinition/FlowdockApiToken",
+        "/definitions/NotificationDefinition/OpsGenieApiKey",
+        "/definitions/NotificationDefinition/ServiceKey",
+        "/definitions/NotificationDefinition/VictorOpsApiKey",
+        "/definitions/NotificationDefinition/VictorOpsRoutingKey"
+    ]
+}

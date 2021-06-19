@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::AzureRM::DevspaceController",
+    "description": "Manages a DevSpace Controller.\n\n~> **NOTE:** Microsoft will be retiring Azure Dev Spaces on 31 October 2023, please see the product [documentation](https://azure.microsoft.com/en-us/updates/azure-dev-spaces-is-retiring-on-31-october-2023/) for more information.\n\n!> **NOTE:** The Azure API no longer allows provisioning new DevSpace Controllers - as such this resource exists only to allow existing users to continue managing these in Terraform at this time. Support for the `azurerm_devspace_controller` resource will be removed in version 3.0 of the Azure Provider.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DevspaceController/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataPlaneFqdn": {
+            "type": "string"
+        },
+        "HostSuffix": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported location where the DevSpace Controller should exist. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the DevSpace Controller. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group under which the DevSpace Controller resource has to be created. Changing this forces a new resource to be created."
+        },
+        "SkuName": {
+            "type": "string",
+            "description": "Specifies the SKU Name for this DevSpace Controller. Possible values are `S1`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TargetContainerHostCredentialsBase64": {
+            "type": "string",
+            "description": "Base64 encoding of `kube_config_raw` of Azure Kubernetes Service cluster. Changing this forces a new resource to be created."
+        },
+        "TargetContainerHostResourceId": {
+            "type": "string",
+            "description": "The resource id of Azure Kubernetes Service cluster. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "SkuName",
+        "TargetContainerHostCredentialsBase64",
+        "TargetContainerHostResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DataPlaneFqdn",
+        "/properties/HostSuffix",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/TargetContainerHostCredentialsBase64"
+    ]
+}

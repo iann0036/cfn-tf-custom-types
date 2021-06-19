@@ -1,0 +1,249 @@
+{
+    "typeName": "TF::Vault::AwsAuthBackendRole",
+    "description": "Manages an AWS auth backend role in a Vault server. Roles constrain the\ninstances or principals that can perform the login operation against the\nbackend. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/aws.html) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-AwsAuthBackendRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowInstanceMigration": {
+            "type": "boolean",
+            "description": "If set to `true`, allows migration of\nthe underlying instance where the client resides."
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "The auth type permitted for this role. Valid choices\nare `ec2` and `iam`. Defaults to `iam`."
+        },
+        "Backend": {
+            "type": "string"
+        },
+        "BoundAccountId": {
+            "type": "string"
+        },
+        "BoundAccountIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2\ninstances that can perform the login operation that they should be using the\naccount ID specified by this field. `auth_type` must be set to `ec2` or\n`inferred_entity_type` must be set to `ec2_instance` to use this constraint."
+        },
+        "BoundAmiId": {
+            "type": "string"
+        },
+        "BoundAmiIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2 instances\nthat can perform the login operation that they should be using the AMI ID\nspecified by this field. `auth_type` must be set to `ec2` or\n`inferred_entity_type` must be set to `ec2_instance` to use this constraint."
+        },
+        "BoundEc2InstanceId": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundEc2InstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundIamInstanceProfileArn": {
+            "type": "string"
+        },
+        "BoundIamInstanceProfileArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on\nthe EC2 instances that can perform the login operation that they must be\nassociated with an IAM instance profile ARN which has a prefix that matches\nthe value specified by this field. The value is prefix-matched as though it\nwere a glob ending in `*`. `auth_type` must be set to `ec2` or\n`inferred_entity_type` must be set to `ec2_instance` to use this constraint."
+        },
+        "BoundIamPrincipalArn": {
+            "type": "string"
+        },
+        "BoundIamPrincipalArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines the IAM principal that\nmust be authenticated when `auth_type` is set to `iam`. Wildcards are\nsupported at the end of the ARN."
+        },
+        "BoundIamRoleArn": {
+            "type": "string"
+        },
+        "BoundIamRoleArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2\ninstances that can perform the login operation that they must match the IAM\nrole ARN specified by this field. `auth_type` must be set to `ec2` or\n`inferred_entity_type` must be set to `ec2_instance` to use this constraint."
+        },
+        "BoundRegion": {
+            "type": "string"
+        },
+        "BoundRegions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2 instances\nthat can perform the login operation that the region in their identity\ndocument must match the one specified by this field. `auth_type` must be set\nto `ec2` or `inferred_entity_type` must be set to `ec2_instance` to use this\nconstraint."
+        },
+        "BoundSubnetId": {
+            "type": "string"
+        },
+        "BoundSubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2\ninstances that can perform the login operation that they be associated with\nthe subnet ID that matches the value specified by this field. `auth_type`\nmust be set to `ec2` or `inferred_entity_type` must be set to `ec2_instance`\nto use this constraint."
+        },
+        "BoundVpcId": {
+            "type": "string"
+        },
+        "BoundVpcIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the EC2 instances\nthat can perform the login operation that they be associated with the VPC ID\nthat matches the value specified by this field. `auth_type` must be set to\n`ec2` or `inferred_entity_type` must be set to `ec2_instance` to use this\nconstraint."
+        },
+        "DisallowReauthentication": {
+            "type": "boolean",
+            "description": "IF set to `true`, only allows a\nsingle token to be granted per instance ID. This can only be set when\n`auth_type` is set to `ec2`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InferredAwsRegion": {
+            "type": "string",
+            "description": "When `inferred_entity_type` is set, this\nis the region to search for the inferred entities. Required if\n`inferred_entity_type` is set. This only applies when `auth_type` is set to\n`iam`."
+        },
+        "InferredEntityType": {
+            "type": "string",
+            "description": "If set, instructs Vault to turn on\ninferencing. The only valid value is `ec2_instance`, which instructs Vault to\ninfer that the role comes from an EC2 instance in an IAM instance profile.\nThis only applies when `auth_type` is set to `iam`."
+        },
+        "MaxTtl": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResolveAwsUniqueIds": {
+            "type": "boolean",
+            "description": "Only valid when\n`auth_type` is `iam`. If set to `true`, the `bound_iam_principal_arns` are\nresolved to [AWS Unique\nIDs](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-unique-ids)\nfor the bound principal ARN. This field is ignored when a\n`bound_iam_principal_arn` ends in a wildcard. Resolving to unique IDs more\nclosely mimics the behavior of AWS services in that if an IAM user or role is\ndeleted and a new one is recreated with the same name, those new users or\nroles won't get access to roles in Vault that were permissioned to the prior\nprincipals of the same name. Defaults to `true`.\nOnce set to `true`, this cannot be changed to `false` without recreating the role."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The name of the role."
+        },
+        "RoleTag": {
+            "type": "string",
+            "description": "If set, enable role tags for this role. The value set\nfor this field should be the key of the tag on the EC2 instance. `auth_type`\nmust be set to `ec2` or `inferred_entity_type` must be set to `ec2_instance`\nto use this constraint."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

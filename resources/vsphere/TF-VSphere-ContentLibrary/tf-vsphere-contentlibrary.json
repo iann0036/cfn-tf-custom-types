@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::VSphere::ContentLibrary",
+    "description": "The `vsphere_content_library` resource can be used to manage Content Libraries.\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-ContentLibrary/docs/README.md",
+    "definitions": {
+        "PublicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationMethod": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Published": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SubscriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationMethod": {
+                    "type": "string"
+                },
+                "AutomaticSync": {
+                    "type": "boolean"
+                },
+                "OnDemand": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "SubscriptionUrl": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the Content Library."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Content Library."
+        },
+        "StorageBacking": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The [managed object reference ID][docs-about-morefs] on which to store Content Library\nitems."
+        },
+        "Publication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Subscription": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubscriptionDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StorageBacking"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

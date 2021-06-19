@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::Google::ComputeRouterNat",
+    "description": "A NAT service created in a router.\n\n\nTo get more information about RouterNat, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)\n* How-to Guides\n    * [Google Cloud Router](https://cloud.google.com/router/docs/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeRouterNat/docs/README.md",
+    "definitions": {
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Filter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enable",
+                "Filter"
+            ]
+        },
+        "SubnetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "SecondaryIpRangeNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceIpRangesToNat": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "SourceIpRangesToNat"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DrainNatIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EnableEndpointIndependentMapping": {
+            "type": "boolean"
+        },
+        "IcmpIdleTimeoutSec": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinPortsPerVm": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NatIpAllocateOption": {
+            "type": "string"
+        },
+        "NatIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Router": {
+            "type": "string"
+        },
+        "SourceSubnetworkIpRangesToNat": {
+            "type": "string"
+        },
+        "TcpEstablishedIdleTimeoutSec": {
+            "type": "number"
+        },
+        "TcpTransitoryIdleTimeoutSec": {
+            "type": "number"
+        },
+        "UdpIdleTimeoutSec": {
+            "type": "number"
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Subnetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubnetworkDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NatIpAllocateOption",
+        "Router",
+        "SourceSubnetworkIpRangesToNat"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

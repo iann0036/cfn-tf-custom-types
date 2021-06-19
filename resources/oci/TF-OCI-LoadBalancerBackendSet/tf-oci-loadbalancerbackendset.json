@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::OCI::LoadBalancerBackendset",
+    "description": "CloudFormation equivalent of oci_load_balancer_backendset",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LoadBalancerBackendset/docs/README.md",
+    "definitions": {
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backup": {
+                    "type": "boolean"
+                },
+                "Drain": {
+                    "type": "boolean"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Offline": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            }
+        },
+        "HealthCheckerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntervalMs": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "ResponseBodyRegex": {
+                    "type": "string"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "ReturnCode": {
+                    "type": "number"
+                },
+                "TimeoutInMillis": {
+                    "type": "number"
+                },
+                "UrlPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "LbCookieSessionPersistenceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string"
+                },
+                "DisableFallback": {
+                    "type": "boolean"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "IsHttpOnly": {
+                    "type": "boolean"
+                },
+                "IsSecure": {
+                    "type": "boolean"
+                },
+                "MaxAgeInSeconds": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SessionPersistenceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string"
+                },
+                "DisableFallback": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CookieName"
+            ]
+        },
+        "SslConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateName": {
+                    "type": "string"
+                },
+                "CipherSuiteName": {
+                    "type": "string"
+                },
+                "Protocols": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServerOrderPreference": {
+                    "type": "string"
+                },
+                "VerifyDepth": {
+                    "type": "number"
+                },
+                "VerifyPeerCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CertificateName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "HealthChecker": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckerDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LbCookieSessionPersistenceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LbCookieSessionPersistenceConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "SessionPersistenceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SessionPersistenceConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "SslConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId",
+        "Name",
+        "Policy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Backend",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

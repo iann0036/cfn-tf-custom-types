@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Anxcloud::IpAddress",
+    "description": "CloudFormation equivalent of anxcloud_ip_address",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/anxcloud/TF-Anxcloud-IpAddress/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "DescriptionCustomer": {
+            "type": "string"
+        },
+        "DescriptionInternal": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkPrefixId": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "VlanId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "NetworkPrefixId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DescriptionInternal",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/Version",
+        "/properties/VlanId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

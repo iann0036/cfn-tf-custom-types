@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::Exoscale::NlbService",
+    "description": "Provides an Exoscale Network Load Balancer ([NLB][r-nlb]) service resource. This can be used to create, modify, and delete NLB services.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/exoscale/TF-Exoscale-NlbService/docs/README.md",
+    "definitions": {
+        "HealthcheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "TlsSni": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Port"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstancePoolId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NlbId": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "Strategy": {
+            "type": "string"
+        },
+        "TargetPort": {
+            "type": "number"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HealthcheckDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstancePoolId",
+        "Name",
+        "NlbId",
+        "Port",
+        "TargetPort",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

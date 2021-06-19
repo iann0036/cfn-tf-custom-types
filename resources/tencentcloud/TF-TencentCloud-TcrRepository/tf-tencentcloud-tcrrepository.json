@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::TencentCloud::TcrRepository",
+    "description": "Use this resource to create tcr repository.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-TcrRepository/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BriefDesc": {
+            "type": "string",
+            "description": "Brief description of the repository. Valid length is [1~100]."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the repository. Valid length is [1~1000]."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of the TCR instance."
+        },
+        "IsPublic": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the TCR repository. Valid length is [2~200]. It can only contain lowercase letters, numbers and separators (`.`, `_`, `-`, `/`), and cannot start, end or continue with separators. Support the use of multi-level address formats, such as `sub1/sub2/repo`."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "Name of the TCR namespace."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BriefDesc",
+        "Description",
+        "InstanceId",
+        "Name",
+        "NamespaceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/IsPublic",
+        "/properties/UpdateTime",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

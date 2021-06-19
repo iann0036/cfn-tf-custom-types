@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::CloudEOS::Subnet",
+    "description": "The `cloudeos_subnet` resource sends the information about the subnet that has been deployed to CVaaS.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-Subnet/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability zone."
+        },
+        "CidrBlock": {
+            "type": "string",
+            "description": "CIDR of the subnet."
+        },
+        "CloudProvider": {
+            "type": "string",
+            "description": "Cloud Provider in which the subnet is being deployed. Supported: aws or azure."
+        },
+        "ComputedSubnetId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of subnet deployed in AWS/Azure."
+        },
+        "SubnetName": {
+            "type": "string",
+            "description": "Name of the subnet."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "VnetName": {
+            "type": "string",
+            "description": "VNET name, only needed in Azure."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID in which this subnet is created, equivalent to rg_name in Azure."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "CloudProvider",
+        "SubnetId",
+        "SubnetName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ComputedSubnetId",
+        "/properties/Id",
+        "/properties/TfId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

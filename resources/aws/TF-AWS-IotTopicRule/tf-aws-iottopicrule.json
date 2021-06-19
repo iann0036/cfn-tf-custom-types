@@ -1,0 +1,716 @@
+{
+    "typeName": "TF::AWS::IotTopicRule",
+    "description": "CloudFormation equivalent of aws_iot_topic_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-IotTopicRule/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CloudwatchAlarmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlarmName": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StateReason": {
+                    "type": "string"
+                },
+                "StateValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AlarmName",
+                "RoleArn",
+                "StateReason",
+                "StateValue"
+            ]
+        },
+        "CloudwatchMetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "MetricNamespace": {
+                    "type": "string"
+                },
+                "MetricTimestamp": {
+                    "type": "string"
+                },
+                "MetricUnit": {
+                    "type": "string"
+                },
+                "MetricValue": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "MetricNamespace",
+                "MetricUnit",
+                "MetricValue",
+                "RoleArn"
+            ]
+        },
+        "DynamodbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashKeyField": {
+                    "type": "string"
+                },
+                "HashKeyType": {
+                    "type": "string"
+                },
+                "HashKeyValue": {
+                    "type": "string"
+                },
+                "Operation": {
+                    "type": "string"
+                },
+                "PayloadField": {
+                    "type": "string"
+                },
+                "RangeKeyField": {
+                    "type": "string"
+                },
+                "RangeKeyType": {
+                    "type": "string"
+                },
+                "RangeKeyValue": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HashKeyField",
+                "HashKeyValue",
+                "RoleArn",
+                "TableName"
+            ]
+        },
+        "Dynamodbv2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RoleArn": {
+                    "type": "string"
+                },
+                "PutItem": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PutItemDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RoleArn"
+            ]
+        },
+        "ElasticsearchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Index": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Id",
+                "Index",
+                "RoleArn",
+                "Type"
+            ]
+        },
+        "ErrorActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchAlarm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchAlarmDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CloudwatchMetric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchMetricDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Dynamodb": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamodbDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Dynamodbv2": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dynamodbv2Definition"
+                    },
+                    "maxItems": 1
+                },
+                "Elasticsearch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ElasticsearchDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Firehose": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FirehoseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IotAnalytics": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IotAnalyticsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IotEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IotEventsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Kinesis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Lambda": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Republish": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RepublishDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                },
+                "Sns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sqs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SqsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StepFunctions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepFunctionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "FirehoseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeliveryStreamName": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Separator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeliveryStreamName",
+                "RoleArn"
+            ]
+        },
+        "IotAnalyticsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChannelName": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ChannelName",
+                "RoleArn"
+            ]
+        },
+        "IotEventsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InputName": {
+                    "type": "string"
+                },
+                "MessageId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InputName",
+                "RoleArn"
+            ]
+        },
+        "KinesisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PartitionKey": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StreamName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "StreamName"
+            ]
+        },
+        "LambdaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn"
+            ]
+        },
+        "RepublishDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Qos": {
+                    "type": "number"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "Topic"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Key",
+                "RoleArn"
+            ]
+        },
+        "SnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageFormat": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "TargetArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "TargetArn"
+            ]
+        },
+        "SqsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueueUrl": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UseBase64": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "QueueUrl",
+                "RoleArn",
+                "UseBase64"
+            ]
+        },
+        "StepFunctionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExecutionNamePrefix": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StateMachineName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "StateMachineName"
+            ]
+        },
+        "PutItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TableName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the rule."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the rule is enabled."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The unique identifier for the document you are storing."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule."
+        },
+        "Sql": {
+            "type": "string",
+            "description": "The SQL statement used to query the topic. For more information, see AWS IoT SQL Reference (http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference) in the AWS IoT Developer Guide."
+        },
+        "SqlVersion": {
+            "type": "string",
+            "description": "The version of the SQL rules engine to use when evaluating the rule."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "CloudwatchAlarm": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchAlarmDefinition"
+            }
+        },
+        "CloudwatchMetric": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchMetricDefinition"
+            }
+        },
+        "Dynamodb": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DynamodbDefinition"
+            }
+        },
+        "Dynamodbv2": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Dynamodbv2Definition"
+            }
+        },
+        "Elasticsearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchDefinition"
+            }
+        },
+        "ErrorAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ErrorActionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Firehose": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FirehoseDefinition"
+            }
+        },
+        "IotAnalytics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IotAnalyticsDefinition"
+            }
+        },
+        "IotEvents": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IotEventsDefinition"
+            }
+        },
+        "Kinesis": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KinesisDefinition"
+            }
+        },
+        "Lambda": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LambdaDefinition"
+            }
+        },
+        "Republish": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RepublishDefinition"
+            }
+        },
+        "S3": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3Definition"
+            }
+        },
+        "Sns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SnsDefinition"
+            }
+        },
+        "Sqs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SqsDefinition"
+            }
+        },
+        "StepFunctions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StepFunctionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Name",
+        "Sql",
+        "SqlVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

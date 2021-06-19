@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::ACI::L3outOspfInterfaceProfile",
+    "description": "CloudFormation equivalent of aci_l3out_ospf_interface_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outOspfInterfaceProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "AuthKey": {
+            "type": "string"
+        },
+        "AuthKeyId": {
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalInterfaceProfileDn": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "RelationOspfRsIfPol": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthKey",
+        "LogicalInterfaceProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

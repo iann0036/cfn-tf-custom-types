@@ -1,0 +1,2739 @@
+{
+    "typeName": "TF::Volterra::HttpLoadbalancer",
+    "description": "CloudFormation equivalent of volterra_http_loadbalancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-HttpLoadbalancer/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActiveServicePoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Policies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PoliciesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvertiseCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertiseWhere": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdvertiseWhereDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvertiseOnPublicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublicIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlockedClientsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumber": {
+                    "type": "number"
+                },
+                "ExpirationTimestamp": {
+                    "type": "string"
+                },
+                "IpPrefix": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CaptchaChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpiry": {
+                    "type": "number"
+                },
+                "CustomPage": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CookieStickinessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CorsPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowCredentials": {
+                    "type": "boolean"
+                },
+                "AllowHeaders": {
+                    "type": "string"
+                },
+                "AllowMethods": {
+                    "type": "string"
+                },
+                "AllowOrigin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowOriginRegex": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "ExposeHeaders": {
+                    "type": "string"
+                },
+                "MaxAge": {
+                    "type": "string"
+                },
+                "MaximumAge": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DefaultRoutePoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointSubsets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointSubsetsDefinition"
+                    }
+                },
+                "Weight": {
+                    "type": "number"
+                },
+                "Cluster": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClusterDefinition"
+                    }
+                },
+                "Pool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PoolDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EndpointSubsetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsVolterraManaged": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HttpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddHsts": {
+                    "type": "boolean"
+                },
+                "AppendServerName": {
+                    "type": "string"
+                },
+                "DefaultHeader": {
+                    "type": "boolean"
+                },
+                "HttpRedirect": {
+                    "type": "boolean"
+                },
+                "PassThrough": {
+                    "type": "boolean"
+                },
+                "ServerName": {
+                    "type": "string"
+                },
+                "TlsParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsParametersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpsAutoCertDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddHsts": {
+                    "type": "boolean"
+                },
+                "AppendServerName": {
+                    "type": "string"
+                },
+                "DefaultHeader": {
+                    "type": "boolean"
+                },
+                "HttpRedirect": {
+                    "type": "boolean"
+                },
+                "NoMtls": {
+                    "type": "boolean"
+                },
+                "PassThrough": {
+                    "type": "boolean"
+                },
+                "ServerName": {
+                    "type": "string"
+                },
+                "TlsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsConfigDefinition"
+                    }
+                },
+                "UseMtls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UseMtlsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "JsChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpiry": {
+                    "type": "number"
+                },
+                "CustomPage": {
+                    "type": "string"
+                },
+                "JsScriptDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MaliciousUserMitigationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MoreOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomErrors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomErrorsDefinition"
+                    }
+                },
+                "DisableDefaultErrorPages": {
+                    "type": "boolean"
+                },
+                "IdleTimeout": {
+                    "type": "number"
+                },
+                "MaxRequestHeaderSize": {
+                    "type": "number"
+                },
+                "RequestHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResponseHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BufferPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BufferPolicyDefinition"
+                    }
+                },
+                "CompressionParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CompressionParamsDefinition"
+                    }
+                },
+                "JavascriptInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/JavascriptInfoDefinition"
+                    }
+                },
+                "Jwt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JwtDefinition"
+                    }
+                },
+                "RequestHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestHeadersToAddDefinition"
+                    }
+                },
+                "ResponseHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseHeadersToAddDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomErrorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PolicyBasedChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysEnableCaptchaChallenge": {
+                    "type": "boolean"
+                },
+                "AlwaysEnableJsChallenge": {
+                    "type": "boolean"
+                },
+                "DefaultCaptchaChallengeParameters": {
+                    "type": "boolean"
+                },
+                "DefaultJsChallengeParameters": {
+                    "type": "boolean"
+                },
+                "DefaultMitigationSettings": {
+                    "type": "boolean"
+                },
+                "DefaultTemporaryBlockingParameters": {
+                    "type": "boolean"
+                },
+                "NoChallenge": {
+                    "type": "boolean"
+                },
+                "CaptchaChallengeParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CaptchaChallengeParametersDefinition"
+                    }
+                },
+                "JsChallengeParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/JsChallengeParametersDefinition"
+                    }
+                },
+                "MaliciousUserMitigation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaliciousUserMitigationDefinition"
+                    }
+                },
+                "RuleList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleListDefinition"
+                    }
+                },
+                "TemporaryUserBlocking": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TemporaryUserBlockingDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoIpAllowedList": {
+                    "type": "boolean"
+                },
+                "NoPolicies": {
+                    "type": "boolean"
+                },
+                "CustomIpAllowedList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomIpAllowedListDefinition"
+                    }
+                },
+                "IpAllowedList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAllowedListDefinition"
+                    }
+                },
+                "Policies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PoliciesDefinition"
+                    }
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RingHashDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HashPolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomRouteObject": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomRouteObjectDefinition"
+                    }
+                },
+                "DirectResponseRoute": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DirectResponseRouteDefinition"
+                    }
+                },
+                "RedirectRoute": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectRouteDefinition"
+                    }
+                },
+                "SimpleRoute": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SimpleRouteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TrustedClientsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumber": {
+                    "type": "number"
+                },
+                "ExpirationTimestamp": {
+                    "type": "string"
+                },
+                "IpPrefix": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UserIdentificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WafDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WafExclusionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyDomain": {
+                    "type": "boolean"
+                },
+                "DomainRegex": {
+                    "type": "string"
+                },
+                "ExcludeRuleIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExpirationTimestamp": {
+                    "type": "string"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PathRegex": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ExcludeRuleIds"
+            ]
+        },
+        "WafRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AdvertiseWhereDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "UseDefaultPort": {
+                    "type": "boolean"
+                },
+                "Site": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteDefinition"
+                    }
+                },
+                "VirtualNetwork": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkDefinition"
+                    }
+                },
+                "VirtualSite": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualSiteDefinition"
+                    }
+                },
+                "Vk8sService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Vk8sServiceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PublicIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TlsParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoMtls": {
+                    "type": "boolean"
+                },
+                "TlsCertificates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsCertificatesDefinition"
+                    }
+                },
+                "TlsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsConfigDefinition"
+                    }
+                },
+                "UseMtls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UseMtlsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultSecurity": {
+                    "type": "boolean"
+                },
+                "LowSecurity": {
+                    "type": "boolean"
+                },
+                "MediumSecurity": {
+                    "type": "boolean"
+                },
+                "CustomSecurity": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomSecurityDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UseMtlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrustedCaUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BufferPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "MaxRequestBytes": {
+                    "type": "number"
+                },
+                "MaxRequestTime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CompressionParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentLength": {
+                    "type": "number"
+                },
+                "ContentType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DisableOnEtagHeader": {
+                    "type": "boolean"
+                },
+                "RemoveAcceptEncodingHeader": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "JavascriptInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CachePrefix": {
+                    "type": "string"
+                },
+                "CustomScriptUrl": {
+                    "type": "string"
+                },
+                "ScriptConfig": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JwtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RequestHeadersToAddDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Append": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseHeadersToAddDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Append": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CaptchaChallengeParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpiry": {
+                    "type": "number"
+                },
+                "CustomPage": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JsChallengeParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpiry": {
+                    "type": "number"
+                },
+                "CustomPage": {
+                    "type": "string"
+                },
+                "JsScriptDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RuleListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TemporaryUserBlockingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomPage": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomIpAllowedListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RateLimiterAllowedPrefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterAllowedPrefixesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpAllowedListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Prefixes"
+            ]
+        },
+        "RateLimiterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TotalNumber": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HashPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderName": {
+                    "type": "string"
+                },
+                "SourceIp": {
+                    "type": "boolean"
+                },
+                "Terminal": {
+                    "type": "boolean"
+                },
+                "Cookie": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CookieDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomRouteObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RouteRef": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RouteRefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DirectResponseRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                },
+                "RouteDirectResponse": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RouteDirectResponseDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RedirectRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                },
+                "RouteRedirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RouteRedirectDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SimpleRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoHostRewrite": {
+                    "type": "boolean"
+                },
+                "DisableHostRewrite": {
+                    "type": "boolean"
+                },
+                "HostRewrite": {
+                    "type": "string"
+                },
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "AdvancedOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdvancedOptionsDefinition"
+                    }
+                },
+                "OriginPools": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginPoolsDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualSiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Vk8sServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Site": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteDefinition"
+                    }
+                },
+                "VirtualSite": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualSiteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomSecurityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CipherSuites": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxVersion": {
+                    "type": "string"
+                },
+                "MinVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CipherSuites"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "Spec": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SpecDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RateLimiterAllowedPrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CookieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RouteRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrefixValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RegexValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Transformers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RouteDirectResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseBody": {
+                    "type": "string"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RouteRedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllParams": {
+                    "type": "boolean"
+                },
+                "HostRedirect": {
+                    "type": "string"
+                },
+                "PathRedirect": {
+                    "type": "string"
+                },
+                "ProtoRedirect": {
+                    "type": "string"
+                },
+                "RemoveAllParams": {
+                    "type": "boolean"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                },
+                "RetainAllParams": {
+                    "type": "boolean"
+                },
+                "StripQueryParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StripQueryParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonBuffering": {
+                    "type": "boolean"
+                },
+                "CommonHashPolicy": {
+                    "type": "boolean"
+                },
+                "DefaultRetryPolicy": {
+                    "type": "boolean"
+                },
+                "DisableLocationAdd": {
+                    "type": "boolean"
+                },
+                "DisableMirroring": {
+                    "type": "boolean"
+                },
+                "DisablePrefixRewrite": {
+                    "type": "boolean"
+                },
+                "DisableSpdy": {
+                    "type": "boolean"
+                },
+                "DisableWaf": {
+                    "type": "boolean"
+                },
+                "DisableWebSocketConfig": {
+                    "type": "boolean"
+                },
+                "DoNotRetractCluster": {
+                    "type": "boolean"
+                },
+                "EnableSpdy": {
+                    "type": "boolean"
+                },
+                "EndpointSubsets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointSubsetsDefinition2"
+                    }
+                },
+                "PrefixRewrite": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "RequestHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResponseHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RetractCluster": {
+                    "type": "boolean"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "BufferPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BufferPolicyDefinition"
+                    }
+                },
+                "CorsPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CorsPolicyDefinition"
+                    }
+                },
+                "MirrorPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MirrorPolicyDefinition"
+                    }
+                },
+                "RequestHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestHeadersToAddDefinition"
+                    }
+                },
+                "ResponseHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseHeadersToAddDefinition"
+                    }
+                },
+                "RetryPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RetryPolicyDefinition"
+                    }
+                },
+                "SpecificHashPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SpecificHashPolicyDefinition"
+                    }
+                },
+                "Waf": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WafDefinition"
+                    }
+                },
+                "WafRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WafRuleDefinition"
+                    }
+                },
+                "WebSocketConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WebSocketConfigDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EndpointSubsetsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OriginPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointSubsets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointSubsetsDefinition3"
+                    }
+                },
+                "Weight": {
+                    "type": "number"
+                },
+                "Cluster": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClusterDefinition"
+                    }
+                },
+                "Pool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PoolDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EndpointSubsetsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyAsn": {
+                    "type": "boolean"
+                },
+                "AnyClient": {
+                    "type": "boolean"
+                },
+                "AnyIp": {
+                    "type": "boolean"
+                },
+                "ClientName": {
+                    "type": "string"
+                },
+                "DisableChallenge": {
+                    "type": "boolean"
+                },
+                "EnableCaptchaChallenge": {
+                    "type": "boolean"
+                },
+                "EnableJavascriptChallenge": {
+                    "type": "boolean"
+                },
+                "ExpirationTimestamp": {
+                    "type": "string"
+                },
+                "ArgMatchers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArgMatchersDefinition"
+                    }
+                },
+                "AsnList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AsnListDefinition"
+                    }
+                },
+                "AsnMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AsnMatcherDefinition"
+                    }
+                },
+                "BodyMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BodyMatcherDefinition"
+                    }
+                },
+                "ClientNameMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientNameMatcherDefinition"
+                    }
+                },
+                "ClientSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientSelectorDefinition"
+                    }
+                },
+                "CookieMatchers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookieMatchersDefinition"
+                    }
+                },
+                "DomainMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DomainMatcherDefinition"
+                    }
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "HttpMethod": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HttpMethodDefinition"
+                    }
+                },
+                "IpMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpMatcherDefinition"
+                    }
+                },
+                "IpPrefixList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpPrefixListDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                },
+                "QueryParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParamsDefinition"
+                    }
+                },
+                "TlsFingerprintMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsFingerprintMatcherDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StripQueryParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueryParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MirrorPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginPool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OriginPoolDefinition"
+                    }
+                },
+                "Percent": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PercentDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RetryPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumRetries": {
+                    "type": "number"
+                },
+                "PerTryTimeout": {
+                    "type": "number"
+                },
+                "RetriableStatusCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "RetryOn": {
+                    "type": "string"
+                },
+                "BackOff": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BackOffDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SpecificHashPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HashPolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WebSocketConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdleTimeout": {
+                    "type": "number"
+                },
+                "MaxConnectAttempts": {
+                    "type": "number"
+                },
+                "UseWebsocket": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ArgMatchersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckNotPresent": {
+                    "type": "boolean"
+                },
+                "CheckPresent": {
+                    "type": "boolean"
+                },
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Presence": {
+                    "type": "boolean"
+                },
+                "Item": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AsnListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumbers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "AsNumbers"
+            ]
+        },
+        "AsnMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsnSets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AsnSetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BodyMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RegexValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Transformers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientNameMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RegexValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Transformers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expressions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Expressions"
+            ]
+        },
+        "CookieMatchersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckNotPresent": {
+                    "type": "boolean"
+                },
+                "CheckPresent": {
+                    "type": "boolean"
+                },
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Presence": {
+                    "type": "boolean"
+                },
+                "Item": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DomainMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RegexValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckNotPresent": {
+                    "type": "boolean"
+                },
+                "CheckPresent": {
+                    "type": "boolean"
+                },
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Presence": {
+                    "type": "boolean"
+                },
+                "Item": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpMethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "PrefixSets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixSetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpPrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InvertMatch": {
+                    "type": "boolean"
+                },
+                "IpPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "IpPrefixes"
+            ]
+        },
+        "QueryParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckNotPresent": {
+                    "type": "boolean"
+                },
+                "CheckPresent": {
+                    "type": "boolean"
+                },
+                "InvertMatcher": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Presence": {
+                    "type": "boolean"
+                },
+                "Item": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsFingerprintMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OriginPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PercentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Denominator": {
+                    "type": "string"
+                },
+                "Numerator": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BackOffDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseInterval": {
+                    "type": "number"
+                },
+                "MaxInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RegexValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Transformers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AsnSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrefixSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddLocation": {
+            "type": "boolean"
+        },
+        "AdvertiseOnPublicDefaultVip": {
+            "type": "boolean"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "DisableRateLimit": {
+            "type": "boolean"
+        },
+        "DisableWaf": {
+            "type": "boolean"
+        },
+        "DoNotAdvertise": {
+            "type": "boolean"
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LeastActive": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NoChallenge": {
+            "type": "boolean"
+        },
+        "NoServicePolicies": {
+            "type": "boolean"
+        },
+        "Random": {
+            "type": "boolean"
+        },
+        "RoundRobin": {
+            "type": "boolean"
+        },
+        "ServicePoliciesFromNamespace": {
+            "type": "boolean"
+        },
+        "SourceIpStickiness": {
+            "type": "boolean"
+        },
+        "ActiveServicePolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ActiveServicePoliciesDefinition"
+            }
+        },
+        "AdvertiseCustom": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdvertiseCustomDefinition"
+            }
+        },
+        "AdvertiseOnPublic": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdvertiseOnPublicDefinition"
+            }
+        },
+        "BlockedClients": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockedClientsDefinition"
+            }
+        },
+        "CaptchaChallenge": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CaptchaChallengeDefinition"
+            }
+        },
+        "CookieStickiness": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CookieStickinessDefinition"
+            }
+        },
+        "CorsPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CorsPolicyDefinition"
+            }
+        },
+        "DefaultRoutePools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultRoutePoolsDefinition"
+            }
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            }
+        },
+        "Https": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpsDefinition"
+            }
+        },
+        "HttpsAutoCert": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpsAutoCertDefinition"
+            }
+        },
+        "JsChallenge": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/JsChallengeDefinition"
+            }
+        },
+        "MaliciousUserMitigation": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MaliciousUserMitigationDefinition"
+            }
+        },
+        "MoreOption": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MoreOptionDefinition"
+            }
+        },
+        "PolicyBasedChallenge": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PolicyBasedChallengeDefinition"
+            }
+        },
+        "RateLimit": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RateLimitDefinition"
+            }
+        },
+        "RingHash": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RingHashDefinition"
+            }
+        },
+        "Routes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutesDefinition"
+            }
+        },
+        "TrustedClients": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedClientsDefinition"
+            }
+        },
+        "UserIdentification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserIdentificationDefinition"
+            }
+        },
+        "Waf": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WafDefinition"
+            }
+        },
+        "WafExclusionRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WafExclusionRulesDefinition"
+            }
+        },
+        "WafRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WafRuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domains",
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

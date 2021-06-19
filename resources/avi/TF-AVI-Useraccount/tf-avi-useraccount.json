@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::AVI::Useraccount",
+    "description": "The Useraccount resource allows the password update of a user and setting up admin password in the bootstrap.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Useraccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "To set email for the useraccount."
+        },
+        "FullName": {
+            "type": "string",
+            "description": "To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Is local user.\n* `name` - (Optional) To set name for the user account.\n* `full_name` - (Optional) To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        },
+        "Name": {
+            "type": "string",
+            "description": "To set name for the user account.\n* `full_name` - (Optional) To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        },
+        "OldPassword": {
+            "type": "string",
+            "description": "Old/currant password of the user.\n* `password` - (Required) New paswword for the given user.\n* `local` - (Optional) Is local user.\n* `name` - (Optional) To set name for the user account.\n* `full_name` - (Optional) To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        },
+        "Password": {
+            "type": "string",
+            "description": "New paswword for the given user.\n* `local` - (Optional) Is local user.\n* `name` - (Optional) To set name for the user account.\n* `full_name` - (Optional) To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        },
+        "Username": {
+            "type": "string",
+            "description": "User name of a user who's password needs to be updated.\n* `old_password` - (Required) Old/currant password of the user.\n* `password` - (Required) New paswword for the given user.\n* `local` - (Optional) Is local user.\n* `name` - (Optional) To set name for the user account.\n* `full_name` - (Optional) To set full name for the user account.\n* `email` - (Optional) To set email for the useraccount."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

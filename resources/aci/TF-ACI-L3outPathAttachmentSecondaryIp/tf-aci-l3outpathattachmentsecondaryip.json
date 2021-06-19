@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::ACI::L3outPathAttachmentSecondaryIp",
+    "description": "Manages ACI L3-out Path Attachment Secondary IP",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outPathAttachmentSecondaryIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Addr": {
+            "type": "string",
+            "description": "The peer IP address.\n- `annotation` - (Optional) Annotation for object L3-out path attachment secondary IP.\n- `ipv6_dad` - (Optional) IPv6-DAD for object L3-out path attachment secondary IP.\nAllowed values: \"disabled\", \"enabled\". Default value: \"disabled\".\n- `name_alias` - (Optional) Name alias for object L3-out path attachment secondary IP."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3-out path attachment secondary IP.\n- `ipv6_dad` - (Optional) IPv6-DAD for object L3-out path attachment secondary IP.\nAllowed values: \"disabled\", \"enabled\". Default value: \"disabled\".\n- `name_alias` - (Optional) Name alias for object L3-out path attachment secondary IP."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6Dad": {
+            "type": "string",
+            "description": "IPv6-DAD for object L3-out path attachment secondary IP.\nAllowed values: \"disabled\", \"enabled\". Default value: \"disabled\".\n- `name_alias` - (Optional) Name alias for object L3-out path attachment secondary IP."
+        },
+        "L3outPathAttachmentDn": {
+            "type": "string",
+            "description": "Distinguished name of parent L3-out path attachment object.\n- `addr` - (Required) The peer IP address.\n- `annotation` - (Optional) Annotation for object L3-out path attachment secondary IP.\n- `ipv6_dad` - (Optional) IPv6-DAD for object L3-out path attachment secondary IP.\nAllowed values: \"disabled\", \"enabled\". Default value: \"disabled\".\n- `name_alias` - (Optional) Name alias for object L3-out path attachment secondary IP."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3-out path attachment secondary IP."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Addr",
+        "L3outPathAttachmentDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

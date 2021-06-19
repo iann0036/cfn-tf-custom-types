@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::AWS::ConfigRemediationConfiguration",
+    "description": "Provides an AWS Config Remediation Configuration.\n\n~> **Note:** Config Remediation Configuration requires an existing [Config Rule](/docs/providers/aws/r/config_config_rule.html) to be present.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ConfigRemediationConfiguration/docs/README.md",
+    "definitions": {
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the attribute."
+                },
+                "ResourceValue": {
+                    "type": "string",
+                    "description": "The value is dynamic and changes at run-time."
+                },
+                "StaticValue": {
+                    "type": "string",
+                    "description": "The value is static and does not change at run-time."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ConfigRuleName": {
+            "type": "string",
+            "description": "The name of the AWS Config rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "The type of a resource."
+        },
+        "TargetId": {
+            "type": "string",
+            "description": "Target ID is the name of the public document."
+        },
+        "TargetType": {
+            "type": "string",
+            "description": "The type of the target. Target executes remediation. For example, SSM document."
+        },
+        "TargetVersion": {
+            "type": "string",
+            "description": "Version of the target. For example, version of the SSM document."
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParameterDefinition"
+            },
+            "maxItems": 25
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigRuleName",
+        "TargetId",
+        "TargetType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

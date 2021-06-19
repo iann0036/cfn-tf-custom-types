@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::VCD::VmSizingPolicy",
+    "description": "Provides a vCloud Director VM sizing policy resource. This can be\nused to create, modify, and delete VM sizing policy.\n\nSupported in provider *v3.0+* and requires VCD 10.0+\n\n~> **Note:** \nCPU and memory properties of a VM sizing policy can't be updated in-place, so updating them will force a re-create. For such re-creation to succeed, the policy can't be used by VDC and VM. Hence, the policy usage has to be removed from VDC and VM beforehand. For the cases when that is not trivial, a two-step approach may be easier: to create a new policy with the new values, assign it to VDC and VM, and afterwards remove the old policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VmSizingPolicy/docs/README.md",
+    "definitions": {
+        "CpuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoresPerSocket": {
+                    "type": "string"
+                },
+                "Count": {
+                    "type": "string"
+                },
+                "LimitInMhz": {
+                    "type": "string"
+                },
+                "ReservationGuarantee": {
+                    "type": "string"
+                },
+                "Shares": {
+                    "type": "string"
+                },
+                "SpeedInMhz": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MemoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LimitInMb": {
+                    "type": "string"
+                },
+                "ReservationGuarantee": {
+                    "type": "string"
+                },
+                "Shares": {
+                    "type": "string"
+                },
+                "SizeInMb": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "description of VM sizing policy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of VM sizing policy."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organizations."
+        },
+        "Cpu": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CpuDefinition"
+            },
+            "maxItems": 1
+        },
+        "Memory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemoryDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

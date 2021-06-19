@@ -1,0 +1,254 @@
+{
+    "typeName": "TF::Checkly::AlertChannel",
+    "description": "The `checkly_alert_channel` resource allows users to manage checkly Alert Channels.\n\nCheckly's Alert Channels feature allows you to define global alerting channels for the checks in your account:",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkly/TF-Checkly-AlertChannel/docs/README.md",
+    "definitions": {
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "OpsgenieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey",
+                "Name",
+                "Priority",
+                "Region"
+            ]
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Channel": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Channel",
+                "Url"
+            ]
+        },
+        "SmsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Number": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Number"
+            ]
+        },
+        "WebhookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "QueryParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParametersDefinition"
+                    }
+                },
+                "Template": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "WebhookSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method",
+                "Name"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "QueryParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SendDegraded": {
+            "type": "boolean"
+        },
+        "SendFailure": {
+            "type": "boolean"
+        },
+        "SendRecovery": {
+            "type": "boolean"
+        },
+        "SslExpiry": {
+            "type": "boolean"
+        },
+        "SslExpiryThreshold": {
+            "type": "number"
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Opsgenie": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OpsgenieDefinition"
+            },
+            "maxItems": 1
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Webhook": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WebhookDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

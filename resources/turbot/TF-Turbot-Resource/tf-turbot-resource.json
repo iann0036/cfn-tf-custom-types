@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Turbot::Resource",
+    "description": "The `turbot_resource` defines a resource in Turbot. Typically it is used to define the top level for a set of discoverable resources (e.g. an AWS account).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-Resource/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Akas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Data": {
+            "type": "string",
+            "description": "JSON representation of resource properties to be managed by Terraform. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are ignored by Terraform.\n- `metadata` - (Optional) JSON representation of resource metadata properties to be managed by Terraform. NOTE: If additional metadata properties are set on the resource by other means, they are ignored by Terraform.\n- `full_data` - (Optional) JSON representation of all resource properties to be set on the resource. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are removed.\n- `full_metadata` - (Optional) JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "FullData": {
+            "type": "string",
+            "description": "JSON representation of all resource properties to be set on the resource. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are removed.\n- `full_metadata` - (Optional) JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "FullMetadata": {
+            "type": "string",
+            "description": "JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "string",
+            "description": "JSON representation of resource metadata properties to be managed by Terraform. NOTE: If additional metadata properties are set on the resource by other means, they are ignored by Terraform.\n- `full_data` - (Optional) JSON representation of all resource properties to be set on the resource. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are removed.\n- `full_metadata` - (Optional) JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "The identifier of the parent resource under which this resource will be created.\n- `type` - (Required) Defines the type of the resource to be created.\n- `data` - (Optional) JSON representation of resource properties to be managed by Terraform. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are ignored by Terraform.\n- `metadata` - (Optional) JSON representation of resource metadata properties to be managed by Terraform. NOTE: If additional metadata properties are set on the resource by other means, they are ignored by Terraform.\n- `full_data` - (Optional) JSON representation of all resource properties to be set on the resource. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are removed.\n- `full_metadata` - (Optional) JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "User defined label for grouping resources."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Defines the type of the resource to be created.\n- `data` - (Optional) JSON representation of resource properties to be managed by Terraform. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are ignored by Terraform.\n- `metadata` - (Optional) JSON representation of resource metadata properties to be managed by Terraform. NOTE: If additional metadata properties are set on the resource by other means, they are ignored by Terraform.\n- `full_data` - (Optional) JSON representation of all resource properties to be set on the resource. The data must be valid for the resource type schema. NOTE: If additional properties are set on the resource by other means, they are removed.\n- `full_metadata` - (Optional) JSON representation of all resource metadata properties to be set on the resource. NOTE: If additional metadata properties are set on the resource by other means, they are removed.\n- `akas` - (Optional) Unique identifier of the resource.\n- `tags` - (Optional) User defined label for grouping resources."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ParentAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

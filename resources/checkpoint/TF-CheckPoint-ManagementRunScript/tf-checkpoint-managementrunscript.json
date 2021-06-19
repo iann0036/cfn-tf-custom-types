@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::CheckPoint::ManagementRunScript",
+    "description": "This command resource allows you to execute Check Point Run Script.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementRunScript/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Args": {
+            "type": "string",
+            "description": "Script arguments."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Script": {
+            "type": "string",
+            "description": "Script body."
+        },
+        "ScriptName": {
+            "type": "string",
+            "description": "Script name."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "On what targets to execute this command. Targets may be identified by their name, or object unique identifier.targets blocks are documented below."
+        },
+        "Tasks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of asynchronous task unique identifiers."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Script",
+        "ScriptName",
+        "Targets"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Tasks"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::OCI::CoreDrgAttachmentsList",
+    "description": "This resource provides the Drg Attachments List resource in Oracle Cloud Infrastructure Core service.\n\nReturns a complete list of DRG attachments that belong to a particular DRG.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreDrgAttachmentsList/docs/README.md",
+    "definitions": {
+        "DrgAllAttachmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachmentType": {
+            "type": "string",
+            "description": "The type for the network resource attached to the DRG."
+        },
+        "DrgAllAttachments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DrgAllAttachmentsDefinition"
+            }
+        },
+        "DrgId": {
+            "type": "string",
+            "description": "The [[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsCrossTenancy": {
+            "type": "boolean",
+            "description": "Whether the DRG attachment lives in a different tenancy than the DRG."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DrgId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DrgAllAttachments",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

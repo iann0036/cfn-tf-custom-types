@@ -1,0 +1,218 @@
+{
+    "typeName": "TF::AzureRM::VmwarePrivateCloud",
+    "description": "Manages a Vmware Private Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VmwarePrivateCloud/docs/README.md",
+    "definitions": {
+        "CircuitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpressRouteId": {
+                    "type": "string"
+                },
+                "ExpressRoutePrivatePeeringId": {
+                    "type": "string"
+                },
+                "PrimarySubnetCidr": {
+                    "type": "string"
+                },
+                "SecondarySubnetCidr": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ManagementClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Size"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Circuit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CircuitDefinition"
+            }
+        },
+        "HcxCloudManagerEndpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetConnectionEnabled": {
+            "type": "boolean"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "ManagementSubnetCidr": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkSubnetCidr": {
+            "type": "string"
+        },
+        "NsxtCertificateThumbprint": {
+            "type": "string"
+        },
+        "NsxtManagerEndpoint": {
+            "type": "string"
+        },
+        "NsxtPassword": {
+            "type": "string"
+        },
+        "ProvisioningSubnetCidr": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SkuName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VcenterCertificateThumbprint": {
+            "type": "string"
+        },
+        "VcenterPassword": {
+            "type": "string"
+        },
+        "VcsaEndpoint": {
+            "type": "string"
+        },
+        "VmotionSubnetCidr": {
+            "type": "string"
+        },
+        "ManagementCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagementClusterDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "NetworkSubnetCidr",
+        "ResourceGroupName",
+        "SkuName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Circuit",
+        "/properties/HcxCloudManagerEndpoint",
+        "/properties/Id",
+        "/properties/ManagementSubnetCidr",
+        "/properties/NsxtCertificateThumbprint",
+        "/properties/NsxtManagerEndpoint",
+        "/properties/ProvisioningSubnetCidr",
+        "/properties/VcenterCertificateThumbprint",
+        "/properties/VcsaEndpoint",
+        "/properties/VmotionSubnetCidr"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/NsxtPassword",
+        "/properties/VcenterPassword"
+    ]
+}

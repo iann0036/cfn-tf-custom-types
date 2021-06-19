@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::FortiOS::NetworkingInterfacePort",
+    "description": "Provides a resource to configure interface settings of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_system_interface`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-NetworkingInterfacePort/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string",
+            "description": "Alias will be displayed with the interface name to make it easier to distinguish."
+        },
+        "Allowaccess": {
+            "type": "string",
+            "description": "Permitted types of management access to this interface."
+        },
+        "Defaultgw": {
+            "type": "string",
+            "description": "Enable to get the gateway IP from the DHCP or PPPoE server."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DeviceIdentification": {
+            "type": "string",
+            "description": "Enable/disable passively gathering of device identity information about the devices on the network connected to this interface."
+        },
+        "Distance": {
+            "type": "string",
+            "description": "Distance for routes learned through PPPoE or DHCP, lower distance indicates preferred route."
+        },
+        "DnsServerOverride": {
+            "type": "string",
+            "description": "Enable/disable use DNS acquired by DHCP or PPPoE."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "Interface IPv4 address and subnet mask, syntax` - X.X.X.X X.X.X.X."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Addressing mode."
+        },
+        "Mtu": {
+            "type": "string",
+            "description": "MTU value for this interface."
+        },
+        "MtuOverride": {
+            "type": "string",
+            "description": "Enable to set a custom MTU for this interface."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Role": {
+            "type": "string",
+            "description": "Interface role."
+        },
+        "Speed": {
+            "type": "string",
+            "description": "Interface speed. The default setting and the options available depend on the interface hardware."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Bring the interface up or shut the interface down."
+        },
+        "TcpMss": {
+            "type": "string",
+            "description": "TCP maximum segment size. 0 means do not change segment size."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Interface type (support physical, vlan, loopback)."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "Interface is in this virtual domain (VDOM)."
+        },
+        "Vlanid": {
+            "type": "string",
+            "description": "VLAN ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Alicloud::RamRolePolicyAttachment",
+    "description": "Provides a RAM Role attachment resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-RamRolePolicyAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PolicyName": {
+            "type": "string",
+            "description": "Name of the RAM policy. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen \"-\", and must not begin with a hyphen."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "Type of the RAM policy. It must be `Custom` or `System`."
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "Name of the RAM Role. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as \"-\", \"_\", and must not begin with a hyphen."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PolicyName",
+        "PolicyType",
+        "RoleName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

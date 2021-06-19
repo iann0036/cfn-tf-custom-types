@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::OCI::LoadBalancerBackend",
+    "description": "This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.\n\nAdds a backend server to a backend set.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LoadBalancerBackend/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendsetName": {
+            "type": "string",
+            "description": "The name of the backend set to add the backend server to.  Example: `example_backend_set`."
+        },
+        "Backup": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy."
+        },
+        "Drain": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the load balancer should drain this server. Servers marked \"drain\" receive no new incoming traffic.  Example: `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "The IP address of the backend server.  Example: `10.0.0.3`."
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Offline": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The communication port for the backend server.  Example: `8080`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "number",
+            "description": "(Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackendsetName",
+        "IpAddress",
+        "LoadBalancerId",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

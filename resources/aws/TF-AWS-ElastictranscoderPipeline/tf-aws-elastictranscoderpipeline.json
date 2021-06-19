@@ -1,0 +1,224 @@
+{
+    "typeName": "TF::AWS::ElastictranscoderPipeline",
+    "description": "Provides an Elastic Transcoder pipeline resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElastictranscoderPipeline/docs/README.md",
+    "definitions": {
+        "ContentConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string",
+                    "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists."
+                },
+                "StorageClass": {
+                    "type": "string",
+                    "description": "The Amazon S3 storage class, `Standard` or `ReducedRedundancy`, that you want Elastic Transcoder to assign to the files and playlists that it stores in your Amazon S3 bucket."
+                }
+            },
+            "required": []
+        },
+        "ContentConfigPermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`."
+                },
+                "Grantee": {
+                    "type": "string",
+                    "description": "The AWS user or group that you want to have access to transcoded files and playlists."
+                },
+                "GranteeType": {
+                    "type": "string",
+                    "description": "Specify the type of value that appears in the `content_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`."
+                }
+            },
+            "required": []
+        },
+        "NotificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Completed": {
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline."
+                },
+                "Error": {
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline."
+                },
+                "Progressing": {
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline."
+                },
+                "Warning": {
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline."
+                }
+            },
+            "required": []
+        },
+        "ThumbnailConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string",
+                    "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files."
+                },
+                "StorageClass": {
+                    "type": "string",
+                    "description": "The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket."
+                }
+            },
+            "required": []
+        },
+        "ThumbnailConfigPermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The permission that you want to give to the AWS user that you specified in `thumbnail_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`."
+                },
+                "Grantee": {
+                    "type": "string",
+                    "description": "The AWS user or group that you want to have access to thumbnail files."
+                },
+                "GranteeType": {
+                    "type": "string",
+                    "description": "Specify the type of value that appears in the `thumbnail_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AwsKmsKeyArn": {
+            "type": "string",
+            "description": "The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputBucket": {
+            "type": "string",
+            "description": "The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the pipeline. Maximum 40 characters."
+        },
+        "OutputBucket": {
+            "type": "string",
+            "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline."
+        },
+        "ContentConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContentConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ContentConfigPermissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContentConfigPermissionsDefinition"
+            }
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ThumbnailConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThumbnailConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ThumbnailConfigPermissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ThumbnailConfigPermissionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InputBucket",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

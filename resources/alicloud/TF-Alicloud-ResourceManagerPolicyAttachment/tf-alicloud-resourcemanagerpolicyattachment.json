@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::Alicloud::ResourceManagerPolicyAttachment",
+    "description": "Provides a Resource Manager Policy Attachment resource to attaches a policy to an object. After you attach a policy to an object, the object has the operation permissions on the current resource group or the resources under the current account. \nFor information about Resource Manager Policy Attachment and how to use it, see [How to authorize and manage resource groups](https://www.alibabacloud.com/help/en/doc-detail/94490.htm).\n\n-> **NOTE:** Available in v1.93.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ResourceManagerPolicyAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PolicyName": {
+            "type": "string",
+            "description": "The name of the policy. name must be 1 to 128 characters in length and can contain letters, digits, and hyphens (-)."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "- (Required, ForceNew) The type of the policy. Valid values: `Custom`, `System`."
+        },
+        "PrincipalName": {
+            "type": "string",
+            "description": "The name of the object to which you want to attach the policy."
+        },
+        "PrincipalType": {
+            "type": "string",
+            "description": "The type of the object to which you want to attach the policy. Valid values: `IMSUser`: RAM user, `IMSGroup`: RAM user group, `ServiceRole`: RAM role."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PolicyName",
+        "PolicyType",
+        "PrincipalName",
+        "PrincipalType",
+        "ResourceGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

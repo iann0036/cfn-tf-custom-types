@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Okta::UserBaseSchema",
+    "description": "Manages a User Base Schema property.\n\nThis resource allows you to configure a base user schema property.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-UserBaseSchema/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Index": {
+            "type": "string",
+            "description": "The property name."
+        },
+        "Master": {
+            "type": "string",
+            "description": "Master priority for the user schema property. It can be set to `\"PROFILE_MASTER\"` or `\"OKTA\"`."
+        },
+        "Pattern": {
+            "type": "string",
+            "description": "The validation pattern to use for the subschema, only available for `login` property. Must be in form of `.+`, or `[<pattern>]+`."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Access control permissions for the property. It can be set to `\"READ_WRITE\"`, `\"READ_ONLY\"`, `\"HIDE\"`."
+        },
+        "Required": {
+            "type": "boolean",
+            "description": "Whether the property is required for this application's users."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The property display name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the schema property. It can be `\"string\"`, `\"boolean\"`, `\"number\"`, `\"integer\"`, `\"array\"`, or `\"object\"`."
+        },
+        "UserType": {
+            "type": "string",
+            "description": "User type ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Index",
+        "Title",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

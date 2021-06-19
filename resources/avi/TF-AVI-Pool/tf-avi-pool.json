@@ -1,0 +1,946 @@
+{
+    "typeName": "TF::AVI::Pool",
+    "description": "The Pool resource allows the creation and management of Avi Pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Pool/docs/README.md",
+    "definitions": {
+        "AnalyticsPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableRealtimeMetrics": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ConnPoolPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UpstreamConnpoolConnIdleTmo": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolConnLifeTmo": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolConnMaxReuse": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolServerMaxCache": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FailActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "LocalRsp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocalRspDefinition"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "MaxConnRatePerServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitTracking": {
+                    "type": "boolean"
+                },
+                "FineGrain": {
+                    "type": "boolean"
+                },
+                "HttpCookie": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "ServerFilter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NetworkRef"
+            ]
+        },
+        "PlacementNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "NetworkRef"
+            ]
+        },
+        "ServerReselectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "NumRetries": {
+                    "type": "number"
+                },
+                "RetryNonidempotent": {
+                    "type": "boolean"
+                },
+                "RetryTimeout": {
+                    "type": "number"
+                },
+                "SvrRespCode": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SvrRespCodeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscalingGroupName": {
+                    "type": "string"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ExternalOrchestrationId": {
+                    "type": "string"
+                },
+                "ExternalUuid": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "NwRef": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PrstHdrVal": {
+                    "type": "string"
+                },
+                "Ratio": {
+                    "type": "number"
+                },
+                "ResolveServerByDns": {
+                    "type": "boolean"
+                },
+                "RewriteHostHeader": {
+                    "type": "boolean"
+                },
+                "ServerNode": {
+                    "type": "string"
+                },
+                "Static": {
+                    "type": "boolean"
+                },
+                "VerifyNetwork": {
+                    "type": "boolean"
+                },
+                "VmRef": {
+                    "type": "string"
+                },
+                "DiscoveredNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiscoveredNetworksDefinition"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocationDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LocalRspDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeepQuery": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RateLimiterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSz": {
+                    "type": "number"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "SvrRespCodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Codes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "RespCodeBlock": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DiscoveredNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": [
+                "NetworkRef"
+            ]
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "FileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType",
+                "FileContent"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "number"
+                },
+                "End": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Begin",
+                "End"
+            ]
+        },
+        "Subnet6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TokensDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIndex": {
+                    "type": "number"
+                },
+                "StartIndex": {
+                    "type": "number"
+                },
+                "StrValue": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnalyticsProfileRef": {
+            "type": "string"
+        },
+        "ApicEpgName": {
+            "type": "string",
+            "description": "argument_description.\n* `application_persistence_profile_ref` - (Optional ) argument_description.\n* `autoscale_launch_config_ref` - (Optional ) argument_description.\n* `autoscale_networks` - (Optional ) argument_description.\n* `autoscale_policy_ref` - (Optional ) argument_description.\n* `capacity_estimation` - (Optional ) argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "ApplicationPersistenceProfileRef": {
+            "type": "string",
+            "description": "argument_description.\n* `autoscale_launch_config_ref` - (Optional ) argument_description.\n* `autoscale_networks` - (Optional ) argument_description.\n* `autoscale_policy_ref` - (Optional ) argument_description.\n* `capacity_estimation` - (Optional ) argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "AutoscaleLaunchConfigRef": {
+            "type": "string",
+            "description": "argument_description.\n* `autoscale_networks` - (Optional ) argument_description.\n* `autoscale_policy_ref` - (Optional ) argument_description.\n* `capacity_estimation` - (Optional ) argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "AutoscaleNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "argument_description.\n* `autoscale_policy_ref` - (Optional ) argument_description.\n* `capacity_estimation` - (Optional ) argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "AutoscalePolicyRef": {
+            "type": "string",
+            "description": "argument_description.\n* `capacity_estimation` - (Optional ) argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "CapacityEstimation": {
+            "type": "boolean",
+            "description": "argument_description.\n* `capacity_estimation_ttfb_thresh` - (Optional ) argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "CapacityEstimationTtfbThresh": {
+            "type": "number",
+            "description": "argument_description.\n* `cloud_config_cksum` - (Optional ) argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "CloudConfigCksum": {
+            "type": "string",
+            "description": "argument_description.\n* `cloud_ref` - (Optional ) argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "argument_description.\n* `connection_ramp_duration` - (Optional ) argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "ConnectionRampDuration": {
+            "type": "number",
+            "description": "argument_description.\n* `created_by` - (Optional ) argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "argument_description.\n* `default_server_port` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "DefaultServerPort": {
+            "type": "number",
+            "description": "argument_description.\n* `description` - (Optional ) argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "DeleteServerOnDnsRefresh": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "argument_description.\n* `domain_name` - (Optional ) argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "DomainName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "argument_description.\n* `east_west` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "EastWest": {
+            "type": "boolean",
+            "description": "argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "EnableHttp2": {
+            "type": "boolean"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "argument_description.\n* `external_autoscale_groups` - (Optional ) argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "ExternalAutoscaleGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "argument_description.\n* `fail_action` - (Optional ) argument_description.\n* `fewest_tasks_feedback_delay` - (Optional ) argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "FewestTasksFeedbackDelay": {
+            "type": "number",
+            "description": "argument_description.\n* `graceful_disable_timeout` - (Optional ) argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "GracefulDisableTimeout": {
+            "type": "number",
+            "description": "argument_description.\n* `health_monitor_refs` - (Optional ) argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "HealthMonitorRefs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "argument_description.\n* `host_check_enabled` - (Optional ) argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "HostCheckEnabled": {
+            "type": "boolean",
+            "description": "argument_description.\n* `inline_health_monitor` - (Optional ) argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreServerPort": {
+            "type": "boolean"
+        },
+        "IgnoreServers": {
+            "type": "boolean"
+        },
+        "InlineHealthMonitor": {
+            "type": "boolean",
+            "description": "argument_description.\n* `ipaddrgroup_ref` - (Optional ) argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "IpaddrgroupRef": {
+            "type": "string",
+            "description": "argument_description.\n* `lb_algorithm` - (Optional ) argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "LbAlgorithm": {
+            "type": "string",
+            "description": "argument_description.\n* `lb_algorithm_consistent_hash_hdr` - (Optional ) argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "LbAlgorithmConsistentHashHdr": {
+            "type": "string",
+            "description": "argument_description.\n* `lb_algorithm_core_nonaffinity` - (Optional ) argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "LbAlgorithmCoreNonaffinity": {
+            "type": "number",
+            "description": "argument_description.\n* `lb_algorithm_hash` - (Optional ) argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "LbAlgorithmHash": {
+            "type": "string",
+            "description": "argument_description.\n* `lookup_server_by_name` - (Optional ) argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "LookupServerByName": {
+            "type": "boolean",
+            "description": "argument_description.\n* `max_concurrent_connections_per_server` - (Optional ) argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "MaxConcurrentConnectionsPerServer": {
+            "type": "number",
+            "description": "argument_description.\n* `max_conn_rate_per_server` - (Optional ) argument_description.\n* `name` - (Required) argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "MinHealthMonitorsUp": {
+            "type": "number"
+        },
+        "MinServersUp": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "argument_description.\n* `networks` - (Optional ) argument_description.\n* `nsx_securitygroup` - (Optional ) argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "NsxSecuritygroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "argument_description.\n* `pki_profile_ref` - (Optional ) argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "PkiProfileRef": {
+            "type": "string",
+            "description": "argument_description.\n* `placement_networks` - (Optional ) argument_description.\n* `request_queue_depth` - (Optional ) argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "RequestQueueDepth": {
+            "type": "number",
+            "description": "argument_description.\n* `request_queue_enabled` - (Optional ) argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "RequestQueueEnabled": {
+            "type": "boolean",
+            "description": "argument_description.\n* `rewrite_host_header_to_server_name` - (Optional ) argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "ResolvePoolByDns": {
+            "type": "boolean"
+        },
+        "RewriteHostHeaderToServerName": {
+            "type": "boolean",
+            "description": "argument_description.\n* `rewrite_host_header_to_sni` - (Optional ) argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "RewriteHostHeaderToSni": {
+            "type": "boolean",
+            "description": "argument_description.\n* `server_count` - (Optional ) argument_description.\n* `server_name` - (Optional ) argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "RoutingPool": {
+            "type": "boolean"
+        },
+        "ServerName": {
+            "type": "string",
+            "description": "argument_description.\n* `server_reselect` - (Optional ) argument_description.\n* `servers` - (Optional ) argument_description.\n* `sni_enabled` - (Optional ) argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "ServerTimeout": {
+            "type": "number"
+        },
+        "ServiceMetadata": {
+            "type": "string"
+        },
+        "SniEnabled": {
+            "type": "boolean",
+            "description": "argument_description.\n* `ssl_key_and_certificate_ref` - (Optional ) argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "SslKeyAndCertificateRef": {
+            "type": "string",
+            "description": "argument_description.\n* `ssl_profile_ref` - (Optional ) argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "SslProfileRef": {
+            "type": "string",
+            "description": "argument_description.\n* `tenant_ref` - (Optional ) argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "argument_description.\n* `use_service_port` - (Optional ) argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "Tier1Lr": {
+            "type": "string"
+        },
+        "UseServicePort": {
+            "type": "boolean",
+            "description": "argument_description.\n* `vrf_ref` - (Optional ) argument_description."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VrfRef": {
+            "type": "string",
+            "description": "argument_description."
+        },
+        "AnalyticsPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnalyticsPolicyDefinition"
+            }
+        },
+        "ConnPoolProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConnPoolPropertiesDefinition"
+            }
+        },
+        "FailAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FailActionDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "MaxConnRatePerServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MaxConnRatePerServerDefinition"
+            }
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworksDefinition"
+            }
+        },
+        "PlacementNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlacementNetworksDefinition"
+            }
+        },
+        "ServerReselect": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServerReselectDefinition"
+            }
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

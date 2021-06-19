@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::ECL::SecurityHostBasedV2",
+    "description": "Manages a V2 Host Based WAF Security resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-SecurityHostBasedV2/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DsmLang": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locale": {
+            "type": "string",
+            "description": "Messages are displayed in Japanese or English\ndepending on this value. ja: Japanese, en: English. Default value is \"en\"."
+        },
+        "MailAddress": {
+            "type": "string",
+            "description": "Contact e-mail address."
+        },
+        "MaxAgentValue": {
+            "type": "number",
+            "description": "Set maximum quantity of Agent usage."
+        },
+        "ServiceOrderService": {
+            "type": "string",
+            "description": "Requested menu. Set \"Managed Anti-Virus\", \"Managed Virtual Patch\"\nor \"Managed Host-based Security Package\" to this field."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID of the owner (UUID)."
+        },
+        "TimeZone": {
+            "type": "string",
+            "description": "Set \"Asia/Tokyo\" for JST or \"Etc/GMT\" for UTC."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DsmLang",
+        "MailAddress",
+        "MaxAgentValue",
+        "ServiceOrderService",
+        "TenantId",
+        "TimeZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,237 @@
+{
+    "typeName": "TF::Spotinst::OceanAksVirtualNodeGroup",
+    "description": "Manages a Spotinst Ocean AKS Virtual Node Group resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanAksVirtualNodeGroup/docs/README.md",
+    "definitions": {
+        "AutoscaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LabelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "LaunchSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OsDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxInstanceCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TaintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Effect",
+                "Key",
+                "Value"
+            ]
+        },
+        "AutoscaleHeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "GpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumOfUnits"
+            ]
+        },
+        "OsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SizeGb": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SizeGb"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Set name for the virtual node group."
+        },
+        "OceanId": {
+            "type": "string",
+            "description": "The Ocean cluster ID."
+        },
+        "Autoscale": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscaleDefinition"
+            }
+        },
+        "Label": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelDefinition"
+            }
+        },
+        "LaunchSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchSpecificationDefinition"
+            }
+        },
+        "ResourceLimits": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceLimitsDefinition"
+            }
+        },
+        "Taint": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaintDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "OceanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

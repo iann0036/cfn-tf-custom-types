@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::Route53QueryLog",
+    "description": "Provides a Route53 query logging configuration resource.\n\n~> **NOTE:** There are restrictions on the configuration of query logging. Notably,\nthe CloudWatch log group must be in the `us-east-1` region,\na permissive CloudWatch log resource policy must be in place, and\nthe Route53 hosted zone must be public.\nSee [Configuring Logging for DNS Queries](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html?console_help=true#query-logs-configuring) for additional details.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Route53QueryLog/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudwatchLogGroupArn": {
+            "type": "string",
+            "description": "CloudWatch log group ARN to send query logs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "Route53 hosted zone ID to enable query logs."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudwatchLogGroupArn",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

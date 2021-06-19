@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::AWS::AcmCertificate",
+    "description": "The ACM certificate resource allows requesting and management of certificates\nfrom the Amazon Certificate Manager.\n\nIt deals with requesting certificates and managing their attributes and life-cycle.\nThis resource does not deal with validation of a certificate but can provide inputs\nfor other resources implementing the validation. It does not wait for a certificate to be issued.\nUse a [`aws_acm_certificate_validation`](acm_certificate_validation.html) resource for this.\n\nMost commonly, this resource is used together with [`aws_route53_record`](route53_record.html) and\n[`aws_acm_certificate_validation`](acm_certificate_validation.html) to request a DNS validated certificate,\ndeploy the required validation records and wait for validation to complete.\n\nDomain validation through email is also supported but should be avoided as it requires a manual step outside\nof Terraform.\n\nIt's recommended to specify `create_before_destroy = true` in a [lifecycle][1] block to replace a certificate\nwhich is currently in use ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AcmCertificate/docs/README.md",
+    "definitions": {
+        "DomainValidationOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainName": {
+                    "type": "string"
+                },
+                "ResourceRecordName": {
+                    "type": "string"
+                },
+                "ResourceRecordType": {
+                    "type": "string"
+                },
+                "ResourceRecordValue": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateTransparencyLoggingPreference": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateAuthorityArn": {
+            "type": "string",
+            "description": "ARN of an ACM PCA\n* `subject_alternative_names` - (Optional) Set of domains that should be SANs in the issued certificate. To remove all elements of a previously configured list, set this value equal to an empty list (`[]`) or use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) to trigger recreation."
+        },
+        "CertificateBody": {
+            "type": "string",
+            "description": "The certificate's PEM-formatted public key\n* `certificate_chain` - (Optional) The certificate's PEM-formatted chain."
+        },
+        "CertificateChain": {
+            "type": "string",
+            "description": "The certificate's PEM-formatted chain."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "A domain name for which the certificate should be issued\n* `certificate_authority_arn` - (Required) ARN of an ACM PCA\n* `subject_alternative_names` - (Optional) Set of domains that should be SANs in the issued certificate. To remove all elements of a previously configured list, set this value equal to an empty list (`[]`) or use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) to trigger recreation."
+        },
+        "DomainValidationOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DomainValidationOptionsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "The certificate's PEM-formatted private key\n* `certificate_body` - (Required) The certificate's PEM-formatted public key\n* `certificate_chain` - (Optional) The certificate's PEM-formatted chain."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of domains that should be SANs in the issued certificate. To remove all elements of a previously configured list, set this value equal to an empty list (`[]`) or use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) to trigger recreation."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ValidationEmails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ValidationMethod": {
+            "type": "string",
+            "description": "Which method to use for validation. `DNS` or `EMAIL` are valid, `NONE` can be used for certificates that were imported into ACM and then into Terraform.\n* `options` - (Optional) Configuration block used to set certificate options. Detailed below."
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainValidationOptions",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/ValidationEmails"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKey"
+    ]
+}

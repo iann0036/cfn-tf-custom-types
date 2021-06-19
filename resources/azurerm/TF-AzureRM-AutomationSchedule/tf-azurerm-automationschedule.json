@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::AzureRM::AutomationSchedule",
+    "description": "Manages a Automation Schedule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AutomationSchedule/docs/README.md",
+    "definitions": {
+        "MonthlyOccurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string",
+                    "description": "Day of the occurrence. Must be one of `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sunday`."
+                },
+                "Occurrence": {
+                    "type": "number",
+                    "description": "Occurrence of the week within the month. Must be between `1` and `5`. `-1` for last week within the month."
+                }
+            },
+            "required": [
+                "Day",
+                "Occurrence"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomationAccountName": {
+            "type": "string",
+            "description": "The name of the automation account in which the Schedule is created. Changing this forces a new resource to be created."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for this Schedule."
+        },
+        "ExpiryTime": {
+            "type": "string",
+            "description": "The end time of the schedule."
+        },
+        "Frequency": {
+            "type": "string",
+            "description": "The frequency of the schedule. - can be either `OneTime`, `Day`, `Hour`, `Week`, or `Month`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The number of `frequency`s between runs. Only valid when frequency is `Day`, `Hour`, `Week`, or `Month` and defaults to `1`."
+        },
+        "MonthDays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of days of the month that the job should execute on. Must be between `1` and `31`. `-1` for last day of the month. Only valid when frequency is `Month`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Schedule. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Schedule is created. Changing this forces a new resource to be created."
+        },
+        "StartTime": {
+            "type": "string",
+            "description": "Start time of the schedule. Must be at least five minutes in the future. Defaults to seven minutes in the future from the time the resource is created."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The timezone of the start time. Defaults to `UTC`. For possible values see: https://s2.automation.ext.azure.com/api/Orchestrator/TimeZones?_=1594792230258."
+        },
+        "WeekDays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of days of the week that the job should execute on. Only valid when frequency is `Week`."
+        },
+        "MonthlyOccurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonthlyOccurrenceDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutomationAccountName",
+        "Frequency",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

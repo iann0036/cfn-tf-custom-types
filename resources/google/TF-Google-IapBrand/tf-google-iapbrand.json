@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Google::IapBrand",
+    "description": "OAuth brand data. Only \"Organization Internal\" brands can be created\nprogrammatically via API. To convert it into an external brands\nplease use the GCP Console.\n\n\n~> **Note:** Brands can only be created once for a Google Cloud \nproject and the underlying Google API doesn't not support DELETE or PATCH methods. \nDestroying a Terraform-managed Brand will remove it from state \nbut *will not delete it from Google Cloud.*\n\n\nTo get more information about Brand, see:\n\n* [API documentation](https://cloud.google.com/iap/docs/reference/rest/v1/projects.brands)\n* How-to Guides\n    * [Setting up IAP Brand](https://cloud.google.com/iap/docs/tutorial-gce#set_up_iap)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-IapBrand/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationTitle": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrgInternalOnly": {
+            "type": "boolean"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SupportEmail": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationTitle",
+        "SupportEmail"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/OrgInternalOnly"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Panos::PanoramaTemplateVariable",
+    "description": "This resource allows you to add/update/delete variables for both Panorama\ntemplates and template stacks.\n\nTemplate variables are available in PAN-OS 8.1+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaTemplateVariable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The template's name.  This must start with a dollar sign ($)."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The variable type.  Valid values are `ip-netmask`\n(default), `ip-range`, `fqdn`, `group-id`, or `interface`."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The variable value."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::AWS::Ec2ClientVpnAuthorizationRule",
+    "description": "Provides authorization rules for AWS Client VPN endpoints. For more information on usage, please see the\n[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2ClientVpnAuthorizationRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessGroupId": {
+            "type": "string",
+            "description": "The ID of the group to which the authorization rule grants access. One of `access_group_id` or `authorize_all_groups` must be set."
+        },
+        "AuthorizeAllGroups": {
+            "type": "boolean",
+            "description": "Indicates whether the authorization rule grants access to all clients. One of `access_group_id` or `authorize_all_groups` must be set."
+        },
+        "ClientVpnEndpointId": {
+            "type": "string",
+            "description": "The ID of the Client VPN endpoint."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A brief description of the authorization rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TargetNetworkCidr": {
+            "type": "string",
+            "description": "The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientVpnEndpointId",
+        "TargetNetworkCidr"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

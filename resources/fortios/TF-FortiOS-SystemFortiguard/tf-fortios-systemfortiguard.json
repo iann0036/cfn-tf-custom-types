@@ -1,0 +1,246 @@
+{
+    "typeName": "TF::FortiOS::SystemFortiguard",
+    "description": "Configure FortiGuard services.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemFortiguard/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AntispamCache": {
+            "type": "string",
+            "description": "Enable/disable FortiGuard antispam request caching. Uses a small amount of memory but improves performance. Valid values: `enable`, `disable`."
+        },
+        "AntispamCacheMpercent": {
+            "type": "number",
+            "description": "Maximum percent of FortiGate memory the antispam cache is allowed to use (1 - 15%)."
+        },
+        "AntispamCacheTtl": {
+            "type": "number",
+            "description": "Time-to-live for antispam cache entries in seconds (300 - 86400). Lower times reduce the cache size. Higher times may improve performance since the cache will have more entries."
+        },
+        "AntispamExpiration": {
+            "type": "number",
+            "description": "Expiration date of the FortiGuard antispam contract."
+        },
+        "AntispamForceOff": {
+            "type": "string",
+            "description": "Enable/disable turning off the FortiGuard antispam service. Valid values: `enable`, `disable`."
+        },
+        "AntispamLicense": {
+            "type": "number",
+            "description": "Interval of time between license checks for the FortiGuard antispam contract."
+        },
+        "AntispamTimeout": {
+            "type": "number",
+            "description": "Antispam query time out (1 - 30 sec, default = 7)."
+        },
+        "AnycastSdnsServerIp": {
+            "type": "string",
+            "description": "IP address of the FortiGuard anycast DNS rating server."
+        },
+        "AnycastSdnsServerPort": {
+            "type": "number",
+            "description": "Port to connect to on the FortiGuard anycast DNS rating server."
+        },
+        "AutoJoinForticloud": {
+            "type": "string",
+            "description": "Automatically connect to and login to FortiCloud. Valid values: `enable`, `disable`."
+        },
+        "DdnsServerIp": {
+            "type": "string",
+            "description": "IP address of the FortiDDNS server."
+        },
+        "DdnsServerPort": {
+            "type": "number",
+            "description": "Port used to communicate with FortiDDNS servers."
+        },
+        "FortiguardAnycast": {
+            "type": "string",
+            "description": "Enable/disable use of FortiGuard's anycast network. Valid values: `enable`, `disable`."
+        },
+        "FortiguardAnycastSource": {
+            "type": "string",
+            "description": "Configure which of Fortinet's servers to provide FortiGuard services in FortiGuard's anycast network. Default is Fortinet. Valid values: `fortinet`, `aws`, `debug`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "LoadBalanceServers": {
+            "type": "number",
+            "description": "Number of servers to alternate between as first FortiGuard option."
+        },
+        "OutbreakPreventionCache": {
+            "type": "string",
+            "description": "Enable/disable FortiGuard Virus Outbreak Prevention cache. Valid values: `enable`, `disable`."
+        },
+        "OutbreakPreventionCacheMpercent": {
+            "type": "number",
+            "description": "Maximum percent of memory FortiGuard Virus Outbreak Prevention cache can use (1 - 15%, default = 2)."
+        },
+        "OutbreakPreventionCacheTtl": {
+            "type": "number",
+            "description": "Time-to-live for FortiGuard Virus Outbreak Prevention cache entries (300 - 86400 sec, default = 300)."
+        },
+        "OutbreakPreventionExpiration": {
+            "type": "number",
+            "description": "Expiration date of FortiGuard Virus Outbreak Prevention contract."
+        },
+        "OutbreakPreventionForceOff": {
+            "type": "string",
+            "description": "Turn off FortiGuard Virus Outbreak Prevention service. Valid values: `enable`, `disable`."
+        },
+        "OutbreakPreventionLicense": {
+            "type": "number",
+            "description": "Interval of time between license checks for FortiGuard Virus Outbreak Prevention contract."
+        },
+        "OutbreakPreventionTimeout": {
+            "type": "number",
+            "description": "FortiGuard Virus Outbreak Prevention time out (1 - 30 sec, default = 7)."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Port used to communicate with the FortiGuard servers."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol used to communicate with the FortiGuard servers. Valid values: `udp`, `http`, `https`."
+        },
+        "ProxyPassword": {
+            "type": "string",
+            "description": "Proxy user password."
+        },
+        "ProxyServerIp": {
+            "type": "string",
+            "description": "IP address of the proxy server."
+        },
+        "ProxyServerPort": {
+            "type": "number",
+            "description": "Port used to communicate with the proxy server."
+        },
+        "ProxyUsername": {
+            "type": "string",
+            "description": "Proxy user name."
+        },
+        "SandboxRegion": {
+            "type": "string",
+            "description": "Cloud sandbox region."
+        },
+        "SdnsOptions": {
+            "type": "string",
+            "description": "Customization options for the FortiGuard DNS service. Valid values: `include-question-section`."
+        },
+        "SdnsServerIp": {
+            "type": "string",
+            "description": "IP address of the FortiDNS server."
+        },
+        "SdnsServerPort": {
+            "type": "number",
+            "description": "Port used to communicate with FortiDNS servers."
+        },
+        "ServiceAccountId": {
+            "type": "string",
+            "description": "Service account ID."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IPv4 address used to communicate with FortiGuard."
+        },
+        "SourceIp6": {
+            "type": "string",
+            "description": "Source IPv6 address used to communicate with FortiGuard."
+        },
+        "UpdateServerLocation": {
+            "type": "string",
+            "description": "Signature update server location. Valid values: `usa`, `any`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WebfilterCache": {
+            "type": "string",
+            "description": "Enable/disable FortiGuard web filter caching. Valid values: `enable`, `disable`."
+        },
+        "WebfilterCacheTtl": {
+            "type": "number",
+            "description": "Time-to-live for web filter cache entries in seconds (300 - 86400)."
+        },
+        "WebfilterExpiration": {
+            "type": "number",
+            "description": "Expiration date of the FortiGuard web filter contract."
+        },
+        "WebfilterForceOff": {
+            "type": "string",
+            "description": "Enable/disable turning off the FortiGuard web filtering service. Valid values: `enable`, `disable`."
+        },
+        "WebfilterLicense": {
+            "type": "number",
+            "description": "Interval of time between license checks for the FortiGuard web filter contract."
+        },
+        "WebfilterTimeout": {
+            "type": "number",
+            "description": "Web filter query time out (1 - 30 sec, default = 7)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AntispamTimeout",
+        "OutbreakPreventionTimeout",
+        "WebfilterTimeout"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ProxyPassword"
+    ]
+}

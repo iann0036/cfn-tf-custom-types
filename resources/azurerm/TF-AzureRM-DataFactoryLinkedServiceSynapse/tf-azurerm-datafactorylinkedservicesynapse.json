@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::AzureRM::DataFactoryLinkedServiceSynapse",
+    "description": "Manages a Linked Service (connection) between Synapse and Azure Data Factory.\n\n~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DataFactoryLinkedServiceSynapse/docs/README.md",
+    "definitions": {
+        "AdditionalPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KeyVaultPasswordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkedServiceName": {
+                    "type": "string",
+                    "description": "Specifies the name of an existing Key Vault Data Factory Linked Service."
+                },
+                "SecretName": {
+                    "type": "string",
+                    "description": "Specifies the secret name in Azure Key Vault that stores Synapse password."
+                }
+            },
+            "required": [
+                "LinkedServiceName",
+                "SecretName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalPropertiesDefinition"
+            },
+            "description": "A map of additional properties to associate with the Data Factory Linked Service Synapse."
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that can be used for describing the Data Factory Linked Service Synapse."
+        },
+        "ConnectionString": {
+            "type": "string",
+            "description": "The connection string in which to authenticate with the Synapse."
+        },
+        "DataFactoryName": {
+            "type": "string",
+            "description": "The Data Factory name in which to associate the Linked Service with. Changing this forces a new resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the Data Factory Linked Service Synapse."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationRuntimeName": {
+            "type": "string",
+            "description": "The integration runtime reference to associate with the Data Factory Linked Service Synapse."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Data Factory Linked Service Synapse. Changing this forces a new resource to be created. Must be unique within a data\nfactory. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A map of parameters to associate with the Data Factory Linked Service Synapse."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory Linked Service Synapse. Changing this forces a new resource."
+        },
+        "KeyVaultPassword": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyVaultPasswordDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionString",
+        "DataFactoryName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

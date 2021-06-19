@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::Google::ComputeManagedSslCertificate",
+    "description": "An SslCertificate resource, used for HTTPS load balancing.  This resource\nrepresents a certificate for which the certificate secrets are created and\nmanaged by Google.\n\nFor a resource where you provide the key, see the\nSSL Certificate resource.\n\n\nTo get more information about ManagedSslCertificate, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/sslCertificates)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/load-balancing/docs/ssl-certificates)\n\n~> **Warning:** This resource should be used with extreme caution!  Provisioning an SSL\ncertificate is complex.  Ensure that you understand the lifecycle of a\ncertificate before attempting complex tasks like cert rotation automatically.\nThis resource will \"return\" as soon as the certificate object is created,\nbut post-creation the certificate object will go through a \"provisioning\"\nprocess.  The provisioning process can complete only when the domain name\nfor which the certificate is created points to a ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeManagedSslCertificate/docs/README.md",
+    "definitions": {
+        "ManagedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Domains"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "number"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExpireTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Managed": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/ExpireTime",
+        "/properties/Id",
+        "/properties/SelfLink",
+        "/properties/SubjectAlternativeNames"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

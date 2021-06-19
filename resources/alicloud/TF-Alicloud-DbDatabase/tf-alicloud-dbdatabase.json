@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Alicloud::DbDatabase",
+    "description": "Provides an RDS database resource. A DB database deployed in a DB instance. A DB instance can own multiple databases.\n\n-> **NOTE:** This resource does not support creating 'PPAS' database. You have to login RDS instance to create manually.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DbDatabase/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CharacterSet": {
+            "type": "string",
+            "description": "Character set. The value range is limited to the following:\n- MySQL: [ utf8, gbk, latin1, utf8mb4 ] \\(`utf8mb4` only supports versions 5.5 and 5.6\\).\n- SQLServer: [ Chinese_PRC_CI_AS, Chinese_PRC_CS_AS, SQL_Latin1_General_CP1_CI_AS, SQL_Latin1_General_CP1_CS_AS, Chinese_PRC_BIN ]\n- PostgreSQL: [ KOI8U\u3001UTF8\u3001WIN866\u3001WIN874\u3001WIN1250\u3001WIN1251\u3001WIN1252\u3001WIN1253\u3001WIN1254\u3001WIN1255\u3001WIN1256\u3001WIN1257\u3001WIN1258\u3001EUC_CN\u3001EUC_KR\u3001EUC_TW\u3001EUC_JP\u3001EUC_JIS_2004\u3001KOI8R\u3001MULE_INTERNAL\u3001LATIN1\u3001LATIN2\u3001LATIN3\u3001LATIN4\u3001LATIN5\u3001LATIN6\u3001LATIN7\u3001LATIN8\u3001LATIN9\u3001LATIN10\u3001ISO_8859_5\u3001ISO_8859_6\u3001ISO_8859_7\u3001ISO_8859_8\u3001SQL_ASCII ]."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Database description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The Id of instance that can run database."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the database requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter\nand have no more than 64 characters."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::VSphere::ContentLibraryItem",
+    "description": "The `vsphere_content_library_item` resource can be used to create items in a Content Library.\n`file_url` must be accessible from the vSphere environment as it will be downloaded from the\nspecified location and stored on the Content Library's storage backing.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-ContentLibraryItem/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the item."
+        },
+        "FileUrl": {
+            "type": "string",
+            "description": "File to import into the Content Library item. OVFs and\nOVAs will be parsed and associated files will also be imported."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LibraryId": {
+            "type": "string",
+            "description": "The ID of the Content Library the item should be created in."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the item to be created in the Content Library."
+        },
+        "SourceUuid": {
+            "type": "string",
+            "description": "Virtual machine UUID to clone to Content Library."
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LibraryId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

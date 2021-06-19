@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::Alicloud::CrEeSyncRule",
+    "description": "This resource will help you to manager Container Registry Enterprise Edition sync rules.\n\nFor information about Container Registry Enterprise Edition sync rules and how to use it, see [Create a Sync Rule](https://www.alibabacloud.com/help/doc-detail/145280.htm)\n\n-> **NOTE:** Available in v1.90.0+.\n\n-> **NOTE:** You need to set your registry password in Container Registry Enterprise Edition console before use this resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CrEeSyncRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of Container Registry Enterprise Edition source instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of Container Registry Enterprise Edition sync rule."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "Name of Container Registry Enterprise Edition source namespace. It can contain 2 to 30 characters."
+        },
+        "RepoName": {
+            "type": "string",
+            "description": "Name of the source repository which should be set together with `target_repo_name`, if empty means that the synchronization scope is the entire namespace level."
+        },
+        "RuleId": {
+            "type": "string"
+        },
+        "SyncDirection": {
+            "type": "string"
+        },
+        "SyncScope": {
+            "type": "string"
+        },
+        "TagFilter": {
+            "type": "string",
+            "description": "The regular expression used to filter image tags for synchronization in the source repository."
+        },
+        "TargetInstanceId": {
+            "type": "string",
+            "description": "ID of Container Registry Enterprise Edition target instance to be synchronized."
+        },
+        "TargetNamespaceName": {
+            "type": "string",
+            "description": "Name of Container Registry Enterprise Edition target namespace to be synchronized. It can contain 2 to 30 characters."
+        },
+        "TargetRegionId": {
+            "type": "string",
+            "description": "The target region to be synchronized."
+        },
+        "TargetRepoName": {
+            "type": "string",
+            "description": "Name of the target repository."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "Name",
+        "NamespaceName",
+        "TagFilter",
+        "TargetInstanceId",
+        "TargetNamespaceName",
+        "TargetRegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RuleId",
+        "/properties/SyncDirection",
+        "/properties/SyncScope"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

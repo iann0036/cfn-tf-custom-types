@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Panos::PanoramaStaticRouteIpv4",
+    "description": "This resource allows you to add/update/delete Panorama IPv4 static routes on a\nvirtual router for either a template or a template stack.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaStaticRouteIpv4/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminDistance": {
+            "type": "number",
+            "description": "The admin distance."
+        },
+        "BfdProfile": {
+            "type": "string",
+            "description": "BFD configuration."
+        },
+        "Destination": {
+            "type": "string",
+            "description": "Destination IP address / prefix."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface to use."
+        },
+        "Metric": {
+            "type": "number",
+            "description": "Metric value / path cost (default: `10`)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The static route's name."
+        },
+        "NextHop": {
+            "type": "string",
+            "description": "The value for the `type` setting."
+        },
+        "RouteTable": {
+            "type": "string",
+            "description": "Target routing table to install the route.  Valid\nvalues are `unicast` (the default), `no install`, `multicast`, or `both`."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The next hop type.  Valid values are `ip-address` (the\ndefault), `discard`, `next-vr`, or an empty string for `None`."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add the static\nroute to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

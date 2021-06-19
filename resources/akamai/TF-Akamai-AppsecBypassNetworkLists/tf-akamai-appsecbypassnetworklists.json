@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Akamai::AppsecBypassNetworkLists",
+    "description": "Use the `akamai_appsec_bypass_network_lists` resource to update which network lists to use in the\nbypass network lists settings. Note: this resource is only applicable to WAP (Web Application\nProtector) configurations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecBypassNetworkLists/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BypassNetworkList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list containing the IDs of the network lists to use."
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The configuration ID to use."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BypassNetworkList",
+        "ConfigId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

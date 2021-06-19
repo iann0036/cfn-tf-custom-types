@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::FortiOS::RouterMulticast6",
+    "description": "Configure IPv6 multicast.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterMulticast6/docs/README.md",
+    "definitions": {
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloHoldtime": {
+                    "type": "number",
+                    "description": "Time before old neighbour information expires (1 - 65535 sec, default = 105)."
+                },
+                "HelloInterval": {
+                    "type": "number",
+                    "description": "Interval between sending PIM hello messages  (1 - 65535 sec, default = 30).."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "PimSmGlobalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RegisterRateLimit": {
+                    "type": "number",
+                    "description": "Limit of packets/sec per source registered through this RP (0 means unlimited)."
+                },
+                "RpAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RpAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID of the entry."
+                },
+                "Ip6Address": {
+                    "type": "string",
+                    "description": "RP router IPv6 address."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MulticastPmtu": {
+            "type": "string",
+            "description": "Enable/disable PMTU for IPv6 multicast. Valid values: `enable`, `disable`."
+        },
+        "MulticastRouting": {
+            "type": "string",
+            "description": "Enable/disable IPv6 multicast routing. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceDefinition"
+            }
+        },
+        "PimSmGlobal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PimSmGlobalDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

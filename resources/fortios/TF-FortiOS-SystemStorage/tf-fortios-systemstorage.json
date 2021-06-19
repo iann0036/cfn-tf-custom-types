@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::SystemStorage",
+    "description": "Configure logical storage.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemStorage/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Device": {
+            "type": "string",
+            "description": "Partition device."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MediaStatus": {
+            "type": "string",
+            "description": "The physical status of current media. Valid values: `enable`, `disable`, `fail`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Storage name."
+        },
+        "Order": {
+            "type": "number",
+            "description": "Set storage order."
+        },
+        "Partition": {
+            "type": "string",
+            "description": "Label of underlying partition."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Partition size."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable storage. Valid values: `enable`, `disable`."
+        },
+        "Usage": {
+            "type": "string",
+            "description": "Use hard disk for logging or WAN Optimization (default = log). Valid values: `log`, `wanopt`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WanoptMode": {
+            "type": "string",
+            "description": "WAN Optimization mode (default = mix). Valid values: `mix`, `wanopt`, `webcache`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

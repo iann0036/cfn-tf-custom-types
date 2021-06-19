@@ -1,0 +1,270 @@
+{
+    "typeName": "TF::AzureRM::StorageManagementPolicy",
+    "description": "Manages an Azure Storage Account Management Policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageManagementPolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Boolean to specify whether the rule is enabled."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy."
+                },
+                "Actions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseBlob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BaseBlobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Snapshot": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnapshotDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Version": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VersionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlobTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array of predefined values. Valid options are `blockBlob` and `appendBlob`."
+                },
+                "PrefixMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array of strings for prefixes to be matched."
+                },
+                "MatchBlobIndexTag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchBlobIndexTagDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BaseBlobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteAfterDaysSinceModificationGreaterThan": {
+                    "type": "number",
+                    "description": "The age in days after last modification to delete the blob. Must be between 0 and 99999."
+                },
+                "TierToArchiveAfterDaysSinceModificationGreaterThan": {
+                    "type": "number",
+                    "description": "The age in days after last modification to tier blobs to archive storage. Supports blob currently at Hot or Cool tier. Must be between 0 and 99999."
+                },
+                "TierToCoolAfterDaysSinceModificationGreaterThan": {
+                    "type": "number",
+                    "description": "The age in days after last modification to tier blobs to cool storage. Supports blob currently at Hot tier. Must be between 0 and 99999."
+                }
+            },
+            "required": []
+        },
+        "SnapshotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChangeTierToArchiveAfterDaysSinceCreation": {
+                    "type": "number",
+                    "description": "The age in days after creation to tier blob snapshot to archive storage. Must be between 0 and 99999."
+                },
+                "ChangeTierToCoolAfterDaysSinceCreation": {
+                    "type": "number",
+                    "description": "The age in days after creation to tier blob snapshot to cool storage. Must be between 0 and 99999."
+                },
+                "DeleteAfterDaysSinceCreationGreaterThan": {
+                    "type": "number",
+                    "description": "The age in days after creation to delete the blob snapshot. Must be between 0 and 99999."
+                }
+            },
+            "required": []
+        },
+        "VersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChangeTierToArchiveAfterDaysSinceCreation": {
+                    "type": "number",
+                    "description": "The age in days after creation to tier blob version to archive storage. Must be between 0 and 99999."
+                },
+                "ChangeTierToCoolAfterDaysSinceCreation": {
+                    "type": "number",
+                    "description": "The age in days creation create to  tier blob version to cool storage. Must be between 0 and 99999."
+                },
+                "DeleteAfterDaysSinceCreation": {
+                    "type": "number",
+                    "description": "The age in days after creation to delete the blob version. Must be between 0 and 99999."
+                }
+            },
+            "required": []
+        },
+        "MatchBlobIndexTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The filter tag name used for tag based filtering for blob objects."
+                },
+                "Operation": {
+                    "type": "string",
+                    "description": "The comparison operator which is used for object comparison and filtering. Possible value is `==`. Defaults to `==`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The filter tag value used for tag based filtering for blob objects."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StorageAccountId": {
+            "type": "string",
+            "description": "Specifies the id of the storage account to apply the management policy to."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StorageAccountId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

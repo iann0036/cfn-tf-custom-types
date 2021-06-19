@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::TencentCloud::Eni",
+    "description": "Provides a resource to create an ENI.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Eni/docs/README.md",
+    "definitions": {
+        "Ipv4InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Ipv4sDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description of the IP, maximum length 25."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Intranet IP."
+                },
+                "Primary": {
+                    "type": "boolean",
+                    "description": "Indicates whether the IP is primary."
+                }
+            },
+            "required": [
+                "Ip",
+                "Primary"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the ENI, maximum length 60."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Count": {
+            "type": "number",
+            "description": "The number of intranet IPv4s. When it is greater than 1, there is only one primary intranet IP. The others are auxiliary intranet IPs, which conflict with `ipv4s`."
+        },
+        "Ipv4Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv4InfoDefinition"
+            }
+        },
+        "Mac": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the ENI, maximum length 60."
+        },
+        "Primary": {
+            "type": "boolean"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A set of security group IDs."
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of the subnet within this vpc."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of the ENI."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the vpc."
+        },
+        "Ipv4s": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ipv4sDefinition"
+            },
+            "maxItems": 30
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Ipv4Info",
+        "/properties/Mac",
+        "/properties/Primary",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

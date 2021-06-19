@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Gitlab::TagProtection",
+    "description": "This resource allows you to protect a specific tag or wildcard by an access level so that the user with less access level cannot Create the tags.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-TagProtection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateAccessLevel": {
+            "type": "string",
+            "description": "One of five levels of access to the project."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The id of the project."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Name of the tag or wildcard."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CreateAccessLevel",
+        "Project",
+        "Tag"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

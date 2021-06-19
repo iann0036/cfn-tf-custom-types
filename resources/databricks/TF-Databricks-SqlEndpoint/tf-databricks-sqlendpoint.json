@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::Databricks::SqlEndpoint",
+    "description": "CloudFormation equivalent of databricks_sql_endpoint",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-SqlEndpoint/docs/README.md",
+    "definitions": {
+        "OdbcParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Path",
+                "Port",
+                "Protocol"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomTagsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CustomTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoStopMins": {
+            "type": "number"
+        },
+        "ClusterSize": {
+            "type": "string"
+        },
+        "DataSourceId": {
+            "type": "string"
+        },
+        "EnablePhoton": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceProfileArn": {
+            "type": "string"
+        },
+        "JdbcUrl": {
+            "type": "string"
+        },
+        "MaxNumClusters": {
+            "type": "number"
+        },
+        "MinNumClusters": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NumClusters": {
+            "type": "number"
+        },
+        "SpotInstancePolicy": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "OdbcParams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OdbcParamsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterSize",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

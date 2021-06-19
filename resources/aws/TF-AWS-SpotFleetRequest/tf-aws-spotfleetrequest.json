@@ -1,0 +1,509 @@
+{
+    "typeName": "TF::AWS::SpotFleetRequest",
+    "description": "Provides an EC2 Spot Fleet Request resource. This allows a fleet of Spot\ninstances to be requested on the Spot market.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SpotFleetRequest/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LaunchSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ami": {
+                    "type": "string"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "boolean"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "EbsOptimized": {
+                    "type": "boolean"
+                },
+                "IamInstanceProfile": {
+                    "type": "string"
+                },
+                "IamInstanceProfileArn": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "Monitoring": {
+                    "type": "boolean"
+                },
+                "PlacementGroup": {
+                    "type": "string"
+                },
+                "PlacementTenancy": {
+                    "type": "string"
+                },
+                "SpotPrice": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                },
+                "UserData": {
+                    "type": "string"
+                },
+                "VpcSecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WeightedCapacity": {
+                    "type": "string"
+                },
+                "EbsBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsBlockDeviceDefinition"
+                    }
+                },
+                "EphemeralBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+                    }
+                },
+                "RootBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RootBlockDeviceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Ami",
+                "InstanceType"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LaunchTemplateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateSpecificationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Overrides": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OverridesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SpotMaintenanceStrategiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityRebalance": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityRebalanceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "RootBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LaunchTemplateSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "SpotPrice": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CapacityRebalanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReplacementStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationStrategy": {
+            "type": "string",
+            "description": "Indicates how to allocate the target capacity across\nthe Spot pools specified by the Spot fleet request. The default is\n`lowestPrice`."
+        },
+        "ClientToken": {
+            "type": "string"
+        },
+        "ExcessCapacityTerminationPolicy": {
+            "type": "string",
+            "description": "Indicates whether running Spot\ninstances should be terminated if the target capacity of the Spot fleet\nrequest is decreased below the current size of the Spot fleet."
+        },
+        "FleetType": {
+            "type": "string",
+            "description": "The type of fleet request. Indicates whether the Spot Fleet only requests the target\ncapacity or also attempts to maintain it. Default is `maintain`."
+        },
+        "IamFleetRole": {
+            "type": "string",
+            "description": "Grants the Spot fleet permission to terminate\nSpot instances on your behalf when you cancel its Spot fleet request using\nCancelSpotFleetRequests or when the Spot fleet request expires, if you set\nterminateInstancesWithExpiration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceInterruptionBehaviour": {
+            "type": "string",
+            "description": "Indicates whether a Spot\ninstance stops or terminates when it is interrupted. Default is\n`terminate`."
+        },
+        "InstancePoolsToUseCount": {
+            "type": "number",
+            "description": "The number of Spot pools across which to allocate your target Spot capacity.\nValid only when `allocation_strategy` is set to `lowestPrice`. Spot Fleet selects\nthe cheapest Spot pools and evenly allocates your target Spot capacity across\nthe number of Spot pools that you specify."
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "OnDemandAllocationStrategy": {
+            "type": "string",
+            "description": "The order of the launch template overrides to use in fulfilling On-Demand capacity. the possible values are: `lowestPrice` and `prioritized`. the default is `lowestPrice`."
+        },
+        "OnDemandMaxTotalPrice": {
+            "type": "string",
+            "description": "The maximum amount per hour for On-Demand Instances that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn\u2019t met the target capacity."
+        },
+        "OnDemandTargetCapacity": {
+            "type": "number",
+            "description": "The number of On-Demand units to request. If the request type is `maintain`, you can specify a target capacity of 0 and add capacity later."
+        },
+        "ReplaceUnhealthyInstances": {
+            "type": "boolean",
+            "description": "Indicates whether Spot fleet should replace unhealthy instances. Default `false`."
+        },
+        "SpotPrice": {
+            "type": "string",
+            "description": "The maximum bid price per unit hour."
+        },
+        "SpotRequestState": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TargetCapacity": {
+            "type": "number",
+            "description": "The number of units to request. You can choose to set the\ntarget capacity in terms of instances or a performance characteristic that is\nimportant to your application workload, such as vCPUs, memory, or I/O."
+        },
+        "TargetGroupArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TerminateInstancesWithExpiration": {
+            "type": "boolean",
+            "description": "Indicates whether running Spot\ninstances should be terminated when the Spot fleet request expires."
+        },
+        "ValidFrom": {
+            "type": "string",
+            "description": "The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately."
+        },
+        "ValidUntil": {
+            "type": "string",
+            "description": "The end date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new Spot instance requests are placed or enabled to fulfill the request."
+        },
+        "WaitForFulfillment": {
+            "type": "boolean",
+            "description": "If set, Terraform will\nwait for the Spot Request to be fulfilled, and will throw an error if the\ntimeout of 10m is reached."
+        },
+        "LaunchSpecification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LaunchSpecificationDefinition"
+            }
+        },
+        "LaunchTemplateConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplateConfigDefinition"
+            }
+        },
+        "SpotMaintenanceStrategies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpotMaintenanceStrategiesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IamFleetRole",
+        "TargetCapacity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientToken",
+        "/properties/Id",
+        "/properties/SpotRequestState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

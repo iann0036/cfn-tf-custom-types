@@ -1,0 +1,117 @@
+# DO NOT modify this file by hand, changes will be overwritten
+import sys
+from dataclasses import dataclass
+from inspect import getmembers, isclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseModel,
+    BaseResourceHandlerRequest,
+)
+from cloudformation_cli_python_lib.recast import recast_object
+from cloudformation_cli_python_lib.utils import deserialize_list
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseModel):
+    tfcfnid: Optional[str]
+    Description: Optional[str]
+    Id: Optional[str]
+    Name: Optional[str]
+    NumLoops: Optional[float]
+    Teams: Optional[Sequence[str]]
+    Rule: Optional[Sequence["_RuleDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        dataclasses = {n: o for n, o in getmembers(sys.modules[__name__]) if isclass(o)}
+        recast_object(cls, json_data, dataclasses)
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
+            Name=json_data.get("Name"),
+            NumLoops=json_data.get("NumLoops"),
+            Teams=json_data.get("Teams"),
+            Rule=deserialize_list(json_data.get("Rule"), RuleDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+
+@dataclass
+class RuleDefinition(BaseModel):
+    EscalationDelayInMinutes: Optional[float]
+    Target: Optional[Sequence["_TargetDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_RuleDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_RuleDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            EscalationDelayInMinutes=json_data.get("EscalationDelayInMinutes"),
+            Target=deserialize_list(json_data.get("Target"), TargetDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_RuleDefinition = RuleDefinition
+
+
+@dataclass
+class TargetDefinition(BaseModel):
+    Id: Optional[str]
+    Type: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_TargetDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_TargetDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            Id=json_data.get("Id"),
+            Type=json_data.get("Type"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_TargetDefinition = TargetDefinition
+
+

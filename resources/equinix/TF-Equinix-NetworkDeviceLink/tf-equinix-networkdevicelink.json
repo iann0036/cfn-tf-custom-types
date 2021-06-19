@@ -1,0 +1,175 @@
+{
+    "typeName": "TF::Equinix::NetworkDeviceLink",
+    "description": "Resource `equinix_network_device_link` allows creation and management of Equinix\nNetwork Edge virtual network device links.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-NetworkDeviceLink/docs/README.md",
+    "definitions": {
+        "DeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number",
+                    "description": "Device ASN number."
+                },
+                "Id": {
+                    "type": "string",
+                    "description": "Device identifier."
+                },
+                "InterfaceId": {
+                    "type": "number",
+                    "description": "Device network interface identifier to use\nfor device link connection."
+                }
+            },
+            "required": [
+                "Asn",
+                "Id"
+            ]
+        },
+        "LinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountNumber": {
+                    "type": "string",
+                    "description": "billing account number to be used for\nconnection charges."
+                },
+                "DstMetroCode": {
+                    "type": "string",
+                    "description": "connection destination metro code."
+                },
+                "DstZoneCode": {
+                    "type": "string",
+                    "description": "connection destination zone code."
+                },
+                "SrcMetroCode": {
+                    "type": "string",
+                    "description": "connection source metro code."
+                },
+                "SrcZoneCode": {
+                    "type": "string",
+                    "description": "connection source zone code."
+                },
+                "Throughput": {
+                    "type": "string",
+                    "description": "connection throughput."
+                },
+                "ThroughputUnit": {
+                    "type": "string",
+                    "description": "connection throughput unit (Mbps or Gbps)."
+                }
+            },
+            "required": [
+                "AccountNumber",
+                "DstMetroCode",
+                "DstZoneCode",
+                "SrcMetroCode",
+                "SrcZoneCode",
+                "Throughput",
+                "ThroughputUnit"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "device link name."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "device link subnet in CIDR format."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Device": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DeviceDefinition"
+            },
+            "minItems": 2
+        },
+        "Link": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinkDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Subnet"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

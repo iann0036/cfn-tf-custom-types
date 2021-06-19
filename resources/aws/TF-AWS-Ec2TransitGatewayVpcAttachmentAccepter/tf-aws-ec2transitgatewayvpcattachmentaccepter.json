@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::AWS::Ec2TransitGatewayVpcAttachmentAccepter",
+    "description": "Manages the accepter's side of an EC2 Transit Gateway VPC Attachment.\n\nWhen a cross-account (requester's AWS account differs from the accepter's AWS account) EC2 Transit Gateway VPC Attachment\nis created, an EC2 Transit Gateway VPC Attachment resource is automatically created in the accepter's account.\nThe requester can use the `aws_ec2_transit_gateway_vpc_attachment` resource to manage its side of the connection\nand the accepter can use the `aws_ec2_transit_gateway_vpc_attachment_accepter` resource to \"adopt\" its side of the\nconnection into management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2TransitGatewayVpcAttachmentAccepter/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplianceModeSupport": {
+            "type": "string"
+        },
+        "DnsSupport": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6Support": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway VPC Attachment. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TransitGatewayAttachmentId": {
+            "type": "string",
+            "description": "The ID of the EC2 Transit Gateway Attachment to manage."
+        },
+        "TransitGatewayDefaultRouteTableAssociation": {
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. Default value: `true`."
+        },
+        "TransitGatewayDefaultRouteTablePropagation": {
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. Default value: `true`."
+        },
+        "TransitGatewayId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcOwnerId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TransitGatewayAttachmentId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApplianceModeSupport",
+        "/properties/DnsSupport",
+        "/properties/Id",
+        "/properties/Ipv6Support",
+        "/properties/SubnetIds",
+        "/properties/TransitGatewayId",
+        "/properties/VpcId",
+        "/properties/VpcOwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

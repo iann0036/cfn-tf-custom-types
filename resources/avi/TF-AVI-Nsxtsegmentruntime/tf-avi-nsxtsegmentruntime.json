@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::AVI::Nsxtsegmentruntime",
+    "description": "The NsxtSegmentRuntime resource allows the creation and management of Avi NsxtSegmentRuntime",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Nsxtsegmentruntime/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "Nsxt segment belongs to cloud. It is a reference to an object of type cloud. Field introduced in 20.1.1."
+        },
+        "Dhcp6Ranges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "V6 dhcp ranges configured in nsxt. Field introduced in 20.1.1."
+        },
+        "DhcpEnabled": {
+            "type": "boolean",
+            "description": "Ip address management scheme for this segment associated network. Field introduced in 20.1.1."
+        },
+        "DhcpRanges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Dhcp ranges configured in nsxt. Field introduced in 20.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Segment object name. Field introduced in 20.1.1."
+        },
+        "NwName": {
+            "type": "string",
+            "description": "Network name. Field introduced in 20.1.1."
+        },
+        "NwRef": {
+            "type": "string",
+            "description": "Corresponding network object in avi. It is a reference to an object of type network. Field introduced in 20.1.1."
+        },
+        "OpaqueNetworkId": {
+            "type": "string",
+            "description": "Opaque network id. Field introduced in 20.1.1."
+        },
+        "SegmentGw": {
+            "type": "string",
+            "description": "Segment gateway. Field introduced in 20.1.1."
+        },
+        "SegmentGw6": {
+            "type": "string",
+            "description": "V6 segment gateway. Field introduced in 20.1.1."
+        },
+        "SegmentId": {
+            "type": "string",
+            "description": "Segment id. Field introduced in 20.1.1."
+        },
+        "Segname": {
+            "type": "string",
+            "description": "Segment name. Field introduced in 20.1.1."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Segment cidr. Field introduced in 20.1.1."
+        },
+        "Subnet6": {
+            "type": "string",
+            "description": "V6 segment cidr. Field introduced in 20.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Nsxt segment belongs to tenant. It is a reference to an object of type tenant. Field introduced in 20.1.1."
+        },
+        "Tier1Id": {
+            "type": "string",
+            "description": "Tier1 router id. Field introduced in 20.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VlanIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Segment vlan ids. Field introduced in 20.1.5."
+        },
+        "VrfContextRef": {
+            "type": "string",
+            "description": "Corresponding vrf context object in avi. It is a reference to an object of type vrfcontext. Field introduced in 20.1.1."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

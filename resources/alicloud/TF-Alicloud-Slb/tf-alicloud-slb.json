@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::Alicloud::Slb",
+    "description": "Provides an Application Load Balancer resource.\n\n-> **NOTE:** At present, to avoid some unnecessary regulation confusion, SLB can not support alicloud international account to create \"paybybandwidth\" instance.\n\n-> **NOTE:** The supported specifications vary by region. Currently not all regions support guaranteed-performance instances.\nFor more details about guaranteed-performance instance, see [Guaranteed-performance instances](https://www.alibabacloud.com/help/doc-detail/27657.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-Slb/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "Specify the IP address of the private network for the SLB instance, which must be in the destination CIDR block of the correspond ing switch."
+        },
+        "AddressIpVersion": {
+            "type": "string",
+            "description": "The IP version of the SLB instance to be created, which can be set to ipv4 or ipv6 . Default to \"ipv4\". Now, only internet instance support ipv6 address."
+        },
+        "AddressType": {
+            "type": "string",
+            "description": "The network type of the SLB instance. Valid values: [\"internet\", \"intranet\"]. If load balancer launched in VPC, this value must be \"intranet\".\n- internet: After an Internet SLB instance is created, the system allocates a public IP address so that the instance can forward requests from the Internet.\n- intranet: After an intranet SLB instance is created, the system allocates an intranet IP address so that the instance can only forward intranet requests."
+        },
+        "Bandwidth": {
+            "type": "number",
+            "description": "Valid\nvalue is between 1 and 1000, If argument \"internet_charge_type\" is \"paybytraffic\", then this value will be ignore."
+        },
+        "DeleteProtection": {
+            "type": "string",
+            "description": "Whether enable the deletion protection or not. on: Enable deletion protection. off: Disable deletion protection. Default to off. Only postpaid instance support this function."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "The billing method of the load balancer. Valid values are \"PrePaid\" and \"PostPaid\". Default to \"PostPaid\"."
+        },
+        "Internet": {
+            "type": "boolean",
+            "description": "Field 'internet' has been deprecated from provider version 1.55.3. Use 'address_type' replaces it."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Valid\nvalues are `PayByBandwidth`, `PayByTraffic`. If this value is \"PayByBandwidth\", then argument \"internet\" must be \"true\". Default is \"PayByTraffic\". If load balancer launched in VPC, this value must be \"PayByTraffic\".\nBefore version 1.10.1, the valid values are \"paybybandwidth\" and \"paybytraffic\"."
+        },
+        "LoadBalancerName": {
+            "type": "string"
+        },
+        "LoadBalancerSpec": {
+            "type": "string"
+        },
+        "MasterZoneId": {
+            "type": "string",
+            "description": "The primary zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API."
+        },
+        "ModificationProtectionReason": {
+            "type": "string"
+        },
+        "ModificationProtectionStatus": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the SLB. This name must be unique within your AliCloud account, can have a maximum of 80 characters,\nmust contain only alphanumeric characters or hyphens, such as \"-\",\"/\",\".\",\"_\", and must not begin or end with a hyphen. If not specified,\nTerraform will autogenerate a name beginning with `tf-lb`."
+        },
+        "PaymentType": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "The duration that you will buy the resource, in month. It is valid when `instance_charge_type` is `PrePaid`. Default to 1. Valid values: [1-9, 12, 24, 36]."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the SLB belongs."
+        },
+        "SlaveZoneId": {
+            "type": "string",
+            "description": "The standby zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API."
+        },
+        "Specification": {
+            "type": "string",
+            "description": "The specification of the Server Load Balancer instance. Default to empty string indicating it is \"Shared-Performance\" instance.\nLaunching \"[Performance-guaranteed](https://www.alibabacloud.com/help/doc-detail/27657.htm)\" instance, it is must be specified and it valid values are: \"slb.s1.small\", \"slb.s2.small\", \"slb.s2.medium\",\n\"slb.s3.small\", \"slb.s3.medium\", \"slb.s3.large\" and \"slb.s4.large\"."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. The `tags` can have a maximum of 10 tag for every load balancer instance."
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The VSwitch ID to launch in. If `address_type` is internet, it will be ignore."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

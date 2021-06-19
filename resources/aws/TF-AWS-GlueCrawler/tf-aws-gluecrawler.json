@@ -1,0 +1,340 @@
+{
+    "typeName": "TF::AWS::GlueCrawler",
+    "description": "Manages a Glue Crawler. More information can be found in the [AWS Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlueCrawler/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CatalogTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseName": {
+                    "type": "string"
+                },
+                "Tables": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "Tables"
+            ]
+        },
+        "DynamodbTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "ScanAll": {
+                    "type": "boolean"
+                },
+                "ScanRate": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "JdbcTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionName": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConnectionName",
+                "Path"
+            ]
+        },
+        "LineageConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CrawlerLineageSettings": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MongodbTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionName": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ScanAll": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ConnectionName",
+                "Path"
+            ]
+        },
+        "RecrawlPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecrawlBehavior": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionName": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "SchemaChangePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteBehavior": {
+                    "type": "string"
+                },
+                "UpdateBehavior": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Classifiers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Configuration": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "SecurityConfiguration": {
+            "type": "string"
+        },
+        "TablePrefix": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "CatalogTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CatalogTargetDefinition"
+            }
+        },
+        "DynamodbTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DynamodbTargetDefinition"
+            }
+        },
+        "JdbcTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JdbcTargetDefinition"
+            }
+        },
+        "LineageConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LineageConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "MongodbTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongodbTargetDefinition"
+            }
+        },
+        "RecrawlPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RecrawlPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "S3Target": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3TargetDefinition"
+            }
+        },
+        "SchemaChangePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchemaChangePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabaseName",
+        "Name",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

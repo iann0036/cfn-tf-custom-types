@@ -1,0 +1,277 @@
+{
+    "typeName": "TF::OCI::DatabaseVmClusterNetwork",
+    "description": "This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.\n\nCreates the VM cluster network. Applies to Exadata Cloud@Customer instances only.\nTo create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseVmClusterNetwork/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScansDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "Ips": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Ips",
+                "Port"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VmNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainName": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "NetworkType": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "string"
+                },
+                "Nodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DomainName",
+                "Gateway",
+                "Netmask",
+                "NetworkType",
+                "VlanId"
+            ]
+        },
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Vip": {
+                    "type": "string"
+                },
+                "VipHostname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Ip"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique."
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The list of DNS server IP addresses. Maximum of 3 allowed."
+        },
+        "ExadataInfrastructureId": {
+            "type": "string",
+            "description": "The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "Ntp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The list of NTP server IP addresses. Maximum of 3 allowed."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "ValidateVmClusterNetwork": {
+            "type": "boolean",
+            "description": "(Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a [VM Cluster](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/database_vm_cluster) resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network."
+        },
+        "VmClusterId": {
+            "type": "string"
+        },
+        "Scans": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScansDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VmNetworks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VmNetworksDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "ExadataInfrastructureId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/VmClusterId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

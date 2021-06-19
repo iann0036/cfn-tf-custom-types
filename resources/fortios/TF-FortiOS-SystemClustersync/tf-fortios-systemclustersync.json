@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::FortiOS::SystemClustersync",
+    "description": "Configure FortiGate Session Life Support Protocol (FGSP) session synchronization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemClustersync/docs/README.md",
+    "definitions": {
+        "DownIntfsBeforeSessSyncDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "SessionSyncFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dstaddr": {
+                    "type": "string",
+                    "description": "Only sessions to this IPv4 address are synchronized. You can only enter one address. To synchronize sessions for multiple destination addresses, add multiple filters."
+                },
+                "Dstaddr6": {
+                    "type": "string",
+                    "description": "Only sessions to this IPv6 address are synchronized. You can only enter one address. To synchronize sessions for multiple destination addresses, add multiple filters."
+                },
+                "Dstintf": {
+                    "type": "string",
+                    "description": "Only sessions to this interface are synchronized. You can only enter one interface name. To synchronize sessions to multiple destination interfaces, add multiple filters."
+                },
+                "Srcaddr": {
+                    "type": "string",
+                    "description": "Only sessions from this IPv4 address are synchronized. You can only enter one address. To synchronize sessions from multiple source addresses, add multiple filters."
+                },
+                "Srcaddr6": {
+                    "type": "string",
+                    "description": "Only sessions from this IPv6 address are synchronized. You can only enter one address. To synchronize sessions from multiple source addresses, add multiple filters."
+                },
+                "Srcintf": {
+                    "type": "string",
+                    "description": "Only sessions from this interface are synchronized. You can only enter one interface name. To synchronize sessions for multiple source interfaces, add multiple filters."
+                },
+                "CustomService": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomServiceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SyncvdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "VDOM name."
+                }
+            },
+            "required": []
+        },
+        "CustomServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DstPortRange": {
+                    "type": "string",
+                    "description": "Custom service destination port range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Custom service ID."
+                },
+                "SrcPortRange": {
+                    "type": "string",
+                    "description": "Custom service source port range."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "HbInterval": {
+            "type": "number",
+            "description": "Heartbeat interval (1 - 10 sec)."
+        },
+        "HbLostThreshold": {
+            "type": "number",
+            "description": "Lost heartbeat threshold (1 - 10)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpsecTunnelSync": {
+            "type": "string",
+            "description": "Enable/disable IPsec tunnel synchronization. Valid values: `enable`, `disable`."
+        },
+        "Peerip": {
+            "type": "string",
+            "description": "IP address of the interface on the peer unit that is used for the session synchronization link."
+        },
+        "Peervd": {
+            "type": "string",
+            "description": "VDOM that contains the session synchronization link interface on the peer unit. Usually both peers would have the same peervd."
+        },
+        "SlaveAddIkeRoutes": {
+            "type": "string",
+            "description": "Enable/disable IKE route announcement on the backup unit. Valid values: `enable`, `disable`."
+        },
+        "SyncId": {
+            "type": "number",
+            "description": "Sync ID."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "DownIntfsBeforeSessSync": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DownIntfsBeforeSessSyncDefinition"
+            }
+        },
+        "SessionSyncFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SessionSyncFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Syncvd": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SyncvdDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

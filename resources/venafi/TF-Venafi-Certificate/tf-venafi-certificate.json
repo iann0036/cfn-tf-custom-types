@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::Venafi::Certificate",
+    "description": "Provides access to TLS key and certificate data enrolled using Venafi. This can be used to define a\ncertificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/venafi/TF-Venafi-Certificate/docs/README.md",
+    "definitions": {
+        "CustomFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "Key encryption algorithm, either RSA or ECDSA.\nDefaults to \"RSA\"."
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "CertificateDn": {
+            "type": "string"
+        },
+        "Chain": {
+            "type": "string"
+        },
+        "CommonName": {
+            "type": "string",
+            "description": "The common name of the certificate."
+        },
+        "CsrPem": {
+            "type": "string"
+        },
+        "CustomFields": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomFieldsDefinition"
+            },
+            "description": "Collection of Custom Field name-value pairs to\nassign to the certificate."
+        },
+        "EcdsaCurve": {
+            "type": "string"
+        },
+        "ExpirationWindow": {
+            "type": "number",
+            "description": "Number of hours before certificate expiry\nto request a new certificate."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerHint": {
+            "type": "string",
+            "description": "Used with valid_days to indicate the target\nissuer when using Trust Protection Platform.  Relevant values are: \"DigiCert\",\n\"Entrust\", and \"Microsoft\"."
+        },
+        "KeyPassword": {
+            "type": "string",
+            "description": "The password used to encrypt the private key."
+        },
+        "Pkcs12": {
+            "type": "string"
+        },
+        "PrivateKeyPem": {
+            "type": "string"
+        },
+        "RsaBits": {
+            "type": "number",
+            "description": "Number of bits to use when generating an RSA key.\nApplies when algorithm=RSA.  Defaults to 2048."
+        },
+        "SanDns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of DNS names to use as alternative\nsubjects of the certificate."
+        },
+        "SanEmail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of email addresses to use as\nalternative subjects of the certificate."
+        },
+        "SanIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of IP addresses to use as alternative\nsubjects of the certificate."
+        },
+        "ValidDays": {
+            "type": "number",
+            "description": "Desired number of days for which the new\ncertificate will be valid."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CommonName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/Chain",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KeyPassword",
+        "/properties/PrivateKeyPem"
+    ]
+}

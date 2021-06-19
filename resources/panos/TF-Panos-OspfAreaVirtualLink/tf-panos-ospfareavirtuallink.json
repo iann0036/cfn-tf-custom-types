@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::Panos::OspfAreaVirtualLink",
+    "description": "Manages an OSPF area virtual link.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-OspfAreaVirtualLink/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthProfile": {
+            "type": "string",
+            "description": "Auth profile."
+        },
+        "BfdProfile": {
+            "type": "string",
+            "description": "BFD profile."
+        },
+        "DeadCounts": {
+            "type": "number",
+            "description": "Dead counts (default: `4`)."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable (default: `true`)."
+        },
+        "HelloInterval": {
+            "type": "number",
+            "description": "Hello interval in seconds (default: `10`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "NeighborId": {
+            "type": "string",
+            "description": "Neighbor ID."
+        },
+        "OspfArea": {
+            "type": "string",
+            "description": "OSPF area name."
+        },
+        "RetransmitInterval": {
+            "type": "number",
+            "description": "Retransmit interval in seconds (default: `5`)."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location."
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "TransitAreaId": {
+            "type": "string",
+            "description": "Transit area ID."
+        },
+        "TransitDelay": {
+            "type": "number",
+            "description": "Transit delay in seconds (default: `1`)."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NeighborId",
+        "OspfArea",
+        "TransitAreaId",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Aviatrix::FirewallTag",
+    "description": "The **aviatrix_firewall_tag** resource allows the creation and management of [Aviatrix Stateful Firewall tags](https://docs.aviatrix.com/HowTos/tag_firewall.html) for tag-based security for gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FirewallTag/docs/README.md",
+    "definitions": {
+        "CidrListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "CidrTagName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr",
+                "CidrTagName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FirewallTag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "CidrList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CidrListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallTag"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

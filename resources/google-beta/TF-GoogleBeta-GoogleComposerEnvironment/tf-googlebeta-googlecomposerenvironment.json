@@ -1,0 +1,422 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComposerEnvironment",
+    "description": "CloudFormation equivalent of google_composer_environment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComposerEnvironment/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeCount": {
+                    "type": "number"
+                },
+                "DatabaseConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EncryptionConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivateEnvironmentConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivateEnvironmentConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SoftwareConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SoftwareConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WebServerConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebServerConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WebServerNetworkAccessControl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebServerNetworkAccessControlDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DatabaseConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MachineType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MachineType"
+            ]
+        },
+        "EncryptionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "NodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "IpAllocationPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAllocationPolicyDefinition"
+                    }
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "Subnetwork": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Zone"
+            ]
+        },
+        "IpAllocationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "ClusterSecondaryRangeName": {
+                    "type": "string"
+                },
+                "ServicesIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "ServicesSecondaryRangeName": {
+                    "type": "string"
+                },
+                "UseIpAliases": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PrivateEnvironmentConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudSqlIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "EnablePrivateEndpoint": {
+                    "type": "boolean"
+                },
+                "MasterIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "WebServerIpv4CidrBlock": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SoftwareConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AirflowConfigOverrides": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AirflowConfigOverridesDefinition"
+                    }
+                },
+                "EnvVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvVariablesDefinition"
+                    }
+                },
+                "ImageVersion": {
+                    "type": "string"
+                },
+                "PypiPackages": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PypiPackagesDefinition"
+                    }
+                },
+                "PythonVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AirflowConfigOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EnvVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PypiPackagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WebServerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MachineType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MachineType"
+            ]
+        },
+        "WebServerNetworkAccessControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedIpRange": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AllowedIpRangeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AllowedIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

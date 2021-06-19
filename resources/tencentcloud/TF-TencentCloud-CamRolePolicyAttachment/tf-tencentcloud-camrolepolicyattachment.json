@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::TencentCloud::CamRolePolicyAttachment",
+    "description": "Provides a resource to create a CAM role policy attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CamRolePolicyAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateMode": {
+            "type": "number"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PolicyId": {
+            "type": "string",
+            "description": "ID of the policy."
+        },
+        "PolicyName": {
+            "type": "string"
+        },
+        "PolicyType": {
+            "type": "string"
+        },
+        "RoleId": {
+            "type": "string",
+            "description": "ID of the attached CAM role."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PolicyId",
+        "RoleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateMode",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/PolicyName",
+        "/properties/PolicyType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

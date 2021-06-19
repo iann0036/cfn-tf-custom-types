@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Aviatrix::VpnUser",
+    "description": "The **aviatrix_vpn_user** resource creates and manages Aviatrix VPN users.\n\n~> **NOTE:** As of R2.15, management of user/profile attachment can be set using `manage_user_attachment`. This argument must be to *true* in either **aviatrix_vpn_user** or **aviatrix_vpn_profile**. If attachment is managed in the **aviatrix_vpn_user** (set to *true*), it must be set to *false* in the **aviatrix_vpn_profile** resource and vice versa.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-VpnUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageUserAttachment": {
+            "type": "boolean"
+        },
+        "Profiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SamlEndpoint": {
+            "type": "string"
+        },
+        "UserEmail": {
+            "type": "string"
+        },
+        "UserName": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "UserName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

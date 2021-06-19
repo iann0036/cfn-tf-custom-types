@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::Okta::AppBasicAuth",
+    "description": "Creates a Basic Auth Application.\n\nThis resource allows you to create and configure a Basic Auth Application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppBasicAuth/docs/README.md",
+    "definitions": {
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthUrl": {
+            "type": "string",
+            "description": "The URL of the authenticating site for this app."
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean",
+            "description": "Display auto submit toolbar."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Groups associated with the application."
+        },
+        "HideIos": {
+            "type": "boolean",
+            "description": "Do not display application icon on mobile app."
+        },
+        "HideWeb": {
+            "type": "boolean",
+            "description": "Do not display application icon to users."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The Application's display name."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of application. (`\"ACTIVE\"` or `\"INACTIVE\"`)."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL of the sign-in page for this app."
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthUrl",
+        "Label",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

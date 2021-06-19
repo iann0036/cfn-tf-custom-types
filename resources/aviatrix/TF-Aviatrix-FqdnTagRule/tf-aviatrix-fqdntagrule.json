@@ -1,0 +1,84 @@
+{
+    "typeName": "TF::Aviatrix::FqdnTagRule",
+    "description": "The **aviatrix_fqdn_tag_rule** resource manages a single FQDN filtering domain name rule.\n\n~> **NOTE on FQDN and FQDN Tag Rule resources:** Terraform currently provides both a standalone FQDN Tag Rule resource and an FQDN resource with domain name rules defined in-line. At this time, you cannot use an FQDN resource with in-line rules in conjunction with any FQDN Tag Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules. In order to use this resource, please set `manage_domain_names` in the **aviatrix_fqdn** resource to false.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FqdnTagRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "What action should happen to matching requests. Possible values are: 'Base Policy', 'Allow' or 'Deny'. Defaults to 'Base Policy' if no value provided.\n* For protocol \"all\", port must be set to \"all\".\n* For protocol \u201cicmp\u201d, port must be set to \u201cping\u201d."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "FQDN. Example: \"facebook.com\"."
+        },
+        "FqdnTagName": {
+            "type": "string",
+            "description": "FQDN Filter tag name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string",
+            "description": "Port. Example \"25\"."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol. Valid values: \"all\", \"tcp\", \"udp\", \"icmp\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fqdn",
+        "FqdnTagName",
+        "Port",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

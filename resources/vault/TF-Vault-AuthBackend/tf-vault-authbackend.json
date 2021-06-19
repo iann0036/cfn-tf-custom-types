@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::Vault::AuthBackend",
+    "description": "CloudFormation equivalent of vault_auth_backend",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-AuthBackend/docs/README.md",
+    "definitions": {
+        "TuneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedResponseHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuditNonHmacRequestKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuditNonHmacResponseKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultLeaseTtl": {
+                    "type": "string"
+                },
+                "ListingVisibility": {
+                    "type": "string"
+                },
+                "MaxLeaseTtl": {
+                    "type": "string"
+                },
+                "PassthroughRequestHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TokenType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "DefaultLeaseTtlSeconds": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the auth method."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListingVisibility": {
+            "type": "string"
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Specifies if the auth method is local only."
+        },
+        "MaxLeaseTtlSeconds": {
+            "type": "number"
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path to mount the auth method \u2014 this defaults to the name of the type."
+        },
+        "Tune": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TuneDefinition"
+            },
+            "description": "Extra configuration block. Structure is documented below."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The name of the auth method type."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

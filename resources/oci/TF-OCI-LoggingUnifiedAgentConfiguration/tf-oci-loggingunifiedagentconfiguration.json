@@ -1,0 +1,409 @@
+{
+    "typeName": "TF::OCI::LoggingUnifiedAgentConfiguration",
+    "description": "This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.\n\nCreate unified agent configuration registration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-LoggingUnifiedAgentConfiguration/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GroupAssociationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigurationType": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ConfigurationType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogObjectId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogObjectId"
+            ]
+        },
+        "SourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Paths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceType": {
+                    "type": "string"
+                },
+                "Parser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParserDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "SourceType"
+            ]
+        },
+        "ParserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delimiter": {
+                    "type": "string"
+                },
+                "Expression": {
+                    "type": "string"
+                },
+                "FieldTimeKey": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FormatFirstline": {
+                    "type": "string"
+                },
+                "GrokFailureKey": {
+                    "type": "string"
+                },
+                "GrokNameKey": {
+                    "type": "string"
+                },
+                "IsEstimateCurrentEvent": {
+                    "type": "boolean"
+                },
+                "IsKeepTimeKey": {
+                    "type": "boolean"
+                },
+                "IsNullEmptyString": {
+                    "type": "boolean"
+                },
+                "IsSupportColonlessIdent": {
+                    "type": "boolean"
+                },
+                "IsWithPriority": {
+                    "type": "boolean"
+                },
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MessageFormat": {
+                    "type": "string"
+                },
+                "MessageKey": {
+                    "type": "string"
+                },
+                "MultiLineStartRegexp": {
+                    "type": "string"
+                },
+                "NullValuePattern": {
+                    "type": "string"
+                },
+                "ParserType": {
+                    "type": "string"
+                },
+                "Rfc5424timeFormat": {
+                    "type": "string"
+                },
+                "SyslogParserType": {
+                    "type": "string"
+                },
+                "TimeFormat": {
+                    "type": "string"
+                },
+                "TimeType": {
+                    "type": "string"
+                },
+                "TimeoutInMilliseconds": {
+                    "type": "number"
+                },
+                "Types": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TypesDefinition"
+                    }
+                },
+                "Patterns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PatternsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ParserType"
+            ]
+        },
+        "TypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PatternsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FieldTimeFormat": {
+                    "type": "string"
+                },
+                "FieldTimeKey": {
+                    "type": "string"
+                },
+                "FieldTimeZone": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Pattern": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment that the resource belongs to."
+        },
+        "ConfigurationState": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) Description for this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) Whether or not this resource is currently enabled."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeLastModified": {
+            "type": "string"
+        },
+        "GroupAssociation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupAssociationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "IsEnabled"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigurationState",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeLastModified"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Aiven::AccountAuthentication",
+    "description": "CloudFormation equivalent of aiven_account_authentication",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-AccountAuthentication/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "AuthenticationId": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SamlAcsUrl": {
+            "type": "string"
+        },
+        "SamlCertificate": {
+            "type": "string"
+        },
+        "SamlEntityId": {
+            "type": "string"
+        },
+        "SamlIdpUrl": {
+            "type": "string"
+        },
+        "SamlMetadataUrl": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

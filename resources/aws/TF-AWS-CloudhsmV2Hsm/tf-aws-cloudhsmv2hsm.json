@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::AWS::CloudhsmV2Hsm",
+    "description": "Creates an HSM module in Amazon CloudHSM v2 cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudhsmV2Hsm/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The IDs of AZ in which HSM module will be located. Do not use together with subnet_id."
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of Cloud HSM v2 cluster to which HSM will be added."
+        },
+        "HsmEniId": {
+            "type": "string"
+        },
+        "HsmId": {
+            "type": "string"
+        },
+        "HsmState": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "The IP address of HSM module. Must be within the CIDR of selected subnet."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of subnet in which HSM module will be located."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HsmEniId",
+        "/properties/HsmId",
+        "/properties/HsmState",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::Civo::KubernetesNodePool",
+    "description": "Provides a Civo Kubernetes node pool resource. While the default node pool must be defined in the civo_kubernetes_cluster resource, this resource can be used to add additional ones to a cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-KubernetesNodePool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of the Kubernetes cluster to which the node pool is associated."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NumTargetNodes": {
+            "type": "number",
+            "description": "The number of instances to create (The default at the time of writing is 3)."
+        },
+        "TargetNodesSize": {
+            "type": "string",
+            "description": "The size of each node."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

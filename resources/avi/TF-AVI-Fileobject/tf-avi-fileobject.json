@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::AVI::Fileobject",
+    "description": "The FileObject resource allows the creation and management of Avi FileObject",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Fileobject/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Checksum": {
+            "type": "string",
+            "description": "Sha1 checksum of the file. Field introduced in 20.1.1."
+        },
+        "Compressed": {
+            "type": "boolean",
+            "description": "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1."
+        },
+        "Created": {
+            "type": "string",
+            "description": "Timestamp of creation for the file. Field introduced in 20.1.1."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the file. Field introduced in 20.1.1."
+        },
+        "ExpiresAt": {
+            "type": "string",
+            "description": "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFederated": {
+            "type": "boolean",
+            "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the file object. Field introduced in 20.1.1."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to the file. Field introduced in 20.1.1."
+        },
+        "ReadOnly": {
+            "type": "boolean",
+            "description": "Enforce read-only on the file. Field introduced in 20.1.1."
+        },
+        "RestrictDownload": {
+            "type": "boolean",
+            "description": "Flag to allow/restrict download of the file. Field introduced in 20.1.1."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Size of the file. Field introduced in 20.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 20.1.1."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE. Field introduced in 20.1.1. Allowed in basic(allowed values- other_file_types) edition, essentials(allowed values- other_file_types) edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "Version of the file. Field introduced in 20.1.1."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

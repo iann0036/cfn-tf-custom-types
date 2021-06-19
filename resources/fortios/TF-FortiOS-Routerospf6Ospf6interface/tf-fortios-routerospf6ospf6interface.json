@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::FortiOS::Routerospf6Ospf6interface",
+    "description": "OSPF6 interface configuration.\n\n~> The provider supports the definition of Ospf6-Interface in Router Ospf6 `fortios_router_ospf6`, and also allows the definition of separate Ospf6-Interface resources `fortios_routerospf6_ospf6interface`, but do not use a `fortios_router_ospf6` with in-line Ospf6-Interface in conjunction with any `fortios_routerospf6_ospf6interface` resources, otherwise conflicts and overwrite will occur.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Routerospf6Ospf6interface/docs/README.md",
+    "definitions": {
+        "IpsecKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthKey": {
+                    "type": "string",
+                    "description": "Authentication key."
+                },
+                "EncKey": {
+                    "type": "string",
+                    "description": "Encryption key."
+                },
+                "Spi": {
+                    "type": "number",
+                    "description": "Security Parameters Index."
+                }
+            },
+            "required": []
+        },
+        "NeighborDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cost": {
+                    "type": "number",
+                    "description": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost."
+                },
+                "Ip6": {
+                    "type": "string",
+                    "description": "IPv6 link local address of the neighbor."
+                },
+                "PollInterval": {
+                    "type": "number",
+                    "description": "Poll interval time in seconds."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "priority."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AreaId": {
+            "type": "string",
+            "description": "A.B.C.D, in IPv4 address format."
+        },
+        "Authentication": {
+            "type": "string",
+            "description": "Authentication mode. Valid values: `none`, `ah`, `esp`, `area`."
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Enable/disable Bidirectional Forwarding Detection (BFD). Valid values: `global`, `enable`, `disable`."
+        },
+        "Cost": {
+            "type": "number",
+            "description": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost."
+        },
+        "DeadInterval": {
+            "type": "number",
+            "description": "Dead interval."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "HelloInterval": {
+            "type": "number",
+            "description": "Hello interval."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Configuration interface name."
+        },
+        "IpsecAuthAlg": {
+            "type": "string",
+            "description": "Authentication algorithm. Valid values: `md5`, `sha1`, `sha256`, `sha384`, `sha512`."
+        },
+        "IpsecEncAlg": {
+            "type": "string",
+            "description": "Encryption algorithm. Valid values: `null`, `des`, `3des`, `aes128`, `aes192`, `aes256`."
+        },
+        "KeyRolloverInterval": {
+            "type": "number",
+            "description": "Key roll-over interval."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "MTU for OSPFv3 packets."
+        },
+        "MtuIgnore": {
+            "type": "string",
+            "description": "Enable/disable ignoring MTU field in DBD packets. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface entry name."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Network type. Valid values: `broadcast`, `point-to-point`, `non-broadcast`, `point-to-multipoint`, `point-to-multipoint-non-broadcast`."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "priority."
+        },
+        "RetransmitInterval": {
+            "type": "number",
+            "description": "Retransmit interval."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable OSPF6 routing on this interface. Valid values: `disable`, `enable`."
+        },
+        "TransmitDelay": {
+            "type": "number",
+            "description": "Transmit delay."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "IpsecKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecKeysDefinition"
+            }
+        },
+        "Neighbor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Vault::Mount",
+    "description": "CloudFormation equivalent of vault_mount",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-Mount/docs/README.md",
+    "definitions": {
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "DefaultLeaseTtlSeconds": {
+            "type": "number",
+            "description": "Default lease duration for tokens and secrets in seconds."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description of the mount."
+        },
+        "ExternalEntropyAccess": {
+            "type": "boolean",
+            "description": "Boolean flag that can be explicitly set to true to enable the secrets engine to access Vault's external entropy source."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Boolean flag that can be explicitly set to true to enforce local mount in HA environment."
+        },
+        "MaxLeaseTtlSeconds": {
+            "type": "number",
+            "description": "Maximum possible lease duration for tokens and secrets in seconds."
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "description": "Specifies mount type specific options that are passed to the backend."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Where the secret backend will be mounted."
+        },
+        "SealWrap": {
+            "type": "boolean",
+            "description": "Boolean flag that can be explicitly set to true to enable seal wrapping for the mount, causing values stored by the mount to be wrapped by the seal's encryption capability."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the backend, such as \"aws\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Path",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

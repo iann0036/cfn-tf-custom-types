@@ -1,0 +1,212 @@
+{
+    "typeName": "TF::Okta::IdpSocial",
+    "description": "Creates a Social Identity Provider.\n\nThis resource allows you to create and configure a Social Identity Provider.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-IdpSocial/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountLinkAction": {
+            "type": "string",
+            "description": "Specifies the account linking action for an IdP user."
+        },
+        "AccountLinkGroupInclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Group memberships to determine link candidates."
+        },
+        "AuthorizationBinding": {
+            "type": "string",
+            "description": "The method of making an authorization request. It can be set to `\"HTTP-POST\"` or `\"HTTP-REDIRECT\"`."
+        },
+        "AuthorizationUrl": {
+            "type": "string",
+            "description": "IdP Authorization Server (AS) endpoint to request consent from the user and obtain an authorization code grant."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Unique identifier issued by AS for the Okta IdP instance."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "Client secret issued by AS for the Okta IdP instance."
+        },
+        "DeprovisionedAction": {
+            "type": "string",
+            "description": "Action for a previously deprovisioned IdP user during authentication. Can be `\"NONE\"` or `\"REACTIVATE\"`."
+        },
+        "GroupsAction": {
+            "type": "string",
+            "description": "Provisioning action for IdP user's group memberships. It can be `\"NONE\"`, `\"SYNC\"`, `\"APPEND\"`, or `\"ASSIGN\"`."
+        },
+        "GroupsAssignment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Okta Group IDs to add an IdP user as a member with the `\"ASSIGN\"` `groups_action`."
+        },
+        "GroupsAttribute": {
+            "type": "string",
+            "description": "IdP user profile attribute name (case-insensitive) for an array value that contains group memberships."
+        },
+        "GroupsFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Whitelist of Okta Group identifiers that are allowed for the `\"APPEND\"` or `\"SYNC\"` `groups_action`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerMode": {
+            "type": "string",
+            "description": "Indicates whether Okta uses the original Okta org domain URL, or a custom domain URL. It can be `\"ORG_URL\"` or `\"CUSTOM_URL\"`."
+        },
+        "MatchAttribute": {
+            "type": "string"
+        },
+        "MatchType": {
+            "type": "string"
+        },
+        "MaxClockSkew": {
+            "type": "number",
+            "description": "Maximum allowable clock-skew when processing messages from the IdP."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Application's display name."
+        },
+        "ProfileMaster": {
+            "type": "boolean",
+            "description": "Determines if the IdP should act as a source of truth for user profile attributes."
+        },
+        "ProtocolType": {
+            "type": "string",
+            "description": "The type of protocol to use. It can be `\"OIDC\"` or `\"OAUTH2\"`."
+        },
+        "ProvisioningAction": {
+            "type": "string",
+            "description": "Provisioning action for an IdP user during authentication."
+        },
+        "RequestSignatureAlgorithm": {
+            "type": "string",
+            "description": "The XML digital signature algorithm used when signing an AuthnRequest message."
+        },
+        "RequestSignatureScope": {
+            "type": "string",
+            "description": "Specifies whether to digitally sign an AuthnRequest messages to the IdP. It can be `\"REQUEST\"` or `\"NONE\"`."
+        },
+        "ResponseSignatureAlgorithm": {
+            "type": "string",
+            "description": "The minimum XML digital signature algorithm allowed when verifying a SAMLResponse message or Assertion element."
+        },
+        "ResponseSignatureScope": {
+            "type": "string",
+            "description": "Specifies whether to verify a SAMLResponse message or Assertion element XML digital signature. It can be `\"RESPONSE\"`, `\"ASSERTION\"`, or `\"ANY\"`."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The scopes of the IdP."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the IdP."
+        },
+        "SubjectMatchAttribute": {
+            "type": "string",
+            "description": "Okta user profile attribute for matching transformed IdP username. Only for matchType `\"CUSTOM_ATTRIBUTE\"`."
+        },
+        "SubjectMatchType": {
+            "type": "string",
+            "description": "Determines the Okta user profile attribute match conditions for account linking and authentication of the transformed IdP username. By default, it is set to `\"USERNAME\"`. It can be set to `\"USERNAME\"`, `\"EMAIL\"`, `\"USERNAME_OR_EMAIL\"` or `\"CUSTOM_ATTRIBUTE\"`."
+        },
+        "SuspendedAction": {
+            "type": "string",
+            "description": "Action for a previously suspended IdP user during authentication. Can be set to `\"NONE\"` or `\"UNSUSPEND\"`."
+        },
+        "TokenBinding": {
+            "type": "string",
+            "description": "The method of making a token request. It can be set to `\"HTTP-POST\"` or `\"HTTP-REDIRECT\"`."
+        },
+        "TokenUrl": {
+            "type": "string",
+            "description": "IdP Authorization Server (AS) endpoint to exchange the authorization code grant for an access token."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of Social IdP. It can be `\"FACEBOOK\"`, `\"LINKEDIN\"`, `\"MICROSOFT\"`, or `\"GOOGLE\"`."
+        },
+        "UsernameTemplate": {
+            "type": "string",
+            "description": "Okta EL Expression to generate or transform a unique username for the IdP user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Scopes",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AuthorizationBinding",
+        "/properties/AuthorizationUrl",
+        "/properties/Id",
+        "/properties/TokenBinding",
+        "/properties/TokenUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret"
+    ]
+}

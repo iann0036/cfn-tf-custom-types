@@ -1,0 +1,425 @@
+{
+    "typeName": "TF::FortiOS::ReportLayout",
+    "description": "Report layout configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ReportLayout/docs/README.md",
+    "definitions": {
+        "BodyItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Chart": {
+                    "type": "string",
+                    "description": "Report item chart name."
+                },
+                "ChartOptions": {
+                    "type": "string",
+                    "description": "Report chart options. Valid values: `include-no-data`, `hide-title`, `show-caption`."
+                },
+                "Column": {
+                    "type": "number",
+                    "description": "Report section column number."
+                },
+                "Content": {
+                    "type": "string",
+                    "description": "Report item text content."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "DrillDownItems": {
+                    "type": "string",
+                    "description": "Control how drill down charts are shown."
+                },
+                "DrillDownTypes": {
+                    "type": "string",
+                    "description": "Control whether keys from the parent being combined or not."
+                },
+                "Hide": {
+                    "type": "string",
+                    "description": "Enable/disable hide item in report. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Report item ID."
+                },
+                "ImgSrc": {
+                    "type": "string",
+                    "description": "Report item image file name."
+                },
+                "ListComponent": {
+                    "type": "string",
+                    "description": "Report item list component. Valid values: `bullet`, `numbered`."
+                },
+                "MiscComponent": {
+                    "type": "string",
+                    "description": "Report item miscellaneous component. Valid values: `hline`, `page-break`, `column-break`, `section-start`."
+                },
+                "Style": {
+                    "type": "string",
+                    "description": "Report item style."
+                },
+                "TableCaptionStyle": {
+                    "type": "string",
+                    "description": "Table chart caption style."
+                },
+                "TableColumnWidths": {
+                    "type": "string",
+                    "description": "Report item table column widths."
+                },
+                "TableEvenRowStyle": {
+                    "type": "string",
+                    "description": "Table chart even row style."
+                },
+                "TableHeadStyle": {
+                    "type": "string",
+                    "description": "Table chart head style."
+                },
+                "TableOddRowStyle": {
+                    "type": "string",
+                    "description": "Table chart odd row style."
+                },
+                "TextComponent": {
+                    "type": "string",
+                    "description": "Report item text component. Valid values: `text`, `heading1`, `heading2`, `heading3`."
+                },
+                "Title": {
+                    "type": "string",
+                    "description": "Report section title."
+                },
+                "TopN": {
+                    "type": "number",
+                    "description": "Value of top."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Report item type. Valid values: `text`, `image`, `chart`, `misc`."
+                },
+                "List": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ListDefinition"
+                    }
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColumnBreakBefore": {
+                    "type": "string",
+                    "description": "Report page auto column break before heading. Valid values: `heading1`, `heading2`, `heading3`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Report page options. Valid values: `header-on-first-page`, `footer-on-first-page`."
+                },
+                "PageBreakBefore": {
+                    "type": "string",
+                    "description": "Report page auto page break before heading. Valid values: `heading1`, `heading2`, `heading3`."
+                },
+                "Paper": {
+                    "type": "string",
+                    "description": "Report page paper. Valid values: `a4`, `letter`."
+                },
+                "Footer": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FooterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string",
+                    "description": "List entry content."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "List entry ID."
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Field name that match field of parameters defined in dataset."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Value to replace corresponding field of parameters defined in dataset."
+                }
+            },
+            "required": []
+        },
+        "FooterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Style": {
+                    "type": "string",
+                    "description": "Report footer style."
+                },
+                "FooterItem": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FooterItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Style": {
+                    "type": "string",
+                    "description": "Report header style."
+                },
+                "HeaderItem": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FooterItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string",
+                    "description": "Report item text content."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Report item ID."
+                },
+                "ImgSrc": {
+                    "type": "string",
+                    "description": "Report item image file name."
+                },
+                "Style": {
+                    "type": "string",
+                    "description": "Report item style."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Report item type. Valid values: `text`, `image`."
+                }
+            },
+            "required": []
+        },
+        "HeaderItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string",
+                    "description": "Report item text content."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Report item ID."
+                },
+                "ImgSrc": {
+                    "type": "string",
+                    "description": "Report item image file name."
+                },
+                "Style": {
+                    "type": "string",
+                    "description": "Report item style."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Report item type. Valid values: `text`, `image`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CutoffOption": {
+            "type": "string",
+            "description": "Cutoff-option is either run-time or custom. Valid values: `run-time`, `custom`."
+        },
+        "CutoffTime": {
+            "type": "string",
+            "description": "Custom cutoff time to generate report [hh:mm]."
+        },
+        "Day": {
+            "type": "string",
+            "description": "Schedule days of week to generate report. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmailRecipients": {
+            "type": "string",
+            "description": "Email recipients for generated reports."
+        },
+        "EmailSend": {
+            "type": "string",
+            "description": "Enable/disable sending emails after reports are generated. Valid values: `enable`, `disable`."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Report format. Valid values: `pdf`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxPdfReport": {
+            "type": "number",
+            "description": "Maximum number of PDF reports to keep at one time (oldest report is overwritten)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Report layout name."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Report layout options. Valid values: `include-table-of-content`, `auto-numbering-heading`, `view-chart-as-heading`, `show-html-navbar-before-heading`, `dummy-option`."
+        },
+        "ScheduleType": {
+            "type": "string",
+            "description": "Report schedule type. Valid values: `demand`, `daily`, `weekly`."
+        },
+        "StyleTheme": {
+            "type": "string",
+            "description": "Report style theme."
+        },
+        "Subtitle": {
+            "type": "string",
+            "description": "Report subtitle."
+        },
+        "Time": {
+            "type": "string",
+            "description": "Schedule time to generate report [hh:mm]."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Report title."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "BodyItem": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BodyItemDefinition"
+            }
+        },
+        "Page": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PageDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StyleTheme"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

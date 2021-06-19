@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::AWS::VpcPeeringConnectionOptions",
+    "description": "Provides a resource to manage VPC peering connection options.\n\n~> **NOTE on VPC Peering Connections and VPC Peering Connection Options:** Terraform provides\nboth a standalone VPC Peering Connection Options and a [VPC Peering Connection](vpc_peering_connection.html)\nresource with `accepter` and `requester` attributes. Do not manage options for the same VPC peering\nconnection in both a VPC Peering Connection resource and a VPC Peering Connection Options resource.\nDoing so will cause a conflict of options and will overwrite the options.\nUsing a VPC Peering Connection Options resource decouples management of the connection options from\nmanagement of the VPC Peering Connection and allows options to be set correctly in cross-region and\ncross-account scenarios.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VpcPeeringConnectionOptions/docs/README.md",
+    "definitions": {
+        "AccepterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RequesterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VpcPeeringConnectionId": {
+            "type": "string",
+            "description": "The ID of the requester VPC peering connection."
+        },
+        "Accepter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccepterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Requester": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequesterDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcPeeringConnectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

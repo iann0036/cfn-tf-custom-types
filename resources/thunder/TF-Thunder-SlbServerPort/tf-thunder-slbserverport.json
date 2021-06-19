@@ -1,0 +1,215 @@
+{
+    "typeName": "TF::Thunder::SlbServerPort",
+    "description": "`thunder_slb_server_port` Provides details about thunder slb server port",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbServerPort/docs/README.md",
+    "definitions": {
+        "AlternatePortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alternate": {
+                    "type": "number"
+                },
+                "AlternateName": {
+                    "type": "string"
+                },
+                "AlternateServerPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AuthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServicePrincipalName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: enable; \u2018disable\u2019: disable; \u2018disable-with-health-check\u2019: disable port, but health check work;."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection Limit."
+        },
+        "ConnResume": {
+            "type": "number",
+            "description": "Connection Resume."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on real server port."
+        },
+        "FollowPortProtocol": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: TCP Port; \u2018udp\u2019: UDP Port;."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Health Check (Monitor Name)."
+        },
+        "HealthCheckDisable": {
+            "type": "number",
+            "description": "Disable health check."
+        },
+        "HealthCheckFollowPort": {
+            "type": "number",
+            "description": "Specify which port to follow for health status (Port Number)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "NoSsl": {
+            "type": "number",
+            "description": "No SSL."
+        },
+        "PortNumber": {
+            "type": "number",
+            "description": "Port Number."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: TCP Port; \u2018udp\u2019: UDP Port;."
+        },
+        "Range": {
+            "type": "number",
+            "description": "Port range (Port range value - used for vip-to-rport-mapping)."
+        },
+        "RportHealthCheckShared": {
+            "type": "string",
+            "description": "Health Check (Monitor Name)."
+        },
+        "SharedPartitionPortTemplate": {
+            "type": "number"
+        },
+        "SharedRportHealthCheck": {
+            "type": "number",
+            "description": "Reference a health-check from shared partition."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for real server port; \u2018stats-data-disable\u2019: Disable statistical data collection for real server port;."
+        },
+        "SupportHttp2": {
+            "type": "number",
+            "description": "Starting HTTP/2 with Prior Knowledge."
+        },
+        "TemplatePort": {
+            "type": "string",
+            "description": "Port template (Port template name)."
+        },
+        "TemplatePortShared": {
+            "type": "string"
+        },
+        "TemplateServerSsl": {
+            "type": "string",
+            "description": "Server side SSL template (Server side SSL Name)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Port Weight (Connection Weight)."
+        },
+        "AlternatePort": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlternatePortDefinition"
+            }
+        },
+        "AuthCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

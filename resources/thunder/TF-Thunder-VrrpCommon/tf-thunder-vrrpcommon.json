@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::Thunder::VrrpCommon",
+    "description": "`thunder_vrrp_common` Provides details about thunder vrrp common",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-VrrpCommon/docs/README.md",
+    "definitions": {
+        "HostidAppendToVridDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostidAppendToVridDefault": {
+                    "type": "number"
+                },
+                "HostidAppendToVridValue": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "InlineModeCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InlineMode": {
+                    "type": "number"
+                },
+                "PreferredPort": {
+                    "type": "number"
+                },
+                "PreferredTrunk": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: enable vrrp-a; \u2018disable\u2019: disable vrrp-a;."
+        },
+        "ArpRetry": {
+            "type": "number",
+            "description": "Number of additional gratuitous ARPs sent out after HA failover (1-255, default is 4)."
+        },
+        "DeadTimer": {
+            "type": "number",
+            "description": "VRRP-A dead timer in terms of how many hello messages missed, default is 5 (2-255, default is 5)."
+        },
+        "DeviceId": {
+            "type": "number",
+            "description": "Unique ID for each VRRP-A box (Device-id number)."
+        },
+        "DisableDefaultVrid": {
+            "type": "number",
+            "description": "Disable default vrid."
+        },
+        "ForwardL4PacketOnStandby": {
+            "type": "number",
+            "description": "Enables Layer 2/3 forwarding of Layer 4 traffic on the Standby ACOS device."
+        },
+        "GetReadyTime": {
+            "type": "number",
+            "description": "set get ready time after ax starting up (60-1200, in unit of 100millisec, default is 60)."
+        },
+        "HelloInterval": {
+            "type": "number",
+            "description": "VRRP-A Hello Interval (1-255, in unit of 100millisec, default is 2)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PreemptionDelay": {
+            "type": "number",
+            "description": "Delay before changing state from Active to Standby (1-255, in unit of 100millisec, default is 60)."
+        },
+        "RestartTime": {
+            "type": "number",
+            "description": "Time between restarting ports on standby system after transition."
+        },
+        "SetId": {
+            "type": "number",
+            "description": "Set-ID for HA configuration (Set id from 1 to 15)."
+        },
+        "TrackEventDelay": {
+            "type": "number",
+            "description": "Delay before changing state after up/down event (Units of 100 milliseconds (default 30))."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "HostidAppendToVrid": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostidAppendToVridDefinition"
+            },
+            "maxItems": 1
+        },
+        "InlineModeCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InlineModeCfgDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

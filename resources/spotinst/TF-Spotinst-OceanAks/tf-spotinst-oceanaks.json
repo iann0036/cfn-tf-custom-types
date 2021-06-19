@@ -1,0 +1,484 @@
+{
+    "typeName": "TF::Spotinst::OceanAks",
+    "description": "Manages a Spotinst Ocean AKS resource.\n\n-> This resource contains arguments (such as `image` and `extension`) that are automatically populated from the data reported by the Ocean AKS Connector deployed into your cluster. You can override the upstream configuration by defining the corresponding arguments.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanAks/docs/README.md",
+    "definitions": {
+        "AutoscalerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimitsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExtensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiVersion": {
+                    "type": "string"
+                },
+                "MinorVersionAutoUpgrade": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HealthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GracePeriod": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Marketplace": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MarketplaceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LoadBalancerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPoolNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancerSku": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "VirtualNetworkName": {
+                    "type": "string"
+                },
+                "NetworkInterface": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkInterfaceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SizeGb": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SizeGb"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FallbackToOndemand": {
+                    "type": "boolean"
+                },
+                "SpotPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VmSizesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Whitelist": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AutoscaleDownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxScaleDownPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleHeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Automatic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutomaticDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxMemoryGib": {
+                    "type": "number"
+                },
+                "MaxVcpu": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MarketplaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Sku": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "IsPrimary": {
+                    "type": "boolean"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "AdditionalIpConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalIpConfigDefinition"
+                    }
+                },
+                "SecurityGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityGroupDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutomaticDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Percentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AdditionalIpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateIpVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SecurityGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcdIdentifier": {
+            "type": "string",
+            "description": "The AKS identifier."
+        },
+        "AksName": {
+            "type": "string",
+            "description": "The AKS cluster name."
+        },
+        "AksResourceGroupName": {
+            "type": "string",
+            "description": "Name of the Azure Resource Group where the AKS cluster is located."
+        },
+        "ControllerClusterId": {
+            "type": "string",
+            "description": "A unique identifier used for connecting the Ocean SaaS platform and the Kubernetes cluster. Typically, the cluster name is used as its identifier."
+        },
+        "CustomData": {
+            "type": "string",
+            "description": "Must contain a valid Base64 encoded string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Load Balancer.\n* `resource_group_name` - (Optional) The Resource Group name of the Load Balancer.\n* `type` - (Optional) The type of load balancer. Supported value: `loadBalancer`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The Resource Group name of the Load Balancer.\n* `type` - (Optional) The type of load balancer. Supported value: `loadBalancer`."
+        },
+        "SshPublicKey": {
+            "type": "string",
+            "description": "SSH public key for admin access to Linux VMs."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "Username for admin access to VMs."
+        },
+        "Autoscaler": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalerDefinition"
+            },
+            "maxItems": 1
+        },
+        "Extension": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExtensionDefinition"
+            }
+        },
+        "Health": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthDefinition"
+            },
+            "maxItems": 1
+        },
+        "Image": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImageDefinition"
+            }
+        },
+        "LoadBalancer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 1
+        },
+        "OsDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDiskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StrategyDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        },
+        "VmSizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VmSizesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AcdIdentifier",
+        "AksName",
+        "AksResourceGroupName",
+        "Name",
+        "SshPublicKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

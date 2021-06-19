@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::BIGIP::LtmNode",
+    "description": "`bigip_ltm_node` Manages a node configuration\n\nFor resources should be named with their \"full path\".The full path is the combination of the partition + name of the resource( example: /Common/my-node ) or partition + Direcroty + nameof the resource ( example: /Common/test/my-node ).When including directory in fullpath we have to make sure it is created in the given partition before using it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmNode/docs/README.md",
+    "definitions": {
+        "FqdnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressFamily": {
+                    "type": "string"
+                },
+                "Autopopulate": {
+                    "type": "string"
+                },
+                "Downinterval": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "IP or hostname of the node."
+        },
+        "ConnectionLimit": {
+            "type": "number",
+            "description": "Specifies the maximum number of connections allowed for the node or node address."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User-defined description give ltm_node."
+        },
+        "DynamicRatio": {
+            "type": "number",
+            "description": "Specifies the fixed ratio value used for a node during ratio load balancing."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Monitor": {
+            "type": "string",
+            "description": "specifies the name of the monitor or monitor rule that you want to associate with the node."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the node."
+        },
+        "RateLimit": {
+            "type": "string",
+            "description": "Specifies the maximum number of connections per second allowed for a node or node address. The default value is 'disabled'."
+        },
+        "Ratio": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string",
+            "description": "Default is \"user-up\" you can set to \"user-down\" if you want to disable."
+        },
+        "Fqdn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FqdnDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

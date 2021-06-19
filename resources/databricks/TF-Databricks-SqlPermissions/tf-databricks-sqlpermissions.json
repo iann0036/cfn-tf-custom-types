@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Databricks::SqlPermissions",
+    "description": "CloudFormation equivalent of databricks_sql_permissions",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-SqlPermissions/docs/README.md",
+    "definitions": {
+        "PrivilegeAssignmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Principal": {
+                    "type": "string"
+                },
+                "Privileges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Principal",
+                "Privileges"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnonymousFunction": {
+            "type": "boolean"
+        },
+        "AnyFile": {
+            "type": "boolean"
+        },
+        "Catalog": {
+            "type": "boolean"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "Database": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Table": {
+            "type": "string"
+        },
+        "View": {
+            "type": "string"
+        },
+        "PrivilegeAssignments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PrivilegeAssignmentsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

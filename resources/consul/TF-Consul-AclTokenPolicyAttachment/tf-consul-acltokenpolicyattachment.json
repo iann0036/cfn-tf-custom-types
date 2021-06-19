@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Consul::AclTokenPolicyAttachment",
+    "description": "The `consul_acl_token_policy_attachment` resource links a Consul Token and an ACL\npolicy. The link is implemented through an update to the Consul ACL token.\n\n~> **NOTE:** This resource is only useful to attach policies to an ACL token\nthat has been created outside the current Terraform configuration, like the\nanonymous or the master token. If the token you need to attach a policy to has\nbeen created in the current Terraform configuration and will only be used in it,\nyou should use the `policies` attribute of [`consul_acl_token`](/docs/providers/consul/r/acl_token.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-AclTokenPolicyAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string",
+            "description": "The name of the policy attached to the token."
+        },
+        "TokenId": {
+            "type": "string",
+            "description": "The id of the token."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Policy",
+        "TokenId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

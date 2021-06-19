@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::Vault::LdapAuthBackend",
+    "description": "Provides a resource for managing an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-LdapAuthBackend/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "Binddn": {
+            "type": "string",
+            "description": "DN of object to bind when performing user search."
+        },
+        "Bindpass": {
+            "type": "string",
+            "description": "Password to use with `binddn` when performing user search."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "Trusted CA to validate TLS certificate."
+        },
+        "ClientTlsCert": {
+            "type": "string"
+        },
+        "ClientTlsKey": {
+            "type": "string"
+        },
+        "DenyNullBind": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the LDAP auth backend mount."
+        },
+        "Discoverdn": {
+            "type": "boolean"
+        },
+        "Groupattr": {
+            "type": "string",
+            "description": "LDAP attribute to follow on objects returned by groupfilter."
+        },
+        "Groupdn": {
+            "type": "string",
+            "description": "Base DN under which to perform group search."
+        },
+        "Groupfilter": {
+            "type": "string",
+            "description": "Go template used to construct group membership query."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsecureTls": {
+            "type": "boolean",
+            "description": "Control whether or TLS certificates must be validated."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to mount the LDAP auth backend under."
+        },
+        "Starttls": {
+            "type": "boolean",
+            "description": "Control use of TLS when conecting to LDAP."
+        },
+        "TlsMaxVersion": {
+            "type": "string",
+            "description": "Maximum acceptable version of TLS."
+        },
+        "TlsMinVersion": {
+            "type": "string",
+            "description": "Minimum acceptable version of TLS."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Upndomain": {
+            "type": "string",
+            "description": "The userPrincipalDomain used to construct UPN string."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL of the LDAP server."
+        },
+        "UseTokenGroups": {
+            "type": "boolean",
+            "description": "Use the Active Directory tokenGroups constructed attribute of the user to find the group memberships."
+        },
+        "Userattr": {
+            "type": "string",
+            "description": "Attribute on user object matching username passed in."
+        },
+        "Userdn": {
+            "type": "string",
+            "description": "Base DN under which to perform user search."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Bindpass",
+        "/properties/ClientTlsKey"
+    ]
+}

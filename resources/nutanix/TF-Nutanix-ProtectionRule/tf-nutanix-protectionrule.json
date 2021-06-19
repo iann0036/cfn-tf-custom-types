@@ -1,0 +1,340 @@
+{
+    "typeName": "TF::Nutanix::ProtectionRule",
+    "description": "Provides a Nutanix Protection Rule resource to Create a Protection Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanix/TF-Nutanix-ProtectionRule/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AvailabilityZoneConnectivityListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationAvailabilityZoneIndex": {
+                    "type": "number"
+                },
+                "SourceAvailabilityZoneIndex": {
+                    "type": "number"
+                },
+                "SnapshotScheduleList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnapshotScheduleListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CategoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CategoryFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KindList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Params": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OrderedAvailabilityZoneListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZoneUrl": {
+                    "type": "string"
+                },
+                "ClusterUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OwnerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProjectReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SnapshotScheduleListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoSuspendTimeoutSecs": {
+                    "type": "number"
+                },
+                "RecoveryPointObjectiveSecs": {
+                    "type": "number"
+                },
+                "SnapshotType": {
+                    "type": "string"
+                },
+                "LocalSnapshotRetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalSnapshotRetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RemoteSnapshotRetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RemoteSnapshotRetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RecoveryPointObjectiveSecs"
+            ]
+        },
+        "ParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "LocalSnapshotRetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumSnapshots": {
+                    "type": "number"
+                },
+                "RollupRetentionPolicyMultiple": {
+                    "type": "number"
+                },
+                "RollupRetentionPolicySnapshotIntervalType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RemoteSnapshotRetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumSnapshots": {
+                    "type": "number"
+                },
+                "RollupRetentionPolicyMultiple": {
+                    "type": "number"
+                },
+                "RollupRetentionPolicySnapshotIntervalType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for protection rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the protection rule."
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "AvailabilityZoneConnectivityList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AvailabilityZoneConnectivityListDefinition"
+            },
+            "minItems": 1
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CategoriesDefinition"
+            }
+        },
+        "CategoryFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CategoryFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "OrderedAvailabilityZoneList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrderedAvailabilityZoneListDefinition"
+            },
+            "minItems": 1
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnerReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProjectReferenceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

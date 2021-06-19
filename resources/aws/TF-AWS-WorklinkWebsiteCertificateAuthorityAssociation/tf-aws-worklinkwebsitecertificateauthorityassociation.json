@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::WorklinkWebsiteCertificateAuthorityAssociation",
+    "description": "CloudFormation equivalent of aws_worklink_website_certificate_authority_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-WorklinkWebsiteCertificateAuthorityAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "The root certificate of the Certificate Authority."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The certificate name to display."
+        },
+        "FleetArn": {
+            "type": "string",
+            "description": "The ARN of the fleet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WebsiteCaId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Certificate",
+        "FleetArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/WebsiteCaId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

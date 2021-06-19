@@ -1,0 +1,292 @@
+{
+    "typeName": "TF::OCI::MeteringComputationUsage",
+    "description": "This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.\n\nReturns usage for the given account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-MeteringComputationUsage/docs/README.md",
+    "definitions": {
+        "ItemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "ItemsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ad": {
+                    "type": "string"
+                },
+                "CompartmentId": {
+                    "type": "string"
+                },
+                "CompartmentName": {
+                    "type": "string"
+                },
+                "CompartmentPath": {
+                    "type": "string"
+                },
+                "ComputedAmount": {
+                    "type": "number"
+                },
+                "ComputedQuantity": {
+                    "type": "number"
+                },
+                "Currency": {
+                    "type": "string"
+                },
+                "Discount": {
+                    "type": "number"
+                },
+                "IsForecast": {
+                    "type": "boolean"
+                },
+                "ListRate": {
+                    "type": "number"
+                },
+                "Overage": {
+                    "type": "string"
+                },
+                "OveragesFlag": {
+                    "type": "string"
+                },
+                "Platform": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "ResourceId": {
+                    "type": "string"
+                },
+                "ResourceName": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "SkuName": {
+                    "type": "string"
+                },
+                "SkuPartNumber": {
+                    "type": "string"
+                },
+                "SubscriptionId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    }
+                },
+                "TenantId": {
+                    "type": "string"
+                },
+                "TenantName": {
+                    "type": "string"
+                },
+                "TimeUsageEnded": {
+                    "type": "string"
+                },
+                "TimeUsageStarted": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "UnitPrice": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            }
+        },
+        "ForecastDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForecastType": {
+                    "type": "string"
+                },
+                "TimeForecastEnded": {
+                    "type": "string"
+                },
+                "TimeForecastStarted": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TimeForecastEnded"
+            ]
+        },
+        "GroupByTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentDepth": {
+            "type": "number",
+            "description": "The compartment depth level."
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "Granularity": {
+            "type": "string",
+            "description": "The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported."
+        },
+        "GroupBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Aggregate the result by. example: `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\", \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\", \"resourceId\", \"tenantId\", \"tenantName\"]`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAggregateByTime": {
+            "type": "boolean",
+            "description": "is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period."
+        },
+        "Items": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ItemsDefinition2"
+            }
+        },
+        "QueryType": {
+            "type": "string",
+            "description": "The query usage type. COST by default if it is missing Usage - Query the usage data. Cost - Query the cost/billing data."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID."
+        },
+        "TimeUsageEnded": {
+            "type": "string",
+            "description": "The usage end time."
+        },
+        "TimeUsageStarted": {
+            "type": "string",
+            "description": "The usage start time."
+        },
+        "Forecast": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForecastDefinition"
+            },
+            "maxItems": 1
+        },
+        "GroupByTag": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupByTagDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Granularity",
+        "TenantId",
+        "TimeUsageEnded",
+        "TimeUsageStarted"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Items"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

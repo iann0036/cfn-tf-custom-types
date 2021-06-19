@@ -1,0 +1,45 @@
+# Aiven Provider
+
+## Configuration
+
+No configuration is required for this provider.
+
+## Supported Resources
+
+* [TF::Aiven::AccountAuthentication](../resources/aiven/TF-Aiven-AccountAuthentication/docs/README.md)
+* [TF::Aiven::AccountTeamMember](../resources/aiven/TF-Aiven-AccountTeamMember/docs/README.md)
+* [TF::Aiven::AccountTeamProject](../resources/aiven/TF-Aiven-AccountTeamProject/docs/README.md)
+* [TF::Aiven::AccountTeam](../resources/aiven/TF-Aiven-AccountTeam/docs/README.md)
+* [TF::Aiven::Account](../resources/aiven/TF-Aiven-Account/docs/README.md)
+* [TF::Aiven::AwsPrivatelink](../resources/aiven/TF-Aiven-AwsPrivatelink/docs/README.md)
+* [TF::Aiven::BillingGroup](../resources/aiven/TF-Aiven-BillingGroup/docs/README.md)
+* [TF::Aiven::Cassandra](../resources/aiven/TF-Aiven-Cassandra/docs/README.md)
+* [TF::Aiven::ConnectionPool](../resources/aiven/TF-Aiven-ConnectionPool/docs/README.md)
+* [TF::Aiven::Database](../resources/aiven/TF-Aiven-Database/docs/README.md)
+* [TF::Aiven::ElasticsearchAcl](../resources/aiven/TF-Aiven-ElasticsearchAcl/docs/README.md)
+* [TF::Aiven::Elasticsearch](../resources/aiven/TF-Aiven-Elasticsearch/docs/README.md)
+* [TF::Aiven::Grafana](../resources/aiven/TF-Aiven-Grafana/docs/README.md)
+* [TF::Aiven::Influxdb](../resources/aiven/TF-Aiven-Influxdb/docs/README.md)
+* [TF::Aiven::KafkaAcl](../resources/aiven/TF-Aiven-KafkaAcl/docs/README.md)
+* [TF::Aiven::KafkaConnect](../resources/aiven/TF-Aiven-KafkaConnect/docs/README.md)
+* [TF::Aiven::KafkaConnector](../resources/aiven/TF-Aiven-KafkaConnector/docs/README.md)
+* [TF::Aiven::KafkaMirrormaker](../resources/aiven/TF-Aiven-KafkaMirrormaker/docs/README.md)
+* [TF::Aiven::KafkaSchemaConfiguration](../resources/aiven/TF-Aiven-KafkaSchemaConfiguration/docs/README.md)
+* [TF::Aiven::KafkaSchema](../resources/aiven/TF-Aiven-KafkaSchema/docs/README.md)
+* [TF::Aiven::KafkaTopic](../resources/aiven/TF-Aiven-KafkaTopic/docs/README.md)
+* [TF::Aiven::Kafka](../resources/aiven/TF-Aiven-Kafka/docs/README.md)
+* [TF::Aiven::M3aggregator](../resources/aiven/TF-Aiven-M3aggregator/docs/README.md)
+* [TF::Aiven::M3db](../resources/aiven/TF-Aiven-M3db/docs/README.md)
+* [TF::Aiven::MirrormakerReplicationFlow](../resources/aiven/TF-Aiven-MirrormakerReplicationFlow/docs/README.md)
+* [TF::Aiven::Mysql](../resources/aiven/TF-Aiven-Mysql/docs/README.md)
+* [TF::Aiven::Pg](../resources/aiven/TF-Aiven-Pg/docs/README.md)
+* [TF::Aiven::ProjectUser](../resources/aiven/TF-Aiven-ProjectUser/docs/README.md)
+* [TF::Aiven::ProjectVpc](../resources/aiven/TF-Aiven-ProjectVpc/docs/README.md)
+* [TF::Aiven::Project](../resources/aiven/TF-Aiven-Project/docs/README.md)
+* [TF::Aiven::Redis](../resources/aiven/TF-Aiven-Redis/docs/README.md)
+* [TF::Aiven::ServiceIntegrationEndpoint](../resources/aiven/TF-Aiven-ServiceIntegrationEndpoint/docs/README.md)
+* [TF::Aiven::ServiceIntegration](../resources/aiven/TF-Aiven-ServiceIntegration/docs/README.md)
+* [TF::Aiven::ServiceUser](../resources/aiven/TF-Aiven-ServiceUser/docs/README.md)
+* [TF::Aiven::Service](../resources/aiven/TF-Aiven-Service/docs/README.md)
+* [TF::Aiven::TransitGatewayVpcAttachment](../resources/aiven/TF-Aiven-TransitGatewayVpcAttachment/docs/README.md)
+* [TF::Aiven::VpcPeeringConnection](../resources/aiven/TF-Aiven-VpcPeeringConnection/docs/README.md)

@@ -1,0 +1,50 @@
+# TF::ZeroTier::Network AssignmentPoolDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#cidr" title="Cidr">Cidr</a>" : <i>String</i>,
+    "<a href="#end" title="End">End</a>" : <i>String</i>,
+    "<a href="#start" title="Start">Start</a>" : <i>String</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#cidr" title="Cidr">Cidr</a>: <i>String</i>
+<a href="#end" title="End">End</a>: <i>String</i>
+<a href="#start" title="Start">Start</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### Cidr
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### End
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Start
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

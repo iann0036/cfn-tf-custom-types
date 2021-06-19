@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::AWS::PinpointEmailChannel",
+    "description": "Provides a Pinpoint Email Channel resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-PinpointEmailChannel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string",
+            "description": "The application ID."
+        },
+        "ConfigurationSet": {
+            "type": "string",
+            "description": "The ARN of the Amazon SES configuration set that you want to apply to messages that you send through the channel."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the channel is enabled or disabled. Defaults to `true`."
+        },
+        "FromAddress": {
+            "type": "string",
+            "description": "The email address used to send emails from."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identity": {
+            "type": "string",
+            "description": "The ARN of an identity verified with SES."
+        },
+        "MessagesPerSecond": {
+            "type": "number"
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationId",
+        "FromAddress",
+        "Identity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MessagesPerSecond"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

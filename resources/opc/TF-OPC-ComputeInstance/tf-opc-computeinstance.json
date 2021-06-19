@@ -1,0 +1,332 @@
+{
+    "typeName": "TF::OPC::ComputeInstance",
+    "description": "The ``opc_compute_instance`` resource creates and manages an instance in an Oracle Cloud Infrastructure Compute Classic identity domain.\n\n~> **Caution:** The ``opc_compute_instance`` resource can completely delete your\ninstance just as easily as it can create it. To avoid costly accidents,\nconsider setting\n[``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy)\non your instance resources as an extra safety measure.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeInstance/docs/README.md",
+    "definitions": {
+        "NetworkingInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IpNetwork": {
+                    "type": "string"
+                },
+                "IsDefaultGateway": {
+                    "type": "boolean"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "NameServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Nat": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SearchDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SecLists": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SharedNetwork": {
+                    "type": "boolean"
+                },
+                "Vnic": {
+                    "type": "string"
+                },
+                "VnicSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Index"
+            ]
+        },
+        "StorageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "Volume": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Volume"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attributes": {
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "BootOrder": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "The index number of the bootable storage volume, presented as a list, that should be used to boot the instance. The only valid value is `[1]`. If you set this attribute, you must also specify a bootable storage volume with index number 1 in the volume sub-parameter of storage_attachments. When you specify boot_order, you don't need to specify the imagelist attribute, because the instance is booted using the image on the specified bootable storage volume. If you specify both boot_order and imagelist, the imagelist attribute is ignored."
+        },
+        "DesiredState": {
+            "type": "string",
+            "description": "Set the desire state of the instance to `running` (default) or `shutdown`. You can use this request to shut down and restart individual instances which use a persistent bootable storage volume."
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Entry": {
+            "type": "number"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The host name assigned to the instance. On an Oracle Linux instance, this host name is displayed in response to the hostname command. Only relative DNS is supported. The domain name is suffixed to the host name that you specify. The host name must not end with a period. If you don't specify a host name, then a name is generated automatically."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageFormat": {
+            "type": "string"
+        },
+        "ImageList": {
+            "type": "string",
+            "description": "The imageList of the instance, e.g. `/oracle/public/oel_6.4_2GB_v1`."
+        },
+        "InstanceAttributes": {
+            "type": "string",
+            "description": "A JSON string of custom attributes. See [Attributes](#attributes) below for more information."
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The label to apply to the instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the instance."
+        },
+        "PlacementRequirements": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "string"
+        },
+        "QuotaReservation": {
+            "type": "string"
+        },
+        "Relationships": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Resolvers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ReverseDns": {
+            "type": "boolean",
+            "description": "If set to `true` (default), then reverse DNS records are created. If set to `false`, no reverse DNS records are created."
+        },
+        "Shape": {
+            "type": "string",
+            "description": "The shape of the instance, e.g. `oc4`."
+        },
+        "Site": {
+            "type": "string"
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of the names of the SSH Keys that can be used to log into the instance."
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of strings that should be supplied to the instance as tags."
+        },
+        "Vcable": {
+            "type": "string"
+        },
+        "Virtio": {
+            "type": "boolean"
+        },
+        "VncAddress": {
+            "type": "string"
+        },
+        "NetworkingInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkingInfoDefinition"
+            }
+        },
+        "Storage": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Shape"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attributes",
+        "/properties/AvailabilityDomain",
+        "/properties/Domain",
+        "/properties/Entry",
+        "/properties/Fingerprint",
+        "/properties/Fqdn",
+        "/properties/Id",
+        "/properties/ImageFormat",
+        "/properties/IpAddress",
+        "/properties/PlacementRequirements",
+        "/properties/Platform",
+        "/properties/Priority",
+        "/properties/QuotaReservation",
+        "/properties/Relationships",
+        "/properties/Resolvers",
+        "/properties/Site",
+        "/properties/StartTime",
+        "/properties/State",
+        "/properties/Vcable",
+        "/properties/Virtio",
+        "/properties/VncAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

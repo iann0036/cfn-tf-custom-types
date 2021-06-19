@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::Panos::SyslogServerProfile",
+    "description": "This resource allows you to add/update/delete syslog server profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-SyslogServerProfile/docs/README.md",
+    "definitions": {
+        "SyslogServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Facility": {
+                    "type": "string",
+                    "description": "The syslog facility.  Valid values are `LOG_USER`\n(default), `LOG_LOCAL0`, `LOG_LOCAL1`, `LOG_LOCAL2`, `LOG_LOCAL3`,\n`LOG_LOCAL4`, `LOG_LOCAL5`, `LOG_LOCAL6`, or `LOG_LOCAL7`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Server name."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "The port number (default: 514)."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "The hostname."
+                },
+                "SyslogFormat": {
+                    "type": "string",
+                    "description": "The syslog format.  Valid values are `BSD`\n(default) or `IETF`."
+                },
+                "Transport": {
+                    "type": "string",
+                    "description": "The transport.  Valid values are `UDP` (default),\n`TCP`, or `SSL`."
+                }
+            },
+            "required": [
+                "Name",
+                "Server"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthFormat": {
+            "type": "string",
+            "description": "Auth format."
+        },
+        "ConfigFormat": {
+            "type": "string",
+            "description": "Config format."
+        },
+        "DataFormat": {
+            "type": "string",
+            "description": "Data format."
+        },
+        "EscapeCharacter": {
+            "type": "string",
+            "description": "The escape character."
+        },
+        "EscapedCharacters": {
+            "type": "string",
+            "description": "The escaped characters (as a string)."
+        },
+        "GtpFormat": {
+            "type": "string",
+            "description": "GTP format."
+        },
+        "HipMatchFormat": {
+            "type": "string",
+            "description": "HIP match format."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IptagFormat": {
+            "type": "string",
+            "description": "IP tag format."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group's name."
+        },
+        "SctpFormat": {
+            "type": "string",
+            "description": "SCTP format."
+        },
+        "SystemFormat": {
+            "type": "string",
+            "description": "System format."
+        },
+        "ThreatFormat": {
+            "type": "string",
+            "description": "Threat format."
+        },
+        "TrafficFormat": {
+            "type": "string",
+            "description": "Traffic format."
+        },
+        "TunnelFormat": {
+            "type": "string",
+            "description": "Tunnel format."
+        },
+        "UrlFormat": {
+            "type": "string",
+            "description": "URL format."
+        },
+        "UserIdFormat": {
+            "type": "string",
+            "description": "UserID format."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys (default: `shared`)."
+        },
+        "WildfireFormat": {
+            "type": "string",
+            "description": "Wildfire format."
+        },
+        "SyslogServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SyslogServerDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

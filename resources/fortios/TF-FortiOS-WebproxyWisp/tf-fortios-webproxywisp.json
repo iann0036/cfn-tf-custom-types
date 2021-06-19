@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::WebproxyWisp",
+    "description": "Configure Wireless Internet service provider (WISP) servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyWisp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConnections": {
+            "type": "number",
+            "description": "Maximum number of web proxy WISP connections (4 - 4096, default = 64)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server name."
+        },
+        "OutgoingIp": {
+            "type": "string",
+            "description": "WISP outgoing IP address."
+        },
+        "ServerIp": {
+            "type": "string",
+            "description": "WISP server IP address."
+        },
+        "ServerPort": {
+            "type": "number",
+            "description": "WISP server port (1 - 65535, default = 15868)."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Period of time before WISP requests time out (1 - 15 sec, default = 5)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServerIp",
+        "ServerPort"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

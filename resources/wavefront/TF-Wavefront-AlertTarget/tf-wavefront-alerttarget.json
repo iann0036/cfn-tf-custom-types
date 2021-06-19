@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::Wavefront::AlertTarget",
+    "description": "CloudFormation equivalent of wavefront_alert_target",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-AlertTarget/docs/README.md",
+    "definitions": {
+        "CustomHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method",
+                "Target"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "CustomHeaders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomHeadersDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EmailSubject": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsHtmlContent": {
+            "type": "boolean"
+        },
+        "Method": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Recipient": {
+            "type": "string"
+        },
+        "TargetId": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name",
+        "Recipient",
+        "Template",
+        "Triggers"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TargetId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

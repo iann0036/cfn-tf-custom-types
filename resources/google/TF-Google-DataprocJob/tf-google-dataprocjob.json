@@ -1,0 +1,743 @@
+{
+    "typeName": "TF::Google::DataprocJob",
+    "description": "Manages a job resource within a Dataproc cluster within GCE. For more information see\n[the official dataproc documentation](https://cloud.google.com/dataproc/).\n\n!> **Note:** This resource does not support 'update' and changing any attributes will cause the resource to be recreated.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataprocJob/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Details": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "StateStartTime": {
+                    "type": "string"
+                },
+                "Substate": {
+                    "type": "string"
+                }
+            }
+        },
+        "HadoopConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainClass": {
+                    "type": "string"
+                },
+                "MainJarFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HiveConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContinueOnFailure": {
+                    "type": "boolean"
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition2"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PigConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContinueOnFailure": {
+                    "type": "boolean"
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition3"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition2"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PlacementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterName"
+            ]
+        },
+        "PysparkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainPythonFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition4"
+                    }
+                },
+                "PythonFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MainPythonFileUri"
+            ]
+        },
+        "PropertiesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JobId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SchedulingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxFailuresPerHour": {
+                    "type": "number"
+                },
+                "MaxFailuresTotal": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxFailuresPerHour",
+                "MaxFailuresTotal"
+            ]
+        },
+        "SparkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainClass": {
+                    "type": "string"
+                },
+                "MainJarFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition5"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparksqlConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition6"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition3"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoggingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DriverLogLevels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DriverLogLevelsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DriverLogLevels"
+            ]
+        },
+        "DriverLogLevelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DriverControlsFilesUri": {
+            "type": "string"
+        },
+        "DriverOutputResourceUri": {
+            "type": "string"
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "The list of labels (key/value pairs) to add to the job."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The project in which the `cluster` can be found and jobs\nsubsequently run against. If it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The Cloud Dataproc region. This essentially determines which clusters are available\nfor this job to be submitted to. If not specified, defaults to `global`."
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition"
+            }
+        },
+        "HadoopConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HadoopConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "HiveConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HiveConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PigConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PigConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Placement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlacementDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "PysparkConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PysparkConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Reference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Scheduling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchedulingDefinition"
+            },
+            "maxItems": 1
+        },
+        "SparkConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SparkConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SparksqlConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SparksqlConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DriverControlsFilesUri",
+        "/properties/DriverOutputResourceUri",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

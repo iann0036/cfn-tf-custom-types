@@ -1,0 +1,529 @@
+{
+    "typeName": "TF::Thunder::InterfaceEthernetIpv6",
+    "description": "`thunder_interface_ethernet_ipv6` Provides details about thunder interface ethernet ipv6",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceEthernetIpv6/docs/README.md",
+    "definitions": {
+        "AccessListCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inbound": {
+                    "type": "number"
+                },
+                "V6AclName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressType": {
+                    "type": "string"
+                },
+                "Ipv6Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "AreaList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AreaListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "SplitHorizonCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SplitHorizonCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RouterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Isis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IsisDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ospf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ripng": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RipngDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RouterAdverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AdverMtu": {
+                    "type": "number"
+                },
+                "AdverMtuDisable": {
+                    "type": "number"
+                },
+                "AdverVrid": {
+                    "type": "number"
+                },
+                "AdverVridDefault": {
+                    "type": "number"
+                },
+                "DefaultLifetime": {
+                    "type": "number"
+                },
+                "FloatingIp": {
+                    "type": "string"
+                },
+                "FloatingIpDefaultVrid": {
+                    "type": "string"
+                },
+                "HopLimit": {
+                    "type": "number"
+                },
+                "ManagedConfigAction": {
+                    "type": "string"
+                },
+                "MaxInterval": {
+                    "type": "number"
+                },
+                "MinInterval": {
+                    "type": "number"
+                },
+                "OtherConfigAction": {
+                    "type": "string"
+                },
+                "RateLimit": {
+                    "type": "number"
+                },
+                "ReachableTime": {
+                    "type": "number"
+                },
+                "RetransmitTimer": {
+                    "type": "number"
+                },
+                "UseFloatingIp": {
+                    "type": "number"
+                },
+                "UseFloatingIpDefaultVrid": {
+                    "type": "number"
+                },
+                "PrefixList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StatefulFirewallDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "number"
+                },
+                "AclName": {
+                    "type": "string"
+                },
+                "ClassList": {
+                    "type": "string"
+                },
+                "Inside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CostCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cost": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DeadIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HelloIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MtuIgnoreCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "MtuIgnore": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NeighborCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NeigInst": {
+                    "type": "number"
+                },
+                "Neighbor": {
+                    "type": "string"
+                },
+                "NeighborCost": {
+                    "type": "number"
+                },
+                "NeighborPollInterval": {
+                    "type": "number"
+                },
+                "NeighborPriority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NetworkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BroadcastType": {
+                    "type": "string"
+                },
+                "NetworkInstanceId": {
+                    "type": "number"
+                },
+                "P2mpNbma": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PriorityCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RetransmitIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TransmitDelayCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SplitHorizonCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IsisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RipngDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rip": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotAutonomous": {
+                    "type": "number"
+                },
+                "NotOnLink": {
+                    "type": "number"
+                },
+                "PreferredLifetime": {
+                    "type": "number"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "ValidLifetime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AreaListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaIdAddr": {
+                    "type": "string"
+                },
+                "AreaIdNum": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifnum": {
+            "type": "number"
+        },
+        "Inside": {
+            "type": "number",
+            "description": "Inside (private) interface for stateful firewall."
+        },
+        "Ipv6Enable": {
+            "type": "number",
+            "description": "Enable IPv6 processing."
+        },
+        "Outside": {
+            "type": "number",
+            "description": "Outside (public) interface for stateful firewall."
+        },
+        "TtlIgnore": {
+            "type": "number",
+            "description": "Ignore TTL decrement for a received packet before sending out."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AccessListCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessListCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "AddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddressListDefinition"
+            }
+        },
+        "Ospf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RipDefinition"
+            },
+            "maxItems": 1
+        },
+        "Router": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouterDefinition"
+            },
+            "maxItems": 1
+        },
+        "RouterAdver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouterAdverDefinition"
+            },
+            "maxItems": 1
+        },
+        "StatefulFirewall": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatefulFirewallDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

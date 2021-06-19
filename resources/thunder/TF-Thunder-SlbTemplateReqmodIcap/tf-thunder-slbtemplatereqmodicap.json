@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateReqmodIcap",
+    "description": "`thunder_slb_template_reqmod_icap` Provides details about thunder slb template reqmod icap",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateReqmodIcap/docs/README.md",
+    "definitions": {
+        "BypassIpCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BypassIp": {
+                    "type": "string"
+                },
+                "Mask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018continue\u2019: Continue; \u2018drop\u2019: Drop; \u2018reset\u2019: Reset;."
+        },
+        "AllowedHttpMethods": {
+            "type": "string",
+            "description": "List of allowed HTTP methods. Default is \u201cAllow All\u201d. (List of HTTP methods allowed (default \u201cAllow All\u201d))."
+        },
+        "Cylance": {
+            "type": "number",
+            "description": "cylance external server."
+        },
+        "DisableHttpServerReset": {
+            "type": "number",
+            "description": "Don\u2019t reset http server."
+        },
+        "FailClose": {
+            "type": "number",
+            "description": "When template sg is down mark vport down."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeProtocolInUri": {
+            "type": "number",
+            "description": "Include protocol and port in HTTP URI."
+        },
+        "LogOnlyAllowedMethod": {
+            "type": "number",
+            "description": "Only log allowed HTTP method."
+        },
+        "Logging": {
+            "type": "string",
+            "description": "logging template (Logging template name)."
+        },
+        "MinPayloadSize": {
+            "type": "number",
+            "description": "min-payload-size value 1 - 65536, default is 4096."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Reqmod ICAP Template Name."
+        },
+        "Preview": {
+            "type": "number",
+            "description": "Preview value 1 - 32768, default is 32768."
+        },
+        "ServerSsl": {
+            "type": "string",
+            "description": "Server SSL template (Server SSL template name)."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Bind a Service Group to the template (Service Group Name)."
+        },
+        "ServiceUrl": {
+            "type": "string",
+            "description": "URL to send to ICAP server (Service URL Name)."
+        },
+        "SharedPartitionPersistSourceIpTemplate": {
+            "type": "number",
+            "description": "Reference a persist source ip template from shared partition."
+        },
+        "SharedPartitionTcpProxyTemplate": {
+            "type": "number",
+            "description": "Reference a TCP Proxy template from shared partition."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP persistence template (Source IP persistence template name)."
+        },
+        "TcpProxy": {
+            "type": "string",
+            "description": "TCP proxy template (TCP proxy template name)."
+        },
+        "TemplatePersistSourceIpShared": {
+            "type": "string",
+            "description": "Source IP Persistence Template Name."
+        },
+        "TemplateTcpProxyShared": {
+            "type": "string",
+            "description": "TCP Proxy Template name."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "BypassIpCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BypassIpCfgDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

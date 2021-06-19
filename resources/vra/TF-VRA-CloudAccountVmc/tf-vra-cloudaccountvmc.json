@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::VRA::CloudAccountVmc",
+    "description": "Creates a VMware vRealize Automation VMC cloud account resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-CloudAccountVmc/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptSelfSignedCert": {
+            "type": "boolean",
+            "description": "Accept self-signed certificate when connecting to the cloud account."
+        },
+        "ApiToken": {
+            "type": "string",
+            "description": "VMC API access key."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DcId": {
+            "type": "string",
+            "description": "Identifier of a data collector VM deployed in the on premise infrastructure. Refer to the data-collector API to create or list data collector."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human-friendly name used as an identifier in APIs that support this option."
+        },
+        "NsxHostname": {
+            "type": "string",
+            "description": "IP address of the NSX Manager server in the specified SDDC / FQDN."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "RegionIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of region names enabled for the cloud account."
+        },
+        "SddcName": {
+            "type": "string",
+            "description": "Identifier of the on-premise SDDC to be used by the cloud account. Note that NSX-V SDDCs are not supported."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "VcenterHostname": {
+            "type": "string",
+            "description": "IP address or FQDN of the vCenter Server in the specified SDDC. The cloud proxy belongs on this vCenter."
+        },
+        "VcenterPassword": {
+            "type": "string",
+            "description": "Password used to authenticate to the cloud Account."
+        },
+        "VcenterUsername": {
+            "type": "string",
+            "description": "vCenter user name for the specified SDDC. The user requires CloudAdmin credentials. The user does not require CloudGlobalAdmin credentials."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiToken",
+        "Name",
+        "NsxHostname",
+        "Regions",
+        "SddcName",
+        "VcenterHostname",
+        "VcenterPassword",
+        "VcenterUsername"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/RegionIds",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/VcenterPassword"
+    ]
+}

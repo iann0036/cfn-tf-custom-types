@@ -1,0 +1,278 @@
+{
+    "typeName": "TF::CheckPoint::ManagementCheckpointHost",
+    "description": "This resource allows you to execute Check Point Checkpoint Host.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementCheckpointHost/docs/README.md",
+    "definitions": {
+        "LogsSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ManagementBladesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NatSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string",
+                    "description": "Color of the object. Should be one of existing colors."
+                },
+                "Comments": {
+                    "type": "string",
+                    "description": "Comments string."
+                },
+                "IgnoreErrors": {
+                    "type": "boolean",
+                    "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+                },
+                "IgnoreWarnings": {
+                    "type": "boolean",
+                    "description": "Apply changes ignoring warnings."
+                },
+                "MaskLength4": {
+                    "type": "number",
+                    "description": "IPv4 network mask length."
+                },
+                "MaskLength6": {
+                    "type": "number",
+                    "description": "IPv6 network mask length."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                },
+                "Subnet4": {
+                    "type": "string",
+                    "description": "IPv4 network address."
+                },
+                "Subnet6": {
+                    "type": "string",
+                    "description": "IPv6 network address."
+                },
+                "SubnetMask": {
+                    "type": "string",
+                    "description": "IPv4 network mask."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Hardware": {
+            "type": "string",
+            "description": "Hardware name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "IPv4 address."
+        },
+        "Ipv6Address": {
+            "type": "string",
+            "description": "IPv6 address."
+        },
+        "LogsSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogsSettingsDefinition"
+            },
+            "description": "Logs settings. logs_settings blocks are documented below."
+        },
+        "ManagementBlades": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagementBladesDefinition"
+            },
+            "description": "Management blades. management_blades blocks are documented below."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "NatSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NatSettingsDefinition"
+            },
+            "description": "NAT settings. nat_settings blocks are documented below."
+        },
+        "OneTimePassword": {
+            "type": "string",
+            "description": "Secure internal connection one time password."
+        },
+        "Os": {
+            "type": "string",
+            "description": "Operating system name."
+        },
+        "SaveLogsLocally": {
+            "type": "boolean",
+            "description": "Enable save logs locally."
+        },
+        "SendAlertsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send alerts to identified by the name or UID."
+        },
+        "SendLogsToBackupServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Backup server(s) to send logs to identified by the name or UID."
+        },
+        "SendLogsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send logs to identified by the name or UID."
+        },
+        "SicName": {
+            "type": "string",
+            "description": "Name of the Secure Internal Connection Trust."
+        },
+        "SicState": {
+            "type": "string",
+            "description": "State the Secure Internal Connection Trust."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Checkpoint host platform version."
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfacesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SicName",
+        "/properties/SicState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,230 @@
+{
+    "typeName": "TF::Google::ComputeFirewall",
+    "description": "Each network has its own firewall controlling access to and from the\ninstances.\n\nAll traffic to instances, even from other instances, is blocked by the\nfirewall unless firewall rules are created to allow it.\n\nThe default network has automatically created firewall rules that are\nshown in default firewall rules. No manually created network has\nautomatically created firewall rules except for a default \"allow\" rule for\noutgoing traffic and a default \"deny\" for incoming traffic. For all\nnetworks except the default network, you must create any firewall rules\nyou need.\n\n\nTo get more information about Firewall, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/v1/firewalls)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/vpc/docs/firewalls)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&clouds...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeFirewall/docs/README.md",
+    "definitions": {
+        "AllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "DenyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metadata": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Metadata"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DestinationRanges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Direction": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "EnableLogging": {
+            "type": "boolean",
+            "description": "This field denotes whether to enable logging for a particular firewall rule.\nIf logging is enabled, logs will be exported to Stackdriver. Deprecated in favor of `log_config`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SourceRanges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SourceServiceAccounts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SourceTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TargetServiceAccounts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TargetTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Allow": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllowDefinition"
+            }
+        },
+        "Deny": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DenyDefinition"
+            }
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Network"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

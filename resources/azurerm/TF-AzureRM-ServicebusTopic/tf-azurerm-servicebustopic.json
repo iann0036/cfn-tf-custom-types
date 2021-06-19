@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::AzureRM::ServicebusTopic",
+    "description": "Manages a ServiceBus Topic.\n\n**Note** Topics can only be created in Namespaces with an SKU of `standard` or higher.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ServicebusTopic/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoDeleteOnIdle": {
+            "type": "string",
+            "description": "The ISO 8601 timespan duration of the idle interval after which the\nTopic is automatically deleted, minimum of 5 minutes."
+        },
+        "DefaultMessageTtl": {
+            "type": "string",
+            "description": "The ISO 8601 timespan duration of TTL of messages sent to this topic if no\nTTL value is set on the message itself."
+        },
+        "DuplicateDetectionHistoryTimeWindow": {
+            "type": "string",
+            "description": "The ISO 8601 timespan duration during which\nduplicates can be detected. Defaults to 10 minutes. (`PT10M`)."
+        },
+        "EnableBatchedOperations": {
+            "type": "boolean",
+            "description": "Boolean flag which controls if server-side\nbatched operations are enabled. Defaults to false."
+        },
+        "EnableExpress": {
+            "type": "boolean",
+            "description": "Boolean flag which controls whether Express Entities\nare enabled. An express topic holds a message in memory temporarily before writing\nit to persistent storage. Defaults to false."
+        },
+        "EnablePartitioning": {
+            "type": "boolean",
+            "description": "Boolean flag which controls whether to enable\nthe topic to be partitioned across multiple message brokers. Defaults to false.\nChanging this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSizeInMegabytes": {
+            "type": "number",
+            "description": "Integer value which controls the size of\nmemory allocated for the topic. For supported values see the \"Queue/topic size\"\nsection of [this document](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quotas)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Topic resource. Changing this forces a\nnew resource to be created."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "The name of the ServiceBus Namespace to create\nthis topic in. Changing this forces a new resource to be created."
+        },
+        "RequiresDuplicateDetection": {
+            "type": "boolean",
+            "description": "Boolean flag which controls whether\nthe Topic requires duplicate detection. Defaults to false. Changing this forces\na new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the namespace. Changing this forces a new resource to be created."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The Status of the Service Bus Topic. Acceptable values are `Active` or `Disabled`. Defaults to `Active`."
+        },
+        "SupportOrdering": {
+            "type": "boolean",
+            "description": "Boolean flag which controls whether the Topic\nsupports ordering. Defaults to false."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NamespaceName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Panos::PanoramaIpsecTunnelProxyIdIpv4",
+    "description": "This resource allows you to add/update/delete Panorama IPSec tunnel proxy IDs\nto a parent auto key IPSec tunnel for templates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaIpsecTunnelProxyIdIpv4/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpsecTunnel": {
+            "type": "string",
+            "description": "The auto key IPSec tunnel to attach this\nproxy ID to."
+        },
+        "Local": {
+            "type": "string",
+            "description": "IP subnet or IP address represents local network."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The object's name."
+        },
+        "ProtocolAny": {
+            "type": "boolean",
+            "description": "Set to `true` for any IP protocol."
+        },
+        "ProtocolNumber": {
+            "type": "number",
+            "description": "IP protocol number."
+        },
+        "ProtocolTcpLocal": {
+            "type": "number",
+            "description": "Local TCP port number."
+        },
+        "ProtocolTcpRemote": {
+            "type": "number",
+            "description": "Remote TCP port number."
+        },
+        "ProtocolUdpLocal": {
+            "type": "number",
+            "description": "Local UDP port number."
+        },
+        "ProtocolUdpRemote": {
+            "type": "number",
+            "description": "Remote UDP port number."
+        },
+        "Remote": {
+            "type": "string",
+            "description": "IP subnet or IP address represents remote network."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpsecTunnel",
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

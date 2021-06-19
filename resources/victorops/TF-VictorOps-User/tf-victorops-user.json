@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::VictorOps::User",
+    "description": "A [user](https://portal.victorops.com/public/api-docs.html#/Users) is an individual within a VictorOps account.\n\nMake sure the optional field 'replacement_user' is set to a default user_name to facilitate deleting users using TF. Alternatively, you can set the `VO_REPLACEMENT_USERNAME` env variable to the default username to replace all users when removed.\n\nNote: We no longer allow creation of `admin` users through the Terraform (or the public API), the `is_admin` field value is ignored.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/victorops/TF-VictorOps-User/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultEmailContactId": {
+            "type": "number"
+        },
+        "Email": {
+            "type": "string",
+            "description": "The user's email address."
+        },
+        "ExpirationHours": {
+            "type": "number"
+        },
+        "FirstName": {
+            "type": "string",
+            "description": "The first name of the user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAdmin": {
+            "type": "boolean",
+            "description": "DEPRECATED - the field and its value will be ignored if specified."
+        },
+        "LastName": {
+            "type": "string",
+            "description": "The last name of the user."
+        },
+        "ReplacementUser": {
+            "type": "string"
+        },
+        "UserName": {
+            "type": "string",
+            "description": "The username for this user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "FirstName",
+        "IsAdmin",
+        "LastName",
+        "UserName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultEmailContactId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

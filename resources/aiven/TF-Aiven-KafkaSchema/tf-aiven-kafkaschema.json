@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Aiven::KafkaSchema",
+    "description": "CloudFormation equivalent of aiven_kafka_schema",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-KafkaSchema/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompatibilityLevel": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "SubjectName": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "Schema",
+        "ServiceName",
+        "SubjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

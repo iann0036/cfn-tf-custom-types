@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::VSphere::VappEntity",
+    "description": "The `vsphere_vapp_entity` resource can be used to describe the behavior of an\nentity (virtual machine or sub-vApp container) in a vApp container.\n\nFor more information on vSphere vApps, see [this\npage][ref-vsphere-vapp].\n\n[ref-vsphere-vapp]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-2A95EBB8-1779-40FA-B4FB-4D0845750879.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-VappEntity/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContainerId": {
+            "type": "string",
+            "description": "[Managed object ID|docs-about-morefs] of the vApp\ncontainer the entity is a member of."
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StartAction": {
+            "type": "string",
+            "description": "How to start the entity. Valid settings are none\nor powerOn. If set to none, then the entity does not participate in auto-start.\nDefault: powerOn."
+        },
+        "StartDelay": {
+            "type": "number",
+            "description": "Delay in seconds before continuing with the next\nentity in the order of entities to be started. Default: 120."
+        },
+        "StartOrder": {
+            "type": "number",
+            "description": "Order to start and stop target in vApp. Default: 1."
+        },
+        "StopAction": {
+            "type": "string",
+            "description": "Defines the stop action for the entity. Can be set\nto none, powerOff, guestShutdown, or suspend. If set to none, then the entity\ndoes not participate in auto-stop. Default: powerOff."
+        },
+        "StopDelay": {
+            "type": "number",
+            "description": "Delay in seconds before continuing with the next\nentity in the order sequence. This is only used if the stopAction is\nguestShutdown. Default: 120."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TargetId": {
+            "type": "string",
+            "description": "[Managed object ID|docs-about-morefs] of the entity\nto power on or power off. This can be a virtual machine or a vApp."
+        },
+        "WaitForGuest": {
+            "type": "boolean",
+            "description": "Determines if the VM should be marked as being\nstarted when VMware Tools are ready instead of waiting for `start_delay`. This\nproperty has no effect for vApps. Default: false."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContainerId",
+        "TargetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

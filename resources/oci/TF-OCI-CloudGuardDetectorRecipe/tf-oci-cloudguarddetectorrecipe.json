@@ -1,0 +1,456 @@
+{
+    "typeName": "TF::OCI::CloudGuardDetectorRecipe",
+    "description": "This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.\n\nCreates a DetectorRecipe",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CloudGuardDetectorRecipe/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EffectiveDetectorRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsPreferred": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "EffectiveDetectorRulesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListType": {
+                    "type": "string"
+                },
+                "ManagedListType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "EffectiveDetectorRulesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigKey": {
+                    "type": "string"
+                },
+                "DataType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EffectiveDetectorRulesDefinition2"
+                    }
+                }
+            }
+        },
+        "EffectiveDetectorRulesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "Configurations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EffectiveDetectorRulesDefinition3"
+                    }
+                },
+                "IsConfigurationAllowed": {
+                    "type": "boolean"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RiskLevel": {
+                    "type": "string"
+                }
+            }
+        },
+        "EffectiveDetectorRulesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CandidateResponderRules": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EffectiveDetectorRulesDefinition"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EffectiveDetectorRulesDefinition4"
+                    }
+                },
+                "Detector": {
+                    "type": "string"
+                },
+                "DetectorRuleId": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "LifecycleDetails": {
+                    "type": "string"
+                },
+                "ManagedListTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Recommendation": {
+                    "type": "string"
+                },
+                "ResourceType": {
+                    "type": "string"
+                },
+                "ServiceType": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "TimeCreated": {
+                    "type": "string"
+                },
+                "TimeUpdated": {
+                    "type": "string"
+                }
+            }
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SystemTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DetectorRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DetectorRuleId": {
+                    "type": "string"
+                },
+                "Details": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DetailsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DetectorRuleId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RiskLevel": {
+                    "type": "string"
+                },
+                "Configurations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IsEnabled",
+                "RiskLevel"
+            ]
+        },
+        "ConfigurationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigKey": {
+                    "type": "string"
+                },
+                "DataType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValuesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ConfigKey",
+                "Name"
+            ]
+        },
+        "ValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListType": {
+                    "type": "string"
+                },
+                "ManagedListType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ListType",
+                "ManagedListType",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) DetectorRecipe Description."
+        },
+        "Detector": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) DetectorRecipe Display Name."
+        },
+        "EffectiveDetectorRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EffectiveDetectorRulesDefinition5"
+            }
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "SourceDetectorRecipeId": {
+            "type": "string",
+            "description": "The id of the source detector recipe."
+        },
+        "State": {
+            "type": "string"
+        },
+        "SystemTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemTagsDefinition"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "DetectorRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DetectorRulesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "SourceDetectorRecipeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Detector",
+        "/properties/EffectiveDetectorRules",
+        "/properties/Id",
+        "/properties/Owner",
+        "/properties/State",
+        "/properties/SystemTags",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

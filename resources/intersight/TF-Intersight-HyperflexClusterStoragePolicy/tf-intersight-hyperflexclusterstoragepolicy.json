@@ -1,0 +1,380 @@
+{
+    "typeName": "TF::Intersight::HyperflexClusterStoragePolicy",
+    "description": "A policy specifying HyperFlex cluster storage settings (optional).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-HyperflexClusterStoragePolicy/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ClusterProfilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "LogicalAvalabilityZoneConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "AutoConfig": {
+                    "type": "boolean"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "ClusterProfiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterProfilesDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DiskPartitionCleanup": {
+            "type": "boolean"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalAvalabilityZoneConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogicalAvalabilityZoneConfigDefinition"
+            }
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            }
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VdiOptimization": {
+            "type": "boolean"
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

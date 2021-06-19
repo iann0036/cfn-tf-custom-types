@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::FortiOS::SystemVirtualswitch",
+    "description": "Configure virtual hardware switch interfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemVirtualswitch/docs/README.md",
+    "definitions": {
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string",
+                    "description": "Alias."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Physical interface name."
+                },
+                "Speed": {
+                    "type": "string",
+                    "description": "Interface speed. Valid values: `auto`, `10full`, `10half`, `100full`, `100half`, `1000full`, `1000half`, `1000auto`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Interface status. Valid values: `up`, `down`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the virtual switch."
+        },
+        "PhysicalSwitch": {
+            "type": "string",
+            "description": "Physical switch parent."
+        },
+        "Span": {
+            "type": "string",
+            "description": "Enable/disable SPAN. Valid values: `disable`, `enable`."
+        },
+        "SpanDestPort": {
+            "type": "string",
+            "description": "SPAN destination port."
+        },
+        "SpanDirection": {
+            "type": "string",
+            "description": "SPAN direction. Valid values: `rx`, `tx`, `both`."
+        },
+        "SpanSourcePort": {
+            "type": "string",
+            "description": "SPAN source ports."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Port": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

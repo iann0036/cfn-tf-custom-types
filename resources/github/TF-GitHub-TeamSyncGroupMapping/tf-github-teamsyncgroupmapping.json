@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::GitHub::TeamSyncGroupMapping",
+    "description": "This resource allows you to create and manage Identity Provider (IdP) group connections within your GitHub teams.\nYou must have team synchronization enabled for organizations owned by enterprise accounts.\n\nTo learn more about team synchronization between IdPs and Github, please refer to:\nhttps://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/synchronizing-teams-between-your-identity-provider-and-github",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-TeamSyncGroupMapping/docs/README.md",
+    "definitions": {
+        "GroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupDescription": {
+                    "type": "string",
+                    "description": "The description of the IdP group."
+                },
+                "GroupId": {
+                    "type": "string",
+                    "description": "The ID of the IdP group."
+                },
+                "GroupName": {
+                    "type": "string",
+                    "description": "The name of the IdP group."
+                }
+            },
+            "required": [
+                "GroupDescription",
+                "GroupId",
+                "GroupName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TeamSlug": {
+            "type": "string",
+            "description": "Slug of the team."
+        },
+        "Group": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GroupDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TeamSlug"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

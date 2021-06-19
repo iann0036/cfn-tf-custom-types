@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::Consul::Keys",
+    "description": "The `consul_keys` resource writes sets of individual values into Consul.\nThis is a powerful way to expose infrastructure details to clients.\n\nThis resource manages individual keys, and thus it can create, update\nand delete the keys explicitly given. However, it is not able to detect\nand remove additional keys that have been added by non-Terraform means.\nTo manage *all* keys sharing a common prefix, and thus have Terraform\nremove errant keys not present in the configuration, consider using the\n`consul_key_prefix` resource instead.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-Keys/docs/README.md",
+    "definitions": {
+        "VarDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "boolean",
+                    "description": "If true, then the key will be deleted when\neither its configuration block is removed from the configuration or\nthe entire resource is destroyed. Otherwise, it will be left in Consul.\nDefaults to false."
+                },
+                "Flags": {
+                    "type": "number",
+                    "description": "An [unsigned integer value](https://www.consul.io/api/kv.html#flags-1)\nto attach to the key (defaults to 0)."
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "This is the path in Consul that should be written to."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value to write to the given path."
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The namespace to create the keys within."
+        },
+        "Token": {
+            "type": "string",
+            "description": "The ACL token to use. This overrides the\ntoken that the agent provides by default."
+        },
+        "Var": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VarDefinition"
+            }
+        },
+        "Key": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KeyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Var"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

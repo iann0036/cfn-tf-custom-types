@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::Nutanix::Role",
+    "description": "Provides a resource to create a role based on the input parameters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanix/TF-Nutanix-Role/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CategoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OwnerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PermissionReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "ProjectReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CategoriesDefinition"
+            }
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnerReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "PermissionReferenceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PermissionReferenceListDefinition"
+            },
+            "minItems": 1
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProjectReferenceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

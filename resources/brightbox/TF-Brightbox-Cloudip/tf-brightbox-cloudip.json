@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Brightbox::Cloudip",
+    "description": "Provides a Brightbox CloudIP resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/brightbox/TF-Brightbox-Cloudip/docs/README.md",
+    "definitions": {
+        "PortTranslatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Incoming": {
+                    "type": "number"
+                },
+                "Outgoing": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Incoming",
+                "Outgoing",
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "a label to assign to the CloudIP."
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "PublicIpv4": {
+            "type": "string"
+        },
+        "PublicIpv6": {
+            "type": "string"
+        },
+        "ReverseDns": {
+            "type": "string",
+            "description": "The reverse DNS entry for the CloudIP."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string",
+            "description": "The CloudIP mapping target. This is the interface id from a server, or the id of a load balancer, server group or cloud sql resource."
+        },
+        "PortTranslator": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PortTranslatorDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id",
+        "/properties/Locked",
+        "/properties/PublicIp",
+        "/properties/PublicIpv4",
+        "/properties/PublicIpv6",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

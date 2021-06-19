@@ -1,0 +1,275 @@
+{
+    "typeName": "TF::AWS::SsmPatchBaseline",
+    "description": "Provides an SSM Patch Baseline resource\n\n~> **NOTE on Patch Baselines:** The `approved_patches` and `approval_rule` are\nboth marked as optional fields, but the Patch Baseline requires that at least one\nof them is specified.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmPatchBaseline/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApprovalRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApproveAfterDays": {
+                    "type": "number",
+                    "description": "The number of days after the release date of each patch matched by the rule the patch is marked as approved in the patch baseline. Valid Range: 0 to 100. Conflicts with `approve_until_date`."
+                },
+                "ApproveUntilDate": {
+                    "type": "string",
+                    "description": "The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Date is formatted as `YYYY-MM-DD`. Conflicts with `approve_after_days`."
+                },
+                "ComplianceLevel": {
+                    "type": "string",
+                    "description": "Defines the compliance level for patches approved by this rule. Valid compliance levels include the following: `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, `INFORMATIONAL`, `UNSPECIFIED`. The default value is `UNSPECIFIED`."
+                },
+                "EnableNonSecurity": {
+                    "type": "boolean",
+                    "description": "Boolean enabling the application of non-security updates. The default value is 'false'. Valid for Linux instances only."
+                },
+                "PatchFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PatchFilterDefinition"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "GlobalFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Configuration": {
+                    "type": "string",
+                    "description": "The value of the yum repo configuration. For information about other options available for your yum repository configuration, see the [`dnf.conf` documentation](https://man7.org/linux/man-pages/man5/dnf.conf.5.html)."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name specified to identify the patch source."
+                },
+                "Products": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The specific operating system versions a patch repository applies to, such as `\"Ubuntu16.04\"`, `\"AmazonLinux2016.09\"`, `\"RedhatEnterpriseLinux7.2\"` or `\"Suse12.7\"`. For lists of supported product values, see [PatchFilter](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html)."
+                }
+            },
+            "required": [
+                "Configuration",
+                "Name",
+                "Products"
+            ]
+        },
+        "PatchFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApprovedPatches": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of explicitly approved patches for the baseline."
+        },
+        "ApprovedPatchesComplianceLevel": {
+            "type": "string",
+            "description": "Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. Valid compliance levels include the following: `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, `INFORMATIONAL`, `UNSPECIFIED`. The default value is `UNSPECIFIED`."
+        },
+        "ApprovedPatchesEnableNonSecurity": {
+            "type": "boolean",
+            "description": "Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. Applies to Linux instances only."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the patch baseline."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the patch baseline."
+        },
+        "OperatingSystem": {
+            "type": "string",
+            "description": "Defines the operating system the patch baseline applies to. Supported operating systems include `WINDOWS`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `SUSE`, `UBUNTU`, `CENTOS`, and `REDHAT_ENTERPRISE_LINUX`. The Default value is `WINDOWS`."
+        },
+        "RejectedPatches": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of rejected patches."
+        },
+        "RejectedPatchesAction": {
+            "type": "string",
+            "description": "The action for Patch Manager to take on patches included in the `rejected_patches` list. Allow values are `ALLOW_AS_DEPENDENCY` and `BLOCK`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ApprovalRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApprovalRuleDefinition"
+            }
+        },
+        "GlobalFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GlobalFilterDefinition"
+            },
+            "maxItems": 4
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 20
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

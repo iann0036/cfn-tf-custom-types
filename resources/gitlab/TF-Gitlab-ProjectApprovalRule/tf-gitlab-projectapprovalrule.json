@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Gitlab::ProjectApprovalRule",
+    "description": "This resource allows you to create and manage multiple approval rules for your GitLab\nprojects. For further information on approval rules, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ee/api/merge_request_approvals.html#project-level-mr-approvals).\n\n-> This feature requires a GitLab Starter account or above.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-ProjectApprovalRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApprovalsRequired": {
+            "type": "number",
+            "description": "The number of approvals required for this rule."
+        },
+        "GroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of group IDs who's members can approve of the merge request."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the approval rule."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The name or id of the project to add the approval rules."
+        },
+        "UserIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of specific User IDs to add to the list of approvers."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApprovalsRequired",
+        "Name",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

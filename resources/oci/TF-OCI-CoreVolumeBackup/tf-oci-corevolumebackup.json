@@ -1,0 +1,239 @@
+{
+    "typeName": "TF::OCI::CoreVolumeBackup",
+    "description": "This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new backup of the specified volume. For general information about volume backups,\nsee [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm)\n\nWhen the request is received, the backup object is in a REQUEST_RECEIVED state.\nWhen the data is imaged, it goes into a CREATING state.\nAfter the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreVolumeBackup/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SystemTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SourceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "VolumeBackupId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Region",
+                "VolumeBackupId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment that contains the volume backup."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the volume backup. Does not have to be unique and it's changeable. Avoid entering confidential information."
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.\n* `region` - The region of the volume backup source.\n* `volume_backup_id` - The OCID of the source volume backup."
+        },
+        "SizeInGbs": {
+            "type": "string"
+        },
+        "SizeInMbs": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "SourceVolumeBackupId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "SystemTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemTagsDefinition"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeRequestReceived": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'."
+        },
+        "UniqueSizeInGbs": {
+            "type": "string"
+        },
+        "UniqueSizeInMbs": {
+            "type": "string"
+        },
+        "VolumeId": {
+            "type": "string",
+            "description": "The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set."
+        },
+        "SourceDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExpirationTime",
+        "/properties/Id",
+        "/properties/KmsKeyId",
+        "/properties/SizeInGbs",
+        "/properties/SizeInMbs",
+        "/properties/SourceType",
+        "/properties/SourceVolumeBackupId",
+        "/properties/State",
+        "/properties/SystemTags",
+        "/properties/TimeCreated",
+        "/properties/TimeRequestReceived",
+        "/properties/UniqueSizeInGbs",
+        "/properties/UniqueSizeInMbs"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

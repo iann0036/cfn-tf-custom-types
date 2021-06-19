@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::AWS::Macie2Member",
+    "description": "Provides a resource to manage an [Amazon Macie Member](https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Macie2Member/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The AWS account ID for the account."
+        },
+        "AdministratorAccountId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "The email address for the account."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvitationDisableEmailNotification": {
+            "type": "string",
+            "description": "Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to `true`."
+        },
+        "InvitationMessage": {
+            "type": "string",
+            "description": "A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation."
+        },
+        "Invite": {
+            "type": "boolean",
+            "description": "Send an invitation to a member."
+        },
+        "InvitedAt": {
+            "type": "string"
+        },
+        "MasterAccountId": {
+            "type": "string"
+        },
+        "RelationshipStatus": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to `ENABLED`. Valid values are `ENABLED` or `PAUSED`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "Email"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdministratorAccountId",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/InvitedAt",
+        "/properties/MasterAccountId",
+        "/properties/RelationshipStatus",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

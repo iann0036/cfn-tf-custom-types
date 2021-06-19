@@ -1,0 +1,362 @@
+{
+    "typeName": "TF::TencentCloud::VodProcedureTemplate",
+    "description": "Provide a resource to create a VOD procedure template.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-VodProcedureTemplate/docs/README.md",
+    "definitions": {
+        "MediaProcessTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdaptiveDynamicStreamingTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdaptiveDynamicStreamingTaskListDefinition"
+                    }
+                },
+                "AnimatedGraphicTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnimatedGraphicTaskListDefinition"
+                    }
+                },
+                "CoverBySnapshotTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CoverBySnapshotTaskListDefinition"
+                    }
+                },
+                "ImageSpriteTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageSpriteTaskListDefinition"
+                    }
+                },
+                "SampleSnapshotTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SampleSnapshotTaskListDefinition"
+                    }
+                },
+                "SnapshotByTimeOffsetTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnapshotByTimeOffsetTaskListDefinition"
+                    }
+                },
+                "TranscodeTaskList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TranscodeTaskListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdaptiveDynamicStreamingTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "WatermarkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WatermarkListDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "AnimatedGraphicTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "EndTimeOffset": {
+                    "type": "number"
+                },
+                "StartTimeOffset": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Definition",
+                "EndTimeOffset",
+                "StartTimeOffset"
+            ]
+        },
+        "CoverBySnapshotTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "PositionType": {
+                    "type": "string"
+                },
+                "PositionValue": {
+                    "type": "number"
+                },
+                "WatermarkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WatermarkListDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Definition",
+                "PositionType",
+                "PositionValue"
+            ]
+        },
+        "ImageSpriteTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "SampleSnapshotTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string",
+                    "description": "Sampled screen capturing template ID."
+                },
+                "WatermarkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WatermarkListDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "SnapshotByTimeOffsetTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string",
+                    "description": "Time point screen capturing template ID."
+                },
+                "ExtTimeOffsetList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of screenshot time points. `s` and `%` formats are supported: When a time point string ends with `s`, its unit is second. For example, `3.5s` means the 3.5th second of the video; When a time point string ends with `%`, it is marked with corresponding percentage of the video duration. For example, `10%` means that the time point is at the 10% of the video entire duration."
+                },
+                "WatermarkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WatermarkListDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "TranscodeTaskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string",
+                    "description": "Video transcoding template ID."
+                },
+                "MosaicList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MosaicListDefinition"
+                    },
+                    "maxItems": 10
+                },
+                "WatermarkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WatermarkListDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "WatermarkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "string",
+                    "description": "Watermarking template ID."
+                },
+                "EndTimeOffset": {
+                    "type": "number",
+                    "description": "End time offset of a watermark in seconds. If this parameter is left blank or `0` is entered, the watermark will exist till the last video frame; If this value is greater than `0` (e.g., n), the watermark will exist till second n; If this value is smaller than `0` (e.g., -n), the watermark will exist till second n before the last video frame."
+                },
+                "StartTimeOffset": {
+                    "type": "number",
+                    "description": "Start time offset of a watermark in seconds. If this parameter is left blank or `0` is entered, the watermark will appear upon the first video frame. If this parameter is left blank or `0` is entered, the watermark will appear upon the first video frame; If this value is greater than `0` (e.g., n), the watermark will appear at second n after the first video frame; If this value is smaller than `0` (e.g., -n), the watermark will appear at second n before the last video frame."
+                },
+                "SvgContent": {
+                    "type": "string",
+                    "description": "SVG content of up to `2000000` characters. This needs to be entered only when the watermark type is `SVG`. Note: this field may return null, indicating that no valid values can be obtained."
+                },
+                "TextContent": {
+                    "type": "string",
+                    "description": "Text content of up to `100` characters. This needs to be entered only when the watermark type is text. Note: this field may return null, indicating that no valid values can be obtained."
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "MosaicListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoordinateOrigin": {
+                    "type": "string"
+                },
+                "EndTimeOffset": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "string"
+                },
+                "StartTimeOffset": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "string"
+                },
+                "XPos": {
+                    "type": "string"
+                },
+                "YPos": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Template description. Length limit: 256 characters."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Task flow name (up to 20 characters)."
+        },
+        "SubAppId": {
+            "type": "number",
+            "description": "Subapplication ID in VOD. If you need to access a resource in a subapplication, enter the subapplication ID in this field; otherwise, leave it empty."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "MediaProcessTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MediaProcessTaskDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

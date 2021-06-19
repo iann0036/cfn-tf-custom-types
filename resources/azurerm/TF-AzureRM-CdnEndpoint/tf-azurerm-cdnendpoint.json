@@ -1,0 +1,946 @@
+{
+    "typeName": "TF::AzureRM::CdnEndpoint",
+    "description": "A CDN Endpoint is the entity within a CDN Profile containing configuration information regarding caching behaviours and origins. The CDN Endpoint is exposed using the URL format <endpointname>.azureedge.net.\n\n!> **Be Aware:** Azure is rolling out a breaking change on Friday 9th April which may cause issues with the CDN/FrontDoor resources. [More information is available in this Github issue](https://github.com/terraform-providers/terraform-provider-azurerm/issues/11231) - however unfortunately this may necessitate a breaking change to the CDN and FrontDoor resources, more information will be posted [in the Github issue](https://github.com/terraform-providers/terraform-provider-azurerm/issues/11231) as the necessary changes are identified.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-CdnEndpoint/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeliveryRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "CacheExpirationAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheExpirationActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CacheKeyQueryStringAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheKeyQueryStringActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CookiesCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookiesConditionDefinition"
+                    }
+                },
+                "DeviceCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeviceConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpVersionCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpVersionConditionDefinition"
+                    }
+                },
+                "ModifyRequestHeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModifyRequestHeaderActionDefinition"
+                    }
+                },
+                "ModifyResponseHeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModifyResponseHeaderActionDefinition"
+                    }
+                },
+                "PostArgCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PostArgConditionDefinition"
+                    }
+                },
+                "QueryStringCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringConditionDefinition"
+                    }
+                },
+                "RemoteAddressCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RemoteAddressConditionDefinition"
+                    }
+                },
+                "RequestBodyCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestBodyConditionDefinition"
+                    }
+                },
+                "RequestHeaderCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestHeaderConditionDefinition"
+                    }
+                },
+                "RequestMethodCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestMethodConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RequestSchemeCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestSchemeConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RequestUriCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestUriConditionDefinition"
+                    }
+                },
+                "UrlFileExtensionCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlFileExtensionConditionDefinition"
+                    }
+                },
+                "UrlFileNameCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlFileNameConditionDefinition"
+                    }
+                },
+                "UrlPathCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlPathConditionDefinition"
+                    }
+                },
+                "UrlRedirectAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRedirectActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UrlRewriteAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRewriteActionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "Order"
+            ]
+        },
+        "GeoFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CountryCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RelativePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "CountryCodes",
+                "RelativePath"
+            ]
+        },
+        "GlobalDeliveryRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheExpirationAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheExpirationActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CacheKeyQueryStringAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheKeyQueryStringActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ModifyRequestHeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModifyRequestHeaderActionDefinition"
+                    }
+                },
+                "ModifyResponseHeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModifyResponseHeaderActionDefinition"
+                    }
+                },
+                "UrlRedirectAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRedirectActionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UrlRewriteAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRewriteActionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OriginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostName": {
+                    "type": "string"
+                },
+                "HttpPort": {
+                    "type": "number"
+                },
+                "HttpsPort": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HostName",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CacheExpirationActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Behavior": {
+                    "type": "string"
+                },
+                "Duration": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Behavior"
+            ]
+        },
+        "CacheKeyQueryStringActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Behavior": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Behavior"
+            ]
+        },
+        "CookiesConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator",
+                "Selector"
+            ]
+        },
+        "DeviceConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchValues"
+            ]
+        },
+        "HttpVersionConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchValues"
+            ]
+        },
+        "ModifyRequestHeaderActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Name"
+            ]
+        },
+        "ModifyResponseHeaderActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Name"
+            ]
+        },
+        "PostArgConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator",
+                "Selector"
+            ]
+        },
+        "QueryStringConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "RemoteAddressConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "RequestBodyConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "RequestHeaderConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator",
+                "Selector"
+            ]
+        },
+        "RequestMethodConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchValues"
+            ]
+        },
+        "RequestSchemeConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchValues"
+            ]
+        },
+        "RequestUriConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "UrlFileExtensionConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "UrlFileNameConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "UrlPathConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NegateCondition": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "UrlRedirectActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fragment": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "QueryString": {
+                    "type": "string"
+                },
+                "RedirectType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RedirectType"
+            ]
+        },
+        "UrlRewriteActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                },
+                "PreserveUnmatchedPath": {
+                    "type": "boolean"
+                },
+                "SourcePattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination",
+                "SourcePattern"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentTypesToCompress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HostName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsCompressionEnabled": {
+            "type": "boolean"
+        },
+        "IsHttpAllowed": {
+            "type": "boolean"
+        },
+        "IsHttpsAllowed": {
+            "type": "boolean"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OptimizationType": {
+            "type": "string"
+        },
+        "OriginHostHeader": {
+            "type": "string"
+        },
+        "OriginPath": {
+            "type": "string"
+        },
+        "ProbePath": {
+            "type": "string"
+        },
+        "ProfileName": {
+            "type": "string"
+        },
+        "QuerystringCachingBehaviour": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "DeliveryRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeliveryRuleDefinition"
+            }
+        },
+        "GeoFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GeoFilterDefinition"
+            }
+        },
+        "GlobalDeliveryRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GlobalDeliveryRuleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Origin": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ProfileName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HostName",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

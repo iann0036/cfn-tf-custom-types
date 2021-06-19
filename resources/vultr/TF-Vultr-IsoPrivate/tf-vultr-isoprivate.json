@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Vultr::IsoPrivate",
+    "description": "Provides a Vultr ISO file resource. This can be used to create, read, and delete ISO files on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-IsoPrivate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Filename": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Md5sum": {
+            "type": "string"
+        },
+        "Sha512sum": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string",
+            "description": "URL pointing to the ISO file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DateCreated",
+        "/properties/Filename",
+        "/properties/Id",
+        "/properties/Md5sum",
+        "/properties/Sha512sum",
+        "/properties/Size",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

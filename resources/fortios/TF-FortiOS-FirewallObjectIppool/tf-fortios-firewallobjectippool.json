@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::FortiOS::FirewallObjectIppool",
+    "description": "Provides a resource to configure IPv4 IP address pools of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_firewall_ippool`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallObjectIppool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable/disable replying to ARP requests when an IP Pool is added to a policy."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Endip": {
+            "type": "string",
+            "description": "Final IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "IP pool name."
+        },
+        "Startip": {
+            "type": "string",
+            "description": "First IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "IP pool type(Support overload and one-to-one)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Endip",
+        "Name",
+        "Startip",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

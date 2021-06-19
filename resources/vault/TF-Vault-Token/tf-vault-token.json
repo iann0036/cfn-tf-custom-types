@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Vault::Token",
+    "description": "Provides a resource to generate a vault token with its options. The token renewing is supported through optional\narguments.\n\nThe token used by Terraform will require update access to the `auth/token/lookup-accessor`\npath to create tokens and the `auth/token/revoke-accessor` path in Vault to\ndestroy a token.\n\n```hcl\npath \"auth/token/lookup-accessor\" {\n  capabilities = [\"update\"]\n}\n\npath \"auth/token/revoke-accessor\" {\n  capabilities = [\"update\"]\n}\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-Token/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientToken": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "String containing the token display name."
+        },
+        "EncryptedClientToken": {
+            "type": "string"
+        },
+        "ExplicitMaxTtl": {
+            "type": "string",
+            "description": "The explicit max TTL of this token."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaseDuration": {
+            "type": "number"
+        },
+        "LeaseStarted": {
+            "type": "string"
+        },
+        "NoDefaultPolicy": {
+            "type": "boolean",
+            "description": "Flag to not attach the default policy to this token."
+        },
+        "NoParent": {
+            "type": "boolean",
+            "description": "Flag to create a token without parent."
+        },
+        "NumUses": {
+            "type": "number",
+            "description": "The number of allowed uses of this token."
+        },
+        "Period": {
+            "type": "string",
+            "description": "The period of this token."
+        },
+        "PgpKey": {
+            "type": "string",
+            "description": "The PGP key with which the `client_token` will be encrypted.\nThe key must be provided using either a base64 encoded non-armored PGP key, or a keybase\nusername in the form `keybase:somebody`.\nThe token won't be renewed automatically by the provider and `client_token` will be empty.\n**If you do not set this argument, the `client_token` will be written as plain text in the\nTerraform state.**."
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of policies to attach to this token."
+        },
+        "RenewIncrement": {
+            "type": "number",
+            "description": "The renew increment."
+        },
+        "RenewMinLease": {
+            "type": "number",
+            "description": "The minimal lease to renew this token."
+        },
+        "Renewable": {
+            "type": "boolean",
+            "description": "Flag to allow to renew this token."
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "The token role name."
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "The TTL period of this token."
+        },
+        "WrappedToken": {
+            "type": "string"
+        },
+        "WrappingAccessor": {
+            "type": "string"
+        },
+        "WrappingTtl": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientToken",
+        "/properties/EncryptedClientToken",
+        "/properties/Id",
+        "/properties/LeaseDuration",
+        "/properties/LeaseStarted",
+        "/properties/WrappedToken",
+        "/properties/WrappingAccessor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientToken",
+        "/properties/EncryptedClientToken",
+        "/properties/WrappedToken",
+        "/properties/WrappingAccessor"
+    ]
+}

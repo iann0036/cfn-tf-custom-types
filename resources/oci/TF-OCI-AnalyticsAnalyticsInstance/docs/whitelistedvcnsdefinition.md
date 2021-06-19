@@ -1,0 +1,41 @@
+# TF::OCI::AnalyticsAnalyticsInstance WhitelistedVcnsDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+    "<a href="#whitelistedips" title="WhitelistedIps">WhitelistedIps</a>" : <i>[ String, ... ]</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#id" title="Id">Id</a>: <i>String</i>
+<a href="#whitelistedips" title="WhitelistedIps">WhitelistedIps</a>: <i>
+      - String</i>
+</pre>
+
+## Properties
+
+#### Id
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WhitelistedIps
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

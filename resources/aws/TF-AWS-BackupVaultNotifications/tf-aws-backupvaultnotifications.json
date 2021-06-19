@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::BackupVaultNotifications",
+    "description": "Provides an AWS Backup vault notifications resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-BackupVaultNotifications/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupVaultArn": {
+            "type": "string"
+        },
+        "BackupVaultEvents": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of events that indicate the status of jobs to back up resources to the backup vault."
+        },
+        "BackupVaultName": {
+            "type": "string",
+            "description": "Name of the backup vault to add notifications for."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SnsTopicArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) that specifies the topic for a backup vault\u2019s events."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackupVaultEvents",
+        "BackupVaultName",
+        "SnsTopicArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackupVaultArn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

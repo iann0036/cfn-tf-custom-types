@@ -1,0 +1,346 @@
+{
+    "typeName": "TF::OCI::OcvpSddc",
+    "description": "This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\n\nCreates an Oracle Cloud VMware Solution software-defined data center (SDDC).\n\nUse the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the\ncreation of the SDDC.\n\n**Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OcvpSddc/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HcxOnPremLicensesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActivationKey": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "SystemName": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActualEsxiHostsCount": {
+            "type": "number"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC."
+        },
+        "ComputeAvailabilityDomain": {
+            "type": "string",
+            "description": "The availability domain to create the SDDC's ESXi hosts in."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information."
+        },
+        "EsxiHostsCount": {
+            "type": "number",
+            "description": "The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost))."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "HcxAction": {
+            "type": "string",
+            "description": "(Updatable) The action to be performed upon HCX licenses. \"UPGRADE\" will upgrade the SDDC from HCX Advanced to HCX Enterprise. \"DOWNGRADE\" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. \"CANCEL_DOWNGRADE\" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If \"UPGRADE\" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE."
+        },
+        "HcxFqdn": {
+            "type": "string"
+        },
+        "HcxInitialPassword": {
+            "type": "string"
+        },
+        "HcxOnPremKey": {
+            "type": "string"
+        },
+        "HcxOnPremLicenses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HcxOnPremLicensesDefinition"
+            }
+        },
+        "HcxPrivateIpId": {
+            "type": "string"
+        },
+        "HcxVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialSku": {
+            "type": "string",
+            "description": "Billing option selected during SDDC creation. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs: HOUR, MONTH, ONE_YEAR, and THREE_YEARS. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus)."
+        },
+        "InstanceDisplayNamePrefix": {
+            "type": "string",
+            "description": "A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix."
+        },
+        "IsHcxEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether to enable HCX for this SDDC."
+        },
+        "IsHcxEnterpriseEnabled": {
+            "type": "boolean"
+        },
+        "IsHcxPendingDowngrade": {
+            "type": "boolean"
+        },
+        "NsxEdgeUplink1vlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment."
+        },
+        "NsxEdgeUplink2vlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment."
+        },
+        "NsxEdgeUplinkIpId": {
+            "type": "string"
+        },
+        "NsxEdgeVtepVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment."
+        },
+        "NsxManagerFqdn": {
+            "type": "string"
+        },
+        "NsxManagerInitialPassword": {
+            "type": "string"
+        },
+        "NsxManagerPrivateIpId": {
+            "type": "string"
+        },
+        "NsxManagerUsername": {
+            "type": "string"
+        },
+        "NsxOverlaySegmentName": {
+            "type": "string"
+        },
+        "NsxVtepVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment."
+        },
+        "ProvisioningSubnetId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC."
+        },
+        "ProvisioningVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment."
+        },
+        "RefreshHcxLicenseStatus": {
+            "type": "boolean",
+            "description": "(Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed."
+        },
+        "ReplicationVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment."
+        },
+        "ReservingHcxOnPremiseLicenseKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is \"DOWNGRADE\". Its value can only be changed when hcx_action is updated."
+        },
+        "SshAuthorizedKeys": {
+            "type": "string",
+            "description": "(Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeHcxBillingCycleEnd": {
+            "type": "string"
+        },
+        "TimeHcxLicenseStatusUpdated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "VcenterFqdn": {
+            "type": "string"
+        },
+        "VcenterInitialPassword": {
+            "type": "string"
+        },
+        "VcenterPrivateIpId": {
+            "type": "string"
+        },
+        "VcenterUsername": {
+            "type": "string"
+        },
+        "VmotionVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment."
+        },
+        "VmwareSoftwareVersion": {
+            "type": "string",
+            "description": "(Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)."
+        },
+        "VsanVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment."
+        },
+        "VsphereVlanId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment."
+        },
+        "WorkloadNetworkCidr": {
+            "type": "string",
+            "description": "The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "ComputeAvailabilityDomain",
+        "EsxiHostsCount",
+        "NsxEdgeUplink1vlanId",
+        "NsxEdgeUplink2vlanId",
+        "NsxEdgeVtepVlanId",
+        "NsxVtepVlanId",
+        "ProvisioningSubnetId",
+        "SshAuthorizedKeys",
+        "VmotionVlanId",
+        "VmwareSoftwareVersion",
+        "VsanVlanId",
+        "VsphereVlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActualEsxiHostsCount",
+        "/properties/HcxFqdn",
+        "/properties/HcxInitialPassword",
+        "/properties/HcxOnPremKey",
+        "/properties/HcxOnPremLicenses",
+        "/properties/HcxPrivateIpId",
+        "/properties/Id",
+        "/properties/IsHcxEnterpriseEnabled",
+        "/properties/IsHcxPendingDowngrade",
+        "/properties/NsxEdgeUplinkIpId",
+        "/properties/NsxManagerFqdn",
+        "/properties/NsxManagerInitialPassword",
+        "/properties/NsxManagerPrivateIpId",
+        "/properties/NsxManagerUsername",
+        "/properties/NsxOverlaySegmentName",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeHcxBillingCycleEnd",
+        "/properties/TimeHcxLicenseStatusUpdated",
+        "/properties/TimeUpdated",
+        "/properties/VcenterFqdn",
+        "/properties/VcenterInitialPassword",
+        "/properties/VcenterPrivateIpId",
+        "/properties/VcenterUsername"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

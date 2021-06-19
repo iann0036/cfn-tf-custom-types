@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::Cloudflare::AccessIdentityProvider",
+    "description": "Provides a Cloudflare Access Identity Provider resource. Identity Providers are\nused as an authentication or authorisation source within Access.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-AccessIdentityProvider/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppsDomain": {
+                    "type": "string"
+                },
+                "Attributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuthUrl": {
+                    "type": "string"
+                },
+                "CentrifyAccount": {
+                    "type": "string"
+                },
+                "CentrifyAppId": {
+                    "type": "string"
+                },
+                "CertsUrl": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "DirectoryId": {
+                    "type": "string"
+                },
+                "EmailAttributeName": {
+                    "type": "string"
+                },
+                "IdpPublicCert": {
+                    "type": "string"
+                },
+                "IssuerUrl": {
+                    "type": "string"
+                },
+                "OktaAccount": {
+                    "type": "string"
+                },
+                "OneloginAccount": {
+                    "type": "string"
+                },
+                "RedirectUrl": {
+                    "type": "string"
+                },
+                "SignRequest": {
+                    "type": "boolean"
+                },
+                "SsoTargetUrl": {
+                    "type": "string"
+                },
+                "SupportGroups": {
+                    "type": "boolean"
+                },
+                "TokenUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account ID the provider should be associated with. Conflicts with `zone_id`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Friendly name of the Access Identity Provider configuration."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The provider type to use. Must be one of: `\"centrify\"`,\n`\"facebook\"`, `\"google-apps\"`, `\"oidc\"`, `\"github\"`, `\"google\"`, `\"saml\"`,\n`\"linkedin\"`, `\"azureAD\"`, `\"okta\"`, `\"onetimepin\"`, `\"onelogin\"`, `\"yandex\"`."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID the provider should be associated with. Conflicts with `account_id`."
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

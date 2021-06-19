@@ -1,0 +1,512 @@
+{
+    "typeName": "TF::Thunder::VrrpVrid",
+    "description": "`thunder_vrrp_vrid` Provides details about thunder vrrp vrid",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-VrrpVrid/docs/README.md",
+    "definitions": {
+        "BladeParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailOverPolicyTemplate": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "TrackingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TrackingOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "FloatingIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressCfgDefinition"
+                    }
+                },
+                "IpAddressPartCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressPartCfgDefinition"
+                    }
+                },
+                "Ipv6AddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6AddressCfgDefinition"
+                    }
+                },
+                "Ipv6AddressPartCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6AddressPartCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FollowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VridLead": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PreemptModeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "number"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TrackingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "Bgp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BgpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Gateway": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GatewayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                },
+                "Route": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TrunkCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TrunkCfgDefinition"
+                    }
+                },
+                "VlanCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VlanCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpAddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAddressPartCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddressPartition": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6AddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ethernet": {
+                    "type": "number"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Trunk": {
+                    "type": "number"
+                },
+                "Ve": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Ipv6AddressPartCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ethernet": {
+                    "type": "number"
+                },
+                "Ipv6AddressPartition": {
+                    "type": "string"
+                },
+                "Trunk": {
+                    "type": "number"
+                },
+                "Ve": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BgpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BgpIpv4AddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BgpIpv4AddressCfgDefinition"
+                    }
+                },
+                "BgpIpv6AddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BgpIpv6AddressCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GatewayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4GatewayList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4GatewayListDefinition"
+                    }
+                },
+                "Ipv6GatewayList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6GatewayListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ethernet": {
+                    "type": "number"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpDestinationCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpDestinationCfgDefinition"
+                    }
+                },
+                "Ipv6DestinationCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6DestinationCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TrunkCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerPortPri": {
+                    "type": "number"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Trunk": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "VlanCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BgpIpv4AddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BgpIpv4Address": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BgpIpv6AddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BgpIpv6Address": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Ipv4GatewayListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6GatewayListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpDestinationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Distance": {
+                    "type": "number"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "IpDestination": {
+                    "type": "string"
+                },
+                "Mask": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6DestinationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Distance": {
+                    "type": "number"
+                },
+                "Gatewayv6": {
+                    "type": "string"
+                },
+                "Ipv6Destination": {
+                    "type": "string"
+                },
+                "PriorityCost": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "VridVal": {
+            "type": "number",
+            "description": "Specify ha VRRP-A vrid."
+        },
+        "BladeParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BladeParametersDefinition"
+            },
+            "maxItems": 1
+        },
+        "FloatingIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FloatingIpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Follow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FollowDefinition"
+            },
+            "maxItems": 1
+        },
+        "PreemptMode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreemptModeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

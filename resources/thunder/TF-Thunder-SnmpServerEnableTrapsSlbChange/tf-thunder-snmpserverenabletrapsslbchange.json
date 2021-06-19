@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsSlbChange",
+    "description": "`thunder_snmp_server_enable_traps_slb_change` Provides details about thunder snmp server enable traps slb change",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsSlbChange/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all system group traps."
+        },
+        "ConnectionResourceEvent": {
+            "type": "number",
+            "description": "Enable system connection resource event trap."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceUsageWarning": {
+            "type": "number",
+            "description": "Enable partition resource usage warning trap."
+        },
+        "Server": {
+            "type": "number",
+            "description": "Enable slb server create/delete trap."
+        },
+        "ServerPort": {
+            "type": "number",
+            "description": "Enable slb server port create/delete trap."
+        },
+        "SslCertChange": {
+            "type": "number",
+            "description": "Enable SSL certificate change trap."
+        },
+        "SslCertExpire": {
+            "type": "number",
+            "description": "Enable SSL certificate expiring trap."
+        },
+        "SystemThreshold": {
+            "type": "number",
+            "description": "Enable slb system threshold trap."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Vip": {
+            "type": "number",
+            "description": "Enable slb vip create/delete trap."
+        },
+        "VipPort": {
+            "type": "number",
+            "description": "Enable slb vip-port create/delete trap."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::CheckPoint::ManagementAccessPointName",
+    "description": "This resource allows you to execute Check Point Access Point Name.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementAccessPointName/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Apn": {
+            "type": "string",
+            "description": "APN name."
+        },
+        "BlockTrafficOtherEndUserDomains": {
+            "type": "boolean",
+            "description": "Block MS to MS traffic between this and other APN end user domains."
+        },
+        "BlockTrafficThisEndUserDomain": {
+            "type": "boolean",
+            "description": "Block MS to MS traffic within this end user domain."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "EndUserDomain": {
+            "type": "string",
+            "description": "End user domain name or UID."
+        },
+        "EnforceEndUserDomain": {
+            "type": "boolean",
+            "description": "Enable enforce end user domain."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

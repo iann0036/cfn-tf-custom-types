@@ -1,0 +1,644 @@
+{
+    "typeName": "TF::FortiOS::RouterOspf",
+    "description": "Configure OSPF.\n\n~> The provider supports the definition of Ospf-Interface in Router Ospf `fortios_router_ospf`, and also allows the definition of separate Ospf-Interface resources `fortios_routerospf_ospfinterface`, but do not use a `fortios_router_ospf` with in-line Ospf-Interface in conjunction with any `fortios_routerospf_ospfinterface` resources, otherwise conflicts and overwrite will occur.\n\n~> The provider supports the definition of Network in Router Ospf `fortios_router_ospf`, and also allows the definition of separate Network resources `fortios_routerospf_network`, but do not use a `fortios_router_ospf` with in-line Network in conjunction with any `fortios_routerospf_network` resources, otherwise conflicts and overwrite will occur.\n\n~> The provider supports the definition of Neighbor in Router Ospf `fortios_router_ospf`, and also allows the definition of separate Neighbor resources `fortios_routerospf_neighbor`, but do not use a `fortios_router_ospf` with in-line Neighbor in conjunction with any ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterOspf/docs/README.md",
+    "definitions": {
+        "AreaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "string",
+                    "description": "Authentication type. Valid values: `none`, `text`, `md5`."
+                },
+                "DefaultCost": {
+                    "type": "number",
+                    "description": "Summary default cost of stub or NSSA area."
+                },
+                "Id": {
+                    "type": "string",
+                    "description": "Area entry IP address."
+                },
+                "NssaDefaultInformationOriginate": {
+                    "type": "string",
+                    "description": "Redistribute, advertise, or do not originate Type-7 default route into NSSA area. Valid values: `enable`, `always`, `disable`."
+                },
+                "NssaDefaultInformationOriginateMetric": {
+                    "type": "number",
+                    "description": "OSPF default metric."
+                },
+                "NssaDefaultInformationOriginateMetricType": {
+                    "type": "string",
+                    "description": "OSPF metric type for default routes. Valid values: `1`, `2`."
+                },
+                "NssaRedistribution": {
+                    "type": "string",
+                    "description": "Enable/disable redistribute into NSSA area. Valid values: `enable`, `disable`."
+                },
+                "NssaTranslatorRole": {
+                    "type": "string",
+                    "description": "NSSA translator role type. Valid values: `candidate`, `never`, `always`."
+                },
+                "Shortcut": {
+                    "type": "string",
+                    "description": "Enable/disable shortcut option. Valid values: `disable`, `enable`, `default`."
+                },
+                "StubType": {
+                    "type": "string",
+                    "description": "Stub summary setting. Valid values: `no-summary`, `summary`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Area type setting. Valid values: `regular`, `nssa`, `stub`."
+                },
+                "FilterList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterListDefinition"
+                    }
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    }
+                },
+                "VirtualLink": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualLinkDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DistributeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "string",
+                    "description": "Access list name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Distribute list entry ID."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol type. Valid values: `connected`, `static`, `rip`."
+                }
+            },
+            "required": []
+        },
+        "NeighborDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cost": {
+                    "type": "number",
+                    "description": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Neighbor entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Interface IP address of the neighbor."
+                },
+                "PollInterval": {
+                    "type": "number",
+                    "description": "Poll interval time in seconds."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Priority."
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Area": {
+                    "type": "string",
+                    "description": "Attach the network to area."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Network entry ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Prefix."
+                }
+            },
+            "required": []
+        },
+        "OspfInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "string",
+                    "description": "Authentication type. Valid values: `none`, `text`, `md5`."
+                },
+                "AuthenticationKey": {
+                    "type": "string",
+                    "description": "Authentication key."
+                },
+                "Bfd": {
+                    "type": "string",
+                    "description": "Bidirectional Forwarding Detection (BFD). Valid values: `global`, `enable`, `disable`."
+                },
+                "Cost": {
+                    "type": "number",
+                    "description": "Cost of the interface, value range from 0 to 65535, 0 means auto-cost."
+                },
+                "DatabaseFilterOut": {
+                    "type": "string",
+                    "description": "Enable/disable control of flooding out LSAs. Valid values: `enable`, `disable`."
+                },
+                "DeadInterval": {
+                    "type": "number",
+                    "description": "Dead interval."
+                },
+                "HelloInterval": {
+                    "type": "number",
+                    "description": "Hello interval."
+                },
+                "HelloMultiplier": {
+                    "type": "number",
+                    "description": "Number of hello packets within dead interval."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Configuration interface name."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP address."
+                },
+                "Md5Key": {
+                    "type": "string",
+                    "description": "MD5 key."
+                },
+                "Md5Keychain": {
+                    "type": "string",
+                    "description": "Authentication MD5 key-chain name."
+                },
+                "Mtu": {
+                    "type": "number",
+                    "description": "MTU for database description packets."
+                },
+                "MtuIgnore": {
+                    "type": "string",
+                    "description": "Enable/disable ignore MTU. Valid values: `enable`, `disable`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Interface entry name."
+                },
+                "NetworkType": {
+                    "type": "string",
+                    "description": "Network type. Valid values: `broadcast`, `non-broadcast`, `point-to-point`, `point-to-multipoint`, `point-to-multipoint-non-broadcast`."
+                },
+                "PrefixLength": {
+                    "type": "number",
+                    "description": "Prefix length."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Priority."
+                },
+                "ResyncTimeout": {
+                    "type": "number",
+                    "description": "Graceful restart neighbor resynchronization timeout."
+                },
+                "RetransmitInterval": {
+                    "type": "number",
+                    "description": "Retransmit interval."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable status. Valid values: `disable`, `enable`."
+                },
+                "TransmitDelay": {
+                    "type": "number",
+                    "description": "Transmit delay."
+                },
+                "Md5Keys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Md5KeysDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PassiveInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Passive interface name."
+                }
+            },
+            "required": []
+        },
+        "RedistributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "number",
+                    "description": "Redistribute metric setting."
+                },
+                "MetricType": {
+                    "type": "string",
+                    "description": "Metric type. Valid values: `1`, `2`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Redistribute name."
+                },
+                "Routemap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "status Valid values: `enable`, `disable`."
+                },
+                "Tag": {
+                    "type": "number",
+                    "description": "Tag value."
+                }
+            },
+            "required": []
+        },
+        "SummaryAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Advertise": {
+                    "type": "string",
+                    "description": "Enable/disable advertise status. Valid values: `disable`, `enable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Summary address entry ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Prefix."
+                },
+                "Tag": {
+                    "type": "number",
+                    "description": "Tag value."
+                }
+            },
+            "required": []
+        },
+        "FilterListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string",
+                    "description": "Direction. Valid values: `in`, `out`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Filter list entry ID."
+                },
+                "List": {
+                    "type": "string",
+                    "description": "Access-list or prefix-list name."
+                }
+            },
+            "required": []
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Advertise": {
+                    "type": "string",
+                    "description": "Enable/disable advertise status. Valid values: `disable`, `enable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Range entry ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Prefix."
+                },
+                "Substitute": {
+                    "type": "string",
+                    "description": "Substitute prefix."
+                },
+                "SubstituteStatus": {
+                    "type": "string",
+                    "description": "Enable/disable substitute status. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "VirtualLinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "string",
+                    "description": "Authentication type. Valid values: `none`, `text`, `md5`."
+                },
+                "AuthenticationKey": {
+                    "type": "string",
+                    "description": "Authentication key."
+                },
+                "DeadInterval": {
+                    "type": "number",
+                    "description": "Dead interval."
+                },
+                "HelloInterval": {
+                    "type": "number",
+                    "description": "Hello interval."
+                },
+                "Md5Key": {
+                    "type": "string",
+                    "description": "MD5 key."
+                },
+                "Md5Keychain": {
+                    "type": "string",
+                    "description": "Authentication MD5 key-chain name."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Virtual link entry name."
+                },
+                "Peer": {
+                    "type": "string",
+                    "description": "Peer IP."
+                },
+                "RetransmitInterval": {
+                    "type": "number",
+                    "description": "Retransmit interval."
+                },
+                "TransmitDelay": {
+                    "type": "number",
+                    "description": "Transmit delay."
+                },
+                "Md5Keys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Md5KeysDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Md5KeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Key ID (1 - 255)."
+                },
+                "KeyString": {
+                    "type": "string",
+                    "description": "Password for the key."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbrType": {
+            "type": "string",
+            "description": "Area border router type. Valid values: `cisco`, `ibm`, `shortcut`, `standard`."
+        },
+        "AutoCostRefBandwidth": {
+            "type": "number",
+            "description": "Reference bandwidth in terms of megabits per second."
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Bidirectional Forwarding Detection (BFD). Valid values: `enable`, `disable`."
+        },
+        "DatabaseOverflow": {
+            "type": "string",
+            "description": "Enable/disable database overflow. Valid values: `enable`, `disable`."
+        },
+        "DatabaseOverflowMaxLsas": {
+            "type": "number",
+            "description": "Database overflow maximum LSAs."
+        },
+        "DatabaseOverflowTimeToRecover": {
+            "type": "number",
+            "description": "Database overflow time to recover (sec)."
+        },
+        "DefaultInformationMetric": {
+            "type": "number",
+            "description": "Default information metric."
+        },
+        "DefaultInformationMetricType": {
+            "type": "string",
+            "description": "Default information metric type. Valid values: `1`, `2`."
+        },
+        "DefaultInformationOriginate": {
+            "type": "string",
+            "description": "Enable/disable generation of default route. Valid values: `enable`, `always`, `disable`."
+        },
+        "DefaultInformationRouteMap": {
+            "type": "string",
+            "description": "Default information route map."
+        },
+        "DefaultMetric": {
+            "type": "number",
+            "description": "Default metric of redistribute routes."
+        },
+        "Distance": {
+            "type": "number",
+            "description": "Distance of the route."
+        },
+        "DistanceExternal": {
+            "type": "number",
+            "description": "Administrative external distance."
+        },
+        "DistanceInterArea": {
+            "type": "number",
+            "description": "Administrative inter-area distance."
+        },
+        "DistanceIntraArea": {
+            "type": "number",
+            "description": "Administrative intra-area distance."
+        },
+        "DistributeListIn": {
+            "type": "string",
+            "description": "Filter incoming routes."
+        },
+        "DistributeRouteMapIn": {
+            "type": "string",
+            "description": "Filter incoming external routes by route-map."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogNeighbourChanges": {
+            "type": "string",
+            "description": "Enable logging of OSPF neighbour's changes Valid values: `enable`, `disable`."
+        },
+        "RestartMode": {
+            "type": "string",
+            "description": "OSPF restart mode (graceful or LLS). Valid values: `none`, `lls`, `graceful-restart`."
+        },
+        "RestartPeriod": {
+            "type": "number",
+            "description": "Graceful restart period."
+        },
+        "Rfc1583Compatible": {
+            "type": "string",
+            "description": "Enable/disable RFC1583 compatibility. Valid values: `enable`, `disable`."
+        },
+        "RouterId": {
+            "type": "string",
+            "description": "Router ID."
+        },
+        "SpfTimers": {
+            "type": "string",
+            "description": "SPF calculation frequency."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Area": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AreaDefinition"
+            }
+        },
+        "DistributeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeListDefinition"
+            }
+        },
+        "Neighbor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "OspfInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfInterfaceDefinition"
+            }
+        },
+        "PassiveInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PassiveInterfaceDefinition"
+            }
+        },
+        "Redistribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributeDefinition"
+            }
+        },
+        "SummaryAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SummaryAddressDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RouterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/OspfInterfaceDefinition/AuthenticationKey",
+        "/definitions/OspfInterfaceDefinition/Md5Key",
+        "/definitions/VirtualLinkDefinition/AuthenticationKey",
+        "/definitions/VirtualLinkDefinition/Md5Key",
+        "/definitions/Md5KeysDefinition/KeyString"
+    ]
+}

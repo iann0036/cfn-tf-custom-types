@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::Thunder::OverlayTunnelVtep",
+    "description": "`thunder_overlay_tunnel_vtep` Provides details about thunder overlay tunnel vtep",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-OverlayTunnelVtep/docs/README.md",
+    "definitions": {
+        "DestinationIpAddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encap": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VniList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VniListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationVtep": {
+                    "type": "string"
+                },
+                "IpAddr": {
+                    "type": "string"
+                },
+                "OverlayMacAddr": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Vni": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SourceIpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VniList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VniListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VniListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Segment": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Encap": {
+            "type": "string",
+            "description": "\u2018nvgre\u2019: Tunnel Encapsulation Type is NVGRE; \u2018vxlan\u2019: Tunnel Encapsulation Type is VXLAN;."
+        },
+        "Id": {
+            "type": "string",
+            "description": "VTEP Identifier."
+        },
+        "Id2": {
+            "type": "number"
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "DestinationIpAddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationIpAddressListDefinition"
+            }
+        },
+        "HostList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostListDefinition"
+            }
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        },
+        "SourceIpAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceIpAddressDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

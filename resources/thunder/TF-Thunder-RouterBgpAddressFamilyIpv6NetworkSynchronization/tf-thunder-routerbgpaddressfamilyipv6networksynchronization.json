@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Thunder::RouterBgpAddressFamilyIpv6NetworkSynchronization",
+    "description": "`thunder_router_bgp_address_family_ipv6_network_synchronization` Provides details about thunder router bgp address family ipv6 network synchronization",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterBgpAddressFamilyIpv6NetworkSynchronization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkSynchronization": {
+            "type": "number"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

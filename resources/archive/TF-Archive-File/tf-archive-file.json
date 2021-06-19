@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Archive::File",
+    "description": "CloudFormation equivalent of archive_file",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/archive/TF-Archive-File/docs/README.md",
+    "definitions": {
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Filename": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Filename"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Excludes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OutputBase64sha256": {
+            "type": "string"
+        },
+        "OutputFileMode": {
+            "type": "string"
+        },
+        "OutputMd5": {
+            "type": "string"
+        },
+        "OutputPath": {
+            "type": "string"
+        },
+        "OutputSha": {
+            "type": "string"
+        },
+        "OutputSize": {
+            "type": "number"
+        },
+        "SourceContent": {
+            "type": "string"
+        },
+        "SourceContentFilename": {
+            "type": "string"
+        },
+        "SourceDir": {
+            "type": "string"
+        },
+        "SourceFile": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OutputPath",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OutputBase64sha256",
+        "/properties/OutputMd5",
+        "/properties/OutputSha",
+        "/properties/OutputSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

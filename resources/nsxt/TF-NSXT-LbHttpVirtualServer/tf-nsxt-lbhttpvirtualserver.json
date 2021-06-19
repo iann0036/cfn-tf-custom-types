@@ -1,0 +1,242 @@
+{
+    "typeName": "TF::NSXT::LbHttpVirtualServer",
+    "description": "Provides a resource to configure lb http or https virtual server on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LbHttpVirtualServer/docs/README.md",
+    "definitions": {
+        "ClientSslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientAuth": {
+                    "type": "boolean"
+                },
+                "ClientSslProfileId": {
+                    "type": "string"
+                },
+                "CrlIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultCertificateId": {
+                    "type": "string"
+                },
+                "SniCertificateIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientSslProfileId",
+                "DefaultCertificateId"
+            ]
+        },
+        "ServerSslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientCertificateId": {
+                    "type": "string"
+                },
+                "CrlIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServerAuth": {
+                    "type": "boolean"
+                },
+                "ServerSslProfileId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServerSslProfileId"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessLogEnabled": {
+            "type": "boolean",
+            "description": "Whether access log is enabled. Default is false."
+        },
+        "ApplicationProfileId": {
+            "type": "string",
+            "description": "The application profile defines the application protocol characteristics."
+        },
+        "DefaultPoolMemberPort": {
+            "type": "string",
+            "description": "Default pool member port."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the virtual server is enabled. Default is true."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "Virtual server IP address."
+        },
+        "MaxConcurrentConnections": {
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, affecting other applications hosted on the same LBS, connections to a virtual server can be capped. If it is not specified, it means that connections are unlimited."
+        },
+        "MaxNewConnectionRate": {
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, connections to a member can be rate limited. If it is not specified, it means that connection rate is unlimited."
+        },
+        "PersistenceProfileId": {
+            "type": "string",
+            "description": "Persistence profile is used to allow related client connections to be sent to the same backend server."
+        },
+        "PoolId": {
+            "type": "string",
+            "description": "Pool of backend servers. Server pool consists of one or more servers, also referred to as pool members, that are similarly configured and are running the same application."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Virtual server port."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RuleIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of load balancer rules that provide customization of load balancing behavior using match/action rules."
+        },
+        "SorryPoolId": {
+            "type": "string",
+            "description": "When load balancer can not select a backend server to serve the request in default pool or pool in rules, the request would be served by sorry server pool."
+        },
+        "ClientSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientSslDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServerSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSslDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationProfileId",
+        "IpAddress",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

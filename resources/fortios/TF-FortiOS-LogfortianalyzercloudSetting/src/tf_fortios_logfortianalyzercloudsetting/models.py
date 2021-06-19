@@ -1,0 +1,103 @@
+# DO NOT modify this file by hand, changes will be overwritten
+import sys
+from dataclasses import dataclass
+from inspect import getmembers, isclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseModel,
+    BaseResourceHandlerRequest,
+)
+from cloudformation_cli_python_lib.recast import recast_object
+from cloudformation_cli_python_lib.utils import deserialize_list
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseModel):
+    tfcfnid: Optional[str]
+    AccessConfig: Optional[str]
+    Certificate: Optional[str]
+    ConnTimeout: Optional[float]
+    EncAlgorithm: Optional[str]
+    HmacAlgorithm: Optional[str]
+    Id: Optional[str]
+    Interface: Optional[str]
+    InterfaceSelectMethod: Optional[str]
+    IpsArchive: Optional[str]
+    MaxLogRate: Optional[float]
+    MonitorFailureRetryPeriod: Optional[float]
+    MonitorKeepalivePeriod: Optional[float]
+    Priority: Optional[str]
+    SourceIp: Optional[str]
+    SslMinProtoVersion: Optional[str]
+    Status: Optional[str]
+    UploadDay: Optional[str]
+    UploadInterval: Optional[str]
+    UploadOption: Optional[str]
+    UploadTime: Optional[str]
+    Vdomparam: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        dataclasses = {n: o for n, o in getmembers(sys.modules[__name__]) if isclass(o)}
+        recast_object(cls, json_data, dataclasses)
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            AccessConfig=json_data.get("AccessConfig"),
+            Certificate=json_data.get("Certificate"),
+            ConnTimeout=json_data.get("ConnTimeout"),
+            EncAlgorithm=json_data.get("EncAlgorithm"),
+            HmacAlgorithm=json_data.get("HmacAlgorithm"),
+            Id=json_data.get("Id"),
+            Interface=json_data.get("Interface"),
+            InterfaceSelectMethod=json_data.get("InterfaceSelectMethod"),
+            IpsArchive=json_data.get("IpsArchive"),
+            MaxLogRate=json_data.get("MaxLogRate"),
+            MonitorFailureRetryPeriod=json_data.get("MonitorFailureRetryPeriod"),
+            MonitorKeepalivePeriod=json_data.get("MonitorKeepalivePeriod"),
+            Priority=json_data.get("Priority"),
+            SourceIp=json_data.get("SourceIp"),
+            SslMinProtoVersion=json_data.get("SslMinProtoVersion"),
+            Status=json_data.get("Status"),
+            UploadDay=json_data.get("UploadDay"),
+            UploadInterval=json_data.get("UploadInterval"),
+            UploadOption=json_data.get("UploadOption"),
+            UploadTime=json_data.get("UploadTime"),
+            Vdomparam=json_data.get("Vdomparam"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+

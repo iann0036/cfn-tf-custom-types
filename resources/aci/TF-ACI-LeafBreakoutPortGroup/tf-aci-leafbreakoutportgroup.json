@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::ACI::LeafBreakoutPortGroup",
+    "description": "Manages ACI Leaf Breakout Port Group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-LeafBreakoutPortGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for leaf breakout port group object.\n- `brkout_map` - (Optional) Breakout map for leaf breakout port group object. Allowed values are \"100g-2x\", \"100g-4x\", \"10g-4x\", \"25g-4x\", \"50g-8x\" and \"none\". Default value is \"none\".\n- `name_alias` - (Optional) Name alias for leaf breakout port group object.\n- `description` - (Optional) Description for leaf breakout port group object.\n- `relation_infra_rs_mon_brkout_infra_pol` - (Optional) Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "BrkoutMap": {
+            "type": "string",
+            "description": "Breakout map for leaf breakout port group object. Allowed values are \"100g-2x\", \"100g-4x\", \"10g-4x\", \"25g-4x\", \"50g-8x\" and \"none\". Default value is \"none\".\n- `name_alias` - (Optional) Name alias for leaf breakout port group object.\n- `description` - (Optional) Description for leaf breakout port group object.\n- `relation_infra_rs_mon_brkout_infra_pol` - (Optional) Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for leaf breakout port group object.\n- `relation_infra_rs_mon_brkout_infra_pol` - (Optional) Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of leaf breakout port group object.\n- `annotation` - (Optional) Annotation for leaf breakout port group object.\n- `brkout_map` - (Optional) Breakout map for leaf breakout port group object. Allowed values are \"100g-2x\", \"100g-4x\", \"10g-4x\", \"25g-4x\", \"50g-8x\" and \"none\". Default value is \"none\".\n- `name_alias` - (Optional) Name alias for leaf breakout port group object.\n- `description` - (Optional) Description for leaf breakout port group object.\n- `relation_infra_rs_mon_brkout_infra_pol` - (Optional) Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for leaf breakout port group object.\n- `description` - (Optional) Description for leaf breakout port group object.\n- `relation_infra_rs_mon_brkout_infra_pol` - (Optional) Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationInfraRsMonBrkoutInfraPol": {
+            "type": "string",
+            "description": "Relation to class monInfraPol. Cardinality - N_TO_ONE. Type - String."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

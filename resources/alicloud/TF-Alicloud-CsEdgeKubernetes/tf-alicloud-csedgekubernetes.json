@@ -1,0 +1,391 @@
+{
+    "typeName": "TF::Alicloud::CsEdgeKubernetes",
+    "description": "CloudFormation equivalent of alicloud_cs_edge_kubernetes",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CsEdgeKubernetes/docs/README.md",
+    "definitions": {
+        "CertificateAuthorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConnectionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WorkerNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateIp": {
+                    "type": "string"
+                }
+            }
+        },
+        "AddonsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Project": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WorkerDataDisksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoSnapshotPolicyId": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "Device": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "string"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PerformanceLevel": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "CertificateAuthority": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CertificateAuthorityDefinition"
+            }
+        },
+        "ClientCert": {
+            "type": "string"
+        },
+        "ClientKey": {
+            "type": "string"
+        },
+        "ClusterCaCert": {
+            "type": "string"
+        },
+        "Connections": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConnectionsDefinition"
+            }
+        },
+        "DeletionProtection": {
+            "type": "boolean"
+        },
+        "ForceUpdate": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallCloudMonitor": {
+            "type": "boolean"
+        },
+        "IsEnterpriseSecurityGroup": {
+            "type": "boolean"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "KubeConfig": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "NatGatewayId": {
+            "type": "string"
+        },
+        "NewNatGateway": {
+            "type": "boolean"
+        },
+        "NodeCidrMask": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PodCidr": {
+            "type": "string"
+        },
+        "ProxyMode": {
+            "type": "string"
+        },
+        "RdsInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "ServiceCidr": {
+            "type": "string"
+        },
+        "SlbInternet": {
+            "type": "string"
+        },
+        "SlbInternetEnabled": {
+            "type": "boolean"
+        },
+        "SlbIntranet": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "WorkerDiskCategory": {
+            "type": "string"
+        },
+        "WorkerDiskPerformanceLevel": {
+            "type": "string"
+        },
+        "WorkerDiskSize": {
+            "type": "number"
+        },
+        "WorkerDiskSnapshotPolicyId": {
+            "type": "string"
+        },
+        "WorkerInstanceChargeType": {
+            "type": "string"
+        },
+        "WorkerInstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WorkerNodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerNodesDefinition"
+            }
+        },
+        "WorkerNumber": {
+            "type": "number"
+        },
+        "WorkerVswitchIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Addons": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddonsDefinition"
+            }
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WorkerDataDisks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerDataDisksDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "WorkerInstanceTypes",
+        "WorkerNumber",
+        "WorkerVswitchIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateAuthority",
+        "/properties/Connections",
+        "/properties/Id",
+        "/properties/NatGatewayId",
+        "/properties/SlbInternet",
+        "/properties/SlbIntranet",
+        "/properties/VpcId",
+        "/properties/WorkerNodes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

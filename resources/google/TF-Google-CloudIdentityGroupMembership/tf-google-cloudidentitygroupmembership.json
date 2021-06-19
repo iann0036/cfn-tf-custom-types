@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::Google::CloudIdentityGroupMembership",
+    "description": "A Membership defines a relationship between a Group and an entity belonging to that Group, referred to as a \"member\".\n\n\nTo get more information about GroupMembership, see:\n\n* [API documentation](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/identity/docs/how-to/memberships-google-groups)\n\n~> **Warning:** If you are using User ADCs (Application Default Credentials) with this resource,\nyou must specify a `billing_project` and set `user_project_override` to true \nin the provider configuration. Otherwise the Cloud Identity API will return a 403 error. \nYour account must have the `serviceusage.services.use` permission on the \n`billing_project` you defined.\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=cloud_identit...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-CloudIdentityGroupMembership/docs/README.md",
+    "definitions": {
+        "PreferredMemberKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "PreferredMemberKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreferredMemberKeyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Group"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Type",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

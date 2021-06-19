@@ -1,0 +1,238 @@
+{
+    "typeName": "TF::DigitalOcean::Loadbalancer",
+    "description": "Provides a DigitalOcean Load Balancer resource. This can be used to create,\nmodify, and delete Load Balancers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Loadbalancer/docs/README.md",
+    "definitions": {
+        "ForwardingRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateId": {
+                    "type": "string",
+                    "description": "**Deprecated** The ID of the TLS certificate to be used for SSL termination."
+                },
+                "CertificateName": {
+                    "type": "string",
+                    "description": "The unique name of the TLS certificate to be used for SSL termination."
+                },
+                "EntryPort": {
+                    "type": "number",
+                    "description": "An integer representing the port on which the Load Balancer instance will listen."
+                },
+                "EntryProtocol": {
+                    "type": "string",
+                    "description": "The protocol used for traffic to the Load Balancer. The possible values are: `http`, `https`, `http2` or `tcp`."
+                },
+                "TargetPort": {
+                    "type": "number",
+                    "description": "An integer representing the port on the backend Droplets to which the Load Balancer will send traffic."
+                },
+                "TargetProtocol": {
+                    "type": "string",
+                    "description": "The protocol used for traffic from the Load Balancer to the backend Droplets. The possible values are: `http`, `https`, `http2` or `tcp`."
+                },
+                "TlsPassthrough": {
+                    "type": "boolean",
+                    "description": "A boolean value indicating whether SSL encrypted traffic will be passed through to the backend Droplets. The default value is `false`."
+                }
+            },
+            "required": [
+                "EntryPort",
+                "EntryProtocol",
+                "TargetPort",
+                "TargetProtocol"
+            ]
+        },
+        "HealthcheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckIntervalSeconds": {
+                    "type": "number",
+                    "description": "The number of seconds between between two consecutive health checks. If not specified, the default value is `10`."
+                },
+                "HealthyThreshold": {
+                    "type": "number",
+                    "description": "The number of times a health check must pass for a backend Droplet to be marked \"healthy\" and be re-added to the pool. If not specified, the default value is `5`."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "The path on the backend Droplets to which the Load Balancer instance will send a request."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "An integer representing the port on the backend Droplets on which the health check will attempt a connection."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The protocol used for health checks sent to the backend Droplets. The possible values are `http`, `https` or `tcp`."
+                },
+                "ResponseTimeoutSeconds": {
+                    "type": "number",
+                    "description": "The number of seconds the Load Balancer instance will wait for a response until marking a health check as failed. If not specified, the default value is `5`."
+                },
+                "UnhealthyThreshold": {
+                    "type": "number",
+                    "description": "The number of times a health check must fail for a backend Droplet to be marked \"unhealthy\" and be removed from the pool. If not specified, the default value is `3`."
+                }
+            },
+            "required": [
+                "Port",
+                "Protocol"
+            ]
+        },
+        "StickySessionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string",
+                    "description": "The name to be used for the cookie sent to the client. This attribute is required when using `cookies` for the sticky sessions type."
+                },
+                "CookieTtlSeconds": {
+                    "type": "number",
+                    "description": "The number of seconds until the cookie set by the Load Balancer expires. This attribute is required when using `cookies` for the sticky sessions type."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "An attribute indicating how and if requests from a client will be persistently served by the same backend Droplet. The possible values are `cookies` or `none`. If not specified, the default value is `none`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "The load balancing algorithm used to determine\nwhich backend Droplet will be selected by a client. It must be either `round_robin`\nor `least_connections`. The default value is `round_robin`."
+        },
+        "DropletIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "DropletTag": {
+            "type": "string"
+        },
+        "EnableBackendKeepalive": {
+            "type": "boolean",
+            "description": "A boolean value indicating whether HTTP keepalive connections are maintained to target Droplets. Default value is `false`."
+        },
+        "EnableProxyProtocol": {
+            "type": "boolean",
+            "description": "A boolean value indicating whether PROXY\nProtocol should be used to pass information from connecting client requests to\nthe backend service. Default value is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Load Balancer name."
+        },
+        "RedirectHttpToHttps": {
+            "type": "boolean",
+            "description": "A boolean value indicating whether\nHTTP requests to the Load Balancer on port 80 will be redirected to HTTPS on port 443.\nDefault value is `false`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region to start in."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The size of the Load Balancer. It must be either `lb-small`, `lb-medium`, or `lb-large`. Defaults to `lb-small`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "VpcUuid": {
+            "type": "string",
+            "description": "The ID of the VPC where the load balancer will be located."
+        },
+        "ForwardingRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ForwardingRuleDefinition"
+            },
+            "minItems": 1
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthcheckDefinition"
+            },
+            "maxItems": 1
+        },
+        "StickySessions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StickySessionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ip",
+        "/properties/Status",
+        "/properties/Urn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

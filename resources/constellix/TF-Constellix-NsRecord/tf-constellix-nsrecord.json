@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Constellix::NsRecord",
+    "description": "Manages records of type NS  for a specific domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/constellix/TF-Constellix-NsRecord/docs/README.md",
+    "definitions": {
+        "RoundrobinDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableFlag": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "GtdRegion": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Noanswer": {
+            "type": "boolean"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Roundrobin": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoundrobinDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "SourceType",
+        "Ttl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

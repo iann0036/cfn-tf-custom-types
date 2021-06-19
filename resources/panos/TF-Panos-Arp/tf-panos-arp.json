@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Panos::Arp",
+    "description": "Manages ARP config attached to an interface.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-Arp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "The interface."
+        },
+        "InterfaceName": {
+            "type": "string",
+            "description": "The interface name (leave this empty for VLAN interfaces)."
+        },
+        "InterfaceType": {
+            "type": "string",
+            "description": "The interface type.  Valid values are `ethernet` (default),\n`aggregate-ethernet`, or `vlan`."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "The IP address."
+        },
+        "MacAddress": {
+            "type": "string",
+            "description": "The MAC address."
+        },
+        "SubinterfaceName": {
+            "type": "string",
+            "description": "The subinterface name."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip",
+        "MacAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

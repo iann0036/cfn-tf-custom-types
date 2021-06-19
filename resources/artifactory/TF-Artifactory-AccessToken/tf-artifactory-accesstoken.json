@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Artifactory::AccessToken",
+    "description": "CloudFormation equivalent of artifactory_access_token",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-AccessToken/docs/README.md",
+    "definitions": {
+        "AdminTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessToken": {
+            "type": "string"
+        },
+        "Audience": {
+            "type": "string"
+        },
+        "EndDate": {
+            "type": "string"
+        },
+        "EndDateRelative": {
+            "type": "string"
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RefreshToken": {
+            "type": "string"
+        },
+        "Refreshable": {
+            "type": "boolean"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "AdminToken": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdminTokenDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessToken",
+        "/properties/Id",
+        "/properties/RefreshToken"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccessToken",
+        "/properties/RefreshToken"
+    ]
+}

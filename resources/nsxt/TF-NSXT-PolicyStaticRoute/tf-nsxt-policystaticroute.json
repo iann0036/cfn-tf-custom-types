@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::NSXT::PolicyStaticRoute",
+    "description": "This resource provides a method for the management of a Static Route.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyStaticRoute/docs/README.md",
+    "definitions": {
+        "NextHopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminDistance": {
+                    "type": "number"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "GatewayPath": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string",
+            "description": "The network address in CIDR format for the route."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "NextHop": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NextHopDefinition"
+            },
+            "minItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath",
+        "Network"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

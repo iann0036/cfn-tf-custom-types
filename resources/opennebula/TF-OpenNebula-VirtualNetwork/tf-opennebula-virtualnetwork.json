@@ -1,0 +1,238 @@
+{
+    "typeName": "TF::OpenNebula::VirtualNetwork",
+    "description": "Provides an OpenNebula virtual network resource.\n\nThis resource allows you to manage virtual networks on your OpenNebula clusters. When applied,\na new virtual network is created. When destroyed, that virtual network is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-VirtualNetwork/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ArDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArType": {
+                    "type": "string"
+                },
+                "GlobalPrefix": {
+                    "type": "string"
+                },
+                "Ip4": {
+                    "type": "string"
+                },
+                "Ip6": {
+                    "type": "string"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "PrefixLength": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "UlaPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Size"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomaticVlanId": {
+            "type": "boolean",
+            "description": "Flag to let OpenNebula scheduler to attribute the VLAN ID. Conflicts with `reservation_vnet`, `reservation_size` and `vlan_id`."
+        },
+        "Bridge": {
+            "type": "string",
+            "description": "Name of the bridge interface to which the virtual network should be associated. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Clusters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of cluster IDs where the virtual network can be use. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the virtual network."
+        },
+        "Dns": {
+            "type": "string",
+            "description": "Text String containing a comma separated list of DNS IPs. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "IP of the gateway. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Gid": {
+            "type": "number"
+        },
+        "Gname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "Name of the group which owns the virtual network. Defaults to the caller primary group."
+        },
+        "GuestMtu": {
+            "type": "number",
+            "description": "MTU of the network caord on the virtual machine. **Cannot be greater than `mtu`**. Defaults to `1500`. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "HoldIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Hold Ips from any Address Range of the Virtual Network. The IP must be available to be held`. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "HoldSize": {
+            "type": "number",
+            "description": "Carve a network reservation of this size from the reservation starting from `ip_hold`. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpHold": {
+            "type": "string",
+            "description": "Start IP of the range to be held. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Virtual network MTU. Defaults to `1500`. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual network."
+        },
+        "NetworkMask": {
+            "type": "string",
+            "description": "Network mask. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on virtual network. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "PhysicalDevice": {
+            "type": "string",
+            "description": "Name of the physical device interface to which the virtual network should be associated. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "ReservationSize": {
+            "type": "number",
+            "description": "Size (in address) reserved. Conflicts with all parameters excepted `name`, `description`, `permissions`, `security_groups` and `group`."
+        },
+        "ReservationVnet": {
+            "type": "number",
+            "description": "ID of the parent virtual network to reserve from. Conflicts with all parameters excepted `name`, `description`, `permissions`, `security_groups` and `group`."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of security group IDs to apply on the virtual network."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Virtual Network tags (Key = Value)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Virtual network type. One of these: `dummy`, `bridge`'`fw`, `ebtables`, `802.1Q`, `vxlan` or `ovswitch`. Defaults to `bridge`. Conflicts with `reservation_vnet` and `reservation_size`."
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uname": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "string",
+            "description": "ID of VLAN. Only if `type` is `802.1Q`, `vxlan` or `ovswitch`. Conflicts with `reservation_vnet`, `reservation_size` and `automatic_vlan_id`."
+        },
+        "Ar": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gid",
+        "/properties/Gname",
+        "/properties/Id",
+        "/properties/Uid",
+        "/properties/Uname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

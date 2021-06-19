@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::Akamai::IamUser",
+    "description": "The `akamai_iam_user` resource represents a user in Akamai Control Center.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-IamUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AuthGrantsJson": {
+            "type": "string"
+        },
+        "City": {
+            "type": "string"
+        },
+        "ContactType": {
+            "type": "string"
+        },
+        "Country": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "EmailUpdatePending": {
+            "type": "boolean"
+        },
+        "EnableTfa": {
+            "type": "boolean"
+        },
+        "FirstName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsLocked": {
+            "type": "boolean"
+        },
+        "JobTitle": {
+            "type": "string"
+        },
+        "LastLogin": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string"
+        },
+        "MobilePhone": {
+            "type": "string"
+        },
+        "PasswordExpiredAfter": {
+            "type": "string"
+        },
+        "Phone": {
+            "type": "string"
+        },
+        "PreferredLanguage": {
+            "type": "string"
+        },
+        "SecondaryEmail": {
+            "type": "string"
+        },
+        "SessionTimeout": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TfaConfigured": {
+            "type": "boolean"
+        },
+        "TimeZone": {
+            "type": "string"
+        },
+        "UserName": {
+            "type": "string"
+        },
+        "ZipCode": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthGrantsJson",
+        "Country",
+        "Email",
+        "EnableTfa",
+        "FirstName",
+        "LastName",
+        "Phone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EmailUpdatePending",
+        "/properties/Id",
+        "/properties/IsLocked",
+        "/properties/LastLogin",
+        "/properties/PasswordExpiredAfter",
+        "/properties/TfaConfigured",
+        "/properties/UserName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::MongoDBAtlas::CloudProviderSnapshotRestoreJob",
+    "description": "`mongodbatlas_cloud_provider_snapshot_restore_job` provides a resource to create a new restore job from a cloud backup snapshot of a specified cluster. The restore job can be one of three types: \n* **automated:** Atlas automatically restores the snapshot with snapshotId to the Atlas cluster with name targetClusterName in the Atlas project with targetGroupId.\n\n* **download:** Atlas provides a URL to download a .tar.gz of the snapshot with snapshotId. The contents of the archive contain the data files for your Atlas cluster.\n\n* **pointInTime:**  Atlas performs a Continuous Cloud Backup restore.\n\n-> **Important:** If you specify `deliveryType` : `automated` or `deliveryType` : `pointInTime` in your request body to create an automated restore job, Atlas removes all existing data on the target cluster prior to the restore.\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find `groupId` in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-CloudProviderSnapshotRestoreJob/docs/README.md",
+    "definitions": {
+        "DeliveryTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cancelled": {
+            "type": "boolean"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The name of the Atlas cluster whose snapshot you want to restore."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DeliveryType": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DeliveryTypeDefinition"
+            },
+            "description": "Type of restore job to create. Possible values are: **download** or **automated**, only one must be set it in ``true``."
+        },
+        "DeliveryUrl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Expired": {
+            "type": "boolean"
+        },
+        "ExpiresAt": {
+            "type": "string"
+        },
+        "FinishedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique identifier of the project for the Atlas cluster whose snapshot you want to restore."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "Unique identifier of the snapshot to restore."
+        },
+        "SnapshotRestoreJobId": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "DeliveryType",
+        "ProjectId",
+        "SnapshotId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cancelled",
+        "/properties/CreatedAt",
+        "/properties/DeliveryUrl",
+        "/properties/Expired",
+        "/properties/ExpiresAt",
+        "/properties/FinishedAt",
+        "/properties/Id",
+        "/properties/SnapshotRestoreJobId",
+        "/properties/Timestamp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,216 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerQosprofile",
+    "description": "Configure WiFi quality of service (QoS) profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerQosprofile/docs/README.md",
+    "definitions": {
+        "DscpWmmBeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "DSCP WMM mapping numbers (0 - 63)."
+                }
+            },
+            "required": []
+        },
+        "DscpWmmBkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "DSCP WMM mapping numbers (0 - 63)."
+                }
+            },
+            "required": []
+        },
+        "DscpWmmViDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "DSCP WMM mapping numbers (0 - 63)."
+                }
+            },
+            "required": []
+        },
+        "DscpWmmVoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "DSCP WMM mapping numbers (0 - 63)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthAdmissionControl": {
+            "type": "string",
+            "description": "Enable/disable WMM bandwidth admission control. Valid values: `enable`, `disable`."
+        },
+        "BandwidthCapacity": {
+            "type": "number",
+            "description": "Maximum bandwidth capacity allowed (1 - 600000 Kbps, default = 2000)."
+        },
+        "Burst": {
+            "type": "string",
+            "description": "Enable/disable client rate burst. Valid values: `enable`, `disable`."
+        },
+        "CallAdmissionControl": {
+            "type": "string",
+            "description": "Enable/disable WMM call admission control. Valid values: `enable`, `disable`."
+        },
+        "CallCapacity": {
+            "type": "number",
+            "description": "Maximum number of Voice over WLAN (VoWLAN) phones allowed (0 - 60, default = 10)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Downlink": {
+            "type": "number",
+            "description": "Maximum downlink bandwidth for Virtual Access Points (VAPs) (0 - 2097152 Kbps, default = 0, 0 means no limit)."
+        },
+        "DownlinkSta": {
+            "type": "number",
+            "description": "Maximum downlink bandwidth for clients (0 - 2097152 Kbps, default = 0, 0 means no limit)."
+        },
+        "DscpWmmMapping": {
+            "type": "string",
+            "description": "Enable/disable Differentiated Services Code Point (DSCP) mapping. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "WiFi QoS profile name."
+        },
+        "Uplink": {
+            "type": "number",
+            "description": "Maximum uplink bandwidth for Virtual Access Points (VAPs) (0 - 2097152 Kbps, default = 0, 0 means no limit)."
+        },
+        "UplinkSta": {
+            "type": "number",
+            "description": "Maximum uplink bandwidth for clients (0 - 2097152 Kbps, default = 0, 0 means no limit)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Wmm": {
+            "type": "string",
+            "description": "Enable/disable WiFi multi-media (WMM) control. Valid values: `enable`, `disable`."
+        },
+        "WmmBeDscp": {
+            "type": "number",
+            "description": "DSCP marking for best effort access (default = 0)."
+        },
+        "WmmBkDscp": {
+            "type": "number",
+            "description": "DSCP marking for background access (default = 8)."
+        },
+        "WmmDscpMarking": {
+            "type": "string",
+            "description": "Enable/disable WMM Differentiated Services Code Point (DSCP) marking. Valid values: `enable`, `disable`."
+        },
+        "WmmUapsd": {
+            "type": "string",
+            "description": "Enable/disable WMM Unscheduled Automatic Power Save Delivery (U-APSD) power save mode. Valid values: `enable`, `disable`."
+        },
+        "WmmViDscp": {
+            "type": "number",
+            "description": "DSCP marking for video access (default = 32)."
+        },
+        "WmmVoDscp": {
+            "type": "number",
+            "description": "DSCP marking for voice access (default = 48)."
+        },
+        "DscpWmmBe": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DscpWmmBeDefinition"
+            }
+        },
+        "DscpWmmBk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DscpWmmBkDefinition"
+            }
+        },
+        "DscpWmmVi": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DscpWmmViDefinition"
+            }
+        },
+        "DscpWmmVo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DscpWmmVoDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

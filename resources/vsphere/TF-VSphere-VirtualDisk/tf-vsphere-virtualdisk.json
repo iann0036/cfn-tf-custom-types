@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::VSphere::VirtualDisk",
+    "description": "The `vsphere_virtual_disk` resource can be used to create virtual disks outside\nof any given [`vsphere_virtual_machine`][docs-vsphere-virtual-machine]\nresource. These disks can be attached to a virtual machine by creating a disk\nblock with the [`attach`][docs-vsphere-virtual-machine-disk-attach] parameter.\n\n[docs-vsphere-virtual-machine]: /docs/providers/vsphere/r/virtual_machine.html\n[docs-vsphere-virtual-machine-disk-attach]: /docs/providers/vsphere/r/virtual_machine.html#attach",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-VirtualDisk/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdapterType": {
+            "type": "string",
+            "description": "The adapter type for this virtual disk. Can be\none of `ide`, `lsiLogic`, or `busLogic`.  Default: `lsiLogic`."
+        },
+        "CreateDirectories": {
+            "type": "boolean",
+            "description": "Tells the resource to create any\ndirectories that are a part of the `vmdk_path` parameter if they are missing.\nDefault: `false`."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The name of the datacenter in which to create the\ndisk. Can be omitted when when ESXi or if there is only one datacenter in\nyour infrastructure."
+        },
+        "Datastore": {
+            "type": "string",
+            "description": "The name of the datastore in which to create the\ndisk."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number",
+            "description": "Size of the disk (in GB)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of disk to create. Can be one of\n`eagerZeroedThick`, `lazy`, or `thin`. Default: `eagerZeroedThick`. For\ninformation on what each kind of disk provisioning policy means, click\n[here][docs-vmware-vm-disk-provisioning]."
+        },
+        "VmdkPath": {
+            "type": "string",
+            "description": "The path, including filename, of the virtual disk to\nbe created.  This needs to end in `.vmdk`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Datastore",
+        "Size",
+        "VmdkPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

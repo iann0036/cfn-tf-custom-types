@@ -1,0 +1,262 @@
+{
+    "typeName": "TF::AWS::NeptuneCluster",
+    "description": "Provides an Neptune Cluster Resource. A Cluster Resource defines attributes that are\napplied to the entire cluster of Neptune Cluster Instances.\n\nChanges to a Neptune Cluster can occur when you manually change a\nparameter, such as `backup_retention_period`, and are reflected in the next maintenance\nwindow. Because of this, Terraform may report a difference in its planning\nphase because a modification has not yet taken place. You can use the\n`apply_immediately` flag to instruct the service to apply the change immediately\n(see documentation below).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NeptuneCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of EC2 Availability Zones that instances in the Neptune cluster can be created in."
+        },
+        "BackupRetentionPeriod": {
+            "type": "number",
+            "description": "The days to retain backups for. Default `1`."
+        },
+        "ClusterIdentifier": {
+            "type": "string",
+            "description": "The cluster identifier. If omitted, Terraform will assign a random, unique identifier."
+        },
+        "ClusterIdentifierPrefix": {
+            "type": "string",
+            "description": "Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`."
+        },
+        "ClusterMembers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClusterResourceId": {
+            "type": "string"
+        },
+        "DeletionProtection": {
+            "type": "boolean",
+            "description": "A value that indicates whether the DB cluster has deletion protection enabled.The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled."
+        },
+        "EnableCloudwatchLogsExports": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of the log types this DB cluster is configured to export to Cloudwatch Logs. Currently only supports `audit`."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string",
+            "description": "The name of the database engine to be used for this Neptune cluster. Defaults to `neptune`."
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "The database engine version."
+        },
+        "FinalSnapshotIdentifier": {
+            "type": "string",
+            "description": "The name of your final Neptune snapshot when this Neptune cluster is deleted. If omitted, no final snapshot will be made."
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "IamDatabaseAuthenticationEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether or mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled."
+        },
+        "IamRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A List of ARNs for the IAM roles to associate to the Neptune Cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string",
+            "description": "The ARN for the KMS encryption key. When specifying `kms_key_arn`, `storage_encrypted` needs to be set to true."
+        },
+        "NeptuneClusterParameterGroupName": {
+            "type": "string",
+            "description": "A cluster parameter group to associate with the cluster."
+        },
+        "NeptuneSubnetGroupName": {
+            "type": "string",
+            "description": "A Neptune subnet group to associate with this Neptune instance."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port on which the Neptune accepts connections. Default is `8182`."
+        },
+        "PreferredBackupWindow": {
+            "type": "string",
+            "description": "The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter. Time in UTC. Default: A 30-minute window selected at random from an 8-hour block of time per region. e.g. 04:00-09:00."
+        },
+        "PreferredMaintenanceWindow": {
+            "type": "string",
+            "description": "The weekly time range during which system maintenance can occur, in (UTC) e.g. wed:04:00-wed:04:30."
+        },
+        "ReaderEndpoint": {
+            "type": "string"
+        },
+        "ReplicationSourceIdentifier": {
+            "type": "string",
+            "description": "ARN of a source Neptune cluster or Neptune instance if this Neptune cluster is to be created as a Read Replica."
+        },
+        "SkipFinalSnapshot": {
+            "type": "boolean",
+            "description": "Determines whether a final Neptune snapshot is created before the Neptune cluster is deleted. If true is specified, no Neptune snapshot is created. If false is specified, a Neptune snapshot is created before the Neptune cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`."
+        },
+        "SnapshotIdentifier": {
+            "type": "string",
+            "description": "Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a Neptune cluster snapshot, or the ARN when specifying a Neptune snapshot."
+        },
+        "StorageEncrypted": {
+            "type": "boolean",
+            "description": "Specifies whether the Neptune cluster is encrypted. The default is `false` if not specified."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the Neptune cluster. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of VPC security groups to associate with the Cluster."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ClusterMembers",
+        "/properties/ClusterResourceId",
+        "/properties/Endpoint",
+        "/properties/HostedZoneId",
+        "/properties/Id",
+        "/properties/ReaderEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,318 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleNotebooksInstance",
+    "description": "CloudFormation equivalent of google_notebooks_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleNotebooksInstance/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AcceleratorConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoreCount": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CoreCount",
+                "Type"
+            ]
+        },
+        "ContainerImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Repository": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Repository"
+            ]
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                },
+                "EnableVtpm": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VmImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageFamily": {
+                    "type": "string"
+                },
+                "ImageName": {
+                    "type": "string"
+                },
+                "Project": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Project"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootDiskSizeGb": {
+            "type": "number"
+        },
+        "BootDiskType": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CustomGpuDriverPath": {
+            "type": "string"
+        },
+        "DataDiskSizeGb": {
+            "type": "number"
+        },
+        "DataDiskType": {
+            "type": "string"
+        },
+        "DiskEncryption": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallGpuDriver": {
+            "type": "boolean"
+        },
+        "InstanceOwners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "KmsKey": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "MachineType": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NoProxyAccess": {
+            "type": "boolean"
+        },
+        "NoPublicIp": {
+            "type": "boolean"
+        },
+        "NoRemoveDataDisk": {
+            "type": "boolean"
+        },
+        "PostStartupScript": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ProxyUri": {
+            "type": "string"
+        },
+        "ServiceAccount": {
+            "type": "string"
+        },
+        "ServiceAccountScopes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "AcceleratorConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AcceleratorConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ContainerImage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContainerImageDefinition"
+            },
+            "maxItems": 1
+        },
+        "ShieldedInstanceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VmImage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VmImageDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "MachineType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProxyUri",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

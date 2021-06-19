@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Consul::NetworkArea",
+    "description": "~> **NOTE:** This feature requires [Consul Enterprise](https://www.consul.io/docs/enterprise/index.html).\n\nThe `consul_network_area` resource manages a relationship between servers in two\ndifferent Consul datacenters.\n\nUnlike Consul's WAN feature, network areas use just the server RPC port for\ncommunication, and relationships can be made between independent pairs of\ndatacenters, so not all servers need to be fully connected. This allows for\ncomplex topologies among Consul datacenters like hub/spoke and more general trees.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-NetworkArea/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerDatacenter": {
+            "type": "string",
+            "description": "The name of the Consul datacenter that will be\njoined to form the area."
+        },
+        "RetryJoin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a list of Consul servers to attempt to\njoin. Servers can be given as `IP`, `IP:port`, `hostname`, or `hostname:port`."
+        },
+        "Token": {
+            "type": "string",
+            "description": "The ACL token to use. This overrides the\ntoken that the agent provides by default."
+        },
+        "UseTls": {
+            "type": "boolean",
+            "description": "Specifies whether gossip over this area should be\nencrypted with TLS if possible. Defaults to `false`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PeerDatacenter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::CloudSigma::Drive",
+    "description": "Provides a CloudSigma Drive resource which can be attached to a Server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudsigma/TF-CloudSigma-Drive/docs/README.md",
+    "definitions": {
+        "MountedOnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceUri": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloneDriveId": {
+            "type": "string",
+            "description": "UUID of the drive that will be cloned."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Media": {
+            "type": "string",
+            "description": "Media representation type. It can be `cdrom` or `disk`."
+        },
+        "MountedOn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MountedOnDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human readable name of the drive."
+        },
+        "ResourceUri": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number",
+            "description": "Size of the drive in bytes."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of the tags UUIDs to be applied to the drive."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Media",
+        "Name",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MountedOn",
+        "/properties/ResourceUri",
+        "/properties/Status",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::AVI::Snmptrapprofile",
+    "description": "The SnmpTrapProfile resource allows the creation and management of Avi SnmpTrapProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Snmptrapprofile/docs/README.md",
+    "definitions": {
+        "TrapServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                },
+                "User": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UserDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthPassphrase": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "PrivPassphrase": {
+                    "type": "string"
+                },
+                "PrivType": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user-friendly name of the snmp trap configuration."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "TrapServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrapServersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/TrapServersDefinition/Community",
+        "/definitions/UserDefinition/AuthPassphrase",
+        "/definitions/UserDefinition/PrivPassphrase"
+    ]
+}

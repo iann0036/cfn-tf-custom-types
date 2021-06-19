@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::Google::ComputeSnapshot",
+    "description": "Represents a Persistent Disk Snapshot resource.\n\nUse snapshots to back up data from your persistent disks. Snapshots are\ndifferent from public images and custom images, which are used primarily\nto create instances or configure instance templates. Snapshots are useful\nfor periodic backup of the data on your persistent disks. You can create\nsnapshots from persistent disks even while they are attached to running\ninstances.\n\nSnapshots are incremental, so you can create regular snapshots on a\npersistent disk faster and at a much lower cost than if you regularly\ncreated a full image of the disk.\n\n\nTo get more information about Snapshot, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/snapshots)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/compute/docs/disks/create-snapshots)\n\n~> **Warning:** All arguments including `snapshot_encryption_key.raw_key` and `source_disk_encryption_key.raw_key` will be stored in the raw\nstate as plain-text. [Read more abo...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeSnapshot/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SnapshotEncryptionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeySelfLink": {
+                    "type": "string"
+                },
+                "KmsKeyServiceAccount": {
+                    "type": "string"
+                },
+                "RawKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SourceDiskEncryptionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyServiceAccount": {
+                    "type": "string"
+                },
+                "RawKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DiskSizeGb": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Licenses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SnapshotId": {
+            "type": "number"
+        },
+        "SourceDisk": {
+            "type": "string"
+        },
+        "SourceDiskLink": {
+            "type": "string"
+        },
+        "StorageBytes": {
+            "type": "number"
+        },
+        "StorageLocations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "SnapshotEncryptionKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotEncryptionKeyDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourceDiskEncryptionKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDiskEncryptionKeyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SourceDisk"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/DiskSizeGb",
+        "/properties/Id",
+        "/properties/LabelFingerprint",
+        "/properties/Licenses",
+        "/properties/SelfLink",
+        "/properties/SnapshotId",
+        "/properties/SourceDiskLink",
+        "/properties/StorageBytes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SnapshotEncryptionKeyDefinition/RawKey",
+        "/definitions/SourceDiskEncryptionKeyDefinition/RawKey"
+    ]
+}

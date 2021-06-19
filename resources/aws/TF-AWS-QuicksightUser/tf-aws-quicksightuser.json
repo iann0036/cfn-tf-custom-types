@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::AWS::QuicksightUser",
+    "description": "Resource for managing QuickSight User",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-QuicksightUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string",
+            "description": "The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The email address of the user that you want to register."
+        },
+        "IamArn": {
+            "type": "string",
+            "description": "The ARN of the IAM user or role that you are registering with Amazon QuickSight."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityType": {
+            "type": "string",
+            "description": "Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts either  `IAM` or `QUICKSIGHT`."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The namespace. Currently, you should set this to `default`."
+        },
+        "SessionName": {
+            "type": "string",
+            "description": "The name of the IAM session to use when assuming roles that can embed QuickSight dashboards."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "The Amazon QuickSight user name that you want to create for the user you are registering."
+        },
+        "UserRole": {
+            "type": "string",
+            "description": "The Amazon QuickSight role of the user. The user role can be one of the following: `READER`, `AUTHOR`, or `ADMIN`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "IdentityType",
+        "UserRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

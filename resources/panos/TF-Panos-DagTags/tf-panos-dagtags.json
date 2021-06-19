@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::Panos::DagTags",
+    "description": "This resource allows you to add and remove dynamic address group tags.\n\nThe `ip` field should be unique in the `panos_dag_tags` block, and there\nshould only be one `panos_dag_tags` block defined in a given plan.\n\n**Note** - Tags are only removed during `terraform destroy`.  Updating an\napplied terraform plan to have alternative tags will leave behind the\nold tags from the previously published plan(s).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-DagTags/docs/README.md",
+    "definitions": {
+        "RegisterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Ip",
+                "Tags"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the DAG tags in (default: `vsys1`)."
+        },
+        "Register": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RegisterDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::TencentCloud::ElasticsearchInstance",
+    "description": "Provides an elasticsearch instance resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ElasticsearchInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MultiZoneInfosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string",
+                    "description": "Availability zone."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of a VPC subnetwork."
+                }
+            },
+            "required": [
+                "AvailabilityZone",
+                "SubnetId"
+            ]
+        },
+        "NodeInfoListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSize": {
+                    "type": "number",
+                    "description": "Node disk size. Unit is GB, and default value is `100`."
+                },
+                "DiskType": {
+                    "type": "string",
+                    "description": "Node disk type. Valid values are `CLOUD_SSD` and `CLOUD_PREMIUM`. The default value is `CLOUD_SSD`."
+                },
+                "Encrypt": {
+                    "type": "boolean",
+                    "description": "Decides to encrypt this disk or not."
+                },
+                "NodeNum": {
+                    "type": "number",
+                    "description": "Number of nodes."
+                },
+                "NodeType": {
+                    "type": "string",
+                    "description": "Node specification, and valid values refer to [document of tencentcloud](https://intl.cloud.tencent.com/document/product/845/18376)."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Node type. Valid values are `hotData`, `warmData` and `dedicatedMaster`. The default value is 'hotData`."
+                }
+            },
+            "required": [
+                "NodeNum",
+                "NodeType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability zone."
+        },
+        "BasicSecurityType": {
+            "type": "number",
+            "description": "Whether to enable X-Pack security authentication in Basic Edition 6.8 and above. Valid values are `1` and `2`. `1` is disabled, `2` is enabled, and default value is `1`."
+        },
+        "ChargePeriod": {
+            "type": "number",
+            "description": "The tenancy of the prepaid instance, and uint is month. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DeployMode": {
+            "type": "number",
+            "description": "Cluster deployment mode. Valid values are `0` and `1`. `0` is single-AZ deployment, and `1` is multi-AZ deployment. Default value is `0`."
+        },
+        "ElasticsearchDomain": {
+            "type": "string"
+        },
+        "ElasticsearchPort": {
+            "type": "number"
+        },
+        "ElasticsearchVip": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "Name of the instance, which can contain 1 to 50 English letters, Chinese characters, digits, dashes(-), or underscores(_)."
+        },
+        "KibanaUrl": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "License type. Valid values are `oss`, `basic` and `platinum`. The default value is `platinum`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password to an instance."
+        },
+        "RenewFlag": {
+            "type": "string",
+            "description": "When enabled, the instance will be renew automatically when it reach the end of the prepaid tenancy. Valid values are `RENEW_FLAG_AUTO` and `RENEW_FLAG_MANUAL`. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of a VPC subnetwork."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the instance. For tag limits, please refer to [Use Limits](https://intl.cloud.tencent.com/document/product/651/13354)."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Version of the instance. Valid values are `5.6.4`, `6.4.3`, `6.8.2` and `7.5.1`."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of a VPC network."
+        },
+        "MultiZoneInfos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MultiZoneInfosDefinition"
+            }
+        },
+        "NodeInfoList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeInfoListDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "Password",
+        "SubnetId",
+        "Version",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ElasticsearchDomain",
+        "/properties/ElasticsearchPort",
+        "/properties/ElasticsearchVip",
+        "/properties/Id",
+        "/properties/KibanaUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

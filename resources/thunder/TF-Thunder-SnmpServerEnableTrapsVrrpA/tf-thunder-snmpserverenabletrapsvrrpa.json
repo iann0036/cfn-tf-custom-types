@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsVrrpA",
+    "description": "`thunder_snmp_server_enable_traps_vrrp_a` Provides details about thunder snmp server enable traps vrrp a",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsVrrpA/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "number",
+            "description": "Enable VRRP-A active trap."
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all VRRP-A group traps."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Standby": {
+            "type": "number",
+            "description": "Enable VRRP-A standby trap."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

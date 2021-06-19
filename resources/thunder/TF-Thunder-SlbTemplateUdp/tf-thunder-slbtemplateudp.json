@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateUdp",
+    "description": "`thunder_slb_template_udp` Provides details about thunder slb template udp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateUdp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "Idle Timeout value (Interval of 60 seconds), default 120 seconds (idle timeout in second, default 120)."
+        },
+        "Immediate": {
+            "type": "number",
+            "description": "Immediate Removal after Transaction."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Fast UDP Template Name."
+        },
+        "Qos": {
+            "type": "number",
+            "description": "QOS level (number)."
+        },
+        "ReSelectIfServerDown": {
+            "type": "number",
+            "description": "re-select another server if service port is down."
+        },
+        "StatelessConnTimeout": {
+            "type": "number",
+            "description": "Stateless Current Connection Timeout value (5 - 120 seconds) (idle timeout in second, default 120)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

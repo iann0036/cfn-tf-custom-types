@@ -1,0 +1,395 @@
+{
+    "typeName": "TF::VRA::Machine",
+    "description": "CloudFormation equivalent of vra_machine",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-Machine/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DisksListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockDeviceId": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "BootConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "DisksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockDeviceId": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BlockDeviceId"
+            ]
+        },
+        "ImageDiskConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "NicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CustomProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomPropertiesDefinition2"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "NetworkId"
+            ]
+        },
+        "CustomPropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            },
+            "description": "Additional properties that may be used to extend the base resource."
+        },
+        "DeploymentId": {
+            "type": "string",
+            "description": "Deployment id that is associated with this resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "DisksList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DisksListDefinition"
+            }
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "ExternalZoneId": {
+            "type": "string"
+        },
+        "Flavor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "ImageRef": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "PowerState": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The id of the project this resource belongs to."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "BootConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BootConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Constraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConstraintsDefinition"
+            }
+        },
+        "Disks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DisksDefinition"
+            }
+        },
+        "ImageDiskConstraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImageDiskConstraintsDefinition"
+            }
+        },
+        "Nics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NicsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Flavor",
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/CreatedAt",
+        "/properties/DisksList",
+        "/properties/ExternalId",
+        "/properties/ExternalRegionId",
+        "/properties/ExternalZoneId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrganizationId",
+        "/properties/Owner",
+        "/properties/PowerState",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

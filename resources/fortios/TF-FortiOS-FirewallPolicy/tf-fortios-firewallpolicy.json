@@ -1,0 +1,1106 @@
+{
+    "typeName": "TF::FortiOS::FirewallPolicy",
+    "description": "Configure IPv4 policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallPolicy/docs/README.md",
+    "definitions": {
+        "AppCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Category IDs."
+                }
+            },
+            "required": []
+        },
+        "AppGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Application group names."
+                }
+            },
+            "required": []
+        },
+        "ApplicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Application IDs."
+                }
+            },
+            "required": []
+        },
+        "CustomLogFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FieldId": {
+                    "type": "string",
+                    "description": "Custom log field."
+                }
+            },
+            "required": []
+        },
+        "DevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Device or group name."
+                }
+            },
+            "required": []
+        },
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Dstaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "DstintfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "FssoGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Names of FSSO groups."
+                }
+            },
+            "required": []
+        },
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceCustomGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Internet Service ID."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcCustomGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service group name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Internet Service ID."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceSrcNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "NtlmEnabledBrowsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UserAgentString": {
+                    "type": "string",
+                    "description": "User agent string."
+                }
+            },
+            "required": []
+        },
+        "PoolnameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "IP pool name."
+                }
+            },
+            "required": []
+        },
+        "Poolname6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "IPv6 pool name."
+                }
+            },
+            "required": []
+        },
+        "RtpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Service and service group names."
+                }
+            },
+            "required": []
+        },
+        "SrcVendorMacDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Vendor MAC ID."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Srcaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "SrcintfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "SslMirrorIntfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Mirror Interface name."
+                }
+            },
+            "required": []
+        },
+        "UrlCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "URL category ID."
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Names of individual users that can authenticate with this policy."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Policy action (allow/deny/ipsec). Valid values: `accept`, `deny`, `ipsec`."
+        },
+        "AntiReplay": {
+            "type": "string",
+            "description": "Enable/disable anti-replay check. Valid values: `enable`, `disable`."
+        },
+        "ApplicationList": {
+            "type": "string",
+            "description": "Name of an existing Application list."
+        },
+        "AuthCert": {
+            "type": "string",
+            "description": "HTTPS server certificate for policy authentication."
+        },
+        "AuthPath": {
+            "type": "string",
+            "description": "Enable/disable authentication-based routing. Valid values: `enable`, `disable`."
+        },
+        "AuthRedirectAddr": {
+            "type": "string",
+            "description": "HTTP-to-HTTPS redirect address for firewall authentication."
+        },
+        "AutoAsicOffload": {
+            "type": "string",
+            "description": "Enable/disable policy traffic ASIC offloading. Valid values: `enable`, `disable`."
+        },
+        "AvProfile": {
+            "type": "string",
+            "description": "Name of an existing Antivirus profile."
+        },
+        "BlockNotification": {
+            "type": "string",
+            "description": "Enable/disable block notification. Valid values: `enable`, `disable`."
+        },
+        "CaptivePortalExempt": {
+            "type": "string",
+            "description": "Enable to exempt some users from the captive portal. Valid values: `enable`, `disable`."
+        },
+        "CapturePacket": {
+            "type": "string",
+            "description": "Enable/disable capture packets. Valid values: `enable`, `disable`."
+        },
+        "CifsProfile": {
+            "type": "string",
+            "description": "Name of an existing CIFS profile."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DecryptedTrafficMirror": {
+            "type": "string",
+            "description": "Decrypted traffic mirror."
+        },
+        "DelayTcpNpuSession": {
+            "type": "string",
+            "description": "Enable TCP NPU session delay to guarantee packet order of 3-way handshake. Valid values: `enable`, `disable`."
+        },
+        "DiffservForward": {
+            "type": "string",
+            "description": "Enable to change packet's DiffServ values to the specified diffservcode-forward value. Valid values: `enable`, `disable`."
+        },
+        "DiffservReverse": {
+            "type": "string",
+            "description": "Enable to change packet's reverse (reply) DiffServ values to the specified diffservcode-rev value. Valid values: `enable`, `disable`."
+        },
+        "DiffservcodeForward": {
+            "type": "string",
+            "description": "Change packet's DiffServ to this value."
+        },
+        "DiffservcodeRev": {
+            "type": "string",
+            "description": "Change packet's reverse (reply) DiffServ to this value."
+        },
+        "Disclaimer": {
+            "type": "string",
+            "description": "Enable/disable user authentication disclaimer. Valid values: `enable`, `disable`."
+        },
+        "DlpSensor": {
+            "type": "string",
+            "description": "Name of an existing DLP sensor."
+        },
+        "DnsfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing DNS filter profile."
+        },
+        "Dsri": {
+            "type": "string",
+            "description": "Enable DSRI to ignore HTTP server responses. Valid values: `enable`, `disable`."
+        },
+        "DstaddrNegate": {
+            "type": "string",
+            "description": "When enabled dstaddr specifies what the destination address must NOT be. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmailCollect": {
+            "type": "string",
+            "description": "Enable/disable email collection. Valid values: `enable`, `disable`."
+        },
+        "EmailfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing email filter profile."
+        },
+        "FileFilterProfile": {
+            "type": "string",
+            "description": "Name of an existing file-filter profile."
+        },
+        "FirewallSessionDirty": {
+            "type": "string",
+            "description": "How to handle sessions if the configuration of this firewall policy changes. Valid values: `check-all`, `check-new`."
+        },
+        "Fixedport": {
+            "type": "string",
+            "description": "Enable to prevent source NAT from changing a session's source port. Valid values: `enable`, `disable`."
+        },
+        "Fsso": {
+            "type": "string",
+            "description": "Enable/disable Fortinet Single Sign-On. Valid values: `enable`, `disable`."
+        },
+        "FssoAgentForNtlm": {
+            "type": "string",
+            "description": "FSSO agent to use for NTLM authentication."
+        },
+        "GeoipAnycast": {
+            "type": "string",
+            "description": "Enable/disable recognition of anycast IP addresses using the geography IP database. Valid values: `enable`, `disable`."
+        },
+        "GeoipMatch": {
+            "type": "string",
+            "description": "Match geography address based either on its physical location or registered location. Valid values: `physical-location`, `registered-location`."
+        },
+        "GlobalLabel": {
+            "type": "string",
+            "description": "Label for the policy that appears when the GUI is in Global View mode."
+        },
+        "HttpPolicyRedirect": {
+            "type": "string",
+            "description": "Redirect HTTP(S) traffic to matching transparent web proxy policy. Valid values: `enable`, `disable`."
+        },
+        "IcapProfile": {
+            "type": "string",
+            "description": "Name of an existing ICAP profile."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityBasedRoute": {
+            "type": "string",
+            "description": "Name of identity-based routing rule."
+        },
+        "Inbound": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: only traffic from the remote network can initiate a VPN. Valid values: `enable`, `disable`."
+        },
+        "InspectionMode": {
+            "type": "string",
+            "description": "Policy inspection mode (Flow/proxy). Default is Flow mode. Valid values: `proxy`, `flow`."
+        },
+        "InternetService": {
+            "type": "string",
+            "description": "Enable/disable use of Internet Services for this policy. If enabled, destination address and service are not used.  Valid values: `enable`, `disable`."
+        },
+        "InternetServiceNegate": {
+            "type": "string",
+            "description": "When enabled internet-service specifies what the service must NOT be. Valid values: `enable`, `disable`."
+        },
+        "InternetServiceSrc": {
+            "type": "string",
+            "description": "Enable/disable use of Internet Services in source for this policy. If enabled, source address is not used.  Valid values: `enable`, `disable`."
+        },
+        "InternetServiceSrcNegate": {
+            "type": "string",
+            "description": "When enabled internet-service-src specifies what the service must NOT be. Valid values: `enable`, `disable`."
+        },
+        "Ippool": {
+            "type": "string",
+            "description": "Enable to use IP Pools for source NAT. Valid values: `enable`, `disable`."
+        },
+        "IpsSensor": {
+            "type": "string",
+            "description": "Name of an existing IPS sensor."
+        },
+        "Label": {
+            "type": "string",
+            "description": "Label for the policy that appears when the GUI is in Section View mode."
+        },
+        "LearningMode": {
+            "type": "string",
+            "description": "Enable to allow everything, but log all of the meaningful data for security information gathering. A learning report will be generated. Valid values: `enable`, `disable`."
+        },
+        "Logtraffic": {
+            "type": "string",
+            "description": "Enable or disable logging. Log all sessions or security profile sessions. Valid values: `all`, `utm`, `disable`."
+        },
+        "LogtrafficStart": {
+            "type": "string",
+            "description": "Record logs when a session starts. Valid values: `enable`, `disable`."
+        },
+        "MatchVip": {
+            "type": "string",
+            "description": "Enable to match packets that have had their destination addresses changed by a VIP. Valid values: `enable`, `disable`."
+        },
+        "MatchVipOnly": {
+            "type": "string",
+            "description": "Enable/disable matching of only those packets that have had their destination addresses changed by a VIP. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Policy name."
+        },
+        "Nat": {
+            "type": "string",
+            "description": "Enable/disable source NAT. Valid values: `enable`, `disable`."
+        },
+        "Natinbound": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: apply destination NAT to inbound traffic. Valid values: `enable`, `disable`."
+        },
+        "Natip": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: source NAT IP address for outgoing traffic."
+        },
+        "Natoutbound": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: apply source NAT to outbound traffic. Valid values: `enable`, `disable`."
+        },
+        "Ntlm": {
+            "type": "string",
+            "description": "Enable/disable NTLM authentication. Valid values: `enable`, `disable`."
+        },
+        "NtlmGuest": {
+            "type": "string",
+            "description": "Enable/disable NTLM guest user access. Valid values: `enable`, `disable`."
+        },
+        "Outbound": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: only traffic from the internal network can initiate a VPN. Valid values: `enable`, `disable`."
+        },
+        "PerIpShaper": {
+            "type": "string",
+            "description": "Per-IP traffic shaper."
+        },
+        "PermitAnyHost": {
+            "type": "string",
+            "description": "Accept UDP packets from any host. Valid values: `enable`, `disable`."
+        },
+        "PermitStunHost": {
+            "type": "string",
+            "description": "Accept UDP packets from any Session Traversal Utilities for NAT (STUN) host. Valid values: `enable`, `disable`."
+        },
+        "Policyid": {
+            "type": "number",
+            "description": "Policy ID."
+        },
+        "ProfileGroup": {
+            "type": "string",
+            "description": "Name of profile group."
+        },
+        "ProfileProtocolOptions": {
+            "type": "string",
+            "description": "Name of an existing Protocol options profile."
+        },
+        "ProfileType": {
+            "type": "string",
+            "description": "Determine whether the firewall policy allows security profile groups or single profiles only. Valid values: `single`, `group`."
+        },
+        "RadiusMacAuthBypass": {
+            "type": "string",
+            "description": "Enable MAC authentication bypass. The bypassed MAC address must be received from RADIUS server. Valid values: `enable`, `disable`."
+        },
+        "RedirectUrl": {
+            "type": "string",
+            "description": "URL users are directed to after seeing and accepting the disclaimer or authenticating."
+        },
+        "ReplacemsgOverrideGroup": {
+            "type": "string",
+            "description": "Override the default replacement message group for this policy."
+        },
+        "ReputationDirection": {
+            "type": "string",
+            "description": "Direction of the initial traffic for reputation to take effect. Valid values: `source`, `destination`."
+        },
+        "ReputationMinimum": {
+            "type": "number",
+            "description": "Minimum Reputation to take action."
+        },
+        "Rsso": {
+            "type": "string",
+            "description": "Enable/disable RADIUS single sign-on (RSSO). Valid values: `enable`, `disable`."
+        },
+        "RtpNat": {
+            "type": "string",
+            "description": "Enable Real Time Protocol (RTP) NAT. Valid values: `disable`, `enable`."
+        },
+        "ScanBotnetConnections": {
+            "type": "string",
+            "description": "Block or monitor connections to Botnet servers or disable Botnet scanning. Valid values: `disable`, `block`, `monitor`."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Schedule name.(Default is `always`)."
+        },
+        "ScheduleTimeout": {
+            "type": "string",
+            "description": "Enable to force current sessions to end when the schedule object times out. Disable allows them to end from inactivity. Valid values: `enable`, `disable`."
+        },
+        "SendDenyPacket": {
+            "type": "string",
+            "description": "Enable to send a reply when a session is denied or blocked by a firewall policy. Valid values: `disable`, `enable`."
+        },
+        "ServiceNegate": {
+            "type": "string",
+            "description": "When enabled service specifies what the service must NOT be. Valid values: `enable`, `disable`."
+        },
+        "SessionTtl": {
+            "type": "number",
+            "description": "TTL in seconds for sessions accepted by this policy (0 means use the system default session TTL)."
+        },
+        "SpamfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing Spam filter profile."
+        },
+        "SrcaddrNegate": {
+            "type": "string",
+            "description": "When enabled srcaddr specifies what the source address must NOT be. Valid values: `enable`, `disable`."
+        },
+        "SshFilterProfile": {
+            "type": "string",
+            "description": "Name of an existing SSH filter profile."
+        },
+        "SshPolicyRedirect": {
+            "type": "string",
+            "description": "Redirect SSH traffic to matching transparent proxy policy. Valid values: `enable`, `disable`."
+        },
+        "SslMirror": {
+            "type": "string",
+            "description": "Enable to copy decrypted SSL traffic to a FortiGate interface (called SSL mirroring). Valid values: `enable`, `disable`."
+        },
+        "SslSshProfile": {
+            "type": "string",
+            "description": "Name of an existing SSL SSH profile."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable or disable this policy. Valid values: `enable`, `disable`."
+        },
+        "TcpMssReceiver": {
+            "type": "number",
+            "description": "Receiver TCP maximum segment size (MSS)."
+        },
+        "TcpMssSender": {
+            "type": "number",
+            "description": "Sender TCP maximum segment size (MSS)."
+        },
+        "TcpSessionWithoutSyn": {
+            "type": "string",
+            "description": "Enable/disable creation of TCP session without SYN flag. Valid values: `all`, `data-only`, `disable`."
+        },
+        "TimeoutSendRst": {
+            "type": "string",
+            "description": "Enable/disable sending RST packets when TCP sessions expire. Valid values: `enable`, `disable`."
+        },
+        "Tos": {
+            "type": "string",
+            "description": "ToS (Type of Service) value used for comparison."
+        },
+        "TosMask": {
+            "type": "string",
+            "description": "Non-zero bit positions are used for comparison while zero bit positions are ignored."
+        },
+        "TosNegate": {
+            "type": "string",
+            "description": "Enable negated TOS match. Valid values: `enable`, `disable`."
+        },
+        "TrafficShaper": {
+            "type": "string",
+            "description": "Traffic shaper."
+        },
+        "TrafficShaperReverse": {
+            "type": "string",
+            "description": "Reverse traffic shaper."
+        },
+        "UtmStatus": {
+            "type": "string",
+            "description": "Enable to add one or more security profiles (AV, IPS, etc.) to the firewall policy. Valid values: `enable`, `disable`."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VlanCosFwd": {
+            "type": "number",
+            "description": "VLAN forward direction user priority: 255 passthrough, 0 lowest, 7 highest."
+        },
+        "VlanCosRev": {
+            "type": "number",
+            "description": "VLAN reverse direction user priority: 255 passthrough, 0 lowest, 7 highest."
+        },
+        "VlanFilter": {
+            "type": "string",
+            "description": "Set VLAN filters."
+        },
+        "VoipProfile": {
+            "type": "string",
+            "description": "Name of an existing VoIP profile."
+        },
+        "Vpntunnel": {
+            "type": "string",
+            "description": "Policy-based IPsec VPN: name of the IPsec VPN Phase 1."
+        },
+        "WafProfile": {
+            "type": "string",
+            "description": "Name of an existing Web application firewall profile."
+        },
+        "Wanopt": {
+            "type": "string",
+            "description": "Enable/disable WAN optimization. Valid values: `enable`, `disable`."
+        },
+        "WanoptDetection": {
+            "type": "string",
+            "description": "WAN optimization auto-detection mode. Valid values: `active`, `passive`, `off`."
+        },
+        "WanoptPassiveOpt": {
+            "type": "string",
+            "description": "WAN optimization passive mode options. This option decides what IP address will be used to connect server. Valid values: `default`, `transparent`, `non-transparent`."
+        },
+        "WanoptPeer": {
+            "type": "string",
+            "description": "WAN optimization peer."
+        },
+        "WanoptProfile": {
+            "type": "string",
+            "description": "WAN optimization profile."
+        },
+        "Wccp": {
+            "type": "string",
+            "description": "Enable/disable forwarding traffic matching this policy to a configured WCCP server. Valid values: `enable`, `disable`."
+        },
+        "Webcache": {
+            "type": "string",
+            "description": "Enable/disable web cache. Valid values: `enable`, `disable`."
+        },
+        "WebcacheHttps": {
+            "type": "string",
+            "description": "Enable/disable web cache for HTTPS. Valid values: `disable`, `enable`."
+        },
+        "WebfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing Web filter profile."
+        },
+        "WebproxyForwardServer": {
+            "type": "string",
+            "description": "Web proxy forward server name."
+        },
+        "WebproxyProfile": {
+            "type": "string",
+            "description": "Webproxy profile name."
+        },
+        "Wsso": {
+            "type": "string",
+            "description": "Enable/disable WiFi Single Sign On (WSSO). Valid values: `enable`, `disable`."
+        },
+        "AppCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppCategoryDefinition"
+            }
+        },
+        "AppGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppGroupDefinition"
+            }
+        },
+        "Application": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationDefinition"
+            }
+        },
+        "CustomLogFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomLogFieldsDefinition"
+            }
+        },
+        "Devices": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DevicesDefinition"
+            }
+        },
+        "Dstaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstaddrDefinition"
+            }
+        },
+        "Dstaddr6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Dstaddr6Definition"
+            }
+        },
+        "Dstintf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstintfDefinition"
+            },
+            "minItems": 1
+        },
+        "FssoGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FssoGroupsDefinition"
+            }
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            }
+        },
+        "InternetServiceCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceCustomDefinition"
+            }
+        },
+        "InternetServiceCustomGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceCustomGroupDefinition"
+            }
+        },
+        "InternetServiceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceGroupDefinition"
+            }
+        },
+        "InternetServiceId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceIdDefinition"
+            }
+        },
+        "InternetServiceName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceNameDefinition"
+            }
+        },
+        "InternetServiceSrcCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcCustomDefinition"
+            }
+        },
+        "InternetServiceSrcCustomGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcCustomGroupDefinition"
+            }
+        },
+        "InternetServiceSrcGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcGroupDefinition"
+            }
+        },
+        "InternetServiceSrcId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcIdDefinition"
+            }
+        },
+        "InternetServiceSrcName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceSrcNameDefinition"
+            }
+        },
+        "NtlmEnabledBrowsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NtlmEnabledBrowsersDefinition"
+            }
+        },
+        "Poolname": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PoolnameDefinition"
+            }
+        },
+        "Poolname6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Poolname6Definition"
+            }
+        },
+        "RtpAddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RtpAddrDefinition"
+            }
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            }
+        },
+        "SrcVendorMac": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcVendorMacDefinition"
+            }
+        },
+        "Srcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcaddrDefinition"
+            }
+        },
+        "Srcaddr6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Srcaddr6Definition"
+            }
+        },
+        "Srcintf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcintfDefinition"
+            },
+            "minItems": 1
+        },
+        "SslMirrorIntf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslMirrorIntfDefinition"
+            }
+        },
+        "UrlCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlCategoryDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

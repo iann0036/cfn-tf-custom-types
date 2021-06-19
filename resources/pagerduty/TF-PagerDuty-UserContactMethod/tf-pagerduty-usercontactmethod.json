@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::PagerDuty::UserContactMethod",
+    "description": "A [contact method](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_contact_methods) is a contact method for a PagerDuty user (email, phone or SMS).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-UserContactMethod/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        },
+        "Blacklisted": {
+            "type": "boolean"
+        },
+        "CountryCode": {
+            "type": "number",
+            "description": "The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        },
+        "SendShortEmail": {
+            "type": "boolean",
+            "description": "Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).\n* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "The ID of the user.\n* `type` - (Required) The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).\n* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "Label",
+        "Type",
+        "UserId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Blacklisted",
+        "/properties/Enabled",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

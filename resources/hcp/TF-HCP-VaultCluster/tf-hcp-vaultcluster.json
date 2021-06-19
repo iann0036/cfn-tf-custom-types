@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::HCP::VaultCluster",
+    "description": "CloudFormation equivalent of hcp_vault_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcp/TF-HCP-VaultCluster/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudProvider": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "HvnId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinVaultVersion": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "PublicEndpoint": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "VaultPrivateEndpointUrl": {
+            "type": "string"
+        },
+        "VaultPublicEndpointUrl": {
+            "type": "string"
+        },
+        "VaultVersion": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "HvnId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudProvider",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Namespace",
+        "/properties/OrganizationId",
+        "/properties/ProjectId",
+        "/properties/Region",
+        "/properties/VaultPrivateEndpointUrl",
+        "/properties/VaultPublicEndpointUrl",
+        "/properties/VaultVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

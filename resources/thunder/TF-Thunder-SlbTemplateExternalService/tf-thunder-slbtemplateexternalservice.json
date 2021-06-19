@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateExternalService",
+    "description": "`thunder_slb_template_external_service` Provides details about thunder slb template external service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateExternalService/docs/README.md",
+    "definitions": {
+        "BypassIpCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BypassIp": {
+                    "type": "string"
+                },
+                "Mask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RequestHeaderForwardListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestHeaderForward": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018continue\u2019: Continue; \u2018drop\u2019: Drop; \u2018reset\u2019: Reset;."
+        },
+        "FailureAction": {
+            "type": "string",
+            "description": "\u2018continue\u2019: Continue; \u2018drop\u2019: Drop; \u2018reset\u2019: Reset;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "External Service Template Name."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Bind a Service Group to the template (Service Group Name)."
+        },
+        "SharedPartitionPersistSourceIpTemplate": {
+            "type": "number",
+            "description": "Reference a persist source ip template from shared partition."
+        },
+        "SharedPartitionTcpProxyTemplate": {
+            "type": "number",
+            "description": "Reference a TCP Proxy template from shared partition."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP persistence template (Source IP persistence template name)."
+        },
+        "TcpProxy": {
+            "type": "string",
+            "description": "TCP proxy template (TCP proxy template name)."
+        },
+        "TemplatePersistSourceIpShared": {
+            "type": "string",
+            "description": "Source IP Persistence Template Name."
+        },
+        "TemplateTcpProxyShared": {
+            "type": "string",
+            "description": "TCP Proxy Template name."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout value 1 - 200 in units of 200ms, default is 5 (default is 1000ms) (1 - 200 in units of 200ms, default is 5 (1000ms))."
+        },
+        "Type": {
+            "type": "string",
+            "description": "\u2018skyfire-icap\u2019: Skyfire ICAP service; \u2018url-filter\u2019: URL filtering service;."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "BypassIpCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BypassIpCfgDefinition"
+            }
+        },
+        "RequestHeaderForwardList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestHeaderForwardListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

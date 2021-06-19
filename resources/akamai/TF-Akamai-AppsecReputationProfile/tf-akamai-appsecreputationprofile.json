@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Akamai::AppsecReputationProfile",
+    "description": "Use the `akamai_appsec_reputation_profile` resource to create or modify a reputation profile for a specific security configuration version.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecReputationProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ReputationProfile": {
+            "type": "string",
+            "description": "The name of a file containing a JSON-formatted definition of the reputation profile. ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#postreputationprofiles))."
+        },
+        "ReputationProfileId": {
+            "type": "number"
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the security configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "ReputationProfile",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ReputationProfileId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

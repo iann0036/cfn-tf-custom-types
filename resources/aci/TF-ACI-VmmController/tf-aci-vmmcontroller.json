@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::ACI::VmmController",
+    "description": "CloudFormation equivalent of aci_vmm_controller",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-VmmController/docs/README.md",
+    "definitions": {
+        "RelationVmmRsVmmCtrlrPDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EpgDeplPref": {
+                    "type": "string"
+                },
+                "TargetDn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetDn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DvsVersion": {
+            "type": "string"
+        },
+        "HostOrIp": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InventoryTrigSt": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "MsftConfigErrMsg": {
+            "type": "string"
+        },
+        "MsftConfigIssues": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "N1kvStatsMode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string"
+        },
+        "RelationVmmRsAcc": {
+            "type": "string"
+        },
+        "RelationVmmRsCtrlrPMonPol": {
+            "type": "string"
+        },
+        "RelationVmmRsMcastAddrNs": {
+            "type": "string"
+        },
+        "RelationVmmRsMgmtEPg": {
+            "type": "string"
+        },
+        "RelationVmmRsToExtDevMgr": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationVmmRsVxlanNs": {
+            "type": "string"
+        },
+        "RelationVmmRsVxlanNsDef": {
+            "type": "string"
+        },
+        "RootContName": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "SeqNum": {
+            "type": "string"
+        },
+        "StatsMode": {
+            "type": "string"
+        },
+        "VmmDomainDn": {
+            "type": "string"
+        },
+        "VxlanDeplPref": {
+            "type": "string"
+        },
+        "RelationVmmRsVmmCtrlrP": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationVmmRsVmmCtrlrPDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VmmDomainDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

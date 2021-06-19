@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::TencentCloud::TcrInstance",
+    "description": "Use this resource to create tcr instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-TcrInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteBucket": {
+            "type": "boolean",
+            "description": "Indicate to delete the COS bucket which is auto-created with the instance or not."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "TCR types. Valid values are: `standard`, `basic`, `premium`."
+        },
+        "InternalEndPoint": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the TCR instance."
+        },
+        "OpenPublicOperation": {
+            "type": "boolean",
+            "description": "Control public network access."
+        },
+        "PublicDomain": {
+            "type": "string"
+        },
+        "PublicStatus": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The available tags within this TCR instance."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InternalEndPoint",
+        "/properties/PublicDomain",
+        "/properties/PublicStatus",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

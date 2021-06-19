@@ -1,0 +1,317 @@
+{
+    "typeName": "TF::OpenNebula::VirtualMachine",
+    "description": "Provides an OpenNebula virtual machine resource.\n\nThis resource allows you to manage virtual machines on your OpenNebula clusters. When applied,\na new virtual machine is created. When destroyed, this virtual machine is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-VirtualMachine/docs/README.md",
+    "definitions": {
+        "ContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "ImageId": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GraphicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keymap": {
+                    "type": "string"
+                },
+                "Listen": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Listen",
+                "Type"
+            ]
+        },
+        "NicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "number"
+                },
+                "PhysicalDevice": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "NetworkId"
+            ]
+        },
+        "OsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arch": {
+                    "type": "string"
+                },
+                "Boot": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Arch",
+                "Boot"
+            ]
+        },
+        "VmgroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Role": {
+                    "type": "string"
+                },
+                "VmgroupId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Role",
+                "VmgroupId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Context": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContextDefinition"
+            },
+            "description": "Array of free form key=value pairs, rendered and added to the CONTEXT variables for the VM. Recommended to include: `NETWORK = \"YES\"` and `SET_HOSTNAME = \"$NAME\"`. If a `template_id` is set, see [Instantiate from a template](#instantiate-from-a-template) for details."
+        },
+        "Cpu": {
+            "type": "number",
+            "description": "Amount of CPU shares assigned to the VM. **Mandatory if** `template_id` **is not set**."
+        },
+        "Gid": {
+            "type": "number"
+        },
+        "Gname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "Name of the group which owns the virtual machine. Defaults to the caller primary group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Lcmstate": {
+            "type": "number"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Amount of RAM assigned to the VM in MB. **Mandatory if** `template_id` **is not set**."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual machine."
+        },
+        "Pending": {
+            "type": "boolean",
+            "description": "Pending state during VM creation. Defaults to `false`."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on virtual machine. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "State": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Virtual Machine tags (Key = Value)."
+        },
+        "TemplateId": {
+            "type": "number",
+            "description": "If set, VM are instantiated from the template ID. See [Instantiate from a template](#instantiate-from-a-template) for details. Changing this argument triggers a new resource."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout (in Minutes) for VM availability. Defaults to 3 minutes."
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uname": {
+            "type": "string"
+        },
+        "Vcpu": {
+            "type": "number"
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Graphics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GraphicsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicDefinition"
+            }
+        },
+        "Os": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Vmgroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VmgroupDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gid",
+        "/properties/Gname",
+        "/properties/Id",
+        "/properties/Instance",
+        "/properties/Ip",
+        "/properties/Lcmstate",
+        "/properties/State",
+        "/properties/Uid",
+        "/properties/Uname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

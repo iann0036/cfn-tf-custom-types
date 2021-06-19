@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::FortiOS::UserDomaincontroller",
+    "description": "Configure domain controller entries.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserDomaincontroller/docs/README.md",
+    "definitions": {
+        "ExtraServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Server ID."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "Domain controller IP address."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port to be used for communication with the domain controller (default = 445)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Domain DNS name."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "Domain controller IP address."
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "LDAP server name."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Domain controller entry name."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port to be used for communication with the domain controller (default = 445)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ExtraServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtraServerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpAddress",
+        "LdapServer"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

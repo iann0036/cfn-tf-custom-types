@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Cloudflare::Filter",
+    "description": "Filter expressions that can be referenced across multiple features, e.g. [Firewall Rule](firewall_rule.html). The expression format is similar to [Wireshark Display Filter](https://www.wireshark.org/docs/man-pages/wireshark-filter.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-Filter/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A note that you can use to describe the purpose of the filter."
+        },
+        "Expression": {
+            "type": "string",
+            "description": "The filter expression to be used."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Paused": {
+            "type": "boolean",
+            "description": "Whether this filter is currently paused. Boolean value."
+        },
+        "Ref": {
+            "type": "string",
+            "description": "Short reference tag to quickly select related rules."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone to which the Filter should be added."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Expression",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

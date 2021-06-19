@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::OneLogin::Smarthooks",
+    "description": "Manage SmartHook resources.\n\nThis resource allows you to create and configure SmartHooks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-Smarthooks/docs/README.md",
+    "definitions": {
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PackagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Source",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContextVersion": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string",
+            "description": "Timestamp for smarthook's last update."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates if function is available for execution or not. Default true."
+        },
+        "EnvVars": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of predefined environment variables to be supplied to the function at runtime."
+        },
+        "Function": {
+            "type": "string",
+            "description": "A base64 encoded blob, or Heredoc string containing the javascript function code."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "description": "A list of options for the hook\n* `risk_enabled` - (Required) When true a risk score and risk reasons will be passed in the context. Only applies authentication time hooks. E.g. pre-authentication, user-migration. Default false."
+        },
+        "Packages": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PackagesDefinition"
+            },
+            "description": "A list of public npm packages than will be installed as part of the function build process. These packages names must be on our allowlist. See Node Modules section of this doc. Packages can be any version and support the semantic versioning syntax used by NPM."
+        },
+        "Retries": {
+            "type": "number",
+            "description": "Number of retries if execution fails. Default 0, Max 4."
+        },
+        "Runtime": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "The smarthook's status."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "The number of milliseconds to allow before timeout. Default 1000, Max 10000."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The name of the hook. Must be one of: `user-migration` `pre-authentication` `pre-user-create` `post-user-create` `pre-user-update` `post-user-update`."
+        },
+        "UpdatedAt": {
+            "type": "string",
+            "description": "Timestamp for smarthook's last update."
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Disabled",
+        "EnvVars",
+        "Function",
+        "Packages",
+        "Retries",
+        "Runtime",
+        "Timeout",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::Vault::ApproleAuthBackendRole",
+    "description": "Manages an AppRole auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/approle) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-ApproleAuthBackendRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string",
+            "description": "The unique name of the auth backend to configure.\nDefaults to `approle`."
+        },
+        "BindSecretId": {
+            "type": "boolean",
+            "description": "Whether or not to require `secret_id` to be\npresented when logging in using this AppRole. Defaults to `true`."
+        },
+        "BoundCidrList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RoleId": {
+            "type": "string",
+            "description": "The RoleID of this role. If not specified, one will be\nauto-generated."
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "The name of the role."
+        },
+        "SecretIdBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set,\nspecifies blocks of IP addresses which can perform the login operation."
+        },
+        "SecretIdNumUses": {
+            "type": "number",
+            "description": "The number of times any particular SecretID\ncan be used to fetch a token from this AppRole, after which the SecretID will\nexpire. A value of zero will allow unlimited uses."
+        },
+        "SecretIdTtl": {
+            "type": "number",
+            "description": "The number of seconds after which any SecretID\nexpires."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RoleName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

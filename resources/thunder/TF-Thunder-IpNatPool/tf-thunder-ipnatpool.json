@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Thunder::IpNatPool",
+    "description": "`thunder_ip_nat_pool` Provides details about thunder ip nat pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-IpNatPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChunkNetmask": {
+            "type": "string"
+        },
+        "EndAddress": {
+            "type": "string",
+            "description": "Configure end IP address of NAT pool."
+        },
+        "Ethernet": {
+            "type": "number",
+            "description": "Ethernet interface."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "Configure gateway IP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpRr": {
+            "type": "number",
+            "description": "Use IP address round-robin behavior."
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "Configure mask for pool."
+        },
+        "PoolName": {
+            "type": "string",
+            "description": "Specify pool name or pool group."
+        },
+        "PortOverload": {
+            "type": "number"
+        },
+        "ScaleoutDeviceId": {
+            "type": "number",
+            "description": "Configure Scaleout device id to which this NAT pool is to be bound (Specify Scaleout device id)."
+        },
+        "StartAddress": {
+            "type": "string",
+            "description": "Configure start IP address of NAT pool."
+        },
+        "UseIfIp": {
+            "type": "number",
+            "description": "Use Interface IP."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Vrid": {
+            "type": "number",
+            "description": "Configure VRRP-A vrid (Specify ha VRRP-A vrid)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

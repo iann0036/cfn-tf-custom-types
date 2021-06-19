@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::AWS::CognitoResourceServer",
+    "description": "Provides a Cognito Resource Server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CognitoResourceServer/docs/README.md",
+    "definitions": {
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScopeDescription": {
+                    "type": "string"
+                },
+                "ScopeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ScopeDescription",
+                "ScopeName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string",
+            "description": "An identifier for the resource server."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the resource server."
+        },
+        "ScopeIdentifiers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UserPoolId": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScopeDefinition"
+            },
+            "maxItems": 100
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Identifier",
+        "Name",
+        "UserPoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ScopeIdentifiers"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

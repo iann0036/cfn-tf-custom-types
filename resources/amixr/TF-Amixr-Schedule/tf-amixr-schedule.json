@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::Amixr::Schedule",
+    "description": "Manage a [schedule](https://api-docs.amixr.io/#schedules).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/amixr/TF-Amixr-Schedule/docs/README.md",
+    "definitions": {
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChannelId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "IcalUrl": {
+            "type": "string",
+            "description": "The URL of the external calendar iCal file\n* `slack` - (Optional) Dictionary with slack-specific settings for a schedule. Includes:\n- `channel_id` - Slack channel id. Reminder about schedule shifts will be directed to this channel in Slack."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The schedule's name\n* `time_zone` - (Optional) The schedule's time zone. More information about [time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).\n* `ical_url` - (Optional) The URL of the external calendar iCal file\n* `slack` - (Optional) Dictionary with slack-specific settings for a schedule. Includes:\n- `channel_id` - Slack channel id. Reminder about schedule shifts will be directed to this channel in Slack."
+        },
+        "TimeZone": {
+            "type": "string",
+            "description": "The schedule's time zone. More information about [time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).\n* `ical_url` - (Optional) The URL of the external calendar iCal file\n* `slack` - (Optional) Dictionary with slack-specific settings for a schedule. Includes:\n- `channel_id` - Slack channel id. Reminder about schedule shifts will be directed to this channel in Slack."
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

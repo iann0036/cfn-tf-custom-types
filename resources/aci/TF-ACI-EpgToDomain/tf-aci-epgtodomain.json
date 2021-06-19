@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::ACI::EpgToDomain",
+    "description": "CloudFormation equivalent of aci_epg_to_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-EpgToDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowMicroSeg": {
+            "type": "boolean"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ApplicationEpgDn": {
+            "type": "string"
+        },
+        "BindingType": {
+            "type": "string"
+        },
+        "Delimiter": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Encap": {
+            "type": "string"
+        },
+        "EncapMode": {
+            "type": "string"
+        },
+        "EpgCos": {
+            "type": "string"
+        },
+        "EpgCosPref": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstrImedcy": {
+            "type": "string"
+        },
+        "LagPolicyName": {
+            "type": "string"
+        },
+        "NetflowDir": {
+            "type": "string"
+        },
+        "NetflowPref": {
+            "type": "string"
+        },
+        "NumPorts": {
+            "type": "string"
+        },
+        "PortAllocation": {
+            "type": "string"
+        },
+        "PrimaryEncap": {
+            "type": "string"
+        },
+        "PrimaryEncapInner": {
+            "type": "string"
+        },
+        "ResImedcy": {
+            "type": "string"
+        },
+        "SecondaryEncapInner": {
+            "type": "string"
+        },
+        "SwitchingMode": {
+            "type": "string"
+        },
+        "Tdn": {
+            "type": "string"
+        },
+        "VmmAllowPromiscuous": {
+            "type": "string"
+        },
+        "VmmForgedTransmits": {
+            "type": "string"
+        },
+        "VmmId": {
+            "type": "string"
+        },
+        "VmmMacChanges": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationEpgDn",
+        "Tdn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VmmId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

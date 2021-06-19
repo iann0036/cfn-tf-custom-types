@@ -1,0 +1,545 @@
+{
+    "typeName": "TF::Volterra::NetworkPolicy",
+    "description": "CloudFormation equivalent of volterra_network_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-NetworkPolicy/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Any": {
+                    "type": "boolean"
+                },
+                "InsideEndpoints": {
+                    "type": "boolean"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "OutsideEndpoints": {
+                    "type": "boolean"
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                },
+                "PrefixList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrefixListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressRulesDefinition"
+                    }
+                },
+                "IngressRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LabelSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expressions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Expressions"
+            ]
+        },
+        "PrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Prefixes"
+            ]
+        },
+        "EgressRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AllTcpTraffic": {
+                    "type": "boolean"
+                },
+                "AllTraffic": {
+                    "type": "boolean"
+                },
+                "AllUdpTraffic": {
+                    "type": "boolean"
+                },
+                "Any": {
+                    "type": "boolean"
+                },
+                "InsideEndpoints": {
+                    "type": "boolean"
+                },
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "OutsideEndpoints": {
+                    "type": "boolean"
+                },
+                "RuleDescription": {
+                    "type": "string"
+                },
+                "RuleName": {
+                    "type": "string"
+                },
+                "AdvAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdvActionDefinition"
+                    }
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationsDefinition"
+                    }
+                },
+                "IpPrefixSet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpPrefixSetDefinition"
+                    }
+                },
+                "LabelMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelMatcherDefinition"
+                    }
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "PrefixList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrefixListDefinition"
+                    }
+                },
+                "ProtocolPortRange": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolPortRangeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IngressRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AllTcpTraffic": {
+                    "type": "boolean"
+                },
+                "AllTraffic": {
+                    "type": "boolean"
+                },
+                "AllUdpTraffic": {
+                    "type": "boolean"
+                },
+                "Any": {
+                    "type": "boolean"
+                },
+                "InsideEndpoints": {
+                    "type": "boolean"
+                },
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "OutsideEndpoints": {
+                    "type": "boolean"
+                },
+                "RuleDescription": {
+                    "type": "string"
+                },
+                "RuleName": {
+                    "type": "string"
+                },
+                "AdvAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdvActionDefinition"
+                    }
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationsDefinition"
+                    }
+                },
+                "IpPrefixSet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpPrefixSetDefinition"
+                    }
+                },
+                "LabelMatcher": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelMatcherDefinition"
+                    }
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "PrefixList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrefixListDefinition"
+                    }
+                },
+                "ProtocolPortRange": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolPortRangeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ApplicationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpPrefixSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelMatcherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProtocolPortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PortRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointDefinition"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

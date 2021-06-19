@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::FortiOS::Wirelesscontrollerhotspot20H2qposuprovider",
+    "description": "Configure online sign up (OSU) provider list.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Wirelesscontrollerhotspot20H2qposuprovider/docs/README.md",
+    "definitions": {
+        "FriendlyNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FriendlyName": {
+                    "type": "string",
+                    "description": "OSU provider friendly name."
+                },
+                "Index": {
+                    "type": "number",
+                    "description": "OSU provider friendly name index."
+                },
+                "Lang": {
+                    "type": "string",
+                    "description": "Language code."
+                }
+            },
+            "required": []
+        },
+        "ServiceDescriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lang": {
+                    "type": "string",
+                    "description": "Language code."
+                },
+                "ServiceDescription": {
+                    "type": "string",
+                    "description": "Service description."
+                },
+                "ServiceId": {
+                    "type": "number",
+                    "description": "OSU service ID."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Icon": {
+            "type": "string",
+            "description": "OSU provider icon."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "OSU provider ID."
+        },
+        "OsuMethod": {
+            "type": "string",
+            "description": "OSU method list. Valid values: `oma-dm`, `soap-xml-spp`, `reserved`."
+        },
+        "OsuNai": {
+            "type": "string",
+            "description": "OSU NAI."
+        },
+        "ServerUri": {
+            "type": "string",
+            "description": "Server URI."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "FriendlyName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FriendlyNameDefinition"
+            }
+        },
+        "ServiceDescription": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDescriptionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

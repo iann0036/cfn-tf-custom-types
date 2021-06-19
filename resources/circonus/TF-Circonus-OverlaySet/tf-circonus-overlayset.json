@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::Circonus::OverlaySet",
+    "description": "CloudFormation equivalent of circonus_overlay_set",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-OverlaySet/docs/README.md",
+    "definitions": {
+        "OverlaysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "DataOpts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DataOptsDefinition"
+                    },
+                    "minItems": 1
+                },
+                "UiSpecs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UiSpecsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "DataOptsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GraphTitle": {
+                    "type": "string"
+                },
+                "GraphUuid": {
+                    "type": "string"
+                },
+                "XShift": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GraphTitle",
+                "GraphUuid",
+                "XShift"
+            ]
+        },
+        "UiSpecsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Decouple": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Z": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Label",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GraphCid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Overlays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OverlaysDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GraphCid",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

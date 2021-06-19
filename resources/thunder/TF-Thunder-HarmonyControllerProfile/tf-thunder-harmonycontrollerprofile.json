@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::Thunder::HarmonyControllerProfile",
+    "description": "`thunder_harmony_controller_profile` provides details about harmony-controller profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-HarmonyControllerProfile/docs/README.md",
+    "definitions": {
+        "ThunderMgmtIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "'register\u2019: Register the device to the controller; 'deregister\u2019: Deregister the device from controller;."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "availablity zone of the thunder-device."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Set harmony controller host adddress."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Set port for remote Harmony Controller, default is 8443."
+        },
+        "Provider2": {
+            "type": "string",
+            "description": "provider for the harmony-controller."
+        },
+        "Region": {
+            "type": "string",
+            "description": "region of the thunder-device."
+        },
+        "SecretValue": {
+            "type": "string",
+            "description": "Specify the password for the user."
+        },
+        "UseMgmtPort": {
+            "type": "number",
+            "description": "Use management port for connections."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "user-name for the tenant."
+        },
+        "ThunderMgmtIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThunderMgmtIpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

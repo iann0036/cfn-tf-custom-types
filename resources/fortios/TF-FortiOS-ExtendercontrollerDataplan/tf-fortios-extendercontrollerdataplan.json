@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::FortiOS::ExtendercontrollerDataplan",
+    "description": "FortiExtender dataplan configuration. Applies to FortiOS Version `>= 6.4.2`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ExtendercontrollerDataplan/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Apn": {
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "Authentication type. Valid values: `none`, `pap`, `chap`."
+        },
+        "BillingDate": {
+            "type": "number",
+            "description": "Billing day of the month (1 - 31)."
+        },
+        "Capacity": {
+            "type": "number",
+            "description": "Capacity in MB (0 - 102400000)."
+        },
+        "Carrier": {
+            "type": "string",
+            "description": "Carrier configuration."
+        },
+        "Iccid": {
+            "type": "string",
+            "description": "ICCID configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ModemId": {
+            "type": "string",
+            "description": "Dataplan's modem specifics, if any. Valid values: `modem1`, `modem2`, `all`."
+        },
+        "MonthlyFee": {
+            "type": "number",
+            "description": "Monthly fee of dataplan (0 - 100000, in local currency)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "FortiExtender dataplan name."
+        },
+        "Overage": {
+            "type": "string",
+            "description": "Enable/disable dataplan overage detection. Valid values: `disable`, `enable`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password."
+        },
+        "Pdn": {
+            "type": "string"
+        },
+        "PreferredSubnet": {
+            "type": "number",
+            "description": "Preferred subnet mask (8 - 32)."
+        },
+        "PrivateNetwork": {
+            "type": "string",
+            "description": "Enable/disable dataplan private network support. Valid values: `disable`, `enable`."
+        },
+        "SignalPeriod": {
+            "type": "number",
+            "description": "Signal period (600 to 18000 seconds)."
+        },
+        "SignalThreshold": {
+            "type": "number",
+            "description": "Signal threshold. Specify the range between 50 - 100, where 50/100 means -50/-100 dBm."
+        },
+        "Slot": {
+            "type": "string",
+            "description": "SIM slot configuration. Valid values: `sim1`, `sim2`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type preferences configuration. Valid values: `carrier`, `slot`, `iccid`, `generic`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

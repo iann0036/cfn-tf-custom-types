@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::Panos::OspfAuthProfile",
+    "description": "Manages OSPF auth profile config attached to a virtual router.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-OspfAuthProfile/docs/README.md",
+    "definitions": {
+        "Md5KeysEncDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enc": {
+                    "type": "string"
+                },
+                "Raw": {
+                    "type": "string"
+                }
+            }
+        },
+        "Md5KeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string",
+                    "description": "MD5 key."
+                },
+                "KeyId": {
+                    "type": "number",
+                    "description": "MD5 key ID."
+                },
+                "Preferred": {
+                    "type": "boolean",
+                    "description": "Preferred key."
+                }
+            },
+            "required": [
+                "Key",
+                "KeyId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "The auth type.  Valid values are `password` (default) or `md5`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Md5KeysEnc": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Md5KeysEncDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The export rule name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The simple password."
+        },
+        "PasswordEnc": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location."
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router name."
+        },
+        "Md5Key": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Md5KeyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Md5KeysEnc",
+        "/properties/PasswordEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Md5KeysEnc",
+        "/properties/Password",
+        "/properties/PasswordEnc",
+        "/definitions/Md5KeyDefinition/Key"
+    ]
+}

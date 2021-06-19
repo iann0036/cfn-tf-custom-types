@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::AzureDevOps::GitRepository",
+    "description": "Manages a git repository within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-GitRepository/docs/README.md",
+    "definitions": {
+        "InitializationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InitType": {
+                    "type": "string",
+                    "description": "The type of repository to create. Valid values: `Uninitialized`, `Clean` or `Import`. Defaults to `Uninitialized`.\n- `source_type` - (Optional) Type of the source repository. Used if the `init_type` is `Import`. Valid values: `Git`.\n- `source_url` - (Optional) The URL of the source repository. Used if the `init_type` is `Import`."
+                },
+                "SourceType": {
+                    "type": "string",
+                    "description": "Type of the source repository. Used if the `init_type` is `Import`. Valid values: `Git`.\n- `source_url` - (Optional) The URL of the source repository. Used if the `init_type` is `Import`."
+                },
+                "SourceUrl": {
+                    "type": "string",
+                    "description": "The URL of the source repository. Used if the `init_type` is `Import`."
+                }
+            },
+            "required": [
+                "InitType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultBranch": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFork": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the git repository.\n- `parent_repository_id` - (Optional) The ID of a Git project from which a fork is to be created.\n- `initialization` - (Required) An `initialization` block as documented below."
+        },
+        "ParentRepositoryId": {
+            "type": "string",
+            "description": "The ID of a Git project from which a fork is to be created.\n- `initialization` - (Required) An `initialization` block as documented below."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `name` - (Required) The name of the git repository.\n- `parent_repository_id` - (Optional) The ID of a Git project from which a fork is to be created.\n- `initialization` - (Required) An `initialization` block as documented below."
+        },
+        "RemoteUrl": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "SshUrl": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "WebUrl": {
+            "type": "string"
+        },
+        "Initialization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InitializationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IsFork",
+        "/properties/RemoteUrl",
+        "/properties/Size",
+        "/properties/SshUrl",
+        "/properties/Url",
+        "/properties/WebUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::FortiOS::FirewallAddress6template",
+    "description": "Configure IPv6 address templates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallAddress6template/docs/README.md",
+    "definitions": {
+        "SubnetSegmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bits": {
+                    "type": "number",
+                    "description": "Number of bits."
+                },
+                "Exclusive": {
+                    "type": "string",
+                    "description": "Enable/disable exclusive value. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Subnet segment ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Subnet segment name."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValuesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Subnet segment value name."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Subnet segment value."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip6": {
+            "type": "string",
+            "description": "IPv6 address prefix."
+        },
+        "Name": {
+            "type": "string",
+            "description": "IPv6 address template name."
+        },
+        "SubnetSegmentCount": {
+            "type": "number",
+            "description": "Number of IPv6 subnet segments."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "SubnetSegment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetSegmentDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip6",
+        "Name",
+        "SubnetSegmentCount"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

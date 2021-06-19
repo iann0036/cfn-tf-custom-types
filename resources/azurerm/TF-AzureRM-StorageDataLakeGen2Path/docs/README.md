@@ -1,0 +1,142 @@
+# TF::AzureRM::StorageDataLakeGen2Path
+
+Manages a Data Lake Gen2 Path in a File System within an Azure Storage Account.
+
+~> **NOTE:** This Resource requires using Azure Active Directory to connect to Azure Storage, which in turn requires the `Storage` specific roles - which are not granted by default.
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::AzureRM::StorageDataLakeGen2Path",
+    "Properties" : {
+        "<a href="#filesystemname" title="FilesystemName">FilesystemName</a>" : <i>String</i>,
+        "<a href="#group" title="Group">Group</a>" : <i>String</i>,
+        "<a href="#owner" title="Owner">Owner</a>" : <i>String</i>,
+        "<a href="#path" title="Path">Path</a>" : <i>String</i>,
+        "<a href="#resource" title="Resource">Resource</a>" : <i>String</i>,
+        "<a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>" : <i>String</i>,
+        "<a href="#ace" title="Ace">Ace</a>" : <i>[ <a href="acedefinition.md">AceDefinition</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::AzureRM::StorageDataLakeGen2Path
+Properties:
+    <a href="#filesystemname" title="FilesystemName">FilesystemName</a>: <i>String</i>
+    <a href="#group" title="Group">Group</a>: <i>String</i>
+    <a href="#owner" title="Owner">Owner</a>: <i>String</i>
+    <a href="#path" title="Path">Path</a>: <i>String</i>
+    <a href="#resource" title="Resource">Resource</a>: <i>String</i>
+    <a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>: <i>String</i>
+    <a href="#ace" title="Ace">Ace</a>: <i>
+      - <a href="acedefinition.md">AceDefinition</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+</pre>
+
+## Properties
+
+#### FilesystemName
+
+The name of the Data Lake Gen2 File System which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Group
+
+Specifies the Object ID of the Azure Active Directory Group to make the owning group.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Owner
+
+Specifies the Object ID of the Azure Active Directory User to make the owning user.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Path
+
+The path which should be created within the Data Lake Gen2 File System in the Storage Account. Changing this forces a new resource to be created.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Resource
+
+Specifies the type for path to create. Currently only `directory` is supported.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageAccountId
+
+Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Ace
+
+_Required_: No
+
+_Type_: List of <a href="acedefinition.md">AceDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Timeouts
+
+_Required_: No
+
+_Type_: <a href="timeoutsdefinition.md">TimeoutsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
+

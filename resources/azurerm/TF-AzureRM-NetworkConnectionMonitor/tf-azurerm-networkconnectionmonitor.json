@@ -1,0 +1,462 @@
+{
+    "typeName": "TF::AzureRM::NetworkConnectionMonitor",
+    "description": "Manages a Network Connection Monitor.\n\n~> **NOTE:** Any Network Connection Monitor resource created with API versions 2019-06-01 or earlier (v1) are now incompatible with Terraform, which now only supports v2.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NetworkConnectionMonitor/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "VirtualMachineId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "CoverageLevel": {
+                    "type": "string"
+                },
+                "ExcludedIpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludedIpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TargetResourceId": {
+                    "type": "string"
+                },
+                "TargetResourceType": {
+                    "type": "string"
+                },
+                "VirtualMachineId": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "VirtualMachineId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TestConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PreferredIpVersion": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "TestFrequencyInSeconds": {
+                    "type": "number"
+                },
+                "HttpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IcmpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SuccessThreshold": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SuccessThresholdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "Protocol"
+            ]
+        },
+        "TestGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationEndpoints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SourceEndpoints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TestConfigurationNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DestinationEndpoints",
+                "Name",
+                "SourceEndpoints",
+                "TestConfigurationNames"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Item": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ItemDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Method": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PreferHttps": {
+                    "type": "boolean"
+                },
+                "ValidStatusCodeRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RequestHeader": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RequestHeaderDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IcmpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TraceRouteEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SuccessThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChecksFailedPercent": {
+                    "type": "number"
+                },
+                "RoundTripTimeMs": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TcpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "TraceRouteEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Port"
+            ]
+        },
+        "ItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RequestHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoStart": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntervalInSeconds": {
+            "type": "number"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkWatcherId": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "OutputWorkspaceResourceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Endpoint": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointDefinition"
+            },
+            "minItems": 1
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1
+        },
+        "TestConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TestConfigurationDefinition"
+            },
+            "minItems": 1
+        },
+        "TestGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TestGroupDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "NetworkWatcherId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

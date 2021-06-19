@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::CloudScale::ObjectsUser",
+    "description": "Provides a cloudscale.ch Objects User for the S3-compatible object storage.\n\n**Hint**: When using this resource, your Terraform state will contain sensitive data, namely the objects user secret\nkey. Hence you should treat the Terraform state the same way as you treat the secret key itself. For more\ninformation, see <a href=\"/docs/state/sensitive-data.html\">here</a>.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-ObjectsUser/docs/README.md",
+    "definitions": {
+        "KeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The new display name of the objects user."
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeysDefinition"
+            }
+        },
+        "UserId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id",
+        "/properties/Keys",
+        "/properties/UserId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

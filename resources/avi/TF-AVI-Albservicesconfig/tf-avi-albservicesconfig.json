@@ -1,0 +1,291 @@
+{
+    "typeName": "TF::AVI::Albservicesconfig",
+    "description": "The ALBServicesConfig resource allows the creation and management of Avi ALBServicesConfig",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Albservicesconfig/docs/README.md",
+    "definitions": {
+        "AppSignatureConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppSignatureSyncInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AssetContactDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "AccountName": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Phone": {
+                    "type": "string"
+                },
+                "ManagedAccounts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagedAccountsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Email"
+            ]
+        },
+        "FeatureOptInStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableAppsignatureSync": {
+                    "type": "boolean"
+                },
+                "EnableAutoCaseCreationOnSeFailure": {
+                    "type": "boolean"
+                },
+                "EnableAutoCaseCreationOnSystemFailure": {
+                    "type": "boolean"
+                },
+                "EnableAutoDownloadWafSignatures": {
+                    "type": "boolean"
+                },
+                "EnableIpReputation": {
+                    "type": "boolean"
+                },
+                "EnableWafSignaturesNotifications": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "IpReputationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpReputationFileObjectExpiryDuration": {
+                    "type": "number"
+                },
+                "IpReputationSyncInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ProactiveSupportDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttachCoreDump": {
+                    "type": "boolean"
+                },
+                "AttachTechSupport": {
+                    "type": "boolean"
+                },
+                "CaseSeverity": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SplitProxyConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Port"
+            ]
+        },
+        "ManagedAccountsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UsersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Phone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Email",
+                "Name",
+                "Phone"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Mode helps log collection and upload. Enum options - SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition, enterprise edition."
+        },
+        "PollingInterval": {
+            "type": "number",
+            "description": "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6."
+        },
+        "PortalUrl": {
+            "type": "string",
+            "description": "The fqdn or ip address of the customer portal. Field introduced in 18.2.6."
+        },
+        "UseSplitProxy": {
+            "type": "boolean",
+            "description": "By default, use system proxy configuration.if true, use split proxy configuration. Field introduced in 20.1.1."
+        },
+        "UseTls": {
+            "type": "boolean",
+            "description": "Secure the controller to pulse communication over tls. Field introduced in 20.1.3. Allowed in basic edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AppSignatureConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppSignatureConfigDefinition"
+            },
+            "minItems": 1
+        },
+        "AssetContact": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssetContactDefinition"
+            }
+        },
+        "FeatureOptInStatus": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FeatureOptInStatusDefinition"
+            },
+            "minItems": 1
+        },
+        "IpReputationConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpReputationConfigDefinition"
+            },
+            "minItems": 1
+        },
+        "ProactiveSupportDefaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProactiveSupportDefaultsDefinition"
+            },
+            "minItems": 1
+        },
+        "SplitProxyConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SplitProxyConfigurationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PortalUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SplitProxyConfigurationDefinition/Password"
+    ]
+}

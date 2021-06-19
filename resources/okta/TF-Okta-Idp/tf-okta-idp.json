@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::Okta::Idp",
+    "description": "CloudFormation equivalent of okta_idp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-Idp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountLinkAction": {
+            "type": "string"
+        },
+        "AccountLinkGroupInclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AuthorizationBinding": {
+            "type": "string"
+        },
+        "AuthorizationUrl": {
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "DeprovisionedAction": {
+            "type": "string"
+        },
+        "GroupsAction": {
+            "type": "string"
+        },
+        "GroupsAssignment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "GroupsAttribute": {
+            "type": "string"
+        },
+        "GroupsFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerMode": {
+            "type": "string"
+        },
+        "IssuerUrl": {
+            "type": "string"
+        },
+        "JwksBinding": {
+            "type": "string"
+        },
+        "JwksUrl": {
+            "type": "string"
+        },
+        "MaxClockSkew": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProfileMaster": {
+            "type": "boolean"
+        },
+        "ProtocolType": {
+            "type": "string"
+        },
+        "ProvisioningAction": {
+            "type": "string"
+        },
+        "RequestSignatureAlgorithm": {
+            "type": "string"
+        },
+        "RequestSignatureScope": {
+            "type": "string"
+        },
+        "ResponseSignatureAlgorithm": {
+            "type": "string"
+        },
+        "ResponseSignatureScope": {
+            "type": "string"
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubjectMatchAttribute": {
+            "type": "string"
+        },
+        "SubjectMatchType": {
+            "type": "string"
+        },
+        "SuspendedAction": {
+            "type": "string"
+        },
+        "TokenBinding": {
+            "type": "string"
+        },
+        "TokenUrl": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserInfoBinding": {
+            "type": "string"
+        },
+        "UserInfoUrl": {
+            "type": "string"
+        },
+        "UsernameTemplate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthorizationBinding",
+        "AuthorizationUrl",
+        "ClientId",
+        "ClientSecret",
+        "IssuerUrl",
+        "JwksBinding",
+        "JwksUrl",
+        "Name",
+        "Scopes",
+        "TokenBinding",
+        "TokenUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret"
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::OVH::DomainZoneRecord",
+    "description": "Provides a OVH domain zone record.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DomainZoneRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Fieldtype": {
+            "type": "string",
+            "description": "The type of the record."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Subdomain": {
+            "type": "string",
+            "description": "The name of the record."
+        },
+        "Target": {
+            "type": "string",
+            "description": "The value of the record."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The TTL of the record."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The domain to add the record to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fieldtype",
+        "Target",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

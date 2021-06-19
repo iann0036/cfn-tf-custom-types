@@ -1,0 +1,474 @@
+{
+    "typeName": "TF::Google::AppEngineStandardAppVersion",
+    "description": "Standard App Version resource to create a new version of standard GAE Application.\nLearn about the differences between the standard environment and the flexible environment\nat https://cloud.google.com/appengine/docs/the-appengine-environments.\nCurrently supporting Zip and File Containers.\n\n\nTo get more information about StandardAppVersion, see:\n\n* [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/appengine/docs/standard)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=app_engine_standard_app_version&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <im...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-AppEngineStandardAppVersion/docs/README.md",
+    "definitions": {
+        "EnvVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AutomaticScalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxConcurrentRequests": {
+                    "type": "number"
+                },
+                "MaxIdleInstances": {
+                    "type": "number"
+                },
+                "MaxPendingLatency": {
+                    "type": "string"
+                },
+                "MinIdleInstances": {
+                    "type": "number"
+                },
+                "MinPendingLatency": {
+                    "type": "string"
+                },
+                "StandardSchedulerSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StandardSchedulerSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BasicScalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdleTimeout": {
+                    "type": "string"
+                },
+                "MaxInstances": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxInstances"
+            ]
+        },
+        "DeploymentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Files": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FilesDefinition"
+                    }
+                },
+                "Zip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZipDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "EntrypointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Shell": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Shell"
+            ]
+        },
+        "HandlersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthFailAction": {
+                    "type": "string"
+                },
+                "Login": {
+                    "type": "string"
+                },
+                "RedirectHttpResponseCode": {
+                    "type": "string"
+                },
+                "SecurityLevel": {
+                    "type": "string"
+                },
+                "UrlRegex": {
+                    "type": "string"
+                },
+                "Script": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StaticFiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticFilesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LibrariesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManualScalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Instances": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Instances"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpcAccessConnectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "StandardSchedulerSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxInstances": {
+                    "type": "number"
+                },
+                "MinInstances": {
+                    "type": "number"
+                },
+                "TargetCpuUtilization": {
+                    "type": "number"
+                },
+                "TargetThroughputUtilization": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The identifier for this object. Format specified above."
+                },
+                "Sha1Sum": {
+                    "type": "string"
+                },
+                "SourceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "SourceUrl"
+            ]
+        },
+        "ZipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilesCount": {
+                    "type": "number"
+                },
+                "SourceUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceUrl"
+            ]
+        },
+        "ScriptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScriptPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ScriptPath"
+            ]
+        },
+        "StaticFilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationReadable": {
+                    "type": "boolean"
+                },
+                "Expiration": {
+                    "type": "string"
+                },
+                "HttpHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeadersDefinition"
+                    }
+                },
+                "MimeType": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "RequireMatchingFile": {
+                    "type": "boolean"
+                },
+                "UploadPathRegex": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteServiceOnDestroy": {
+            "type": "boolean"
+        },
+        "EnvVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvVariablesDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundServices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "InstanceClass": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NoopOnDestroy": {
+            "type": "boolean"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Runtime": {
+            "type": "string"
+        },
+        "RuntimeApiVersion": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "Threadsafe": {
+            "type": "boolean"
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "AutomaticScaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomaticScalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "BasicScaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BasicScalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Deployment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Entrypoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EntrypointDefinition"
+            },
+            "maxItems": 1
+        },
+        "Handlers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HandlersDefinition"
+            }
+        },
+        "Libraries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LibrariesDefinition"
+            }
+        },
+        "ManualScaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManualScalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VpcAccessConnector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcAccessConnectorDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Runtime",
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

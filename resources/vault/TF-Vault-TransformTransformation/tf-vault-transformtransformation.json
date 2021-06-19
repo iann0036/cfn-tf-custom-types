@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::Vault::TransformTransformation",
+    "description": "This resource supports the \"/transform/transformation/{name}\" Vault endpoint.\n\nIt creates or updates a transformation with the given name. If a transformation with the name does not exist,\nit will be created. If the transformation exists, it will be updated with the new attributes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-TransformTransformation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedRoles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The set of roles allowed to perform this transformation."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaskingCharacter": {
+            "type": "string",
+            "description": "The character used to replace data when in masking mode."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the transformation."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to where the back-end is mounted within Vault."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The name of the template to use."
+        },
+        "Templates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Templates configured for transformation."
+        },
+        "TweakSource": {
+            "type": "string",
+            "description": "The source of where the tweak value comes from. Only valid when in FPE mode."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of transformation to perform."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Path"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

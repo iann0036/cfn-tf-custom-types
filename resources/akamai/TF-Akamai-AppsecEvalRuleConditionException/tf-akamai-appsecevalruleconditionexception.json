@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::Akamai::AppsecEvalRuleConditionException",
+    "description": "Use the `akamai_appsec_eval_rule_condition_exception` resource to create or modify an eval rule's conditions and exceptions.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecEvalRuleConditionException/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConditionException": {
+            "type": "string",
+            "description": "The name of a file containing a JSON-formatted description of the conditions and exceptions to use ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putevalconditionsexceptions))."
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RuleId": {
+            "type": "number",
+            "description": "The ID of the eval rule to use."
+        },
+        "SecurityPolicyId": {
+            "type": "string",
+            "description": "The ID of the security policy to use."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the security configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConditionException",
+        "ConfigId",
+        "RuleId",
+        "SecurityPolicyId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

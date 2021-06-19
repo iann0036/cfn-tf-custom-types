@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::Cloudflare::TeamsList",
+    "description": "Provides a Cloudflare Teams List resource. Teams lists are referenced when creating secure web gateway policies or device posture rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-TeamsList/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account to which the teams list should be added."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the teams list."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Items": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The items of the teams list."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the teams list."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The teams list type. Valid values are `SERIAL`, `URL`, `DOMAIN`, and `EMAIL`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

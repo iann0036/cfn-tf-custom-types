@@ -1,0 +1,203 @@
+{
+    "typeName": "TF::DCNM::Network",
+    "description": "CloudFormation equivalent of dcnm_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dcnm/TF-DCNM-Network/docs/README.md",
+    "definitions": {
+        "AttachmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attach": {
+                    "type": "boolean"
+                },
+                "Dot1Qvlan": {
+                    "type": "number"
+                },
+                "ExtensionValues": {
+                    "type": "string"
+                },
+                "FreeFromConfig": {
+                    "type": "string"
+                },
+                "InstanceValues": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "SwitchPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Untagged": {
+                    "type": "boolean"
+                },
+                "VlanId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "SerialNumber"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpSuppFlag": {
+            "type": "boolean"
+        },
+        "Deploy": {
+            "type": "boolean"
+        },
+        "DeployTimeout": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Dhcp1": {
+            "type": "string"
+        },
+        "Dhcp2": {
+            "type": "string"
+        },
+        "DhcpVrf": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "ExtensionTemplate": {
+            "type": "string"
+        },
+        "FabricName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Gateway": {
+            "type": "string"
+        },
+        "Ipv6Gateway": {
+            "type": "string"
+        },
+        "IrEnableFlag": {
+            "type": "boolean"
+        },
+        "L2OnlyFlag": {
+            "type": "boolean"
+        },
+        "L3GatewayFlag": {
+            "type": "boolean"
+        },
+        "LoopbackId": {
+            "type": "number"
+        },
+        "McastGroup": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "RtBothFlag": {
+            "type": "boolean"
+        },
+        "SecondaryGw1": {
+            "type": "string"
+        },
+        "SecondaryGw2": {
+            "type": "string"
+        },
+        "ServiceTemplate": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TrmEnableFlag": {
+            "type": "boolean"
+        },
+        "VlanId": {
+            "type": "number"
+        },
+        "VlanName": {
+            "type": "string"
+        },
+        "VrfName": {
+            "type": "string"
+        },
+        "Attachments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttachmentsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FabricName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::OCI::BlockchainPeer",
+    "description": "This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.\n\nCreate Blockchain Platform Peer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-BlockchainPeer/docs/README.md",
+    "definitions": {
+        "OcpuAllocationParamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OcpuAllocationNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "OcpuAllocationNumber"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ad": {
+            "type": "string",
+            "description": "Availability Domain to place new peer."
+        },
+        "Alias": {
+            "type": "string",
+            "description": "peer alias."
+        },
+        "BlockchainPlatformId": {
+            "type": "string",
+            "description": "Unique service identifier."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerKey": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string",
+            "description": "Peer role."
+        },
+        "State": {
+            "type": "string"
+        },
+        "OcpuAllocationParam": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OcpuAllocationParamDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ad",
+        "BlockchainPlatformId",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Host",
+        "/properties/Id",
+        "/properties/PeerKey",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

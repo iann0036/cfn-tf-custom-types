@@ -1,0 +1,209 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementAuthorizationServer",
+    "description": "Manages an Authorization Server within an API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementAuthorizationServer/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TokenBodyParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The Name of the Parameter."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The Value of the Parameter."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the API Management Service in which this Authorization Server should be created. Changing this forces a new resource to be created."
+        },
+        "AuthorizationEndpoint": {
+            "type": "string",
+            "description": "The OAUTH Authorization Endpoint."
+        },
+        "AuthorizationMethods": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The HTTP Verbs supported by the Authorization Endpoint. Possible values are `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`."
+        },
+        "BearerTokenSendingMethods": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The mechanism by which Access Tokens are passed to the API. Possible values are `authorizationHeader` and `query`."
+        },
+        "ClientAuthenticationMethod": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The Authentication Methods supported by the Token endpoint of this Authorization Server.. Possible values are `Basic` and `Body`."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The Client/App ID registered with this Authorization Server."
+        },
+        "ClientRegistrationEndpoint": {
+            "type": "string",
+            "description": "The URI of page where Client/App Registration is performed for this Authorization Server."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "The Client/App Secret registered with this Authorization Server."
+        },
+        "DefaultScope": {
+            "type": "string",
+            "description": "The Default Scope used when requesting an Access Token, specified as a string containing space-delimited values."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the Authorization Server, which may contain HTML formatting tags."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The user-friendly name of this Authorization Server."
+        },
+        "GrantTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Form of Authorization Grants required when requesting an Access Token. Possible values are `authorizationCode`, `clientCredentials`, `implicit` and `resourceOwnerPassword`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of this Authorization Server. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "ResourceOwnerPassword": {
+            "type": "string",
+            "description": "The password associated with the Resource Owner."
+        },
+        "ResourceOwnerUsername": {
+            "type": "string",
+            "description": "The username associated with the Resource Owner."
+        },
+        "SupportState": {
+            "type": "boolean",
+            "description": "Does this Authorization Server support State? If this is set to `true` the client may use the state parameter to raise protocol security."
+        },
+        "TokenEndpoint": {
+            "type": "string",
+            "description": "The OAUTH Token Endpoint."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "TokenBodyParameter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TokenBodyParameterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "AuthorizationEndpoint",
+        "AuthorizationMethods",
+        "ClientId",
+        "ClientRegistrationEndpoint",
+        "DisplayName",
+        "GrantTypes",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret",
+        "/properties/ResourceOwnerPassword"
+    ]
+}

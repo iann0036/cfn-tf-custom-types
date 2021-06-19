@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::Cloudflare::CustomSsl",
+    "description": "Provides a Cloudflare custom ssl resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-CustomSsl/docs/README.md",
+    "definitions": {
+        "CustomSslOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomSslPriorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomSslOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomSslOptionsDefinition"
+            },
+            "description": "The certificate, private key and associated optional parameters, such as bundle_method, geo_restrictions, and type."
+        },
+        "ExpiresOn": {
+            "type": "string"
+        },
+        "Hosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Signature": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UploadedOn": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone id to the custom ssl cert should be added."
+        },
+        "CustomSslPriority": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomSslPriorityDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExpiresOn",
+        "/properties/Hosts",
+        "/properties/Id",
+        "/properties/Issuer",
+        "/properties/ModifiedOn",
+        "/properties/Priority",
+        "/properties/Signature",
+        "/properties/Status",
+        "/properties/UploadedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

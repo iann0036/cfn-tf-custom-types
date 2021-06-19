@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerGlobal",
+    "description": "Configure FortiSwitch global settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerGlobal/docs/README.md",
+    "definitions": {
+        "CustomCommandDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommandEntry": {
+                    "type": "string",
+                    "description": "List of FortiSwitch commands."
+                },
+                "CommandName": {
+                    "type": "string",
+                    "description": "Name of custom command to push to all FortiSwitches in VDOM."
+                }
+            },
+            "required": []
+        },
+        "DisableDiscoveryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Managed device ID."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowMultipleInterfaces": {
+            "type": "string",
+            "description": "Enable/disable multiple FortiLink interfaces for redundant connections between a managed FortiSwitch and FortiGate. Valid values: `enable`, `disable`."
+        },
+        "BounceQuarantinedLink": {
+            "type": "string",
+            "description": "Enable/disable bouncing (administratively bring the link down, up) of a switch port where a quarantined device was seen last. Helps to re-initiate the DHCP process for a device. Valid values: `disable`, `enable`."
+        },
+        "DefaultVirtualSwitchVlan": {
+            "type": "string",
+            "description": "Default VLAN for ports when added to the virtual-switch."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "HttpsImagePush": {
+            "type": "string",
+            "description": "Enable/disable image push to FortiSwitch using HTTPS. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogMacLimitViolations": {
+            "type": "string",
+            "description": "Enable/disable logs for Learning Limit Violations. Valid values: `enable`, `disable`."
+        },
+        "MacAgingInterval": {
+            "type": "number",
+            "description": "Time after which an inactive MAC is aged out (10 - 1000000 sec, default = 300, 0 = disable)."
+        },
+        "MacEventLogging": {
+            "type": "string",
+            "description": "Enable/disable MAC address event logging. Valid values: `enable`, `disable`."
+        },
+        "MacRetentionPeriod": {
+            "type": "number",
+            "description": "Time in hours after which an inactive MAC is removed from client DB."
+        },
+        "MacViolationTimer": {
+            "type": "number",
+            "description": "Set timeout for Learning Limit Violations (0 = disabled)."
+        },
+        "QuarantineMode": {
+            "type": "string",
+            "description": "Quarantine mode. Valid values: `by-vlan`, `by-redirect`."
+        },
+        "SnDnsResolution": {
+            "type": "string",
+            "description": "Enable/disable DNS resolution of the FortiSwitch unit's IP address by use of its serial number. Valid values: `enable`, `disable`."
+        },
+        "UpdateUserDevice": {
+            "type": "string",
+            "description": "Control which sources update the device user list. Valid values: `mac-cache`, `lldp`, `dhcp-snooping`, `l2-db`, `l3-db`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VlanAllMode": {
+            "type": "string",
+            "description": "VLAN configuration mode, user-defined-vlans or all-possible-vlans. Valid values: `all`, `defined`."
+        },
+        "VlanOptimization": {
+            "type": "string",
+            "description": "FortiLink VLAN optimization. Valid values: `enable`, `disable`."
+        },
+        "CustomCommand": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomCommandDefinition"
+            }
+        },
+        "DisableDiscovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DisableDiscoveryDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

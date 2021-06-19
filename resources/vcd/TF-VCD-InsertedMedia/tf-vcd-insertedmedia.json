@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::VCD::InsertedMedia",
+    "description": "Provides a vCloud Director resource for inserting or ejecting media (ISO) file for the VM. Create this resource for inserting the media, and destroy it for ejecting.\n\nSupported in provider *v2.0+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-InsertedMedia/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Catalog": {
+            "type": "string",
+            "description": "The name of the catalog where to find media file."
+        },
+        "EjectForce": {
+            "type": "boolean",
+            "description": "Allows to pass answer to question in vCD\n\"The guest operating system has locked the CD-ROM door and is probably using the CD-ROM.\nDisconnect anyway (and override the lock)?\"\nwhen ejecting from a VM which is powered on. True means \"Yes\" as answer to question. Default is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Media file name in catalog which will be inserted to VM."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "VappName": {
+            "type": "string",
+            "description": "- The name of vApp to find."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "VmName": {
+            "type": "string",
+            "description": "- The name of VM to be used to insert media file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Catalog",
+        "Name",
+        "VappName",
+        "VmName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

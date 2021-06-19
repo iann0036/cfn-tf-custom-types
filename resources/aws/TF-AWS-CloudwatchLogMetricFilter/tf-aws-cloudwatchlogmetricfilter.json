@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::AWS::CloudwatchLogMetricFilter",
+    "description": "Provides a CloudWatch Log Metric Filter resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudwatchLogMetricFilter/docs/README.md",
+    "definitions": {
+        "MetricTransformationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string",
+                    "description": "The value to emit when a filter pattern does not match a log event. Conflicts with `dimensions`."
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    },
+                    "description": "Map of fields to use as dimensions for the metric. Up to 3 dimensions are allowed. Conflicts with `default_value`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the CloudWatch metric to which the monitored log information should be published (e.g. `ErrorCount`)."
+                },
+                "Namespace": {
+                    "type": "string",
+                    "description": "The destination namespace of the CloudWatch metric."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "The unit to assign to the metric. If you omit this, the unit is set as `None`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "What to publish to the metric. For example, if you're counting the occurrences of a particular term like \"Error\", the value will be \"1\" for each occurrence. If you're counting the bytes transferred the published value will be the value in the log event."
+                }
+            },
+            "required": [
+                "Name",
+                "Namespace",
+                "Value"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogGroupName": {
+            "type": "string",
+            "description": "The name of the log group to associate the metric filter with."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the metric filter."
+        },
+        "Pattern": {
+            "type": "string",
+            "description": "A valid [CloudWatch Logs filter pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/FilterAndPatternSyntax.html)\nfor extracting metric data out of ingested log events."
+        },
+        "MetricTransformation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricTransformationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogGroupName",
+        "Name",
+        "Pattern"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

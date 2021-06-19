@@ -1,0 +1,171 @@
+{
+    "typeName": "TF::ECL::NetworkGatewayInterfaceV2",
+    "description": "Manages a V2 gateway interface resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-NetworkGatewayInterfaceV2/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsGwId": {
+            "type": "string",
+            "description": "AWS Gateway to which this port is connected.\nConflicts with \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "AzureGwId": {
+            "type": "string",
+            "description": "Azure Gateway to which this port is connected.\nConflicts with \"aws_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the Gateway Interface resource."
+        },
+        "FicGwId": {
+            "type": "string",
+            "description": "FIC Gateway to which this port is connected.\nConflicts with \"aws_gw_id\", \"azure_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "GcpGwId": {
+            "type": "string",
+            "description": "GCP Gateway to which this port is connected.\nConflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "GwVipv4": {
+            "type": "string",
+            "description": "IP version 4 address to be assigned virtual router on VRRP."
+        },
+        "GwVipv6": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterdcGwId": {
+            "type": "string",
+            "description": "Inter DC Gateway to which this port is connected.\nConflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "InternetGwId": {
+            "type": "string",
+            "description": "Internet GW to which this port is connected.\nConflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\" and \"vpn_gw_id\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Gateway Interface resource."
+        },
+        "Netmask": {
+            "type": "number",
+            "description": "Netmask for IPv4 addresses."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "Network connected to this interface."
+        },
+        "PrimaryIpv4": {
+            "type": "string",
+            "description": "IP version 4 address to be assigned to primary device on VRRP."
+        },
+        "PrimaryIpv6": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to obtain the V2 Network client."
+        },
+        "SecondaryIpv4": {
+            "type": "string",
+            "description": "IP version 4 address to be assigned to secondary device on VRRP."
+        },
+        "SecondaryIpv6": {
+            "type": "string"
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "Service type for this interface.\nMust be one of \"aws\", \"azure\", \"fic\", \"gcp\", \"interdc\", \"internet\" and \"vpn\"."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID of the owner (UUID)."
+        },
+        "VpnGwId": {
+            "type": "string",
+            "description": "VPN Gateway to which this port is connected.\nConflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\" and \"internet_gw_id\"."
+        },
+        "Vrid": {
+            "type": "number",
+            "description": "VRRP Group ID for this GW Interface."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwVipv4",
+        "Netmask",
+        "NetworkId",
+        "PrimaryIpv4",
+        "SecondaryIpv4",
+        "ServiceType",
+        "Vrid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GwVipv6",
+        "/properties/Id",
+        "/properties/PrimaryIpv6",
+        "/properties/SecondaryIpv6"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

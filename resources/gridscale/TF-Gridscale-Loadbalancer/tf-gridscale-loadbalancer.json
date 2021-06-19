@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::Gridscale::Loadbalancer",
+    "description": "Provides a loadbalancer resource. This can be used to create, modify, and delete load balancers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Loadbalancer/docs/README.md",
+    "definitions": {
+        "BackendServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Host"
+            ]
+        },
+        "ForwardingRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUuid": {
+                    "type": "string"
+                },
+                "LetsencryptSsl": {
+                    "type": "string"
+                },
+                "ListenPort": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "TargetPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ListenPort",
+                "Mode",
+                "TargetPort"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "The algorithm used to process requests. Accepted values: roundrobin/leastconn."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "ListenIpv4Uuid": {
+            "type": "string",
+            "description": "The UUID of the IPv4 address the load balancer will listen to for incoming requests."
+        },
+        "ListenIpv6Uuid": {
+            "type": "string",
+            "description": "The UUID of the IPv6 address the load balancer will listen to for incoming requests."
+        },
+        "LocationUuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "RedirectHttpToHttps": {
+            "type": "boolean",
+            "description": "Whether the load balancer is forced to redirect requests from HTTP to HTTPS."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "BackendServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendServerDefinition"
+            },
+            "minItems": 1
+        },
+        "ForwardingRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ForwardingRuleDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Algorithm",
+        "ListenIpv4Uuid",
+        "ListenIpv6Uuid",
+        "Name",
+        "RedirectHttpToHttps"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LocationUuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

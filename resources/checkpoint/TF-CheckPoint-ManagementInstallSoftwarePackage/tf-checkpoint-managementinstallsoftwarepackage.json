@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::CheckPoint::ManagementInstallSoftwarePackage",
+    "description": "This command resource allows you to execute Check Point Install Software Package.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementInstallSoftwarePackage/docs/README.md",
+    "definitions": {
+        "ClusterInstallationSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterInstallationSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClusterInstallationSettingsDefinition"
+            },
+            "description": "Installation settings for cluster.cluster_installation_settings blocks are documented below."
+        },
+        "ConcurrencyLimit": {
+            "type": "number",
+            "description": "The number of targets, on which the same package is installed at the same time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the software package."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "On what targets to execute this command. Targets may be identified by their name, or object unique identifier.targets blocks are documented below."
+        },
+        "TaskId": {
+            "type": "string",
+            "description": "Asynchronous task unique identifier."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Targets"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TaskId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

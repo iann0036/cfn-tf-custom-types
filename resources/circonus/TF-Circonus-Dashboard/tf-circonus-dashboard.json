@@ -1,0 +1,497 @@
+{
+    "typeName": "TF::Circonus::Dashboard",
+    "description": "The ``circonus_dashboard`` resource creates and manages a\n[Circonus Dashboard](https://login.circonus.com/resources/docs/user/Dashboards.html).\n\nhttps://login.circonus.com/resources/api/calls/dashboard.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-Dashboard/docs/README.md",
+    "definitions": {
+        "GridLayoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FullScreenHideTitle": {
+                    "type": "boolean"
+                },
+                "HideGrid": {
+                    "type": "boolean"
+                },
+                "ScaleText": {
+                    "type": "boolean"
+                },
+                "TextSize": {
+                    "type": "number"
+                },
+                "AccessConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessConfigsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WidgetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Origin": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "WidgetId": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "Settings": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SettingsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Height",
+                "Name",
+                "Origin",
+                "Type",
+                "WidgetId",
+                "Width"
+            ]
+        },
+        "AccessConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlackDash": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "FullScreen": {
+                    "type": "boolean"
+                },
+                "FullScreenHideTitle": {
+                    "type": "boolean"
+                },
+                "NickName": {
+                    "type": "string"
+                },
+                "ScaleText": {
+                    "type": "boolean"
+                },
+                "SharedId": {
+                    "type": "string"
+                },
+                "TextSize": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "Acknowledged": {
+                    "type": "string"
+                },
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Autoformat": {
+                    "type": "boolean"
+                },
+                "BodyFormat": {
+                    "type": "string"
+                },
+                "Caql": {
+                    "type": "string"
+                },
+                "ChartType": {
+                    "type": "string"
+                },
+                "CheckUuid": {
+                    "type": "string"
+                },
+                "Cleared": {
+                    "type": "string"
+                },
+                "ClusterId": {
+                    "type": "number"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "DateWindow": {
+                    "type": "string"
+                },
+                "Dependents": {
+                    "type": "string"
+                },
+                "DisableAutoformat": {
+                    "type": "boolean"
+                },
+                "Display": {
+                    "type": "string"
+                },
+                "DisplayMarkup": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Formula": {
+                    "type": "string"
+                },
+                "GoodColor": {
+                    "type": "string"
+                },
+                "GraphUuid": {
+                    "type": "string"
+                },
+                "HideXaxis": {
+                    "type": "boolean"
+                },
+                "HideYaxis": {
+                    "type": "boolean"
+                },
+                "KeyInline": {
+                    "type": "boolean"
+                },
+                "KeyLoc": {
+                    "type": "string"
+                },
+                "KeySize": {
+                    "type": "number"
+                },
+                "KeyWrap": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Layout": {
+                    "type": "string"
+                },
+                "LayoutStyle": {
+                    "type": "string"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "LinkUrl": {
+                    "type": "string"
+                },
+                "Maintenance": {
+                    "type": "string"
+                },
+                "Markup": {
+                    "type": "string"
+                },
+                "MetricDisplayName": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MetricType": {
+                    "type": "string"
+                },
+                "MinAge": {
+                    "type": "string"
+                },
+                "OverlaySetId": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "RangeHigh": {
+                    "type": "number"
+                },
+                "RangeLow": {
+                    "type": "number"
+                },
+                "RealTime": {
+                    "type": "boolean"
+                },
+                "ResourceLimit": {
+                    "type": "string"
+                },
+                "ResourceUsage": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "ShowFlags": {
+                    "type": "boolean"
+                },
+                "ShowValue": {
+                    "type": "boolean"
+                },
+                "Size": {
+                    "type": "string"
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleFormat": {
+                    "type": "string"
+                },
+                "Trend": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UseDefault": {
+                    "type": "boolean"
+                },
+                "ValueType": {
+                    "type": "string"
+                },
+                "BadRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BadRulesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Datapoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DatapointsDefinition"
+                    }
+                },
+                "Thresholds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThresholdsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BadRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Criterion": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Color",
+                "Criterion",
+                "Value"
+            ]
+        },
+        "DatapointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_checkId": {
+                    "type": "number"
+                },
+                "_metricType": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "_checkId",
+                "_metricType",
+                "Label",
+                "Metric"
+            ]
+        },
+        "ThresholdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Colors": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Flip": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Colors",
+                "Flip",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountDefault": {
+            "type": "boolean",
+            "description": "Boolean. Whether this dash is set as the default\nfor the account."
+        },
+        "GridLayout": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GridLayoutDefinition"
+            },
+            "description": "Map. Has members `width` and `height` to control the\ndimensions of the dashboard."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Shared": {
+            "type": "boolean",
+            "description": "Boolean. Whether this dash is shared with everyone in the\nCirconus account or private to the user."
+        },
+        "Title": {
+            "type": "string",
+            "description": "String. The title of the dashboard."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "minItems": 1
+        },
+        "Widget": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WidgetDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GridLayout",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1062 @@
+{
+    "typeName": "TF::Kubernetes::PersistentVolume",
+    "description": "The resource provides a piece of networked storage in the cluster provisioned by an administrator. It is a resource in the cluster just like a node is a cluster resource. Persistent Volumes have a lifecycle independent of any individual pod that uses the PV.\nFor more info see [Kubernetes reference](https://kubernetes.io/docs/concepts/storage/persistent-volumes)/",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/kubernetes/TF-Kubernetes-PersistentVolume/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotationsDefinition"
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessModes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Capacity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityDefinition"
+                    }
+                },
+                "MountOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PersistentVolumeReclaimPolicy": {
+                    "type": "string"
+                },
+                "StorageClassName": {
+                    "type": "string"
+                },
+                "VolumeMode": {
+                    "type": "string"
+                },
+                "ClaimRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClaimRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeAffinityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PersistentVolumeSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PersistentVolumeSourceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "AccessModes",
+                "Capacity"
+            ]
+        },
+        "CapacityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClaimRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "NodeAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Required": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequiredDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PersistentVolumeSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsElasticBlockStore": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsElasticBlockStoreDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureFile": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureFileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CephFs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CephFsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Cinder": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CinderDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Csi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Fc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FlexVolume": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlexVolumeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Flocker": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlockerDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcePersistentDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcePersistentDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Glusterfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GlusterfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HostPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostPathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Iscsi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IscsiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Local": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Nfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PhotonPersistentDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PhotonPersistentDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Quobyte": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QuobyteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Rbd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RbdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VsphereVolume": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VsphereVolumeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RequiredDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeSelectorTerm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeSelectorTermDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AwsElasticBlockStoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Partition": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumeId"
+            ]
+        },
+        "AzureDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CachingMode": {
+                    "type": "string"
+                },
+                "DataDiskUri": {
+                    "type": "string"
+                },
+                "DiskName": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Kind": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CachingMode",
+                "DataDiskUri",
+                "DiskName"
+            ]
+        },
+        "AzureFileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretName": {
+                    "type": "string"
+                },
+                "SecretNamespace": {
+                    "type": "string"
+                },
+                "ShareName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecretName",
+                "ShareName"
+            ]
+        },
+        "CephFsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Monitors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretFile": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Monitors"
+            ]
+        },
+        "CinderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumeId"
+            ]
+        },
+        "CsiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeAttributesDefinition"
+                    }
+                },
+                "VolumeHandle": {
+                    "type": "string"
+                },
+                "ControllerExpandSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerExpandSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ControllerPublishSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerPublishSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodePublishSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodePublishSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeStageSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeStageSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Driver",
+                "VolumeHandle"
+            ]
+        },
+        "VolumeAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Lun": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "TargetWwNs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Lun",
+                "TargetWwNs"
+            ]
+        },
+        "FlexVolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Options": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionsDefinition"
+                    }
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Driver"
+            ]
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FlockerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetName": {
+                    "type": "string"
+                },
+                "DatasetUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GcePersistentDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Partition": {
+                    "type": "number"
+                },
+                "PdName": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "PdName"
+            ]
+        },
+        "GlusterfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointsName": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EndpointsName",
+                "Path"
+            ]
+        },
+        "HostPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IscsiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Iqn": {
+                    "type": "string"
+                },
+                "IscsiInterface": {
+                    "type": "string"
+                },
+                "Lun": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "TargetPortal": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Iqn",
+                "TargetPortal"
+            ]
+        },
+        "LocalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Server": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path",
+                "Server"
+            ]
+        },
+        "PhotonPersistentDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "PdId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PdId"
+            ]
+        },
+        "QuobyteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Group": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Registry": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Volume": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Registry",
+                "Volume"
+            ]
+        },
+        "RbdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CephMonitors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Keyring": {
+                    "type": "string"
+                },
+                "RadosUser": {
+                    "type": "string"
+                },
+                "RbdImage": {
+                    "type": "string"
+                },
+                "RbdPool": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CephMonitors",
+                "RbdImage"
+            ]
+        },
+        "VsphereVolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "VolumePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumePath"
+            ]
+        },
+        "NodeSelectorTermDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchExpressions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchExpressionsDefinition"
+                    }
+                },
+                "MatchFields": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchFieldsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ControllerExpandSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ControllerPublishSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodePublishSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodeStageSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchExpressionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Operator"
+            ]
+        },
+        "MatchFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Operator"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

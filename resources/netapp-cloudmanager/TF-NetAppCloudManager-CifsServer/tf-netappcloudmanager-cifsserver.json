@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::NetAppCloudManager::CifsServer",
+    "description": "CloudFormation equivalent of netapp-cloudmanager_cifs_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-CifsServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "DnsDomain": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsWorkgroup": {
+            "type": "boolean"
+        },
+        "Netbios": {
+            "type": "string"
+        },
+        "OrganizationalUnit": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ServerName": {
+            "type": "string"
+        },
+        "SvmName": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "WorkgroupName": {
+            "type": "string"
+        },
+        "WorkingEnvironmentId": {
+            "type": "string"
+        },
+        "WorkingEnvironmentName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

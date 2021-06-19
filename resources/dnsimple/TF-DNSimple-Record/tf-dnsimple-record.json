@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::DNSimple::Record",
+    "description": "Provides a DNSimple record resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dnsimple/TF-DNSimple-Record/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to add the record to."
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the record."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "The priority of the record - only useful for some record types."
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "The TTL of the record."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the record."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the record."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DomainId",
+        "/properties/Hostname",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

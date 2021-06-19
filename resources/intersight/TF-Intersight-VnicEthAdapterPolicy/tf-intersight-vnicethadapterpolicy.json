@@ -1,0 +1,646 @@
+{
+    "typeName": "TF::Intersight::VnicEthAdapterPolicy",
+    "description": "An Ethernet adapter policy governs the host-side behavior of the adapter, including how the adapter handles traffic. For each VIC Virtual Ethernet Interface various features like VXLAN, NVGRE, ARFS, Interrupt settings, and TCP Offload settings can be configured.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-VnicEthAdapterPolicy/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ArfsSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "CompletionQueueSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "NrCount": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RingSize": {
+                    "type": "number"
+                }
+            }
+        },
+        "InterruptSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "CoalescingTime": {
+                    "type": "number"
+                },
+                "CoalescingType": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "NrCount": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "NvgreSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "RoceSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ClassOfService": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "MemoryRegions": {
+                    "type": "number"
+                },
+                "NrVersion": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "QueuePairs": {
+                    "type": "number"
+                },
+                "ResourceGroups": {
+                    "type": "number"
+                }
+            }
+        },
+        "RssHashSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Ipv4Hash": {
+                    "type": "boolean"
+                },
+                "Ipv6ExtHash": {
+                    "type": "boolean"
+                },
+                "Ipv6Hash": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "TcpIpv4Hash": {
+                    "type": "boolean"
+                },
+                "TcpIpv6ExtHash": {
+                    "type": "boolean"
+                },
+                "TcpIpv6Hash": {
+                    "type": "boolean"
+                },
+                "UdpIpv4Hash": {
+                    "type": "boolean"
+                },
+                "UdpIpv6Hash": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "RxQueueSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "NrCount": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RingSize": {
+                    "type": "number"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "TcpOffloadSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "LargeReceive": {
+                    "type": "boolean"
+                },
+                "LargeSend": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RxChecksum": {
+                    "type": "boolean"
+                },
+                "TxChecksum": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "TxQueueSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "NrCount": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RingSize": {
+                    "type": "number"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        },
+        "VxlanSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "AdvancedFilter": {
+            "type": "boolean"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "ArfsSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArfsSettingsDefinition"
+            }
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "CompletionQueueSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CompletionQueueSettingsDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterruptScaling": {
+            "type": "boolean"
+        },
+        "InterruptSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterruptSettingsDefinition"
+            }
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NvgreSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NvgreSettingsDefinition"
+            }
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            }
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "RoceSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoceSettingsDefinition"
+            }
+        },
+        "RssHashSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RssHashSettingsDefinition"
+            }
+        },
+        "RssSettings": {
+            "type": "boolean"
+        },
+        "RxQueueSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RxQueueSettingsDefinition"
+            }
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TcpOffloadSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TcpOffloadSettingsDefinition"
+            }
+        },
+        "TxQueueSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TxQueueSettingsDefinition"
+            }
+        },
+        "UplinkFailbackTimeout": {
+            "type": "number"
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        },
+        "VxlanSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VxlanSettingsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

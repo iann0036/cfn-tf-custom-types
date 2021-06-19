@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::GuarddutyPublishingDestination",
+    "description": "Provides a resource to manage a GuardDuty PublishingDestination. Requires an existing GuardDuty Detector.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GuarddutyPublishingDestination/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DestinationArn": {
+            "type": "string",
+            "description": "The bucket arn and prefix under which the findings get exported. Bucket-ARN is required, the prefix is optional and will be `AWSLogs/[Account-ID]/GuardDuty/[Region]/` if not provided."
+        },
+        "DestinationType": {
+            "type": "string",
+            "description": "Currently there is only \"S3\" available as destination type which is also the default value."
+        },
+        "DetectorId": {
+            "type": "string",
+            "description": "The detector ID of the GuardDuty."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string",
+            "description": "The ARN of the KMS key used to encrypt GuardDuty findings. GuardDuty enforces this to be encrypted."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationArn",
+        "DetectorId",
+        "KmsKeyArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

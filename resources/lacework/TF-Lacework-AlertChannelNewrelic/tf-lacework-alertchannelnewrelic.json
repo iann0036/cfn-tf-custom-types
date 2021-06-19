@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Lacework::AlertChannelNewrelic",
+    "description": "You can configure a Lacework alert channel to forward alerts to New Relic using the Insights API.\n\nTo find more information about the New Relic Insights alert channel integration, see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360005842354-New-Relic).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelNewrelic/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "number",
+            "description": "The New Relic account ID."
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertKey": {
+            "type": "string",
+            "description": "The New Relic Insert API key."
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "TypeName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "InsertKey",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

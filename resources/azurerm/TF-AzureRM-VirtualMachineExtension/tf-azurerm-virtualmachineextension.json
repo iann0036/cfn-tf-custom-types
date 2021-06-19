@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::AzureRM::VirtualMachineExtension",
+    "description": "Manages a Virtual Machine Extension to provide post deployment configuration\nand run automated tasks.\n\n~> **NOTE:** Custom Script Extensions for Linux & Windows require that the `commandToExecute` returns a `0` exit code to be classified as successfully deployed. You can achieve this by appending `exit 0` to the end of your `commandToExecute`.\n\n-> **NOTE:** Custom Script Extensions require that the Azure Virtual Machine Guest Agent is running on the Virtual Machine.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualMachineExtension/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoUpgradeMinorVersion": {
+            "type": "boolean",
+            "description": "Specifies if the platform deploys\nthe latest minor version update to the `type_handler_version` specified."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual machine extension peering. Changing\nthis forces a new resource to be created."
+        },
+        "ProtectedSettings": {
+            "type": "string",
+            "description": "The protected_settings passed to the\nextension, like settings, these are specified as a JSON object in a string."
+        },
+        "Publisher": {
+            "type": "string",
+            "description": "The publisher of the extension, available publishers\ncan be found by using the Azure CLI."
+        },
+        "Settings": {
+            "type": "string",
+            "description": "The settings passed to the extension, these are\nspecified as a JSON object in a string."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of extension, available types for a publisher can\nbe found using the Azure CLI."
+        },
+        "TypeHandlerVersion": {
+            "type": "string",
+            "description": "Specifies the version of the extension to\nuse, available versions can be found using the Azure CLI."
+        },
+        "VirtualMachineId": {
+            "type": "string",
+            "description": "The ID of the Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Publisher",
+        "Type",
+        "TypeHandlerVersion",
+        "VirtualMachineId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ProtectedSettings"
+    ]
+}

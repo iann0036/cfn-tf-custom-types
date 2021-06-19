@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::AWS::EbsSnapshotCopy",
+    "description": "Creates a Snapshot of a snapshot.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EbsSnapshotCopy/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DataEncryptionKeyId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of what the snapshot is."
+        },
+        "Encrypted": {
+            "type": "boolean",
+            "description": "Whether the snapshot is encrypted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The ARN for the KMS encryption key."
+        },
+        "OwnerAlias": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "SourceRegion": {
+            "type": "string"
+        },
+        "SourceSnapshotId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags for the snapshot. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VolumeId": {
+            "type": "string"
+        },
+        "VolumeSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SourceRegion",
+        "SourceSnapshotId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DataEncryptionKeyId",
+        "/properties/Id",
+        "/properties/OwnerAlias",
+        "/properties/OwnerId",
+        "/properties/VolumeId",
+        "/properties/VolumeSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

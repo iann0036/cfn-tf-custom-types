@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Alicloud::SlbMasterSlaveServerGroup",
+    "description": "A master slave server group contains two ECS instances. The master slave server group can help you to define multiple listening dimension.\n\n-> **NOTE:** One ECS instance can be added into multiple master slave server groups.\n\n-> **NOTE:** One master slave server group can only add two ECS instances, which are master server and slave server.\n\n-> **NOTE:** One master slave server group can be attached with tcp/udp listeners in one load balancer.\n\n-> **NOTE:** One Classic and Internet load balancer, its master slave server group can add Classic and VPC ECS instances.\n\n-> **NOTE:** One Classic and Intranet load balancer, its master slave server group can only add Classic ECS instances.\n\n-> **NOTE:** One VPC load balancer, its master slave server group can only add the same VPC ECS instances.\n\n-> **NOTE:** Available in 1.54.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SlbMasterSlaveServerGroup/docs/README.md",
+    "definitions": {
+        "ServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsBackup": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ServerId": {
+                    "type": "string"
+                },
+                "ServerType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Port",
+                "ServerId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The Load Balancer ID which is used to launch a new master slave server group."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the master slave server group."
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServersDefinition"
+            },
+            "maxItems": 2
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

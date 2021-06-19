@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::TencentCloud::GaapCertificate",
+    "description": "Provides a resource to create a certificate of GAAP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BeginTime": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "Content of the certificate, and URL encoding. When the certificate is basic authentication, use the `user:xxx password:xxx` format, where the password is encrypted with `htpasswd` or `openssl`; When the certificate is `CA` or `SSL`, the format is `pem`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EndTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerCn": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Key of the `SSL` certificate."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the certificate."
+        },
+        "SubjectCn": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the certificate. Valid value: `BASIC`, `CLIENT`, `SERVER`, `REALSERVER` and `PROXY`. `BASIC` means basic certificate; `CLIENT` means client CA certificate; `SERVER` means server SSL certificate; `REALSERVER` means realserver CA certificate; `PROXY` means proxy SSL certificate."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BeginTime",
+        "/properties/CreateTime",
+        "/properties/EndTime",
+        "/properties/Id",
+        "/properties/IssuerCn",
+        "/properties/SubjectCn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Key"
+    ]
+}

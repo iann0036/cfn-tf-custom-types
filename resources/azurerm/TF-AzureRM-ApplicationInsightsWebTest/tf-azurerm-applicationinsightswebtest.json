@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::AzureRM::ApplicationInsightsWebTest",
+    "description": "Manages an Application Insights WebTest.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApplicationInsightsWebTest/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationInsightsId": {
+            "type": "string",
+            "description": "The ID of the Application Insights component on which the WebTest operates. Changing this forces a new resource to be created."
+        },
+        "Configuration": {
+            "type": "string",
+            "description": "An XML configuration specification for a WebTest ([see here for more information](https://docs.microsoft.com/en-us/rest/api/application-insights/webtests/createorupdate/))."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Purpose/user defined descriptive test for this WebTest."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Is the test actively being monitored."
+        },
+        "Frequency": {
+            "type": "number",
+            "description": "Interval in seconds between test runs for this WebTest. Valid options are `300`, `600` and `900`. Defaults to `300`."
+        },
+        "GeoLocations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of where to physically run the tests from to give global coverage for accessibility of your application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string",
+            "description": "The kind of web test that this web test watches. Choices are `ping` and `multistep`. Changing this forces a new resource to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. It needs to correlate with location of parent resource (azurerm_application_insights)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Application Insights WebTest. Changing this forces a\nnew resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Application Insights WebTest. Changing this forces a new resource."
+        },
+        "RetryEnabled": {
+            "type": "boolean",
+            "description": "Allow for retries should this WebTest fail."
+        },
+        "SyntheticMonitorId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Seconds until this WebTest will timeout and fail. Default is `30`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationInsightsId",
+        "Configuration",
+        "GeoLocations",
+        "Kind",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SyntheticMonitorId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

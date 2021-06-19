@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::Vault::KubernetesAuthBackendRole",
+    "description": "Manages an Kubernetes auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/kubernetes.html) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-KubernetesAuthBackendRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Audience": {
+            "type": "string",
+            "description": "Audience claim to verify in the JWT."
+        },
+        "Backend": {
+            "type": "string",
+            "description": "Unique name of the kubernetes backend to configure."
+        },
+        "BoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundServiceAccountNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of service account names able to access this role. If set to `[\"*\"]` all names are allowed, both this and bound_service_account_namespaces can not be \"*\"."
+        },
+        "BoundServiceAccountNamespaces": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of namespaces allowed to access this role. If set to `[\"*\"]` all namespaces are allowed, both this and bound_service_account_names can not be set to \"*\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "number"
+        },
+        "NumUses": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "Name of the role."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BoundServiceAccountNames",
+        "BoundServiceAccountNamespaces",
+        "RoleName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

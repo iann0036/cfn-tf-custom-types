@@ -1,0 +1,216 @@
+{
+    "typeName": "TF::FortiOS::SystemCsf",
+    "description": "Add this FortiGate to a Security Fabric or set up a new Security Fabric on this FortiGate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemCsf/docs/README.md",
+    "definitions": {
+        "FabricDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessToken": {
+                    "type": "string",
+                    "description": "Device access token."
+                },
+                "DeviceIp": {
+                    "type": "string",
+                    "description": "Device IP."
+                },
+                "DeviceType": {
+                    "type": "string",
+                    "description": "Device type. Valid values: `fortimail`."
+                },
+                "HttpsPort": {
+                    "type": "number",
+                    "description": "HTTPS port for fabric device."
+                },
+                "Login": {
+                    "type": "string",
+                    "description": "Device login name."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Device name."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Device login password."
+                }
+            },
+            "required": []
+        },
+        "TrustedListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Security fabric authorization action. Valid values: `accept`, `deny`."
+                },
+                "AuthorizationType": {
+                    "type": "string",
+                    "description": "Authorization type. Valid values: `serial`, `certificate`."
+                },
+                "Certificate": {
+                    "type": "string",
+                    "description": "Certificate."
+                },
+                "DownstreamAuthorization": {
+                    "type": "string",
+                    "description": "Trust authorizations by this node's administrator. Valid values: `enable`, `disable`."
+                },
+                "HaMembers": {
+                    "type": "string",
+                    "description": "HA members."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Serial": {
+                    "type": "string",
+                    "description": "Serial."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptAuthByCert": {
+            "type": "string",
+            "description": "Accept connections with unknown certificates and ask admin for approval. Valid values: `disable`, `enable`."
+        },
+        "AuthorizationRequestType": {
+            "type": "string",
+            "description": "Authorization request type. Valid values: `serial`, `certificate`."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "Certificate."
+        },
+        "ConfigurationSync": {
+            "type": "string",
+            "description": "Configuration sync mode. Valid values: `default`, `local`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "FabricObjectUnification": {
+            "type": "string",
+            "description": "Fabric CMDB Object Unification Valid values: `default`, `local`."
+        },
+        "FixedKey": {
+            "type": "string",
+            "description": "Auto-generated fixed key used when this device is the root. (Will automatically be generated if not set.)."
+        },
+        "GroupName": {
+            "type": "string",
+            "description": "Security Fabric group name. All FortiGates in a Security Fabric must have the same group name."
+        },
+        "GroupPassword": {
+            "type": "string",
+            "description": "Security Fabric group password. All FortiGates in a Security Fabric must have the same group password."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagementIp": {
+            "type": "string",
+            "description": "Management IP address of this FortiGate. Used to log into this FortiGate from another FortiGate in the Security Fabric."
+        },
+        "ManagementPort": {
+            "type": "number",
+            "description": "Overriding port for management connection (Overrides admin port)."
+        },
+        "SamlConfigurationSync": {
+            "type": "string",
+            "description": "SAML setting configuration synchronization. Valid values: `default`, `local`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable Security Fabric. Valid values: `enable`, `disable`."
+        },
+        "UpstreamIp": {
+            "type": "string",
+            "description": "IP address of the FortiGate upstream from this FortiGate in the Security Fabric."
+        },
+        "UpstreamPort": {
+            "type": "number",
+            "description": "The port number to use to communicate with the FortiGate upstream from this FortiGate in the Security Fabric (default = 8013)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "FabricDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FabricDeviceDefinition"
+            }
+        },
+        "TrustedList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/FixedKey",
+        "/properties/GroupPassword",
+        "/definitions/FabricDeviceDefinition/AccessToken",
+        "/definitions/FabricDeviceDefinition/Password"
+    ]
+}

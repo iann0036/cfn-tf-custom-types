@@ -1,0 +1,502 @@
+{
+    "typeName": "TF::AVI::Gslb",
+    "description": "The Gslb resource allows the creation and management of Avi Gslb",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Gslb/docs/README.md",
+    "definitions": {
+        "ClientIpAddrGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Addrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddrsDefinition"
+                    }
+                },
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixesDefinition"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DnsConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DomainName"
+            ]
+        },
+        "ReplicationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckpointRef": {
+                    "type": "string"
+                },
+                "ReplicationMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SitesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "ClusterUuid": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HmShardEnabled": {
+                    "type": "boolean"
+                },
+                "MemberType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Ratio": {
+                    "type": "number"
+                },
+                "SuspendMode": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "DnsVses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsVsesDefinition"
+                    }
+                },
+                "HmProxies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HmProxiesDefinition"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressesDefinition"
+                    }
+                },
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ClusterUuid",
+                "Name",
+                "Password",
+                "Username"
+            ]
+        },
+        "ThirdPartySitesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Ratio": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "HmProxies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HmProxiesDefinition"
+                    }
+                },
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BeginDefinition"
+                    },
+                    "minItems": 1
+                },
+                "End": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EndDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DnsVsesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsVsUuid": {
+                    "type": "string"
+                },
+                "DomainNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DnsVsUuid"
+            ]
+        },
+        "HmProxiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProxyType": {
+                    "type": "string"
+                },
+                "SiteUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "BeginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "EndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AsyncInterval": {
+            "type": "number",
+            "description": "Frequency with which messages are propagated to vs mgr. Value of 0 disables async behavior and rpc are sent inline. Allowed values are 0-5. Field introduced in 18.2.3. Unit is sec."
+        },
+        "ClearOnMaxRetries": {
+            "type": "number",
+            "description": "Max retries after which the remote site is treated as a fresh start. In fresh start all the configs are downloaded. Allowed values are 1-1024."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "EnableConfigByMembers": {
+            "type": "boolean",
+            "description": "Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members. Field introduced in 20.1.5."
+        },
+        "ErrorResyncInterval": {
+            "type": "number",
+            "description": "Frequency with which errored messages are resynced to follower sites. Value of 0 disables resync behavior. Allowed values are 60-3600. Special values are 0 - 'disable'. Field introduced in 18.2.3. Unit is sec."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFederated": {
+            "type": "boolean",
+            "description": "This field indicates that this object is replicated across gslb federation. Field introduced in 17.1.3."
+        },
+        "LeaderClusterUuid": {
+            "type": "string",
+            "description": "Mark this site as leader of gslb configuration. This site is the one among the avi sites."
+        },
+        "MaintenanceMode": {
+            "type": "boolean",
+            "description": "This field disables the configuration operations on the leader for all federated objects. Cud operations on gslb, gslbservice, gslbgeodbprofile and other federated objects will be rejected. The rest-api disabling helps in upgrade scenarios where we don't want configuration sync operations to the gslb member when the member is being upgraded. This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade. Field introduced in 17.2.1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the gslb object."
+        },
+        "SendInterval": {
+            "type": "number",
+            "description": "Frequency with which group members communicate. Allowed values are 1-3600. Unit is sec."
+        },
+        "SendIntervalPriorToMaintenanceMode": {
+            "type": "number",
+            "description": "The user can specify a send-interval while entering maintenance mode. The validity of this 'maintenance send-interval' is only during maintenance mode. When the user leaves maintenance mode, the original send-interval is reinstated. This internal variable is used to store the original send-interval. Field introduced in 18.2.3. Unit is sec."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "TenantScoped": {
+            "type": "boolean",
+            "description": "This field indicates tenant visibility for gs pool member selection across the gslb federated objects. Field introduced in 18.2.12,20.1.4."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "ViewId": {
+            "type": "number",
+            "description": "The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace. Each partitioned group will be able to operate independently by using the view-id."
+        },
+        "ClientIpAddrGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClientIpAddrGroupDefinition"
+            }
+        },
+        "DnsConfigs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsConfigsDefinition"
+            }
+        },
+        "ReplicationPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ReplicationPolicyDefinition"
+            }
+        },
+        "Sites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SitesDefinition"
+            },
+            "minItems": 1
+        },
+        "ThirdPartySites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThirdPartySitesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LeaderClusterUuid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SitesDefinition/Password"
+    ]
+}

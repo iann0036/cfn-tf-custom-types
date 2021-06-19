@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::FortiOS::WanoptCacheservice",
+    "description": "Designate cache-service for wan-optimization and webcache.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WanoptCacheservice/docs/README.md",
+    "definitions": {
+        "DstPeerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "number",
+                    "description": "Set authentication type for this peer."
+                },
+                "DeviceId": {
+                    "type": "string",
+                    "description": "Device ID of this peer."
+                },
+                "EncodeType": {
+                    "type": "number",
+                    "description": "Set encode type for this peer."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Set cluster IP address of this peer."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Set priority for this peer."
+                }
+            },
+            "required": []
+        },
+        "SrcPeerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "number",
+                    "description": "Set authentication type for this peer."
+                },
+                "DeviceId": {
+                    "type": "string",
+                    "description": "Device ID of this peer."
+                },
+                "EncodeType": {
+                    "type": "number",
+                    "description": "Set encode type for this peer."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Set cluster IP address of this peer."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Set priority for this peer."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptableConnections": {
+            "type": "string",
+            "description": "Set strategy when accepting cache collaboration connection. Valid values: `any`, `peers`."
+        },
+        "Collaboration": {
+            "type": "string",
+            "description": "Enable/disable cache-collaboration between cache-service clusters. Valid values: `enable`, `disable`."
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "Set identifier for this cache device."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PreferScenario": {
+            "type": "string",
+            "description": "Set the preferred cache behavior towards the balance between latency and hit-ratio. Valid values: `balance`, `prefer-speed`, `prefer-cache`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "DstPeer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstPeerDefinition"
+            }
+        },
+        "SrcPeer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcPeerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

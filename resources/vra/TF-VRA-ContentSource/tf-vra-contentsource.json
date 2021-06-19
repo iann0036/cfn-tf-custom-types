@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::VRA::ContentSource",
+    "description": "This resource provides a way to create a content source vRealize Automation(vRA).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-ContentSource/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "IntegrationId": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ProjectName": {
+                    "type": "string"
+                },
+                "Repository": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntegrationId",
+                "Path",
+                "ProjectName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedAt": {
+            "type": "string"
+        },
+        "LastUpdatedBy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name for content source used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The id of the project this entity belongs to."
+        },
+        "SyncEnabled": {
+            "type": "boolean",
+            "description": "Flag indicating whether sync is enabled for this content source."
+        },
+        "TypeId": {
+            "type": "string",
+            "description": "Content Source type. Supported values are `com.gitlab`, `com.github`, `com.vmware.marketplace`, `org.bitbucket`."
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId",
+        "SyncEnabled",
+        "TypeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/LastUpdatedAt",
+        "/properties/LastUpdatedBy",
+        "/properties/OrgId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

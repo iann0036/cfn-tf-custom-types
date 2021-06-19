@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::VRA::CloudAccountNsxv",
+    "description": "Creates a VMware vRealize Automation NSX-V cloud account resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-CloudAccountNsxv/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptSelfSignedCert": {
+            "type": "boolean",
+            "description": "Accept self-signed certificate when connecting to the cloud account."
+        },
+        "AssociatedCloudAccountIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DcId": {
+            "type": "string",
+            "description": "Identifier of a data collector VM deployed in the on premise infrastructure."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Host name for NSX-V cloud account."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of NSX-V cloud account."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password used to authenticate to the cloud account."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username used to authenticate with the cloud account."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hostname",
+        "Name",
+        "Password",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedCloudAccountIds",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

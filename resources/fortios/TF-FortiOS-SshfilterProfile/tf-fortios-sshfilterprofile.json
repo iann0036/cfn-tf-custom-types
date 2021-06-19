@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::FortiOS::SshfilterProfile",
+    "description": "SSH filter profile.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SshfilterProfile/docs/README.md",
+    "definitions": {
+        "FileFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable file filter logging. Valid values: `enable`, `disable`."
+                },
+                "ScanArchiveContents": {
+                    "type": "string",
+                    "description": "Enable/disable file filter archive contents scan. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable file filter. Valid values: `enable`, `disable`."
+                },
+                "Entries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntriesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ShellCommandsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take for URL filter matches. Valid values: `block`, `allow`."
+                },
+                "Alert": {
+                    "type": "string",
+                    "description": "Enable/disable alert. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Id."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Pattern": {
+                    "type": "string",
+                    "description": "SSH shell command pattern."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Log severity. Valid values: `low`, `medium`, `high`, `critical`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Matching type. Valid values: `simple`, `regex`."
+                }
+            },
+            "required": []
+        },
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action taken for matched file. Valid values: `log`, `block`."
+                },
+                "Comment": {
+                    "type": "string",
+                    "description": "Comment."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "Match files transmitted in the session's originating or reply direction. Valid values: `incoming`, `outgoing`, `any`."
+                },
+                "Filter": {
+                    "type": "string",
+                    "description": "Add a file filter."
+                },
+                "PasswordProtected": {
+                    "type": "string",
+                    "description": "Match password-protected files. Valid values: `yes`, `any`."
+                },
+                "FileType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileTypeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FileTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "File type name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Block": {
+            "type": "string",
+            "description": "SSH blocking options."
+        },
+        "DefaultCommandLog": {
+            "type": "string",
+            "description": "Enable/disable logging unmatched shell commands. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Log": {
+            "type": "string",
+            "description": "SSH logging options."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SSH filter profile name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "FileFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FileFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "ShellCommands": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShellCommandsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

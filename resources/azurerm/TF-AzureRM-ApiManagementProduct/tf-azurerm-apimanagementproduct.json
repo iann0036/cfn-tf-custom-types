@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementProduct",
+    "description": "Manages an API Management Product.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementProduct/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
+        },
+        "ApprovalRequired": {
+            "type": "boolean",
+            "description": "Do subscribers need to be approved prior to being able to use the Product?."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this Product, which may include HTML formatting tags."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The Display Name for this API Management Product."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProductId": {
+            "type": "string",
+            "description": "The Identifier for this Product, which must be unique within the API Management Service. Changing this forces a new resource to be created."
+        },
+        "Published": {
+            "type": "boolean",
+            "description": "Is this Product Published?."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created."
+        },
+        "SubscriptionRequired": {
+            "type": "boolean",
+            "description": "Is a Subscription required to access API's included in this Product?."
+        },
+        "SubscriptionsLimit": {
+            "type": "number",
+            "description": "The number of subscriptions a user can have to this Product at the same time."
+        },
+        "Terms": {
+            "type": "string",
+            "description": "The Terms and Conditions for this Product, which must be accepted by Developers before they can begin the Subscription process."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "DisplayName",
+        "ProductId",
+        "Published",
+        "ResourceGroupName",
+        "SubscriptionRequired"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,542 @@
+{
+    "typeName": "TF::ILert::Connection",
+    "description": "A [connection](https://docs.ilert.com/getting-started/intro#connectors-and-connections-outbond-integrations) is created at the alert source level and uses its [connector](connector.html) to perform a concrete action.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-Connection/docs/README.md",
+    "definitions": {
+        "AlertSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "AutotaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CompanyId": {
+                    "type": "string"
+                },
+                "IssueType": {
+                    "type": "string"
+                },
+                "QueueId": {
+                    "type": "number"
+                },
+                "TicketCategory": {
+                    "type": "string"
+                },
+                "TicketType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "QueueId"
+            ]
+        },
+        "AwsLambdaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "AzureFaasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ConnectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "DatadogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "string"
+                },
+                "Site": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subject": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Recipients",
+                "Subject"
+            ]
+        },
+        "GithubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Repository": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Owner",
+                "Repository"
+            ]
+        },
+        "GoogleFaasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "JiraDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "IssueType": {
+                    "type": "string"
+                },
+                "Project": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Project"
+            ]
+        },
+        "ServicenowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CallerId": {
+                    "type": "string"
+                },
+                "Impact": {
+                    "type": "string"
+                },
+                "Urgency": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChannelId": {
+                    "type": "string"
+                },
+                "ChannelName": {
+                    "type": "string"
+                },
+                "TeamDomain": {
+                    "type": "string"
+                },
+                "TeamId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ChannelId",
+                "TeamId"
+            ]
+        },
+        "StatusPageIoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PageId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SysdigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventFilter": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TopdeskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Status": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WebhookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ZammadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ZapierDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ZendeskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the connection.\n- `alert_source` - (Required) A [alert_source](#alert-source-arguments) block.\n- `connector` - (Required) A [connector](#connector-arguments) block.\n- `trigger_mode` - (Optional) The trigger mode of the connection. Allowed values are `AUTOMATIC` or `MANUAL`. Default: `AUTOMATIC`.\n- `trigger_types` - (Optional) A list of the trigger types. Allowed values are `incident-created`, `incident-assigned`, `incident-auto-escalated`, `incident-acknowledged`, `incident-raised`, `incident-comment-added`, `incident-resolved`.\n- `datadog` - (Optional) A [datadog](#datadog-arguments) block.\n- `jira` - (Optional) A [jira](#jira-arguments) block.\n- `servicenow` - (Optional) A [servicenow](#servicenow-arguments) block.\n- `slack` - (Optional) A [slack](#slack-arguments) block.\n- `webhook` - (Optional) A [webhook](#webhook-arguments) block.\n- `zendesk` - (Optional) A [zendesk](#zendesk-arguments) block.\n- `github` - (Optional) A [github](#github-arguments) block.\n- `aws_lambda` - (Optional) A [aws_lambda](#aws-lambda-arguments) block.\n- `azure_faas` - (Optional) A [azure_faas](#azure-function-arguments) block.\n- `google_faas` - (Optional) A [google_faas](#google-cloud-function-arguments) block.\n- `email` - (Optional) A [email](#email-arguments) block.\n- `sysdig` - (Optional) A [sysdig](#sysdig-arguments) block.\n- `zapier` - (Optional) A [zapier](#zapier-arguments) block.\n- `autotask` - (Optional) A [autotask](#autotask-arguments) block.\n- `mattermost` - (Optional) A [mattermost](#mattermost-arguments) block.\n- `zammad` - (Optional) A [zammad](#zammad-arguments) block.\n- `status_page_io` - (Optional) A [status_page_io](#statuspage-arguments) block."
+        },
+        "TriggerMode": {
+            "type": "string",
+            "description": "The trigger mode of the connection. Allowed values are `AUTOMATIC` or `MANUAL`. Default: `AUTOMATIC`.\n- `trigger_types` - (Optional) A list of the trigger types. Allowed values are `incident-created`, `incident-assigned`, `incident-auto-escalated`, `incident-acknowledged`, `incident-raised`, `incident-comment-added`, `incident-resolved`.\n- `datadog` - (Optional) A [datadog](#datadog-arguments) block.\n- `jira` - (Optional) A [jira](#jira-arguments) block.\n- `servicenow` - (Optional) A [servicenow](#servicenow-arguments) block.\n- `slack` - (Optional) A [slack](#slack-arguments) block.\n- `webhook` - (Optional) A [webhook](#webhook-arguments) block.\n- `zendesk` - (Optional) A [zendesk](#zendesk-arguments) block.\n- `github` - (Optional) A [github](#github-arguments) block.\n- `aws_lambda` - (Optional) A [aws_lambda](#aws-lambda-arguments) block.\n- `azure_faas` - (Optional) A [azure_faas](#azure-function-arguments) block.\n- `google_faas` - (Optional) A [google_faas](#google-cloud-function-arguments) block.\n- `email` - (Optional) A [email](#email-arguments) block.\n- `sysdig` - (Optional) A [sysdig](#sysdig-arguments) block.\n- `zapier` - (Optional) A [zapier](#zapier-arguments) block.\n- `autotask` - (Optional) A [autotask](#autotask-arguments) block.\n- `mattermost` - (Optional) A [mattermost](#mattermost-arguments) block.\n- `zammad` - (Optional) A [zammad](#zammad-arguments) block.\n- `status_page_io` - (Optional) A [status_page_io](#statuspage-arguments) block."
+        },
+        "TriggerTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of the trigger types. Allowed values are `incident-created`, `incident-assigned`, `incident-auto-escalated`, `incident-acknowledged`, `incident-raised`, `incident-comment-added`, `incident-resolved`.\n- `datadog` - (Optional) A [datadog](#datadog-arguments) block.\n- `jira` - (Optional) A [jira](#jira-arguments) block.\n- `servicenow` - (Optional) A [servicenow](#servicenow-arguments) block.\n- `slack` - (Optional) A [slack](#slack-arguments) block.\n- `webhook` - (Optional) A [webhook](#webhook-arguments) block.\n- `zendesk` - (Optional) A [zendesk](#zendesk-arguments) block.\n- `github` - (Optional) A [github](#github-arguments) block.\n- `aws_lambda` - (Optional) A [aws_lambda](#aws-lambda-arguments) block.\n- `azure_faas` - (Optional) A [azure_faas](#azure-function-arguments) block.\n- `google_faas` - (Optional) A [google_faas](#google-cloud-function-arguments) block.\n- `email` - (Optional) A [email](#email-arguments) block.\n- `sysdig` - (Optional) A [sysdig](#sysdig-arguments) block.\n- `zapier` - (Optional) A [zapier](#zapier-arguments) block.\n- `autotask` - (Optional) A [autotask](#autotask-arguments) block.\n- `mattermost` - (Optional) A [mattermost](#mattermost-arguments) block.\n- `zammad` - (Optional) A [zammad](#zammad-arguments) block.\n- `status_page_io` - (Optional) A [status_page_io](#statuspage-arguments) block."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "AlertSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertSourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Autotask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutotaskDefinition"
+            },
+            "maxItems": 1
+        },
+        "AwsLambda": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsLambdaDefinition"
+            },
+            "maxItems": 1
+        },
+        "AzureFaas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFaasDefinition"
+            },
+            "maxItems": 1
+        },
+        "Connector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectorDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Datadog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatadogDefinition"
+            },
+            "maxItems": 1
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Github": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GithubDefinition"
+            },
+            "maxItems": 1
+        },
+        "GoogleFaas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GoogleFaasDefinition"
+            },
+            "maxItems": 1
+        },
+        "Jira": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JiraDefinition"
+            },
+            "maxItems": 1
+        },
+        "Servicenow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServicenowDefinition"
+            },
+            "maxItems": 1
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            },
+            "maxItems": 1
+        },
+        "StatusPageIo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusPageIoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sysdig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SysdigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Topdesk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TopdeskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Webhook": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebhookDefinition"
+            },
+            "maxItems": 1
+        },
+        "Zammad": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZammadDefinition"
+            },
+            "maxItems": 1
+        },
+        "Zapier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZapierDefinition"
+            },
+            "maxItems": 1
+        },
+        "Zendesk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZendeskDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::VRA::BlueprintVersion",
+    "description": "Creates a VMware vRealize Automation cloud template (blueprint) version resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-BlueprintVersion/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlueprintDescription": {
+            "type": "string"
+        },
+        "BlueprintId": {
+            "type": "string",
+            "description": "ID of the cloud template  (blueprint)."
+        },
+        "ChangeLog": {
+            "type": "string",
+            "description": "Cloud template  (blueprint) version log."
+        },
+        "Content": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description for the cloud template  (blueprint) version."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "ProjectName": {
+            "type": "string"
+        },
+        "Release": {
+            "type": "boolean",
+            "description": "Flag to indicate whether to release the version."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "UpdatedBy": {
+            "type": "string"
+        },
+        "Valid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "Cloud template  (blueprint) version."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BlueprintId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BlueprintDescription",
+        "/properties/Content",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/OrgId",
+        "/properties/ProjectId",
+        "/properties/ProjectName",
+        "/properties/Status",
+        "/properties/UpdatedAt",
+        "/properties/UpdatedBy",
+        "/properties/Valid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

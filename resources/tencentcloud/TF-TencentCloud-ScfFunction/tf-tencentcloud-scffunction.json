@@ -1,0 +1,301 @@
+{
+    "typeName": "TF::TencentCloud::ScfFunction",
+    "description": "Provide a resource to create a SCF function.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ScfFunction/docs/README.md",
+    "definitions": {
+        "EnvironmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TriggerInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateTime": {
+                    "type": "string"
+                },
+                "CustomArgument": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "ModifyTime": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TriggerDesc": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "TriggersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CosRegion": {
+                    "type": "string",
+                    "description": "Region of cos bucket. if `type` is `cos`, `cos_region` is required."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name of the SCF function trigger, if `type` is `ckafka`, the format of name must be `<ckafkaInstanceId>-<topicId>`; if `type` is `cos`, the name is cos bucket id, other In any case, it can be combined arbitrarily. It can only contain English letters, numbers, connectors and underscores. The maximum length is 100."
+                },
+                "TriggerDesc": {
+                    "type": "string",
+                    "description": "TriggerDesc of the SCF function trigger, parameter format of `timer` is linux cron expression; parameter of `cos` type is json string `{\"event\":\"cos:ObjectCreated:*\",\"filter\":{\"Prefix\":\"\",\"Suffix\":\"\"}}`, where `event` is the cos event trigger, `Prefix` is the corresponding file prefix filter condition, `Suffix` is the suffix filter condition, if not need filter condition can not pass; `cmq` type does not pass this parameter; `ckafka` type parameter format is json string `{\"maxMsgNum\":\"1\",\"offset\":\"latest\"}`; `apigw` type parameter format is json string `{\"api\":{\"authRequired\":\"FALSE\",\"requestConfig\":{\"method\":\"ANY\"},\"isIntegratedResponse\":\"FALSE\"},\"service\":{\"serviceId\":\"service-dqzh68sg\"},\"release\":{\"environmentName\":\"test\"}}`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type of the SCF function trigger, support `cos`, `cmq`, `timer`, `ckafka`, `apigw`."
+                }
+            },
+            "required": [
+                "Name",
+                "TriggerDesc",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClsLogsetId": {
+            "type": "string",
+            "description": "cls logset id of the SCF function."
+        },
+        "ClsTopicId": {
+            "type": "string",
+            "description": "cls topic id of the SCF function."
+        },
+        "CodeError": {
+            "type": "string"
+        },
+        "CodeResult": {
+            "type": "string"
+        },
+        "CodeSize": {
+            "type": "number"
+        },
+        "CosBucketName": {
+            "type": "string",
+            "description": "Cos bucket name of the SCF function, such as `cos-1234567890`, conflict with `zip_file`."
+        },
+        "CosBucketRegion": {
+            "type": "string",
+            "description": "Cos bucket region of the SCF function, conflict with `zip_file`."
+        },
+        "CosObjectName": {
+            "type": "string",
+            "description": "Cos object name of the SCF function, should have suffix `.zip` or `.jar`, conflict with `zip_file`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the SCF function. Description supports English letters, numbers, spaces, commas, newlines, periods and Chinese, the maximum length is 1000."
+        },
+        "EipFixed": {
+            "type": "boolean"
+        },
+        "Eips": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentDefinition"
+            },
+            "description": "Environment of the SCF function."
+        },
+        "ErrNo": {
+            "type": "number"
+        },
+        "Handler": {
+            "type": "string",
+            "description": "Handler of the SCF function. The format of name is `<filename>.<method_name>`, and it supports 26 English letters, numbers, connectors, and underscores, it should start with a letter. The last character cannot be `-` or `_`. Available length is 2-60."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallDependency": {
+            "type": "boolean"
+        },
+        "L5Enable": {
+            "type": "boolean",
+            "description": "Enable L5 for SCF function, default is `false`."
+        },
+        "MemSize": {
+            "type": "number",
+            "description": "Memory size of the SCF function, unit is MB. The default is `128`MB. The range is 128M-1536M, and the ladder is 128M."
+        },
+        "ModifyTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the SCF function. Name supports 26 English letters, numbers, connectors, and underscores, it should start with a letter. The last character cannot be `-` or `_`. Available length is 2-60."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "Namespace of the SCF function, default is `default`."
+        },
+        "Role": {
+            "type": "string",
+            "description": "Role of the SCF function."
+        },
+        "Runtime": {
+            "type": "string",
+            "description": "Runtime of the SCF function, only supports `Python2.7`, `Python3.6`, `Nodejs6.10`, `Nodejs8.9`, `Nodejs10.15`, `PHP5`, `PHP7`, `Golang1`, and `Java8`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusDesc": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Subnet ID of the SCF function."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of the SCF function."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout of the SCF function, unit is second. Default `3`. Available value is 1-900."
+        },
+        "TriggerInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TriggerInfoDefinition"
+            }
+        },
+        "Vip": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID of the SCF function."
+        },
+        "ZipFile": {
+            "type": "string",
+            "description": "Zip file of the SCF function, conflict with `cos_bucket_name`, `cos_object_name`, `cos_bucket_region`."
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TriggersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Handler",
+        "Name",
+        "Runtime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CodeError",
+        "/properties/CodeResult",
+        "/properties/CodeSize",
+        "/properties/EipFixed",
+        "/properties/Eips",
+        "/properties/ErrNo",
+        "/properties/Host",
+        "/properties/Id",
+        "/properties/InstallDependency",
+        "/properties/ModifyTime",
+        "/properties/Status",
+        "/properties/StatusDesc",
+        "/properties/TriggerInfo",
+        "/properties/Vip"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

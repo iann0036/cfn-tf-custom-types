@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::NSXT::DhcpServerIpPool",
+    "description": "Provides a resource to configure IP Pool for logical DHCP server on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-DhcpServerIpPool/docs/README.md",
+    "definitions": {
+        "DhcpGenericOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Code",
+                "Values"
+            ]
+        },
+        "DhcpOption121Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Network": {
+                    "type": "string"
+                },
+                "NextHop": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Network",
+                "NextHop"
+            ]
+        },
+        "IpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "ErrorThreshold": {
+            "type": "number",
+            "description": "Error threshold in percent. Valid values are from 80 to 100, default is 100."
+        },
+        "GatewayIp": {
+            "type": "string",
+            "description": "Gateway IP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaseTime": {
+            "type": "number",
+            "description": "Lease time in seconds. Default is 86400."
+        },
+        "LogicalDhcpServerId": {
+            "type": "string",
+            "description": "DHCP server uuid. Changing this would force new pool to be created."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "WarningThreshold": {
+            "type": "number",
+            "description": "Warning threshold in percent. Valid values are from 50 to 80, default is 80."
+        },
+        "DhcpGenericOption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DhcpGenericOptionDefinition"
+            }
+        },
+        "DhcpOption121": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DhcpOption121Definition"
+            }
+        },
+        "IpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpRangeDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicalDhcpServerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,439 @@
+{
+    "typeName": "TF::Volterra::AlertReceiver",
+    "description": "CloudFormation equivalent of volterra_alert_receiver",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-AlertReceiver/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OpsgenieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                },
+                "ApiKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApiKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PagerdutyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                },
+                "RoutingKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RoutingKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Channel": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UrlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SmsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContactNumber": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ApiKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RoutingKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EmailDefinition"
+            }
+        },
+        "Opsgenie": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OpsgenieDefinition"
+            }
+        },
+        "Pagerduty": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PagerdutyDefinition"
+            }
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            }
+        },
+        "Sms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

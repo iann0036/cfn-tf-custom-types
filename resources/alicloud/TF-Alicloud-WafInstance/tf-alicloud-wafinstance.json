@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::Alicloud::WafInstance",
+    "description": "Provides a WAF Instance resource to create instance in the Web Application Firewall.\n\nFor information about WAF and how to use it, see [What is Alibaba Cloud WAF](https://www.alibabacloud.com/help/doc-detail/28517.htm).\n\n-> **NOTE:** Available in 1.83.0+ .",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-WafInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BigScreen": {
+            "type": "string",
+            "description": "Specify whether big screen is supported. Valid values: [\"0\", \"1\"]. \"0\" for false and \"1\" for true."
+        },
+        "ExclusiveIpPackage": {
+            "type": "string",
+            "description": "Specify the number of exclusive WAF IP addresses."
+        },
+        "ExtBandwidth": {
+            "type": "string",
+            "description": "The extra bandwidth. Unit: Mbit/s."
+        },
+        "ExtDomainPackage": {
+            "type": "string",
+            "description": "The number of extra domains."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogStorage": {
+            "type": "string",
+            "description": "Log storage size. Unit: T. Valid values: [3, 5, 10, 20, 50]."
+        },
+        "LogTime": {
+            "type": "string",
+            "description": "Log storage period. Unit: day. Valid values: [180, 360]."
+        },
+        "ModifyType": {
+            "type": "string",
+            "description": "Type of configuration change. Valid value: Upgrade."
+        },
+        "PackageCode": {
+            "type": "string",
+            "description": "Subscription plan:\n* China site customers can purchase the following versions of China Mainland region, valid values: [\"version_3\", \"version_4\", \"version_5\"].\n* China site customers can purchase the following versions of International region, valid values: [\"version_pro_asia\", \"version_business_asia\", \"version_enterprise_asia\"]\n* International site customers can purchase the following versions of China Mainland region: [\"version_pro_china\", \"version_business_china\", \"version_enterprise_china\"]\n* International site customers can purchase the following versions of International region: [\"version_pro\", \"version_business\", \"version_enterprise\"]."
+        },
+        "Period": {
+            "type": "number",
+            "description": "Service time of Web Application Firewall."
+        },
+        "PrefessionalService": {
+            "type": "string",
+            "description": "Specify whether professional service is supported. Valid values: [\"true\", \"false\"]."
+        },
+        "RenewPeriod": {
+            "type": "number",
+            "description": "Renewal period of WAF service. Unit: month."
+        },
+        "RenewalStatus": {
+            "type": "string",
+            "description": "Renewal status of WAF service. Valid values:\n* AutoRenewal: The service time of WAF is renewed automatically.\n* ManualRenewal (default): The service time of WAF is renewed manually.Specifies whether to configure a Layer-7 proxy, such as Anti-DDoS Pro or CDN, to filter the inbound traffic before it is forwarded to WAF. Valid values: \"On\" and \"Off\". Default to \"Off\"."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The resource group ID."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubscriptionType": {
+            "type": "string",
+            "description": "Subscription of WAF service. Valid values: [\"Subscription\", \"PayAsYouGo\"]."
+        },
+        "WafLog": {
+            "type": "string",
+            "description": "Specify whether Log service is supported. Valid values: [\"true\", \"false\"]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BigScreen",
+        "ExclusiveIpPackage",
+        "ExtBandwidth",
+        "ExtDomainPackage",
+        "LogStorage",
+        "LogTime",
+        "PackageCode",
+        "PrefessionalService",
+        "SubscriptionType",
+        "WafLog"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::Alicloud::KmsKey",
+    "description": "This resouce used to create a secret and store its initial version.\n\n-> **NOTE:** Available in 1.76.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-KmsKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutomaticRotation": {
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Creator": {
+            "type": "string"
+        },
+        "DeleteDate": {
+            "type": "string"
+        },
+        "DeletionWindowInDays": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the secret."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "KeySpec": {
+            "type": "string"
+        },
+        "KeyState": {
+            "type": "string"
+        },
+        "KeyUsage": {
+            "type": "string"
+        },
+        "LastRotationDate": {
+            "type": "string"
+        },
+        "MaterialExpireTime": {
+            "type": "string"
+        },
+        "NextRotationDate": {
+            "type": "string"
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "PendingWindowInDays": {
+            "type": "number"
+        },
+        "PrimaryKeyVersion": {
+            "type": "string"
+        },
+        "ProtectionLevel": {
+            "type": "string"
+        },
+        "RotationInterval": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreationDate",
+        "/properties/Creator",
+        "/properties/DeleteDate",
+        "/properties/Id",
+        "/properties/LastRotationDate",
+        "/properties/MaterialExpireTime",
+        "/properties/NextRotationDate",
+        "/properties/PrimaryKeyVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

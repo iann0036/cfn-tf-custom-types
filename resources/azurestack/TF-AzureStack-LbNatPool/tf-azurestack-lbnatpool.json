@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::AzureStack::LbNatPool",
+    "description": "Manages a Load Balancer NAT pool.\n\n~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurestack/TF-AzureStack-LbNatPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendPort": {
+            "type": "number",
+            "description": "The port used for the internal endpoint. Possible values range between 1 and 65535, inclusive."
+        },
+        "FrontendIpConfigurationId": {
+            "type": "string"
+        },
+        "FrontendIpConfigurationName": {
+            "type": "string",
+            "description": "The name of the frontend IP configuration exposing this rule."
+        },
+        "FrontendPortEnd": {
+            "type": "number",
+            "description": "The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive."
+        },
+        "FrontendPortStart": {
+            "type": "number",
+            "description": "The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadbalancerId": {
+            "type": "string",
+            "description": "The ID of the Load Balancer in which to create the NAT pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the NAT pool."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The transport protocol for the external endpoint. Possible values are `Udp` or `Tcp`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackendPort",
+        "FrontendIpConfigurationName",
+        "FrontendPortEnd",
+        "FrontendPortStart",
+        "LoadbalancerId",
+        "Name",
+        "Protocol",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FrontendIpConfigurationId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

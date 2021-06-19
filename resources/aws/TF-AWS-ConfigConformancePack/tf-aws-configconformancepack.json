@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::AWS::ConfigConformancePack",
+    "description": "Manages a Config Conformance Pack. More information about this collection of Config rules and remediation actions can be found in the\n[Conformance Packs](https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html) documentation.\nSample Conformance Pack templates may be found in the\n[AWS Config Rules Repository](https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs).\n\n~> **NOTE:** The account must have a Configuration Recorder with proper IAM permissions before the Conformance Pack will\nsuccessfully create or update. See also the\n[`aws_config_configuration_recorder` resource](/docs/providers/aws/r/config_configuration_recorder.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ConfigConformancePack/docs/README.md",
+    "definitions": {
+        "InputParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ParameterName": {
+                    "type": "string"
+                },
+                "ParameterValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ParameterName",
+                "ParameterValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DeliveryS3Bucket": {
+            "type": "string",
+            "description": "Amazon S3 bucket where AWS Config stores conformance pack templates. Maximum length of 63."
+        },
+        "DeliveryS3KeyPrefix": {
+            "type": "string",
+            "description": "The prefix for the Amazon S3 bucket. Maximum length of 1024."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the conformance pack. Must begin with a letter and contain from 1 to 256 alphanumeric characters and hyphens."
+        },
+        "TemplateBody": {
+            "type": "string",
+            "description": "A string containing full conformance pack template body. Maximum length of 51200. Drift detection is not possible with this argument."
+        },
+        "TemplateS3Uri": {
+            "type": "string",
+            "description": "Location of file, e.g. `s3://bucketname/prefix`, containing the template body. The uri must point to the conformance pack template that is located in an Amazon S3 bucket in the same region as the conformance pack. Maximum length of 1024. Drift detection is not possible with this argument."
+        },
+        "InputParameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InputParameterDefinition"
+            },
+            "maxItems": 60
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

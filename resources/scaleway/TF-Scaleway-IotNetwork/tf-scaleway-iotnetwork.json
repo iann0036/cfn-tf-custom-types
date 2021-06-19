@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Scaleway::IotNetwork",
+    "description": "-> **Note:** This terraform resource is currently in beta and might include breaking change in future releases.\n\nCreates and manages Scaleway IoT Networks. For more information, see the following:\n\n- [API documentation](https://developers.scaleway.com/en/products/iot/api).\n- [Product documentation](https://www.scaleway.com/en/docs/scaleway-iothub-networks/)\n\nFor more step-by-step instructions on how to setup the networks on the external providers backends, you can follow these guides:\n\n- [Configuring the Sigfox backend](https://www.scaleway.com/en/docs/scaleway-iothub-networks/#-Configuring-the-Sigfox-backend)\n- [Using the Rest Network](https://www.scaleway.com/en/docs/scaleway-iothub-networks/#-Using-the-Rest-Network)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-IotNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "HubId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Secret": {
+            "type": "string"
+        },
+        "TopicPrefix": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HubId",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/Secret"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Secret"
+    ]
+}

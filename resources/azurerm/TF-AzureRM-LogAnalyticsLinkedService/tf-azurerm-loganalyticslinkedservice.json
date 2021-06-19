@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::AzureRM::LogAnalyticsLinkedService",
+    "description": "Manages a Log Analytics Linked Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LogAnalyticsLinkedService/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinkedServiceName": {
+            "type": "string",
+            "description": "Name of the type of linkedServices resource to connect to the Log Analytics Workspace specified in workspace_name. Accepted values are `automation` and `cluster`. Defaults to `automation`. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ReadAccessId": {
+            "type": "string",
+            "description": "The ID of the readable Resource that will be linked to the workspace. This should be used for linking to an Automation Account resource."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Log Analytics Linked Service is created. Changing this forces a new resource to be created."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The ID of the Resource that will be linked to the workspace. This should be used for linking to an Automation Account resource."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "WorkspaceId": {
+            "type": "string",
+            "description": "The ID of the Log Analytics Workspace that will contain the Log Analytics Linked Service resource. Changing this forces a new resource to be created."
+        },
+        "WorkspaceName": {
+            "type": "string",
+            "description": "The name of the Log Analytics Workspace that will contain the Log Analytics Linked Service resource. Changing this forces a new resource to be created."
+        },
+        "WriteAccessId": {
+            "type": "string",
+            "description": "The ID of the writable Resource that will be linked to the workspace. This should be used for linking to a Log Analytics Cluster resource."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

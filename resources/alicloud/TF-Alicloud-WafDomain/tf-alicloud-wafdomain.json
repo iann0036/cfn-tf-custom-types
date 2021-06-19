@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::Alicloud::WafDomain",
+    "description": "Provides a WAF Domain resource to create domain in the Web Application Firewall.\n\nFor information about WAF and how to use it, see [What is Alibaba Cloud WAF](https://www.alibabacloud.com/help/doc-detail/28517.htm).\n\n-> **NOTE:** Available in 1.82.0+ .",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-WafDomain/docs/README.md",
+    "definitions": {
+        "LogHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterType": {
+            "type": "string",
+            "description": "The type of the WAF cluster. Valid values: `PhysicalCluster` and `VirtualCluster`. Default to `PhysicalCluster`."
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "ConnectionTime": {
+            "type": "number",
+            "description": "The connection timeout for WAF exclusive clusters. Unit: seconds."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Field `domain` has been deprecated from version 1.94.0. Use `domain_name` instead."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The domain that you want to add to WAF."
+        },
+        "Http2Port": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the HTTP 2.0 ports."
+        },
+        "HttpPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the HTTP ports."
+        },
+        "HttpToUserIp": {
+            "type": "string",
+            "description": "Specifies whether to enable the HTTP back-to-origin feature. After this feature is enabled, the WAF instance can use HTTP to forward HTTPS requests to the origin server.\nBy default, port 80 is used to forward the requests to the origin server. Valid values: `On` and `Off`. Default to `Off`."
+        },
+        "HttpsPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the HTTPS ports."
+        },
+        "HttpsRedirect": {
+            "type": "string",
+            "description": "Specifies whether to redirect HTTP requests as HTTPS requests. Valid values: \"On\" and `Off`. Default to `Off`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The ID of the WAF instance."
+        },
+        "IsAccessProduct": {
+            "type": "string",
+            "description": "Specifies whether to configure a Layer-7 proxy, such as Anti-DDoS Pro or CDN, to filter the inbound traffic before it is forwarded to WAF. Valid values: `On` and `Off`. Default to `Off`."
+        },
+        "LoadBalancing": {
+            "type": "string",
+            "description": "The load balancing algorithm that is used to forward requests to the origin. Valid values: `IpHash` and `RoundRobin`. Default to `IpHash`."
+        },
+        "ReadTime": {
+            "type": "number",
+            "description": "The read timeout of a WAF exclusive cluster. Unit: seconds."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group to which the queried domain belongs in Resource Management. By default, no value is specified, indicating that the domain belongs to the default resource group."
+        },
+        "SourceIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the IP address or domain of the origin server to which the specified domain points."
+        },
+        "WriteTime": {
+            "type": "number",
+            "description": "The timeout period for a WAF exclusive cluster write connection. Unit: seconds."
+        },
+        "LogHeaders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogHeadersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "IsAccessProduct"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

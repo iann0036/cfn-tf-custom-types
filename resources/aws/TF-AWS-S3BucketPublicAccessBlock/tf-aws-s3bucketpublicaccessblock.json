@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::AWS::S3BucketPublicAccessBlock",
+    "description": "Manages S3 bucket-level Public Access Block configuration. For more information about these settings, see the [AWS S3 Block Public Access documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-S3BucketPublicAccessBlock/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlockPublicAcls": {
+            "type": "boolean",
+            "description": "Whether Amazon S3 should block public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect existing policies or ACLs. When set to `true` causes the following behavior:\n* PUT Bucket acl and PUT Object acl calls will fail if the specified ACL allows public access.\n* PUT Object calls will fail if the request includes an object ACL."
+        },
+        "BlockPublicPolicy": {
+            "type": "boolean",
+            "description": "Whether Amazon S3 should block public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the existing bucket policy. When set to `true` causes Amazon S3 to:\n* Reject calls to PUT Bucket policy if the specified bucket policy allows public access."
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "S3 Bucket to which this Public Access Block configuration should be applied."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnorePublicAcls": {
+            "type": "boolean",
+            "description": "Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to `false`. Enabling this setting does not affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set. When set to `true` causes Amazon S3 to:\n* Ignore public ACLs on this bucket and any objects that it contains."
+        },
+        "RestrictPublicBuckets": {
+            "type": "boolean",
+            "description": "Whether Amazon S3 should restrict public bucket policies for this bucket. Defaults to `false`. Enabling this setting does not affect the previously stored bucket policy, except that public and cross-account access within the public bucket policy, including non-public delegation to specific accounts, is blocked. When set to `true`:\n* Only the bucket owner and AWS Services can access this buckets if it has a public policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,945 @@
+{
+    "typeName": "TF::ECL::VnaApplianceV1",
+    "description": "Manages a V1 Virtual Network Appliance resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-VnaApplianceV1/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface1AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface1FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface1InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface2AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface2FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface2InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition3"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface3AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface3FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface3InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition4"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface4AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface4FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface4InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition5"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface5AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface5FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface5InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition6"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface6AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface6FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface6InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition7"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface7AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface7FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface7InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition8"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Interface8AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vrid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Type",
+                "Vrid"
+            ]
+        },
+        "Interface8FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "Interface8InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition9"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability Zone,\nthis can be referred to using Virtual Server (Nova)'s\nlist availability zones."
+        },
+        "DefaultGateway": {
+            "type": "string",
+            "description": "IP address of default gateway."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the Virtual Network Appliance."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface1NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface1NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface2NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface2NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface3NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface3NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface4NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface4NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface5NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface5NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface6NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface6NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface7NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface7NoFixedIps": {
+            "type": "boolean"
+        },
+        "Interface8NoAllowedAddressPairs": {
+            "type": "boolean"
+        },
+        "Interface8NoFixedIps": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Virtual Network Appliance."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of the Virtual Network Appliance."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID of the owner (UUID)."
+        },
+        "VirtualNetworkAppliancePlanId": {
+            "type": "string",
+            "description": "ID of the Virtual Network Appliance Plan."
+        },
+        "Interface1AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface1AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface1FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface1FixedIpsDefinition"
+            }
+        },
+        "Interface1Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface1InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface2AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface2AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface2FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface2FixedIpsDefinition"
+            }
+        },
+        "Interface2Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface2InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface3AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface3AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface3FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface3FixedIpsDefinition"
+            }
+        },
+        "Interface3Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface3InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface4AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface4AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface4FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface4FixedIpsDefinition"
+            }
+        },
+        "Interface4Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface4InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface5AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface5AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface5FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface5FixedIpsDefinition"
+            }
+        },
+        "Interface5Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface5InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface6AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface6AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface6FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface6FixedIpsDefinition"
+            }
+        },
+        "Interface6Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface6InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface7AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface7AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface7FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface7FixedIpsDefinition"
+            }
+        },
+        "Interface7Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface7InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Interface8AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface8AllowedAddressPairsDefinition"
+            }
+        },
+        "Interface8FixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface8FixedIpsDefinition"
+            }
+        },
+        "Interface8Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interface8InfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VirtualNetworkAppliancePlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

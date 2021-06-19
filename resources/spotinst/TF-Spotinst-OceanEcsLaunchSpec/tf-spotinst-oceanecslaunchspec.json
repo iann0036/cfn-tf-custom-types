@@ -1,0 +1,266 @@
+{
+    "typeName": "TF::Spotinst::OceanEcsLaunchSpec",
+    "description": "Manages a custom Spotinst Ocean ECS Launch Spec resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanEcsLaunchSpec/docs/README.md",
+    "definitions": {
+        "AttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "AutoscaleHeadroomsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumOfUnits"
+            ]
+        },
+        "BlockDeviceMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EbsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "EbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "DynamicVolumeSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicVolumeSizeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DynamicVolumeSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseSize": {
+                    "type": "number"
+                },
+                "Resource": {
+                    "type": "string"
+                },
+                "SizePerResourceUnit": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BaseSize",
+                "Resource",
+                "SizePerResourceUnit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of instance types allowed to be provisioned for pods pending under the specified launch specification. The list overrides the list defined for the Ocean cluster."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Ocean Launch Specification name."
+        },
+        "OceanId": {
+            "type": "string",
+            "description": "The Ocean cluster ID ."
+        },
+        "RestrictScaleDown": {
+            "type": "boolean",
+            "description": "Boolean. When set to \u201cTrue\u201d, VNG nodes will be treated as if all pods running have the restrict-scale-down label. Therefore, Ocean will not scale nodes down unless empty."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more security group ids."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
+        },
+        "Attributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttributesDefinition"
+            }
+        },
+        "AutoscaleHeadrooms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AutoscaleHeadroomsDefinition"
+            }
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappingsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "OceanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

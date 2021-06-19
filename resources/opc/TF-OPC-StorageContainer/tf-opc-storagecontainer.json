@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::OPC::StorageContainer",
+    "description": "Creates and manages a Container in the Oracle Cloud Infrastructure Storage Classic service. `storage_endpoint` must be set in the\nprovider or environment to manage these resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-StorageContainer/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedOrigins": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of origins that are allowed to make cross-origin requests."
+        },
+        "ExposedHeaders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of headers exposed to the user agent (e.g. browser) in the actual request response."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxAge": {
+            "type": "number",
+            "description": "Maximum age in seconds for the origin to hold the preflight results."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "Additional object metadata headers. See [Container Metadata ](#container-metadata) below for more information."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Storage Container."
+        },
+        "PrimaryKey": {
+            "type": "string",
+            "description": "The primary secret key value for temporary URLs."
+        },
+        "QuotaBytes": {
+            "type": "number",
+            "description": "Maximum size of the container, in bytes."
+        },
+        "QuotaCount": {
+            "type": "number",
+            "description": "Maximum object count of the container."
+        },
+        "ReadAcls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of ACLs that grant read access. See [Setting Container ACLs](#setting-container-acls)."
+        },
+        "SecondaryKey": {
+            "type": "string",
+            "description": "The secondary secret key value for temporary URLs."
+        },
+        "WriteAcls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of ACLs that grant write access. See [Setting Container ACLs](#setting-container-acls)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

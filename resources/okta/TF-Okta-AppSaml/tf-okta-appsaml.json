@@ -1,0 +1,324 @@
+{
+    "typeName": "TF::Okta::AppSaml",
+    "description": "Creates an SAML Application.\n\nThis resource allows you to create and configure an SAML Application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppSaml/docs/README.md",
+    "definitions": {
+        "AttributeStatementsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterType": {
+                    "type": "string"
+                },
+                "FilterValue": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessibilityErrorRedirectUrl": {
+            "type": "string",
+            "description": "Custom error page URL."
+        },
+        "AccessibilityLoginRedirectUrl": {
+            "type": "string",
+            "description": "Custom login page URL."
+        },
+        "AccessibilitySelfService": {
+            "type": "boolean",
+            "description": "Enable self-service."
+        },
+        "AcsEndpoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of ACS endpoints. You can configure a maximum of 100 endpoints."
+        },
+        "AppSettingsJson": {
+            "type": "string",
+            "description": "Application settings in JSON format."
+        },
+        "AssertionSigned": {
+            "type": "boolean",
+            "description": "Determines whether the SAML assertion is digitally signed."
+        },
+        "Audience": {
+            "type": "string",
+            "description": "Audience restriction."
+        },
+        "AuthnContextClassRef": {
+            "type": "string",
+            "description": "Identifies the SAML authentication context class for the assertion\u2019s authentication statement."
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean",
+            "description": "Display auto submit toolbar."
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "DefaultRelayState": {
+            "type": "string",
+            "description": "Identifies a specific application resource in an IDP initiated SSO scenario."
+        },
+        "Destination": {
+            "type": "string",
+            "description": "Identifies the location where the SAML response is intended to be sent inside the SAML assertion."
+        },
+        "DigestAlgorithm": {
+            "type": "string",
+            "description": "Determines the digest algorithm used to digitally sign the SAML assertion and response."
+        },
+        "EntityKey": {
+            "type": "string"
+        },
+        "EntityUrl": {
+            "type": "string"
+        },
+        "Features": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "features enabled. Notice: you can't currently configure provisioning features via the API."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Groups associated with the application."
+        },
+        "HideIos": {
+            "type": "boolean",
+            "description": "Do not display application icon on mobile app."
+        },
+        "HideWeb": {
+            "type": "boolean",
+            "description": "Do not display application icon to users."
+        },
+        "HonorForceAuthn": {
+            "type": "boolean",
+            "description": "Prompt user to re-authenticate if SP asks for it."
+        },
+        "HttpPostBinding": {
+            "type": "string"
+        },
+        "HttpRedirectBinding": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpIssuer": {
+            "type": "string",
+            "description": "SAML issuer ID."
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "Certificate name. This modulates the rotation of keys. New name == new key. Required to be set with `key_years_valid`."
+        },
+        "KeyYearsValid": {
+            "type": "number",
+            "description": "Number of years the certificate is valid (2 - 10 years)."
+        },
+        "Label": {
+            "type": "string",
+            "description": "label of application."
+        },
+        "Metadata": {
+            "type": "string"
+        },
+        "MetadataUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the attribute statement.\n- `filter_type` - (Optional) Type of group attribute filter. Valid values are: `\"STARTS_WITH\"`, `\"EQUALS\"`, `\"CONTAINS\"`, or `\"REGEX\"`\n- `filter_value` - (Optional) Filter value to use.\n- `namespace` - (Optional) The attribute namespace. It can be set to `\"urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified\"`, `\"urn:oasis:names:tc:SAML:2.0:attrname-format:uri\"`, or `\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\"`.\n- `type` - (Optional) The type of attribute statement value. Valid values are: `\"EXPRESSION\"` or `\"GROUP\"`. Default is `\"EXPRESSION\"`.\n- `values` - (Optional) Array of values to use."
+        },
+        "PreconfiguredApp": {
+            "type": "string",
+            "description": "name of application from the Okta Integration Network, if not included a custom app will be created."
+        },
+        "Recipient": {
+            "type": "string",
+            "description": "The location where the app may present the SAML assertion."
+        },
+        "RequestCompressed": {
+            "type": "boolean",
+            "description": "Denotes whether the request is compressed or not."
+        },
+        "ResponseSigned": {
+            "type": "boolean",
+            "description": "Determines whether the SAML auth response message is digitally signed."
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "SignatureAlgorithm": {
+            "type": "string",
+            "description": "Signature algorithm used ot digitally sign the assertion and response."
+        },
+        "SingleLogoutCertificate": {
+            "type": "string",
+            "description": "x509 encoded certificate that the Service Provider uses to sign Single Logout requests.\nNote: should be provided without `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`, see [official documentation](https://developer.okta.com/docs/reference/api/apps/#service-provider-certificate)."
+        },
+        "SingleLogoutIssuer": {
+            "type": "string",
+            "description": "The issuer of the Service Provider that generates the Single Logout request."
+        },
+        "SingleLogoutUrl": {
+            "type": "string",
+            "description": "The location where the logout response is sent."
+        },
+        "SpIssuer": {
+            "type": "string",
+            "description": "SAML service provider issuer."
+        },
+        "SsoUrl": {
+            "type": "string",
+            "description": "Single Sign-on Url."
+        },
+        "Status": {
+            "type": "string",
+            "description": "status of application."
+        },
+        "SubjectNameIdFormat": {
+            "type": "string",
+            "description": "Identifies the SAML processing rules."
+        },
+        "SubjectNameIdTemplate": {
+            "type": "string",
+            "description": "Template for app user's username when a user is assigned to the app."
+        },
+        "UserNameTemplate": {
+            "type": "string",
+            "description": "Username template."
+        },
+        "UserNameTemplateSuffix": {
+            "type": "string",
+            "description": "Username template suffix."
+        },
+        "UserNameTemplateType": {
+            "type": "string",
+            "description": "Username template type."
+        },
+        "AttributeStatements": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttributeStatementsDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/EntityKey",
+        "/properties/EntityUrl",
+        "/properties/HttpPostBinding",
+        "/properties/HttpRedirectBinding",
+        "/properties/Id",
+        "/properties/KeyId",
+        "/properties/Metadata",
+        "/properties/MetadataUrl",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

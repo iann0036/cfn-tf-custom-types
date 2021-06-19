@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerWagprofile",
+    "description": "Configure wireless access gateway (WAG) profiles used for tunnels on AP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerWagprofile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DhcpIpAddr": {
+            "type": "string",
+            "description": "IP address of the monitoring DHCP request packet sent through the tunnel."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Tunnel profile name."
+        },
+        "PingInterval": {
+            "type": "number",
+            "description": "Interval between two tunnel monitoring echo packets (1 - 65535 sec, default = 1)."
+        },
+        "PingNumber": {
+            "type": "number",
+            "description": "Number of the tunnel monitoring echo packets (1 - 65535, default = 5)."
+        },
+        "ReturnPacketTimeout": {
+            "type": "number",
+            "description": "Window of time for the return packets from the tunnel's remote end (1 - 65535 sec, default = 160)."
+        },
+        "TunnelType": {
+            "type": "string",
+            "description": "Tunnel type. Valid values: `l2tpv3`, `gre`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WagIp": {
+            "type": "string",
+            "description": "IP Address of the wireless access gateway."
+        },
+        "WagPort": {
+            "type": "number",
+            "description": "UDP port of the wireless access gateway."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

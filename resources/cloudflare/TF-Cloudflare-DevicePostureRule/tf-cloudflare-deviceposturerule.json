@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::Cloudflare::DevicePostureRule",
+    "description": "Provides a Cloudflare Device Posture Rule resource. Device posture rules configure security policies for device posture checks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-DevicePostureRule/docs/README.md",
+    "definitions": {
+        "InputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exists": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Running": {
+                    "type": "boolean"
+                },
+                "Sha256": {
+                    "type": "string"
+                },
+                "Thumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Platform": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account to which the device posture rule should be added."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the device posture rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the device posture rule."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Tells the client when to run the device posture check.\nMust be in the format `\"1h\"` or `\"30m\"`. Valid units are `h` and `m`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The device posture rule type. Valid values are `file`, `application`, and `serial_number`."
+        },
+        "Input": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputDefinition"
+            },
+            "minItems": 1
+        },
+        "Match": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

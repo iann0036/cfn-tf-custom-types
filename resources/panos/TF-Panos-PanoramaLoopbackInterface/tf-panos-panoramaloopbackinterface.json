@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::Panos::PanoramaLoopbackInterface",
+    "description": "This resource allows you to add/update/delete Panorama loopback interfaces\nfor templates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaLoopbackInterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustTcpMss": {
+            "type": "boolean",
+            "description": "Adjust TCP MSS (default: false)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The interface comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4MssAdjust": {
+            "type": "number",
+            "description": "The IPv4 MSS adjust value."
+        },
+        "Ipv6MssAdjust": {
+            "type": "number",
+            "description": "The IPv6 MSS adjust value."
+        },
+        "ManagementProfile": {
+            "type": "string",
+            "description": "The management profile."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "The MTU."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The interface's name.  This must start with `loopback.`."
+        },
+        "NetflowProfile": {
+            "type": "string",
+            "description": "The netflow profile."
+        },
+        "StaticIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of static IPv4 addresses to set for this data\ninterface."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys that will use this interface (default: `vsys1`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

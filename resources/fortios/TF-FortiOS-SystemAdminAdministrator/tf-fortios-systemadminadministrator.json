@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::FortiOS::SystemAdminAdministrator",
+    "description": "Provides a resource to configure administrator accounts of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_system_admin`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAdminAdministrator/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accprofile": {
+            "type": "string",
+            "description": "Access profile for this administrator. Access profiles control administrator access to FortiGate features."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "User name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Admin user password."
+        },
+        "Trusthost1": {
+            "type": "string"
+        },
+        "Trusthost10": {
+            "type": "string"
+        },
+        "Trusthost2": {
+            "type": "string"
+        },
+        "Trusthost3": {
+            "type": "string"
+        },
+        "Trusthost4": {
+            "type": "string"
+        },
+        "Trusthost5": {
+            "type": "string"
+        },
+        "Trusthost6": {
+            "type": "string"
+        },
+        "Trusthost7": {
+            "type": "string"
+        },
+        "Trusthost8": {
+            "type": "string"
+        },
+        "Trusthost9": {
+            "type": "string"
+        },
+        "Vdom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Virtual domain(s) that the administrator can access."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Accprofile",
+        "Name",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::AWS::CodeartifactRepository",
+    "description": "Provides a CodeArtifact Repository Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodeartifactRepository/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ExternalConnectionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalConnectionName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExternalConnectionName"
+            ]
+        },
+        "UpstreamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RepositoryName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RepositoryName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdministratorAccount": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the repository."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain that contains the created repository."
+        },
+        "DomainOwner": {
+            "type": "string",
+            "description": "The account number of the AWS account that owns the domain."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The name of the repository to create."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ExternalConnections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalConnectionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Upstream": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpstreamDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdministratorAccount",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

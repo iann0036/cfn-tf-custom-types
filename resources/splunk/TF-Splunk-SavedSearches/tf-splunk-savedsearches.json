@@ -1,0 +1,668 @@
+{
+    "typeName": "TF::Splunk::SavedSearches",
+    "description": "Create and manage saved searches.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-SavedSearches/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionEmail": {
+            "type": "boolean",
+            "description": "The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0."
+        },
+        "ActionEmailAuthPassword": {
+            "type": "string",
+            "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string."
+        },
+        "ActionEmailAuthUsername": {
+            "type": "string",
+            "description": "The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails."
+        },
+        "ActionEmailBcc": {
+            "type": "string",
+            "description": "BCC email address to use if action.email is enabled."
+        },
+        "ActionEmailCc": {
+            "type": "string",
+            "description": "CC email address to use if action.email is enabled."
+        },
+        "ActionEmailCommand": {
+            "type": "string",
+            "description": "The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$."
+        },
+        "ActionEmailFormat": {
+            "type": "string",
+            "description": "Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments."
+        },
+        "ActionEmailFrom": {
+            "type": "string",
+            "description": "Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf."
+        },
+        "ActionEmailHostname": {
+            "type": "string",
+            "description": "Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)."
+        },
+        "ActionEmailIncludeResultsLink": {
+            "type": "number",
+            "description": "Specify whether to include a link to the results. Defaults to 0."
+        },
+        "ActionEmailIncludeSearch": {
+            "type": "number",
+            "description": "Specify whether to include the search that caused an email to be sent. Defaults to 0."
+        },
+        "ActionEmailIncludeTrigger": {
+            "type": "number",
+            "description": "Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0."
+        },
+        "ActionEmailIncludeTriggerTime": {
+            "type": "number",
+            "description": "Specify whether to show the time that the alert was fired. Defaults to 0."
+        },
+        "ActionEmailIncludeViewLink": {
+            "type": "number",
+            "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0."
+        },
+        "ActionEmailInline": {
+            "type": "boolean",
+            "description": "Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email."
+        },
+        "ActionEmailMailserver": {
+            "type": "string",
+            "description": "Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf."
+        },
+        "ActionEmailMaxResults": {
+            "type": "number",
+            "description": "Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100."
+        },
+        "ActionEmailMaxTime": {
+            "type": "string",
+            "description": "Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m."
+        },
+        "ActionEmailMessageAlert": {
+            "type": "string",
+            "description": "Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered."
+        },
+        "ActionEmailMessageReport": {
+            "type": "string",
+            "description": "Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run."
+        },
+        "ActionEmailPdfview": {
+            "type": "string",
+            "description": "The name of the view to deliver if sendpdf is enabled."
+        },
+        "ActionEmailPreprocessResults": {
+            "type": "string",
+            "description": "Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields."
+        },
+        "ActionEmailReportCidFontList": {
+            "type": "string",
+            "description": "Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'."
+        },
+        "ActionEmailReportIncludeSplunkLogo": {
+            "type": "boolean",
+            "description": "Indicates whether to include the Splunk logo with the report."
+        },
+        "ActionEmailReportPaperOrientation": {
+            "type": "string",
+            "description": "Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait."
+        },
+        "ActionEmailReportPaperSize": {
+            "type": "string",
+            "description": "Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter."
+        },
+        "ActionEmailReportServerEnabled": {
+            "type": "boolean",
+            "description": "No Supported."
+        },
+        "ActionEmailReportServerUrl": {
+            "type": "string",
+            "description": "Not supported.For a default locally installed report server, the URL is http://localhost:8091/."
+        },
+        "ActionEmailSendCsv": {
+            "type": "number",
+            "description": "Specify whether to send results as a CSV file. Defaults to 0."
+        },
+        "ActionEmailSendPdf": {
+            "type": "boolean",
+            "description": "Indicates whether to create and send the results as a PDF. Defaults to false."
+        },
+        "ActionEmailSendResults": {
+            "type": "boolean",
+            "description": "Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline."
+        },
+        "ActionEmailSubject": {
+            "type": "string",
+            "description": "Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>."
+        },
+        "ActionEmailTo": {
+            "type": "string",
+            "description": "A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled."
+        },
+        "ActionEmailTrackAlert": {
+            "type": "boolean",
+            "description": "Indicates whether the execution of this action signifies a trackable alert."
+        },
+        "ActionEmailTtl": {
+            "type": "string",
+            "description": "Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf."
+        },
+        "ActionEmailUseSsl": {
+            "type": "boolean",
+            "description": "Indicates whether to use SSL when communicating with the SMTP server. Defaults to false."
+        },
+        "ActionEmailUseTls": {
+            "type": "boolean",
+            "description": "Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false."
+        },
+        "ActionEmailWidthSortColumns": {
+            "type": "boolean",
+            "description": "Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text."
+        },
+        "ActionPopulateLookup": {
+            "type": "boolean",
+            "description": "The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0."
+        },
+        "ActionPopulateLookupCommand": {
+            "type": "string",
+            "description": "The search command (or pipeline) which is responsible for executing the action."
+        },
+        "ActionPopulateLookupDest": {
+            "type": "string",
+            "description": "Lookup name of path of the lookup to populate."
+        },
+        "ActionPopulateLookupHostname": {
+            "type": "string",
+            "description": "Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)."
+        },
+        "ActionPopulateLookupMaxResults": {
+            "type": "number",
+            "description": "Sets the maximum number of search results sent using alerts. Defaults to 100."
+        },
+        "ActionPopulateLookupMaxTime": {
+            "type": "number",
+            "description": "Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m."
+        },
+        "ActionPopulateLookupTrackAlert": {
+            "type": "boolean",
+            "description": "Indicates whether the execution of this action signifies a trackable alert."
+        },
+        "ActionPopulateLookupTtl": {
+            "type": "string",
+            "description": "Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p."
+        },
+        "ActionRss": {
+            "type": "boolean",
+            "description": "The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0."
+        },
+        "ActionRssCommand": {
+            "type": "string",
+            "description": "The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$."
+        },
+        "ActionRssHostname": {
+            "type": "string",
+            "description": "Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)."
+        },
+        "ActionRssMaxResults": {
+            "type": "number",
+            "description": "Sets the maximum number of search results sent using alerts. Defaults to 100."
+        },
+        "ActionRssMaxTime": {
+            "type": "number",
+            "description": "Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m."
+        },
+        "ActionRssTrackAlert": {
+            "type": "boolean",
+            "description": "Indicates whether the execution of this action signifies a trackable alert."
+        },
+        "ActionRssTtl": {
+            "type": "string",
+            "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours)."
+        },
+        "ActionScript": {
+            "type": "boolean",
+            "description": "The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0."
+        },
+        "ActionScriptCommand": {
+            "type": "string",
+            "description": "The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$."
+        },
+        "ActionScriptFilename": {
+            "type": "string",
+            "description": "File name of the script to call. Required if script action is enabled."
+        },
+        "ActionScriptHostname": {
+            "type": "string",
+            "description": "Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)."
+        },
+        "ActionScriptMaxResults": {
+            "type": "number",
+            "description": "Sets the maximum number of search results sent using alerts. Defaults to 100."
+        },
+        "ActionScriptMaxTime": {
+            "type": "number",
+            "description": "Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m."
+        },
+        "ActionScriptTrackAlert": {
+            "type": "boolean",
+            "description": "Indicates whether the execution of this action signifies a trackable alert."
+        },
+        "ActionScriptTtl": {
+            "type": "string",
+            "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours)."
+        },
+        "ActionSlackParamAttachment": {
+            "type": "string",
+            "description": "Include a message attachment. Valid values are message, none, or alert_link."
+        },
+        "ActionSlackParamChannel": {
+            "type": "string",
+            "description": "Slack channel to send the message to (Should start with # or @)."
+        },
+        "ActionSlackParamFields": {
+            "type": "string",
+            "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*."
+        },
+        "ActionSlackParamMessage": {
+            "type": "string",
+            "description": "Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search."
+        },
+        "ActionSlackParamWebhookUrlOverride": {
+            "type": "string",
+            "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team."
+        },
+        "ActionSummaryIndex": {
+            "type": "boolean",
+            "description": "The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0."
+        },
+        "ActionSummaryIndexCommand": {
+            "type": "string",
+            "description": "The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$."
+        },
+        "ActionSummaryIndexHostname": {
+            "type": "string",
+            "description": "Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)."
+        },
+        "ActionSummaryIndexInline": {
+            "type": "boolean",
+            "description": "Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true."
+        },
+        "ActionSummaryIndexMaxResults": {
+            "type": "number",
+            "description": "Sets the maximum number of search results sent using alerts. Defaults to 100."
+        },
+        "ActionSummaryIndexMaxTime": {
+            "type": "number",
+            "description": "Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m."
+        },
+        "ActionSummaryIndexName": {
+            "type": "string",
+            "description": "Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary."
+        },
+        "ActionSummaryIndexTrackAlert": {
+            "type": "boolean",
+            "description": "Indicates whether the execution of this action signifies a trackable alert."
+        },
+        "ActionSummaryIndexTtl": {
+            "type": "string",
+            "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours)."
+        },
+        "Actions": {
+            "type": "string",
+            "description": "A comma-separated list of actions to enable. For example: rss,email."
+        },
+        "AlertComparator": {
+            "type": "string",
+            "description": "One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions."
+        },
+        "AlertCondition": {
+            "type": "string",
+            "description": "Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string."
+        },
+        "AlertDigestMode": {
+            "type": "boolean",
+            "description": "Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true)."
+        },
+        "AlertExpires": {
+            "type": "string",
+            "description": "Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour."
+        },
+        "AlertSeverity": {
+            "type": "number",
+            "description": "Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3."
+        },
+        "AlertSuppress": {
+            "type": "boolean",
+            "description": "Indicates whether alert suppression is enabled for this scheduled search."
+        },
+        "AlertSuppressFields": {
+            "type": "string",
+            "description": "Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled."
+        },
+        "AlertSuppressPeriod": {
+            "type": "string",
+            "description": "Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour."
+        },
+        "AlertThreshold": {
+            "type": "string",
+            "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc."
+        },
+        "AlertTrack": {
+            "type": "boolean",
+            "description": "Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search."
+        },
+        "AlertType": {
+            "type": "string",
+            "description": "What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources."
+        },
+        "AllowSkew": {
+            "type": "string",
+            "description": "Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods."
+        },
+        "AutoSummarize": {
+            "type": "boolean",
+            "description": "Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0."
+        },
+        "AutoSummarizeCommand": {
+            "type": "string",
+            "description": "An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details."
+        },
+        "AutoSummarizeCronSchedule": {
+            "type": "string",
+            "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`."
+        },
+        "AutoSummarizeDispatchEarliestTime": {
+            "type": "string",
+            "description": "A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "AutoSummarizeDispatchLatestTime": {
+            "type": "string",
+            "description": "A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "AutoSummarizeDispatchTimeFormat": {
+            "type": "string",
+            "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z."
+        },
+        "AutoSummarizeDispatchTtl": {
+            "type": "string",
+            "description": "Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search."
+        },
+        "AutoSummarizeMaxDisabledBuckets": {
+            "type": "number",
+            "description": "The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2."
+        },
+        "AutoSummarizeMaxSummaryRatio": {
+            "type": "number",
+            "description": "The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size."
+        },
+        "AutoSummarizeMaxSummarySize": {
+            "type": "number",
+            "description": "The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB."
+        },
+        "AutoSummarizeMaxTime": {
+            "type": "number",
+            "description": "Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries."
+        },
+        "AutoSummarizeSuspendPeriod": {
+            "type": "string",
+            "description": "Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h."
+        },
+        "AutoSummarizeTimespan": {
+            "type": "string",
+            "description": "The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d."
+        },
+        "CronSchedule": {
+            "type": "string",
+            "description": "Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-readable description of this saved search. Defaults to empty string."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web."
+        },
+        "DispatchBuckets": {
+            "type": "number",
+            "description": "The maximum number of timeline buckets. Defaults to 0."
+        },
+        "DispatchEarliestTime": {
+            "type": "string",
+            "description": "A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "DispatchIndexEarliest": {
+            "type": "string",
+            "description": "A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "DispatchIndexLatest": {
+            "type": "string",
+            "description": "A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "DispatchIndexedRealtime": {
+            "type": "boolean",
+            "description": "A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "DispatchIndexedRealtimeMinspan": {
+            "type": "number",
+            "description": "Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf."
+        },
+        "DispatchIndexedRealtimeOffset": {
+            "type": "number",
+            "description": "Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf."
+        },
+        "DispatchLatestTime": {
+            "type": "string",
+            "description": "A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value."
+        },
+        "DispatchLookups": {
+            "type": "boolean",
+            "description": "Enables or disables the lookups for this search. Defaults to 1."
+        },
+        "DispatchMaxCount": {
+            "type": "number",
+            "description": "The maximum number of results before finalizing the search. Defaults to 500000."
+        },
+        "DispatchMaxTime": {
+            "type": "number",
+            "description": "Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0."
+        },
+        "DispatchReduceFreq": {
+            "type": "number",
+            "description": "Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10."
+        },
+        "DispatchRtBackfill": {
+            "type": "boolean",
+            "description": "Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0."
+        },
+        "DispatchRtMaximumSpan": {
+            "type": "number",
+            "description": "Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf."
+        },
+        "DispatchSpawnProcess": {
+            "type": "boolean",
+            "description": "Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process."
+        },
+        "DispatchTimeFormat": {
+            "type": "string",
+            "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z."
+        },
+        "DispatchTtl": {
+            "type": "string",
+            "description": "Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered."
+        },
+        "DisplayView": {
+            "type": "string",
+            "description": "Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsScheduled": {
+            "type": "boolean",
+            "description": "Whether this search is to be run on a schedule."
+        },
+        "IsVisible": {
+            "type": "boolean",
+            "description": "Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1."
+        },
+        "MaxConcurrent": {
+            "type": "number",
+            "description": "The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the search."
+        },
+        "RealtimeSchedule": {
+            "type": "boolean",
+            "description": "Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option."
+        },
+        "RequestUiDispatchApp": {
+            "type": "string",
+            "description": "Specifies a field used by Splunk Web to denote the app this search should be dispatched in."
+        },
+        "RequestUiDispatchView": {
+            "type": "string",
+            "description": "Specifies a field used by Splunk Web to denote the view this search should be displayed in."
+        },
+        "RestartOnSearchpeerAdd": {
+            "type": "boolean",
+            "description": "Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1."
+        },
+        "RunOnStartup": {
+            "type": "boolean",
+            "description": "Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables."
+        },
+        "SchedulePriority": {
+            "type": "string",
+            "description": "Raises the scheduling priority of the named search. Defaults to Default."
+        },
+        "ScheduleWindow": {
+            "type": "string",
+            "description": "Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto."
+        },
+        "Search": {
+            "type": "string",
+            "description": "Required when creating a new search."
+        },
+        "Vsid": {
+            "type": "string",
+            "description": "Defines the viewstate id associated with the UI view listed in 'displayview'."
+        },
+        "WorkloadPool": {
+            "type": "string",
+            "description": "Specifies the new workload pool where the existing running search will be placed.`."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Search"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActionEmail",
+        "/properties/ActionPopulateLookup",
+        "/properties/ActionRss",
+        "/properties/ActionScript",
+        "/properties/ActionSummaryIndex",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

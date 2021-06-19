@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::CheckPoint::ManagementAccessLayer",
+    "description": "This resource allows you to execute Check Point Access Layer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementAccessLayer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddDefaultRule": {
+            "type": "boolean",
+            "description": "Indicates whether to include a cleanup rule in the new layer."
+        },
+        "ApplicationsAndUrlFiltering": {
+            "type": "boolean",
+            "description": "Whether to enable Applications & URL Filtering blade on the layer."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "ContentAwareness": {
+            "type": "boolean",
+            "description": "Whether to enable Content Awareness blade on the layer."
+        },
+        "DetectUsingXForwardFor": {
+            "type": "boolean",
+            "description": "Whether to use X-Forward-For HTTP header, which is added by the  proxy server to keep track of the original source IP."
+        },
+        "Firewall": {
+            "type": "boolean",
+            "description": "Whether to enable Firewall blade on the layer."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "ImplicitCleanupAction": {
+            "type": "string",
+            "description": "The default \"catch-all\" action for traffic that does not match any explicit or implied rules in the layer."
+        },
+        "MobileAccess": {
+            "type": "boolean",
+            "description": "Whether to enable Mobile Access blade on the layer."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "Shared": {
+            "type": "boolean",
+            "description": "Whether this layer is shared."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers.tags blocks are documented below."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

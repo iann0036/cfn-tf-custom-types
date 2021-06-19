@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Tfe::Organization",
+    "description": "Manages organizations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-Organization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CollaboratorAuthPolicy": {
+            "type": "string",
+            "description": "Authentication policy (`password`\nor `two_factor_mandatory`). Defaults to `password`."
+        },
+        "CostEstimationEnabled": {
+            "type": "boolean",
+            "description": "Whether or not the cost estimation feature is enabled for all workspaces in the organization. Defaults to true. In a Terraform Cloud organization which does not have Teams & Governance features, this value is always false and cannot be changed. In Terraform Enterprise, Cost Estimation must also be enabled in Site Administration."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Admin email address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "OwnersTeamSamlRoleId": {
+            "type": "string",
+            "description": "The name of the \"owners\" team."
+        },
+        "SessionRememberMinutes": {
+            "type": "number",
+            "description": "Session expiration. Defaults to\n`20160`."
+        },
+        "SessionTimeoutMinutes": {
+            "type": "number",
+            "description": "Session timeout after inactivity.\nDefaults to `20160`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,91 @@
+# TF::OpsGenie::IntegrationAction AcknowledgeDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#alias" title="Alias">Alias</a>" : <i>String</i>,
+    "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+    "<a href="#note" title="Note">Note</a>" : <i>String</i>,
+    "<a href="#order" title="Order">Order</a>" : <i>Double</i>,
+    "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+    "<a href="#user" title="User">User</a>" : <i>String</i>,
+    "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filterdefinition.md">FilterDefinition</a>, ... ]</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#alias" title="Alias">Alias</a>: <i>String</i>
+<a href="#name" title="Name">Name</a>: <i>String</i>
+<a href="#note" title="Note">Note</a>: <i>String</i>
+<a href="#order" title="Order">Order</a>: <i>Double</i>
+<a href="#type" title="Type">Type</a>: <i>String</i>
+<a href="#user" title="User">User</a>: <i>String</i>
+<a href="#filter" title="Filter">Filter</a>: <i>
+      - <a href="filterdefinition.md">FilterDefinition</a></i>
+</pre>
+
+## Properties
+
+#### Alias
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Note
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Order
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### User
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Filter
+
+_Required_: No
+
+_Type_: List of <a href="filterdefinition.md">FilterDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::Alicloud::PvtzZone",
+    "description": "Provides a Private Zone resource.\n\n-> **NOTE:** Terraform will auto Create a Private Zone while it uses `alicloud_pvtz_zone` to build a Private Zone resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-PvtzZone/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsPtr": {
+            "type": "boolean"
+        },
+        "Lang": {
+            "type": "string",
+            "description": "The language. Valid values: \"zh\", \"en\", \"jp\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Private Zone."
+        },
+        "ProxyPattern": {
+            "type": "string",
+            "description": "The recursive DNS proxy. Valid values:\n- ZONE: indicates that the recursive DNS proxy is disabled.\n- RECORD: indicates that the recursive DNS proxy is enabled."
+        },
+        "RecordCount": {
+            "type": "number"
+        },
+        "Remark": {
+            "type": "string",
+            "description": "The remark of the Private Zone."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the Private Zone belongs."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "UserClientIp": {
+            "type": "string",
+            "description": "The IP address of the client."
+        },
+        "ZoneName": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Id",
+        "/properties/IsPtr",
+        "/properties/RecordCount",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

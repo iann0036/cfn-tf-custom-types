@@ -1,0 +1,367 @@
+{
+    "typeName": "TF::Checkly::CheckGroup",
+    "description": "The `checkly_check_group` resource allows users to manage checkly Check Groups.\n\nCheckly's groups feature allows you to group together a set of related checks, which can also share default settings for various attributes. Here is an example check group:",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkly/TF-Checkly-CheckGroup/docs/README.md",
+    "definitions": {
+        "EnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlertChannelSubscriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Activated": {
+                    "type": "boolean"
+                },
+                "ChannelId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Activated",
+                "ChannelId"
+            ]
+        },
+        "AlertSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EscalationType": {
+                    "type": "string"
+                },
+                "Reminders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RemindersDefinition"
+                    }
+                },
+                "RunBasedEscalation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RunBasedEscalationDefinition"
+                    }
+                },
+                "SslCertificates": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslCertificatesDefinition"
+                    }
+                },
+                "TimeBasedEscalation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TimeBasedEscalationDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ApiCheckDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "QueryParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParametersDefinition"
+                    }
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Assertion": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AssertionDefinition"
+                    }
+                },
+                "BasicAuth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BasicAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "QueryParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RemindersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Amount": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RunBasedEscalationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailedRunThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SslCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertThreshold": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeBasedEscalationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinutesFailingThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AssertionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Source",
+                "Target"
+            ]
+        },
+        "BasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Activated": {
+            "type": "boolean"
+        },
+        "Concurrency": {
+            "type": "number"
+        },
+        "DoubleCheck": {
+            "type": "boolean"
+        },
+        "EnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariablesDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalSetupScript": {
+            "type": "string"
+        },
+        "LocalTeardownScript": {
+            "type": "string"
+        },
+        "Locations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Muted": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SetupSnippetId": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeardownSnippetId": {
+            "type": "number"
+        },
+        "UseGlobalAlertSettings": {
+            "type": "boolean"
+        },
+        "AlertChannelSubscription": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertChannelSubscriptionDefinition"
+            }
+        },
+        "AlertSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlertSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ApiCheckDefaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ApiCheckDefaultsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Activated",
+        "Concurrency",
+        "Locations",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

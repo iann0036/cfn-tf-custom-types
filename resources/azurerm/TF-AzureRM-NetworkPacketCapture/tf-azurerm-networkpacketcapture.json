@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::AzureRM::NetworkPacketCapture",
+    "description": "CloudFormation equivalent of azurerm_network_packet_capture",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NetworkPacketCapture/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalIpAddress": {
+                    "type": "string"
+                },
+                "LocalPort": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RemoteIpAddress": {
+                    "type": "string"
+                },
+                "RemotePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "StorageLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilePath": {
+                    "type": "string"
+                },
+                "StorageAccountId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaximumBytesPerPacket": {
+            "type": "number"
+        },
+        "MaximumBytesPerSession": {
+            "type": "number"
+        },
+        "MaximumCaptureDuration": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkWatcherName": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "TargetResourceId": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            }
+        },
+        "StorageLocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageLocationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NetworkWatcherName",
+        "ResourceGroupName",
+        "TargetResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

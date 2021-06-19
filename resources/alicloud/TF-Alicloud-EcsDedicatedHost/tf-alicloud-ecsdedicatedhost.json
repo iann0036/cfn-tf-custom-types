@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::Alicloud::EcsDedicatedHost",
+    "description": "This resouce used to create a dedicated host and store its initial version. For information about Aliecs Dedicated Host and how to use it, see [What is Resource Aliecs Dedicated Host](https://www.alibabacloud.com/help/doc-detail/134238.htm).\n\n-> **NOTE:** Available in 1.91.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EcsDedicatedHost/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NetworkAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SlbUdpTimeout": {
+                    "type": "number"
+                },
+                "UdpTimeout": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionOnMaintenance": {
+            "type": "string",
+            "description": "The policy used to migrate the instances from the dedicated host when the dedicated host fails or needs to be repaired online. Valid values: `Migrate`, `Stop`."
+        },
+        "AutoPlacement": {
+            "type": "string",
+            "description": "Specifies whether to add the dedicated host to the resource pool for automatic deployment. If you do not specify the DedicatedHostId parameter when you create an instance on a dedicated host, Alibaba Cloud automatically selects a dedicated host from the resource pool to host the instance. Valid values: `on`, `off`. Default: `on`."
+        },
+        "AutoReleaseTime": {
+            "type": "string",
+            "description": "The automatic release time of the dedicated host. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC+0."
+        },
+        "AutoRenew": {
+            "type": "boolean",
+            "description": "Specifies whether to automatically renew the subscription dedicated host."
+        },
+        "AutoRenewPeriod": {
+            "type": "number",
+            "description": "The auto-renewal period of the dedicated host. Unit: months. Valid values: `1`, `2`, `3`, `6`, and `12`. takes effect and is required only when the AutoRenew parameter is set to true."
+        },
+        "CpuOverCommitRatio": {
+            "type": "number"
+        },
+        "DedicatedHostClusterId": {
+            "type": "string"
+        },
+        "DedicatedHostName": {
+            "type": "string",
+            "description": "The name of the dedicated host. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-)."
+        },
+        "DedicatedHostType": {
+            "type": "string",
+            "description": "The type of the dedicated host. You can call the [DescribeDedicatedHostTypes](https://www.alibabacloud.com/help/doc-detail/134240.htm) operation to obtain the most recent list of dedicated host types."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the dedicated host. The description must be 2 to 256 characters in length and cannot start with http:// or https://."
+        },
+        "DetailFee": {
+            "type": "boolean",
+            "description": "Specifies whether to return the billing details of the order when the billing method is changed from subscription to pay-as-you-go. Default: `false`."
+        },
+        "DryRun": {
+            "type": "boolean",
+            "description": "Specifies whether to only validate the request. Default: `false`."
+        },
+        "ExpiredTime": {
+            "type": "string",
+            "description": "The subscription period of the dedicated host. The Period parameter takes effect and is required only when the ChargeType parameter is set to PrePaid."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinQuantity": {
+            "type": "number"
+        },
+        "PaymentType": {
+            "type": "string",
+            "description": "The billing method of the dedicated host. Valid values: `PrePaid`, `PostPaid`. Default: `PostPaid`."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group to which the dedicated host belongs."
+        },
+        "SaleCycle": {
+            "type": "string",
+            "description": "The unit of the subscription period of the dedicated host."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID of the dedicated host. This parameter is empty by default. If you do not specify this parameter, the system automatically selects a zone."
+        },
+        "NetworkAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkAttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DedicatedHostType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::VCD::VappNetwork",
+    "description": "Allows to provision a vApp network and optionally connect it to an existing Org VDC network.\n\nSupported in provider *v2.1+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VappNetwork/docs/README.md",
+    "definitions": {
+        "DhcpPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultLeaseTime": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "EndAddress": {
+                    "type": "string"
+                },
+                "MaxLeaseTime": {
+                    "type": "number"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StartAddress"
+            ]
+        },
+        "StaticIpPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of vApp network."
+        },
+        "Dns1": {
+            "type": "string",
+            "description": "First DNS server to use."
+        },
+        "Dns2": {
+            "type": "string",
+            "description": "Second DNS server to use."
+        },
+        "DnsSuffix": {
+            "type": "string",
+            "description": "A FQDN for the virtual machines on this network."
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "GuestVlanAllowed": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the network."
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "The netmask for the new network. Default is `255.255.255.0`."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when\nconnected as sysadmin working across different organisations."
+        },
+        "OrgNetworkName": {
+            "type": "string",
+            "description": "An Org network name to which vApp network is connected. If not configured, then an isolated network is created."
+        },
+        "RetainIpMacEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether the network resources such as IP/MAC of router will be retained across deployments. Default is false."
+        },
+        "VappName": {
+            "type": "string",
+            "description": "The vApp this network belongs to."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "DhcpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DhcpPoolDefinition"
+            }
+        },
+        "StaticIpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StaticIpPoolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Gateway",
+        "Name",
+        "VappName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::VCD::ExternalNetworkV2",
+    "description": "Provides a VMware Cloud Director External Network resource (version 2). New version of this resource \nuses new VCD API and is capable of creating NSX-T backed external networks as well as port group\nbacked ones.\n\n-> **Note:** This resource uses new VMware Cloud Director\n[OpenAPI](https://code.vmware.com/docs/11982/getting-started-with-vmware-cloud-director-openapi) and\nrequires at least VCD *10.0+*. It supports both NSX-T and NSX-V backed networks (NSX-T *3.0+* requires VCD *10.1.1+*)\n\nSupported in provider *v3.0+*.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-ExternalNetworkV2/docs/README.md",
+    "definitions": {
+        "IpScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dns1": {
+                    "type": "string"
+                },
+                "Dns2": {
+                    "type": "string"
+                },
+                "DnsSuffix": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "PrefixLength": {
+                    "type": "number"
+                },
+                "StaticIpPool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StaticIpPoolDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Gateway",
+                "PrefixLength"
+            ]
+        },
+        "NsxtNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NsxtManagerId": {
+                    "type": "string"
+                },
+                "NsxtTier0RouterId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NsxtManagerId",
+                "NsxtTier0RouterId"
+            ]
+        },
+        "VsphereNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PortgroupId": {
+                    "type": "string"
+                },
+                "VcenterId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PortgroupId",
+                "VcenterId"
+            ]
+        },
+        "StaticIpPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Network friendly description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the network."
+        },
+        "IpScope": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpScopeDefinition"
+            },
+            "minItems": 1
+        },
+        "NsxtNetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NsxtNetworkDefinition"
+            },
+            "maxItems": 1
+        },
+        "VsphereNetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VsphereNetworkDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

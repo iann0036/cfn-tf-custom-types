@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::Akamai::AppsecSiemSettings",
+    "description": "Use the `akamai_appsec_siem_settings` resource to mpdate the SIEM integration settings for a specific configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecSiemSettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The configuration ID to use."
+        },
+        "EnableBotmanSiem": {
+            "type": "boolean",
+            "description": "Whether you enabled SIEM for the Bot Manager events."
+        },
+        "EnableForAllPolicies": {
+            "type": "boolean",
+            "description": "Whether you enabled SIEM for all the security policies in the configuration version."
+        },
+        "EnableSiem": {
+            "type": "boolean",
+            "description": "Whether you enabled SIEM in a security configuration version."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OutputText": {
+            "type": "string"
+        },
+        "SecurityPolicyIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of security policy identifiers for which to enable the SIEM integration."
+        },
+        "SiemId": {
+            "type": "number",
+            "description": "An integer that uniquely identifies the SIEM settings."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "EnableForAllPolicies",
+        "EnableSiem",
+        "SecurityPolicyIds",
+        "SiemId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OutputText"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

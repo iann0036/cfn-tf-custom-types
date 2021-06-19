@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AzureStack::StorageBlob",
+    "description": "Manages an Azure Storage Blob.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurestack/TF-AzureStack-StorageBlob/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attempts": {
+            "type": "number",
+            "description": "The number of attempts to make per page or block when uploading. Defaults to `1`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the storage blob. Must be unique within the storage container the blob is located."
+        },
+        "Parallelism": {
+            "type": "number",
+            "description": "The number of workers per CPU core to run for concurrent uploads. Defaults to `8`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the storage container. Changing this forces a new resource to be created."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Used only for `page` blobs to specify the size in bytes of the blob to be created. Must be a multiple of 512. Defaults to 0."
+        },
+        "Source": {
+            "type": "string",
+            "description": "An absolute path to a file on the local system. Cannot be defined if `source_uri` is defined."
+        },
+        "SourceUri": {
+            "type": "string",
+            "description": "The URI of an existing blob, or a file in the Azure File service, to use as the source contents\nfor the blob to be created. Changing this forces a new resource to be created. Cannot be defined if `source` is defined."
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage container.\nChanging this forces a new resource to be created."
+        },
+        "StorageContainerName": {
+            "type": "string",
+            "description": "The name of the storage container in which this blob should be created."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the storage blob to be created. One of either `block` or `page`. When not copying from an existing blob,\nthis becomes required."
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "StorageAccountName",
+        "StorageContainerName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

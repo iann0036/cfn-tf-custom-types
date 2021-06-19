@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::Alicloud::NasFileSystem",
+    "description": "Provides a Nas File System resource.\n\nAfter activating NAS, you can create a file system and purchase a storage package for it in the NAS console. The NAS console also enables you to view the file system details and remove unnecessary file systems.\n\nFor information about NAS file system and how to use it, see [Manage file systems](https://www.alibabacloud.com/help/doc-detail/27530.htm)\n\n-> **NOTE:** Available in v1.33.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-NasFileSystem/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The File System description."
+        },
+        "EncryptType": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProtocolType": {
+            "type": "string",
+            "description": "The Protocol Type of a File System. Valid values: `NFS` and `SMB`."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "The Storage Type of a File System. Valid values: `Capacity` and `Performance`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProtocolType",
+        "StorageType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

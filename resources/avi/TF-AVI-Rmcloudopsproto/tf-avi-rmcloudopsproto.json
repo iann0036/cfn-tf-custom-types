@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AVI::Rmcloudopsproto",
+    "description": "The RmCloudOpsProto resource allows the creation and management of Avi RmCloudOpsProto",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Rmcloudopsproto/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastQueriedSeCreationLimit": {
+            "type": "number",
+            "description": "The most recent value of concurrent se creation limit from cloudconnectorstatus. Field introduced in 20.1.1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Cloud name. Field introduced in 20.1.1."
+        },
+        "PendingSeCreationCount": {
+            "type": "number",
+            "description": "Number of se creations in progress. Field introduced in 20.1.1."
+        },
+        "PendingVnicOpCount": {
+            "type": "number",
+            "description": "Number of vnic operations in progress (both add and delete). Field introduced in 20.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

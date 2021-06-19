@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::MongoDBAtlas::CloudProviderSnapshot",
+    "description": "`mongodbatlas_cloud_provider_snapshot` provides a resource to take a cloud backup snapshot on demand.\nOn-demand snapshots happen immediately, unlike scheduled snapshots which occur at regular intervals. If there is already an on-demand snapshot with a status of queued or inProgress, you must wait until Atlas has completed the on-demand snapshot before taking another.\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find `groupId` in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-CloudProviderSnapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The name of the Atlas cluster that contains the snapshots you want to retrieve."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the on-demand snapshot."
+        },
+        "ExpiresAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MasterKeyUuid": {
+            "type": "string"
+        },
+        "MongodVersion": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique identifier of the project for the Atlas cluster."
+        },
+        "RetentionInDays": {
+            "type": "number",
+            "description": "The number of days that Atlas should retain the on-demand snapshot. Must be at least 1."
+        },
+        "SnapshotId": {
+            "type": "string"
+        },
+        "SnapshotType": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageSizeBytes": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "Description",
+        "ProjectId",
+        "RetentionInDays"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/ExpiresAt",
+        "/properties/Id",
+        "/properties/MasterKeyUuid",
+        "/properties/MongodVersion",
+        "/properties/SnapshotId",
+        "/properties/SnapshotType",
+        "/properties/Status",
+        "/properties/StorageSizeBytes",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

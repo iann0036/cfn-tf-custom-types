@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::Thunder::SlbTemplatePort",
+    "description": "`thunder_slb_template_port` Provides details about thunder slb template port",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplatePort/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Add": {
+            "type": "number",
+            "description": "Slow start connection limit add by a number every interval (Add by this number every interval)."
+        },
+        "BwRateLimit": {
+            "type": "number",
+            "description": "Configure bandwidth rate limit on real server port (Bandwidth rate limit in Kbps)."
+        },
+        "BwRateLimitDuration": {
+            "type": "number",
+            "description": "Duration in seconds the observed rate needs to honor."
+        },
+        "BwRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log bandwidth rate limit related state transitions."
+        },
+        "BwRateLimitResume": {
+            "type": "number",
+            "description": "Resume server selection after bandwidth drops below this threshold (in Kbps) (Bandwidth rate limit resume threshold (in Kbps))."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection limit."
+        },
+        "ConnLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnRateLimit": {
+            "type": "number",
+            "description": "Connection rate limit."
+        },
+        "ConnRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "DampeningFlaps": {
+            "type": "number",
+            "description": "service dampening flaps count (max-flaps allowed in flap period)."
+        },
+        "Decrement": {
+            "type": "number",
+            "description": "Decrease after every round of DNS query (default is 0)."
+        },
+        "DelSessionOnServerDown": {
+            "type": "number",
+            "description": "Delete session if the server/port goes down (either disabled/hm down)."
+        },
+        "DestNat": {
+            "type": "number",
+            "description": "Destination NAT."
+        },
+        "DownGracePeriod": {
+            "type": "number",
+            "description": "Port down grace period."
+        },
+        "DownTimer": {
+            "type": "number",
+            "description": "The timer to bring the marked down server/port to up (default is 0, never bring up) (The timer to bring up server (in second, default is 0))."
+        },
+        "Dscp": {
+            "type": "number",
+            "description": "Differentiated Services Code Point (DSCP to Real Server IP Mapping Value)."
+        },
+        "DynamicMemberPriority": {
+            "type": "number",
+            "description": "Set dynamic member\u2019s priority (Initial priority (default is 16))."
+        },
+        "Every": {
+            "type": "number",
+            "description": "Slow start connection limit increment interval (default 10)."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on real server port."
+        },
+        "FlapPeriod": {
+            "type": "number",
+            "description": "take service out of rotation if max-flaps exceeded within time in seconds."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Health Check Monitor (Health monitor name)."
+        },
+        "HealthCheckDisable": {
+            "type": "number",
+            "description": "Disable configured health check configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InbandHealthCheck": {
+            "type": "number",
+            "description": "Use inband traffic to detect port\u2019s health status."
+        },
+        "InitialSlowStart": {
+            "type": "number",
+            "description": "Initial slow start connection limit (default 128)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Port template name."
+        },
+        "NoSsl": {
+            "type": "number",
+            "description": "No SSL."
+        },
+        "RateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Use 100 ms as sampling interval; \u2018second\u2019: Use 1 second as sampling interval;."
+        },
+        "Reassign": {
+            "type": "number",
+            "description": "Maximum reassign times before declear the server/port down (default is 25) (The maximum reassign number)."
+        },
+        "RequestRateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Use 100 ms as sampling interval; \u2018second\u2019: Use 1 second as sampling interval;."
+        },
+        "RequestRateLimit": {
+            "type": "number",
+            "description": "Request rate limit."
+        },
+        "RequestRateNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ReselOnReset": {
+            "type": "number",
+            "description": "When receiving reset from server, do the server/port reselection (default is 0, don\u2019t do reselection)."
+        },
+        "Reset": {
+            "type": "number",
+            "description": "Send client reset when connection rate over limit."
+        },
+        "RestoreSvcTime": {
+            "type": "number",
+            "description": "put the service back to the rotation after time in seconds."
+        },
+        "Resume": {
+            "type": "number",
+            "description": "Resume accepting new connection after connection number drops below threshold (Connection resume threshold)."
+        },
+        "Retry": {
+            "type": "number",
+            "description": "Maximum retry times before reassign this connection to another server/port (default is 2) (The maximum retry number)."
+        },
+        "SharedPartitionPool": {
+            "type": "number",
+            "description": "Reference a NAT pool or pool-group from shared partition."
+        },
+        "SlowStart": {
+            "type": "number",
+            "description": "Slowly ramp up the connection number after port is up."
+        },
+        "SourceNat": {
+            "type": "string",
+            "description": "Source NAT (IP NAT Pool or pool group name)."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for real server port; \u2018stats-data-disable\u2019: Disable statistical data collection for real server port;."
+        },
+        "SubGroup": {
+            "type": "number",
+            "description": "Divide service group members into different sub groups (Sub group ID (default is 0))."
+        },
+        "TemplatePortPoolShared": {
+            "type": "string",
+            "description": "Source NAT (IP NAT Pool or pool group name)."
+        },
+        "Till": {
+            "type": "number",
+            "description": "Slow start ends when slow start connection limit reaches a number (default 4096) (Slow start ends when connection limit reaches this number)."
+        },
+        "Times": {
+            "type": "number",
+            "description": "Slow start connection limit multiply by a number every interval (default 2) (Multiply by this number every interval)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Weight (port weight)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,401 @@
+{
+    "typeName": "TF::FortiOS::ReportChart",
+    "description": "Report chart widget configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ReportChart/docs/README.md",
+    "definitions": {
+        "CategorySeriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Databind": {
+                    "type": "string",
+                    "description": "Category series value expression."
+                },
+                "FontSize": {
+                    "type": "number",
+                    "description": "Font size of category-series title."
+                }
+            },
+            "required": []
+        },
+        "ColumnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DetailUnit": {
+                    "type": "string",
+                    "description": "Detail unit of column."
+                },
+                "DetailValue": {
+                    "type": "string",
+                    "description": "Detail value of column."
+                },
+                "FooterUnit": {
+                    "type": "string",
+                    "description": "Footer unit of column."
+                },
+                "FooterValue": {
+                    "type": "string",
+                    "description": "Footer value of column."
+                },
+                "HeaderValue": {
+                    "type": "string",
+                    "description": "Display name of table header."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Mapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MappingDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DrillDownChartsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChartName": {
+                    "type": "string",
+                    "description": "Drill down chart name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Drill down chart ID."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this drill down chart. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ValueSeriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Databind": {
+                    "type": "string",
+                    "description": "Value series value expression."
+                }
+            },
+            "required": []
+        },
+        "XSeriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caption": {
+                    "type": "string",
+                    "description": "X-series caption."
+                },
+                "CaptionFontSize": {
+                    "type": "number",
+                    "description": "X-series caption font size."
+                },
+                "Databind": {
+                    "type": "string",
+                    "description": "X-series value expression."
+                },
+                "FontSize": {
+                    "type": "number",
+                    "description": "X-series label font size."
+                },
+                "IsCategory": {
+                    "type": "string",
+                    "description": "X-series represent category or not. Valid values: `yes`, `no`."
+                },
+                "LabelAngle": {
+                    "type": "string",
+                    "description": "X-series label angle. Valid values: `45-degree`, `vertical`, `horizontal`."
+                },
+                "ScaleDirection": {
+                    "type": "string",
+                    "description": "Scale increase or decrease. Valid values: `decrease`, `increase`."
+                },
+                "ScaleFormat": {
+                    "type": "string",
+                    "description": "Date/time format. Valid values: `YYYY-MM-DD-HH-MM`, `YYYY-MM-DD HH`, `YYYY-MM-DD`, `YYYY-MM`, `YYYY`, `HH-MM`, `MM-DD`."
+                },
+                "ScaleStep": {
+                    "type": "number",
+                    "description": "Scale step."
+                },
+                "ScaleUnit": {
+                    "type": "string",
+                    "description": "Scale unit. Valid values: `minute`, `hour`, `day`, `month`, `year`."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "X-series unit."
+                }
+            },
+            "required": []
+        },
+        "YSeriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caption": {
+                    "type": "string",
+                    "description": "Y-series caption."
+                },
+                "CaptionFontSize": {
+                    "type": "number",
+                    "description": "Y-series caption font size."
+                },
+                "Databind": {
+                    "type": "string",
+                    "description": "Y-series value expression."
+                },
+                "ExtraDatabind": {
+                    "type": "string",
+                    "description": "Extra Y-series value."
+                },
+                "ExtraY": {
+                    "type": "string",
+                    "description": "Allow another Y-series value Valid values: `enable`, `disable`."
+                },
+                "ExtraYLegend": {
+                    "type": "string",
+                    "description": "Extra Y-series legend type/name."
+                },
+                "FontSize": {
+                    "type": "number",
+                    "description": "Y-series label font size."
+                },
+                "Group": {
+                    "type": "string",
+                    "description": "Y-series group option."
+                },
+                "LabelAngle": {
+                    "type": "string",
+                    "description": "Y-series label angle. Valid values: `45-degree`, `vertical`, `horizontal`."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "Y-series unit."
+                },
+                "YLegend": {
+                    "type": "string",
+                    "description": "First Y-series legend type/name."
+                }
+            },
+            "required": []
+        },
+        "MappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Displayname": {
+                    "type": "string",
+                    "description": "Display name."
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "Op": {
+                    "type": "string",
+                    "description": "Comparision operater. Valid values: `none`, `greater`, `greater-equal`, `less`, `less-equal`, `equal`, `between`."
+                },
+                "Value1": {
+                    "type": "string",
+                    "description": "Value 1."
+                },
+                "Value2": {
+                    "type": "string",
+                    "description": "Value 2."
+                },
+                "ValueType": {
+                    "type": "string",
+                    "description": "Value type. Valid values: `integer`, `string`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Background": {
+            "type": "string",
+            "description": "Chart background."
+        },
+        "Category": {
+            "type": "string",
+            "description": "Category. Valid values: `misc`, `traffic`, `event`, `virus`, `webfilter`, `attack`, `spam`, `dlp`, `app-ctrl`, `vulnerability`."
+        },
+        "ColorPalette": {
+            "type": "string",
+            "description": "Color palette (system will pick color automatically by default)."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Dataset": {
+            "type": "string",
+            "description": "Bind dataset to chart."
+        },
+        "Dimension": {
+            "type": "string",
+            "description": "Dimension. Valid values: `2D`, `3D`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Favorite": {
+            "type": "string",
+            "description": "Favorite. Valid values: `no`, `yes`."
+        },
+        "GraphType": {
+            "type": "string",
+            "description": "Graph type. Valid values: `none`, `bar`, `pie`, `line`, `flow`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Legend": {
+            "type": "string",
+            "description": "Enable/Disable Legend area. Valid values: `enable`, `disable`."
+        },
+        "LegendFontSize": {
+            "type": "number",
+            "description": "Font size of legend area."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Chart Widget Name."
+        },
+        "Period": {
+            "type": "string",
+            "description": "Time period. Valid values: `last24h`, `last7d`."
+        },
+        "Policy": {
+            "type": "number",
+            "description": "Used by monitor policy."
+        },
+        "Style": {
+            "type": "string",
+            "description": "Style. Valid values: `auto`, `manual`."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Chart title."
+        },
+        "TitleFontSize": {
+            "type": "number",
+            "description": "Font size of chart title."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Chart type. Valid values: `graph`, `table`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "CategorySeries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CategorySeriesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Column": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ColumnDefinition"
+            }
+        },
+        "DrillDownCharts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DrillDownChartsDefinition"
+            }
+        },
+        "ValueSeries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ValueSeriesDefinition"
+            },
+            "maxItems": 1
+        },
+        "XSeries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/XSeriesDefinition"
+            },
+            "maxItems": 1
+        },
+        "YSeries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/YSeriesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Comments",
+        "Dataset",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

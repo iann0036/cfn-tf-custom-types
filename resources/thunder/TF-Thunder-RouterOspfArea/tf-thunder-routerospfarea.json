@@ -1,0 +1,257 @@
+{
+    "typeName": "TF::Thunder::RouterOspfArea",
+    "description": "`thunder_router_ospf_area` Provides details about thunder router ospf area",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterOspfArea/docs/README.md",
+    "definitions": {
+        "AuthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "number"
+                },
+                "MessageDigest": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FilterListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclDirection": {
+                    "type": "string"
+                },
+                "AclName": {
+                    "type": "string"
+                },
+                "FilterList": {
+                    "type": "number"
+                },
+                "PlistDirection": {
+                    "type": "string"
+                },
+                "PlistName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NssaCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultInformationOriginate": {
+                    "type": "number"
+                },
+                "Metric": {
+                    "type": "number"
+                },
+                "MetricType": {
+                    "type": "number"
+                },
+                "NoRedistribution": {
+                    "type": "number"
+                },
+                "NoSummary": {
+                    "type": "number"
+                },
+                "Nssa": {
+                    "type": "number"
+                },
+                "TranslatorRole": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RangeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaRangePrefix": {
+                    "type": "string"
+                },
+                "Option": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StubCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoSummary": {
+                    "type": "number"
+                },
+                "Stub": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "VirtualLinkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationKey": {
+                    "type": "string"
+                },
+                "Bfd": {
+                    "type": "number"
+                },
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "Md5": {
+                    "type": "string"
+                },
+                "MessageDigestKey": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                },
+                "VirtualLinkAuthType": {
+                    "type": "string"
+                },
+                "VirtualLinkAuthentication": {
+                    "type": "number"
+                },
+                "VirtualLinkIpAddr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AreaIpv4": {
+            "type": "string"
+        },
+        "AreaNum": {
+            "type": "number"
+        },
+        "AsNumber": {
+            "type": "string"
+        },
+        "DefaultCost": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "number"
+        },
+        "Shortcut": {
+            "type": "string",
+            "description": "'default': Set default shortcutting behavior; 'disable': Disable shortcutting through the area; 'enable': Enable shortcutting through the area;."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AuthCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "FilterLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterListsDefinition"
+            }
+        },
+        "NssaCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NssaCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "RangeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangeListDefinition"
+            }
+        },
+        "StubCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StubCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "VirtualLinkList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualLinkListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

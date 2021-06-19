@@ -1,0 +1,203 @@
+{
+    "typeName": "TF::Google::ComputeReservation",
+    "description": "Represents a reservation resource. A reservation ensures that capacity is\nheld in a specific zone even if the reserved VMs are not running.\n\nReservations apply only to Compute Engine, Cloud Dataproc, and Google\nKubernetes Engine VM usage.Reservations do not apply to `f1-micro` or\n`g1-small` machine types, preemptible VMs, sole tenant nodes, or other\nservices not listed above\nlike Cloud SQL and Dataflow.\n\n\nTo get more information about Reservation, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/reservations)\n* How-to Guides\n    * [Reserving zonal resources](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=reservation_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeReservation/docs/README.md",
+    "definitions": {
+        "SpecificReservationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "InstanceProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstancePropertiesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Count"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InstancePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "GuestAccelerators": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GuestAcceleratorsDefinition"
+                    }
+                },
+                "LocalSsds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalSsdsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MachineType"
+            ]
+        },
+        "GuestAcceleratorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceleratorCount": {
+                    "type": "number"
+                },
+                "AcceleratorType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AcceleratorCount",
+                "AcceleratorType"
+            ]
+        },
+        "LocalSsdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "Interface": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DiskSizeGb"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Commitment": {
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SpecificReservationRequired": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "SpecificReservation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecificReservationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Commitment",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

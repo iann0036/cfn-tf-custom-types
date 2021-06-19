@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::CheckPoint::PutFile",
+    "description": "This resource allows you to add a new file to a Check Point machine.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-PutFile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FileName": {
+            "type": "string",
+            "description": "Filename include the desired path. The file will be created in the user home directory if the full path wasn't provided."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Override": {
+            "type": "boolean",
+            "description": "If the file already exists, indicates whether to overwrite it."
+        },
+        "TextContent": {
+            "type": "string",
+            "description": "Content to add to the new file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FileName",
+        "TextContent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

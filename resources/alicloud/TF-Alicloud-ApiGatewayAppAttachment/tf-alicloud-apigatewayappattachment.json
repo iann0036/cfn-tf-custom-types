@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Alicloud::ApiGatewayAppAttachment",
+    "description": "Provides an app attachment resource.It is used for authorizing a specific api to an app accessing. \n\nFor information about Api Gateway App attachment and how to use it, see [Add specified API access authorities](https://www.alibabacloud.com/help/doc-detail/43673.htm)\n\n-> **NOTE:** Terraform will auto build app attachment while it uses `alicloud_api_gateway_app_attachment` to build.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ApiGatewayAppAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The api_id that app apply to access."
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The app that apply to the authorization."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The group that the api belongs to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StageName": {
+            "type": "string",
+            "description": "Stage that the app apply to access."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "AppId",
+        "GroupId",
+        "StageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

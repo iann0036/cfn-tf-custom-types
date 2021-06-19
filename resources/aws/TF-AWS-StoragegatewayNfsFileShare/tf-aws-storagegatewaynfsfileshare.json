@@ -1,0 +1,248 @@
+{
+    "typeName": "TF::AWS::StoragegatewayNfsFileShare",
+    "description": "Manages an AWS Storage Gateway NFS File Share.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-StoragegatewayNfsFileShare/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CacheAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheStaleTimeoutInSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NfsFileShareDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DirectoryMode": {
+                    "type": "string"
+                },
+                "FileMode": {
+                    "type": "string"
+                },
+                "GroupId": {
+                    "type": "string"
+                },
+                "OwnerId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ClientList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks. Set to `[\"0.0.0.0/0\"]` to not limit access. Minimum 1 item. Maximum 100 items."
+        },
+        "DefaultStorageClass": {
+            "type": "string",
+            "description": "The default storage class for objects put into an Amazon S3 bucket by the file gateway. Defaults to `S3_STANDARD`. Valid values: `S3_STANDARD`, `S3_STANDARD_IA`, `S3_ONEZONE_IA`."
+        },
+        "FileShareName": {
+            "type": "string",
+            "description": "The name of the file share. Must be set if an S3 prefix name is set in `location_arn`."
+        },
+        "FileshareId": {
+            "type": "string"
+        },
+        "GatewayArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the file gateway."
+        },
+        "GuessMimeTypeEnabled": {
+            "type": "boolean",
+            "description": "Boolean value that enables guessing of the MIME type for uploaded objects based on file extensions. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsEncrypted": {
+            "type": "boolean",
+            "description": "Boolean value if `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Defaults to `false`."
+        },
+        "KmsKeyArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) for KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is true."
+        },
+        "LocationArn": {
+            "type": "string",
+            "description": "The ARN of the backed storage used for storing file data."
+        },
+        "NotificationPolicy": {
+            "type": "string",
+            "description": "The notification policy of the file share. For more information see the [AWS Documentation](https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html#StorageGateway-CreateNFSFileShare-request-NotificationPolicy). Default value is `{}`."
+        },
+        "ObjectAcl": {
+            "type": "string",
+            "description": "Access Control List permission for S3 bucket objects. Defaults to `private`."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "ReadOnly": {
+            "type": "boolean",
+            "description": "Boolean to indicate write status of file share. File share does not accept writes if `true`. Defaults to `false`."
+        },
+        "RequesterPays": {
+            "type": "boolean",
+            "description": "Boolean who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to `true` if you want the requester to pay instead of the bucket owner. Defaults to `false`."
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the underlying storage."
+        },
+        "Squash": {
+            "type": "string",
+            "description": "Maps a user to anonymous user. Defaults to `RootSquash`. Valid values: `RootSquash` (only root is mapped to anonymous user), `NoSquash` (no one is mapped to anonymous user), `AllSquash` (everyone is mapped to anonymous user)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "CacheAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CacheAttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "NfsFileShareDefaults": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NfsFileShareDefaultsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientList",
+        "GatewayArn",
+        "LocationArn",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/FileshareId",
+        "/properties/Id",
+        "/properties/Path"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

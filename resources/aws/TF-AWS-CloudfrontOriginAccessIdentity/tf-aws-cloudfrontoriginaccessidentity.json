@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::AWS::CloudfrontOriginAccessIdentity",
+    "description": "Creates an Amazon CloudFront origin access identity.\n\nFor information about CloudFront distributions, see the\n[Amazon CloudFront Developer Guide][1]. For more information on generating\norigin access identities, see\n[Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content][2].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudfrontOriginAccessIdentity/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CallerReference": {
+            "type": "string"
+        },
+        "CloudfrontAccessIdentityPath": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "IamArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "S3CanonicalUserId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CallerReference",
+        "/properties/CloudfrontAccessIdentityPath",
+        "/properties/Etag",
+        "/properties/IamArn",
+        "/properties/Id",
+        "/properties/S3CanonicalUserId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

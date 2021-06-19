@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::NSXT::PolicyIpPoolStaticSubnet",
+    "description": "This resource provides a means to configure IP Pool Static Subnets in NSX Policy.\n\nThis resource is applicable to NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyIpPoolStaticSubnet/docs/README.md",
+    "definitions": {
+        "AllocationRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string",
+            "description": "The network CIDR."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name for the Static Subnet."
+        },
+        "DnsNameservers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of up to 3 DNS nameservers for the Subnet."
+        },
+        "DnsSuffix": {
+            "type": "string",
+            "description": "The DNS suffix for the Subnet."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "The gateway IP for the Subnet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PoolPath": {
+            "type": "string",
+            "description": "The Policy path to the IP Pool for this Static Subnet."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "AllocationRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllocationRangeDefinition"
+            },
+            "minItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cidr",
+        "DisplayName",
+        "PoolPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

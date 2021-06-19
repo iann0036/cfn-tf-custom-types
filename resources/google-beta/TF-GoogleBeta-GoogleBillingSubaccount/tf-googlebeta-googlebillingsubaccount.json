@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBillingSubaccount",
+    "description": "CloudFormation equivalent of google_billing_subaccount",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBillingSubaccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingAccountId": {
+            "type": "string"
+        },
+        "DeletionPolicy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MasterBillingAccount": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Open": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "MasterBillingAccount"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BillingAccountId",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Open"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

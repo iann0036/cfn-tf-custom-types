@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::GitHub::RepositoryFile",
+    "description": "This resource allows you to create and manage files within a\nGitHub repository.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryFile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Branch": {
+            "type": "string",
+            "description": "Git branch (defaults to `main`).\nThe branch must already exist, it will not be created if it does not already exist."
+        },
+        "CommitAuthor": {
+            "type": "string",
+            "description": "Committer author name to use."
+        },
+        "CommitEmail": {
+            "type": "string",
+            "description": "Committer email address to use."
+        },
+        "CommitMessage": {
+            "type": "string",
+            "description": "Commit message when adding or updating the managed file."
+        },
+        "CommitSha": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "The file content."
+        },
+        "File": {
+            "type": "string",
+            "description": "The path of the file to manage."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OverwriteOnCreate": {
+            "type": "boolean",
+            "description": "Enable overwriting existing files."
+        },
+        "Repository": {
+            "type": "string"
+        },
+        "Sha": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "File",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CommitSha",
+        "/properties/Id",
+        "/properties/Sha"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

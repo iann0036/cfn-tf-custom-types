@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::Gridscale::Snapshot",
+    "description": "Provides a storage snapshot resource. This can be used to create, modify, and delete storage snapshots.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Snapshot/docs/README.md",
+    "definitions": {
+        "ObjectStorageExportDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "Bucket": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Object": {
+                    "type": "string"
+                },
+                "Private": {
+                    "type": "boolean"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "Bucket",
+                "Host",
+                "Object",
+                "Private",
+                "SecretKey"
+            ]
+        },
+        "RollbackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Capacity": {
+            "type": "number"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CurrentPrice": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string",
+            "description": "ID of the rollback request. It can be any string value. Each rollback request has to have a UNIQUE id."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of labels."
+        },
+        "LicenseProductNo": {
+            "type": "number"
+        },
+        "LocationCountry": {
+            "type": "string"
+        },
+        "LocationIata": {
+            "type": "string"
+        },
+        "LocationName": {
+            "type": "string"
+        },
+        "LocationUuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the snapshot."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageUuid": {
+            "type": "string",
+            "description": "UUID of the storage used to create this snapshot."
+        },
+        "UsageInMinutes": {
+            "type": "number"
+        },
+        "ObjectStorageExport": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ObjectStorageExportDefinition"
+            }
+        },
+        "Rollback": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RollbackDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StorageUuid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Capacity",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/CurrentPrice",
+        "/properties/Id",
+        "/properties/LicenseProductNo",
+        "/properties/LocationCountry",
+        "/properties/LocationIata",
+        "/properties/LocationName",
+        "/properties/LocationUuid",
+        "/properties/Status",
+        "/properties/UsageInMinutes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ObjectStorageExportDefinition/AccessKey",
+        "/definitions/ObjectStorageExportDefinition/SecretKey"
+    ]
+}

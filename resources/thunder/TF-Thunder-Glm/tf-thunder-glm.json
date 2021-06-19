@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::Thunder::Glm",
+    "description": "`thunder_glm` Provides details about thunder glm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Glm/docs/README.md",
+    "definitions": {
+        "ProxyServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretString": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocateBandwidth": {
+            "type": "number",
+            "description": "Enter the requested bandwidth in Mbps for Capacity Pool."
+        },
+        "ApplianceName": {
+            "type": "string",
+            "description": "Helpful identifier for this appliance."
+        },
+        "Burst": {
+            "type": "number"
+        },
+        "EnableRequests": {
+            "type": "number",
+            "description": "Enable connection to the GLM."
+        },
+        "Enterprise": {
+            "type": "string",
+            "description": "Enter the ELM hostname or IP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Enter the desired ping interval in hours."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Proxy server port."
+        },
+        "Token": {
+            "type": "string",
+            "description": "License entitlement token."
+        },
+        "UseMgmtPort": {
+            "type": "number",
+            "description": "Use management port to connect to GLM."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ProxyServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProxyServerDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

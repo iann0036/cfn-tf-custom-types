@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::Alicloud::CmsGroupMetricRule",
+    "description": "CloudFormation equivalent of alicloud_cms_group_metric_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CmsGroupMetricRule/docs/README.md",
+    "definitions": {
+        "EscalationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Critical": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CriticalDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Info": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InfoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Warn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WarnDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CriticalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComparisonOperator": {
+                    "type": "string"
+                },
+                "Statistics": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "string"
+                },
+                "Times": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComparisonOperator": {
+                    "type": "string"
+                },
+                "Statistics": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "string"
+                },
+                "Times": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WarnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComparisonOperator": {
+                    "type": "string"
+                },
+                "Statistics": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "string"
+                },
+                "Times": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string"
+        },
+        "ContactGroups": {
+            "type": "string"
+        },
+        "Dimensions": {
+            "type": "string"
+        },
+        "EffectiveInterval": {
+            "type": "string"
+        },
+        "EmailSubject": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "string"
+        },
+        "GroupMetricRuleName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NoEffectiveInterval": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "RuleId": {
+            "type": "string"
+        },
+        "SilenceTime": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Webhook": {
+            "type": "string"
+        },
+        "Escalations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EscalationsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "GroupId",
+        "GroupMetricRuleName",
+        "MetricName",
+        "Namespace",
+        "RuleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

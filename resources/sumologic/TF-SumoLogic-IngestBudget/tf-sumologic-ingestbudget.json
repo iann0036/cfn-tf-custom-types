@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::SumoLogic::IngestBudget",
+    "description": "Provides a [Sumologic Ingest Budget][1]. To assign an Ingest Budget to the Collector use the field `_budget` with the Field Value of the Ingest Budget to assign.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-IngestBudget/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "CapacityBytes": {
+            "type": "number",
+            "description": "Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `description` - (Optional) Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "FieldValue": {
+            "type": "string",
+            "description": "Custom field value that is used to assign Collectors to the ingest budget.\n* `capacity_bytes` - (Required) Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `description` - (Optional) Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The internal ID of the ingest budget. This can be used to assign collectors to the ingest budget."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Display name of the ingest budget. This must be unique across all of the ingest budgets\n* `field_value` - (Required) Custom field value that is used to assign Collectors to the ingest budget.\n* `capacity_bytes` - (Required) Capacity of the ingest budget, in bytes.\n* `description` - (Optional) The description of the collector.\n* `timezone` - (Optional) The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `description` - (Optional) Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "ResetTime": {
+            "type": "string",
+            "description": "Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `description` - (Optional) Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The time zone to use for this collector. The value follows the [tzdata][2] naming convention. Defaults to `Etc/UTC`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `reset_time` - (Optional) Reset time of the ingest budget in HH:MM format. Defaults to `00:00`\n* `description` - (Optional) Description of the ingest budget.\n* `action` - (Optional) Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are `stopCollecting` and `keepCollecting`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CapacityBytes",
+        "FieldValue",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

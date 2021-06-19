@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::OCI::IdentityAuthenticationPolicy",
+    "description": "This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.\n\nUpdates authentication policy for the specified tenancy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-IdentityAuthenticationPolicy/docs/README.md",
+    "definitions": {
+        "NetworkPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkSourceIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PasswordPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsLowercaseCharactersRequired": {
+                    "type": "boolean"
+                },
+                "IsNumericCharactersRequired": {
+                    "type": "boolean"
+                },
+                "IsSpecialCharactersRequired": {
+                    "type": "boolean"
+                },
+                "IsUppercaseCharactersRequired": {
+                    "type": "boolean"
+                },
+                "IsUsernameContainmentAllowed": {
+                    "type": "boolean"
+                },
+                "MinimumPasswordLength": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "PasswordPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PasswordPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

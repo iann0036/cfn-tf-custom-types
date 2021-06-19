@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::MongoDBAtlas::NetworkPeering",
+    "description": "`mongodbatlas_network_peering` provides a Network Peering Connection resource. The resource lets you create, edit and delete network peering connections. The resource requires your Project ID.  \n\nEnsure you have first created a network container if it is required for your configuration.  See the network_container resource documentation to determine if you need a network container first.  Examples for creating both container and peering resource are shown below as well as examples for creating the peering connection only.\n\n~> **GCP AND AZURE ONLY:** Connect via Peering Only mode is deprecated, so no longer needed.  See [disable Peering Only mode](https://docs.atlas.mongodb.com/reference/faq/connection-changes/#disable-peering-mode) for details and [private_ip_mode](https://www.terraform.io/docs/providers/mongodbatlas/r/private_ip_mode.html) to disable.\n\n~> **AZURE ONLY:** To create the peering request with an Azure VNET, you must grant Atlas the following permissions on the virtual network.\n    Microsoft.N...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-NetworkPeering/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccepterRegionName": {
+            "type": "string",
+            "description": "Specifies the AWS region where the peer VPC resides. For complete lists of supported regions, see [Amazon Web Services](https://docs.atlas.mongodb.com/reference/amazon-aws/)."
+        },
+        "AtlasCidrBlock": {
+            "type": "string"
+        },
+        "AtlasGcpProjectId": {
+            "type": "string"
+        },
+        "AtlasId": {
+            "type": "string"
+        },
+        "AtlasVpcName": {
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string",
+            "description": "AWS Account ID of the owner of the peer VPC."
+        },
+        "AzureDirectoryId": {
+            "type": "string",
+            "description": "Unique identifier for an Azure AD directory."
+        },
+        "AzureSubscriptionId": {
+            "type": "string",
+            "description": "Unique identifier of the Azure subscription in which the VNet resides."
+        },
+        "ConnectionId": {
+            "type": "string"
+        },
+        "ContainerId": {
+            "type": "string",
+            "description": "Unique identifier of the MongoDB Atlas container for the provider (GCP) or provider/region (AWS, AZURE). You can create an MongoDB Atlas container using the network_container resource or it can be obtained from the cluster returned values if a cluster has been created before the first container."
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "ErrorState": {
+            "type": "string"
+        },
+        "ErrorStateName": {
+            "type": "string"
+        },
+        "GcpProjectId": {
+            "type": "string",
+            "description": "GCP project ID of the owner of the network peer."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string",
+            "description": "Name of the network peer to which Atlas connects."
+        },
+        "PeerId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique ID for the MongoDB Atlas project to create the database user."
+        },
+        "ProviderName": {
+            "type": "string",
+            "description": "Cloud provider to whom the peering connection is being made. (Possible Values `AWS`, `AZURE`, `GCP`)."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Name of your Azure resource group."
+        },
+        "RouteTableCidrBlock": {
+            "type": "string",
+            "description": "AWS VPC CIDR block or subnet."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusName": {
+            "type": "string"
+        },
+        "VnetName": {
+            "type": "string",
+            "description": "Name of your Azure VNet."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "Unique identifier of the AWS peer VPC (Note: this is **not** the same as the Atlas AWS VPC that is returned by the network_container resource)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContainerId",
+        "ProjectId",
+        "ProviderName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AtlasId",
+        "/properties/ConnectionId",
+        "/properties/ErrorMessage",
+        "/properties/ErrorState",
+        "/properties/ErrorStateName",
+        "/properties/Id",
+        "/properties/PeerId",
+        "/properties/Status",
+        "/properties/StatusName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

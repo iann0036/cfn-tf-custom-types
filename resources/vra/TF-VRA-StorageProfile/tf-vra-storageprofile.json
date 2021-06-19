@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::VRA::StorageProfile",
+    "description": "CloudFormation equivalent of vra_storage_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-StorageProfile/docs/README.md",
+    "definitions": {
+        "DiskPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DiskTargetPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudAccountId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DefaultItem": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "DiskProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskPropertiesDefinition"
+            },
+            "description": "Map of storage properties that are to be applied on disk while provisioning."
+        },
+        "DiskTargetProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskTargetPropertiesDefinition"
+            },
+            "description": "Map of storage placements to know where the disk is provisioned."
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "RegionId": {
+            "type": "string",
+            "description": "The id of the region for which this profile is defined as in vRealize Automation(vRA)."
+        },
+        "SupportsEncryption": {
+            "type": "boolean",
+            "description": "Indicates whether this storage profile supports encryption or not."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultItem",
+        "Name",
+        "RegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudAccountId",
+        "/properties/CreatedAt",
+        "/properties/ExternalRegionId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointGithubEnterprise",
+    "description": "Manages a GitHub Enterprise Server service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointGithubEnterprise/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthPersonalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PersonalAccessToken": {
+                    "type": "string",
+                    "description": "The Personal Access Token for Github."
+                }
+            },
+            "required": [
+                "PersonalAccessToken"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The Service Endpoint name.\n- `url` - (Required) Github Enterprise Server Url.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name.\n- `url` - (Required) Github Enterprise Server Url.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token."
+        },
+        "Url": {
+            "type": "string",
+            "description": "Github Enterprise Server Url.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`.\n- `auth_personal` - (Optional) An `auth_personal` block as documented below. Allows connecting using a personal access token."
+        },
+        "AuthPersonal": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthPersonalDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "ServiceEndpointName",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthPersonalDefinition/PersonalAccessToken"
+    ]
+}

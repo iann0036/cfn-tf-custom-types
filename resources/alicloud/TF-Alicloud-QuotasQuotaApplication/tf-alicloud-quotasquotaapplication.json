@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::Alicloud::QuotasQuotaApplication",
+    "description": "CloudFormation equivalent of alicloud_quotas_quota_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-QuotasQuotaApplication/docs/README.md",
+    "definitions": {
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApproveValue": {
+            "type": "string"
+        },
+        "AuditMode": {
+            "type": "string"
+        },
+        "AuditReason": {
+            "type": "string"
+        },
+        "DesireValue": {
+            "type": "number"
+        },
+        "EffectiveTime": {
+            "type": "string"
+        },
+        "ExpireTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NoticeType": {
+            "type": "number"
+        },
+        "ProductCode": {
+            "type": "string"
+        },
+        "QuotaActionCode": {
+            "type": "string"
+        },
+        "QuotaCategory": {
+            "type": "string"
+        },
+        "QuotaDescription": {
+            "type": "string"
+        },
+        "QuotaName": {
+            "type": "string"
+        },
+        "QuotaUnit": {
+            "type": "string"
+        },
+        "Reason": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DimensionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesireValue",
+        "ProductCode",
+        "QuotaActionCode",
+        "Reason"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApproveValue",
+        "/properties/AuditReason",
+        "/properties/EffectiveTime",
+        "/properties/ExpireTime",
+        "/properties/Id",
+        "/properties/QuotaDescription",
+        "/properties/QuotaName",
+        "/properties/QuotaUnit",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

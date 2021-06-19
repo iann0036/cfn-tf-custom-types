@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::Dynatrace::CustomService",
+    "description": "CloudFormation equivalent of dynatrace_custom_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-CustomService/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Class": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClassDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MethodDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Match": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Match": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arguments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Returns": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProcessGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "QueueEntryPoint": {
+            "type": "boolean"
+        },
+        "QueueEntryPointType": {
+            "type": "string"
+        },
+        "Technology": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Name",
+        "Technology"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

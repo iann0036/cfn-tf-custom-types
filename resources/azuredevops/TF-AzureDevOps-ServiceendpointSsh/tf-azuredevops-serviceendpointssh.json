@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointSsh",
+    "description": "Manages a SSH service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointSsh/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Host": {
+            "type": "string",
+            "description": "The Host name or IP address of the remote machine.\n- `username` - (Required) Username for connecting to the endpoint.\n- `port` - (Optional) Port number on the remote machine to use for connecting. Defaults to `22`.\n- `password` - (Optional) Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "PasswordHash": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number on the remote machine to use for connecting. Defaults to `22`.\n- `password` - (Optional) Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "PrivateKeyHash": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The Service Endpoint name.\n- `host` - (Required) The Host name or IP address of the remote machine.\n- `username` - (Required) Username for connecting to the endpoint.\n- `port` - (Optional) Port number on the remote machine to use for connecting. Defaults to `22`.\n- `password` - (Optional) Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name.\n- `host` - (Required) The Host name or IP address of the remote machine.\n- `username` - (Required) Username for connecting to the endpoint.\n- `port` - (Optional) Port number on the remote machine to use for connecting. Defaults to `22`.\n- `password` - (Optional) Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username for connecting to the endpoint.\n- `port` - (Optional) Port number on the remote machine to use for connecting. Defaults to `22`.\n- `password` - (Optional) Password for connecting to the endpoint.\n- `private_key` - (Optional) Private Key for connecting to the endpoint.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Host",
+        "ProjectId",
+        "ServiceEndpointName",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PasswordHash",
+        "/properties/PrivateKeyHash"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PasswordHash",
+        "/properties/PrivateKey",
+        "/properties/PrivateKeyHash"
+    ]
+}

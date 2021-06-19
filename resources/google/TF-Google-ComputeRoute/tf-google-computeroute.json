@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::Google::ComputeRoute",
+    "description": "Represents a Route resource.\n\nA route is a rule that specifies how certain packets should be handled by\nthe virtual network. Routes are associated with virtual machines by tag,\nand the set of routes for a particular virtual machine is called its\nrouting table. For each packet leaving a virtual machine, the system\nsearches that virtual machine's routing table for a single best matching\nroute.\n\nRoutes match packets by destination IP address, preferring smaller or more\nspecific ranges over larger ones. If there is a tie, the system selects\nthe route with the smallest priority value. If there is still a tie, it\nuses the layer three and four packet headers to select just one of the\nremaining matching routes. The packet is then forwarded as specified by\nthe next_hop field of the winning route -- either to another virtual\nmachine destination, a virtual machine gateway or a Compute\nEngine-operated gateway. Packets that do not match any route in the\nsending virtual machine's routing table will be dropped.\n\nA Route...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeRoute/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DestRange": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NextHopGateway": {
+            "type": "string"
+        },
+        "NextHopIlb": {
+            "type": "string"
+        },
+        "NextHopInstance": {
+            "type": "string"
+        },
+        "NextHopInstanceZone": {
+            "type": "string",
+            "description": "The zone of the instance specified in\n`next_hop_instance`.  Omit if `next_hop_instance` is specified as\na URL."
+        },
+        "NextHopIp": {
+            "type": "string"
+        },
+        "NextHopNetwork": {
+            "type": "string"
+        },
+        "NextHopVpnTunnel": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestRange",
+        "Name",
+        "Network"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NextHopNetwork",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

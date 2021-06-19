@@ -1,0 +1,652 @@
+{
+    "typeName": "TF::AVI::Analyticsprofile",
+    "description": "The AnalyticsProfile resource allows the creation and management of Avi AnalyticsProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Analyticsprofile/docs/README.md",
+    "definitions": {
+        "ClientLogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableSignificantLogCollection": {
+                    "type": "boolean"
+                },
+                "FilteredLogProcessing": {
+                    "type": "string"
+                },
+                "NonSignificantLogProcessing": {
+                    "type": "string"
+                },
+                "SignificantLogProcessing": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClientLogStreamingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalServer": {
+                    "type": "string"
+                },
+                "ExternalServerPort": {
+                    "type": "number"
+                },
+                "LogTypesToSend": {
+                    "type": "string"
+                },
+                "MaxLogsPerSecond": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "FormatConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FormatConfigDefinition"
+                    }
+                },
+                "SyslogConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SyslogConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ExternalServer"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "number"
+                },
+                "End": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Begin",
+                "End"
+            ]
+        },
+        "SensitiveLogProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderFieldRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderFieldRulesDefinition"
+                    }
+                },
+                "WafFieldRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WafFieldRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FormatConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "IncludedFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Format"
+            ]
+        },
+        "SyslogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Facility": {
+                    "type": "number"
+                },
+                "FilteredLogSeverity": {
+                    "type": "number"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "NonSignificantLogSeverity": {
+                    "type": "number"
+                },
+                "SignificantLogSeverity": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HeaderFieldRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WafFieldRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApdexResponseThreshold": {
+            "type": "number",
+            "description": "If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied. It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold. Greater than this number and the client's request is considered frustrated. Allowed values are 1-30000. Unit is milliseconds. Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition."
+        },
+        "ApdexResponseToleratedFactor": {
+            "type": "number",
+            "description": "Client tolerated response latency factor. Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition."
+        },
+        "ApdexRttThreshold": {
+            "type": "number",
+            "description": "Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Unit is milliseconds. Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition."
+        },
+        "ApdexRttToleratedFactor": {
+            "type": "number",
+            "description": "Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition."
+        },
+        "ApdexRumThreshold": {
+            "type": "number",
+            "description": "If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied. It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency. Greater than this number and the client's request is considered frustrated. A pageload includes the time for dns lookup, download of all http objects, and page render time. Allowed values are 1-30000. Unit is milliseconds. Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition."
+        },
+        "ApdexRumToleratedFactor": {
+            "type": "number",
+            "description": "Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold. Allowed values are 1-1000. Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition."
+        },
+        "ApdexServerResponseThreshold": {
+            "type": "number",
+            "description": "A server http response is considered satisfied if latency is less than the satisfactory latency threshold. The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency. Greater than this number and the server response is considered frustrated. Allowed values are 1-30000. Unit is milliseconds. Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition."
+        },
+        "ApdexServerResponseToleratedFactor": {
+            "type": "number",
+            "description": "Server tolerated response latency factor. Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition."
+        },
+        "ApdexServerRttThreshold": {
+            "type": "number",
+            "description": "Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Unit is milliseconds. Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition."
+        },
+        "ApdexServerRttToleratedFactor": {
+            "type": "number",
+            "description": "Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition."
+        },
+        "ConnLossyOooThreshold": {
+            "type": "number",
+            "description": "A connection between client and avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition."
+        },
+        "ConnLossyTimeoRexmtThreshold": {
+            "type": "number",
+            "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition."
+        },
+        "ConnLossyTotalRexmtThreshold": {
+            "type": "number",
+            "description": "A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition."
+        },
+        "ConnLossyZeroWinSizeEventThreshold": {
+            "type": "number",
+            "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold. Allowed values are 0-100. Unit is percent. Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition."
+        },
+        "ConnServerLossyOooThreshold": {
+            "type": "number",
+            "description": "A connection between avi and server is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition."
+        },
+        "ConnServerLossyTimeoRexmtThreshold": {
+            "type": "number",
+            "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition."
+        },
+        "ConnServerLossyTotalRexmtThreshold": {
+            "type": "number",
+            "description": "A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is percent. Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition."
+        },
+        "ConnServerLossyZeroWinSizeEventThreshold": {
+            "type": "number",
+            "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold. Allowed values are 0-100. Unit is percent. Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "EnableAdaptiveConfig": {
+            "type": "boolean",
+            "description": "Enable adaptive configuration for optimizing resource usage. Field introduced in 20.1.1."
+        },
+        "EnableAdvancedAnalytics": {
+            "type": "boolean",
+            "description": "Enables advanced analytics features like anomaly detection. If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated. However, setting it to false reduces cpu and memory requirements for analytics subsystem. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition. Special default for basic edition is false, essentials edition is false, enterprise is true."
+        },
+        "EnableOndemandMetrics": {
+            "type": "boolean",
+            "description": "Virtual service (vs) metrics are processed only when there is live data traffic on the vs. In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs. Field introduced in 20.1.3."
+        },
+        "EnableSeAnalytics": {
+            "type": "boolean",
+            "description": "Enable node (service engine) level analytics forvs metrics. Field introduced in 20.1.3."
+        },
+        "EnableServerAnalytics": {
+            "type": "boolean",
+            "description": "Enables analytics on backend servers. This may be desired in container environment when there are large number of ephemeral servers. Additionally, no healthscore of servers is computed when server analytics is enabled. Field introduced in 20.1.3."
+        },
+        "EnableVsAnalytics": {
+            "type": "boolean",
+            "description": "Enable virtualservice (frontend) analytics. This flag enables metrics and healthscore for virtualservice. Field introduced in 20.1.3."
+        },
+        "ExcludeClientCloseBeforeRequestAsError": {
+            "type": "boolean",
+            "description": "Exclude client closed connection before an http request could be completed from being classified as an error. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeDnsPolicyDropAsSignificant": {
+            "type": "boolean",
+            "description": "Exclude dns policy drops from the list of errors. Field introduced in 17.2.2. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeGsDownAsError": {
+            "type": "boolean",
+            "description": "Exclude queries to gslb services that are operationally down from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeHttpErrorCodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of http status codes to be excluded from being classified as an error. Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack."
+        },
+        "ExcludeInvalidDnsDomainAsError": {
+            "type": "boolean",
+            "description": "Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeInvalidDnsQueryAsError": {
+            "type": "boolean",
+            "description": "Exclude invalid dns queries from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeIssuerRevokedOcspResponsesAsError": {
+            "type": "boolean",
+            "description": "Exclude the issuer-revoked ocsp responses from the list of errors. Field introduced in 20.1.1. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "ExcludeNoDnsRecordAsError": {
+            "type": "boolean",
+            "description": "Exclude queries to domains that did not have configured services/records from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeNoValidGsMemberAsError": {
+            "type": "boolean",
+            "description": "Exclude queries to gslb services that have no available members from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludePersistenceChangeAsError": {
+            "type": "boolean",
+            "description": "Exclude persistence server changed while load balancing' from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeRevokedOcspResponsesAsError": {
+            "type": "boolean",
+            "description": "Exclude the revoked ocsp certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "ExcludeServerDnsErrorAsError": {
+            "type": "boolean",
+            "description": "Exclude server dns error response from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeServerTcpResetAsError": {
+            "type": "boolean",
+            "description": "Exclude server tcp reset from errors. It is common for applications like ms exchange. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeSipErrorCodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of sip status codes to be excluded from being classified as an error. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in basic edition, essentials edition, enterprise edition."
+        },
+        "ExcludeStaleOcspResponsesAsError": {
+            "type": "boolean",
+            "description": "Exclude the stale ocsp certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "ExcludeSynRetransmitAsError": {
+            "type": "boolean",
+            "description": "Exclude 'server unanswered syns' from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeTcpResetAsError": {
+            "type": "boolean",
+            "description": "Exclude tcp resets by client from the list of potential errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "ExcludeUnavailableOcspResponsesAsError": {
+            "type": "boolean",
+            "description": "Exclude the unavailable ocsp responses from the list of errors. Field introduced in 20.1.1. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "ExcludeUnsupportedDnsQueryAsError": {
+            "type": "boolean",
+            "description": "Exclude unsupported dns queries from the list of errors. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "HealthscoreMaxServerLimit": {
+            "type": "number",
+            "description": "Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- 'server health score is deactivated'. Field introduced in 17.2.13, 18.1.4. Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition. Special default for basic edition is 0, essentials edition is 0, enterprise is 20."
+        },
+        "HsEventThrottleWindow": {
+            "type": "number",
+            "description": "Time window (in secs) within which only unique health change events should occur. Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition."
+        },
+        "HsMaxAnomalyPenalty": {
+            "type": "number",
+            "description": "Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition."
+        },
+        "HsMaxResourcesPenalty": {
+            "type": "number",
+            "description": "Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 0-100. Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition."
+        },
+        "HsMaxSecurityPenalty": {
+            "type": "number",
+            "description": "Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 0-100. Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition."
+        },
+        "HsMinDosRate": {
+            "type": "number",
+            "description": "Dos connection rate below which the dos security assessment will not kick in. Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition."
+        },
+        "HsPerformanceBoost": {
+            "type": "number",
+            "description": "Adds free performance score credits to health score. It can be used for compensating health score for known slow applications. Allowed values are 0-100. Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition."
+        },
+        "HsPscoreTrafficThresholdL4Client": {
+            "type": "number",
+            "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition."
+        },
+        "HsPscoreTrafficThresholdL4Server": {
+            "type": "number",
+            "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition."
+        },
+        "HsSecurityCertscoreExpired": {
+            "type": "number",
+            "description": "Score assigned when the certificate has expired. Allowed values are 0-5. Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition."
+        },
+        "HsSecurityCertscoreGt30d": {
+            "type": "number",
+            "description": "Score assigned when the certificate expires in more than 30 days. Allowed values are 0-5. Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition."
+        },
+        "HsSecurityCertscoreLe07d": {
+            "type": "number",
+            "description": "Score assigned when the certificate expires in less than or equal to 7 days. Allowed values are 0-5. Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition."
+        },
+        "HsSecurityCertscoreLe30d": {
+            "type": "number",
+            "description": "Score assigned when the certificate expires in less than or equal to 30 days. Allowed values are 0-5. Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition."
+        },
+        "HsSecurityChainInvalidityPenalty": {
+            "type": "number",
+            "description": "Penalty for allowing certificates with invalid chain. Allowed values are 0-5. Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition."
+        },
+        "HsSecurityCipherscoreEq000b": {
+            "type": "number",
+            "description": "Score assigned when the minimum cipher strength is 0 bits. Allowed values are 0-5. Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition."
+        },
+        "HsSecurityCipherscoreGe128b": {
+            "type": "number",
+            "description": "Score assigned when the minimum cipher strength is greater than equal to 128 bits. Allowed values are 0-5. Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition."
+        },
+        "HsSecurityCipherscoreLt128b": {
+            "type": "number",
+            "description": "Score assigned when the minimum cipher strength is less than 128 bits. Allowed values are 0-5. Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition."
+        },
+        "HsSecurityEncalgoScoreNone": {
+            "type": "number",
+            "description": "Score assigned when no algorithm is used for encryption. Allowed values are 0-5. Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition."
+        },
+        "HsSecurityEncalgoScoreRc4": {
+            "type": "number",
+            "description": "Score assigned when rc4 algorithm is used for encryption. Allowed values are 0-5. Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition."
+        },
+        "HsSecurityHstsPenalty": {
+            "type": "number",
+            "description": "Penalty for not enabling hsts. Allowed values are 0-5. Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition."
+        },
+        "HsSecurityNonpfsPenalty": {
+            "type": "number",
+            "description": "Penalty for allowing non-pfs handshakes. Allowed values are 0-5. Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition."
+        },
+        "HsSecurityOcspRevokedScore": {
+            "type": "number",
+            "description": "Score assigned when ocsp certificate status is set to revoked or issuer revoked. Allowed values are 0.0-5.0. Field introduced in 20.1.1. Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition."
+        },
+        "HsSecuritySelfsignedcertPenalty": {
+            "type": "number",
+            "description": "Deprecated. Allowed values are 0-5. Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition."
+        },
+        "HsSecuritySsl30Score": {
+            "type": "number",
+            "description": "Score assigned when supporting ssl3.0 encryption protocol. Allowed values are 0-5. Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition."
+        },
+        "HsSecurityTls10Score": {
+            "type": "number",
+            "description": "Score assigned when supporting tls1.0 encryption protocol. Allowed values are 0-5. Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition."
+        },
+        "HsSecurityTls11Score": {
+            "type": "number",
+            "description": "Score assigned when supporting tls1.1 encryption protocol. Allowed values are 0-5. Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition."
+        },
+        "HsSecurityTls12Score": {
+            "type": "number",
+            "description": "Score assigned when supporting tls1.2 encryption protocol. Allowed values are 0-5. Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition."
+        },
+        "HsSecurityWeakSignatureAlgoPenalty": {
+            "type": "number",
+            "description": "Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the analytics profile."
+        },
+        "OndemandMetricsIdleTimeout": {
+            "type": "number",
+            "description": "This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is seconds."
+        },
+        "RespCodeBlock": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Block of http response codes to be excluded from being classified as an error. Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX."
+        },
+        "SipLogDepth": {
+            "type": "number",
+            "description": "Maximum number of sip messages added in logs for a sip transaction. By default, this value is 20. Allowed values are 1-1000. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "ClientLogConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClientLogConfigDefinition"
+            }
+        },
+        "ClientLogStreamingConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClientLogStreamingConfigDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Ranges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangesDefinition"
+            }
+        },
+        "SensitiveLogProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SensitiveLogProfileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

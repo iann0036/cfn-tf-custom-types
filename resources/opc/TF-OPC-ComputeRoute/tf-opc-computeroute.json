@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::OPC::ComputeRoute",
+    "description": "The `opc_compute_route` resource creates and manages a route for an IP Network in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeRoute/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminDistance": {
+            "type": "number",
+            "description": "The route's administrative distance. Defaults to `0`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the route."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddressPrefix": {
+            "type": "string",
+            "description": "The IPv4 address prefix, in CIDR format, of the external network from which to route traffic."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the route."
+        },
+        "NextHopVnicSet": {
+            "type": "string",
+            "description": "Name of the virtual NIC set to route matching packets to. Routed flows are load-balanced among all the virtual NICs in the virtual NIC set."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpAddressPrefix",
+        "Name",
+        "NextHopVnicSet"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,302 @@
+{
+    "typeName": "TF::PrismaCloud::AlertRule",
+    "description": "Manage an alert rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-AlertRule/docs/README.md",
+    "definitions": {
+        "NotificationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigId": {
+                    "type": "string"
+                },
+                "ConfigType": {
+                    "type": "string"
+                },
+                "DayOfMonth": {
+                    "type": "number"
+                },
+                "DetailedReport": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "FrequencyFromRRule": {
+                    "type": "string"
+                },
+                "HourOfDay": {
+                    "type": "number"
+                },
+                "IncludeRemediation": {
+                    "type": "boolean"
+                },
+                "RRuleSchedule": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TemplateId": {
+                    "type": "string"
+                },
+                "TimezoneId": {
+                    "type": "string"
+                },
+                "WithCompression": {
+                    "type": "boolean"
+                },
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DaysOfWeekDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedAccounts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Regions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DaysOfWeekDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "Offset": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAutoRemediate": {
+            "type": "boolean",
+            "description": "Allow auto-remediation."
+        },
+        "DelayNotificationMs": {
+            "type": "number",
+            "description": "Delay notifications by the specified miliseconds."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enabled (default: `true`)."
+        },
+        "ExcludedPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of policies to exclude from scan."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedOn": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Rule/Scan name."
+        },
+        "NotificationChannels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NotifyOnDismissed": {
+            "type": "boolean",
+            "description": "Include dismissed alerts in notification."
+        },
+        "NotifyOnOpen": {
+            "type": "boolean",
+            "description": "Include open alerts in notification (default: `true`)."
+        },
+        "NotifyOnResolved": {
+            "type": "boolean",
+            "description": "Include resolved alerts in notification."
+        },
+        "NotifyOnSnoozed": {
+            "type": "boolean",
+            "description": "Include snoozed alerts in notification."
+        },
+        "OpenAlertsCount": {
+            "type": "number"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of specific policies to scan."
+        },
+        "PolicyLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of policy labels."
+        },
+        "PolicyScanConfigId": {
+            "type": "string"
+        },
+        "ReadOnly": {
+            "type": "boolean"
+        },
+        "ScanAll": {
+            "type": "boolean",
+            "description": "Scan all policies."
+        },
+        "NotificationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationConfigDefinition"
+            }
+        },
+        "Target": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedOn",
+        "/properties/NotificationChannels",
+        "/properties/OpenAlertsCount",
+        "/properties/Owner",
+        "/properties/PolicyScanConfigId",
+        "/properties/ReadOnly"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

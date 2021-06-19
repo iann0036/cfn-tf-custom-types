@@ -1,0 +1,331 @@
+{
+    "typeName": "TF::Spotinst::ElastigroupAzureV3",
+    "description": "Provides a Spotinst elastigroup Azure resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-ElastigroupAzureV3/docs/README.md",
+    "definitions": {
+        "ImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Custom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomDefinition"
+                    }
+                },
+                "Marketplace": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MarketplaceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LoginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SshPublicKey": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserName"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "VirtualNetworkName": {
+                    "type": "string"
+                },
+                "NetworkInterfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkInterfacesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ResourceGroupName",
+                "VirtualNetworkName"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DrainingTimeout": {
+                    "type": "number"
+                },
+                "FallbackToOnDemand": {
+                    "type": "boolean"
+                },
+                "OdCount": {
+                    "type": "number"
+                },
+                "SpotPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageName": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ImageName",
+                "ResourceGroupName"
+            ]
+        },
+        "MarketplaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Sku": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku",
+                "Version"
+            ]
+        },
+        "NetworkInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "IsPrimary": {
+                    "type": "boolean"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "AdditionalIpConfigs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalIpConfigsDefinition"
+                    }
+                },
+                "ApplicationSecurityGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationSecurityGroupDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AssignPublicIp",
+                "IsPrimary",
+                "SubnetName"
+            ]
+        },
+        "AdditionalIpConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateIpVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ApplicationSecurityGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ResourceGroupName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group name."
+        },
+        "OdSizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Available On-Demand sizes."
+        },
+        "Os": {
+            "type": "string",
+            "description": "Type of the operating system. Valid values: `\"Linux\"`, `\"Windows\"`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region your Azure group will be created in."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Name of the Resource Group for Elastigroup."
+        },
+        "SpotSizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Available Low-Priority sizes."
+        },
+        "Image": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImageDefinition"
+            }
+        },
+        "Login": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoginDefinition"
+            },
+            "maxItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StrategyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "OdSizes",
+        "Os",
+        "Region",
+        "ResourceGroupName",
+        "SpotSizes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

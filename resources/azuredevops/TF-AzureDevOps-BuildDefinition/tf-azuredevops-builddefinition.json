@@ -1,0 +1,336 @@
+{
+    "typeName": "TF::AzureDevOps::BuildDefinition",
+    "description": "Manages a Build Definition within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-BuildDefinition/docs/README.md",
+    "definitions": {
+        "CiTriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UseYaml": {
+                    "type": "boolean",
+                    "description": "Use the azure-pipeline file for the build configuration. Defaults to `false`.\n- `override` - (Optional) Override the azure-pipeline file and use a this configuration for all builds."
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverrideDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PullRequestTriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommentRequired": {
+                    "type": "string"
+                },
+                "InitialBranch": {
+                    "type": "string",
+                    "description": "When use_yaml is true set this to the name of the branch that the azure-pipelines.yml exists on. Defaults to `Managed by Terraform`.\n- `forks` - (Required) Set permissions for Forked repositories.\n- `override` - (Optional) Override the azure-pipeline file and use this configuration for all builds."
+                },
+                "UseYaml": {
+                    "type": "boolean",
+                    "description": "Use the azure-pipeline file for the build configuration. Defaults to `false`.\n- `initial_branch` - (Optional) When use_yaml is true set this to the name of the branch that the azure-pipelines.yml exists on. Defaults to `Managed by Terraform`.\n- `forks` - (Required) Set permissions for Forked repositories.\n- `override` - (Optional) Override the azure-pipeline file and use this configuration for all builds."
+                },
+                "Forks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForksDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverrideDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RepositoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BranchName": {
+                    "type": "string",
+                    "description": "The branch name for which builds are triggered. Defaults to `master`.\n- `repo_id` - (Required) The id of the repository. For `TfsGit` repos, this is simply the ID of the repository. For `Github` repos, this will take the form of `<GitHub Org>/<Repo Name>`. For `Bitbucket` repos, this will take the form of `<Workspace ID>/<Repo Name>`.\n- `repo_type` - (Optional) The repository type. Valid values: `GitHub` or `TfsGit` or `Bitbucket` or `GitHub Enterprise`. Defaults to `GitHub`. If `repo_type` is `GitHubEnterprise`, must use existing project and GitHub Enterprise service connection.\n- `service_connection_id` - (Optional) The service connection ID. Used if the `repo_type` is `GitHub` or `GitHubEnterprise`.\n- `yml_path` - (Required) The path of the Yaml file describing the build definition.\n- `github_enterprise_url` - (Optional) The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                },
+                "GithubEnterpriseUrl": {
+                    "type": "string",
+                    "description": "The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                },
+                "RepoId": {
+                    "type": "string",
+                    "description": "The id of the repository. For `TfsGit` repos, this is simply the ID of the repository. For `Github` repos, this will take the form of `<GitHub Org>/<Repo Name>`. For `Bitbucket` repos, this will take the form of `<Workspace ID>/<Repo Name>`.\n- `repo_type` - (Optional) The repository type. Valid values: `GitHub` or `TfsGit` or `Bitbucket` or `GitHub Enterprise`. Defaults to `GitHub`. If `repo_type` is `GitHubEnterprise`, must use existing project and GitHub Enterprise service connection.\n- `service_connection_id` - (Optional) The service connection ID. Used if the `repo_type` is `GitHub` or `GitHubEnterprise`.\n- `yml_path` - (Required) The path of the Yaml file describing the build definition.\n- `github_enterprise_url` - (Optional) The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                },
+                "RepoType": {
+                    "type": "string",
+                    "description": "The repository type. Valid values: `GitHub` or `TfsGit` or `Bitbucket` or `GitHub Enterprise`. Defaults to `GitHub`. If `repo_type` is `GitHubEnterprise`, must use existing project and GitHub Enterprise service connection.\n- `service_connection_id` - (Optional) The service connection ID. Used if the `repo_type` is `GitHub` or `GitHubEnterprise`.\n- `yml_path` - (Required) The path of the Yaml file describing the build definition.\n- `github_enterprise_url` - (Optional) The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                },
+                "ReportBuildStatus": {
+                    "type": "boolean",
+                    "description": "Report build status. Default is true."
+                },
+                "ServiceConnectionId": {
+                    "type": "string",
+                    "description": "The service connection ID. Used if the `repo_type` is `GitHub` or `GitHubEnterprise`.\n- `yml_path` - (Required) The path of the Yaml file describing the build definition.\n- `github_enterprise_url` - (Optional) The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                },
+                "YmlPath": {
+                    "type": "string",
+                    "description": "The path of the Yaml file describing the build definition.\n- `github_enterprise_url` - (Optional) The Github Enterprise URL. Used if `repo_type` is `GithubEnterprise`.\n- `report_build_status` - (Optional) Report build status. Default is true."
+                }
+            },
+            "required": [
+                "RepoId",
+                "RepoType",
+                "YmlPath"
+            ]
+        },
+        "VariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowOverride": {
+                    "type": "boolean",
+                    "description": "True if the variable can be overridden. Defaults to `true`."
+                },
+                "IsSecret": {
+                    "type": "boolean",
+                    "description": "True if the variable is a secret. Defaults to `false`.\n- `allow_override` - (Optional) True if the variable can be overridden. Defaults to `true`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the variable.\n- `value` - (Optional) The value of the variable.\n- `secret_value` - (Optional) The secret value of the variable. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) True if the variable is a secret. Defaults to `false`.\n- `allow_override` - (Optional) True if the variable can be overridden. Defaults to `true`."
+                },
+                "SecretValue": {
+                    "type": "string",
+                    "description": "The secret value of the variable. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) True if the variable is a secret. Defaults to `false`.\n- `allow_override` - (Optional) True if the variable can be overridden. Defaults to `true`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value of the variable.\n- `secret_value` - (Optional) The secret value of the variable. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) True if the variable is a secret. Defaults to `false`.\n- `allow_override` - (Optional) True if the variable can be overridden. Defaults to `true`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "OverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoCancel": {
+                    "type": "boolean",
+                    "description": ". Defaults to `true`.\n- `branch_filter` - (Optional) The branches to include and exclude from the trigger.\n- `path_filter` - (Optional) Specify file paths to include or exclude. Note that the wildcard syntax is different between branches/tags and file paths."
+                },
+                "BranchFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BranchFilterDefinition"
+                    }
+                },
+                "PathFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathFilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Build pull requests form forms of this repository.\n- `share_secrets` - (Required) Make secrets available to builds of forks."
+                },
+                "ShareSecrets": {
+                    "type": "boolean",
+                    "description": "Make secrets available to builds of forks."
+                }
+            },
+            "required": [
+                "Enabled",
+                "ShareSecrets"
+            ]
+        },
+        "BranchFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of branch patterns to exclude."
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of branch patterns to include.\n- `exclude` - (Optional) List of branch patterns to exclude."
+                }
+            },
+            "required": []
+        },
+        "PathFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of path patterns to exclude."
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of path patterns to include.\n- `exclude` - (Optional) List of path patterns to exclude."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentPoolName": {
+            "type": "string",
+            "description": "The agent pool that should execute the build.\n- `repository` - (Required) A `repository` block as documented below.\n- `ci_trigger` - (Optional) Continuous Integration trigger.\n- `pull_request_trigger` - (Optional) Pull Request Integration Integration trigger.\n- `variable_groups` - (Optional) A list of variable group IDs (integers) to link to the build definition.\n- `variable` - (Optional) A list of `variable` blocks, as documented below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the build definition.\n- `path` - (Optional) The folder path of the build definition.\n- `agent_pool_name` - (Optional) The agent pool that should execute the build.\n- `repository` - (Required) A `repository` block as documented below.\n- `ci_trigger` - (Optional) Continuous Integration trigger.\n- `pull_request_trigger` - (Optional) Pull Request Integration Integration trigger.\n- `variable_groups` - (Optional) A list of variable group IDs (integers) to link to the build definition.\n- `variable` - (Optional) A list of `variable` blocks, as documented below."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The folder path of the build definition.\n- `agent_pool_name` - (Optional) The agent pool that should execute the build.\n- `repository` - (Required) A `repository` block as documented below.\n- `ci_trigger` - (Optional) Continuous Integration trigger.\n- `pull_request_trigger` - (Optional) Pull Request Integration Integration trigger.\n- `variable_groups` - (Optional) A list of variable group IDs (integers) to link to the build definition.\n- `variable` - (Optional) A list of `variable` blocks, as documented below."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `name` - (Optional) The name of the build definition.\n- `path` - (Optional) The folder path of the build definition.\n- `agent_pool_name` - (Optional) The agent pool that should execute the build.\n- `repository` - (Required) A `repository` block as documented below.\n- `ci_trigger` - (Optional) Continuous Integration trigger.\n- `pull_request_trigger` - (Optional) Pull Request Integration Integration trigger.\n- `variable_groups` - (Optional) A list of variable group IDs (integers) to link to the build definition.\n- `variable` - (Optional) A list of `variable` blocks, as documented below."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "VariableGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of variable group IDs (integers) to link to the build definition.\n- `variable` - (Optional) A list of `variable` blocks, as documented below."
+        },
+        "CiTrigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CiTriggerDefinition"
+            },
+            "maxItems": 1
+        },
+        "PullRequestTrigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PullRequestTriggerDefinition"
+            },
+            "maxItems": 1
+        },
+        "Repository": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RepositoryDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Variable": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VariableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/VariableDefinition/SecretValue"
+    ]
+}

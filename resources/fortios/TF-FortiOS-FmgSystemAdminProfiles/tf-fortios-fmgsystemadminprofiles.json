@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::FortiOS::FmgSystemAdminProfiles",
+    "description": "This resource supports Create/Read/Update/Delete admin profiles for FortiManager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgSystemAdminProfiles/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdomPolicyPackages": {
+            "type": "string",
+            "description": "Adom policy packages."
+        },
+        "AdomSwitch": {
+            "type": "string",
+            "description": "Administrator Domain."
+        },
+        "Assignment": {
+            "type": "string",
+            "description": "Assignment Permission."
+        },
+        "ConfigRetrieve": {
+            "type": "string",
+            "description": "Configuration Retrieve."
+        },
+        "ConfigRevert": {
+            "type": "string",
+            "description": "Revert Configuration from Revision History."
+        },
+        "ConsistencyCheck": {
+            "type": "string",
+            "description": "Consistency check."
+        },
+        "DeployManagement": {
+            "type": "string",
+            "description": "Install to devices."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DeviceAp": {
+            "type": "string",
+            "description": "Manage AP."
+        },
+        "DeviceConfig": {
+            "type": "string",
+            "description": "Manage device configurations."
+        },
+        "DeviceForticlient": {
+            "type": "string",
+            "description": "Manage FortiClient."
+        },
+        "DeviceFortiswitch": {
+            "type": "string",
+            "description": "Manage FortiSwitch."
+        },
+        "DeviceManager": {
+            "type": "string",
+            "description": "Device Manager."
+        },
+        "DeviceOperation": {
+            "type": "string",
+            "description": "Device add/delete/edit."
+        },
+        "DeviceProfile": {
+            "type": "string",
+            "description": "Device profile permission."
+        },
+        "DeviceRevisionDeletion": {
+            "type": "string",
+            "description": "Delete device revision."
+        },
+        "DeviceWanLinkLoadBalance": {
+            "type": "string",
+            "description": "Manage WAN link load balance."
+        },
+        "FortiguardCenter": {
+            "type": "string",
+            "description": "FortiGuard Center."
+        },
+        "FortiguardCenterAdvanced": {
+            "type": "string",
+            "description": "FortiGuard Center Advanced."
+        },
+        "FortiguardCenterFirmwareManagerment": {
+            "type": "string",
+            "description": "FortiGuard Center Firmware Managerment."
+        },
+        "FortiguardCenterLicensing": {
+            "type": "string",
+            "description": "FortiGuard Center Licensing."
+        },
+        "GlobalPolicyPackages": {
+            "type": "string",
+            "description": "Global policy packages."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportPolicyPackages": {
+            "type": "string",
+            "description": "Import Policy Package."
+        },
+        "IntfMapping": {
+            "type": "string",
+            "description": "Interface Mapping."
+        },
+        "LogViewer": {
+            "type": "string",
+            "description": "Log Viewer."
+        },
+        "PolicyObjects": {
+            "type": "string",
+            "description": "Policy objects permission."
+        },
+        "Profileid": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "SetInstallTargets": {
+            "type": "string",
+            "description": "Edit installation targets."
+        },
+        "SystemSetting": {
+            "type": "string",
+            "description": "System Setting."
+        },
+        "TerminalAccess": {
+            "type": "string",
+            "description": "Terminal access."
+        },
+        "VpnManager": {
+            "type": "string",
+            "description": "VPN Manager."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Profileid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

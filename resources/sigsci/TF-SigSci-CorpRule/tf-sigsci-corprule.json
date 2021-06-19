@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::SigSci::CorpRule",
+    "description": "CloudFormation equivalent of sigsci_corp_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sigsci/TF-SigSci-CorpRule/docs/README.md",
+    "definitions": {
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Signal": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string"
+                },
+                "GroupOperator": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CorpScope": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Expiration": {
+            "type": "string"
+        },
+        "GroupOperator": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Reason": {
+            "type": "string"
+        },
+        "Signal": {
+            "type": "string"
+        },
+        "SiteShortNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ActionsDefinition"
+            },
+            "minItems": 1
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CorpScope",
+        "Enabled",
+        "Expiration",
+        "GroupOperator",
+        "Reason",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,195 @@
+{
+    "typeName": "TF::AzureRM::SiteRecoveryReplicatedVm",
+    "description": "Manages a VM replicated using Azure Site Recovery (Azure to Azure only). A replicated VM keeps a copiously updated image of the VM in another region in order to be able to start the VM in that region in case of a disaster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SiteRecoveryReplicatedVm/docs/README.md",
+    "definitions": {
+        "ManagedDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "string"
+                },
+                "StagingStorageAccountId": {
+                    "type": "string"
+                },
+                "TargetDiskType": {
+                    "type": "string"
+                },
+                "TargetReplicaDiskType": {
+                    "type": "string"
+                },
+                "TargetResourceGroupId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoveryPublicIpAddressId": {
+                    "type": "string"
+                },
+                "SourceNetworkInterfaceId": {
+                    "type": "string"
+                },
+                "TargetStaticIp": {
+                    "type": "string"
+                },
+                "TargetSubnetName": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagedDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedDiskDefinition"
+            },
+            "description": "One or more `managed_disk` block."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the network mapping."
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            },
+            "description": "One or more `network_interface` block."
+        },
+        "RecoveryReplicationPolicyId": {
+            "type": "string"
+        },
+        "RecoveryVaultName": {
+            "type": "string",
+            "description": "The name of the vault that should be updated."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
+        },
+        "SourceRecoveryFabricName": {
+            "type": "string",
+            "description": "Name of fabric that should contains this replication."
+        },
+        "SourceRecoveryProtectionContainerName": {
+            "type": "string",
+            "description": "Name of the protection container to use."
+        },
+        "SourceVmId": {
+            "type": "string",
+            "description": "Id of the VM to replicate."
+        },
+        "TargetAvailabilitySetId": {
+            "type": "string",
+            "description": "Id of availability set that the new VM should belong to when a failover is done."
+        },
+        "TargetNetworkId": {
+            "type": "string",
+            "description": "Network to use when a failover is done (recommended to set if any network_interface is configured for failover)."
+        },
+        "TargetRecoveryFabricId": {
+            "type": "string",
+            "description": "Id of fabric where the VM replication should be handled when a failover is done."
+        },
+        "TargetRecoveryProtectionContainerId": {
+            "type": "string",
+            "description": "Id of protection container where the VM replication should be created when a failover is done."
+        },
+        "TargetResourceGroupId": {
+            "type": "string",
+            "description": "Id of resource group where the VM should be created when a failover is done."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RecoveryReplicationPolicyId",
+        "RecoveryVaultName",
+        "ResourceGroupName",
+        "SourceRecoveryFabricName",
+        "SourceRecoveryProtectionContainerName",
+        "SourceVmId",
+        "TargetRecoveryFabricId",
+        "TargetRecoveryProtectionContainerId",
+        "TargetResourceGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::PrismaCloud::ComplianceStandardRequirement",
+    "description": "Manage a compliance standard requirement.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-ComplianceStandardRequirement/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedOn": {
+            "type": "number"
+        },
+        "CsId": {
+            "type": "string",
+            "description": "Compliance standard ID."
+        },
+        "CsrId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedOn": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Compliance standard requirement name."
+        },
+        "PoliciesAssignedCount": {
+            "type": "number"
+        },
+        "RequirementId": {
+            "type": "string",
+            "description": "Compliance requirement number."
+        },
+        "StandardName": {
+            "type": "string"
+        },
+        "SystemDefault": {
+            "type": "boolean"
+        },
+        "ViewOrder": {
+            "type": "number",
+            "description": "View order."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CsId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedBy",
+        "/properties/CreatedOn",
+        "/properties/CsrId",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedOn",
+        "/properties/PoliciesAssignedCount",
+        "/properties/StandardName",
+        "/properties/SystemDefault"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

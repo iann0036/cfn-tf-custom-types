@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::Cloudflare::AccessApplication",
+    "description": "Provides a Cloudflare Access Application resource. Access Applications\nare used to restrict access to a whole application using an\nauthorisation gateway managed by Cloudflare.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-AccessApplication/docs/README.md",
+    "definitions": {
+        "CorsHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowAllHeaders": {
+                    "type": "boolean"
+                },
+                "AllowAllMethods": {
+                    "type": "boolean"
+                },
+                "AllowAllOrigins": {
+                    "type": "boolean"
+                },
+                "AllowCredentials": {
+                    "type": "boolean"
+                },
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxAge": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account to which the access application should be added. Conflicts with `zone_id`."
+        },
+        "AllowedIdps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The identity providers selected for the application."
+        },
+        "Aud": {
+            "type": "string"
+        },
+        "AutoRedirectToIdentity": {
+            "type": "boolean",
+            "description": "Option to skip identity provider\nselection if only one is configured in allowed_idps. Defaults to `false`\n(disabled)."
+        },
+        "CustomDenyMessage": {
+            "type": "string",
+            "description": "Option that returns a custom error message when a user is denied access to the application."
+        },
+        "CustomDenyUrl": {
+            "type": "string",
+            "description": "Option that redirects to a custom URL when a user is denied access to the application."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The complete URL of the asset you wish to put\nCloudflare Access in front of. Can include subdomains or paths. Or both."
+        },
+        "EnableBindingCookie": {
+            "type": "boolean",
+            "description": "Option to provide increased security against compromised authorization tokens and CSRF attacks by requiring an additional \"binding\" cookie on requests. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Friendly name of the Access Application."
+        },
+        "SessionDuration": {
+            "type": "string",
+            "description": "How often a user will be forced to\nre-authorise. Must be in the format `\"48h\"` or `\"2h45m\"`.\nValid time units are `ns`, `us` (or `\u00b5s`), `ms`, `s`, `m`, `h`. Defaults to `24h`."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone to which the access application should be added. Conflicts with `account_id`."
+        },
+        "CorsHeaders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsHeadersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Aud",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,220 @@
+{
+    "typeName": "TF::AzureRM::VpnGatewayConnection",
+    "description": "Manages a VPN Gateway Connection.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VpnGatewayConnection/docs/README.md",
+    "definitions": {
+        "RoutingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociatedRouteTable": {
+                    "type": "string"
+                },
+                "PropagatedRouteTables": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "AssociatedRouteTable",
+                "PropagatedRouteTables"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpnLinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BandwidthMbps": {
+                    "type": "number"
+                },
+                "BgpEnabled": {
+                    "type": "boolean"
+                },
+                "LocalAzureIpAddressEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PolicyBasedTrafficSelectorEnabled": {
+                    "type": "boolean"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RatelimitEnabled": {
+                    "type": "boolean"
+                },
+                "RouteWeight": {
+                    "type": "number"
+                },
+                "SharedKey": {
+                    "type": "string"
+                },
+                "VpnSiteLinkId": {
+                    "type": "string"
+                },
+                "IpsecPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpsecPolicyDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "VpnSiteLinkId"
+            ]
+        },
+        "IpsecPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DhGroup": {
+                    "type": "string"
+                },
+                "EncryptionAlgorithm": {
+                    "type": "string"
+                },
+                "IkeEncryptionAlgorithm": {
+                    "type": "string"
+                },
+                "IkeIntegrityAlgorithm": {
+                    "type": "string"
+                },
+                "IntegrityAlgorithm": {
+                    "type": "string"
+                },
+                "PfsGroup": {
+                    "type": "string"
+                },
+                "SaDataSizeKb": {
+                    "type": "number"
+                },
+                "SaLifetimeSec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DhGroup",
+                "EncryptionAlgorithm",
+                "IkeEncryptionAlgorithm",
+                "IkeIntegrityAlgorithm",
+                "IntegrityAlgorithm",
+                "PfsGroup",
+                "SaDataSizeKb",
+                "SaLifetimeSec"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetSecurityEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RemoteVpnSiteId": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        },
+        "Routing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VpnLink": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpnLinkDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RemoteVpnSiteId",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

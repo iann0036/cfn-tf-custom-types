@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Gitlab::ServiceJira",
+    "description": "This resource allows you to manage Jira integration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-ServiceJira/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean"
+        },
+        "CommentOnEventEnabled": {
+            "type": "boolean",
+            "description": "Enable comments inside Jira issues on each GitLab event (commit / merge request)."
+        },
+        "CommitEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for commit events."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JiraIssueTransitionId": {
+            "type": "string",
+            "description": "The ID of a transition that moves issues to a closed state. You can find this number under the JIRA workflow administration (Administration > Issues > Workflows) by selecting View under Operations of the desired workflow of your project. By default, this ID is set to 2."
+        },
+        "MergeRequestsEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for merge request events."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the user created to be used with GitLab/JIRA."
+        },
+        "Project": {
+            "type": "string",
+            "description": "ID of the project you want to activate integration on."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "The short identifier for your JIRA project, all uppercase, e.g., PROJ."
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL to the JIRA project which is being linked to this GitLab project. For example, https://jira.example.com."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username of the user created to be used with GitLab/JIRA."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Password",
+        "Project",
+        "Url",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Active",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Title",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

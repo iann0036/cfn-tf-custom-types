@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::FortiOS::SystemNat64",
+    "description": "Configure NAT64.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemNat64/docs/README.md",
+    "definitions": {
+        "SecondaryPrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "NAT64 prefix name."
+                },
+                "Nat64Prefix": {
+                    "type": "string",
+                    "description": "NAT64 prefix."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlwaysSynthesizeAaaaRecord": {
+            "type": "string",
+            "description": "Enable/disable AAAA record synthesis (default = enable). Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GenerateIpv6FragmentHeader": {
+            "type": "string",
+            "description": "Enable/disable IPv6 fragment header generation. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Nat46ForceIpv4PacketForwarding": {
+            "type": "string",
+            "description": "Enable/disable mandatory IPv4 packet forwarding in nat46. Valid values: `enable`, `disable`."
+        },
+        "Nat64Prefix": {
+            "type": "string",
+            "description": "NAT64 prefix must be ::/96 (default = 64:ff9b::/96)."
+        },
+        "SecondaryPrefixStatus": {
+            "type": "string",
+            "description": "Enable/disable secondary NAT64 prefix. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable NAT64 (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "SecondaryPrefix": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryPrefixDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Nat64Prefix"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

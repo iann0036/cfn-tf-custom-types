@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::Tfe::Team",
+    "description": "Manages teams.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-Team/docs/README.md",
+    "definitions": {
+        "OrganizationAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ManagePolicies": {
+                    "type": "boolean",
+                    "description": "Allows members to create, edit, and delete the organization's Sentinel policies."
+                },
+                "ManagePolicyOverrides": {
+                    "type": "boolean",
+                    "description": "Allows members to override soft-mandatory policy checks."
+                },
+                "ManageVcsSettings": {
+                    "type": "boolean",
+                    "description": "Allows members to manage the organization's VCS Providers and SSH keys."
+                },
+                "ManageWorkspaces": {
+                    "type": "boolean",
+                    "description": "Allows members to create and administrate all workspaces within the organization."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the team."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "The visibility of the team (\"secret\" or \"organization\"). Defaults to \"secret\"."
+        },
+        "OrganizationAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationAccessDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

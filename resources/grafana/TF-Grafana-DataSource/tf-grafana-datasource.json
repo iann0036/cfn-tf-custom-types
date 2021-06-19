@@ -1,0 +1,250 @@
+{
+    "typeName": "TF::Grafana::DataSource",
+    "description": "CloudFormation equivalent of grafana_data_source",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/grafana/TF-Grafana-DataSource/docs/README.md",
+    "definitions": {
+        "JsonDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssumeRoleArn": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "AuthenticationType": {
+                    "type": "string"
+                },
+                "ClientEmail": {
+                    "type": "string"
+                },
+                "ConnMaxLifetime": {
+                    "type": "number"
+                },
+                "CustomMetricsNamespaces": {
+                    "type": "string"
+                },
+                "DefaultProject": {
+                    "type": "string"
+                },
+                "DefaultRegion": {
+                    "type": "string"
+                },
+                "Encrypt": {
+                    "type": "string"
+                },
+                "EsVersion": {
+                    "type": "number"
+                },
+                "GraphiteVersion": {
+                    "type": "string"
+                },
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "Interval": {
+                    "type": "string"
+                },
+                "LogLevelField": {
+                    "type": "string"
+                },
+                "LogMessageField": {
+                    "type": "string"
+                },
+                "MaxIdleConns": {
+                    "type": "number"
+                },
+                "MaxOpenConns": {
+                    "type": "number"
+                },
+                "PostgresVersion": {
+                    "type": "number"
+                },
+                "Profile": {
+                    "type": "string"
+                },
+                "QueryTimeout": {
+                    "type": "string"
+                },
+                "SslMode": {
+                    "type": "string"
+                },
+                "TimeField": {
+                    "type": "string"
+                },
+                "TimeInterval": {
+                    "type": "string"
+                },
+                "Timescaledb": {
+                    "type": "boolean"
+                },
+                "TlsAuth": {
+                    "type": "boolean"
+                },
+                "TlsAuthWithCaCert": {
+                    "type": "boolean"
+                },
+                "TlsSkipVerify": {
+                    "type": "boolean"
+                },
+                "TokenUri": {
+                    "type": "string"
+                },
+                "TsdbResolution": {
+                    "type": "string"
+                },
+                "TsdbVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SecureJsonDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "BasicAuthPassword": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "BasicAuthEnabled": {
+            "type": "boolean"
+        },
+        "BasicAuthPassword": {
+            "type": "string"
+        },
+        "BasicAuthUsername": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "JsonData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JsonDataDefinition"
+            }
+        },
+        "SecureJsonData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecureJsonDataDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BasicAuthPassword",
+        "/properties/Password",
+        "/definitions/SecureJsonDataDefinition/AccessKey",
+        "/definitions/SecureJsonDataDefinition/BasicAuthPassword",
+        "/definitions/SecureJsonDataDefinition/Password",
+        "/definitions/SecureJsonDataDefinition/PrivateKey",
+        "/definitions/SecureJsonDataDefinition/SecretKey",
+        "/definitions/SecureJsonDataDefinition/TlsCaCert",
+        "/definitions/SecureJsonDataDefinition/TlsClientCert",
+        "/definitions/SecureJsonDataDefinition/TlsClientKey"
+    ]
+}

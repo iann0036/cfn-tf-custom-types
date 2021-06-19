@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::FortiOS::EmailfilterBlockallowlist",
+    "description": "Configure anti-spam block/allow list. Applies to FortiOS Version `>= 7.0.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-EmailfilterBlockallowlist/docs/README.md",
+    "definitions": {
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Reject, mark as spam or good email. Valid values: `reject`, `spam`, `clear`."
+                },
+                "AddrType": {
+                    "type": "string",
+                    "description": "IP address type. Valid values: `ipv4`, `ipv6`."
+                },
+                "EmailPattern": {
+                    "type": "string",
+                    "description": "Email address pattern."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                },
+                "Ip4Subnet": {
+                    "type": "string",
+                    "description": "IPv4 network address/subnet mask bits."
+                },
+                "Ip6Subnet": {
+                    "type": "string",
+                    "description": "IPv6 network address/subnet mask bits."
+                },
+                "PatternType": {
+                    "type": "string",
+                    "description": "Wildcard pattern or regular expression. Valid values: `wildcard`, `regexp`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable status. Valid values: `enable`, `disable`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Entry type. Valid values: `ip`, `email`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of table."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Entries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EntriesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

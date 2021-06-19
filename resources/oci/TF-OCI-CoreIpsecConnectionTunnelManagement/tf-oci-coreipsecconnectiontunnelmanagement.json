@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::OCI::CoreIpsecConnectionTunnelManagement",
+    "description": "This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.\n\nUpdates the specified tunnel. This operation lets you change tunnel attributes such as the\nrouting type (BGP dynamic routing or static routing). Here are some important notes:\n\n\t* If you change the tunnel's routing type or BGP session configuration, the tunnel will go\n\tdown while it's reprovisioned.\n\n\t* If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's\n\tBGP session configuration attributes have been set ([bgpSessionConfig](#/en/iaas/20160918/datatypes/BgpSessionInfo)).\n\n\t* If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the\n\t[IPSecConnection](#/en/iaas/20160918/IPSecConnection/) already has at least one valid CIDR\n\tstatic route.\n\n** IMPORTANT **\nDestroying `the oci_core_ipsec_connection_tunnel_management` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreIpsecConnectionTunnelManagement/docs/README.md",
+    "definitions": {
+        "BgpSessionInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomerBgpAsn": {
+                    "type": "string"
+                },
+                "CustomerInterfaceIp": {
+                    "type": "string"
+                },
+                "OracleInterfaceIp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EncryptionDomainConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpeTrafficSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OracleTrafficSelector": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "CpeIp": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.\n* `encryption_domain_config` - (Optional) Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.\n* `cpe_traffic_selector` - (Optional) Lists IPv4 or IPv6-enabled subnets in your on-premises network.\n* `oracle_traffic_selector` - (Optional) Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.\n* `ike_version` - (Optional) Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeVersion": {
+            "type": "string",
+            "description": "Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
+        },
+        "IpsecId": {
+            "type": "string",
+            "description": "The OCID of the IPSec connection."
+        },
+        "Routing": {
+            "type": "string",
+            "description": "The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing)."
+        },
+        "SharedSecret": {
+            "type": "string",
+            "description": "The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeStatusUpdated": {
+            "type": "string"
+        },
+        "TunnelId": {
+            "type": "string",
+            "description": "The OCID of the IPSec connection's tunnel."
+        },
+        "VpnIp": {
+            "type": "string"
+        },
+        "BgpSessionInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BgpSessionInfoDefinition"
+            }
+        },
+        "EncryptionDomainConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionDomainConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpsecId",
+        "Routing",
+        "TunnelId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompartmentId",
+        "/properties/CpeIp",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/Status",
+        "/properties/TimeCreated",
+        "/properties/TimeStatusUpdated",
+        "/properties/VpnIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

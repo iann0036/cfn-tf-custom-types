@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::TencentCloud::GaapSecurityRule",
+    "description": "Provides a resource to create a security policy rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapSecurityRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Policy of the rule. Valid value: `ACCEPT` and `DROP`."
+        },
+        "CidrIp": {
+            "type": "string",
+            "description": "A network address block of the request source."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the security policy rule. Maximum length is 30."
+        },
+        "PolicyId": {
+            "type": "string",
+            "description": "ID of the security policy."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Target port. Default value is `ALL`. Valid examples: `80`, `80,443` and `3306-20000`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol of the security policy rule. Default value is `ALL`. Valid value: `TCP`, `UDP` and `ALL`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "CidrIp",
+        "PolicyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

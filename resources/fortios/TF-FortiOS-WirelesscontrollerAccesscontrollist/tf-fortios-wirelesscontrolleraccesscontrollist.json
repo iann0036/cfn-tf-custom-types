@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerAccesscontrollist",
+    "description": "Configure WiFi bridge access control list. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerAccesscontrollist/docs/README.md",
+    "definitions": {
+        "Layer3Ipv4RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Policy action (allow | deny). Valid values: `allow`, `deny`."
+                },
+                "Comment": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Dstaddr": {
+                    "type": "string",
+                    "description": "Destination IP address (any | local-LAN | IPv4 address[/<network mask | mask length>], default = any)."
+                },
+                "Dstport": {
+                    "type": "number",
+                    "description": "Destination port (0 - 65535, default = 0, meaning any)."
+                },
+                "Protocol": {
+                    "type": "number",
+                    "description": "Protocol type as defined by IANA (0 - 255, default = 255, meaning any)."
+                },
+                "RuleId": {
+                    "type": "number",
+                    "description": "Rule ID (1 - 65535)."
+                },
+                "Srcaddr": {
+                    "type": "string",
+                    "description": "Source IP address (any | local-LAN | IPv4 address[/<network mask | mask length>], default = any)."
+                },
+                "Srcport": {
+                    "type": "number",
+                    "description": "Source port (0 - 65535, default = 0, meaning any)."
+                }
+            },
+            "required": []
+        },
+        "Layer3Ipv6RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Policy action (allow | deny). Valid values: `allow`, `deny`."
+                },
+                "Comment": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Dstaddr": {
+                    "type": "string",
+                    "description": "Destination IPv6 address (any | local-LAN | IPv6 address[/prefix length]), default = any."
+                },
+                "Dstport": {
+                    "type": "number",
+                    "description": "Destination port (0 - 65535, default = 0, meaning any)."
+                },
+                "Protocol": {
+                    "type": "number",
+                    "description": "Protocol type as defined by IANA (0 - 255, default = 255, meaning any)."
+                },
+                "RuleId": {
+                    "type": "number",
+                    "description": "Rule ID (1 - 65535)."
+                },
+                "Srcaddr": {
+                    "type": "string",
+                    "description": "Source IPv6 address (any | local-LAN | IPv6 address[/prefix length]), default = any."
+                },
+                "Srcport": {
+                    "type": "number",
+                    "description": "Source port (0 - 65535, default = 0, meaning any)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "AP access control list name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Layer3Ipv4Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Layer3Ipv4RulesDefinition"
+            }
+        },
+        "Layer3Ipv6Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Layer3Ipv6RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

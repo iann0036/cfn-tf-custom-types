@@ -1,0 +1,678 @@
+{
+    "typeName": "TF::AWS::LaunchTemplate",
+    "description": "Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LaunchTemplate/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BlockDeviceMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EbsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationPreference": {
+                    "type": "string"
+                },
+                "CapacityReservationTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityReservationTargetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CpuOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoreCount": {
+                    "type": "number"
+                },
+                "ThreadsPerCore": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CreditSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCredits": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ElasticGpuSpecificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ElasticInferenceAcceleratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "EnclaveOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HibernationOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Configured": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Configured"
+            ]
+        },
+        "IamInstanceProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InstanceMarketOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MarketType": {
+                    "type": "string"
+                },
+                "SpotOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpotOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LicenseSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LicenseConfigurationArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LicenseConfigurationArn"
+            ]
+        },
+        "MetadataOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpEndpoint": {
+                    "type": "string"
+                },
+                "HttpPutResponseHopLimit": {
+                    "type": "number"
+                },
+                "HttpTokens": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MonitoringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociateCarrierIpAddress": {
+                    "type": "string"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "string"
+                },
+                "DeleteOnTermination": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "InterfaceType": {
+                    "type": "string"
+                },
+                "Ipv4AddressCount": {
+                    "type": "number"
+                },
+                "Ipv4Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv6AddressCount": {
+                    "type": "number"
+                },
+                "Ipv6Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                },
+                "PrivateIpAddress": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PlacementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Affinity": {
+                    "type": "string"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "GroupName": {
+                    "type": "string"
+                },
+                "HostId": {
+                    "type": "string"
+                },
+                "HostResourceGroupArn": {
+                    "type": "string"
+                },
+                "PartitionNumber": {
+                    "type": "number"
+                },
+                "SpreadDomain": {
+                    "type": "string"
+                },
+                "Tenancy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagSpecificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceType": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpotOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockDurationMinutes": {
+                    "type": "number"
+                },
+                "InstanceInterruptionBehavior": {
+                    "type": "string"
+                },
+                "MaxPrice": {
+                    "type": "string"
+                },
+                "SpotInstanceType": {
+                    "type": "string"
+                },
+                "ValidUntil": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DefaultVersion": {
+            "type": "number",
+            "description": "Default Version of the launch template."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the launch template."
+        },
+        "DisableApiTermination": {
+            "type": "boolean",
+            "description": "If `true`, enables [EC2 Instance\nTermination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination)."
+        },
+        "EbsOptimized": {
+            "type": "string",
+            "description": "If `true`, the launched EC2 instance will be EBS-optimized."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The AMI from which to launch the instance."
+        },
+        "InstanceInitiatedShutdownBehavior": {
+            "type": "string",
+            "description": "Shutdown behavior for the instance. Can be `stop` or `terminate`.\n(Default: `stop`)."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The type of the instance."
+        },
+        "KernelId": {
+            "type": "string",
+            "description": "The kernel ID."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The key name to use for the instance."
+        },
+        "LatestVersion": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the launch template. If you leave this blank, Terraform will auto-generate a unique name."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
+        },
+        "RamDiskId": {
+            "type": "string",
+            "description": "The ID of the RAM disk."
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group names to associate with. If you are creating Instances in a VPC, use\n`vpc_security_group_ids` instead."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the launch template. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UpdateDefaultVersion": {
+            "type": "boolean",
+            "description": "Whether to update Default Version each update. Conflicts with `default_version`."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The Base64-encoded user data to provide when launching the instance."
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group IDs to associate with."
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappingsDefinition"
+            }
+        },
+        "CapacityReservationSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapacityReservationSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "CpuOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CpuOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "CreditSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreditSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElasticGpuSpecifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticGpuSpecificationsDefinition"
+            }
+        },
+        "ElasticInferenceAccelerator": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticInferenceAcceleratorDefinition"
+            },
+            "maxItems": 1
+        },
+        "EnclaveOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnclaveOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "HibernationOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HibernationOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "IamInstanceProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IamInstanceProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "InstanceMarketOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceMarketOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "LicenseSpecification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LicenseSpecificationDefinition"
+            }
+        },
+        "MetadataOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Monitoring": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitoringDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfacesDefinition"
+            }
+        },
+        "Placement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlacementDefinition"
+            },
+            "maxItems": 1
+        },
+        "TagSpecifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagSpecificationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/LatestVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

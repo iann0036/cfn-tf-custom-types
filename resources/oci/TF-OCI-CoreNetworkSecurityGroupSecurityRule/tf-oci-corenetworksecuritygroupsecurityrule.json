@@ -1,0 +1,244 @@
+{
+    "typeName": "TF::OCI::CoreNetworkSecurityGroupSecurityRule",
+    "description": "This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.\n\nAdds a security rule to the specified network security group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreNetworkSecurityGroupSecurityRule/docs/README.md",
+    "definitions": {
+        "IcmpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TcpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationPortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationPortRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourcePortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcePortRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UdpOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationPortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationPortRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourcePortRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcePortRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DestinationPortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Max",
+                "Min"
+            ]
+        },
+        "SourcePortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Max",
+                "Min"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description of your choice for the rule. Avoid entering confidential information."
+        },
+        "Destination": {
+            "type": "string",
+            "description": "Conceptually, this is the range of IP addresses that a packet originating from the instance can go to."
+        },
+        "DestinationType": {
+            "type": "string",
+            "description": "Type of destination for the rule. Required if `direction` = `EGRESS`."
+        },
+        "Direction": {
+            "type": "string",
+            "description": "Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsValid": {
+            "type": "boolean"
+        },
+        "NetworkSecurityGroupId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP (\"1\"), TCP (\"6\"), UDP (\"17\"), and ICMPv6 (\"58\")."
+        },
+        "Source": {
+            "type": "string",
+            "description": "Conceptually, this is the range of IP addresses that a packet coming into the instance can come from."
+        },
+        "SourceType": {
+            "type": "string",
+            "description": "Type of source for the rule. Required if `direction` = `INGRESS`.\n* `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.\n* `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).\n* `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/)."
+        },
+        "Stateless": {
+            "type": "boolean",
+            "description": "A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "IcmpOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcmpOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "TcpOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TcpOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UdpOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UdpOptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Direction",
+        "NetworkSecurityGroupId",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IsValid",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

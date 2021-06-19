@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::FortiOS::AuthenticationSetting",
+    "description": "Configure authentication setting.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-AuthenticationSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveAuthScheme": {
+            "type": "string",
+            "description": "Active authentication method (scheme name)."
+        },
+        "AuthHttps": {
+            "type": "string",
+            "description": "Enable/disable redirecting HTTP user authentication to HTTPS. Valid values: `enable`, `disable`."
+        },
+        "CaptivePortal": {
+            "type": "string",
+            "description": "Captive portal host name."
+        },
+        "CaptivePortal6": {
+            "type": "string",
+            "description": "IPv6 captive portal host name."
+        },
+        "CaptivePortalIp": {
+            "type": "string",
+            "description": "Captive portal IP address."
+        },
+        "CaptivePortalIp6": {
+            "type": "string",
+            "description": "Captive portal IPv6 address."
+        },
+        "CaptivePortalPort": {
+            "type": "number",
+            "description": "Captive portal port number (1 - 65535, default = 7830)."
+        },
+        "CaptivePortalSslPort": {
+            "type": "number",
+            "description": "Captive portal SSL port number (1 - 65535, default = 7831)."
+        },
+        "CaptivePortalType": {
+            "type": "string",
+            "description": "Captive portal type. Valid values: `fqdn`, `ip`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SsoAuthScheme": {
+            "type": "string",
+            "description": "Single-Sign-On authentication method (scheme name)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

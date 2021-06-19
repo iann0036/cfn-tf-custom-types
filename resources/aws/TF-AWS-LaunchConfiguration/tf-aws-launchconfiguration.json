@@ -1,0 +1,262 @@
+{
+    "typeName": "TF::AWS::LaunchConfiguration",
+    "description": "Provides a resource to create a new launch configuration, used for autoscaling groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LaunchConfiguration/docs/README.md",
+    "definitions": {
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "NoDevice": {
+                    "type": "boolean"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "MetadataOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpEndpoint": {
+                    "type": "string"
+                },
+                "HttpPutResponseHopLimit": {
+                    "type": "number"
+                },
+                "HttpTokens": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RootBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean",
+            "description": "Associate a public ip address with an instance in a VPC."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "If true, the launched EC2 instance will be EBS-optimized."
+        },
+        "EnableMonitoring": {
+            "type": "boolean",
+            "description": "Enables/disables detailed monitoring. This is enabled by default."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "The name attribute of the IAM instance profile to associate\nwith launched instances."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The EC2 image ID to launch."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The size of instance to launch."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The key name that should be used for the instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the launch configuration. If you leave\nthis blank, Terraform will auto-generate a unique name. Conflicts with `name_prefix`."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
+        },
+        "PlacementTenancy": {
+            "type": "string",
+            "description": "The tenancy of the instance. Valid values are\n`\"default\"` or `\"dedicated\"`, see [AWS's Create Launch Configuration](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html)\nfor more details."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of associated security group IDS."
+        },
+        "SpotPrice": {
+            "type": "string",
+            "description": "The maximum price to use for reserving spot instances."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see `user_data_base64` instead."
+        },
+        "UserDataBase64": {
+            "type": "string",
+            "description": "Can be used instead of `user_data` to pass base64-encoded binary data directly. Use this instead of `user_data` whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
+        },
+        "VpcClassicLinkId": {
+            "type": "string",
+            "description": "The ID of a ClassicLink-enabled VPC. Only applies to EC2-Classic instances. (eg. `vpc-2730681a`)."
+        },
+        "VpcClassicLinkSecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of one or more security groups for the specified ClassicLink-enabled VPC (eg. `sg-46ae3d11`)."
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDeviceDefinition"
+            }
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+            }
+        },
+        "MetadataOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "RootBlockDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RootBlockDeviceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageId",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::VSphere::StorageDrsVmOverride",
+    "description": "The `vsphere_storage_drs_vm_override` resource can be used to add a Storage DRS\noverride to a datastore cluster for a specific virtual machine. With this\nresource, one can enable or disable Storage DRS, and control the automation\nlevel and disk affinity for a single virtual machine without affecting the rest\nof the datastore cluster.\n\nFor more information on vSphere datastore clusters and Storage DRS, see [this\npage][ref-vsphere-datastore-clusters].\n\n[ref-vsphere-datastore-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-598DF695-107E-406B-9C95-0AF961FC227A.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-StorageDrsVmOverride/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatastoreClusterId": {
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the datastore cluster to put the override in.\nForces a new resource if changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SdrsAutomationLevel": {
+            "type": "string",
+            "description": "Overrides any Storage DRS automation\nlevels for this virtual machine. Can be one of `automated` or `manual`. When\nnot specified, the datastore cluster's settings are used according to the\n[specific SDRS subsystem][tf-vsphere-datastore-cluster-sdrs-levels]."
+        },
+        "SdrsEnabled": {
+            "type": "string",
+            "description": "Overrides the default Storage DRS setting for\nthis virtual machine. When not specified, the datastore cluster setting is\nused."
+        },
+        "SdrsIntraVmAffinity": {
+            "type": "string",
+            "description": "Overrides the intra-VM affinity setting\nfor this virtual machine. When `true`, all disks for this virtual machine\nwill be kept on the same datastore. When `false`, Storage DRS may locate\nindividual disks on different datastores if it helps satisfy cluster\nrequirements. When not specified, the datastore cluster's settings are used."
+        },
+        "VirtualMachineId": {
+            "type": "string",
+            "description": "The UUID of the virtual machine to create\nthe override for.  Forces a new resource if changed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatastoreClusterId",
+        "VirtualMachineId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

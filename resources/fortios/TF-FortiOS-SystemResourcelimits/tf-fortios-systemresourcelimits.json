@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::FortiOS::SystemResourcelimits",
+    "description": "Configure resource limits.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemResourcelimits/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomService": {
+            "type": "number",
+            "description": "Maximum number of firewall custom services."
+        },
+        "DialupTunnel": {
+            "type": "number",
+            "description": "Maximum number of dial-up tunnels."
+        },
+        "FirewallAddress": {
+            "type": "number",
+            "description": "Maximum number of firewall addresses (IPv4, IPv6, multicast)."
+        },
+        "FirewallAddrgrp": {
+            "type": "number",
+            "description": "Maximum number of firewall address groups (IPv4, IPv6)."
+        },
+        "FirewallPolicy": {
+            "type": "number",
+            "description": "Maximum number of firewall policies (IPv4, IPv6, policy46, policy64, DoS-policy4, DoS-policy6, multicast)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpsecPhase1": {
+            "type": "number",
+            "description": "Maximum number of VPN IPsec phase1 tunnels."
+        },
+        "IpsecPhase1Interface": {
+            "type": "number",
+            "description": "Maximum number of VPN IPsec phase1 interface tunnels."
+        },
+        "IpsecPhase2": {
+            "type": "number",
+            "description": "Maximum number of VPN IPsec phase2 tunnels."
+        },
+        "IpsecPhase2Interface": {
+            "type": "number",
+            "description": "Maximum number of VPN IPsec phase2 interface tunnels."
+        },
+        "LogDiskQuota": {
+            "type": "number",
+            "description": "Log disk quota in MB."
+        },
+        "OnetimeSchedule": {
+            "type": "number",
+            "description": "Maximum number of firewall one-time schedules."
+        },
+        "Proxy": {
+            "type": "number",
+            "description": "Maximum number of concurrent proxy users."
+        },
+        "RecurringSchedule": {
+            "type": "number",
+            "description": "Maximum number of firewall recurring schedules."
+        },
+        "ServiceGroup": {
+            "type": "number",
+            "description": "Maximum number of firewall service groups."
+        },
+        "Session": {
+            "type": "number",
+            "description": "Maximum number of sessions."
+        },
+        "Sslvpn": {
+            "type": "number",
+            "description": "Maximum number of SSL-VPN."
+        },
+        "User": {
+            "type": "number",
+            "description": "Maximum number of local users."
+        },
+        "UserGroup": {
+            "type": "number",
+            "description": "Maximum number of user groups."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

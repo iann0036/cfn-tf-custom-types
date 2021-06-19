@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::Gridscale::Postgresql",
+    "description": "Provides a PostgreSQL resource. This can be used to create, modify, and delete PostgreSQL instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Postgresql/docs/README.md",
+    "definitions": {
+        "ListenPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "ListenPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ListenPortDefinition"
+            }
+        },
+        "MaxCoreCount": {
+            "type": "number",
+            "description": "Maximum CPU core count. The PostgreSQL instance's CPU core count will be autoscaled based on the workload. The number of cores stays between 1 and `max_core_count`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "NetworkUuid": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PerformanceClass": {
+            "type": "string",
+            "description": "Performance class of PostgreSQL service. Available performance classes at the time of writing: `standard`, `high`, `insane`, `ultra`."
+        },
+        "Release": {
+            "type": "string",
+            "description": "The PostgreSQL release of this instance. For convenience, please use [gscloud](https://github.com/gridscale/gscloud) to get the list of available PostgreSQL service releases."
+        },
+        "SecurityZoneUuid": {
+            "type": "string",
+            "description": "The UUID of the security zone that the service is running in."
+        },
+        "ServiceTemplateUuid": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UsageInMinutes": {
+            "type": "number"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PerformanceClass",
+        "Release"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/ListenPort",
+        "/properties/NetworkUuid",
+        "/properties/Password",
+        "/properties/ServiceTemplateUuid",
+        "/properties/Status",
+        "/properties/UsageInMinutes",
+        "/properties/Username"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/Username"
+    ]
+}

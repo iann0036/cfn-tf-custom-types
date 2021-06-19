@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleProjectOrganizationPolicy",
+    "description": "CloudFormation equivalent of google_project_organization_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleProjectOrganizationPolicy/docs/README.md",
+    "definitions": {
+        "BooleanPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enforced": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enforced"
+            ]
+        },
+        "ListPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InheritFromParent": {
+                    "type": "boolean"
+                },
+                "SuggestedValue": {
+                    "type": "string"
+                },
+                "Allow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Deny": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DenyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RestorePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Default"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DenyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Constraint": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "BooleanPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BooleanPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ListPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ListPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RestorePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestorePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Constraint",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

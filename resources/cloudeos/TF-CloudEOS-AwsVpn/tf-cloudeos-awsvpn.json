@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::CloudEOS::AwsVpn",
+    "description": "The `cloudeos_aws_vpn` resource sends the Ipsec Site-Site VPN connections and attachments information created in AWS to\nCVaaS to configure the CloudEOS router with the Ipsec VTI Tunnel in a given CNPS segment ( VRF ). This resource works\nfor Site-Site VPN connections attached to AWS Transit Gateway Route tables and AWS VPN Gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-AwsVpn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CgwId": {
+            "type": "string",
+            "description": "AWS Customer Gateway ID."
+        },
+        "Cnps": {
+            "type": "string",
+            "description": "VRF Segment in which the Ipsec VPN is created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RouterId": {
+            "type": "string",
+            "description": "CloudEOS Router to which the AWS Ipsec VPN terminates."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "TgwId": {
+            "type": "string",
+            "description": "AWS Transit Gateway ID, if the AWS Site-to-Site connection terminates on a TGW."
+        },
+        "Tunnel1AwsEndpointIp": {
+            "type": "string",
+            "description": "AWS Tunnel1 Underlay IP Address."
+        },
+        "Tunnel1AwsOverlayIp": {
+            "type": "string",
+            "description": "VPN Tunnel1 IP address."
+        },
+        "Tunnel1BgpAsn": {
+            "type": "string",
+            "description": "AWS VPN Tunnel1 BGP ASN."
+        },
+        "Tunnel1BgpHoldtime": {
+            "type": "string",
+            "description": "VPN Tunnel1 BGP Hold time."
+        },
+        "Tunnel1PresharedKey": {
+            "type": "string",
+            "description": "VPN Tunnel1 Ipsec Preshared key."
+        },
+        "Tunnel1RouterOverlayIp": {
+            "type": "string",
+            "description": "CloudEOS Router Tunnel1 IP address."
+        },
+        "Tunnel2AwsEndpointIp": {
+            "type": "string",
+            "description": "AWS VPN Tunnel2 Underlay IP Address."
+        },
+        "Tunnel2AwsOverlayIp": {
+            "type": "string",
+            "description": "AWS VPN Tunnel2 IP address."
+        },
+        "Tunnel2BgpAsn": {
+            "type": "string",
+            "description": "AWS VPN Tunnel2 BGP ASN."
+        },
+        "Tunnel2BgpHoldtime": {
+            "type": "string",
+            "description": "VPN Tunnel2 BGP Hold time."
+        },
+        "Tunnel2PresharedKey": {
+            "type": "string",
+            "description": "VPN Tunnel2 Ipsec Preshared key."
+        },
+        "Tunnel2RouterOverlayIp": {
+            "type": "string",
+            "description": "CloudEOS Router Tunnel2 IP address."
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpnConnectionId": {
+            "type": "string",
+            "description": "AWS Site-to-Site VPN Connection ID."
+        },
+        "VpnGatewayId": {
+            "type": "string",
+            "description": "AWS VPN Gateway ID, if the AWS Site-to-Site connection terminates on a VPN Gateway."
+        },
+        "VpnTgwAttachmentId": {
+            "type": "string",
+            "description": "AWS VPN Transit Gateway Attachment ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CgwId",
+        "Cnps",
+        "RouterId",
+        "Tunnel1AwsEndpointIp",
+        "Tunnel1AwsOverlayIp",
+        "Tunnel1BgpAsn",
+        "Tunnel1BgpHoldtime",
+        "Tunnel1PresharedKey",
+        "Tunnel1RouterOverlayIp",
+        "Tunnel2AwsEndpointIp",
+        "Tunnel2AwsOverlayIp",
+        "Tunnel2BgpAsn",
+        "Tunnel2BgpHoldtime",
+        "Tunnel2PresharedKey",
+        "Tunnel2RouterOverlayIp",
+        "VpcId",
+        "VpnConnectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TfId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Tunnel1PresharedKey",
+        "/properties/Tunnel2PresharedKey"
+    ]
+}

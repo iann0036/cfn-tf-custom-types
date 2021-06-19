@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::Alicloud::VpnConnection",
+    "description": "Provides a VPN connection resource.\n\n-> **NOTE:** Terraform will auto build vpn connection while it uses `alicloud_vpn_connection` to build a vpn connection resource.\n             The vpn connection depends on VPN and VPN customer gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-VpnConnection/docs/README.md",
+    "definitions": {
+        "IkeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IkeAuthAlg": {
+                    "type": "string"
+                },
+                "IkeEncAlg": {
+                    "type": "string"
+                },
+                "IkeLifetime": {
+                    "type": "number"
+                },
+                "IkeLocalId": {
+                    "type": "string"
+                },
+                "IkeMode": {
+                    "type": "string"
+                },
+                "IkePfs": {
+                    "type": "string"
+                },
+                "IkeRemoteId": {
+                    "type": "string"
+                },
+                "IkeVersion": {
+                    "type": "string"
+                },
+                "Psk": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpsecConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpsecAuthAlg": {
+                    "type": "string"
+                },
+                "IpsecEncAlg": {
+                    "type": "string"
+                },
+                "IpsecLifetime": {
+                    "type": "number"
+                },
+                "IpsecPfs": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomerGatewayId": {
+            "type": "string",
+            "description": "The ID of the customer gateway."
+        },
+        "EffectImmediately": {
+            "type": "boolean",
+            "description": "Whether to delete a successfully negotiated IPsec tunnel and initiate a negotiation again. Valid value:true,false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalSubnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The CIDR block of the VPC to be connected with the local data center. This parameter is used for phase-two negotiation."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the IPsec connection."
+        },
+        "RemoteSubnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The CIDR block of the local data center. This parameter is used for phase-two negotiation."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string",
+            "description": "The ID of the VPN gateway."
+        },
+        "IkeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IkeConfigDefinition"
+            }
+        },
+        "IpsecConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecConfigDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomerGatewayId",
+        "LocalSubnet",
+        "RemoteSubnet",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

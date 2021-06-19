@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Panos::BgpPeerGroup",
+    "description": "This resource allows you to add/update/delete a BGP peer group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-BgpPeerGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregatedConfedAsPath": {
+            "type": "boolean",
+            "description": "The peers understand aggregated confederation AS path (default: `true`)."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
+        },
+        "ExportNextHop": {
+            "type": "string",
+            "description": "Export next hop.  Valid values are\n`original`, `use-self`, or `resolve`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportNextHop": {
+            "type": "string",
+            "description": "Import next hop.  Valid values are\n`original`, `use-peer`, or the empty string."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "RemovePrivateAs": {
+            "type": "boolean",
+            "description": "Remove private AS when exporting\nroute.  Only available for `type=ebgp`."
+        },
+        "SoftResetWithStoredInfo": {
+            "type": "boolean",
+            "description": "Soft reset with stored info."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Peer group type.  Valid options are `ebgp` (default),\n`ebgp-confed`, `ibgp`, or `ibgp-confed`."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this BGP\npeer group to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Cloudflare::WafGroup",
+    "description": "Provides a Cloudflare WAF rule group resource for a particular zone. This can be used to configure firewall behaviour for pre-defined firewall groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-WafGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The WAF Rule Group ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The mode of the group, can be one of [\"on\", \"off\"]."
+        },
+        "PackageId": {
+            "type": "string",
+            "description": "The ID of the WAF Rule Package that contains the group."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID to apply to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupId",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

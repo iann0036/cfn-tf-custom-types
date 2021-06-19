@@ -1,0 +1,1186 @@
+{
+    "typeName": "TF::Volterra::AzureVnetSite",
+    "description": "CloudFormation equivalent of volterra_azure_vnet_site",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-AzureVnetSite/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureCredDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CoordinatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IngressEgressGwDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureCertifiedHw": {
+                    "type": "string"
+                },
+                "ForwardProxyAllowAll": {
+                    "type": "boolean"
+                },
+                "NoForwardProxy": {
+                    "type": "boolean"
+                },
+                "NoGlobalNetwork": {
+                    "type": "boolean"
+                },
+                "NoInsideStaticRoutes": {
+                    "type": "boolean"
+                },
+                "NoNetworkPolicy": {
+                    "type": "boolean"
+                },
+                "NoOutsideStaticRoutes": {
+                    "type": "boolean"
+                },
+                "ActiveForwardProxyPolicies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActiveForwardProxyPoliciesDefinition"
+                    }
+                },
+                "ActiveNetworkPolicies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActiveNetworkPoliciesDefinition"
+                    }
+                },
+                "AzNodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzNodesDefinition"
+                    }
+                },
+                "GlobalNetworkList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalNetworkListDefinition"
+                    }
+                },
+                "InsideStaticRoutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InsideStaticRoutesDefinition"
+                    }
+                },
+                "OutsideStaticRoutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OutsideStaticRoutesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IngressGwDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureCertifiedHw": {
+                    "type": "string"
+                },
+                "AzNodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzNodesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LogReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultOsVersion": {
+                    "type": "boolean"
+                },
+                "OperatingSystemVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SwDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultSwVersion": {
+                    "type": "boolean"
+                },
+                "VolterraSoftwareVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExistingVnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ExistingVnetDefinition"
+                    }
+                },
+                "NewVnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NewVnetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VoltstackClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureCertifiedHw": {
+                    "type": "string"
+                },
+                "ForwardProxyAllowAll": {
+                    "type": "boolean"
+                },
+                "NoForwardProxy": {
+                    "type": "boolean"
+                },
+                "NoGlobalNetwork": {
+                    "type": "boolean"
+                },
+                "NoK8sCluster": {
+                    "type": "boolean"
+                },
+                "NoNetworkPolicy": {
+                    "type": "boolean"
+                },
+                "NoOutsideStaticRoutes": {
+                    "type": "boolean"
+                },
+                "ActiveForwardProxyPolicies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActiveForwardProxyPoliciesDefinition"
+                    }
+                },
+                "ActiveNetworkPolicies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActiveNetworkPoliciesDefinition"
+                    }
+                },
+                "AzNodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzNodesDefinition"
+                    }
+                },
+                "GlobalNetworkList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalNetworkListDefinition"
+                    }
+                },
+                "K8sCluster": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/K8sClusterDefinition"
+                    }
+                },
+                "OutsideStaticRoutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OutsideStaticRoutesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ActiveForwardProxyPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForwardProxyPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardProxyPoliciesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ActiveNetworkPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkPoliciesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AzNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureAz": {
+                    "type": "string"
+                },
+                "DiskSize": {
+                    "type": "number"
+                },
+                "LocalSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocalSubnetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GlobalNetworkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalNetworkConnections": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GlobalNetworkConnectionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InsideStaticRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StaticRouteList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticRouteListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OutsideStaticRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StaticRouteList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticRouteListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ExistingVnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceGroup": {
+                    "type": "string"
+                },
+                "VnetName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NewVnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autogenerate": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrimaryIpv4": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "K8sClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ForwardProxyPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LocalSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "SubnetParam": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetParamDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GlobalNetworkConnectionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableForwardProxy": {
+                    "type": "boolean"
+                },
+                "EnableForwardProxy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnableForwardProxyDefinition"
+                    }
+                },
+                "SliToGlobalDr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SliToGlobalDrDefinition"
+                    }
+                },
+                "SloToGlobalDr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SloToGlobalDrDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StaticRouteListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SimpleStaticRoute": {
+                    "type": "string"
+                },
+                "CustomStaticRoute": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomStaticRouteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SubnetName": {
+                    "type": "string"
+                },
+                "SubnetResourceGrp": {
+                    "type": "string"
+                },
+                "VnetResourceGroup": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SubnetParamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "string"
+                },
+                "Ipv6": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EnableForwardProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionTimeout": {
+                    "type": "number"
+                },
+                "MaxConnectAttempts": {
+                    "type": "number"
+                },
+                "NoInterception": {
+                    "type": "boolean"
+                },
+                "WhiteListedPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "WhiteListedPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TlsIntercept": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsInterceptDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SliToGlobalDrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SloToGlobalDrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomStaticRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "Nexthop": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NexthopDefinition"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TlsInterceptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableForAllDomains": {
+                    "type": "boolean"
+                },
+                "TrustedCaUrl": {
+                    "type": "string"
+                },
+                "VolterraCertificate": {
+                    "type": "boolean"
+                },
+                "VolterraTrustedCa": {
+                    "type": "boolean"
+                },
+                "CustomCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomCertificateDefinition"
+                    }
+                },
+                "Policy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GlobalVnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NexthopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                },
+                "NexthopAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NexthopAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterceptionRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterceptionRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NexthopAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Ipv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterceptionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableInterception": {
+                    "type": "boolean"
+                },
+                "EnableInterception": {
+                    "type": "boolean"
+                },
+                "DomainMatch": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DomainMatchDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DomainMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValue": {
+                    "type": "string"
+                },
+                "RegexValue": {
+                    "type": "string"
+                },
+                "SuffixValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Assisted": {
+            "type": "boolean"
+        },
+        "AzureRegion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "DiskSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LogsStreamingDisabled": {
+            "type": "boolean"
+        },
+        "MachineType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NodesPerAz": {
+            "type": "number"
+        },
+        "ResourceGroup": {
+            "type": "string"
+        },
+        "SshKey": {
+            "type": "string"
+        },
+        "AzureCred": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureCredDefinition"
+            }
+        },
+        "Coordinates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CoordinatesDefinition"
+            }
+        },
+        "IngressEgressGw": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IngressEgressGwDefinition"
+            }
+        },
+        "IngressGw": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IngressGwDefinition"
+            }
+        },
+        "LogReceiver": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogReceiverDefinition"
+            }
+        },
+        "Os": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsDefinition"
+            }
+        },
+        "Sw": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SwDefinition"
+            }
+        },
+        "Vnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VnetDefinition"
+            }
+        },
+        "VoltstackCluster": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VoltstackClusterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AzureRegion",
+        "Name",
+        "Namespace",
+        "ResourceGroup"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,201 @@
+{
+    "typeName": "TF::NS1::Apikey",
+    "description": "Provides a NS1 Api Key resource. This can be used to create, modify, and delete api keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ns1/TF-NS1-Apikey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountManageAccountSettings": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify account settings."
+        },
+        "AccountManageApikeys": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify account apikeys."
+        },
+        "AccountManageIpWhitelist": {
+            "type": "boolean",
+            "description": "Whether the apikey can manage ip whitelist."
+        },
+        "AccountManagePaymentMethods": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify account payment methods."
+        },
+        "AccountManagePlan": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify the account plan."
+        },
+        "AccountManageTeams": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify other teams in the account."
+        },
+        "AccountManageUsers": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify account users."
+        },
+        "AccountViewActivityLog": {
+            "type": "boolean",
+            "description": "Whether the apikey can view activity logs."
+        },
+        "AccountViewInvoices": {
+            "type": "boolean",
+            "description": "Whether the apikey can view invoices."
+        },
+        "DataManageDatafeeds": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify data feeds."
+        },
+        "DataManageDatasources": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify data sources."
+        },
+        "DataPushToDatafeeds": {
+            "type": "boolean",
+            "description": "Whether the apikey can publish to data feeds."
+        },
+        "DhcpManageDhcp": {
+            "type": "boolean",
+            "description": "Whether the apikey can manage DHCP.\nOnly relevant for the DDI product."
+        },
+        "DhcpViewDhcp": {
+            "type": "boolean",
+            "description": "Whether the apikey can view DHCP.\nOnly relevant for the DDI product."
+        },
+        "DnsManageZones": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify the accounts zones."
+        },
+        "DnsViewZones": {
+            "type": "boolean",
+            "description": "Whether the apikey can view the accounts zones."
+        },
+        "DnsZonesAllow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of zones that the apikey may access."
+        },
+        "DnsZonesAllowByDefault": {
+            "type": "boolean",
+            "description": "If true, enable the `dns_zones_allow` list, otherwise enable the `dns_zones_deny` list."
+        },
+        "DnsZonesDeny": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of zones that the apikey may not access."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpWhitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IP addresses to whitelist for this key."
+        },
+        "IpWhitelistStrict": {
+            "type": "boolean",
+            "description": "Sets exclusivity on this IP whitelist."
+        },
+        "IpamManageIpam": {
+            "type": "boolean",
+            "description": "Whether the apikey can manage IPAM.\nOnly relevant for the DDI product."
+        },
+        "IpamViewIpam": {
+            "type": "boolean",
+            "description": "Whether the apikey can view IPAM.\nOnly relevant for the DDI product."
+        },
+        "Key": {
+            "type": "string"
+        },
+        "MonitoringManageJobs": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify monitoring jobs."
+        },
+        "MonitoringManageLists": {
+            "type": "boolean",
+            "description": "Whether the apikey can modify notification lists."
+        },
+        "MonitoringViewJobs": {
+            "type": "boolean",
+            "description": "Whether the apikey can view monitoring jobs."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The free form name of the apikey."
+        },
+        "SecurityManageActiveDirectory": {
+            "type": "boolean",
+            "description": "Whether the apikey can manage global active directory.\nOnly relevant for the DDI product."
+        },
+        "SecurityManageGlobal2fa": {
+            "type": "boolean",
+            "description": "Whether the apikey can manage global two factor authentication."
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The teams that the apikey belongs to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,195 @@
+{
+    "typeName": "TF::AzureRM::PrivateLinkService",
+    "description": "Manages a Private Link Service.\n\n-> **NOTE** Private Link is now in [GA](https://docs.microsoft.com/en-gb/azure/private-link/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-PrivateLinkService/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NatIpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name which should be used for the NAT IP Configuration. Changing this forces a new resource to be created."
+                },
+                "Primary": {
+                    "type": "boolean",
+                    "description": "Is this is the Primary IP Configuration? Changing this forces a new resource to be created."
+                },
+                "PrivateIpAddress": {
+                    "type": "string",
+                    "description": "Specifies a Private Static IP Address for this IP Configuration."
+                },
+                "PrivateIpAddressVersion": {
+                    "type": "string",
+                    "description": "The version of the IP Protocol which should be used. At this time the only supported value is `IPv4`. Defaults to `IPv4`."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Subnet which should be used for the Private Link Service."
+                }
+            },
+            "required": [
+                "Name",
+                "Primary",
+                "SubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string"
+        },
+        "AutoApprovalSubscriptionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Subscription UUID/GUID's that will be automatically be able to use this Private Link Service."
+        },
+        "EnableProxyProtocol": {
+            "type": "boolean",
+            "description": "Should the Private Link Service support the Proxy Protocol? Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerFrontendIpConfigurationIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Frontend IP Configuration ID's from a Standard Load Balancer, where traffic from the Private Link Service should be routed. You can use Load Balancer Rules to direct this traffic to appropriate backend pools where your applications are running."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of this Private Link Service. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Private Link Service should exist. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. Changing this forces a new resource to be created."
+        },
+        "VisibilitySubscriptionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Subscription UUID/GUID's that will be able to see this Private Link Service."
+        },
+        "NatIpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NatIpConfigurationDefinition"
+            },
+            "maxItems": 8,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerFrontendIpConfigurationIds",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Alias",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

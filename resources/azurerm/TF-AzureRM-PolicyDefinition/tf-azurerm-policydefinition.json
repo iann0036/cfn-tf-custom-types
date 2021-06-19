@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::AzureRM::PolicyDefinition",
+    "description": "Manages a policy rule definition on a management group or your provider subscription.\n\nPolicy definitions do not take effect until they are assigned to a scope using a Policy Assignment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-PolicyDefinition/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the policy definition."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of the policy definition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagementGroupId": {
+            "type": "string",
+            "description": "The name of the Management Group where this policy should be defined. Changing this forces a new resource to be created."
+        },
+        "ManagementGroupName": {
+            "type": "string",
+            "description": "The name of the Management Group where this policy should be defined. Changing this forces a new resource to be created."
+        },
+        "Metadata": {
+            "type": "string",
+            "description": "The metadata for the policy definition. This\nis a JSON string representing additional metadata that should be stored\nwith the policy definition."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The policy mode that allows you to specify which resource\ntypes will be evaluated. Possible values are `All`, `Indexed`, `Microsoft.ContainerService.Data`, `Microsoft.CustomerLockbox.Data`, `Microsoft.DataCatalog.Data`, `Microsoft.KeyVault.Data`, `Microsoft.Kubernetes.Data`, `Microsoft.MachineLearningServices.Data`, `Microsoft.Network.Data` and `Microsoft.Synapse.Data`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the policy definition. Changing this forces a\nnew resource to be created."
+        },
+        "Parameters": {
+            "type": "string",
+            "description": "Parameters for the policy definition. This field\nis a JSON string that allows you to parameterize your policy definition."
+        },
+        "PolicyRule": {
+            "type": "string",
+            "description": "The policy rule for the policy definition. This\nis a JSON string representing the rule that contains an if and\na then block."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "The policy type. Possible values are `BuiltIn`, `Custom` and `NotSpecified`. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Mode",
+        "Name",
+        "PolicyType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

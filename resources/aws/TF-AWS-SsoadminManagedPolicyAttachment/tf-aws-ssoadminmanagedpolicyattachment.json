@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::SsoadminManagedPolicyAttachment",
+    "description": "Provides an IAM managed policy for a Single Sign-On (SSO) Permission Set resource\n\n~> **NOTE:** Creating this resource will automatically [Provision the Permission Set](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html) to apply the corresponding updates to all assigned accounts.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsoadminManagedPolicyAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed."
+        },
+        "ManagedPolicyArn": {
+            "type": "string",
+            "description": "The IAM managed policy Amazon Resource Name (ARN) to be attached to the Permission Set."
+        },
+        "ManagedPolicyName": {
+            "type": "string"
+        },
+        "PermissionSetArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Permission Set."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceArn",
+        "ManagedPolicyArn",
+        "PermissionSetArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ManagedPolicyName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

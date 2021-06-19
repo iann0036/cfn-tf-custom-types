@@ -1,0 +1,871 @@
+{
+    "typeName": "TF::Intersight::WorkflowTaskDefinition",
+    "description": "Used to define a task which can be included within a workflow. Task definition conveys the intent that we want to achieve with the task. We can have a standalone task definition that is bound to a single implementation for that task, or we can define an TaskDefinition that will serve as the interface task definition which is linked to multiple implementation tasks. Each implemented TaskDefinition will be bound to its own implementation so we can achieve a case where single TaskDefinition has multiple implementations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-WorkflowTaskDefinition/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "CatalogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ImplementedTasksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "InterfaceTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "InternalPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InternalPropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "TargetDataType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InternalPropertiesDefinition"
+                    }
+                }
+            }
+        },
+        "InternalPropertiesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "BaseTaskType": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Constraints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InternalPropertiesDefinition2"
+                    }
+                },
+                "Internal": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "IsValueSet": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Override": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                }
+            }
+        },
+        "PropertiesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InventorySelector": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "WidgetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "PropertiesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition2"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayMeta": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition3"
+                    }
+                },
+                "InputParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition4"
+                    }
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Required": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PropertiesDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "IsValueSet": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Override": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition6"
+                    }
+                }
+            }
+        },
+        "PropertiesDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InventorySelector": {
+                    "type": "boolean"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "WidgetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "PropertiesDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition7"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayMeta": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition8"
+                    }
+                },
+                "InputParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition9"
+                    }
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Required": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PropertiesDefinition11": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "ExternalMeta": {
+                    "type": "boolean"
+                },
+                "InputDefinition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition5"
+                    }
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "OutputDefinition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition10"
+                    }
+                },
+                "RetryCount": {
+                    "type": "number"
+                },
+                "RetryDelay": {
+                    "type": "number"
+                },
+                "RetryPolicy": {
+                    "type": "string"
+                },
+                "SupportStatus": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "TimeoutPolicy": {
+                    "type": "string"
+                }
+            }
+        },
+        "RollbackTasksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RollbackTasksDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "CatalogMoid": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "InputParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollbackTasksDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NrVersion": {
+                    "type": "number"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "TaskMoid": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaskMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "Catalog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CatalogDefinition"
+            }
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DefaultVersion": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImplementedTasks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImplementedTasksDefinition"
+            }
+        },
+        "InterfaceTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceTaskDefinition"
+            }
+        },
+        "InternalProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternalPropertiesDefinition3"
+            }
+        },
+        "Label": {
+            "type": "string"
+        },
+        "LicenseEntitlement": {
+            "type": "string"
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NrVersion": {
+            "type": "number"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition11"
+            }
+        },
+        "RollbackTasks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RollbackTasksDefinition2"
+            }
+        },
+        "SecurePropAccess": {
+            "type": "boolean"
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TaskMetadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaskMetadataDefinition"
+            }
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

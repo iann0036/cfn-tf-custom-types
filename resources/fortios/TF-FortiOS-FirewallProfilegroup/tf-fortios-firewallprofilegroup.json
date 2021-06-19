@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::FortiOS::FirewallProfilegroup",
+    "description": "Configure profile groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallProfilegroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationList": {
+            "type": "string",
+            "description": "Name of an existing Application list."
+        },
+        "AvProfile": {
+            "type": "string",
+            "description": "Name of an existing Antivirus profile."
+        },
+        "CifsProfile": {
+            "type": "string",
+            "description": "Name of an existing CIFS profile."
+        },
+        "DlpSensor": {
+            "type": "string",
+            "description": "Name of an existing DLP sensor."
+        },
+        "DnsfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing DNS filter profile."
+        },
+        "EmailfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing email filter profile."
+        },
+        "FileFilterProfile": {
+            "type": "string",
+            "description": "Name of an existing file-filter profile."
+        },
+        "IcapProfile": {
+            "type": "string",
+            "description": "Name of an existing ICAP profile."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpsSensor": {
+            "type": "string",
+            "description": "Name of an existing IPS sensor."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile group name."
+        },
+        "ProfileProtocolOptions": {
+            "type": "string",
+            "description": "Name of an existing Protocol options profile."
+        },
+        "SpamfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing Spam filter profile."
+        },
+        "SshFilterProfile": {
+            "type": "string",
+            "description": "Name of an existing SSH filter profile."
+        },
+        "SslSshProfile": {
+            "type": "string",
+            "description": "Name of an existing SSL SSH profile."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VoipProfile": {
+            "type": "string",
+            "description": "Name of an existing VoIP profile."
+        },
+        "WafProfile": {
+            "type": "string",
+            "description": "Name of an existing Web application firewall profile."
+        },
+        "WebfilterProfile": {
+            "type": "string",
+            "description": "Name of an existing Web filter profile."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

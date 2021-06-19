@@ -1,0 +1,484 @@
+{
+    "typeName": "TF::Volterra::K8sPodSecurityPolicy",
+    "description": "CloudFormation equivalent of volterra_k8s_pod_security_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-K8sPodSecurityPolicy/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PspSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "AllowedCsiDrivers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedFlexVolumes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedProcMounts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedUnsafeSysctls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultAllowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "ForbiddenSysctls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HostIpc": {
+                    "type": "boolean"
+                },
+                "HostNetwork": {
+                    "type": "boolean"
+                },
+                "HostPid": {
+                    "type": "boolean"
+                },
+                "HostPortRanges": {
+                    "type": "string"
+                },
+                "NoAllowedCapabilities": {
+                    "type": "boolean"
+                },
+                "NoDefaultCapabilities": {
+                    "type": "boolean"
+                },
+                "NoDropCapabilities": {
+                    "type": "boolean"
+                },
+                "NoFsGroups": {
+                    "type": "boolean"
+                },
+                "NoRunAsGroup": {
+                    "type": "boolean"
+                },
+                "NoRunAsUser": {
+                    "type": "boolean"
+                },
+                "NoRuntimeClass": {
+                    "type": "boolean"
+                },
+                "NoSeLinuxOptions": {
+                    "type": "boolean"
+                },
+                "NoSupplementalGroups": {
+                    "type": "boolean"
+                },
+                "Privileged": {
+                    "type": "boolean"
+                },
+                "ReadOnlyRootFilesystem": {
+                    "type": "boolean"
+                },
+                "Volumes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AllowedCapabilitiesDefinition"
+                    }
+                },
+                "AllowedHostPaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedHostPathsDefinition"
+                    }
+                },
+                "DefaultCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DefaultCapabilitiesDefinition"
+                    }
+                },
+                "DropCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DropCapabilitiesDefinition"
+                    }
+                },
+                "FsGroupStrategyOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FsGroupStrategyOptionsDefinition"
+                    }
+                },
+                "RunAsGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RunAsGroupDefinition"
+                    }
+                },
+                "RunAsUser": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RunAsUserDefinition"
+                    }
+                },
+                "RuntimeClass": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuntimeClassDefinition"
+                    }
+                },
+                "SeLinuxOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeLinuxOptionsDefinition"
+                    }
+                },
+                "SupplementalGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SupplementalGroupsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AllowedCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Capabilities"
+            ]
+        },
+        "AllowedHostPathsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PathPrefix": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DefaultCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Capabilities"
+            ]
+        },
+        "DropCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Capabilities"
+            ]
+        },
+        "FsGroupStrategyOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "IdRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IdRangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RunAsGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "IdRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IdRangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RunAsUserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "IdRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IdRangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RuntimeClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedRuntimeClassNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultRuntimeClassName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AllowedRuntimeClassNames"
+            ]
+        },
+        "SeLinuxOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "Rule": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SupplementalGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "IdRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IdRangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IdRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxId": {
+                    "type": "number"
+                },
+                "MinId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Yaml": {
+            "type": "string"
+        },
+        "PspSpec": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PspSpecDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

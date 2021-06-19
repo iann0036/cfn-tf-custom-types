@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::AWS::ServicecatalogConstraint",
+    "description": "Manages a Service Catalog Constraint.\n\n~> **NOTE:** This resource does not associate a Service Catalog product and portfolio. However, the product and portfolio must be associated (see the `aws_servicecatalog_product_portfolio_association` resource) prior to creating a constraint or you will receive an error.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogConstraint/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptLanguage": {
+            "type": "string",
+            "description": "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the constraint."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "string",
+            "description": "Constraint parameters in JSON format. The syntax depends on the constraint type. See details below."
+        },
+        "PortfolioId": {
+            "type": "string",
+            "description": "Portfolio identifier."
+        },
+        "ProductId": {
+            "type": "string",
+            "description": "Product identifier."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `RESOURCE_UPDATE`, `STACKSET`, and `TEMPLATE`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parameters",
+        "PortfolioId",
+        "ProductId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Owner",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

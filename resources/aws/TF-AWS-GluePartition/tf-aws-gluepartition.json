@@ -1,0 +1,326 @@
+{
+    "typeName": "TF::AWS::GluePartition",
+    "description": "Provides a Glue Partition Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GluePartition/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StorageDescriptorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketColumns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compressed": {
+                    "type": "boolean"
+                },
+                "InputFormat": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "NumberOfBuckets": {
+                    "type": "number"
+                },
+                "OutputFormat": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition2"
+                    }
+                },
+                "StoredAsSubDirectories": {
+                    "type": "boolean"
+                },
+                "Columns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColumnsDefinition"
+                    }
+                },
+                "SerDeInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SerDeInfoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SkewedInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SkewedInfoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SortColumns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SortColumnsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ColumnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "SerDeInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition3"
+                    }
+                },
+                "SerializationLibrary": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SkewedInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SkewedColumnNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SkewedColumnValueLocationMaps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SkewedColumnValueLocationMapsDefinition"
+                    }
+                },
+                "SkewedColumnValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SkewedColumnValueLocationMapsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SortColumnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "string"
+                },
+                "SortOrder": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Column",
+                "SortOrder"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string",
+            "description": "ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name."
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastAccessedTime": {
+            "type": "string"
+        },
+        "LastAnalyzedTime": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "Properties associated with this table, as a list of key-value pairs."
+        },
+        "PartitionValues": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The values that define the partition."
+        },
+        "TableName": {
+            "type": "string"
+        },
+        "StorageDescriptor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageDescriptorDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabaseName",
+        "PartitionValues",
+        "TableName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Id",
+        "/properties/LastAccessedTime",
+        "/properties/LastAnalyzedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

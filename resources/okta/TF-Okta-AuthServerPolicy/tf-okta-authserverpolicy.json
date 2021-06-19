@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::Okta::AuthServerPolicy",
+    "description": "Creates an Authorization Server Policy.\n\nThis resource allows you to create and configure an Authorization Server Policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServerPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthServerId": {
+            "type": "string",
+            "description": "The ID of the Auth Server."
+        },
+        "ClientWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The clients to whitelist the policy for. `[\"ALL_CLIENTS\"]` is a special value that can be used to whitelist all clients, otherwise it is a list of client ids."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Auth Server Policy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Auth Server Policy."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the Auth Server Policy."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the Auth Server Policy."
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthServerId",
+        "ClientWhitelist",
+        "Description",
+        "Name",
+        "Priority"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

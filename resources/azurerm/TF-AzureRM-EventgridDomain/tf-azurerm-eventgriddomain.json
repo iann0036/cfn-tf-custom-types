@@ -1,0 +1,232 @@
+{
+    "typeName": "TF::AzureRM::EventgridDomain",
+    "description": "Manages an EventGrid Domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-EventgridDomain/docs/README.md",
+    "definitions": {
+        "InboundIpRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "IpMask": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InputMappingDefaultValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataVersion": {
+                    "type": "string",
+                    "description": "Specifies the default data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "EventType": {
+                    "type": "string",
+                    "description": "Specifies the default event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "Subject": {
+                    "type": "string",
+                    "description": "Specifies the default subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        },
+        "InputMappingFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataVersion": {
+                    "type": "string",
+                    "description": "Specifies the data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "EventTime": {
+                    "type": "string",
+                    "description": "Specifies the event time of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "EventType": {
+                    "type": "string",
+                    "description": "Specifies the event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "Id": {
+                    "type": "string",
+                    "description": "Specifies the id of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "Subject": {
+                    "type": "string",
+                    "description": "Specifies the subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                },
+                "Topic": {
+                    "type": "string",
+                    "description": "Specifies the topic of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundIpRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundIpRuleDefinition"
+            },
+            "description": "One or more `inbound_ip_rule` blocks as defined below."
+        },
+        "InputSchema": {
+            "type": "string",
+            "description": "Specifies the schema in which incoming events will be published to this domain. Allowed values are `CloudEventSchemaV1_0`, `CustomEventSchema`, or `EventGridSchema`. Defaults to `eventgridschema`. Changing this forces a new resource to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the EventGrid Domain resource. Changing this forces a new resource to be created."
+        },
+        "PrimaryAccessKey": {
+            "type": "string"
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Whether or not public network access is allowed for this server. Defaults to `true`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the EventGrid Domain exists. Changing this forces a new resource to be created."
+        },
+        "SecondaryAccessKey": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "InputMappingDefaultValues": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputMappingDefaultValuesDefinition"
+            },
+            "maxItems": 1
+        },
+        "InputMappingFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputMappingFieldsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/PrimaryAccessKey",
+        "/properties/SecondaryAccessKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrimaryAccessKey",
+        "/properties/SecondaryAccessKey"
+    ]
+}

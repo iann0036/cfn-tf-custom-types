@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Aviatrix::CloudnTransitGatewayAttachment",
+    "description": "The **aviatrix_cloudn_transit_gateway_attachment** resource allows the creation and management of CloudN Transit Gateway Attachments. This resource is available as of provider version R2.19+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-CloudnTransitGatewayAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudnBgpAsn": {
+            "type": "string"
+        },
+        "CloudnLanInterfaceNeighborBgpAsn": {
+            "type": "string"
+        },
+        "CloudnLanInterfaceNeighborIp": {
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "EnableDeadPeerDetection": {
+            "type": "boolean"
+        },
+        "EnableJumboFrame": {
+            "type": "boolean"
+        },
+        "EnableOverPrivateNetwork": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TransitGatewayBgpAsn": {
+            "type": "string"
+        },
+        "TransitGatewayName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudnBgpAsn",
+        "CloudnLanInterfaceNeighborBgpAsn",
+        "CloudnLanInterfaceNeighborIp",
+        "ConnectionName",
+        "DeviceName",
+        "EnableOverPrivateNetwork",
+        "TransitGatewayBgpAsn",
+        "TransitGatewayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,236 @@
+{
+    "typeName": "TF::FortiOS::IcapProfile",
+    "description": "Configure ICAP profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-IcapProfile/docs/README.md",
+    "definitions": {
+        "IcapHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Base64Encoding": {
+                    "type": "string",
+                    "description": "Enable/disable use of base64 encoding of HTTP content. Valid values: `disable`, `enable`."
+                },
+                "Content": {
+                    "type": "string",
+                    "description": "HTTP header content."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "HTTP forwarded header ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "HTTP forwarded header name."
+                }
+            },
+            "required": []
+        },
+        "RespmodForwardRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to be taken for ICAP server. Valid values: `forward`, `bypass`."
+                },
+                "Host": {
+                    "type": "string",
+                    "description": "Address object for the host."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                },
+                "HeaderGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderGroupDefinition"
+                    }
+                },
+                "HttpRespStatusCode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpRespStatusCodeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeaderGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitivity": {
+                    "type": "string",
+                    "description": "Enable/disable case sensitivity when matching header. Valid values: `disable`, `enable`."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "HTTP header regular expression."
+                },
+                "HeaderName": {
+                    "type": "string",
+                    "description": "HTTP header."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                }
+            },
+            "required": []
+        },
+        "HttpRespStatusCodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number",
+                    "description": "HTTP response status code."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Methods": {
+            "type": "string",
+            "description": "The allowed HTTP methods that will be sent to ICAP server for further processing. Valid values: `delete`, `get`, `head`, `options`, `post`, `put`, `trace`, `other`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "ICAP profile name."
+        },
+        "Preview": {
+            "type": "string",
+            "description": "Enable/disable preview of data to ICAP server. Valid values: `disable`, `enable`."
+        },
+        "PreviewDataLength": {
+            "type": "number",
+            "description": "Preview data length to be sent to ICAP server."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group."
+        },
+        "Request": {
+            "type": "string",
+            "description": "Enable/disable whether an HTTP request is passed to an ICAP server. Valid values: `disable`, `enable`."
+        },
+        "RequestFailure": {
+            "type": "string",
+            "description": "Action to take if the ICAP server cannot be contacted when processing an HTTP request. Valid values: `error`, `bypass`."
+        },
+        "RequestPath": {
+            "type": "string",
+            "description": "Path component of the ICAP URI that identifies the HTTP request processing service."
+        },
+        "RequestServer": {
+            "type": "string",
+            "description": "ICAP server to use for an HTTP request."
+        },
+        "RespmodDefaultAction": {
+            "type": "string",
+            "description": "Default action to ICAP response modification (respmod) processing. Valid values: `forward`, `bypass`."
+        },
+        "Response": {
+            "type": "string",
+            "description": "Enable/disable whether an HTTP response is passed to an ICAP server. Valid values: `disable`, `enable`."
+        },
+        "ResponseFailure": {
+            "type": "string",
+            "description": "Action to take if the ICAP server cannot be contacted when processing an HTTP response. Valid values: `error`, `bypass`."
+        },
+        "ResponsePath": {
+            "type": "string",
+            "description": "Path component of the ICAP URI that identifies the HTTP response processing service."
+        },
+        "ResponseReqHdr": {
+            "type": "string",
+            "description": "Enable/disable addition of req-hdr for ICAP response modification (respmod) processing. Valid values: `disable`, `enable`."
+        },
+        "ResponseServer": {
+            "type": "string",
+            "description": "ICAP server to use for an HTTP response."
+        },
+        "StreamingContentBypass": {
+            "type": "string",
+            "description": "Enable/disable bypassing of ICAP server for streaming content. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "IcapHeaders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcapHeadersDefinition"
+            }
+        },
+        "RespmodForwardRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RespmodForwardRulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

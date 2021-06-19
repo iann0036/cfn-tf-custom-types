@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::OCI::IdentityUser",
+    "description": "This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.\n\nManages the capabilities of the specified user.\n\n**Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-IdentityUser/docs/README.md",
+    "definitions": {
+        "CapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanUseApiKeys": {
+                    "type": "boolean"
+                },
+                "CanUseAuthTokens": {
+                    "type": "boolean"
+                },
+                "CanUseConsolePassword": {
+                    "type": "boolean"
+                },
+                "CanUseCustomerSecretKeys": {
+                    "type": "boolean"
+                },
+                "CanUseOauth2clientCredentials": {
+                    "type": "boolean"
+                },
+                "CanUseSmtpCredentials": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Capabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapabilitiesDefinition"
+            }
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "EmailVerified": {
+            "type": "boolean"
+        },
+        "ExternalIdentifier": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityProviderId": {
+            "type": "string"
+        },
+        "InactiveState": {
+            "type": "string"
+        },
+        "LastSuccessfulLoginTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PreviousSuccessfulLoginTime": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Capabilities",
+        "/properties/EmailVerified",
+        "/properties/ExternalIdentifier",
+        "/properties/Id",
+        "/properties/IdentityProviderId",
+        "/properties/InactiveState",
+        "/properties/LastSuccessfulLoginTime",
+        "/properties/PreviousSuccessfulLoginTime",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

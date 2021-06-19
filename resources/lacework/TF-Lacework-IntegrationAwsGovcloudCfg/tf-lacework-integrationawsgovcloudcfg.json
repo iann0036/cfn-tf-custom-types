@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Lacework::IntegrationAwsGovcloudCfg",
+    "description": "Use this resource to configure an AWS Config integration for AWS GovCloud to analyze AWS configuration compliance.\n\nTo find more information see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360021140214-Initial-Setup-of-AWS-GovCloud-Integration).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationAwsGovcloudCfg/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKeyId",
+                "SecretAccessKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The AWS account ID."
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The AWS GovCloud Config integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Retries": {
+            "type": "number",
+            "description": "The number of attempts to create the external integration. Defaults to `5`."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/SecretAccessKey"
+    ]
+}

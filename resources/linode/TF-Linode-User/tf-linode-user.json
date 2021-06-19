@@ -1,0 +1,293 @@
+{
+    "typeName": "TF::Linode::User",
+    "description": "Manages a Linode User.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-User/docs/README.md",
+    "definitions": {
+        "DomainGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "GlobalGrantsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountAccess": {
+                    "type": "string"
+                },
+                "AddDomains": {
+                    "type": "boolean"
+                },
+                "AddImages": {
+                    "type": "boolean"
+                },
+                "AddLinodes": {
+                    "type": "boolean"
+                },
+                "AddLongview": {
+                    "type": "boolean"
+                },
+                "AddNodebalancers": {
+                    "type": "boolean"
+                },
+                "AddStackscripts": {
+                    "type": "boolean"
+                },
+                "AddVolumes": {
+                    "type": "boolean"
+                },
+                "CancelAccount": {
+                    "type": "boolean"
+                },
+                "LongviewSubscription": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ImageGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "LinodeGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "LongviewGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "NodebalancerGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "StackscriptGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        },
+        "VolumeGrantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Permissions"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "The email address of the user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Restricted": {
+            "type": "boolean",
+            "description": "If true, this user will only have explicit permissions granted."
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TfaEnabled": {
+            "type": "boolean"
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username of the user."
+        },
+        "DomainGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DomainGrantDefinition"
+            }
+        },
+        "GlobalGrants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GlobalGrantsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ImageGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImageGrantDefinition"
+            }
+        },
+        "LinodeGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinodeGrantDefinition"
+            }
+        },
+        "LongviewGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LongviewGrantDefinition"
+            }
+        },
+        "NodebalancerGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NodebalancerGrantDefinition"
+            }
+        },
+        "StackscriptGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StackscriptGrantDefinition"
+            }
+        },
+        "VolumeGrant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VolumeGrantDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SshKeys",
+        "/properties/TfaEnabled"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

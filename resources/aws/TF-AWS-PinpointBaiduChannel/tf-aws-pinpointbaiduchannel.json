@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::PinpointBaiduChannel",
+    "description": "Provides a Pinpoint Baidu Channel resource.\n\n~> **Note:** All arguments including the Api Key and Secret Key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-PinpointBaiduChannel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiKey": {
+            "type": "string",
+            "description": "Platform credential API key from Baidu."
+        },
+        "ApplicationId": {
+            "type": "string",
+            "description": "The application ID."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Specifies whether to enable the channel. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string",
+            "description": "Platform credential Secret key from Baidu."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiKey",
+        "ApplicationId",
+        "SecretKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey",
+        "/properties/SecretKey"
+    ]
+}

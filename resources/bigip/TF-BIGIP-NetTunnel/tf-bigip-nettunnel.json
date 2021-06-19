@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::BIGIP::NetTunnel",
+    "description": "`bigip_net_tunnel` Manages a tunnel configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-NetTunnel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppService": {
+            "type": "string",
+            "description": "The application service that the object belongs to."
+        },
+        "AutoLastHop": {
+            "type": "string",
+            "description": "Specifies whether auto lasthop is enabled or not."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "Specifies an idle timeout for wildcard tunnels in seconds."
+        },
+        "Key": {
+            "type": "number",
+            "description": "The key field may represent different values depending on the type of the tunnel."
+        },
+        "LocalAddress": {
+            "type": "string",
+            "description": "Specifies a local IP address. This option is required."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Specifies how the tunnel carries traffic."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Specifies the maximum transmission unit (MTU) of the tunnel."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the tunnel."
+        },
+        "Partition": {
+            "type": "string",
+            "description": "Displays the admin-partition within which this component resides."
+        },
+        "Profile": {
+            "type": "string",
+            "description": "Specifies the profile that you want to associate with the tunnel."
+        },
+        "RemoteAddress": {
+            "type": "string",
+            "description": "Specifies a remote IP address."
+        },
+        "SecondaryAddress": {
+            "type": "string",
+            "description": "Specifies a secondary non-floating IP address when the local-address is set to a floating address."
+        },
+        "Tos": {
+            "type": "string",
+            "description": "Specifies a value for insertion into the Type of Service (ToS) octet within the IP header of the encapsulating header of transmitted packets."
+        },
+        "TrafficGroup": {
+            "type": "string",
+            "description": "Specifies a traffic-group for use with the tunnel."
+        },
+        "Transparent": {
+            "type": "string",
+            "description": "Enables or disables the tunnel to be transparent."
+        },
+        "UsePmtu": {
+            "type": "string",
+            "description": "Enables or disables the tunnel to use the PMTU (Path MTU) information provided by ICMP NeedFrag error messages."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LocalAddress",
+        "Name",
+        "Profile"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

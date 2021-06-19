@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Heroku::Build",
+    "description": "Provides a [Heroku Build](https://devcenter.heroku.com/articles/platform-api-reference#build)\nresource, to deploy source code to a Heroku app.\n\nEither a [URL](#source-urls) or [local path](#local-source), pointing to a [tarball](https://en.wikipedia.org/wiki/Tar_(computing))\nof the source code, may be deployed. If a local path is used, it may instead point to a directory of source code, which will be tarballed automatically and then deployed.\n\nThis resource waits until the [build](https://devcenter.heroku.com/articles/build-and-release-using-the-api)\n& [release](https://devcenter.heroku.com/articles/release-phase) completes.\n\nIf the build fails, the error will contain a URL to view the build log. `curl \"https://the-long-log-url-in-the-error\"`.\n\nTo start the app from a successful build, use a [Formation resource](formation.html) to specify the process, dyno size, and dyno quantity.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-Build/docs/README.md",
+    "definitions": {
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Checksum": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "App": {
+            "type": "string",
+            "description": "The ID of the Heroku app."
+        },
+        "Buildpacks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of buildpack GitHub URLs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalChecksum": {
+            "type": "string"
+        },
+        "OutputStreamUrl": {
+            "type": "string"
+        },
+        "ReleaseId": {
+            "type": "string"
+        },
+        "SlugId": {
+            "type": "string"
+        },
+        "Stack": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "User": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserDefinition"
+            }
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "App"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LocalChecksum",
+        "/properties/OutputStreamUrl",
+        "/properties/ReleaseId",
+        "/properties/SlugId",
+        "/properties/Stack",
+        "/properties/Status",
+        "/properties/User",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

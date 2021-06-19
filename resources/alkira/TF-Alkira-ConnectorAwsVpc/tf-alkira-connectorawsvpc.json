@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::Alkira::ConnectorAwsVpc",
+    "description": "CloudFormation equivalent of alkira_connector_aws_vpc",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-ConnectorAwsVpc/docs/README.md",
+    "definitions": {
+        "VpcRouteTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Options": {
+                    "type": "string"
+                },
+                "PrefixListIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VpcSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string"
+        },
+        "AwsRegion": {
+            "type": "string"
+        },
+        "BillingTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "CredentialId": {
+            "type": "string"
+        },
+        "Cxp": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Segment": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "string"
+        },
+        "VpcCidr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcRouteTable": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VpcRouteTableDefinition"
+            }
+        },
+        "VpcSubnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VpcSubnetDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AwsAccountId",
+        "AwsRegion",
+        "CredentialId",
+        "Cxp",
+        "Name",
+        "Segment",
+        "Size",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

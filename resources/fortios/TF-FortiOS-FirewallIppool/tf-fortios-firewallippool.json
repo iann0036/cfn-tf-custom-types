@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::FortiOS::FirewallIppool",
+    "description": "Configure IPv4 IP pools.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallIppool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpIntf": {
+            "type": "string",
+            "description": "Select an interface from available options that will reply to ARP requests. (If blank, any is selected)."
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable/disable replying to ARP requests when an IP Pool is added to a policy (default = enable). Valid values: `disable`, `enable`."
+        },
+        "AssociatedInterface": {
+            "type": "string",
+            "description": "Associated interface name."
+        },
+        "BlockSize": {
+            "type": "number",
+            "description": "Number of addresses in a block (64 to 4096, default = 128)."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Endip": {
+            "type": "string",
+            "description": "Final IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx, Default: 0.0.0.0)."
+        },
+        "Endport": {
+            "type": "number",
+            "description": "Final port number (inclusive) in the range for the address pool (Default: 65533)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "IP pool name."
+        },
+        "NumBlocksPerUser": {
+            "type": "number",
+            "description": "Number of addresses blocks that can be used by a user (1 to 128, default = 8)."
+        },
+        "PbaTimeout": {
+            "type": "number",
+            "description": "Port block allocation timeout (seconds)."
+        },
+        "PermitAnyHost": {
+            "type": "string",
+            "description": "Enable/disable full cone NAT. Valid values: `disable`, `enable`."
+        },
+        "PortPerUser": {
+            "type": "number",
+            "description": "Number of port for each user (32 to 60416, default = 0, auto)."
+        },
+        "SourceEndip": {
+            "type": "string",
+            "description": "Final IPv4 address (inclusive) in the range of the source addresses to be translated (format xxx.xxx.xxx.xxx, Default: 0.0.0.0)."
+        },
+        "SourceStartip": {
+            "type": "string",
+            "description": "First IPv4 address (inclusive) in the range of the source addresses to be translated (format xxx.xxx.xxx.xxx, Default: 0.0.0.0)."
+        },
+        "Startip": {
+            "type": "string",
+            "description": "First IPv4 address (inclusive) in the range for the address pool (format xxx.xxx.xxx.xxx, Default: 0.0.0.0)."
+        },
+        "Startport": {
+            "type": "number",
+            "description": "First port number (inclusive) in the range for the address pool (Default: 5117)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "IP pool type (overload, one-to-one, fixed port range, or port block allocation). Valid values: `overload`, `one-to-one`, `fixed-port-range`, `port-block-allocation`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Endip",
+        "Startip"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

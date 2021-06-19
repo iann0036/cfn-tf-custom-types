@@ -1,0 +1,534 @@
+{
+    "typeName": "TF::FortiOS::SystemAdmin",
+    "description": "Configure admin users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAdmin/docs/README.md",
+    "definitions": {
+        "GuestUsergroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Select guest user groups."
+                }
+            },
+            "required": []
+        },
+        "GuiDashboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Columns": {
+                    "type": "number",
+                    "description": "Number of columns."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Dashboard ID."
+                },
+                "LayoutType": {
+                    "type": "string",
+                    "description": "Layout type. Valid values: `responsive`, `fixed`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Dashboard name."
+                },
+                "Scope": {
+                    "type": "string",
+                    "description": "Dashboard scope. Valid values: `global`, `vdom`."
+                },
+                "Widget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GuiGlobalMenuFavoritesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Select menu ID."
+                }
+            },
+            "required": []
+        },
+        "GuiNewFeatureAcknowledgeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Select menu ID."
+                }
+            },
+            "required": []
+        },
+        "GuiVdomMenuFavoritesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Select menu ID."
+                }
+            },
+            "required": []
+        },
+        "LoginTimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LastFailedLogin": {
+                    "type": "string",
+                    "description": "Last failed login time."
+                },
+                "LastLogin": {
+                    "type": "string",
+                    "description": "Last successful login time."
+                },
+                "UsrName": {
+                    "type": "string",
+                    "description": "User name."
+                }
+            },
+            "required": []
+        },
+        "VdomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Virtual domain name."
+                }
+            },
+            "required": []
+        },
+        "WidgetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FabricDevice": {
+                    "type": "string",
+                    "description": "Fabric device to monitor."
+                },
+                "Height": {
+                    "type": "number",
+                    "description": "Height."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Widget ID."
+                },
+                "Industry": {
+                    "type": "string",
+                    "description": "Security Audit Rating industry. Valid values: `default`, `custom`."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface to monitor."
+                },
+                "Region": {
+                    "type": "string",
+                    "description": "Security Audit Rating region. Valid values: `default`, `custom`."
+                },
+                "ReportBy": {
+                    "type": "string",
+                    "description": "Field to aggregate the data by. Valid values: `source`, `destination`, `country`, `intfpair`, `srcintf`, `dstintf`, `policy`, `wificlient`, `shaper`, `endpoint-vulnerability`, `endpoint-device`, `application`, `cloud-app`, `cloud-user`, `web-domain`, `web-category`, `web-search-phrase`, `threat`, `system`, `unauth`, `admin`, `vpn`."
+                },
+                "SortBy": {
+                    "type": "string",
+                    "description": "Field to sort the data by."
+                },
+                "Timeframe": {
+                    "type": "string",
+                    "description": "Timeframe period of reported data. Valid values: `realtime`, `5min`, `hour`, `day`, `week`."
+                },
+                "Title": {
+                    "type": "string",
+                    "description": "Widget title."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Widget type. Valid values: `sysinfo`, `licinfo`, `vminfo`, `forticloud`, `cpu-usage`, `memory-usage`, `disk-usage`, `log-rate`, `sessions`, `session-rate`, `tr-history`, `analytics`, `usb-modem`, `admins`, `security-fabric`, `security-fabric-ranking`, `ha-status`, `vulnerability-summary`, `host-scan-summary`, `fortiview`, `botnet-activity`, `fortimail`."
+                },
+                "Visualization": {
+                    "type": "string",
+                    "description": "Visualization to use. Valid values: `table`, `bubble`, `country`, `chord`."
+                },
+                "Width": {
+                    "type": "number",
+                    "description": "Width."
+                },
+                "XPos": {
+                    "type": "number",
+                    "description": "X position."
+                },
+                "YPos": {
+                    "type": "number",
+                    "description": "Y position."
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "FortiView Filter ID."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "Filter key."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Filter value."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accprofile": {
+            "type": "string",
+            "description": "Access profile for this administrator. Access profiles control administrator access to FortiGate features."
+        },
+        "AccprofileOverride": {
+            "type": "string",
+            "description": "Enable to use the name of an access profile provided by the remote authentication server to control the FortiGate features that this administrator can access. Valid values: `enable`, `disable`."
+        },
+        "AllowRemoveAdminSession": {
+            "type": "string",
+            "description": "Enable/disable allow admin session to be removed by privileged admin users. Valid values: `enable`, `disable`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmailTo": {
+            "type": "string",
+            "description": "This administrator's email address."
+        },
+        "ForcePasswordChange": {
+            "type": "string",
+            "description": "Enable/disable force password change on next login. Valid values: `enable`, `disable`."
+        },
+        "Fortitoken": {
+            "type": "string",
+            "description": "This administrator's FortiToken serial number."
+        },
+        "GuestAuth": {
+            "type": "string",
+            "description": "Enable/disable guest authentication. Valid values: `disable`, `enable`."
+        },
+        "GuestLang": {
+            "type": "string",
+            "description": "Guest management portal language."
+        },
+        "Hidden": {
+            "type": "number",
+            "description": "Admin user hidden attribute."
+        },
+        "History0": {
+            "type": "string",
+            "description": "history0."
+        },
+        "History1": {
+            "type": "string",
+            "description": "history1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip6Trusthost1": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost10": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost2": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost3": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost4": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost5": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost6": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost7": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost8": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Ip6Trusthost9": {
+            "type": "string",
+            "description": "Any IPv6 address from which the administrator can connect to the FortiGate unit. Default allows access from any IPv6 address."
+        },
+        "Name": {
+            "type": "string",
+            "description": "User name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Admin user password."
+        },
+        "PasswordExpire": {
+            "type": "string",
+            "description": "Password expire time."
+        },
+        "PeerAuth": {
+            "type": "string",
+            "description": "Set to enable peer certificate authentication (for HTTPS admin access). Valid values: `enable`, `disable`."
+        },
+        "PeerGroup": {
+            "type": "string",
+            "description": "Name of peer group defined under config user group which has PKI members. Used for peer certificate authentication (for HTTPS admin access)."
+        },
+        "RadiusVdomOverride": {
+            "type": "string",
+            "description": "Enable to use the names of VDOMs provided by the remote authentication server to control the VDOMs that this administrator can access. Valid values: `enable`, `disable`."
+        },
+        "RemoteAuth": {
+            "type": "string",
+            "description": "Enable/disable authentication using a remote RADIUS, LDAP, or TACACS+ server. Valid values: `enable`, `disable`."
+        },
+        "RemoteGroup": {
+            "type": "string",
+            "description": "User group name used for remote auth."
+        },
+        "Schedule": {
+            "type": "string",
+            "description": "Firewall schedule used to restrict when the administrator can log in. No schedule means no restrictions."
+        },
+        "SmsCustomServer": {
+            "type": "string",
+            "description": "Custom SMS server to send SMS messages to."
+        },
+        "SmsPhone": {
+            "type": "string",
+            "description": "Phone number on which the administrator receives SMS messages."
+        },
+        "SmsServer": {
+            "type": "string",
+            "description": "Send SMS messages using the FortiGuard SMS server or a custom server. Valid values: `fortiguard`, `custom`."
+        },
+        "SshCertificate": {
+            "type": "string",
+            "description": "Select the certificate to be used by the FortiGate for authentication with an SSH client."
+        },
+        "SshPublicKey1": {
+            "type": "string",
+            "description": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application."
+        },
+        "SshPublicKey2": {
+            "type": "string",
+            "description": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application."
+        },
+        "SshPublicKey3": {
+            "type": "string",
+            "description": "Public key of an SSH client. The client is authenticated without being asked for credentials. Create the public-private key pair in the SSH client application."
+        },
+        "Trusthost1": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost10": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost2": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost3": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost4": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost5": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost6": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost7": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost8": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "Trusthost9": {
+            "type": "string",
+            "description": "Any IPv4 address or subnet address and netmask from which the administrator can connect to the FortiGate unit. Default allows access from any IPv4 address."
+        },
+        "TwoFactor": {
+            "type": "string",
+            "description": "Enable/disable two-factor authentication."
+        },
+        "TwoFactorAuthentication": {
+            "type": "string",
+            "description": "Authentication method by FortiToken Cloud. Valid values: `fortitoken`, `email`, `sms`."
+        },
+        "TwoFactorNotification": {
+            "type": "string",
+            "description": "Notification method for user activation by FortiToken Cloud. Valid values: `email`, `sms`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Wildcard": {
+            "type": "string",
+            "description": "Enable/disable wildcard RADIUS authentication. Valid values: `enable`, `disable`."
+        },
+        "GuestUsergroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuestUsergroupsDefinition"
+            }
+        },
+        "GuiDashboard": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuiDashboardDefinition"
+            }
+        },
+        "GuiGlobalMenuFavorites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuiGlobalMenuFavoritesDefinition"
+            }
+        },
+        "GuiNewFeatureAcknowledge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuiNewFeatureAcknowledgeDefinition"
+            }
+        },
+        "GuiVdomMenuFavorites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuiVdomMenuFavoritesDefinition"
+            }
+        },
+        "LoginTime": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoginTimeDefinition"
+            }
+        },
+        "Vdom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VdomDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/History0",
+        "/properties/History1",
+        "/properties/Password",
+        "/properties/SshPublicKey1",
+        "/properties/SshPublicKey2",
+        "/properties/SshPublicKey3"
+    ]
+}

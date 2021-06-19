@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::LaunchDarkly::Destination",
+    "description": "Provides a LaunchDarkly Data Export Destination resource.\n\nData Export Destinations are locations that receive exported data. This resource allows you to configure destinations for the export of raw analytics data, including feature flag requests, analytics events, custom events, and more.\n\nTo learn more about data export, read [Data Export Documentation](https://docs.launchdarkly.com/integrations/data-export).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-Destination/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "description": "- The destination-specific configuration. To learn more, read [Destination-Specific Configs](#destination-specific-configs)."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EnvKey": {
+            "type": "string",
+            "description": "- The environment key."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string",
+            "description": "- The data export destination type. Available choices are `kinesis`, `google-pubsub`, `mparticle`, and `segment`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "- A human-readable name for your data export destination."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "- The LaunchDarkly project key."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvKey",
+        "Kind",
+        "Name",
+        "ProjectKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

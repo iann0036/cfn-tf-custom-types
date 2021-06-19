@@ -1,0 +1,735 @@
+{
+    "typeName": "TF::FortiOS::FirewallSslsshprofile",
+    "description": "Configure SSL/SSH protocol options.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallSslsshprofile/docs/README.md",
+    "definitions": {
+        "FtpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `deep-inspection`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "HttpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `certificate-inspection`, `deep-inspection`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "ImapsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `deep-inspection`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "Pop3sDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `deep-inspection`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "SmtpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `deep-inspection`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "SshDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Level of SSL inspection. Valid values: `disable`, `deep-inspection`."
+                },
+                "Ports": {
+                    "type": "string",
+                    "description": "Ports to use for scanning (1 - 65535, default = 443)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "SshAlgorithm": {
+                    "type": "string",
+                    "description": "Relative strength of encryption algorithms accepted during negotiation. Valid values: `compatible`, `high-encryption`."
+                },
+                "SshPolicyCheck": {
+                    "type": "string",
+                    "description": "Enable/disable SSH policy check. Valid values: `disable`, `enable`."
+                },
+                "SshTunPolicyCheck": {
+                    "type": "string",
+                    "description": "Enable/disable SSH tunnel policy check. Valid values: `disable`, `enable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Configure protocol inspection status. Valid values: `disable`, `deep-inspection`."
+                },
+                "UnsupportedVersion": {
+                    "type": "string",
+                    "description": "Action based on SSH version being unsupported. Valid values: `bypass`, `block`."
+                }
+            },
+            "required": []
+        },
+        "SslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertValidationFailure": {
+                    "type": "string",
+                    "description": "Action based on certificate validation failure. Valid values: `allow`, `block`, `ignore`."
+                },
+                "CertValidationTimeout": {
+                    "type": "string",
+                    "description": "Action based on certificate validation timeout. Valid values: `allow`, `block`, `ignore`."
+                },
+                "ClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ExpiredServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is expired. Valid values: `allow`, `block`, `ignore`."
+                },
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Level of SSL inspection. Valid values: `disable`, `certificate-inspection`, `deep-inspection`."
+                },
+                "InvalidServerCert": {
+                    "type": "string",
+                    "description": "Allow or block the invalid SSL session server certificate. Valid values: `allow`, `block`."
+                },
+                "RevokedServerCert": {
+                    "type": "string",
+                    "description": "Action based on server certificate is revoked. Valid values: `allow`, `block`, `ignore`."
+                },
+                "SniServerCertCheck": {
+                    "type": "string",
+                    "description": "Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. Valid values: `enable`, `strict`, `disable`."
+                },
+                "UnsupportedSsl": {
+                    "type": "string",
+                    "description": "Action based on the SSL encryption used being unsupported. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "UnsupportedSslCipher": {
+                    "type": "string",
+                    "description": "Action based on the SSL cipher used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UnsupportedSslNegotiation": {
+                    "type": "string",
+                    "description": "Action based on the SSL negotiation used being unsupported. Valid values: `allow`, `block`."
+                },
+                "UntrustedServerCert": {
+                    "type": "string",
+                    "description": "Allow, ignore, or block the untrusted SSL session server certificate. Valid values: `allow`, `block`, `ignore`."
+                }
+            },
+            "required": []
+        },
+        "SslExemptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "IPv4 address object."
+                },
+                "Address6": {
+                    "type": "string",
+                    "description": "IPv6 address object."
+                },
+                "FortiguardCategory": {
+                    "type": "number",
+                    "description": "FortiGuard category ID."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID number."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "Exempt servers by regular expression."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type of address object (IPv4 or IPv6) or FortiGuard category. Valid values: `fortiguard-category`, `address`, `address6`, `wildcard-fqdn`, `regex`."
+                },
+                "WildcardFqdn": {
+                    "type": "string",
+                    "description": "Exempt servers by wildcard FQDN."
+                }
+            },
+            "required": []
+        },
+        "SslServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FtpsClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during the FTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "FtpsClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during the FTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "HttpsClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during the HTTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "HttpsClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during the HTTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "SSL server ID."
+                },
+                "ImapsClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during the IMAPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "ImapsClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during the IMAPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the SSL server."
+                },
+                "Pop3sClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during the POP3S handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "Pop3sClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during the POP3S handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "SmtpsClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during the SMTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "SmtpsClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during the SMTPS handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "SslOtherClientCertRequest": {
+                    "type": "string",
+                    "description": "Action based on client certificate request during an SSL protocol handshake. Valid values: `bypass`, `inspect`, `block`."
+                },
+                "SslOtherClientCertificate": {
+                    "type": "string",
+                    "description": "Action based on received client certificate during an SSL protocol handshake. Valid values: `bypass`, `inspect`, `block`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Allowlist": {
+            "type": "string",
+            "description": "Enable/disable exempting servers by FortiGuard allowlist. Valid values: `enable`, `disable`."
+        },
+        "BlockBlacklistedCertificates": {
+            "type": "string",
+            "description": "Enable/disable blocking SSL-based botnet communication by FortiGuard certificate blacklist. Valid values: `disable`, `enable`."
+        },
+        "BlockBlocklistedCertificates": {
+            "type": "string",
+            "description": "Enable/disable blocking SSL-based botnet communication by FortiGuard certificate blocklist. Valid values: `disable`, `enable`."
+        },
+        "Caname": {
+            "type": "string",
+            "description": "CA certificate used by SSL Inspection."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MapiOverHttps": {
+            "type": "string",
+            "description": "Enable/disable inspection of MAPI over HTTPS. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "RpcOverHttps": {
+            "type": "string",
+            "description": "Enable/disable inspection of RPC over HTTPS. Valid values: `enable`, `disable`."
+        },
+        "ServerCert": {
+            "type": "string",
+            "description": "Certificate used by SSL Inspection to replace server certificate."
+        },
+        "ServerCertMode": {
+            "type": "string",
+            "description": "Re-sign or replace the server's certificate. Valid values: `re-sign`, `replace`."
+        },
+        "SslAnomaliesLog": {
+            "type": "string",
+            "description": "Enable/disable logging SSL anomalies. Valid values: `disable`, `enable`."
+        },
+        "SslExemptionsLog": {
+            "type": "string",
+            "description": "Enable/disable logging SSL exemptions. Valid values: `disable`, `enable`."
+        },
+        "SslNegotiationLog": {
+            "type": "string",
+            "description": "Enable/disable logging SSL negotiation. Valid values: `disable`, `enable`."
+        },
+        "SupportedAlpn": {
+            "type": "string",
+            "description": "Configure ALPN option. Valid values: `http1-1`, `http2`, `all`, `none`."
+        },
+        "UntrustedCaname": {
+            "type": "string",
+            "description": "Untrusted CA certificate used by SSL Inspection."
+        },
+        "UseSslServer": {
+            "type": "string",
+            "description": "Enable/disable the use of SSL server table for SSL offloading. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Whitelist": {
+            "type": "string",
+            "description": "Enable/disable exempting servers by FortiGuard whitelist. Valid values: `enable`, `disable`."
+        },
+        "Ftps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtpsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Https": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Imaps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImapsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Pop3s": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Pop3sDefinition"
+            },
+            "maxItems": 1
+        },
+        "Smtps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmtpsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslDefinition"
+            },
+            "maxItems": 1
+        },
+        "SslExempt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslExemptDefinition"
+            }
+        },
+        "SslServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslServerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

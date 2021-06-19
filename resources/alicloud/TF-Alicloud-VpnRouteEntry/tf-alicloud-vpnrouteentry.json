@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::Alicloud::VpnRouteEntry",
+    "description": "Provides a VPN Route Entry resource.\n\n-> **NOTE:** Terraform will build vpn route entry instance while it uses `alicloud_vpn_route_entry` to build a VPN Route Entry resource.\n\n-> **NOTE:** Available in 1.57.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-VpnRouteEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NextHop": {
+            "type": "string",
+            "description": "The next hop of the destination route."
+        },
+        "PublishVpc": {
+            "type": "boolean",
+            "description": "Whether to issue the destination route to the VPC."
+        },
+        "RouteDest": {
+            "type": "string",
+            "description": "The destination network segment of the destination route."
+        },
+        "VpnGatewayId": {
+            "type": "string",
+            "description": "The id of the vpn gateway."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "The value should be 0 or 100."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NextHop",
+        "PublishVpc",
+        "RouteDest",
+        "VpnGatewayId",
+        "Weight"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

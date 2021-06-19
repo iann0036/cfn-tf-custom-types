@@ -1,0 +1,255 @@
+{
+    "typeName": "TF::AVI::Server",
+    "description": "The Server resource allows the creation and management of Avi Server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Server/docs/README.md",
+    "definitions": {
+        "DiscoveredNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": [
+                "NetworkRef"
+            ]
+        },
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "Subnet6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoscalingGroupName": {
+            "type": "string",
+            "description": "argument_description.\n* `description` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "ExternalOrchestrationId": {
+            "type": "string",
+            "description": "argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "ExternalUuid": {
+            "type": "string",
+            "description": "argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "argument_description.\n* `port` - (Optional ) argument_description.\n* `type` - (Optional ) argument_description.\n* `autoscaling_group_name` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "NwRef": {
+            "type": "string",
+            "description": "argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "PoolRef": {
+            "type": "string",
+            "description": "argument_description.\n* `ip` - (Required) argument_description.\n* `port` - (Optional ) argument_description.\n* `type` - (Optional ) argument_description.\n* `autoscaling_group_name` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "Port": {
+            "type": "number",
+            "description": "argument_description.\n* `type` - (Optional ) argument_description.\n* `autoscaling_group_name` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "PrstHdrVal": {
+            "type": "string",
+            "description": "argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "Ratio": {
+            "type": "number"
+        },
+        "ResolveServerByDns": {
+            "type": "boolean"
+        },
+        "RewriteHostHeader": {
+            "type": "boolean",
+            "description": "argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "ServerNode": {
+            "type": "string"
+        },
+        "Static": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string",
+            "description": "argument_description.\n* `autoscaling_group_name` - (Optional ) argument_description.\n* `description` - (Optional ) argument_description.\n* `enabled` - (Optional ) argument_description.\n* `external_orchestration_id` - (Optional ) argument_description.\n* `external_uuid` - (Optional ) argument_description.\n* `hostname` - (Optional ) argument_description.\n* `location` - (Optional ) argument_description.\n* `nw_ref` - (Optional ) argument_description.\n* `prst_hdr_val` - (Optional ) argument_description.\n* `rewrite_host_header` - (Optional ) argument_description.\n* `vm_ref` - (Optional ) argument_description."
+        },
+        "VerifyNetwork": {
+            "type": "boolean"
+        },
+        "VmRef": {
+            "type": "string",
+            "description": "argument_description."
+        },
+        "DiscoveredNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiscoveredNetworksDefinition"
+            }
+        },
+        "Location": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip",
+        "PoolRef"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

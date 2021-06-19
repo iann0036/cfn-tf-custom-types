@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::Alicloud::RamPolicy",
+    "description": "Provides a RAM Policy resource. \n\n-> **NOTE:** When you want to destroy this resource forcefully(means remove all the relationships associated with it automatically and then destroy it) without set `force`  with `true` at beginning, you need add `force = true` to configuration file and run `terraform plan`, then you can delete resource forcefully.\n\n-> **NOTE:** Each policy can own at most 5 versions and the oldest version will be removed after its version achieves 5.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-RamPolicy/docs/README.md",
+    "definitions": {
+        "StatementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Effect": {
+                    "type": "string"
+                },
+                "Resource": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Action",
+                "Effect",
+                "Resource"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachmentCount": {
+            "type": "number"
+        },
+        "DefaultVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the RAM policy. This name can have a string of 1 to 1024 characters."
+        },
+        "Document": {
+            "type": "string",
+            "description": "Document of the RAM policy. It is required when the `statement` is not specified."
+        },
+        "Force": {
+            "type": "boolean",
+            "description": "This parameter is used for resource destroy. Default value is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the RAM policy. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen \"-\", and must not begin with a hyphen."
+        },
+        "PolicyDocument": {
+            "type": "string"
+        },
+        "PolicyName": {
+            "type": "string"
+        },
+        "RotateStrategy": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "(It has been deprecated from version 1.49.0, and use field 'document' to replace.) Version of the RAM policy document. Valid value is `1`. Default value is `1`."
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "Statement": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StatementDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AttachmentCount",
+        "/properties/DefaultVersion",
+        "/properties/Id",
+        "/properties/Type",
+        "/properties/VersionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

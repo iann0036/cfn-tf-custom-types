@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::DigitalOcean::ProjectResources",
+    "description": "Assign resources to a DigitalOcean Project. This is useful if you need to assign resources\nmanaged in Terraform to a DigitalOcean Project managed outside of Terraform.\n\nThe following resource types can be associated with a project:\n\n* Database Clusters\n* Domains\n* Droplets\n* Floating IP\n* Load Balancers\n* Spaces Bucket\n* Volume",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-ProjectResources/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "the ID of the project."
+        },
+        "Resources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "a list of uniform resource names (URNs) for the resources associated with the project."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "Resources"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

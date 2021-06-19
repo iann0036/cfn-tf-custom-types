@@ -1,0 +1,245 @@
+{
+    "typeName": "TF::Vultr::LoadBalancer",
+    "description": "Get information about a Vultr load balancer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-LoadBalancer/docs/README.md",
+    "definitions": {
+        "FirewallRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpType": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpType",
+                "Port",
+                "Source"
+            ]
+        },
+        "ForwardingRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPort": {
+                    "type": "number"
+                },
+                "BackendProtocol": {
+                    "type": "string"
+                },
+                "FrontendPort": {
+                    "type": "number"
+                },
+                "FrontendProtocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackendPort",
+                "BackendProtocol",
+                "FrontendPort",
+                "FrontendProtocol"
+            ]
+        },
+        "HealthCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckInterval": {
+                    "type": "number"
+                },
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "ResponseTimeout": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "CheckInterval",
+                "HealthyThreshold",
+                "Port",
+                "Protocol",
+                "ResponseTimeout",
+                "UnhealthyThreshold"
+            ]
+        },
+        "SslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "Chain": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Certificate",
+                "PrivateKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachedInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of instances that are currently attached to the load balancer."
+        },
+        "BalancingAlgorithm": {
+            "type": "string",
+            "description": "The balancing algorithm for your load balancer. Options are `roundrobin` or `leastconn`. Default value is `roundrobin`."
+        },
+        "CookieName": {
+            "type": "string",
+            "description": "Name for your given sticky session."
+        },
+        "HasSsl": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "string"
+        },
+        "Ipv6": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The load balancer's label."
+        },
+        "PrivateNetwork": {
+            "type": "string"
+        },
+        "ProxyProtocol": {
+            "type": "boolean",
+            "description": "Boolean value that indicates if Proxy Protocol is enabled."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region your load balancer is deployed in."
+        },
+        "SslRedirect": {
+            "type": "boolean",
+            "description": "Boolean value that indicates if HTTP calls will be redirected to HTTPS."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "FirewallRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FirewallRulesDefinition"
+            }
+        },
+        "ForwardingRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ForwardingRulesDefinition"
+            },
+            "minItems": 1
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SslDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HasSsl",
+        "/properties/Id",
+        "/properties/Ipv4",
+        "/properties/Ipv6",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SslDefinition/PrivateKey"
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::Datadog::ServiceLevelObjective",
+    "description": "CloudFormation equivalent of datadog_service_level_objective",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-ServiceLevelObjective/docs/README.md",
+    "definitions": {
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Denominator": {
+                    "type": "string"
+                },
+                "Numerator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Denominator",
+                "Numerator"
+            ]
+        },
+        "ThresholdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Target": {
+                    "type": "number"
+                },
+                "TargetDisplay": {
+                    "type": "string"
+                },
+                "Timeframe": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "number"
+                },
+                "WarningDisplay": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Target",
+                "Timeframe"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ForceDelete": {
+            "type": "boolean"
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MonitorIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Validate": {
+            "type": "boolean"
+        },
+        "Query": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Thresholds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThresholdsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,594 @@
+{
+    "typeName": "TF::AWS::SpotInstanceRequest",
+    "description": "Provides an EC2 Spot Instance Request resource. This allows instances to be\nrequested on the spot market.\n\nBy default Terraform creates Spot Instance Requests with a `persistent` type,\nwhich means that for the duration of their lifetime, AWS will launch an\ninstance with the configured details if and when the spot market will accept\nthe requested price.\n\nOn destruction, Terraform will make an attempt to terminate the associated Spot\nInstance if there is one present.\n\nSpot Instances requests with a `one-time` type will close the spot request\nwhen the instance is terminated either by the request being below the current spot\nprice availability or by a user.\n\n~> **NOTE:** Because their behavior depends on the live status of the spot\nmarket, Spot Instance Requests have a unique lifecycle that makes them behave\ndifferently than other Terraform resources. Most importantly: there is __no\nguarantee__ that a Spot Instance exists to fulfill the request at any given\npoint in time. See the [AWS Spot Instance\ndocumentat...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SpotInstanceRequest/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CapacityReservationSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationPreference": {
+                    "type": "string"
+                },
+                "CapacityReservationTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityReservationTargetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CreditSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCredits": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EnclaveOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "boolean"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "MetadataOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpEndpoint": {
+                    "type": "string"
+                },
+                "HttpPutResponseHopLimit": {
+                    "type": "number"
+                },
+                "HttpTokens": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceIndex",
+                "NetworkInterfaceId"
+            ]
+        },
+        "RootBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition3"
+                    }
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ami": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "BlockDurationMinutes": {
+            "type": "number",
+            "description": "The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).\nThe duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.\nNote that you can't specify an Availability Zone group or a launch group if you specify a duration."
+        },
+        "CpuCoreCount": {
+            "type": "number"
+        },
+        "CpuThreadsPerCore": {
+            "type": "number"
+        },
+        "DisableApiTermination": {
+            "type": "boolean"
+        },
+        "EbsOptimized": {
+            "type": "boolean"
+        },
+        "GetPasswordData": {
+            "type": "boolean"
+        },
+        "Hibernation": {
+            "type": "boolean"
+        },
+        "HostId": {
+            "type": "string"
+        },
+        "IamInstanceProfile": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceInitiatedShutdownBehavior": {
+            "type": "string"
+        },
+        "InstanceInterruptionBehaviour": {
+            "type": "string",
+            "description": "Indicates whether a Spot instance stops or terminates when it is interrupted. Default is `terminate` as this is the current AWS behaviour."
+        },
+        "InstanceState": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "Ipv6AddressCount": {
+            "type": "number"
+        },
+        "Ipv6Addresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "LaunchGroup": {
+            "type": "string",
+            "description": "A launch group is a group of spot instances that launch together and terminate together.\nIf left empty instances are launched and terminated individually."
+        },
+        "Monitoring": {
+            "type": "boolean"
+        },
+        "OutpostArn": {
+            "type": "string"
+        },
+        "PasswordData": {
+            "type": "string"
+        },
+        "PlacementGroup": {
+            "type": "string"
+        },
+        "PrimaryNetworkInterfaceId": {
+            "type": "string"
+        },
+        "PrivateDns": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PublicDns": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "SecondaryPrivateIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SourceDestCheck": {
+            "type": "boolean"
+        },
+        "SpotBidStatus": {
+            "type": "string"
+        },
+        "SpotInstanceId": {
+            "type": "string"
+        },
+        "SpotPrice": {
+            "type": "string",
+            "description": "The maximum price to request on the spot market."
+        },
+        "SpotRequestState": {
+            "type": "string"
+        },
+        "SpotType": {
+            "type": "string",
+            "description": "If set to `one-time`, after\nthe instance is terminated, the spot request will be closed."
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the Spot Instance Request. These tags are not automatically applied to the launched Instance. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Tenancy": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "UserDataBase64": {
+            "type": "string"
+        },
+        "ValidFrom": {
+            "type": "string",
+            "description": "The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately."
+        },
+        "ValidUntil": {
+            "type": "string",
+            "description": "The end date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new Spot instance requests are placed or enabled to fulfill the request. The default end date is 7 days from the current date."
+        },
+        "VolumeTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VolumeTagsDefinition"
+            }
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WaitForFulfillment": {
+            "type": "boolean",
+            "description": "If set, Terraform will\nwait for the Spot Request to be fulfilled, and will throw an error if the\ntimeout of 10m is reached."
+        },
+        "CapacityReservationSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapacityReservationSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "CreditSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreditSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDeviceDefinition"
+            }
+        },
+        "EnclaveOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnclaveOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+            }
+        },
+        "MetadataOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "RootBlockDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RootBlockDeviceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ami",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/InstanceState",
+        "/properties/OutpostArn",
+        "/properties/PasswordData",
+        "/properties/PrimaryNetworkInterfaceId",
+        "/properties/PrivateDns",
+        "/properties/PublicDns",
+        "/properties/PublicIp",
+        "/properties/SpotBidStatus",
+        "/properties/SpotInstanceId",
+        "/properties/SpotRequestState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

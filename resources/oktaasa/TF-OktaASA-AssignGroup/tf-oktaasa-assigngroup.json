@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::OktaASA::AssignGroup",
+    "description": "The oktaasa_assign_group resource assigns control access levels in group definitions in Okta's ASA.  In order to give access to project, you need to assign an Okta group to a project. Use \"server_access\" and \"server_admin\" parameters to control access level.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oktaasa/TF-OktaASA-AssignGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateServerGroup": {
+            "type": "boolean"
+        },
+        "GroupName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectName": {
+            "type": "string"
+        },
+        "ServerAccess": {
+            "type": "boolean"
+        },
+        "ServerAdmin": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupName",
+        "ProjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

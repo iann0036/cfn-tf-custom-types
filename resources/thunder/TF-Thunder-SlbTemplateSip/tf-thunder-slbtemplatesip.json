@@ -1,0 +1,284 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateSip",
+    "description": "`thunder_slb_template_sip` Provides details about thunder slb template sip",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateSip/docs/README.md",
+    "definitions": {
+        "ClientRequestHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientRequestEraseAll": {
+                    "type": "number"
+                },
+                "ClientRequestHeaderErase": {
+                    "type": "string"
+                },
+                "ClientRequestHeaderInsert": {
+                    "type": "string"
+                },
+                "InsertConditionClientRequest": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClientResponseHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientResponseEraseAll": {
+                    "type": "number"
+                },
+                "ClientResponseHeaderErase": {
+                    "type": "string"
+                },
+                "ClientResponseHeaderInsert": {
+                    "type": "string"
+                },
+                "InsertConditionClientResponse": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExcludeTranslationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderString": {
+                    "type": "string"
+                },
+                "TranslationValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerRequestHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsertConditionServerRequest": {
+                    "type": "string"
+                },
+                "ServerRequestEraseAll": {
+                    "type": "number"
+                },
+                "ServerRequestHeaderErase": {
+                    "type": "string"
+                },
+                "ServerRequestHeaderInsert": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerResponseHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsertConditionServerResponse": {
+                    "type": "string"
+                },
+                "ServerResponseEraseAll": {
+                    "type": "number"
+                },
+                "ServerResponseHeaderErase": {
+                    "type": "string"
+                },
+                "ServerResponseHeaderInsert": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AclId": {
+            "type": "number",
+            "description": "ACL id."
+        },
+        "AclNameValue": {
+            "type": "string",
+            "description": "IPv4 Access List Name."
+        },
+        "AlgDestNat": {
+            "type": "number",
+            "description": "Translate VIP to real server IP in SIP message when destination NAT is used."
+        },
+        "AlgSourceNat": {
+            "type": "number",
+            "description": "Translate source IP to NAT IP in SIP message when source NAT is used."
+        },
+        "CallIdPersistDisable": {
+            "type": "number",
+            "description": "Disable call-ID persistence."
+        },
+        "ClientKeepAlive": {
+            "type": "number",
+            "description": "Respond client keep-alive packet directly instead of forwarding to server."
+        },
+        "DialogAware": {
+            "type": "number",
+            "description": "Permit system processes dialog session."
+        },
+        "DropWhenClientFail": {
+            "type": "number",
+            "description": "Drop current SIP message when select client fail."
+        },
+        "DropWhenServerFail": {
+            "type": "number",
+            "description": "Drop current SIP message when select server fail."
+        },
+        "FailedClientSelection": {
+            "type": "number",
+            "description": "Define action when select client fail."
+        },
+        "FailedClientSelectionMessage": {
+            "type": "string",
+            "description": "Send SIP message (includs status code) to server when select client fail(Format: 3 digits(1XX~6XX) space reason)."
+        },
+        "FailedServerSelection": {
+            "type": "number",
+            "description": "Define action when select server fail."
+        },
+        "FailedServerSelectionMessage": {
+            "type": "string",
+            "description": "Send SIP message (includs status code) to client when select server fail(Format: 3 digits(1XX~6XX) space reason)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertClientIp": {
+            "type": "number",
+            "description": "Insert Client IP address into SIP header."
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The interval of keep-alive packet for each persist connection (second)."
+        },
+        "KeepServerIpIfMatchAcl": {
+            "type": "number",
+            "description": "Use Real Server IP for addresses matching the ACL for a Call-Id."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SIP Template Name."
+        },
+        "PstnGw": {
+            "type": "string",
+            "description": "configure pstn gw host name for tel: uri translate to sip: uri (Hostname String, default is \u201cpstn\u201d)."
+        },
+        "ServerKeepAlive": {
+            "type": "number",
+            "description": "Send server keep-alive packet for every persist connection when enable conn-reuse."
+        },
+        "ServerSelectionPerRequest": {
+            "type": "number",
+            "description": "Force server selection on every SIP request."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "service group name."
+        },
+        "SmpCallIdRtpSession": {
+            "type": "number",
+            "description": "Create the across cpu call-id rtp session."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Time in minutes."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ClientRequestHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientRequestHeaderDefinition"
+            }
+        },
+        "ClientResponseHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientResponseHeaderDefinition"
+            }
+        },
+        "ExcludeTranslation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExcludeTranslationDefinition"
+            }
+        },
+        "ServerRequestHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerRequestHeaderDefinition"
+            }
+        },
+        "ServerResponseHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerResponseHeaderDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

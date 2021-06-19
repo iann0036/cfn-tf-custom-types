@@ -1,0 +1,288 @@
+{
+    "typeName": "TF::AzureRM::SynapseWorkspace",
+    "description": "Manages a Synapse Workspace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SynapseWorkspace/docs/README.md",
+    "definitions": {
+        "AadAdminDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Login": {
+                    "type": "string"
+                },
+                "ObjectId": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConnectivityEndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PrincipalId": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureDevopsRepoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string"
+                },
+                "BranchName": {
+                    "type": "string"
+                },
+                "ProjectName": {
+                    "type": "string"
+                },
+                "RepositoryName": {
+                    "type": "string"
+                },
+                "RootFolder": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountName",
+                "BranchName",
+                "ProjectName",
+                "RepositoryName",
+                "RootFolder"
+            ]
+        },
+        "GithubRepoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string"
+                },
+                "BranchName": {
+                    "type": "string"
+                },
+                "GitUrl": {
+                    "type": "string"
+                },
+                "RepositoryName": {
+                    "type": "string"
+                },
+                "RootFolder": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountName",
+                "BranchName",
+                "RepositoryName",
+                "RootFolder"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AadAdmin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AadAdminDefinition"
+            }
+        },
+        "ConnectivityEndpoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConnectivityEndpointsDefinition"
+            }
+        },
+        "CustomerManagedKeyVersionlessId": {
+            "type": "string"
+        },
+        "DataExfiltrationProtectionEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "ManagedResourceGroupName": {
+            "type": "string"
+        },
+        "ManagedVirtualNetworkEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SqlAdministratorLogin": {
+            "type": "string"
+        },
+        "SqlAdministratorLoginPassword": {
+            "type": "string"
+        },
+        "SqlIdentityControlEnabled": {
+            "type": "boolean"
+        },
+        "StorageDataLakeGen2FilesystemId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "AzureDevopsRepo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureDevopsRepoDefinition"
+            },
+            "maxItems": 1
+        },
+        "GithubRepo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GithubRepoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "SqlAdministratorLogin",
+        "SqlAdministratorLoginPassword",
+        "StorageDataLakeGen2FilesystemId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectivityEndpoints",
+        "/properties/Id",
+        "/properties/Identity"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SqlAdministratorLoginPassword"
+    ]
+}

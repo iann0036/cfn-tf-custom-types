@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::FortiOS::SystemGretunnel",
+    "description": "Configure GRE tunnel.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemGretunnel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChecksumReception": {
+            "type": "string",
+            "description": "Enable/disable validating checksums in received GRE packets. Valid values: `disable`, `enable`."
+        },
+        "ChecksumTransmission": {
+            "type": "string",
+            "description": "Enable/disable including checksums in transmitted GRE packets. Valid values: `disable`, `enable`."
+        },
+        "Diffservcode": {
+            "type": "string",
+            "description": "DiffServ setting to be applied to GRE tunnel outer IP header."
+        },
+        "DscpCopying": {
+            "type": "string",
+            "description": "Enable/disable DSCP copying. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "IP version to use for VPN interface. Valid values: `4`, `6`."
+        },
+        "KeepaliveFailtimes": {
+            "type": "number",
+            "description": "Number of consecutive unreturned keepalive messages before a GRE connection is considered down (1 - 255)."
+        },
+        "KeepaliveInterval": {
+            "type": "number",
+            "description": "Keepalive message interval (0 - 32767, 0 = disabled)."
+        },
+        "KeyInbound": {
+            "type": "number",
+            "description": "Require received GRE packets contain this key (0 - 4294967295)."
+        },
+        "KeyOutbound": {
+            "type": "number",
+            "description": "Include this key in transmitted GRE packets (0 - 4294967295)."
+        },
+        "LocalGw": {
+            "type": "string",
+            "description": "IP address of the local gateway."
+        },
+        "LocalGw6": {
+            "type": "string",
+            "description": "IPv6 address of the local gateway."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Tunnel name."
+        },
+        "RemoteGw": {
+            "type": "string",
+            "description": "IP address of the remote gateway."
+        },
+        "RemoteGw6": {
+            "type": "string",
+            "description": "IPv6 address of the remote gateway."
+        },
+        "SequenceNumberReception": {
+            "type": "string",
+            "description": "Enable/disable validating sequence numbers in received GRE packets. Valid values: `disable`, `enable`."
+        },
+        "SequenceNumberTransmission": {
+            "type": "string",
+            "description": "Enable/disable including of sequence numbers in transmitted GRE packets. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LocalGw",
+        "RemoteGw"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

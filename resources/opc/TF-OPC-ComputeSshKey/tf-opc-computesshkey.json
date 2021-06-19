@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::OPC::ComputeSshKey",
+    "description": "The ``opc_compute_ssh_key`` resource creates and manages an SSH key in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeSshKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether or not the key is enabled. This is useful if you want to temporarily disable an SSH key,\nwithout removing it entirely from your Terraform resource definition. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The SSH key itself."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The unique (within this identity domain) name of the SSH key."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

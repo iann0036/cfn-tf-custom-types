@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::NSXT::LogicalTier1Router",
+    "description": "This resource provides a method for the management of a tier 1 logical router. A tier 1 logical router is often used for tenants, users and applications. There can be many tier 1 logical routers connected to a common tier 0 provider router.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LogicalTier1Router/docs/README.md",
+    "definitions": {
+        "FirewallSectionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetId": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertiseConfigRevision": {
+            "type": "number"
+        },
+        "AdvertiseConnectedRoutes": {
+            "type": "boolean",
+            "description": "Enable the router advertisement for all NSX connected routes."
+        },
+        "AdvertiseLbSnatIpRoutes": {
+            "type": "boolean",
+            "description": "Enable the router advertisement for LB SNAT IP routes."
+        },
+        "AdvertiseLbVipRoutes": {
+            "type": "boolean",
+            "description": "Enable the router advertisement for LB VIP routes."
+        },
+        "AdvertiseNatRoutes": {
+            "type": "boolean",
+            "description": "Enable the router advertisement for NAT routes."
+        },
+        "AdvertiseStaticRoutes": {
+            "type": "boolean",
+            "description": "Enable the router advertisement for static routes."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
+        },
+        "EdgeClusterId": {
+            "type": "string",
+            "description": "Edge Cluster ID for the logical Tier1 router."
+        },
+        "EnableRouterAdvertisement": {
+            "type": "boolean",
+            "description": "Enable the router advertisement."
+        },
+        "FailoverMode": {
+            "type": "string",
+            "description": "This failover mode determines, whether the preferred service router instance for given logical router will preempt the peer. Note - It can be specified if and only if logical router is ACTIVE_STANDBY and NON_PREEMPTIVE mode is supported only for a Tier1 logical router. For ACTIVE_ACTIVE logical routers, this field must not be populated."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "FirewallSections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallSectionsDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdvertiseConfigRevision",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

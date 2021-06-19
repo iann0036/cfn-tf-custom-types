@@ -1,0 +1,641 @@
+{
+    "typeName": "TF::NewRelic::OneDashboard",
+    "description": "CloudFormation equivalent of newrelic_one_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-OneDashboard/docs/README.md",
+    "definitions": {
+        "PageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "WidgetArea": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetAreaDefinition"
+                    }
+                },
+                "WidgetBar": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetBarDefinition"
+                    }
+                },
+                "WidgetBillboard": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetBillboardDefinition"
+                    }
+                },
+                "WidgetBullet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetBulletDefinition"
+                    }
+                },
+                "WidgetFunnel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetFunnelDefinition"
+                    }
+                },
+                "WidgetHeatmap": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetHeatmapDefinition"
+                    }
+                },
+                "WidgetHistogram": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetHistogramDefinition"
+                    }
+                },
+                "WidgetJson": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetJsonDefinition"
+                    }
+                },
+                "WidgetLine": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetLineDefinition"
+                    }
+                },
+                "WidgetMarkdown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetMarkdownDefinition"
+                    }
+                },
+                "WidgetPie": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetPieDefinition"
+                    }
+                },
+                "WidgetTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WidgetTableDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "WidgetAreaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetBarDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "LinkedEntityGuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetBillboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Critical": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetBulletDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetFunnelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetHeatmapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetHistogramDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetJsonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetLineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetMarkdownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Text": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetPieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "LinkedEntityGuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "WidgetTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "LinkedEntityGuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "NrqlQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NrqlQueryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title"
+            ]
+        },
+        "NrqlQueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "number"
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "number",
+            "description": "Determines the New Relic account where the dashboard will be created. Defaults to the account associated with the API key used.\n* `description` - (Optional) Brief text describing the dashboard.\n* `permissions` - (Optional) Determines who can see the dashboard in an account. Valid values are `private`, `public_read_only`, or `public_read_write`.  Defaults to `public_read_only`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Brief text describing the dashboard.\n* `permissions` - (Optional) Determines who can see the dashboard in an account. Valid values are `private`, `public_read_only`, or `public_read_write`.  Defaults to `public_read_only`."
+        },
+        "Guid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of the dashboard.\n* `page` - (Required) A nested block that describes a page. See [Nested page blocks](#nested-page-blocks) below for details.\n* `account_id` - (Optional) Determines the New Relic account where the dashboard will be created. Defaults to the account associated with the API key used.\n* `description` - (Optional) Brief text describing the dashboard.\n* `permissions` - (Optional) Determines who can see the dashboard in an account. Valid values are `private`, `public_read_only`, or `public_read_write`.  Defaults to `public_read_only`."
+        },
+        "Permalink": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Determines who can see the dashboard in an account. Valid values are `private`, `public_read_only`, or `public_read_write`.  Defaults to `public_read_only`."
+        },
+        "Page": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PageDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Guid",
+        "/properties/Id",
+        "/properties/Permalink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

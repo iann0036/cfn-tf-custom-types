@@ -1,0 +1,264 @@
+{
+    "typeName": "TF::AVI::Alertconfig",
+    "description": "The AlertConfig resource allows the creation and management of Avi AlertConfig",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Alertconfig/docs/README.md",
+    "definitions": {
+        "AlertRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventMatchFilter": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "ConnAppLogRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConnAppLogRuleDefinition"
+                    }
+                },
+                "MetricsRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricsRuleDefinition"
+                    }
+                },
+                "SysEventRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SysEventRuleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConnAppLogRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterAction": {
+                    "type": "string"
+                },
+                "FilterString": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FilterString"
+            ]
+        },
+        "MetricsRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "MetricId": {
+                    "type": "string"
+                },
+                "MetricThreshold": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetricThresholdDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SysEventRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventId": {
+                    "type": "string"
+                },
+                "NotCond": {
+                    "type": "boolean"
+                },
+                "EventDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EventDetailsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetricThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Comparator"
+            ]
+        },
+        "EventDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string"
+                },
+                "EventDetailsKey": {
+                    "type": "string"
+                },
+                "EventDetailsValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparator",
+                "EventDetailsKey",
+                "EventDetailsValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionGroupRef": {
+            "type": "string",
+            "description": "The alert config will trigger the selected alert action, which can send notifications and execute a controlscript. It is a reference to an object of type actiongroupconfig."
+        },
+        "AutoscaleAlert": {
+            "type": "boolean",
+            "description": "This alert config applies to auto scale alerts."
+        },
+        "Category": {
+            "type": "string",
+            "description": "Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time window. Enum options - REALTIME, ROLLINGWINDOW, WATERMARK."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A custom description field."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable or disable this alert config from generating new alerts."
+        },
+        "ExpiryTime": {
+            "type": "number",
+            "description": "An alert is expired and deleted after the expiry time has elapsed. The original event triggering the alert remains in the event's log. Allowed values are 1-31536000. Unit is sec."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the alert configuration."
+        },
+        "ObjUuid": {
+            "type": "string",
+            "description": "Uuid of the resource for which alert was raised."
+        },
+        "ObjectType": {
+            "type": "string",
+            "description": "The object type to which the alert config is associated with. Valid object types are - virtual service, pool, service engine. Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP, STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT, PKIPROFILE, AUTHPROFILE, CLOUD..."
+        },
+        "Recommendation": {
+            "type": "string",
+            "description": "Placeholder for description of property recommendation of obj type alertconfig field type string  type str."
+        },
+        "RollingWindow": {
+            "type": "number",
+            "description": "Only if the number of events is reached or exceeded within the time window will an alert be generated. Allowed values are 1-31536000. Unit is sec."
+        },
+        "Source": {
+            "type": "string",
+            "description": "Signifies system events or the type of client logsused in this alert configuration. Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS."
+        },
+        "Summary": {
+            "type": "string",
+            "description": "Summary of reason why alert is generated."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Threshold": {
+            "type": "number",
+            "description": "An alert is created only when the number of events meets or exceeds this number within the chosen time frame. Allowed values are 1-65536."
+        },
+        "Throttle": {
+            "type": "number",
+            "description": "Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config. Allowed values are 0-31536000. Unit is sec."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AlertRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlertRuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "Name",
+        "Source"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

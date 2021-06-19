@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::Alicloud::CdnDomainNew",
+    "description": "Provides a CDN Accelerated Domain resource. This resource is based on CDN's new version OpenAPI.\n\nFor information about Cdn Domain New and how to use it, see [Add a domain](https://www.alibabacloud.com/help/doc-detail/91176.html).\n\n-> **NOTE:** Available in v1.34.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CdnDomainNew/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CertificateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertName": {
+                    "type": "string"
+                },
+                "CertType": {
+                    "type": "string"
+                },
+                "ForceSet": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "ServerCertificate": {
+                    "type": "string"
+                },
+                "ServerCertificateStatus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Content",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CdnType": {
+            "type": "string",
+            "description": "Cdn type of the accelerated domain. Valid values are `web`, `download`, `video`."
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Name of the accelerated domain. This name without suffix can have a string of 1 to 63 characters, must contain only alphanumeric characters or \"-\", and must not begin or end with \"-\", and \"-\" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "Resource group ID."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "Scope of the accelerated domain. Valid values are `domestic`, `overseas`, `global`. Default value is `domestic`. This parameter's setting is valid Only for the international users and domestic L3 and above users ."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "CertificateConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SourcesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CdnType",
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CertificateConfigDefinition/PrivateKey",
+        "/definitions/CertificateConfigDefinition/ServerCertificate"
+    ]
+}

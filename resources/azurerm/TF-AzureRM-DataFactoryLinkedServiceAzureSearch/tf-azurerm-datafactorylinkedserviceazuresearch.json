@@ -1,0 +1,171 @@
+{
+    "typeName": "TF::AzureRM::DataFactoryLinkedServiceAzureSearch",
+    "description": "Manages a Linked Service (connection) between Azure Search Service and Azure Data Factory.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DataFactoryLinkedServiceAzureSearch/docs/README.md",
+    "definitions": {
+        "AdditionalPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalPropertiesDefinition"
+            },
+            "description": "A map of additional properties to associate with the Data Factory Linked Service."
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that can be used for describing the Data Factory Linked Service."
+        },
+        "DataFactoryId": {
+            "type": "string",
+            "description": "The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the Data Factory Linked Service."
+        },
+        "EncryptedCredential": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationRuntimeName": {
+            "type": "string",
+            "description": "The integration runtime reference to associate with the Data Factory Linked Service."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data\nfactory. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A map of parameters to associate with the Data Factory Linked Service."
+        },
+        "SearchServiceKey": {
+            "type": "string",
+            "description": "The key of the Azure Search Service."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL of the Search Service endpoint (e.g. https://{searchServiceName}.search.windows.net)."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DataFactoryId",
+        "Name",
+        "SearchServiceKey",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EncryptedCredential",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

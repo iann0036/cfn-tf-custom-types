@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeVpnTunnel",
+    "description": "CloudFormation equivalent of google_compute_vpn_tunnel",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeVpnTunnel/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DetailedStatus": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeVersion": {
+            "type": "number"
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LocalTrafficSelector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PeerExternalGateway": {
+            "type": "string"
+        },
+        "PeerExternalGatewayInterface": {
+            "type": "number"
+        },
+        "PeerGcpGateway": {
+            "type": "string"
+        },
+        "PeerIp": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RemoteTrafficSelector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Router": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SharedSecret": {
+            "type": "string"
+        },
+        "SharedSecretHash": {
+            "type": "string"
+        },
+        "TargetVpnGateway": {
+            "type": "string"
+        },
+        "TunnelId": {
+            "type": "string"
+        },
+        "VpnGateway": {
+            "type": "string"
+        },
+        "VpnGatewayInterface": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SharedSecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/DetailedStatus",
+        "/properties/Id",
+        "/properties/LabelFingerprint",
+        "/properties/SelfLink",
+        "/properties/SharedSecretHash",
+        "/properties/TunnelId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SharedSecret"
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::OpenNebula::ServiceTemplate",
+    "description": "Provides an OpenNebula service template resource.\n\nThis resource allows you to manage service templates on your OpenNebula clusters. When applied,\na new service template will be created. When destroyed, that service template will be removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-ServiceTemplate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Gid": {
+            "type": "number",
+            "description": "Set the id of the group owner of the newly created service template. The corresponding `gname` will be computed."
+        },
+        "Gname": {
+            "type": "string",
+            "description": "Set the name of the group owner of the newly created service template. The corresponding `gid` will be computed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service template."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on service template. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "Template": {
+            "type": "string",
+            "description": "Service template definition in JSON format."
+        },
+        "Uid": {
+            "type": "number",
+            "description": "Set the id of the user owner of the newly created service template. The corresponding `uname` will be computed."
+        },
+        "Uname": {
+            "type": "string",
+            "description": "Set the name of the user owner of the newly created service template. The corresponding `uid` will be computed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

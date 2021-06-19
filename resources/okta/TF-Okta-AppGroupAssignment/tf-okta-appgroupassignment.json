@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Okta::AppGroupAssignment",
+    "description": "Assigns a group to an application.\n\nThis resource allows you to create an App Group assignment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppGroupAssignment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The ID of the application to assign a group to."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The ID of the group to assign the app to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Profile": {
+            "type": "string",
+            "description": "JSON document containing [application profile](https://developer.okta.com/docs/reference/api/apps/#profile-object)."
+        },
+        "RetainAssignment": {
+            "type": "boolean",
+            "description": "Retain the group assignment on destroy. If set to true, the resource will be removed from state but not from the Okta app."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "GroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

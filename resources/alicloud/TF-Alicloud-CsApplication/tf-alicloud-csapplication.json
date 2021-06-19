@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Alicloud::CsApplication",
+    "description": "-> **DEPRECATED:** This resource manages applications in swarm cluster only, which is being deprecated and will be replaced by Kubernetes cluster.\n\nThis resource use an orchestration template to define and deploy a multi-container application. An application is created by using an orchestration template.\nEach application can contain one or more services.\n\n-> **NOTE:** Application orchestration template must be a valid Docker Compose YAML template.\n\n-> **NOTE:** At present, this resource only support swarm cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CsApplication/docs/README.md",
+    "definitions": {
+        "EnvironmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlueGreen": {
+            "type": "boolean",
+            "description": "Wherther to use \"Blue Green\" method when release a new version. Default to false."
+        },
+        "BlueGreenConfirm": {
+            "type": "boolean",
+            "description": "Whether to confirm a \"Blue Green\" application. Default to false. It will be ignored when `blue_green` is false."
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The swarm cluster's name."
+        },
+        "DefaultDomain": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of application."
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentDefinition"
+            },
+            "description": "A key/value map used to replace the variable parameter in the Compose template."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LatestImage": {
+            "type": "boolean",
+            "description": "Whether to use latest docker image while each updating application. Default to false."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The application name. It should be 1-64 characters long, and can contain numbers, English letters and hyphens, but cannot start with hyphens."
+        },
+        "Services": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServicesDefinition"
+            }
+        },
+        "Template": {
+            "type": "string",
+            "description": "The application deployment template and it must be [Docker Compose format](https://docs.docker.com/compose/)."
+        },
+        "Version": {
+            "type": "string",
+            "description": "The application deploying version. Each updating, it must be different with current. Default to \"1.0\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultDomain",
+        "/properties/Id",
+        "/properties/Services"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Aviatrix::AccountUser",
+    "description": "The **aviatrix_account_user** resource allows the creation and management of Aviatrix user accounts.\n\n~> **NOTE:** With the release of Controller 5.4 (compatible with Aviatrix provider R2.13), Role-Based Access Control (RBAC) is now integrated into the Accounts workflow. Any **aviatrix_account_user** created in 5.3 by default will have admin privileges (attached to the 'admin' RBAC permission group). In 5.4, any new account users created will no longer have the option to specify an `account_name`, but rather have the option to attach the user to specific RBAC groups through the **aviatrix_rbac_group_user_attachment** resource for more granular security control. Account users created in 5.4 will have minimal access (read_only) unless otherwise specified in the RBAC group permissions that the users are attached to.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AccountUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Password",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

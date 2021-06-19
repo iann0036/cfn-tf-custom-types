@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Lacework::IntegrationDockerV2",
+    "description": "Use the Docker V2 Registry integration for private Docker V2 registries only.\n\n~> **Note:** For Docker Hub, ECR, and GCR, use their corresponding container registry types.\n\nThe Docker V2 Registry integration functions differently than Lacework's other container registry\nintegrations. This integration performs on-demand image assessment via the Lacework API, while the other\nintegrations automatically assess images at regular intervals.\n\nSupported Docker V2 registries:\n\n* Azure Container Registry\n* GitLab (On prem 12.8 and cloud)\n* JFrog Artifactory (On prem 7.2.1 and cloud)\n* JFrog Platform (On prem 7.2.1 and cloud)\n\n~> **Note:** You must whitelist the Lacework outbound IPs to allow the vulnerability scanner to communicate with your private registries. See [Lacework Outbound IPs](https://support.lacework.com/hc/en-us/articles/360052140433)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationDockerV2/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "LimitByLabel": {
+            "type": "string",
+            "description": "An image label to limit the assessment of images with matching label. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "LimitByTag": {
+            "type": "string",
+            "description": "An image tag to limit the assessment of images with matching tag. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Docker V2 Registry integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password for the specified user."
+        },
+        "RegistryDomain": {
+            "type": "string",
+            "description": "The registry domain. Allowed formats are `YourIP:YourPort` or `YourDomain:YourPort`."
+        },
+        "Ssl": {
+            "type": "boolean",
+            "description": "Enable or disable SSL communication. Defaults to `false`."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "The user that has at permissions to pull from the container registry the images to be assessed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Password",
+        "RegistryDomain",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::Tfe::Workspace",
+    "description": "Provides a workspace resource.\n\n~> **NOTE:** Using `global_remote_state` or `remote_state_consumer_ids` requires using the provider with Terraform Cloud or an instance of Terraform Enterprise at least as recent as v202104-1.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-Workspace/docs/README.md",
+    "definitions": {
+        "VcsRepoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string",
+                    "description": "The repository branch that Terraform will execute from.\nThis defaults to the repository's default branch (e.g. main)."
+                },
+                "Identifier": {
+                    "type": "string",
+                    "description": "A reference to your VCS repository in the format\n`<organization>/<repository>` where `<organization>` and `<repository>` refer to the organization and repository\nin your VCS provider. The format for Azure DevOps is <organization>/<project>/_git/<repository>."
+                },
+                "IngressSubmodules": {
+                    "type": "boolean",
+                    "description": "Whether submodules should be fetched when\ncloning the VCS repository. Defaults to `false`."
+                },
+                "OauthTokenId": {
+                    "type": "string",
+                    "description": "The VCS Connection (OAuth Connection + Token) to use.\nThis ID can be obtained from a `tfe_oauth_client` resource."
+                }
+            },
+            "required": [
+                "Identifier",
+                "OauthTokenId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentPoolId": {
+            "type": "string",
+            "description": "The ID of an agent pool to assign to the workspace. Requires `execution_mode`\nto be set to `agent`. This value _must not_ be provided if `execution_mode` is set to any other value or if `operations` is\nprovided."
+        },
+        "AllowDestroyPlan": {
+            "type": "boolean",
+            "description": "Whether destroy plans can be queued on the workspace."
+        },
+        "AutoApply": {
+            "type": "boolean",
+            "description": "Whether to automatically apply changes when a\nTerraform plan is successful. Defaults to `false`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the workspace."
+        },
+        "ExecutionMode": {
+            "type": "string",
+            "description": "Which [execution mode](https://www.terraform.io/docs/cloud/workspaces/settings.html#execution-mode) to use. Using Terraform Cloud, valid\nvalues are `remote`, `local` or `agent`. Using Terraform Enterprise, only `remote` and `local` execution modes are\nvalid.  When set to `local`, the workspace will be used for state storage only. Defaults to `remote`. This value _must\nnot_ be provided if `operations` is provided."
+        },
+        "FileTriggersEnabled": {
+            "type": "boolean",
+            "description": "Whether to filter runs based on the changed files\nin a VCS push. If enabled, the working directory and trigger prefixes describe a set of\npaths which must contain changes for a VCS push to trigger a run. If disabled, any push will\ntrigger a run. Defaults to `true`."
+        },
+        "GlobalRemoteState": {
+            "type": "boolean",
+            "description": "Whether the workspace allows all workspaces in the organization to access its state data during runs. If false, then only specifically approved workspaces can access its state (`remote_state_consumer_ids`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the workspace."
+        },
+        "Operations": {
+            "type": "boolean",
+            "description": "**Deprecated** Whether to use remote execution mode. When set to `false`, the workspace will\nbe used for state storage only. Defaults to `true`. This value _must not_ be provided if `execution_mode` is\nprovided."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "QueueAllRuns": {
+            "type": "boolean",
+            "description": "Whether the workspace should start automatically performing\nruns immediately after its creation. When set to `false`, runs triggered by a webhook\n(such as a commit in VCS) will not be queued until at least one run has been manually\nqueued. Defaults to `true`. **Note:** This default differs from the Terraform Cloud API default, which is `false`.\nThe provider uses `true` as any workspace provisioned with `false` would need to then have a run manually queued out-of-band\nbefore accepting webhooks."
+        },
+        "RemoteStateConsumerIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The set of workspace IDs set as explicit remote state consumers for the given workspace."
+        },
+        "SpeculativeEnabled": {
+            "type": "boolean",
+            "description": "Whether this workspace allows speculative\nplans. Setting this to `false` prevents Terraform Cloud or the Terraform\nEnterprise instance from running plans on pull requests, which can improve\nsecurity if the VCS repository is public or includes untrusted contributors.\nDefaults to `true`."
+        },
+        "SshKeyId": {
+            "type": "string",
+            "description": "The ID of an SSH key to assign to the workspace."
+        },
+        "TerraformVersion": {
+            "type": "string",
+            "description": "The version of Terraform to use for this workspace. Defaults to\nthe latest available version."
+        },
+        "TriggerPrefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of repository-root-relative paths which describe all locations\nto be tracked for changes."
+        },
+        "WorkingDirectory": {
+            "type": "string",
+            "description": "A relative path that Terraform will execute\nwithin.  Defaults to the root of your repository."
+        },
+        "VcsRepo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VcsRepoDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::ILert::UptimeMonitor",
+    "description": "An [uptime monitor](https://api.ilert.com/api-docs/#tag/Uptime-Monitors) allows you to quickly setup monitoring for any kind of exposed service e.g. HTTP (e.g. websites), ICMP (ping) or TCP and UDP servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-UptimeMonitor/docs/README.md",
+    "definitions": {
+        "CheckParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CheckType": {
+            "type": "string",
+            "description": "The check type of the uptime monitor. Allowed values are `http`, `ping`, `tcp` and `udp`.\n- `check_params` - (Required) A [check params](#check-params-arguments) block.\n- `interval_sec` - (Optional) The check interval in seconds of the uptime monitor. Allowed values are `60`, `300`, `600`, `900`, `1800` and `3600`. Default: `300`.\n- `timeout_ms` - (Optional) The check timeout in milliseconds of the uptime monitor. Allowed values are between `1000` to `60000`. Default: `30000`.\n- `create_incident_after_failed_checks` - (Optional) The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "CreateIncidentAfterFailedChecks": {
+            "type": "number",
+            "description": "The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "EmbedUrl": {
+            "type": "string"
+        },
+        "EscalationPolicy": {
+            "type": "string",
+            "description": "The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntervalSec": {
+            "type": "number",
+            "description": "The check interval in seconds of the uptime monitor. Allowed values are `60`, `300`, `600`, `900`, `1800` and `3600`. Default: `300`.\n- `timeout_ms` - (Optional) The check timeout in milliseconds of the uptime monitor. Allowed values are between `1000` to `60000`. Default: `30000`.\n- `create_incident_after_failed_checks` - (Optional) The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the uptime monitor.\n- `region` - (Optional) The region of the uptime monitor. Allowed values are `EU` and `US`. Default: `EU`.\n- `check_type` - (Required) The check type of the uptime monitor. Allowed values are `http`, `ping`, `tcp` and `udp`.\n- `check_params` - (Required) A [check params](#check-params-arguments) block.\n- `interval_sec` - (Optional) The check interval in seconds of the uptime monitor. Allowed values are `60`, `300`, `600`, `900`, `1800` and `3600`. Default: `300`.\n- `timeout_ms` - (Optional) The check timeout in milliseconds of the uptime monitor. Allowed values are between `1000` to `60000`. Default: `30000`.\n- `create_incident_after_failed_checks` - (Optional) The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "Paused": {
+            "type": "boolean",
+            "description": "The paused state of the uptime monitor. Default: `false`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region of the uptime monitor. Allowed values are `EU` and `US`. Default: `EU`.\n- `check_type` - (Required) The check type of the uptime monitor. Allowed values are `http`, `ping`, `tcp` and `udp`.\n- `check_params` - (Required) A [check params](#check-params-arguments) block.\n- `interval_sec` - (Optional) The check interval in seconds of the uptime monitor. Allowed values are `60`, `300`, `600`, `900`, `1800` and `3600`. Default: `300`.\n- `timeout_ms` - (Optional) The check timeout in milliseconds of the uptime monitor. Allowed values are between `1000` to `60000`. Default: `30000`.\n- `create_incident_after_failed_checks` - (Optional) The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "ShareUrl": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TimeoutMs": {
+            "type": "number",
+            "description": "The check timeout in milliseconds of the uptime monitor. Allowed values are between `1000` to `60000`. Default: `30000`.\n- `create_incident_after_failed_checks` - (Optional) The incident creation ratio after failed checks of the uptime monitor. Allowed values are between `1` to `12`. Default: `1`.\n- `escalation_policy` - (Required) The escalation policy id used by this uptime monitor.\n- `paused` - (Optional) The paused state of the uptime monitor. Default: `false`."
+        },
+        "CheckParams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CheckParamsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CheckType",
+        "EscalationPolicy",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EmbedUrl",
+        "/properties/Id",
+        "/properties/ShareUrl",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

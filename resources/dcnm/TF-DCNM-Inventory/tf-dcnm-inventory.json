@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::DCNM::Inventory",
+    "description": "CloudFormation equivalent of dcnm_inventory",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dcnm/TF-DCNM-Inventory/docs/README.md",
+    "definitions": {
+        "SwitchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "SwitchDbId": {
+                    "type": "string"
+                },
+                "SwitchName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ip"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthProtocol": {
+            "type": "number"
+        },
+        "ConfigTimeout": {
+            "type": "number"
+        },
+        "Deploy": {
+            "type": "boolean"
+        },
+        "FabricName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ips": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaxHops": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "PreserveConfig": {
+            "type": "string"
+        },
+        "SecondTimeout": {
+            "type": "number"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "SwitchConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SwitchConfigDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FabricName",
+        "Password",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

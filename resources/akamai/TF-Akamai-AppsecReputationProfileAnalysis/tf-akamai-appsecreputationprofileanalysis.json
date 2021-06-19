@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Akamai::AppsecReputationProfileAnalysis",
+    "description": "CloudFormation equivalent of akamai_appsec_reputation_profile_analysis",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecReputationProfileAnalysis/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number"
+        },
+        "ForwardSharedIpToHttpHeaderSiem": {
+            "type": "boolean"
+        },
+        "ForwardToHttpHeader": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityPolicyId": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "ForwardSharedIpToHttpHeaderSiem",
+        "ForwardToHttpHeader",
+        "SecurityPolicyId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

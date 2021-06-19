@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::NSXT::PolicyBgpConfig",
+    "description": "This resource provides a method for the management of BGP for T0 Gateway on specific site. A single resource should be specified per T0 Gateway + Site.\n\n~> **NOTE:** This resource should NOT be used together with `bgp_config` clause in gateway resource configuration - such usage may produce inconsistent experience. Please choose one way or the other to configure BGP.\n\n~> **NOTE:** Since BGP config is auto-created on NSX, this resource will update NSX object, but never create or delete it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyBgpConfig/docs/README.md",
+    "definitions": {
+        "RouteAggregationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "SummaryOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ecmp": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable ECMP. Default is `true`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable BGP. Default is `true`."
+        },
+        "GatewayId": {
+            "type": "string"
+        },
+        "GatewayPath": {
+            "type": "string"
+        },
+        "GracefulRestartMode": {
+            "type": "string",
+            "description": "Setting to control BGP graceful restart mode, one of `DISABLE`, `GR_AND_HELPER`, `HELPER_ONLY`."
+        },
+        "GracefulRestartStaleRouteTimer": {
+            "type": "number",
+            "description": "BGP stale route timer. Default is `600`."
+        },
+        "GracefulRestartTimer": {
+            "type": "number",
+            "description": "BGP graceful restart timer. Default is `180`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterSrIbgp": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable inter SR IBGP configuration. Default is `true`."
+        },
+        "LocalAsNum": {
+            "type": "string",
+            "description": "BGP AS number in ASPLAIN/ASDOT Format. This attribute is required for non-VRF configurations."
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "MultipathRelax": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable multipath relax for BGP. Default is `true`."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SitePath": {
+            "type": "string",
+            "description": "Path for policy site. This attribute is required for Global Manager and is not relevant for Local Manager."
+        },
+        "RouteAggregation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteAggregationDefinition"
+            },
+            "maxItems": 1000
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GatewayPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GatewayId",
+        "/properties/Id",
+        "/properties/LocaleServiceId",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

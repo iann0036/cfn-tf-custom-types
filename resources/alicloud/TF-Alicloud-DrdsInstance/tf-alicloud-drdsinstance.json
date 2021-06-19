@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Alicloud::DrdsInstance",
+    "description": "Distributed Relational Database Service (DRDS) is a lightweight (stateless), flexible, stable, and efficient middleware product independently developed by Alibaba Group to resolve scalability issues with single-host relational databases.\nWith its compatibility with MySQL protocols and syntaxes, DRDS enables database/table sharding, smooth scaling, configuration upgrade/downgrade,\ntransparent read/write splitting, and distributed transactions, providing O&M capabilities for distributed databases throughout their entire lifecycle.\n\nFor information about DRDS and how to use it, see [What is DRDS](https://www.alibabacloud.com/help/doc-detail/29659.htm).\n\n-> **NOTE:** At present, DRDS instance only can be supported in the regions: cn-shenzhen, cn-beijing, cn-hangzhou, cn-hongkong, cn-qingdao, ap-southeast-1.\n\n-> **NOTE:** Currently, this resource only support `Domestic Site Account`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DrdsInstance/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the DRDS instance, This description can have a string of 2 to 256 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "Valid values are `PrePaid`, `PostPaid`, Default to `PostPaid`."
+        },
+        "InstanceSeries": {
+            "type": "string",
+            "description": "User-defined DRDS instance node spec. Value range:\n- `drds.sn1.4c8g` for DRDS instance Starter version;\n- `drds.sn1.8c16g` for DRDS instance Standard edition;\n- `drds.sn1.16c32g` for DRDS instance Enterprise Edition;\n- `drds.sn1.32c64g` for DRDS instance Extreme Edition;."
+        },
+        "Specification": {
+            "type": "string",
+            "description": "User-defined DRDS instance specification. Value range:\n- `drds.sn1.4c8g` for DRDS instance Starter version;\n- value range : `drds.sn1.4c8g.8c16g`, `drds.sn1.4c8g.16c32g`, `drds.sn1.4c8g.32c64g`, `drds.sn1.4c8g.64c128g`\n- `drds.sn1.8c16g` for DRDS instance Standard edition;\n- value range : `drds.sn1.8c16g.16c32g`, `drds.sn1.8c16g.32c64g`, `drds.sn1.8c16g.64c128g`\n- `drds.sn1.16c32g` for DRDS instance Enterprise Edition;\n- value range : `drds.sn1.16c32g.32c64g`, `drds.sn1.16c32g.64c128g`\n- `drds.sn1.32c64g` for DRDS instance Extreme Edition;\n- value range : `drds.sn1.32c64g.128c256g`."
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The VSwitch ID to launch in."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The Zone to launch the DRDS instance."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "InstanceSeries",
+        "Specification",
+        "VswitchId",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

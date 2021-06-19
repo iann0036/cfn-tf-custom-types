@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Panos::ZoneEntry",
+    "description": "This resource allows you to add/update/delete a specific interface in a zone.\n\nThis resource has some overlap with the `panos_zone`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_zone` spec does not define the\n`interfaces` field.\n\nThis is the appropriate resource to use if you have a pre-existing zone\nand don't want Terraform to delete it on `terraform destroy`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-ZoneEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "The interface's name."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The mode.  Can be `layer3` (default), `layer2`,\n`virtual-wire`, `tap`, or `external`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys (default: `vsys1`)."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The zone's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

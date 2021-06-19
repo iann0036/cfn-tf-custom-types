@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Alicloud::RamLoginProfile",
+    "description": "Provides a RAM User Login Profile resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-RamLoginProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MfaBindRequired": {
+            "type": "boolean",
+            "description": "This parameter indicates whether the MFA needs to be bind when the user first logs in. Default value is `false`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of the RAM user."
+        },
+        "PasswordResetRequired": {
+            "type": "boolean",
+            "description": "This parameter indicates whether the password needs to be reset when the user first logs in. Default value is `false`."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "Name of the RAM user. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin with a hyphen."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Password",
+        "UserName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

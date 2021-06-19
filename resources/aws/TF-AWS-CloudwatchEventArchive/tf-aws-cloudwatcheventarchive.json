@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::AWS::CloudwatchEventArchive",
+    "description": "Provides an EventBridge event archive resource.\n\n~> **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudwatchEventArchive/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the new event archive."
+        },
+        "EventPattern": {
+            "type": "string",
+            "description": "Instructs the new event archive to only capture events matched by this pattern. By default, it attempts to archive every event received in the `event_source_arn`."
+        },
+        "EventSourceArn": {
+            "type": "string",
+            "description": "Event bus source ARN from where these events should be archived."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the new event archive. The archive name cannot exceed 48 characters."
+        },
+        "RetentionDays": {
+            "type": "number",
+            "description": "The maximum number of days to retain events in the new event archive. By default, it archives indefinitely."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EventSourceArn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

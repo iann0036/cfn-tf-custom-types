@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::SignalFx::DataLink",
+    "description": "Manage SignalFx [Data Links](https://docs.signalfx.com/en/latest/managing/data-links.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-DataLink/docs/README.md",
+    "definitions": {
+        "TargetExternalUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinimumTimeWindow": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PropertyKeyMapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertyKeyMappingDefinition"
+                    }
+                },
+                "TimeFormat": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "PropertyKeyMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TargetSignalfxDashboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DashboardGroupId": {
+                    "type": "string"
+                },
+                "DashboardId": {
+                    "type": "string"
+                },
+                "IsDefault": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DashboardGroupId",
+                "DashboardId",
+                "Name"
+            ]
+        },
+        "TargetSplunkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PropertyKeyMapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertyKeyMappingDefinition2"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertyKeyMappingDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContextDashboardId": {
+            "type": "string",
+            "description": "If provided, scopes this data link to the supplied dashboard id. If omitted then the link will be global."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PropertyName": {
+            "type": "string",
+            "description": "Name (key) of the metadata that's the trigger of a data link. If you specify `property_value`, you must specify `property_name`."
+        },
+        "PropertyValue": {
+            "type": "string",
+            "description": "Value of the metadata that's the trigger of a data link. If you specify this property, you must also specify `property_name`."
+        },
+        "TargetExternalUrl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetExternalUrlDefinition"
+            }
+        },
+        "TargetSignalfxDashboard": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetSignalfxDashboardDefinition"
+            }
+        },
+        "TargetSplunk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetSplunkDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

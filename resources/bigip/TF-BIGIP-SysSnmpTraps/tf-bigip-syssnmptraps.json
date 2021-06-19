@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::BIGIP::SysSnmpTraps",
+    "description": "`bigip_sys_snmp_traps` provides details bout how to enable snmp_traps resource on BIG-IP",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-SysSnmpTraps/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthPasswordencrypted": {
+            "type": "string"
+        },
+        "AuthProtocol": {
+            "type": "string"
+        },
+        "Community": {
+            "type": "string",
+            "description": "Specifies the community string used for this trap."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The port that the trap will be sent to."
+        },
+        "EngineId": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "string",
+            "description": "The host the trap will be sent to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the snmp trap."
+        },
+        "Port": {
+            "type": "number",
+            "description": "User defined description."
+        },
+        "PrivacyPassword": {
+            "type": "string"
+        },
+        "PrivacyPasswordEncrypted": {
+            "type": "string"
+        },
+        "PrivacyProtocol": {
+            "type": "string"
+        },
+        "SecurityLevel": {
+            "type": "string"
+        },
+        "SecurityName": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

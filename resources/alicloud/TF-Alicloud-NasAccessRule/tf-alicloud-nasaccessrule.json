@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::Alicloud::NasAccessRule",
+    "description": "Provides a Nas Access Rule resource.\n\nWhen NAS is activated, the Default VPC Permission Group is automatically generated. It allows all IP addresses in a VPC to access the mount point with full permissions. Full permissions include Read/Write permission with no restriction on root users.\n\n-> **NOTE:** Available in v1.34.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-NasAccessRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessGroupName": {
+            "type": "string",
+            "description": "Permission group name."
+        },
+        "AccessRuleId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Priority level. Range: 1-100. Default value: 1."
+        },
+        "RwAccessType": {
+            "type": "string",
+            "description": "Read-write permission type: RDWR (default), RDONLY."
+        },
+        "SourceCidrIp": {
+            "type": "string",
+            "description": "Address or address segment."
+        },
+        "UserAccessType": {
+            "type": "string",
+            "description": "User permission type: no_squash (default), root_squash, all_squash."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessGroupName",
+        "SourceCidrIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessRuleId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

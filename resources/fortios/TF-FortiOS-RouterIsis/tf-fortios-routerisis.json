@@ -1,0 +1,498 @@
+{
+    "typeName": "TF::FortiOS::RouterIsis",
+    "description": "Configure IS-IS.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterIsis/docs/README.md",
+    "definitions": {
+        "IsisInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthKeychainL1": {
+                    "type": "string",
+                    "description": "Authentication key-chain for level 1 PDUs."
+                },
+                "AuthKeychainL2": {
+                    "type": "string",
+                    "description": "Authentication key-chain for level 2 PDUs."
+                },
+                "AuthModeL1": {
+                    "type": "string",
+                    "description": "Level 1 authentication mode. Valid values: `md5`, `password`."
+                },
+                "AuthModeL2": {
+                    "type": "string",
+                    "description": "Level 2 authentication mode. Valid values: `md5`, `password`."
+                },
+                "AuthPasswordL1": {
+                    "type": "string",
+                    "description": "Authentication password for level 1 PDUs."
+                },
+                "AuthPasswordL2": {
+                    "type": "string",
+                    "description": "Authentication password for level 2 PDUs."
+                },
+                "AuthSendOnlyL1": {
+                    "type": "string",
+                    "description": "Enable/disable authentication send-only for level 1 PDUs. Valid values: `enable`, `disable`."
+                },
+                "AuthSendOnlyL2": {
+                    "type": "string",
+                    "description": "Enable/disable authentication send-only for level 2 PDUs. Valid values: `enable`, `disable`."
+                },
+                "CircuitType": {
+                    "type": "string",
+                    "description": "IS-IS interface's circuit type Valid values: `level-1-2`, `level-1`, `level-2`."
+                },
+                "CsnpIntervalL1": {
+                    "type": "number",
+                    "description": "Level 1 CSNP interval."
+                },
+                "CsnpIntervalL2": {
+                    "type": "number",
+                    "description": "Level 2 CSNP interval."
+                },
+                "HelloIntervalL1": {
+                    "type": "number",
+                    "description": "Level 1 hello interval."
+                },
+                "HelloIntervalL2": {
+                    "type": "number",
+                    "description": "Level 2 hello interval."
+                },
+                "HelloMultiplierL1": {
+                    "type": "number",
+                    "description": "Level 1 multiplier for Hello holding time."
+                },
+                "HelloMultiplierL2": {
+                    "type": "number",
+                    "description": "Level 2 multiplier for Hello holding time."
+                },
+                "HelloPadding": {
+                    "type": "string",
+                    "description": "Enable/disable padding to IS-IS hello packets. Valid values: `enable`, `disable`."
+                },
+                "LspInterval": {
+                    "type": "number",
+                    "description": "LSP transmission interval (milliseconds)."
+                },
+                "LspRetransmitInterval": {
+                    "type": "number",
+                    "description": "LSP retransmission interval (sec)."
+                },
+                "MeshGroup": {
+                    "type": "string",
+                    "description": "Enable/disable IS-IS mesh group. Valid values: `enable`, `disable`."
+                },
+                "MeshGroupId": {
+                    "type": "number",
+                    "description": "Mesh group ID <0-4294967295>, 0: mesh-group blocked."
+                },
+                "MetricL1": {
+                    "type": "number",
+                    "description": "Level 1 metric for interface."
+                },
+                "MetricL2": {
+                    "type": "number",
+                    "description": "Level 2 metric for interface."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "IS-IS interface name."
+                },
+                "NetworkType": {
+                    "type": "string",
+                    "description": "IS-IS interface's network type Valid values: `broadcast`, `point-to-point`, `loopback`."
+                },
+                "PriorityL1": {
+                    "type": "number",
+                    "description": "Level 1 priority."
+                },
+                "PriorityL2": {
+                    "type": "number",
+                    "description": "Level 2 priority."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable interface for IS-IS. Valid values: `enable`, `disable`."
+                },
+                "Status6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 interface for IS-IS. Valid values: `enable`, `disable`."
+                },
+                "WideMetricL1": {
+                    "type": "number",
+                    "description": "Level 1 wide metric for interface."
+                },
+                "WideMetricL2": {
+                    "type": "number",
+                    "description": "Level 2 wide metric for interface."
+                }
+            },
+            "required": []
+        },
+        "IsisNetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "isis-net ID."
+                },
+                "Net": {
+                    "type": "string",
+                    "description": "IS-IS net xx.xxxx. ... .xxxx.xx."
+                }
+            },
+            "required": []
+        },
+        "RedistributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string",
+                    "description": "Level. Valid values: `level-1-2`, `level-1`, `level-2`."
+                },
+                "Metric": {
+                    "type": "number",
+                    "description": "Metric."
+                },
+                "MetricType": {
+                    "type": "string",
+                    "description": "Metric type. Valid values: `external`, `internal`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol name."
+                },
+                "Routemap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "Redistribute6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string",
+                    "description": "Level. Valid values: `level-1-2`, `level-1`, `level-2`."
+                },
+                "Metric": {
+                    "type": "number",
+                    "description": "Metric."
+                },
+                "MetricType": {
+                    "type": "string",
+                    "description": "Metric type. Valid values: `external`, `internal`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocol name."
+                },
+                "Routemap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable redistribution. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "SummaryAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Summary address entry ID."
+                },
+                "Level": {
+                    "type": "string",
+                    "description": "Level. Valid values: `level-1-2`, `level-1`, `level-2`."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Prefix."
+                }
+            },
+            "required": []
+        },
+        "SummaryAddress6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Prefix entry ID."
+                },
+                "Level": {
+                    "type": "string",
+                    "description": "Level. Valid values: `level-1-2`, `level-1`, `level-2`."
+                },
+                "Prefix6": {
+                    "type": "string",
+                    "description": "IPv6 prefix."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjacencyCheck": {
+            "type": "string",
+            "description": "Enable/disable adjacency check. Valid values: `enable`, `disable`."
+        },
+        "AdjacencyCheck6": {
+            "type": "string",
+            "description": "Enable/disable IPv6 adjacency check. Valid values: `enable`, `disable`."
+        },
+        "AdvPassiveOnly": {
+            "type": "string",
+            "description": "Enable/disable IS-IS advertisement of passive interfaces only. Valid values: `enable`, `disable`."
+        },
+        "AdvPassiveOnly6": {
+            "type": "string",
+            "description": "Enable/disable IPv6 IS-IS advertisement of passive interfaces only. Valid values: `enable`, `disable`."
+        },
+        "AuthKeychainL1": {
+            "type": "string",
+            "description": "Authentication key-chain for level 1 PDUs."
+        },
+        "AuthKeychainL2": {
+            "type": "string",
+            "description": "Authentication key-chain for level 2 PDUs."
+        },
+        "AuthModeL1": {
+            "type": "string",
+            "description": "Level 1 authentication mode. Valid values: `password`, `md5`."
+        },
+        "AuthModeL2": {
+            "type": "string",
+            "description": "Level 2 authentication mode. Valid values: `password`, `md5`."
+        },
+        "AuthPasswordL1": {
+            "type": "string",
+            "description": "Authentication password for level 1 PDUs."
+        },
+        "AuthPasswordL2": {
+            "type": "string",
+            "description": "Authentication password for level 2 PDUs."
+        },
+        "AuthSendonlyL1": {
+            "type": "string",
+            "description": "Enable/disable level 1 authentication send-only. Valid values: `enable`, `disable`."
+        },
+        "AuthSendonlyL2": {
+            "type": "string",
+            "description": "Enable/disable level 2 authentication send-only. Valid values: `enable`, `disable`."
+        },
+        "DefaultOriginate": {
+            "type": "string",
+            "description": "Enable/disable distribution of default route information. Valid values: `enable`, `disable`."
+        },
+        "DefaultOriginate6": {
+            "type": "string",
+            "description": "Enable/disable distribution of default IPv6 route information. Valid values: `enable`, `disable`."
+        },
+        "DynamicHostname": {
+            "type": "string",
+            "description": "Enable/disable dynamic hostname. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreLspErrors": {
+            "type": "string",
+            "description": "Enable/disable ignoring of LSP errors with bad checksums. Valid values: `enable`, `disable`."
+        },
+        "IsType": {
+            "type": "string",
+            "description": "IS type. Valid values: `level-1-2`, `level-1`, `level-2-only`."
+        },
+        "LspGenIntervalL1": {
+            "type": "number",
+            "description": "Minimum interval for level 1 LSP regenerating."
+        },
+        "LspGenIntervalL2": {
+            "type": "number",
+            "description": "Minimum interval for level 2 LSP regenerating."
+        },
+        "LspRefreshInterval": {
+            "type": "number",
+            "description": "LSP refresh time in seconds."
+        },
+        "MaxLspLifetime": {
+            "type": "number",
+            "description": "Maximum LSP lifetime in seconds."
+        },
+        "MetricStyle": {
+            "type": "string",
+            "description": "Use old-style (ISO 10589) or new-style packet formats Valid values: `narrow`, `wide`, `transition`, `narrow-transition`, `narrow-transition-l1`, `narrow-transition-l2`, `wide-l1`, `wide-l2`, `wide-transition`, `wide-transition-l1`, `wide-transition-l2`, `transition-l1`, `transition-l2`."
+        },
+        "OverloadBit": {
+            "type": "string",
+            "description": "Enable/disable signal other routers not to use us in SPF. Valid values: `enable`, `disable`."
+        },
+        "OverloadBitOnStartup": {
+            "type": "number",
+            "description": "Overload-bit only temporarily after reboot."
+        },
+        "OverloadBitSuppress": {
+            "type": "string",
+            "description": "Suppress overload-bit for the specific prefixes. Valid values: `external`, `interlevel`."
+        },
+        "Redistribute6L1": {
+            "type": "string",
+            "description": "Enable/disable redistribution of level 1 IPv6 routes into level 2. Valid values: `enable`, `disable`."
+        },
+        "Redistribute6L1List": {
+            "type": "string",
+            "description": "Access-list for IPv6 route redistribution from l1 to l2."
+        },
+        "Redistribute6L2": {
+            "type": "string",
+            "description": "Enable/disable redistribution of level 2 IPv6 routes into level 1. Valid values: `enable`, `disable`."
+        },
+        "Redistribute6L2List": {
+            "type": "string",
+            "description": "Access-list for IPv6 route redistribution from l2 to l1."
+        },
+        "RedistributeL1": {
+            "type": "string",
+            "description": "Enable/disable redistribution of level 1 routes into level 2. Valid values: `enable`, `disable`."
+        },
+        "RedistributeL1List": {
+            "type": "string",
+            "description": "Access-list for route redistribution from l1 to l2."
+        },
+        "RedistributeL2": {
+            "type": "string",
+            "description": "Enable/disable redistribution of level 2 routes into level 1. Valid values: `enable`, `disable`."
+        },
+        "RedistributeL2List": {
+            "type": "string",
+            "description": "Access-list for route redistribution from l2 to l1."
+        },
+        "SpfIntervalExpL1": {
+            "type": "string",
+            "description": "Level 1 SPF calculation delay."
+        },
+        "SpfIntervalExpL2": {
+            "type": "string",
+            "description": "Level 2 SPF calculation delay."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "IsisInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IsisInterfaceDefinition"
+            }
+        },
+        "IsisNet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IsisNetDefinition"
+            }
+        },
+        "Redistribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributeDefinition"
+            }
+        },
+        "Redistribute6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Redistribute6Definition"
+            }
+        },
+        "SummaryAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SummaryAddressDefinition"
+            }
+        },
+        "SummaryAddress6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SummaryAddress6Definition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthPasswordL1",
+        "/properties/AuthPasswordL2",
+        "/definitions/IsisInterfaceDefinition/AuthPasswordL1",
+        "/definitions/IsisInterfaceDefinition/AuthPasswordL2"
+    ]
+}

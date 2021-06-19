@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Lacework::AgentAccessToken",
+    "description": "To connect to the Lacework platform, Lacework agents require an agent access token. Use this resource to\nmanage agent tokens within your Lacework account. \n\n!> **Warning:** Agent tokens should be treated as secret and not published. A token uniquely identifies\na Lacework customer. If you suspect your token has been publicly exposed or compromised, generate a new\ntoken, update the new token on all machines using the old token. When complete, the old token can safely\nbe disabled without interrupting Lacework services.\n\nYou can use the agent token name to logically separate your deployments, for example, by environment types\n(QA, Dev, etc.) or system types (CentOS, RHEL, etc.).\n\n-> **Note:** The Lacework agent runs on most Linux distributions. For more detailed information, see\n\t[Supported Operating Systems.](https://support.lacework.com/hc/en-us/articles/360005230014-Supported-Operating-Systems).\n\n!> **Warning:** By design, agent tokens cannot be deleted. Running terraform destroy will only disable the token.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AgentAccessToken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The agent access token description."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The agent access token name."
+        },
+        "Token": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Account",
+        "/properties/CreatedTime",
+        "/properties/Id",
+        "/properties/LastUpdatedTime",
+        "/properties/Token",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

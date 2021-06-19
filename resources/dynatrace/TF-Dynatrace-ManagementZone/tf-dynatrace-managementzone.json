@@ -1,0 +1,2191 @@
+{
+    "typeName": "TF::Dynatrace::ManagementZone",
+    "description": "CloudFormation equivalent of dynatrace_management_zone",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-ManagementZone/docs/README.md",
+    "definitions": {
+        "DimensionalRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppliesTo": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AppliesTo"
+            ]
+        },
+        "EntitySelectorBasedRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Selector": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterVersion": {
+                    "type": "string"
+                },
+                "ConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "CurrentConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PropagationTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Match",
+                "Type"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ApplicationType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationTypeDefinition"
+                    }
+                },
+                "ApplicationTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationTypeComparisonDefinition"
+                    }
+                },
+                "AzureComputeMode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureComputeModeDefinition"
+                    }
+                },
+                "AzureComputeModeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureComputeModeComparisonDefinition"
+                    }
+                },
+                "AzureSku": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureSkuDefinition"
+                    }
+                },
+                "AzureSkuComparision": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureSkuComparisionDefinition"
+                    }
+                },
+                "BaseComparisonBasic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BaseComparisonBasicDefinition"
+                    }
+                },
+                "BaseConditionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BaseConditionKeyDefinition"
+                    }
+                },
+                "Bitness": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BitnessDefinition"
+                    }
+                },
+                "BitnessComparision": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BitnessComparisionDefinition"
+                    }
+                },
+                "CloudType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudTypeDefinition"
+                    }
+                },
+                "CloudTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudTypeComparisonDefinition"
+                    }
+                },
+                "Comparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ComparisonDefinition"
+                    }
+                },
+                "CustomApplicationType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomApplicationTypeDefinition"
+                    }
+                },
+                "CustomApplicationTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomApplicationTypeComparisonDefinition"
+                    }
+                },
+                "CustomHostMetadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomHostMetadataDefinition"
+                    }
+                },
+                "CustomHostMetadataConditionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomHostMetadataConditionKeyDefinition"
+                    }
+                },
+                "CustomProcessMetadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomProcessMetadataDefinition"
+                    }
+                },
+                "CustomProcessMetadataConditionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomProcessMetadataConditionKeyDefinition"
+                    }
+                },
+                "DatabaseTopology": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseTopologyDefinition"
+                    }
+                },
+                "DatabaseTopologyComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseTopologyComparisonDefinition"
+                    }
+                },
+                "DcrumDecoder": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DcrumDecoderDefinition"
+                    }
+                },
+                "DcrumDecoderComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DcrumDecoderComparisonDefinition"
+                    }
+                },
+                "Entity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntityDefinition"
+                    }
+                },
+                "EntityIdComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntityIdComparisonDefinition"
+                    }
+                },
+                "HostTech": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostTechDefinition"
+                    }
+                },
+                "Hypervisor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HypervisorDefinition"
+                    }
+                },
+                "HypervisorTypeComparision": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HypervisorTypeComparisionDefinition"
+                    }
+                },
+                "IndexedName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedNameDefinition"
+                    }
+                },
+                "IndexedNameComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedNameComparisonDefinition"
+                    }
+                },
+                "IndexedString": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedStringDefinition"
+                    }
+                },
+                "IndexedStringComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedStringComparisonDefinition"
+                    }
+                },
+                "IndexedTag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedTagDefinition"
+                    }
+                },
+                "IndexedTagComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexedTagComparisonDefinition"
+                    }
+                },
+                "Integer": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IntegerDefinition"
+                    }
+                },
+                "IntegerComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IntegerComparisonDefinition"
+                    }
+                },
+                "Ipaddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpaddressDefinition"
+                    }
+                },
+                "IpaddressComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpaddressComparisonDefinition"
+                    }
+                },
+                "Key": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyDefinition"
+                    }
+                },
+                "MobilePlatform": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MobilePlatformDefinition"
+                    }
+                },
+                "MobilePlatformComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MobilePlatformComparisonDefinition"
+                    }
+                },
+                "OsArch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsArchDefinition"
+                    }
+                },
+                "OsType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsTypeDefinition"
+                    }
+                },
+                "OsarchitectureComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsarchitectureComparisonDefinition"
+                    }
+                },
+                "OstypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OstypeComparisonDefinition"
+                    }
+                },
+                "PaasType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PaasTypeDefinition"
+                    }
+                },
+                "PaasTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PaasTypeComparisonDefinition"
+                    }
+                },
+                "ProcessMetadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessMetadataDefinition"
+                    }
+                },
+                "ProcessMetadataConditionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessMetadataConditionKeyDefinition"
+                    }
+                },
+                "ServiceTopology": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTopologyDefinition"
+                    }
+                },
+                "ServiceTopologyComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTopologyComparisonDefinition"
+                    }
+                },
+                "ServiceType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTypeDefinition"
+                    }
+                },
+                "ServiceTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTypeComparisonDefinition"
+                    }
+                },
+                "SimpleHostTechComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SimpleHostTechComparisonDefinition"
+                    }
+                },
+                "SimpleTechComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SimpleTechComparisonDefinition"
+                    }
+                },
+                "String": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringDefinition"
+                    }
+                },
+                "StringComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringComparisonDefinition"
+                    }
+                },
+                "StringConditionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringConditionKeyDefinition"
+                    }
+                },
+                "StringKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringKeyDefinition"
+                    }
+                },
+                "SyntheticEngine": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SyntheticEngineDefinition"
+                    }
+                },
+                "SyntheticEngineTypeComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SyntheticEngineTypeComparisonDefinition"
+                    }
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                },
+                "TagComparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagComparisonDefinition"
+                    }
+                },
+                "Tech": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TechDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ApplicationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ApplicationTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "AzureComputeModeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "AzureComputeModeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "AzureSkuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "AzureSkuComparisionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "BaseComparisonBasicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "BaseConditionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "BitnessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "BitnessComparisionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "CloudTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "CloudTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "CustomApplicationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "CustomApplicationTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "CustomHostMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "CustomHostMetadataConditionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "CustomProcessMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "CustomProcessMetadataConditionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "DatabaseTopologyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "DatabaseTopologyComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "DcrumDecoderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "DcrumDecoderComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "EntityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "EntityIdComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "HostTechDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "HypervisorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "HypervisorTypeComparisionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedNameComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedStringComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IndexedTagComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IntegerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IntegerComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IpaddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "IpaddressComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "KeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "MobilePlatformDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "MobilePlatformComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "OsArchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "OsTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "OsarchitectureComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "OstypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "PaasTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "PaasTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ProcessMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute",
+                "DynamicKey"
+            ]
+        },
+        "ProcessMetadataConditionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute",
+                "DynamicKey"
+            ]
+        },
+        "ServiceTopologyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ServiceTopologyComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ServiceTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ServiceTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "SimpleHostTechComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "SimpleTechComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "StringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "StringComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "StringConditionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute",
+                "DynamicKey"
+            ]
+        },
+        "StringKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "DynamicKey": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute",
+                "DynamicKey"
+            ]
+        },
+        "SyntheticEngineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "SyntheticEngineTypeComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "TagComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "TechDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "DynamicKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Source"
+            ]
+        },
+        "ValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "VerbatimType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "DimensionalRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DimensionalRuleDefinition"
+            }
+        },
+        "EntitySelectorBasedRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EntitySelectorBasedRuleDefinition"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

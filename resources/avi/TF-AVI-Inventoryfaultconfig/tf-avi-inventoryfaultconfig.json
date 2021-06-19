@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::AVI::Inventoryfaultconfig",
+    "description": "The InventoryFaultConfig resource allows the creation and management of Avi InventoryFaultConfig",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Inventoryfaultconfig/docs/README.md",
+    "definitions": {
+        "ControllerFaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackupSchedulerFaults": {
+                    "type": "boolean"
+                },
+                "ClusterFaults": {
+                    "type": "boolean"
+                },
+                "DeprecatedApiVersionFaults": {
+                    "type": "boolean"
+                },
+                "LicenseFaults": {
+                    "type": "boolean"
+                },
+                "MigrationFaults": {
+                    "type": "boolean"
+                },
+                "SslprofileFaults": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ServiceengineFaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DebugFaults": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "VirtualserviceFaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DebugFaults": {
+                    "type": "boolean"
+                },
+                "PoolServerFaults": {
+                    "type": "boolean"
+                },
+                "ScaleoutFaults": {
+                    "type": "boolean"
+                },
+                "SharedVipFaults": {
+                    "type": "boolean"
+                },
+                "SslCertExpiryFaults": {
+                    "type": "boolean"
+                },
+                "SslCertStatusFaults": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name. Field introduced in 20.1.6."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant. It is a reference to an object of type tenant. Field introduced in 20.1.6."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "ControllerFaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ControllerFaultsDefinition"
+            }
+        },
+        "ServiceengineFaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceengineFaultsDefinition"
+            }
+        },
+        "VirtualserviceFaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VirtualserviceFaultsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

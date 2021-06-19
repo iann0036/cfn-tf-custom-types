@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::SignalFx::GcpIntegration",
+    "description": "SignalFx GCP Integration\n\n~> **NOTE** When managing integrations you'll need to use an admin token to authenticate the SignalFx provider. Otherwise you'll receive a 4xx error.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-GcpIntegration/docs/README.md",
+    "definitions": {
+        "ProjectServiceKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "ProjectKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ProjectId",
+                "ProjectKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the integration is enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration."
+        },
+        "NamedToken": {
+            "type": "string"
+        },
+        "PollRate": {
+            "type": "number",
+            "description": "GCP integration poll rate in seconds. Can be set to either 60 or 300 (1 minute or 5 minutes)."
+        },
+        "Services": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "GCP service metrics to import. Can be an empty list, or not included, to import 'All services'. See the documentation for [Creating Integrations](https://developers.signalfx.com/integrations_reference.html#operation/Create%20Integration) for valid values."
+        },
+        "Whitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ProjectServiceKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProjectServiceKeysDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ProjectServiceKeysDefinition/ProjectKey"
+    ]
+}

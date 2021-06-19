@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::AWS::LambdaFunctionEventInvokeConfig",
+    "description": "Manages an asynchronous invocation configuration for a Lambda Function or Alias. More information about asynchronous invocations and the configurable values can be found in the [Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LambdaFunctionEventInvokeConfig/docs/README.md",
+    "definitions": {
+        "DestinationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnFailureDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OnSuccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnSuccessDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OnFailureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "OnSuccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FunctionName": {
+            "type": "string",
+            "description": "Name or Amazon Resource Name (ARN) of the Lambda Function, omitting any version or alias qualifier."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaximumEventAgeInSeconds": {
+            "type": "number",
+            "description": "Maximum age of a request that Lambda sends to a function for processing in seconds. Valid values between 60 and 21600."
+        },
+        "MaximumRetryAttempts": {
+            "type": "number",
+            "description": "Maximum number of times to retry when the function returns an error. Valid values between 0 and 2. Defaults to 2."
+        },
+        "Qualifier": {
+            "type": "string",
+            "description": "Lambda Function published version, `$LATEST`, or Lambda Alias name."
+        },
+        "DestinationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

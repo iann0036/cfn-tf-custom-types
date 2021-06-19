@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::AzureRM::HpcCacheAccessPolicy",
+    "description": "Manages a HPC Cache Access Policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-HpcCacheAccessPolicy/docs/README.md",
+    "definitions": {
+        "AccessRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "string"
+                },
+                "AnonymousGid": {
+                    "type": "number"
+                },
+                "AnonymousUid": {
+                    "type": "number"
+                },
+                "Filter": {
+                    "type": "string"
+                },
+                "RootSquashEnabled": {
+                    "type": "boolean"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SubmountAccessEnabled": {
+                    "type": "boolean"
+                },
+                "SuidEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Access",
+                "Scope"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HpcCacheId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "AccessRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AccessRuleDefinition"
+            },
+            "maxItems": 3,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HpcCacheId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

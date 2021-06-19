@@ -1,0 +1,907 @@
+{
+    "typeName": "TF::StackPath::ComputeWorkload",
+    "description": "A computing application deployed to StackPath's edge network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/stackpath/TF-StackPath-ComputeWorkload/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Command": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "LivenessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LivenessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    }
+                },
+                "ReadinessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReadinessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "VolumeMount": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Image",
+                "Name"
+            ]
+        },
+        "ImagePullCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DockerRegistry": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DockerRegistryDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "InstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalIpAddress": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Phase": {
+                    "type": "string"
+                },
+                "Reason": {
+                    "type": "string"
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NetworkInterface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkInterfaceDefinition"
+                    }
+                },
+                "VirtualMachine": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualMachineDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Gateway": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IpAddressAliases": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Network": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Gateway",
+                "IpAddress",
+                "Network"
+            ]
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentScope": {
+                    "type": "string"
+                },
+                "MaxReplicas": {
+                    "type": "number"
+                },
+                "MinReplicas": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ScaleSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScaleSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Selector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SelectorDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MinReplicas",
+                "Name"
+            ]
+        },
+        "VirtualMachineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Image": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UserData": {
+                    "type": "string"
+                },
+                "LivenessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LivenessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    }
+                },
+                "ReadinessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReadinessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "VolumeMount": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Image",
+                "Name"
+            ]
+        },
+        "VolumeClaimDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Slug": {
+                    "type": "string"
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "EnvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "SecretValue": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "LivenessProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "FailureThreshold",
+                "SuccessThreshold"
+            ]
+        },
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableImplicitNetworkPolicy": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Port"
+            ]
+        },
+        "ReadinessProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "FailureThreshold",
+                "SuccessThreshold"
+            ]
+        },
+        "ResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Requests": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestsDefinition2"
+                    }
+                }
+            },
+            "required": [
+                "Requests"
+            ]
+        },
+        "RequestsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeMountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MountPath": {
+                    "type": "string"
+                },
+                "Slug": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MountPath",
+                "Slug"
+            ]
+        },
+        "DockerRegistryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Server": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "City": {
+                    "type": "string"
+                },
+                "CityCode": {
+                    "type": "string"
+                },
+                "Continent": {
+                    "type": "string"
+                },
+                "ContinentCode": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Latitude": {
+                    "type": "number"
+                },
+                "Longitude": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RegionCode": {
+                    "type": "string"
+                },
+                "Subdivision": {
+                    "type": "string"
+                },
+                "SubdivisionCode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotationsDefinition2"
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScaleSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metrics": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Operator",
+                "Values"
+            ]
+        },
+        "HttpGetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeadersDefinition2"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Scheme": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Port"
+            ]
+        },
+        "HttpHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TcpSocketDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Port"
+            ]
+        },
+        "RequestsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetricsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageUtilization": {
+                    "type": "number"
+                },
+                "AverageValue": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Metric"
+            ]
+        },
+        "HttpHeadersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            },
+            "description": "Key/value pairs that define StackPath-specific workload configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "Key/value pairs of arbitrary label names and values that can be referenced as [selectors](#selectors) by [network policies](/docs/providers/stackpath/r/compute_network_policy.html)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human readable name."
+        },
+        "Slug": {
+            "type": "string",
+            "description": "A programmatic name for the workload. Workload slugs are used to build the workload's instance names and cannot be changed after creation."
+        },
+        "Container": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContainerDefinition"
+            }
+        },
+        "ImagePullCredentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImagePullCredentialsDefinition"
+            }
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstancesDefinition"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            },
+            "minItems": 1
+        },
+        "Target": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetDefinition"
+            },
+            "minItems": 1
+        },
+        "VirtualMachine": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualMachineDefinition"
+            },
+            "maxItems": 1
+        },
+        "VolumeClaim": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VolumeClaimDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Slug"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/EnvDefinition/SecretValue",
+        "/definitions/DockerRegistryDefinition/Email",
+        "/definitions/DockerRegistryDefinition/Password",
+        "/definitions/EnvDefinition/SecretValue"
+    ]
+}

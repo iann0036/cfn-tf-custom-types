@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Panos::VmAuthKey",
+    "description": "Creates a VM auth key you can use to bootstrap a VM NGFW.\n\n**NOTE:** This is for Panorama only.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-VmAuthKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthKey": {
+            "type": "string"
+        },
+        "Expiry": {
+            "type": "string"
+        },
+        "Hours": {
+            "type": "number",
+            "description": "The VM auth key lifetime in hours."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Valid": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AuthKey",
+        "/properties/Expiry",
+        "/properties/Id",
+        "/properties/Valid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

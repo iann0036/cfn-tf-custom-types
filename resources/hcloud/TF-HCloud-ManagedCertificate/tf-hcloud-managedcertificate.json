@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::HCloud::ManagedCertificate",
+    "description": "Obtain a Hetzner Cloud managed TLS certificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-ManagedCertificate/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "DomainNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "User-defined labels (key-value pairs) the\ncertificate should be created with."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Certificate.\n- `domains` - (Required, list) Domain names for which a certificate\nshould be obtained.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) the\ncertificate should be created with."
+        },
+        "NotValidAfter": {
+            "type": "string"
+        },
+        "NotValidBefore": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainNames",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/Created",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/NotValidAfter",
+        "/properties/NotValidBefore",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

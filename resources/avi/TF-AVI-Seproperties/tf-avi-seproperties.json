@@ -1,0 +1,765 @@
+{
+    "typeName": "TF::AVI::Seproperties",
+    "description": "The SeProperties resource allows the creation and management of Avi SeProperties",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Seproperties/docs/README.md",
+    "definitions": {
+        "SeAgentPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ControllerEchoMissAggressiveLimit": {
+                    "type": "number"
+                },
+                "ControllerEchoMissLimit": {
+                    "type": "number"
+                },
+                "ControllerEchoRpcAggressiveTimeout": {
+                    "type": "number"
+                },
+                "ControllerEchoRpcTimeout": {
+                    "type": "number"
+                },
+                "ControllerHeartbeatMissLimit": {
+                    "type": "number"
+                },
+                "ControllerHeartbeatTimeoutSec": {
+                    "type": "number"
+                },
+                "ControllerRegistrationTimeoutSec": {
+                    "type": "number"
+                },
+                "ControllerRpcTimeout": {
+                    "type": "number"
+                },
+                "CpustatsInterval": {
+                    "type": "number"
+                },
+                "CtrlRegPendingMaxWaitTime": {
+                    "type": "number"
+                },
+                "DebugMode": {
+                    "type": "boolean"
+                },
+                "DpAggressiveDeqIntervalMsec": {
+                    "type": "number"
+                },
+                "DpAggressiveEnqIntervalMsec": {
+                    "type": "number"
+                },
+                "DpBatchSize": {
+                    "type": "number"
+                },
+                "DpDeqIntervalMsec": {
+                    "type": "number"
+                },
+                "DpEnqIntervalMsec": {
+                    "type": "number"
+                },
+                "DpMaxWaitRspTimeSec": {
+                    "type": "number"
+                },
+                "DpRegPendingMaxWaitTime": {
+                    "type": "number"
+                },
+                "HeadlessTimeoutSec": {
+                    "type": "number"
+                },
+                "IgnoreDockerMacChange": {
+                    "type": "boolean"
+                },
+                "NsHelperDeqIntervalMsec": {
+                    "type": "number"
+                },
+                "SdbFlushInterval": {
+                    "type": "number"
+                },
+                "SdbPipelineSize": {
+                    "type": "number"
+                },
+                "SdbScanCount": {
+                    "type": "number"
+                },
+                "SeGrpChangeDisruptive": {
+                    "type": "boolean"
+                },
+                "SendSeReadyTimeout": {
+                    "type": "number"
+                },
+                "StatesFlushInterval": {
+                    "type": "number"
+                },
+                "VnicDhcpIpCheckInterval": {
+                    "type": "number"
+                },
+                "VnicDhcpIpMaxRetries": {
+                    "type": "number"
+                },
+                "VnicIpDeleteInterval": {
+                    "type": "number"
+                },
+                "VnicProbeInterval": {
+                    "type": "number"
+                },
+                "VnicRpcRetryInterval": {
+                    "type": "number"
+                },
+                "VnicdbCmdHistorySize": {
+                    "type": "number"
+                },
+                "SeagentStatecacheProperties": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeagentStatecachePropertiesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeBootupPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DockerBackendPortend": {
+                    "type": "number"
+                },
+                "DockerBackendPortstart": {
+                    "type": "number"
+                },
+                "FairQueueingEnabled": {
+                    "type": "boolean"
+                },
+                "GeoDbGranularity": {
+                    "type": "number"
+                },
+                "L7ConnsPerCore": {
+                    "type": "number"
+                },
+                "L7ResvdListenConnsPerCore": {
+                    "type": "number"
+                },
+                "LogAgentDebugEnabled": {
+                    "type": "boolean"
+                },
+                "LogAgentTraceEnabled": {
+                    "type": "boolean"
+                },
+                "SeEmulatedCores": {
+                    "type": "number"
+                },
+                "SeIpEncapIpc": {
+                    "type": "number"
+                },
+                "SeL3EncapIpc": {
+                    "type": "number"
+                },
+                "SeLogBufferAppBlockingDequeue": {
+                    "type": "boolean"
+                },
+                "SeLogBufferApplogSize": {
+                    "type": "number"
+                },
+                "SeLogBufferChunkCount": {
+                    "type": "number"
+                },
+                "SeLogBufferConnBlockingDequeue": {
+                    "type": "boolean"
+                },
+                "SeLogBufferConnlogSize": {
+                    "type": "number"
+                },
+                "SeLogBufferEventsBlockingDequeue": {
+                    "type": "boolean"
+                },
+                "SeLogBufferEventsSize": {
+                    "type": "number"
+                },
+                "SslSessCachePerVs": {
+                    "type": "number"
+                },
+                "SslSessCacheTimeout": {
+                    "type": "number"
+                },
+                "TcpSyncacheHashsize": {
+                    "type": "number"
+                },
+                "SeDpCompression": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeDpCompressionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeRuntimePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminSshEnabled": {
+                    "type": "boolean"
+                },
+                "BaremetalDispatcherHandlesFlows": {
+                    "type": "boolean"
+                },
+                "ConnectionsLossyLogRateLimiterThreshold": {
+                    "type": "number"
+                },
+                "ConnectionsUdfnfLogRateLimiterThreshold": {
+                    "type": "number"
+                },
+                "DisableFlowProbes": {
+                    "type": "boolean"
+                },
+                "DownstreamSendTimeout": {
+                    "type": "number"
+                },
+                "DpAggressiveHbFrequency": {
+                    "type": "number"
+                },
+                "DpAggressiveHbTimeoutCount": {
+                    "type": "number"
+                },
+                "DpHbFrequency": {
+                    "type": "number"
+                },
+                "DpHbTimeoutCount": {
+                    "type": "number"
+                },
+                "DupipFrequency": {
+                    "type": "number"
+                },
+                "DupipTimeoutCount": {
+                    "type": "number"
+                },
+                "EnableHsmLog": {
+                    "type": "boolean"
+                },
+                "FeproxyVipsEnableProxyArp": {
+                    "type": "boolean"
+                },
+                "FlowTableBatchPushFrequency": {
+                    "type": "number"
+                },
+                "GlobalMtu": {
+                    "type": "number"
+                },
+                "HttpRumConsoleLog": {
+                    "type": "boolean"
+                },
+                "HttpRumMinContentLength": {
+                    "type": "number"
+                },
+                "LbactionNumRequestsToDispatch": {
+                    "type": "number"
+                },
+                "LbactionRqPerRequestMaxRetries": {
+                    "type": "number"
+                },
+                "LogAgentCompressLogs": {
+                    "type": "boolean"
+                },
+                "LogAgentConnSendBufferSize": {
+                    "type": "number"
+                },
+                "LogAgentExportMsgBufferSize": {
+                    "type": "number"
+                },
+                "LogAgentExportWaitTime": {
+                    "type": "number"
+                },
+                "LogAgentFileSzAppl": {
+                    "type": "number"
+                },
+                "LogAgentFileSzConn": {
+                    "type": "number"
+                },
+                "LogAgentFileSzDebug": {
+                    "type": "number"
+                },
+                "LogAgentFileSzEvent": {
+                    "type": "number"
+                },
+                "LogAgentLogStorageMinSz": {
+                    "type": "number"
+                },
+                "LogAgentMaxActiveAdfFilesPerVs": {
+                    "type": "number"
+                },
+                "LogAgentMaxConcurrentRsync": {
+                    "type": "number"
+                },
+                "LogAgentMaxLogmessageProtoSz": {
+                    "type": "number"
+                },
+                "LogAgentMaxStorageExcessPercent": {
+                    "type": "number"
+                },
+                "LogAgentMaxStorageIgnorePercent": {
+                    "type": "number"
+                },
+                "LogAgentMinStoragePerVs": {
+                    "type": "number"
+                },
+                "LogAgentPauseInterval": {
+                    "type": "number"
+                },
+                "LogAgentSleepInterval": {
+                    "type": "number"
+                },
+                "LogAgentUnknownVsTimer": {
+                    "type": "number"
+                },
+                "LogMessageMaxFileListSize": {
+                    "type": "number"
+                },
+                "McacheEnabled": {
+                    "type": "boolean"
+                },
+                "McacheFetchEnabled": {
+                    "type": "boolean"
+                },
+                "McacheStoreInEnabled": {
+                    "type": "boolean"
+                },
+                "McacheStoreInMaxSize": {
+                    "type": "number"
+                },
+                "McacheStoreInMinSize": {
+                    "type": "number"
+                },
+                "McacheStoreOutEnabled": {
+                    "type": "boolean"
+                },
+                "NgxFreeConnectionStack": {
+                    "type": "boolean"
+                },
+                "PersistenceMemMax": {
+                    "type": "number"
+                },
+                "ScaleoutUdpPerPkt": {
+                    "type": "boolean"
+                },
+                "SeAuthLdapBindTimeout": {
+                    "type": "number"
+                },
+                "SeAuthLdapCacheSize": {
+                    "type": "number"
+                },
+                "SeAuthLdapConnectTimeout": {
+                    "type": "number"
+                },
+                "SeAuthLdapConnsPerServer": {
+                    "type": "number"
+                },
+                "SeAuthLdapReconnectTimeout": {
+                    "type": "number"
+                },
+                "SeAuthLdapRequestTimeout": {
+                    "type": "number"
+                },
+                "SeAuthLdapServersFailoverOnly": {
+                    "type": "boolean"
+                },
+                "SeDpHmDrops": {
+                    "type": "number"
+                },
+                "SeDpIfStatePollInterval": {
+                    "type": "number"
+                },
+                "SeDpLogNfEnqueuePercent": {
+                    "type": "number"
+                },
+                "SeDpLogUdfEnqueuePercent": {
+                    "type": "number"
+                },
+                "SeDumpCoreOnAssert": {
+                    "type": "boolean"
+                },
+                "SeHandleInterfaceRoutes": {
+                    "type": "boolean"
+                },
+                "SeHbPersistFudgeBits": {
+                    "type": "number"
+                },
+                "SeMacErrorThresholdToDisablePromiscious": {
+                    "type": "number"
+                },
+                "SeMemoryPoison": {
+                    "type": "boolean"
+                },
+                "SeMetricsInterval": {
+                    "type": "number"
+                },
+                "SeMetricsRtEnabled": {
+                    "type": "boolean"
+                },
+                "SeMetricsRtInterval": {
+                    "type": "number"
+                },
+                "SePacketBufferMax": {
+                    "type": "number"
+                },
+                "SeRandomTcpDrops": {
+                    "type": "boolean"
+                },
+                "ServicesAccessibleAllInterfaces": {
+                    "type": "boolean"
+                },
+                "SpdyFwdProxyParseEnable": {
+                    "type": "boolean"
+                },
+                "TcpSyncacheMaxRetransmitDefault": {
+                    "type": "number"
+                },
+                "UpstreamConnectTimeout": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolCacheThresh": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolConnIdleThreshTmo": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolCoreMaxCache": {
+                    "type": "number"
+                },
+                "UpstreamConnpoolEnable": {
+                    "type": "boolean"
+                },
+                "UpstreamConnpoolStrategy": {
+                    "type": "number"
+                },
+                "UpstreamKeepalive": {
+                    "type": "boolean"
+                },
+                "UpstreamReadTimeout": {
+                    "type": "number"
+                },
+                "UpstreamSendTimeout": {
+                    "type": "number"
+                },
+                "UserDefinedMetricAge": {
+                    "type": "number"
+                },
+                "AppHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AppHeadersDefinition"
+                    }
+                },
+                "DosProfile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DosProfileDefinition"
+                    }
+                },
+                "SeDpCompression": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeDpCompressionDefinition"
+                    }
+                },
+                "SeRateLimiters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeRateLimitersDefinition"
+                    }
+                },
+                "ServiceIpSubnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceIpSubnetsDefinition"
+                    }
+                },
+                "ServicePortRanges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServicePortRangesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeagentStatecachePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScBatchBufferFlushLimit": {
+                    "type": "number"
+                },
+                "ScDnsQBatchDequeueLimit": {
+                    "type": "number"
+                },
+                "ScDnsQMaxSize": {
+                    "type": "number"
+                },
+                "ScShardCleanupMaxTime": {
+                    "type": "number"
+                },
+                "ScStateRingBatchDequeueLimit": {
+                    "type": "number"
+                },
+                "ScStatesFlushInterval": {
+                    "type": "number"
+                },
+                "ScStreamCheckInterval": {
+                    "type": "number"
+                },
+                "ScThreadQBatchDequeueLimit": {
+                    "type": "number"
+                },
+                "ScThreadQMaxSize": {
+                    "type": "number"
+                },
+                "ScThreadSleepInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SeDpCompressionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxLowRtt": {
+                    "type": "number"
+                },
+                "MinHighRtt": {
+                    "type": "number"
+                },
+                "MinLength": {
+                    "type": "number"
+                },
+                "MobileStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AppHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HdrMatchCase": {
+                    "type": "string"
+                },
+                "HdrName": {
+                    "type": "string"
+                },
+                "HdrStringOp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HdrMatchCase",
+                "HdrName",
+                "HdrStringOp"
+            ]
+        },
+        "DosProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ThreshPeriod": {
+                    "type": "number"
+                },
+                "ThreshInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThreshInfoDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ThreshPeriod"
+            ]
+        },
+        "SeRateLimitersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArpRl": {
+                    "type": "number"
+                },
+                "DefaultRl": {
+                    "type": "number"
+                },
+                "FlowProbeRl": {
+                    "type": "number"
+                },
+                "IcmpRl": {
+                    "type": "number"
+                },
+                "IcmpRspRl": {
+                    "type": "number"
+                },
+                "RstRl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ServiceIpSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "ServicePortRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "ThreshInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attack": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Attack",
+                "MaxValue",
+                "MinValue"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "SeAgentProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SeAgentPropertiesDefinition"
+            }
+        },
+        "SeBootupProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SeBootupPropertiesDefinition"
+            }
+        },
+        "SeRuntimeProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SeRuntimePropertiesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

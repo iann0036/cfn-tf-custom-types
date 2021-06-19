@@ -1,0 +1,2262 @@
+{
+    "typeName": "TF::AWS::SecurityhubInsight",
+    "description": "Provides a Security Hub custom insight resource. See the [Managing custom insights section](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html) of the AWS User Guide for more information.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SecurityhubInsight/docs/README.md",
+    "definitions": {
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsAccountId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AwsAccountIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "CompanyName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CompanyNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ComplianceStatus": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ComplianceStatusDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Confidence": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConfidenceDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "CreatedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CreatedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Criticality": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CriticalityDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Description": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DescriptionDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsConfidence": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsConfidenceDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsCriticality": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsCriticalityDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsRelatedFindingsId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsRelatedFindingsIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsRelatedFindingsProductArn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsRelatedFindingsProductArnDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsSeverityLabel": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsSeverityLabelDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsSeverityOriginal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsSeverityOriginalDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FindingProviderFieldsTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FindingProviderFieldsTypesDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "FirstObservedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FirstObservedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "GeneratorId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GeneratorIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Id": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Keyword": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/KeywordDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "LastObservedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LastObservedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "MalwareName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MalwareNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "MalwarePath": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MalwarePathDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "MalwareState": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MalwareStateDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "MalwareType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MalwareTypeDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkDestinationDomain": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDestinationDomainDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkDestinationIpv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDestinationIpv4Definition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkDestinationIpv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDestinationIpv6Definition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkDestinationPort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDestinationPortDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkDirection": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDirectionDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkProtocol": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkProtocolDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkSourceDomain": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkSourceDomainDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkSourceIpv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkSourceIpv4Definition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkSourceIpv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkSourceIpv6Definition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkSourceMac": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkSourceMacDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NetworkSourcePort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkSourcePortDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NoteText": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoteTextDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NoteUpdatedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoteUpdatedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "NoteUpdatedBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoteUpdatedByDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessLaunchedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessLaunchedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessParentPid": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessParentPidDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessPath": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessPathDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessPid": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessPidDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProcessTerminatedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProcessTerminatedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProductArn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProductArnDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProductFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProductFieldsDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ProductName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProductNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "RecommendationText": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RecommendationTextDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "RecordState": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RecordStateDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "RelatedFindingsId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RelatedFindingsIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "RelatedFindingsProductArn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RelatedFindingsProductArnDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceIamInstanceProfileArn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceIamInstanceProfileArnDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceImageId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceImageIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceIpv4Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceIpv4AddressesDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceIpv6Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceIpv6AddressesDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceKeyName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceKeyNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceLaunchedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceLaunchedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceSubnetId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceSubnetIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceTypeDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsEc2InstanceVpcId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsEc2InstanceVpcIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsIamAccessKeyCreatedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsIamAccessKeyCreatedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsIamAccessKeyStatus": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsIamAccessKeyStatusDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsIamAccessKeyUserName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsIamAccessKeyUserNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsS3BucketOwnerId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsS3BucketOwnerIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceAwsS3BucketOwnerName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAwsS3BucketOwnerNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceContainerImageId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceContainerImageIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceContainerImageName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceContainerImageNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceContainerLaunchedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceContainerLaunchedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceContainerName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceContainerNameDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceDetailsOther": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceDetailsOtherDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceIdDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourcePartition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourcePartitionDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceRegion": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceRegionDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceTagsDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ResourceType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceTypeDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "SeverityLabel": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeverityLabelDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "SourceUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SourceUrlDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorCategory": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorCategoryDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorLastObservedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorLastObservedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorSource": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorSourceDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorSourceUrl": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorSourceUrlDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorTypeDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "ThreatIntelIndicatorValue": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ThreatIntelIndicatorValueDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Title": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TitleDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "Type": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TypeDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "UpdatedAt": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UpdatedAtDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "UserDefinedValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UserDefinedValuesDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "VerificationState": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VerificationStateDefinition"
+                    },
+                    "maxItems": 20
+                },
+                "WorkflowStatus": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WorkflowStatusDefinition"
+                    },
+                    "maxItems": 20
+                }
+            },
+            "required": []
+        },
+        "AwsAccountIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "CompanyNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ComplianceStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ConfidenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CreatedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CriticalityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DescriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FindingProviderFieldsConfidenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FindingProviderFieldsCriticalityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FindingProviderFieldsRelatedFindingsIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FindingProviderFieldsRelatedFindingsProductArnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FindingProviderFieldsSeverityLabelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FindingProviderFieldsSeverityOriginalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FindingProviderFieldsTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "FirstObservedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GeneratorIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "IdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "KeywordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "LastObservedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MalwareNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "MalwarePathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "MalwareStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "MalwareTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkDestinationDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkDestinationIpv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "NetworkDestinationIpv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "NetworkDestinationPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkDirectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkProtocolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkSourceDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkSourceIpv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "NetworkSourceIpv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "NetworkSourceMacDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NetworkSourcePortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NoteTextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "NoteUpdatedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NoteUpdatedByDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ProcessLaunchedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ProcessNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ProcessParentPidDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProcessPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ProcessPidDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eq": {
+                    "type": "string"
+                },
+                "Gte": {
+                    "type": "string"
+                },
+                "Lte": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProcessTerminatedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ProductArnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ProductFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Key",
+                "Value"
+            ]
+        },
+        "ProductNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "RecommendationTextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "RecordStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "RelatedFindingsIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "RelatedFindingsProductArnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceIamInstanceProfileArnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceImageIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceIpv4AddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "ResourceAwsEc2InstanceIpv6AddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cidr"
+            ]
+        },
+        "ResourceAwsEc2InstanceKeyNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceLaunchedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ResourceAwsEc2InstanceSubnetIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsEc2InstanceVpcIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsIamAccessKeyCreatedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ResourceAwsIamAccessKeyStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsIamAccessKeyUserNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsS3BucketOwnerIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceAwsS3BucketOwnerNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceContainerImageIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceContainerImageNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceContainerLaunchedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ResourceContainerNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceDetailsOtherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Key",
+                "Value"
+            ]
+        },
+        "ResourceIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourcePartitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceRegionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ResourceTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Key",
+                "Value"
+            ]
+        },
+        "ResourceTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "SeverityLabelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "SourceUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ThreatIntelIndicatorCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ThreatIntelIndicatorLastObservedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ThreatIntelIndicatorSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ThreatIntelIndicatorSourceUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ThreatIntelIndicatorTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "ThreatIntelIndicatorValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "TitleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "TypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "UpdatedAtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "UserDefinedValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Key",
+                "Value"
+            ]
+        },
+        "VerificationStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "WorkflowStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Value"
+            ]
+        },
+        "DateRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unit": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Unit",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "GroupByAttribute": {
+            "type": "string",
+            "description": "The attribute used to group the findings for the insight e.g. if an insight is grouped by `ResourceId`, then the insight produces a list of resource identifiers."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the custom insight."
+        },
+        "Filters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FiltersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupByAttribute",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

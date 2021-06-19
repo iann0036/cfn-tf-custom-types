@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::ACI::L3outBfdInterfaceProfile",
+    "description": "Manages ACI L3out BFD Interface Profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outBfdInterfaceProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for L3out BFD interface profile object.\n- `name_alias` - (Optional) Name alias for L3out BFD interface profile object.\n- `description` - (Optional) Description for L3out BFD interface profile object.\n- `key` - (Optional) Password to identify this L3out BFD interface profile object.\n- `key_id` - (Optional) Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for L3out BFD interface profile object.\n- `key` - (Optional) Password to identify this L3out BFD interface profile object.\n- `key_id` - (Optional) Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterfaceProfileType": {
+            "type": "string",
+            "description": "Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "Key": {
+            "type": "string",
+            "description": "Password to identify this L3out BFD interface profile object.\n- `key_id` - (Optional) Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "LogicalInterfaceProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent logical interface profile object.\n- `annotation` - (Optional) Annotation for L3out BFD interface profile object.\n- `name_alias` - (Optional) Name alias for L3out BFD interface profile object.\n- `description` - (Optional) Description for L3out BFD interface profile object.\n- `key` - (Optional) Password to identify this L3out BFD interface profile object.\n- `key_id` - (Optional) Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for L3out BFD interface profile object.\n- `description` - (Optional) Description for L3out BFD interface profile object.\n- `key` - (Optional) Password to identify this L3out BFD interface profile object.\n- `key_id` - (Optional) Authentication key id for L3out BFD interface profile object. Default value is \"1\".\n- `interface_profile_type` - (Optional) Component type for L3out BFD interface profile object. Allowed values are \"none\" and \"sha1\". Default value is \"none\"."
+        },
+        "RelationBfdRsIfPol": {
+            "type": "string",
+            "description": "Relation to class bfdIfPol. Cardinality - N_TO_ONE. Type - String."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicalInterfaceProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

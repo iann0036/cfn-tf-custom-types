@@ -1,0 +1,224 @@
+{
+    "typeName": "TF::CloudEOS::RouterConfig",
+    "description": "The `cloudeos_router_config` resource should be created before the CloudEOS Router is deployed. It sends deployment\ninformation to CVaaS, which returns the bootstrap configuration with which the router\nwill be deployed. After the CloudEOS Router boots up, it will start streaming to CVaaS and register itself.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-RouterConfig/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ami": {
+            "type": "string",
+            "description": "CloudEOS image. ( AWS only )."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability Zone of VPC."
+        },
+        "BootstrapCfg": {
+            "type": "string"
+        },
+        "CloudProvider": {
+            "type": "string",
+            "description": "Cloud Provider for this deployment. Supports only aws or azure."
+        },
+        "Cnps": {
+            "type": "string",
+            "description": "Cloud Network Private Segments Name. ( VRF name )."
+        },
+        "HaRtrId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalRtTableId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IntfName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interface names."
+        },
+        "IntfPrivateIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interface private IPs. Currently, only supports 1 IP address per interface."
+        },
+        "IntfType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Interface type (public, private, internal). A `public` interface has a public IP\nassociated with it. An `internal` interface is the interface which connects the Leaf and Edge routers.\nAnd a `private` interface is the default GW interface for all host traffic."
+        },
+        "IsRr": {
+            "type": "boolean",
+            "description": "true if this CloudEOS acts as a Route Reflector."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "keypair name ( AWS only )."
+        },
+        "PeerRoutetableId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Peerroutetableid1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PrivateRtTableId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublicRtTableId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Region": {
+            "type": "string",
+            "description": "Region of deployment."
+        },
+        "Role": {
+            "type": "string",
+            "description": "CloudEdge or CloudLeaf (Same as VPC role)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "TopologyName": {
+            "type": "string",
+            "description": "Name of the topology in which this CloudEOS router is deployed in."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC/VNET ID in which this CloudEOS is deployed."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudProvider",
+        "IntfName",
+        "IntfPrivateIp",
+        "IntfType",
+        "Region",
+        "TopologyName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BootstrapCfg",
+        "/properties/HaRtrId",
+        "/properties/Id",
+        "/properties/InternalRtTableId",
+        "/properties/PeerRoutetableId",
+        "/properties/Peerroutetableid1",
+        "/properties/PrivateRtTableId",
+        "/properties/PublicRtTableId",
+        "/properties/TfId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

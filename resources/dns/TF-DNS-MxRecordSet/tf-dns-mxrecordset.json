@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::DNS::MxRecordSet",
+    "description": "Creates an MX type DNS record set.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dns/TF-DNS-MxRecordSet/docs/README.md",
+    "definitions": {
+        "MxDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exchange": {
+                    "type": "string",
+                    "description": "The FQDN of the mail exchange, include the trailing dot."
+                },
+                "Preference": {
+                    "type": "number",
+                    "description": "The preference for the record."
+                }
+            },
+            "required": [
+                "Exchange",
+                "Preference"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
+        },
+        "Mx": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MxDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

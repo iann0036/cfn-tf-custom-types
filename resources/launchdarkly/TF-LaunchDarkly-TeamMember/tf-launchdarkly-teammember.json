@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::LaunchDarkly::TeamMember",
+    "description": "Provides a LaunchDarkly team member resource.\n\nThis resource allows you to create and manage team members within your LaunchDarkly organization.\n\n-> **Note:** You can only manage team members with \"admin\" level personal access tokens. To learn more, read [Managing Teams](https://docs.launchdarkly.com/docs/teams).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-TeamMember/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of custom roles keys associated with the team member. Custom roles are only available to customers on enterprise plans. To learn more about enterprise plans, contact sales@launchdarkly.com."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The unique email address associated with the team member."
+        },
+        "FirstName": {
+            "type": "string",
+            "description": "The team member's given name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string",
+            "description": "The team member's family name."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The role associated with team member. Supported roles are `reader`, `writer`, or `admin`. If you don't specify a role, `reader` is assigned by default."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

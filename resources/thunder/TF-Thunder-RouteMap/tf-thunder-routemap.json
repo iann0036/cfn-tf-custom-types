@@ -1,0 +1,767 @@
+{
+    "typeName": "TF::Thunder::RouteMap",
+    "description": "`thunder_route_map` Provides details about thunder route map",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouteMap/docs/README.md",
+    "definitions": {
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "AsPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AsPathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Community": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CommunityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Extcommunity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtcommunityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    },
+                    "maxItems": 1
+                },
+                "LocalPreference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalPreferenceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Origin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RouteType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteTypeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Scaleout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScaleoutDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AtomicAggregate": {
+                    "type": "number"
+                },
+                "Community": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Aggregator": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AggregatorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AsPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AsPathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CommList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CommListDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DampeningCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DampeningCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ddos": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DdosDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Extcommunity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtcommunityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    },
+                    "maxItems": 1
+                },
+                "Level": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LevelDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LocalPreference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalPreferenceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MetricType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricTypeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Origin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OriginatorId": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginatorIdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Weight": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeightDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AsPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Num": {
+                    "type": "number"
+                },
+                "Num2": {
+                    "type": "number"
+                },
+                "Prepend": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CommunityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NameCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NameCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExtcommunityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RtDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Soo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SooDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupId": {
+                    "type": "number"
+                },
+                "HaState": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ethernet": {
+                    "type": "number"
+                },
+                "Loopback": {
+                    "type": "number"
+                },
+                "Trunk": {
+                    "type": "number"
+                },
+                "Tunnel": {
+                    "type": "number"
+                },
+                "Ve": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NextHop": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NextHopDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NextHop1": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NextHop1Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LocalPreferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Val": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OriginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Egp": {
+                    "type": "number"
+                },
+                "Igp": {
+                    "type": "number"
+                },
+                "Incomplete": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RouteTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "External": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExternalDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScaleoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterId": {
+                    "type": "number"
+                },
+                "OperationalState": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AggregatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AggregatorAs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AggregatorAsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CommListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NameDelete": {
+                    "type": "number"
+                },
+                "VExp": {
+                    "type": "number"
+                },
+                "VExpDelete": {
+                    "type": "number"
+                },
+                "VStd": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DampeningCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dampening": {
+                    "type": "number"
+                },
+                "DampeningHalfTime": {
+                    "type": "number"
+                },
+                "DampeningMaxSupress": {
+                    "type": "number"
+                },
+                "DampeningPenalty": {
+                    "type": "number"
+                },
+                "DampeningReuse": {
+                    "type": "number"
+                },
+                "DampeningSupress": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DdosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClassListCid": {
+                    "type": "number"
+                },
+                "ClassListName": {
+                    "type": "string"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LevelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetricTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OriginatorIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginatorIp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WeightDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WeightVal": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NameCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SooDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NextHopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NextHop1Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Local": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AggregatorAsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number"
+                },
+                "Ip": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LocalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "'permit': Route map permits set operations; 'deny': Route map denies set operations;."
+        },
+        "AsNumber": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "number",
+            "description": "Sequence to insert to/delete from existing route-map entry."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Route map tag."
+        },
+        "UserTag": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Match": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchDefinition"
+            },
+            "maxItems": 1
+        },
+        "Set": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SetDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

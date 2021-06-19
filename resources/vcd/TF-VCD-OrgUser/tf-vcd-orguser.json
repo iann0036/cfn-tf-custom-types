@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::VCD::OrgUser",
+    "description": "Provides a vCloud Director Org User. This can be used to create, update, and delete organization users, including org administrators.\n\nSupported in provider *v2.4+*\n\n~> **Note:** Only `System Administrator` or `Org Administrator` users can create users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-OrgUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeployedVmQuota": {
+            "type": "number",
+            "description": "Quota of vApps that this user can deploy. A value of 0 specifies an unlimited quota.\nThe default is 10."
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description of the user."
+        },
+        "EmailAddress": {
+            "type": "string",
+            "description": "The Org User email address. Needs to be a properly formatted email address."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "True if the user is enabled and can log in. The default is `true`."
+        },
+        "FullName": {
+            "type": "string",
+            "description": "The full name of the user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstantMessaging": {
+            "type": "string",
+            "description": "The Org User instant messaging."
+        },
+        "IsGroupRole": {
+            "type": "boolean",
+            "description": "True if this user has a group role. The default is `false`."
+        },
+        "IsLocked": {
+            "type": "boolean",
+            "description": "aIf the user account has been locked due to too many invalid login attempts, the value will\nchange to true (only the system can lock the user). To unlock the user re-set this flag to false."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the user."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to which the user belongs. Optional if defined at provider level."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The user password. This value is never returned\non read. It is inspected on create and modify. To modify, fill with a different value. Note that if you remove the\npassword *on update*, Terraform will indicate that a change was occurring, but the empty password will be ignored by vCD."
+        },
+        "PasswordFile": {
+            "type": "string"
+        },
+        "ProviderType": {
+            "type": "string",
+            "description": "Identity provider type for this user. One of: `INTEGRATED`, `SAML`, `OAUTH`. The default\nis `INTEGRATED`."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The role of the user. Role names can be retrieved from the organization. Both built-in roles and\ncustom built can be used. The roles normally available are:\n* `Organization Administrator`\n* `Catalog Author`\n* `vApp Author`\n* `vApp User`\n* `Console Access Only`\n* `Defer to Identity Provider`."
+        },
+        "StoredVmQuota": {
+            "type": "number",
+            "description": "Quota of vApps that this user can store. A value of 0 specifies an unlimited quota.\nThe default is 10."
+        },
+        "TakeOwnership": {
+            "type": "boolean",
+            "description": "Take ownership of user's objects on deletion."
+        },
+        "Telephone": {
+            "type": "string",
+            "description": "The Org User telephone number."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

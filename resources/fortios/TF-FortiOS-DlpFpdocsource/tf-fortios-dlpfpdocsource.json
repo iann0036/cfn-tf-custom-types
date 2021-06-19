@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::FortiOS::DlpFpdocsource",
+    "description": "Create a DLP fingerprint database by allowing the FortiGate to access a file server containing files from which to create fingerprints.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-DlpFpdocsource/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Date": {
+            "type": "number",
+            "description": "Day of the month on which to scan the server (1 - 31)."
+        },
+        "FilePath": {
+            "type": "string",
+            "description": "Path on the server to the fingerprint files (max 119 characters)."
+        },
+        "FilePattern": {
+            "type": "string",
+            "description": "Files matching this pattern on the server are fingerprinted. Optionally use the * and ? wildcards."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepModified": {
+            "type": "string",
+            "description": "Enable so that when a file is changed on the server the FortiGate keeps the old fingerprint and adds a new fingerprint to the database. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DLP fingerprint database."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password required to log into the file server."
+        },
+        "Period": {
+            "type": "string",
+            "description": "Frequency for which the FortiGate checks the server for new or changed files. Valid values: `none`, `daily`, `weekly`, `monthly`."
+        },
+        "RemoveDeleted": {
+            "type": "string",
+            "description": "Enable to keep the fingerprint database up to date when a file is deleted from the server. Valid values: `enable`, `disable`."
+        },
+        "ScanOnCreation": {
+            "type": "string",
+            "description": "Enable to keep the fingerprint database up to date when a file is added or changed on the server. Valid values: `enable`, `disable`."
+        },
+        "ScanSubdirectories": {
+            "type": "string",
+            "description": "Enable/disable scanning subdirectories to find files to create fingerprints from. Valid values: `enable`, `disable`."
+        },
+        "Sensitivity": {
+            "type": "string",
+            "description": "Select a sensitivity or threat level for matches with this fingerprint database. Add sensitivities using fp-sensitivity."
+        },
+        "Server": {
+            "type": "string",
+            "description": "IPv4 or IPv6 address of the server."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Protocol used to communicate with the file server. Currently only Samba (SMB) servers are supported. Valid values: `samba`."
+        },
+        "TodHour": {
+            "type": "number",
+            "description": "Hour of the day on which to scan the server (0 - 23, default = 1)."
+        },
+        "TodMin": {
+            "type": "number",
+            "description": "Minute of the hour on which to scan the server (0 - 59)."
+        },
+        "Username": {
+            "type": "string",
+            "description": "User name required to log into the file server."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "Select the VDOM that can communicate with the file server. Valid values: `mgmt`, `current`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Weekday": {
+            "type": "string",
+            "description": "Day of the week on which to scan the server. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Server",
+        "ServerType",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

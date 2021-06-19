@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::Amixr::Escalation",
+    "description": "[Escalation policy](https://api-docs.amixr.io/#escalation-policies) configures what happened after incident is triggered: who will be notified first, second, etc., and delay before notifications.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/amixr/TF-Amixr-Escalation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionToTrigger": {
+            "type": "string",
+            "description": "ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "Duration": {
+            "type": "number",
+            "description": "The duration of delay for `wait` type step.\n* `persons_to_notify` - (Optional) The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "GroupToNotify": {
+            "type": "string",
+            "description": "ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Important": {
+            "type": "boolean",
+            "description": "Will activate \"important\" personal notification rules. Can be `true` or `false`. Actual for steps: `notify_persons`, `notify_on_call_from_schedule` and `notify_user_group`.\n* `duration` - (Optional) The duration of delay for `wait` type step.\n* `persons_to_notify` - (Optional) The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "NotifyIfTimeFrom": {
+            "type": "string",
+            "description": "The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "NotifyIfTimeTo": {
+            "type": "string",
+            "description": "The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "NotifyOnCallFromSchedule": {
+            "type": "string",
+            "description": "ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "PersonsToNotify": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "PersonsToNotifyNextEachTime": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "Position": {
+            "type": "number",
+            "description": "The position of the escalation step (starts from 0)\n* `type` - (Optional) The type of escalation policy. Can be:\n- `wait` - just wait\n- `notify_persons` - notify multiple users at the same time\n- `notify_person_next_each_time` - notify one user from queue\n- `notify_on_call_from_schedule` - notify by schedule\n- `notify_user_group` - notify User Group (available for teams with Slack integration)\n- `trigger_action` - trigger action (outgoing webhook)\n- `notify_if_time_from_to` - continue escalation only if the time is within the selected interval\n- `notify_whole_channel` - notify a channel in Slack (available for teams with Slack integration)\n- `resolve` - resolve incident\n- `null` - do nothing\n* `important` - (Optional) Will activate \"important\" personal notification rules. Can be `true` or `false`. Actual for steps: `notify_persons`, `notify_on_call_from_schedule` and `notify_user_group`.\n* `duration` - (Optional) The duration of delay for `wait` type step.\n* `persons_to_notify` - (Optional) The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "RouteId": {
+            "type": "string",
+            "description": "The ID of the route.\n* `position` - (Required) The position of the escalation step (starts from 0)\n* `type` - (Optional) The type of escalation policy. Can be:\n- `wait` - just wait\n- `notify_persons` - notify multiple users at the same time\n- `notify_person_next_each_time` - notify one user from queue\n- `notify_on_call_from_schedule` - notify by schedule\n- `notify_user_group` - notify User Group (available for teams with Slack integration)\n- `trigger_action` - trigger action (outgoing webhook)\n- `notify_if_time_from_to` - continue escalation only if the time is within the selected interval\n- `notify_whole_channel` - notify a channel in Slack (available for teams with Slack integration)\n- `resolve` - resolve incident\n- `null` - do nothing\n* `important` - (Optional) Will activate \"important\" personal notification rules. Can be `true` or `false`. Actual for steps: `notify_persons`, `notify_on_call_from_schedule` and `notify_user_group`.\n* `duration` - (Optional) The duration of delay for `wait` type step.\n* `persons_to_notify` - (Optional) The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of escalation policy. Can be:\n- `wait` - just wait\n- `notify_persons` - notify multiple users at the same time\n- `notify_person_next_each_time` - notify one user from queue\n- `notify_on_call_from_schedule` - notify by schedule\n- `notify_user_group` - notify User Group (available for teams with Slack integration)\n- `trigger_action` - trigger action (outgoing webhook)\n- `notify_if_time_from_to` - continue escalation only if the time is within the selected interval\n- `notify_whole_channel` - notify a channel in Slack (available for teams with Slack integration)\n- `resolve` - resolve incident\n- `null` - do nothing\n* `important` - (Optional) Will activate \"important\" personal notification rules. Can be `true` or `false`. Actual for steps: `notify_persons`, `notify_on_call_from_schedule` and `notify_user_group`.\n* `duration` - (Optional) The duration of delay for `wait` type step.\n* `persons_to_notify` - (Optional) The list of ID's of users for `notify_persons` type step.\n* `persons_to_notify_next_each_time` - (Optional) The list of ID's of users for `notify_person_next_each_time` type step.\n* `notify_on_call_from_schedule` - (Optional) ID of a Schedule for `notify_on_call_from_schedule` type step.\n* `action_to_trigger` - (Optional) ID of an Action for `trigger_action` type step.\n* `group_to_notify` - (Optional) ID of a User Group for `notify_user_group` type step.\n* `notify_if_time_from` - (Optional) The beginning of the time interval for `notify_if_time_from_to` type step in UTC (for example 08:00:00Z).\n* `notify_if_time_to` - (Optional) The end of the time interval for `notify_if_time_from_to` type step in UTC (for example 18:00:00Z)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Position",
+        "RouteId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,270 @@
+{
+    "typeName": "TF::Alicloud::ElasticsearchInstance",
+    "description": "Provides a Elasticsearch instance resource. It contains data nodes, dedicated master node(optional) and etc. It can be associated with private IP whitelists and kibana IP whitelist.\n\n-> **NOTE:** Only one operation is supported in a request. So if `data_node_spec` and `data_node_disk_size` are both changed, system will respond error.\n\n-> **NOTE:** At present, `version` can not be modified once instance has been created.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ElasticsearchInstance/docs/README.md",
+    "definitions": {
+        "KmsEncryptionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientNodeAmount": {
+            "type": "number"
+        },
+        "ClientNodeSpec": {
+            "type": "string"
+        },
+        "DataNodeAmount": {
+            "type": "number",
+            "description": "The Elasticsearch cluster's data node quantity, between 2 and 50."
+        },
+        "DataNodeDiskEncrypted": {
+            "type": "boolean",
+            "description": "If encrypt the data node disk. Valid values are `true`, `false`. Default to `false`."
+        },
+        "DataNodeDiskSize": {
+            "type": "number",
+            "description": "The single data node storage space.\n- `cloud_ssd`: An SSD disk, supports a maximum of 2048 GiB (2 TB).\n- `cloud_efficiency` An ultra disk, supports a maximum of 5120 GiB (5 TB). If the data to be stored is larger than 2048 GiB, an ultra disk can only support the following data sizes (GiB): [`2560`, `3072`, `3584`, `4096`, `4608`, `5120`]."
+        },
+        "DataNodeDiskType": {
+            "type": "string",
+            "description": "The data node disk type. Supported values: cloud_ssd, cloud_efficiency."
+        },
+        "DataNodeSpec": {
+            "type": "string",
+            "description": "The data node specifications of the Elasticsearch instance."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of instance. It a string of 0 to 30 characters."
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "EnableKibanaPrivateNetwork": {
+            "type": "boolean",
+            "description": "Bool, default to false. When it set to true, the instance can close kibana private network access\u3002."
+        },
+        "EnableKibanaPublicNetwork": {
+            "type": "boolean",
+            "description": "Bool, default to true. When it set to false, the instance can enable kibana public network access\u3002."
+        },
+        "EnablePublic": {
+            "type": "boolean",
+            "description": "Bool, default to false. When it set to true, the instance can enable public network access\u3002."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "Valid values are `PrePaid`, `PostPaid`. Default to `PostPaid`. From version 1.69.0, the Elasticsearch cluster allows you to update your instance_charge_ype from `PostPaid` to `PrePaid`, the following attributes are required: `period`. But, updating from `PostPaid` to `PrePaid` is not supported."
+        },
+        "KibanaDomain": {
+            "type": "string"
+        },
+        "KibanaPort": {
+            "type": "number"
+        },
+        "KibanaPrivateWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set the Kibana's IP whitelist in private network."
+        },
+        "KibanaWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set the Kibana's IP whitelist in internet network."
+        },
+        "KmsEncryptedPassword": {
+            "type": "string",
+            "description": "An KMS encrypts password used to a instance. If the `password` is filled in, this field will be ignored, but you have to specify one of `password` and `kms_encrypted_password` fields."
+        },
+        "KmsEncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KmsEncryptionContextDefinition"
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating instance with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
+        },
+        "MasterNodeSpec": {
+            "type": "string",
+            "description": "The dedicated master node spec. If specified, dedicated master node will be created."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the instance. The password can be 8 to 30 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (`!@#$%^&*()_+-=`)."
+        },
+        "Period": {
+            "type": "number",
+            "description": "The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. Default to 1. From version 1.69.2, when to modify this value, the resource can renewal a `PrePaid` instance."
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set the instance's IP whitelist in VPC network."
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "PublicWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set the instance's IP whitelist in internet network."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the Elasticsearch instance belongs."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource.\n- key: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"acs:\". It cannot contain \"http://\" and \"https://\". It cannot be a null string.\n- value: It can be up to 128 characters in length. It cannot contain \"http://\" and \"https://\". It can be a null string."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Elasticsearch version. Supported values: `5.5.3_with_X-Pack`, `6.3_with_X-Pack` and `6.7_with_X-Pack`."
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The ID of VSwitch."
+        },
+        "ZoneCount": {
+            "type": "number",
+            "description": "The Multi-AZ supported for Elasticsearch, between 1 and 3. The `data_node_amount` value must be an integral multiple of the `zone_count` value."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DataNodeAmount",
+        "DataNodeDiskSize",
+        "DataNodeDiskType",
+        "DataNodeSpec",
+        "Version",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Domain",
+        "/properties/Id",
+        "/properties/KibanaDomain",
+        "/properties/KibanaPort",
+        "/properties/Port",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

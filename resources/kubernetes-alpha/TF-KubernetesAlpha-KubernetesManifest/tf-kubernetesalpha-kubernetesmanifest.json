@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::KubernetesAlpha::KubernetesManifest",
+    "description": "CloudFormation equivalent of kubernetes_manifest",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/kubernetes-alpha/TF-KubernetesAlpha-KubernetesManifest/docs/README.md",
+    "definitions": {
+        "WaitForDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WaitForDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fields": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WaitForDefinition"
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Manifest": {
+            "type": "string"
+        },
+        "Object": {
+            "type": "string"
+        },
+        "WaitFor": {
+            "$ref": "#/definitions/WaitForDefinition2"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Manifest"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

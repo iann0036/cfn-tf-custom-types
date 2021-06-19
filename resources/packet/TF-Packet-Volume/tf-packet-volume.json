@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::Packet::Volume",
+    "description": "Provides an Equinix Metal Block Storage Volume resource to allow you to\nmanage block volumes on your account.\nOnce created by Terraform, they must then be attached and mounted\nusing the api and `packet_block_attach` and `packet_block_detach`\nscripts.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/packet/TF-Packet-Volume/docs/README.md",
+    "definitions": {
+        "AttachmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                }
+            }
+        },
+        "SnapshotPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SnapshotCount": {
+                    "type": "number"
+                },
+                "SnapshotFrequency": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SnapshotCount",
+                "SnapshotFrequency"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attachments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentsDefinition"
+            }
+        },
+        "BillingCycle": {
+            "type": "string",
+            "description": "The billing cycle, defaults to \"hourly\"."
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Optional description for the volume."
+        },
+        "Facility": {
+            "type": "string",
+            "description": "The facility to create the volume in."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean",
+            "description": "Lock or unlock the volume."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The service plan slug of the volume."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The packet project ID to deploy the volume in."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The size in GB to make the volume."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "SnapshotPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotPoliciesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Facility",
+        "Plan",
+        "ProjectId",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attachments",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/State",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

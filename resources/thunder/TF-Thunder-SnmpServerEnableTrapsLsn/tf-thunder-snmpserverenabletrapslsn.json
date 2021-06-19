@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsLsn",
+    "description": "`thunder_snmp_server_enable_traps_lsn` Provides details about thunder snmp server enable traps lsn",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsLsn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all LSN group traps."
+        },
+        "FixedNatPortMappingFileChange": {
+            "type": "number",
+            "description": "Enable LSN trap when fixed nat port mapping file change."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxIpportThreshold": {
+            "type": "number",
+            "description": "Maximum threshold."
+        },
+        "MaxPortThreshold": {
+            "type": "number",
+            "description": "Maximum threshold."
+        },
+        "PerIpPortUsageThreshold": {
+            "type": "number",
+            "description": "Enable LSN trap when IP total port usage reaches the threshold (default 64512)."
+        },
+        "TotalPortUsageThreshold": {
+            "type": "number",
+            "description": "Enable LSN trap when NAT total port usage reaches the threshold (default 655350000)."
+        },
+        "TrafficExceeded": {
+            "type": "number",
+            "description": "Enable LSN trap when NAT pool reaches the threshold."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

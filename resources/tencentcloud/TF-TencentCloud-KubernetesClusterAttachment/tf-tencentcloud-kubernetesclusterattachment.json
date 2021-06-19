@@ -1,0 +1,254 @@
+{
+    "typeName": "TF::TencentCloud::KubernetesClusterAttachment",
+    "description": "Provide a resource to attach an existing  cvm to kubernetes cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-KubernetesClusterAttachment/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WorkerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredPodNum": {
+                    "type": "number",
+                    "description": "Indicate to set desired pod number in node. valid when the cluster is podCIDR."
+                },
+                "DockerGraphPath": {
+                    "type": "string",
+                    "description": "Docker graph path. Default is `/var/lib/docker`."
+                },
+                "ExtraArgs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Custom parameter information related to the node. This is a white-list parameter."
+                },
+                "IsSchedule": {
+                    "type": "boolean",
+                    "description": "Indicate to schedule the adding node or not. Default is true."
+                },
+                "MountTarget": {
+                    "type": "string",
+                    "description": "Mount target. Default is not mounting."
+                },
+                "UserData": {
+                    "type": "string",
+                    "description": "Base64-encoded User Data text, the length limit is 16KB."
+                },
+                "DataDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDiskDefinition"
+                    },
+                    "maxItems": 11
+                }
+            },
+            "required": []
+        },
+        "WorkerConfigOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredPodNum": {
+                    "type": "number",
+                    "description": "Indicate to set desired pod number in node. valid when the cluster is podCIDR."
+                },
+                "DockerGraphPath": {
+                    "type": "string",
+                    "description": "Docker graph path. Default is `/var/lib/docker`."
+                },
+                "ExtraArgs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Custom parameter information related to the node. This is a white-list parameter."
+                },
+                "IsSchedule": {
+                    "type": "boolean",
+                    "description": "Indicate to schedule the adding node or not. Default is true."
+                },
+                "MountTarget": {
+                    "type": "string",
+                    "description": "Mount target. Default is not mounting."
+                },
+                "UserData": {
+                    "type": "string",
+                    "description": "Base64-encoded User Data text, the length limit is 16KB."
+                },
+                "DataDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDiskDefinition"
+                    },
+                    "maxItems": 11
+                }
+            },
+            "required": []
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoFormatAndMount": {
+                    "type": "boolean"
+                },
+                "DiskSize": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "FileSystem": {
+                    "type": "string"
+                },
+                "MountTarget": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "ID of the cluster."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The host name of the attached instance. Dot (.) and dash (-) cannot be used as the first and last characters of HostName and cannot be used consecutively. Windows example: The length of the name character is [2, 15], letters (capitalization is not restricted), numbers and dashes (-) are allowed, dots (.) are not supported, and not all numbers are allowed. Examples of other types (Linux, etc.): The character length is [2, 60], and multiple dots are allowed. There is a segment between the dots. Each segment allows letters (with no limitation on capitalization), numbers and dashes (-)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of the CVM instance, this cvm will reinstall the system."
+        },
+        "KeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The key pair to use for the instance, it looks like skey-16jig7tx, it should be set if `password` not set."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "Labels of tke attachment exits CVM."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password to access, should be set if `key_ids` not set."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Unschedulable": {
+            "type": "number",
+            "description": "Sets whether the joining node participates in the schedule. Default is '0'. Participate in scheduling."
+        },
+        "WorkerConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "WorkerConfigOverrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerConfigOverridesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SecurityGroups",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

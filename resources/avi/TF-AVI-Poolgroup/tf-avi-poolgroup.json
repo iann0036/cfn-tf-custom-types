@@ -1,0 +1,257 @@
+{
+    "typeName": "TF::AVI::Poolgroup",
+    "description": "The PoolGroup resource allows the creation and management of Avi PoolGroup",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Poolgroup/docs/README.md",
+    "definitions": {
+        "FailActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "LocalRsp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LocalRspDefinition"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentState": {
+                    "type": "string"
+                },
+                "PoolRef": {
+                    "type": "string"
+                },
+                "PriorityLabel": {
+                    "type": "string"
+                },
+                "Ratio": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "PoolRef"
+            ]
+        },
+        "LocalRspDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host"
+            ]
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "FileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType",
+                "FileContent"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudConfigCksum": {
+            "type": "string",
+            "description": "Checksum of cloud configuration for poolgroup. Internally set by cloud connector."
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Name of the user who created the object."
+        },
+        "DeploymentPolicyRef": {
+            "type": "string",
+            "description": "When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type poolgroupdeploymentpolicy."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of pool group."
+        },
+        "EnableHttp2": {
+            "type": "boolean",
+            "description": "Enable http/2 for traffic from virtualservice to all the backend servers in all the pools configured under this poolgroup. Field introduced in 20.1.1. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImplicitPriorityLabels": {
+            "type": "boolean",
+            "description": "Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3."
+        },
+        "MinServers": {
+            "type": "number",
+            "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'disable'. Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the pool group."
+        },
+        "PriorityLabelsRef": {
+            "type": "string",
+            "description": "Uuid of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type prioritylabels."
+        },
+        "ServiceMetadata": {
+            "type": "string",
+            "description": "Metadata pertaining to the service provided by this poolgroup. In openshift/kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by avi vantage. Field introduced in 17.2.14,18.1.5,18.2.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "FailAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FailActionDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MembersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

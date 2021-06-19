@@ -1,0 +1,344 @@
+{
+    "typeName": "TF::OCI::DatabaseAutonomousExadataInfrastructure",
+    "description": "This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseAutonomousExadataInfrastructure/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "MaintenanceWindowDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "MaintenanceWindowDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceWindowDefinition"
+                    }
+                },
+                "HoursOfDay": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "LeadTimeInWeeks": {
+                    "type": "number"
+                },
+                "Months": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceWindowDefinition2"
+                    }
+                },
+                "Preference": {
+                    "type": "string"
+                },
+                "WeeksOfMonth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "MaintenanceWindowDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HoursOfDay": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "LeadTimeInWeeks": {
+                    "type": "number"
+                },
+                "Preference": {
+                    "type": "string"
+                },
+                "WeeksOfMonth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DaysOfWeekDefinition"
+                    }
+                },
+                "Months": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonthsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Preference"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DaysOfWeekDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MonthsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string",
+            "description": "The availability domain where the Autonomous Exadata Infrastructure is located."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in."
+        },
+        "CreateAsync": {
+            "type": "boolean"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastMaintenanceRunId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string",
+            "description": "The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition3"
+            }
+        },
+        "NextMaintenanceRunId": {
+            "type": "string"
+        },
+        "NsgIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**\n* Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty."
+        },
+        "ScanDnsName": {
+            "type": "string"
+        },
+        "Shape": {
+            "type": "string",
+            "description": "The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation."
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "MaintenanceWindowDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityDomain",
+        "CompartmentId",
+        "Shape",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Hostname",
+        "/properties/Id",
+        "/properties/LastMaintenanceRunId",
+        "/properties/LifecycleDetails",
+        "/properties/MaintenanceWindow",
+        "/properties/NextMaintenanceRunId",
+        "/properties/ScanDnsName",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

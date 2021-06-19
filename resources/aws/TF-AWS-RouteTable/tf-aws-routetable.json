@@ -1,0 +1,182 @@
+{
+    "typeName": "TF::AWS::RouteTable",
+    "description": "Provides a resource to create a VPC routing table.\n\n~> **NOTE on Route Tables and Routes:** Terraform currently\nprovides both a standalone [Route resource](route.html) and a Route Table resource with routes\ndefined in-line. At this time you cannot use a Route Table with in-line routes\nin conjunction with any Route resources. Doing so will cause\na conflict of rule settings and will overwrite rules.\n\n~> **NOTE on `gateway_id` and `nat_gateway_id`:** The AWS API is very forgiving with these two\nattributes and the `aws_route_table` resource can be created with a NAT ID specified as a Gateway ID attribute.\nThis _will_ lead to a permanent diff between your configuration and statefile, as the API returns the correct\nparameters in the returned route table. If you're experiencing constant diffs in your `aws_route_table` resources,\nthe first thing to check is whether or not you're specifying a NAT ID instead of a Gateway ID, or vice-versa.\n\n~> **NOTE on `propagating_vgws` and the `aws_vpn_gateway_route_propagation`...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-RouteTable/docs/README.md",
+    "definitions": {
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CarrierGatewayId": {
+                    "type": "string"
+                },
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "DestinationPrefixListId": {
+                    "type": "string"
+                },
+                "EgressOnlyGatewayId": {
+                    "type": "string"
+                },
+                "GatewayId": {
+                    "type": "string"
+                },
+                "InstanceId": {
+                    "type": "string"
+                },
+                "Ipv6CidrBlock": {
+                    "type": "string"
+                },
+                "LocalGatewayId": {
+                    "type": "string"
+                },
+                "NatGatewayId": {
+                    "type": "string"
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                },
+                "TransitGatewayId": {
+                    "type": "string"
+                },
+                "VpcEndpointId": {
+                    "type": "string"
+                },
+                "VpcPeeringConnectionId": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PropagatingVgws": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of virtual gateways for propagation."
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            },
+            "description": "A list of route objects. Their keys are documented below. This argument is processed in [attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html).\nThis means that omitting this argument is interpreted as ignoring any existing routes. To remove all managed routes an empty list should be specified. See the example above."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/OwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

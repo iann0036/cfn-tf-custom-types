@@ -1,0 +1,241 @@
+{
+    "typeName": "TF::AzureRM::TrafficManagerProfile",
+    "description": "Manages a Traffic Manager Profile to which multiple endpoints can be attached.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-TrafficManagerProfile/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DnsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RelativeName": {
+                    "type": "string",
+                    "description": "The relative domain name, this is combined with the domain name used by Traffic Manager to form the FQDN which is exported as documented below. Changing this forces a new resource to be created."
+                },
+                "Ttl": {
+                    "type": "number",
+                    "description": "The TTL value of the Profile used by Local DNS resolvers and clients."
+                }
+            },
+            "required": [
+                "RelativeName",
+                "Ttl"
+            ]
+        },
+        "MonitorConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedStatusCodeRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of status code ranges in the format of `100-101`."
+                },
+                "IntervalInSeconds": {
+                    "type": "number",
+                    "description": "The interval used to check the endpoint health from a Traffic Manager probing agent. You can specify two values here: `30` (normal probing) and `10` (fast probing). The default value is `30`."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "The path used by the monitoring checks. Required when `protocol` is set to `HTTP` or `HTTPS` - cannot be set when `protocol` is set to `TCP`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "The port number used by the monitoring checks."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The protocol used by the monitoring checks, supported values are `HTTP`, `HTTPS` and `TCP`."
+                },
+                "TimeoutInSeconds": {
+                    "type": "number",
+                    "description": "The amount of time the Traffic Manager probing agent should wait before considering that check a failure when a health check probe is sent to the endpoint. If `interval_in_seconds` is set to `30`, then `timeout_in_seconds` can be between `5` and `10`. The default value is `10`. If `interval_in_seconds` is set to `10`, then valid values are between `5` and `9` and `timeout_in_seconds` is required."
+                },
+                "ToleratedNumberOfFailures": {
+                    "type": "number",
+                    "description": "The number of failures a Traffic Manager probing agent tolerates before marking that endpoint as unhealthy. Valid values are between `0` and `9`. The default value is `3`."
+                },
+                "CustomHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomHeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Port",
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the custom header."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value of custom header. Applicable for Http and Https protocol."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxReturn": {
+            "type": "number",
+            "description": "The amount of endpoints to return for DNS queries to this Profile. Possible values range from `1` to `8`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Traffic Manager profile. Changing this forces a new resource to be created."
+        },
+        "ProfileStatus": {
+            "type": "string",
+            "description": "The status of the profile, can be set to either `Enabled` or `Disabled`. Defaults to `Enabled`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Traffic Manager profile."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TrafficRoutingMethod": {
+            "type": "string",
+            "description": "Specifies the algorithm used to route traffic, possible values are:\n* `Geographic` - Traffic is routed based on Geographic regions specified in the Endpoint.\n* `MultiValue` - All healthy Endpoints are returned.  MultiValue routing method works only if all the endpoints of type \u2018External\u2019 and are specified as IPv4 or IPv6 addresses.\n* `Performance` - Traffic is routed via the User's closest Endpoint\n* `Priority` - Traffic is routed to the Endpoint with the lowest `priority` value.\n* `Subnet` - Traffic is routed based on a mapping of sets of end-user IP address ranges to a specific Endpoint within a Traffic Manager profile.\n* `Weighted` - Traffic is spread across Endpoints proportional to their `weight` value."
+        },
+        "TrafficViewEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether Traffic View is enabled for the Traffic Manager profile."
+        },
+        "DnsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "MonitorConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "TrafficRoutingMethod"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

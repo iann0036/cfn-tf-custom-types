@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::CheckPoint::ManagementSetAutomaticPurge",
+    "description": "This command resource allows you to execute Check Point Set Automatic Purge.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementSetAutomaticPurge/docs/README.md",
+    "definitions": {
+        "SchedulingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Turn on/off the automatic-purge feature."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepSessionsByCount": {
+            "type": "boolean",
+            "description": "Whether or not to keep the latest N sessions.\nNote: when the automatic purge feature is enabled, this field and/or the \"keep-sessions-by-date\" field must be set to 'true'."
+        },
+        "KeepSessionsByDays": {
+            "type": "boolean",
+            "description": "Whether or not to keep the sessions for D days.\nNote: when the automatic purge feature is enabled, this field and/or the \"keep-sessions-by-count\" field must be set to 'true'."
+        },
+        "NumberOfDaysToKeep": {
+            "type": "number",
+            "description": "When \"keep-sessions-by-days = true\" this sets the number of days to keep the sessions."
+        },
+        "NumberOfSessionsToKeep": {
+            "type": "number",
+            "description": "When \"keep-sessions-by-count = true\" this sets the number of newest sessions to preserve, by the sessions's publish date."
+        },
+        "Scheduling": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SchedulingDefinition"
+            },
+            "description": "When to purge sessions that do not meet the \"keep\" criteria. Note: when the automatic purge feature is enabled, this field must be set.scheduling blocks are documented below."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

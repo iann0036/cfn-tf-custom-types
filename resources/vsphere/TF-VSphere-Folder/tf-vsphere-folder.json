@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::VSphere::Folder",
+    "description": "The `vsphere_folder` resource can be used to manage vSphere inventory folders.\nThe resource supports creating folders of the 5 major types - datacenter\nfolders, host and cluster folders, virtual machine folders, datastore folders,\nand network folders.\n\nPaths are always relative to the specific type of folder you are creating.\nSubfolders are discovered by parsing the relative path specified in `path`, so\n`foo/bar` will create a folder named `bar` in the parent folder `foo`, as long\nas that folder exists.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-Folder/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "Map of custom attribute ids to attribute\nvalue strings to set for folder. See [here][docs-setting-custom-attributes]\nfor a reference on how to set values for custom attributes."
+        },
+        "DatacenterId": {
+            "type": "string",
+            "description": "The ID of the datacenter the folder will be created in.\nRequired for all folder types except for datacenter folders. Forces a new\nresource if changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path of the folder to be created. This is relative to\nthe root of the type of folder you are creating, and the supplied datacenter.\nFor example, given a default datacenter of `default-dc`, a folder of type\n`vm` (denoting a virtual machine folder), and a supplied folder of\n`terraform-test-folder`, the resulting path would be\n`/default-dc/vm/terraform-test-folder`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of folder to create. Allowed options are\n`datacenter` for datacenter folders, `host` for host and cluster folders,\n`vm` for virtual machine folders, `datastore` for datastore folders, and\n`network` for network folders. Forces a new resource if changed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Path",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

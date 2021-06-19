@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Cloudtamerio::AwsIamPolicy",
+    "description": "CloudFormation equivalent of cloudtamerio_aws_iam_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudtamerio/TF-Cloudtamerio-AwsIamPolicy/docs/README.md",
+    "definitions": {
+        "OwnerUserGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "OwnerUsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsIamPath": {
+            "type": "string"
+        },
+        "AwsManagedPolicy": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdated": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PathSuffix": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "SystemManagedPolicy": {
+            "type": "boolean"
+        },
+        "OwnerUserGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnerUserGroupsDefinition"
+            }
+        },
+        "OwnerUsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnerUsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Policy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsManagedPolicy",
+        "/properties/Id",
+        "/properties/PathSuffix",
+        "/properties/SystemManagedPolicy"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

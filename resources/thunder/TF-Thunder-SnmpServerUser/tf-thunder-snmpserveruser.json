@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Thunder::SnmpServerUser",
+    "description": "`thunder_snmp_server_user` Provides details about thunder snmp server user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthVal": {
+            "type": "string",
+            "description": "\u2018md5\u2019: Use HMAC MD5 algorithm for authentication; \u2018sha\u2019: Use HMAC SHA algorithm for authentication;."
+        },
+        "Encpasswd": {
+            "type": "string",
+            "description": "Passphrase for encryption."
+        },
+        "Group": {
+            "type": "string",
+            "description": "Group to which the user belongs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Passwd": {
+            "type": "string",
+            "description": "Password of this user."
+        },
+        "Priv": {
+            "type": "string",
+            "description": "\u2018des\u2019: DES encryption alogrithm; \u2018aes\u2019: AES encryption alogrithm;  (Encryption type)."
+        },
+        "PrivPwEncrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED passphrase string)."
+        },
+        "PwEncrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED passphrase string)."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Name of the user."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "V3": {
+            "type": "string",
+            "description": "\u2018auth\u2019: Using the authNoPriv Security Level; \u2018noauth\u2019: Using the noAuthNoPriv Security Level;."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

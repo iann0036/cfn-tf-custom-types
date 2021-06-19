@@ -1,0 +1,733 @@
+{
+    "typeName": "TF::OCI::DatabaseDbSystem",
+    "description": "This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new DB system in the specified compartment and availability domain. The Oracle\nDatabase edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.\n\nAn initial database is created on the DB system based on the request parameters you provide and some default\noptions. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)\n\n**Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.\n\nFor Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.o...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseDbSystem/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IormConfigCacheDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbName": {
+                    "type": "string"
+                },
+                "FlashCacheLimit": {
+                    "type": "string"
+                },
+                "Share": {
+                    "type": "number"
+                }
+            }
+        },
+        "IormConfigCacheDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbPlans": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IormConfigCacheDefinition"
+                    }
+                },
+                "DbSystemId": {
+                    "type": "string"
+                },
+                "LifecycleDetails": {
+                    "type": "string"
+                },
+                "Objective": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            }
+        },
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "MaintenanceWindowDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "MaintenanceWindowDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceWindowDefinition"
+                    }
+                },
+                "HoursOfDay": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "LeadTimeInWeeks": {
+                    "type": "number"
+                },
+                "Months": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceWindowDefinition2"
+                    }
+                },
+                "Preference": {
+                    "type": "string"
+                },
+                "WeeksOfMonth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "DbHomeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateAsync": {
+                    "type": "boolean"
+                },
+                "DatabaseSoftwareImageId": {
+                    "type": "string"
+                },
+                "DbVersion": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition2"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition2"
+                    }
+                },
+                "Database": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DbSystemOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageManagement": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MaintenanceWindowDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HoursOfDay": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "LeadTimeInWeeks": {
+                    "type": "number"
+                },
+                "Preference": {
+                    "type": "string"
+                },
+                "WeeksOfMonth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DaysOfWeekDefinition"
+                    }
+                },
+                "Months": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonthsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "BackupId": {
+                    "type": "string"
+                },
+                "BackupTdePassword": {
+                    "type": "string"
+                },
+                "CharacterSet": {
+                    "type": "string"
+                },
+                "DatabaseId": {
+                    "type": "string"
+                },
+                "DatabaseSoftwareImageId": {
+                    "type": "string"
+                },
+                "DbDomain": {
+                    "type": "string"
+                },
+                "DbName": {
+                    "type": "string"
+                },
+                "DbWorkload": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition3"
+                    }
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition3"
+                    }
+                },
+                "NcharacterSet": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "TdeWalletPassword": {
+                    "type": "string"
+                },
+                "TimeStampForPointInTimeRecovery": {
+                    "type": "string"
+                },
+                "DbBackupConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbBackupConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "AdminPassword"
+            ]
+        },
+        "DefinedTagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DaysOfWeekDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MonthsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DbBackupConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoBackupEnabled": {
+                    "type": "boolean"
+                },
+                "AutoBackupWindow": {
+                    "type": "string"
+                },
+                "RecoveryWindowInDays": {
+                    "type": "number"
+                },
+                "BackupDestinationDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackupDestinationDetailsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BackupDestinationDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string",
+            "description": "The availability domain where the DB system is located."
+        },
+        "BackupNetworkNsgIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems."
+        },
+        "BackupSubnetId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems."
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in."
+        },
+        "CpuCoreCount": {
+            "type": "number",
+            "description": "(Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:\n* BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.\n* BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.\n* Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.\n* Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.\n* Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.\n* Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.\n* Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.\n* Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.\n* Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368."
+        },
+        "DataStoragePercentage": {
+            "type": "number",
+            "description": "The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems."
+        },
+        "DataStorageSizeInGb": {
+            "type": "number",
+            "description": "(Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume."
+        },
+        "DatabaseEdition": {
+            "type": "string",
+            "description": "The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "DiskRedundancy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "FaultDomains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IormConfigCache": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IormConfigCacheDefinition2"
+            }
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "KmsKeyVersionId": {
+            "type": "string"
+        },
+        "LastMaintenanceRunId": {
+            "type": "string"
+        },
+        "LastPatchHistoryEntryId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "ListenerPort": {
+            "type": "number"
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition3"
+            }
+        },
+        "NextMaintenanceRunId": {
+            "type": "string"
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "NsgIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PointInTimeDataDiskCloneTimestamp": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "RecoStorageSizeInGb": {
+            "type": "number"
+        },
+        "ScanDnsName": {
+            "type": "string"
+        },
+        "ScanDnsRecordId": {
+            "type": "string"
+        },
+        "ScanIpIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SourceDbSystemId": {
+            "type": "string"
+        },
+        "SparseDiskgroup": {
+            "type": "boolean"
+        },
+        "SshPublicKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeZone": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "VipIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "DbHome": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DbHomeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "DbSystemOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DbSystemOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenanceWindowDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityDomain",
+        "CompartmentId",
+        "Hostname",
+        "Shape",
+        "SshPublicKeys",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IormConfigCache",
+        "/properties/LastMaintenanceRunId",
+        "/properties/LastPatchHistoryEntryId",
+        "/properties/LifecycleDetails",
+        "/properties/ListenerPort",
+        "/properties/MaintenanceWindow",
+        "/properties/NextMaintenanceRunId",
+        "/properties/PointInTimeDataDiskCloneTimestamp",
+        "/properties/RecoStorageSizeInGb",
+        "/properties/ScanDnsName",
+        "/properties/ScanDnsRecordId",
+        "/properties/ScanIpIds",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/Version",
+        "/properties/VipIds",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DatabaseDefinition/AdminPassword",
+        "/definitions/DatabaseDefinition/BackupTdePassword",
+        "/definitions/DatabaseDefinition/TdeWalletPassword"
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::FortiOS::WebproxyForwardserver",
+    "description": "Configure forward-server addresses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyForwardserver/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddrType": {
+            "type": "string",
+            "description": "Address type of the forwarding proxy server: IP or FQDN. Valid values: `ip`, `fqdn`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Forward server Fully Qualified Domain Name (FQDN)."
+        },
+        "Healthcheck": {
+            "type": "string",
+            "description": "Enable/disable forward server health checking. Attempts to connect through the remote forwarding server to a destination to verify that the forwarding server is operating normally. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "Forward proxy server IP address."
+        },
+        "Monitor": {
+            "type": "string",
+            "description": "URL for forward server health check monitoring (default = http://www.google.com)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "HTTP authentication password."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number that the forwarding server expects to receive HTTP sessions on (1 - 65535, default = 3128)."
+        },
+        "ServerDownOption": {
+            "type": "string",
+            "description": "Action to take when the forward server is found to be down: block sessions until the server is back up or pass sessions to their destination. Valid values: `block`, `pass`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "HTTP authentication user name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

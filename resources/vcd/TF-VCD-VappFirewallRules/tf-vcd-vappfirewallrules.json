@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::VCD::VappFirewallRules",
+    "description": "Provides a vCloud Director vApp Firewall resource. This can be used to create,\nmodify, and delete firewall settings and rules in a [vApp network](/docs/providers/vcd/r/vapp_network.html).\nFirewall rules can be applied to [vApp networks connected to Org network](/docs/providers/vcd/r/vapp_network.html) or [vApp org networks](/docs/providers/vcd/r/vapp_org_network.html) which are fenced. \n\n!> **Warning:** Using this resource overrides any existing firewall rules on vApp network. It's recommended to have only one resource per vApp and vApp network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VappFirewallRules/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationIp": {
+                    "type": "string"
+                },
+                "DestinationPort": {
+                    "type": "string"
+                },
+                "DestinationVmId": {
+                    "type": "string"
+                },
+                "DestinationVmIpType": {
+                    "type": "string"
+                },
+                "DestinationVmNicId": {
+                    "type": "number"
+                },
+                "EnableLogging": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Policy": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourceIp": {
+                    "type": "string"
+                },
+                "SourcePort": {
+                    "type": "string"
+                },
+                "SourceVmId": {
+                    "type": "string"
+                },
+                "SourceVmIpType": {
+                    "type": "string"
+                },
+                "SourceVmNicId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultAction": {
+            "type": "string",
+            "description": "Either 'allow' or 'drop'. Specifies what to do should none of the rules match."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable or disable firewall. Default is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogDefaultAction": {
+            "type": "boolean",
+            "description": "Flag to enable logging for default action. Default value is `false`."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "The identifier of [vApp network](/docs/providers/vcd/r/vapp_network.html)."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "VappId": {
+            "type": "string",
+            "description": "The identifier of [vApp](/docs/providers/vcd/r/vapp.html)."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultAction",
+        "NetworkId",
+        "VappId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

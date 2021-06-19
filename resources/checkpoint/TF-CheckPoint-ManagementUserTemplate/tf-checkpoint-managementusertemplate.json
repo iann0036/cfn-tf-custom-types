@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::CheckPoint::ManagementUserTemplate",
+    "description": "This resource allows you to execute Check Point User Template.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementUserTemplate/docs/README.md",
+    "definitions": {
+        "AllowedLocationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllowedLocationsDefinition"
+            },
+            "description": "User allowed locations. allowed_locations blocks are documented below."
+        },
+        "AuthenticationMethod": {
+            "type": "string",
+            "description": "Authentication method."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "ConnectDaily": {
+            "type": "boolean",
+            "description": "Connect every day."
+        },
+        "ConnectOnDays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Days users allow to connect."
+        },
+        "Encryption": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EncryptionDefinition"
+            },
+            "description": "User encryption. encryption blocks are documented below."
+        },
+        "ExpirationByGlobalProperties": {
+            "type": "boolean",
+            "description": "Expiration date according to global properties."
+        },
+        "ExpirationDate": {
+            "type": "string",
+            "description": "Expiration date in format: yyyy-MM-dd."
+        },
+        "FromHour": {
+            "type": "string",
+            "description": "Allow users connect from hour."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "RadiusServer": {
+            "type": "string",
+            "description": "RADIUS server object identified by the name or UID. Must be set when \"authentication-method\" was selected to be \"RADIUS\"."
+        },
+        "TacacsServer": {
+            "type": "string",
+            "description": "TACACS server object identified by the name or UID. Must be set when \"authentication-method\" was selected to be \"TACACS\"."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "ToHour": {
+            "type": "string",
+            "description": "Allow users connect until hour."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,226 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointKubernetes",
+    "description": "Manages a Kubernetes service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointKubernetes/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureSubscriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureEnvironment": {
+                    "type": "string"
+                },
+                "ClusterAdmin": {
+                    "type": "boolean"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "ResourcegroupId": {
+                    "type": "string"
+                },
+                "SubscriptionId": {
+                    "type": "string"
+                },
+                "SubscriptionName": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterName",
+                "ResourcegroupId",
+                "SubscriptionId",
+                "SubscriptionName",
+                "TenantId"
+            ]
+        },
+        "KubeconfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptUntrustedCerts": {
+                    "type": "boolean"
+                },
+                "ClusterContext": {
+                    "type": "string"
+                },
+                "KubeConfig": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KubeConfig"
+            ]
+        },
+        "ServiceAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaCert": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CaCert",
+                "Token"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiserverUrl": {
+            "type": "string",
+            "description": "The Service Endpoint description.\n- `authorization_type` - (Required) The authentication method used to authenticate on the Kubernetes cluster. The value should be one of AzureSubscription, Kubeconfig, ServiceAccount.\n- `azure_subscription` - (Optional) The configuration for authorization_type=\"AzureSubscription\".\n- `azure_environment` - (Optional) Azure environment refers to whether the public cloud offering or domestic (government) clouds are being used. Currently, only the public cloud is supported. The value must be AzureCloud. This is also the default-value.\n- `cluster_name` - (Required) The name of the Kubernetes cluster.\n- `subscription_id` - (Required) The id of the Azure subscription.\n- `subscription_name` - (Required) The name of the Azure subscription.\n- `tenant_id` - (Required) The id of the tenant used by the subscription.\n- `resourcegroup_id` - (Required) The resource group name, to which the Kubernetes cluster is deployed.\n- `namespace` - (Optional) The Kubernetes namespace. Default value is \"default\".\n- `cluster_admin` - (Optional) Set this option to allow use cluster admin credentials.\n- `kubeconfig` - (Optional) The configuration for authorization_type=\"Kubeconfig\".\n- `kube_config` - (Required) The content of the kubeconfig in yaml notation to be used to communicate with the API-Server of Kubernetes.\n- `accept_untrusted_certs` - (Optional) Set this option to allow clients to accept a self-signed certificate.\n- `cluster_context` - (Optional) Context within the kubeconfig file that is to be used for identifying the cluster. Default value is the current-context set in kubeconfig.\n- `service_account` - (Optional) The configuration for authorization_type=\"ServiceAccount\". This type uses the credentials of a service account currently deployed to the cluster.\n- `token` - (Required) The token from a Kubernetes secret object.\n- `ca_cert` - (Required) The certificate from a Kubernetes secret object."
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "AuthorizationType": {
+            "type": "string",
+            "description": "The authentication method used to authenticate on the Kubernetes cluster. The value should be one of AzureSubscription, Kubeconfig, ServiceAccount.\n- `azure_subscription` - (Optional) The configuration for authorization_type=\"AzureSubscription\".\n- `azure_environment` - (Optional) Azure environment refers to whether the public cloud offering or domestic (government) clouds are being used. Currently, only the public cloud is supported. The value must be AzureCloud. This is also the default-value.\n- `cluster_name` - (Required) The name of the Kubernetes cluster.\n- `subscription_id` - (Required) The id of the Azure subscription.\n- `subscription_name` - (Required) The name of the Azure subscription.\n- `tenant_id` - (Required) The id of the tenant used by the subscription.\n- `resourcegroup_id` - (Required) The resource group name, to which the Kubernetes cluster is deployed.\n- `namespace` - (Optional) The Kubernetes namespace. Default value is \"default\".\n- `cluster_admin` - (Optional) Set this option to allow use cluster admin credentials.\n- `kubeconfig` - (Optional) The configuration for authorization_type=\"Kubeconfig\".\n- `kube_config` - (Required) The content of the kubeconfig in yaml notation to be used to communicate with the API-Server of Kubernetes.\n- `accept_untrusted_certs` - (Optional) Set this option to allow clients to accept a self-signed certificate.\n- `cluster_context` - (Optional) Context within the kubeconfig file that is to be used for identifying the cluster. Default value is the current-context set in kubeconfig.\n- `service_account` - (Optional) The configuration for authorization_type=\"ServiceAccount\". This type uses the credentials of a service account currently deployed to the cluster.\n- `token` - (Required) The token from a Kubernetes secret object.\n- `ca_cert` - (Required) The certificate from a Kubernetes secret object."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The Service Endpoint name.\n- `apiserver_url` - (Required) The Service Endpoint description.\n- `authorization_type` - (Required) The authentication method used to authenticate on the Kubernetes cluster. The value should be one of AzureSubscription, Kubeconfig, ServiceAccount.\n- `azure_subscription` - (Optional) The configuration for authorization_type=\"AzureSubscription\".\n- `azure_environment` - (Optional) Azure environment refers to whether the public cloud offering or domestic (government) clouds are being used. Currently, only the public cloud is supported. The value must be AzureCloud. This is also the default-value.\n- `cluster_name` - (Required) The name of the Kubernetes cluster.\n- `subscription_id` - (Required) The id of the Azure subscription.\n- `subscription_name` - (Required) The name of the Azure subscription.\n- `tenant_id` - (Required) The id of the tenant used by the subscription.\n- `resourcegroup_id` - (Required) The resource group name, to which the Kubernetes cluster is deployed.\n- `namespace` - (Optional) The Kubernetes namespace. Default value is \"default\".\n- `cluster_admin` - (Optional) Set this option to allow use cluster admin credentials.\n- `kubeconfig` - (Optional) The configuration for authorization_type=\"Kubeconfig\".\n- `kube_config` - (Required) The content of the kubeconfig in yaml notation to be used to communicate with the API-Server of Kubernetes.\n- `accept_untrusted_certs` - (Optional) Set this option to allow clients to accept a self-signed certificate.\n- `cluster_context` - (Optional) Context within the kubeconfig file that is to be used for identifying the cluster. Default value is the current-context set in kubeconfig.\n- `service_account` - (Optional) The configuration for authorization_type=\"ServiceAccount\". This type uses the credentials of a service account currently deployed to the cluster.\n- `token` - (Required) The token from a Kubernetes secret object.\n- `ca_cert` - (Required) The certificate from a Kubernetes secret object."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name.\n- `apiserver_url` - (Required) The Service Endpoint description.\n- `authorization_type` - (Required) The authentication method used to authenticate on the Kubernetes cluster. The value should be one of AzureSubscription, Kubeconfig, ServiceAccount.\n- `azure_subscription` - (Optional) The configuration for authorization_type=\"AzureSubscription\".\n- `azure_environment` - (Optional) Azure environment refers to whether the public cloud offering or domestic (government) clouds are being used. Currently, only the public cloud is supported. The value must be AzureCloud. This is also the default-value.\n- `cluster_name` - (Required) The name of the Kubernetes cluster.\n- `subscription_id` - (Required) The id of the Azure subscription.\n- `subscription_name` - (Required) The name of the Azure subscription.\n- `tenant_id` - (Required) The id of the tenant used by the subscription.\n- `resourcegroup_id` - (Required) The resource group name, to which the Kubernetes cluster is deployed.\n- `namespace` - (Optional) The Kubernetes namespace. Default value is \"default\".\n- `cluster_admin` - (Optional) Set this option to allow use cluster admin credentials.\n- `kubeconfig` - (Optional) The configuration for authorization_type=\"Kubeconfig\".\n- `kube_config` - (Required) The content of the kubeconfig in yaml notation to be used to communicate with the API-Server of Kubernetes.\n- `accept_untrusted_certs` - (Optional) Set this option to allow clients to accept a self-signed certificate.\n- `cluster_context` - (Optional) Context within the kubeconfig file that is to be used for identifying the cluster. Default value is the current-context set in kubeconfig.\n- `service_account` - (Optional) The configuration for authorization_type=\"ServiceAccount\". This type uses the credentials of a service account currently deployed to the cluster.\n- `token` - (Required) The token from a Kubernetes secret object.\n- `ca_cert` - (Required) The certificate from a Kubernetes secret object."
+        },
+        "AzureSubscription": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureSubscriptionDefinition"
+            }
+        },
+        "Kubeconfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KubeconfigDefinition"
+            }
+        },
+        "ServiceAccount": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceAccountDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiserverUrl",
+        "AuthorizationType",
+        "ProjectId",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/KubeconfigDefinition/KubeConfig",
+        "/definitions/ServiceAccountDefinition/CaCert",
+        "/definitions/ServiceAccountDefinition/Token"
+    ]
+}

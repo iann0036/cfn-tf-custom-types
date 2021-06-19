@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Alicloud::LogAudit",
+    "description": "SLS log audit exists in the form of log service app.\n\nIn addition to inheriting all SLS functions, it also enhances the real-time automatic centralized collection of audit related logs across multi cloud products under multi accounts, and provides support for storage, query and information summary required by audit. It covers actiontrail, OSS, NAS, SLB, API gateway, RDS, WAF, cloud firewall, cloud security center and other products.\n\n-> **NOTE:** Available in 1.81.0",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-LogAudit/docs/README.md",
+    "definitions": {
+        "VariableMapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aliuid": {
+            "type": "string",
+            "description": "Aliuid value of your account."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Name of SLS log audit."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MultiAccount": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Multi-account configuration, please fill in multiple aliuid."
+        },
+        "VariableMap": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VariableMapDefinition"
+            },
+            "description": "Log audit detailed configuration.\n* `actiontrail_enabled` - (Optional) Notification type. Support Email, SMS, DingTalk. Default true.\n* `actiontrail_ttl` - (Optional) Actiontril action log TTL. Default 180.\n* `oss_access_enabled` - (Optional) Access log switch of OSS. Default true.\n* `oss_access_ttl` - (Optional) Access log TTL of OSS. Default 180.\n* `oss_sync_enabled` - (Optional) OSS synchronization to central configuration switch. Default true.\n* `oss_sync_ttl` - (Optional) OSS synchronization to central TTL. Default 180.\n* `oss_metering_enabled` - (Optional) OSS metering log switch.Default true.\n* `oss_metering_ttl` - (Optional) OSS measurement log TTL. Default 180.\n* `rds_enabled` - (Optional) RDS audit log switch. Default true.\n* `rds_ttl` - (Optional) Dds log centralization ttl. Default 180.\n* `slb_access_enabled` - (Optional) Slb log switch. Default true.\n* `slb_access_ttl` - (Optional) Slb centralized ttl. Default 180.\n* `slb_sync_enabled` - (Optional) Slb sync to center switch. Default true.\n* `slb_sync_ttl` - (Optional) Slb sync to center switch. Default 180.\n* `bastion_enabled` - (Optional) Fortress machine operation log switch.Default true.\n* `bastion_ttl` - (Optional) Fort machine centralized ttl. Default 180.\n* `waf_enabled` - (Optional) Waf log switch. Default true.\n* `waf_ttl` - (Optional) Waf centralized ttl. Default true.\n* `cloudfirewall_ttl` - (Optional) Cloud firewall switch.Default true.\n* `sas_ttl` - (Optional) Cloud Security Center centralized ttl. Default 180.\n* `sas_process_enabled` - (Optional) Cloud Security Center process startup log switch. Default false.\n* `sas_network_enabled` - (Optional) Cloud security center network connection log switch. Default false.\n* `sas_login_enabled` - (Optional) Cloud security center login flow log switch. Default false.\n* `sas_crack_enabled` - (Optional) Cloud Security Center Brute Force Log Switch. Default false.\n* `sas_snapshot_process_enabled` - (Optional) Cloud Security Center process snapshot switch. Default false.\n* `sas_snapshot_account_enabled` - (Optional) Cloud Security Center account snapshot switch. Default false.\n* `sas_snapshot_port_enabled` - (Optional) Cloud Security Center Port Snapshot Switch. Default false.\n* `sas_dns_enabled` - (Optional) Cloud Security Center DNS resolution log switch. Default false.\n* `sas_local_dns_enabled` - (Optional) Cloud security center local DNS log switch. Default false.\n* `sas_session_enabled` - (Optional) Cloud security center network session log switch.Default false.\n* `sas_http_enabled` - (Optional). Cloud Security Center WEB access log switch. Default false.\n* `sas_security_vul_enabled` - (Optional) Cloud Security Center Vulnerability Log Switch.Default false.\n* `sas_security_hc_enabled` - (Optional) Cloud Security Center Baseline Log Switch. Default false.\n* `sas_security_alert_enabled` - (Optional) Cloud Security Center Security Alarm Log Switch .Default false.\n* `apigateway_enabled` - (Optional) API Gateway Log Switch. Default true.\n* `apigateway_ttl` - (Optional) API Gateway ttl. Default 180.\n* `nas_enabled` - (Optional) Nas log switch. Default true.\n* `nas_ttl` - (Optional) Nas centralized ttl. Default 180.\n* `cps_enabled` - (Optional) Mobile push log switch. Default true.\n* `cps_ttl` - (Optional) Mobile push ttl. Default 180."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Aliuid",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerLog",
+    "description": "Configure wireless controller event log filters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerLog/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddrgrpLog": {
+            "type": "string",
+            "description": "Lowest severity level to log address group message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "BleLog": {
+            "type": "string",
+            "description": "Lowest severity level to log BLE detection message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "ClbLog": {
+            "type": "string",
+            "description": "Lowest severity level to log client load balancing message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "DhcpStarvLog": {
+            "type": "string",
+            "description": "Lowest severity level to log DHCP starvation event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LedSchedLog": {
+            "type": "string",
+            "description": "Lowest severity level to log LED schedule event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "RadioEventLog": {
+            "type": "string",
+            "description": "Lowest severity level to log radio event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "RogueEventLog": {
+            "type": "string",
+            "description": "Lowest severity level to log rogue AP event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "StaEventLog": {
+            "type": "string",
+            "description": "Lowest severity level to log station event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "StaLocateLog": {
+            "type": "string",
+            "description": "Lowest severity level to log station locate message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable wireless event logging. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WidsLog": {
+            "type": "string",
+            "description": "Lowest severity level to log WIDS message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "WtpEventLog": {
+            "type": "string",
+            "description": "Lowest severity level to log WTP event message. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

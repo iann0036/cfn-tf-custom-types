@@ -1,0 +1,286 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerWidsprofile",
+    "description": "Configure wireless intrusion detection system (WIDS) profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerWidsprofile/docs/README.md",
+    "definitions": {
+        "ApBgscanDisableSchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Schedule name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApAutoSuppress": {
+            "type": "string",
+            "description": "Enable/disable on-wire rogue AP auto-suppression (default = disable). Valid values: `enable`, `disable`."
+        },
+        "ApBgscanDisableDay": {
+            "type": "string",
+            "description": "Optionally turn off scanning for one or more days of the week. Separate the days with a space. By default, no days are set. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        },
+        "ApBgscanDisableEnd": {
+            "type": "string",
+            "description": "End time, using a 24-hour clock in the format of hh:mm, for disabling background scanning (default = 00:00)."
+        },
+        "ApBgscanDisableStart": {
+            "type": "string",
+            "description": "Start time, using a 24-hour clock in the format of hh:mm, for disabling background scanning (default = 00:00)."
+        },
+        "ApBgscanDuration": {
+            "type": "number",
+            "description": "Listening time on a scanning channel (10 - 1000 msec, default = 20)."
+        },
+        "ApBgscanIdle": {
+            "type": "number",
+            "description": "Waiting time for channel inactivity before scanning this channel (0 - 1000 msec, default = 0)."
+        },
+        "ApBgscanIntv": {
+            "type": "number",
+            "description": "Period of time between scanning two channels (1 - 600 sec, default = 1)."
+        },
+        "ApBgscanPeriod": {
+            "type": "number",
+            "description": "Period of time between background scans (60 - 3600 sec, default = 600)."
+        },
+        "ApBgscanReportIntv": {
+            "type": "number",
+            "description": "Period of time between background scan reports (15 - 600 sec, default = 30)."
+        },
+        "ApFgscanReportIntv": {
+            "type": "number",
+            "description": "Period of time between foreground scan reports (15 - 600 sec, default = 15)."
+        },
+        "ApScan": {
+            "type": "string",
+            "description": "Enable/disable rogue AP detection. Valid values: `disable`, `enable`."
+        },
+        "ApScanPassive": {
+            "type": "string",
+            "description": "Enable/disable passive scanning. Enable means do not send probe request on any channels (default = disable). Valid values: `enable`, `disable`."
+        },
+        "ApScanThreshold": {
+            "type": "string",
+            "description": "Minimum signal level/threshold in dBm required for the AP to report detected rogue AP (-95 to -20, default = -90)."
+        },
+        "AsleapAttack": {
+            "type": "string",
+            "description": "Enable/disable asleap attack detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "AssocFloodThresh": {
+            "type": "number",
+            "description": "The threshold value for association frame flooding."
+        },
+        "AssocFloodTime": {
+            "type": "number",
+            "description": "Number of seconds after which a station is considered not connected."
+        },
+        "AssocFrameFlood": {
+            "type": "string",
+            "description": "Enable/disable association frame flooding detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "AuthFloodThresh": {
+            "type": "number",
+            "description": "The threshold value for authentication frame flooding."
+        },
+        "AuthFloodTime": {
+            "type": "number",
+            "description": "Number of seconds after which a station is considered not connected."
+        },
+        "AuthFrameFlood": {
+            "type": "string",
+            "description": "Enable/disable authentication frame flooding detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DeauthBroadcast": {
+            "type": "string",
+            "description": "Enable/disable broadcasting de-authentication detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "DeauthUnknownSrcThresh": {
+            "type": "number",
+            "description": "Threshold value per second to deauth unknown src for DoS attack (0: no limit)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EapolFailFlood": {
+            "type": "string",
+            "description": "Enable/disable EAPOL-Failure flooding (to AP) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolFailIntv": {
+            "type": "number",
+            "description": "The detection interval for EAPOL-Failure flooding (1 - 3600 sec)."
+        },
+        "EapolFailThresh": {
+            "type": "number",
+            "description": "The threshold value for EAPOL-Failure flooding in specified interval."
+        },
+        "EapolLogoffFlood": {
+            "type": "string",
+            "description": "Enable/disable EAPOL-Logoff flooding (to AP) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolLogoffIntv": {
+            "type": "number",
+            "description": "The detection interval for EAPOL-Logoff flooding (1 - 3600 sec)."
+        },
+        "EapolLogoffThresh": {
+            "type": "number",
+            "description": "The threshold value for EAPOL-Logoff flooding in specified interval."
+        },
+        "EapolPreFailFlood": {
+            "type": "string",
+            "description": "Enable/disable premature EAPOL-Failure flooding (to STA) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolPreFailIntv": {
+            "type": "number",
+            "description": "The detection interval for premature EAPOL-Failure flooding (1 - 3600 sec)."
+        },
+        "EapolPreFailThresh": {
+            "type": "number",
+            "description": "The threshold value for premature EAPOL-Failure flooding in specified interval."
+        },
+        "EapolPreSuccFlood": {
+            "type": "string",
+            "description": "Enable/disable premature EAPOL-Success flooding (to STA) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolPreSuccIntv": {
+            "type": "number",
+            "description": "The detection interval for premature EAPOL-Success flooding (1 - 3600 sec)."
+        },
+        "EapolPreSuccThresh": {
+            "type": "number",
+            "description": "The threshold value for premature EAPOL-Success flooding in specified interval."
+        },
+        "EapolStartFlood": {
+            "type": "string",
+            "description": "Enable/disable EAPOL-Start flooding (to AP) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolStartIntv": {
+            "type": "number",
+            "description": "The detection interval for EAPOL-Start flooding (1 - 3600 sec)."
+        },
+        "EapolStartThresh": {
+            "type": "number",
+            "description": "The threshold value for EAPOL-Start flooding in specified interval."
+        },
+        "EapolSuccFlood": {
+            "type": "string",
+            "description": "Enable/disable EAPOL-Success flooding (to AP) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "EapolSuccIntv": {
+            "type": "number",
+            "description": "The detection interval for EAPOL-Success flooding (1 - 3600 sec)."
+        },
+        "EapolSuccThresh": {
+            "type": "number",
+            "description": "The threshold value for EAPOL-Success flooding in specified interval."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvalidMacOui": {
+            "type": "string",
+            "description": "Enable/disable invalid MAC OUI detection. Valid values: `enable`, `disable`."
+        },
+        "LongDurationAttack": {
+            "type": "string",
+            "description": "Enable/disable long duration attack detection based on user configured threshold (default = disable). Valid values: `enable`, `disable`."
+        },
+        "LongDurationThresh": {
+            "type": "number",
+            "description": "Threshold value for long duration attack detection (1000 - 32767 usec, default = 8200)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "WIDS profile name."
+        },
+        "NullSsidProbeResp": {
+            "type": "string",
+            "description": "Enable/disable null SSID probe response detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "SensorMode": {
+            "type": "string",
+            "description": "Scan WiFi nearby stations (default = disable). Valid values: `disable`, `foreign`, `both`."
+        },
+        "SpoofedDeauth": {
+            "type": "string",
+            "description": "Enable/disable spoofed de-authentication attack detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WeakWepIv": {
+            "type": "string",
+            "description": "Enable/disable weak WEP IV (Initialization Vector) detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "WirelessBridge": {
+            "type": "string",
+            "description": "Enable/disable wireless bridge detection (default = disable). Valid values: `enable`, `disable`."
+        },
+        "ApBgscanDisableSchedules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApBgscanDisableSchedulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::OVH::IploadbalancingVrackNetwork",
+    "description": "Manage a vrack network for your IP Loadbalancing service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IploadbalancingVrackNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Human readable name for your vrack network."
+        },
+        "FarmId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "This attribute is there for documentation purpose only and isnt passed to the OVH API as it may conflicts with http/tcp farms `vrack_network_id` attribute."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NatIp": {
+            "type": "string",
+            "description": "An IP block used as a pool of IPs by this Load Balancer to connect to the servers in this private network. The blck must be in the private network and reserved for the Load Balancer."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "IP block of the private network in the vRack."
+        },
+        "Vlan": {
+            "type": "number",
+            "description": "VLAN of the private network in the vRack. 0 if the private network is not in a VLAN."
+        },
+        "VrackNetworkId": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NatIp",
+        "ServiceName",
+        "Subnet"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VrackNetworkId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

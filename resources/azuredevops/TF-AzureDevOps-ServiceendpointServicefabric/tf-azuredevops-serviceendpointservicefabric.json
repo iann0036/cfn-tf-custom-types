@@ -1,0 +1,218 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointServicefabric",
+    "description": "Manages a Service Fabric service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointServicefabric/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureActiveDirectoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "ServerCertificateCommonName": {
+                    "type": "string"
+                },
+                "ServerCertificateLookup": {
+                    "type": "string"
+                },
+                "ServerCertificateThumbprint": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "ServerCertificateLookup",
+                "Username"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientCertificatePassword": {
+                    "type": "string"
+                },
+                "ServerCertificateCommonName": {
+                    "type": "string"
+                },
+                "ServerCertificateLookup": {
+                    "type": "string"
+                },
+                "ServerCertificateThumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientCertificate",
+                "ServerCertificateLookup"
+            ]
+        },
+        "NoneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterSpn": {
+                    "type": "string"
+                },
+                "Unsecured": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "ClusterEndpoint": {
+            "type": "string",
+            "description": "Client connection endpoint for the cluster. Prefix the value with 'tcp://';. This value overrides the publish profile.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The Service Endpoint name.\n- `cluster_endpoint` - (Required) Client connection endpoint for the cluster. Prefix the value with 'tcp://';. This value overrides the publish profile.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name.\n- `cluster_endpoint` - (Required) Client connection endpoint for the cluster. Prefix the value with 'tcp://';. This value overrides the publish profile.\n- `description` - (Optional) The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "AzureActiveDirectory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureActiveDirectoryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDefinition"
+            },
+            "maxItems": 1
+        },
+        "None": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NoneDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterEndpoint",
+        "ProjectId",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AzureActiveDirectoryDefinition/Password",
+        "/definitions/CertificateDefinition/ClientCertificate",
+        "/definitions/CertificateDefinition/ClientCertificatePassword"
+    ]
+}

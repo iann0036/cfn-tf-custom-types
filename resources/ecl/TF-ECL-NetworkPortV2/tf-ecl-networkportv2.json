@@ -1,0 +1,214 @@
+{
+    "typeName": "TF::ECL::NetworkPortV2",
+    "description": "Manages a V2 port resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-NetworkPortV2/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string",
+                    "description": "The additional IP address."
+                },
+                "MacAddress": {
+                    "type": "string",
+                    "description": "The additional MAC address."
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "FixedIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string",
+                    "description": "IP address desired in the subnet for this port. If\nyou don't specify `ip_address`, an available IP address from the specified\nsubnet will be allocated to this port. This field will not be populated if it\nis left blank or omitted. To retrieve the assigned IP address, use the\n`all_fixed_ips` attribute."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "Subnet in which to allocate IP address for\nthis port."
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminStateUp": {
+            "type": "boolean",
+            "description": "Administrative up/down status for the port\n(must be \"true\" or \"false\" if provided). Changing this updates the\n`admin_state_up` of an existing port."
+        },
+        "AllFixedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "Port description."
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "The ID of the device attached to the port. Changing this\ncreates a new port."
+        },
+        "DeviceOwner": {
+            "type": "string",
+            "description": "The device owner of the Port.\nChanging this creates a new port."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MacAddress": {
+            "type": "string",
+            "description": "Specify a specific MAC address for the port. Changing\nthis creates a new port."
+        },
+        "ManagedByService": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the port. Changing this\nupdates the `name` of an existing port."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "The ID of the network to attach the port to.\nChanging this creates a new port."
+        },
+        "NoFixedIp": {
+            "type": "boolean",
+            "description": "Create a port with no fixed\nIP address. This will also remove any fixed IPs previously set on a port. `true`\nis the only valid value for this argument."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to obtain the V2 network client.\nA network client is needed to create a port. If omitted, the\n`region` argument of the provider is used.\nChanging this creates a new port."
+        },
+        "SegmentationId": {
+            "type": "number",
+            "description": "The segmentation ID used for this port.\nUser can specify this value only in case segmentation type is \"vlan\"."
+        },
+        "SegmentationType": {
+            "type": "string",
+            "description": "The segmentation type used for this port.\nUser can use \"vlan\" of \"flat\" as this argument."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Port tags."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The owner of the Port. Required if admin wants\nto create a port for another tenant. Changing this creates a new port."
+        },
+        "AllowedAddressPairs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllowedAddressPairsDefinition"
+            }
+        },
+        "FixedIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FixedIpDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllFixedIps",
+        "/properties/Id",
+        "/properties/ManagedByService",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

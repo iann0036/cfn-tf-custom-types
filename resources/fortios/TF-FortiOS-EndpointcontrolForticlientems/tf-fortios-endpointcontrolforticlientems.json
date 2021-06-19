@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::FortiOS::EndpointcontrolForticlientems",
+    "description": "Configure FortiClient Enterprise Management Server (EMS) entries. Applies to FortiOS Version `<= 6.2.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-EndpointcontrolForticlientems/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "Firewall address name."
+        },
+        "AdminPassword": {
+            "type": "string",
+            "description": "FortiClient EMS admin password."
+        },
+        "AdminType": {
+            "type": "string",
+            "description": "FortiClient EMS admin type. Valid values: `Windows`, `LDAP`."
+        },
+        "AdminUsername": {
+            "type": "string",
+            "description": "FortiClient EMS admin username."
+        },
+        "HttpsPort": {
+            "type": "number",
+            "description": "FortiClient EMS HTTPS access port number. (1 - 65535, default: 443)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenPort": {
+            "type": "number",
+            "description": "FortiClient EMS telemetry listen port number. (1 - 65535, default: 8013)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "FortiClient Enterprise Management Server (EMS) name."
+        },
+        "RestApiAuth": {
+            "type": "string",
+            "description": "FortiClient EMS REST API authentication. Valid values: `disable`, `userpass`."
+        },
+        "SerialNumber": {
+            "type": "string",
+            "description": "FortiClient EMS Serial Number."
+        },
+        "UploadPort": {
+            "type": "number",
+            "description": "FortiClient EMS telemetry upload port number. (1 - 65535, default: 8014)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "AdminUsername",
+        "SerialNumber"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword"
+    ]
+}

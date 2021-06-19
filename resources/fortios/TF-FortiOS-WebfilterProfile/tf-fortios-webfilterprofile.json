@@ -1,0 +1,713 @@
+{
+    "typeName": "TF::FortiOS::WebfilterProfile",
+    "description": "Configure Web filter profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebfilterProfile/docs/README.md",
+    "definitions": {
+        "AntiphishDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckBasicAuth": {
+                    "type": "string",
+                    "description": "Enable/disable checking of HTTP Basic Auth field for known credentials. Valid values: `enable`, `disable`."
+                },
+                "CheckUri": {
+                    "type": "string",
+                    "description": "Enable/disable checking of GET URI parameters for known credentials. Valid values: `enable`, `disable`."
+                },
+                "DefaultAction": {
+                    "type": "string",
+                    "description": "Action to be taken when there is no matching rule. Valid values: `exempt`, `log`, `block`."
+                },
+                "DomainController": {
+                    "type": "string",
+                    "description": "Domain for which to verify received credentials against."
+                },
+                "MaxBodyLen": {
+                    "type": "number",
+                    "description": "Maximum size of a POST body to check for credentials."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Toggle AntiPhishing functionality. Valid values: `enable`, `disable`."
+                },
+                "CustomPatterns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomPatternsDefinition"
+                    }
+                },
+                "InspectionEntries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InspectionEntriesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FileFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable file filter logging. Valid values: `enable`, `disable`."
+                },
+                "ScanArchiveContents": {
+                    "type": "string",
+                    "description": "Enable/disable file filter archive contents scan. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable file filter. Valid values: `enable`, `disable`."
+                },
+                "Entries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntriesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FtgdWfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExemptQuota": {
+                    "type": "string",
+                    "description": "Do not stop quota for these categories."
+                },
+                "MaxQuotaTimeout": {
+                    "type": "number",
+                    "description": "Maximum FortiGuard quota used by single page view in seconds (excludes streams)."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Options for FortiGuard Web Filter. Valid values: `error-allow`, `rate-server-ip`, `connect-request-bypass`, `ftgd-disable`."
+                },
+                "Ovrd": {
+                    "type": "string",
+                    "description": "Allow web filter profile overrides."
+                },
+                "RateCrlUrls": {
+                    "type": "string",
+                    "description": "Enable/disable rating CRL by URL. Valid values: `disable`, `enable`."
+                },
+                "RateCssUrls": {
+                    "type": "string",
+                    "description": "Enable/disable rating CSS by URL. Valid values: `disable`, `enable`."
+                },
+                "RateImageUrls": {
+                    "type": "string",
+                    "description": "Enable/disable rating images by URL. Valid values: `disable`, `enable`."
+                },
+                "RateJavascriptUrls": {
+                    "type": "string",
+                    "description": "Enable/disable rating JavaScript by URL. Valid values: `disable`, `enable`."
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    }
+                },
+                "Quota": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QuotaDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OvrdCookie": {
+                    "type": "string",
+                    "description": "Allow/deny browser-based (cookie) overrides. Valid values: `allow`, `deny`."
+                },
+                "OvrdDur": {
+                    "type": "string",
+                    "description": "Override duration."
+                },
+                "OvrdDurMode": {
+                    "type": "string",
+                    "description": "Override duration mode. Valid values: `constant`, `ask`."
+                },
+                "OvrdScope": {
+                    "type": "string",
+                    "description": "Override scope. Valid values: `user`, `user-group`, `ip`, `browser`, `ask`."
+                },
+                "ProfileAttribute": {
+                    "type": "string",
+                    "description": "Profile attribute to retrieve from the RADIUS server. Valid values: `User-Name`, `NAS-IP-Address`, `Framed-IP-Address`, `Framed-IP-Netmask`, `Filter-Id`, `Login-IP-Host`, `Reply-Message`, `Callback-Number`, `Callback-Id`, `Framed-Route`, `Framed-IPX-Network`, `Class`, `Called-Station-Id`, `Calling-Station-Id`, `NAS-Identifier`, `Proxy-State`, `Login-LAT-Service`, `Login-LAT-Node`, `Login-LAT-Group`, `Framed-AppleTalk-Zone`, `Acct-Session-Id`, `Acct-Multi-Session-Id`."
+                },
+                "ProfileType": {
+                    "type": "string",
+                    "description": "Override profile type. Valid values: `list`, `radius`."
+                },
+                "OvrdUserGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OvrdUserGroupDefinition"
+                    }
+                },
+                "Profile": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProfileDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WebDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Allowlist": {
+                    "type": "string",
+                    "description": "FortiGuard allowlist settings. Valid values: `exempt-av`, `exempt-webcontent`, `exempt-activex-java-cookie`, `exempt-dlp`, `exempt-rangeblock`, `extended-log-others`."
+                },
+                "Blacklist": {
+                    "type": "string",
+                    "description": "Enable/disable automatic addition of URLs detected by FortiSandbox to blacklist. Valid values: `enable`, `disable`."
+                },
+                "Blocklist": {
+                    "type": "string",
+                    "description": "Enable/disable automatic addition of URLs detected by FortiSandbox to blocklist. Valid values: `enable`, `disable`."
+                },
+                "BwordTable": {
+                    "type": "number",
+                    "description": "Banned word table ID."
+                },
+                "BwordThreshold": {
+                    "type": "number",
+                    "description": "Banned word score threshold."
+                },
+                "ContentHeaderList": {
+                    "type": "number",
+                    "description": "Content header list."
+                },
+                "LogSearch": {
+                    "type": "string",
+                    "description": "Enable/disable logging all search phrases. Valid values: `enable`, `disable`."
+                },
+                "SafeSearch": {
+                    "type": "string",
+                    "description": "Safe search type. Valid values: `url`, `header`."
+                },
+                "UrlfilterTable": {
+                    "type": "number",
+                    "description": "URL filter table ID."
+                },
+                "Whitelist": {
+                    "type": "string",
+                    "description": "FortiGuard whitelist settings. Valid values: `exempt-av`, `exempt-webcontent`, `exempt-activex-java-cookie`, `exempt-dlp`, `exempt-rangeblock`, `extended-log-others`."
+                },
+                "YoutubeRestrict": {
+                    "type": "string",
+                    "description": "YouTube EDU filter level. Valid values: `none`, `strict`, `moderate`."
+                },
+                "KeywordMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeywordMatchDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WispServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Server name."
+                }
+            },
+            "required": []
+        },
+        "YoutubeChannelFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChannelId": {
+                    "type": "string",
+                    "description": "YouTube channel ID to be filtered."
+                },
+                "Comment": {
+                    "type": "string",
+                    "description": "Comment."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                }
+            },
+            "required": []
+        },
+        "CustomPatternsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Category that the pattern matches. Valid values: `username`, `password`."
+                },
+                "Pattern": {
+                    "type": "string",
+                    "description": "Target pattern."
+                }
+            },
+            "required": []
+        },
+        "InspectionEntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to be taken upon an AntiPhishing match. Valid values: `exempt`, `log`, `block`."
+                },
+                "FortiguardCategory": {
+                    "type": "string",
+                    "description": "FortiGuard category to match."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Inspection target name."
+                }
+            },
+            "required": []
+        },
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action taken for matched file. Valid values: `log`, `block`."
+                },
+                "Comment": {
+                    "type": "string",
+                    "description": "Comment."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "Match files transmitted in the session's originating or reply direction. Valid values: `incoming`, `outgoing`, `any`."
+                },
+                "Filter": {
+                    "type": "string",
+                    "description": "Add a file filter."
+                },
+                "PasswordProtected": {
+                    "type": "string",
+                    "description": "Match password-protected files. Valid values: `yes`, `any`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Protocols to apply with. Valid values: `http`, `ftp`."
+                },
+                "FileType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileTypeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take for matches. Valid values: `block`, `authenticate`, `monitor`, `warning`."
+                },
+                "Category": {
+                    "type": "number",
+                    "description": "Categories and groups the filter examines."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID number."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "OverrideReplacemsg": {
+                    "type": "string",
+                    "description": "Override replacement message."
+                },
+                "WarnDuration": {
+                    "type": "string",
+                    "description": "Duration of warnings."
+                },
+                "WarningDurationType": {
+                    "type": "string",
+                    "description": "Re-display warning after closing browser or after a timeout. Valid values: `session`, `timeout`."
+                },
+                "WarningPrompt": {
+                    "type": "string",
+                    "description": "Warning prompts in each category or each domain. Valid values: `per-domain`, `per-category`."
+                },
+                "AuthUsrGrp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthUsrGrpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "QuotaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "FortiGuard categories to apply quota to (category action must be set to monitor)."
+                },
+                "Duration": {
+                    "type": "string",
+                    "description": "Duration of quota."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID number."
+                },
+                "OverrideReplacemsg": {
+                    "type": "string",
+                    "description": "Override replacement message."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Quota type. Valid values: `time`, `traffic`."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "Traffic quota unit of measurement. Valid values: `B`, `KB`, `MB`, `GB`."
+                },
+                "Value": {
+                    "type": "number",
+                    "description": "Traffic quota value."
+                }
+            },
+            "required": []
+        },
+        "OvrdUserGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User group name."
+                }
+            },
+            "required": []
+        },
+        "ProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Web profile."
+                }
+            },
+            "required": []
+        },
+        "KeywordMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Pattern": {
+                    "type": "string",
+                    "description": "Pattern/keyword to search for."
+                }
+            },
+            "required": []
+        },
+        "FileTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "File type name."
+                }
+            },
+            "required": []
+        },
+        "AuthUsrGrpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User group name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ExtendedLog": {
+            "type": "string",
+            "description": "Enable/disable extended logging for web filtering. Valid values: `enable`, `disable`."
+        },
+        "FeatureSet": {
+            "type": "string",
+            "description": "Flow/proxy feature set. Valid values: `flow`, `proxy`."
+        },
+        "HttpsReplacemsg": {
+            "type": "string",
+            "description": "Enable replacement messages for HTTPS. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InspectionMode": {
+            "type": "string",
+            "description": "Web filtering inspection mode. Valid values: `proxy`, `flow-based`."
+        },
+        "LogAllUrl": {
+            "type": "string",
+            "description": "Enable/disable logging all URLs visited. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Options."
+        },
+        "OvrdPerm": {
+            "type": "string",
+            "description": "Permitted override types. Valid values: `bannedword-override`, `urlfilter-override`, `fortiguard-wf-override`, `contenttype-check-override`."
+        },
+        "PostAction": {
+            "type": "string",
+            "description": "Action taken for HTTP POST traffic. Valid values: `normal`, `block`."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WebAntiphishingLog": {
+            "type": "string",
+            "description": "Enable/disable logging of AntiPhishing checks. Valid values: `enable`, `disable`."
+        },
+        "WebContentLog": {
+            "type": "string",
+            "description": "Enable/disable logging logging blocked web content. Valid values: `enable`, `disable`."
+        },
+        "WebExtendedAllActionLog": {
+            "type": "string",
+            "description": "Enable/disable extended any filter action logging for web filtering. Valid values: `enable`, `disable`."
+        },
+        "WebFilterActivexLog": {
+            "type": "string",
+            "description": "Enable/disable logging ActiveX. Valid values: `enable`, `disable`."
+        },
+        "WebFilterAppletLog": {
+            "type": "string",
+            "description": "Enable/disable logging Java applets. Valid values: `enable`, `disable`."
+        },
+        "WebFilterCommandBlockLog": {
+            "type": "string",
+            "description": "Enable/disable logging blocked commands. Valid values: `enable`, `disable`."
+        },
+        "WebFilterCookieLog": {
+            "type": "string",
+            "description": "Enable/disable logging cookie filtering. Valid values: `enable`, `disable`."
+        },
+        "WebFilterCookieRemovalLog": {
+            "type": "string",
+            "description": "Enable/disable logging blocked cookies. Valid values: `enable`, `disable`."
+        },
+        "WebFilterJsLog": {
+            "type": "string",
+            "description": "Enable/disable logging Java scripts. Valid values: `enable`, `disable`."
+        },
+        "WebFilterJscriptLog": {
+            "type": "string",
+            "description": "Enable/disable logging JScripts. Valid values: `enable`, `disable`."
+        },
+        "WebFilterRefererLog": {
+            "type": "string",
+            "description": "Enable/disable logging referrers. Valid values: `enable`, `disable`."
+        },
+        "WebFilterUnknownLog": {
+            "type": "string",
+            "description": "Enable/disable logging unknown scripts. Valid values: `enable`, `disable`."
+        },
+        "WebFilterVbsLog": {
+            "type": "string",
+            "description": "Enable/disable logging VBS scripts. Valid values: `enable`, `disable`."
+        },
+        "WebFtgdErrLog": {
+            "type": "string",
+            "description": "Enable/disable logging rating errors. Valid values: `enable`, `disable`."
+        },
+        "WebFtgdQuotaUsage": {
+            "type": "string",
+            "description": "Enable/disable logging daily quota usage. Valid values: `enable`, `disable`."
+        },
+        "WebInvalidDomainLog": {
+            "type": "string",
+            "description": "Enable/disable logging invalid domain names. Valid values: `enable`, `disable`."
+        },
+        "WebUrlLog": {
+            "type": "string",
+            "description": "Enable/disable logging URL filtering. Valid values: `enable`, `disable`."
+        },
+        "Wisp": {
+            "type": "string",
+            "description": "Enable/disable web proxy WISP. Valid values: `enable`, `disable`."
+        },
+        "WispAlgorithm": {
+            "type": "string",
+            "description": "WISP server selection algorithm. Valid values: `primary-secondary`, `round-robin`, `auto-learning`."
+        },
+        "YoutubeChannelStatus": {
+            "type": "string",
+            "description": "YouTube channel filter status."
+        },
+        "Antiphish": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AntiphishDefinition"
+            },
+            "maxItems": 1
+        },
+        "FileFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FileFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "FtgdWf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtgdWfDefinition"
+            },
+            "maxItems": 1
+        },
+        "Override": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OverrideDefinition"
+            },
+            "maxItems": 1
+        },
+        "Web": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebDefinition"
+            },
+            "maxItems": 1
+        },
+        "WispServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WispServersDefinition"
+            }
+        },
+        "YoutubeChannelFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/YoutubeChannelFilterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

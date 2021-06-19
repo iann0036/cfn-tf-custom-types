@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::FortiOS::CertificateLocal",
+    "description": "Local keys and certificates.\n\nDue to the limitations of the current system, the feature is temporarily unavailable. Please use the following resource configuration as an alternative.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-CertificateLocal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRegenerateDays": {
+            "type": "number"
+        },
+        "AutoRegenerateDaysWarning": {
+            "type": "number"
+        },
+        "CaIdentifier": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "CmpPath": {
+            "type": "string"
+        },
+        "CmpRegenerationMethod": {
+            "type": "string"
+        },
+        "CmpServer": {
+            "type": "string"
+        },
+        "CmpServerCert": {
+            "type": "string"
+        },
+        "Comments": {
+            "type": "string"
+        },
+        "Csr": {
+            "type": "string"
+        },
+        "EnrollProtocol": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeLocalid": {
+            "type": "string"
+        },
+        "IkeLocalidType": {
+            "type": "string"
+        },
+        "LastUpdated": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameEncoding": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "Range": {
+            "type": "string"
+        },
+        "ScepPassword": {
+            "type": "string"
+        },
+        "ScepUrl": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SourceIp": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PrivateKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateKey",
+        "/properties/ScepPassword"
+    ]
+}

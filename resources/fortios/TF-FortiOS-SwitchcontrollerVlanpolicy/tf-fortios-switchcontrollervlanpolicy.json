@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerVlanpolicy",
+    "description": "Configure VLAN policy to be applied on the managed FortiSwitch ports through port-policy. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerVlanpolicy/docs/README.md",
+    "definitions": {
+        "AllowedVlansDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VlanName": {
+                    "type": "string",
+                    "description": "VLAN name."
+                }
+            },
+            "required": []
+        },
+        "UntaggedVlansDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VlanName": {
+                    "type": "string",
+                    "description": "VLAN name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedVlansAll": {
+            "type": "string",
+            "description": "Enable/disable all defined VLANs when using this VLAN policy. Valid values: `enable`, `disable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the VLAN policy."
+        },
+        "DiscardMode": {
+            "type": "string",
+            "description": "Discard mode to be applied when using this VLAN policy. Valid values: `none`, `all-untagged`, `all-tagged`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fortilink": {
+            "type": "string",
+            "description": "FortiLink interface for which this VLAN policy belongs to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "VLAN policy name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vlan": {
+            "type": "string",
+            "description": "Native VLAN to be applied when using this VLAN policy."
+        },
+        "AllowedVlans": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllowedVlansDefinition"
+            }
+        },
+        "UntaggedVlans": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UntaggedVlansDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

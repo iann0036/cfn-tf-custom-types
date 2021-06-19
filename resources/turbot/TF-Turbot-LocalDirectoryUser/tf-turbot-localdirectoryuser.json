@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::Turbot::LocalDirectoryUser",
+    "description": "The `Turbot Local Directory User` resource adds support for local directory users. It is used to create, manage and delete user settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-LocalDirectoryUser/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Full display name for the new user. Usually a combination of the given name and family name.\n- `email` - (Required) Email address of the new user.\n- `parent` - (Required) ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the local directory user.\n- `family_name` - (Optional) Surname of the user.\n- `given_name` - (Optional) First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Email address of the new user.\n- `parent` - (Required) ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the local directory user.\n- `family_name` - (Optional) Surname of the user.\n- `given_name` - (Optional) First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "FamilyName": {
+            "type": "string",
+            "description": "Surname of the user.\n- `given_name` - (Optional) First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "GivenName": {
+            "type": "string",
+            "description": "First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MiddleName": {
+            "type": "string",
+            "description": "Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the local directory user.\n- `family_name` - (Optional) Surname of the user.\n- `given_name` - (Optional) First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PasswordTimestamp": {
+            "type": "string"
+        },
+        "Picture": {
+            "type": "string",
+            "description": "Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Short descriptive name for the local directory user.\n- `family_name` - (Optional) Surname of the user.\n- `given_name` - (Optional) First name of the user.\n- `middle_name` - (Optional) Middle name of the user.\n- `picture` - (Optional) Picture of the user.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Email",
+        "Parent",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ParentAkas",
+        "/properties/PasswordTimestamp",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

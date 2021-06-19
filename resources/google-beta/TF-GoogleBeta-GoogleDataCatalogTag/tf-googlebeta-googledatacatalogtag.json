@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataCatalogTag",
+    "description": "CloudFormation equivalent of google_data_catalog_tag",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataCatalogTag/docs/README.md",
+    "definitions": {
+        "FieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BoolValue": {
+                    "type": "boolean"
+                },
+                "DoubleValue": {
+                    "type": "number"
+                },
+                "EnumValue": {
+                    "type": "string"
+                },
+                "FieldName": {
+                    "type": "string"
+                },
+                "StringValue": {
+                    "type": "string"
+                },
+                "TimestampValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FieldName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Column": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateDisplayname": {
+            "type": "string"
+        },
+        "Fields": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FieldsDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/TemplateDisplayname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

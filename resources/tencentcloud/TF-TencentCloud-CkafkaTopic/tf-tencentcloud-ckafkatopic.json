@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::TencentCloud::CkafkaTopic",
+    "description": "Use this resource to create ckafka topic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CkafkaTopic/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CleanUpPolicy": {
+            "type": "string",
+            "description": "Clear log policy, log clear mode, default is `delete`. `delete`: logs are deleted according to the storage time. `compact`: logs are compressed according to the key. `compact, delete`: logs are compressed according to the key and will be deleted according to the storage time."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EnableWhiteList": {
+            "type": "boolean",
+            "description": "Whether to open the ip whitelist, `true`: open, `false`: close."
+        },
+        "ForwardCosBucket": {
+            "type": "string"
+        },
+        "ForwardInterval": {
+            "type": "number"
+        },
+        "ForwardStatus": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "Ckafka instance ID."
+        },
+        "IpWhiteList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Ip whitelist, quota limit, required when enableWhileList=true."
+        },
+        "MaxMessageBytes": {
+            "type": "number",
+            "description": "Max message bytes."
+        },
+        "MessageStorageLocation": {
+            "type": "string"
+        },
+        "Note": {
+            "type": "string",
+            "description": "The subject note is a string of no more than 64 characters. It must start with a letter, and the remaining part can contain letters, numbers and dashes (-)."
+        },
+        "PartitionNum": {
+            "type": "number",
+            "description": "The number of partition."
+        },
+        "ReplicaNum": {
+            "type": "number",
+            "description": "The number of replica, the maximum is 3."
+        },
+        "Retention": {
+            "type": "number",
+            "description": "Message can be selected. Retention time, unit is ms, the current minimum value is 60000ms."
+        },
+        "Segment": {
+            "type": "number",
+            "description": "Segment scrolling time, in ms, the current minimum is 3600000ms."
+        },
+        "SegmentBytes": {
+            "type": "number"
+        },
+        "SyncReplicaMinNum": {
+            "type": "number",
+            "description": "Min number of sync replicas, Default is `1`."
+        },
+        "TopicName": {
+            "type": "string",
+            "description": "Name of the CKafka topic. It must start with a letter, the rest can contain letters, numbers and dashes(-). The length range is from 1 to 64."
+        },
+        "UncleanLeaderElectionEnable": {
+            "type": "boolean",
+            "description": "Whether to allow unsynchronized replicas to be selected as leader, default is `false`, `true: `allowed, `false`: not allowed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "PartitionNum",
+        "ReplicaNum",
+        "TopicName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ForwardCosBucket",
+        "/properties/ForwardInterval",
+        "/properties/ForwardStatus",
+        "/properties/Id",
+        "/properties/MessageStorageLocation",
+        "/properties/SegmentBytes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

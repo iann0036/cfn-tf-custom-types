@@ -1,0 +1,189 @@
+{
+    "typeName": "TF::ACI::EndpointSecurityGroup",
+    "description": "CloudFormation equivalent of aci_endpoint_security_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-EndpointSecurityGroup/docs/README.md",
+    "definitions": {
+        "RelationFvRsConsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prio": {
+                    "type": "string"
+                },
+                "TargetDn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetDn"
+            ]
+        },
+        "RelationFvRsConsIfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prio": {
+                    "type": "string"
+                },
+                "TargetDn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetDn"
+            ]
+        },
+        "RelationFvRsProvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchT": {
+                    "type": "string"
+                },
+                "Prio": {
+                    "type": "string"
+                },
+                "TargetDn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetDn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ApplicationProfileDn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FloodOnEncap": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchT": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PcEnfPref": {
+            "type": "string"
+        },
+        "PrefGrMemb": {
+            "type": "string"
+        },
+        "Prio": {
+            "type": "string"
+        },
+        "RelationFvRsCustQosPol": {
+            "type": "string"
+        },
+        "RelationFvRsIntraEpg": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProtBy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsScope": {
+            "type": "string"
+        },
+        "RelationFvRsSecInherited": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsCons": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsConsDefinition"
+            }
+        },
+        "RelationFvRsConsIf": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsConsIfDefinition"
+            }
+        },
+        "RelationFvRsProv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsProvDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationProfileDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

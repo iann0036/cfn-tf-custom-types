@@ -1,0 +1,206 @@
+{
+    "typeName": "TF::DCNM::Interface",
+    "description": "CloudFormation equivalent of dcnm_interface",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dcnm/TF-DCNM-Interface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessVlans": {
+            "type": "string"
+        },
+        "AdminState": {
+            "type": "boolean"
+        },
+        "AllowedVlans": {
+            "type": "string"
+        },
+        "BpduGaurdFlag": {
+            "type": "string"
+        },
+        "Configuration": {
+            "type": "string"
+        },
+        "Deploy": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EthernetSpeed": {
+            "type": "string"
+        },
+        "FabricName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "string"
+        },
+        "Ipv4Prefix": {
+            "type": "string"
+        },
+        "Ipv6": {
+            "type": "string"
+        },
+        "Ipv6Prefix": {
+            "type": "string"
+        },
+        "LoopbackLsRouting": {
+            "type": "string"
+        },
+        "LoopbackReplicationMode": {
+            "type": "string"
+        },
+        "LoopbackRouterId": {
+            "type": "string"
+        },
+        "LoopbackRoutingTag": {
+            "type": "string"
+        },
+        "LoopbackTag": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PcInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "PortFastFlag": {
+            "type": "boolean"
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "SubinterfaceMtu": {
+            "type": "string"
+        },
+        "SubinterfaceVlan": {
+            "type": "number"
+        },
+        "SwitchName1": {
+            "type": "string"
+        },
+        "SwitchName2": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VpcPeer1AccessVlans": {
+            "type": "string"
+        },
+        "VpcPeer1AllowedVlans": {
+            "type": "string"
+        },
+        "VpcPeer1Conf": {
+            "type": "string"
+        },
+        "VpcPeer1Desc": {
+            "type": "string"
+        },
+        "VpcPeer1Id": {
+            "type": "number"
+        },
+        "VpcPeer1Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcPeer2AccessVlans": {
+            "type": "string"
+        },
+        "VpcPeer2AllowedVlans": {
+            "type": "string"
+        },
+        "VpcPeer2Conf": {
+            "type": "string"
+        },
+        "VpcPeer2Desc": {
+            "type": "string"
+        },
+        "VpcPeer2Id": {
+            "type": "number"
+        },
+        "VpcPeer2Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Vrf": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FabricName",
+        "Name",
+        "Policy",
+        "SwitchName1",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

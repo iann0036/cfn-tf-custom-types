@@ -1,0 +1,418 @@
+{
+    "typeName": "TF::VCD::VappVm",
+    "description": "Provides a vCloud Director VM resource. This can be used to create,\nmodify, and delete VMs within a vApp.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VappVm/docs/README.md",
+    "definitions": {
+        "GuestPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InternalDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "number"
+                },
+                "BusType": {
+                    "type": "string"
+                },
+                "DiskId": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInMb": {
+                    "type": "number"
+                },
+                "StorageProfile": {
+                    "type": "string"
+                },
+                "ThinProvisioned": {
+                    "type": "boolean"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                }
+            }
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AllowLocalAdminPassword": {
+                    "type": "boolean"
+                },
+                "AutoGeneratePassword": {
+                    "type": "boolean"
+                },
+                "ChangeSid": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Force": {
+                    "type": "boolean"
+                },
+                "Initscript": {
+                    "type": "string"
+                },
+                "JoinDomain": {
+                    "type": "boolean"
+                },
+                "JoinDomainAccountOu": {
+                    "type": "string"
+                },
+                "JoinDomainName": {
+                    "type": "string"
+                },
+                "JoinDomainPassword": {
+                    "type": "string"
+                },
+                "JoinDomainUser": {
+                    "type": "string"
+                },
+                "JoinOrgDomain": {
+                    "type": "boolean"
+                },
+                "MustChangePasswordOnFirstLogin": {
+                    "type": "boolean"
+                },
+                "NumberOfAutoLogons": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "Name",
+                "UnitNumber"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdapterType": {
+                    "type": "string"
+                },
+                "Connected": {
+                    "type": "boolean"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpAllocationMode": {
+                    "type": "string"
+                },
+                "IsPrimary": {
+                    "type": "boolean"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OverrideTemplateDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "number"
+                },
+                "BusType": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInMb": {
+                    "type": "number"
+                },
+                "StorageProfile": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "BusType",
+                "SizeInMb",
+                "UnitNumber"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptAllEulas": {
+            "type": "boolean",
+            "description": "Automatically accept EULA if OVA has it. Default is `true`."
+        },
+        "BootImage": {
+            "type": "string",
+            "description": "Media name to mount as boot image. Image is mounted only during VM creation. On update if value is changed to empty it will eject the mounted media. If you want to mount an image later, please use [vcd_inserted_media](/docs/providers/vcd/r/inserted_media.html)."
+        },
+        "CatalogName": {
+            "type": "string",
+            "description": "The catalog name in which to find the given vApp Template or media for `boot_image`."
+        },
+        "ComputerName": {
+            "type": "string",
+            "description": "Computer name to assign to this virtual machine."
+        },
+        "CpuCores": {
+            "type": "number",
+            "description": "The number of cores per socket."
+        },
+        "CpuHotAddEnabled": {
+            "type": "boolean",
+            "description": "True if the virtual machine supports addition of virtual CPUs while powered on. Default is `false`."
+        },
+        "Cpus": {
+            "type": "number",
+            "description": "The number of virtual CPUs to allocate to the VM. Socket count is a result of: virtual logical processors/cores per socket. If `cpu_hot_add_enabled` is true, then cpus will be increased without VM power off."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The VM description. Note: for VM from Template `description` is read only. Currently, this field has\nthe description of the OVA used to create the VM."
+        },
+        "ExposeHardwareVirtualization": {
+            "type": "boolean",
+            "description": "Boolean for exposing full CPU virtualization to the\nguest operating system so that applications that require hardware virtualization can run on virtual machines without binary\ntranslation or paravirtualization. Useful for hypervisor nesting provided underlying hardware supports it. Default is `false`."
+        },
+        "GuestProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestPropertiesDefinition"
+            },
+            "description": "Key value map of guest properties."
+        },
+        "HardwareVersion": {
+            "type": "string",
+            "description": "Virtual Hardware Version (e.g.`vmx-14`, `vmx-13`, `vmx-12`, etc.). Required when creating empty VM."
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternalDiskDefinition"
+            }
+        },
+        "Memory": {
+            "type": "number",
+            "description": "The amount of RAM (in MB) to allocate to the VM. If `memory_hot_add_enabled` is true, then memory will be increased without VM power off."
+        },
+        "MemoryHotAddEnabled": {
+            "type": "boolean",
+            "description": "True if the virtual machine supports addition of memory while powered on. Default is `false`."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "Key value map of metadata to assign to this VM."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the VM, unique within the vApp."
+        },
+        "NetworkDhcpWaitSeconds": {
+            "type": "number",
+            "description": "Optional number of seconds to try and wait for DHCP IP (only valid\nfor adapters in `network` block with `ip_allocation_mode=DHCP`). It constantly checks if IP is present so the time given\nis a maximum. VM must be powered on and _at least one_ of the following _must be true_:\n* VM has Guest Tools. It waits for IP address to be reported by Guest Tools. This is a slower option, but\ndoes not require for the VM to use Edge Gateways DHCP service.\n* VM DHCP interface is connected to routed Org network and is using Edge Gateways DHCP service (not\nrelayed). It works by querying DHCP leases on Edge Gateway. In general it is quicker than waiting\nuntil Guest Tools report IP addresses, but is more constrained. However this is the only option if Guest\nTools are not present on the VM."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "OsType": {
+            "type": "string",
+            "description": "Operating System type. Possible values can be found in [Os Types](#os-types). Required when creating empty VM."
+        },
+        "PowerOn": {
+            "type": "boolean",
+            "description": "A boolean value stating if this VM should be powered on. Default is `true`."
+        },
+        "PreventUpdatePowerOff": {
+            "type": "boolean",
+            "description": "True if the update of resource should fail when virtual machine power off needed. Default is `false`."
+        },
+        "SizingPolicyId": {
+            "type": "string"
+        },
+        "StorageProfile": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string",
+            "description": "The name of the vApp Template to use."
+        },
+        "VappName": {
+            "type": "string",
+            "description": "The vApp this VM belongs to."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "VmNameInTemplate": {
+            "type": "string",
+            "description": "The name of the VM in vApp Template to use. For cases when vApp template has more than one VM."
+        },
+        "VmType": {
+            "type": "string"
+        },
+        "Customization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomizationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "OverrideTemplateDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OverrideTemplateDiskDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VappName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InternalDisk",
+        "/properties/VmType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CustomizationDefinition/AdminPassword",
+        "/definitions/CustomizationDefinition/JoinDomainPassword"
+    ]
+}

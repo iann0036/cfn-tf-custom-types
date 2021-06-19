@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::AVI::User",
+    "description": "The User resource allows the creation and management of Avi User",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-User/docs/README.md",
+    "definitions": {
+        "AccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllTenants": {
+                    "type": "boolean"
+                },
+                "RoleRef": {
+                    "type": "string"
+                },
+                "TenantRef": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultTenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Placeholder for description of property email of obj type user field type string  type str."
+        },
+        "FullName": {
+            "type": "string",
+            "description": "Placeholder for description of property full_name of obj type user field type string  type str."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsSuperuser": {
+            "type": "boolean",
+            "description": "Boolean flag to set is_superuser."
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Boolean flag to set local."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Placeholder for description of property password of obj type user field type string  type str."
+        },
+        "UserProfileRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type useraccountprofile."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Placeholder for description of property username of obj type user field type string  type str."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Access": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

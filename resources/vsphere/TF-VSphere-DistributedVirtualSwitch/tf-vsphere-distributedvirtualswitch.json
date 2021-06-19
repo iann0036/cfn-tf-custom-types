@@ -1,0 +1,468 @@
+{
+    "typeName": "TF::VSphere::DistributedVirtualSwitch",
+    "description": "The `vsphere_distributed_virtual_switch` resource can be used to manage VMware\nDistributed Virtual Switches.\n\nAn essential component of a distributed, scalable VMware datacenter, the\nvSphere Distributed Virtual Switch (DVS) provides centralized management and\nmonitoring of the networking configuration of all the hosts that are associated\nwith the switch. In addition to adding port groups (see the\n[`vsphere_distributed_port_group`][distributed-port-group] resource) that can\nbe used as networks for virtual machines, a DVS can be configured to perform\nadvanced high availability, traffic shaping, network monitoring, and more.\n\nFor an overview on vSphere networking concepts, see [this\npage][ref-vsphere-net-concepts]. For more information on vSphere DVS, see [this\npage][ref-vsphere-dvs].\n\n[distributed-port-group]: /docs/providers/vsphere/r/distributed_port_group.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC56...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-DistributedVirtualSwitch/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HostSystemId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Devices",
+                "HostSystemId"
+            ]
+        },
+        "PvlanMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PrimaryVlanId": {
+                    "type": "number"
+                },
+                "PvlanType": {
+                    "type": "string"
+                },
+                "SecondaryVlanId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "PrimaryVlanId",
+                "PvlanType",
+                "SecondaryVlanId"
+            ]
+        },
+        "VlanRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxVlan": {
+                    "type": "number"
+                },
+                "MinVlan": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxVlan",
+                "MinVlan"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "BackupnfcMaximumMbit": {
+            "type": "number"
+        },
+        "BackupnfcReservationMbit": {
+            "type": "number"
+        },
+        "BackupnfcShareCount": {
+            "type": "number"
+        },
+        "BackupnfcShareLevel": {
+            "type": "string"
+        },
+        "BlockAllPorts": {
+            "type": "boolean"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "ConfigVersion": {
+            "type": "string"
+        },
+        "ContactDetail": {
+            "type": "string",
+            "description": "The detailed contact information for the person\nwho is responsible for the DVS."
+        },
+        "ContactName": {
+            "type": "string",
+            "description": "The name of the person who is responsible for the\nDVS."
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "Map of custom attribute ids to attribute\nvalue strings to set for virtual switch. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
+        },
+        "DatacenterId": {
+            "type": "string",
+            "description": "The ID of the datacenter where the distributed\nvirtual switch will be created. Forces a new resource if changed."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A detailed description for the DVS."
+        },
+        "DirectpathGen2Allowed": {
+            "type": "boolean"
+        },
+        "EgressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "EgressShapingBurstSize": {
+            "type": "number"
+        },
+        "EgressShapingEnabled": {
+            "type": "boolean"
+        },
+        "EgressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "FaulttoleranceMaximumMbit": {
+            "type": "number"
+        },
+        "FaulttoleranceReservationMbit": {
+            "type": "number"
+        },
+        "FaulttoleranceShareCount": {
+            "type": "number"
+        },
+        "FaulttoleranceShareLevel": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The folder to create the DVS in. Forces a new resource\nif changed."
+        },
+        "HbrMaximumMbit": {
+            "type": "number"
+        },
+        "HbrReservationMbit": {
+            "type": "number"
+        },
+        "HbrShareCount": {
+            "type": "number"
+        },
+        "HbrShareLevel": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreOtherPvlanMappings": {
+            "type": "boolean"
+        },
+        "IngressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "IngressShapingBurstSize": {
+            "type": "number"
+        },
+        "IngressShapingEnabled": {
+            "type": "boolean"
+        },
+        "IngressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "An IPv4 address to identify the switch. This is\nmostly useful when used with the [Netflow arguments](#netflow-arguments) found\nbelow."
+        },
+        "IscsiMaximumMbit": {
+            "type": "number"
+        },
+        "IscsiReservationMbit": {
+            "type": "number"
+        },
+        "IscsiShareCount": {
+            "type": "number"
+        },
+        "IscsiShareLevel": {
+            "type": "string"
+        },
+        "LacpApiVersion": {
+            "type": "string",
+            "description": "The Link Aggregation Control Protocol group\nversion to use with the switch. Possible values are `singleLag` and\n`multipleLag`."
+        },
+        "LacpEnabled": {
+            "type": "boolean"
+        },
+        "LacpMode": {
+            "type": "string"
+        },
+        "LinkDiscoveryOperation": {
+            "type": "string",
+            "description": "Whether to `advertise` or `listen`\nfor link discovery traffic."
+        },
+        "LinkDiscoveryProtocol": {
+            "type": "string",
+            "description": "The discovery protocol type. Valid\ntypes are `cdp` and `lldp`."
+        },
+        "ManagementMaximumMbit": {
+            "type": "number"
+        },
+        "ManagementReservationMbit": {
+            "type": "number"
+        },
+        "ManagementShareCount": {
+            "type": "number"
+        },
+        "ManagementShareLevel": {
+            "type": "string"
+        },
+        "MaxMtu": {
+            "type": "number",
+            "description": "The maximum transmission unit (MTU) for the virtual\nswitch."
+        },
+        "MulticastFilteringMode": {
+            "type": "string",
+            "description": "The multicast filtering mode to use\nwith the switch. Can be one of `legacyFiltering` or `snooping`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the distributed virtual switch."
+        },
+        "NetflowActiveFlowTimeout": {
+            "type": "number"
+        },
+        "NetflowCollectorIpAddress": {
+            "type": "string"
+        },
+        "NetflowCollectorPort": {
+            "type": "number"
+        },
+        "NetflowEnabled": {
+            "type": "boolean"
+        },
+        "NetflowIdleFlowTimeout": {
+            "type": "number"
+        },
+        "NetflowInternalFlowsOnly": {
+            "type": "boolean"
+        },
+        "NetflowObservationDomainId": {
+            "type": "number"
+        },
+        "NetflowSamplingRate": {
+            "type": "number"
+        },
+        "NetworkResourceControlEnabled": {
+            "type": "boolean"
+        },
+        "NetworkResourceControlVersion": {
+            "type": "string"
+        },
+        "NfsMaximumMbit": {
+            "type": "number"
+        },
+        "NfsReservationMbit": {
+            "type": "number"
+        },
+        "NfsShareCount": {
+            "type": "number"
+        },
+        "NfsShareLevel": {
+            "type": "string"
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "PortPrivateSecondaryVlanId": {
+            "type": "number"
+        },
+        "StandbyUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        },
+        "TxUplink": {
+            "type": "boolean"
+        },
+        "Uplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VdpMaximumMbit": {
+            "type": "number"
+        },
+        "VdpReservationMbit": {
+            "type": "number"
+        },
+        "VdpShareCount": {
+            "type": "number"
+        },
+        "VdpShareLevel": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "- The version of the DVS to create. The default is to\ncreate the DVS at the latest version supported by the version of vSphere\nbeing used. A DVS can be upgraded to another version, but cannot be\ndowngraded."
+        },
+        "VirtualmachineMaximumMbit": {
+            "type": "number"
+        },
+        "VirtualmachineReservationMbit": {
+            "type": "number"
+        },
+        "VirtualmachineShareCount": {
+            "type": "number"
+        },
+        "VirtualmachineShareLevel": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "number"
+        },
+        "VmotionMaximumMbit": {
+            "type": "number"
+        },
+        "VmotionReservationMbit": {
+            "type": "number"
+        },
+        "VmotionShareCount": {
+            "type": "number"
+        },
+        "VmotionShareLevel": {
+            "type": "string"
+        },
+        "VsanMaximumMbit": {
+            "type": "number"
+        },
+        "VsanReservationMbit": {
+            "type": "number"
+        },
+        "VsanShareCount": {
+            "type": "number"
+        },
+        "VsanShareLevel": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HostDefinition"
+            }
+        },
+        "PvlanMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PvlanMappingDefinition"
+            }
+        },
+        "VlanRange": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VlanRangeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatacenterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigVersion",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

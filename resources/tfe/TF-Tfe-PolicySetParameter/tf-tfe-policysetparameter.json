@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Tfe::PolicySetParameter",
+    "description": "Creates, updates and destroys policy set parameters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-PolicySetParameter/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Name of the parameter."
+        },
+        "PolicySetId": {
+            "type": "string",
+            "description": "The ID of the policy set that owns the parameter."
+        },
+        "Sensitive": {
+            "type": "boolean",
+            "description": "Whether the value is sensitive. If true then the\nparameter is written once and not visible thereafter. Defaults to `false`."
+        },
+        "Value": {
+            "type": "string",
+            "description": "Value of the parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "PolicySetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Value"
+    ]
+}

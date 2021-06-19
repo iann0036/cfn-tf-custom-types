@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::Alicloud::AdbAccount",
+    "description": "Provides a [ADB](https://www.alibabacloud.com/help/product/92664.htm) account resource and used to manage databases.\n\n-> **NOTE:** Available in v1.71.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-AdbAccount/docs/README.md",
+    "definitions": {
+        "KmsEncryptionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountDescription": {
+            "type": "string",
+            "description": "Account description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters."
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "Operation account requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter and have no more than 16 characters."
+        },
+        "AccountPassword": {
+            "type": "string",
+            "description": "Operation password. It may consist of letters, digits, or underlines, with a length of 6 to 32 characters. You have to specify one of `account_password` and `kms_encrypted_password` fields."
+        },
+        "AccountType": {
+            "type": "string"
+        },
+        "DbClusterId": {
+            "type": "string",
+            "description": "The Id of cluster in which account belongs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsEncryptedPassword": {
+            "type": "string",
+            "description": "An KMS encrypts password used to a db account. If the `account_password` is filled in, this field will be ignored."
+        },
+        "KmsEncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KmsEncryptionContextDefinition"
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a db account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "DbClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccountPassword"
+    ]
+}

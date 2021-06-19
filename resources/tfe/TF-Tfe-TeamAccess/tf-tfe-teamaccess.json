@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::Tfe::TeamAccess",
+    "description": "Associate a team to permissions on a workspace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-TeamAccess/docs/README.md",
+    "definitions": {
+        "PermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Runs": {
+                    "type": "string",
+                    "description": "The permission to grant the team on the workspace's runs. Valid values are `read`, `plan`, or `apply`."
+                },
+                "SentinelMocks": {
+                    "type": "string",
+                    "description": "The permission to grant the team on the workspace's generated Sentinel mocks, Valid values are `none` or `read`."
+                },
+                "StateVersions": {
+                    "type": "string",
+                    "description": "The permission to grant the team on the workspace's state versions. Valid values are `none`, `read`, `read-outputs`, or `write`."
+                },
+                "Variables": {
+                    "type": "string",
+                    "description": "The permission to grant the team on the workspace's variables. Valid values are `none`, `read`, or `write`."
+                },
+                "WorkspaceLocking": {
+                    "type": "boolean",
+                    "description": "Boolean determining whether or not to grant the team permission to manually lock/unlock the workspace."
+                }
+            },
+            "required": [
+                "Runs",
+                "SentinelMocks",
+                "StateVersions",
+                "Variables",
+                "WorkspaceLocking"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Access": {
+            "type": "string",
+            "description": "Type of fixed access to grant. Valid values are `admin`, `read`, `plan`, or `write`. To use `custom` permissions, use a `permissions` block instead. This value _must not_ be provided if `permissions` is provided."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "ID of the team to add to the workspace."
+        },
+        "WorkspaceId": {
+            "type": "string",
+            "description": "ID of the workspace to which the team will be added."
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TeamId",
+        "WorkspaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

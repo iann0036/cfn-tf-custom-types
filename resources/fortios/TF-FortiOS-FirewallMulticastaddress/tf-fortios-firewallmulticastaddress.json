@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::FortiOS::FirewallMulticastaddress",
+    "description": "Configure multicast addresses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallMulticastaddress/docs/README.md",
+    "definitions": {
+        "TaggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Tag category."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Tagging entry name."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Tag name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedInterface": {
+            "type": "string",
+            "description": "Interface associated with the address object. When setting up a policy, only addresses associated with this interface are available."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Integer value to determine the color of the icon in the GUI (1 - 32, default = 0, which sets value to 1)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EndIp": {
+            "type": "string",
+            "description": "Final IPv4 address (inclusive) in the range for the address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Multicast address name."
+        },
+        "StartIp": {
+            "type": "string",
+            "description": "First IPv4 address (inclusive) in the range for the address."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Broadcast address and subnet."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of address object: multicast IP address range or broadcast IP/mask to be treated as a multicast address. Valid values: `multicastrange`, `broadcastmask`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Enable/disable visibility of the multicast address on the GUI. Valid values: `enable`, `disable`."
+        },
+        "Tagging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaggingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndIp",
+        "StartIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

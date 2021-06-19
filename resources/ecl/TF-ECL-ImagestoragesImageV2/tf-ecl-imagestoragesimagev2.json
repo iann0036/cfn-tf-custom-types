@@ -1,0 +1,208 @@
+{
+    "typeName": "TF::ECL::ImagestoragesImageV2",
+    "description": "Manages a V2 image resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-ImagestoragesImageV2/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Checksum": {
+            "type": "string"
+        },
+        "ContainerFormat": {
+            "type": "string",
+            "description": "Format of the container. Must be \"bare\"."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DiskFormat": {
+            "type": "string",
+            "description": "Format of the disk. Must be one of \"raw\", \"qcow2\", \"iso\"."
+        },
+        "File": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseSwitch": {
+            "type": "string",
+            "description": "Switch destination of the license type. Must be one of \"WindowsServer_2012R2_Standard_64bit_ComLicense\", \"WindowsServer_2012_Standard_64bit_ComLicense\", \"WindowsServer_2008R2_Enterprise_64bit_ComLicense\", \"WindowsServer_2008R2_Standard_64bit_ComLicense\", \"WindowsServer_2008_Enterprise_64bit_ComLicense\", \"WindowsServer_2008_Standard_64bit_ComLicense\", \"Red_Hat_Enterprise_Linux_6_64bit_BYOL\"."
+        },
+        "LocalFilePath": {
+            "type": "string",
+            "description": "This is the filepath of the raw image file that will be uploaded to Glance."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "MinDiskGb": {
+            "type": "number",
+            "description": "Amount of disk space (in GB) required to boot image. Defaults to 0."
+        },
+        "MinRamMb": {
+            "type": "number",
+            "description": "Amount of ram (in MB) required to boot image. Defaults to 0."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Descriptive name for the image."
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            }
+        },
+        "Protected": {
+            "type": "boolean",
+            "description": "If true, image will not be deletable. Defaults to false."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to obtain the V2 Imagestorage client.\nImages are associated with accounts, but a Imagestroage client is needed to\ncreate one. If omitted, the `region` argument of the provider is used.\nChanging this creates a new image."
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "SizeBytes": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "String related to the image."
+        },
+        "UpdateAt": {
+            "type": "string"
+        },
+        "VerifyChecksum": {
+            "type": "boolean",
+            "description": "If false, the checksum will not be verified once the image is finished uploading. Defaults to true."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Scope of image accessibility. Must be one of \"public\", \"private\". Defaults to \"private\"."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContainerFormat",
+        "DiskFormat",
+        "LocalFilePath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Checksum",
+        "/properties/CreatedAt",
+        "/properties/File",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/Owner",
+        "/properties/Schema",
+        "/properties/SizeBytes",
+        "/properties/Status",
+        "/properties/UpdateAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

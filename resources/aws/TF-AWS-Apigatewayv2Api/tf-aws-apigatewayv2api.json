@@ -1,0 +1,225 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2Api",
+    "description": "Manages an Amazon API Gateway Version 2 API.\n\n-> **Note:** Amazon API Gateway Version 2 resources are used for creating and deploying WebSocket and HTTP APIs. To create and deploy REST APIs, use Amazon API Gateway Version 1 [resources](/docs/providers/aws/r/api_gateway_rest_api.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2Api/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CorsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowCredentials": {
+                    "type": "boolean",
+                    "description": "Whether credentials are included in the CORS request."
+                },
+                "AllowHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of allowed HTTP headers."
+                },
+                "AllowMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of allowed HTTP methods."
+                },
+                "AllowOrigins": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of allowed origins."
+                },
+                "ExposeHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of exposed HTTP headers."
+                },
+                "MaxAge": {
+                    "type": "number",
+                    "description": "The number of seconds that the browser should cache preflight request results."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiEndpoint": {
+            "type": "string"
+        },
+        "ApiKeySelectionExpression": {
+            "type": "string",
+            "description": "An [API key selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).\nValid values: `$context.authorizer.usageIdentifierKey`, `$request.header.x-api-key`. Defaults to `$request.header.x-api-key`.\nApplicable for WebSocket APIs."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Body": {
+            "type": "string",
+            "description": "An OpenAPI specification that defines the set of routes and integrations to create as part of the HTTP APIs. Supported only for HTTP APIs."
+        },
+        "CredentialsArn": {
+            "type": "string",
+            "description": "Part of _quick create_. Specifies any credentials required for the integration. Applicable for HTTP APIs."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the API. Must be less than or equal to 1024 characters in length."
+        },
+        "DisableExecuteApiEndpoint": {
+            "type": "boolean",
+            "description": "Whether clients can invoke the API by using the default `execute-api` endpoint.\nBy default, clients can invoke the API with the default `{api_id}.execute-api.{region}.amazonaws.com endpoint`.\nTo require that clients use a custom domain name to invoke the API, disable the default endpoint."
+        },
+        "ExecutionArn": {
+            "type": "string"
+        },
+        "FailOnWarnings": {
+            "type": "boolean",
+            "description": "Whether warnings should return an error while API Gateway is creating or updating the resource using an OpenAPI specification. Defaults to `false`. Applicable for HTTP APIs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the API. Must be less than or equal to 128 characters in length."
+        },
+        "ProtocolType": {
+            "type": "string",
+            "description": "The API protocol. Valid values: `HTTP`, `WEBSOCKET`."
+        },
+        "RouteKey": {
+            "type": "string",
+            "description": "Part of _quick create_. Specifies any [route key](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html). Applicable for HTTP APIs."
+        },
+        "RouteSelectionExpression": {
+            "type": "string",
+            "description": "The [route selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-selection-expressions) for the API.\nDefaults to `$request.method $request.path`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the API. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Target": {
+            "type": "string",
+            "description": "Part of _quick create_. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.\nFor HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN.\nThe type of the integration will be `HTTP_PROXY` or `AWS_PROXY`, respectively. Applicable for HTTP APIs."
+        },
+        "Version": {
+            "type": "string",
+            "description": "A version identifier for the API. Must be between 1 and 64 characters in length."
+        },
+        "CorsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProtocolType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiEndpoint",
+        "/properties/Arn",
+        "/properties/ExecutionArn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

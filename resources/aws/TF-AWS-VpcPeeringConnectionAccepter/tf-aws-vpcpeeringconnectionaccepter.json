@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::AWS::VpcPeeringConnectionAccepter",
+    "description": "Provides a resource to manage the accepter's side of a VPC Peering Connection.\n\nWhen a cross-account (requester's AWS account differs from the accepter's AWS account) or an inter-region\nVPC Peering Connection is created, a VPC Peering Connection resource is automatically created in the\naccepter's account.\nThe requester can use the `aws_vpc_peering_connection` resource to manage its side of the connection\nand the accepter can use the `aws_vpc_peering_connection_accepter` resource to \"adopt\" its side of the\nconnection into management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VpcPeeringConnectionAccepter/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccepterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RequesterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptStatus": {
+            "type": "string"
+        },
+        "AutoAccept": {
+            "type": "boolean",
+            "description": "Whether or not to accept the peering request. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerOwnerId": {
+            "type": "string"
+        },
+        "PeerRegion": {
+            "type": "string"
+        },
+        "PeerVpcId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcPeeringConnectionId": {
+            "type": "string",
+            "description": "The VPC Peering Connection ID to manage."
+        },
+        "Accepter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccepterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Requester": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequesterDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcPeeringConnectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AcceptStatus",
+        "/properties/Id",
+        "/properties/PeerOwnerId",
+        "/properties/PeerRegion",
+        "/properties/PeerVpcId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

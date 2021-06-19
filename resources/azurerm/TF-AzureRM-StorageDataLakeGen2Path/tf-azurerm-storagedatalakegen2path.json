@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::AzureRM::StorageDataLakeGen2Path",
+    "description": "Manages a Data Lake Gen2 Path in a File System within an Azure Storage Account.\n\n~> **NOTE:** This Resource requires using Azure Active Directory to connect to Azure Storage, which in turn requires the `Storage` specific roles - which are not granted by default.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageDataLakeGen2Path/docs/README.md",
+    "definitions": {
+        "AceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Specifies the Object ID of the Azure Active Directory User or Group that the entry relates to. Only valid for `user` or `group` entries."
+                },
+                "Permissions": {
+                    "type": "string",
+                    "description": "Specifies the permissions for the entry in `rwx` form. For example, `rwx` gives full permissions but `r--` only gives read permissions."
+                },
+                "Scope": {
+                    "type": "string",
+                    "description": "Specifies whether the ACE represents an `access` entry or a `default` entry. Default value is `access`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the type of entry. Can be `user`, `group`, `mask` or `other`."
+                }
+            },
+            "required": [
+                "Permissions",
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FilesystemName": {
+            "type": "string",
+            "description": "The name of the Data Lake Gen2 File System which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created."
+        },
+        "Group": {
+            "type": "string",
+            "description": "Specifies the Object ID of the Azure Active Directory Group to make the owning group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string",
+            "description": "Specifies the Object ID of the Azure Active Directory User to make the owning user."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path which should be created within the Data Lake Gen2 File System in the Storage Account. Changing this forces a new resource to be created."
+        },
+        "Resource": {
+            "type": "string",
+            "description": "Specifies the type for path to create. Currently only `directory` is supported."
+        },
+        "StorageAccountId": {
+            "type": "string",
+            "description": "Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created."
+        },
+        "Ace": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AceDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FilesystemName",
+        "Path",
+        "Resource",
+        "StorageAccountId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

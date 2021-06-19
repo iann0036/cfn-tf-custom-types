@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::Panos::NatRule",
+    "description": "This resource allows you to add/update/delete NAT rules.\n\n~> **Note:** This resource has been deprecated.  Please use\n`panos_nat_rule_group` instead.\n\n~> **Note:** `panos_nat_policy` is known as `panos_nat_rule`.\n\nThe prefix `sat` stands for \"Source Address Translation\" while the prefix \"dat\"\nstands for \"Destination Address Translation\".  The order of the params in\nthis resource and their naming matches how the params are presented in\nthe GUI.  Thus, having a GUI window open while creating your resource\ndefinition will simplify the process.\n\nNote that while many of the params for this resource are optional in an\nabsolute sense, depending on what type of NAT you wish to configure, certain\nparams may become necessary to correctly configure the NAT rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-NatRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatAddress": {
+            "type": "string",
+            "description": "Destination address translation's address.  Requires\n`dat_type` be set to \"static\" or \"dynamic\"."
+        },
+        "DatDynamicDistribution": {
+            "type": "string",
+            "description": "Distribution algorithm\nfor destination address pool.  The PAN-OS 8.1 GUI doesn't seem to set this\nanywhere, but this is added here for completeness' sake.  Requires `dat_type`\nof \"dynamic\"."
+        },
+        "DatPort": {
+            "type": "number",
+            "description": "Destination address translation's port number.  Requires\n`dat_type` be set to \"static\" or \"dynamic\"."
+        },
+        "DatType": {
+            "type": "string",
+            "description": "Destination address translation type.  This should\nbe either `static` or `dynamic`.  The `dynamic` option is only available on\nPAN-OS 8.1+."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DestinationAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of destination address(es)."
+        },
+        "DestinationZone": {
+            "type": "string",
+            "description": "The destination zone."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Set to `true` to disable this rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The NAT rule's name."
+        },
+        "Rulebase": {
+            "type": "string",
+            "description": "The rulebase.  For firewalls, there is only the\n`rulebase` value (default), but on Panorama, there is also `pre-rulebase`\nand `post-rulebase`."
+        },
+        "SatAddressType": {
+            "type": "string",
+            "description": "Source address translation address type.\nThis can be `interface-address` or `translated-address`."
+        },
+        "SatFallbackInterface": {
+            "type": "string",
+            "description": "Source address translation fallback\ninterface."
+        },
+        "SatFallbackIpAddress": {
+            "type": "string",
+            "description": "The source address translation\nfallback IP address."
+        },
+        "SatFallbackIpType": {
+            "type": "string",
+            "description": "Source address translation fallback\nIP type.  This can be `ip` or `floating`."
+        },
+        "SatFallbackTranslatedAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Source address translation\nlist of fallback translated addresses."
+        },
+        "SatFallbackType": {
+            "type": "string",
+            "description": "Source address translation fallback type.\nThis can be `none`, `interface-address`, or `translated-address`."
+        },
+        "SatInterface": {
+            "type": "string",
+            "description": "Source address translation interface."
+        },
+        "SatIpAddress": {
+            "type": "string",
+            "description": "Source address translation IP address."
+        },
+        "SatStaticBiDirectional": {
+            "type": "boolean",
+            "description": "Set to `true` to enable\nbi-directional source address translation."
+        },
+        "SatStaticTranslatedAddress": {
+            "type": "string",
+            "description": "The statically translated source\naddress."
+        },
+        "SatTranslatedAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Source address translation list of\ntranslated addresses."
+        },
+        "SatType": {
+            "type": "string",
+            "description": "Type of source address translation.  This can be\n`none` (default), `dynamic-ip-and-port`, `dynamic-ip`, or `static-ip`."
+        },
+        "Service": {
+            "type": "string",
+            "description": "Service (default: `any`)."
+        },
+        "SourceAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of source address(es)."
+        },
+        "SourceZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of source zone(s)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of administrative tags."
+        },
+        "ToInterface": {
+            "type": "string",
+            "description": "Egress interface from route lookup (default:\n`any`)."
+        },
+        "Type": {
+            "type": "string",
+            "description": ". NAT type.  This can be `ipv4` (default), `nat64`, or\n`nptv6`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the NAT rule into (default:\n`vsys1`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationAddresses",
+        "DestinationZone",
+        "Name",
+        "SourceAddresses",
+        "SourceZones"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

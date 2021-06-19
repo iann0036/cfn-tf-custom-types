@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Gitlab::ProjectLevelMrApprovals",
+    "description": "This resource allows you to configure project-level MR approvals. for your GitLab projects.\nFor further information on merge request approvals, consult the [GitLab API\ndocumentation](https://docs.gitlab.com/ee/api/merge_request_approvals.html#project-level-mr-approvals).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-ProjectLevelMrApprovals/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisableOverridingApproversPerMergeRequest": {
+            "type": "boolean",
+            "description": "By default, users are able to edit the approval rules in merge requests. If set to true,\nthe approval rules for all new merge requests will be determined by the default approval rules. Default is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MergeRequestsAuthorApproval": {
+            "type": "boolean",
+            "description": "Set to `true` if you want to allow merge request authors to self-approve merge requests. Authors\nalso need to be included in the approvers list in order to be able to approve their merge request. Default is `false`."
+        },
+        "MergeRequestsDisableCommittersApproval": {
+            "type": "boolean",
+            "description": "Set to `true` if you want to prevent approval of merge requests by merge request committers. Default is `false`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "The ID of the project to change MR approval configuration."
+        },
+        "ResetApprovalsOnPush": {
+            "type": "boolean",
+            "description": "Set to `true` if you want to remove all approvals in a merge request when new commits are pushed to its source branch. Default is `true`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

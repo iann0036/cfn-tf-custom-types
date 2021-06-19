@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::OCI::ArtifactsContainerRepository",
+    "description": "This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.\n\nCreate a new empty container repository. Avoid entering confidential information.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ArtifactsContainerRepository/docs/README.md",
+    "definitions": {
+        "ReadmeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Format"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillableSizeInGbs": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource."
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The container repository name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageCount": {
+            "type": "number"
+        },
+        "IsImmutable": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository."
+        },
+        "IsPublic": {
+            "type": "boolean",
+            "description": "(Updatable) Whether the repository is public. A public repository allows unauthenticated access."
+        },
+        "LayerCount": {
+            "type": "number"
+        },
+        "LayersSizeInBytes": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeLastPushed": {
+            "type": "string"
+        },
+        "Readme": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReadmeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BillableSizeInGbs",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/ImageCount",
+        "/properties/LayerCount",
+        "/properties/LayersSizeInBytes",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeLastPushed"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

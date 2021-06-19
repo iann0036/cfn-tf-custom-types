@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementSubscription",
+    "description": "Manages a Subscription within a API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementSubscription/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowTracing": {
+            "type": "boolean",
+            "description": "Determines whether tracing can be enabled.  Defaults to `true`."
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The ID of the API which should be assigned to this Subscription. Changing this forces a new resource to be created."
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the API Management Service where this Subscription should be created. Changing this forces a new resource to be created."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this Subscription."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrimaryKey": {
+            "type": "string",
+            "description": "The primary subscription key to use for the subscription."
+        },
+        "ProductId": {
+            "type": "string",
+            "description": "The ID of the Product which should be assigned to this Subscription. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "SecondaryKey": {
+            "type": "string",
+            "description": "The secondary subscription key to use for the subscription."
+        },
+        "State": {
+            "type": "string",
+            "description": "The state of this Subscription. Possible values are `active`, `cancelled`, `expired`, `rejected`, `submitted` and `suspended`. Defaults to `submitted`."
+        },
+        "SubscriptionId": {
+            "type": "string",
+            "description": "An Identifier which should used as the ID of this Subscription. If not specified a new Subscription ID will be generated. Changing this forces a new resource to be created."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "The ID of the User which should be assigned to this Subscription. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "DisplayName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrimaryKey",
+        "/properties/SecondaryKey"
+    ]
+}

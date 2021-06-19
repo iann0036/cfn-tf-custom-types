@@ -1,0 +1,218 @@
+{
+    "typeName": "TF::Panos::BgpImportRuleGroup",
+    "description": "This resource allows you to add/update/delete BGP import rule groups.\n\nThis resource manages clusters of import rules in a virtual router,\nenforcing both the contents of individual rules as well as their\nordering.  Rules are defined in a `rule` config block.\n\nAlthough you cannot modify non-group import rules with this\nresource, the `position_keyword` and `position_reference` parameters allow you\nto reference some other import rule that already exists, using it as\na means to ensure some rough placement within the ruleset as a whole.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-BgpImportRuleGroup/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Rule action.  Valid values are `allow` (default) or\n`deny`."
+                },
+                "AsPathLimit": {
+                    "type": "number",
+                    "description": "Add AS path limit attribute if it does\nnot exist."
+                },
+                "AsPathType": {
+                    "type": "string",
+                    "description": "AS path update options.  Valid values are\n`none` or `remove`."
+                },
+                "CommunityType": {
+                    "type": "string",
+                    "description": "Community update options.  Valid values are\n`none`, `remove-all`, `remove-regex`, `append`, or `overwrite`."
+                },
+                "CommunityValue": {
+                    "type": "string",
+                    "description": "If `community_type` is `remove-regex`,\n`append`, or `overwrite`, the value associated with that setting.  For the\n`append` and `overwrite` types specifically, valid values for `community_value`\nare `no-export`, `no-advertise`, `local-as`, or `nopeer`."
+                },
+                "Dampening": {
+                    "type": "string",
+                    "description": "Route flap dampening profile."
+                },
+                "Enable": {
+                    "type": "boolean",
+                    "description": "Enable this import rule (default: `true`)."
+                },
+                "ExtendedCommunityType": {
+                    "type": "string",
+                    "description": "Extended community update options.  Valid\nvalues are `none`, `remove-all`, `remove-regex`, `append`, or `overwrite`."
+                },
+                "ExtendedCommunityValue": {
+                    "type": "string"
+                },
+                "LocalPreference": {
+                    "type": "string",
+                    "description": "New local preference value."
+                },
+                "MatchAsPathRegex": {
+                    "type": "string",
+                    "description": "AS path to match."
+                },
+                "MatchCommunityRegex": {
+                    "type": "string",
+                    "description": "Community to match."
+                },
+                "MatchExtendedCommunityRegex": {
+                    "type": "string",
+                    "description": "Extended community to match."
+                },
+                "MatchFromPeers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of peers that advertised the route entry."
+                },
+                "MatchMed": {
+                    "type": "string",
+                    "description": "Match MED."
+                },
+                "MatchNextHops": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of next hop attributes."
+                },
+                "MatchRouteTable": {
+                    "type": "string",
+                    "description": "Route table to match rule.  Valid\nvalues are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't\nseem to be a way to configure this in the GUI, it is always set to `unicast`.\nThus, if you're running this resource against PAN-OS 8.0+, the appropriate\nthing to do is set this value to `unicast` as well to match the GUI functionality."
+                },
+                "Med": {
+                    "type": "string",
+                    "description": "New MED value."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The security rule name."
+                },
+                "NextHop": {
+                    "type": "string",
+                    "description": "Next hop address."
+                },
+                "Origin": {
+                    "type": "string",
+                    "description": "New route origin.  Valid values are `igp`, `egp`, or\n`incomplete`."
+                },
+                "UsedBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of peer groups."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "New weight value."
+                },
+                "MatchAddressPrefix": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchAddressPrefixDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MatchAddressPrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exact": {
+                    "type": "boolean",
+                    "description": "Match exact prefix length."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Address prefix."
+                }
+            },
+            "required": [
+                "Prefix"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PositionKeyword": {
+            "type": "string",
+            "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
+        },
+        "PositionReference": {
+            "type": "string",
+            "description": "Required if `position_keyword` is one of the\n\"above\" or \"below\" variants, this is the name of a non-group rule to use\nas a reference to place this group."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to put the rule into."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

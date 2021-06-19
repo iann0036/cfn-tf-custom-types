@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeBackendBucket",
+    "description": "CloudFormation equivalent of google_compute_backend_bucket",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeBackendBucket/docs/README.md",
+    "definitions": {
+        "CdnPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheMode": {
+                    "type": "string"
+                },
+                "ClientTtl": {
+                    "type": "number"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "NegativeCaching": {
+                    "type": "boolean"
+                },
+                "ServeWhileStale": {
+                    "type": "number"
+                },
+                "SignedUrlCacheMaxAgeSec": {
+                    "type": "number"
+                },
+                "NegativeCachingPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NegativeCachingPolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NegativeCachingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BucketName": {
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "CustomResponseHeaders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableCdn": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "CdnPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CdnPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

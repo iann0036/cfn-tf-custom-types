@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::PagerDuty::Schedule",
+    "description": "A [schedule](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Schedules/get_schedules) determines the time periods that users are on call. Only on-call users are eligible to receive notifications from incidents.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-Schedule/docs/README.md",
+    "definitions": {
+        "LayerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string",
+                    "description": "The end time of the schedule layer. If not specified, the layer does not end."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the schedule layer."
+                },
+                "RotationTurnLengthSeconds": {
+                    "type": "number",
+                    "description": "The duration of each on-call shift in `seconds`."
+                },
+                "RotationVirtualStart": {
+                    "type": "string",
+                    "description": "The effective start time of the schedule layer. This can be before the start time of the schedule."
+                },
+                "Start": {
+                    "type": "string",
+                    "description": "The start time of the schedule layer."
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The ordered list of users on this layer. The position of the user on the list determines their order in the layer."
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "RotationTurnLengthSeconds",
+                "RotationVirtualStart",
+                "Start",
+                "Users"
+            ]
+        },
+        "RestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DurationSeconds": {
+                    "type": "number",
+                    "description": "The duration of the restriction in `seconds`."
+                },
+                "StartDayOfWeek": {
+                    "type": "number",
+                    "description": "Number of the day when restriction starts. From 1 to 7 where 1 is Monday and 7 is Sunday."
+                },
+                "StartTimeOfDay": {
+                    "type": "string",
+                    "description": "The start time in `HH:mm:ss` format."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Can be `daily_restriction` or `weekly_restriction`."
+                }
+            },
+            "required": [
+                "DurationSeconds",
+                "StartTimeOfDay",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the schedule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the schedule."
+        },
+        "Overflow": {
+            "type": "boolean",
+            "description": "Any on-call schedule entries that pass the date range bounds will be truncated at the bounds, unless the parameter `overflow` is passed. For instance, if your schedule is a rotation that changes daily at midnight UTC, and your date range is from `2011-06-01T10:00:00Z` to `2011-06-01T14:00:00Z`:\nIf you don't pass the overflow=true parameter, you will get one schedule entry returned with a start of `2011-06-01T10:00:00Z` and end of `2011-06-01T14:00:00Z`.\nIf you do pass the `overflow` parameter, you will get one schedule entry returned with a start of `2011-06-01T00:00:00Z` and end of `2011-06-02T00:00:00Z`."
+        },
+        "TimeZone": {
+            "type": "string",
+            "description": "The time zone of the schedule (e.g Europe/Berlin)."
+        },
+        "Layer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LayerDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TimeZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

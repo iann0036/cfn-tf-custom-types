@@ -1,0 +1,227 @@
+# TF::FortiOS::IpsCustom
+
+Configure IPS custom signature.
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::FortiOS::IpsCustom",
+    "Properties" : {
+        "<a href="#action" title="Action">Action</a>" : <i>String</i>,
+        "<a href="#application" title="Application">Application</a>" : <i>String</i>,
+        "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
+        "<a href="#location" title="Location">Location</a>" : <i>String</i>,
+        "<a href="#log" title="Log">Log</a>" : <i>String</i>,
+        "<a href="#logpacket" title="LogPacket">LogPacket</a>" : <i>String</i>,
+        "<a href="#os" title="Os">Os</a>" : <i>String</i>,
+        "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
+        "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>Double</i>,
+        "<a href="#severity" title="Severity">Severity</a>" : <i>String</i>,
+        "<a href="#signame" title="SigName">SigName</a>" : <i>String</i>,
+        "<a href="#signature" title="Signature">Signature</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>String</i>,
+        "<a href="#vdomparam" title="Vdomparam">Vdomparam</a>" : <i>String</i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::FortiOS::IpsCustom
+Properties:
+    <a href="#action" title="Action">Action</a>: <i>String</i>
+    <a href="#application" title="Application">Application</a>: <i>String</i>
+    <a href="#comment" title="Comment">Comment</a>: <i>String</i>
+    <a href="#location" title="Location">Location</a>: <i>String</i>
+    <a href="#log" title="Log">Log</a>: <i>String</i>
+    <a href="#logpacket" title="LogPacket">LogPacket</a>: <i>String</i>
+    <a href="#os" title="Os">Os</a>: <i>String</i>
+    <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
+    <a href="#ruleid" title="RuleId">RuleId</a>: <i>Double</i>
+    <a href="#severity" title="Severity">Severity</a>: <i>String</i>
+    <a href="#signame" title="SigName">SigName</a>: <i>String</i>
+    <a href="#signature" title="Signature">Signature</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#tag" title="Tag">Tag</a>: <i>String</i>
+    <a href="#vdomparam" title="Vdomparam">Vdomparam</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### Action
+
+Default action (pass or block) for this signature. Valid values: `pass`, `block`.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Application
+
+Applications to be protected. Blank for all applications.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Comment
+
+Comment.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Location
+
+Protect client or server traffic.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Log
+
+Enable/disable logging. Valid values: `disable`, `enable`.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LogPacket
+
+Enable/disable packet logging. Valid values: `disable`, `enable`.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Os
+
+Operating system(s) that the signature protects. Blank for all operating systems.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Protocol
+
+Protocol(s) that the signature scans. Blank for all protocols.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RuleId
+
+Signature ID.
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Severity
+
+Relative severity of the signature, from info to critical. Log messages generated by the signature include the severity.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SigName
+
+Signature name.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Signature
+
+Custom signature enclosed in single quotes.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+Enable/disable this signature. Valid values: `disable`, `enable`.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Tag
+
+Signature tag.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Vdomparam
+
+Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
+

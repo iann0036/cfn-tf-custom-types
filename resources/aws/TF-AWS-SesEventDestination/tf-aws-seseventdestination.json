@@ -1,0 +1,159 @@
+{
+    "typeName": "TF::AWS::SesEventDestination",
+    "description": "Provides an SES event destination",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SesEventDestination/docs/README.md",
+    "definitions": {
+        "CloudwatchDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "DimensionName": {
+                    "type": "string"
+                },
+                "ValueSource": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DefaultValue",
+                "DimensionName",
+                "ValueSource"
+            ]
+        },
+        "KinesisDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StreamArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "StreamArn"
+            ]
+        },
+        "SnsDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TopicArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ConfigurationSetName": {
+            "type": "string",
+            "description": "The name of the configuration set."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "If true, the event destination will be enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchingTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of matching types. May be any of `\"send\"`, `\"reject\"`, `\"bounce\"`, `\"complaint\"`, `\"delivery\"`, `\"open\"`, `\"click\"`, or `\"renderingFailure\"`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the event destination."
+        },
+        "CloudwatchDestination": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchDestinationDefinition"
+            }
+        },
+        "KinesisDestination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KinesisDestinationDefinition"
+            },
+            "maxItems": 1
+        },
+        "SnsDestination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnsDestinationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigurationSetName",
+        "MatchingTypes",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

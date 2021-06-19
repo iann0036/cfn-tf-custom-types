@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::TencentCloud::AlbServerAttachment",
+    "description": "Provides an tencentcloud application load balancer servers attachment as a resource, to attach and detach instances from load balancer.\n\n~> **NOTE:** It has been deprecated and replaced by `tencentcloud_clb_attachment`.\n\n~> **NOTE:** Currently only support existing `loadbalancer_id` `listener_id` `location_id` and Application layer 7 load balancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AlbServerAttachment/docs/README.md",
+    "definitions": {
+        "BackendsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string",
+                    "description": "A list backend instance ID (CVM instance ID)."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "The port used by the backend server. Valid value range: [1-65535]."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Weight of the backend server. Valid value range: [0-100]. Default to 10."
+                }
+            },
+            "required": [
+                "InstanceId",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "listener ID."
+        },
+        "LoadbalancerId": {
+            "type": "string",
+            "description": "loadbalancer ID."
+        },
+        "LocationId": {
+            "type": "string",
+            "description": "location ID, only support for layer 7 loadbalancer."
+        },
+        "ProtocolType": {
+            "type": "string"
+        },
+        "Backends": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendsDefinition"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ListenerId",
+        "LoadbalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProtocolType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::MongoDBAtlas::X509AuthenticationDatabaseUser",
+    "description": "`mongodbatlas_x509_authentication_database_user` provides a X509 Authentication Database User resource. The mongodbatlas_x509_authentication_database_user resource lets you manage MongoDB users who authenticate using X.509 certificates. You can manage these X.509 certificates or let Atlas do it for you.\n\n| Management  | Description  |\n|---|---|\n| Atlas  | Atlas manages your Certificate Authority and can generate certificates for your MongoDB users. No additional X.509 configuration is required.  |\n| Customer  |  You must provide a Certificate Authority and generate certificates for your MongoDB users. |\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find group_id in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-X509AuthenticationDatabaseUser/docs/README.md",
+    "definitions": {
+        "CertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "GroupId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "NotAfter": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificatesDefinition"
+            }
+        },
+        "CurrentCertificate": {
+            "type": "string"
+        },
+        "CustomerX509Cas": {
+            "type": "string",
+            "description": "PEM string containing one or more customer CAs for database user authentication."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MonthsUntilExpiration": {
+            "type": "number",
+            "description": "A number of months that the created certificate is valid for before expiry, up to 24 months. By default is 3."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Identifier for the Atlas project associated with the X.509 configuration."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username of the database user to create a certificate for."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificates",
+        "/properties/CurrentCertificate",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CurrentCertificate",
+        "/properties/CustomerX509Cas"
+    ]
+}

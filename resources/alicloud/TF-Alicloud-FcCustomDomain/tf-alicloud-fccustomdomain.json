@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::Alicloud::FcCustomDomain",
+    "description": "CloudFormation equivalent of alicloud_fc_custom_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-FcCustomDomain/docs/README.md",
+    "definitions": {
+        "CertConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertName": {
+                    "type": "string"
+                },
+                "Certificate": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CertName",
+                "Certificate",
+                "PrivateKey"
+            ]
+        },
+        "RouteConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionName": {
+                    "type": "string"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Qualifier": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionName",
+                "Path",
+                "ServiceName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedTime": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "CertConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RouteConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteConfigDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountId",
+        "/properties/ApiVersion",
+        "/properties/CreatedTime",
+        "/properties/Id",
+        "/properties/LastModifiedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CertConfigDefinition/PrivateKey"
+    ]
+}

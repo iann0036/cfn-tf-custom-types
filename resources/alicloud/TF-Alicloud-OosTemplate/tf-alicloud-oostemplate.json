@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Alicloud::OosTemplate",
+    "description": "Provides a OOS Template resource. For information about Alicloud OOS Template and how to use it, see [What is Resource Alicloud OOS Template](https://www.alibabacloud.com/help/doc-detail/120761.htm).\n\n-> **NOTE:** Available in 1.92.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-OosTemplate/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoDeleteExecutions": {
+            "type": "boolean",
+            "description": "When deleting a template, whether to delete its related executions. Default to `false`."
+        },
+        "Content": {
+            "type": "string",
+            "description": "The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB."
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HasTrigger": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ShareType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TemplateFormat": {
+            "type": "string"
+        },
+        "TemplateId": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string",
+            "description": "The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with `ALIYUN`, `ACS`, `ALIBABA`, or `ALICLOUD`."
+        },
+        "TemplateType": {
+            "type": "string"
+        },
+        "TemplateVersion": {
+            "type": "string"
+        },
+        "UpdatedBy": {
+            "type": "string"
+        },
+        "UpdatedDate": {
+            "type": "string"
+        },
+        "VersionName": {
+            "type": "string",
+            "description": "The name of template version."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedBy",
+        "/properties/CreatedDate",
+        "/properties/Description",
+        "/properties/HasTrigger",
+        "/properties/Id",
+        "/properties/ShareType",
+        "/properties/TemplateFormat",
+        "/properties/TemplateId",
+        "/properties/TemplateType",
+        "/properties/TemplateVersion",
+        "/properties/UpdatedBy",
+        "/properties/UpdatedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

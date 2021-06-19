@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::VSphere::VmfsDatastore",
+    "description": "The `vsphere_vmfs_datastore` resource can be used to create and manage VMFS\ndatastores on an ESXi host or a set of hosts. The resource supports using any\nSCSI device that can generally be used in a datastore, such as local disks, or\ndisks presented to a host or multiple hosts over Fibre Channel or iSCSI.\nDevices can be specified manually, or discovered using the\n[`vsphere_vmfs_disks`][data-source-vmfs-disks] data source.\n\n[data-source-vmfs-disks]: /docs/providers/vsphere/d/vmfs_disks.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-VmfsDatastore/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessible": {
+            "type": "boolean"
+        },
+        "Capacity": {
+            "type": "number"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            }
+        },
+        "DatastoreClusterId": {
+            "type": "string",
+            "description": "The [managed object\nID][docs-about-morefs] of a datastore cluster to put this datastore in.\nConflicts with `folder`."
+        },
+        "Disks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The disks to use with the datastore."
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The relative path to a folder to put this datastore in.\nThis is a path relative to the datacenter you are deploying the datastore to.\nExample: for the `dc1` datacenter, and a provided `folder` of `foo/bar`,\nTerraform will place a datastore named `terraform-test` in a datastore folder\nlocated at `/dc1/datastore/foo/bar`, with the final inventory path being\n`/dc1/datastore/foo/bar/terraform-test`. Conflicts with\n`datastore_cluster_id`."
+        },
+        "FreeSpace": {
+            "type": "number"
+        },
+        "HostSystemId": {
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the datastore up on. Note that this is not necessarily the\nonly host that the datastore will be set up on - see\n[here](#auto-mounting-of-datastores-within-vcenter) for more info. Forces a\nnew resource if changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceMode": {
+            "type": "string"
+        },
+        "MultipleHostAccess": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the datastore. Forces a new resource if\nchanged."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        },
+        "UncommittedSpace": {
+            "type": "number"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Disks",
+        "HostSystemId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessible",
+        "/properties/Capacity",
+        "/properties/FreeSpace",
+        "/properties/Id",
+        "/properties/MaintenanceMode",
+        "/properties/MultipleHostAccess",
+        "/properties/UncommittedSpace",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

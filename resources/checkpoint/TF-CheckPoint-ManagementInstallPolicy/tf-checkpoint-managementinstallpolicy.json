@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::CheckPoint::ManagementInstallPolicy",
+    "description": "This command resource allows you to install the published policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementInstallPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Access": {
+            "type": "boolean",
+            "description": "Set to be true in order to install the Access Control policy. By default, the value is true if Access Control policy is enabled on the input policy package, otherwise false."
+        },
+        "DesktopSecurity": {
+            "type": "boolean",
+            "description": "Set to be true in order to install the Desktop Security policy. By default, the value is true if desktop security policy is enabled on the input policy package, otherwise false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallOnAllClusterMembersOrFail": {
+            "type": "boolean",
+            "description": "Relevant for the gateway clusters. If true, the policy is installed on all the cluster members. If the installation on a cluster member fails, don't install on that cluster."
+        },
+        "PolicyPackage": {
+            "type": "string",
+            "description": "The name of the Policy Package to be installed."
+        },
+        "PrepareOnly": {
+            "type": "boolean",
+            "description": "If true, prepares the policy for the installation, but doesn't install it on an installation target."
+        },
+        "Qos": {
+            "type": "boolean",
+            "description": "Set to be true in order to install the QoS policy. By default, the value is true if Quality-of-Service policy is enabled on the input policy package, otherwise false."
+        },
+        "Revision": {
+            "type": "string",
+            "description": "The UID of the revision of the policy to install."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "On what targets to execute this command. Targets may be identified by their name, or object unique identifier."
+        },
+        "TaskId": {
+            "type": "string",
+            "description": "Asynchronous task unique identifier."
+        },
+        "ThreatPrevention": {
+            "type": "boolean",
+            "description": "Set to be true in order to install the Threat Prevention policy. By default, the value is true if Threat Prevention policy is enabled on the input policy package, otherwise false."
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Triggers a install-policy if there are any changes to objects in this list."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PolicyPackage",
+        "Targets"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TaskId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

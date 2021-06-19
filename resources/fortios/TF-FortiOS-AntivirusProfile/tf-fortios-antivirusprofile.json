@@ -1,0 +1,657 @@
+{
+    "typeName": "TF::FortiOS::AntivirusProfile",
+    "description": "Configure AntiVirus profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-AntivirusProfile/docs/README.md",
+    "definitions": {
+        "CifsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable CIFS AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "ContentDisarmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoverPage": {
+                    "type": "string",
+                    "description": "Enable/disable inserting a cover page into the disarmed document. Valid values: `disable`, `enable`."
+                },
+                "DetectOnly": {
+                    "type": "string",
+                    "description": "Enable/disable only detect disarmable files, do not alter content. Valid values: `disable`, `enable`."
+                },
+                "ErrorAction": {
+                    "type": "string",
+                    "description": "Action to be taken if CDR engine encounters an unrecoverable error. Valid values: `block`, `log-only`, `ignore`."
+                },
+                "OfficeAction": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of PowerPoint action events in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OfficeDde": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of Dynamic Data Exchange events in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OfficeEmbed": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of embedded objects in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OfficeHylink": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of hyperlinks in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OfficeLinked": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of linked objects in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OfficeMacro": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of macros in Microsoft Office documents. Valid values: `disable`, `enable`."
+                },
+                "OriginalFileDestination": {
+                    "type": "string",
+                    "description": "Destination to send original file if active content is removed. Valid values: `fortisandbox`, `quarantine`, `discard`."
+                },
+                "PdfActForm": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of actions that submit data to other targets in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfActGotor": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of links to other PDFs in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfActJava": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of actions that execute JavaScript code in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfActLaunch": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of links to external applications in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfActMovie": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of embedded movies in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfActSound": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of embedded sound files in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfEmbedfile": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of embedded files in PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfHyperlink": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of hyperlinks from PDF documents. Valid values: `disable`, `enable`."
+                },
+                "PdfJavacode": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of JavaScript code in PDF documents. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "FtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable FTP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ContentDisarm": {
+                    "type": "string",
+                    "description": "Enable Content Disarm and Reconstruction for this protocol. Valid values: `disable`, `enable`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "ImapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ContentDisarm": {
+                    "type": "string",
+                    "description": "Enable Content Disarm and Reconstruction for this protocol. Valid values: `disable`, `enable`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Executables": {
+                    "type": "string",
+                    "description": "Treat Windows executable files as viruses for the purpose of blocking or monitoring. Valid values: `default`, `virus`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable IMAP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "MapiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Executables": {
+                    "type": "string",
+                    "description": "Treat Windows executable files as viruses for the purpose of blocking or monitoring. Valid values: `default`, `virus`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable MAPI AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "NacQuarDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expiry": {
+                    "type": "string",
+                    "description": "Duration of quarantine."
+                },
+                "Infected": {
+                    "type": "string",
+                    "description": "Enable/Disable quarantining infected hosts to the banned user list. Valid values: `none`, `quar-src-ip`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable AntiVirus quarantine logging. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "NntpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable NNTP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "OutbreakPreventionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalBlocklist": {
+                    "type": "string",
+                    "description": "Enable/disable external malware blocklist. Valid values: `disable`, `enable`."
+                },
+                "FtgdService": {
+                    "type": "string",
+                    "description": "Enable/disable FortiGuard Virus outbreak prevention service. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "Pop3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ContentDisarm": {
+                    "type": "string",
+                    "description": "Enable Content Disarm and Reconstruction for this protocol. Valid values: `disable`, `enable`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Executables": {
+                    "type": "string",
+                    "description": "Treat Windows executable files as viruses for the purpose of blocking or monitoring. Valid values: `default`, `virus`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable POP3 AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "SmbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable SMB AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "SmtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ContentDisarm": {
+                    "type": "string",
+                    "description": "Enable Content Disarm and Reconstruction for this protocol. Valid values: `disable`, `enable`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Executables": {
+                    "type": "string",
+                    "description": "Treat Windows executable files as viruses for the purpose of blocking or monitoring. Valid values: `default`, `virus`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable SMTP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        },
+        "SshDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveBlock": {
+                    "type": "string",
+                    "description": "Select the archive types to block. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "ArchiveLog": {
+                    "type": "string",
+                    "description": "Select the archive types to log. Valid values: `encrypted`, `corrupted`, `partiallycorrupted`, `multipart`, `nested`, `mailbomb`, `fileslimit`, `timeout`, `unhandled`."
+                },
+                "Emulator": {
+                    "type": "string",
+                    "description": "Enable/disable the virus emulator. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "Enable/disable SFTP and SCP AntiVirus scanning, monitoring, and quarantine. Valid values: `scan`, `avmonitor`, `quarantine`."
+                },
+                "OutbreakPrevention": {
+                    "type": "string",
+                    "description": "Enable Virus Outbreak Prevention service. Valid values: `disabled`, `files`, `full-archive`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnalyticsAcceptFiletype": {
+            "type": "number",
+            "description": "Only submit files matching this DLP file-pattern to FortiSandbox."
+        },
+        "AnalyticsBlFiletype": {
+            "type": "number",
+            "description": "Only submit files matching this DLP file-pattern to FortiSandbox."
+        },
+        "AnalyticsDb": {
+            "type": "string",
+            "description": "Enable/disable using the FortiSandbox signature database to supplement the AV signature databases. Valid values: `disable`, `enable`."
+        },
+        "AnalyticsIgnoreFiletype": {
+            "type": "number",
+            "description": "Do not submit files matching this DLP file-pattern to FortiSandbox."
+        },
+        "AnalyticsMaxUpload": {
+            "type": "number",
+            "description": "Maximum size of files that can be uploaded to FortiSandbox (1 - 395 MBytes, default = 10)."
+        },
+        "AnalyticsWlFiletype": {
+            "type": "number",
+            "description": "Do not submit files matching this DLP file-pattern to FortiSandbox."
+        },
+        "AvBlockLog": {
+            "type": "string",
+            "description": "Enable/disable logging for AntiVirus file blocking. Valid values: `enable`, `disable`."
+        },
+        "AvVirusLog": {
+            "type": "string",
+            "description": "Enable/disable AntiVirus logging. Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "ExtendedLog": {
+            "type": "string",
+            "description": "Enable/disable extended logging for antivirus. Valid values: `enable`, `disable`."
+        },
+        "FeatureSet": {
+            "type": "string",
+            "description": "Flow/proxy feature set. Valid values: `flow`, `proxy`."
+        },
+        "FtgdAnalytics": {
+            "type": "string",
+            "description": "Settings to control which files are uploaded to FortiSandbox. Valid values: `disable`, `suspicious`, `everything`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InspectionMode": {
+            "type": "string",
+            "description": "Inspection mode. Valid values: `proxy`, `flow-based`."
+        },
+        "MobileMalwareDb": {
+            "type": "string",
+            "description": "Enable/disable using the mobile malware signature database. Valid values: `disable`, `enable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group customized for this profile."
+        },
+        "ScanMode": {
+            "type": "string",
+            "description": "Choose between full scan mode and quick scan mode."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Cifs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CifsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ContentDisarm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContentDisarmDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ftp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Imap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImapDefinition"
+            },
+            "maxItems": 1
+        },
+        "Mapi": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MapiDefinition"
+            },
+            "maxItems": 1
+        },
+        "NacQuar": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NacQuarDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nntp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NntpDefinition"
+            },
+            "maxItems": 1
+        },
+        "OutbreakPrevention": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutbreakPreventionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Pop3": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Pop3Definition"
+            },
+            "maxItems": 1
+        },
+        "Smb": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmbDefinition"
+            },
+            "maxItems": 1
+        },
+        "Smtp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

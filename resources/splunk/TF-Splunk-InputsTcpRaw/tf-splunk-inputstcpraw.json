@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::Splunk::InputsTcpRaw",
+    "description": "Create and manage UDP data inputs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-InputsTcpRaw/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionHost": {
+            "type": "string",
+            "description": "Valid values: (ip | dns | none)\nSet the host for the remote server that is sending data.\nip sets the host to the IP address of the remote server sending data.\ndns sets the host to the reverse DNS entry for the IP address of the remote server sending data.\nnone leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.\nDefault value is dns."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates if input is disabled."
+        },
+        "Host": {
+            "type": "string",
+            "description": "The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Index": {
+            "type": "string",
+            "description": "Which index events from this input should be stored in. Defaults to default."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The UDP port that this input should listen on."
+        },
+        "Queue": {
+            "type": "string",
+            "description": "Which queue events from this input should be sent to. Generally this does not need to be changed."
+        },
+        "RawTcpDoneTimeout": {
+            "type": "number"
+        },
+        "RestrictToHost": {
+            "type": "string",
+            "description": "Restrict incoming connections on this port to the host specified here.\nIf this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used."
+        },
+        "Source": {
+            "type": "string",
+            "description": "The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs."
+        },
+        "Sourcetype": {
+            "type": "string",
+            "description": "The value to populate in the sourcetype field for incoming events."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

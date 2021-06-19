@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::ProfitBricks::K8sNodePool",
+    "description": "Manages a Kubernetes Node Pool, part of a managed Kubernetes cluster on ProfitBricks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/profitbricks/TF-ProfitBricks-K8sNodePool/docs/README.md",
+    "definitions": {
+        "AutoScalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodeCount": {
+                    "type": "number"
+                },
+                "MinNodeCount": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxNodeCount",
+                "MinNodeCount"
+            ]
+        },
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfTheWeek": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DayOfTheWeek",
+                "Time"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "CoresCount": {
+            "type": "number"
+        },
+        "CpuFamily": {
+            "type": "string",
+            "description": "[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "DatacenterId": {
+            "type": "string",
+            "description": "[string] A Datacenter's UUID\n- `k8s_cluster_id`- (Required)[string] A k8s cluster's UUID\n- `cpu_family` - (Required)[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "K8sClusterId": {
+            "type": "string",
+            "description": "[string] A k8s cluster's UUID\n- `cpu_family` - (Required)[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "K8sVersion": {
+            "type": "string",
+            "description": "[string] The desired Kubernetes Version. for supported values, please check the API documentation.\n- `auto_scaling` - (Optional)[string] Wether the Node Pool should autoscale. For more details, please check the API documentation\n- `lans` - (Optional)[list] A list of numeric LAN id's you want this node pool to be part of. For more details, please check the API documentation, as well as the example above\n- `maintenance_window` - (Optional) See the **maintenance_window** section in the example above\n- `datacenter_id` - (Required)[string] A Datacenter's UUID\n- `k8s_cluster_id`- (Required)[string] A k8s cluster's UUID\n- `cpu_family` - (Required)[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "Lans": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "[list] A list of numeric LAN id's you want this node pool to be part of. For more details, please check the API documentation, as well as the example above\n- `maintenance_window` - (Optional) See the **maintenance_window** section in the example above\n- `datacenter_id` - (Required)[string] A Datacenter's UUID\n- `k8s_cluster_id`- (Required)[string] A k8s cluster's UUID\n- `cpu_family` - (Required)[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "Name": {
+            "type": "string",
+            "description": "[string] The name of the Kubernetes Cluster.\n- `k8s_version` - (Optional)[string] The desired Kubernetes Version. for supported values, please check the API documentation.\n- `auto_scaling` - (Optional)[string] Wether the Node Pool should autoscale. For more details, please check the API documentation\n- `lans` - (Optional)[list] A list of numeric LAN id's you want this node pool to be part of. For more details, please check the API documentation, as well as the example above\n- `maintenance_window` - (Optional) See the **maintenance_window** section in the example above\n- `datacenter_id` - (Required)[string] A Datacenter's UUID\n- `k8s_cluster_id`- (Required)[string] A k8s cluster's UUID\n- `cpu_family` - (Required)[string] The desired CPU Family - See the API documentation for more information\n- `availability_zone` - (Required)[string] - The desired Compute availability zone - See the API documentation for more information\n- `storage_type` -(Required)[string] - The desired storage type - SSD/HDD\n- `node_count` -(Required)[int] - The desired number of nodes in the node pool\n- `cores_count` -(Required)[int] - The CPU cores count for each node of the node pool\n- `ram_size` -(Required)[int] - The desired amount of RAM, in MB\n- `storage_size` -(Required)[int] - The desired amount of storage for each node, in GB\n- `public_ips` - (Optional)[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "PublicIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "[list] A list of public IPs associated with the node pool; must have at least `node_count + 1` elements;."
+        },
+        "RamSize": {
+            "type": "number"
+        },
+        "StorageSize": {
+            "type": "number"
+        },
+        "StorageType": {
+            "type": "string"
+        },
+        "AutoScaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoScalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "CoresCount",
+        "CpuFamily",
+        "DatacenterId",
+        "K8sClusterId",
+        "K8sVersion",
+        "Name",
+        "NodeCount",
+        "RamSize",
+        "StorageSize",
+        "StorageType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

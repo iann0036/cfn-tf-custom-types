@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::LogicMonitor::DeviceGroup",
+    "description": "Provides a LogicMonitor device group resource. This can be used to create and manage LogicMonitor device groups",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logicmonitor/TF-LogicMonitor-DeviceGroup/docs/README.md",
+    "definitions": {
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppliesTo": {
+            "type": "string",
+            "description": "The Applies to custom query for this group. Setting this field will make this a dynamic group."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of device group."
+        },
+        "DisableAlerting": {
+            "type": "boolean",
+            "description": "Indicates whether alerting is disabled (true) or enabled (false) for this device group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of device group."
+        },
+        "ParentId": {
+            "type": "number",
+            "description": "The id of the parent group for this device group (the root device group has an Id of 1)."
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            },
+            "description": "The properties associated with this device group. Any string value pair will work (see example)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

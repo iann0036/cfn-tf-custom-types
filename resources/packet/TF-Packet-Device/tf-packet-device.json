@@ -1,0 +1,305 @@
+{
+    "typeName": "TF::Packet::Device",
+    "description": "Provides an Equinix Metal device resource. This can be used to create,\nmodify, and delete devices.\n\n~> **Note:** All arguments including the `root_password` and `user_data` will be stored in\n the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/packet/TF-Packet-Device/docs/README.md",
+    "definitions": {
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Cidr": {
+                    "type": "number"
+                },
+                "Family": {
+                    "type": "number"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Public": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bonded": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "IpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "number",
+                    "description": "CIDR suffix for IP address block to be assigned, i.e. amount of addresses."
+                },
+                "ReservationIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "String of UUID of [IP block reservations](reserved_ip_block.md) from which the public IPv4 address should be taken."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "One of [`private_ipv4`, `public_ipv4`, `public_ipv6`]."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessPrivateIpv4": {
+            "type": "string"
+        },
+        "AccessPublicIpv4": {
+            "type": "string"
+        },
+        "AccessPublicIpv6": {
+            "type": "string"
+        },
+        "AlwaysPxe": {
+            "type": "boolean"
+        },
+        "BillingCycle": {
+            "type": "string",
+            "description": "monthly or hourly."
+        },
+        "Created": {
+            "type": "string"
+        },
+        "CustomData": {
+            "type": "string"
+        },
+        "DeployedFacility": {
+            "type": "string"
+        },
+        "DeployedHardwareReservationId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description string for the device."
+        },
+        "Facilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of facility codes with deployment preferences. Equinix Metal API will go through the list and will deploy your device to first facility with free capacity. List items must be facility codes or `any` (a wildcard). To find the facility code, visit [Facilities API docs](https://metal.equinix.com/developers/api/facilities/), set your API auth token in the top of the page and see JSON from the API response."
+        },
+        "ForceDetachVolumes": {
+            "type": "boolean"
+        },
+        "HardwareReservationId": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The device name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpxeScriptUrl": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "OperatingSystem": {
+            "type": "string",
+            "description": "The operating system slug. To find the slug, or visit [Operating Systems API docs](https://metal.equinix.com/developers/api/operatingsystems), set your API auth token in the top of the page and see JSON from the API response."
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The device plan slug. To find the plan slug, visit [Device plans API docs](https://metal.equinix.com/developers/api/plans), set your auth token in the top of the page and see JSON from the API response."
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortsDefinition"
+            }
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project in which to create the device."
+        },
+        "ProjectSshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of IDs of the project SSH keys which should be added to the device. If you omit this, SSH keys of all the members of the parent project will be added to the device. If you specify this array, only the listed project SSH keys will be added. Project SSH keys can be created with the [packet_project_ssh_key](project_ssh_key.md) resource."
+        },
+        "RootPassword": {
+            "type": "string"
+        },
+        "SshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Storage": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Tags attached to the device."
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "WaitForReservationDeprovision": {
+            "type": "boolean"
+        },
+        "IpAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpAddressDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BillingCycle",
+        "Facilities",
+        "Hostname",
+        "OperatingSystem",
+        "Plan",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessPrivateIpv4",
+        "/properties/AccessPublicIpv4",
+        "/properties/AccessPublicIpv6",
+        "/properties/Created",
+        "/properties/DeployedFacility",
+        "/properties/DeployedHardwareReservationId",
+        "/properties/Id",
+        "/properties/Locked",
+        "/properties/Network",
+        "/properties/NetworkType",
+        "/properties/Ports",
+        "/properties/RootPassword",
+        "/properties/SshKeyIds",
+        "/properties/State",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CustomData",
+        "/properties/RootPassword",
+        "/properties/UserData"
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::PagerDuty::User",
+    "description": "A [user](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users) is a member of a PagerDuty account that have the ability to interact with incidents and other data on the account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-User/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvatarUrl": {
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "The schedule color for the user. Valid options are purple, red, green, blue, teal, orange, brown, turquoise, dark-slate-blue, cayenne, orange-red, dark-orchid, dark-slate-grey, lime, dark-magenta, lime-green, midnight-blue, deep-pink, dark-green, dark-orange, dark-cyan, darkolive-green, dark-slate-gray, grey20, firebrick, maroon, crimson, dark-red, dark-goldenrod, chocolate, medium-violet-red, sea-green, olivedrab, forest-green, dark-olive-green, blue-violet, royal-blue, indigo, slate-blue, saddle-brown, or steel-blue.\n* `role` - (Optional) The user role. Can be `admin`, `limited_user`, `observer`, `owner`, `read_only_user`, `read_only_limited_user`, `restricted_access`, or `user`.\nNotes:\n* Account must have the `read_only_users` ability to set a user as a `read_only_user` or a `read_only_limited_user`, and must have advanced permissions abilities to set a user as `observer` or `restricted_access`.\n* With advanced permissions, users can have both a user role (base role) and a team role. The team role can configured in the `pagerduty_team_membership` resource.\n* Mapping of `role` values to Web UI user role names available in the [user roles support page](https://support.pagerduty.com/docs/advanced-permissions#roles-in-the-rest-api-and-saml).\n* `job_title` - (Optional) The user's title.\n* `teams` - (Optional, **DEPRECATED**) A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The user's email address.\n* `color` - (Optional) The schedule color for the user. Valid options are purple, red, green, blue, teal, orange, brown, turquoise, dark-slate-blue, cayenne, orange-red, dark-orchid, dark-slate-grey, lime, dark-magenta, lime-green, midnight-blue, deep-pink, dark-green, dark-orange, dark-cyan, darkolive-green, dark-slate-gray, grey20, firebrick, maroon, crimson, dark-red, dark-goldenrod, chocolate, medium-violet-red, sea-green, olivedrab, forest-green, dark-olive-green, blue-violet, royal-blue, indigo, slate-blue, saddle-brown, or steel-blue.\n* `role` - (Optional) The user role. Can be `admin`, `limited_user`, `observer`, `owner`, `read_only_user`, `read_only_limited_user`, `restricted_access`, or `user`.\nNotes:\n* Account must have the `read_only_users` ability to set a user as a `read_only_user` or a `read_only_limited_user`, and must have advanced permissions abilities to set a user as `observer` or `restricted_access`.\n* With advanced permissions, users can have both a user role (base role) and a team role. The team role can configured in the `pagerduty_team_membership` resource.\n* Mapping of `role` values to Web UI user role names available in the [user roles support page](https://support.pagerduty.com/docs/advanced-permissions#roles-in-the-rest-api-and-saml).\n* `job_title` - (Optional) The user's title.\n* `teams` - (Optional, **DEPRECATED**) A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvitationSent": {
+            "type": "boolean"
+        },
+        "JobTitle": {
+            "type": "string",
+            "description": "The user's title.\n* `teams` - (Optional, **DEPRECATED**) A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the user.\n* `email` - (Required) The user's email address.\n* `color` - (Optional) The schedule color for the user. Valid options are purple, red, green, blue, teal, orange, brown, turquoise, dark-slate-blue, cayenne, orange-red, dark-orchid, dark-slate-grey, lime, dark-magenta, lime-green, midnight-blue, deep-pink, dark-green, dark-orange, dark-cyan, darkolive-green, dark-slate-gray, grey20, firebrick, maroon, crimson, dark-red, dark-goldenrod, chocolate, medium-violet-red, sea-green, olivedrab, forest-green, dark-olive-green, blue-violet, royal-blue, indigo, slate-blue, saddle-brown, or steel-blue.\n* `role` - (Optional) The user role. Can be `admin`, `limited_user`, `observer`, `owner`, `read_only_user`, `read_only_limited_user`, `restricted_access`, or `user`.\nNotes:\n* Account must have the `read_only_users` ability to set a user as a `read_only_user` or a `read_only_limited_user`, and must have advanced permissions abilities to set a user as `observer` or `restricted_access`.\n* With advanced permissions, users can have both a user role (base role) and a team role. The team role can configured in the `pagerduty_team_membership` resource.\n* Mapping of `role` values to Web UI user role names available in the [user roles support page](https://support.pagerduty.com/docs/advanced-permissions#roles-in-the-rest-api-and-saml).\n* `job_title` - (Optional) The user's title.\n* `teams` - (Optional, **DEPRECATED**) A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The user role. Can be `admin`, `limited_user`, `observer`, `owner`, `read_only_user`, `read_only_limited_user`, `restricted_access`, or `user`.\nNotes:\n* Account must have the `read_only_users` ability to set a user as a `read_only_user` or a `read_only_limited_user`, and must have advanced permissions abilities to set a user as `observer` or `restricted_access`.\n* With advanced permissions, users can have both a user role (base role) and a team role. The team role can configured in the `pagerduty_team_membership` resource.\n* Mapping of `role` values to Web UI user role names available in the [user roles support page](https://support.pagerduty.com/docs/advanced-permissions#roles-in-the-rest-api-and-saml).\n* `job_title` - (Optional) The user's title.\n* `teams` - (Optional, **DEPRECATED**) A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of teams the user should belong to. Please use `pagerduty_team_membership` instead.\n* `time_zone` - (Optional) The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "TimeZone": {
+            "type": "string",
+            "description": "The time zone of the user. Default is account default timezone.\n* `description` - (Optional) A human-friendly description of the user.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvatarUrl",
+        "/properties/HtmlUrl",
+        "/properties/Id",
+        "/properties/InvitationSent"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

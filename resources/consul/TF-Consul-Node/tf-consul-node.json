@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::Consul::Node",
+    "description": "Provides access to Node data in Consul. This can be used to define a\nnode. Currently, defining health checks is not supported.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-Node/docs/README.md",
+    "definitions": {
+        "MetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "The address of the node being added to,\nor referenced in the catalog."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the agent's\ndefault datacenter and the datacenter in the provider setup."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Meta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetaDefinition"
+            },
+            "description": "Key/value pairs that are associated with the node."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the node being added to, or\nreferenced in the catalog."
+        },
+        "Token": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

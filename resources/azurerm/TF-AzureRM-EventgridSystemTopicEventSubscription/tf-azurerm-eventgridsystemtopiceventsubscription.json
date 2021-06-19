@@ -1,0 +1,600 @@
+{
+    "typeName": "TF::AzureRM::EventgridSystemTopicEventSubscription",
+    "description": "Manages an EventGrid System Topic Event Subscription.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-EventgridSystemTopicEventSubscription/docs/README.md",
+    "definitions": {
+        "AdvancedFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BoolEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BoolEqualsDefinition"
+                    }
+                },
+                "NumberGreaterThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberGreaterThanDefinition"
+                    }
+                },
+                "NumberGreaterThanOrEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberGreaterThanOrEqualsDefinition"
+                    }
+                },
+                "NumberIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberInDefinition"
+                    }
+                },
+                "NumberLessThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberLessThanDefinition"
+                    }
+                },
+                "NumberLessThanOrEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberLessThanOrEqualsDefinition"
+                    }
+                },
+                "NumberNotIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberNotInDefinition"
+                    }
+                },
+                "StringBeginsWith": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringBeginsWithDefinition"
+                    }
+                },
+                "StringContains": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringContainsDefinition"
+                    }
+                },
+                "StringEndsWith": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringEndsWithDefinition"
+                    }
+                },
+                "StringIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringInDefinition"
+                    }
+                },
+                "StringNotIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringNotInDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AzureFunctionEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionId": {
+                    "type": "string"
+                },
+                "MaxEventsPerBatch": {
+                    "type": "number"
+                },
+                "PreferredBatchSizeInKilobytes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FunctionId"
+            ]
+        },
+        "RetryPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventTimeToLive": {
+                    "type": "number"
+                },
+                "MaxDeliveryAttempts": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EventTimeToLive",
+                "MaxDeliveryAttempts"
+            ]
+        },
+        "StorageBlobDeadLetterDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageAccountId": {
+                    "type": "string"
+                },
+                "StorageBlobContainerName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StorageAccountId",
+                "StorageBlobContainerName"
+            ]
+        },
+        "StorageQueueEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueueName": {
+                    "type": "string"
+                },
+                "StorageAccountId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "QueueName",
+                "StorageAccountId"
+            ]
+        },
+        "SubjectFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "SubjectBeginsWith": {
+                    "type": "string"
+                },
+                "SubjectEndsWith": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WebhookEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveDirectoryAppIdOrUri": {
+                    "type": "string"
+                },
+                "ActiveDirectoryTenantId": {
+                    "type": "string"
+                },
+                "MaxEventsPerBatch": {
+                    "type": "number"
+                },
+                "PreferredBatchSizeInKilobytes": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "BoolEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberGreaterThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberGreaterThanOrEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "NumberLessThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberLessThanOrEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberNotInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringBeginsWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringContainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringEndsWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringNotInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EventDeliverySchema": {
+            "type": "string"
+        },
+        "EventhubEndpointId": {
+            "type": "string"
+        },
+        "ExpirationTimeUtc": {
+            "type": "string"
+        },
+        "HybridConnectionEndpointId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludedEventTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ServiceBusQueueEndpointId": {
+            "type": "string"
+        },
+        "ServiceBusTopicEndpointId": {
+            "type": "string"
+        },
+        "SystemTopic": {
+            "type": "string"
+        },
+        "AdvancedFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvancedFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "AzureFunctionEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFunctionEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetryPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetryPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageBlobDeadLetterDestination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageBlobDeadLetterDestinationDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageQueueEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageQueueEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "SubjectFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubjectFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WebhookEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebhookEndpointDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "SystemTopic"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

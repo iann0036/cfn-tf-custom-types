@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::TencentCloud::ReservedInstance",
+    "description": "Provides a reserved instance resource.\n\n~> **NOTE:** Reserved instance cannot be deleted and updated. The reserved instance still exist which can be extracted by reserved_instances data source when reserved instance is destroied.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ReservedInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "string",
+            "description": "Configuration ID of the reserved instance."
+        },
+        "EndTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number",
+            "description": "Number of reserved instances to be purchased."
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "InstanceCount"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndTime",
+        "/properties/Id",
+        "/properties/StartTime",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

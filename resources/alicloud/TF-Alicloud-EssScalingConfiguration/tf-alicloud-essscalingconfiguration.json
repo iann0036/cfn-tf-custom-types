@@ -1,0 +1,293 @@
+{
+    "typeName": "TF::Alicloud::EssScalingConfiguration",
+    "description": "Provides a ESS scaling configuration resource.\n\n-> **NOTE:** Several instance types have outdated in some regions and availability zones, such as `ecs.t1.*`, `ecs.s2.*`, `ecs.n1.*` and so on. If you want to keep them, you should set `is_outdated` to true. For more about the upgraded instance type, refer to `alicloud_instance_types` datasource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EssScalingConfiguration/docs/README.md",
+    "definitions": {
+        "KmsEncryptionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoSnapshotPolicyId": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Device": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "Whether active current scaling configuration in the specified scaling group. Default to `false`."
+        },
+        "CreditSpecification": {
+            "type": "string"
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Whether enable the specified scaling group(make it active) to which the current scaling configuration belongs."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "The last scaling configuration will be deleted forcibly with deleting its scaling group. Default to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "ID of an image file, indicating the image resource selected when an instance is enabled."
+        },
+        "ImageName": {
+            "type": "string",
+            "description": "Name of an image file, indicating the image resource selected when an instance is enabled."
+        },
+        "InstanceIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "It has been deprecated from version 1.6.0. New resource `alicloud_ess_attachment` replaces it."
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "Name of an ECS instance. Default to \"ESS-Instance\". It is valid from version 1.7.1."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Resource type of an ECS instance."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Resource types of an ECS instance."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Network billing type, Values: PayByBandwidth or PayByTraffic. Default to `PayByBandwidth`."
+        },
+        "InternetMaxBandwidthIn": {
+            "type": "number",
+            "description": "Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]."
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number",
+            "description": "Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second). The value range for PayByBandwidth is [0,100]."
+        },
+        "IoOptimized": {
+            "type": "string",
+            "description": "It has been deprecated on instance resource. All the launched alicloud instances will be I/O optimized."
+        },
+        "IsOutdated": {
+            "type": "boolean",
+            "description": "Whether to use outdated instance type. Default to false."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The name of key pair that can login ECS instance successfully without password. If it is specified, the password would be invalid."
+        },
+        "KmsEncryptedPassword": {
+            "type": "string",
+            "description": "An KMS encrypts password used to a db account. If the `password` is filled in, this field will be ignored."
+        },
+        "KmsEncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KmsEncryptionContextDefinition"
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a db account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
+        },
+        "Override": {
+            "type": "boolean",
+            "description": "Indicates whether to overwrite the existing data. Default to false."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the ECS instance. The password must be 8 to 30 characters in length. It must contains at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters. Special characters include `() ~!@#$%^&*-_+=\\|{}[]:;'<>,.?/`, The password of Windows-based instances cannot start with a forward slash (/)."
+        },
+        "PasswordInherit": {
+            "type": "boolean",
+            "description": "Specifies whether to use the password that is predefined in the image. If the PasswordInherit parameter is set to true, the `password` and `kms_encrypted_password` will be ignored. You must ensure that the selected image has a password configured."
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "Instance RAM role name. The name is provided and maintained by RAM. You can use `alicloud_ram_role` to create a new one."
+        },
+        "ScalingConfigurationName": {
+            "type": "string",
+            "description": "Name shown for the scheduled task. which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain number, underscores `_`, hypens `-`, and decimal point `.`. If this parameter value is not specified, the default value is ScalingConfigurationId."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "ID of the scaling group of a scaling configuration."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "ID of the security group used to create new instance. It is conflict with `security_group_ids`."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List IDs of the security group used to create new instances. It is conflict with `security_group_id`."
+        },
+        "Substitute": {
+            "type": "string",
+            "description": "The another scaling configuration which will be active automatically and replace current configuration when setting `active` to 'false'. It is invalid when `active` is 'true'."
+        },
+        "SystemDiskAutoSnapshotPolicyId": {
+            "type": "string",
+            "description": "The id of auto snapshot policy for system disk."
+        },
+        "SystemDiskCategory": {
+            "type": "string",
+            "description": "Category of the system disk. The parameter value options are `ephemeral_ssd`, `cloud_efficiency`, `cloud_ssd`, `cloud_essd` and `cloud`. `cloud` only is used to some no I/O optimized instance. Default to `cloud_efficiency`."
+        },
+        "SystemDiskDescription": {
+            "type": "string",
+            "description": "The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://."
+        },
+        "SystemDiskName": {
+            "type": "string",
+            "description": "The name of the system disk. It must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-). Default value: null."
+        },
+        "SystemDiskSize": {
+            "type": "number",
+            "description": "Size of system disk, in GiB. Optional values: cloud: 20-500, cloud_efficiency: 20-500, cloud_ssd: 20-500, ephemeral_ssd: 20-500 The default value is max{40, ImageSize}. If this parameter is set, the system disk size must be greater than or equal to max{40, ImageSize}."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. It will be applied for ECS instances finally.\n- Key: It can be up to 64 characters in length. It cannot begin with \"aliyun\", \"http://\", or \"https://\". It cannot be a null string.\n- Value: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"http://\", or \"https://\" It can be a null string."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "User-defined data to customize the startup behaviors of the ECS instance and to pass data into the ECS instance."
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDiskDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

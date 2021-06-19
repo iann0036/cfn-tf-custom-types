@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::VMC::PublicIp",
+    "description": "Provides a resource to manage public IPs.\n~> **Note:** Public IP resource implicitly depends on SDDC resource creation. SDDC must be provisioned before a public IP can be created. For details on how to provision a SDDC refer to [vmc_sddc](https://www.terraform.io/docs/providers/vmc/r/sddc.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vmc/TF-VMC-PublicIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name for public IP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "NsxtReverseProxyUrl": {
+            "type": "string",
+            "description": "NSXT reverse proxy url for managing public IP. Computed after SDDC creation."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NsxtReverseProxyUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ip"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

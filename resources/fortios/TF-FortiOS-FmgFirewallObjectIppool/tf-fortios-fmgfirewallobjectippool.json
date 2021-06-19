@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::FmgFirewallObjectIppool",
+    "description": "This resource supports Create/Read/Update/Delete firewall object ippool for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgFirewallObjectIppool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "ADOM name. default is 'root'."
+        },
+        "ArpIntf": {
+            "type": "string",
+            "description": "Select an interface that will reply to ARP requests."
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable/disable replying to ARP request, default is \"enable\"."
+        },
+        "AssociatedIntf": {
+            "type": "string",
+            "description": "Associated interface name."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comments."
+        },
+        "Endip": {
+            "type": "string",
+            "description": "Final IPv4 address (inclusive) in the range for the address pool."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Ippool name."
+        },
+        "Startip": {
+            "type": "string",
+            "description": "First IPv4 address (inclusive) in the range for the address pool."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Ip pool type, Enum: [\"overload\", \"one-to-one\"]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Endip",
+        "Name",
+        "Startip"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

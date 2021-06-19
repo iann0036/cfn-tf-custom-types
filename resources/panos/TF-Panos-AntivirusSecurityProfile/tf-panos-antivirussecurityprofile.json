@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::Panos::AntivirusSecurityProfile",
+    "description": "Manages anti-virus security profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-AntivirusSecurityProfile/docs/README.md",
+    "definitions": {
+        "ApplicationExceptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The action.  Valid values are `default`, `allow`,\n`alert`, `block` (PAN-OS 6.1 only), `drop` (PAN-OS 7.0+), `reset-client` (PAN-OS\n7.0+), `reset-server` (PAN-OS 7.0+), or `reset-both` (PAN-OS 7.0+)."
+                },
+                "Application": {
+                    "type": "string",
+                    "description": "The application name."
+                }
+            },
+            "required": [
+                "Application"
+            ]
+        },
+        "DecoderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Decoder action.  Valid values are `default` (default), `allow`,\n`alert`, `block` (PAN-OS 6.1 only), `drop` (PAN-OS 7.0+), `reset-client` (PAN-OS\n7.0+), `reset-server` (PAN-OS 7.0+), or `reset-both` (PAN-OS 7.0+)."
+                },
+                "MachineLearningAction": {
+                    "type": "string",
+                    "description": "Machine learning action."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Decoder name."
+                },
+                "WildfireAction": {
+                    "type": "string",
+                    "description": "Wildfire action.  Valid values are `default` (default), `allow`,\n`alert`, `block` (PAN-OS 6.1 only), `drop` (PAN-OS 7.0+), `reset-client` (PAN-OS\n7.0+), `reset-server` (PAN-OS 7.0+), or `reset-both` (PAN-OS 7.0+)."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MachineLearningExceptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "The description."
+                },
+                "Filename": {
+                    "type": "string",
+                    "description": "Filename."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MachineLearningModelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The action."
+                },
+                "Model": {
+                    "type": "string",
+                    "description": "The model."
+                }
+            },
+            "required": [
+                "Action",
+                "Model"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "PacketCapture": {
+            "type": "boolean",
+            "description": "Set to `true` to enable packet capture."
+        },
+        "ThreatExceptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of threat exceptions."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys location (default: `vsys1`)."
+        },
+        "ApplicationException": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationExceptionDefinition"
+            }
+        },
+        "Decoder": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DecoderDefinition"
+            }
+        },
+        "MachineLearningException": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MachineLearningExceptionDefinition"
+            }
+        },
+        "MachineLearningModel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MachineLearningModelDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

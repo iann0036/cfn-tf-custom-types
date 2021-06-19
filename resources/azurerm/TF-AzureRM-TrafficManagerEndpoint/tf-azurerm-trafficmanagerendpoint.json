@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::AzureRM::TrafficManagerEndpoint",
+    "description": "Manages a Traffic Manager Endpoint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-TrafficManagerEndpoint/docs/README.md",
+    "definitions": {
+        "CustomHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the custom header."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value of custom header. Applicable for Http and Https protocol."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "First": {
+                    "type": "string",
+                    "description": "The First IP...."
+                },
+                "Last": {
+                    "type": "string",
+                    "description": "The Last IP..."
+                },
+                "Scope": {
+                    "type": "number",
+                    "description": "The Scope..."
+                }
+            },
+            "required": [
+                "First"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndpointLocation": {
+            "type": "string",
+            "description": "Specifies the Azure location of the Endpoint,\nthis must be specified for Profiles using the `Performance` routing method\nif the Endpoint is of either type `nestedEndpoints` or `externalEndpoints`.\nFor Endpoints of type `azureEndpoints` the value will be taken from the\nlocation of the Azure target resource."
+        },
+        "EndpointMonitorStatus": {
+            "type": "string"
+        },
+        "EndpointStatus": {
+            "type": "string",
+            "description": "The status of the Endpoint, can be set to\neither `Enabled` or `Disabled`. Defaults to `Enabled`."
+        },
+        "GeoMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Geographic Regions used to distribute traffic, such as `WORLD`, `UK` or `DE`. The same location can't be specified in two endpoints. [See the Geographic Hierarchies documentation for more information](https://docs.microsoft.com/en-us/rest/api/trafficmanager/geographichierarchies/getdefault)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinChildEndpoints": {
+            "type": "number",
+            "description": "This argument specifies the minimum number\nof endpoints that must be \u2018online\u2019 in the child profile in order for the\nparent profile to direct traffic to any of the endpoints in that child\nprofile. This argument only applies to Endpoints of type `nestedEndpoints`\nand defaults to `1`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Traffic Manager endpoint. Changing this forces a\nnew resource to be created."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Specifies the priority of this Endpoint, this must be\nspecified for Profiles using the `Priority` traffic routing method. Supports\nvalues between 1 and 1000, with no Endpoints sharing the same value. If\nomitted the value will be computed in order of creation."
+        },
+        "ProfileName": {
+            "type": "string",
+            "description": "The name of the Traffic Manager Profile to attach\ncreate the Traffic Manager endpoint."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group where the Traffic Manager Profile exists."
+        },
+        "Target": {
+            "type": "string",
+            "description": "The FQDN DNS name of the target. This argument must be\nprovided for an endpoint of type `externalEndpoints`, for other types it\nwill be computed."
+        },
+        "TargetResourceId": {
+            "type": "string",
+            "description": "The resource id of an Azure resource to\ntarget. This argument must be provided for an endpoint of type\n`azureEndpoints` or `nestedEndpoints`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The Endpoint type, must be one of:\n- `azureEndpoints`\n- `externalEndpoints`\n- `nestedEndpoints`."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Specifies how much traffic should be distributed to this\nendpoint, this must be specified for Profiles using the  `Weighted` traffic\nrouting method. Supports values between 1 and 1000."
+        },
+        "CustomHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomHeaderDefinition"
+            }
+        },
+        "Subnet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProfileName",
+        "ResourceGroupName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointMonitorStatus",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

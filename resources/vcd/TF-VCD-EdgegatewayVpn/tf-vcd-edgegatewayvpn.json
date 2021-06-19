@@ -1,0 +1,175 @@
+{
+    "typeName": "TF::VCD::EdgegatewayVpn",
+    "description": "Provides a vCloud Director IPsec VPN. This can be used to create,\nmodify, and delete VPN settings and rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-EdgegatewayVpn/docs/README.md",
+    "definitions": {
+        "LocalSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalSubnetGateway": {
+                    "type": "string"
+                },
+                "LocalSubnetMask": {
+                    "type": "string"
+                },
+                "LocalSubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LocalSubnetGateway",
+                "LocalSubnetMask",
+                "LocalSubnetName"
+            ]
+        },
+        "PeerSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PeerSubnetGateway": {
+                    "type": "string"
+                },
+                "PeerSubnetMask": {
+                    "type": "string"
+                },
+                "PeerSubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PeerSubnetGateway",
+                "PeerSubnetMask",
+                "PeerSubnetName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the VPN."
+        },
+        "EdgeGateway": {
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the Firewall Rules."
+        },
+        "EncryptionProtocol": {
+            "type": "string",
+            "description": "- E.g. `AES256`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalId": {
+            "type": "string",
+            "description": "- Local ID."
+        },
+        "LocalIpAddress": {
+            "type": "string",
+            "description": "- Local IP Address."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "- The MTU setting."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the VPN."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "PeerId": {
+            "type": "string",
+            "description": "- Peer ID."
+        },
+        "PeerIpAddress": {
+            "type": "string",
+            "description": "- Peer IP Address."
+        },
+        "SharedSecret": {
+            "type": "string",
+            "description": "- Shared Secret."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "LocalSubnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocalSubnetsDefinition"
+            }
+        },
+        "PeerSubnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PeerSubnetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway",
+        "EncryptionProtocol",
+        "LocalId",
+        "LocalIpAddress",
+        "Mtu",
+        "Name",
+        "PeerId",
+        "PeerIpAddress",
+        "SharedSecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SharedSecret"
+    ]
+}

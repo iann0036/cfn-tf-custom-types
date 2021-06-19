@@ -1,0 +1,212 @@
+{
+    "typeName": "TF::AzureRM::CosmosdbCassandraTable",
+    "description": "Manages a Cassandra Table within a Cosmos DB Cassandra Keyspace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-CosmosdbCassandraTable/docs/README.md",
+    "definitions": {
+        "AutoscaleSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxThroughput": {
+                    "type": "number",
+                    "description": "The maximum throughput of the Cassandra Table (RU/s). Must be between `4,000` and `1,000,000`. Must be set in increments of `1,000`. Conflicts with `throughput`."
+                }
+            },
+            "required": []
+        },
+        "SchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterKeyDefinition"
+                    }
+                },
+                "Column": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColumnDefinition"
+                    },
+                    "minItems": 1
+                },
+                "PartitionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PartitionKeyDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClusterKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name of the cluster key to be created."
+                },
+                "OrderBy": {
+                    "type": "string",
+                    "description": "Order of the key. Currently supported values are `Asc` and `Desc`."
+                }
+            },
+            "required": [
+                "Name",
+                "OrderBy"
+            ]
+        },
+        "ColumnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name of the column to be created."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type of the column to be created."
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "PartitionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name of the column to partition by."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnalyticalStorageTtl": {
+            "type": "number",
+            "description": "Time to live of the Analytical Storage. Possible values are at least `-1`. `-1` means the Analytical Storage never expires. Changing this forces a new resource to be created."
+        },
+        "CassandraKeyspaceId": {
+            "type": "string",
+            "description": "The ID of the Cosmos DB Cassandra Keyspace to create the table within. Changing this forces a new resource to be created."
+        },
+        "DefaultTtl": {
+            "type": "number",
+            "description": "Time to live of the Cosmos DB Cassandra table. Possible values are at least `-1`. `-1` means the Cassandra table never expires."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Cosmos DB Cassandra Table. Changing this forces a new resource to be created."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "The throughput of Cassandra KeySpace (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual terraform destroy-apply."
+        },
+        "AutoscaleSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscaleSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schema": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchemaDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CassandraKeyspaceId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::OVH::MeInstallationTemplatePartitionSchemePartition",
+    "description": "Use this resource to create a partition in the partition scheme of a custom installation template available for dedicated servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-MeInstallationTemplatePartitionSchemePartition/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Filesystem": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mountpoint": {
+            "type": "string"
+        },
+        "Order": {
+            "type": "number"
+        },
+        "Raid": {
+            "type": "string"
+        },
+        "SchemeName": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VolumeName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Filesystem",
+        "Mountpoint",
+        "Order",
+        "SchemeName",
+        "Size",
+        "TemplateName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

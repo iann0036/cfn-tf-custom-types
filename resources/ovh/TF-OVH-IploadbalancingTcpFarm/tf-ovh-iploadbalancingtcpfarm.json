@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::OVH::IploadbalancingTcpFarm",
+    "description": "Creates a backend server group (farm) to be used by loadbalancing frontend(s)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IploadbalancingTcpFarm/docs/README.md",
+    "definitions": {
+        "ProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForceSsl": {
+                    "type": "boolean"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Match": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Pattern": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Balance": {
+            "type": "string",
+            "description": "Load balancing algorithm. `roundrobin` if null (`first`, `leastconn`, `roundrobin`, `source`)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Readable label for loadbalancer farm."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port for backends to recieve traffic on.\n* `negate` - Negate probe result\n* `pattern` - Pattern to match against `match`\n* `force_ssl` - Force use of SSL (TLS)\n* `url` - URL for HTTP probe type.\n* `method` - HTTP probe method (`GET`, `HEAD`, `OPTIONS`, `internal`)."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
+        },
+        "Stickiness": {
+            "type": "string",
+            "description": "Stickiness type. No stickiness if null (`sourceIp`)."
+        },
+        "VrackNetworkId": {
+            "type": "number",
+            "description": "Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "Zone where the farm will be defined (ie. `GRA`, `BHS` also supports `ALL`)."
+        },
+        "Probe": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProbeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

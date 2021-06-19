@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::Alkira::ConnectorAzureVnet",
+    "description": "CloudFormation equivalent of alkira_connector_azure_vnet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-ConnectorAzureVnet/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AzureRegion": {
+            "type": "string"
+        },
+        "AzureVnetId": {
+            "type": "string"
+        },
+        "BillingTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "ConnectorId": {
+            "type": "number"
+        },
+        "CredentialId": {
+            "type": "string"
+        },
+        "Cxp": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Segment": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AzureRegion",
+        "AzureVnetId",
+        "CredentialId",
+        "Cxp",
+        "Name",
+        "Segment",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectorId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

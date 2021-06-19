@@ -1,0 +1,238 @@
+{
+    "typeName": "TF::AWS::DatasyncTask",
+    "description": "Manages an AWS DataSync Task, which represents a configuration for synchronization. Starting an execution of these DataSync Tasks (actually synchronizing files) is performed outside of this Terraform resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DatasyncTask/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ExcludesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Atime": {
+                    "type": "string"
+                },
+                "BytesPerSecond": {
+                    "type": "number"
+                },
+                "Gid": {
+                    "type": "string"
+                },
+                "LogLevel": {
+                    "type": "string"
+                },
+                "Mtime": {
+                    "type": "string"
+                },
+                "OverwriteMode": {
+                    "type": "string"
+                },
+                "PosixPermissions": {
+                    "type": "string"
+                },
+                "PreserveDeletedFiles": {
+                    "type": "string"
+                },
+                "PreserveDevices": {
+                    "type": "string"
+                },
+                "TaskQueueing": {
+                    "type": "string"
+                },
+                "TransferMode": {
+                    "type": "string"
+                },
+                "Uid": {
+                    "type": "string"
+                },
+                "VerifyMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScheduleExpression": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ScheduleExpression"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CloudwatchLogGroupArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task."
+        },
+        "DestinationLocationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of destination DataSync Location."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DataSync Task."
+        },
+        "SourceLocationArn": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of source DataSync Location."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value pairs of resource tags to assign to the DataSync Task. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Excludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExcludesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationLocationArn",
+        "SourceLocationArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

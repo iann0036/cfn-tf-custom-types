@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::HCloud::NetworkSubnet",
+    "description": "Provides a Hetzner Cloud Network Subnet to represent a Subnet in the Hetzner Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-NetworkSubnet/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpRange": {
+            "type": "string",
+            "description": "Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.\n- `network_zone` - (Required, string) Name of network zone.\n- `vswitch_id` - (Optional, int) ID of the vswitch, Required if type is `vswitch`."
+        },
+        "NetworkId": {
+            "type": "number",
+            "description": "ID of the Network the subnet should be added to.\n- `type` - (Required, string) Type of subnet. `server`, `cloud` or `vswitch`\n- `ip_range` - (Required, string) Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.\n- `network_zone` - (Required, string) Name of network zone.\n- `vswitch_id` - (Optional, int) ID of the vswitch, Required if type is `vswitch`."
+        },
+        "NetworkZone": {
+            "type": "string",
+            "description": "Name of network zone.\n- `vswitch_id` - (Optional, int) ID of the vswitch, Required if type is `vswitch`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of subnet. `server`, `cloud` or `vswitch`\n- `ip_range` - (Required, string) Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.\n- `network_zone` - (Required, string) Name of network zone.\n- `vswitch_id` - (Optional, int) ID of the vswitch, Required if type is `vswitch`."
+        },
+        "VswitchId": {
+            "type": "number",
+            "description": "ID of the vswitch, Required if type is `vswitch`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpRange",
+        "NetworkId",
+        "NetworkZone",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gateway",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

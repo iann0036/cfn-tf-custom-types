@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayService",
+    "description": "Use this resource to create API gateway service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayService/docs/README.md",
+    "definitions": {
+        "ApiListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiDesc": {
+                    "type": "string"
+                },
+                "ApiId": {
+                    "type": "string"
+                },
+                "ApiName": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            }
+        },
+        "UsagePlanListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiId": {
+                    "type": "string"
+                },
+                "BindType": {
+                    "type": "string"
+                },
+                "UsagePlanId": {
+                    "type": "string"
+                },
+                "UsagePlanName": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApiListDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ExclusiveSetName": {
+            "type": "string",
+            "description": "Self-deployed cluster name, which is used to specify the self-deployed cluster where the service is to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InnerHttpPort": {
+            "type": "number"
+        },
+        "InnerHttpsPort": {
+            "type": "number"
+        },
+        "InternalSubDomain": {
+            "type": "string"
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "IP version number. Valid values: `IPv4`, `IPv6`. Default value: `IPv4`."
+        },
+        "ModifyTime": {
+            "type": "string"
+        },
+        "NetType": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Network type list, which is used to specify the supported network types. Valid values: `INNER`, `OUTER`. `INNER` indicates access over private network, and `OUTER` indicates access over public network."
+        },
+        "OuterSubDomain": {
+            "type": "string"
+        },
+        "PreLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Service frontend request type. Valid values: `http`, `https`, `http&https`."
+        },
+        "ReleaseLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "ServiceDesc": {
+            "type": "string",
+            "description": "Custom service description."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "Custom service name."
+        },
+        "TestLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "UsagePlanList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UsagePlanListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetType",
+        "Protocol",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiList",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/InnerHttpPort",
+        "/properties/InnerHttpsPort",
+        "/properties/InternalSubDomain",
+        "/properties/ModifyTime",
+        "/properties/OuterSubDomain",
+        "/properties/UsagePlanList"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

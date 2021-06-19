@@ -1,0 +1,192 @@
+{
+    "typeName": "TF::Metal::SpotMarketRequest",
+    "description": "Provides an Equinix Metal Spot Market Request resource to allow you to\nmanage spot market requests on your account. For more detail on Spot Market, see [this article in Equinix Metal documentation](https://metal.equinix.com/developers/docs/deploy/spot-market/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-SpotMarketRequest/docs/README.md",
+    "definitions": {
+        "InstanceParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysPxe": {
+                    "type": "boolean"
+                },
+                "BillingCycle": {
+                    "type": "string"
+                },
+                "Customdata": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "IpxeScriptUrl": {
+                    "type": "string"
+                },
+                "Locked": {
+                    "type": "boolean"
+                },
+                "OperatingSystem": {
+                    "type": "string"
+                },
+                "Plan": {
+                    "type": "string"
+                },
+                "ProjectSshKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UserSshKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Userdata": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BillingCycle",
+                "Hostname",
+                "OperatingSystem",
+                "Plan"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DevicesMax": {
+            "type": "number",
+            "description": "Maximum number devices to be created."
+        },
+        "DevicesMin": {
+            "type": "number",
+            "description": "Miniumum number devices to be created."
+        },
+        "Facilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Facility IDs where devices should be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxBidPrice": {
+            "type": "number",
+            "description": "Maximum price user is willing to pay per hour per device."
+        },
+        "Metro": {
+            "type": "string",
+            "description": "Metro where devices should be created."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Project ID."
+        },
+        "WaitForDevices": {
+            "type": "boolean",
+            "description": "On resource creation - wait until all desired devices are active, on resource destruction - wait until devices are removed."
+        },
+        "InstanceParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceParametersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DevicesMax",
+        "DevicesMin",
+        "MaxBidPrice",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

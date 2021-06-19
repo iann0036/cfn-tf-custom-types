@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::Alicloud::EciImageCache",
+    "description": "An ECI Image Cache can help user to solve the time-consuming problem of image pull. For information about Alicloud ECI Image Cache and how to use it, see [What is Resource Alicloud ECI Image Cache](https://www.alibabacloud.com/help/doc-detail/146891.htm).\n\n-> **NOTE:** Available in v1.89.0+.\n\n-> **NOTE:** Each image cache corresponds to a snapshot, and the user does not delete the snapshot directly, otherwise the cache will fail.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EciImageCache/docs/README.md",
+    "definitions": {
+        "ImageRegistryCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Server": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContainerGroupId": {
+            "type": "string"
+        },
+        "EipInstanceId": {
+            "type": "string",
+            "description": "The instance ID of the Elastic IP Address (EIP). If you want to pull images from the Internet, you must specify an EIP to make sure that the container group can access the Internet. You can also configure the network address translation (NAT) gateway. We recommend that you configure the NAT gateway for the Internet access. Refer to [Public Network Access Method](https://help.aliyun.com/document_detail/99146.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageCacheName": {
+            "type": "string",
+            "description": "The name of the image cache."
+        },
+        "ImageCacheSize": {
+            "type": "number",
+            "description": "The size of the image cache. Default to `20`. Unit: GiB."
+        },
+        "Images": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The images to be cached. The image name must be versioned."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group."
+        },
+        "RetentionDays": {
+            "type": "number",
+            "description": "The retention days of the image cache. Once the image cache expires, it will be cleared. By default, the image cache never expires. Note: The image cache that fails to be created is retained for only one day."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "The ID of the security group. You do not need to specify the same security group as the container group."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The ID of the VSwitch. You do not need to specify the same VSwitch as the container group."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone id to cache image."
+        },
+        "ImageRegistryCredential": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImageRegistryCredentialDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageCacheName",
+        "Images",
+        "SecurityGroupId",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ContainerGroupId",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2Authorizer",
+    "description": "Manages an Amazon API Gateway Version 2 authorizer.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2Authorizer/docs/README.md",
+    "definitions": {
+        "JwtConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list."
+                },
+                "Issuer": {
+                    "type": "string",
+                    "description": "The base domain of the identity provider that issues JSON Web Tokens, such as the `endpoint` attribute of the [`aws_cognito_user_pool`](/docs/providers/aws/r/cognito_user_pool.html) resource."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API identifier."
+        },
+        "AuthorizerCredentialsArn": {
+            "type": "string",
+            "description": "The required credentials as an IAM role for API Gateway to invoke the authorizer.\nSupported only for `REQUEST` authorizers."
+        },
+        "AuthorizerPayloadFormatVersion": {
+            "type": "string",
+            "description": "The format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers.\nValid values: `1.0`, `2.0`."
+        },
+        "AuthorizerResultTtlInSeconds": {
+            "type": "number",
+            "description": "The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled.\nIf it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Defaults to `300`.\nSupported only for HTTP API Lambda authorizers."
+        },
+        "AuthorizerType": {
+            "type": "string",
+            "description": "The authorizer type. Valid values: `JWT`, `REQUEST`.\nSpecify `REQUEST` for a Lambda function using incoming request parameters.\nFor HTTP APIs, specify `JWT` to use JSON Web Tokens."
+        },
+        "AuthorizerUri": {
+            "type": "string",
+            "description": "The authorizer's Uniform Resource Identifier (URI).\nFor `REQUEST` authorizers this must be a well-formed Lambda function URI, such as the `invoke_arn` attribute of the [`aws_lambda_function`](/docs/providers/aws/r/lambda_function.html) resource.\nSupported only for `REQUEST` authorizers. Must be between 1 and 2048 characters in length."
+        },
+        "EnableSimpleResponses": {
+            "type": "boolean",
+            "description": "Whether a Lambda authorizer returns a response in a simple format. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy.\nSupported only for HTTP APIs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentitySources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The identity sources for which authorization is requested.\nFor `REQUEST` authorizers the value is a list of one or more mapping expressions of the specified request parameters.\nFor `JWT` authorizers the single entry specifies where to extract the JSON Web Token (JWT) from inbound requests."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the authorizer. Must be between 1 and 128 characters in length."
+        },
+        "JwtConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JwtConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "AuthorizerType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

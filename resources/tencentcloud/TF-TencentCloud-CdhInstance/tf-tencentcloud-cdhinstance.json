@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::TencentCloud::CdhInstance",
+    "description": "Provides a resource to manage CDH instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CdhInstance/docs/README.md",
+    "definitions": {
+        "HostResourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuAvailableNum": {
+                    "type": "number"
+                },
+                "CpuTotalNum": {
+                    "type": "number"
+                },
+                "DiskAvailableSize": {
+                    "type": "number"
+                },
+                "DiskTotalSize": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "MemoryAvailableSize": {
+                    "type": "number"
+                },
+                "MemoryTotalSize": {
+                    "type": "number"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The available zone for the CDH instance."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID`. The default is `PREPAID`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CvmInstanceIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ExpiredTime": {
+            "type": "string"
+        },
+        "HostName": {
+            "type": "string",
+            "description": "The name of the CDH instance. The max length of host_name is 60."
+        },
+        "HostResource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostResourceDefinition"
+            }
+        },
+        "HostState": {
+            "type": "string"
+        },
+        "HostType": {
+            "type": "string",
+            "description": "The type of the CDH instance."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when charge_type is set to `PREPAID`. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `24`, `36`."
+        },
+        "PrepaidRenewFlag": {
+            "type": "string",
+            "description": "Auto renewal flag. Valid values: `NOTIFY_AND_AUTO_RENEW`: notify upon expiration and renew automatically, `NOTIFY_AND_MANUAL_RENEW`: notify upon expiration but do not renew automatically, `DISABLE_NOTIFY_AND_MANUAL_RENEW`: neither notify upon expiration nor renew automatically. Default value: `NOTIFY_AND_MANUAL_RENEW`. If this parameter is specified as `NOTIFY_AND_AUTO_RENEW`, the instance will be automatically renewed on a monthly basis if the account balance is sufficient. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "The project the instance belongs to, default to 0."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/CvmInstanceIds",
+        "/properties/ExpiredTime",
+        "/properties/HostResource",
+        "/properties/HostState",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

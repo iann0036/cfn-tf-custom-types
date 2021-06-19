@@ -1,0 +1,1654 @@
+{
+    "typeName": "TF::Spotinst::ElastigroupAws",
+    "description": "Provides a Spotinst AWS group resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-ElastigroupAws/docs/README.md",
+    "definitions": {
+        "CpuOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ThreadsPerCore": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ThreadsPerCore"
+            ]
+        },
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "InstanceTypesWeightsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "InstanceType",
+                "Weight"
+            ]
+        },
+        "IntegrationBeanstalkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnvironmentId": {
+                    "type": "string"
+                },
+                "DeploymentPreferences": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeploymentPreferencesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ManagedActions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagedActionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IntegrationCodedeployDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CleanupOnFailure": {
+                    "type": "boolean"
+                },
+                "TerminateInstanceOnFailure": {
+                    "type": "boolean"
+                },
+                "DeploymentGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DeploymentGroupsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "CleanupOnFailure",
+                "TerminateInstanceOnFailure"
+            ]
+        },
+        "IntegrationDockerSwarmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscaleCooldown": {
+                    "type": "number"
+                },
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "MasterHost": {
+                    "type": "string"
+                },
+                "MasterPort": {
+                    "type": "number"
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MasterHost",
+                "MasterPort"
+            ]
+        },
+        "IntegrationEcsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscaleCooldown": {
+                    "type": "number"
+                },
+                "AutoscaleIsAutoConfig": {
+                    "type": "boolean"
+                },
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "AutoscaleScaleDownNonServiceTasks": {
+                    "type": "boolean"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "AutoscaleAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleAttributesDefinition"
+                    }
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Batch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BatchDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ClusterName"
+            ]
+        },
+        "IntegrationGitlabDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Runner": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunnerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IntegrationKubernetesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiServer": {
+                    "type": "string"
+                },
+                "AutoscaleCooldown": {
+                    "type": "number"
+                },
+                "AutoscaleIsAutoConfig": {
+                    "type": "boolean"
+                },
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "ClusterIdentifier": {
+                    "type": "string"
+                },
+                "IntegrationMode": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleLabels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleLabelsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IntegrationMesosphereDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiServer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiServer"
+            ]
+        },
+        "IntegrationMultaiRuntimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeploymentId"
+            ]
+        },
+        "IntegrationNomadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclToken": {
+                    "type": "string"
+                },
+                "AutoscaleCooldown": {
+                    "type": "number"
+                },
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "MasterHost": {
+                    "type": "string"
+                },
+                "MasterPort": {
+                    "type": "number"
+                },
+                "AutoscaleConstraints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleConstraintsDefinition"
+                    }
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MasterHost",
+                "MasterPort"
+            ]
+        },
+        "IntegrationRancherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "MasterHost": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "MasterHost",
+                "SecretKey"
+            ]
+        },
+        "IntegrationRoute53Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DomainsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetadataOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpPutResponseHopLimit": {
+                    "type": "number"
+                },
+                "HttpTokens": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HttpTokens"
+            ]
+        },
+        "MultaiTargetSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BalancerId": {
+                    "type": "string"
+                },
+                "TargetSetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BalancerId",
+                "TargetSetId"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociateIpv6Address": {
+                    "type": "boolean"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "boolean"
+                },
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "string"
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                },
+                "PrivateIpAddress": {
+                    "type": "string"
+                },
+                "SecondaryPrivateIpAddressCount": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceIndex"
+            ]
+        },
+        "RevertToSpotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                },
+                "TimeWindows": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "PerformAt"
+            ]
+        },
+        "ScalingDownPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold"
+            ]
+        },
+        "ScalingStrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TerminateAtEndOfBillingHour": {
+                    "type": "boolean"
+                },
+                "TerminationPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScalingTargetPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cooldown": {
+                    "type": "number"
+                },
+                "MaxCapacityPerScale": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "PredictiveMode": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Target"
+            ]
+        },
+        "ScalingUpPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold"
+            ]
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adjustment": {
+                    "type": "string"
+                },
+                "AdjustmentPercentage": {
+                    "type": "string"
+                },
+                "BatchSizePercentage": {
+                    "type": "string"
+                },
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "GracePeriod": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxCapacity": {
+                    "type": "string"
+                },
+                "MinCapacity": {
+                    "type": "string"
+                },
+                "ScaleMaxCapacity": {
+                    "type": "string"
+                },
+                "ScaleMinCapacity": {
+                    "type": "string"
+                },
+                "ScaleTargetCapacity": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TargetCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "SignalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "StatefulDeallocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShouldDeleteImages": {
+                    "type": "boolean"
+                },
+                "ShouldDeleteNetworkInterfaces": {
+                    "type": "boolean"
+                },
+                "ShouldDeleteSnapshots": {
+                    "type": "boolean"
+                },
+                "ShouldDeleteVolumes": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "StatefulInstanceActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatefulInstanceId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatefulInstanceId",
+                "Type"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpdatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoApplyTags": {
+                    "type": "boolean"
+                },
+                "ShouldResumeStateful": {
+                    "type": "boolean"
+                },
+                "ShouldRoll": {
+                    "type": "boolean"
+                },
+                "RollConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ShouldResumeStateful",
+                "ShouldRoll"
+            ]
+        },
+        "DeploymentPreferencesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticRoll": {
+                    "type": "boolean"
+                },
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "Strategy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StrategyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ManagedActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PlatformUpdate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlatformUpdateDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DeploymentGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationName": {
+                    "type": "string"
+                },
+                "DeploymentGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApplicationName",
+                "DeploymentGroupName"
+            ]
+        },
+        "AutoscaleDownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EvaluationPeriods": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleHeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "BatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JobQueueNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "JobQueueNames"
+            ]
+        },
+        "RunnerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "AutoscaleConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "DomainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostedZoneId": {
+                    "type": "string"
+                },
+                "RecordSetType": {
+                    "type": "string"
+                },
+                "SpotinstAcctId": {
+                    "type": "string"
+                },
+                "RecordSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RecordSetsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "HostedZoneId"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RollConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "HealthCheckType": {
+                    "type": "string"
+                },
+                "WaitForRollPercentage": {
+                    "type": "number"
+                },
+                "WaitForRollTimeout": {
+                    "type": "number"
+                },
+                "Strategy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StrategyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "BatchSizePercentage"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "BatchMinHealthyPercentage": {
+                    "type": "number"
+                },
+                "ShouldDrainInstances": {
+                    "type": "boolean"
+                },
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnFailureDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "PlatformUpdateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                },
+                "UpdateLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RecordSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "UsePublicDns": {
+                    "type": "boolean"
+                },
+                "UsePublicIp": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "OnFailureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "BatchNum": {
+                    "type": "number"
+                },
+                "DrainingTimeout": {
+                    "type": "number"
+                },
+                "ShouldDecrementTargetCapacity": {
+                    "type": "boolean"
+                },
+                "ShouldHandleAllBatches": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ActionType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Strings of availability zones. When this parameter is set, `subnet_ids` should be left unused.\nNote: `availability_zones` naming syntax follows the convention `availability-zone:subnet:placement-group-name`. For example, to set an AZ in `us-east-1` with subnet `subnet-123456` and placement group `ClusterI03`, you would set:\n`availability_zones = [\"us-east-1a:subnet-123456:ClusterI03\"]`."
+        },
+        "BlockDevicesMode": {
+            "type": "string"
+        },
+        "CapacityUnit": {
+            "type": "string",
+            "description": "The capacity unit to launch instances by. If not specified, when choosing the weight unit, each instance will weight as the number of its vCPUs. Valid values: `instance`, `weight`."
+        },
+        "CpuCredits": {
+            "type": "string",
+            "description": "Controls how T3 instances are launched. Valid values: `standard`, `unlimited`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The group description."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
+        },
+        "DrainingTimeout": {
+            "type": "number",
+            "description": "The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "Enable high bandwidth connectivity between instances and AWS\u2019s Elastic Block Store (EBS). For instance types that are EBS-optimized by default this parameter will be ignored."
+        },
+        "ElasticIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [AWS Elastic IP](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) allocation IDs to associate to the group instances."
+        },
+        "ElasticLoadBalancers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EnableMonitoring": {
+            "type": "boolean",
+            "description": "Indicates whether monitoring is enabled for the instance."
+        },
+        "FallbackToOndemand": {
+            "type": "boolean",
+            "description": "In a case of no Spot instances available, Elastigroup will launch on-demand instances instead."
+        },
+        "HealthCheckGracePeriod": {
+            "type": "number",
+            "description": "The amount of time, in seconds, after the instance has launched to starts and check its health."
+        },
+        "HealthCheckType": {
+            "type": "string",
+            "description": "The service that will perform health checks for the instance. Valid values: `\"ELB\"`, `\"HCS\"`, `\"TARGET_GROUP\"`, `\"MLB\"`, `\"EC2\"`, `\"MULTAI_TARGET_SET\"`, `\"MLB_RUNTIME\"`, `\"K8S_NODE\"`, `\"NOMAD_NODE\"`, `\"ECS_CLUSTER_INSTANCE\"`."
+        },
+        "HealthCheckUnhealthyDurationBeforeReplacement": {
+            "type": "number",
+            "description": "The amount of time, in seconds, that we will wait before replacing an instance that is running and became unhealthy (this is only applicable for instances that were once healthy)."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The ID of the AMI used to launch the instance."
+        },
+        "InstanceTypesOndemand": {
+            "type": "string",
+            "description": "The type of instance determines your instance's CPU capacity, memory and storage (e.g., m1.small, c1.xlarge)."
+        },
+        "InstanceTypesPreferredSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Prioritize a subset of spot instance types. Must be a subset of the selected spot instance types."
+        },
+        "InstanceTypesSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more instance types."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The key name that should be used for the instance."
+        },
+        "LifetimePeriod": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
+        },
+        "MinimumInstanceLifetime": {
+            "type": "number",
+            "description": "Defines the preferred minimum instance lifetime in hours. Markets which comply with this preference will be prioritized. Optional values: 1, 3, 6, 12, 24."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group name."
+        },
+        "OndemandCount": {
+            "type": "number",
+            "description": "Number of on demand instances to launch in the group. All other instances will be spot instances. When this parameter is set the `spot_percentage` parameter is being ignored."
+        },
+        "Orientation": {
+            "type": "string",
+            "description": "Select a prediction strategy. Valid values: `balanced`, `costOriented`, `equalAzDistribution`, `availabilityOriented`. You can read more in our documentation."
+        },
+        "PersistBlockDevices": {
+            "type": "boolean"
+        },
+        "PersistPrivateIp": {
+            "type": "boolean"
+        },
+        "PersistRootDevice": {
+            "type": "boolean"
+        },
+        "PlacementTenancy": {
+            "type": "string",
+            "description": "Enable dedicated tenancy. Note: There is a flat hourly fee for each region in which dedicated tenancy is used. Valid values: \"default\", \"dedicated\" ."
+        },
+        "PreferredAvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The AZs to prioritize when launching Spot instances. If no markets are available in the Preferred AZs, Spot instances are launched in the non-preferred AZs.\nNote: Must be a sublist of `availability_zones` and `orientation` value must not be `\"equalAzDistribution\"`."
+        },
+        "PrivateIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Product": {
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`.\nFor EC2 Classic instances:  `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The AWS region your group will be created in.\nNote: This parameter is required if you specify subnets (through subnet_ids). This parameter is optional if you specify Availability Zones (through availability_zones)."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of associated security group IDS."
+        },
+        "ShutdownScript": {
+            "type": "string",
+            "description": "The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/)."
+        },
+        "SpotPercentage": {
+            "type": "number",
+            "description": "The percentage of Spot instances that would spin up from the `desired_capacity` number."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Strings of subnet identifiers.\nNote: When this parameter is set, `availability_zones` should be left unused."
+        },
+        "TargetGroupArns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The user data to provide when launching the instance."
+        },
+        "UtilizeCommitments": {
+            "type": "boolean"
+        },
+        "UtilizeReservedInstances": {
+            "type": "boolean",
+            "description": "In a case of any available reserved instances, Elastigroup will utilize them first before purchasing Spot instances."
+        },
+        "WaitForCapacity": {
+            "type": "number",
+            "description": "Minimum number of instances in a 'HEALTHY' status that is required before continuing. This is ignored when updating with blue/green deployment. Cannot exceed `desired_capacity`."
+        },
+        "WaitForCapacityTimeout": {
+            "type": "number",
+            "description": "Time (seconds) to wait for instances to report a 'HEALTHY' status. Useful for plans with multiple dependencies that take some time to initialize. Leave undefined or set to `0` to indicate no wait. This is ignored when updating with blue/green deployment."
+        },
+        "CpuOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CpuOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDeviceDefinition"
+            }
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+            }
+        },
+        "InstanceTypesWeights": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceTypesWeightsDefinition"
+            }
+        },
+        "IntegrationBeanstalk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationBeanstalkDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationCodedeploy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationCodedeployDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationDockerSwarm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationDockerSwarmDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationEcs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationEcsDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationGitlab": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationGitlabDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationKubernetes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationKubernetesDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationMesosphere": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationMesosphereDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationMultaiRuntime": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationMultaiRuntimeDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationNomad": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationNomadDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationRancher": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationRancherDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationRoute53": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationRoute53Definition"
+            },
+            "maxItems": 1
+        },
+        "MetadataOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MultaiTargetSets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MultaiTargetSetsDefinition"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "RevertToSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevertToSpotDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScalingDownPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingDownPolicyDefinition"
+            }
+        },
+        "ScalingStrategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScalingStrategyDefinition"
+            }
+        },
+        "ScalingTargetPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingTargetPolicyDefinition"
+            }
+        },
+        "ScalingUpPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingUpPolicyDefinition"
+            }
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        },
+        "Signal": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SignalDefinition"
+            }
+        },
+        "StatefulDeallocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatefulDeallocationDefinition"
+            },
+            "maxItems": 1
+        },
+        "StatefulInstanceAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatefulInstanceActionDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FallbackToOndemand",
+        "InstanceTypesOndemand",
+        "InstanceTypesSpot",
+        "Name",
+        "Orientation",
+        "Product",
+        "SecurityGroups"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

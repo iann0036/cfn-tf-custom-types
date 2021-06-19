@@ -1,0 +1,1191 @@
+{
+    "typeName": "TF::AzureRM::KubernetesCluster",
+    "description": "Manages a Managed Kubernetes Cluster (also known as AKS / Azure Kubernetes Service)\n\n-> **Note:** Due to the fast-moving nature of AKS, we recommend using the latest version of the Azure Provider when using AKS - you can find [the latest version of the Azure Provider here](https://registry.terraform.io/providers/hashicorp/azurerm/latest).\n\n~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-KubernetesCluster/docs/README.md",
+    "definitions": {
+        "KubeAdminConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "ClusterCaCertificate": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        },
+        "KubeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "ClusterCaCertificate": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AddonProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AciConnectorLinux": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AciConnectorLinuxDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzurePolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzurePolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpApplicationRouting": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpApplicationRoutingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IngressApplicationGateway": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressApplicationGatewayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KubeDashboard": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KubeDashboardDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OmsAgent": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OmsAgentDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoScalerProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BalanceSimilarNodeGroups": {
+                    "type": "boolean",
+                    "description": "Detect similar node groups and balance the number of nodes between them. Defaults to `false`."
+                },
+                "EmptyBulkDeleteMax": {
+                    "type": "string",
+                    "description": "Maximum number of empty nodes that can be deleted at the same time. Defaults to `10`."
+                },
+                "Expander": {
+                    "type": "string",
+                    "description": "Expander to use. Possible values are `least-waste`, `priority`, `most-pods` and `random`. Defaults to `random`."
+                },
+                "MaxGracefulTerminationSec": {
+                    "type": "string",
+                    "description": "Maximum number of seconds the cluster autoscaler waits for pod termination when trying to scale down a node. Defaults to `600`."
+                },
+                "MaxNodeProvisioningTime": {
+                    "type": "string",
+                    "description": "Maximum time the autoscaler waits for a node to be provisioned. Defaults to `15m`."
+                },
+                "MaxUnreadyNodes": {
+                    "type": "number",
+                    "description": "Maximum Number of allowed unready nodes. Defaults to `3`."
+                },
+                "MaxUnreadyPercentage": {
+                    "type": "number",
+                    "description": "Maximum percentage of unready nodes the cluster autoscaler will stop if the percentage is exceeded. Defaults to `45`."
+                },
+                "NewPodScaleUpDelay": {
+                    "type": "string",
+                    "description": "For scenarios like burst/batch scale where you don't want CA to act before the kubernetes scheduler could schedule all the pods, you can tell CA to ignore unscheduled pods before they're a certain age. Defaults to `10s`."
+                },
+                "ScaleDownDelayAfterAdd": {
+                    "type": "string",
+                    "description": "How long after the scale up of AKS nodes the scale down evaluation resumes. Defaults to `10m`."
+                },
+                "ScaleDownDelayAfterDelete": {
+                    "type": "string",
+                    "description": "How long after node deletion that scale down evaluation resumes. Defaults to the value used for `scan_interval`."
+                },
+                "ScaleDownDelayAfterFailure": {
+                    "type": "string",
+                    "description": "How long after scale down failure that scale down evaluation resumes. Defaults to `3m`."
+                },
+                "ScaleDownUnneeded": {
+                    "type": "string",
+                    "description": "How long a node should be unneeded before it is eligible for scale down. Defaults to `10m`."
+                },
+                "ScaleDownUnready": {
+                    "type": "string",
+                    "description": "How long an unready node should be unneeded before it is eligible for scale down. Defaults to `20m`."
+                },
+                "ScaleDownUtilizationThreshold": {
+                    "type": "string",
+                    "description": "Node utilization level, defined as sum of requested resources divided by capacity, below which a node can be considered for scale down. Defaults to `0.5`."
+                },
+                "ScanInterval": {
+                    "type": "string",
+                    "description": "How often the AKS Cluster should be re-evaluated for scale up/down. Defaults to `10s`."
+                },
+                "SkipNodesWithLocalStorage": {
+                    "type": "boolean",
+                    "description": "If `true` cluster autoscaler will never delete nodes with pods with local storage, for example, EmptyDir or HostPath. Defaults to `true`."
+                },
+                "SkipNodesWithSystemPods": {
+                    "type": "boolean",
+                    "description": "If `true` cluster autoscaler will never delete nodes with pods from kube-system (except for DaemonSet or mirror pods). Defaults to `true`."
+                }
+            },
+            "required": []
+        },
+        "DefaultNodePoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Availability Zones across which the Node Pool should be spread. Changing this forces a new resource to be created."
+                },
+                "EnableAutoScaling": {
+                    "type": "boolean",
+                    "description": "Should [the Kubernetes Auto Scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler) be enabled for this Node Pool? Defaults to `false`."
+                },
+                "EnableHostEncryption": {
+                    "type": "boolean",
+                    "description": "Should the nodes in the Default Node Pool have host encryption enabled? Defaults to `false`."
+                },
+                "EnableNodePublicIp": {
+                    "type": "boolean",
+                    "description": "Should nodes in this Node Pool have a Public IP Address? Defaults to `false`. Changing this forces a new resource to be created."
+                },
+                "MaxCount": {
+                    "type": "number"
+                },
+                "MaxPods": {
+                    "type": "number",
+                    "description": "The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
+                },
+                "MinCount": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name which should be used for the default Kubernetes Node Pool. Changing this forces a new resource to be created."
+                },
+                "NodeCount": {
+                    "type": "number"
+                },
+                "NodeLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeLabelsDefinition"
+                    },
+                    "description": "A map of Kubernetes labels which should be applied to nodes in the Default Node Pool. Changing this forces a new resource to be created."
+                },
+                "NodePublicIpPrefixId": {
+                    "type": "string",
+                    "description": "Resource ID for the Public IP Addresses Prefix for the nodes in this Node Pool. `enable_node_public_ip` should be `true`. Changing this forces a new resource to be created."
+                },
+                "NodeTaints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OnlyCriticalAddonsEnabled": {
+                    "type": "boolean",
+                    "description": "Enabling this option will taint default node pool with `CriticalAddonsOnly=true:NoSchedule` taint. Changing this forces a new resource to be created."
+                },
+                "OrchestratorVersion": {
+                    "type": "string",
+                    "description": "Version of Kubernetes used for the Agents. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade)."
+                },
+                "OsDiskSizeGb": {
+                    "type": "number",
+                    "description": "The size of the OS Disk which should be used for each agent in the Node Pool. Changing this forces a new resource to be created."
+                },
+                "OsDiskType": {
+                    "type": "string",
+                    "description": "The type of disk which should be used for the Operating System. Possible values are `Ephemeral` and `Managed`. Defaults to `Managed`. Changing this forces a new resource to be created."
+                },
+                "ProximityPlacementGroupId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    },
+                    "description": "A mapping of tags to assign to the Node Pool."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of Node Pool which should be created. Possible values are `AvailabilitySet` and `VirtualMachineScaleSets`. Defaults to `VirtualMachineScaleSets`."
+                },
+                "VmSize": {
+                    "type": "string",
+                    "description": "The size of the Virtual Machine, such as `Standard_DS2_v2`."
+                },
+                "VnetSubnetId": {
+                    "type": "string",
+                    "description": "The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created."
+                },
+                "KubeletConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KubeletConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LinuxOsConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinuxOsConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UpgradeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UpgradeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "VmSize"
+            ]
+        },
+        "NodeLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The type of identity used for the managed cluster. Possible values are `SystemAssigned` and `UserAssigned`. If `UserAssigned` is set, a `user_assigned_identity_id` must be set as well."
+                },
+                "UserAssignedIdentityId": {
+                    "type": "string",
+                    "description": "The ID of a user assigned identity."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "KubeletIdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string",
+                    "description": "The Client ID of the user-defined Managed Identity to be assigned to the Kubelets. If not specified a Managed Identity is created automatically."
+                },
+                "ObjectId": {
+                    "type": "string",
+                    "description": "The Object ID of the user-defined Managed Identity assigned to the Kubelets.If not specified a Managed Identity is created automatically."
+                },
+                "UserAssignedIdentityId": {
+                    "type": "string",
+                    "description": "The ID of the User Assigned Identity assigned to the Kubelets. If not specified a Managed Identity is created automatically."
+                }
+            },
+            "required": []
+        },
+        "LinuxProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminUsername": {
+                    "type": "string",
+                    "description": "The Admin Username for the Cluster. Changing this forces a new resource to be created."
+                },
+                "SshKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SshKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "AdminUsername"
+            ]
+        },
+        "NetworkProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServiceIp": {
+                    "type": "string",
+                    "description": "IP address within the Kubernetes service address range that will be used by cluster service discovery (kube-dns). Changing this forces a new resource to be created."
+                },
+                "DockerBridgeCidr": {
+                    "type": "string",
+                    "description": "IP address (in CIDR notation) used as the Docker bridge IP address on nodes. Changing this forces a new resource to be created."
+                },
+                "LoadBalancerSku": {
+                    "type": "string",
+                    "description": "Specifies the SKU of the Load Balancer used for this Kubernetes Cluster. Possible values are `Basic` and `Standard`. Defaults to `Standard`."
+                },
+                "NetworkMode": {
+                    "type": "string",
+                    "description": "Network mode to be used with Azure CNI. Possible values are `bridge` and `transparent`. Changing this forces a new resource to be created."
+                },
+                "NetworkPlugin": {
+                    "type": "string",
+                    "description": "Network plugin to use for networking. Currently supported values are `azure` and `kubenet`. Changing this forces a new resource to be created."
+                },
+                "NetworkPolicy": {
+                    "type": "string",
+                    "description": "Sets up network policy to be used with Azure CNI. [Network policy allows us to control the traffic flow between pods](https://docs.microsoft.com/en-us/azure/aks/use-network-policies). Currently supported values are `calico` and `azure`. Changing this forces a new resource to be created."
+                },
+                "OutboundType": {
+                    "type": "string",
+                    "description": "The outbound (egress) routing method which should be used for this Kubernetes Cluster. Possible values are `loadBalancer` and `userDefinedRouting`. Defaults to `loadBalancer`."
+                },
+                "PodCidr": {
+                    "type": "string",
+                    "description": "The CIDR to use for pod IP addresses. This field can only be set when `network_plugin` is set to `kubenet`. Changing this forces a new resource to be created."
+                },
+                "ServiceCidr": {
+                    "type": "string",
+                    "description": "The Network Range used by the Kubernetes service. Changing this forces a new resource to be created."
+                },
+                "LoadBalancerProfile": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoadBalancerProfileDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "NetworkPlugin"
+            ]
+        },
+        "RoleBasedAccessControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is Role Based Access Control Enabled? Changing this forces a new resource to be created."
+                },
+                "AzureActiveDirectory": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureActiveDirectoryDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ServicePrincipalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string",
+                    "description": "The Client ID for the Service Principal."
+                },
+                "ClientSecret": {
+                    "type": "string",
+                    "description": "The Client Secret for the Service Principal."
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WindowsProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string",
+                    "description": "The Admin Password for Windows VMs. Length must be between 14 and 123 characters."
+                },
+                "AdminUsername": {
+                    "type": "string",
+                    "description": "The Admin Username for Windows VMs."
+                }
+            },
+            "required": [
+                "AdminUsername"
+            ]
+        },
+        "AciConnectorLinuxDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "SubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "AzurePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the Azure Policy for Kubernetes Add On enabled?."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "HttpApplicationRoutingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "IngressApplicationGatewayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Whether to deploy the Application Gateway ingress controller to this Kubernetes Cluster?."
+                },
+                "GatewayId": {
+                    "type": "string",
+                    "description": "The ID of the Application Gateway to integrate with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing) page for further details."
+                },
+                "GatewayName": {
+                    "type": "string",
+                    "description": "The name of the Application Gateway to be used or created in the Nodepool Resource Group, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details."
+                },
+                "SubnetCidr": {
+                    "type": "string",
+                    "description": "The subnet CIDR to be used to create an Application Gateway, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the subnet on which to create an Application Gateway, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "KubeDashboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the Kubernetes Dashboard enabled?."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "OmsAgentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the OMS Agent Enabled?."
+                },
+                "LogAnalyticsWorkspaceId": {
+                    "type": "string",
+                    "description": "The ID of the Log Analytics Workspace which the OMS Agent should send data to. Must be present if `enabled` is `true`."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "KubeletConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedUnsafeSysctls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies the allow list of unsafe sysctls command or patterns (ending in `*`). Changing this forces a new resource to be created."
+                },
+                "ContainerLogMaxLine": {
+                    "type": "number",
+                    "description": "Specifies the maximum number of container log files that can be present for a container. must be at least 2. Changing this forces a new resource to be created."
+                },
+                "ContainerLogMaxSizeMb": {
+                    "type": "number",
+                    "description": "Specifies the maximum size (e.g. 10MB) of container log file before it is rotated. Changing this forces a new resource to be created."
+                },
+                "CpuCfsQuotaEnabled": {
+                    "type": "boolean",
+                    "description": "Is CPU CFS quota enforcement for containers enabled? Changing this forces a new resource to be created."
+                },
+                "CpuCfsQuotaPeriod": {
+                    "type": "string",
+                    "description": "Specifies the CPU CFS quota period value. Changing this forces a new resource to be created."
+                },
+                "CpuManagerPolicy": {
+                    "type": "string",
+                    "description": "Specifies the CPU Manager policy to use. Possible values are `none` and `static`, Changing this forces a new resource to be created."
+                },
+                "ImageGcHighThreshold": {
+                    "type": "number",
+                    "description": "Specifies the percent of disk usage above which image garbage collection is always run. Must be between `0` and `100`. Changing this forces a new resource to be created."
+                },
+                "ImageGcLowThreshold": {
+                    "type": "number",
+                    "description": "Specifies the percent of disk usage lower than which image garbage collection is never run. Must be between `0` and `100`. Changing this forces a new resource to be created."
+                },
+                "PodMaxPid": {
+                    "type": "number",
+                    "description": "Specifies the maximum number of processes per pod. Changing this forces a new resource to be created."
+                },
+                "TopologyManagerPolicy": {
+                    "type": "string",
+                    "description": "Specifies the Topology Manager policy to use. Possible values are `none`, `best-effort`, `restricted` or `single-numa-node`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        },
+        "LinuxOsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SwapFileSizeMb": {
+                    "type": "number",
+                    "description": "Specifies the size of swap file on each node in MB. Changing this forces a new resource to be created."
+                },
+                "TransparentHugePageDefrag": {
+                    "type": "string",
+                    "description": "specifies the defrag configuration for Transparent Huge Page. Possible values are `always`, `defer`, `defer+madvise`, `madvise` and `never`. Changing this forces a new resource to be created."
+                },
+                "TransparentHugePageEnabled": {
+                    "type": "string",
+                    "description": "Specifies the Transparent Huge Page enabled configuration. Possible values are `always`, `madvise` and `never`. Changing this forces a new resource to be created."
+                },
+                "SysctlConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SysctlConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "UpgradeSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "string",
+                    "description": "The maximum number or percentage of nodes which will be added to the Node Pool size during an upgrade."
+                }
+            },
+            "required": [
+                "MaxSurge"
+            ]
+        },
+        "SshKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyData": {
+                    "type": "string",
+                    "description": "The Public SSH Key used to access the cluster. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "KeyData"
+            ]
+        },
+        "LoadBalancerProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdleTimeoutInMinutes": {
+                    "type": "number",
+                    "description": "Desired outbound flow idle timeout in minutes for the cluster load balancer. Must be between `4` and `120` inclusive. Defaults to `30`."
+                },
+                "ManagedOutboundIpCount": {
+                    "type": "number",
+                    "description": "Count of desired managed outbound IPs for the cluster load balancer. Must be between `1` and `100` inclusive."
+                },
+                "OutboundIpAddressIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The ID of the Public IP Addresses which should be used for outbound communication for the cluster load balancer."
+                },
+                "OutboundIpPrefixIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The ID of the outbound Public IP Address Prefixes which should be used for the cluster load balancer."
+                },
+                "OutboundPortsAllocated": {
+                    "type": "number",
+                    "description": "Number of desired SNAT port for each VM in the clusters load balancer. Must be between `0` and `64000` inclusive. Defaults to `0`."
+                }
+            },
+            "required": []
+        },
+        "AzureActiveDirectoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminGroupObjectIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AzureRbacEnabled": {
+                    "type": "boolean"
+                },
+                "ClientAppId": {
+                    "type": "string"
+                },
+                "Managed": {
+                    "type": "boolean"
+                },
+                "ServerAppId": {
+                    "type": "string"
+                },
+                "ServerAppSecret": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SysctlConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsAioMaxNr": {
+                    "type": "number",
+                    "description": "The sysctl setting fs.aio-max-nr. Must be between `65536` and `6553500`. Changing this forces a new resource to be created."
+                },
+                "FsFileMax": {
+                    "type": "number",
+                    "description": "The sysctl setting fs.file-max. Must be between `8192` and `12000500`. Changing this forces a new resource to be created."
+                },
+                "FsInotifyMaxUserWatches": {
+                    "type": "number",
+                    "description": "The sysctl setting fs.inotify.max_user_watches. Must be between `781250` and `2097152`. Changing this forces a new resource to be created."
+                },
+                "FsNrOpen": {
+                    "type": "number",
+                    "description": "The sysctl setting fs.nr_open. Must be between `8192` and `20000500`. Changing this forces a new resource to be created."
+                },
+                "KernelThreadsMax": {
+                    "type": "number",
+                    "description": "The sysctl setting kernel.threads-max. Must be between `20` and `513785`. Changing this forces a new resource to be created."
+                },
+                "NetCoreNetdevMaxBacklog": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.netdev_max_backlog. Must be between `1000` and `3240000`. Changing this forces a new resource to be created."
+                },
+                "NetCoreOptmemMax": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.optmem_max. Must be between `20480` and `4194304`. Changing this forces a new resource to be created."
+                },
+                "NetCoreRmemDefault": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.rmem_default. Must be between `212992` and `134217728`. Changing this forces a new resource to be created."
+                },
+                "NetCoreRmemMax": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.rmem_max. Must be between `212992` and `134217728`. Changing this forces a new resource to be created."
+                },
+                "NetCoreSomaxconn": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.somaxconn. Must be between `4096` and `3240000`. Changing this forces a new resource to be created."
+                },
+                "NetCoreWmemDefault": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.wmem_default. Must be between `212992` and `134217728`. Changing this forces a new resource to be created."
+                },
+                "NetCoreWmemMax": {
+                    "type": "number",
+                    "description": "The sysctl setting net.core.wmem_max. Must be between `212992` and `134217728`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4IpLocalPortRangeMax": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.ip_local_port_range max value. Must be between `1024` and `60999`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4IpLocalPortRangeMin": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.ip_local_port_range min value. Must be between `1024` and `60999`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4NeighDefaultGcThresh1": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.neigh.default.gc_thresh1. Must be between `128` and `80000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4NeighDefaultGcThresh2": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.neigh.default.gc_thresh2. Must be between `512` and `90000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4NeighDefaultGcThresh3": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.neigh.default.gc_thresh3. Must be between `1024` and `100000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpFinTimeout": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_fin_timeout. Must be between `5` and `120`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpKeepaliveIntvl": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_keepalive_intvl. Must be between `10` and `75`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpKeepaliveProbes": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_keepalive_probes. Must be between `1` and `15`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpKeepaliveTime": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_keepalive_time. Must be between `30` and `432000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpMaxSynBacklog": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_max_syn_backlog. Must be between `128` and `3240000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpMaxTwBuckets": {
+                    "type": "number",
+                    "description": "The sysctl setting net.ipv4.tcp_max_tw_buckets. Must be between `8000` and `1440000`. Changing this forces a new resource to be created."
+                },
+                "NetIpv4TcpTwReuse": {
+                    "type": "boolean",
+                    "description": "The sysctl setting net.ipv4.tcp_tw_reuse. Changing this forces a new resource to be created."
+                },
+                "NetNetfilterNfConntrackBuckets": {
+                    "type": "number",
+                    "description": "The sysctl setting net.netfilter.nf_conntrack_buckets. Must be between `65536` and `147456`. Changing this forces a new resource to be created."
+                },
+                "NetNetfilterNfConntrackMax": {
+                    "type": "number",
+                    "description": "The sysctl setting net.netfilter.nf_conntrack_max. Must be between `131072` and `589824`. Changing this forces a new resource to be created."
+                },
+                "VmMaxMapCount": {
+                    "type": "number",
+                    "description": "The sysctl setting vm.max_map_count. Must be between `65530` and `262144`. Changing this forces a new resource to be created."
+                },
+                "VmSwappiness": {
+                    "type": "number",
+                    "description": "The sysctl setting vm.swappiness. Must be between `0` and `100`. Changing this forces a new resource to be created."
+                },
+                "VmVfsCachePressure": {
+                    "type": "number",
+                    "description": "The sysctl setting vm.vfs_cache_pressure. Must be between `0` and `100`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiServerAuthorizedIpRanges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IP ranges to whitelist for incoming traffic to the masters."
+        },
+        "AutomaticChannelUpgrade": {
+            "type": "string",
+            "description": "The upgrade channel for this Kubernetes Cluster. Possible values are `patch`, `rapid`, and `stable`."
+        },
+        "DiskEncryptionSetId": {
+            "type": "string",
+            "description": "The ID of the Disk Encryption Set which should be used for the Nodes and Volumes. More information [can be found in the documentation](https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys)."
+        },
+        "DnsPrefix": {
+            "type": "string",
+            "description": "DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
+        },
+        "DnsPrefixPrivateCluster": {
+            "type": "string",
+            "description": "Specifies the DNS prefix to use with private clusters. Changing this forces a new resource to be created."
+        },
+        "EnablePodSecurityPolicy": {
+            "type": "boolean"
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubeAdminConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubeAdminConfigDefinition"
+            }
+        },
+        "KubeAdminConfigRaw": {
+            "type": "string"
+        },
+        "KubeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubeConfigDefinition"
+            }
+        },
+        "KubeConfigRaw": {
+            "type": "string"
+        },
+        "KubernetesVersion": {
+            "type": "string",
+            "description": "Version of Kubernetes specified when creating the AKS managed cluster. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade)."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the Managed Kubernetes Cluster should be created. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created."
+        },
+        "NodeResourceGroup": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Kubernetes Nodes should exist. Changing this forces a new resource to be created."
+        },
+        "PrivateClusterEnabled": {
+            "type": "boolean",
+            "description": "Should this Kubernetes Cluster have its API server only exposed on internal IP addresses? This provides a Private IP Address for the Kubernetes API on the Virtual Network where the Kubernetes Cluster is located. Defaults to `false`. Changing this forces a new resource to be created."
+        },
+        "PrivateDnsZoneId": {
+            "type": "string",
+            "description": "Either the ID of Private DNS Zone which should be delegated to this Cluster, `System` to have AKS manage this or `None`. In case of `None` you will need to bring your own DNS server and set up resolving, otherwise cluster will have issues after provisioning."
+        },
+        "PrivateFqdn": {
+            "type": "string"
+        },
+        "PrivateLinkEnabled": {
+            "type": "boolean"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the Resource Group where the Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created."
+        },
+        "SkuTier": {
+            "type": "string",
+            "description": "The SKU Tier that should be used for this Kubernetes Cluster. Possible values are `Free` and `Paid` (which includes the Uptime SLA). Defaults to `Free`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "AddonProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddonProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutoScalerProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoScalerProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "DefaultNodePool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultNodePoolDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "KubeletIdentity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubeletIdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "LinuxProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinuxProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "RoleBasedAccessControl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoleBasedAccessControlDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServicePrincipal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServicePrincipalDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WindowsProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WindowsProfileDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id",
+        "/properties/KubeAdminConfig",
+        "/properties/KubeAdminConfigRaw",
+        "/properties/KubeConfig",
+        "/properties/KubeConfigRaw",
+        "/properties/PrivateFqdn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KubeAdminConfigRaw",
+        "/properties/KubeConfigRaw",
+        "/definitions/ServicePrincipalDefinition/ClientSecret",
+        "/definitions/WindowsProfileDefinition/AdminPassword",
+        "/definitions/AzureActiveDirectoryDefinition/ServerAppSecret"
+    ]
+}

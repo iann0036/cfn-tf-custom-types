@@ -1,0 +1,424 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBigqueryTable",
+    "description": "CloudFormation equivalent of google_bigquery_table",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBigqueryTable/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EncryptionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "ExternalDataConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autodetect": {
+                    "type": "boolean"
+                },
+                "Compression": {
+                    "type": "string"
+                },
+                "IgnoreUnknownValues": {
+                    "type": "boolean"
+                },
+                "MaxBadRecords": {
+                    "type": "number"
+                },
+                "Schema": {
+                    "type": "string"
+                },
+                "SourceFormat": {
+                    "type": "string"
+                },
+                "SourceUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CsvOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GoogleSheetsOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoogleSheetsOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HivePartitioningOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HivePartitioningOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Autodetect",
+                "SourceFormat",
+                "SourceUris"
+            ]
+        },
+        "MaterializedViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableRefresh": {
+                    "type": "boolean"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "RefreshIntervalMs": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "RangePartitioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Field"
+            ]
+        },
+        "TimePartitioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationMs": {
+                    "type": "number"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "RequirePartitionFilter": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "UseLegacySql": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "CsvOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowJaggedRows": {
+                    "type": "boolean"
+                },
+                "AllowQuotedNewlines": {
+                    "type": "boolean"
+                },
+                "Encoding": {
+                    "type": "string"
+                },
+                "FieldDelimiter": {
+                    "type": "string"
+                },
+                "Quote": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Quote"
+            ]
+        },
+        "GoogleSheetsOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HivePartitioningOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "RequirePartitionFilter": {
+                    "type": "boolean"
+                },
+                "SourceUriPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Interval",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Clustering": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "DatasetId": {
+            "type": "string"
+        },
+        "DeletionProtection": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "number"
+        },
+        "FriendlyName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LastModifiedTime": {
+            "type": "number"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "NumBytes": {
+            "type": "number"
+        },
+        "NumLongTermBytes": {
+            "type": "number"
+        },
+        "NumRows": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "TableId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalDataConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalDataConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaterializedView": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaterializedViewDefinition"
+            },
+            "maxItems": 1
+        },
+        "RangePartitioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangePartitioningDefinition"
+            },
+            "maxItems": 1
+        },
+        "TimePartitioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimePartitioningDefinition"
+            },
+            "maxItems": 1
+        },
+        "View": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatasetId",
+        "TableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/LastModifiedTime",
+        "/properties/Location",
+        "/properties/NumBytes",
+        "/properties/NumLongTermBytes",
+        "/properties/NumRows",
+        "/properties/SelfLink",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Google::Folder",
+    "description": "Allows management of a Google Cloud Platform folder. For more information see \n[the official documentation](https://cloud.google.com/resource-manager/docs/creating-managing-folders)\nand \n[API](https://cloud.google.com/resource-manager/reference/rest/v2/folders).\n\nA folder can contain projects, other folders, or a combination of both. You can use folders to group projects under an organization in a hierarchy. For example, your organization might contain multiple departments, each with its own set of Cloud Platform resources. Folders allows you to group these resources on a per-department basis. Folders are used to group resources that share common IAM policies.\n\nFolders created live inside an Organization. See the [Organization documentation](https://cloud.google.com/resource-manager/docs/quickstarts) for more details.\n\nThe service account used to run Terraform when creating a `google_folder`\nresource must have `roles/resourcemanager.folderCreator`. See the\n[Access Control for Folders Using IAM](https://cl...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-Folder/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The folder\u2019s display name.\nA folder\u2019s display name must be unique amongst its siblings, e.g. no two folders with the same parent can share the same display name. The display name must start and end with a letter or digit, may contain letters, digits, spaces, hyphens and underscores and can be no longer than 30 characters."
+        },
+        "FolderId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleState": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string",
+            "description": "The resource name of the parent Folder or Organization.\nMust be of the form `folders/{folder_id}` or `organizations/{org_id}`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/FolderId",
+        "/properties/Id",
+        "/properties/LifecycleState",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Databricks::DbfsFile",
+    "description": "CloudFormation equivalent of databricks_dbfs_file",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-DbfsFile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentBase64": {
+            "type": "string"
+        },
+        "DbfsPath": {
+            "type": "string"
+        },
+        "FileSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Md5": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Path"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DbfsPath",
+        "/properties/FileSize",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

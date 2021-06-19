@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::Equinix::NetworkBgp",
+    "description": "Resource `equinix_network_bgp` allows creation and management of Equinix Network\nEdge BGP peering configurations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-NetworkBgp/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthenticationKey": {
+            "type": "string",
+            "description": "shared key used for BGP peer authentication."
+        },
+        "ConnectionId": {
+            "type": "string",
+            "description": "identifier of a connection established between\nnetwork device and remote service provider that will be used for peering."
+        },
+        "DeviceId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalAsn": {
+            "type": "number",
+            "description": "Local ASN number."
+        },
+        "LocalIpAddress": {
+            "type": "string",
+            "description": "IP address in CIDR format of a local device."
+        },
+        "ProvisioningStatus": {
+            "type": "string"
+        },
+        "RemoteAsn": {
+            "type": "number",
+            "description": "Remote ASN number."
+        },
+        "RemoteIpAddress": {
+            "type": "string",
+            "description": "IP address of remote peer."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionId",
+        "LocalAsn",
+        "LocalIpAddress",
+        "RemoteAsn",
+        "RemoteIpAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeviceId",
+        "/properties/Id",
+        "/properties/ProvisioningStatus",
+        "/properties/State",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthenticationKey"
+    ]
+}

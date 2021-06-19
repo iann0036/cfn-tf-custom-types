@@ -1,0 +1,1515 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleContainerCluster",
+    "description": "CloudFormation equivalent of google_container_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleContainerCluster/docs/README.md",
+    "definitions": {
+        "ResourceLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AddonsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudrunConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudrunConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ConfigConnectorConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigConnectorConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DnsCacheConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsCacheConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcePersistentDiskCsiDriverConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcePersistentDiskCsiDriverConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HorizontalPodAutoscaling": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HorizontalPodAutoscalingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpLoadBalancing": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpLoadBalancingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IstioConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IstioConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KalmConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KalmConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NetworkPolicyConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkPolicyConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthenticatorGroupsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecurityGroup"
+            ]
+        },
+        "ClusterAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscalingProfile": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "AutoProvisioningDefaults": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoProvisioningDefaultsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimitsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ClusterTelemetryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConfidentialNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "DatabaseEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyName": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "State"
+            ]
+        },
+        "DefaultSnatStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "IpAllocationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "ClusterSecondaryRangeName": {
+                    "type": "string"
+                },
+                "ServicesIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "ServicesSecondaryRangeName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MaintenancePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DailyMaintenanceWindow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailyMaintenanceWindowDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaintenanceExclusion": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MaintenanceExclusionDefinition"
+                    },
+                    "maxItems": 3
+                },
+                "RecurringWindow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecurringWindowDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MasterAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "ClientCertificateConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientCertificateConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MasterAuthorizedNetworksConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrBlocks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CidrBlocksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworkPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "NodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootDiskKmsKey": {
+                    "type": "string"
+                },
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "GuestAccelerator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GuestAcceleratorDefinition2"
+                    }
+                },
+                "ImageType": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "LocalSsdCount": {
+                    "type": "number"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition2"
+                    }
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Preemptible": {
+                    "type": "boolean"
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Taint": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaintDefinition2"
+                    }
+                },
+                "EphemeralStorageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EphemeralStorageConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KubeletConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KubeletConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LinuxNodeConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinuxNodeConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SandboxConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SandboxConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ShieldedInstanceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkloadMetadataConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkloadMetadataConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GuestAcceleratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "NodePoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InitialNodeCount": {
+                    "type": "number"
+                },
+                "MaxPodsPerNode": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamePrefix": {
+                    "type": "string"
+                },
+                "NodeCount": {
+                    "type": "number"
+                },
+                "NodeLocations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Autoscaling": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscalingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Management": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagementDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UpgradeSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UpgradeSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NotificationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Pubsub": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PubsubDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "PodSecurityPolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "PrivateClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnablePrivateEndpoint": {
+                    "type": "boolean"
+                },
+                "EnablePrivateNodes": {
+                    "type": "boolean"
+                },
+                "MasterIpv4CidrBlock": {
+                    "type": "string"
+                },
+                "MasterGlobalAccessConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MasterGlobalAccessConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "EnablePrivateEndpoint"
+            ]
+        },
+        "ReleaseChannelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Channel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Channel"
+            ]
+        },
+        "ResourceUsageExportConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableNetworkEgressMetering": {
+                    "type": "boolean"
+                },
+                "EnableResourceConsumptionMetering": {
+                    "type": "boolean"
+                },
+                "BigqueryDestination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BigqueryDestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VerticalPodAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "WorkloadIdentityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityNamespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IdentityNamespace"
+            ]
+        },
+        "CloudrunConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "LoadBalancerType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "ConfigConnectorConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "DnsCacheConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "GcePersistentDiskCsiDriverConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "HorizontalPodAutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "HttpLoadBalancingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "IstioConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Auth": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "KalmConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "NetworkPolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Disabled"
+            ]
+        },
+        "AutoProvisioningDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Maximum": {
+                    "type": "number"
+                },
+                "Minimum": {
+                    "type": "number"
+                },
+                "ResourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceType"
+            ]
+        },
+        "DailyMaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StartTime"
+            ]
+        },
+        "MaintenanceExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "ExclusionName": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndTime",
+                "ExclusionName",
+                "StartTime"
+            ]
+        },
+        "RecurringWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "Recurrence": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndTime",
+                "Recurrence",
+                "StartTime"
+            ]
+        },
+        "ClientCertificateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IssueClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "IssueClientCertificate"
+            ]
+        },
+        "CidrBlocksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CidrBlock"
+            ]
+        },
+        "EphemeralStorageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalSsdCount": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "LocalSsdCount"
+            ]
+        },
+        "KubeletConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCfsQuota": {
+                    "type": "boolean"
+                },
+                "CpuCfsQuotaPeriod": {
+                    "type": "string"
+                },
+                "CpuManagerPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CpuManagerPolicy"
+            ]
+        },
+        "LinuxNodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sysctls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SysctlsDefinition2"
+                    }
+                }
+            },
+            "required": [
+                "Sysctls"
+            ]
+        },
+        "SysctlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SandboxConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SandboxType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SandboxType"
+            ]
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "WorkloadMetadataConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeMetadata": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NodeMetadata"
+            ]
+        },
+        "AutoscalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodeCount": {
+                    "type": "number"
+                },
+                "MinNodeCount": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxNodeCount",
+                "MinNodeCount"
+            ]
+        },
+        "ManagementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRepair": {
+                    "type": "boolean"
+                },
+                "AutoUpgrade": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "GuestAcceleratorDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaintDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "UpgradeSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "number"
+                },
+                "MaxUnavailable": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxSurge",
+                "MaxUnavailable"
+            ]
+        },
+        "PubsubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "MasterGlobalAccessConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "BigqueryDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId"
+            ]
+        },
+        "SysctlsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterIpv4Cidr": {
+            "type": "string"
+        },
+        "DatapathProvider": {
+            "type": "string"
+        },
+        "DefaultMaxPodsPerNode": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableAutopilot": {
+            "type": "boolean"
+        },
+        "EnableBinaryAuthorization": {
+            "type": "boolean"
+        },
+        "EnableIntranodeVisibility": {
+            "type": "boolean"
+        },
+        "EnableKubernetesAlpha": {
+            "type": "boolean"
+        },
+        "EnableL4IlbSubsetting": {
+            "type": "boolean"
+        },
+        "EnableLegacyAbac": {
+            "type": "boolean"
+        },
+        "EnableShieldedNodes": {
+            "type": "boolean"
+        },
+        "EnableTpu": {
+            "type": "boolean"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialNodeCount": {
+            "type": "number"
+        },
+        "InstanceGroupUrls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "LoggingService": {
+            "type": "string"
+        },
+        "MasterVersion": {
+            "type": "string"
+        },
+        "MinMasterVersion": {
+            "type": "string"
+        },
+        "MonitoringService": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NetworkingMode": {
+            "type": "string"
+        },
+        "NodeLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NodeVersion": {
+            "type": "string"
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "PrivateIpv6GoogleAccess": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RemoveDefaultNodePool": {
+            "type": "boolean"
+        },
+        "ResourceLabels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceLabelsDefinition"
+            }
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "ServicesIpv4Cidr": {
+            "type": "string"
+        },
+        "Subnetwork": {
+            "type": "string"
+        },
+        "TpuIpv4CidrBlock": {
+            "type": "string"
+        },
+        "AddonsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddonsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "AuthenticatorGroupsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticatorGroupsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClusterAutoscaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterAutoscalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClusterTelemetry": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterTelemetryDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConfidentialNodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfidentialNodesDefinition"
+            },
+            "maxItems": 1
+        },
+        "DatabaseEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "DefaultSnatStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultSnatStatusDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpAllocationPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpAllocationPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenancePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenancePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterAuthDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterAuthorizedNetworksConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterAuthorizedNetworksConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodePool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodePoolDefinition"
+            }
+        },
+        "NotificationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PodSecurityPolicyConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PodSecurityPolicyConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PrivateClusterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateClusterConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ReleaseChannel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReleaseChannelDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResourceUsageExportConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceUsageExportConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VerticalPodAutoscaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VerticalPodAutoscalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "WorkloadIdentityConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkloadIdentityConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/InstanceGroupUrls",
+        "/properties/LabelFingerprint",
+        "/properties/MasterVersion",
+        "/properties/Operation",
+        "/properties/SelfLink",
+        "/properties/ServicesIpv4Cidr",
+        "/properties/TpuIpv4CidrBlock"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/MasterAuthDefinition/Password"
+    ]
+}

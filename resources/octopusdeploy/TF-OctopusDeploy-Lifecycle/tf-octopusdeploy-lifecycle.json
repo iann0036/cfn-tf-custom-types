@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::OctopusDeploy::Lifecycle",
+    "description": "CloudFormation equivalent of octopusdeploy_lifecycle",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-Lifecycle/docs/README.md",
+    "definitions": {
+        "PhaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticDeploymentTargets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsOptionalPhase": {
+                    "type": "boolean"
+                },
+                "MinimumEnvironmentsBeforePromotion": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OptionalDeploymentTargets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ReleaseRetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReleaseRetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TentacleRetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TentacleRetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ReleaseRetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QuantityToKeep": {
+                    "type": "number"
+                },
+                "ShouldKeepForever": {
+                    "type": "boolean"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TentacleRetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QuantityToKeep": {
+                    "type": "number"
+                },
+                "ShouldKeepForever": {
+                    "type": "boolean"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "Phase": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PhaseDefinition"
+            }
+        },
+        "ReleaseRetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReleaseRetentionPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "TentacleRetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TentacleRetentionPolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

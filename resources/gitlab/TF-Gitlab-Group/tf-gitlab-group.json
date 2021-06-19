@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::Gitlab::Group",
+    "description": "This resource allows you to create and manage GitLab groups.\nNote your provider will need to be configured with admin-level access for this resource to work.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-Group/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoDevopsEnabled": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Default to Auto\nDevOps pipeline for all projects within this group."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the group."
+        },
+        "EmailsDisabled": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Disable email notifications."
+        },
+        "FullName": {
+            "type": "string"
+        },
+        "FullPath": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LfsEnabled": {
+            "type": "boolean",
+            "description": "Boolean, defaults to true.  Whether to enable LFS\nsupport for projects in this group."
+        },
+        "MentionsDisabled": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Disable the capability\nof a group from getting mentioned."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of this group."
+        },
+        "ParentId": {
+            "type": "number",
+            "description": "Integer, id of the parent group (creates a nested group)."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path of the group."
+        },
+        "ProjectCreationLevel": {
+            "type": "string",
+            "description": ", defaults to Maintainer.\nDetermine if developers can create projects\nin the group. Can be noone (No one), maintainer (Maintainers),\nor developer (Developers + Maintainers)."
+        },
+        "RequestAccessEnabled": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Whether to\nenable users to request access to the group."
+        },
+        "RequireTwoFactorAuthentication": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.\nequire all users in this group to setup Two-factor authentication."
+        },
+        "RunnersToken": {
+            "type": "string"
+        },
+        "ShareWithGroupLock": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Prevent sharing\na project with another group within this group."
+        },
+        "SubgroupCreationLevel": {
+            "type": "string",
+            "description": ", defaults to Owner.\nAllowed to create subgroups.\nCan be owner (Owners), or maintainer (Maintainers)."
+        },
+        "TwoFactorGracePeriod": {
+            "type": "number",
+            "description": "Int, defaults to 48.\nTime before Two-factor authentication is enforced (in hours)."
+        },
+        "VisibilityLevel": {
+            "type": "string",
+            "description": "The group's visibility. Can be `private`, `internal`, or `public`."
+        },
+        "WebUrl": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Path"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FullName",
+        "/properties/FullPath",
+        "/properties/Id",
+        "/properties/RunnersToken",
+        "/properties/WebUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RunnersToken"
+    ]
+}

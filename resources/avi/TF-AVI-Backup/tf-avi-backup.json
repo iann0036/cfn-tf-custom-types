@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::AVI::Backup",
+    "description": "The Backup resource allows the creation and management of Avi Backup",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Backup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupConfigRef": {
+            "type": "string",
+            "description": "Backupconfiguration information. It is a reference to an object of type backupconfiguration."
+        },
+        "FileName": {
+            "type": "string",
+            "description": "The file name of backup."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalFileUrl": {
+            "type": "string",
+            "description": "Url to download the backup file."
+        },
+        "RemoteFileUrl": {
+            "type": "string",
+            "description": "Url to download the backup file."
+        },
+        "SchedulerRef": {
+            "type": "string",
+            "description": "Scheduler information. It is a reference to an object of type scheduler."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Timestamp": {
+            "type": "string",
+            "description": "Unix timestamp of when the backup file is created."
+        },
+        "Uuid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FileName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

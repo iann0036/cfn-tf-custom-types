@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::FortiOS::SystemAdminProfiles",
+    "description": "Provides a resource to configure access profiles of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_system_accprofile`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAdminProfiles/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdmintimeoutOverride": {
+            "type": "string",
+            "description": "Enable/disable overriding the global administrator idle timeout."
+        },
+        "Authgrp": {
+            "type": "string",
+            "description": "Administrator access to Users and Devices."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Ftviewgrp": {
+            "type": "string",
+            "description": "FortiView."
+        },
+        "Fwgrp": {
+            "type": "string",
+            "description": "Administrator access to the Firewall configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Loggrp": {
+            "type": "string",
+            "description": "Administrator access to Logging and Reporting including viewing log messages."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Netgrp": {
+            "type": "string",
+            "description": "Network Configuration."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "Scope of admin access."
+        },
+        "Secfabgrp": {
+            "type": "string",
+            "description": "Security Fabric."
+        },
+        "Sysgrp": {
+            "type": "string",
+            "description": "System Configuration."
+        },
+        "Utmgrp": {
+            "type": "string",
+            "description": "Administrator access to Security Profiles."
+        },
+        "Vpngrp": {
+            "type": "string",
+            "description": "Administrator access to IPsec, SSL, PPTP, and L2TP VPN."
+        },
+        "Wanoptgrp": {
+            "type": "string",
+            "description": "Administrator access to WAN Opt & Cache."
+        },
+        "Wifi": {
+            "type": "string",
+            "description": "Administrator access to the WiFi controller and Switch controller."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

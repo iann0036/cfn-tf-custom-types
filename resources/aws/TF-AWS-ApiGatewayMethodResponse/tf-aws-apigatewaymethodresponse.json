@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::AWS::ApiGatewayMethodResponse",
+    "description": "Provides an HTTP Method Response for an API Gateway Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayMethodResponse/docs/README.md",
+    "definitions": {
+        "ResponseModelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ResponseParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HttpMethod": {
+            "type": "string",
+            "description": "The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The API resource ID."
+        },
+        "ResponseModels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseModelsDefinition"
+            },
+            "description": "A map of the API models used for the response's content type."
+        },
+        "ResponseParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseParametersDefinition"
+            },
+            "description": "A map of response parameters that can be sent to the caller.\nFor example: `response_parameters = { \"method.response.header.X-Some-Header\" = true }`\nwould define that the header `X-Some-Header` can be provided on the response."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated REST API."
+        },
+        "StatusCode": {
+            "type": "string",
+            "description": "The HTTP status code."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HttpMethod",
+        "ResourceId",
+        "RestApiId",
+        "StatusCode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

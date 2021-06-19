@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::Spotinst::OceanGkeLaunchSpec",
+    "description": "Manages a custom Spotinst Ocean GKE Launch Spec resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanGkeLaunchSpec/docs/README.md",
+    "definitions": {
+        "AutoscaleHeadroomsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "GpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumOfUnits"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreemptiblePercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TaintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Effect",
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OceanId": {
+            "type": "string",
+            "description": "The Ocean cluster ID."
+        },
+        "RestrictScaleDown": {
+            "type": "boolean",
+            "description": "Boolean. When set to `true`, VNG nodes will be treated as if all pods running have the restrict-scale-down label. Therefore, Ocean will not scale nodes down unless empty."
+        },
+        "SourceImage": {
+            "type": "string",
+            "description": "Image URL."
+        },
+        "AutoscaleHeadrooms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AutoscaleHeadroomsDefinition"
+            }
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "minItems": 1
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StrategyDefinition"
+            }
+        },
+        "Taints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaintsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OceanId",
+        "SourceImage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

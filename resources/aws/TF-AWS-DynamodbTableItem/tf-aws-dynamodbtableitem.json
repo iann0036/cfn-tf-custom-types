@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::DynamodbTableItem",
+    "description": "Provides a DynamoDB table item resource\n\n-> **Note:** This resource is not meant to be used for managing large amounts of data in your table, it is not designed to scale.\n  You should perform **regular backups** of all data in the table, see [AWS docs for more](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DynamodbTableItem/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HashKey": {
+            "type": "string",
+            "description": "Hash key to use for lookups and identification of the item."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Item": {
+            "type": "string",
+            "description": "JSON representation of a map of attribute name/value pairs, one for each attribute.\nOnly the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item."
+        },
+        "RangeKey": {
+            "type": "string",
+            "description": "Range key to use for lookups and identification of the item. Required if there is range key defined in the table."
+        },
+        "TableName": {
+            "type": "string",
+            "description": "The name of the table to contain the item."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HashKey",
+        "Item",
+        "TableName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

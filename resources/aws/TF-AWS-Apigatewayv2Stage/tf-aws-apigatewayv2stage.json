@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2Stage",
+    "description": "Manages an Amazon API Gateway Version 2 stage.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2Stage/docs/README.md",
+    "definitions": {
+        "StageVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccessLogSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationArn": {
+                    "type": "string",
+                    "description": "The ARN of the CloudWatch Logs log group to receive access logs. Any trailing `:*` is trimmed from the ARN."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "A single line [format](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#apigateway-cloudwatch-log-formats) of the access logs of data, as specified by [selected $context variables](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html)."
+                }
+            },
+            "required": [
+                "DestinationArn",
+                "Format"
+            ]
+        },
+        "DefaultRouteSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataTraceEnabled": {
+                    "type": "boolean",
+                    "description": "Whether data trace logging is enabled for the default route. Affects the log entries pushed to Amazon CloudWatch Logs.\nDefaults to `false`. Supported only for WebSocket APIs."
+                },
+                "DetailedMetricsEnabled": {
+                    "type": "boolean",
+                    "description": "Whether detailed metrics are enabled for the default route. Defaults to `false`."
+                },
+                "LoggingLevel": {
+                    "type": "string",
+                    "description": "The logging level for the default route. Affects the log entries pushed to Amazon CloudWatch Logs.\nValid values: `ERROR`, `INFO`, `OFF`. Defaults to `OFF`. Supported only for WebSocket APIs. Terraform will only perform drift detection of its value when present in a configuration."
+                },
+                "ThrottlingBurstLimit": {
+                    "type": "number",
+                    "description": "The throttling burst limit for the default route."
+                },
+                "ThrottlingRateLimit": {
+                    "type": "number",
+                    "description": "The throttling rate limit for the default route."
+                }
+            },
+            "required": []
+        },
+        "RouteSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataTraceEnabled": {
+                    "type": "boolean",
+                    "description": "Whether data trace logging is enabled for the route. Affects the log entries pushed to Amazon CloudWatch Logs.\nDefaults to `false`. Supported only for WebSocket APIs."
+                },
+                "DetailedMetricsEnabled": {
+                    "type": "boolean",
+                    "description": "Whether detailed metrics are enabled for the route. Defaults to `false`."
+                },
+                "LoggingLevel": {
+                    "type": "string",
+                    "description": "The logging level for the route. Affects the log entries pushed to Amazon CloudWatch Logs.\nValid values: `ERROR`, `INFO`, `OFF`. Defaults to `OFF`. Supported only for WebSocket APIs. Terraform will only perform drift detection of its value when present in a configuration."
+                },
+                "RouteKey": {
+                    "type": "string",
+                    "description": "Route key."
+                },
+                "ThrottlingBurstLimit": {
+                    "type": "number",
+                    "description": "The throttling burst limit for the route."
+                },
+                "ThrottlingRateLimit": {
+                    "type": "number",
+                    "description": "The throttling rate limit for the route."
+                }
+            },
+            "required": [
+                "RouteKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API identifier."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoDeploy": {
+            "type": "boolean",
+            "description": "Whether updates to an API automatically trigger a new deployment. Defaults to `false`. Applicable for HTTP APIs."
+        },
+        "ClientCertificateId": {
+            "type": "string",
+            "description": "The identifier of a client certificate for the stage. Use the [`aws_api_gateway_client_certificate`](/docs/providers/aws/r/api_gateway_client_certificate.html) resource to configure a client certificate.\nSupported only for WebSocket APIs."
+        },
+        "DeploymentId": {
+            "type": "string",
+            "description": "The deployment identifier of the stage. Use the [`aws_apigatewayv2_deployment`](/docs/providers/aws/r/apigatewayv2_deployment.html) resource to configure a deployment."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the stage. Must be less than or equal to 1024 characters in length."
+        },
+        "ExecutionArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the stage. Must be between 1 and 128 characters in length."
+        },
+        "StageVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StageVariablesDefinition"
+            },
+            "description": "A map that defines the stage variables for the stage."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the stage. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "AccessLogSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLogSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "DefaultRouteSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultRouteSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "RouteSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RouteSettingsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ExecutionArn",
+        "/properties/Id",
+        "/properties/InvokeUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

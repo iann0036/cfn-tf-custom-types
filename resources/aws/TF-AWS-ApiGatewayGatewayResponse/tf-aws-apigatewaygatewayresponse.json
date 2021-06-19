@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::AWS::ApiGatewayGatewayResponse",
+    "description": "Provides an API Gateway Gateway Response for a REST API Gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayGatewayResponse/docs/README.md",
+    "definitions": {
+        "ResponseParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ResponseTemplatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResponseParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseParametersDefinition"
+            },
+            "description": "A map specifying the parameters (paths, query strings and headers) of the Gateway Response."
+        },
+        "ResponseTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseTemplatesDefinition"
+            },
+            "description": "A map specifying the templates used to transform the response body."
+        },
+        "ResponseType": {
+            "type": "string",
+            "description": "The response type of the associated GatewayResponse."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The string identifier of the associated REST API."
+        },
+        "StatusCode": {
+            "type": "string",
+            "description": "The HTTP status code of the Gateway Response."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResponseType",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

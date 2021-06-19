@@ -1,0 +1,333 @@
+{
+    "typeName": "TF::OpsGenie::NotificationRule",
+    "description": "Manages a Notification Rule within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-NotificationRule/docs/README.md",
+    "definitions": {
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RepeatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "LoopAfter": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "LoopAfter"
+            ]
+        },
+        "SchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "StepsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Defined if this step is enabled. Default: `true`."
+                },
+                "SendAfter": {
+                    "type": "number",
+                    "description": "Time period, in minutes, notification will be sent after."
+                },
+                "Contact": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContactDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionDefinition"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string",
+                    "description": "User defined value that will be compared with alert field according to the operation. Default: empty string."
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "Possible values: `message`, `alias`, `description`, `source`, `entity`, `tags`, `actions`, `details`, `extra-properties`, `recipients`, `teams`, `priority`."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "If 'field' is set as 'extra-properties', key could be used for key-value pair."
+                },
+                "Not": {
+                    "type": "boolean",
+                    "description": "Indicates behaviour of the given operation. Default: `false`."
+                },
+                "Operation": {
+                    "type": "string",
+                    "description": "Possible values: `matches`, `contains`, `starts-with`, `ends-with`, `equals`, `contains-key`, `contains-value`, `greater-than`, `less-than`, `is-empty`, `equals-ignore-whitespace`."
+                },
+                "Order": {
+                    "type": "number",
+                    "description": "Order of the condition in conditions list."
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        },
+        "ContactDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Method": {
+                    "type": "string",
+                    "description": "Contact method. Possible values: `email`, `sms`, `voice`, `mobile`."
+                },
+                "To": {
+                    "type": "string",
+                    "description": "Address of a given method (eg. email address for `email`, phone number for `sms`/`voice` or mobile application name for `mobile`)."
+                }
+            },
+            "required": [
+                "Method",
+                "To"
+            ]
+        },
+        "RestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string"
+                },
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartDay": {
+                    "type": "string"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionType": {
+            "type": "string",
+            "description": "Type of the action that notification rule will have. Allowed values: `create-alert`, `acknowledged-alert`, `closed-alert`, `assigned-alert`, `add-note`, `schedule-start`, `schedule-end`, `incoming-call-routing`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "If policy should be enabled. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the notification policy."
+        },
+        "NotificationTime": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Time Periods that notification for schedule start/end will be sent. Allowed values: `just-before`, `15-minutes-ago`, `1-hour-ago`, `1-day-ago`. If `action_type` is `schedule-start` or `schedule-end` then it is required."
+        },
+        "Order": {
+            "type": "number"
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username of user to which this notification rule belongs to."
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriteriaDefinition"
+            }
+        },
+        "Repeat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RepeatDefinition"
+            }
+        },
+        "Schedules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchedulesDefinition"
+            }
+        },
+        "Steps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepsDefinition"
+            }
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestrictionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ActionType",
+        "Name",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

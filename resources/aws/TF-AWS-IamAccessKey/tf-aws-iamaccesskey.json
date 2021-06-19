@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::AWS::IamAccessKey",
+    "description": "Provides an IAM access key. This is a set of credentials that allow API requests to be made as an IAM user.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-IamAccessKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateDate": {
+            "type": "string"
+        },
+        "EncryptedSecret": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyFingerprint": {
+            "type": "string"
+        },
+        "PgpKey": {
+            "type": "string",
+            "description": "Either a base-64 encoded PGP public key, or a\nkeybase username in the form `keybase:some_person_that_exists`, for use\nin the `encrypted_secret` output attribute."
+        },
+        "Secret": {
+            "type": "string"
+        },
+        "SesSmtpPasswordV4": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "The access key status to apply. Defaults to `Active`.\nValid values are `Active` and `Inactive`."
+        },
+        "User": {
+            "type": "string",
+            "description": "The IAM user to associate with this access key."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateDate",
+        "/properties/EncryptedSecret",
+        "/properties/Id",
+        "/properties/KeyFingerprint",
+        "/properties/Secret",
+        "/properties/SesSmtpPasswordV4"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Secret",
+        "/properties/SesSmtpPasswordV4"
+    ]
+}

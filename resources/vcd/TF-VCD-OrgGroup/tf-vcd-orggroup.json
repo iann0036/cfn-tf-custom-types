@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::VCD::OrgGroup",
+    "description": "Provides a vCloud Director Organization group. This can be used to create, update, and delete\norganization groups defined in `SAML` or `LDAP`.\n\nSupported in provider *v2.9+*\n\n~> **Note:** This operation requires the rights included in the predefined `Organization\nAdministrator` role or an equivalent set of rights. `SAML` or `LDAP` must be configured as vCD\ndoes not support local groups and will return HTTP error 403 \"This operation is denied.\" if selected\n`provider_type` is not configured.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-OrgGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of Organization group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the group."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to which the VDC belongs. Optional if defined at provider level."
+        },
+        "ProviderType": {
+            "type": "string",
+            "description": "Identity provider type for this this group. One of `SAML` or\n`INTEGRATED`. **Note** `LDAP` must be configured to create `INTEGRATED` groups and names must\nmatch `LDAP` group names. If LDAP is not configured - it will return 403 errors."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The role of the group. Role names can be retrieved from the organization. Both built-in roles and\ncustom built can be used. The roles normally available are:\n* `Organization Administrator`\n* `Catalog Author`\n* `vApp Author`\n* `vApp User`\n* `Console Access Only`\n* `Defer to Identity Provider`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProviderType",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

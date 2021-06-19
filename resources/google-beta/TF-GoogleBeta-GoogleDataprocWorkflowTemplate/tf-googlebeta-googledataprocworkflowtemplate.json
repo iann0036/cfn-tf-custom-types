@@ -1,0 +1,1658 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataprocWorkflowTemplate",
+    "description": "CloudFormation equivalent of google_dataproc_workflow_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataprocWorkflowTemplate/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "JobsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "PrerequisiteStepIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StepId": {
+                    "type": "string"
+                },
+                "HadoopJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HadoopJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HiveJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HiveJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PigJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PigJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrestoJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrestoJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PysparkJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PysparkJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Scheduling": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchedulingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SparkJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SparkRJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkRJobDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SparkSqlJob": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkSqlJobDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "StepId"
+            ]
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Fields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Validation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValidationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Fields",
+                "Name"
+            ]
+        },
+        "PlacementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterSelectorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ManagedCluster": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagedClusterDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HadoopJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainClass": {
+                    "type": "string"
+                },
+                "MainJarFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HiveJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContinueOnFailure": {
+                    "type": "boolean"
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition2"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition"
+                    }
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PigJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContinueOnFailure": {
+                    "type": "boolean"
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition3"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition2"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrestoJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ContinueOnFailure": {
+                    "type": "boolean"
+                },
+                "OutputFormat": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition4"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PysparkJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainPythonFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition5"
+                    }
+                },
+                "PythonFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MainPythonFileUri"
+            ]
+        },
+        "PropertiesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SchedulingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxFailuresPerHour": {
+                    "type": "number"
+                },
+                "MaxFailuresTotal": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SparkJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainClass": {
+                    "type": "string"
+                },
+                "MainJarFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition6"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkRJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MainRFileUri": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition7"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MainRFileUri"
+            ]
+        },
+        "PropertiesDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkSqlJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JarFileUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition8"
+                    }
+                },
+                "QueryFileUri": {
+                    "type": "string"
+                },
+                "ScriptVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptVariablesDefinition3"
+                    }
+                },
+                "LoggingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScriptVariablesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ValidationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Regex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegexDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValuesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ClusterSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterLabelsDefinition"
+                    }
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterLabels"
+            ]
+        },
+        "ClusterLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ManagedClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterName": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition3"
+                    }
+                },
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ClusterName"
+            ]
+        },
+        "LabelsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoggingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DriverLogLevels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DriverLogLevelsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DriverLogLevelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "QueryListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Queries": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Queries"
+            ]
+        },
+        "RegexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Regexes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Regexes"
+            ]
+        },
+        "ValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StagingBucket": {
+                    "type": "string"
+                },
+                "TempBucket": {
+                    "type": "string"
+                },
+                "AutoscalingConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscalingConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EncryptionConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EndpointConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GceClusterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GceClusterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GkeClusterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GkeClusterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InitializationActions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitializationActionsDefinition"
+                    }
+                },
+                "LifecycleConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MasterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MasterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MetastoreConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetastoreConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecondaryWorkerConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecondaryWorkerConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecurityConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SoftwareConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SoftwareConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkerConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkerConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoscalingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Policy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EncryptionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GcePdKmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EndpointConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableHttpPortAccess": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "GceClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InternalIpOnly": {
+                    "type": "boolean"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "PrivateIpv6GoogleAccess": {
+                    "type": "string"
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "ServiceAccountScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnetwork": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zone": {
+                    "type": "string"
+                },
+                "NodeGroupAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeGroupAffinityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ReservationAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReservationAffinityDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GkeClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamespacedGkeDeploymentTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NamespacedGkeDeploymentTargetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "InitializationActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExecutableFile": {
+                    "type": "string"
+                },
+                "ExecutionTimeout": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LifecycleConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDeleteTime": {
+                    "type": "string"
+                },
+                "AutoDeleteTtl": {
+                    "type": "string"
+                },
+                "IdleDeleteTtl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MasterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Image": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "NumInstances": {
+                    "type": "number"
+                },
+                "Preemptibility": {
+                    "type": "string"
+                },
+                "Accelerators": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AcceleratorsDefinition"
+                    }
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetastoreConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataprocMetastoreService": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DataprocMetastoreService"
+            ]
+        },
+        "SecondaryWorkerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Image": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "NumInstances": {
+                    "type": "number"
+                },
+                "Preemptibility": {
+                    "type": "string"
+                },
+                "Accelerators": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AcceleratorsDefinition"
+                    }
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SecurityConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KerberosConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KerberosConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SoftwareConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageVersion": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition9"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "WorkerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Image": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "MinCpuPlatform": {
+                    "type": "string"
+                },
+                "NumInstances": {
+                    "type": "number"
+                },
+                "Preemptibility": {
+                    "type": "string"
+                },
+                "Accelerators": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AcceleratorsDefinition"
+                    }
+                },
+                "DiskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NodeGroupAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeGroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NodeGroup"
+            ]
+        },
+        "ReservationAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsumeReservationType": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NamespacedGkeDeploymentTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterNamespace": {
+                    "type": "string"
+                },
+                "TargetGkeCluster": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AcceleratorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceleratorCount": {
+                    "type": "number"
+                },
+                "AcceleratorType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiskConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootDiskSizeGb": {
+                    "type": "number"
+                },
+                "BootDiskType": {
+                    "type": "string"
+                },
+                "NumLocalSsds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "KerberosConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CrossRealmTrustAdminServer": {
+                    "type": "string"
+                },
+                "CrossRealmTrustKdc": {
+                    "type": "string"
+                },
+                "CrossRealmTrustRealm": {
+                    "type": "string"
+                },
+                "CrossRealmTrustSharedPassword": {
+                    "type": "string"
+                },
+                "EnableKerberos": {
+                    "type": "boolean"
+                },
+                "KdcDbKey": {
+                    "type": "string"
+                },
+                "KeyPassword": {
+                    "type": "string"
+                },
+                "Keystore": {
+                    "type": "string"
+                },
+                "KeystorePassword": {
+                    "type": "string"
+                },
+                "KmsKey": {
+                    "type": "string"
+                },
+                "Realm": {
+                    "type": "string"
+                },
+                "RootPrincipalPassword": {
+                    "type": "string"
+                },
+                "TgtLifetimeHours": {
+                    "type": "number"
+                },
+                "Truststore": {
+                    "type": "string"
+                },
+                "TruststorePassword": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DagTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Jobs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JobsDefinition"
+            },
+            "minItems": 1
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        },
+        "Placement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlacementDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

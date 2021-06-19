@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Linode::ObjectStorageKey",
+    "description": "Provides a Linode Object Storage Key resource. This can be used to create, modify, and delete Linodes Object Storage Keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-ObjectStorageKey/docs/README.md",
+    "definitions": {
+        "BucketAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Cluster": {
+                    "type": "string"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Cluster",
+                "Permissions"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The label given to this key. For display purposes only."
+        },
+        "Limited": {
+            "type": "boolean"
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "BucketAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BucketAccessDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessKey",
+        "/properties/Id",
+        "/properties/Limited",
+        "/properties/SecretKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SecretKey"
+    ]
+}

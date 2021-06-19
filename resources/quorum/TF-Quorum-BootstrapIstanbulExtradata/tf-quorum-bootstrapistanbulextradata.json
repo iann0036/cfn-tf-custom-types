@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Quorum::BootstrapIstanbulExtradata",
+    "description": "Use this resource to construct `extradata` field used in the genesis file.\n\n`istanbul_address` can be referenced from `quorum_bootstrap_node_key` data source or newly created from `quorum_bootstrap_node_key` resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/quorum/TF-Quorum-BootstrapIstanbulExtradata/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Extradata": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IstanbulAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "list of Istanbul address to construct extradata\n- `mode` - (Optional) generate extradata using RLP encoding mode. Supported: ibft1, ibft2 and qbft. Default is ibft1\n- `vanity` - (Optional) Vanity Hex Value to be included in the extradata."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "generate extradata using RLP encoding mode. Supported: ibft1, ibft2 and qbft. Default is ibft1\n- `vanity` - (Optional) Vanity Hex Value to be included in the extradata."
+        },
+        "Vanity": {
+            "type": "string",
+            "description": "Vanity Hex Value to be included in the extradata."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IstanbulAddresses"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Extradata",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

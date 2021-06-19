@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Heroku::SpaceAppAccess",
+    "description": "Provides a resource for managing permissions for the entire Private Space. Members with the admin role will\nalways have full permissions in the Private Space, so using this resource on an admin will have no effect.\nThe provided email must already be a member of the Heroku Team. Currently, the only supported permission is `create_apps`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-SpaceAppAccess/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "The email of the existing Heroku Team member."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The permissions to grant the team member for the Private Space.\nCurrently `create_apps` is the only supported permission. If not provided the member will have no permissions to the space.\nMembers with admin role will always have `create_apps` permissions, which cannot be removed."
+        },
+        "Space": {
+            "type": "string",
+            "description": "The name of the Private Space."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Permissions",
+        "Space"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

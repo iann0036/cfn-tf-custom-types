@@ -1,0 +1,136 @@
+{
+    "typeName": "TF::NSXT::LogicalRouterDownlinkPort",
+    "description": "This resource provides a means to define a downlink port on a logical router to connect a logical tier1 router to a logical switch. The result of this is to provide a default gateway to virtual machines running on the logical switch.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LogicalRouterDownlinkPort/docs/README.md",
+    "definitions": {
+        "ServiceBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetId": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "Logical router port subnet (ip_address / prefix length)."
+        },
+        "LinkedLogicalSwitchPortId": {
+            "type": "string",
+            "description": "Identifier for port on logical switch to connect to."
+        },
+        "LogicalRouterId": {
+            "type": "string",
+            "description": "Identifier for logical Tier-1 router on which this port is created."
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "UrpfMode": {
+            "type": "string",
+            "description": "Unicast Reverse Path Forwarding mode. Accepted values are \"NONE\" and \"STRICT\" which is the default value."
+        },
+        "ServiceBinding": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceBindingDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpAddress",
+        "LinkedLogicalSwitchPortId",
+        "LogicalRouterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MacAddress",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

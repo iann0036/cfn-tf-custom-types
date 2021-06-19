@@ -1,0 +1,1047 @@
+{
+    "typeName": "TF::Thunder::RouterOspf",
+    "description": "`thunder_router_ospf` Provides details about thunder router ospf",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterOspf/docs/README.md",
+    "definitions": {
+        "AreaListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaIpv4": {
+                    "type": "string"
+                },
+                "AreaNum": {
+                    "type": "number"
+                },
+                "DefaultCost": {
+                    "type": "number"
+                },
+                "Shortcut": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "AuthCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FilterLists": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterListsDefinition"
+                    }
+                },
+                "NssaCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NssaCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RangeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeListDefinition"
+                    }
+                },
+                "StubCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StubCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VirtualLinkList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualLinkListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DefaultInformationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Always": {
+                    "type": "number"
+                },
+                "Metric": {
+                    "type": "number"
+                },
+                "MetricType": {
+                    "type": "number"
+                },
+                "Originate": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DistanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistanceValue": {
+                    "type": "number"
+                },
+                "DistanceOspf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DistanceOspfDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DistributeInternalListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiAreaIpv4": {
+                    "type": "string"
+                },
+                "DiAreaNum": {
+                    "type": "number"
+                },
+                "DiCost": {
+                    "type": "number"
+                },
+                "DiType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DistributeListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string"
+                },
+                "Option": {
+                    "type": "string"
+                },
+                "OspfId": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HaStandbyExtraCostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExtraCost": {
+                    "type": "number"
+                },
+                "Group": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HostListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostAddress": {
+                    "type": "string"
+                },
+                "AreaCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AreaCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LogAdjacencyChangesCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Cost": {
+                    "type": "number"
+                },
+                "PollInterval": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NetworkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkIpv4": {
+                    "type": "string"
+                },
+                "NetworkIpv4Cidr": {
+                    "type": "string"
+                },
+                "NetworkIpv4Mask": {
+                    "type": "string"
+                },
+                "NetworkArea": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkAreaDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Ospf1Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AbrType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AbrTypeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OverflowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PassiveInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EthCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EthCfgDefinition"
+                    }
+                },
+                "LifCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifCfgDefinition"
+                    }
+                },
+                "LoopbackCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoopbackCfgDefinition"
+                    }
+                },
+                "TrunkCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TrunkCfgDefinition"
+                    }
+                },
+                "TunnelCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TunnelCfgDefinition"
+                    }
+                },
+                "VeCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VeCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RedistributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpNat": {
+                    "type": "number"
+                },
+                "MetricIpNat": {
+                    "type": "number"
+                },
+                "MetricTypeIpNat": {
+                    "type": "string"
+                },
+                "RouteMapIpNat": {
+                    "type": "string"
+                },
+                "TagIpNat": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "IpNatFloatingList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpNatFloatingListDefinition"
+                    }
+                },
+                "OspfList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfListDefinition"
+                    }
+                },
+                "RedistList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedistListDefinition"
+                    }
+                },
+                "VipFloatingList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VipFloatingListDefinition"
+                    }
+                },
+                "VipList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VipListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RouterIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SummaryAddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotAdvertise": {
+                    "type": "number"
+                },
+                "SummaryAddress": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Spf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpfDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "number"
+                },
+                "MessageDigest": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FilterListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclDirection": {
+                    "type": "string"
+                },
+                "AclName": {
+                    "type": "string"
+                },
+                "FilterList": {
+                    "type": "number"
+                },
+                "PlistDirection": {
+                    "type": "string"
+                },
+                "PlistName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NssaCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultInformationOriginate": {
+                    "type": "number"
+                },
+                "Metric": {
+                    "type": "number"
+                },
+                "MetricType": {
+                    "type": "number"
+                },
+                "NoRedistribution": {
+                    "type": "number"
+                },
+                "NoSummary": {
+                    "type": "number"
+                },
+                "Nssa": {
+                    "type": "number"
+                },
+                "TranslatorRole": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RangeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaRangePrefix": {
+                    "type": "string"
+                },
+                "Option": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StubCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoSummary": {
+                    "type": "number"
+                },
+                "Stub": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "VirtualLinkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationKey": {
+                    "type": "string"
+                },
+                "Bfd": {
+                    "type": "number"
+                },
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "Md5": {
+                    "type": "string"
+                },
+                "MessageDigestKey": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                },
+                "VirtualLinkAuthType": {
+                    "type": "string"
+                },
+                "VirtualLinkAuthentication": {
+                    "type": "number"
+                },
+                "VirtualLinkIpAddr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DistanceOspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistanceExternal": {
+                    "type": "number"
+                },
+                "DistanceInterArea": {
+                    "type": "number"
+                },
+                "DistanceIntraArea": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AreaCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaIpv4": {
+                    "type": "string"
+                },
+                "AreaNum": {
+                    "type": "number"
+                },
+                "Cost": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NetworkAreaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceValue": {
+                    "type": "number"
+                },
+                "NetworkAreaIpv4": {
+                    "type": "string"
+                },
+                "NetworkAreaNum": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AbrTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Option": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "DbExternal": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "string"
+                },
+                "RecoveryTime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EthAddress": {
+                    "type": "string"
+                },
+                "Ethernet": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LifCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lif": {
+                    "type": "number"
+                },
+                "LifAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoopbackCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Loopback": {
+                    "type": "number"
+                },
+                "LoopbackAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrunkCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Trunk": {
+                    "type": "number"
+                },
+                "TrunkAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TunnelCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tunnel": {
+                    "type": "number"
+                },
+                "TunnelAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VeCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ve": {
+                    "type": "number"
+                },
+                "VeAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpNatFloatingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpNatFloatingIpForward": {
+                    "type": "string"
+                },
+                "IpNatPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricOspf": {
+                    "type": "number"
+                },
+                "MetricTypeOspf": {
+                    "type": "string"
+                },
+                "Ospf": {
+                    "type": "number"
+                },
+                "ProcessId": {
+                    "type": "number"
+                },
+                "RouteMapOspf": {
+                    "type": "string"
+                },
+                "TagOspf": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RedistListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "number"
+                },
+                "MetricType": {
+                    "type": "string"
+                },
+                "RouteMap": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VipFloatingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VipAddress": {
+                    "type": "string"
+                },
+                "VipFloatingIpForward": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VipListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricTypeVip": {
+                    "type": "string"
+                },
+                "MetricVip": {
+                    "type": "number"
+                },
+                "RouteMapVip": {
+                    "type": "string"
+                },
+                "TagVip": {
+                    "type": "number"
+                },
+                "TypeVip": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExpDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxDelay": {
+                    "type": "number"
+                },
+                "MinDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "string"
+        },
+        "AutoCostReferenceBandwidth": {
+            "type": "number"
+        },
+        "BfdAllInterfaces": {
+            "type": "number"
+        },
+        "DefaultMetric": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrentDd": {
+            "type": "number"
+        },
+        "MaximumArea": {
+            "type": "number"
+        },
+        "ProcessId": {
+            "type": "number"
+        },
+        "Rfc1583Compatible": {
+            "type": "number"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "UserTag": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AreaList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AreaListDefinition"
+            }
+        },
+        "DefaultInformation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultInformationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Distance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistanceDefinition"
+            },
+            "maxItems": 1
+        },
+        "DistributeInternalList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeInternalListDefinition"
+            }
+        },
+        "DistributeLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeListsDefinition"
+            }
+        },
+        "HaStandbyExtraCost": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HaStandbyExtraCostDefinition"
+            }
+        },
+        "HostList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostListDefinition"
+            }
+        },
+        "LogAdjacencyChangesCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogAdjacencyChangesCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "NeighborList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborListDefinition"
+            }
+        },
+        "NetworkList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkListDefinition"
+            }
+        },
+        "Ospf1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ospf1Definition"
+            },
+            "maxItems": 1
+        },
+        "Overflow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OverflowDefinition"
+            },
+            "maxItems": 1
+        },
+        "PassiveInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PassiveInterfaceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Redistribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributeDefinition"
+            },
+            "maxItems": 1
+        },
+        "RouterId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouterIdDefinition"
+            },
+            "maxItems": 1
+        },
+        "SummaryAddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SummaryAddressListDefinition"
+            }
+        },
+        "Timers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimersDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

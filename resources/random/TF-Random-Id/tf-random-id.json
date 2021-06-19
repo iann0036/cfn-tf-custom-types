@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Random::Id",
+    "description": "CloudFormation equivalent of random_id",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/random/TF-Random-Id/docs/README.md",
+    "definitions": {
+        "KeepersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "B64Std": {
+            "type": "string"
+        },
+        "B64Url": {
+            "type": "string"
+        },
+        "ByteLength": {
+            "type": "number"
+        },
+        "Dec": {
+            "type": "string"
+        },
+        "Hex": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keepers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KeepersDefinition"
+            }
+        },
+        "Prefix": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ByteLength"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/B64Std",
+        "/properties/B64Url",
+        "/properties/Dec",
+        "/properties/Hex",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

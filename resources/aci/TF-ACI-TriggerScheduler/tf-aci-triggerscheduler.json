@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::ACI::TriggerScheduler",
+    "description": "Manages ACI Trigger Scheduler",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-TriggerScheduler/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "annotation for object trigger_scheduler.\n- `name_alias` - (Optional) name_alias for object trigger_scheduler.\n- `description` - (Optional) Description for object trigger_scheduler."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object trigger_scheduler."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "name of Object trigger_scheduler.\n- `annotation` - (Optional) annotation for object trigger_scheduler.\n- `name_alias` - (Optional) name_alias for object trigger_scheduler.\n- `description` - (Optional) Description for object trigger_scheduler."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "name_alias for object trigger_scheduler.\n- `description` - (Optional) Description for object trigger_scheduler."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::GitHub::Branch",
+    "description": "This resource allows you to create and manage branches within your repository.\n\nAdditional constraints can be applied to ensure your branch is created from\nanother branch or commit.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-Branch/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Branch": {
+            "type": "string",
+            "description": "The repository branch to create."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ref": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The GitHub repository name."
+        },
+        "Sha": {
+            "type": "string"
+        },
+        "SourceBranch": {
+            "type": "string",
+            "description": "The branch name to start from. Defaults to `master`."
+        },
+        "SourceSha": {
+            "type": "string",
+            "description": "The commit hash to start from. Defaults to the tip of `source_branch`. If provided, `source_branch` is ignored."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Branch",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/Ref",
+        "/properties/Sha"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::NewRelic::AlertMutingRule",
+    "description": "Use this resource to create a muting rule for New Relic Alerts violations.\n\n-> **IMPORTANT!** Version 2.0.0 of the New Relic Terraform Provider introduces some [additional requirements](/docs/providers/newrelic/index.html) for configuring the provider.\n<br><br>\nBefore upgrading to version 2.0.0 or later, it is recommended to upgrade to the most recent 1.x version of the provider and ensure that your environment successfully runs `terraform plan` without unexpected changes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-AlertMutingRule/docs/README.md",
+    "definitions": {
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndRepeat": {
+                    "type": "string"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "Repeat": {
+                    "type": "string"
+                },
+                "RepeatCount": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TimeZone": {
+                    "type": "string"
+                },
+                "WeeklyRepeatDays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "TimeZone"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Attribute",
+                "Operator",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "number",
+            "description": "The account id of the MutingRule.\n* `condition`  - (Required) The condition that defines which violations to target. See [Nested condition blocks](#nested-condition-blocks) below for details.\n* `enabled` - (Required) Whether the MutingRule is enabled.\n* `name` - The name of the MutingRule.\n* `description` - The description of the MutingRule.\n* `schedule` - (Optional) Specify a schedule for enabling the MutingRule. See [Schedule](#schedule) below for details."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the MutingRule.\n* `schedule` - (Optional) Specify a schedule for enabling the MutingRule. See [Schedule](#schedule) below for details."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the MutingRule is enabled.\n* `name` - The name of the MutingRule.\n* `description` - The description of the MutingRule.\n* `schedule` - (Optional) Specify a schedule for enabling the MutingRule. See [Schedule](#schedule) below for details."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the MutingRule.\n* `description` - The description of the MutingRule.\n* `schedule` - (Optional) Specify a schedule for enabling the MutingRule. See [Schedule](#schedule) below for details."
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

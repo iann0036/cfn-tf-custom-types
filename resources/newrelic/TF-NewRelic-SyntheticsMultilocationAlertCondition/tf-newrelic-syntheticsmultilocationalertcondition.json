@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::NewRelic::SyntheticsMultilocationAlertCondition",
+    "description": "Use this resource to create, update, and delete a New Relic Synthetics Location Alerts.\n\n-> **NOTE:** The [newrelic_nrql_alert_condition](nrql_alert_condition.html) resource is preferred for configuring alerts conditions. In most cases feature parity can be achieved with a NRQL query. Other condition types may be deprecated in the future and receive fewer product updates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-SyntheticsMultilocationAlertCondition/docs/README.md",
+    "definitions": {
+        "CriticalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Threshold"
+            ]
+        },
+        "WarningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Threshold"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Set whether to enable the alert condition.  Defaults to true.\n* `entities` - (Required) The GUIDs of the Synthetics monitors to alert on.\n* `critical` - (Required) A condition term with the priority set to critical.\n* `warning` - (Optional) A condition term with the priority set to warning."
+        },
+        "Entities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The GUIDs of the Synthetics monitors to alert on.\n* `critical` - (Required) A condition term with the priority set to critical.\n* `warning` - (Optional) A condition term with the priority set to warning."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of the condition.\n* `policy_id` - (Required) The ID of the policy where this condition will be used.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition.  Defaults to true.\n* `entities` - (Required) The GUIDs of the Synthetics monitors to alert on.\n* `critical` - (Required) A condition term with the priority set to critical.\n* `warning` - (Optional) A condition term with the priority set to warning."
+        },
+        "PolicyId": {
+            "type": "number",
+            "description": "The ID of the policy where this condition will be used.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition.  Defaults to true.\n* `entities` - (Required) The GUIDs of the Synthetics monitors to alert on.\n* `critical` - (Required) A condition term with the priority set to critical.\n* `warning` - (Optional) A condition term with the priority set to warning."
+        },
+        "RunbookUrl": {
+            "type": "string",
+            "description": "Runbook URL to display in notifications.\n* `enabled` - (Optional) Set whether to enable the alert condition.  Defaults to true.\n* `entities` - (Required) The GUIDs of the Synthetics monitors to alert on.\n* `critical` - (Required) A condition term with the priority set to critical.\n* `warning` - (Optional) A condition term with the priority set to warning."
+        },
+        "ViolationTimeLimitSeconds": {
+            "type": "number"
+        },
+        "Critical": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriticalDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Warning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WarningDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Entities",
+        "Name",
+        "PolicyId",
+        "ViolationTimeLimitSeconds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

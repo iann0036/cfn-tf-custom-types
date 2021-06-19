@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Alicloud::AdbBackupPolicy",
+    "description": "Provides a [ADB](https://www.alibabacloud.com/help/product/92664.htm) cluster backup policy resource and used to configure cluster backup policy.\n\n-> **NOTE:** Available in v1.71.0+. \n-> Each DB cluster has a backup policy and it will be set default values when destroying the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-AdbBackupPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupRetentionPeriod": {
+            "type": "string"
+        },
+        "DbClusterId": {
+            "type": "string",
+            "description": "The Id of cluster that can run database."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PreferredBackupPeriod": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "ADB Cluster backup period. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]."
+        },
+        "PreferredBackupTime": {
+            "type": "string",
+            "description": "ADB Cluster backup time, in the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. China time is 8 hours behind it."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbClusterId",
+        "PreferredBackupPeriod",
+        "PreferredBackupTime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackupRetentionPeriod",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

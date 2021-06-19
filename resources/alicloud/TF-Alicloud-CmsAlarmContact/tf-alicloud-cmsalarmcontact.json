@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Alicloud::CmsAlarmContact",
+    "description": "CloudFormation equivalent of alicloud_cms_alarm_contact",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CmsAlarmContact/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlarmContactName": {
+            "type": "string"
+        },
+        "ChannelsAliim": {
+            "type": "string"
+        },
+        "ChannelsDingWebHook": {
+            "type": "string"
+        },
+        "ChannelsMail": {
+            "type": "string"
+        },
+        "ChannelsSms": {
+            "type": "string"
+        },
+        "Describe": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lang": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlarmContactName",
+        "Describe"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

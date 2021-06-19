@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::SignalFx::SingleValueChart",
+    "description": "This chart type displays a single number in a large font, representing the current value of a single metric on a plot line.\n\nIf the time period is in the past, the number represents the value of the metric near the end of the time period.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-SingleValueChart/docs/README.md",
+    "definitions": {
+        "ColorScaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Gt": {
+                    "type": "number"
+                },
+                "Gte": {
+                    "type": "number"
+                },
+                "Lt": {
+                    "type": "number"
+                },
+                "Lte": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Color"
+            ]
+        },
+        "VizOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ValuePrefix": {
+                    "type": "string"
+                },
+                "ValueSuffix": {
+                    "type": "string"
+                },
+                "ValueUnit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ColorBy": {
+            "type": "string",
+            "description": "Must be `\"Dimension\"`, `\"Scale\"` or `\"Metric\"`. `\"Dimension\"` by default."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the chart."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsTimestampHidden": {
+            "type": "boolean",
+            "description": "Whether to hide the timestamp in the chart. `false` by default."
+        },
+        "MaxDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait for late datapoints."
+        },
+        "MaxPrecision": {
+            "type": "number",
+            "description": "The maximum precision to for value displayed."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the chart."
+        },
+        "ProgramText": {
+            "type": "string",
+            "description": "Signalflow program text for the chart. More info [in the SignalFx docs](https://developers.signalfx.com/signalflow_analytics/signalflow_overview.html#_signalflow_programming_language)."
+        },
+        "RefreshInterval": {
+            "type": "number",
+            "description": "How often (in seconds) to refresh the value."
+        },
+        "SecondaryVisualization": {
+            "type": "string",
+            "description": "The type of secondary visualization. Can be `None`, `Radial`, `Linear`, or `Sparkline`. If unset, the SignalFx default is used (`None`)."
+        },
+        "ShowSparkLine": {
+            "type": "boolean",
+            "description": "Whether to show a trend line below the current value. `false` by default."
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "UnitPrefix": {
+            "type": "string",
+            "description": "Must be `\"Metric\"` or `\"Binary\"`. `\"Metric\"` by default."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "ColorScale": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ColorScaleDefinition"
+            }
+        },
+        "VizOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VizOptionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProgramText"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

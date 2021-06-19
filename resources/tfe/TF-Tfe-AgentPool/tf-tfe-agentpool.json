@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Tfe::AgentPool",
+    "description": "An agent pool represents a group of agents, often related to one another by sharing a common \nnetwork segment or purpose. A workspace may be configured to use one of the organization's agent \npools to run remote operations with isolated, private, or on-premises infrastructure.\n\n~> **NOTE:** This resource requires using the provider with Terraform Cloud and a Terraform Cloud \nfor Business account. \n[Learn more about Terraform Cloud pricing here](https://www.hashicorp.com/products/terraform/pricing).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-AgentPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the agent pool."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

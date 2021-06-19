@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::Limelight::Edgefunction",
+    "description": "This resource provides a way to manage EdgeFunctions in Limelight Networks.\nFor more details see the [API docs](https://support.limelight.com/public/openapi/edgefunctions/index.html#tag/Function-Management)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/limelight/TF-Limelight-Edgefunction/docs/README.md",
+    "definitions": {
+        "EnvironmentVariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanDebug": {
+            "type": "boolean",
+            "description": "Boolean flag to enable debug IO. Defaults to `false`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the EdgeFunction."
+        },
+        "FunctionArchive": {
+            "type": "string",
+            "description": "Path to the function archive (zip file)."
+        },
+        "FunctionSha256": {
+            "type": "string",
+            "description": "The SHA256 value of the `function_archive`."
+        },
+        "Handler": {
+            "type": "string",
+            "description": "Handler that's run when the EdgeFunction is invoked."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "The memory allocated to the EdgeFunction. Defaults to `256`. CPU is allocated\nproportional to memory."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The environment variable name.\n* `value` - (Required) The environment variable value."
+        },
+        "ReservedConcurrency": {
+            "type": "number",
+            "description": "Sets the reserved concurrency for the EdgeFunction. Defaults to `0`."
+        },
+        "RevisionId": {
+            "type": "number"
+        },
+        "Runtime": {
+            "type": "string",
+            "description": "The runtime for the EdgeFunction."
+        },
+        "Shortname": {
+            "type": "string",
+            "description": "The account name (shortname)."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout for the EdgeFunction execution in milliseconds. Defaults to `5000`."
+        },
+        "EnvironmentVariable": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionArchive",
+        "FunctionSha256",
+        "Handler",
+        "Name",
+        "Runtime",
+        "Shortname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RevisionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

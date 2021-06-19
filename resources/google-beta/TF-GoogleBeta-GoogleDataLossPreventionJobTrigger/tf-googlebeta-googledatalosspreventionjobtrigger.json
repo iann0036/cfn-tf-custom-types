@@ -1,0 +1,484 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataLossPreventionJobTrigger",
+    "description": "CloudFormation equivalent of google_data_loss_prevention_job_trigger",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataLossPreventionJobTrigger/docs/README.md",
+    "definitions": {
+        "InspectJobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectTemplateName": {
+                    "type": "string"
+                },
+                "Actions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionsDefinition"
+                    },
+                    "minItems": 1
+                },
+                "StorageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "InspectTemplateName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Schedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SaveFindings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SaveFindingsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "StorageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BigQueryOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BigQueryOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CloudStorageOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudStorageOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DatastoreOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatastoreOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TimespanConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimespanConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecurrencePeriodDuration": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SaveFindingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OutputConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutputConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "BigQueryOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TableReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TableReferenceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudStorageOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BytesLimitPerFile": {
+                    "type": "number"
+                },
+                "BytesLimitPerFilePercent": {
+                    "type": "number"
+                },
+                "FileTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilesLimitPercent": {
+                    "type": "number"
+                },
+                "SampleMethod": {
+                    "type": "string"
+                },
+                "FileSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileSetDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DatastoreOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KindDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "PartitionId": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PartitionIdDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimespanConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableAutoPopulationOfTimespanConfig": {
+                    "type": "boolean"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TimestampField": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimestampFieldDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "OutputConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OutputSchema": {
+                    "type": "string"
+                },
+                "Table": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TableDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TableReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId",
+                "ProjectId",
+                "TableId"
+            ]
+        },
+        "FileSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                },
+                "RegexFileSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegexFileSetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "KindDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PartitionIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamespaceId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ProjectId"
+            ]
+        },
+        "TimestampFieldDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId",
+                "ProjectId"
+            ]
+        },
+        "RegexFileSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "ExcludeRegex": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludeRegex": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastRunTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "InspectJob": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InspectJobDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TriggersDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LastRunTime",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

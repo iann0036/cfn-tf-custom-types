@@ -1,0 +1,264 @@
+{
+    "typeName": "TF::TencentCloud::CosBucket",
+    "description": "Provides a COS resource to create a COS bucket and set its attributes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CosBucket/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CorsRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies which headers are allowed."
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies which methods are allowed. Can be `GET`, `PUT`, `POST`, `DELETE` or `HEAD`."
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies which origins are allowed."
+                },
+                "ExposeHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies expose header in the response."
+                },
+                "MaxAgeSeconds": {
+                    "type": "number",
+                    "description": "Specifies time in seconds that browser can cache the response for a preflight request."
+                }
+            },
+            "required": [
+                "AllowedHeaders",
+                "AllowedMethods",
+                "AllowedOrigins"
+            ]
+        },
+        "LifecycleRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterPrefix": {
+                    "type": "string",
+                    "description": "Object key prefix identifying one or more objects to which the rule applies."
+                },
+                "Expiration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ExpirationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Transition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TransitionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "FilterPrefix"
+            ]
+        },
+        "WebsiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorDocument": {
+                    "type": "string",
+                    "description": "An absolute path to the document to return in case of a 4XX error."
+                },
+                "IndexDocument": {
+                    "type": "string",
+                    "description": "COS returns this index document when requests are made to the root domain or any of the subfolders."
+                }
+            },
+            "required": []
+        },
+        "ExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string"
+                },
+                "Days": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TransitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string",
+                    "description": "Specifies the date after which you want the corresponding action to take effect."
+                },
+                "Days": {
+                    "type": "number",
+                    "description": "Specifies the number of days after object creation when the specific rule action takes effect."
+                },
+                "StorageClass": {
+                    "type": "string",
+                    "description": "Specifies the storage class to which you want the object to transition. Available values include `STANDARD`, `STANDARD_IA` and `ARCHIVE`."
+                }
+            },
+            "required": [
+                "StorageClass"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string",
+            "description": "The canned ACL to apply. Valid values: private, public-read, and public-read-write. Defaults to private."
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of a bucket to be created. Bucket format should be [custom name]-[appid], for example `mycos-1258798060`."
+        },
+        "CosBucketUrl": {
+            "type": "string"
+        },
+        "EncryptionAlgorithm": {
+            "type": "string",
+            "description": "The server-side encryption algorithm to use. Valid value is `AES256`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogEnable": {
+            "type": "boolean",
+            "description": "Indicate the access log of this bucket to be saved or not. Default is `false`. If set `true`, the access log will be saved with `log_target_bucket`. To enable log, the full access of log service must be granted. [Full Access Role Policy](https://intl.cloud.tencent.com/document/product/436/16920)."
+        },
+        "LogPrefix": {
+            "type": "string",
+            "description": "The prefix log name which saves the access log of this bucket per 5 minutes. Eg. `MyLogPrefix/`. The log access file format is `log_target_bucket`/`log_prefix`{YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz. Only valid when `log_enable` is `true`."
+        },
+        "LogTargetBucket": {
+            "type": "string",
+            "description": "The target bucket name which saves the access log of this bucket per 5 minutes. The log access file format is `log_target_bucket`/`log_prefix`{YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz. Only valid when `log_enable` is `true`. User must have full access on this bucket."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The tags of a bucket."
+        },
+        "VersioningEnable": {
+            "type": "boolean",
+            "description": "Enable bucket versioning."
+        },
+        "CorsRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsRulesDefinition"
+            }
+        },
+        "LifecycleRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRulesDefinition"
+            }
+        },
+        "Website": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebsiteDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CosBucketUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

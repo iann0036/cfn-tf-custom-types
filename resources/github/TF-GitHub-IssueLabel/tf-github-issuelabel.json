@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::GitHub::IssueLabel",
+    "description": "Provides a GitHub issue label resource.\n\nThis resource allows you to create and manage issue labels within your\nGitHub organization.\n\nIssue labels are keyed off of their \"name\", so pre-existing issue labels result\nin a 422 HTTP error if they exist outside of Terraform. Normally this would not\nbe an issue, except new repositories are created with a \"default\" set of labels,\nand those labels easily conflict with custom ones.\n\nThis resource will first check if the label exists, and then issue an update,\notherwise it will create.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-IssueLabel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "A 6 character hex code, **without the leading #**, identifying the color of the label."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A short description of the label."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the label."
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The GitHub repository."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL to the issue label."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Color",
+        "Name",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

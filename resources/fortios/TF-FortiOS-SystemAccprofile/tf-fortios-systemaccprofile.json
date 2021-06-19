@@ -1,0 +1,321 @@
+{
+    "typeName": "TF::FortiOS::SystemAccprofile",
+    "description": "Configure access profiles for system administrators.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAccprofile/docs/README.md",
+    "definitions": {
+        "FwgrpPermissionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Address Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "Policy": {
+                    "type": "string",
+                    "description": "Policy Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "Schedule": {
+                    "type": "string",
+                    "description": "Schedule Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "Service": {
+                    "type": "string",
+                    "description": "Service Configuration. Valid values: `none`, `read`, `read-write`."
+                }
+            },
+            "required": []
+        },
+        "LoggrpPermissionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "string",
+                    "description": "Log & Report configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "DataAccess": {
+                    "type": "string",
+                    "description": "Log & Report Data Access. Valid values: `none`, `read`, `read-write`."
+                },
+                "ReportAccess": {
+                    "type": "string",
+                    "description": "Log & Report Report Access. Valid values: `none`, `read`, `read-write`."
+                },
+                "ThreatWeight": {
+                    "type": "string",
+                    "description": "Log & Report Threat Weight. Valid values: `none`, `read`, `read-write`."
+                }
+            },
+            "required": []
+        },
+        "NetgrpPermissionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cfg": {
+                    "type": "string",
+                    "description": "Network Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "PacketCapture": {
+                    "type": "string",
+                    "description": "Packet Capture Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "RouteCfg": {
+                    "type": "string",
+                    "description": "Router Configuration. Valid values: `none`, `read`, `read-write`."
+                }
+            },
+            "required": []
+        },
+        "SysgrpPermissionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Admin": {
+                    "type": "string",
+                    "description": "Administrator Users. Valid values: `none`, `read`, `read-write`."
+                },
+                "Cfg": {
+                    "type": "string",
+                    "description": "System Configuration. Valid values: `none`, `read`, `read-write`."
+                },
+                "Mnt": {
+                    "type": "string",
+                    "description": "Maintenance. Valid values: `none`, `read`, `read-write`."
+                },
+                "Upd": {
+                    "type": "string",
+                    "description": "FortiGuard Updates. Valid values: `none`, `read`, `read-write`."
+                }
+            },
+            "required": []
+        },
+        "UtmgrpPermissionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Antivirus": {
+                    "type": "string",
+                    "description": "Antivirus profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "ApplicationControl": {
+                    "type": "string",
+                    "description": "Application Control profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "DataLossPrevention": {
+                    "type": "string",
+                    "description": "DLP profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Dnsfilter": {
+                    "type": "string",
+                    "description": "DNS Filter profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Emailfilter": {
+                    "type": "string",
+                    "description": "AntiSpam filter and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "EndpointControl": {
+                    "type": "string",
+                    "description": "FortiClient Profiles. Valid values: `none`, `read`, `read-write`."
+                },
+                "FileFilter": {
+                    "type": "string",
+                    "description": "File-filter profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Icap": {
+                    "type": "string",
+                    "description": "ICAP profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Ips": {
+                    "type": "string",
+                    "description": "IPS profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Spamfilter": {
+                    "type": "string",
+                    "description": "AntiSpam filter and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Voip": {
+                    "type": "string",
+                    "description": "VoIP profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Waf": {
+                    "type": "string",
+                    "description": "Web Application Firewall profiles and settings. Valid values: `none`, `read`, `read-write`."
+                },
+                "Webfilter": {
+                    "type": "string",
+                    "description": "Web Filter profiles and settings. Valid values: `none`, `read`, `read-write`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Admintimeout": {
+            "type": "number",
+            "description": "Administrator timeout for this access profile (0 - 480 min, default = 10, 0 means never timeout)."
+        },
+        "AdmintimeoutOverride": {
+            "type": "string",
+            "description": "Enable/disable overriding the global administrator idle timeout. Valid values: `enable`, `disable`."
+        },
+        "Authgrp": {
+            "type": "string",
+            "description": "Administrator access to Users and Devices. Valid values: `none`, `read`, `read-write`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Ftviewgrp": {
+            "type": "string",
+            "description": "FortiView. Valid values: `none`, `read`, `read-write`."
+        },
+        "Fwgrp": {
+            "type": "string",
+            "description": "Administrator access to the Firewall configuration. Valid values: `none`, `read`, `read-write`, `custom`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Loggrp": {
+            "type": "string",
+            "description": "Administrator access to Logging and Reporting including viewing log messages. Valid values: `none`, `read`, `read-write`, `custom`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Netgrp": {
+            "type": "string",
+            "description": "Network Configuration. Valid values: `none`, `read`, `read-write`, `custom`."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "Scope of admin access: global or specific VDOM(s). Valid values: `vdom`, `global`."
+        },
+        "Secfabgrp": {
+            "type": "string",
+            "description": "Security Fabric. Valid values: `none`, `read`, `read-write`."
+        },
+        "Sysgrp": {
+            "type": "string",
+            "description": "System Configuration. Valid values: `none`, `read`, `read-write`, `custom`."
+        },
+        "SystemDiagnostics": {
+            "type": "string",
+            "description": "Enable/disable permission to run system diagnostic commands. Valid values: `enable`, `disable`."
+        },
+        "Utmgrp": {
+            "type": "string",
+            "description": "Administrator access to Security Profiles. Valid values: `none`, `read`, `read-write`, `custom`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vpngrp": {
+            "type": "string",
+            "description": "Administrator access to IPsec, SSL, PPTP, and L2TP VPN. Valid values: `none`, `read`, `read-write`."
+        },
+        "Wanoptgrp": {
+            "type": "string",
+            "description": "Administrator access to WAN Opt & Cache. Valid values: `none`, `read`, `read-write`."
+        },
+        "Wifi": {
+            "type": "string",
+            "description": "Administrator access to the WiFi controller and Switch controller. Valid values: `none`, `read`, `read-write`."
+        },
+        "FwgrpPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FwgrpPermissionDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoggrpPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggrpPermissionDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetgrpPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetgrpPermissionDefinition"
+            },
+            "maxItems": 1
+        },
+        "SysgrpPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SysgrpPermissionDefinition"
+            },
+            "maxItems": 1
+        },
+        "UtmgrpPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UtmgrpPermissionDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,549 @@
+{
+    "typeName": "TF::Volterra::Bgp",
+    "description": "CloudFormation equivalent of volterra_bgp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-Bgp/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BgpParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number"
+                },
+                "BgpRouterIdKey": {
+                    "type": "string"
+                },
+                "BgpRouterIdType": {
+                    "type": "string"
+                },
+                "FromSite": {
+                    "type": "boolean"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "LocalAddress": {
+                    "type": "boolean"
+                },
+                "BgpRouterId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BgpRouterIdDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PeersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetService": {
+                    "type": "string"
+                },
+                "External": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ExternalDefinition"
+                    }
+                },
+                "Internal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InternalDefinition"
+                    }
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WhereDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Site": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteDefinition"
+                    }
+                },
+                "VirtualSite": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualSiteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BgpRouterIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ExternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Asn": {
+                    "type": "number"
+                },
+                "DefaultGateway": {
+                    "type": "boolean"
+                },
+                "FromSite": {
+                    "type": "boolean"
+                },
+                "InsideInterfaces": {
+                    "type": "boolean"
+                },
+                "OutsideInterfaces": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SubnetBeginOffset": {
+                    "type": "number"
+                },
+                "SubnetEndOffset": {
+                    "type": "number"
+                },
+                "FamilyInet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FamilyInetDefinition"
+                    }
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                },
+                "InterfaceList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "DisableMtls": {
+                    "type": "boolean"
+                },
+                "DnsName": {
+                    "type": "string"
+                },
+                "EnableMtls": {
+                    "type": "boolean"
+                },
+                "FromSite": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "FamilyInet6vpn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FamilyInet6vpnDefinition"
+                    }
+                },
+                "FamilyInetvpn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FamilyInetvpnDefinition"
+                    }
+                },
+                "FamilyRtarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FamilyRtargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkType": {
+                    "type": "string"
+                },
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VirtualSiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkType": {
+                    "type": "string"
+                },
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Ipv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FamilyInetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InterfaceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfacesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FamilyInet6vpnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "FamilyInetvpnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Enable": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FamilyRtargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "BgpParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BgpParametersDefinition"
+            }
+        },
+        "Peers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PeersDefinition"
+            }
+        },
+        "Where": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WhereDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

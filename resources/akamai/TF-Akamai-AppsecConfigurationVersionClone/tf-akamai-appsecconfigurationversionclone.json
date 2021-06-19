@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Akamai::AppsecConfigurationVersionClone",
+    "description": "The `akamai_appsec_configuration_version_clone` resource allows you to create a new version of a security configuration by cloning an existing version.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecConfigurationVersionClone/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "CreateFromVersion": {
+            "type": "number",
+            "description": "The version number of the security configuration to clone."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RuleUpdate": {
+            "type": "boolean",
+            "description": "A boolean indicating whether to update the rules of the new version. If not supplied, False is assumed."
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "CreateFromVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

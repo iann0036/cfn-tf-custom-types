@@ -1,0 +1,258 @@
+{
+    "typeName": "TF::AzureRM::EventhubNamespace",
+    "description": "Manages an EventHub Namespace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-EventhubNamespace/docs/README.md",
+    "definitions": {
+        "NetworkRulesetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "IpMask": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkRulesetsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IgnoreMissingVirtualNetworkServiceEndpoint": {
+                    "type": "boolean"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkRulesetsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultAction": {
+                    "type": "string"
+                },
+                "IpRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkRulesetsDefinition"
+                    }
+                },
+                "TrustedServiceAccessEnabled": {
+                    "type": "boolean"
+                },
+                "VirtualNetworkRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkRulesetsDefinition2"
+                    }
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The Type of Identity which should be used for this EventHub Namespace. At this time the only possible value is `SystemAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoInflateEnabled": {
+            "type": "boolean",
+            "description": "Is Auto Inflate enabled for the EventHub Namespace?."
+        },
+        "Capacity": {
+            "type": "number",
+            "description": "Specifies the Capacity / Throughput Units for a `Standard` SKU namespace. Default capacity has a maximum of `20`, but can be increased in blocks of 20 on a committed purchase basis."
+        },
+        "DedicatedClusterId": {
+            "type": "string",
+            "description": "Specifies the ID of the EventHub Dedicated Cluster where this Namespace should created. Changing this forces a new resource to be created."
+        },
+        "DefaultPrimaryConnectionString": {
+            "type": "string"
+        },
+        "DefaultPrimaryConnectionStringAlias": {
+            "type": "string"
+        },
+        "DefaultPrimaryKey": {
+            "type": "string"
+        },
+        "DefaultSecondaryConnectionString": {
+            "type": "string"
+        },
+        "DefaultSecondaryConnectionStringAlias": {
+            "type": "string"
+        },
+        "DefaultSecondaryKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "MaximumThroughputUnits": {
+            "type": "number",
+            "description": "Specifies the maximum number of throughput units when Auto Inflate is Enabled. Valid values range from `1` - `20`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace resource. Changing this forces a new resource to be created."
+        },
+        "NetworkRulesets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkRulesetsDefinition3"
+            },
+            "description": "A `network_rulesets` block as defined below."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the namespace. Changing this forces a new resource to be created."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "Defines which tier to use. Valid options are `Basic` and `Standard`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ZoneRedundant": {
+            "type": "boolean",
+            "description": "Specifies if the EventHub Namespace should be Zone Redundant (created across Availability Zones). Changing this forces a new resource to be created. Defaults to `false`."
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Sku"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultPrimaryConnectionString",
+        "/properties/DefaultPrimaryConnectionStringAlias",
+        "/properties/DefaultPrimaryKey",
+        "/properties/DefaultSecondaryConnectionString",
+        "/properties/DefaultSecondaryConnectionStringAlias",
+        "/properties/DefaultSecondaryKey",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DefaultPrimaryConnectionString",
+        "/properties/DefaultPrimaryConnectionStringAlias",
+        "/properties/DefaultPrimaryKey",
+        "/properties/DefaultSecondaryConnectionString",
+        "/properties/DefaultSecondaryConnectionStringAlias",
+        "/properties/DefaultSecondaryKey"
+    ]
+}

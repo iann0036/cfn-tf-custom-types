@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::AWS::DefaultSubnet",
+    "description": "Provides a resource to manage a [default AWS VPC subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#default-vpc-basics) in the current region.\n\nThe `aws_default_subnet` behaves differently from normal resources, in that Terraform does not _create_ this resource but instead \"adopts\" it into management.\n\nThe `aws_default_subnet` resource allows you to manage a region's default VPC subnet but Terraform cannot destroy it. Removing this resource from your configuration will remove it from your statefile and Terraform management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DefaultSubnet/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssignIpv6AddressOnCreation": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "AZ for the subnet."
+        },
+        "AvailabilityZoneId": {
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "CustomerOwnedIpv4Pool": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6CidrBlock": {
+            "type": "string"
+        },
+        "Ipv6CidrBlockAssociationId": {
+            "type": "string"
+        },
+        "MapCustomerOwnedIpOnLaunch": {
+            "type": "boolean"
+        },
+        "MapPublicIpOnLaunch": {
+            "type": "boolean",
+            "description": "Whether instances launched into the subnet should be assigned a public IP address."
+        },
+        "OutpostArn": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the resource."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AssignIpv6AddressOnCreation",
+        "/properties/AvailabilityZoneId",
+        "/properties/CidrBlock",
+        "/properties/Id",
+        "/properties/Ipv6CidrBlock",
+        "/properties/Ipv6CidrBlockAssociationId",
+        "/properties/OwnerId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

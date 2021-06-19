@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::NSXT::IcmpTypeNsService",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the ICMP protocol.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-IcmpTypeNsService/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultService": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
+        },
+        "IcmpCode": {
+            "type": "number",
+            "description": "ICMP message code."
+        },
+        "IcmpType": {
+            "type": "number",
+            "description": "ICMP message type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Version of ICMP protocol ICMPv4 or ICMPv6."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultService",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

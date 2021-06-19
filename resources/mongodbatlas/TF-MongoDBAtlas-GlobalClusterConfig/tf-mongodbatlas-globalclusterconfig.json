@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::MongoDBAtlas::GlobalClusterConfig",
+    "description": "`mongodbatlas_global_cluster_config` provides a Global Cluster Configuration resource.\n\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find group_id in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-GlobalClusterConfig/docs/README.md",
+    "definitions": {
+        "CustomZoneMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomZoneMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManagedNamespacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Collection": {
+                    "type": "string"
+                },
+                "CustomShardKey": {
+                    "type": "string"
+                },
+                "Db": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Collection",
+                "CustomShardKey",
+                "Db"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The name of the Global Cluster."
+        },
+        "CustomZoneMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomZoneMappingDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique ID for the project to create the database user."
+        },
+        "CustomZoneMappings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomZoneMappingsDefinition"
+            }
+        },
+        "ManagedNamespaces": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedNamespacesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CustomZoneMapping",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

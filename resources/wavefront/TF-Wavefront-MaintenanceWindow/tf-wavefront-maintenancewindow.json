@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Wavefront::MaintenanceWindow",
+    "description": "CloudFormation equivalent of wavefront_maintenance_window",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-MaintenanceWindow/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndTimeInSeconds": {
+            "type": "number"
+        },
+        "HostTagGroupHostNamesGroupAnded": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Reason": {
+            "type": "string"
+        },
+        "RelevantCustomerTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelevantHostNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelevantHostTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelevantHostTagsAnded": {
+            "type": "boolean"
+        },
+        "StartTimeInSeconds": {
+            "type": "number"
+        },
+        "Title": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndTimeInSeconds",
+        "Reason",
+        "StartTimeInSeconds",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

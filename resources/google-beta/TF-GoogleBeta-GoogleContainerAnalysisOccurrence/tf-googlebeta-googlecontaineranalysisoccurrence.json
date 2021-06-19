@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleContainerAnalysisOccurrence",
+    "description": "CloudFormation equivalent of google_container_analysis_occurrence",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleContainerAnalysisOccurrence/docs/README.md",
+    "definitions": {
+        "AttestationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SerializedPayload": {
+                    "type": "string"
+                },
+                "Signatures": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SignaturesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "SerializedPayload"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SignaturesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublicKeyId": {
+                    "type": "string"
+                },
+                "Signature": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PublicKeyId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NoteName": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Remediation": {
+            "type": "string"
+        },
+        "ResourceUri": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Attestation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttestationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NoteName",
+        "ResourceUri"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Kind",
+        "/properties/Name",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "typeName": "TF::Databricks::InstancePool",
+    "description": "CloudFormation equivalent of databricks_instance_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-InstancePool/docs/README.md",
+    "definitions": {
+        "CustomTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AwsAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Availability": {
+                    "type": "string"
+                },
+                "SpotBidPricePercent": {
+                    "type": "number"
+                },
+                "ZoneId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AzureAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Availability": {
+                    "type": "string"
+                },
+                "SpotBidMaxPrice": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DiskSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskCount": {
+                    "type": "number"
+                },
+                "DiskSize": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskTypeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PreloadedDockerImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                },
+                "BasicAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BasicAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "DiskTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureDiskVolumeType": {
+                    "type": "string"
+                },
+                "EbsVolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomTagsDefinition"
+            }
+        },
+        "EnableElasticDisk": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleInstanceAutoterminationMinutes": {
+            "type": "number"
+        },
+        "InstancePoolId": {
+            "type": "string"
+        },
+        "InstancePoolName": {
+            "type": "string"
+        },
+        "MaxCapacity": {
+            "type": "number"
+        },
+        "MinIdleInstances": {
+            "type": "number"
+        },
+        "NodeTypeId": {
+            "type": "string"
+        },
+        "PreloadedSparkVersions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AwsAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsAttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "AzureAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureAttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "DiskSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskSpecDefinition"
+            },
+            "maxItems": 1
+        },
+        "PreloadedDockerImage": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PreloadedDockerImageDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IdleInstanceAutoterminationMinutes",
+        "InstancePoolName",
+        "NodeTypeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

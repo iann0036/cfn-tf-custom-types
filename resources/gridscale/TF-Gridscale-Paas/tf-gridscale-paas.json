@@ -1,0 +1,217 @@
+{
+    "typeName": "TF::Gridscale::Paas",
+    "description": "Provides a PaaS resource. This can be used to create, modify, and delete PaaS instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Paas/docs/README.md",
+    "definitions": {
+        "ListenPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Param": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Param",
+                "Type",
+                "Value"
+            ]
+        },
+        "ResourceLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Limit": {
+                    "type": "number"
+                },
+                "Resource": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Limit",
+                "Resource"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CurrentPrice": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kubeconfig": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "ListenPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ListenPortDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "NetworkUuid": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "SecurityZoneUuid": {
+            "type": "string",
+            "description": "The UUID of the security zone that the service is running in."
+        },
+        "ServiceTemplateUuid": {
+            "type": "string",
+            "description": "The template used to create the service."
+        },
+        "ServiceTemplateUuidComputed": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UsageInMinute": {
+            "type": "number"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParameterDefinition"
+            }
+        },
+        "ResourceLimit": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceLimitDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServiceTemplateUuid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/CurrentPrice",
+        "/properties/Id",
+        "/properties/Kubeconfig",
+        "/properties/ListenPort",
+        "/properties/NetworkUuid",
+        "/properties/Password",
+        "/properties/ServiceTemplateUuidComputed",
+        "/properties/Status",
+        "/properties/UsageInMinute",
+        "/properties/Username"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Kubeconfig",
+        "/properties/Password",
+        "/properties/Username"
+    ]
+}

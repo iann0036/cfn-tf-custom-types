@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Vault::QuotaRateLimit",
+    "description": "Manage rate limit quotas which enforce API rate limiting using a token bucket algorithm.\nA rate limit quota can be created at the root level or defined on a namespace or mount by\nspecifying a path when creating the quota.\n\nSee [Vault's Documentation](https://www.vaultproject.io/docs/concepts/resource-quotas) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-QuotaRateLimit/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the rate limit quota."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path of the mount or namespace to apply the quota. A blank path configures a\nglobal rate limit quota. For example `namespace1/` adds a quota to a full namespace,\n`namespace1/auth/userpass` adds a `quota` to `userpass` in `namespace1`.\nUpdating this field on an existing quota can have \"moving\" effects. For example, updating\n`auth/userpass` to `namespace1/auth/userpass` moves this quota from being a global mount quota to\na namespace specific mount quota. **Note, namespaces are supported in Enterprise only.**."
+        },
+        "Rate": {
+            "type": "number",
+            "description": "The maximum number of requests at any given second to be allowed by the quota\nrule. The `rate` must be positive."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Rate"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

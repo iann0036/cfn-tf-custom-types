@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::VSphere::File",
+    "description": "The `vsphere_file` resource can be used to upload files (such as virtual disk\nfiles) from the host machine that Terraform is running on to a target\ndatastore.  The resource can also be used to copy files between datastores, or\nfrom one location to another on the same datastore.\n\nUpdates to destination parameters such as `datacenter`, `datastore`, or\n`destination_file` will move the managed file a new destination based on the\nvalues of the new settings.  If any source parameter is changed, such as\n`source_datastore`, `source_datacenter` or `source_file`), the resource will be\nre-created. Depending on if destination parameters are being changed as well,\nthis may result in the destination file either being overwritten or deleted at\nthe old location.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-File/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateDirectories": {
+            "type": "boolean",
+            "description": "Create directories in `destination_file`\npath parameter if any missing for copy operation."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The name of a datacenter in which the file will be\nuploaded to."
+        },
+        "Datastore": {
+            "type": "string",
+            "description": "The name of the datastore in which to upload the\nfile to."
+        },
+        "DestinationFile": {
+            "type": "string",
+            "description": "The path to where the file should be uploaded\nor copied to on vSphere."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SourceDatacenter": {
+            "type": "string",
+            "description": "The name of a datacenter in which the file\nwill be copied from. Forces a new resource if changed."
+        },
+        "SourceDatastore": {
+            "type": "string",
+            "description": "The name of the datastore in which file will\nbe copied from. Forces a new resource if changed."
+        },
+        "SourceFile": {
+            "type": "string",
+            "description": "The path to the file being uploaded from the\nTerraform host to vSphere or copied within vSphere. Forces a new resource if\nchanged."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Datastore",
+        "DestinationFile",
+        "SourceFile"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

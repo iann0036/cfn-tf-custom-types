@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Metal::VirtualCircuit",
+    "description": "Use this resource to associate VLAN with a Dedicated Port from [Equinix Fabric - software-defined interconnections](https://metal.equinix.com/developers/docs/networking/fabric/#associating-a-vlan-with-a-dedicated-port).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-VirtualCircuit/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionId": {
+            "type": "string",
+            "description": "UUID of Connection where the VC is scoped to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Virtual Circuit resource."
+        },
+        "NniVlan": {
+            "type": "number",
+            "description": "Equinix Metal network-to-network VLAN ID."
+        },
+        "NniVnid": {
+            "type": "number"
+        },
+        "PortId": {
+            "type": "string",
+            "description": "UUID of the Connection Port where the VC is scoped to."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "UUID of the Project where the VC is scoped to."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "string",
+            "description": "UUID of the VLAN to associate."
+        },
+        "Vnid": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionId",
+        "NniVlan",
+        "PortId",
+        "ProjectId",
+        "VlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NniVnid",
+        "/properties/Status",
+        "/properties/Vnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

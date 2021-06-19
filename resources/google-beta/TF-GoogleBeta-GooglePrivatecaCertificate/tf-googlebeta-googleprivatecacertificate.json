@@ -1,0 +1,704 @@
+{
+    "typeName": "TF::GoogleBeta::GooglePrivatecaCertificate",
+    "description": "CloudFormation equivalent of google_privateca_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GooglePrivatecaCertificate/docs/README.md",
+    "definitions": {
+        "CertificateDescriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyId": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sha256Hash": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertSign": {
+                    "type": "boolean"
+                },
+                "ContentCommitment": {
+                    "type": "boolean"
+                },
+                "CrlSign": {
+                    "type": "boolean"
+                },
+                "DataEncipherment": {
+                    "type": "boolean"
+                },
+                "DecipherOnly": {
+                    "type": "boolean"
+                },
+                "DigitalSignature": {
+                    "type": "boolean"
+                },
+                "EncipherOnly": {
+                    "type": "boolean"
+                },
+                "KeyAgreement": {
+                    "type": "boolean"
+                },
+                "KeyEncipherment": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyUsageOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition3"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientAuth": {
+                    "type": "boolean"
+                },
+                "CodeSigning": {
+                    "type": "boolean"
+                },
+                "EmailProtection": {
+                    "type": "boolean"
+                },
+                "OcspSigning": {
+                    "type": "boolean"
+                },
+                "ServerAuth": {
+                    "type": "boolean"
+                },
+                "TimeStamping": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ObjectIdPath": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ObectId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition6"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseKeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition4"
+                    }
+                },
+                "ExtendedKeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition5"
+                    }
+                },
+                "UnknownExtendedKeyUsages": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition7"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition8"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition11": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "PostalCode": {
+                    "type": "string"
+                },
+                "Province": {
+                    "type": "string"
+                },
+                "StreetAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition12": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ObjectIdPath": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition13": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Critical": {
+                    "type": "boolean"
+                },
+                "ObectId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition12"
+                    }
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition14": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomSans": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition13"
+                    }
+                },
+                "DnsNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Uris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition15": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "HexSerialNumber": {
+                    "type": "string"
+                },
+                "Lifetime": {
+                    "type": "string"
+                },
+                "NotAfterTime": {
+                    "type": "string"
+                },
+                "NotBeforeTime": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition11"
+                    }
+                },
+                "SubjectAltName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition14"
+                    }
+                }
+            }
+        },
+        "CertificateDescriptionDefinition16": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyId": {
+                    "type": "string"
+                }
+            }
+        },
+        "CertificateDescriptionDefinition17": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AiaIssuingCertificateUrls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuthorityKeyId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition"
+                    }
+                },
+                "CertFingerprint": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition2"
+                    }
+                },
+                "ConfigValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition9"
+                    }
+                },
+                "CrlDistributionPoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PublicKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition10"
+                    }
+                },
+                "SubjectDescription": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition15"
+                    }
+                },
+                "SubjectKeyId": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDescriptionDefinition16"
+                    }
+                }
+            }
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RevocationDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RevocationState": {
+                    "type": "string"
+                },
+                "RevocationTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublicKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ReusableConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReusableConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SubjectConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ReusableConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReusableConfig": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ReusableConfig"
+            ]
+        },
+        "SubjectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SubjectAltName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectAltNameDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CommonName"
+            ]
+        },
+        "SubjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "PostalCode": {
+                    "type": "string"
+                },
+                "Province": {
+                    "type": "string"
+                },
+                "StreetAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Organization"
+            ]
+        },
+        "SubjectAltNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Uris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateAuthority": {
+            "type": "string"
+        },
+        "CertificateDescription": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDescriptionDefinition17"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Lifetime": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PemCertificate": {
+            "type": "string"
+        },
+        "PemCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PemCsr": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RevocationDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevocationDetailsDefinition"
+            }
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateAuthority",
+        "Location",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateDescription",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/PemCertificate",
+        "/properties/PemCertificates",
+        "/properties/RevocationDetails",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

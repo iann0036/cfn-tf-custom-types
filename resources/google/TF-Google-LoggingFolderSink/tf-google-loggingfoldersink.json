@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Google::LoggingFolderSink",
+    "description": "Manages a folder-level logging sink. For more information see:\n* [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/folders.sinks)\n* How-to Guides\n    * [Exporting Logs](https://cloud.google.com/logging/docs/export)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-LoggingFolderSink/docs/README.md",
+    "definitions": {
+        "BigqueryOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UsePartitionedTables": {
+                    "type": "boolean",
+                    "description": "Whether to use [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables).\nBy default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned\ntables the date suffix is no longer present and [special query syntax](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)\nhas to be used instead. In both cases, tables are sharded based on UTC timezone."
+                }
+            },
+            "required": [
+                "UsePartitionedTables"
+            ]
+        },
+        "ExclusionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "A description of this exclusion."
+                },
+                "Disabled": {
+                    "type": "boolean",
+                    "description": "If set to True, then this exclusion is disabled and it does not exclude any log entries."
+                },
+                "Filter": {
+                    "type": "string",
+                    "description": "An advanced logs filter that matches the log entries to be excluded. By using the sample function, you can exclude less than 100% of the matching log entries. See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "A client-assigned identifier, such as `load-balancer-exclusion`. Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric."
+                }
+            },
+            "required": [
+                "Filter",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this sink. The maximum length of the description is 8000 characters."
+        },
+        "Destination": {
+            "type": "string",
+            "description": "The destination of the sink (or, in other words, where logs are written to). Can be a\nCloud Storage bucket, a PubSub topic, a BigQuery dataset or a Cloud Logging bucket. Examples:\n```\n\"storage.googleapis.com/[GCS_BUCKET]\"\n\"bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]\"\n\"pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]\"\n\"logging.googleapis.com/projects/[PROJECT_ID]]/locations/global/buckets/[BUCKET_ID]\"\n```\nThe writer associated with the sink must have access to write to the above resource."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "If set to True, then this sink is disabled and it does not export any log entries."
+        },
+        "Filter": {
+            "type": "string",
+            "description": "The filter to apply when exporting logs. Only log entries that match the filter are exported.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter."
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The folder to be exported to the sink. Note that either [FOLDER_ID] or \"folders/[FOLDER_ID]\" is\naccepted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeChildren": {
+            "type": "boolean",
+            "description": "Whether or not to include children folders in the sink export. If true, logs\nassociated with child projects are also exported; otherwise only logs relating to the provided folder are included."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the logging sink."
+        },
+        "WriterIdentity": {
+            "type": "string"
+        },
+        "BigqueryOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BigqueryOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Exclusions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExclusionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Folder",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/WriterIdentity"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

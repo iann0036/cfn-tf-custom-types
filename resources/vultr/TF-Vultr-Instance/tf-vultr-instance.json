@@ -1,0 +1,267 @@
+{
+    "typeName": "TF::Vultr::Instance",
+    "description": "Provides a Vultr instance resource. This can be used to create, read, modify, and delete instances on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-Instance/docs/README.md",
+    "definitions": {
+        "BackupsScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dom": {
+                    "type": "number",
+                    "description": "Day of month to run. Use values between 1 and 28."
+                },
+                "Dow": {
+                    "type": "number",
+                    "description": "Day of week to run. `1 = Sunday`, `2 = Monday`, `3 = Tuesday`, `4 = Wednesday`, `5 = Thursday`, `6 = Friday`, `7 = Saturday`."
+                },
+                "Hour": {
+                    "type": "number",
+                    "description": "Hour of day to run in UTC."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type of backup schedule Possible values are `daily`, `weekly`, `monthly`, `daily_alt_event`, or `daily_alt_odd`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationEmail": {
+            "type": "boolean",
+            "description": "Whether an activation email will be sent when the server is ready."
+        },
+        "AllowedBandwidth": {
+            "type": "number"
+        },
+        "AppId": {
+            "type": "number",
+            "description": "The ID of the Vultr application to be installed on the server."
+        },
+        "Backups": {
+            "type": "string",
+            "description": "Whether automatic backups will be enabled for this server (these have an extra charge associated with them). Values can be enabled or disabled."
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DdosProtection": {
+            "type": "boolean",
+            "description": "Whether DDOS protection will be enabled on the server (there is an additional charge for this)."
+        },
+        "DefaultPassword": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "number"
+        },
+        "EnableIpv6": {
+            "type": "boolean",
+            "description": "Whether the server has IPv6 networking activated."
+        },
+        "EnablePrivateNetwork": {
+            "type": "boolean",
+            "description": "Whether the server has private networking support enabled."
+        },
+        "Features": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FirewallGroupId": {
+            "type": "string",
+            "description": "The ID of the firewall group to assign to the server."
+        },
+        "GatewayV4": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname to assign to the server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalIp": {
+            "type": "string"
+        },
+        "IsoId": {
+            "type": "string",
+            "description": "The ID of the ISO file to be installed on the server."
+        },
+        "Kvm": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "A label for the server."
+        },
+        "MainIp": {
+            "type": "string"
+        },
+        "NetmaskV4": {
+            "type": "string"
+        },
+        "Os": {
+            "type": "string"
+        },
+        "OsId": {
+            "type": "number",
+            "description": "The ID of the operating system to be installed on the server."
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The ID of the plan that you want the instance to subscribe to."
+        },
+        "PowerStatus": {
+            "type": "string"
+        },
+        "PrivateNetworkIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of private network IDs to be attached to the server."
+        },
+        "Ram": {
+            "type": "number"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The ID of the region that the instance is to be created in."
+        },
+        "ReservedIpId": {
+            "type": "string",
+            "description": "ID of the floating IP to use as the main IP of this server."
+        },
+        "ScriptId": {
+            "type": "string",
+            "description": "The ID of the startup script you want added to the server."
+        },
+        "ServerStatus": {
+            "type": "string"
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "The ID of the Vultr snapshot that the server will restore for the initial installation."
+        },
+        "SshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of SSH key IDs to apply to the server on install (only valid for Linux/FreeBSD)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string",
+            "description": "The tag to assign to the server."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Generic data store, which some provisioning tools and cloud operating systems use as a configuration file. It is generally consumed only once after an instance has been launched, but individual needs may vary."
+        },
+        "V6MainIp": {
+            "type": "string"
+        },
+        "V6Network": {
+            "type": "string"
+        },
+        "V6NetworkSize": {
+            "type": "number"
+        },
+        "VcpuCount": {
+            "type": "number"
+        },
+        "BackupsSchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupsScheduleDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Plan",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllowedBandwidth",
+        "/properties/DateCreated",
+        "/properties/DefaultPassword",
+        "/properties/Disk",
+        "/properties/Features",
+        "/properties/GatewayV4",
+        "/properties/Id",
+        "/properties/InternalIp",
+        "/properties/Kvm",
+        "/properties/MainIp",
+        "/properties/NetmaskV4",
+        "/properties/Os",
+        "/properties/PowerStatus",
+        "/properties/Ram",
+        "/properties/ServerStatus",
+        "/properties/Status",
+        "/properties/V6MainIp",
+        "/properties/V6Network",
+        "/properties/V6NetworkSize",
+        "/properties/VcpuCount"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DefaultPassword"
+    ]
+}

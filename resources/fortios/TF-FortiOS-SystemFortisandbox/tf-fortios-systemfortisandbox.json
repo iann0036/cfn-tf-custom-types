@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::SystemFortisandbox",
+    "description": "Configure FortiSandbox.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemFortisandbox/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "Notifier email address."
+        },
+        "EncAlgorithm": {
+            "type": "string",
+            "description": "Configure the level of SSL protection for secure communication with FortiSandbox. Valid values: `default`, `high`, `low`."
+        },
+        "Forticloud": {
+            "type": "string",
+            "description": "Enable/disable FortiSandbox Cloud. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "Server": {
+            "type": "string",
+            "description": "IPv4 or IPv6 address of the remote FortiSandbox."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address for communications to FortiSandbox."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable FortiSandbox. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

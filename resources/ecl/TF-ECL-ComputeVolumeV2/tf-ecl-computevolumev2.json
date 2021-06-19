@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::ECL::ComputeVolumeV2",
+    "description": "Manages a V2 volume resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-ComputeVolumeV2/docs/README.md",
+    "definitions": {
+        "AttachmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Device": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "InstanceId": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attachment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttachmentDefinition"
+            }
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The availability zone for the volume.\nChanging this creates a new volume."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the volume. Changing this updates\nthe volume's description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The image ID from which to create the volume.\nChanging this creates a new volume."
+        },
+        "ImageName": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "Metadata key/value pairs to associate with the volume.\nChanging this updates the existing volume metadata."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the volume. Changing this updates the\nvolume's name."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to create the volume. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new volume."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The size of the volume to create (in gigabytes). Changing\nthis creates a new volume.\nUser can choice following volume sizes."
+        },
+        "SourceReplica": {
+            "type": "string",
+            "description": "The volume ID to replicate with."
+        },
+        "VolumeType": {
+            "type": "string",
+            "description": "The type of volume to create.\nChanging this creates a new volume."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attachment",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

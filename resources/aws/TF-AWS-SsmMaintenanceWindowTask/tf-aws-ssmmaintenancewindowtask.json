@@ -1,0 +1,354 @@
+{
+    "typeName": "TF::AWS::SsmMaintenanceWindowTask",
+    "description": "Provides an SSM Maintenance Window Task resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmMaintenanceWindowTask/docs/README.md",
+    "definitions": {
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "TaskInvocationParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomationParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutomationParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LambdaParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RunCommandParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunCommandParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StepFunctionsParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepFunctionsParametersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutomationParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DocumentVersion": {
+                    "type": "string",
+                    "description": "The version of an Automation document to use during task execution."
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ParameterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LambdaParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientContext": {
+                    "type": "string",
+                    "description": "Pass client-specific information to the Lambda function that you are invoking."
+                },
+                "Payload": {
+                    "type": "string",
+                    "description": "JSON to provide to your Lambda function as input."
+                },
+                "Qualifier": {
+                    "type": "string",
+                    "description": "Specify a Lambda function version or alias name."
+                }
+            },
+            "required": []
+        },
+        "RunCommandParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string",
+                    "description": "Information about the command(s) to execute."
+                },
+                "DocumentHash": {
+                    "type": "string",
+                    "description": "The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated."
+                },
+                "DocumentHashType": {
+                    "type": "string",
+                    "description": "SHA-256 or SHA-1. SHA-1 hashes have been deprecated. Valid values: `Sha256` and `Sha1`."
+                },
+                "DocumentVersion": {
+                    "type": "string"
+                },
+                "OutputS3Bucket": {
+                    "type": "string",
+                    "description": "The name of the Amazon S3 bucket."
+                },
+                "OutputS3KeyPrefix": {
+                    "type": "string",
+                    "description": "The Amazon S3 bucket subfolder."
+                },
+                "ServiceRoleArn": {
+                    "type": "string",
+                    "description": "The IAM service role to assume during task execution."
+                },
+                "TimeoutSeconds": {
+                    "type": "number",
+                    "description": "If this time is reached and the command has not already started executing, it doesn't run."
+                },
+                "CloudwatchConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NotificationConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotificationConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ParameterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StepFunctionsParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Input": {
+                    "type": "string",
+                    "description": "The inputs for the STEP_FUNCTION task."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the STEP_FUNCTION task."
+                }
+            },
+            "required": []
+        },
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The parameter name."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The array of strings."
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "CloudwatchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogGroupName": {
+                    "type": "string",
+                    "description": "The name of the CloudWatch log group where you want to send command output. If you don't specify a group name, Systems Manager automatically creates a log group for you. The log group uses the following naming format: aws/ssm/SystemsManagerDocumentName."
+                },
+                "CloudwatchOutputEnabled": {
+                    "type": "boolean",
+                    "description": "Enables Systems Manager to send command output to CloudWatch Logs."
+                }
+            },
+            "required": []
+        },
+        "NotificationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotificationArn": {
+                    "type": "string",
+                    "description": "An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications about command status changes to this topic."
+                },
+                "NotificationEvents": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The different events for which you can receive notifications. Valid values: `All`, `InProgress`, `Success`, `TimedOut`, `Cancelled`, and `Failed`."
+                },
+                "NotificationType": {
+                    "type": "string",
+                    "description": "When specified with `Command`, receive notification when the status of a command changes. When specified with `Invocation`, for commands sent to multiple instances, receive notification on a per-instance basis when the status of a command changes. Valid values: `Command` and `Invocation`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the maintenance window task."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrency": {
+            "type": "string",
+            "description": "The maximum number of targets this task can be run for in parallel."
+        },
+        "MaxErrors": {
+            "type": "string",
+            "description": "The maximum number of errors allowed before this task stops being scheduled."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the maintenance window task."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel."
+        },
+        "ServiceRoleArn": {
+            "type": "string",
+            "description": "The role that should be assumed when executing the task. If a role is not provided, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created for you."
+        },
+        "TaskArn": {
+            "type": "string",
+            "description": "The ARN of the task to execute."
+        },
+        "TaskType": {
+            "type": "string",
+            "description": "The type of task being registered. Valid values: `AUTOMATION`, `LAMBDA`, `RUN_COMMAND` or `STEP_FUNCTIONS`."
+        },
+        "WindowId": {
+            "type": "string",
+            "description": "The Id of the maintenance window to register the task with."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            },
+            "maxItems": 5
+        },
+        "TaskInvocationParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaskInvocationParametersDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxConcurrency",
+        "MaxErrors",
+        "TaskArn",
+        "TaskType",
+        "WindowId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/LambdaParametersDefinition/Payload",
+        "/definitions/StepFunctionsParametersDefinition/Input"
+    ]
+}

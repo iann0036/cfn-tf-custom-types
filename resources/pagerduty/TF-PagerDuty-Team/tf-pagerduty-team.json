@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::PagerDuty::Team",
+    "description": "A [team](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams/get_teams) is a collection of users and escalation policies that represent a group of people within an organization.\n\nThe account must have the `teams` ability to use the following resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-Team/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description of the team.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `parent` - (Optional) ID of the parent team. This is available to accounts with the Team Hierarchy feature enabled. Please contact your account manager for more information."
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the group.\n* `description` - (Optional) A human-friendly description of the team.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `parent` - (Optional) ID of the parent team. This is available to accounts with the Team Hierarchy feature enabled. Please contact your account manager for more information."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "ID of the parent team. This is available to accounts with the Team Hierarchy feature enabled. Please contact your account manager for more information."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HtmlUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

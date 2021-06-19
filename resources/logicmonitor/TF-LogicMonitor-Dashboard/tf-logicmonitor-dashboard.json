@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::LogicMonitor::Dashboard",
+    "description": "Provides a LogicMonitor dashboard resource. This can be used to create and manage LogicMonitor dashboards\nCurrently only creating a dashboard based on an existing JSON template is supported",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logicmonitor/TF-LogicMonitor-Dashboard/docs/README.md",
+    "definitions": {
+        "WidgetTokensDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of dashboard."
+        },
+        "GroupId": {
+            "type": "number",
+            "description": "The id of the parent group for this dashboard."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of dashboard."
+        },
+        "Public": {
+            "type": "boolean",
+            "description": "Defines if it is a public or private dashboard."
+        },
+        "Template": {
+            "type": "string",
+            "description": "Defines if an existing exported JSON template is used to create dashboard."
+        },
+        "WidgetTokens": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WidgetTokensDefinition"
+            },
+            "description": "Dashboard tokens allow users to apply a single dashboard template to different device or website groups simply by changing the tokens\u2019 values."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

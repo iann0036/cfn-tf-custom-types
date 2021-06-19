@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::VCD::NsxtNetworkDhcp",
+    "description": "Provides a resource to manage DHCP pools for NSX-T Org VDC Routed network.\n\nSupported in provider *v3.2+* and VCD 10.1+ with NSX-T backed VDCs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-NsxtNetworkDhcp/docs/README.md",
+    "definitions": {
+        "PoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
+        },
+        "OrgNetworkId": {
+            "type": "string",
+            "description": "ID of parent Org VDC Routed network."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "Pool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PoolDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OrgNetworkId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

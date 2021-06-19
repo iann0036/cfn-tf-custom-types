@@ -1,0 +1,392 @@
+{
+    "typeName": "TF::AVI::Controllerproperties",
+    "description": "The ControllerProperties resource allows the creation and management of Avi ControllerProperties",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Controllerproperties/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAdminNetworkUpdates": {
+            "type": "boolean",
+            "description": "Allow non-admin tenants to update admin vrfcontext and network objects. Field introduced in 18.2.7, 20.1.1."
+        },
+        "AllowIpForwarding": {
+            "type": "boolean",
+            "description": "Field introduced in 17.1.1."
+        },
+        "AllowUnauthenticatedApis": {
+            "type": "boolean",
+            "description": "Allow unauthenticated access for special apis."
+        },
+        "AllowUnauthenticatedNodes": {
+            "type": "boolean",
+            "description": "Boolean flag to set allow_unauthenticated_nodes."
+        },
+        "ApiIdleTimeout": {
+            "type": "number",
+            "description": "Allowed values are 0-1440. Unit is min."
+        },
+        "ApiPerfLoggingThreshold": {
+            "type": "number",
+            "description": "Threshold to log request timing in portal_performance.log and server-timing response header. Any stage taking longer than 1% of the threshold will be included in the server-timing header. Field introduced in 18.1.4, 18.2.1. Unit is milliseconds."
+        },
+        "AppviewxCompatMode": {
+            "type": "boolean",
+            "description": "Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "AsyncPatchMergePeriod": {
+            "type": "number",
+            "description": "Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - 'deactivated'. Field introduced in 18.2.11, 20.1.3. Unit is sec."
+        },
+        "AsyncPatchRequestCleanupDuration": {
+            "type": "number",
+            "description": "Duration for which asynchronous patch requests should be kept, after being marked as success or fail. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is min."
+        },
+        "AttachIpRetryInterval": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "AttachIpRetryLimit": {
+            "type": "number",
+            "description": "Placeholder for description of property attach_ip_retry_limit of obj type controllerproperties field type integer  type int."
+        },
+        "BmUseAnsible": {
+            "type": "boolean",
+            "description": "Use ansible for se creation in baremetal. Field introduced in 17.2.2."
+        },
+        "CheckVsvipFqdnSyntax": {
+            "type": "boolean",
+            "description": "Enforce vsvip fqdn syntax checks. Field introduced in 20.1.6. Allowed in basic edition, essentials edition, enterprise edition."
+        },
+        "CleanupExpiredAuthtokenTimeoutPeriod": {
+            "type": "number",
+            "description": "Period for auth token cleanup job. Field introduced in 18.1.1. Unit is min."
+        },
+        "CleanupSessionsTimeoutPeriod": {
+            "type": "number",
+            "description": "Period for sessions cleanup job. Field introduced in 18.1.1. Unit is min."
+        },
+        "CloudReconcile": {
+            "type": "boolean",
+            "description": "Enable/disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1."
+        },
+        "ClusterIpGratuitousArpPeriod": {
+            "type": "number",
+            "description": "Period for cluster ip gratuitous arp job. Unit is min."
+        },
+        "ConsistencyCheckTimeoutPeriod": {
+            "type": "number",
+            "description": "Period for consistency check job. Field introduced in 18.1.1. Unit is min."
+        },
+        "ControllerResourceInfoCollectionPeriod": {
+            "type": "number",
+            "description": "Periodically collect stats. Field introduced in 20.1.3. Unit is min."
+        },
+        "CrashedSeReboot": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "DeadSeDetectionTimer": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "DefaultMinimumApiTimeout": {
+            "type": "number",
+            "description": "Minimum api timeout value.if this value is not 60, it will be the default timeout for all apis that do not have a specific timeout.if an api has a specific timeout but is less than this value, this value will become the new timeout. Allowed values are 60-3600. Field introduced in 18.2.6. Unit is sec."
+        },
+        "DelOfflineSeAfterRebootDelay": {
+            "type": "number",
+            "description": "The amount of time the controller will wait before deleting an offline se after it has been rebooted. For unresponsive ses, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed ses, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is sec."
+        },
+        "DnsRefreshPeriod": {
+            "type": "number",
+            "description": "Period for refresh pool and gslb dns job. Unit is min. Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition."
+        },
+        "Dummy": {
+            "type": "number",
+            "description": "Placeholder for description of property dummy of obj type controllerproperties field type integer  type int."
+        },
+        "EditSystemLimits": {
+            "type": "boolean",
+            "description": "Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1."
+        },
+        "EnableApiSharding": {
+            "type": "boolean",
+            "description": "This setting enables the controller leader to shard api requests to the followers (if any). Field introduced in 18.1.5, 18.2.1."
+        },
+        "EnableMemoryBalancer": {
+            "type": "boolean",
+            "description": "Enable/disable memory balancer. Field introduced in 17.2.8."
+        },
+        "EnableResmgrLogCachePrint": {
+            "type": "boolean",
+            "description": "Enable printing of cached logs inside resource manager. Used for debugging purposes only. Field introduced in 20.1.6."
+        },
+        "FatalErrorLeaseTime": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "FederatedDatastoreCleanupDuration": {
+            "type": "number",
+            "description": "Federated datastore will not cleanup diffs unless they are at least this duration in the past. Field introduced in 20.1.1. Unit is hours."
+        },
+        "FileObjectCleanupPeriod": {
+            "type": "number",
+            "description": "Period for file object cleanup job. Field introduced in 20.1.1. Unit is min."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxDeadSeInGrp": {
+            "type": "number",
+            "description": "Placeholder for description of property max_dead_se_in_grp of obj type controllerproperties field type integer  type int."
+        },
+        "MaxPcapPerTenant": {
+            "type": "number",
+            "description": "Maximum number of pcap files stored per tenant."
+        },
+        "MaxSeSpawnIntervalDelay": {
+            "type": "number",
+            "description": "Maximum delay possible to add to se_spawn_retry_interval after successive se spawn failure. Field introduced in 20.1.1. Unit is sec."
+        },
+        "MaxSeqAttachIpFailures": {
+            "type": "number",
+            "description": "Maximum number of consecutive attach ip failures that halts vs placement. Field introduced in 17.2.2."
+        },
+        "MaxSeqVnicFailures": {
+            "type": "number",
+            "description": "Placeholder for description of property max_seq_vnic_failures of obj type controllerproperties field type integer  type int."
+        },
+        "MaxThreadsCcVipBgWorker": {
+            "type": "number",
+            "description": "Maximum number of threads in threadpool used by cloud connector ccvipbgworker. Allowed values are 1-100. Field introduced in 20.1.3."
+        },
+        "PermissionScopedSharedAdminNetworks": {
+            "type": "boolean",
+            "description": "Network and vrfcontext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1."
+        },
+        "PersistenceKeyRotatePeriod": {
+            "type": "number",
+            "description": "Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - 'disabled'. Unit is min. Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition."
+        },
+        "PortalRequestBurstLimit": {
+            "type": "number",
+            "description": "Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1."
+        },
+        "PortalRequestRateLimit": {
+            "type": "number",
+            "description": "Maximum average number of requests allowed per second. 0 to disable. Field introduced in 20.1.1. Unit is per_second."
+        },
+        "PortalToken": {
+            "type": "string",
+            "description": "Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2."
+        },
+        "ProcessLockedUseraccountsTimeoutPeriod": {
+            "type": "number",
+            "description": "Period for process locked user accounts job. Field introduced in 18.1.1. Unit is min."
+        },
+        "ProcessPkiProfileTimeoutPeriod": {
+            "type": "number",
+            "description": "Period for process pki profile job. Field introduced in 18.1.1. Unit is min."
+        },
+        "QueryHostFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "ResmgrLogCachingPeriod": {
+            "type": "number",
+            "description": "Period for each cycle of log caching in resource manager. At the end of each cycle, the in memory cached log history will be cleared. Field introduced in 20.1.5. Unit is sec."
+        },
+        "SafenetHsmVersion": {
+            "type": "string",
+            "description": "Version of the safenet package installed on the controller. Field introduced in 16.5.2,17.2.3."
+        },
+        "SeCreateTimeout": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "SeFailoverAttemptInterval": {
+            "type": "number",
+            "description": "Interval between attempting failovers to an se. Unit is sec."
+        },
+        "SeFromMarketplace": {
+            "type": "string",
+            "description": "This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller. The setting is applicable only when byol license is selected. Enum options - MARKETPLACE, IMAGE. Field introduced in 18.1.4, 18.2.1."
+        },
+        "SeOfflineDel": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "SeSpawnRetryInterval": {
+            "type": "number",
+            "description": "Default retry period before attempting another service engine spawn in se group. Field introduced in 20.1.1. Unit is sec."
+        },
+        "SeVnicCooldown": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "SeVnicGcWaitTime": {
+            "type": "number",
+            "description": "Duration to wait after last vnic addition before proceeding with vnic garbage collection. Used for testing purposes. Field introduced in 20.1.4. Unit is sec."
+        },
+        "SecureChannelCleanupTimeout": {
+            "type": "number",
+            "description": "Period for secure channel cleanup job. Unit is min."
+        },
+        "SecureChannelControllerTokenTimeout": {
+            "type": "number",
+            "description": "Unit is min."
+        },
+        "SecureChannelSeTokenTimeout": {
+            "type": "number",
+            "description": "Unit is min."
+        },
+        "SeupgradeCopyPoolSize": {
+            "type": "number",
+            "description": "This parameter defines the number of simultaneous se image downloads in a segroup. It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image. Field introduced in 18.2.6."
+        },
+        "SeupgradeFabricPoolSize": {
+            "type": "number",
+            "description": "Pool size used for all fabric commands during se upgrade."
+        },
+        "SeupgradeSegroupMinDeadTimeout": {
+            "type": "number",
+            "description": "Time to wait before marking segroup upgrade as stuck. Unit is sec."
+        },
+        "SharedSslCertificates": {
+            "type": "boolean",
+            "description": "Ssl certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5."
+        },
+        "SslCertificateExpiryWarningDays": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "Number of days for ssl certificate expiry warning. Unit is days."
+        },
+        "UnresponsiveSeReboot": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "UpgradeDnsTtl": {
+            "type": "number",
+            "description": "Time to account for dns ttl during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is sec. Allowed in basic(allowed values- 5) edition, essentials(allowed values- 5) edition, enterprise edition."
+        },
+        "UpgradeFatSeLeaseTime": {
+            "type": "number",
+            "description": "Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade. Field introduced in 18.2.10, 20.1.1. Unit is sec."
+        },
+        "UpgradeLeaseTime": {
+            "type": "number",
+            "description": "Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade. Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds. Unit is sec."
+        },
+        "UpgradeSePerVsScaleOpsTxnTime": {
+            "type": "number",
+            "description": "This parameter defines the upper-bound value of the vs scale-in or vs scale-out operation executed in the sescalein and sescale context. User can tweak this parameter to a higher value if the segroup gets suspended due to sescalein or sescaleout timeout failure typically associated with high number of vs(es) scaled out. Field introduced in 18.2.10, 20.1.1. Unit is sec."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VnicOpFailTime": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsApicScaleoutTimeout": {
+            "type": "number"
+        },
+        "VsAwaitingSeTimeout": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsKeyRotatePeriod": {
+            "type": "number",
+            "description": "Period for rotate vs keys job. Allowed values are 1-1051200. Special values are 0 - 'disabled'. Unit is min."
+        },
+        "VsScaleoutReadyCheckInterval": {
+            "type": "number",
+            "description": "Interval for checking scaleout_ready status while controller is waiting for scaleoutready rpc from the service engine. Field introduced in 18.2.2. Unit is sec."
+        },
+        "VsSeAttachIpFail": {
+            "type": "number",
+            "description": "Time to wait before marking attach ip operation on an se as failed. Field introduced in 17.2.2. Unit is sec."
+        },
+        "VsSeBootupFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsSeCreateFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsSePingFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsSeVnicFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "VsSeVnicIpFail": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "WarmstartSeReconnectWaitTime": {
+            "type": "number",
+            "description": "Unit is sec."
+        },
+        "WarmstartVsResyncWaitTime": {
+            "type": "number",
+            "description": "Timeout for warmstart vs resync. Field introduced in 18.1.4, 18.2.1. Unit is sec."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PortalToken"
+    ]
+}

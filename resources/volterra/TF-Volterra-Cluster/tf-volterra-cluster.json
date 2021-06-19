@@ -1,0 +1,539 @@
+{
+    "typeName": "TF::Volterra::Cluster",
+    "description": "CloudFormation equivalent of volterra_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-Cluster/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DefaultSubsetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CircuitBreakerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionLimit": {
+                    "type": "number"
+                },
+                "MaxRequests": {
+                    "type": "number"
+                },
+                "PendingRequests": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Retries": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EndpointSubsetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HealthChecksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Http2OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OutlierDetectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseEjectionTime": {
+                    "type": "number"
+                },
+                "Consecutive5xx": {
+                    "type": "number"
+                },
+                "ConsecutiveGatewayFailure": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "MaxEjectionPercent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TlsParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableSni": {
+                    "type": "boolean"
+                },
+                "Sni": {
+                    "type": "string"
+                },
+                "UseHostHeaderAsSni": {
+                    "type": "boolean"
+                },
+                "CommonParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CommonParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CommonParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CipherSuites": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaximumProtocolVersion": {
+                    "type": "string"
+                },
+                "MinimumProtocolVersion": {
+                    "type": "string"
+                },
+                "TrustedCaUrl": {
+                    "type": "string"
+                },
+                "TlsCertificates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsCertificatesDefinition"
+                    }
+                },
+                "ValidationParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ValidationParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ValidationParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SkipHostnameVerification": {
+                    "type": "boolean"
+                },
+                "TrustedCaUrl": {
+                    "type": "string"
+                },
+                "UseVolterraTrustedCaUrl": {
+                    "type": "boolean"
+                },
+                "VerifySubjectAltNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "ConnectionTimeout": {
+            "type": "number"
+        },
+        "DefaultSubset": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefaultSubsetDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "EndpointSelection": {
+            "type": "string"
+        },
+        "FallbackPolicy": {
+            "type": "string"
+        },
+        "HttpIdleTimeout": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LoadbalancerAlgorithm": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NoPanicThreshold": {
+            "type": "boolean"
+        },
+        "PanicThreshold": {
+            "type": "number"
+        },
+        "CircuitBreaker": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CircuitBreakerDefinition"
+            }
+        },
+        "EndpointSubsets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointSubsetsDefinition"
+            }
+        },
+        "Endpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointsDefinition"
+            }
+        },
+        "HealthChecks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthChecksDefinition"
+            }
+        },
+        "Http2Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Http2OptionsDefinition"
+            }
+        },
+        "OutlierDetection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OutlierDetectionDefinition"
+            }
+        },
+        "TlsParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TlsParametersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

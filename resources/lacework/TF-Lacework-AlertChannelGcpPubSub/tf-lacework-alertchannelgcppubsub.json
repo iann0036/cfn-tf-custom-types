@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::Lacework::AlertChannelGcpPubSub",
+    "description": "You can configure Lacework to forward events to Google Cloud Pub/Sub asynchronous messaging service using the Lacework Google Cloud Pub/Sub alert channel.\n\nTo find more information see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360047496514-Google-Cloud-Pub-Sub).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelGcpPubSub/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientEmail": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "PrivateKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientEmail",
+                "ClientId",
+                "PrivateKey",
+                "PrivateKeyId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "IssueGrouping": {
+            "type": "string",
+            "description": "Defines how Lacework compliance events get grouped. Must be one of `Events` or `Resources`. Defaults to `Events`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The name of the Google Cloud Project."
+        },
+        "TopicId": {
+            "type": "string",
+            "description": "The ID of the Google Cloud Pub/Sub topic."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId",
+        "TopicId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/PrivateKey"
+    ]
+}

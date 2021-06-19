@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::Splunk::ShIndexesManager",
+    "description": "Create indexes on Splunk Cloud instances. [BETA]",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-ShIndexesManager/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Datatype": {
+            "type": "string",
+            "description": "Valid values: (event | metric). Specifies the type of index."
+        },
+        "FrozenTimePeriodInSecs": {
+            "type": "string",
+            "description": "Number of seconds after which indexed data rolls to frozen.\nDefaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxGlobalRawDataSizeMb": {
+            "type": "string",
+            "description": "The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.\nDefaults to 100 MB."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the index to create."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

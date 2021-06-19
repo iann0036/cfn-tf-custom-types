@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Thunder::FwTcpMssClamp",
+    "description": "`thunder_fw_tcp_mss_clamp` Provides details about thunder fw tcp mss clamp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-FwTcpMssClamp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Min": {
+            "type": "number",
+            "description": "Specify the min value allowed for the TCP MSS (Specify the min value allowed for the TCP MSS (default: ((576 - 60 - 60))))."
+        },
+        "MssClampType": {
+            "type": "string",
+            "description": "\u2018fixed\u2019: Specify a fixed max value for the TCP MSS; \u2018subtract\u2019: Specify the value to subtract from the TCP MSS;."
+        },
+        "MssSubtract": {
+            "type": "number",
+            "description": "Specify the value to subtract from the TCP MSS (default: not configured)."
+        },
+        "MssValue": {
+            "type": "number",
+            "description": "The max value allowed for the TCP MSS (default: not configured)}."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

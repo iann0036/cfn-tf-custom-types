@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Okta::TrustedOrigin",
+    "description": "Creates a Trusted Origin.\n\nThis resource allows you to create and configure a Trusted Origin.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-TrustedOrigin/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "Whether the Trusted Origin is active or not - can only be issued post-creation. By default, it is 'true'."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Unique name for this trusted origin."
+        },
+        "Origin": {
+            "type": "string",
+            "description": "Unique origin URL for this trusted origin."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Scopes of the Trusted Origin - can be `\"CORS\"` and/or `\"REDIRECT\"`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Origin",
+        "Scopes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

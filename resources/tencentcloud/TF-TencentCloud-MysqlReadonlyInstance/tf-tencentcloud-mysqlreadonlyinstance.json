@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::TencentCloud::MysqlReadonlyInstance",
+    "description": "Provides a mysql instance resource to create read-only database instances.\n\n~> **NOTE:** The terminate operation of read only mysql does NOT take effect immediately, maybe takes for several hours. so during that time, VPCs associated with that mysql instance can't be terminated also.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MysqlReadonlyInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number",
+            "description": "Auto renew flag. NOTES: Only supported prepaid instance."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Pay type of instance. Valid values:`PREPAID`, `POSTPAID`. Default is `POSTPAID`."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete instance directly or not. Default is `false`. If set true, the instance will be deleted instead of staying recycle bin. Note: only works for `PREPAID` instance. When the main mysql instance set true, this para of the readonly mysql instance will not take effect."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of a mysql instance."
+        },
+        "IntranetIp": {
+            "type": "string"
+        },
+        "IntranetPort": {
+            "type": "number",
+            "description": "Public access port. Valid value ranges: [1024~65535]. The default value is `3306`."
+        },
+        "Locked": {
+            "type": "number"
+        },
+        "MasterInstanceId": {
+            "type": "string",
+            "description": "Indicates the master instance ID of recovery instances."
+        },
+        "MemSize": {
+            "type": "number",
+            "description": "Memory size (in MB)."
+        },
+        "PayType": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.36.0. Please use `charge_type` instead. Pay type of instance. Valid values: `0`, `1`. `0`: prepaid, `1`: postpaid."
+        },
+        "Period": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.36.0. Please use `prepaid_period` instead. Period of instance. NOTES: Only supported prepaid instance."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "Period of instance. NOTES: Only supported prepaid instance."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Security groups to use."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Private network ID. If `vpc_id` is set, this value is required."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Instance tags."
+        },
+        "TaskStatus": {
+            "type": "number"
+        },
+        "VolumeSize": {
+            "type": "number",
+            "description": "Disk size (in GB)."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC, which can be modified once every 24 hours and can't be removed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "MasterInstanceId",
+        "MemSize",
+        "VolumeSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IntranetIp",
+        "/properties/Locked",
+        "/properties/Status",
+        "/properties/TaskStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

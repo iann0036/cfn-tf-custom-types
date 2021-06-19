@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::AWS::GlueCatalogDatabase",
+    "description": "Provides a Glue Catalog Database Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlueCatalogDatabase/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TargetDatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CatalogId": {
+                    "type": "string"
+                },
+                "DatabaseName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CatalogId",
+                "DatabaseName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string",
+            "description": "ID of the Glue Catalog to create the database in. If omitted, this defaults to the AWS Account ID."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the database."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocationUri": {
+            "type": "string",
+            "description": "Location of the database (for example, an HDFS path)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the database. The acceptable characters are lowercase letters, numbers, and the underscore character."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "List of key-value pairs that define parameters and properties of the database."
+        },
+        "TargetDatabase": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetDatabaseDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

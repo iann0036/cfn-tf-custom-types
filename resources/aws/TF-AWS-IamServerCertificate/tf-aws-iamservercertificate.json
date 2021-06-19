@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::AWS::IamServerCertificate",
+    "description": "Provides an IAM Server Certificate resource to upload Server Certificates.\nCerts uploaded to IAM can easily work with other AWS services such as:\n\n- AWS Elastic Beanstalk\n- Elastic Load Balancing\n- CloudFront\n- AWS OpsWorks\n\nFor information about server certificates in IAM, see [Managing Server\nCertificates][2] in AWS Documentation.\n\n~> **Note:** All arguments including the private key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-IamServerCertificate/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateBody": {
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "Expiration": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Server Certificate. Do not include the\npath in this value. If omitted, Terraform will assign a random, unique name."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The IAM path for the server certificate.  If it is not\nincluded, it defaults to a slash (/). If this certificate is for use with\nAWS CloudFront, the path must be in format `/cloudfront/your_path_here`.\nSee [IAM Identifiers][1] for more details on IAM Paths."
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of resource tags for the server certificate. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UploadDate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateBody",
+        "PrivateKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Expiration",
+        "/properties/Id",
+        "/properties/UploadDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKey"
+    ]
+}

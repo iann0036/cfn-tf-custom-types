@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::DigitalOcean::DatabaseCluster",
+    "description": "Provides a DigitalOcean database cluster resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-DatabaseCluster/docs/README.md",
+    "definitions": {
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string",
+                    "description": "The day of the week on which to apply maintenance updates."
+                },
+                "Hour": {
+                    "type": "string",
+                    "description": "The hour in UTC at which maintenance updates will be applied in 24 hour format."
+                }
+            },
+            "required": [
+                "Day",
+                "Hour"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Database": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string",
+            "description": "Database engine used by the cluster (ex. `pg` for PostreSQL, `mysql` for MySQL, or `redis` for Redis)."
+        },
+        "EvictionPolicy": {
+            "type": "string",
+            "description": "A string specifying the eviction policy for a Redis cluster. Valid values are: `noeviction`, `allkeys_lru`, `allkeys_random`, `volatile_lru`, `volatile_random`, or `volatile_ttl`."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the database cluster."
+        },
+        "NodeCount": {
+            "type": "number",
+            "description": "Number of nodes that will be included in the cluster."
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateHost": {
+            "type": "string"
+        },
+        "PrivateNetworkUuid": {
+            "type": "string",
+            "description": "The ID of the VPC where the database cluster will be located."
+        },
+        "PrivateUri": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "DigitalOcean region where the cluster will reside."
+        },
+        "Size": {
+            "type": "string",
+            "description": "Database Droplet size associated with the cluster (ex. `db-s-1vcpu-1gb`). See here for a [list of valid size slugs](https://developers.digitalocean.com/documentation/v2/#databases)."
+        },
+        "SqlMode": {
+            "type": "string",
+            "description": "A comma separated string specifying the  SQL modes for a MySQL cluster."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tag names to be applied to the database cluster."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "Engine version used by the cluster (ex. `11` for PostgreSQL 11)."
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Engine",
+        "Name",
+        "NodeCount",
+        "Region",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Database",
+        "/properties/Host",
+        "/properties/Id",
+        "/properties/Password",
+        "/properties/Port",
+        "/properties/PrivateHost",
+        "/properties/PrivateUri",
+        "/properties/Uri",
+        "/properties/Urn",
+        "/properties/User"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateUri",
+        "/properties/Uri"
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::BIGIP::LtmPool",
+    "description": "`bigip_ltm_pool` Manages F5 BIG-IP LTM pools via iControl REST API.\n\nResources should be named with their \"full path\". The full path is the combination of the partition + name (example: /Common/my-pool ) or  partition + directory + name of the resource  (example: /Common/test/my-pool )",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowNat": {
+            "type": "string",
+            "description": "Specifies whether NATs are automatically enabled or disabled for any connections using this pool, [ Default : `yes`, Possible Values `yes` or `no`]."
+        },
+        "AllowSnat": {
+            "type": "string",
+            "description": "Specifies whether SNATs are automatically enabled or disabled for any connections using this pool,[ Default : `yes`, Possible Values `yes` or `no`]."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Specifies descriptive text that identifies the pool."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancingMode": {
+            "type": "string",
+            "description": "Specifies the load balancing method. The default is Round Robin."
+        },
+        "MinimumActiveMembers": {
+            "type": "number",
+            "description": "Specifies whether the system load balances traffic according to the priority number assigned to the pool member,Default Value is `0` meaning `disabled`."
+        },
+        "Monitors": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of monitor names to associate with the pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the pool,it should be \"full path\".The full path is the combination of the partition + name of the pool.(For example `/Common/my-pool`)."
+        },
+        "ReselectTries": {
+            "type": "number",
+            "description": "Specifies the number of times the system tries to contact a new pool member after a passive failure."
+        },
+        "ServiceDownAction": {
+            "type": "string",
+            "description": "Specifies how the system should respond when the target pool member becomes unavailable. The default is `None`, Possible values: `[none, reset, reselect, drop]`."
+        },
+        "SlowRampTime": {
+            "type": "number",
+            "description": "Specifies the duration during which the system sends less traffic to a newly-enabled pool member."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

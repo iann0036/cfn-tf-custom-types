@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Metal::VolumeAttachment",
+    "description": "Provides attachment of Equinix Metal Block Storage Volume to Devices.\n\nDevice and volume must be in the same location (facility).\n\nOnce attached by Terraform, they must then be mounted using the `packet-block-storage-attach` and `packet-block-storage-detach` scripts, which are pre-installed on most OS images. They can also be found in [https://github.com/packethost/packet-block-storage](https://github.com/packethost/packet-block-storage).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-VolumeAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "The ID of the device to which the volume should be attached."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VolumeId": {
+            "type": "string",
+            "description": "The ID of the volume to attach."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceId",
+        "VolumeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

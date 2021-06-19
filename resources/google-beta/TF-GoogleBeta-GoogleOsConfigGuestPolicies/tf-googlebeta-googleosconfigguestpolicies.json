@@ -1,0 +1,745 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleOsConfigGuestPolicies",
+    "description": "CloudFormation equivalent of google_os_config_guest_policies",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleOsConfigGuestPolicies/docs/README.md",
+    "definitions": {
+        "AssignmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceNamePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Instances": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "GroupLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupLabelsDefinition"
+                    }
+                },
+                "OsTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsTypesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PackageRepositoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Apt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AptDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Goo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GooDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Yum": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/YumDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Zypper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZypperDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PackagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredState": {
+                    "type": "string"
+                },
+                "Manager": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RecipesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredState": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Artifacts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArtifactsDefinition"
+                    }
+                },
+                "InstallSteps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstallStepsDefinition"
+                    }
+                },
+                "UpdateSteps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UpdateStepsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GroupLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Labels"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OsTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OsArchitecture": {
+                    "type": "string"
+                },
+                "OsShortName": {
+                    "type": "string"
+                },
+                "OsVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveType": {
+                    "type": "string"
+                },
+                "Components": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Distribution": {
+                    "type": "string"
+                },
+                "GpgKey": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Components",
+                "Distribution",
+                "Uri"
+            ]
+        },
+        "GooDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "YumDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseUrl": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "GpgKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BaseUrl",
+                "Id"
+            ]
+        },
+        "ZypperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseUrl": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "GpgKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BaseUrl",
+                "Id"
+            ]
+        },
+        "ArtifactsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowInsecure": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Gcs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Remote": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RemoteDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "InstallStepsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveExtraction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArchiveExtractionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DpkgInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DpkgInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FileCopy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileCopyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FileExec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MsiInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MsiInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RpmInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RpmInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScriptRun": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptRunDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "UpdateStepsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveExtraction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArchiveExtractionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DpkgInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DpkgInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FileCopy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileCopyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FileExec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MsiInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MsiInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RpmInstallation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RpmInstallationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScriptRun": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptRunDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GcsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Generation": {
+                    "type": "number"
+                },
+                "Object": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RemoteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckSum": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ArchiveExtractionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactId": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactId",
+                "Type"
+            ]
+        },
+        "DpkgInstallationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactId"
+            ]
+        },
+        "FileCopyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactId": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "Overwrite": {
+                    "type": "boolean"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactId",
+                "Destination"
+            ]
+        },
+        "FileExecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedExitCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ArtifactId": {
+                    "type": "string"
+                },
+                "LocalPath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MsiInstallationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedExitCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "ArtifactId": {
+                    "type": "string"
+                },
+                "Flags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ArtifactId"
+            ]
+        },
+        "RpmInstallationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactId"
+            ]
+        },
+        "ScriptRunDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedExitCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Interpreter": {
+                    "type": "string"
+                },
+                "Script": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Script"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "GuestPolicyId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Assignment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AssignmentDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "PackageRepositories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PackageRepositoriesDefinition"
+            }
+        },
+        "Packages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PackagesDefinition"
+            }
+        },
+        "Recipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RecipesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GuestPolicyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

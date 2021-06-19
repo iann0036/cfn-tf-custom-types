@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::BIGIP::BigiqAs3",
+    "description": "`bigip_bigiq_as3` provides details about bigiq as3 resource\n\nThis resource is helpful to configure as3 declarative JSON on BIG-IP through BIG-IQ.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-BigiqAs3/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "As3Json": {
+            "type": "string",
+            "description": "Path/Filename of Declarative AS3 JSON which is a json file used with builtin ```file``` function."
+        },
+        "BigiqAddress": {
+            "type": "string",
+            "description": "Address of the BIG-IQ to which your targer BIG-IP is attached."
+        },
+        "BigiqLoginRef": {
+            "type": "string"
+        },
+        "BigiqPassword": {
+            "type": "string",
+            "description": "Password of the BIG-IQ to which your targer BIG-IP is attached."
+        },
+        "BigiqPort": {
+            "type": "string"
+        },
+        "BigiqTokenAuth": {
+            "type": "boolean"
+        },
+        "BigiqUser": {
+            "type": "string",
+            "description": "User name  of the BIG-IQ to which your targer BIG-IP is attached."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TenantList": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "As3Json",
+        "BigiqAddress",
+        "BigiqPassword",
+        "BigiqUser"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BigiqLoginRef",
+        "/properties/BigiqPassword",
+        "/properties/BigiqPort",
+        "/properties/BigiqTokenAuth",
+        "/properties/BigiqUser"
+    ]
+}

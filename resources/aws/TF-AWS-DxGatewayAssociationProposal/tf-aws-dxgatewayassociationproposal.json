@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::AWS::DxGatewayAssociationProposal",
+    "description": "Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the [`aws_dx_gateway_association` resource](/docs/providers/aws/r/dx_gateway_association.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DxGatewayAssociationProposal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured."
+        },
+        "AssociatedGatewayId": {
+            "type": "string",
+            "description": "The ID of the VGW or transit gateway with which to associate the Direct Connect gateway."
+        },
+        "AssociatedGatewayOwnerAccountId": {
+            "type": "string"
+        },
+        "AssociatedGatewayType": {
+            "type": "string"
+        },
+        "DxGatewayId": {
+            "type": "string",
+            "description": "Direct Connect Gateway identifier."
+        },
+        "DxGatewayOwnerAccountId": {
+            "type": "string",
+            "description": "AWS Account identifier of the Direct Connect Gateway's owner."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AssociatedGatewayId",
+        "DxGatewayId",
+        "DxGatewayOwnerAccountId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedGatewayOwnerAccountId",
+        "/properties/AssociatedGatewayType",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

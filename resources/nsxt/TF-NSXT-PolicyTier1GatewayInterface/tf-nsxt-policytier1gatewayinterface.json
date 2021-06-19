@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::NSXT::PolicyTier1GatewayInterface",
+    "description": "This resource provides a method for the management of a Tier-1 gateway Interface. Note that edge cluster must be configured on Tier-1 Gateway in order to configure interfaces on it.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.\n\n# Example Usage\n\n```hcl\ndata \"nsxt_policy_tier1_gateway\" \"gw1\" {\n  display_name = \"gw1\"\n}\n\ndata \"nsxt_policy_ipv6_ndra_profile\" \"slaac\" {\n  display_name = \"slaac\"\n}\n\nresource \"nsxt_policy_vlan_segment\" \"segment1\" {\n  display_name = \"segment1\"\n  vlan_ids     = [12]\n}\n\nresource \"nsxt_policy_tier1_gateway_interface\" \"if1\" {\n  display_name           = \"segment1_interface\"\n  description            = \"connection to segment1\"\n  gateway_path           = data.nsxt_policy_tier1_gateway.gw1.path\n  segment_path           = nsxt_policy_vlan_segment.segment1.path\n  subnets                = [\"12.12.2.13/24\"]\n  mtu                    = 1500\n  ipv6_ndra_profile_path = data.nsxt_policy_ipv6_ndra_profile.slaac.path\n}\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyTier1GatewayInterface/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Policy path for the Tier-1 Gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6NdraProfilePath": {
+            "type": "string",
+            "description": "IPv6 NDRA profile to be associated with this interface."
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Maximum Transmission Unit for this interface."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SegmentPath": {
+            "type": "string",
+            "description": "Policy path for segment to be connected with this Tier1 Gateway."
+        },
+        "SitePath": {
+            "type": "string",
+            "description": "Path of the site the Tier1 edge cluster belongs to. This configuration is required for global manager only. `path` field of the existing `nsxt_policy_site` can be used here."
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "list of Ip Addresses/Prefixes in CIDR format, to be associated with this interface."
+        },
+        "UrpfMode": {
+            "type": "string",
+            "description": "Unicast Reverse Path Forwarding mode, one of `NONE`, `STRICT`. Default is `STRICT`. This attribute is supported with NSX 3.0.0 onwards."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath",
+        "SegmentPath",
+        "Subnets"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LocaleServiceId",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

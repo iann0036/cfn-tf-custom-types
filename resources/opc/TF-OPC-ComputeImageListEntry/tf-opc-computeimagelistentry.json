@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::OPC::ComputeImageListEntry",
+    "description": "The ``opc_compute_image_list_entry`` resource creates and manages an Image List Entry in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeImageListEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attributes": {
+            "type": "string",
+            "description": "JSON String of optional data that will be passed to an instance of this machine image when it is launched."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MachineImages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of machine images."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Image List."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number",
+            "description": "The unique version of the image list entry, as an integer."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MachineImages",
+        "Name",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

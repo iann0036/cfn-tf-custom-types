@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Akamai::AppsecConfigurationClone",
+    "description": "CloudFormation equivalent of akamai_appsec_configuration_clone",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecConfigurationClone/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number"
+        },
+        "ContractId": {
+            "type": "string"
+        },
+        "CreateFromConfigId": {
+            "type": "number"
+        },
+        "CreateFromVersion": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "number"
+        },
+        "HostNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContractId",
+        "CreateFromConfigId",
+        "CreateFromVersion",
+        "Description",
+        "GroupId",
+        "HostNames",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigId",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

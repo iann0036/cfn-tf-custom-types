@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::FirewallsshSetting",
+    "description": "SSH proxy settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallsshSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Caname": {
+            "type": "string",
+            "description": "CA certificate used by SSH Inspection."
+        },
+        "HostTrustedChecking": {
+            "type": "string",
+            "description": "Enable/disable host trusted checking. Valid values: `enable`, `disable`."
+        },
+        "HostkeyDsa1024": {
+            "type": "string",
+            "description": "DSA certificate used by SSH proxy."
+        },
+        "HostkeyEcdsa256": {
+            "type": "string",
+            "description": "ECDSA nid256 certificate used by SSH proxy."
+        },
+        "HostkeyEcdsa384": {
+            "type": "string",
+            "description": "ECDSA nid384 certificate used by SSH proxy."
+        },
+        "HostkeyEcdsa521": {
+            "type": "string",
+            "description": "ECDSA nid384 certificate used by SSH proxy."
+        },
+        "HostkeyEd25519": {
+            "type": "string",
+            "description": "ED25519 hostkey used by SSH proxy."
+        },
+        "HostkeyRsa2048": {
+            "type": "string",
+            "description": "RSA certificate used by SSH proxy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "UntrustedCaname": {
+            "type": "string",
+            "description": "Untrusted CA certificate used by SSH Inspection."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,232 @@
+{
+    "typeName": "TF::AWS::DirectoryServiceDirectory",
+    "description": "Provides a Simple or Managed Microsoft directory in AWS Directory Service.\n\n~> **Note:** All arguments including the password and customer username will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DirectoryServiceDirectory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConnectSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomerDnsIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CustomerUsername": {
+                    "type": "string"
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CustomerDnsIps",
+                "CustomerUsername",
+                "SubnetIds",
+                "VpcId"
+            ]
+        },
+        "VpcSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SubnetIds",
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessUrl": {
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string",
+            "description": "The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A textual description for the directory."
+        },
+        "DnsIpAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Edition": {
+            "type": "string",
+            "description": "The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise` (applies to MicrosoftAD type only)."
+        },
+        "EnableSso": {
+            "type": "boolean",
+            "description": "Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The fully qualified name for the directory, such as `corp.example.com`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password for the directory administrator or connector user."
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "ShortName": {
+            "type": "string",
+            "description": "The short name of the directory, such as `CORP`."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The size of the directory (`Small` or `Large` are accepted values)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "ConnectSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "VpcSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessUrl",
+        "/properties/DnsIpAddresses",
+        "/properties/Id",
+        "/properties/SecurityGroupId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

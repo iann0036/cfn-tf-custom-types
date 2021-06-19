@@ -1,0 +1,159 @@
+{
+    "typeName": "TF::OPC::LbaasServerPool",
+    "description": "The `opc_lbaas_server_pool` resource creates and manages a Load Balancer Classic Origin Server Pool for a Load Balancer Classic instance. The Server Pool defines one or more servers (referred to as origin servers) to which the load balancer can distribute requests.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-LbaasServerPool/docs/README.md",
+    "definitions": {
+        "HealthCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptedReturnCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Consumers": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Boolean flag to enable or disable the Server Pool. Default is `true` (enabled)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancer": {
+            "type": "string",
+            "description": "The parent Load Balancer the Origin Server Pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Server Pool."
+        },
+        "OperationDetails": {
+            "type": "boolean"
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of servers in the Server Pool. To define the server in the server pool, provide IP address or DNS name of the compute instances, and port for load balancer to direct traffic to, in the format `host:port`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "VnicSet": {
+            "type": "string",
+            "description": "Fully qualified three part name of a vNICSet to be associated with the server pool vNIC. Load Balancer uses this vNICSet to set the right ACLs to allow egress traffic from the load balancer."
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancer",
+        "Name",
+        "Servers"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Consumers",
+        "/properties/Id",
+        "/properties/OperationDetails",
+        "/properties/State",
+        "/properties/Status",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

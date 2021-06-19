@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Okta::TemplateSms",
+    "description": "Creates an Okta SMS Template.\n\nThis resource allows you to create and configure an Okta SMS Template.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-TemplateSms/docs/README.md",
+    "definitions": {
+        "TranslationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Language": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Language",
+                "Template"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string",
+            "description": "The SMS message."
+        },
+        "Type": {
+            "type": "string",
+            "description": "SMS template type."
+        },
+        "Translations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TranslationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Template",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

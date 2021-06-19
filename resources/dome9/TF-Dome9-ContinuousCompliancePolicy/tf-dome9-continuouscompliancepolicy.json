@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Dome9::ContinuousCompliancePolicy",
+    "description": "This  resource is used to  create and modify compliance policies in Dome9 for continuous compliance assessments. A continuous compliance policy is the combination of a Rule Bundle applied to a specific cloud account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-ContinuousCompliancePolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotificationIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The notification policy id's for the policy [list]."
+        },
+        "RulesetId": {
+            "type": "number",
+            "description": "The bundle id for the bundle that will be used in the policy."
+        },
+        "TargetId": {
+            "type": "string",
+            "description": "The cloud account id."
+        },
+        "TargetType": {
+            "type": "string",
+            "description": "The cloud account provider (\"Aws\", \"Azure\", \"Gcp\", \"Kubernetes\", \"OrganizationalUnit\")."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NotificationIds",
+        "TargetId",
+        "TargetType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

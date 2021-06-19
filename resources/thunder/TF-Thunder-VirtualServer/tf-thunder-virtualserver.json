@@ -1,0 +1,765 @@
+{
+    "typeName": "TF::Thunder::VirtualServer",
+    "description": "`thunder_virtual_server` provides details about configuring virtual server on device",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-VirtualServer/docs/README.md",
+    "definitions": {
+        "MigrateVipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CancelMigration": {
+                    "type": "number"
+                },
+                "FinishMigration": {
+                    "type": "number"
+                },
+                "TargetDataCpu": {
+                    "type": "number"
+                },
+                "TargetFloatingIpv4": {
+                    "type": "string"
+                },
+                "TargetFloatingTemplatePolicy": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PortListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AltProtocol1": {
+                    "type": "string"
+                },
+                "AltProtocol2": {
+                    "type": "string"
+                },
+                "AlternatePort": {
+                    "type": "number"
+                },
+                "AlternatePortNumber": {
+                    "type": "number"
+                },
+                "Auto": {
+                    "type": "number"
+                },
+                "ClientipStickyNat": {
+                    "type": "number"
+                },
+                "ConnLimit": {
+                    "type": "number"
+                },
+                "DefSelectionIfPrefFailed": {
+                    "type": "string"
+                },
+                "EnablePlayeridCheck": {
+                    "type": "number"
+                },
+                "EthFwd": {
+                    "type": "number"
+                },
+                "EthRev": {
+                    "type": "number"
+                },
+                "Expand": {
+                    "type": "number"
+                },
+                "ExtendedStats": {
+                    "type": "number"
+                },
+                "ForceRoutingMode": {
+                    "type": "number"
+                },
+                "GslbEnable": {
+                    "type": "number"
+                },
+                "HaConnMirror": {
+                    "type": "number"
+                },
+                "IpMapList": {
+                    "type": "string"
+                },
+                "Ipinip": {
+                    "type": "number"
+                },
+                "Ipv6Acl": {
+                    "type": "string"
+                },
+                "L7HardwareAssist": {
+                    "type": "number"
+                },
+                "MessageSwitching": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NoAutoUpOnAflex": {
+                    "type": "number"
+                },
+                "NoDestNat": {
+                    "type": "number"
+                },
+                "NoLogging": {
+                    "type": "number"
+                },
+                "OnSyn": {
+                    "type": "number"
+                },
+                "OptimizationLevel": {
+                    "type": "string"
+                },
+                "PersistType": {
+                    "type": "string"
+                },
+                "Pool": {
+                    "type": "string"
+                },
+                "PoolShared": {
+                    "type": "string"
+                },
+                "PortNumber": {
+                    "type": "number"
+                },
+                "PortTranslation": {
+                    "type": "number"
+                },
+                "Precedence": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "number"
+                },
+                "Rate": {
+                    "type": "number"
+                },
+                "RedirectToHttps": {
+                    "type": "number"
+                },
+                "ReqFail": {
+                    "type": "number"
+                },
+                "Reset": {
+                    "type": "number"
+                },
+                "ResetOnServerSelectionFail": {
+                    "type": "number"
+                },
+                "RtpSipCallIdMatch": {
+                    "type": "number"
+                },
+                "ScaleoutBucketCount": {
+                    "type": "number"
+                },
+                "ScaleoutDeviceGroup": {
+                    "type": "number"
+                },
+                "Secs": {
+                    "type": "number"
+                },
+                "ServSelFail": {
+                    "type": "number"
+                },
+                "ServiceGroup": {
+                    "type": "string"
+                },
+                "SharedPartitionCacheTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionClientSslTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionConnectionReuseTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionDiameterTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionDnsTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionDynamicServiceTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionExternalServiceTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionHttpPolicyTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionHttpTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPersistCookieTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPersistDestinationIpTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPersistSourceIpTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPersistSslSidTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPolicyTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionPool": {
+                    "type": "number"
+                },
+                "SharedPartitionServerSslTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionTcp": {
+                    "type": "number"
+                },
+                "SharedPartitionTcpProxyTemplate": {
+                    "type": "number"
+                },
+                "SharedPartitionUdp": {
+                    "type": "number"
+                },
+                "SharedPartitionVirtualPortTemplate": {
+                    "type": "number"
+                },
+                "SkipRevHash": {
+                    "type": "number"
+                },
+                "SnatOnVip": {
+                    "type": "number"
+                },
+                "StatsDataAction": {
+                    "type": "string"
+                },
+                "SupportHttp2": {
+                    "type": "number"
+                },
+                "SynCookie": {
+                    "type": "number"
+                },
+                "TemplateCache": {
+                    "type": "string"
+                },
+                "TemplateCacheShared": {
+                    "type": "string"
+                },
+                "TemplateClientSsh": {
+                    "type": "string"
+                },
+                "TemplateClientSsl": {
+                    "type": "string"
+                },
+                "TemplateClientSslShared": {
+                    "type": "string"
+                },
+                "TemplateConnectionReuse": {
+                    "type": "string"
+                },
+                "TemplateConnectionReuseShared": {
+                    "type": "string"
+                },
+                "TemplateDblb": {
+                    "type": "string"
+                },
+                "TemplateDiameter": {
+                    "type": "string"
+                },
+                "TemplateDiameterShared": {
+                    "type": "string"
+                },
+                "TemplateDns": {
+                    "type": "string"
+                },
+                "TemplateDnsShared": {
+                    "type": "string"
+                },
+                "TemplateDynamicService": {
+                    "type": "string"
+                },
+                "TemplateDynamicServiceShared": {
+                    "type": "string"
+                },
+                "TemplateExternalService": {
+                    "type": "string"
+                },
+                "TemplateExternalServiceShared": {
+                    "type": "string"
+                },
+                "TemplateFileInspection": {
+                    "type": "string"
+                },
+                "TemplateFix": {
+                    "type": "string"
+                },
+                "TemplateFtp": {
+                    "type": "string"
+                },
+                "TemplateHttp": {
+                    "type": "string"
+                },
+                "TemplateHttpPolicy": {
+                    "type": "string"
+                },
+                "TemplateHttpPolicyShared": {
+                    "type": "string"
+                },
+                "TemplateHttpShared": {
+                    "type": "string"
+                },
+                "TemplateImapPop3": {
+                    "type": "string"
+                },
+                "TemplatePersistCookie": {
+                    "type": "string"
+                },
+                "TemplatePersistCookieShared": {
+                    "type": "string"
+                },
+                "TemplatePersistDestinationIp": {
+                    "type": "string"
+                },
+                "TemplatePersistDestinationIpShared": {
+                    "type": "string"
+                },
+                "TemplatePersistSourceIp": {
+                    "type": "string"
+                },
+                "TemplatePersistSourceIpShared": {
+                    "type": "string"
+                },
+                "TemplatePersistSslSid": {
+                    "type": "string"
+                },
+                "TemplatePersistSslSidShared": {
+                    "type": "string"
+                },
+                "TemplatePolicy": {
+                    "type": "string"
+                },
+                "TemplatePolicyShared": {
+                    "type": "string"
+                },
+                "TemplateReqmodIcap": {
+                    "type": "string"
+                },
+                "TemplateRespmodIcap": {
+                    "type": "string"
+                },
+                "TemplateScaleout": {
+                    "type": "string"
+                },
+                "TemplateServerSsh": {
+                    "type": "string"
+                },
+                "TemplateServerSsl": {
+                    "type": "string"
+                },
+                "TemplateServerSslShared": {
+                    "type": "string"
+                },
+                "TemplateSip": {
+                    "type": "string"
+                },
+                "TemplateSmpp": {
+                    "type": "string"
+                },
+                "TemplateSmtp": {
+                    "type": "string"
+                },
+                "TemplateSsli": {
+                    "type": "string"
+                },
+                "TemplateTcp": {
+                    "type": "string"
+                },
+                "TemplateTcpProxy": {
+                    "type": "string"
+                },
+                "TemplateTcpProxyClient": {
+                    "type": "string"
+                },
+                "TemplateTcpProxyServer": {
+                    "type": "string"
+                },
+                "TemplateTcpProxyShared": {
+                    "type": "string"
+                },
+                "TemplateTcpShared": {
+                    "type": "string"
+                },
+                "TemplateUdp": {
+                    "type": "string"
+                },
+                "TemplateUdpShared": {
+                    "type": "string"
+                },
+                "TemplateVirtualPort": {
+                    "type": "string"
+                },
+                "TemplateVirtualPortShared": {
+                    "type": "string"
+                },
+                "TrunkFwd": {
+                    "type": "number"
+                },
+                "TrunkRev": {
+                    "type": "number"
+                },
+                "UseAlternatePort": {
+                    "type": "number"
+                },
+                "UseCgnv6": {
+                    "type": "number"
+                },
+                "UseDefaultIfNoServer": {
+                    "type": "number"
+                },
+                "UseRcvHopForResp": {
+                    "type": "number"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "View": {
+                    "type": "number"
+                },
+                "WafTemplate": {
+                    "type": "string"
+                },
+                "WhenDown": {
+                    "type": "number"
+                },
+                "WhenDownProtocol2": {
+                    "type": "number"
+                },
+                "AclIdList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AclIdListDefinition"
+                    }
+                },
+                "AclNameList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AclNameListDefinition"
+                    }
+                },
+                "AflexScripts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AflexScriptsDefinition"
+                    }
+                },
+                "AuthCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AclIdListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclId": {
+                    "type": "number"
+                },
+                "AclIdSeqNum": {
+                    "type": "number"
+                },
+                "AclIdSeqNumShared": {
+                    "type": "number"
+                },
+                "AclIdSrcNatPool": {
+                    "type": "string"
+                },
+                "AclIdSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "SharedPartitionPoolId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AclNameListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclName": {
+                    "type": "string"
+                },
+                "AclNameSeqNum": {
+                    "type": "number"
+                },
+                "AclNameSeqNumShared": {
+                    "type": "number"
+                },
+                "AclNameSrcNatPool": {
+                    "type": "string"
+                },
+                "AclNameSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "SharedPartitionPoolName": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AflexScriptsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aflex": {
+                    "type": "string"
+                },
+                "AflexShared": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AaaPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AclId": {
+            "type": "number",
+            "description": "ACL id VPORT."
+        },
+        "AclIdShared": {
+            "type": "number",
+            "description": "acl id."
+        },
+        "AclName": {
+            "type": "string",
+            "description": "Apply an access list name (Named Access List)."
+        },
+        "AclNameShared": {
+            "type": "string",
+            "description": "Access List name (IPv4 Access List Name)."
+        },
+        "ArpDisable": {
+            "type": "number",
+            "description": "Disable Respond to Virtual Server ARP request."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Create a description for VIP."
+        },
+        "DisableVipAdv": {
+            "type": "number",
+            "description": "Disable virtual server GARP."
+        },
+        "EnableDisableAction": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable Virtual Server (default); \u2018disable\u2019: Disable Virtual Server; \u2018disable-when-all-ports-down\u2019: Disable Virtual Server when all member ports are down; \u2018disable-when-any-port-down\u2019: Disable Virtual Server when any member port is down;."
+        },
+        "Ethernet": {
+            "type": "number",
+            "description": "Ethernet interface."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on virtual port."
+        },
+        "HaDynamic": {
+            "type": "number",
+            "description": "Dynamic failover based on vip status."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "IP Address."
+        },
+        "Ipv6Acl": {
+            "type": "string",
+            "description": "ipv6 acl name."
+        },
+        "Ipv6AclShared": {
+            "type": "string",
+            "description": "ipv6 acl name."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SLB Virtual Service Name."
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "IP subnet mask."
+        },
+        "RedistributeRouteMap": {
+            "type": "string",
+            "description": "Route map reference (Name of route-map)."
+        },
+        "RedistributionFlagged": {
+            "type": "number",
+            "description": "Flag VIP for special redistribution handling."
+        },
+        "SharedPartitionPolicyTemplate": {
+            "type": "number",
+            "description": "Reference a policy template from shared partition."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for virtual port; \u2018stats-data-disable\u2019: Disable statistical data collection for virtual port;."
+        },
+        "TemplateLogging": {
+            "type": "string",
+            "description": "NAT Logging template (NAT Logging template name)."
+        },
+        "TemplatePolicy": {
+            "type": "string",
+            "description": "Policy Template (Policy template name)."
+        },
+        "TemplatePolicyAcl": {
+            "type": "string"
+        },
+        "TemplatePolicyAclShared": {
+            "type": "string"
+        },
+        "TemplatePolicyAddress": {
+            "type": "string"
+        },
+        "TemplatePolicyShared": {
+            "type": "string",
+            "description": "Policy Template Name."
+        },
+        "TemplateScaleout": {
+            "type": "string",
+            "description": "Scaleout template (Scaleout template name)."
+        },
+        "TemplateVirtualServer": {
+            "type": "string",
+            "description": "Virtual server template (Virtual server template name)."
+        },
+        "UseIfIp": {
+            "type": "number",
+            "description": "Use Interface IP."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Vrid": {
+            "type": "number",
+            "description": "Join a vrrp group (Specify ha VRRP-A vrid)."
+        },
+        "MigrateVip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MigrateVipDefinition"
+            },
+            "maxItems": 1
+        },
+        "PortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

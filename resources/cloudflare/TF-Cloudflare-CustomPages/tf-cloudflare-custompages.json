@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Cloudflare::CustomPages",
+    "description": "Provides a resource which manages Cloudflare custom error pages.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-CustomPages/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account ID where the custom pages should be\nupdated. Either `account_id` or `zone_id` must be provided. If\n`account_id` is present, it will override the zone setting."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string",
+            "description": "Managed state of the custom page. Must be one of\n`default`, `customized`. If the value is `default` it will be removed\nfrom the Terraform state management."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of custom page you wish to update. Must\nbe one of `basic_challenge`, `waf_challenge`, `waf_block`,\n`ratelimit_block`, `country_challenge`, `ip_block`, `under_attack`,\n`500_errors`, `1000_errors`, `always_online`."
+        },
+        "Url": {
+            "type": "string",
+            "description": "URL of where the custom page source is located."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID where the custom pages should be\nupdated. Either `zone_id` or `account_id` must be provided."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Type",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

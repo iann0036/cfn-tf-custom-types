@@ -1,0 +1,385 @@
+{
+    "typeName": "TF::Thunder::RouterBgpAddressFamilyIpv6Redistribute",
+    "description": "`thunder_router_bgp_address_family_ipv6_redistribute` Provides details about thunder router bgp address family ipv6 redistribute",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterBgpAddressFamilyIpv6Redistribute/docs/README.md",
+    "definitions": {
+        "ConnectedCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Connected": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FloatingIpCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FloatingIp": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpNatCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpNat": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpNatListCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpNatList": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IsisCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Isis": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Lw4o6CfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lw4o6": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Nat64CfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nat64": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NatMapCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NatMap": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ospf": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RipCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rip": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StaticCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RouteMap": {
+                    "type": "string"
+                },
+                "Static": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "StaticNatCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RouteMap": {
+                    "type": "string"
+                },
+                "StaticNat": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "VipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnlyFlaggedCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnlyFlaggedCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OnlyNotFlaggedCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnlyNotFlaggedCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OnlyFlaggedCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnlyFlagged": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OnlyNotFlaggedCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnlyNotFlagged": {
+                    "type": "number"
+                },
+                "RouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ConnectedCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectedCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "FloatingIpCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FloatingIpCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpNatCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNatCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpNatListCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNatListCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "IsisCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IsisCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "Lw4o6Cfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Lw4o6CfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nat64Cfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Nat64CfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "NatMapCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NatMapCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "OspfCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "RipCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RipCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "StaticCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "StaticNatCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticNatCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "Vip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VipDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

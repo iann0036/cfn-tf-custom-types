@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::NSXT::PolicyTier0GatewayInterface",
+    "description": "This resource provides a method for the management of a Tier-0 gateway Interface. Note that edge cluster must be configured on Tier-0 Gateway in order to configure interfaces on it.\n\n~> **NOTE:** When configuring VRF-Lite interfaces, please specify explicit dependency on parent Tier-0 Gateway interface(see VRF interface example below).  This will ensure correct order of object deletion.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.\n\n# Example Usage\n\n```hcl\ndata \"nsxt_policy_tier0_gateway\" \"gw1\" {\n  display_name = \"gw1\"\n}\n\ndata \"nsxt_policy_ipv6_ndra_profile\" \"slaac\" {\n  display_name = \"slaac\"\n}\n\nresource \"nsxt_policy_vlan_segment\" \"segment0\" {\n  display_name = \"segment0\"\n  vlan_ids     = [12]\n}\n\nresource \"nsxt_policy_tier0_gateway_interface\" \"if1\" {\n  display_name           = \"segment0_interface\"\n  description            = \"connection to segment0\"\n  type                   = \"SERVICE\"\n  gateway_path           = data.nsxt_policy_tier0_gateway.gw1.path\n  segment_path        ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyTier0GatewayInterface/docs/README.md",
+    "definitions": {
+        "OspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaPath": {
+                    "type": "string"
+                },
+                "BfdProfilePath": {
+                    "type": "string"
+                },
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "EnableBfd": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "NetworkType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AreaPath"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessVlanId": {
+            "type": "number",
+            "description": "Access VLAN ID, relevant only for VRF interfaces. This attribute is supported with NSX 3.0.0 onwards."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "EdgeNodePath": {
+            "type": "string",
+            "description": "Path of edge node for this interface, relevant for interfaces of type `EXTERNAL`."
+        },
+        "EnablePim": {
+            "type": "boolean",
+            "description": "Flag to enable Protocol Independent Multicast, relevant only for interfaces of type `EXTERNAL`. This attribute will always be `false` for other interface types. This attribute is supported with NSX 3.0.0 onwards, and only for local managers."
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Policy path for the Tier-0 Gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Ipv6NdraProfilePath": {
+            "type": "string",
+            "description": "IPv6 NDRA profile to be associated with this interface."
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Maximum Transmission Unit for this interface."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SegmentPath": {
+            "type": "string",
+            "description": "Policy path for segment to be connected with this Tier1 Gateway. This argemnt is required for interfaces of type `SERVICE` and `EXTERNAL`."
+        },
+        "SitePath": {
+            "type": "string",
+            "description": "Path of the site the Tier0 edge cluster belongs to. This configuration is required for global manager only. `path` field of the existing `nsxt_policy_site` can be used here."
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "list of Ip Addresses/Prefixes in CIDR format, to be associated with this interface."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of this interface, one of `SERVICE`, `EXTERNAL`, `LOOPBACK`. Default is `EXTERNAL`."
+        },
+        "UrpfMode": {
+            "type": "string",
+            "description": "Unicast Reverse Path Forwarding mode, one of `NONE`, `STRICT`. Default is `STRICT`. This attribute is supported with NSX 3.0.0 onwards."
+        },
+        "Ospf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath",
+        "Subnets"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IpAddresses",
+        "/properties/LocaleServiceId",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

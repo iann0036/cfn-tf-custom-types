@@ -1,0 +1,627 @@
+{
+    "typeName": "TF::Thunder::InterfaceVeIp",
+    "description": "`thunder_interface_ve_ip` Provides details about thunder interface ve ip",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceVeIp/docs/README.md",
+    "definitions": {
+        "AddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4Netmask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HelperAddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelperAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OspfGlobal": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfGlobalDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OspfIpList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfIpListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReceivePacket": {
+                    "type": "number"
+                },
+                "SendPacket": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Authentication": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ReceiveCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReceiveCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SendCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SendCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SplitHorizonCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SplitHorizonCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RouterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Isis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IsisDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "StatefulFirewallDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "number"
+                },
+                "AclId": {
+                    "type": "number"
+                },
+                "ClassList": {
+                    "type": "string"
+                },
+                "Inside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfGlobalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationKey": {
+                    "type": "string"
+                },
+                "Cost": {
+                    "type": "number"
+                },
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "Disable": {
+                    "type": "string"
+                },
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "Mtu": {
+                    "type": "number"
+                },
+                "MtuIgnore": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "AuthenticationCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "BfdCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BfdCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DatabaseFilterCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseFilterCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MessageDigestCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MessageDigestCfgDefinition"
+                    }
+                },
+                "Network": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OspfIpListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "number"
+                },
+                "AuthenticationKey": {
+                    "type": "string"
+                },
+                "Cost": {
+                    "type": "number"
+                },
+                "DatabaseFilter": {
+                    "type": "string"
+                },
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "string"
+                },
+                "MtuIgnore": {
+                    "type": "number"
+                },
+                "Out": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "MessageDigestCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MessageDigestCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyChain": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyChainDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Mode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Str": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StrDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ReceiveCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Receive": {
+                    "type": "number"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SendCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Send": {
+                    "type": "number"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SplitHorizonCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IsisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthenticationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authentication": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BfdCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bfd": {
+                    "type": "number"
+                },
+                "Disable": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DatabaseFilterCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseFilter": {
+                    "type": "string"
+                },
+                "Out": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MessageDigestCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageDigestKey": {
+                    "type": "number"
+                },
+                "Md5": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Md5Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Broadcast": {
+                    "type": "number"
+                },
+                "NonBroadcast": {
+                    "type": "number"
+                },
+                "P2mpNbma": {
+                    "type": "number"
+                },
+                "PointToMultipoint": {
+                    "type": "number"
+                },
+                "PointToPoint": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "KeyChainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyChain": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ModeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "String": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Md5Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Md5Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowPromiscuousVip": {
+            "type": "number",
+            "description": "Allow traffic to be associated with promiscuous VIP."
+        },
+        "Client": {
+            "type": "number",
+            "description": "Client facing interface for IPv4/v6 traffic."
+        },
+        "Dhcp": {
+            "type": "number",
+            "description": "Use DHCP to configure IP address."
+        },
+        "GenerateMembershipQuery": {
+            "type": "number",
+            "description": "Enable Membership Query."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifnum": {
+            "type": "number"
+        },
+        "Inside": {
+            "type": "number",
+            "description": "Inside (private) interface for stateful firewall."
+        },
+        "MaxRespTime": {
+            "type": "number",
+            "description": "Maximum Response Time (Max Response Time (Default is 100))."
+        },
+        "Outside": {
+            "type": "number",
+            "description": "Outside (public) interface for stateful firewall."
+        },
+        "QueryInterval": {
+            "type": "number",
+            "description": "1 - 255 (Default is 125)."
+        },
+        "Server": {
+            "type": "number",
+            "description": "Server facing interface for IPv4/v6 traffic."
+        },
+        "SlbPartitionRedirect": {
+            "type": "number",
+            "description": "Redirect SLB traffic across partition."
+        },
+        "TtlIgnore": {
+            "type": "number",
+            "description": "Ignore TTL decrement for a received packet."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddressListDefinition"
+            }
+        },
+        "HelperAddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HelperAddressListDefinition"
+            }
+        },
+        "Ospf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RipDefinition"
+            },
+            "maxItems": 1
+        },
+        "Router": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouterDefinition"
+            },
+            "maxItems": 1
+        },
+        "StatefulFirewall": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatefulFirewallDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

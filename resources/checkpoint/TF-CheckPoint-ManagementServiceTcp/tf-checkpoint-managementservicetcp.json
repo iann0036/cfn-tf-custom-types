@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::CheckPoint::ManagementServiceTcp",
+    "description": "This resource allows you to add/update/delete Check Point Service Tcp.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementServiceTcp/docs/README.md",
+    "definitions": {
+        "AggressiveAgingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggressiveAging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AggressiveAgingDefinition"
+            },
+            "description": "Sets short (aggressive) timeouts for idle connections. Aggressive Aging blocks are documented below."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "KeepConnectionsOpenAfterPolicyInstallation": {
+            "type": "boolean",
+            "description": "Keep connections open after policy has been installed even if they are not allowed under the new policy. This overrides the settings in the Connection Persistence page. If you change this property, the change will not affect open connections, but only future connections."
+        },
+        "MatchByProtocolSignature": {
+            "type": "boolean",
+            "description": "A value of true enables matching by the selected protocol's signature - the signature identifies the protocol as genuine. Select this option to limit the port to the specified protocol. If the selected protocol does not support matching by signature, this field cannot be set to true."
+        },
+        "MatchForAny": {
+            "type": "boolean",
+            "description": "Indicates whether this service is used when 'Any' is set as the rule's service and there are several service objects with the same source port and protocol."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name. Should be unique in the domain."
+        },
+        "OverrideDefaultSettings": {
+            "type": "boolean",
+            "description": "Indicates whether this service is a Data Domain service which has been overridden."
+        },
+        "Port": {
+            "type": "string",
+            "description": "The number of the port used to provide this service. To specify a port range, place a hyphen between the lowest and highest port numbers, for example 44-55."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Select the protocol type associated with the service, and by implication, the management server (if any) that enforces Content Security and Authentication for the service. Selecting a Protocol Type invokes the specific protocol handlers for each protocol type, thus enabling higher level of security by parsing the protocol, and higher level of connectivity by tracking dynamic actions (such as opening of ports)."
+        },
+        "SessionTimeout": {
+            "type": "number",
+            "description": "Time (in seconds) before the session times out."
+        },
+        "SourcePort": {
+            "type": "string",
+            "description": "Port number for the client side service. If specified, only those Source port Numbers will be Accepted, Dropped, or Rejected during packet inspection. Otherwise, the source port is not inspected."
+        },
+        "SyncConnectionsOnCluster": {
+            "type": "boolean",
+            "description": "Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "UseDefaultSessionTimeout": {
+            "type": "boolean",
+            "description": "Use default virtual session timeout."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

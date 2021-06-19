@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::Gridscale::SslCertificate",
+    "description": "Provides a TLS/SSL certificate resource. This can be used to create and delete TLS/SSL certificates.\nA TLS/SSL certificate can be attached to a loadbalancer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-SslCertificate/docs/README.md",
+    "definitions": {
+        "FingerprintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Md5": {
+                    "type": "string"
+                },
+                "Sha1": {
+                    "type": "string"
+                },
+                "Sha256": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string",
+            "description": "The PEM-formatted full-chain between the certificate authority and the domain's SSL certificate."
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CommonName": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Fingerprints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FingerprintsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "LeafCertificate": {
+            "type": "string",
+            "description": "The PEM-formatted public SSL of the SSL certificate."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "NotValidAfter": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "The PEM-formatted private-key of the SSL certificate."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LeafCertificate",
+        "Name",
+        "PrivateKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CommonName",
+        "/properties/CreateTime",
+        "/properties/Fingerprints",
+        "/properties/Id",
+        "/properties/NotValidAfter",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CertificateChain",
+        "/properties/LeafCertificate",
+        "/properties/PrivateKey"
+    ]
+}

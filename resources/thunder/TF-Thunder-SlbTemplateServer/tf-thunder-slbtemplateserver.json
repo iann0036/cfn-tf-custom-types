@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateServer",
+    "description": "`thunder_slb_template_server` Provides details about thunder slb template server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Add": {
+            "type": "number",
+            "description": "Slow start connection limit add by a number every interval (Add by this number every interval)."
+        },
+        "BwRateLimit": {
+            "type": "number",
+            "description": "Configure bandwidth rate limit on real server (Bandwidth rate limit in Kbps)."
+        },
+        "BwRateLimitAcct": {
+            "type": "string",
+            "description": "\u2018to-server-only\u2019: Only account for traffic sent to server; \u2018from-server-only\u2019: Only account for traffic received from server; \u2018all\u2019: Account for all traffic sent to and received from server;."
+        },
+        "BwRateLimitDuration": {
+            "type": "number",
+            "description": "Duration in seconds the observed rate needs to honor."
+        },
+        "BwRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log bandwidth rate limit related state transitions."
+        },
+        "BwRateLimitResume": {
+            "type": "number",
+            "description": "Resume server selection after bandwidth drops below this threshold (in Kbps) (Bandwidth rate limit resume threshold (in Kbps))."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection limit."
+        },
+        "ConnLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnRateLimit": {
+            "type": "number",
+            "description": "Connection rate limit."
+        },
+        "ConnRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "DnsQueryInterval": {
+            "type": "number",
+            "description": "The interval to query DNS server for the hostname (DNS query interval (in minute, default is 10))."
+        },
+        "DynamicServerPrefix": {
+            "type": "string",
+            "description": "Prefix of dynamic server (Prefix of dynamic server (default is \u201cDRS\u201d))."
+        },
+        "Every": {
+            "type": "number",
+            "description": "Slow start connection limit increment interval (default 10)."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on real server."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Health Check Monitor (Health monitor name)."
+        },
+        "HealthCheckDisable": {
+            "type": "number",
+            "description": "Disable configured health check configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialSlowStart": {
+            "type": "number",
+            "description": "Initial slow start connection limit (default 128)."
+        },
+        "LogSelectionFailure": {
+            "type": "number",
+            "description": "Enable real-time logging for server selection failure event."
+        },
+        "MaxDynamicServer": {
+            "type": "number",
+            "description": "Maximum dynamic server number (Maximum dynamic server number (default is 255))."
+        },
+        "MinTtlRatio": {
+            "type": "number",
+            "description": "Minimum TTL to DNS query interval ratio (Minimum TTL ratio (default is 2))."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server template name."
+        },
+        "RateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Use 100 ms as sampling interval; \u2018second\u2019: Use 1 second as sampling interval;."
+        },
+        "Resume": {
+            "type": "number",
+            "description": "Resume accepting new connection after connection number drops below threshold (Connection resume threshold)."
+        },
+        "SlowStart": {
+            "type": "number",
+            "description": "Slowly ramp up the connection number after server is up."
+        },
+        "SpoofingCache": {
+            "type": "number",
+            "description": "Servers under the template are spoofing cache."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for real server; \u2018stats-data-disable\u2019: Disable statistical data collection for real server;."
+        },
+        "Till": {
+            "type": "number",
+            "description": "Slow start ends when slow start connection limit reaches a number (default 4096) (Slow start ends when connection limit reaches this number)."
+        },
+        "Times": {
+            "type": "number",
+            "description": "Slow start connection limit multiply by a number every interval (default 2) (Multiply by this number every interval)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Weight for the Real Servers (Connection Weight)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

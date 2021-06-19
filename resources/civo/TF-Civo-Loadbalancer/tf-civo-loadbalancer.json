@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Civo::Loadbalancer",
+    "description": "Provides a Civo Network resource. This can be used to create,\nmodify, and delete Networks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-Loadbalancer/docs/README.md",
+    "definitions": {
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceId",
+                "Port",
+                "Protocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FailTimeout": {
+            "type": "number"
+        },
+        "HealthCheckPath": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreInvalidBackendTls": {
+            "type": "boolean"
+        },
+        "MaxConns": {
+            "type": "number"
+        },
+        "MaxRequestSize": {
+            "type": "number"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "TlsCertificate": {
+            "type": "string"
+        },
+        "TlsKey": {
+            "type": "string"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FailTimeout",
+        "Hostname",
+        "MaxConns",
+        "MaxRequestSize",
+        "Policy",
+        "Port",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

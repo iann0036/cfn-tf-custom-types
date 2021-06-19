@@ -1,0 +1,235 @@
+{
+    "typeName": "TF::VCD::NsxvFirewallRule",
+    "description": "Provides a vCloud Director firewall rule resource for advanced edge gateways (NSX-V). This can be\nused to create, modify, and delete firewall rules.\n\n~> **Note:** This resource requires advanced edge gateway (NSX-V).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-NsxvFirewallRule/docs/README.md",
+    "definitions": {
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "boolean"
+                },
+                "GatewayInterfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpSets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OrgNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VmIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "boolean"
+                },
+                "GatewayInterfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpSets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OrgNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VmIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AboveRuleId": {
+            "type": "string",
+            "description": "This can be used to alter default rule placement order. By default\nevery rule is appended to the end of firewall rule list. When a value of another rule is set - this\nrule will be placed above the specified rule."
+        },
+        "Action": {
+            "type": "string",
+            "description": "Defines if the rule is set to `accept` or `deny` traffic. Default `accept`."
+        },
+        "EdgeGateway": {
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the firewall rule."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Defines if the rule is enabaled. Default `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoggingEnabled": {
+            "type": "boolean",
+            "description": "Defines if the logging for this rule is enabaled. Default `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Free text name. Can be duplicate."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
+        },
+        "RuleTag": {
+            "type": "number",
+            "description": "This can be used to specify user-controlled rule tag. If not specified,\nit will report rule ID after creation. Must be between 65537-131072."
+        },
+        "RuleType": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceDefinition"
+            },
+            "minItems": 1
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

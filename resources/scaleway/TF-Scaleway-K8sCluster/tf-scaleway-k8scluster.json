@@ -1,0 +1,300 @@
+{
+    "typeName": "TF::Scaleway::K8sCluster",
+    "description": "Creates and manages Scaleway Kubernetes clusters. For more information, see [the documentation](https://developers.scaleway.com/en/products/k8s/api/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-K8sCluster/docs/README.md",
+    "definitions": {
+        "KubeconfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterCaCertificate": {
+                    "type": "string"
+                },
+                "ConfigFile": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            }
+        },
+        "AutoUpgradeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "MaintenanceWindowDay": {
+                    "type": "string"
+                },
+                "MaintenanceWindowStartHour": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Enable",
+                "MaintenanceWindowDay",
+                "MaintenanceWindowStartHour"
+            ]
+        },
+        "AutoscalerConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BalanceSimilarNodeGroups": {
+                    "type": "boolean"
+                },
+                "DisableScaleDown": {
+                    "type": "boolean"
+                },
+                "Estimator": {
+                    "type": "string"
+                },
+                "Expander": {
+                    "type": "string"
+                },
+                "ExpendablePodsPriorityCutoff": {
+                    "type": "number"
+                },
+                "IgnoreDaemonsetsUtilization": {
+                    "type": "boolean"
+                },
+                "MaxGracefulTerminationSec": {
+                    "type": "number"
+                },
+                "ScaleDownDelayAfterAdd": {
+                    "type": "string"
+                },
+                "ScaleDownUnneededTime": {
+                    "type": "string"
+                },
+                "ScaleDownUtilizationThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "OpenIdConnectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "GroupsClaim": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "GroupsPrefix": {
+                    "type": "string"
+                },
+                "IssuerUrl": {
+                    "type": "string"
+                },
+                "RequiredClaim": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UsernameClaim": {
+                    "type": "string"
+                },
+                "UsernamePrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientId",
+                "IssuerUrl"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdmissionPlugins": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ApiserverCertSans": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ApiserverUrl": {
+            "type": "string"
+        },
+        "Cni": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DeleteAdditionalResources": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FeatureGates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kubeconfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubeconfigDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "UpgradeAvailable": {
+            "type": "boolean"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "WildcardDns": {
+            "type": "string"
+        },
+        "AutoUpgrade": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoUpgradeDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutoscalerConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalerConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OpenIdConnectConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OpenIdConnectConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cni",
+        "Name",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiserverUrl",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Kubeconfig",
+        "/properties/OrganizationId",
+        "/properties/Status",
+        "/properties/UpdatedAt",
+        "/properties/UpgradeAvailable",
+        "/properties/WildcardDns"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

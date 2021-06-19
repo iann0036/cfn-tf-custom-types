@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Akamai::EdgeHostname",
+    "description": "~> **Note** Version 1.0.0 of the Akamai Terraform Provider is now available for the Provisioning module. To upgrade to the new version, you have to update this resource. See the [migration guide](../guides/1.0_migration.md) for details. \n\nThe `akamai_edge_hostname` resource lets you configure a secure edge hostname. Your \nedge hostname determines how requests for your site, app, or content are mapped to \nAkamai edge servers. \n\nAn edge hostname is the CNAME target you use when directing your end user traffic to \nAkamai. Each hostname assigned to a property has a corresponding edge hostname. \n \nAkamai supports three types of edge hostnames, depending on the level of security \nyou need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When \nentering the `edge_hostname` attribute, you need to include a specific domain suffix \nfor your edge hostname type: \n\n| Edge hostname type | Domain suffix |\n|------|-------|\n| Enhanced TLS | edgekey.net |\n| Standard TLS | edgesuite.net |\n| Shared Cert |...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-EdgeHostname/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "number"
+        },
+        "Contract": {
+            "type": "string"
+        },
+        "ContractId": {
+            "type": "string"
+        },
+        "EdgeHostname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpBehavior": {
+            "type": "string"
+        },
+        "Product": {
+            "type": "string"
+        },
+        "ProductId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeHostname",
+        "IpBehavior"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

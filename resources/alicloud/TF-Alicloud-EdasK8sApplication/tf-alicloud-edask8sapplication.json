@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::Alicloud::EdasK8sApplication",
+    "description": "CloudFormation equivalent of alicloud_edas_k8s_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EdasK8sApplication/docs/README.md",
+    "definitions": {
+        "EnvsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationDescriotion": {
+            "type": "string"
+        },
+        "ApplicationName": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "Command": {
+            "type": "string"
+        },
+        "CommandArgs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EdasContainerVersion": {
+            "type": "string"
+        },
+        "Envs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageUrl": {
+            "type": "string"
+        },
+        "InternetSlbId": {
+            "type": "string"
+        },
+        "InternetSlbPort": {
+            "type": "number"
+        },
+        "InternetSlbProtocol": {
+            "type": "string"
+        },
+        "InternetTargetPort": {
+            "type": "number"
+        },
+        "Jdk": {
+            "type": "string"
+        },
+        "LimitMCpu": {
+            "type": "number"
+        },
+        "LimitMem": {
+            "type": "number"
+        },
+        "Liveness": {
+            "type": "string"
+        },
+        "LocalVolume": {
+            "type": "string"
+        },
+        "LogicalRegionId": {
+            "type": "string"
+        },
+        "MountDescs": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NasId": {
+            "type": "string"
+        },
+        "PackageType": {
+            "type": "string"
+        },
+        "PackageUrl": {
+            "type": "string"
+        },
+        "PackageVersion": {
+            "type": "string"
+        },
+        "PostStart": {
+            "type": "string"
+        },
+        "PreStop": {
+            "type": "string"
+        },
+        "Readiness": {
+            "type": "string"
+        },
+        "Replicas": {
+            "type": "number"
+        },
+        "RequestsMCpu": {
+            "type": "number"
+        },
+        "RequestsMem": {
+            "type": "number"
+        },
+        "WebContainer": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationName",
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

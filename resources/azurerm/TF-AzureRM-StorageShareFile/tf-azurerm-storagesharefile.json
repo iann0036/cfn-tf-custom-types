@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::AzureRM::StorageShareFile",
+    "description": "Manages a File within an Azure Storage File Share.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageShareFile/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string",
+            "description": "Sets the file\u2019s Content-Disposition header."
+        },
+        "ContentEncoding": {
+            "type": "string",
+            "description": "Specifies which content encodings have been applied to the file."
+        },
+        "ContentMd5": {
+            "type": "string",
+            "description": "The MD5 sum of the file contents. Changing this forces a new resource to be created."
+        },
+        "ContentType": {
+            "type": "string",
+            "description": "The content type of the share file. Defaults to `application/octet-stream`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "A mapping of metadata to assign to this file."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name (or path) of the File that should be created within this File Share. Changing this forces a new resource to be created."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The storage share directory that you would like the file placed into. Changing this forces a new resource to be created."
+        },
+        "Source": {
+            "type": "string",
+            "description": "An absolute path to a file on the local system."
+        },
+        "StorageShareId": {
+            "type": "string",
+            "description": "The Storage Share ID in which this file will be placed into. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StorageShareId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

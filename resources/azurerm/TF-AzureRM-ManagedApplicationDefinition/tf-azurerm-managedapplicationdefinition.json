@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::AzureRM::ManagedApplicationDefinition",
+    "description": "Manages a Managed Application Definition.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ManagedApplicationDefinition/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RoleDefinitionId": {
+                    "type": "string",
+                    "description": "Specifies a role definition identifier for the provider. This role will define all the permissions that the provider must have on the managed application's container resource group. This role definition cannot have permission to delete the resource group."
+                },
+                "ServicePrincipalId": {
+                    "type": "string",
+                    "description": "Specifies a service principal identifier for the provider. This is the identity that the provider will use to call ARM to manage the managed application resources."
+                }
+            },
+            "required": [
+                "RoleDefinitionId",
+                "ServicePrincipalId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateUiDefinition": {
+            "type": "string",
+            "description": "Specifies the `createUiDefinition` json for the backing template with `Microsoft.Solutions/applications` resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Specifies the managed application definition description."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Specifies the managed application definition display name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "LockLevel": {
+            "type": "string",
+            "description": "Specifies the managed application lock level. Valid values include `CanNotDelete`, `None`, `ReadOnly`. Changing this forces a new resource to be created."
+        },
+        "MainTemplate": {
+            "type": "string",
+            "description": "Specifies the inline main template json which has resources to be provisioned."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Managed Application Definition. Changing this forces a new resource to be created."
+        },
+        "PackageEnabled": {
+            "type": "boolean",
+            "description": "Is the package enabled? Defaults to `true`."
+        },
+        "PackageFileUri": {
+            "type": "string",
+            "description": "Specifies the managed application definition package file Uri."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Managed Application Definition should exist. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Location",
+        "LockLevel",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Panos::Edl",
+    "description": "This resource allows you to add/update/delete external dynamic lists (EDL).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-Edl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateProfile": {
+            "type": "string",
+            "description": "Profile for authenticating client certificates."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The object's description."
+        },
+        "Exceptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Provide a list of exception entries."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The object's name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "EDL password."
+        },
+        "PasswordEnc": {
+            "type": "string"
+        },
+        "Repeat": {
+            "type": "string",
+            "description": "How often to retrieve the EDL.  This can be `hourly` (the\ndefault), `daily`, `weekly`, `monthly`, or `every five minutes` (valid for\nPAN-OS 7.1+)."
+        },
+        "RepeatAt": {
+            "type": "string",
+            "description": "The time at which to retrieve the EDL.  Please refer\nto the section above for how to set this value properly."
+        },
+        "RepeatDayOfMonth": {
+            "type": "number",
+            "description": "If `repeat` is `monthly`, then this should\nbe set to the desired day of the month."
+        },
+        "RepeatDayOfWeek": {
+            "type": "string",
+            "description": "If `repeat` is `weekly`, then this should\nbe set to the desired day of the week.  Valid values are `sunday`,\n`monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, and\n`sunday`."
+        },
+        "Source": {
+            "type": "string",
+            "description": "The EDL source URL."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of EDL.  This can be `ip` (the default; and the\nonly valid value for PAN-OS 6.1 - 7.0), `domain`, `url`, or `predefined`\n(PAN-OS 8.0+)."
+        },
+        "Username": {
+            "type": "string",
+            "description": "EDL username."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the object into (default: `vsys1`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PasswordEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PasswordEnc"
+    ]
+}

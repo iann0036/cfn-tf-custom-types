@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Alkira::PolicyRule",
+    "description": "CloudFormation equivalent of alkira_policy_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-PolicyRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationFamilyList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ApplicationList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Dscp": {
+            "type": "string"
+        },
+        "DstIp": {
+            "type": "string"
+        },
+        "DstPortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetApplicationId": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "RuleAction": {
+            "type": "string"
+        },
+        "RuleActionServiceTypeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RuleId": {
+            "type": "number"
+        },
+        "SrcIp": {
+            "type": "string"
+        },
+        "SrcPortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Dscp",
+        "DstIp",
+        "DstPortList",
+        "Name",
+        "Protocol",
+        "SrcIp",
+        "SrcPortList"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RuleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

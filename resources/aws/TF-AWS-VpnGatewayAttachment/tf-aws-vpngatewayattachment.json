@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::VpnGatewayAttachment",
+    "description": "Provides a Virtual Private Gateway attachment resource, allowing for an existing\nhardware VPN gateway to be attached and/or detached from a VPC.\n\n-> **Note:** The [`aws_vpn_gateway`](vpn_gateway.html)\nresource can also automatically attach the Virtual Private Gateway it creates\nto an existing VPC by setting the [`vpc_id`](vpn_gateway.html#vpc_id) attribute accordingly.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VpnGatewayAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of the VPC."
+        },
+        "VpnGatewayId": {
+            "type": "string",
+            "description": "The ID of the Virtual Private Gateway."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

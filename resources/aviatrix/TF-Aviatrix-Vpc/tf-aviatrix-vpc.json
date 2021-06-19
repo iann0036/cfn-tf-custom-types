@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::Aviatrix::Vpc",
+    "description": "The **aviatrix_vpc** resource allows the creation and management of Aviatrix-created VPCs of various cloud types.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Vpc/docs/README.md",
+    "definitions": {
+        "PrivateSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "PublicSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AviatrixFirenetVpc": {
+            "type": "boolean"
+        },
+        "AviatrixTransitVpc": {
+            "type": "boolean"
+        },
+        "AzureVnetResourceId": {
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "EnableNativeGwlb": {
+            "type": "boolean"
+        },
+        "EnablePrivateOobSubnet": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NumOfSubnetPairs": {
+            "type": "number"
+        },
+        "PrivateSubnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateSubnetsDefinition"
+            }
+        },
+        "PublicSubnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicSubnetsDefinition"
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ResourceGroup": {
+            "type": "string"
+        },
+        "RouteTables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubnetSize": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AzureVnetResourceId",
+        "/properties/Id",
+        "/properties/PrivateSubnets",
+        "/properties/PublicSubnets",
+        "/properties/RouteTables",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::AzureAD::ApplicationOauth2Permission",
+    "description": "Manages an OAuth2 Permission (also known as a Scope) associated with an Application within Azure Active Directory.\n\n~> This resource is deprecated in favour of [azuread_application_oauth2_permission_scope](application_oauth2_permission_scope.html) and will be removed in version 2.0 of the provider.\n\n-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write all applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuread/TF-AzureAD-ApplicationOauth2Permission/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminConsentDescription": {
+            "type": "string",
+            "description": "Permission help text that appears in the admin consent and app assignment experiences."
+        },
+        "AdminConsentDisplayName": {
+            "type": "string",
+            "description": "Display name for the permission that appears in the admin consent and app assignment experiences."
+        },
+        "ApplicationObjectId": {
+            "type": "string",
+            "description": "The Object ID of the Application for which this Permission should be created. Changing this field forces a new resource to be created."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean",
+            "description": "Determines if the Permission is enabled. Defaults to `true`."
+        },
+        "PermissionId": {
+            "type": "string",
+            "description": "Specifies a custom UUID for the Permission. If omitted, a random UUID will be automatically generated. Changing this field forces a new resource to be created."
+        },
+        "ScopeId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by an Administrator. Possible values are \"User\" or \"Admin\"."
+        },
+        "UserConsentDescription": {
+            "type": "string",
+            "description": "Permission help text that appears in the end user consent experience."
+        },
+        "UserConsentDisplayName": {
+            "type": "string",
+            "description": "Display name for the permission that appears in the end user consent experience."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the scope claim that the resource application should expect in the OAuth 2.0 access token."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdminConsentDescription",
+        "AdminConsentDisplayName",
+        "ApplicationObjectId",
+        "Type",
+        "UserConsentDescription",
+        "UserConsentDisplayName",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

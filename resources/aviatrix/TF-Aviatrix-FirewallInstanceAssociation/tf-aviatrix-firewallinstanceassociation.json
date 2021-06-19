@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Aviatrix::FirewallInstanceAssociation",
+    "description": "The **aviatrix_firewall_instance_association** resource allows for the creation and management of a firewall instance association. To use this resource you must also have an `aviatrix_firenet` resource with it's `manage_firewall_instance_association` attribute set to false.\n\nAvailable in provider version R2.17.1+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FirewallInstanceAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attached": {
+            "type": "boolean"
+        },
+        "EgressInterface": {
+            "type": "string"
+        },
+        "FirenetGwName": {
+            "type": "string"
+        },
+        "FirewallName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "LanInterface": {
+            "type": "string"
+        },
+        "ManagementInterface": {
+            "type": "string"
+        },
+        "VendorType": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

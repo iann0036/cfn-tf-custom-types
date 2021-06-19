@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::AWS::SsmAssociation",
+    "description": "Associates an SSM Document to an instance or EC2 tag.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmAssociation/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OutputLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3BucketName": {
+                    "type": "string",
+                    "description": "The S3 bucket name."
+                },
+                "S3KeyPrefix": {
+                    "type": "string",
+                    "description": "The S3 bucket prefix. Results stored in the root if not configured."
+                }
+            },
+            "required": [
+                "S3BucketName"
+            ]
+        },
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyOnlyAtCronInterval": {
+            "type": "boolean",
+            "description": "By default, when you create a new or update associations, the system runs it immediately and then according to the schedule you specified. Enable this option if you do not want an association to run immediately after you create or update it. This parameter is not supported for rate expressions. Default: `false`."
+        },
+        "AssociationId": {
+            "type": "string"
+        },
+        "AssociationName": {
+            "type": "string",
+            "description": "The descriptive name for the association."
+        },
+        "AutomationTargetParameterName": {
+            "type": "string",
+            "description": "Specify the target for the association. This target is required for associations that use an `Automation` document and target resources by using rate controls."
+        },
+        "ComplianceSeverity": {
+            "type": "string",
+            "description": "The compliance severity for the association. Can be one of the following: `UNSPECIFIED`, `LOW`, `MEDIUM`, `HIGH` or `CRITICAL`."
+        },
+        "DocumentVersion": {
+            "type": "string",
+            "description": "The document version you want to associate with the target(s). Can be a specific version or the default version."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The instance ID to apply an SSM document to. Use `targets` with key `InstanceIds` for document schema versions 2.0 and above."
+        },
+        "MaxConcurrency": {
+            "type": "string",
+            "description": "The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%."
+        },
+        "MaxErrors": {
+            "type": "string",
+            "description": "The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify a number, for example 10, or a percentage of the target set, for example 10%."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the SSM document to apply."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "A block of arbitrary string parameters to pass to the SSM document."
+        },
+        "ScheduleExpression": {
+            "type": "string",
+            "description": "A cron expression when the association will be applied to the target(s)."
+        },
+        "OutputLocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutputLocationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            },
+            "maxItems": 5
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociationId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

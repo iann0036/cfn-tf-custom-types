@@ -1,0 +1,461 @@
+{
+    "typeName": "TF::Databricks::SqlQuery",
+    "description": "CloudFormation equivalent of databricks_sql_query",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-SqlQuery/docs/README.md",
+    "definitions": {
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Date": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DateRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Datetime": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatetimeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DatetimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatetimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Datetimesec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatetimesecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DatetimesecRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatetimesecRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Enum": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnumDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Number": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Query": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Text": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TextDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Continuous": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContinuousDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Daily": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Weekly": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeeklyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DateRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DatetimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DatetimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DatetimesecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DatetimesecRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "EnumDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Options": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Multiple": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MultipleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Options"
+            ]
+        },
+        "NumberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueryId": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Multiple": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MultipleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "QueryId"
+            ]
+        },
+        "TextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "ContinuousDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntervalSeconds": {
+                    "type": "number"
+                },
+                "UntilDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntervalSeconds"
+            ]
+        },
+        "DailyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntervalDays": {
+                    "type": "number"
+                },
+                "TimeOfDay": {
+                    "type": "string"
+                },
+                "UntilDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntervalDays",
+                "TimeOfDay"
+            ]
+        },
+        "WeeklyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "IntervalWeeks": {
+                    "type": "number"
+                },
+                "TimeOfDay": {
+                    "type": "string"
+                },
+                "UntilDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DayOfWeek",
+                "IntervalWeeks",
+                "TimeOfDay"
+            ]
+        },
+        "MultipleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "Separator": {
+                    "type": "string"
+                },
+                "Suffix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Prefix",
+                "Separator",
+                "Suffix"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataSourceId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Query": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParameterDefinition"
+            }
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DataSourceId",
+        "Name",
+        "Query"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

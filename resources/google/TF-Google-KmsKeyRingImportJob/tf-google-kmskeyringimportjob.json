@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::Google::KmsKeyRingImportJob",
+    "description": "A `KeyRingImportJob` can be used to create `CryptoKeys` and `CryptoKeyVersions` using pre-existing\nkey material, generated outside of Cloud KMS. A `KeyRingImportJob` expires 3 days after it is created.\nOnce expired, Cloud KMS will no longer be able to import or unwrap any key material that\nwas wrapped with the `KeyRingImportJob`'s public key.\n\n\n~> **Note:** KeyRingImportJobs cannot be deleted from Google Cloud Platform.\nDestroying a Terraform-managed KeyRingImportJob will remove it from state but\n*will not delete the resource from the project.* \n\n\nTo get more information about KeyRingImportJob, see:\n\n* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.importJobs)\n* How-to Guides\n    * [Importing a key](https://cloud.google.com/kms/docs/importing-a-key)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-KmsKeyRingImportJob/docs/README.md",
+    "definitions": {
+        "AttestationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                }
+            }
+        },
+        "PublicKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Pem": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attestation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttestationDefinition"
+            }
+        },
+        "ExpireTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportJobId": {
+            "type": "string"
+        },
+        "ImportMethod": {
+            "type": "string"
+        },
+        "KeyRing": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProtectionLevel": {
+            "type": "string"
+        },
+        "PublicKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicKeyDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImportJobId",
+        "ImportMethod",
+        "KeyRing",
+        "ProtectionLevel"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attestation",
+        "/properties/ExpireTime",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/PublicKey",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

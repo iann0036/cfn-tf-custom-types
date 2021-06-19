@@ -1,0 +1,84 @@
+{
+    "typeName": "TF::Quorum::BootstrapAccount",
+    "description": "Use this resource to create a new Ethereum account",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/quorum/TF-Quorum-BootstrapAccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountUrl": {
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "Balance": {
+            "type": "string",
+            "description": "A place holder to keep account initial balance for referencing\n- `passphrase` - (Optional) Passphrase to lock/unlock the account. Default is empty\n- `wallet_id` - (Required) ID of a wallet storing the newly created account. For keystore, it's the keystore resource id."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Passphrase": {
+            "type": "string",
+            "description": "Passphrase to lock/unlock the account. Default is empty\n- `wallet_id` - (Required) ID of a wallet storing the newly created account. For keystore, it's the keystore resource id."
+        },
+        "WalletId": {
+            "type": "string",
+            "description": "ID of a wallet storing the newly created account. For keystore, it's the keystore resource id."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "WalletId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountUrl",
+        "/properties/Address",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Passphrase"
+    ]
+}

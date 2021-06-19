@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::ACI::Connection",
+    "description": "CloudFormation equivalent of aci_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-Connection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjType": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ConnDir": {
+            "type": "string"
+        },
+        "ConnType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DirectConnect": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L4L7ServiceGraphTemplateDn": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "RelationVnsRsAbsConnectionConns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationVnsRsAbsCopyConnection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UnicastRoute": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "L4L7ServiceGraphTemplateDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

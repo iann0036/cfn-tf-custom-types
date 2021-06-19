@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::AzureAD::ApplicationAppRole",
+    "description": "Manages an App Role associated with an Application within Azure Active Directory.\n\n-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write all applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuread/TF-AzureAD-ApplicationAppRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedMemberTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies whether this app role definition can be assigned to users and groups by setting to `User`, or to other applications (that are accessing this application in a standalone scenario) by setting to `Application`, or to both."
+        },
+        "ApplicationObjectId": {
+            "type": "string",
+            "description": "The Object ID of the Application for which this App Role should be created. Changing this field forces a new resource to be created."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the app role that appears when the role is being assigned and, if the role functions as an application permissions, during the consent experiences."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name for the app role that appears during app role assignment and in consent experiences."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Determines if the app role is enabled: Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "RoleId": {
+            "type": "string",
+            "description": "The unique identifier for the app role. If omitted, a random UUID will be automatically generated. Must be a valid UUID. Changing this field forces a new resource to be created."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value that is used for the `roles` claim in ID tokens and OAuth 2.0 access tokens that are authenticating an assigned service or user principal."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllowedMemberTypes",
+        "ApplicationObjectId",
+        "Description",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

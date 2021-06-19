@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Panos::PanoramaDeviceGroup",
+    "description": "This resource allows you to add/update/delete Panorama device groups.\n\nThis resource has some overlap with the `panos_panorama_device_group_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_device_group` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if `terraform destroy` should delete\nthe device group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaDeviceGroup/docs/README.md",
+    "definitions": {
+        "DeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serial": {
+                    "type": "string",
+                    "description": "The serial number of the firewall."
+                },
+                "VsysList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A subset of all available vsys on the firewall\nthat should be in this device group.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
+                }
+            },
+            "required": [
+                "Serial"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The device group's description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The device group's name."
+        },
+        "Device": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DeviceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

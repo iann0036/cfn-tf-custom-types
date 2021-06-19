@@ -1,0 +1,287 @@
+{
+    "typeName": "TF::Panos::PanoramaApplicationSignature",
+    "description": "This resource allows you to add/update/delete Panorama application signatures.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaApplicationSignature/docs/README.md",
+    "definitions": {
+        "AndConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OrCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OrConditionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "OrConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EqualTo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EqualToDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GreaterThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GreaterThanDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LessThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LessThanDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PatternMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PatternMatchDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "EqualToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Mask": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Value"
+            ]
+        },
+        "GreaterThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Qualifiers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QualifiersDefinition"
+                    }
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Value"
+            ]
+        },
+        "QualifiersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LessThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Qualifiers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QualifiersDefinition2"
+                    }
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Value"
+            ]
+        },
+        "QualifiersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PatternMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Pattern": {
+                    "type": "string"
+                },
+                "Qualifiers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QualifiersDefinition3"
+                    }
+                }
+            },
+            "required": [
+                "Context",
+                "Pattern"
+            ]
+        },
+        "QualifiersDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationObject": {
+            "type": "string",
+            "description": "The applciation object for this signature."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group (default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The signature's name."
+        },
+        "OrderedMatch": {
+            "type": "boolean",
+            "description": "Set to `false` to disable ordered matching\n(default: `true`)."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "The signature's scope.  Valid values are\n`transaction` (default) or `session`."
+        },
+        "AndCondition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AndConditionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationObject",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

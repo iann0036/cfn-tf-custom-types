@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Fastly::TlsCertificate",
+    "description": "Uploads a custom TLS certificate to Fastly to be used to terminate TLS traffic.\n\n-> Each TLS certificate **must** have its corresponding private key uploaded _prior_ to uploading the certificate. This\ncan be achieved in Terraform using [`depends_on`](https://www.terraform.io/docs/configuration/meta-arguments/depends_on.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-TlsCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateBody": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuedTo": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Replace": {
+            "type": "boolean"
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "SignatureAlgorithm": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateBody"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Domains",
+        "/properties/Id",
+        "/properties/IssuedTo",
+        "/properties/Issuer",
+        "/properties/Replace",
+        "/properties/SerialNumber",
+        "/properties/SignatureAlgorithm",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

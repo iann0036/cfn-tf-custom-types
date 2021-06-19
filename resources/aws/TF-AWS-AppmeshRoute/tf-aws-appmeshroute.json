@@ -1,0 +1,538 @@
+{
+    "typeName": "TF::AWS::AppmeshRoute",
+    "description": "Provides an AWS App Mesh route resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppmeshRoute/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number",
+                    "description": "The priority for the route, between `0` and `1000`.\nRoutes are matched based on the specified value, where `0` is the highest priority."
+                },
+                "GrpcRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GrpcRouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Http2Route": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Http2RouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpRouteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpRouteDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GrpcRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RetryPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetryPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Timeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeoutDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Http2RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "RetryPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetryPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Timeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeoutDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HttpRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "RetryPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetryPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Timeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeoutDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TcpRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Timeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeoutDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WeightedTarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WeightedTargetDefinition"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exact": {
+                    "type": "string",
+                    "description": "The header value sent by the client must match the specified value exactly."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "The header value sent by the client must begin with the specified characters."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "The header value sent by the client must include the specified characters."
+                },
+                "Suffix": {
+                    "type": "string",
+                    "description": "The header value sent by the client must end with the specified characters."
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RetryPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpRetryEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of HTTP retry events.\nValid values: `client-error` (HTTP status code 409), `gateway-error` (HTTP status codes 502, 503, and 504), `server-error` (HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511), `stream-error` (retry on refused stream)."
+                },
+                "MaxRetries": {
+                    "type": "number",
+                    "description": "The maximum number of retries."
+                },
+                "TcpRetryEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of TCP retry events. The only valid value is `connection-error`."
+                },
+                "PerRetryTimeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PerRetryTimeoutDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxRetries"
+            ]
+        },
+        "TimeoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Idle": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IdleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "WeightedTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualNode": {
+                    "type": "string",
+                    "description": "The virtual node to associate with the weighted target. Must be between 1 and 255 characters in length."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "The relative weight of the weighted target. An integer between 0 and 100."
+                }
+            },
+            "required": [
+                "VirtualNode",
+                "Weight"
+            ]
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Invert": {
+                    "type": "boolean",
+                    "description": "If `true`, the match is on the opposite of the `match` method and value. Default is `false`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "A name for the HTTP header in the client request that will be matched on."
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PerRetryTimeoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unit": {
+                    "type": "string",
+                    "description": "Retry unit. Valid values: `ms`, `s`."
+                },
+                "Value": {
+                    "type": "number",
+                    "description": "Retry value."
+                }
+            },
+            "required": [
+                "Unit",
+                "Value"
+            ]
+        },
+        "IdleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unit": {
+                    "type": "string",
+                    "description": "The unit of time. Valid values: `ms`, `s`."
+                },
+                "Value": {
+                    "type": "number",
+                    "description": "The number of time units. Minimum value of `0`."
+                }
+            },
+            "required": [
+                "Unit",
+                "Value"
+            ]
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number",
+                    "description": "The end of the range."
+                },
+                "Start": {
+                    "type": "number",
+                    "description": "The start of the range."
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "MeshName": {
+            "type": "string",
+            "description": "The name of the service mesh in which to create the route. Must be between 1 and 255 characters in length."
+        },
+        "MeshOwner": {
+            "type": "string",
+            "description": "The AWS account ID of the service mesh's owner. Defaults to the account ID the [AWS provider][1] is currently connected to."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name to use for the route. Must be between 1 and 255 characters in length."
+        },
+        "ResourceOwner": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VirtualRouterName": {
+            "type": "string",
+            "description": "The name of the virtual router in which to create the route. Must be between 1 and 255 characters in length."
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MeshName",
+        "Name",
+        "VirtualRouterName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/ResourceOwner"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

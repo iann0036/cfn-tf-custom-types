@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::TencentCloud::CamUser",
+    "description": "Provides a resource to manage CAM user.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CamUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConsoleLogin": {
+            "type": "boolean",
+            "description": "Indicate whether the CAM user can login to the web console or not."
+        },
+        "CountryCode": {
+            "type": "string",
+            "description": "Country code of the phone number, for example: '86'."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Email of the CAM user."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to force deletes the CAM user. If set false, the API secret key will be checked and failed when exists; otherwise the user will be deleted directly. Default is false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the CAM user."
+        },
+        "NeedResetPassword": {
+            "type": "boolean",
+            "description": "Indicate whether the CAM user need to reset the password when first logins."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the CAM user. Password should be at least 8 characters and no more than 32 characters, includes uppercase letters, lowercase letters, numbers and special characters. Only required when `console_login` is true. If not set, a random password will be automatically generated."
+        },
+        "PhoneNum": {
+            "type": "string",
+            "description": "Phone number of the CAM user."
+        },
+        "Remark": {
+            "type": "string",
+            "description": "Remark of the CAM user."
+        },
+        "SecretId": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uin": {
+            "type": "number"
+        },
+        "UseApi": {
+            "type": "boolean",
+            "description": "Indicate whether to generate the API secret key or not."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SecretId",
+        "/properties/SecretKey",
+        "/properties/Uid",
+        "/properties/Uin"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/SecretId",
+        "/properties/SecretKey"
+    ]
+}

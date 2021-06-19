@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::OVH::IploadbalancingTcpFarmServer",
+    "description": "Creates a backend server entry linked to loadbalancing group (farm)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IploadbalancingTcpFarmServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "Address of the backend server (IP from either internal or OVH network)."
+        },
+        "Backup": {
+            "type": "boolean",
+            "description": "is it a backup server used in case of failure of all the non-backup backends."
+        },
+        "Chain": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Label for the server."
+        },
+        "FarmId": {
+            "type": "number",
+            "description": "ID of the farm this server is attached to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port that backend will respond on."
+        },
+        "Probe": {
+            "type": "boolean",
+            "description": "defines if backend will be probed to determine health and keep as active in farm if healthy."
+        },
+        "ProxyProtocolVersion": {
+            "type": "string",
+            "description": "version of the PROXY protocol used to pass origin connection information from loadbalancer to recieving service (`v1`, `v2`, `v2-ssl`, `v2-ssl-cn`)."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
+        },
+        "Ssl": {
+            "type": "boolean",
+            "description": "is the connection ciphered with SSL (TLS)."
+        },
+        "Status": {
+            "type": "string",
+            "description": "backend status - `active` or `inactive`."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "used in loadbalancing algorithm."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "FarmId",
+        "ServiceName",
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

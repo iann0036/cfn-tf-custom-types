@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AzureRM::DnsZone",
+    "description": "Enables you to manage DNS zones within Azure DNS. These zones are hosted on Azure's name servers to which you can delegate the zone from the parent domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DnsZone/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SoaRecordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string",
+                    "description": "The email contact for the SOA record."
+                },
+                "ExpireTime": {
+                    "type": "number",
+                    "description": "The expire time for the SOA record. Defaults to `2419200`."
+                },
+                "HostName": {
+                    "type": "string",
+                    "description": "The domain name of the authoritative name server for the SOA record. Defaults to `ns1-03.azure-dns.com.`."
+                },
+                "MinimumTtl": {
+                    "type": "number",
+                    "description": "The minimum Time To Live for the SOA record. By convention, it is used to determine the negative caching duration. Defaults to `300`."
+                },
+                "RefreshTime": {
+                    "type": "number",
+                    "description": "The refresh time for the SOA record. Defaults to `3600`."
+                },
+                "RetryTime": {
+                    "type": "number",
+                    "description": "The retry time for the SOA record. Defaults to `300`."
+                },
+                "SerialNumber": {
+                    "type": "number",
+                    "description": "The serial number for the SOA record. Defaults to `1`."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    },
+                    "description": "A mapping of tags to assign to the Record Set."
+                },
+                "Ttl": {
+                    "type": "number",
+                    "description": "The Time To Live of the SOA Record in seconds. Defaults to `3600`."
+                }
+            },
+            "required": [
+                "Email",
+                "HostName"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxNumberOfRecordSets": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the DNS Zone. Must be a valid domain name."
+        },
+        "NameServers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NumberOfRecordSets": {
+            "type": "number"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "SoaRecord": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SoaRecordDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MaxNumberOfRecordSets",
+        "/properties/NameServers",
+        "/properties/NumberOfRecordSets"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

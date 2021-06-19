@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::HCloud::LoadBalancerNetwork",
+    "description": "Provides a Hetzner Cloud Load Balancer Network to represent a private network on a Load Balancer in the Hetzner Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-LoadBalancerNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnablePublicInterface": {
+            "type": "boolean",
+            "description": "Enable or disable the\nLoad Balancers public interface. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IP to request to be assigned to this Load\nBalancer. If you do not provide this then you will be auto assigned an\nIP address.\n- `enable_public_interface` - (Optional, bool) Enable or disable the\nLoad Balancers public interface. Default: `true`."
+        },
+        "LoadBalancerId": {
+            "type": "number",
+            "description": "ID of the Load Balancer.\n- `network_id` - (Optional, int) ID of the network which should be added\nto the Load Balancer. Required if `subnet_id` is not set. Successful\ncreation of the resource depends on the existence of a subnet in the\nHetzner Cloud Backend. Using `network_id` will not create an explicit\ndependency between the Load Balancer and the subnet. Therefore\n`depends_on` may need to be used. Alternatively the `subnet_id`\nproperty can be used, which will create an explicit dependency between\n`hcloud_load_balancer_network` and the existence of a subnet.\n- `subnet_id` - (Optional, string) ID of the sub-network which should be\nadded to the Load Balancer. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Load Balancer is\ncurrently added to the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this Load\nBalancer. If you do not provide this then you will be auto assigned an\nIP address.\n- `enable_public_interface` - (Optional, bool) Enable or disable the\nLoad Balancers public interface. Default: `true`."
+        },
+        "NetworkId": {
+            "type": "number",
+            "description": "ID of the network which should be added\nto the Load Balancer. Required if `subnet_id` is not set. Successful\ncreation of the resource depends on the existence of a subnet in the\nHetzner Cloud Backend. Using `network_id` will not create an explicit\ndependency between the Load Balancer and the subnet. Therefore\n`depends_on` may need to be used. Alternatively the `subnet_id`\nproperty can be used, which will create an explicit dependency between\n`hcloud_load_balancer_network` and the existence of a subnet.\n- `subnet_id` - (Optional, string) ID of the sub-network which should be\nadded to the Load Balancer. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Load Balancer is\ncurrently added to the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this Load\nBalancer. If you do not provide this then you will be auto assigned an\nIP address.\n- `enable_public_interface` - (Optional, bool) Enable or disable the\nLoad Balancers public interface. Default: `true`."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of the sub-network which should be\nadded to the Load Balancer. Required if `network_id` is not set.\n*Note*: if the `ip` property is missing, the Load Balancer is\ncurrently added to the last created subnet.\n- `ip` - (Optional, string) IP to request to be assigned to this Load\nBalancer. If you do not provide this then you will be auto assigned an\nIP address.\n- `enable_public_interface` - (Optional, bool) Enable or disable the\nLoad Balancers public interface. Default: `true`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Dome9::IamSafeEntity",
+    "description": "Protect cloud accounts that are managed by Dome9. Control access to them with targeted short-term authorizations (involving the Dome9 mobile app).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-IamSafeEntity/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AttachedDome9Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AwsCloudAccountId": {
+            "type": "string",
+            "description": "AWS cloud account id to protect."
+        },
+        "Dome9UsersIdToProtect": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "When ProtectWithElevation mode selected, dome9 users ids must be provided."
+        },
+        "EntityName": {
+            "type": "string",
+            "description": "AWS IAM user or role name to protect."
+        },
+        "EntityType": {
+            "type": "string",
+            "description": "Entity type to protect; can be  \"User\", \"Role\"."
+        },
+        "ExistsInAws": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProtectionMode": {
+            "type": "string",
+            "description": "Protection mode; can be  \"Protect\", \"ProtectWithElevation\"."
+        },
+        "State": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AwsCloudAccountId",
+        "EntityName",
+        "EntityType",
+        "ProtectionMode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AttachedDome9Users",
+        "/properties/ExistsInAws",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

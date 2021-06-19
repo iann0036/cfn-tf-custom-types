@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::OVH::CloudProjectContainerregistry",
+    "description": "Creates a container registry associated with a public cloud project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-CloudProjectContainerregistry/docs/README.md",
+    "definitions": {
+        "PlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Vulnerability": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PlanDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageStorage": {
+                    "type": "number"
+                },
+                "ParallelRequest": {
+                    "type": "number"
+                }
+            }
+        },
+        "PlanDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "string"
+                },
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PlanDefinition"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RegistryLimits": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PlanDefinition2"
+                    }
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Registry name."
+        },
+        "Plan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlanDefinition3"
+            }
+        },
+        "PlanId": {
+            "type": "string",
+            "description": "Plan ID of the registry."
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Region of the registry."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_CLOUD_PROJECT_SERVICE` environment variable is used."
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Region",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/Plan",
+        "/properties/ProjectId",
+        "/properties/Size",
+        "/properties/Status",
+        "/properties/UpdatedAt",
+        "/properties/Url",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

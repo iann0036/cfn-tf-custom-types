@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Thunder::SlbCommonConnRateLimitSrcIp",
+    "description": "`thunder_slb_common_conn_rate_limit_src_ip` Provides details about thunder slb common conn rate limit src ip",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbCommonConnRateLimitSrcIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExceedAction": {
+            "type": "number",
+            "description": "Set action if threshold exceeded."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Limit": {
+            "type": "number",
+            "description": "Set max connections per period."
+        },
+        "LimitPeriod": {
+            "type": "string",
+            "description": "\u2018100\u2019: 100 ms; \u20181000\u2019: 1000 ms;."
+        },
+        "LockOut": {
+            "type": "number",
+            "description": "Set lockout period in seconds if threshold exceeded."
+        },
+        "Log": {
+            "type": "number",
+            "description": "Send log if threshold exceeded."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: Set TCP connection rate limit; \u2018udp\u2019: Set UDP packet rate limit;."
+        },
+        "Shared": {
+            "type": "number",
+            "description": "Set threshold shared amongst all virtual ports."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

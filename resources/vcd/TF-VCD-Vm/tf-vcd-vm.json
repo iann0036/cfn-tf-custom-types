@@ -1,0 +1,393 @@
+{
+    "typeName": "TF::VCD::Vm",
+    "description": "Provides a VMware Cloud Director standalone VM resource. This can be used to create, modify, and delete Standalone VMs.\n\nSupported in provider *v3.2+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-Vm/docs/README.md",
+    "definitions": {
+        "GuestPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InternalDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "number"
+                },
+                "BusType": {
+                    "type": "string"
+                },
+                "DiskId": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInMb": {
+                    "type": "number"
+                },
+                "StorageProfile": {
+                    "type": "string"
+                },
+                "ThinProvisioned": {
+                    "type": "boolean"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                }
+            }
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AllowLocalAdminPassword": {
+                    "type": "boolean"
+                },
+                "AutoGeneratePassword": {
+                    "type": "boolean"
+                },
+                "ChangeSid": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Force": {
+                    "type": "boolean"
+                },
+                "Initscript": {
+                    "type": "string"
+                },
+                "JoinDomain": {
+                    "type": "boolean"
+                },
+                "JoinDomainAccountOu": {
+                    "type": "string"
+                },
+                "JoinDomainName": {
+                    "type": "string"
+                },
+                "JoinDomainPassword": {
+                    "type": "string"
+                },
+                "JoinDomainUser": {
+                    "type": "string"
+                },
+                "JoinOrgDomain": {
+                    "type": "boolean"
+                },
+                "MustChangePasswordOnFirstLogin": {
+                    "type": "boolean"
+                },
+                "NumberOfAutoLogons": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "Name",
+                "UnitNumber"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdapterType": {
+                    "type": "string"
+                },
+                "Connected": {
+                    "type": "boolean"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpAllocationMode": {
+                    "type": "string"
+                },
+                "IsPrimary": {
+                    "type": "boolean"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OverrideTemplateDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "number"
+                },
+                "BusType": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInMb": {
+                    "type": "number"
+                },
+                "StorageProfile": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "BusType",
+                "SizeInMb",
+                "UnitNumber"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptAllEulas": {
+            "type": "boolean"
+        },
+        "BootImage": {
+            "type": "string"
+        },
+        "CatalogName": {
+            "type": "string"
+        },
+        "ComputerName": {
+            "type": "string"
+        },
+        "CpuCores": {
+            "type": "number"
+        },
+        "CpuHotAddEnabled": {
+            "type": "boolean"
+        },
+        "Cpus": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExposeHardwareVirtualization": {
+            "type": "boolean"
+        },
+        "GuestProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestPropertiesDefinition"
+            }
+        },
+        "HardwareVersion": {
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternalDiskDefinition"
+            }
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "MemoryHotAddEnabled": {
+            "type": "boolean"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkDhcpWaitSeconds": {
+            "type": "number"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "OsType": {
+            "type": "string"
+        },
+        "PowerOn": {
+            "type": "boolean"
+        },
+        "PreventUpdatePowerOff": {
+            "type": "boolean"
+        },
+        "SizingPolicyId": {
+            "type": "string"
+        },
+        "StorageProfile": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "VappName": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "VmNameInTemplate": {
+            "type": "string"
+        },
+        "VmType": {
+            "type": "string"
+        },
+        "Customization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomizationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "OverrideTemplateDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OverrideTemplateDiskDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InternalDisk",
+        "/properties/VmType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CustomizationDefinition/AdminPassword",
+        "/definitions/CustomizationDefinition/JoinDomainPassword"
+    ]
+}

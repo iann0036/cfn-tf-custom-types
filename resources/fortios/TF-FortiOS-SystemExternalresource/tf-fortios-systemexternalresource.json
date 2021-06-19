@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::FortiOS::SystemExternalresource",
+    "description": "Configure external resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemExternalresource/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "number",
+            "description": "User resource category."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "External resource name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "HTTP basic authentication password."
+        },
+        "RefreshRate": {
+            "type": "number",
+            "description": "Time interval to refresh external resource (1 - 43200 min, default = 5 min)."
+        },
+        "Resource": {
+            "type": "string",
+            "description": "URI of external resource."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IPv4 address used to communicate with server."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable user resource. Valid values: `enable`, `disable`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "User resource type. Valid values: `category`, `address`, `domain`, `malware`."
+        },
+        "UserAgent": {
+            "type": "string",
+            "description": "Override HTTP User-Agent header used when retrieving this external resource."
+        },
+        "Username": {
+            "type": "string",
+            "description": "HTTP basic authentication user name."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RefreshRate",
+        "Resource"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

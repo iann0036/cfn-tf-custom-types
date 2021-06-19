@@ -1,0 +1,661 @@
+{
+    "typeName": "TF::Datadog::LogsCustomPipeline",
+    "description": "CloudFormation equivalent of datadog_logs_custom_pipeline",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-LogsCustomPipeline/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "ProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArithmeticProcessor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArithmeticProcessorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AttributeRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttributeRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CategoryProcessor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CategoryProcessorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DateRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GeoIpParser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GeoIpParserDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GrokParser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GrokParserDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LookupProcessor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LookupProcessorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MessageRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MessageRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ServiceRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StatusRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatusRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StringBuilderProcessor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringBuilderProcessorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TraceIdRemapper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TraceIdRemapperDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UrlParser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlParserDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UserAgentParser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UserAgentParserDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ArithmeticProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsReplaceMissing": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Expression",
+                "Target"
+            ]
+        },
+        "AttributeRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideOnConflict": {
+                    "type": "boolean"
+                },
+                "PreserveSource": {
+                    "type": "boolean"
+                },
+                "SourceType": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "TargetFormat": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceType",
+                "Sources",
+                "Target",
+                "TargetType"
+            ]
+        },
+        "CategoryProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CategoryDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Target"
+            ]
+        },
+        "DateRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Sources"
+            ]
+        },
+        "GeoIpParserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Sources",
+                "Target"
+            ]
+        },
+        "GrokParserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Samples": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Grok": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GrokDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Source"
+            ]
+        },
+        "LookupProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultLookup": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "LookupTable": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LookupTable",
+                "Source",
+                "Target"
+            ]
+        },
+        "MessageRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Sources"
+            ]
+        },
+        "PipelineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Processor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessorDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ServiceRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Sources"
+            ]
+        },
+        "StatusRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Sources"
+            ]
+        },
+        "StringBuilderProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsReplaceMissing": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Target",
+                "Template"
+            ]
+        },
+        "TraceIdRemapperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Sources"
+            ]
+        },
+        "UrlParserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NormalizeEndingSlashes": {
+                    "type": "boolean"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Sources",
+                "Target"
+            ]
+        },
+        "UserAgentParserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsEncoded": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Sources",
+                "Target"
+            ]
+        },
+        "CategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "GrokDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchRules": {
+                    "type": "string"
+                },
+                "SupportRules": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchRules",
+                "SupportRules"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            },
+            "minItems": 1
+        },
+        "Processor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProcessorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

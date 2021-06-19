@@ -1,0 +1,281 @@
+{
+    "typeName": "TF::NSXT::PolicyGroup",
+    "description": "This resource provides a method for the management of an inventory Group and its members. Groups as often used as sources and destinations, as well as in the Applied To field, in firewall rules.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyGroup/docs/README.md",
+    "definitions": {
+        "ConjunctionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator"
+            ]
+        },
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionDefinition"
+                    },
+                    "maxItems": 5
+                },
+                "IpaddressExpression": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpaddressExpressionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MacaddressExpression": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MacaddressExpressionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PathExpression": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PathExpressionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExtendedCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IdentityGroupDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "MemberType": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "MemberType",
+                "Operator",
+                "Value"
+            ]
+        },
+        "IpaddressExpressionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "IpAddresses"
+            ]
+        },
+        "MacaddressExpressionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MacAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MacAddresses"
+            ]
+        },
+        "PathExpressionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MemberPaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MemberPaths"
+            ]
+        },
+        "IdentityGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistinguishedName": {
+                    "type": "string"
+                },
+                "DomainBaseDistinguishedName": {
+                    "type": "string"
+                },
+                "Sid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to use for the Group. This domain must already exist. For VMware Cloud on AWS use `cgw`. For Global Manager, please use site id for this field. If not specified, this field is default to `default`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the group resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "Conjunction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConjunctionDefinition"
+            }
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriteriaDefinition"
+            }
+        },
+        "ExtendedCriteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtendedCriteriaDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,572 @@
+{
+    "typeName": "TF::AWS::LbListenerRule",
+    "description": "Provides a Load Balancer Listener Rule resource.\n\n~> **Note:** `aws_alb_listener_rule` is known as `aws_lb_listener_rule`. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LbListenerRule/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Order": {
+                    "type": "number"
+                },
+                "TargetGroupArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "AuthenticateCognito": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateCognitoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AuthenticateOidc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateOidcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FixedResponse": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedResponseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Forward": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostHeaderDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeaderDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpRequestMethod": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpRequestMethodDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PathPattern": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PathPatternDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryString": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringDefinition"
+                    }
+                },
+                "SourceIp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceIpDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthenticateCognitoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationRequestExtraParamsDefinition"
+                    }
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "UserPoolArn": {
+                    "type": "string"
+                },
+                "UserPoolClientId": {
+                    "type": "string"
+                },
+                "UserPoolDomain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserPoolArn",
+                "UserPoolClientId",
+                "UserPoolDomain"
+            ]
+        },
+        "AuthenticationRequestExtraParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthenticateOidcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationRequestExtraParamsDefinition2"
+                    }
+                },
+                "AuthorizationEndpoint": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "Issuer": {
+                    "type": "string"
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "TokenEndpoint": {
+                    "type": "string"
+                },
+                "UserInfoEndpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthorizationEndpoint",
+                "ClientId",
+                "ClientSecret",
+                "Issuer",
+                "TokenEndpoint",
+                "UserInfoEndpoint"
+            ]
+        },
+        "AuthenticationRequestExtraParamsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FixedResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "MessageBody": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType"
+            ]
+        },
+        "ForwardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Stickiness": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StickinessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TargetGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupDefinition"
+                    },
+                    "maxItems": 5,
+                    "minItems": 2
+                }
+            },
+            "required": []
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatusCode"
+            ]
+        },
+        "HostHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "HttpHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpHeaderName": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "HttpHeaderName",
+                "Values"
+            ]
+        },
+        "HttpRequestMethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "PathPatternDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "QueryStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "SourceIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "StickinessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        },
+        "TargetGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Arn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerArn": {
+            "type": "string",
+            "description": "The ARN of the listener to which to attach the rule."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority for the rule between `1` and `50000`. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            },
+            "minItems": 1
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConditionDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ListenerArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthenticateOidcDefinition/ClientSecret"
+    ]
+}

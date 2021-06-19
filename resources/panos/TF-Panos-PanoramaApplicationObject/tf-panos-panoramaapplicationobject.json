@@ -1,0 +1,308 @@
+{
+    "typeName": "TF::Panos::PanoramaApplicationObject",
+    "description": "This resource allows you to add/update/delete Panorama application objects.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaApplicationObject/docs/README.md",
+    "definitions": {
+        "DefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Icmp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Icmp6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Icmp6Definition"
+                    },
+                    "maxItems": 1
+                },
+                "IpProtocol": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpProtocolDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScanningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataPatterns": {
+                    "type": "boolean",
+                    "description": "Data pattern scanning."
+                },
+                "FileTypes": {
+                    "type": "boolean",
+                    "description": "File type scanning."
+                },
+                "Viruses": {
+                    "type": "boolean",
+                    "description": "Virus scanning."
+                }
+            },
+            "required": []
+        },
+        "TimeoutSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TcpHalfClosed": {
+                    "type": "number",
+                    "description": "TCP half closed timeout."
+                },
+                "TcpTimeWait": {
+                    "type": "number",
+                    "description": "TCP time wait timeout."
+                },
+                "TcpTimeout": {
+                    "type": "number",
+                    "description": "TCP timeout."
+                },
+                "Timeout": {
+                    "type": "number",
+                    "description": "The timeout."
+                },
+                "UdpTimeout": {
+                    "type": "number",
+                    "description": "UDP timeout."
+                }
+            },
+            "required": []
+        },
+        "IcmpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Icmp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "IpProtocolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Ports"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbleToFileTransfer": {
+            "type": "boolean",
+            "description": "Able to file transfer."
+        },
+        "AlgDisableCapability": {
+            "type": "string",
+            "description": "The alg disable capability."
+        },
+        "Category": {
+            "type": "string",
+            "description": "The category."
+        },
+        "ContinueScanningForOtherApplications": {
+            "type": "boolean",
+            "description": "Continue scanning for\nother applications."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The object's description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group (default: `shared`)."
+        },
+        "EvasiveBehavior": {
+            "type": "boolean",
+            "description": "App is evasive."
+        },
+        "ExcessiveBandwidth": {
+            "type": "boolean",
+            "description": "Excessive bandwidth use."
+        },
+        "HasKnownVulnerability": {
+            "type": "boolean",
+            "description": "Has known vulnerabilities."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The object's name."
+        },
+        "NoAppIdCaching": {
+            "type": "boolean",
+            "description": "No appid caching."
+        },
+        "ParentApp": {
+            "type": "string",
+            "description": "The parent application."
+        },
+        "PervasiveUse": {
+            "type": "boolean",
+            "description": "App is pervasive."
+        },
+        "ProneToMisuse": {
+            "type": "boolean",
+            "description": "Prone to misuse."
+        },
+        "Risk": {
+            "type": "number",
+            "description": "The risk (default: 1)."
+        },
+        "Subcategory": {
+            "type": "string",
+            "description": "The subcategory."
+        },
+        "Technology": {
+            "type": "string",
+            "description": "The technology."
+        },
+        "TunnelsOtherApplications": {
+            "type": "boolean",
+            "description": "This application tunnels other apps."
+        },
+        "UsedByMalware": {
+            "type": "boolean",
+            "description": "App is used by malware."
+        },
+        "Defaults": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Scanning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScanningDefinition"
+            },
+            "maxItems": 1
+        },
+        "TimeoutSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeoutSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "Name",
+        "Subcategory",
+        "Technology"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

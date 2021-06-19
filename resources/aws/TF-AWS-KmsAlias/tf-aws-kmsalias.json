@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::AWS::KmsAlias",
+    "description": "Provides an alias for a KMS customer master key. AWS Console enforces 1-to-1 mapping between aliases & keys,\nbut API (hence Terraform too) allows you to create as many aliases as\nthe [account limits](http://docs.aws.amazon.com/kms/latest/developerguide/limits.html) allow you.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-KmsAlias/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The display name of the alias. The name must start with the word \"alias\" followed by a forward slash (alias/)."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates an unique alias beginning with the specified prefix.\nThe name must start with the word \"alias\" followed by a forward slash (alias/).  Conflicts with `name`."
+        },
+        "TargetKeyArn": {
+            "type": "string"
+        },
+        "TargetKeyId": {
+            "type": "string",
+            "description": "Identifier for the key for which the alias is for, can be either an ARN or key_id."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TargetKeyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/TargetKeyArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

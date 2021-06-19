@@ -1,0 +1,284 @@
+{
+    "typeName": "TF::Google::ComputeAutoscaler",
+    "description": "Represents an Autoscaler resource.\n\nAutoscalers allow you to automatically scale virtual machine instances in\nmanaged instance groups according to an autoscaling policy that you\ndefine.\n\n\nTo get more information about Autoscaler, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/autoscalers)\n* How-to Guides\n    * [Autoscaling Groups of Instances](https://cloud.google.com/compute/docs/autoscaler/)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=autoscaler_single_instance&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeAutoscaler/docs/README.md",
+    "definitions": {
+        "AutoscalingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CooldownPeriod": {
+                    "type": "number"
+                },
+                "MaxReplicas": {
+                    "type": "number"
+                },
+                "MinReplicas": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "CpuUtilization": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CpuUtilizationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LoadBalancingUtilization": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoadBalancingUtilizationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    }
+                },
+                "ScaleInControl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScaleInControlDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScalingSchedules": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScalingSchedulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MaxReplicas",
+                "MinReplicas"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CpuUtilizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredictiveMethod": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Target"
+            ]
+        },
+        "LoadBalancingUtilizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Target": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Target"
+            ]
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ScaleInControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeWindowSec": {
+                    "type": "number"
+                },
+                "MaxScaledInReplicas": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxScaledInReplicasDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScalingSchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "DurationSec": {
+                    "type": "number"
+                },
+                "MinRequiredReplicas": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The identifier for this object. Format specified above."
+                },
+                "Schedule": {
+                    "type": "string"
+                },
+                "TimeZone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DurationSec",
+                "MinRequiredReplicas",
+                "Name",
+                "Schedule"
+            ]
+        },
+        "MaxScaledInReplicasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fixed": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "AutoscalingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalingPolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Target"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

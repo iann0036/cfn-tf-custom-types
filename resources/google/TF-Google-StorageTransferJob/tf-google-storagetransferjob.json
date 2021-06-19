@@ -1,0 +1,452 @@
+{
+    "typeName": "TF::Google::StorageTransferJob",
+    "description": "Creates a new Transfer Job in Google Cloud Storage Transfer.\n\nTo get more information about Google Cloud Storage Transfer, see:\n\n* [Overview](https://cloud.google.com/storage-transfer/docs/overview)\n* [API documentation](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs)\n* How-to Guides\n    * [Configuring Access to Data Sources and Sinks](https://cloud.google.com/storage-transfer/docs/configure-access)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-StorageTransferJob/docs/README.md",
+    "definitions": {
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScheduleEndDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleEndDateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScheduleStartDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleStartDateDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "StartTimeOfDay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartTimeOfDayDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TransferSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsS3DataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsS3DataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureBlobStorageDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureBlobStorageDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcsDataSink": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSinkDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcsDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ObjectConditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ObjectConditionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TransferOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TransferOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScheduleEndDateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number",
+                    "description": "Day of month. Must be from 1 to 31 and valid for the year and month."
+                },
+                "Month": {
+                    "type": "number",
+                    "description": "Month of year. Must be from 1 to 12."
+                },
+                "Year": {
+                    "type": "number",
+                    "description": "Year of date. Must be from 1 to 9999."
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "ScheduleStartDateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "StartTimeOfDayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hours": {
+                    "type": "number",
+                    "description": "Hours of day in 24 hour format. Should be from 0 to 23."
+                },
+                "Minutes": {
+                    "type": "number",
+                    "description": "Minutes of hour of day. Must be from 0 to 59."
+                },
+                "Nanos": {
+                    "type": "number",
+                    "description": "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."
+                },
+                "Seconds": {
+                    "type": "number",
+                    "description": "Seconds of minutes of the time. Must normally be from 0 to 59."
+                }
+            },
+            "required": [
+                "Hours",
+                "Minutes",
+                "Nanos",
+                "Seconds"
+            ]
+        },
+        "AwsS3DataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string",
+                    "description": "S3 Bucket name."
+                },
+                "AwsAccessKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsAccessKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "AzureBlobStorageDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Container": {
+                    "type": "string",
+                    "description": "The container to transfer from the Azure Storage account.`."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'."
+                },
+                "StorageAccount": {
+                    "type": "string",
+                    "description": "The name of the Azure Storage account."
+                },
+                "AzureCredentials": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureCredentialsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Container",
+                "StorageAccount"
+            ]
+        },
+        "GcsDataSinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string",
+                    "description": "Google Cloud Storage bucket name."
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "GcsDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string",
+                    "description": "Google Cloud Storage bucket name."
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "HttpDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListUrl": {
+                    "type": "string",
+                    "description": "The URL that points to the file that stores the object list entries. This file must allow public access. Currently, only URLs with HTTP and HTTPS schemes are supported."
+                }
+            },
+            "required": [
+                "ListUrl"
+            ]
+        },
+        "ObjectConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "`exclude_prefixes` must follow the requirements described for `include_prefixes`. See [Requirements](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec#ObjectConditions)."
+                },
+                "IncludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "If `include_refixes` is specified, objects that satisfy the object conditions must have names that start with one of the `include_prefixes` and that do not start with any of the `exclude_prefixes`. If `include_prefixes` is not specified, all objects except those that have names starting with one of the `exclude_prefixes` must satisfy the object conditions. See [Requirements](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec#ObjectConditions)."
+                },
+                "MaxTimeElapsedSinceLastModification": {
+                    "type": "string",
+                    "description": "A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"."
+                },
+                "MinTimeElapsedSinceLastModification": {
+                    "type": "string",
+                    "description": "A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"."
+                }
+            },
+            "required": []
+        },
+        "TransferOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteObjectsFromSourceAfterTransfer": {
+                    "type": "boolean",
+                    "description": "Whether objects should be deleted from the source after they are transferred to the sink. Note that this option and `delete_objects_unique_in_sink` are mutually exclusive."
+                },
+                "DeleteObjectsUniqueInSink": {
+                    "type": "boolean",
+                    "description": "Whether objects that exist only in the sink should be deleted. Note that this option and\n`delete_objects_from_source_after_transfer` are mutually exclusive."
+                },
+                "OverwriteObjectsAlreadyExistingInSink": {
+                    "type": "boolean",
+                    "description": "Whether overwriting objects that already exist in the sink is allowed."
+                }
+            },
+            "required": []
+        },
+        "AwsAccessKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string",
+                    "description": "AWS Key ID."
+                },
+                "SecretAccessKey": {
+                    "type": "string",
+                    "description": "AWS Secret Access Key."
+                }
+            },
+            "required": [
+                "AccessKeyId",
+                "SecretAccessKey"
+            ]
+        },
+        "AzureCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SasToken": {
+                    "type": "string",
+                    "description": "Azure shared access signature. See [Grant limited access to Azure Storage resources using shared access signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)."
+                }
+            },
+            "required": [
+                "SasToken"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "DeletionTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Unique description to identify the Transfer Job."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModificationTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**."
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TransferSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TransferSpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/DeletionTime",
+        "/properties/Id",
+        "/properties/LastModificationTime",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AwsAccessKeyDefinition/AccessKeyId",
+        "/definitions/AwsAccessKeyDefinition/SecretAccessKey",
+        "/definitions/AzureCredentialsDefinition/SasToken"
+    ]
+}

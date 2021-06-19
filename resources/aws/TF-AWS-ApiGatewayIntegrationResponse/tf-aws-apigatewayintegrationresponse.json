@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::AWS::ApiGatewayIntegrationResponse",
+    "description": "Provides an HTTP Method Integration Response for an API Gateway Resource.\n\n-> **Note:** Depends on having `aws_api_gateway_integration` inside your rest api. To ensure this\nyou might need to add an explicit `depends_on` for clean runs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayIntegrationResponse/docs/README.md",
+    "definitions": {
+        "ResponseParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ResponseTemplatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentHandling": {
+            "type": "string",
+            "description": "Specifies how to handle request payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`. If this property is not defined, the response payload will be passed through from the integration response to the method response without modification."
+        },
+        "HttpMethod": {
+            "type": "string",
+            "description": "The HTTP method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The API resource ID."
+        },
+        "ResponseParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseParametersDefinition"
+            },
+            "description": "A map of response parameters that can be read from the backend response.\nFor example: `response_parameters = { \"method.response.header.X-Some-Header\" = \"integration.response.header.X-Some-Other-Header\" }`."
+        },
+        "ResponseTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseTemplatesDefinition"
+            },
+            "description": "A map specifying the templates used to transform the integration response body."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated REST API."
+        },
+        "SelectionPattern": {
+            "type": "string",
+            "description": "Specifies the regular expression pattern used to choose\nan integration response based on the response from the backend. Omit configuring this to make the integration the default one.\nIf the backend is an `AWS` Lambda function, the AWS Lambda function error header is matched.\nFor all other `HTTP` and `AWS` backends, the HTTP status code is matched."
+        },
+        "StatusCode": {
+            "type": "string",
+            "description": "The HTTP status code."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HttpMethod",
+        "ResourceId",
+        "RestApiId",
+        "StatusCode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

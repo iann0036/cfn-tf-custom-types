@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::Alicloud::LogStoreIndex",
+    "description": "Log Service provides the LogSearch/Analytics function to query and analyze large amounts of logs in real time.\nYou can use this function by enabling the index and field statistics. [Refer to details](https://www.alibabacloud.com/help/doc-detail/43772.htm)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-LogStoreIndex/docs/README.md",
+    "definitions": {
+        "FieldSearchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string",
+                    "description": "The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "CaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether the case sensitive for the field. Default to false. It is valid when \"type\" is \"text\" or \"json\".\n* `include_chinese` - (Optional) Whether includes the chinese for the field. Default to false. It is valid when \"type\" is \"text\" or \"json\".\n* `token` - (Optional) The string of several split words, like \"\\r\", \"#\". It is valid when \"type\" is \"text\" or \"json\".\n* `enable_analytics` - (Optional) Whether to enable field analytics. Default to true.\n* `json_keys` - (Optional, Available in 1.66.0+) Use nested index when type is json\n* `name` - (Required) When using the json_keys field, this field is required.\n* `type` - (Optional) The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "EnableAnalytics": {
+                    "type": "boolean",
+                    "description": "Whether to enable field analytics. Default to true.\n* `json_keys` - (Optional, Available in 1.66.0+) Use nested index when type is json\n* `name` - (Required) When using the json_keys field, this field is required.\n* `type` - (Optional) The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "IncludeChinese": {
+                    "type": "boolean",
+                    "description": "Whether includes the chinese for the field. Default to false. It is valid when \"type\" is \"text\" or \"json\".\n* `token` - (Optional) The string of several split words, like \"\\r\", \"#\". It is valid when \"type\" is \"text\" or \"json\".\n* `enable_analytics` - (Optional) Whether to enable field analytics. Default to true.\n* `json_keys` - (Optional, Available in 1.66.0+) Use nested index when type is json\n* `name` - (Required) When using the json_keys field, this field is required.\n* `type` - (Optional) The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "When using the json_keys field, this field is required.\n* `type` - (Optional) The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "Token": {
+                    "type": "string",
+                    "description": "The string of several split words, like \"\\r\", \"#\". It is valid when \"type\" is \"text\" or \"json\".\n* `enable_analytics` - (Optional) Whether to enable field analytics. Default to true.\n* `json_keys` - (Optional, Available in 1.66.0+) Use nested index when type is json\n* `name` - (Required) When using the json_keys field, this field is required.\n* `type` - (Optional) The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of one field. Valid values: [\"long\", \"text\", \"double\"]. Default to \"long\"\n* `alias` - (Optional) The alias of one field.\n* `doc_value` - (Optional) Whether to enable statistics. default to true."
+                },
+                "JsonKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/JsonKeysDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FullTextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean",
+                    "description": "Whether the case sensitive. Default to false.\n* `include_chinese` - (Optional) Whether includes the chinese. Default to false.\n* `token` - (Optional) The string of several split words, like \"\\r\", \"#\"."
+                },
+                "IncludeChinese": {
+                    "type": "boolean",
+                    "description": "Whether includes the chinese. Default to false.\n* `token` - (Optional) The string of several split words, like \"\\r\", \"#\"."
+                },
+                "Token": {
+                    "type": "string",
+                    "description": "The string of several split words, like \"\\r\", \"#\"."
+                }
+            },
+            "required": []
+        },
+        "JsonKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "DocValue": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Logstore": {
+            "type": "string",
+            "description": "The log store name to the query index belongs."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The project name to the log store belongs."
+        },
+        "FieldSearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FieldSearchDefinition"
+            }
+        },
+        "FullText": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FullTextDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Logstore",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

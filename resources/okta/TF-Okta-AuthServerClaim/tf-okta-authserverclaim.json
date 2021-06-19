@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::Okta::AuthServerClaim",
+    "description": "Creates an Authorization Server Claim.\n\nThis resource allows you to create and configure an Authorization Server Claim.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServerClaim/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlwaysIncludeInToken": {
+            "type": "boolean",
+            "description": "Specifies whether to include claims in token, by default it is set to `true`."
+        },
+        "AuthServerId": {
+            "type": "string",
+            "description": "ID of the authorization server."
+        },
+        "ClaimType": {
+            "type": "string",
+            "description": "Specifies whether the claim is for an access token `\"RESOURCE\"` or ID token `\"IDENTITY\"`."
+        },
+        "GroupFilterType": {
+            "type": "string",
+            "description": "Specifies the type of group filter if `value_type` is `\"GROUPS\"`. Can be set to one of the following `\"STARTS_WITH\"`, `\"EQUALS\"`, `\"CONTAINS\"`, `\"REGEX\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the claim."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of scopes the auth server claim is tied to."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the application. It defaults to `\"ACTIVE\"`."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the claim."
+        },
+        "ValueType": {
+            "type": "string",
+            "description": "The type of value of the claim. It can be set to `\"EXPRESSION\"` or `\"GROUPS\"`. It defaults to `\"EXPRESSION\"`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthServerId",
+        "ClaimType",
+        "Name",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

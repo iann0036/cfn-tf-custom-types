@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::AWS::KmsCiphertext",
+    "description": "The KMS ciphertext resource allows you to encrypt plaintext into ciphertext\nby using an AWS KMS customer master key. The value returned by this resource\nis stable across every apply. For a changing ciphertext value each apply, see\nthe [`aws_kms_ciphertext` data source](/docs/providers/aws/d/kms_ciphertext.html).\n\n~> **Note:** All arguments including the plaintext be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-KmsCiphertext/docs/README.md",
+    "definitions": {
+        "ContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CiphertextBlob": {
+            "type": "string"
+        },
+        "Context": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContextDefinition"
+            },
+            "description": "An optional mapping that makes up the encryption context."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "Globally unique key ID for the customer master key."
+        },
+        "Plaintext": {
+            "type": "string",
+            "description": "Data to be encrypted. Note that this may show up in logs, and it will be stored in the state file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyId",
+        "Plaintext"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CiphertextBlob",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Plaintext"
+    ]
+}

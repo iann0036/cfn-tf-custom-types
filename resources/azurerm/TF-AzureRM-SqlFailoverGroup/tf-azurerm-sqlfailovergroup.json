@@ -1,0 +1,206 @@
+{
+    "typeName": "TF::AzureRM::SqlFailoverGroup",
+    "description": "Create a failover group of databases on a collection of Azure SQL servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SqlFailoverGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PartnerServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "the SQL server ID."
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ReadWriteEndpointFailoverPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GraceMinutes": {
+                    "type": "number",
+                    "description": "Applies only if `mode` is `Automatic`. The grace period in minutes before failover with data loss is attempted."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "the failover mode. Possible values are `Manual`, `Automatic`."
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "ReadonlyEndpointFailoverPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string",
+                    "description": "Failover policy for the read-only endpoint. Possible values are `Enabled`, and `Disabled`."
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Databases": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of database ids to add to the failover group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the failover group. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group containing the SQL server."
+        },
+        "Role": {
+            "type": "string"
+        },
+        "ServerName": {
+            "type": "string",
+            "description": "The name of the primary SQL server. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "PartnerServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PartnerServersDefinition"
+            },
+            "minItems": 1
+        },
+        "ReadWriteEndpointFailoverPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReadWriteEndpointFailoverPolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ReadonlyEndpointFailoverPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReadonlyEndpointFailoverPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "ServerName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Location",
+        "/properties/Role"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

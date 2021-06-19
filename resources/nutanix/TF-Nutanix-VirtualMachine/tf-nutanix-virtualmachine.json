@@ -1,0 +1,818 @@
+{
+    "typeName": "TF::Nutanix::VirtualMachine",
+    "description": "Provides a Nutanix Virtual Machine resource to Create a virtual machine.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanix/TF-Nutanix-VirtualMachine/docs/README.md",
+    "definitions": {
+        "AvailabilityZoneReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BootDeviceDiskAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuestCustomizationCloudInitCustomKeyValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuestCustomizationSysprepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuestCustomizationSysprepCustomKeyValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HostReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NgtCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NicListStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "NicListStatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NicListStatusDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FloatingIp": {
+                    "type": "string"
+                },
+                "IpEndpointList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NicListStatusDefinition"
+                    }
+                },
+                "IsConnected": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "NetworkFunctionChainReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NicListStatusDefinition2"
+                    }
+                },
+                "NetworkFunctionNicType": {
+                    "type": "string"
+                },
+                "NicType": {
+                    "type": "string"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "NutanixGuestToolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OwnerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParentReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProjectReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CategoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiskListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataSourceReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataSourceReferenceDefinition"
+                    }
+                },
+                "DiskSizeBytes": {
+                    "type": "number"
+                },
+                "DiskSizeMib": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VolumeGroupReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeGroupReferenceDefinition"
+                    }
+                },
+                "DeviceProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DevicePropertiesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StorageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DataSourceReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeGroupReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GpuListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceId": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Vendor": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NicListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsConnected": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "NetworkFunctionChainReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkFunctionChainReferenceDefinition"
+                    }
+                },
+                "NetworkFunctionNicType": {
+                    "type": "string"
+                },
+                "NicType": {
+                    "type": "string"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "IpEndpointList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpEndpointListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworkFunctionChainReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SerialPortListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "IsConnected": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DevicePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceType": {
+                    "type": "string"
+                },
+                "DiskAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DiskAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StorageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlashMode": {
+                    "type": "string"
+                },
+                "StorageContainerReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageContainerReferenceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpEndpointListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StorageContainerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "AvailabilityZoneReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AvailabilityZoneReferenceDefinition"
+            }
+        },
+        "BootDeviceDiskAddress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BootDeviceDiskAddressDefinition"
+            }
+        },
+        "BootDeviceMacAddress": {
+            "type": "string"
+        },
+        "BootDeviceOrderList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BootType": {
+            "type": "string"
+        },
+        "CloudInitCdromUuid": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "ClusterUuid": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableScriptExec": {
+            "type": "boolean"
+        },
+        "GuestCustomizationCloudInitCustomKeyValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestCustomizationCloudInitCustomKeyValuesDefinition"
+            }
+        },
+        "GuestCustomizationCloudInitMetaData": {
+            "type": "string",
+            "description": "The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded."
+        },
+        "GuestCustomizationCloudInitUserData": {
+            "type": "string"
+        },
+        "GuestCustomizationIsOverridable": {
+            "type": "boolean"
+        },
+        "GuestCustomizationSysprep": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestCustomizationSysprepDefinition"
+            }
+        },
+        "GuestCustomizationSysprepCustomKeyValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestCustomizationSysprepCustomKeyValuesDefinition"
+            }
+        },
+        "GuestOsId": {
+            "type": "string"
+        },
+        "HardwareClockTimezone": {
+            "type": "string"
+        },
+        "HostReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HostReferenceDefinition"
+            }
+        },
+        "HypervisorType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MachineType": {
+            "type": "string"
+        },
+        "MemorySizeMib": {
+            "type": "number"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NgtCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NgtCredentialsDefinition"
+            }
+        },
+        "NgtEnabledCapabilityList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Application names that are enabled."
+        },
+        "NicListStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicListStatusDefinition3"
+            }
+        },
+        "NumSockets": {
+            "type": "number"
+        },
+        "NumVcpusPerSocket": {
+            "type": "number"
+        },
+        "NumVnumaNodes": {
+            "type": "number"
+        },
+        "NutanixGuestTools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NutanixGuestToolsDefinition"
+            }
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OwnerReferenceDefinition"
+            }
+        },
+        "ParentReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParentReferenceDefinition"
+            }
+        },
+        "PowerState": {
+            "type": "string"
+        },
+        "PowerStateMechanism": {
+            "type": "string"
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProjectReferenceDefinition"
+            }
+        },
+        "ShouldFailOnScriptFailure": {
+            "type": "boolean"
+        },
+        "State": {
+            "type": "string"
+        },
+        "UseHotAdd": {
+            "type": "boolean"
+        },
+        "VgaConsoleEnabled": {
+            "type": "boolean"
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CategoriesDefinition"
+            }
+        },
+        "DiskList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskListDefinition"
+            }
+        },
+        "GpuList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GpuListDefinition"
+            }
+        },
+        "NicList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicListDefinition"
+            }
+        },
+        "SerialPortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SerialPortListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterUuid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/ClusterName",
+        "/properties/HostReference",
+        "/properties/HypervisorType",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/NicListStatus",
+        "/properties/PowerState",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

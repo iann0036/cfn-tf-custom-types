@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::FortiOS::EndpointcontrolFctems",
+    "description": "Configure FortiClient Enterprise Management Server (EMS) entries.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-EndpointcontrolFctems/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "string",
+            "description": "FortiClient EMS admin password."
+        },
+        "AdminUsername": {
+            "type": "string",
+            "description": "FortiClient EMS admin username."
+        },
+        "CallTimeout": {
+            "type": "number",
+            "description": "FortiClient EMS call timeout in milliseconds (500 - 30000 milliseconds, default = 5000)."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "FortiClient EMS certificate."
+        },
+        "CloudServerType": {
+            "type": "string",
+            "description": "Cloud server type. Valid values: `production`, `alpha`, `beta`."
+        },
+        "FortinetoneCloudAuthentication": {
+            "type": "string",
+            "description": "Enable/disable authentication of FortiClient EMS Cloud through FortiCloud account. Valid values: `enable`, `disable`."
+        },
+        "HttpsPort": {
+            "type": "number",
+            "description": "FortiClient EMS HTTPS access port number. (1 - 65535, default: 443)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "FortiClient Enterprise Management Server (EMS) name."
+        },
+        "PullAvatars": {
+            "type": "string",
+            "description": "Enable/disable pulling avatars from EMS. Valid values: `enable`, `disable`."
+        },
+        "PullSysinfo": {
+            "type": "string",
+            "description": "Enable/disable pulling SysInfo from EMS. Valid values: `enable`, `disable`."
+        },
+        "PullTags": {
+            "type": "string",
+            "description": "Enable/disable pulling FortiClient user tags from EMS. Valid values: `enable`, `disable`."
+        },
+        "PullVulnerabilities": {
+            "type": "string",
+            "description": "Enable/disable pulling vulnerabilities from EMS. Valid values: `enable`, `disable`."
+        },
+        "SerialNumber": {
+            "type": "string",
+            "description": "FortiClient EMS Serial Number."
+        },
+        "Server": {
+            "type": "string",
+            "description": "FortiClient EMS FQDN or IPv4 address."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "REST API call source IP."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword"
+    ]
+}

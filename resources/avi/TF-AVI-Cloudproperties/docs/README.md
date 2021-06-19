@@ -1,0 +1,103 @@
+# TF::AVI::Cloudproperties
+
+The CloudProperties resource allows the creation and management of Avi CloudProperties
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::AVI::Cloudproperties",
+    "Properties" : {
+        "<a href="#ccvtypes" title="CcVtypes">CcVtypes</a>" : <i>[ String, ... ]</i>,
+        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>,
+        "<a href="#ccprops" title="CcProps">CcProps</a>" : <i>[ <a href="ccpropsdefinition.md">CcPropsDefinition</a>, ... ]</i>,
+        "<a href="#hypprops" title="HypProps">HypProps</a>" : <i>[ <a href="hyppropsdefinition.md">HypPropsDefinition</a>, ... ]</i>,
+        "<a href="#info" title="Info">Info</a>" : <i>[ <a href="infodefinition.md">InfoDefinition</a>, ... ]</i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::AVI::Cloudproperties
+Properties:
+    <a href="#ccvtypes" title="CcVtypes">CcVtypes</a>: <i>
+      - String</i>
+    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
+    <a href="#ccprops" title="CcProps">CcProps</a>: <i>
+      - <a href="ccpropsdefinition.md">CcPropsDefinition</a></i>
+    <a href="#hypprops" title="HypProps">HypProps</a>: <i>
+      - <a href="hyppropsdefinition.md">HypPropsDefinition</a></i>
+    <a href="#info" title="Info">Info</a>: <i>
+      - <a href="infodefinition.md">InfoDefinition</a></i>
+</pre>
+
+## Properties
+
+#### CcVtypes
+
+Cloud types supported by cloudconnector. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uuid
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CcProps
+
+_Required_: No
+
+_Type_: List of <a href="ccpropsdefinition.md">CcPropsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HypProps
+
+_Required_: No
+
+_Type_: List of <a href="hyppropsdefinition.md">HypPropsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Info
+
+_Required_: No
+
+_Type_: List of <a href="infodefinition.md">InfoDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
+

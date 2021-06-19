@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::LaunchDarkly::FeatureFlag",
+    "description": "Provides a LaunchDarkly feature flag resource.\n\nThis resource allows you to create and manage feature flags within your LaunchDarkly organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-FeatureFlag/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Name",
+                "Value"
+            ]
+        },
+        "VariationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultOffVariation": {
+            "type": "string",
+            "description": "The value of the variation served when the flag is off for new environments. Required if `default_on_variation` is set. Flag configurations in existing environments will not be changed. The value used here must be an exact match (including whitespace) to the `value` set in the `variations` list."
+        },
+        "DefaultOnVariation": {
+            "type": "string",
+            "description": "The value of the variation served when the flag is on for new environments. Required if `default_off_variation` is set. Flag configurations in existing environments will not be changed. The value used here must be an exact match (including whitespace) to the `value` set in the `variations` list."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The feature flag's description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeInSnippet": {
+            "type": "boolean",
+            "description": "Specifies whether this flag should be made available to the client-side JavaScript SDK."
+        },
+        "Key": {
+            "type": "string",
+            "description": "The unique feature flag key that references the flag in your application code."
+        },
+        "MaintainerId": {
+            "type": "string",
+            "description": "The feature flag maintainer's 24 character alphanumeric team member ID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the feature flag."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "The feature flag's project key."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of feature flag tags."
+        },
+        "Temporary": {
+            "type": "boolean",
+            "description": "Specifies whether the flag is a temporary flag."
+        },
+        "VariationType": {
+            "type": "string",
+            "description": "The feature flag's variation type: `boolean`, `string`, `number` or `json`."
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            },
+            "maxItems": 64
+        },
+        "Variations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VariationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "Name",
+        "ProjectKey",
+        "VariationType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

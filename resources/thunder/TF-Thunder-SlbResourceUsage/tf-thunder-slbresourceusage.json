@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Thunder::SlbResourceUsage",
+    "description": "`thunder_slb_resource_usage` Provides details about thunder slb resource usage",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbResourceUsage/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheTemplateCount": {
+            "type": "number",
+            "description": "Total configurable HTTP Cache Templates in the System."
+        },
+        "ClientSslTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Client SSL Templates in the System."
+        },
+        "ConnReuseTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Connection reuse Templates in the System."
+        },
+        "FastTcpTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Fast TCP Templates in the System."
+        },
+        "FastUdpTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Fast UDP Templates in the System."
+        },
+        "HealthMonitorCount": {
+            "type": "number",
+            "description": "Total Health Monitors in the System."
+        },
+        "HttpTemplateCount": {
+            "type": "number",
+            "description": "Total configurable HTTP Templates in the System."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NatPoolAddrCount": {
+            "type": "number",
+            "description": "Total configurable NAT Pool addresses in the System."
+        },
+        "PbslbSubnetCount": {
+            "type": "number",
+            "description": "Total PBSLB Subnets in the System."
+        },
+        "PersistCookieTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Persistent cookie Templates in the System."
+        },
+        "PersistSrcipTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Source IP Persistent Templates in the System."
+        },
+        "ProxyTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Proxy Templates in the System."
+        },
+        "RealPortCount": {
+            "type": "number",
+            "description": "Total Real Server Ports in the System."
+        },
+        "RealServerCount": {
+            "type": "number",
+            "description": "Total Real Servers in the System."
+        },
+        "ServerSslTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Server SSL Templates in the System."
+        },
+        "ServiceGroupCount": {
+            "type": "number",
+            "description": "Total Service Groups in the System."
+        },
+        "SlbThresholdResUsagePercent": {
+            "type": "number",
+            "description": "Enter the threshold as a percentage (Threshold in percentage(default is 0%))."
+        },
+        "StreamTemplateCount": {
+            "type": "number",
+            "description": "Total configurable Streaming media in the System."
+        },
+        "VirtualPortCount": {
+            "type": "number",
+            "description": "Total Virtual Server Ports in the System."
+        },
+        "VirtualServerCount": {
+            "type": "number",
+            "description": "Total Virtual Servers in the System."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

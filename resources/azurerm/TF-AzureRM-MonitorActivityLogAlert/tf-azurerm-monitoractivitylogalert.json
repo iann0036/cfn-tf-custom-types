@@ -1,0 +1,283 @@
+{
+    "typeName": "TF::AzureRM::MonitorActivityLogAlert",
+    "description": "Manages an Activity Log Alert within Azure Monitor.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorActivityLogAlert/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionGroupId": {
+                    "type": "string",
+                    "description": "The ID of the Action Group can be sourced from [the `azurerm_monitor_action_group` resource](./monitor_action_group.html)."
+                },
+                "WebhookProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebhookPropertiesDefinition"
+                    },
+                    "description": "The map of custom string properties to include with the post operation. These data are appended to the webhook payload."
+                }
+            },
+            "required": [
+                "ActionGroupId"
+            ]
+        },
+        "WebhookPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caller": {
+                    "type": "string",
+                    "description": "The email address or Azure Active Directory identifier of the user who performed the operation."
+                },
+                "Category": {
+                    "type": "string",
+                    "description": "The category of the operation. Possible values are `Administrative`, `Autoscale`, `Policy`, `Recommendation`, `ResourceHealth`, `Security` and `ServiceHealth`."
+                },
+                "Level": {
+                    "type": "string",
+                    "description": "The severity level of the event. Possible values are `Verbose`, `Informational`, `Warning`, `Error`, and `Critical`."
+                },
+                "OperationName": {
+                    "type": "string",
+                    "description": "The Resource Manager Role-Based Access Control operation name. Supported operation should be of the form: `<resourceProvider>/<resourceType>/<operation>`."
+                },
+                "RecommendationCategory": {
+                    "type": "string",
+                    "description": "The recommendation category of the event. Possible values are `Cost`, `Reliability`, `OperationalExcellence` and `Performance`. It is only allowed when `category` is `Recommendation`."
+                },
+                "RecommendationImpact": {
+                    "type": "string",
+                    "description": "The recommendation impact of the event. Possible values are `High`, `Medium` and `Low`. It is only allowed when `category` is `Recommendation`."
+                },
+                "RecommendationType": {
+                    "type": "string",
+                    "description": "The recommendation type of the event. It is only allowed when `category` is `Recommendation`."
+                },
+                "ResourceGroup": {
+                    "type": "string",
+                    "description": "The name of resource group monitored by the activity log alert."
+                },
+                "ResourceId": {
+                    "type": "string",
+                    "description": "The specific resource monitored by the activity log alert. It should be within one of the `scopes`."
+                },
+                "ResourceProvider": {
+                    "type": "string",
+                    "description": "The name of the resource provider monitored by the activity log alert."
+                },
+                "ResourceType": {
+                    "type": "string",
+                    "description": "The resource type monitored by the activity log alert."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "The status of the event. For example, `Started`, `Failed`, or `Succeeded`."
+                },
+                "SubStatus": {
+                    "type": "string",
+                    "description": "The sub status of the event."
+                },
+                "ServiceHealth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceHealthDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Category"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServiceHealthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Locations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of this activity log alert."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Should this Activity Log Alert be enabled? Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the activity log alert. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the activity log alert instance."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The Scope at which the Activity Log should be applied, for example a the Resource ID of a Subscription or a Resource (such as a Storage Account)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            }
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriteriaDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "Scopes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

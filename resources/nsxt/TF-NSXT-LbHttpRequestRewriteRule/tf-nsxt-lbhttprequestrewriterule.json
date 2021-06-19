@@ -1,0 +1,384 @@
+{
+    "typeName": "TF::NSXT::LbHttpRequestRewriteRule",
+    "description": "Provides a resource to configure lb http request rewrite rule on NSX-T manager. This rule will be executed when HTTP request message is received by load balancer.\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LbHttpRequestRewriteRule/docs/README.md",
+    "definitions": {
+        "BodyConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Value"
+            ]
+        },
+        "CookieConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HeaderConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HeaderRewriteActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "IpConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourceAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceAddress"
+            ]
+        },
+        "MethodConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TcpConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourcePort"
+            ]
+        },
+        "UriArgumentsConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "UriArguments": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "UriArguments"
+            ]
+        },
+        "UriConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Uri"
+            ]
+        },
+        "UriRewriteActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uri": {
+                    "type": "string"
+                },
+                "UriArguments": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "VersionConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchStrategy": {
+            "type": "string",
+            "description": "Strategy to define how load balancer rule is considered a match when multiple match conditions are specified in one rule. If set to ALL, then load balancer rule is considered a match only if all the conditions match. If set to ANY, then load balancer rule is considered a match if any one of the conditions match."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "BodyCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BodyConditionDefinition"
+            }
+        },
+        "CookieCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CookieConditionDefinition"
+            }
+        },
+        "HeaderCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderConditionDefinition"
+            }
+        },
+        "HeaderRewriteAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderRewriteActionDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpConditionDefinition"
+            }
+        },
+        "MethodCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MethodConditionDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        },
+        "TcpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpConditionDefinition"
+            }
+        },
+        "UriArgumentsCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriArgumentsConditionDefinition"
+            }
+        },
+        "UriCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriConditionDefinition"
+            }
+        },
+        "UriRewriteAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriRewriteActionDefinition"
+            },
+            "maxItems": 1
+        },
+        "VersionCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VersionConditionDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

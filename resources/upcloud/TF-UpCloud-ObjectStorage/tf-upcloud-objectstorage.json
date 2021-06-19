@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::UpCloud::ObjectStorage",
+    "description": "CloudFormation equivalent of upcloud_object_storage",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/upcloud/TF-UpCloud-ObjectStorage/docs/README.md",
+    "definitions": {
+        "BucketDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "UsedSpace": {
+            "type": "number"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BucketDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessKey",
+        "Name",
+        "SecretKey",
+        "Size",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/Url",
+        "/properties/UsedSpace"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

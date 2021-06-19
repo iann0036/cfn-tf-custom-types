@@ -1,0 +1,316 @@
+{
+    "typeName": "TF::Metal::Device",
+    "description": "Provides an Equinix Metal device resource. This can be used to create,\nmodify, and delete devices.\n\n~> **Note:** All arguments including the `root_password` and `user_data` will be stored in\n the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-Device/docs/README.md",
+    "definitions": {
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Cidr": {
+                    "type": "number"
+                },
+                "Family": {
+                    "type": "number"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Public": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bonded": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "IpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidr": {
+                    "type": "number",
+                    "description": "CIDR suffix for IP address block to be assigned, i.e. amount of addresses."
+                },
+                "ReservationIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of UUIDs of [IP block reservations](reserved_ip_block.md) from which the public IPv4 address should be taken."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "One of [`private_ipv4`, `public_ipv4`, `public_ipv6`]."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessPrivateIpv4": {
+            "type": "string"
+        },
+        "AccessPublicIpv4": {
+            "type": "string"
+        },
+        "AccessPublicIpv6": {
+            "type": "string"
+        },
+        "AlwaysPxe": {
+            "type": "boolean",
+            "description": "If true, a device with OS `custom_ipxe` will\ncontinue to boot via iPXE on reboots."
+        },
+        "BillingCycle": {
+            "type": "string",
+            "description": "monthly or hourly."
+        },
+        "Created": {
+            "type": "string"
+        },
+        "CustomData": {
+            "type": "string",
+            "description": "A string of the desired Custom Data for the device."
+        },
+        "DeployedFacility": {
+            "type": "string"
+        },
+        "DeployedHardwareReservationId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description string for the device."
+        },
+        "Facilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of facility codes with deployment preferences. Equinix Metal API will go through the list and will deploy your device to first facility with free capacity. List items must be facility codes or `any` (a wildcard). To find the facility code, visit [Facilities API docs](https://metal.equinix.com/developers/api/facilities/), set your API auth token in the top of the page and see JSON from the API response. Conflicts with `metro`."
+        },
+        "ForceDetachVolumes": {
+            "type": "boolean",
+            "description": "Delete device even if it has volumes attached. Only applies for destroy action."
+        },
+        "HardwareReservationId": {
+            "type": "string",
+            "description": "The UUID of the hardware reservation where you want this device deployed, or `next-available` if you want to pick your next available reservation automatically.\nChanging this from a reservation UUID to `next-available` will re-create the device in another reservation.\nPlease be careful when using hardware reservation UUID and `next-available` together for the same pool of reservations. It might happen that the reservation which Equinix Metal API will pick as `next-available` is the reservation which you refer with UUID in another metal_device resource. If that happens, and the metal_device with the UUID is created later, resource creation will fail because the reservation is already in use (by the resource created with `next-available`). To workaround this, have the `next-available` resource  [explicitly depend_on](https://learn.hashicorp.com/terraform/getting-started/dependencies.html#implicit-and-explicit-dependencies) the resource with hardware reservation UUID, so that the latter is created first. For more details, see [issue #176](https://github.com/packethost/terraform-provider-packet/issues/176)."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The device name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpxeScriptUrl": {
+            "type": "string",
+            "description": "URL pointing to a hosted iPXE script. More\ninformation is in the\n[Custom iPXE](https://metal.equinix.com/developers/docs/servers/custom-ipxe/)\ndoc."
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Metro": {
+            "type": "string",
+            "description": "Metro area for the new device. Conflicts with `facilities`."
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "OperatingSystem": {
+            "type": "string",
+            "description": "The operating system slug. To find the slug, or visit [Operating Systems API docs](https://metal.equinix.com/developers/api/operatingsystems), set your API auth token in the top of the page and see JSON from the API response."
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The device plan slug. To find the plan slug, visit [Device plans API docs](https://metal.equinix.com/developers/api/plans), set your auth token in the top of the page and see JSON from the API response."
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortsDefinition"
+            }
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project in which to create the device."
+        },
+        "ProjectSshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of IDs of the project SSH keys which should be added to the device. If you omit this, SSH keys of all the members of the parent project will be added to the device. If you specify this array, only the listed project SSH keys will be added. Project SSH keys can be created with the [metal_project_ssh_key](project_ssh_key.md) resource."
+        },
+        "RootPassword": {
+            "type": "string"
+        },
+        "SshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Storage": {
+            "type": "string",
+            "description": "JSON for custom partitioning. Only usable on reserved hardware. More information in in the [Custom Partitioning and RAID](https://metal.equinix.com/developers/docs/servers/custom-partitioning-raid/) doc.\n* Please note that the disks.partitions.size attribute must be a string, not an integer. It can be a number string, or size notation string, e.g. \"4G\" or \"8M\" (for gigabytes and megabytes)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Tags attached to the device."
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string",
+            "description": "A string of the desired User Data for the device."
+        },
+        "WaitForReservationDeprovision": {
+            "type": "boolean",
+            "description": "Only used for devices in reserved hardware. If set, the deletion of this device will block until the hardware reservation is marked provisionable (about 4 minutes in August 2019)."
+        },
+        "IpAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpAddressDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BillingCycle",
+        "Hostname",
+        "OperatingSystem",
+        "Plan",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessPrivateIpv4",
+        "/properties/AccessPublicIpv4",
+        "/properties/AccessPublicIpv6",
+        "/properties/Created",
+        "/properties/DeployedFacility",
+        "/properties/DeployedHardwareReservationId",
+        "/properties/Id",
+        "/properties/Locked",
+        "/properties/Network",
+        "/properties/NetworkType",
+        "/properties/Ports",
+        "/properties/RootPassword",
+        "/properties/SshKeyIds",
+        "/properties/State",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CustomData",
+        "/properties/RootPassword",
+        "/properties/UserData"
+    ]
+}

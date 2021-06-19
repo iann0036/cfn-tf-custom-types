@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::AWS::LexSlotType",
+    "description": "Provides an Amazon Lex Slot Type resource. For more information see\n[Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LexSlotType/docs/README.md",
+    "definitions": {
+        "EnumerationValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Synonyms": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Checksum": {
+            "type": "string"
+        },
+        "CreateVersion": {
+            "type": "boolean",
+            "description": "Determines if a new slot type version is created when the initial resource is created and on each\nupdate. Defaults to `false`."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the slot type. Must be less than or equal to 200 characters in length."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the slot type. The name is not case sensitive. Must be less than or equal to 100 characters in length."
+        },
+        "ValueSelectionStrategy": {
+            "type": "string",
+            "description": "Determines the slot resolution strategy that Amazon Lex\nuses to return slot type values. `ORIGINAL_VALUE` returns the value entered by the user if the user\nvalue is similar to the slot value. `TOP_RESOLUTION` returns the first value in the resolution list\nif there is a resolution list for the slot, otherwise null is returned. Defaults to `ORIGINAL_VALUE`."
+        },
+        "Version": {
+            "type": "string"
+        },
+        "EnumerationValue": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnumerationValueDefinition"
+            },
+            "maxItems": 10000,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Checksum",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

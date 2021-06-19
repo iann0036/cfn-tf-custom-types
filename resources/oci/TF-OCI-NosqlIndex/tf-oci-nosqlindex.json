@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::OCI::NosqlIndex",
+    "description": "This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.\n\nCreate a new index on the table identified by tableNameOrId.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-NosqlIndex/docs/README.md",
+    "definitions": {
+        "KeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColumnName": {
+                    "type": "string"
+                },
+                "JsonFieldType": {
+                    "type": "string"
+                },
+                "JsonPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ColumnName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsIfNotExists": {
+            "type": "boolean",
+            "description": "If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Index name."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TableId": {
+            "type": "string"
+        },
+        "TableName": {
+            "type": "string"
+        },
+        "TableNameOrId": {
+            "type": "string",
+            "description": "A table name within the compartment, or a table OCID."
+        },
+        "Keys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeysDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TableNameOrId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TableId",
+        "/properties/TableName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

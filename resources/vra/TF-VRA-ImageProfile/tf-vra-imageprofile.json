@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::VRA::ImageProfile",
+    "description": "CloudFormation equivalent of vra_image_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-ImageProfile/docs/README.md",
+    "definitions": {
+        "ImageMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudConfig": {
+                    "type": "string"
+                },
+                "ImageId": {
+                    "type": "string"
+                },
+                "ImageName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Constraints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConstraintsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "RegionId": {
+            "type": "string",
+            "description": "The id of the region for which this profile is defined as in vRealize Automation(vRA)."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "ImageMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImageMappingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/ExternalRegionId",
+        "/properties/Id",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

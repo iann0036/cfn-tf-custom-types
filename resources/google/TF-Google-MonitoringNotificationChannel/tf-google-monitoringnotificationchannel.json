@@ -1,0 +1,180 @@
+{
+    "typeName": "TF::Google::MonitoringNotificationChannel",
+    "description": "A NotificationChannel is a medium through which an alert is delivered\nwhen a policy violation is detected. Examples of channels include email, SMS,\nand third-party messaging applications. Fields containing sensitive information\nlike authentication tokens or contact info are only partially populated on retrieval.\n\nNotification Channels are designed to be flexible and are made up of a supported `type`\nand labels to configure that channel. Each `type` has specific labels that need to be\npresent for that channel to be correctly configured. The labels that are required to be\npresent for one channel `type` are often different than those required for another.\nDue to these loose constraints it's often best to set up a channel through the UI\nand import to Terraform when setting up a brand new channel type to determine which\nlabels are required.\n\nA list of supported channels per project the `list` endpoint can be\naccessed programmatically or through the api explorer at  https://cloud.google.com/monitoring/api/ref_v...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-MonitoringNotificationChannel/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UserLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SensitiveLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthToken": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "ServiceKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserLabels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserLabelsDefinition"
+            }
+        },
+        "VerificationStatus": {
+            "type": "string"
+        },
+        "SensitiveLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SensitiveLabelsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/VerificationStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SensitiveLabelsDefinition/AuthToken",
+        "/definitions/SensitiveLabelsDefinition/Password",
+        "/definitions/SensitiveLabelsDefinition/ServiceKey"
+    ]
+}

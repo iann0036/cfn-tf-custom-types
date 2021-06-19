@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::NetAppElementSW::ElementswVolume",
+    "description": "CloudFormation equivalent of elementsw_volume",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-elementsw/TF-NetAppElementSW-ElementswVolume/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string"
+        },
+        "Attributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BurstIops": {
+            "type": "number"
+        },
+        "Enable512e": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iqn": {
+            "type": "string"
+        },
+        "MaxIops": {
+            "type": "number"
+        },
+        "MinIops": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "TotalSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Account",
+        "Enable512e",
+        "Name",
+        "TotalSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Iqn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

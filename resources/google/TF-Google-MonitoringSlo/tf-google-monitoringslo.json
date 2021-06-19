@@ -1,0 +1,443 @@
+{
+    "typeName": "TF::Google::MonitoringSlo",
+    "description": "A Service-Level Objective (SLO) describes the level of desired good\nservice. It consists of a service-level indicator (SLI), a performance\ngoal, and a period over which the objective is to be evaluated against\nthat goal. The SLO can use SLIs defined in a number of different manners.\nTypical SLOs might include \"99% of requests in each rolling week have\nlatency below 200 milliseconds\" or \"99.5% of requests in each calendar\nmonth return successfully.\"\n\n\nTo get more information about Slo, see:\n\n* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/services.serviceLevelObjectives)\n* How-to Guides\n    * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)\n    * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_w...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-MonitoringSlo/docs/README.md",
+    "definitions": {
+        "BasicSliDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Version": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Availability": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AvailabilityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Latency": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LatencyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RequestBasedSliDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistributionCut": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DistributionCutDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GoodTotalRatio": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoodTotalRatioDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WindowsBasedSliDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GoodBadMetricFilter": {
+                    "type": "string"
+                },
+                "WindowPeriod": {
+                    "type": "string"
+                },
+                "GoodTotalRatioThreshold": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoodTotalRatioThresholdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MetricMeanInRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricMeanInRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MetricSumInRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricSumInRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AvailabilityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "LatencyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Threshold": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Threshold"
+            ]
+        },
+        "DistributionCutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistributionFilter": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DistributionFilter"
+            ]
+        },
+        "GoodTotalRatioDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BadServiceFilter": {
+                    "type": "string"
+                },
+                "GoodServiceFilter": {
+                    "type": "string"
+                },
+                "TotalServiceFilter": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GoodTotalRatioThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Threshold": {
+                    "type": "number"
+                },
+                "BasicSliPerformance": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BasicSliPerformanceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Performance": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PerformanceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetricMeanInRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeSeries": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "TimeSeries"
+            ]
+        },
+        "MetricSumInRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeSeries": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "TimeSeries"
+            ]
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BasicSliPerformanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Version": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Availability": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AvailabilityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Latency": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LatencyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PerformanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistributionCut": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DistributionCutDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GoodTotalRatio": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoodTotalRatioDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CalendarPeriod": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Goal": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "RollingPeriodDays": {
+            "type": "number"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "SloId": {
+            "type": "string"
+        },
+        "BasicSli": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BasicSliDefinition"
+            },
+            "maxItems": 1
+        },
+        "RequestBasedSli": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestBasedSliDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WindowsBasedSli": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WindowsBasedSliDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Goal",
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

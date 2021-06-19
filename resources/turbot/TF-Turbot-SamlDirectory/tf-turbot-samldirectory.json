@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::Turbot::SamlDirectory",
+    "description": "The `Turbot SAML Directory` resource adds support for creating SAML directories. It is used to create and delete directory settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-SamlDirectory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowGroupSyncing": {
+            "type": "boolean",
+            "description": "Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "AllowIdpInitiatedSso": {
+            "type": "boolean",
+            "description": "Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "The public key certificate ([base64-encoded](https://tools.ietf.org/html/rfc4648#section-4) ) which provides SAML entry point access\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Brief description of the purpose and details of the directory.\n- `entry_point` - (Required) Defines the identity provider single sign-on URL.\n- `certificate` - (Required) The public key certificate ([base64-encoded](https://tools.ietf.org/html/rfc4648#section-4) ) which provides SAML entry point access\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "DirectoryType": {
+            "type": "string"
+        },
+        "EntryPoint": {
+            "type": "string",
+            "description": "Defines the identity provider single sign-on URL.\n- `certificate` - (Required) The public key certificate ([base64-encoded](https://tools.ietf.org/html/rfc4648#section-4) ) which provides SAML entry point access\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "GroupFilter": {
+            "type": "string",
+            "description": "Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "GroupIdTemplate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string",
+            "description": "a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "NameIdFormat": {
+            "type": "string",
+            "description": "The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "The `id` or `aka` of the level at which the SAML directory will be created.\n- `title` - (Required) Short descriptive name for the saml directory. This appears as the saml directory name in the Turbot Console.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `entry_point` - (Required) Defines the identity provider single sign-on URL.\n- `certificate` - (Required) The public key certificate ([base64-encoded](https://tools.ietf.org/html/rfc4648#section-4) ) which provides SAML entry point access\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PoolId": {
+            "type": "string"
+        },
+        "ProfileGroupsAttribute": {
+            "type": "string",
+            "description": "Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "ProfileIdTemplate": {
+            "type": "string",
+            "description": "A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "SignRequests": {
+            "type": "string",
+            "description": "Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "SignatureAlgorithm": {
+            "type": "string",
+            "description": "If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "SignaturePrivateKey": {
+            "type": "string",
+            "description": "Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "User defined label for grouping resources."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Short descriptive name for the saml directory. This appears as the saml directory name in the Turbot Console.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `entry_point` - (Required) Defines the identity provider single sign-on URL.\n- `certificate` - (Required) The public key certificate ([base64-encoded](https://tools.ietf.org/html/rfc4648#section-4) ) which provides SAML entry point access\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through this directory. For example, email id of the user.\n- `issuer` - (Optional) a URL that uniquely identifies your SAML identity provider.\n- `name_id_format` - (Optional) The name identifier format to request from the identity provider. Usually the Email Address is the accepted format.It accepts one of the two values - `UNSPECIFIED` and `EMAIL`. Defaults to `UNSPECIFIED`\n- `sign_requests` - (Optional) Signing request for SAML authentication. It accepts one of the two values - `Enabled` and `Disabled`. If enabled, requests will be signed using the specified private key and signature algorithm.\n- `signature_private_key` - (Optional) Private key used to sign authentication requests, in multiline PEM format starting with -----BEGIN PRIVATE KEY-----.\n- `signature_algorithm` - (Optional) If a private key has been provided, it determines the signature algorithm for signing requests. If not specified defaults to *SHA-1*.\n- `allow_group_syncing` -  (Optional) Boolean value to indicate whether groups will be synchronized for SAML users. Defaults to `false`.\n- `allow_idp_initiated_sso` -  (Optional) Boolean value to indicate whether directory allows IDP-initiated SSO. Defaults to `false`.\n- `profile_groups_attribute` - (Optional) Attribute returning list of groups that a SAML user is a part of.\n- `group_filter` -  (Optional) Regular expression to filter out groups that are to be synced from SAML.\n- `tags` - (Optional) User defined label for grouping resources."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Certificate",
+        "EntryPoint",
+        "Parent",
+        "ProfileIdTemplate",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DirectoryType",
+        "/properties/Id",
+        "/properties/ParentAkas",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

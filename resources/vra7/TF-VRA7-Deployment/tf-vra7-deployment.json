@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::VRA7::Deployment",
+    "description": "Provides a VMware vRA7 deployment resource. This can be used to deploy vRA7 catalog items.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra7/TF-VRA7-Deployment/docs/README.md",
+    "definitions": {
+        "DeploymentConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OwnersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "ResourceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cluster": {
+                    "type": "number"
+                },
+                "ComponentName": {
+                    "type": "string"
+                },
+                "Configuration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ComponentName"
+            ]
+        },
+        "ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BusinessgroupId": {
+            "type": "string",
+            "description": "The id of the vRA business group to use for this deployment. Either businessgroup_id or businessgroup_name is required."
+        },
+        "BusinessgroupName": {
+            "type": "string",
+            "description": "The name of the vRA business group to use for this deployment. Either businessgroup_id or businessgroup_name is required."
+        },
+        "CatalogItemId": {
+            "type": "string",
+            "description": "The id of the catalog item to deploy into vRA. Either catalog_item_id or catalog_item_name is required."
+        },
+        "CatalogItemName": {
+            "type": "string",
+            "description": "The name of the catalog item to deploy into vRA. Either catalog_item_id or catalog_item_name is required."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "DeploymentConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DeploymentConfigurationDefinition"
+            },
+            "description": "The configuration of the deployment from the catalog item. All blueprint custom properties including property groups can be added to this block. This property is discussed in detail below."
+        },
+        "DeploymentDestroy": {
+            "type": "boolean"
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the deployment."
+        },
+        "ExpiryDate": {
+            "type": "string",
+            "description": "The date when the deployment will expire. To change lease, modify this field in main.tf. It has to be in the same format as in the state file. For e.g., \"2020-11-25T20:29:37.845Z\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaseDays": {
+            "type": "number",
+            "description": "Number of lease days remaining for the deployment. NOTE: If this is not provided, the default lease_days in the catalog item will be configured. lease_days 0 means the lease never expires."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnersDefinition"
+            }
+        },
+        "Reasons": {
+            "type": "string",
+            "description": "Reasons for requesting the deployment."
+        },
+        "RequestStatus": {
+            "type": "string"
+        },
+        "WaitTimeout": {
+            "type": "number",
+            "description": "Wait time out for the request. If the request is not completed within the timeout period, do a terraform refresh later to check the status of the request."
+        },
+        "ResourceConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceConfigurationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedDate",
+        "/properties/DeploymentId",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Owners",
+        "/properties/RequestStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

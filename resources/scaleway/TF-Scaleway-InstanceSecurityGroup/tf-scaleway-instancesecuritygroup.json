@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::Scaleway::InstanceSecurityGroup",
+    "description": "Creates and manages Scaleway Compute Instance security groups. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#security-groups-8d7f89).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-InstanceSecurityGroup/docs/README.md",
+    "definitions": {
+        "InboundRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpRange": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortRange": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "OutboundRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpRange": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortRange": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableDefaultSecurity": {
+            "type": "boolean"
+        },
+        "ExternalRules": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundDefaultPolicy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "OutboundDefaultPolicy": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Stateful": {
+            "type": "boolean"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "InboundRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundRuleDefinition"
+            }
+        },
+        "OutboundRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutboundRuleDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OrganizationId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

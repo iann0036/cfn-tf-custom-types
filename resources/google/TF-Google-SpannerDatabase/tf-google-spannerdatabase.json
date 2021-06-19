@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Google::SpannerDatabase",
+    "description": "A Cloud Spanner Database which is hosted on a Spanner instance.\n\n\nTo get more information about Database, see:\n\n* [API documentation](https://cloud.google.com/spanner/docs/reference/rest/v1/projects.instances.databases)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/spanner/)\n\n~> **Warning:** On newer versions of the provider, you must explicitly set `deletion_protection=false`\n(and run `terraform apply` to write the field to state) in order to destroy an instance.\nIt is recommended to not set this field (or set it to true) until you're ready to destroy.\nOn older versions, it is strongly recommended to set `lifecycle { prevent_destroy = true }`\non databases in order to prevent accidental data loss. See [Terraform docs](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy)\nfor more information on lifecycle parameters.\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-SpannerDatabase/docs/README.md",
+    "definitions": {
+        "EncryptionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ddl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DeletionProtection": {
+            "type": "boolean",
+            "description": "Whether or not to allow Terraform to destroy the instance. Unless this field is set to false\nin Terraform state, a `terraform destroy` or `terraform apply` that would delete the instance will fail."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "State": {
+            "type": "string"
+        },
+        "EncryptionConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Instance",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

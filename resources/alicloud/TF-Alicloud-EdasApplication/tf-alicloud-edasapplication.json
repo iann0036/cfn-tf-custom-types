@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Alicloud::EdasApplication",
+    "description": "Creates an EDAS ecs application on EDAS. The application will be deployed when `group_id` and `war_url` are given.\n\n-> **NOTE:** Available in 1.82.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EdasApplication/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationName": {
+            "type": "string",
+            "description": "Name of your EDAS application. Only letters '-' '_' and numbers are allowed. The length cannot exceed 36 characters."
+        },
+        "BuildPackId": {
+            "type": "number",
+            "description": "The package ID of Enterprise Distributed Application Service (EDAS) Container, which can be retrieved by calling container version list interface ListBuildPack or the \"Pack ID\" column in container version list. When creating High-speed Service Framework (HSF) application, this parameter is required."
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of the cluster that you want to create the application. The default cluster will be used if you do not specify this parameter."
+        },
+        "Descriotion": {
+            "type": "string",
+            "description": "The description of the application that you want to create."
+        },
+        "EcuInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The ID of the Elastic Compute Unit (ECU) where you want to deploy the application. Type: List."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The ID of the instance group where the application is going to be deployed. Set this parameter to all if you want to deploy the application to all groups."
+        },
+        "HealthCheckUrl": {
+            "type": "string",
+            "description": "The URL for health checking of the application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalRegionId": {
+            "type": "string",
+            "description": "The ID of the namespace where you want to create the application. You can call the ListUserDefineRegion operation to query the namespace ID."
+        },
+        "PackageType": {
+            "type": "string",
+            "description": "The type of the package for the deployment of the application that you want to create. The valid values are: WAR and JAR. We strongly recommend you to set this parameter when creating the application."
+        },
+        "PackageVersion": {
+            "type": "string",
+            "description": "The version of the application that you want to deploy. It must be unique for every application. The length cannot exceed 64 characters. We recommended you to use a timestamp."
+        },
+        "WarUrl": {
+            "type": "string",
+            "description": "The address to store the uploaded web application (WAR) package for application deployment. This parameter is required when the deployType parameter is set as url."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationName",
+        "ClusterId",
+        "PackageType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

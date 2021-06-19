@@ -1,0 +1,581 @@
+{
+    "typeName": "TF::AWS::Instance",
+    "description": "Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. Instances also support [provisioning](https://www.terraform.io/docs/provisioners/index.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Instance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CapacityReservationSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationPreference": {
+                    "type": "string"
+                },
+                "CapacityReservationTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityReservationTargetDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CreditSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCredits": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EnclaveOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "boolean"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "MetadataOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpEndpoint": {
+                    "type": "string"
+                },
+                "HttpPutResponseHopLimit": {
+                    "type": "number"
+                },
+                "HttpTokens": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceIndex",
+                "NetworkInterfaceId"
+            ]
+        },
+        "RootBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition3"
+                    }
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ami": {
+            "type": "string",
+            "description": "AMI to use for the instance."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean",
+            "description": "Whether to associate a public IP address with an instance in a VPC."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "AZ to start the instance in."
+        },
+        "CpuCoreCount": {
+            "type": "number",
+            "description": "Sets the number of CPU cores for an instance. This option is only supported on creation of instance type that support CPU Options [CPU Cores and Threads Per CPU Core Per Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html#cpu-options-supported-instances-values) - specifying this option for unsupported instance types will return an error from the EC2 API."
+        },
+        "CpuThreadsPerCore": {
+            "type": "number",
+            "description": "If set to to 1, hyperthreading is disabled on the launched instance. Defaults to 2 if not set. See [Optimizing CPU Options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) for more information."
+        },
+        "DisableApiTermination": {
+            "type": "boolean",
+            "description": "If true, enables [EC2 Instance Termination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination)."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "If true, the launched EC2 instance will be EBS-optimized. Note that if this is not set on an instance type that is optimized by default then this will show as disabled but if the instance type is optimized by default then there is no need to set this and there is no effect to disabling it. See the [EBS Optimized section](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) of the AWS User Guide for more information."
+        },
+        "GetPasswordData": {
+            "type": "boolean",
+            "description": "If true, wait for password data to become available and retrieve it. Useful for getting the administrator password for instances running Microsoft Windows. The password data is exported to the `password_data` attribute. See [GetPasswordData](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html) for more information."
+        },
+        "Hibernation": {
+            "type": "boolean",
+            "description": "If true, the launched EC2 instance will support hibernation."
+        },
+        "HostId": {
+            "type": "string",
+            "description": "ID of a dedicated host that the instance will be assigned to. Use when an instance is to be launched on a specific dedicated host."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile. Ensure your credentials have the correct permission to assign the instance profile according to the [EC2 documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html#roles-usingrole-ec2instance-permissions), notably `iam:PassRole`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceInitiatedShutdownBehavior": {
+            "type": "string",
+            "description": "Shutdown behavior for the instance. Amazon defaults this to `stop` for EBS-backed instances and `terminate` for instance-store instances. Cannot be set on instance-store instances. See [Shutdown Behavior](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingInstanceInitiatedShutdownBehavior) for more information."
+        },
+        "InstanceState": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Type of instance to start. Updates to this field will trigger a stop/start of the EC2 instance."
+        },
+        "Ipv6AddressCount": {
+            "type": "number",
+            "description": "A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet."
+        },
+        "Ipv6Addresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network interface."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "Key name of the Key Pair to use for the instance; which can be managed using [the `aws_key_pair` resource](key_pair.html)."
+        },
+        "Monitoring": {
+            "type": "boolean",
+            "description": "If true, the launched EC2 instance will have detailed monitoring enabled. (Available since v0.6.0)."
+        },
+        "OutpostArn": {
+            "type": "string"
+        },
+        "PasswordData": {
+            "type": "string"
+        },
+        "PlacementGroup": {
+            "type": "string",
+            "description": "Placement Group to start the instance in."
+        },
+        "PrimaryNetworkInterfaceId": {
+            "type": "string"
+        },
+        "PrivateDns": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string",
+            "description": "Private IP address to associate with the instance in a VPC."
+        },
+        "PublicDns": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "SecondaryPrivateIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of secondary private IPv4 addresses to assign to the instance's primary network interface (eth0) in a VPC. Can only be assigned to the primary network interface (eth0) attached at instance creation, not a pre-existing network interface i.e. referenced in a `network_interface` block. Refer to the [Elastic network interfaces documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI) to see the maximum number of private IP addresses allowed per instance type."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group names (EC2-Classic) or IDs (default VPC) to associate with."
+        },
+        "SourceDestCheck": {
+            "type": "boolean",
+            "description": "Controls if traffic is routed to the instance when the destination address does not match the instance. Used for NAT or VPNs. Defaults true."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "VPC Subnet ID to launch in."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. Note that these tags apply to the instance and not block storage devices. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Tenancy": {
+            "type": "string",
+            "description": "Tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. The host tenancy is not supported for the import-instance command."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "User data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see `user_data_base64` instead."
+        },
+        "UserDataBase64": {
+            "type": "string",
+            "description": "Can be used instead of `user_data` to pass base64-encoded binary data directly. Use this instead of `user_data` whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
+        },
+        "VolumeTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VolumeTagsDefinition"
+            },
+            "description": "A map of tags to assign, at instance-creation time, to root and EBS volumes."
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group IDs to associate with."
+        },
+        "CapacityReservationSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapacityReservationSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "CreditSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreditSpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDeviceDefinition"
+            }
+        },
+        "EnclaveOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnclaveOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+            }
+        },
+        "MetadataOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "RootBlockDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RootBlockDeviceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ami",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/InstanceState",
+        "/properties/OutpostArn",
+        "/properties/PasswordData",
+        "/properties/PrimaryNetworkInterfaceId",
+        "/properties/PrivateDns",
+        "/properties/PublicDns",
+        "/properties/PublicIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,310 @@
+{
+    "typeName": "TF::AWS::ElasticacheReplicationGroup",
+    "description": "Provides an ElastiCache Replication Group resource.\n\nFor working with a [Memcached cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html) or a\n[single-node Redis instance (Cluster Mode Disabled)](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html),\nsee the [`aws_elasticache_cluster` resource](/docs/providers/aws/r/elasticache_cluster.html).\n\n~> **Note:** When you change an attribute, such as `engine_version`, by\ndefault the ElastiCache API applies it in the next maintenance window. Because\nof this, Terraform may report a difference in its planning phase because the\nactual modification has not yet taken place. You can use the\n`apply_immediately` flag to instruct the service to apply the change\nimmediately. Using `apply_immediately` can result in a brief downtime as\nservers reboots.\nSee the AWS Documentation on\n[Modifying an ElastiCache Cache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Modify.html)\nfor more information.\n\n~> **...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElasticacheReplicationGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClusterModeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumNodeGroups": {
+                    "type": "number"
+                },
+                "ReplicasPerNodeGroup": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumNodeGroups",
+                "ReplicasPerNodeGroup"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Specifies whether any modifications are applied immediately, or during the next maintenance window. Default is `false`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AtRestEncryptionEnabled": {
+            "type": "boolean",
+            "description": "Whether to enable encryption at rest."
+        },
+        "AuthToken": {
+            "type": "string",
+            "description": "The password used to access a password protected server. Can be specified only if `transit_encryption_enabled = true`."
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean",
+            "description": "Specifies whether a minor engine upgrades will be applied automatically to the underlying Cache Cluster instances during the maintenance window. This parameter is currently not supported by the AWS API. Defaults to `true`."
+        },
+        "AutomaticFailoverEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing primary fails. If enabled, `number_cache_clusters` must be greater than 1. Must be enabled for Redis (cluster mode enabled) replication groups. Defaults to `false`."
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is not important."
+        },
+        "ClusterEnabled": {
+            "type": "boolean"
+        },
+        "ConfigurationEndpointAddress": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string",
+            "description": "The name of the cache engine to be used for the clusters in this replication group. The only valid value is `redis`."
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "The version number of the cache engine to be used for the cache clusters in this replication group. If the version is 6 or higher, only the major version can be set, e.g. `6.x`, otherwise, specify the full version desired, e.g. `5.0.6`. The actual engine version used is returned in the attribute `engine_version_actual`, [defined below](#engine_version_actual)."
+        },
+        "EngineVersionActual": {
+            "type": "string"
+        },
+        "FinalSnapshotIdentifier": {
+            "type": "string",
+            "description": "The name of your final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster. If omitted, no final snapshot will be made."
+        },
+        "GlobalReplicationGroupId": {
+            "type": "string",
+            "description": "The ID of the global replication group to which this replication group should belong. If this parameter is specified, the replication group is added to the specified global replication group as a secondary replication group; otherwise, the replication group is not part of any global replication group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The ARN of the key that you wish to use if encrypting at rest. If not supplied, uses service managed encryption. Can be specified only if `at_rest_encryption_enabled = true`."
+        },
+        "MaintenanceWindow": {
+            "type": "string"
+        },
+        "MemberClusters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MultiAzEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether to enable Multi-AZ Support for the replication group. If `true`, `automatic_failover_enabled` must also be enabled. Defaults to `false`."
+        },
+        "NodeType": {
+            "type": "string",
+            "description": "The instance class to be used. See AWS documentation for information on [supported node types](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html) and [guidance on selecting node types](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes-select-size.html). Required unless `global_replication_group_id` is set. Cannot be set if `global_replication_group_id` is set."
+        },
+        "NotificationTopicArn": {
+            "type": "string"
+        },
+        "NumberCacheClusters": {
+            "type": "number",
+            "description": "The number of cache clusters (primary and replicas) this replication group will have. If Multi-AZ is enabled, the value of this parameter must be at least 2. Updates will occur before other modifications. One of `number_cache_clusters` or `cluster_mode` is required."
+        },
+        "ParameterGroupName": {
+            "type": "string",
+            "description": "The name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used. To enable \"cluster mode\", i.e. data sharding, use a parameter group that has the parameter `cluster-enabled` set to true."
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrimaryEndpointAddress": {
+            "type": "string"
+        },
+        "ReaderEndpointAddress": {
+            "type": "string"
+        },
+        "ReplicationGroupDescription": {
+            "type": "string"
+        },
+        "ReplicationGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more Amazon VPC security groups associated with this replication group. Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud."
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of cache security group names to associate with this replication group."
+        },
+        "SnapshotArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotName": {
+            "type": "string",
+            "description": "The name of a snapshot from which to restore data into the new node group. Changing the `snapshot_name` forces a new resource."
+        },
+        "SnapshotRetentionLimit": {
+            "type": "number",
+            "description": "The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off. Please note that setting a `snapshot_retention_limit` is not supported on cache.t1.micro cache nodes."
+        },
+        "SnapshotWindow": {
+            "type": "string",
+            "description": "The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. The minimum snapshot window is a 60 minute period. Example: `05:00-09:00`."
+        },
+        "SubnetGroupName": {
+            "type": "string",
+            "description": "The name of the cache subnet group to be used for the replication group."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. Adding tags to this resource will add or overwrite any existing tags on the clusters in the replication group and not to the group itself. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TransitEncryptionEnabled": {
+            "type": "boolean",
+            "description": "Whether to enable encryption in transit."
+        },
+        "ClusterMode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterModeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ReplicationGroupDescription",
+        "ReplicationGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ClusterEnabled",
+        "/properties/ConfigurationEndpointAddress",
+        "/properties/EngineVersionActual",
+        "/properties/Id",
+        "/properties/MemberClusters",
+        "/properties/PrimaryEndpointAddress",
+        "/properties/ReaderEndpointAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthToken"
+    ]
+}

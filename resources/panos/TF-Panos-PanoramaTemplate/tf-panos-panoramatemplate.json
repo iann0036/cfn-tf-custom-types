@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Panos::PanoramaTemplate",
+    "description": "This resource allows you to add/update/delete Panorama templates.\n\nThis resource has some overlap with the `panos_panorama_template_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_template` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if `terraform destroy` should delete\nthe template.\n\n**Note** - In PAN-OS 8.1, it looks like the `devices` field has\nbeen removed.  Creating a template stack and specifying devices in the template\nstack is still present in PAN-OS 8.1.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaTemplate/docs/README.md",
+    "definitions": {
+        "DevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serial": {
+                    "type": "string"
+                },
+                "VsysList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Serial"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultVsys": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The template's description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The template's name."
+        },
+        "Devices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DevicesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultVsys",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

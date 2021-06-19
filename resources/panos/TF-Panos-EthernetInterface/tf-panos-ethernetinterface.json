@@ -1,0 +1,182 @@
+{
+    "typeName": "TF::Panos::EthernetInterface",
+    "description": "This resource allows you to add/update/delete ethernet interfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-EthernetInterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustTcpMss": {
+            "type": "boolean",
+            "description": "Adjust TCP MSS (default: false)."
+        },
+        "AggregateGroup": {
+            "type": "string",
+            "description": "The aggregate group (applicable for\nphysical firewalls only)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The interface comment."
+        },
+        "CreateDhcpDefaultRoute": {
+            "type": "boolean",
+            "description": "Set to `true` to create a DHCP\ndefault route."
+        },
+        "DecryptForward": {
+            "type": "boolean",
+            "description": "Enable decrypt forwarding."
+        },
+        "DhcpDefaultRouteMetric": {
+            "type": "number",
+            "description": "The metric for the DHCP default\nroute."
+        },
+        "DhcpSendHostnameEnable": {
+            "type": "boolean",
+            "description": "For DHCP layer3 interfaces:\nenable sending the firewall or a custom hostname to DHCP server."
+        },
+        "DhcpSendHostnameValue": {
+            "type": "string",
+            "description": "For DHCP layer3 interfaces:\nthe interface hostname.  Leaving this unspecified with `dhcp_send_hostname_enable`\nset means to send the system hostname."
+        },
+        "EnableDhcp": {
+            "type": "boolean",
+            "description": "Set to `true` to enable DHCP on this interface."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4MssAdjust": {
+            "type": "number",
+            "description": "The IPv4 MSS adjust value."
+        },
+        "Ipv6Enabled": {
+            "type": "boolean",
+            "description": "Set to `true` to enable IPv6."
+        },
+        "Ipv6MssAdjust": {
+            "type": "number",
+            "description": "The IPv6 MSS adjust value."
+        },
+        "LacpHaPassivePreNegotiation": {
+            "type": "boolean",
+            "description": "LACP HA passive pre-negotiation."
+        },
+        "LacpPortPriority": {
+            "type": "number",
+            "description": "LACP port priority."
+        },
+        "LinkDuplex": {
+            "type": "string",
+            "description": "Link duplex setting.  This can be `full`, `half`,\nor `auto`."
+        },
+        "LinkSpeed": {
+            "type": "string",
+            "description": "Link speed.  This can be any of the following:\n`10`, `100`, `1000`, or `auto`."
+        },
+        "LinkState": {
+            "type": "string",
+            "description": "The link state.  This can be `up`, `down`, or\n`auto`."
+        },
+        "LldpEnabled": {
+            "type": "boolean",
+            "description": "Enable LLDP (default: false)."
+        },
+        "LldpHaPassivePreNegotiation": {
+            "type": "boolean",
+            "description": "LLDP HA passive pre-negotiation."
+        },
+        "LldpProfile": {
+            "type": "string",
+            "description": "LLDP profile."
+        },
+        "ManagementProfile": {
+            "type": "string",
+            "description": "The management profile."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The interface mode.  This can be any of the following\nvalues: `layer3`, `layer2`, `virtual-wire`, `tap`, `ha`, `decrypt-mirror`,\nor `aggregate-group`."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "The MTU."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The ethernet interface's name.  This should be something\nlike `ethernet1/X`."
+        },
+        "NetflowProfile": {
+            "type": "string",
+            "description": "The netflow profile."
+        },
+        "RxPolicingRate": {
+            "type": "number",
+            "description": "Receive policing rate in Mbps."
+        },
+        "StaticIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of static IPv4 addresses to set for this data\ninterface."
+        },
+        "TxPolicingRate": {
+            "type": "number",
+            "description": "Transmit policing rate in Mbps."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Mode",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

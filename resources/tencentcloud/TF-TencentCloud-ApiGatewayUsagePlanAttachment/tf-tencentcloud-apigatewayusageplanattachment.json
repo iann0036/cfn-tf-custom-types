@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayUsagePlanAttachment",
+    "description": "Use this resource to attach API gateway usage plan to service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayUsagePlanAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "ID of the API. This parameter will be required when `bind_type` is `API`."
+        },
+        "BindType": {
+            "type": "string",
+            "description": "Binding type. Valid values: `API`, `SERVICE`. Default value is `SERVICE`."
+        },
+        "Environment": {
+            "type": "string",
+            "description": "The environment to be bound. Valid values: `test`, `prepub`, `release`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "ID of the service."
+        },
+        "UsagePlanId": {
+            "type": "string",
+            "description": "ID of the usage plan."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Environment",
+        "ServiceId",
+        "UsagePlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

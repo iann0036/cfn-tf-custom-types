@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleCloudAssetFolderFeed",
+    "description": "CloudFormation equivalent of google_cloud_asset_folder_feed",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleCloudAssetFolderFeed/docs/README.md",
+    "definitions": {
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Expression": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Expression"
+            ]
+        },
+        "FeedOutputConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PubsubDestination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PubsubDestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PubsubDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Topic"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssetNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AssetTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BillingProject": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "FeedId": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "FolderId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionDefinition"
+            },
+            "maxItems": 1
+        },
+        "FeedOutputConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FeedOutputConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BillingProject",
+        "FeedId",
+        "Folder"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FolderId",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

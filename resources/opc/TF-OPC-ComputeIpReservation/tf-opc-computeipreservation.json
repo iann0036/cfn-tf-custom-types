@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::OPC::ComputeIpReservation",
+    "description": "The ``opc_compute_ip_reservation`` resource creates and manages an IP reservation in an Oracle Cloud Infrastructure Compute Classic identity domain for the Shared Network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeIpReservation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the IP Reservation. Will be generated if unspecified."
+        },
+        "ParentPool": {
+            "type": "string",
+            "description": "The pool from which to allocate the IP address. Defaults to `/oracle/public/ippool`, and is currently the only acceptable input."
+        },
+        "Permanent": {
+            "type": "boolean",
+            "description": "Whether the IP address remains reserved even when it is no longer associated with an instance\n(if true), or may be returned to the pool and replaced with a different IP address when an instance is restarted, or\ndeleted and recreated (if false)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that may be applied to the IP reservation."
+        },
+        "Used": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Permanent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ip",
+        "/properties/Used"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

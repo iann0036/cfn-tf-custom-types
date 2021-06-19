@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Heroku::Slug",
+    "description": "Provides a [Heroku Slug](https://devcenter.heroku.com/articles/platform-api-reference#slug)\nresource.\n\nThis resource supports uploading a pre-generated archive file of executable code, making it possible to launch apps\ndirectly from a Terraform config. This resource does not itself generate the slug archive.\n[A guide to creating slug archives](https://devcenter.heroku.com/articles/platform-api-deploying-slugs) is available\nin the Heroku Dev Center.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-Slug/docs/README.md",
+    "definitions": {
+        "BlobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Method": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProcessTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "App": {
+            "type": "string",
+            "description": "The ID of the Heroku app."
+        },
+        "Blob": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BlobDefinition"
+            }
+        },
+        "BuildpackProvidedDescription": {
+            "type": "string",
+            "description": "Description of language or app framework, `\"Ruby/Rack\"`;\ndisplayed as the app's language in the Heroku Dashboard."
+        },
+        "Checksum": {
+            "type": "string",
+            "description": "Hash of the slug for verifying its integrity, auto-generated from contents of `file_path` or `file_url`,\n`SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`."
+        },
+        "Commit": {
+            "type": "string",
+            "description": "Identification of the code with your version control system (eg: SHA of the git HEAD), `\"60883d9e8947a57e04dc9124f25df004866a2051\"`."
+        },
+        "CommitDescription": {
+            "type": "string",
+            "description": "Description of the provided commit."
+        },
+        "FilePath": {
+            "type": "string",
+            "description": "Local path to a slug archive, `\"slugs/current.tgz\"`."
+        },
+        "FileUrl": {
+            "type": "string",
+            "description": "**https** URL to a slug archive, `\"https://example.com/slugs/app-v1.tgz\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProcessTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProcessTypesDefinition"
+            },
+            "description": "Map of [processes to launch on Heroku Dynos](https://devcenter.heroku.com/articles/process-model)."
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Stack": {
+            "type": "string",
+            "description": "Name or ID of the [Heroku stack](https://devcenter.heroku.com/articles/stack)."
+        },
+        "StackId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "App",
+        "ProcessTypes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Blob",
+        "/properties/Id",
+        "/properties/Size",
+        "/properties/StackId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

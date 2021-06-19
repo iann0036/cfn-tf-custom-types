@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementDiagnostic",
+    "description": "Manages an API Management Service Diagnostic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementDiagnostic/docs/README.md",
+    "definitions": {
+        "BackendRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BackendResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FrontendRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FrontendResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number",
+                    "description": "Number of payload bytes to log (up to 8192)."
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies a list of headers to log."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlwaysLogErrors": {
+            "type": "boolean",
+            "description": "Always log errors. Send telemetry if there is an erroneous condition, regardless of sampling settings."
+        },
+        "ApiManagementLoggerId": {
+            "type": "string",
+            "description": "The id of the target API Management Logger where the API Management Diagnostic should be saved."
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The Name of the API Management Service where this Diagnostic should be created. Changing this forces a new resource to be created."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "HttpCorrelationProtocol": {
+            "type": "string",
+            "description": "The HTTP Correlation Protocol to use. Possible values are `None`, `Legacy` or `W3C`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string",
+            "description": "The diagnostic identifier for the API Management Service. At this time the only supported value is `applicationinsights`. Changing this forces a new resource to be created."
+        },
+        "LogClientIp": {
+            "type": "boolean",
+            "description": "Log client IP address."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "SamplingPercentage": {
+            "type": "number",
+            "description": "Sampling (%). For high traffic APIs, please read this [documentation](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights#performance-implications-and-log-sampling) to understand performance implications and log sampling. Valid values are between `0.0` and `100.0`."
+        },
+        "Verbosity": {
+            "type": "string",
+            "description": "Logging verbosity. Possible values are `verbose`, `information` or `error`."
+        },
+        "BackendRequest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendRequestDefinition"
+            },
+            "maxItems": 1
+        },
+        "BackendResponse": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendResponseDefinition"
+            },
+            "maxItems": 1
+        },
+        "FrontendRequest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendRequestDefinition"
+            },
+            "maxItems": 1
+        },
+        "FrontendResponse": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendResponseDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementLoggerId",
+        "ApiManagementName",
+        "Identifier",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

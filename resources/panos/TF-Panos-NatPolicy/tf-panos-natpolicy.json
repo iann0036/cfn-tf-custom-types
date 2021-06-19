@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::Panos::NatPolicy",
+    "description": "CloudFormation equivalent of panos_nat_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-NatPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatAddress": {
+            "type": "string"
+        },
+        "DatDynamicDistribution": {
+            "type": "string"
+        },
+        "DatPort": {
+            "type": "number"
+        },
+        "DatType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DestinationAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DestinationZone": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Rulebase": {
+            "type": "string"
+        },
+        "SatAddressType": {
+            "type": "string"
+        },
+        "SatFallbackInterface": {
+            "type": "string"
+        },
+        "SatFallbackIpAddress": {
+            "type": "string"
+        },
+        "SatFallbackIpType": {
+            "type": "string"
+        },
+        "SatFallbackTranslatedAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SatFallbackType": {
+            "type": "string"
+        },
+        "SatInterface": {
+            "type": "string"
+        },
+        "SatIpAddress": {
+            "type": "string"
+        },
+        "SatStaticBiDirectional": {
+            "type": "boolean"
+        },
+        "SatStaticTranslatedAddress": {
+            "type": "string"
+        },
+        "SatTranslatedAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SatType": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "SourceAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SourceZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ToInterface": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Vsys": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationAddresses",
+        "DestinationZone",
+        "Name",
+        "SourceAddresses",
+        "SourceZones"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

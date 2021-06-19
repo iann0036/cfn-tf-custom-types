@@ -1,0 +1,728 @@
+{
+    "typeName": "TF::AVI::Dnspolicy",
+    "description": "The DnsPolicy resource allows the creation and management of Avi DnsPolicy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Dnspolicy/docs/README.md",
+    "definitions": {
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpAddressDefinition"
+                    }
+                },
+                "GeoLocation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GeoLocationDefinition"
+                    }
+                },
+                "Protocol": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolDefinition"
+                    }
+                },
+                "QueryName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/QueryNameDefinition"
+                    }
+                },
+                "QueryType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/QueryTypeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Allow": {
+                    "type": "boolean"
+                },
+                "ResetConn": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DnsRateLimiterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiterObject": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterObjectDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "GslbSiteSelectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FallbackSiteNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsSitePreferred": {
+                    "type": "boolean"
+                },
+                "SiteName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SiteName"
+            ]
+        },
+        "PoolSwitchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PoolGroupRef": {
+                    "type": "string"
+                },
+                "PoolRef": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authoritative": {
+                    "type": "boolean"
+                },
+                "Rcode": {
+                    "type": "string"
+                },
+                "Truncation": {
+                    "type": "boolean"
+                },
+                "ResourceRecordSets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceRecordSetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientIpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UseEdnsClientSubnetIp": {
+                    "type": "boolean"
+                },
+                "ClientIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "GeoLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GeolocationName": {
+                    "type": "string"
+                },
+                "GeolocationTag": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "UseEdnsClientSubnetIp": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "ProtocolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Protocol"
+            ]
+        },
+        "QueryNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "QueryDomainNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "QueryTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "QueryType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "RateLimiterObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSz": {
+                    "type": "number"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ResourceRecordSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Section": {
+                    "type": "string"
+                },
+                "ResourceRecordSet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ResourceRecordSetDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ClientIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Addrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddrsDefinition"
+                    }
+                },
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixesDefinition"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "ResourceRecordSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fqdn": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Cname": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CnameDefinition"
+                    }
+                },
+                "Ip6Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ip6AddressesDefinition"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressesDefinition"
+                    }
+                },
+                "Nses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NsesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Fqdn",
+                "Ttl",
+                "Type"
+            ]
+        },
+        "AddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BeginDefinition"
+                    },
+                    "minItems": 1
+                },
+                "End": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EndDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CnameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cname"
+            ]
+        },
+        "Ip6AddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip6Address": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ip6AddressDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpAddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "NsesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nsname": {
+                    "type": "string"
+                },
+                "Ip6Address": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ip6AddressDefinition"
+                    }
+                },
+                "IpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Nsname"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "BeginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "EndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "Ip6AddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "IpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator name. Field introduced in 17.1.1."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Field introduced in 17.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the dns policy. Field introduced in 17.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant. Field introduced in 17.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

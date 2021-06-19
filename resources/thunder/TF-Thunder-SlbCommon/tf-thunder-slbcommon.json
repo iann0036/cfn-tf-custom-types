@@ -1,0 +1,430 @@
+{
+    "typeName": "TF::Thunder::SlbCommon",
+    "description": "`thunder_slb_common` Provides details about thunder slb common",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbCommon/docs/README.md",
+    "definitions": {
+        "ConnRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SrcIpList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SrcIpListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DdosProtectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpdEnableToggle": {
+                    "type": "string"
+                },
+                "Logging": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PacketsPerSecond": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PacketsPerSecondDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DnsResponseRateLimitingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxTableEntries": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SrcIpListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExceedAction": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "LimitPeriod": {
+                    "type": "string"
+                },
+                "LockOut": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Shared": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpdLoggingToggle": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PacketsPerSecondDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpdTcp": {
+                    "type": "number"
+                },
+                "IpdUdp": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AfterDisable": {
+            "type": "number",
+            "description": "Graceful shutdown after disable server/port and/or virtual server/port."
+        },
+        "AutoNatNoIpRefresh": {
+            "type": "string",
+            "description": "\u2018enable\u2019: enable; \u2018disable\u2019: disable;."
+        },
+        "BuffThresh": {
+            "type": "number",
+            "description": "Set buffer threshold."
+        },
+        "BuffThreshHwBuff": {
+            "type": "number",
+            "description": "Set hardware buffer threshold."
+        },
+        "BuffThreshRelieveThresh": {
+            "type": "number",
+            "description": "Relieve threshold."
+        },
+        "BuffThreshSysBuffHigh": {
+            "type": "number",
+            "description": "Set high water mark of system buffer."
+        },
+        "BuffThreshSysBuffLow": {
+            "type": "number",
+            "description": "Set low water mark of system buffer."
+        },
+        "CompressBlockSize": {
+            "type": "number",
+            "description": "Set compression block size (Compression block size in bytes)."
+        },
+        "DisableAdaptiveResourceCheck": {
+            "type": "number",
+            "description": "Disable adaptive resource check based on buffer usage."
+        },
+        "DisableServerAutoReselect": {
+            "type": "number",
+            "description": "Disable auto reselection of server."
+        },
+        "DnsCacheAge": {
+            "type": "number",
+            "description": "Set DNS cache entry age, default is 300 seconds (1-1000000 seconds, default is 300 seconds)."
+        },
+        "DnsCacheEnable": {
+            "type": "number",
+            "description": "Enable DNS cache."
+        },
+        "DnsCacheEntrySize": {
+            "type": "number",
+            "description": "Set DNS cache entry size, default is 256 bytes (1-4096 bytes, default is 256 bytes)."
+        },
+        "DnsVipStateless": {
+            "type": "number",
+            "description": "Enable DNS VIP stateless mode."
+        },
+        "DropIcmpToVipWhenVipDown": {
+            "type": "number",
+            "description": "Drop ICMP to VIP when VIP down."
+        },
+        "DsrHealthCheckEnable": {
+            "type": "number",
+            "description": "Enable dsr-health-check (direct server return health check)."
+        },
+        "EnableL7ReqAcct": {
+            "type": "number",
+            "description": "Enable L7 request accounting."
+        },
+        "Entity": {
+            "type": "string",
+            "description": "\u2018server\u2019: Graceful shutdown server/port only; \u2018virtual-server\u2019: Graceful shutdown virtual server/port only;."
+        },
+        "ExcludeDestination": {
+            "type": "string",
+            "description": "\u2018local\u2019: Maximum local rate; \u2018remote\u2019: Maximum remote rate;  (Maximum rates)."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable global slb extended statistics."
+        },
+        "FastPathDisable": {
+            "type": "number",
+            "description": "Disable fast path in SLB processing."
+        },
+        "GatewayHealthCheck": {
+            "type": "number",
+            "description": "Enable gateway health check."
+        },
+        "GracefulShutdown": {
+            "type": "number",
+            "description": "1-65535, in unit of seconds."
+        },
+        "GracefulShutdownEnable": {
+            "type": "number",
+            "description": "Enable graceful shutdown."
+        },
+        "HonorServerResponseTtl": {
+            "type": "number",
+            "description": "Honor the server reponse TTL."
+        },
+        "HwCompression": {
+            "type": "number",
+            "description": "Use hardware compression."
+        },
+        "HwSynRr": {
+            "type": "number",
+            "description": "Configure hardware SYN round robin (range 1-500000)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Specify the healthcheck interval, default is 5 seconds (Interval Value, in seconds (default 5))."
+        },
+        "L2l3TrunkLbDisable": {
+            "type": "number",
+            "description": "Disable L2/L3 trunk LB."
+        },
+        "LogForResetUnknownConn": {
+            "type": "number",
+            "description": "Log when rate exceed."
+        },
+        "LowLatency": {
+            "type": "number",
+            "description": "Enable low latency mode."
+        },
+        "MaxBuffQueuedPerConn": {
+            "type": "number",
+            "description": "Set per connection buffer threshold (Buffer value range 128-4096)."
+        },
+        "MaxHttpHeaderCount": {
+            "type": "number",
+            "description": "Set maximum number of HTTP headers allowed."
+        },
+        "MaxLocalRate": {
+            "type": "number",
+            "description": "Set maximum local rate."
+        },
+        "MaxRemoteRate": {
+            "type": "number",
+            "description": "Set maximum remote rate."
+        },
+        "MslTime": {
+            "type": "number",
+            "description": "Configure maximum session life, default is 2 seconds (1-40 seconds, default is 2 seconds)."
+        },
+        "MssTable": {
+            "type": "number",
+            "description": "Set MSS table (128-750, default is 536)."
+        },
+        "NoAutoUpOnAflex": {
+            "type": "number",
+            "description": "Don\u2019t automatically mark vport up when aFleX is bound."
+        },
+        "OverridePort": {
+            "type": "number",
+            "description": "Enable override port in DSR health check mode."
+        },
+        "PktRateForResetUnknownConn": {
+            "type": "number"
+        },
+        "PlayerIdCheckEnable": {
+            "type": "number",
+            "description": "Enable the Player id check."
+        },
+        "Range": {
+            "type": "number",
+            "description": "auto translate port range."
+        },
+        "RangeEnd": {
+            "type": "number",
+            "description": "port range end."
+        },
+        "RangeStart": {
+            "type": "number",
+            "description": "port range start."
+        },
+        "RateLimitLogging": {
+            "type": "number",
+            "description": "Configure rate limit logging."
+        },
+        "ResetStaleSession": {
+            "type": "number",
+            "description": "Send reset if session in delete queue receives a SYN packet."
+        },
+        "ResolvePortConflict": {
+            "type": "number",
+            "description": "Enable client port service port conflicts."
+        },
+        "ResponseType": {
+            "type": "string",
+            "description": "\u2018single-answer\u2019: Only cache DNS response with single answer; \u2018round-robin\u2019: Round robin;."
+        },
+        "ScaleOut": {
+            "type": "number",
+            "description": "Enable SLB scale out."
+        },
+        "SnatGwyForL3": {
+            "type": "number",
+            "description": "Use source NAT gateway for L3 traffic."
+        },
+        "SnatOnVip": {
+            "type": "number",
+            "description": "Enable source NAT traffic against VIP."
+        },
+        "Software": {
+            "type": "number",
+            "description": "Software."
+        },
+        "SortRes": {
+            "type": "number",
+            "description": "Enable SLB sorting of resource names."
+        },
+        "SsliSniHashEnable": {
+            "type": "number",
+            "description": "Enable SSLi SNI hash table."
+        },
+        "StatelessSgMultiBinding": {
+            "type": "number",
+            "description": "Enable stateless service groups to be assigned to multiple L2/L3 DSR VIPs."
+        },
+        "StatsDataDisable": {
+            "type": "number",
+            "description": "Disable global slb data statistics."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Specify the healthcheck timeout value, default is 15 seconds (Timeout Value, in seconds (default 15))."
+        },
+        "TtlThreshold": {
+            "type": "number",
+            "description": "Only cache DNS response with longer TTL."
+        },
+        "UseMssTab": {
+            "type": "number",
+            "description": "Use MSS based on internal table for SLB processing."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ConnRateLimit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnRateLimitDefinition"
+            },
+            "maxItems": 1
+        },
+        "DdosProtection": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DdosProtectionDefinition"
+            },
+            "maxItems": 1
+        },
+        "DnsResponseRateLimiting": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsResponseRateLimitingDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

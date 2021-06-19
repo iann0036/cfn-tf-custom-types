@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::AzureRM::AutomationConnectionServicePrincipal",
+    "description": "Manages an Automation Connection with type `AzureServicePrincipal`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AutomationConnectionServicePrincipal/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string",
+            "description": "The (Client) ID of the Service Principal."
+        },
+        "AutomationAccountName": {
+            "type": "string",
+            "description": "The name of the automation account in which the Connection is created. Changing this forces a new resource to be created."
+        },
+        "CertificateThumbprint": {
+            "type": "string",
+            "description": "The thumbprint of the Service Principal Certificate."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for this Connection."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Connection. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Connection is created. Changing this forces a new resource to be created."
+        },
+        "SubscriptionId": {
+            "type": "string",
+            "description": "The subscription GUID."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The ID of the Tenant the Service Principal is assigned in."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationId",
+        "AutomationAccountName",
+        "CertificateThumbprint",
+        "Name",
+        "ResourceGroupName",
+        "SubscriptionId",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::AWS::AppsyncFunction",
+    "description": "Provides an AppSync Function.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppsyncFunction/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The ID of the associated AppSync API."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DataSource": {
+            "type": "string",
+            "description": "The Function DataSource name."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Function description."
+        },
+        "FunctionId": {
+            "type": "string"
+        },
+        "FunctionVersion": {
+            "type": "string",
+            "description": "The version of the request mapping template. Currently the supported value is `2018-05-29`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Function name. The function name does not have to be unique."
+        },
+        "RequestMappingTemplate": {
+            "type": "string",
+            "description": "The Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template."
+        },
+        "ResponseMappingTemplate": {
+            "type": "string",
+            "description": "The Function response mapping template."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "DataSource",
+        "Name",
+        "RequestMappingTemplate",
+        "ResponseMappingTemplate"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/FunctionId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

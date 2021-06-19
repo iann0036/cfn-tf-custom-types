@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::Okta::AppUserSchema",
+    "description": "Creates an Application User Schema property.\n\nThis resource allows you to create and configure a custom user schema property and associate it with an application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppUserSchema/docs/README.md",
+    "definitions": {
+        "ArrayOneOfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Const": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Const",
+                "Title"
+            ]
+        },
+        "OneOfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Const": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Const",
+                "Title"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The Application's ID the user custom schema property should be assigned to."
+        },
+        "ArrayEnum": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of values that an array property's items can be set to."
+        },
+        "ArrayType": {
+            "type": "string",
+            "description": "The type of the array elements if `type` is set to `\"array\"`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the user schema property."
+        },
+        "Enum": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of values a primitive property can be set to. See `array_enum` for arrays."
+        },
+        "ExternalName": {
+            "type": "string",
+            "description": "External name of the user schema property."
+        },
+        "ExternalNamespace": {
+            "type": "string",
+            "description": "External namespace of the user schema property."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Index": {
+            "type": "string",
+            "description": "The property name."
+        },
+        "Master": {
+            "type": "string",
+            "description": "Master priority for the user schema property. It can be set to `\"PROFILE_MASTER\"` or `\"OKTA\"`."
+        },
+        "MaxLength": {
+            "type": "number",
+            "description": "The maximum length of the user property value. Only applies to type `\"string\"`."
+        },
+        "MinLength": {
+            "type": "number",
+            "description": "The minimum length of the user property value. Only applies to type `\"string\"`."
+        },
+        "Pattern": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Access control permissions for the property. It can be set to `\"READ_WRITE\"`, `\"READ_ONLY\"`, `\"HIDE\"`."
+        },
+        "Required": {
+            "type": "boolean",
+            "description": "Whether the property is required for this application's users."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "determines whether an app user attribute can be set at the Individual or Group Level."
+        },
+        "Title": {
+            "type": "string",
+            "description": "display name for the enum value."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the schema property. It can be `\"string\"`, `\"boolean\"`, `\"number\"`, `\"integer\"`, `\"array\"`, or `\"object\"`."
+        },
+        "Union": {
+            "type": "boolean",
+            "description": "Used to assign attribute group priority. Can not be set to 'true' if `scope` is set to Individual level."
+        },
+        "Unique": {
+            "type": "string"
+        },
+        "UserType": {
+            "type": "string"
+        },
+        "ArrayOneOf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArrayOneOfDefinition"
+            }
+        },
+        "OneOf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OneOfDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "Index",
+        "Title",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

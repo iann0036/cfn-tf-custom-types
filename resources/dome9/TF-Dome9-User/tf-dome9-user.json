@@ -1,0 +1,332 @@
+{
+    "typeName": "TF::Dome9::User",
+    "description": "The User resource has methods to create and manage Dome9 users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-User/docs/README.md",
+    "definitions": {
+        "IamSafeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IamEntity": {
+                    "type": "string"
+                },
+                "LastLeaseTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "IamSafeDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudAccountId": {
+                    "type": "string"
+                },
+                "CloudAccountState": {
+                    "type": "string"
+                },
+                "ExternalAccountNumber": {
+                    "type": "string"
+                },
+                "IamEntities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IamEntitiesLastLeaseTime": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IamSafeDefinition"
+                    }
+                },
+                "IamEntity": {
+                    "type": "string"
+                },
+                "LastLeaseTime": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "IamSafeDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudAccounts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IamSafeDefinition2"
+                    }
+                }
+            }
+        },
+        "AccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MainId": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "Traffic": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MainId": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "Traffic": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MainId": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "Traffic": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanSwitchRole": {
+            "type": "boolean"
+        },
+        "Create": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "CrossAccountAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "Email": {
+            "type": "string",
+            "description": "user email."
+        },
+        "FirstName": {
+            "type": "string",
+            "description": "userfirst name."
+        },
+        "HasApiKey": {
+            "type": "boolean"
+        },
+        "HasApiKeyV1": {
+            "type": "boolean"
+        },
+        "HasApiKeyV2": {
+            "type": "boolean"
+        },
+        "IamSafe": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IamSafeDefinition3"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAuditor": {
+            "type": "boolean"
+        },
+        "IsLocked": {
+            "type": "boolean"
+        },
+        "IsMfaEnabled": {
+            "type": "boolean"
+        },
+        "IsMobileDevicePaired": {
+            "type": "boolean"
+        },
+        "IsOwner": {
+            "type": "boolean"
+        },
+        "IsSsoEnabled": {
+            "type": "boolean",
+            "description": "user has enabled SSO sign-on."
+        },
+        "IsSuperUser": {
+            "type": "boolean"
+        },
+        "IsSuspended": {
+            "type": "boolean"
+        },
+        "LastLogin": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string",
+            "description": "user last name."
+        },
+        "PermitAlertActions": {
+            "type": "boolean",
+            "description": "Is permitted permit alert actions (Optional) .\n* `permit_on_boarding` - Is permitted permit on boarding (Optional)  .\n* `cross_account_access` - (Optional) Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "PermitNotifications": {
+            "type": "boolean",
+            "description": "Is permitted permit notifications (Optional) .\n* `permit_policies` - Is permitted permit policies (Optional) .\n* `permit_alert_actions` - Is permitted permit alert actions (Optional) .\n* `permit_on_boarding` - Is permitted permit on boarding (Optional)  .\n* `cross_account_access` - (Optional) Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "PermitOnBoarding": {
+            "type": "boolean",
+            "description": "Is permitted permit on boarding (Optional)  .\n* `cross_account_access` - (Optional) Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "PermitPolicies": {
+            "type": "boolean",
+            "description": "Is permitted permit policies (Optional) .\n* `permit_alert_actions` - Is permitted permit alert actions (Optional) .\n* `permit_on_boarding` - Is permitted permit on boarding (Optional)  .\n* `cross_account_access` - (Optional) Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "PermitRulesets": {
+            "type": "boolean",
+            "description": "Is permitted permit rulesets (Optional) .\n* `permit_notifications` - Is permitted permit notifications (Optional) .\n* `permit_policies` - Is permitted permit policies (Optional) .\n* `permit_alert_actions` - Is permitted permit alert actions (Optional) .\n* `permit_on_boarding` - Is permitted permit on boarding (Optional)  .\n* `cross_account_access` - (Optional) Cross account access.\n* `create` - (Optional) Create permission list.\n* `access` - (Optional) Access permission list ([SRL](#SRL) Type).\n* `view` - (Optional) View permission list ([SRL](#SRL) Type).\n* `manage` - (Optional) Manage permission list ([SRL](#SRL) Type)."
+        },
+        "RoleIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Access": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessDefinition"
+            }
+        },
+        "Manage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManageDefinition"
+            }
+        },
+        "View": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "FirstName",
+        "IsSsoEnabled",
+        "LastName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CanSwitchRole",
+        "/properties/HasApiKey",
+        "/properties/HasApiKeyV1",
+        "/properties/HasApiKeyV2",
+        "/properties/IamSafe",
+        "/properties/Id",
+        "/properties/IsAuditor",
+        "/properties/IsLocked",
+        "/properties/IsMfaEnabled",
+        "/properties/IsMobileDevicePaired",
+        "/properties/IsSuperUser",
+        "/properties/IsSuspended",
+        "/properties/LastLogin"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

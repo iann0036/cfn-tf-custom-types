@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Splunk::InputsTcpSsl",
+    "description": "Access or update the SSL configuration for the host.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-InputsTcpSsl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates if input is disabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Server certificate password, if any."
+        },
+        "RequireClientCert": {
+            "type": "boolean",
+            "description": "Determines whether a client must authenticate."
+        },
+        "RootCa": {
+            "type": "string",
+            "description": "Certificate authority list (root file)."
+        },
+        "ServerCert": {
+            "type": "string",
+            "description": "Full path to the server certificate."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

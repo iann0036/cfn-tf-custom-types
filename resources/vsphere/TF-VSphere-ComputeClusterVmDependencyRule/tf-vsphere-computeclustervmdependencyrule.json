@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::VSphere::ComputeClusterVmDependencyRule",
+    "description": "The `vsphere_compute_cluster_vm_dependency_rule` resource can be used to manage\nVM dependency rules in a cluster, either created by the\n[`vsphere_compute_cluster`][tf-vsphere-cluster-resource] resource or looked up\nby the [`vsphere_compute_cluster`][tf-vsphere-cluster-data-source] data source.\n\n[tf-vsphere-cluster-resource]: /docs/providers/vsphere/r/compute_cluster.html\n[tf-vsphere-cluster-data-source]: /docs/providers/vsphere/d/compute_cluster.html\n\nA virtual machine dependency rule applies to vSphere HA, and allows\nuser-defined startup orders for virtual machines in the case of host failure.\nVirtual machines are supplied via groups, which can be managed via the\n[`vsphere_compute_cluster_vm_group`][tf-vsphere-cluster-vm-group-resource]\nresource.\n\n[tf-vsphere-cluster-vm-group-resource]: /docs/providers/vsphere/r/compute_cluster_vm_group.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-ComputeClusterVmDependencyRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ComputeClusterId": {
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the group in.  Forces a new\nresource if changed."
+        },
+        "DependencyVmGroupName": {
+            "type": "string",
+            "description": "The name of the VM group that this\nrule depends on. The VMs defined in the group specified by\n[`vm_group_name`](#vm_group_name) will not be started until the VMs in this\ngroup are started."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable this rule in the cluster. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mandatory": {
+            "type": "boolean",
+            "description": "When this value is `true`, prevents any virtual\nmachine operations that may violate this rule. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule. This must be unique in the\ncluster."
+        },
+        "VmGroupName": {
+            "type": "string",
+            "description": "The name of the VM group that is the subject of\nthis rule. The VMs defined in this group will not be started until the VMs in\nthe group specified by\n[`dependency_vm_group_name`](#dependency_vm_group_name) are started."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ComputeClusterId",
+        "DependencyVmGroupName",
+        "Name",
+        "VmGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

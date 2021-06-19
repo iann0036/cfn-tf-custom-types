@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::TencentCloud::CbsStorage",
+    "description": "Provides a resource to create a CBS.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CbsStorage/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attached": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The available zone that the CBS instance locates at."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of CBS instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`. The default is `POSTPAID_BY_HOUR`."
+        },
+        "Encrypt": {
+            "type": "boolean",
+            "description": "Indicates whether CBS is encrypted."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete CBS instance directly or not. Default is false. If set true, the instance will be deleted instead of staying recycle bin."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.33.0. Set `prepaid_period` instead. The purchased usage period of CBS. Valid values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when charge_type is set to `PREPAID`. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36."
+        },
+        "PrepaidRenewFlag": {
+            "type": "string",
+            "description": "Auto Renewal flag. Value range: `NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically, `NOTIFY_AND_MANUAL_RENEW`: Notify expiry but do not renew automatically, `DISABLE_NOTIFY_AND_MANUAL_RENEW`: Neither notify expiry nor renew automatically. Default value range: `NOTIFY_AND_MANUAL_RENEW`: Notify expiry but do not renew automatically. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "ID of the project to which the instance belongs."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "ID of the snapshot. If specified, created the CBS by this snapshot."
+        },
+        "StorageName": {
+            "type": "string",
+            "description": "Name of CBS. The maximum length can not exceed 60 bytes."
+        },
+        "StorageSize": {
+            "type": "number",
+            "description": "Volume of CBS, and unit is GB. If storage type is `CLOUD_SSD`, the size range is [100, 16000], and the others are [10-16000]."
+        },
+        "StorageStatus": {
+            "type": "string"
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "Type of CBS medium. Valid values: CLOUD_BASIC, CLOUD_PREMIUM, CLOUD_SSD, CLOUD_TSSD and CLOUD_HSSD."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The available tags within this CBS."
+        },
+        "ThroughputPerformance": {
+            "type": "number",
+            "description": "Add extra performance to the data disk. Only works when disk type is `CLOUD_TSSD` or `CLOUD_HSSD`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "StorageName",
+        "StorageSize",
+        "StorageType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attached",
+        "/properties/Id",
+        "/properties/StorageStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

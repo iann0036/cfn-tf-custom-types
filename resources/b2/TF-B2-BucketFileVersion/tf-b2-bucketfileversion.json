@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::B2::BucketFileVersion",
+    "description": "CloudFormation equivalent of b2_bucket_file_version",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/b2/TF-B2-BucketFileVersion/docs/README.md",
+    "definitions": {
+        "FileInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServerSideEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "BucketId": {
+            "type": "string"
+        },
+        "ContentMd5": {
+            "type": "string"
+        },
+        "ContentSha1": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "FileId": {
+            "type": "string"
+        },
+        "FileInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FileInfoDefinition"
+            }
+        },
+        "FileName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "UploadTimestamp": {
+            "type": "number"
+        },
+        "ServerSideEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSideEncryptionDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketId",
+        "FileName",
+        "Source"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Action",
+        "/properties/ContentMd5",
+        "/properties/ContentSha1",
+        "/properties/FileId",
+        "/properties/Id",
+        "/properties/Size",
+        "/properties/UploadTimestamp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

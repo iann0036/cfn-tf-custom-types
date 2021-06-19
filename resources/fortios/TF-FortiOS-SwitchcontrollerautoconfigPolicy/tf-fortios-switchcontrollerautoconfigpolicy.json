@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerautoconfigPolicy",
+    "description": "Configure FortiSwitch Auto-Config QoS policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerautoconfigPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgmpFloodReport": {
+            "type": "string",
+            "description": "Enable/disable IGMP flood report. Valid values: `enable`, `disable`."
+        },
+        "IgmpFloodTraffic": {
+            "type": "string",
+            "description": "Enable/disable IGMP flood traffic. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Auto-Config QoS policy name."
+        },
+        "PoeStatus": {
+            "type": "string",
+            "description": "Enable/disable PoE status. Valid values: `enable`, `disable`."
+        },
+        "QosPolicy": {
+            "type": "string",
+            "description": "Auto-Config QoS policy."
+        },
+        "StormControlPolicy": {
+            "type": "string",
+            "description": "Auto-Config storm control policy."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

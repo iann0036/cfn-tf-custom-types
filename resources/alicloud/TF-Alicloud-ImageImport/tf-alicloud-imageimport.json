@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Alicloud::ImageImport",
+    "description": "Import a copy of your local on-premise file to ECS, and appear as a custom replacement in the corresponding domain.\n\n-> **NOTE:** You must upload the image file to the object storage OSS in advance.\n\n-> **NOTE:** The region where the image is imported must be the same region as the OSS bucket where the image file is uploaded.\n\n-> **NOTE:** Available in 1.69.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ImageImport/docs/README.md",
+    "definitions": {
+        "DiskDeviceMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Device": {
+                    "type": "string"
+                },
+                "DiskImageSize": {
+                    "type": "number"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "OssBucket": {
+                    "type": "string"
+                },
+                "OssObject": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Architecture": {
+            "type": "string",
+            "description": "Specifies the architecture of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `i386` , Default is `x86_64`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the image. The length is 2 to 256 English or Chinese characters, and cannot begin with http: // and https: //."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageName": {
+            "type": "string",
+            "description": "The image name. The length is 2 ~ 128 English or Chinese characters. Must start with a english letter or Chinese, and cannot start with http: // and https: //. Can contain numbers, colons (:), underscores (_), or hyphens (-)."
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "The type of the license used to activate the operating system after the image is imported. Default value: `Auto`. Valid values: `Auto`,`Aliyun`,`BYOL`."
+        },
+        "OsType": {
+            "type": "string",
+            "description": "Operating system platform type. Valid values: `windows`, Default is `linux`."
+        },
+        "Platform": {
+            "type": "string",
+            "description": "Specifies the operating system platform of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `CentOS`, `Ubuntu`, `SUSE`, `OpenSUSE`, `Debian`, `CoreOS`, `Windows Server 2003`, `Windows Server 2008`, `Windows Server 2012`, `Windows 7`, Default is `Others Linux`, `Customized Linux`."
+        },
+        "DiskDeviceMapping": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDeviceMappingDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

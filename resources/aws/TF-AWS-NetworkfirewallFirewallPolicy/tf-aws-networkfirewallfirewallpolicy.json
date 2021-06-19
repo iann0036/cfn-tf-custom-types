@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::AWS::NetworkfirewallFirewallPolicy",
+    "description": "Provides an AWS Network Firewall Firewall Policy Resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkfirewallFirewallPolicy/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FirewallPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatelessDefaultActions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StatelessFragmentDefaultActions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StatefulRuleGroupReference": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatefulRuleGroupReferenceDefinition"
+                    }
+                },
+                "StatelessCustomAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatelessCustomActionDefinition"
+                    }
+                },
+                "StatelessRuleGroupReference": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatelessRuleGroupReferenceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "StatelessDefaultActions",
+                "StatelessFragmentDefaultActions"
+            ]
+        },
+        "StatefulRuleGroupReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "StatelessCustomActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionName": {
+                    "type": "string"
+                },
+                "ActionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinitionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ActionName"
+            ]
+        },
+        "StatelessRuleGroupReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number"
+                },
+                "ResourceArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Priority",
+                "ResourceArn"
+            ]
+        },
+        "ActionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublishMetricAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublishMetricActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "PublishMetricActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A friendly description of the firewall policy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A friendly name of the firewall policy."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of resource tags to associate with the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UpdateToken": {
+            "type": "string"
+        },
+        "FirewallPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallPolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/UpdateToken"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

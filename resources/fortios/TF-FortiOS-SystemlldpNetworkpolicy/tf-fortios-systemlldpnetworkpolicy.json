@@ -1,0 +1,354 @@
+{
+    "typeName": "TF::FortiOS::SystemlldpNetworkpolicy",
+    "description": "Configure LLDP network policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemlldpNetworkpolicy/docs/README.md",
+    "definitions": {
+        "GuestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "GuestVoiceSignalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "SoftphoneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "StreamingVideoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "VideoConferencingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "VideoSignalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "VoiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        },
+        "VoiceSignalingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dscp": {
+                    "type": "number",
+                    "description": "Differentiated Services Code Point (DSCP) value to advertise."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "802.1P CoS/PCP to advertise (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable advertising this policy. Valid values: `disable`, `enable`."
+                },
+                "Tag": {
+                    "type": "string",
+                    "description": "Advertise tagged or untagged traffic. Valid values: `none`, `dot1q`, `dot1p`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "802.1Q VLAN ID to advertise (1 - 4094)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "LLDP network policy name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Guest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuestDefinition"
+            },
+            "maxItems": 1
+        },
+        "GuestVoiceSignaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuestVoiceSignalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Softphone": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SoftphoneDefinition"
+            },
+            "maxItems": 1
+        },
+        "StreamingVideo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StreamingVideoDefinition"
+            },
+            "maxItems": 1
+        },
+        "VideoConferencing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VideoConferencingDefinition"
+            },
+            "maxItems": 1
+        },
+        "VideoSignaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VideoSignalingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Voice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VoiceDefinition"
+            },
+            "maxItems": 1
+        },
+        "VoiceSignaling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VoiceSignalingDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

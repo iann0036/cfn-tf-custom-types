@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::SignalFx::OrgToken",
+    "description": "Manage SignalFx org tokens.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-OrgToken/docs/README.md",
+    "definitions": {
+        "DpmLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DpmLimit": {
+                    "type": "number"
+                },
+                "DpmNotificationThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DpmLimit"
+            ]
+        },
+        "HostOrUsageLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerLimit": {
+                    "type": "number"
+                },
+                "ContainerNotificationThreshold": {
+                    "type": "number"
+                },
+                "CustomMetricsLimit": {
+                    "type": "number"
+                },
+                "CustomMetricsNotificationThreshold": {
+                    "type": "number"
+                },
+                "HighResMetricsLimit": {
+                    "type": "number"
+                },
+                "HighResMetricsNotificationThreshold": {
+                    "type": "number"
+                },
+                "HostLimit": {
+                    "type": "number"
+                },
+                "HostNotificationThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the token."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Flag that controls enabling the token. If set to `true`, the token is disabled, and you can't use it for authentication. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the token."
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Where to send notifications about this token's limits. Please consult the [Notification Format](https://www.terraform.io/docs/providers/signalfx/r/detector.html#notification-format) laid out in detectors."
+        },
+        "Secret": {
+            "type": "string",
+            "description": "The secret token created by the API. You cannot set this value."
+        },
+        "DpmLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DpmLimitsDefinition"
+            },
+            "maxItems": 1
+        },
+        "HostOrUsageLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HostOrUsageLimitsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Secret"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Secret"
+    ]
+}

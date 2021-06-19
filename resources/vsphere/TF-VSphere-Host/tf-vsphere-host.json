@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::VSphere::Host",
+    "description": "Provides a VMware vSphere host resource. This represents an ESXi host that\ncan be used either as part of a Compute Cluster or Standalone.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-Host/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cluster": {
+            "type": "string",
+            "description": "The ID of the Compute Cluster this host should\nbe added to. This should not be set if `datacenter` is set. Conflicts with:\n`cluster`."
+        },
+        "ClusterManaged": {
+            "type": "boolean",
+            "description": "Can be set to `true` if compute cluster\nmembership will be managed through the `compute_cluster` resource rather\nthan the`host` resource. Conflicts with: `cluster`."
+        },
+        "Connected": {
+            "type": "boolean",
+            "description": "If set to false then the host will be disconected.\nDefault is `false`."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The ID of the datacenter this host should\nbe added to. This should not be set if `cluster` is set."
+        },
+        "Force": {
+            "type": "boolean",
+            "description": "If set to true then it will force the host to be added, even\nif the host is already connected to a different vSphere instance. Default is `false`."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "FQDN or IP address of the host to be added."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "License": {
+            "type": "string",
+            "description": "The license key that will be applied to the host.\nThe license key is expected to be present in vSphere."
+        },
+        "Lockdown": {
+            "type": "string",
+            "description": "Set the lockdown state of the host. Valid options are\n`disabled`, `normal`, and `strict`. Default is `disabled`."
+        },
+        "Maintenance": {
+            "type": "boolean",
+            "description": "Set the management state of the host. Default is `false`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password that will be used by vSphere to authenticate\nto the host."
+        },
+        "Thumbprint": {
+            "type": "string",
+            "description": "Host's certificate SHA-1 thumbprint. If not set the the\nCA that signed the host's certificate should be trusted. If the CA is not trusted\nand no thumbprint is set then the operation will fail."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username that will be used by vSphere to authenticate\nto the host."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hostname",
+        "Password",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

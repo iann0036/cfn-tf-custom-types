@@ -1,0 +1,723 @@
+{
+    "typeName": "TF::AzureRM::ApiManagement",
+    "description": "Manages an API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagement/docs/README.md",
+    "definitions": {
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "XmlContent": {
+                    "type": "string"
+                },
+                "XmlLink": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdditionalLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string",
+                    "description": "The name of the Azure Region in which the API Management Service should be expanded to."
+                },
+                "VirtualNetworkConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Location"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificatePassword": {
+                    "type": "string",
+                    "description": "The password for the certificate."
+                },
+                "EncodedCertificate": {
+                    "type": "string",
+                    "description": "The Base64 Encoded PFX or Base64 Encoded X.509 Certificate."
+                },
+                "StoreName": {
+                    "type": "string",
+                    "description": "The name of the Certificate Store where this certificate should be stored. Possible values are `CertificateAuthority` and `Root`."
+                }
+            },
+            "required": [
+                "EncodedCertificate",
+                "StoreName"
+            ]
+        },
+        "HostnameConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeveloperPortal": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeveloperPortalDefinition"
+                    }
+                },
+                "Management": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagementDefinition"
+                    }
+                },
+                "Portal": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortalDefinition"
+                    }
+                },
+                "Proxy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProxyDefinition"
+                    }
+                },
+                "Scm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScmDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of IDs for User Assigned Managed Identity resources to be assigned."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the type of Managed Service Identity that should be configured on this API Management Service. Possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned` (to enable both)."
+                }
+            },
+            "required": []
+        },
+        "ProtocolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableHttp2": {
+                    "type": "boolean",
+                    "description": "Should HTTP/2 be supported by the API Management Service? Defaults to `false`."
+                }
+            },
+            "required": []
+        },
+        "SecurityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableBackendSsl30": {
+                    "type": "boolean",
+                    "description": "Should SSL 3.0 be enabled on the backend of the gateway? Defaults to `false`."
+                },
+                "EnableBackendTls10": {
+                    "type": "boolean",
+                    "description": "Should TLS 1.0 be enabled on the backend of the gateway? Defaults to `false`."
+                },
+                "EnableBackendTls11": {
+                    "type": "boolean",
+                    "description": "Should TLS 1.1 be enabled on the backend of the gateway? Defaults to `false`."
+                },
+                "EnableFrontendSsl30": {
+                    "type": "boolean",
+                    "description": "Should SSL 3.0 be enabled on the frontend of the gateway? Defaults to `false`."
+                },
+                "EnableFrontendTls10": {
+                    "type": "boolean",
+                    "description": "Should TLS 1.0 be enabled on the frontend of the gateway? Defaults to `false`."
+                },
+                "EnableFrontendTls11": {
+                    "type": "boolean",
+                    "description": "Should TLS 1.1 be enabled on the frontend of the gateway? Defaults to `false`."
+                },
+                "EnableTripleDesCiphers": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_3DES_EDE_CBC_SHA` cipher be enabled for alL TLS versions (1.0, 1.1 and 1.2)? Defaults to `false`."
+                },
+                "TlsEcdheEcdsaWithAes128CbcShaCiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA` cipher be enabled? Defaults to `false`."
+                },
+                "TlsEcdheEcdsaWithAes256CbcShaCiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA` cipher be enabled? Defaults to `false`."
+                },
+                "TlsEcdheRsaWithAes128CbcShaCiphersEnabled": {
+                    "type": "boolean"
+                },
+                "TlsEcdheRsaWithAes256CbcShaCiphersEnabled": {
+                    "type": "boolean"
+                },
+                "TlsRsaWithAes128CbcSha256CiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_AES_128_CBC_SHA256` cipher be enabled? Defaults to `false`."
+                },
+                "TlsRsaWithAes128CbcShaCiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_AES_128_CBC_SHA` cipher be enabled? Defaults to `false`."
+                },
+                "TlsRsaWithAes128GcmSha256CiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_AES_128_GCM_SHA256` cipher be enabled? Defaults to `false`."
+                },
+                "TlsRsaWithAes256CbcSha256CiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_AES_256_CBC_SHA256` cipher be enabled? Defaults to `false`."
+                },
+                "TlsRsaWithAes256CbcShaCiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_AES_256_CBC_SHA` cipher be enabled? Defaults to `false`."
+                },
+                "TripleDesCiphersEnabled": {
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_3DES_EDE_CBC_SHA` cipher be enabled for alL TLS versions (1.0, 1.1 and 1.2)? Defaults to `false`."
+                }
+            },
+            "required": []
+        },
+        "SignInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should anonymous users be redirected to the sign in page?."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "SignUpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Can users sign up on the development portal?."
+                },
+                "TermsOfService": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TermsOfServiceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "TenantAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should the access to the management api be enabled?."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualNetworkConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The id of the subnet that will be used for the API Management."
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        },
+        "DeveloperPortalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ManagementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "PortalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string",
+                    "description": "The Base64 Encoded Certificate."
+                },
+                "CertificatePassword": {
+                    "type": "string",
+                    "description": "The password associated with the certificate provided above."
+                },
+                "DefaultSslBinding": {
+                    "type": "boolean",
+                    "description": "Is the certificate associated with this Hostname the Default SSL Certificate? This is used when an SNI header isn't specified by a client. Defaults to `false`."
+                },
+                "HostName": {
+                    "type": "string",
+                    "description": "The Hostname to use for the Management API."
+                },
+                "KeyVaultId": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret containing the SSL Certificate, which must be should be of the type `application/x-pkcs12`."
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean",
+                    "description": "Should Client Certificate Negotiation be enabled for this Hostname? Defaults to `false`."
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "ScmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string",
+                    "description": "The Base64 Encoded Certificate."
+                },
+                "CertificatePassword": {
+                    "type": "string",
+                    "description": "The password associated with the certificate provided above."
+                },
+                "HostName": {
+                    "type": "string",
+                    "description": "The Hostname to use for the Management API."
+                },
+                "KeyVaultId": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret containing the SSL Certificate, which must be should be of the type `application/x-pkcs12`."
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean",
+                    "description": "Should Client Certificate Negotiation be enabled for this Hostname? Defaults to `false`."
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "TermsOfServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsentRequired": {
+                    "type": "boolean",
+                    "description": "Should the user be asked for consent during sign up?."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should Terms of Service be displayed during sign up?."
+                },
+                "Text": {
+                    "type": "string",
+                    "description": "The Terms of Service which users are required to agree to in order to sign up."
+                }
+            },
+            "required": [
+                "ConsentRequired",
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientCertificateEnabled": {
+            "type": "boolean",
+            "description": "Enforce a client certificate to be presented on each request to the gateway? This is only supported when sku type is `Consumption`."
+        },
+        "DeveloperPortalUrl": {
+            "type": "string"
+        },
+        "GatewayDisabled": {
+            "type": "boolean",
+            "description": "Disable the gateway in master region? This is only supported when `additional_location` is set."
+        },
+        "GatewayRegionalUrl": {
+            "type": "string"
+        },
+        "GatewayUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure location where the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "ManagementApiUrl": {
+            "type": "string"
+        },
+        "MinApiVersion": {
+            "type": "string",
+            "description": "The version which the control plane API calls to API Management service are limited with version equal to or newer than."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
+        },
+        "NotificationSenderEmail": {
+            "type": "string",
+            "description": "Email address from which the notification will be sent."
+        },
+        "Policy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicyDefinition"
+            },
+            "description": "A `policy` block as defined below."
+        },
+        "PortalUrl": {
+            "type": "string"
+        },
+        "PrivateIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublicIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublisherEmail": {
+            "type": "string",
+            "description": "The email of publisher/company."
+        },
+        "PublisherName": {
+            "type": "string",
+            "description": "The name of publisher/company."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created."
+        },
+        "ScmUrl": {
+            "type": "string"
+        },
+        "SkuName": {
+            "type": "string",
+            "description": "`sku_name` is a string consisting of two parts separated by an underscore(\\_). The first part is the `name`, valid values include: `Consumption`, `Developer`, `Basic`, `Standard` and `Premium`. The second part is the `capacity` (e.g. the number of deployed units of the `sku`), which must be a positive `integer` (e.g. `Developer_1`)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags assigned to the resource."
+        },
+        "VirtualNetworkType": {
+            "type": "string",
+            "description": "The type of virtual network you want to use, valid values include: `None`, `External`, `Internal`.\n> **NOTE:** Please ensure that in the subnet, inbound port 3443 is open when `virtual_network_type` is `Internal` or `External`. And please ensure other necessary ports are open according to [api management network configuration](https://docs.microsoft.com/en-us/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of availability zones."
+        },
+        "AdditionalLocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalLocationDefinition"
+            }
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDefinition"
+            },
+            "maxItems": 10
+        },
+        "HostnameConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostnameConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Protocols": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProtocolsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Security": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecurityDefinition"
+            },
+            "maxItems": 1
+        },
+        "SignIn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignInDefinition"
+            },
+            "maxItems": 1
+        },
+        "SignUp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignUpDefinition"
+            },
+            "maxItems": 1
+        },
+        "TenantAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TenantAccessDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VirtualNetworkConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualNetworkConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "PublisherEmail",
+        "PublisherName",
+        "ResourceGroupName",
+        "SkuName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeveloperPortalUrl",
+        "/properties/GatewayRegionalUrl",
+        "/properties/GatewayUrl",
+        "/properties/Id",
+        "/properties/ManagementApiUrl",
+        "/properties/PortalUrl",
+        "/properties/PrivateIpAddresses",
+        "/properties/PublicIpAddresses",
+        "/properties/ScmUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CertificateDefinition/CertificatePassword",
+        "/definitions/CertificateDefinition/EncodedCertificate",
+        "/definitions/DeveloperPortalDefinition/Certificate",
+        "/definitions/DeveloperPortalDefinition/CertificatePassword",
+        "/definitions/ManagementDefinition/Certificate",
+        "/definitions/ManagementDefinition/CertificatePassword",
+        "/definitions/PortalDefinition/Certificate",
+        "/definitions/PortalDefinition/CertificatePassword",
+        "/definitions/ProxyDefinition/Certificate",
+        "/definitions/ProxyDefinition/CertificatePassword",
+        "/definitions/ScmDefinition/Certificate",
+        "/definitions/ScmDefinition/CertificatePassword"
+    ]
+}

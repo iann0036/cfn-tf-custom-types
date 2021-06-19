@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Alicloud::ResourceManagerRole",
+    "description": "Provides a Resource Manager role resource. Members are resource containers in the resource directory, which can physically isolate resources to form an independent resource grouping unit. You can create members in the resource folder to manage them in a unified manner.\nFor information about Resource Manager role and how to use it, see [What is Resource Manager role](https://www.alibabacloud.com/help/en/doc-detail/111231.htm).\n\n-> **NOTE:** Available in v1.82.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ResourceManagerRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssumeRolePolicyDocument": {
+            "type": "string",
+            "description": "The content of the permissions strategy that plays a role."
+        },
+        "CreateDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Resource Manager role."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSessionDuration": {
+            "type": "number",
+            "description": "Role maximum session time. Valid values: [3600-43200]. Default to `3600`."
+        },
+        "RoleId": {
+            "type": "string"
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "Role Name. The length is 1 ~ 64 characters, which can include English letters, numbers, dots \".\" and dashes \"-\"."
+        },
+        "UpdateDate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AssumeRolePolicyDocument",
+        "RoleName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreateDate",
+        "/properties/Id",
+        "/properties/RoleId",
+        "/properties/UpdateDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

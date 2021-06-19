@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Alicloud::DnsInstance",
+    "description": "Create an DNS Instance resource.\n\n-> **NOTE:** Available in v1.80.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DnsInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsSecurity": {
+            "type": "string",
+            "description": "DNS security level. Valid values: `no`, `basic`, `advanced`."
+        },
+        "DomainNumbers": {
+            "type": "string",
+            "description": "Number of domain names bound."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PaymentType": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "Creating a pre-paid instance, it must be set, the unit is month, please enter an integer multiple of 12 for annually paid products."
+        },
+        "RenewPeriod": {
+            "type": "number",
+            "description": "Automatic renewal period, the unit is month. When setting RenewalStatus to AutoRenewal, it must be set."
+        },
+        "RenewalStatus": {
+            "type": "string",
+            "description": "Automatic renewal status. Valid values: `AutoRenewal`, `ManualRenewal`, default to `ManualRenewal`."
+        },
+        "VersionCode": {
+            "type": "string",
+            "description": "Paid package version. Valid values: `version_personal`, `version_enterprise_basic`, `version_enterprise_advanced`."
+        },
+        "VersionName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DnsSecurity",
+        "DomainNumbers",
+        "VersionCode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VersionName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

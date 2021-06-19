@@ -1,0 +1,552 @@
+{
+    "typeName": "TF::AWS::CodedeployDeploymentGroup",
+    "description": "Provides a CodeDeploy Deployment Group for a CodeDeploy Application\n\n~> **NOTE on blue/green deployments:** When using `green_fleet_provisioning_option` with the `COPY_AUTO_SCALING_GROUP` action, CodeDeploy will create a new ASG with a different name. This ASG is _not_ managed by terraform and will conflict with existing configuration and state. You may want to use a different approach to managing deployments that involve multiple ASG, such as `DISCOVER_EXISTING` with separate blue and green ASG.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodedeployDeploymentGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlarmConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alarms": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IgnorePollAlarmFailure": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AutoRollbackConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlueGreenDeploymentConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentReadyOption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeploymentReadyOptionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GreenFleetProvisioningOption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GreenFleetProvisioningOptionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TerminateBlueInstancesOnDeploymentSuccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TerminateBlueInstancesOnDeploymentSuccessDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DeploymentStyleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentOption": {
+                    "type": "string"
+                },
+                "DeploymentType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ec2TagFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ec2TagSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ec2TagFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ec2TagFilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EcsServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterName",
+                "ServiceName"
+            ]
+        },
+        "LoadBalancerInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ElbInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ElbInfoDefinition"
+                    }
+                },
+                "TargetGroupInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupInfoDefinition"
+                    }
+                },
+                "TargetGroupPairInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupPairInfoDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OnPremisesInstanceTagFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggerConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TriggerEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TriggerName": {
+                    "type": "string"
+                },
+                "TriggerTargetArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TriggerEvents",
+                "TriggerName",
+                "TriggerTargetArn"
+            ]
+        },
+        "DeploymentReadyOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionOnTimeout": {
+                    "type": "string"
+                },
+                "WaitTimeInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "GreenFleetProvisioningOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TerminateBlueInstancesOnDeploymentSuccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "TerminationWaitTimeInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ElbInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetGroupInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetGroupPairInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProdTrafficRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProdTrafficRouteDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "TargetGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupDefinition"
+                    },
+                    "maxItems": 2,
+                    "minItems": 1
+                },
+                "TestTrafficRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TestTrafficRouteDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ProdTrafficRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListenerArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ListenerArns"
+            ]
+        },
+        "TargetGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TestTrafficRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListenerArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ListenerArns"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppName": {
+            "type": "string",
+            "description": "The name of the application."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Autoscaling groups associated with the deployment group."
+        },
+        "ComputePlatform": {
+            "type": "string"
+        },
+        "DeploymentConfigName": {
+            "type": "string",
+            "description": "The name of the group's deployment config. The default is \"CodeDeployDefault.OneAtATime\"."
+        },
+        "DeploymentGroupId": {
+            "type": "string"
+        },
+        "DeploymentGroupName": {
+            "type": "string",
+            "description": "The name of the deployment group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceRoleArn": {
+            "type": "string",
+            "description": "The service role ARN that allows deployments."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "AlarmConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlarmConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutoRollbackConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoRollbackConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "BlueGreenDeploymentConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlueGreenDeploymentConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "DeploymentStyle": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentStyleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ec2TagFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ec2TagFilterDefinition"
+            }
+        },
+        "Ec2TagSet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ec2TagSetDefinition"
+            }
+        },
+        "EcsService": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EcsServiceDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancerInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "OnPremisesInstanceTagFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OnPremisesInstanceTagFilterDefinition"
+            }
+        },
+        "TriggerConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TriggerConfigurationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppName",
+        "DeploymentGroupName",
+        "ServiceRoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ComputePlatform",
+        "/properties/DeploymentGroupId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

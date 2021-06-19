@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::AzureRM::FrontdoorCustomHttpsConfiguration",
+    "description": "Manages the Custom Https Configuration for an Azure Front Door Frontend Endpoint..\n\n-> **NOTE:** Defining custom https configurations using a separate `azurerm_frontdoor_custom_https_configuration` resource allows for parallel creation/update.\n\n!> **BREAKING CHANGE:** In order to address the ordering issue we have changed the design on how to retrieve existing sub resources such as frontend endpoints. Existing design will be deprecated and will result in an incorrect configuration. Please refer to the updated documentation below for more information.\n\n!> **BREAKING CHANGE:** The `resource_group_name` field has been removed as of the `v2.58.0` provider release. If the `resource_group_name` field has been defined in your current `azurerm_frontdoor_custom_https_configuration` resource configuration file please remove it else you will receive a `An argument named \"resource_group_name\" is not expected here.` error. If your pre-existing Front Door instance contained inline `custom_https_configuration` blocks th...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FrontdoorCustomHttpsConfiguration/docs/README.md",
+    "definitions": {
+        "CustomHttpsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureKeyVaultCertificateSecretName": {
+                    "type": "string"
+                },
+                "AzureKeyVaultCertificateSecretVersion": {
+                    "type": "string"
+                },
+                "AzureKeyVaultCertificateVaultId": {
+                    "type": "string"
+                },
+                "CertificateSource": {
+                    "type": "string",
+                    "description": "Certificate source to encrypted `HTTPS` traffic with. Allowed values are `FrontDoor` or `AzureKeyVault`. Defaults to `FrontDoor`."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomHttpsProvisioningEnabled": {
+            "type": "boolean",
+            "description": "Should the HTTPS protocol be enabled for this custom domain associated with the Front Door?."
+        },
+        "FrontendEndpointId": {
+            "type": "string",
+            "description": "The ID of the FrontDoor Frontend Endpoint which this configuration refers to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "CustomHttpsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomHttpsConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomHttpsProvisioningEnabled",
+        "FrontendEndpointId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

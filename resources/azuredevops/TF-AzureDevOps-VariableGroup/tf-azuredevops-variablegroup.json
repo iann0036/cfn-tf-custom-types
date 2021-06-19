@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::AzureDevOps::VariableGroup",
+    "description": "Manages variable groups within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-VariableGroup/docs/README.md",
+    "definitions": {
+        "KeyVaultDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ServiceEndpointId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ServiceEndpointId"
+            ]
+        },
+        "VariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsSecret": {
+                    "type": "boolean",
+                    "description": "A boolean flag describing if the variable value is sensitive. Defaults to `false`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The key value used for the variable. Must be unique within the Variable Group.\n- `value` - (Optional) The value of the variable. If omitted, it will default to empty string.\n- `secret_value` - (Optional) The secret value of the variable. If omitted, it will default to empty string. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) A boolean flag describing if the variable value is sensitive. Defaults to `false`."
+                },
+                "SecretValue": {
+                    "type": "string",
+                    "description": "The secret value of the variable. If omitted, it will default to empty string. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) A boolean flag describing if the variable value is sensitive. Defaults to `false`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value of the variable. If omitted, it will default to empty string.\n- `secret_value` - (Optional) The secret value of the variable. If omitted, it will default to empty string. Used when `is_secret` set to `true`.\n- `is_secret` - (Optional) A boolean flag describing if the variable value is sensitive. Defaults to `false`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAccess": {
+            "type": "boolean",
+            "description": "Boolean that indicate if this variable group is shared by all pipelines of this project.\n- `variable` - (Optional) One or more `variable` blocks as documented below."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Variable Group.\n- `allow_access` - (Required) Boolean that indicate if this variable group is shared by all pipelines of this project.\n- `variable` - (Optional) One or more `variable` blocks as documented below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Variable Group.\n- `description` - (Optional) The description of the Variable Group.\n- `allow_access` - (Required) Boolean that indicate if this variable group is shared by all pipelines of this project.\n- `variable` - (Optional) One or more `variable` blocks as documented below."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `name` - (Required) The name of the Variable Group.\n- `description` - (Optional) The description of the Variable Group.\n- `allow_access` - (Required) Boolean that indicate if this variable group is shared by all pipelines of this project.\n- `variable` - (Optional) One or more `variable` blocks as documented below."
+        },
+        "KeyVault": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyVaultDefinition"
+            },
+            "maxItems": 1
+        },
+        "Variable": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VariableDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/VariableDefinition/SecretValue"
+    ]
+}

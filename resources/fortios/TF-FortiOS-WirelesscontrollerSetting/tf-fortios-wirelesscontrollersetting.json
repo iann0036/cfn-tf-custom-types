@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerSetting",
+    "description": "VDOM wireless controller configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerSetting/docs/README.md",
+    "definitions": {
+        "DarrpOptimizeSchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Schedule name."
+                }
+            },
+            "required": []
+        },
+        "OffendingSsidDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Actions taken for detected offending SSID. Valid values: `log`, `suppress`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "SsidPattern": {
+                    "type": "string",
+                    "description": "Define offending SSID pattern (case insensitive), eg: word, word*, *word, wo*rd."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "FortiCloud customer account ID."
+        },
+        "Country": {
+            "type": "string",
+            "description": "Country or region in which the FortiGate is located. The country determines the 802.11 bands and channels that are available."
+        },
+        "DarrpOptimize": {
+            "type": "number",
+            "description": "Time for running Dynamic Automatic Radio Resource Provisioning (DARRP) optimizations (0 - 86400 sec, default = 86400, 0 = disable)."
+        },
+        "DeviceHoldoff": {
+            "type": "number",
+            "description": "Lower limit of creation time of device for identification in minutes (0 - 60, default = 5)."
+        },
+        "DeviceIdle": {
+            "type": "number",
+            "description": "Upper limit of idle time of device for identification in minutes (0 - 14400, default = 1440)."
+        },
+        "DeviceWeight": {
+            "type": "number",
+            "description": "Upper limit of confidence of device for identification (0 - 255, default = 1, 0 = disable)."
+        },
+        "DuplicateSsid": {
+            "type": "string",
+            "description": "Enable/disable allowing Virtual Access Points (VAPs) to use the same SSID name in the same VDOM. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "FakeSsidAction": {
+            "type": "string",
+            "description": "Actions taken for detected fake SSID. Valid values: `log`, `suppress`."
+        },
+        "FapcCompatibility": {
+            "type": "string",
+            "description": "Enable/disable FAP-C series compatibility. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PhishingSsidDetect": {
+            "type": "string",
+            "description": "Enable/disable phishing SSID detection. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WfaCompatibility": {
+            "type": "string",
+            "description": "Enable/disable WFA compatibility. Valid values: `enable`, `disable`."
+        },
+        "DarrpOptimizeSchedules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DarrpOptimizeSchedulesDefinition"
+            }
+        },
+        "OffendingSsid": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OffendingSsidDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

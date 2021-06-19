@@ -1,0 +1,189 @@
+{
+    "typeName": "TF::Linode::ObjectStorageBucket",
+    "description": "Provides a Linode Object Storage Bucket resource. This can be used to create, modify, and delete Linodes Object Storage Buckets.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-ObjectStorageBucket/docs/README.md",
+    "definitions": {
+        "CertDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Certificate",
+                "PrivateKey"
+            ]
+        },
+        "LifecycleRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AbortIncompleteMultipartUploadDays": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "Expiration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExpirationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NoncurrentVersionExpiration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NoncurrentVersionExpirationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string"
+                },
+                "Days": {
+                    "type": "number"
+                },
+                "ExpiredObjectDeleteMarker": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NoncurrentVersionExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Days"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string",
+            "description": "The Access Control Level of the bucket using a canned ACL string. See all ACL strings [in the Linode API v4 documentation](linode.com/docs/api/object-storage/#object-storage-bucket-access-update__request-body-schema)."
+        },
+        "Cluster": {
+            "type": "string",
+            "description": "The cluster of the Linode Object Storage Bucket."
+        },
+        "CorsEnabled": {
+            "type": "boolean",
+            "description": "If true, the bucket will have CORS enabled for all origins."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The label of the Linode Object Storage Bucket."
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "Versioning": {
+            "type": "boolean",
+            "description": "Whether to enable versioning. Once you version-enable a bucket, it can never return to an unversioned state. You can, however, suspend versioning on that bucket."
+        },
+        "Cert": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertDefinition"
+            },
+            "maxItems": 1
+        },
+        "LifecycleRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cluster",
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CertDefinition/Certificate",
+        "/definitions/CertDefinition/PrivateKey"
+    ]
+}

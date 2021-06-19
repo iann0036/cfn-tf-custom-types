@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::Lacework::AlertChannelServiceNow",
+    "description": "You can configure Lacework to forward alerts to Service Now using the ServiceNow REST API.\n\nTo find more information see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360005842314-ServiceNow).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelServiceNow/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "CustomTemplateFile": {
+            "type": "string",
+            "description": "Populate fields in the ServiceNow incident with values from a custom template JSON file."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceUrl": {
+            "type": "string",
+            "description": "The ServiceNow instance URL."
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "IssueGrouping": {
+            "type": "string",
+            "description": "Defines how Lacework compliance events get grouped. Must be one of `Events` or `Resources`. Defaults to `Events`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Password": {
+            "type": "string",
+            "description": "The ServiceNow password."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "The ServiceNow user name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceUrl",
+        "Name",
+        "Password",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

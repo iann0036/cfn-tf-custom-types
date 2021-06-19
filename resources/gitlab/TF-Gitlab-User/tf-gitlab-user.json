@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::Gitlab::User",
+    "description": "This resource allows you to create and manage GitLab users.\nNote your provider will need to be configured with admin-level access for this resource to work.\n\n-> **Note:** You must specify either `password` or `reset_password`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-User/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanCreateGroup": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Whether to allow the user to create groups."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The e-mail address of the user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAdmin": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Whether to enable administrative priviledges\nfor the user."
+        },
+        "IsExternal": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Whether a user has access only to some internal or private projects. External users can only access projects to which they are explicitly granted access."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the user."
+        },
+        "Note": {
+            "type": "string",
+            "description": "The note associated to the user."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the user."
+        },
+        "ProjectsLimit": {
+            "type": "number",
+            "description": "Integer, defaults to 0.  Number of projects user can create."
+        },
+        "ResetPassword": {
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Send user password reset link."
+        },
+        "SkipConfirmation": {
+            "type": "boolean",
+            "description": "Boolean, defaults to true. Whether to skip confirmation."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username of the user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Name",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

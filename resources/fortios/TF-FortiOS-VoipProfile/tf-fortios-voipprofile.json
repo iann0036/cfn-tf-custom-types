@@ -1,0 +1,516 @@
+{
+    "typeName": "TF::FortiOS::VoipProfile",
+    "description": "Configure VoIP profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VoipProfile/docs/README.md",
+    "definitions": {
+        "SccpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockMcast": {
+                    "type": "string",
+                    "description": "Enable/disable block multicast RTP connections. Valid values: `disable`, `enable`."
+                },
+                "LogCallSummary": {
+                    "type": "string",
+                    "description": "Enable/disable log summary of SCCP calls. Valid values: `disable`, `enable`."
+                },
+                "LogViolations": {
+                    "type": "string",
+                    "description": "Enable/disable logging of SCCP violations. Valid values: `disable`, `enable`."
+                },
+                "MaxCalls": {
+                    "type": "number",
+                    "description": "Maximum calls per minute per SCCP client (max 65535)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable SCCP. Valid values: `disable`, `enable`."
+                },
+                "VerifyHeader": {
+                    "type": "string",
+                    "description": "Enable/disable verify SCCP header content. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "SipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AckRate": {
+                    "type": "number",
+                    "description": "ACK request rate limit (per second, per policy)."
+                },
+                "BlockAck": {
+                    "type": "string",
+                    "description": "Enable/disable block ACK requests. Valid values: `disable`, `enable`."
+                },
+                "BlockBye": {
+                    "type": "string",
+                    "description": "Enable/disable block BYE requests. Valid values: `disable`, `enable`."
+                },
+                "BlockCancel": {
+                    "type": "string",
+                    "description": "Enable/disable block CANCEL requests. Valid values: `disable`, `enable`."
+                },
+                "BlockGeoRedOptions": {
+                    "type": "string",
+                    "description": "Enable/disable block OPTIONS requests, but OPTIONS requests still notify for redundancy. Valid values: `disable`, `enable`."
+                },
+                "BlockInfo": {
+                    "type": "string",
+                    "description": "Enable/disable block INFO requests. Valid values: `disable`, `enable`."
+                },
+                "BlockInvite": {
+                    "type": "string",
+                    "description": "Enable/disable block INVITE requests. Valid values: `disable`, `enable`."
+                },
+                "BlockLongLines": {
+                    "type": "string",
+                    "description": "Enable/disable block requests with headers exceeding max-line-length. Valid values: `disable`, `enable`."
+                },
+                "BlockMessage": {
+                    "type": "string",
+                    "description": "Enable/disable block MESSAGE requests. Valid values: `disable`, `enable`."
+                },
+                "BlockNotify": {
+                    "type": "string",
+                    "description": "Enable/disable block NOTIFY requests. Valid values: `disable`, `enable`."
+                },
+                "BlockOptions": {
+                    "type": "string",
+                    "description": "Enable/disable block OPTIONS requests and no OPTIONS as notifying message for redundancy either. Valid values: `disable`, `enable`."
+                },
+                "BlockPrack": {
+                    "type": "string",
+                    "description": "Enable/disable block prack requests. Valid values: `disable`, `enable`."
+                },
+                "BlockPublish": {
+                    "type": "string",
+                    "description": "Enable/disable block PUBLISH requests. Valid values: `disable`, `enable`."
+                },
+                "BlockRefer": {
+                    "type": "string",
+                    "description": "Enable/disable block REFER requests. Valid values: `disable`, `enable`."
+                },
+                "BlockRegister": {
+                    "type": "string",
+                    "description": "Enable/disable block REGISTER requests. Valid values: `disable`, `enable`."
+                },
+                "BlockSubscribe": {
+                    "type": "string",
+                    "description": "Enable/disable block SUBSCRIBE requests. Valid values: `disable`, `enable`."
+                },
+                "BlockUnknown": {
+                    "type": "string",
+                    "description": "Block unrecognized SIP requests (enabled by default). Valid values: `disable`, `enable`."
+                },
+                "BlockUpdate": {
+                    "type": "string",
+                    "description": "Enable/disable block UPDATE requests. Valid values: `disable`, `enable`."
+                },
+                "ByeRate": {
+                    "type": "number",
+                    "description": "BYE request rate limit (per second, per policy)."
+                },
+                "CallKeepalive": {
+                    "type": "number",
+                    "description": "Continue tracking calls with no RTP for this many minutes."
+                },
+                "CancelRate": {
+                    "type": "number",
+                    "description": "CANCEL request rate limit (per second, per policy)."
+                },
+                "ContactFixup": {
+                    "type": "string",
+                    "description": "Fixup contact anyway even if contact's IP:port doesn't match session's IP:port. Valid values: `disable`, `enable`."
+                },
+                "HntRestrictSourceIp": {
+                    "type": "string",
+                    "description": "Enable/disable restrict RTP source IP to be the same as SIP source IP when HNT is enabled. Valid values: `disable`, `enable`."
+                },
+                "HostedNatTraversal": {
+                    "type": "string",
+                    "description": "Hosted NAT Traversal (HNT). Valid values: `disable`, `enable`."
+                },
+                "InfoRate": {
+                    "type": "number",
+                    "description": "INFO request rate limit (per second, per policy)."
+                },
+                "InviteRate": {
+                    "type": "number",
+                    "description": "INVITE request rate limit (per second, per policy)."
+                },
+                "IpsRtp": {
+                    "type": "string",
+                    "description": "Enable/disable allow IPS on RTP. Valid values: `disable`, `enable`."
+                },
+                "LogCallSummary": {
+                    "type": "string",
+                    "description": "Enable/disable logging of SIP call summary. Valid values: `disable`, `enable`."
+                },
+                "LogViolations": {
+                    "type": "string",
+                    "description": "Enable/disable logging of SIP violations. Valid values: `disable`, `enable`."
+                },
+                "MalformedHeaderAllow": {
+                    "type": "string",
+                    "description": "Action for malformed Allow header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderCallId": {
+                    "type": "string",
+                    "description": "Action for malformed Call-ID header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderContact": {
+                    "type": "string",
+                    "description": "Action for malformed Contact header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderContentLength": {
+                    "type": "string",
+                    "description": "Action for malformed Content-Length header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderContentType": {
+                    "type": "string",
+                    "description": "Action for malformed Content-Type header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderCseq": {
+                    "type": "string",
+                    "description": "Action for malformed CSeq header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderExpires": {
+                    "type": "string",
+                    "description": "Action for malformed Expires header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderFrom": {
+                    "type": "string",
+                    "description": "Action for malformed From header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderMaxForwards": {
+                    "type": "string",
+                    "description": "Action for malformed Max-Forwards header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderPAssertedIdentity": {
+                    "type": "string",
+                    "description": "Action for malformed P-Asserted-Identity header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderRack": {
+                    "type": "string",
+                    "description": "Action for malformed RAck header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderRecordRoute": {
+                    "type": "string",
+                    "description": "Action for malformed Record-Route header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderRoute": {
+                    "type": "string",
+                    "description": "Action for malformed Route header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderRseq": {
+                    "type": "string",
+                    "description": "Action for malformed RSeq header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpA": {
+                    "type": "string",
+                    "description": "Action for malformed SDP a line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpB": {
+                    "type": "string",
+                    "description": "Action for malformed SDP b line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpC": {
+                    "type": "string",
+                    "description": "Action for malformed SDP c line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpI": {
+                    "type": "string",
+                    "description": "Action for malformed SDP i line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpK": {
+                    "type": "string",
+                    "description": "Action for malformed SDP k line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpM": {
+                    "type": "string",
+                    "description": "Action for malformed SDP m line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpO": {
+                    "type": "string",
+                    "description": "Action for malformed SDP o line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpR": {
+                    "type": "string",
+                    "description": "Action for malformed SDP r line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpS": {
+                    "type": "string",
+                    "description": "Action for malformed SDP s line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpT": {
+                    "type": "string",
+                    "description": "Action for malformed SDP t line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpV": {
+                    "type": "string",
+                    "description": "Action for malformed SDP v line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderSdpZ": {
+                    "type": "string",
+                    "description": "Action for malformed SDP z line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderTo": {
+                    "type": "string",
+                    "description": "Action for malformed To header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedHeaderVia": {
+                    "type": "string",
+                    "description": "Action for malformed VIA header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MalformedRequestLine": {
+                    "type": "string",
+                    "description": "Action for malformed request line. Valid values: `discard`, `pass`, `respond`."
+                },
+                "MaxBodyLength": {
+                    "type": "number",
+                    "description": "Maximum SIP message body length (0 meaning no limit)."
+                },
+                "MaxDialogs": {
+                    "type": "number",
+                    "description": "Maximum number of concurrent calls/dialogs (per policy)."
+                },
+                "MaxIdleDialogs": {
+                    "type": "number",
+                    "description": "Maximum number established but idle dialogs to retain (per policy)."
+                },
+                "MaxLineLength": {
+                    "type": "number",
+                    "description": "Maximum SIP header line length (78-4096)."
+                },
+                "MessageRate": {
+                    "type": "number",
+                    "description": "MESSAGE request rate limit (per second, per policy)."
+                },
+                "NatPortRange": {
+                    "type": "string",
+                    "description": "RTP NAT port range."
+                },
+                "NatTrace": {
+                    "type": "string",
+                    "description": "Enable/disable preservation of original IP in SDP i line. Valid values: `disable`, `enable`."
+                },
+                "NoSdpFixup": {
+                    "type": "string",
+                    "description": "Enable/disable no SDP fix-up. Valid values: `disable`, `enable`."
+                },
+                "NotifyRate": {
+                    "type": "number",
+                    "description": "NOTIFY request rate limit (per second, per policy)."
+                },
+                "OpenContactPinhole": {
+                    "type": "string",
+                    "description": "Enable/disable open pinhole for non-REGISTER Contact port. Valid values: `disable`, `enable`."
+                },
+                "OpenRecordRoutePinhole": {
+                    "type": "string",
+                    "description": "Enable/disable open pinhole for Record-Route port. Valid values: `disable`, `enable`."
+                },
+                "OpenRegisterPinhole": {
+                    "type": "string",
+                    "description": "Enable/disable open pinhole for REGISTER Contact port. Valid values: `disable`, `enable`."
+                },
+                "OpenViaPinhole": {
+                    "type": "string",
+                    "description": "Enable/disable open pinhole for Via port. Valid values: `disable`, `enable`."
+                },
+                "OptionsRate": {
+                    "type": "number",
+                    "description": "OPTIONS request rate limit (per second, per policy)."
+                },
+                "PrackRate": {
+                    "type": "number",
+                    "description": "PRACK request rate limit (per second, per policy)."
+                },
+                "PreserveOverride": {
+                    "type": "string",
+                    "description": "Override i line to preserve original IPS (default: append). Valid values: `disable`, `enable`."
+                },
+                "ProvisionalInviteExpiryTime": {
+                    "type": "number",
+                    "description": "Expiry time for provisional INVITE (10 - 3600 sec)."
+                },
+                "PublishRate": {
+                    "type": "number",
+                    "description": "PUBLISH request rate limit (per second, per policy)."
+                },
+                "ReferRate": {
+                    "type": "number",
+                    "description": "REFER request rate limit (per second, per policy)."
+                },
+                "RegisterContactTrace": {
+                    "type": "string",
+                    "description": "Enable/disable trace original IP/port within the contact header of REGISTER requests. Valid values: `disable`, `enable`."
+                },
+                "RegisterRate": {
+                    "type": "number",
+                    "description": "REGISTER request rate limit (per second, per policy)."
+                },
+                "Rfc2543Branch": {
+                    "type": "string",
+                    "description": "Enable/disable support via branch compliant with RFC 2543. Valid values: `disable`, `enable`."
+                },
+                "Rtp": {
+                    "type": "string",
+                    "description": "Enable/disable create pinholes for RTP traffic to traverse firewall. Valid values: `disable`, `enable`."
+                },
+                "SslAlgorithm": {
+                    "type": "string",
+                    "description": "Relative strength of encryption algorithms accepted in negotiation. Valid values: `high`, `medium`, `low`."
+                },
+                "SslAuthClient": {
+                    "type": "string",
+                    "description": "Require a client certificate and authenticate it with the peer/peergrp."
+                },
+                "SslAuthServer": {
+                    "type": "string",
+                    "description": "Authenticate the server's certificate with the peer/peergrp."
+                },
+                "SslClientCertificate": {
+                    "type": "string",
+                    "description": "Name of Certificate to offer to server if requested."
+                },
+                "SslClientRenegotiation": {
+                    "type": "string",
+                    "description": "Allow/block client renegotiation by server. Valid values: `allow`, `deny`, `secure`."
+                },
+                "SslMaxVersion": {
+                    "type": "string",
+                    "description": "Highest SSL/TLS version to negotiate."
+                },
+                "SslMinVersion": {
+                    "type": "string",
+                    "description": "Lowest SSL/TLS version to negotiate."
+                },
+                "SslMode": {
+                    "type": "string",
+                    "description": "SSL/TLS mode for encryption & decryption of traffic. Valid values: `off`, `full`."
+                },
+                "SslPfs": {
+                    "type": "string",
+                    "description": "SSL Perfect Forward Secrecy. Valid values: `require`, `deny`, `allow`."
+                },
+                "SslSendEmptyFrags": {
+                    "type": "string",
+                    "description": "Send empty fragments to avoid attack on CBC IV (SSL 3.0 & TLS 1.0 only). Valid values: `enable`, `disable`."
+                },
+                "SslServerCertificate": {
+                    "type": "string",
+                    "description": "Name of Certificate return to the client in every SSL connection."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable SIP. Valid values: `disable`, `enable`."
+                },
+                "StrictRegister": {
+                    "type": "string",
+                    "description": "Enable/disable only allow the registrar to connect. Valid values: `disable`, `enable`."
+                },
+                "SubscribeRate": {
+                    "type": "number",
+                    "description": "SUBSCRIBE request rate limit (per second, per policy)."
+                },
+                "UnknownHeader": {
+                    "type": "string",
+                    "description": "Action for unknown SIP header. Valid values: `discard`, `pass`, `respond`."
+                },
+                "UpdateRate": {
+                    "type": "number",
+                    "description": "UPDATE request rate limit (per second, per policy)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Sccp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SccpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SipDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,632 @@
+{
+    "typeName": "TF::AzureRM::VirtualMachine",
+    "description": "Manages a Virtual Machine.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualMachine/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdditionalCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UltraSsdEnabled": {
+                    "type": "boolean",
+                    "description": "Should Ultra SSD disk be enabled for this Virtual Machine?."
+                }
+            },
+            "required": [
+                "UltraSsdEnabled"
+            ]
+        },
+        "BootDiagnosticsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should Boot Diagnostics be enabled for this Virtual Machine?."
+                },
+                "StorageUri": {
+                    "type": "string",
+                    "description": "The Storage Account's Blob Endpoint which should hold the virtual machine's diagnostic files."
+                }
+            },
+            "required": [
+                "Enabled",
+                "StorageUri"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies a list of user managed identity ids to be assigned to the VM. Required if `type` is `UserAssigned`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The Managed Service Identity Type of this Virtual Machine. Possible values are `SystemAssigned` (where Azure will generate a Service Principal for you), `UserAssigned` (where you can specify the Service Principal ID's) to be used by this Virtual Machine using the `identity_ids` field, and `SystemAssigned, UserAssigned` which assigns both a system managed identity as well as the specified user assigned identities."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OsProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string",
+                    "description": "The password associated with the local administrator account."
+                },
+                "AdminUsername": {
+                    "type": "string",
+                    "description": "Specifies the name of the local administrator account."
+                },
+                "ComputerName": {
+                    "type": "string",
+                    "description": "Specifies the name of the Virtual Machine."
+                },
+                "CustomData": {
+                    "type": "string",
+                    "description": "Specifies custom data to supply to the machine. On Linux-based systems, this can be used as a cloud-init script. On other systems, this will be copied as a file on disk. Internally, Terraform will base64 encode this value before sending it to the API. The maximum length of the binary array is 65535 bytes."
+                }
+            },
+            "required": [
+                "AdminUsername",
+                "ComputerName"
+            ]
+        },
+        "OsProfileLinuxConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisablePasswordAuthentication": {
+                    "type": "boolean",
+                    "description": "Specifies whether password authentication should be disabled. If set to `false`, an `admin_password` must be specified."
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SshKeysDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DisablePasswordAuthentication"
+            ]
+        },
+        "OsProfileSecretsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SourceVaultId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Key Vault to use."
+                },
+                "VaultCertificates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VaultCertificatesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "SourceVaultId"
+            ]
+        },
+        "OsProfileWindowsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableAutomaticUpgrades": {
+                    "type": "boolean",
+                    "description": "Are automatic updates enabled on this Virtual Machine? Defaults to `false.`."
+                },
+                "ProvisionVmAgent": {
+                    "type": "boolean",
+                    "description": "Should the Azure Virtual Machine Guest Agent be installed on this Virtual Machine? Defaults to `false`."
+                },
+                "Timezone": {
+                    "type": "string",
+                    "description": "Specifies the time zone of the virtual machine, [the possible values are defined here](http://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/)."
+                },
+                "AdditionalUnattendConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalUnattendConfigDefinition"
+                    }
+                },
+                "Winrm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WinrmDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the image from the marketplace."
+                },
+                "Product": {
+                    "type": "string",
+                    "description": "Specifies the product of the image from the marketplace."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the publisher of the image."
+                }
+            },
+            "required": [
+                "Name",
+                "Product",
+                "Publisher"
+            ]
+        },
+        "StorageDataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string",
+                    "description": "Specifies the caching requirements for the Data Disk. Possible values include `None`, `ReadOnly` and `ReadWrite`."
+                },
+                "CreateOption": {
+                    "type": "string",
+                    "description": "Specifies how the data disk should be created. Possible values are `Attach`, `FromImage` and `Empty`."
+                },
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "Specifies the size of the data disk in gigabytes."
+                },
+                "Lun": {
+                    "type": "number",
+                    "description": "Specifies the logical unit number of the data disk. This needs to be unique within all the Data Disks on the Virtual Machine."
+                },
+                "ManagedDiskId": {
+                    "type": "string",
+                    "description": "Specifies the ID of an Existing Managed Disk which should be attached to this Virtual Machine. When this field is set `create_option` must be set to `Attach`."
+                },
+                "ManagedDiskType": {
+                    "type": "string",
+                    "description": "Specifies the type of managed disk to create. Possible values are either `Standard_LRS`, `StandardSSD_LRS`, `Premium_LRS` or `UltraSSD_LRS`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Data Disk."
+                },
+                "VhdUri": {
+                    "type": "string",
+                    "description": "Specifies the URI of the VHD file backing this Unmanaged Data Disk. Changing this forces a new resource to be created."
+                },
+                "WriteAcceleratorEnabled": {
+                    "type": "boolean",
+                    "description": "Specifies if Write Accelerator is enabled on the disk. This can only be enabled on `Premium_LRS` managed disks with no caching and [M-Series VMs](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/how-to-enable-write-accelerator). Defaults to `false`."
+                }
+            },
+            "required": [
+                "CreateOption",
+                "Lun",
+                "Name"
+            ]
+        },
+        "StorageImageReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Custom Image which the Virtual Machine should be created from. Changing this forces a new resource to be created."
+                },
+                "Offer": {
+                    "type": "string",
+                    "description": "Specifies the offer of the image used to create the virtual machine. Changing this forces a new resource to be created."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the publisher of the image used to create the virtual machine. Changing this forces a new resource to be created."
+                },
+                "Sku": {
+                    "type": "string",
+                    "description": "Specifies the SKU of the image used to create the virtual machine. Changing this forces a new resource to be created."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "Specifies the version of the image used to create the virtual machine. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        },
+        "StorageOsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string",
+                    "description": "Specifies the caching requirements for the OS Disk. Possible values include `None`, `ReadOnly` and `ReadWrite`."
+                },
+                "CreateOption": {
+                    "type": "string",
+                    "description": "Specifies how the OS Disk should be created. Possible values are `Attach` (managed disks only) and `FromImage`."
+                },
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "Specifies the size of the OS Disk in gigabytes."
+                },
+                "ImageUri": {
+                    "type": "string",
+                    "description": "Specifies the Image URI in the format `publisherName:offer:skus:version`. This field can also specify the [VHD uri](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-cli-deploy-templates/#create-a-custom-vm-image) of a custom VM image to clone. When cloning a Custom (Unmanaged) Disk Image the `os_type` field must be set."
+                },
+                "ManagedDiskId": {
+                    "type": "string",
+                    "description": "Specifies the ID of an existing Managed Disk which should be attached as the OS Disk of this Virtual Machine. If this is set then the `create_option` must be set to `Attach`."
+                },
+                "ManagedDiskType": {
+                    "type": "string",
+                    "description": "Specifies the type of Managed Disk which should be created. Possible values are `Standard_LRS`, `StandardSSD_LRS` or `Premium_LRS`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the OS Disk."
+                },
+                "OsType": {
+                    "type": "string",
+                    "description": "Specifies the Operating System on the OS Disk. Possible values are `Linux` and `Windows`."
+                },
+                "VhdUri": {
+                    "type": "string",
+                    "description": "Specifies the URI of the VHD file backing this Unmanaged OS Disk. Changing this forces a new resource to be created."
+                },
+                "WriteAcceleratorEnabled": {
+                    "type": "boolean",
+                    "description": "Specifies if Write Accelerator is enabled on the disk. This can only be enabled on `Premium_LRS` managed disks with no caching and [M-Series VMs](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/how-to-enable-write-accelerator). Defaults to `false`."
+                }
+            },
+            "required": [
+                "CreateOption",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SshKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyData": {
+                    "type": "string",
+                    "description": "The Public SSH Key which should be written to the `path` defined above."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "The path of the destination file on the virtual machine."
+                }
+            },
+            "required": [
+                "KeyData",
+                "Path"
+            ]
+        },
+        "VaultCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateStore": {
+                    "type": "string"
+                },
+                "CertificateUrl": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret. Stored secret is the Base64 encoding of a JSON Object that which is encoded in UTF-8 of which the contents need to be:."
+                }
+            },
+            "required": [
+                "CertificateUrl"
+            ]
+        },
+        "AdditionalUnattendConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Component": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "Pass": {
+                    "type": "string"
+                },
+                "SettingName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Component",
+                "Content",
+                "Pass",
+                "SettingName"
+            ]
+        },
+        "WinrmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret which contains the encrypted Certificate which should be installed on the Virtual Machine. This certificate must also be specified in the `vault_certificates` block within the `os_profile_secrets` block."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Specifies the protocol of listener. Possible values are `HTTP` or `HTTPS`."
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilitySetId": {
+            "type": "string",
+            "description": "The ID of the Availability Set in which the Virtual Machine should exist. Changing this forces a new resource to be created."
+        },
+        "DeleteDataDisksOnTermination": {
+            "type": "boolean",
+            "description": "Should the Data Disks (either the Managed Disks / VHD Blobs) be deleted when the Virtual Machine is destroyed? Defaults to `false`."
+        },
+        "DeleteOsDiskOnTermination": {
+            "type": "boolean",
+            "description": "Should the OS Disk (either the Managed Disk / VHD Blob) be deleted when the Virtual Machine is destroyed? Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "Specifies the BYOL Type for this Virtual Machine. This is only applicable to Windows Virtual Machines. Possible values are `Windows_Client` and `Windows_Server`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the Azure Region where the Virtual Machine exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "NetworkInterfaceIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Network Interface ID's which should be associated with the Virtual Machine."
+        },
+        "PrimaryNetworkInterfaceId": {
+            "type": "string",
+            "description": "The ID of the Network Interface (which must be attached to the Virtual Machine) which should be the Primary Network Interface for this Virtual Machine."
+        },
+        "ProximityPlacementGroupId": {
+            "type": "string",
+            "description": "The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Virtual Machine should exist. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the Virtual Machine."
+        },
+        "VmSize": {
+            "type": "string",
+            "description": "Specifies the [size of the Virtual Machine](https://docs.microsoft.com/azure/virtual-machines/sizes-general). See also [Azure VM Naming Conventions](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions)."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of a single item of the Availability Zone which the Virtual Machine should be allocated in."
+        },
+        "AdditionalCapabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalCapabilitiesDefinition"
+            },
+            "maxItems": 1
+        },
+        "BootDiagnostics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootDiagnosticsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "OsProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileDefinition"
+            },
+            "maxItems": 1
+        },
+        "OsProfileLinuxConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileLinuxConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OsProfileSecrets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsProfileSecretsDefinition"
+            }
+        },
+        "OsProfileWindowsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileWindowsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Plan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageDataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageDataDiskDefinition"
+            }
+        },
+        "StorageImageReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageImageReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageOsDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageOsDiskDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "NetworkInterfaceIds",
+        "ResourceGroupName",
+        "VmSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/OsProfileDefinition/AdminPassword",
+        "/definitions/AdditionalUnattendConfigDefinition/Content"
+    ]
+}

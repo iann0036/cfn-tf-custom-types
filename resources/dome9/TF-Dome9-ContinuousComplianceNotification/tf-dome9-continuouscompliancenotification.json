@@ -1,0 +1,344 @@
+{
+    "typeName": "TF::Dome9::ContinuousComplianceNotification",
+    "description": "This resource is used  to create and modify Dome9  notification policies for Continuous Compliance assessments of cloud accounts. Continuous assessments apply bundles of compliance rules to your cloud account continuously, and send notifications of issues according to the Notification Policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-ContinuousComplianceNotification/docs/README.md",
+    "definitions": {
+        "ChangeDetectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsSecurityHubIntegrationState": {
+                    "type": "string"
+                },
+                "EmailPerFindingSendingState": {
+                    "type": "string"
+                },
+                "EmailSendingState": {
+                    "type": "string"
+                },
+                "ExternalTicketCreatingState": {
+                    "type": "string"
+                },
+                "SnsSendingState": {
+                    "type": "string"
+                },
+                "WebhookIntegrationState": {
+                    "type": "string"
+                },
+                "AwsSecurityHubIntegration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AwsSecurityHubIntegrationDefinition"
+                    }
+                },
+                "EmailData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EmailDataDefinition"
+                    }
+                },
+                "EmailPerFindingData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EmailPerFindingDataDefinition"
+                    }
+                },
+                "SnsData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnsDataDefinition"
+                    }
+                },
+                "TicketingSystemData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TicketingSystemDataDefinition"
+                    }
+                },
+                "WebhookData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WebhookDataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GcpSecurityCommandCenterIntegrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProjectId": {
+                    "type": "string"
+                },
+                "SourceId": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScheduledReportDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmailSendingState": {
+                    "type": "string"
+                },
+                "ScheduleData": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleDataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AwsSecurityHubIntegrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalAccountId": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExternalAccountId",
+                "Region"
+            ]
+        },
+        "EmailDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Recipients"
+            ]
+        },
+        "EmailPerFindingDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotificationOutputFormat": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Recipients"
+            ]
+        },
+        "SnsDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SnsOutputFormat": {
+                    "type": "string"
+                },
+                "SnsTopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SnsOutputFormat",
+                "SnsTopicArn"
+            ]
+        },
+        "TicketingSystemDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string"
+                },
+                "IssueType": {
+                    "type": "string"
+                },
+                "Pass": {
+                    "type": "string"
+                },
+                "ProjectKey": {
+                    "type": "string"
+                },
+                "ShouldCloseTickets": {
+                    "type": "boolean"
+                },
+                "SystemType": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Pass"
+            ]
+        },
+        "WebhookDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "FormatType": {
+                    "type": "string"
+                },
+                "HttpMethod": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ScheduleDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CronExpression",
+                "Recipients",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertsConsole": {
+            "type": "boolean",
+            "description": "send  findings (also) to the Dome9 web app alerts console (Boolean); default is False."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the notification."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The cloud account id in Dome9."
+        },
+        "ChangeDetection": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ChangeDetectionDefinition"
+            },
+            "minItems": 1
+        },
+        "GcpSecurityCommandCenterIntegration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GcpSecurityCommandCenterIntegrationDefinition"
+            }
+        },
+        "ScheduledReport": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledReportDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

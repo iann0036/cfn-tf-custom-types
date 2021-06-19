@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Akamai::AppsecMatchTargetSequence",
+    "description": "The `akamai_appsec_match_target_sequence` resource allows you to specify the order in which match targets are applied within a given security configuration version.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecMatchTargetSequence/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchTargetSequence": {
+            "type": "string",
+            "description": "The name of a JSON file containing the sequence of all match targets defined for the specified security configuration version ([format](https://developer.akamai.com/api/cloud_security/application_security/v1.html#putsequence))."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the security configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

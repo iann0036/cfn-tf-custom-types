@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::ACI::BdDhcpLabel",
+    "description": "Manages ACI BD DHCP Label",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BdDhcpLabel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object BD DHCP Label.\n- `name_alias` - (Optional) Name alias for object BD DHCP Label.\n- `owner` - (Optional) Owner of the target relay servers.\nAllowed values: \"infra\", \"tenant\". Default value: \"infra\".\n- `tag` - (Optional) Label color."
+        },
+        "BridgeDomainDn": {
+            "type": "string",
+            "description": "Distinguished name of parent Bridge Domain object.\n- `name` - (Required) The Bridge Domain DHCP label name. This name can be up to 64 alphanumeric characters.\n- `annotation` - (Optional) Annotation for object BD DHCP Label.\n- `name_alias` - (Optional) Name alias for object BD DHCP Label.\n- `owner` - (Optional) Owner of the target relay servers.\nAllowed values: \"infra\", \"tenant\". Default value: \"infra\".\n- `tag` - (Optional) Label color."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Bridge Domain DHCP label name. This name can be up to 64 alphanumeric characters.\n- `annotation` - (Optional) Annotation for object BD DHCP Label.\n- `name_alias` - (Optional) Name alias for object BD DHCP Label.\n- `owner` - (Optional) Owner of the target relay servers.\nAllowed values: \"infra\", \"tenant\". Default value: \"infra\".\n- `tag` - (Optional) Label color."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object BD DHCP Label.\n- `owner` - (Optional) Owner of the target relay servers.\nAllowed values: \"infra\", \"tenant\". Default value: \"infra\".\n- `tag` - (Optional) Label color."
+        },
+        "Owner": {
+            "type": "string",
+            "description": "Owner of the target relay servers.\nAllowed values: \"infra\", \"tenant\". Default value: \"infra\".\n- `tag` - (Optional) Label color."
+        },
+        "RelationDhcpRsDhcpOptionPol": {
+            "type": "string",
+            "description": "Relation to class dhcpOptionPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Label color."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BridgeDomainDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

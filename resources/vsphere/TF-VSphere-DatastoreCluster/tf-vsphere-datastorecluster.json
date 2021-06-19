@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::VSphere::DatastoreCluster",
+    "description": "The `vsphere_datastore_cluster` resource can be used to create and manage\ndatastore clusters. This can be used to create groups of datastores with a\nshared management interface, allowing for resource control and load balancing\nthrough Storage DRS.\n\nFor more information on vSphere datastore clusters and Storage DRS, see [this\npage][ref-vsphere-datastore-clusters].\n\n[ref-vsphere-datastore-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-598DF695-107E-406B-9C95-0AF961FC227A.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** Storage DRS requires a vSphere Enterprise Plus license.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-DatastoreCluster/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SdrsAdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "A map of custom attribute ids to attribute\nvalue strings to set for the datastore cluster. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
+        },
+        "DatacenterId": {
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe datacenter to create the datastore cluster in. Forces a new resource if\nchanged."
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The relative path to a folder to put this datastore\ncluster in.  This is a path relative to the datacenter you are deploying the\ndatastore to.  Example: for the `dc1` datacenter, and a provided `folder` of\n`foo/bar`, Terraform will place a datastore cluster named\n`terraform-datastore-cluster-test` in a datastore folder located at\n`/dc1/datastore/foo/bar`, with the final inventory path being\n`/dc1/datastore/foo/bar/terraform-datastore-cluster-test`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the datastore cluster."
+        },
+        "SdrsAdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SdrsAdvancedOptionsDefinition"
+            }
+        },
+        "SdrsAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsDefaultIntraVmAffinity": {
+            "type": "boolean"
+        },
+        "SdrsEnabled": {
+            "type": "boolean",
+            "description": "Enable Storage DRS for this datastore cluster.\nDefault: `false`."
+        },
+        "SdrsFreeSpaceThreshold": {
+            "type": "number"
+        },
+        "SdrsFreeSpaceThresholdMode": {
+            "type": "string"
+        },
+        "SdrsFreeSpaceUtilizationDifference": {
+            "type": "number"
+        },
+        "SdrsIoBalanceAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsIoLatencyThreshold": {
+            "type": "number"
+        },
+        "SdrsIoLoadBalanceEnabled": {
+            "type": "boolean"
+        },
+        "SdrsIoLoadImbalanceThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservableIopsThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservablePercentThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservableThresholdMode": {
+            "type": "string"
+        },
+        "SdrsLoadBalanceInterval": {
+            "type": "number"
+        },
+        "SdrsPolicyEnforcementAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsRuleEnforcementAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsSpaceBalanceAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsSpaceUtilizationThreshold": {
+            "type": "number"
+        },
+        "SdrsVmEvacuationAutomationLevel": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatacenterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

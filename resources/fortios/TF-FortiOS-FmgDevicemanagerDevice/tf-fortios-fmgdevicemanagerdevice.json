@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::FortiOS::FmgDevicemanagerDevice",
+    "description": "This resource supports adding/deleting online FortiGate to/from FortiManager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgDevicemanagerDevice/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "Name or ID of the ADOM where the command is to be executed on."
+        },
+        "DeviceName": {
+            "type": "string",
+            "description": "Fortigate's device name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipaddr": {
+            "type": "string",
+            "description": "Fortigate's ipaddress."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password."
+        },
+        "Userid": {
+            "type": "string",
+            "description": "User name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceName",
+        "Ipaddr",
+        "Userid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

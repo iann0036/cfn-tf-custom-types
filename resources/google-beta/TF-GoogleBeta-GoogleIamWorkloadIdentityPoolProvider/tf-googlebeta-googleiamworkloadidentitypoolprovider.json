@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleIamWorkloadIdentityPoolProvider",
+    "description": "CloudFormation equivalent of google_iam_workload_identity_pool_provider",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleIamWorkloadIdentityPoolProvider/docs/README.md",
+    "definitions": {
+        "AttributeMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AwsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountId"
+            ]
+        },
+        "OidcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedAudiences": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IssuerUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IssuerUri"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttributeCondition": {
+            "type": "string"
+        },
+        "AttributeMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttributeMappingDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "WorkloadIdentityPoolId": {
+            "type": "string"
+        },
+        "WorkloadIdentityPoolProviderId": {
+            "type": "string"
+        },
+        "Aws": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Oidc": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OidcDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "WorkloadIdentityPoolId",
+        "WorkloadIdentityPoolProviderId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

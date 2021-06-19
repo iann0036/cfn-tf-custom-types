@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::DigitalOcean::DatabaseReplica",
+    "description": "Provides a DigitalOcean database replica resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-DatabaseReplica/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of the original source database cluster."
+        },
+        "Database": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the database replica."
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateHost": {
+            "type": "string"
+        },
+        "PrivateNetworkUuid": {
+            "type": "string",
+            "description": "The ID of the VPC where the database replica will be located."
+        },
+        "PrivateUri": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "DigitalOcean region where the replica will reside."
+        },
+        "Size": {
+            "type": "string",
+            "description": "Database Droplet size associated with the replica (ex. `db-s-1vcpu-1gb`)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tag names to be applied to the database replica."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Database",
+        "/properties/Host",
+        "/properties/Id",
+        "/properties/Password",
+        "/properties/Port",
+        "/properties/PrivateHost",
+        "/properties/PrivateUri",
+        "/properties/Uri",
+        "/properties/User"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateUri",
+        "/properties/Uri"
+    ]
+}

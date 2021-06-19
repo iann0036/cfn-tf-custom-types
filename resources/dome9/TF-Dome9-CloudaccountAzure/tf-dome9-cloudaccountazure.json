@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::Dome9::CloudaccountAzure",
+    "description": "This resource is used to onboard Azure cloud accounts to Dome9. This is the first and pre-requisite step in order to apply  Dome9 features, such as compliance testing, on the account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-CloudaccountAzure/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Azure account id."
+        },
+        "ClientPassword": {
+            "type": "string",
+            "description": "Password for account*."
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Azure account in Dome9."
+        },
+        "OperationMode": {
+            "type": "string",
+            "description": "Dome9 operation mode for the Azure account (\"Read-Only\" or \"Managed\")."
+        },
+        "OrganizationalUnitId": {
+            "type": "string",
+            "description": "Organizational Unit that this cloud account will be attached to."
+        },
+        "OrganizationalUnitName": {
+            "type": "string"
+        },
+        "OrganizationalUnitPath": {
+            "type": "string"
+        },
+        "SubscriptionId": {
+            "type": "string",
+            "description": "The Azure subscription id for account."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The Azure tenant id."
+        },
+        "Vendor": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "ClientPassword",
+        "Name",
+        "OperationMode",
+        "SubscriptionId",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/Id",
+        "/properties/OrganizationalUnitName",
+        "/properties/OrganizationalUnitPath",
+        "/properties/Vendor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientPassword"
+    ]
+}

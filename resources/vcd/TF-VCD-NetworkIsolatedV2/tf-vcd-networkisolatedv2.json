@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::VCD::NetworkIsolatedV2",
+    "description": "Provides a VMware Cloud Director Org VDC isolated Network. This can be used to create, modify, and\ndelete isolated VDC networks (backed by NSX-T or NSX-V).\n\nSupported in provider *v3.2+* for both NSX-T and NSX-V VDCs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-NetworkIsolatedV2/docs/README.md",
+    "definitions": {
+        "StaticIpPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description of the network."
+        },
+        "Dns1": {
+            "type": "string",
+            "description": "First DNS server to use."
+        },
+        "Dns2": {
+            "type": "string",
+            "description": "Second DNS server to use."
+        },
+        "DnsSuffix": {
+            "type": "string",
+            "description": "A FQDN for the virtual machines on this network."
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsShared": {
+            "type": "boolean",
+            "description": "**NSX-V only.** Defines if this network is shared between multiple VDCs\nin the Org.  Defaults to `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the network."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
+        },
+        "PrefixLength": {
+            "type": "number",
+            "description": "The prefix length for the new network (e.g. 24 for netmask 255.255.255.0)."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "StaticIpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StaticIpPoolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Gateway",
+        "Name",
+        "PrefixLength"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

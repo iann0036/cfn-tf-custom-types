@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::FortiOS::WebfilterFortiguard",
+    "description": "Configure FortiGuard Web Filter service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebfilterFortiguard/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheMemPercent": {
+            "type": "number",
+            "description": "Maximum percentage of available memory allocated to caching (1 - 15%)."
+        },
+        "CacheMode": {
+            "type": "string",
+            "description": "Cache entry expiration mode. Valid values: `ttl`, `db-ver`."
+        },
+        "CachePrefixMatch": {
+            "type": "string",
+            "description": "Enable/disable prefix matching in the cache. Valid values: `enable`, `disable`."
+        },
+        "ClosePorts": {
+            "type": "string",
+            "description": "Close ports used for HTTP/HTTPS override authentication and disable user overrides. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OvrdAuthHttps": {
+            "type": "string",
+            "description": "Enable/disable use of HTTPS for override authentication. Valid values: `enable`, `disable`."
+        },
+        "OvrdAuthPort": {
+            "type": "number",
+            "description": "Port to use for FortiGuard Web Filter override authentication."
+        },
+        "OvrdAuthPortHttp": {
+            "type": "number",
+            "description": "Port to use for FortiGuard Web Filter HTTP override authentication."
+        },
+        "OvrdAuthPortHttps": {
+            "type": "number",
+            "description": "Port to use for FortiGuard Web Filter HTTPS override authentication in proxy mode."
+        },
+        "OvrdAuthPortHttpsFlow": {
+            "type": "number",
+            "description": "Port to use for FortiGuard Web Filter HTTPS override authentication in flow mode."
+        },
+        "OvrdAuthPortWarning": {
+            "type": "number",
+            "description": "Port to use for FortiGuard Web Filter Warning override authentication."
+        },
+        "RequestPacketSizeLimit": {
+            "type": "number",
+            "description": "Limit size of URL request packets sent to FortiGuard server (0 for default)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WarnAuthHttps": {
+            "type": "string",
+            "description": "Enable/disable use of HTTPS for warning and authentication. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "typeName": "TF::Panos::LicenseApiKey",
+    "description": "This resource manages the licensing API key, which is necessary to delicense\nthe PAN-OS firewall.\n\nThis resource's `retain_key` param is a Terraform side configuration only.  In\norder for the firewall to delicense itself, the licensing API key must be\npresent.  This means that either the `panos_licensing` resource must use\n`depends_on` and depend on this resource, or you must set the `retain_key`\nparam to `true`.  As there is no harm in leaving the licensing API key on the\nPAN-OS firewall, it is recommended that `retain_key` be set to `true`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-LicenseApiKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The licensing API key."
+        },
+        "RetainKey": {
+            "type": "boolean",
+            "description": "Set to `true` to retain the licensing API key\neven after the deletion of this resource (recommended)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

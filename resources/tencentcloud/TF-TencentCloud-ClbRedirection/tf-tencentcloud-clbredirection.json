@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::TencentCloud::ClbRedirection",
+    "description": "Provides a resource to create a CLB redirection.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbRedirection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClbId": {
+            "type": "string",
+            "description": "ID of CLB instance."
+        },
+        "DeleteAllAutoRewrite": {
+            "type": "boolean",
+            "description": "Indicates whether delete all auto redirection. Default is `false`. It will take effect only when this redirection is auto-rewrite and this auto-rewrite auto redirected more than one rules. All the auto-rewrite relations will be deleted when this parameter set true."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAutoRewrite": {
+            "type": "boolean",
+            "description": "Indicates whether automatic forwarding is enable, default is `false`. If enabled, the source listener and location should be empty, the target listener must be https protocol and port is 443."
+        },
+        "SourceListenerId": {
+            "type": "string",
+            "description": "ID of source listener."
+        },
+        "SourceRuleId": {
+            "type": "string",
+            "description": "Rule ID of source listener."
+        },
+        "TargetListenerId": {
+            "type": "string",
+            "description": "ID of source listener."
+        },
+        "TargetRuleId": {
+            "type": "string",
+            "description": "Rule ID of target listener."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbId",
+        "TargetListenerId",
+        "TargetRuleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

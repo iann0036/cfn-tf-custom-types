@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::FortiOS::SystemVdomproperty",
+    "description": "Configure VDOM property.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemVdomproperty/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomService": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall custom services."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DialupTunnel": {
+            "type": "string",
+            "description": "Maximum guaranteed number of dial-up tunnels."
+        },
+        "FirewallAddress": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall addresses (IPv4, IPv6, multicast)."
+        },
+        "FirewallAddrgrp": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall address groups (IPv4, IPv6)."
+        },
+        "FirewallPolicy": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall policies (IPv4, IPv6, policy46, policy64, DoS-policy4, DoS-policy6, multicast)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpsecPhase1": {
+            "type": "string",
+            "description": "Maximum guaranteed number of VPN IPsec phase 1 tunnels."
+        },
+        "IpsecPhase1Interface": {
+            "type": "string",
+            "description": "Maximum guaranteed number of VPN IPsec phase1 interface tunnels."
+        },
+        "IpsecPhase2": {
+            "type": "string",
+            "description": "Maximum guaranteed number of VPN IPsec phase 2 tunnels."
+        },
+        "IpsecPhase2Interface": {
+            "type": "string",
+            "description": "Maximum guaranteed number of VPN IPsec phase2 interface tunnels."
+        },
+        "LogDiskQuota": {
+            "type": "string",
+            "description": "Log disk quota in MB (range depends on how much disk space is available)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "VDOM name."
+        },
+        "OnetimeSchedule": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall one-time schedules."
+        },
+        "Proxy": {
+            "type": "string",
+            "description": "Maximum guaranteed number of concurrent proxy users."
+        },
+        "RecurringSchedule": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall recurring schedules."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Maximum guaranteed number of firewall service groups."
+        },
+        "Session": {
+            "type": "string",
+            "description": "Maximum guaranteed number of sessions."
+        },
+        "SnmpIndex": {
+            "type": "number",
+            "description": "Permanent SNMP Index of the virtual domain (0 - 4294967295)."
+        },
+        "Sslvpn": {
+            "type": "string",
+            "description": "Maximum guaranteed number of SSL-VPNs."
+        },
+        "User": {
+            "type": "string",
+            "description": "Maximum guaranteed number of local users."
+        },
+        "UserGroup": {
+            "type": "string",
+            "description": "Maximum guaranteed number of user groups."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

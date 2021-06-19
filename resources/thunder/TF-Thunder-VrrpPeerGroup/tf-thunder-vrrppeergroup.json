@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::Thunder::VrrpPeerGroup",
+    "description": "`thunder_vrrp_peer_group` Provides details about thunder vrrp peer group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-VrrpPeerGroup/docs/README.md",
+    "definitions": {
+        "PeerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpPeerAddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpPeerAddressCfgDefinition"
+                    }
+                },
+                "Ipv6PeerAddressCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6PeerAddressCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpPeerAddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpPeerAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6PeerAddressCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv6PeerAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Peer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PeerDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

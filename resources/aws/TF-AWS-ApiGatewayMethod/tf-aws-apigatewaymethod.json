@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::AWS::ApiGatewayMethod",
+    "description": "Provides a HTTP Method for an API Gateway Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayMethod/docs/README.md",
+    "definitions": {
+        "RequestModelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RequestParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiKeyRequired": {
+            "type": "boolean",
+            "description": "Specify if the method requires an API key."
+        },
+        "Authorization": {
+            "type": "string",
+            "description": "The type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`)."
+        },
+        "AuthorizationScopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The authorization scopes used when the authorization is `COGNITO_USER_POOLS`."
+        },
+        "AuthorizerId": {
+            "type": "string",
+            "description": "The authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`."
+        },
+        "HttpMethod": {
+            "type": "string",
+            "description": "The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OperationName": {
+            "type": "string",
+            "description": "The function name that will be given to the method when generating an SDK through API Gateway. If omitted, API Gateway will generate a function name based on the resource path and HTTP verb."
+        },
+        "RequestModels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestModelsDefinition"
+            },
+            "description": "A map of the API models used for the request's content type\nwhere key is the content type (e.g. `application/json`)\nand value is either `Error`, `Empty` (built-in models) or `aws_api_gateway_model`'s `name`."
+        },
+        "RequestParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestParametersDefinition"
+            },
+            "description": "A map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).\nFor example: `request_parameters = {\"method.request.header.X-Some-Header\" = true \"method.request.querystring.some-query-param\" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request."
+        },
+        "RequestValidatorId": {
+            "type": "string",
+            "description": "The ID of a `aws_api_gateway_request_validator`."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The API resource ID."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated REST API."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Authorization",
+        "HttpMethod",
+        "ResourceId",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

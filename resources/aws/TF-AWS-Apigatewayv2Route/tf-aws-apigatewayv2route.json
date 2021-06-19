@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::AWS::Apigatewayv2Route",
+    "description": "Manages an Amazon API Gateway Version 2 route.\nMore information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) for [WebSocket](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-develop-routes.html) and [HTTP](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) APIs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Apigatewayv2Route/docs/README.md",
+    "definitions": {
+        "RequestModelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RequestParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestParameterKey": {
+                    "type": "string",
+                    "description": "Request parameter key. This is a [request data mapping parameter](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-data-mapping.html#websocket-mapping-request-parameters)."
+                },
+                "Required": {
+                    "type": "boolean",
+                    "description": "Boolean whether or not the parameter is required."
+                }
+            },
+            "required": [
+                "RequestParameterKey",
+                "Required"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API identifier."
+        },
+        "ApiKeyRequired": {
+            "type": "boolean",
+            "description": "Boolean whether an API key is required for the route. Defaults to `false`. Supported only for WebSocket APIs."
+        },
+        "AuthorizationScopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The authorization scopes supported by this route. The scopes are used with a JWT authorizer to authorize the method invocation."
+        },
+        "AuthorizationType": {
+            "type": "string",
+            "description": "The authorization type for the route.\nFor WebSocket APIs, valid values are `NONE` for open access, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.\nFor HTTP APIs, valid values are `NONE` for open access, `JWT` for using JSON Web Tokens, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.\nDefaults to `NONE`."
+        },
+        "AuthorizerId": {
+            "type": "string",
+            "description": "The identifier of the [`aws_apigatewayv2_authorizer`](apigatewayv2_authorizer.html) resource to be associated with this route."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ModelSelectionExpression": {
+            "type": "string",
+            "description": "The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route. Supported only for WebSocket APIs."
+        },
+        "OperationName": {
+            "type": "string",
+            "description": "The operation name for the route. Must be between 1 and 64 characters in length."
+        },
+        "RequestModels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestModelsDefinition"
+            },
+            "description": "The request models for the route. Supported only for WebSocket APIs."
+        },
+        "RouteKey": {
+            "type": "string",
+            "description": "The route key for the route. For HTTP APIs, the route key can be either `$default`, or a combination of an HTTP method and resource path, for example, `GET /pets`."
+        },
+        "RouteResponseSelectionExpression": {
+            "type": "string",
+            "description": "The [route response selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-response-selection-expressions) for the route. Supported only for WebSocket APIs."
+        },
+        "Target": {
+            "type": "string",
+            "description": "The target for the route, of the form `integrations/`*`IntegrationID`*, where *`IntegrationID`* is the identifier of an [`aws_apigatewayv2_integration`](apigatewayv2_integration.html) resource."
+        },
+        "RequestParameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestParameterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "RouteKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

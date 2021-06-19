@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Thunder::SnmpServerHostIpv4Host",
+    "description": "`thunder_snmp_server_host_ipv4_host` Provides details about thunder snmp server host ipv4 host",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerHostIpv4Host/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Addr": {
+            "type": "string",
+            "description": "help IPV4 address of SNMP trap host."
+        },
+        "UdpPort": {
+            "type": "number",
+            "description": "The trap host\u2019s UDP port number(default: 162)."
+        },
+        "User": {
+            "type": "string",
+            "description": "SNMPv3 user to send traps (User Name)."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "V1V2cComm": {
+            "type": "string",
+            "description": "SNMPv1/v2c community string."
+        },
+        "Version": {
+            "type": "string",
+            "description": "\u2018v1\u2019: Use SNMPv1; \u2018v2c\u2019: Use SNMPv2c; \u2018v3\u2019: User SNMPv3;."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

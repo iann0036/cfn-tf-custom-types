@@ -1,0 +1,217 @@
+{
+    "typeName": "TF::AzureRM::SharedImage",
+    "description": "Manages a Shared Image within a Shared Image Gallery.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SharedImage/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IdentifierDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string",
+                    "description": "The Offer Name for this Shared Image."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "The Publisher Name for this Gallery Image."
+                },
+                "Sku": {
+                    "type": "string",
+                    "description": "The Name of the SKU for this Gallery Image."
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku"
+            ]
+        },
+        "PurchasePlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The Purchase Plan Name for this Shared Image. Changing this forces a new resource to be created."
+                },
+                "Product": {
+                    "type": "string",
+                    "description": "The Purchase Plan Product for this Gallery Image. Changing this forces a new resource to be created."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "The Purchase Plan Publisher for this Gallery Image. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this Shared Image."
+        },
+        "Eula": {
+            "type": "string",
+            "description": "The End User Licence Agreement for the Shared Image."
+        },
+        "GalleryName": {
+            "type": "string",
+            "description": "Specifies the name of the Shared Image Gallery in which this Shared Image should exist. Changing this forces a new resource to be created."
+        },
+        "HyperVGeneration": {
+            "type": "string",
+            "description": "The generation of HyperV that the Virtual Machine used to create the Shared Image is based on. Possible values are `V1` and `V2`. Defaults to `V1`. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Shared Image Gallery exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Shared Image. Changing this forces a new resource to be created."
+        },
+        "OsType": {
+            "type": "string",
+            "description": "The type of Operating System present in this Shared Image. Possible values are `Linux` and `Windows`. Changing this forces a new resource to be created."
+        },
+        "PrivacyStatementUri": {
+            "type": "string",
+            "description": "The URI containing the Privacy Statement associated with this Shared Image."
+        },
+        "ReleaseNoteUri": {
+            "type": "string",
+            "description": "The URI containing the Release Notes associated with this Shared Image."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Shared Image Gallery exists. Changing this forces a new resource to be created."
+        },
+        "Specialized": {
+            "type": "boolean",
+            "description": "Specifies that the Operating System used inside this Image has not been Generalized (for example, `sysprep` on Windows has not been run). Defaults to `false`. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the Shared Image."
+        },
+        "Identifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentifierDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "PurchasePlan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PurchasePlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GalleryName",
+        "Location",
+        "Name",
+        "OsType",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

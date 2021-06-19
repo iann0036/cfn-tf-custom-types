@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::AWS::LightsailStaticIpAttachment",
+    "description": "Provides a static IP address attachment - relationship between a Lightsail static IP & Lightsail instance.\n\n~> **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [\"Regions and Availability Zones in Amazon Lightsail\"](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LightsailStaticIpAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the Lightsail instance to attach the IP to."
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "StaticIpName": {
+            "type": "string",
+            "description": "The name of the allocated static IP."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "StaticIpName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IpAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

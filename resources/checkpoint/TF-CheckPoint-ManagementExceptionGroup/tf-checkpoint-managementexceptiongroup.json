@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::CheckPoint::ManagementExceptionGroup",
+    "description": "This resource allows you to execute Check Point Exception Group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementExceptionGroup/docs/README.md",
+    "definitions": {
+        "AppliedThreatRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Layer": {
+                    "type": "string",
+                    "description": "The layer of the threat rule to which the group is to be attached."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the threat rule to which the group is to be attached."
+                },
+                "Position": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PositionDefinition"
+                    },
+                    "description": "Position in the rulebase."
+                }
+            },
+            "required": [
+                "Position"
+            ]
+        },
+        "PositionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppliedProfile": {
+            "type": "string",
+            "description": "The threat profile to apply this group to in the case of apply-on threat-rules-with-specific-profile."
+        },
+        "ApplyOn": {
+            "type": "string",
+            "description": "An exception group can be set to apply on all threat rules, all threat rules which have a specific profile, or those rules manually chosen by the user."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers.tags blocks are documented below."
+        },
+        "AppliedThreatRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppliedThreatRulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

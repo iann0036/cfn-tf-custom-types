@@ -1,0 +1,233 @@
+{
+    "typeName": "TF::Consul::PreparedQuery",
+    "description": "Allows Terraform to manage a Consul prepared query.\n\nManaging prepared queries is done using Consul's REST API. This resource is\nuseful to provide a consistent and declarative way of managing prepared\nqueries in your Consul cluster using Terraform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-PreparedQuery/docs/README.md",
+    "definitions": {
+        "NodeMetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServiceMetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ttl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FailoverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Datacenters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NearestN": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Regexp": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Regexp",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Connect": {
+            "type": "boolean",
+            "description": "When `true` the prepared query will return connect\nproxy services for a queried service.  Conditions such as `tags` in the\nprepared query will be matched against the proxy service. Defaults to false."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreCheckIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies a list of check IDs that should be\nignored when filtering unhealthy instances. This is mostly useful in an\nemergency or as a temporary measure when a health check is found to be\nunreliable. Being able to ignore it in centrally-defined queries can be\nsimpler than de-registering the check as an interim solution until the check\ncan be fixed."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the prepared query. Used to identify\nthe prepared query during requests. Can be specified as an empty string\nto configure the query as a catch-all."
+        },
+        "Near": {
+            "type": "string",
+            "description": "Allows specifying the name of a node to sort results\nnear using Consul's distance sorting and network coordinates. The magic\n`_agent` value can be used to always sort nearest the node servicing the\nrequest."
+        },
+        "NodeMeta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NodeMetaDefinition"
+            },
+            "description": "Specifies a list of user-defined key/value pairs that\nwill be used for filtering the query results to nodes with the given metadata\nvalues present."
+        },
+        "OnlyPassing": {
+            "type": "boolean",
+            "description": "When `true`, the prepared query will only\nreturn nodes with passing health checks in the result."
+        },
+        "Service": {
+            "type": "string",
+            "description": "The name of the service to query."
+        },
+        "ServiceMeta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceMetaDefinition"
+            },
+            "description": "Specifies a list of user-defined key/value pairs\nthat will be used for filtering the query results to services with the given\nmetadata values present."
+        },
+        "Session": {
+            "type": "string",
+            "description": "The name of the Consul session to tie this query's\nlifetime to.  This is an advanced parameter that should not be used without a\ncomplete understanding of Consul sessions and the implications of their use\n(it is recommended to leave this blank in nearly all cases).  If this\nparameter is omitted the query will not expire."
+        },
+        "StoredToken": {
+            "type": "string",
+            "description": "The ACL token to store with the prepared\nquery. This token will be used by default whenever the query is executed."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of required and/or disallowed tags.  If a tag is\nin this list it must be present.  If the tag is preceded with a \"!\" then it is\ndisallowed."
+        },
+        "Token": {
+            "type": "string",
+            "description": "The ACL token to use when saving the prepared query.\nThis overrides the token that the agent provides by default."
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Failover": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FailoverDefinition"
+            },
+            "maxItems": 1
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

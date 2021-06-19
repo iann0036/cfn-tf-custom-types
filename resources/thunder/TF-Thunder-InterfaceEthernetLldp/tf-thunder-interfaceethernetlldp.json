@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::Thunder::InterfaceEthernetLldp",
+    "description": "`thunder_interface_ethernet_lldp` Provides details about thunder interface ethernet lldp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceEthernetLldp/docs/README.md",
+    "definitions": {
+        "EnableCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RtEnable": {
+                    "type": "number"
+                },
+                "Rx": {
+                    "type": "number"
+                },
+                "Tx": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NotificationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotifEnable": {
+                    "type": "number"
+                },
+                "Notification": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxDot1CfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkAggregation": {
+                    "type": "number"
+                },
+                "TxDot1Tlvs": {
+                    "type": "number"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxTlvsCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "number"
+                },
+                "ManagementAddress": {
+                    "type": "number"
+                },
+                "PortDescription": {
+                    "type": "number"
+                },
+                "SystemCapabilities": {
+                    "type": "number"
+                },
+                "SystemDescription": {
+                    "type": "number"
+                },
+                "SystemName": {
+                    "type": "number"
+                },
+                "TxTlvs": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifnum": {
+            "type": "number"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "EnableCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnableCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "NotificationCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "TxDot1Cfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TxDot1CfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "TxTlvsCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TxTlvsCfgDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

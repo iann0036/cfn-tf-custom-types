@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Thunder::SnmpServerCommunityReadOid",
+    "description": "`thunder_snmp_server_community_read_oid` Provides details about thunder snmp server community read oid",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerCommunityReadOid/docs/README.md",
+    "definitions": {
+        "RemoteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostListDefinition"
+                    }
+                },
+                "Ipv4List": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4ListDefinition"
+                    }
+                },
+                "Ipv6List": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6ListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsHost": {
+                    "type": "string"
+                },
+                "Ipv4Mask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv4ListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Host": {
+                    "type": "string"
+                },
+                "Ipv4Mask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6ListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv6Host": {
+                    "type": "string"
+                },
+                "Ipv6Mask": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OidVal": {
+            "type": "string",
+            "description": "specific the oid (The oid value, object-key)."
+        },
+        "ReadUser": {
+            "type": "string"
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Remote": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

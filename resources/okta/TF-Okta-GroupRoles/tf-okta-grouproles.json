@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::Okta::GroupRoles",
+    "description": "Creates Group level Admin Role Assignments.\n\nThis resource allows you to create and configure Group level Admin Role Assignments.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-GroupRoles/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Admin roles associated with the group. It can be any of the following values `\"SUPER_ADMIN\"`, `\"ORG_ADMIN\"`, `\"APP_ADMIN\"`, `\"USER_ADMIN\"`, `\"HELP_DESK_ADMIN\"`, `\"READ_ONLY_ADMIN\"`, `\"MOBILE_ADMIN\"`, `\"API_ACCESS_MANAGEMENT_ADMIN\"`, `\"REPORT_ADMIN\"`, `\"GROUP_MEMBERSHIP_ADMIN\"`."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The ID of group to attach admin roles to."
+        },
+        "Id": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

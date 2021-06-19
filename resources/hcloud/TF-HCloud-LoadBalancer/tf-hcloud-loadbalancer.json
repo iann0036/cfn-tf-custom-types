@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::HCloud::LoadBalancer",
+    "description": "Provides a Hetzner Cloud Load Balancer to represent a Load Balancer in the Hetzner Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-LoadBalancer/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlgorithmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServerId": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UsePrivateIp": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "string"
+        },
+        "Ipv6": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "User-defined labels (key-value pairs) should be created with."
+        },
+        "LoadBalancerType": {
+            "type": "string",
+            "description": "Type of the Load Balancer.\n- `location` - (Optional, string) Location of the Load Balancer. Require when no network_zone is set.\n- `network_zone` - (Optional, string) Network Zone of the Load Balancer. Require when no location is set.\n- `algorithm` - (Optional) Configuration of the algorithm the Load Balancer use.\n- `target` - (Optional, list) List of targets of the Load Balancer.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Location of the Load Balancer. Require when no network_zone is set.\n- `network_zone` - (Optional, string) Network Zone of the Load Balancer. Require when no location is set.\n- `algorithm` - (Optional) Configuration of the algorithm the Load Balancer use.\n- `target` - (Optional, list) List of targets of the Load Balancer.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Load Balancer.\n- `load_balancer_type` - (Required, string) Type of the Load Balancer.\n- `location` - (Optional, string) Location of the Load Balancer. Require when no network_zone is set.\n- `network_zone` - (Optional, string) Network Zone of the Load Balancer. Require when no location is set.\n- `algorithm` - (Optional) Configuration of the algorithm the Load Balancer use.\n- `target` - (Optional, list) List of targets of the Load Balancer.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
+        },
+        "NetworkId": {
+            "type": "number"
+        },
+        "NetworkIp": {
+            "type": "string"
+        },
+        "NetworkZone": {
+            "type": "string",
+            "description": "Network Zone of the Load Balancer. Require when no location is set.\n- `algorithm` - (Optional) Configuration of the algorithm the Load Balancer use.\n- `target` - (Optional, list) List of targets of the Load Balancer.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
+        },
+        "Algorithm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlgorithmDefinition"
+            },
+            "maxItems": 1
+        },
+        "Target": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ipv4",
+        "/properties/Ipv6",
+        "/properties/NetworkId",
+        "/properties/NetworkIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

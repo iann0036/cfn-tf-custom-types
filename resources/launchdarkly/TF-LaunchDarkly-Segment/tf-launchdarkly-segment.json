@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::LaunchDarkly::Segment",
+    "description": "Provides a LaunchDarkly segment resource.\n\nThis resource allows you to create and manage segments within your LaunchDarkly organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-Segment/docs/README.md",
+    "definitions": {
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketBy": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                },
+                "Clauses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClausesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClausesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Op": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Attribute",
+                "Negate",
+                "Op",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the segment's purpose."
+        },
+        "EnvKey": {
+            "type": "string",
+            "description": "The segment's environment key."
+        },
+        "Excluded": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of user excluded from the segment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Included": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of users included in the segment."
+        },
+        "Key": {
+            "type": "string",
+            "description": "The unique key that references the segment."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-friendly name for the segment."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "The segment's project key."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of tags for the segment."
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvKey",
+        "Key",
+        "Name",
+        "ProjectKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

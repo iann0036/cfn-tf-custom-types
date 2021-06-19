@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::ACI::L3outHsrpInterfaceProfile",
+    "description": "Manages ACI L3-out HSRP interface profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outHsrpInterfaceProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3-out HSRP interface profile.\n- `description` - (Optional) Description for object L3-out HSRP interface profile.\n- `name_alias` - (Optional) Name alias for object L3-out HSRP interface profile.\n- `version` - (Optional) Compatibility catalog version.\nAllowed values: \"v1\", \"v2\". Default value: \"v1\".\n- `relation_hsrp_rs_if_pol` - (Optional) Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object L3-out HSRP interface profile.\n- `name_alias` - (Optional) Name alias for object L3-out HSRP interface profile.\n- `version` - (Optional) Compatibility catalog version.\nAllowed values: \"v1\", \"v2\". Default value: \"v1\".\n- `relation_hsrp_rs_if_pol` - (Optional) Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalInterfaceProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent logical interface profile object.\n- `annotation` - (Optional) Annotation for object L3-out HSRP interface profile.\n- `description` - (Optional) Description for object L3-out HSRP interface profile.\n- `name_alias` - (Optional) Name alias for object L3-out HSRP interface profile.\n- `version` - (Optional) Compatibility catalog version.\nAllowed values: \"v1\", \"v2\". Default value: \"v1\".\n- `relation_hsrp_rs_if_pol` - (Optional) Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3-out HSRP interface profile.\n- `version` - (Optional) Compatibility catalog version.\nAllowed values: \"v1\", \"v2\". Default value: \"v1\".\n- `relation_hsrp_rs_if_pol` - (Optional) Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationHsrpRsIfPol": {
+            "type": "string",
+            "description": "Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Compatibility catalog version.\nAllowed values: \"v1\", \"v2\". Default value: \"v1\".\n- `relation_hsrp_rs_if_pol` - (Optional) Relation to class hsrpIfPol. Cardinality - N_TO_ONE. Type - String."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicalInterfaceProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,391 @@
+{
+    "typeName": "TF::ECL::BaremetalServerV2",
+    "description": "Manages a baremetal v2 Server resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-BaremetalServerV2/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NicPhysicalPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NicPhysicalPortsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FixedIps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NicPhysicalPortsDefinition"
+                    }
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "PortId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NicPhysicalPortsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttachedPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NicPhysicalPortsDefinition2"
+                    }
+                },
+                "HardwareId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "MacAddr": {
+                    "type": "string"
+                },
+                "NetworkPhysicalPortId": {
+                    "type": "string"
+                },
+                "Plane": {
+                    "type": "string"
+                }
+            }
+        },
+        "FilesystemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string",
+                    "description": "Filesystem type. Changing this creates a new server."
+                },
+                "Label": {
+                    "type": "string",
+                    "description": "Filesystem label. Changing this creates a new server."
+                },
+                "MountPoint": {
+                    "type": "string",
+                    "description": "Mount point. Changing this creates a new server."
+                }
+            },
+            "required": []
+        },
+        "LvmVolumeGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PhysicalVolumePartitionLabels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of physical volume partition\nlabel. Changing this creates a new server."
+                },
+                "VgLabel": {
+                    "type": "string",
+                    "description": "Volume group label. Changing this creates a new server."
+                },
+                "LogicalVolumes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogicalVolumesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FixedIp": {
+                    "type": "string",
+                    "description": "Specifies a fixed IPv4 address to be used on this\nnetwork. Changing this creates a new server."
+                },
+                "Plane": {
+                    "type": "string",
+                    "description": "The port UUID of a\nnetwork to attach to the server. Changing this creates a new server."
+                },
+                "Port": {
+                    "type": "string",
+                    "description": "The port UUID of a\nnetwork to attach to the server. Changing this creates a new server."
+                },
+                "Uuid": {
+                    "type": "string",
+                    "description": "The network UUID to\nattach to the server. Changing this creates a new server."
+                }
+            },
+            "required": []
+        },
+        "PersonalityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Contents": {
+                    "type": "string",
+                    "description": "Contents. Changing this creates a new server."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "File path. Changing this creates a new server."
+                }
+            },
+            "required": []
+        },
+        "RaidArraysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskHardwareIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of disk hardware ID. Changing\nthis creates a new server."
+                },
+                "PrimaryStorage": {
+                    "type": "boolean",
+                    "description": "Primary storage flag. At least one storage\nshoul be primary. Changing this creates a new server."
+                },
+                "RaidCardHardwareId": {
+                    "type": "string",
+                    "description": "Raid card hardware ID. Changing\nthis creates a new server."
+                },
+                "RaidLevel": {
+                    "type": "number",
+                    "description": "Raid level. Changing this creates a new server."
+                },
+                "Partitions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PartitionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LogicalVolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LvLabel": {
+                    "type": "string",
+                    "description": "Logical volume label. Changing this creates a\nnew server."
+                },
+                "Size": {
+                    "type": "string",
+                    "description": "Logical volume size. Changing this creates a new server."
+                }
+            },
+            "required": []
+        },
+        "PartitionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lvm": {
+                    "type": "boolean",
+                    "description": "LVM flag. Changing this creates a new server."
+                },
+                "PartitionLabel": {
+                    "type": "string",
+                    "description": "Partition label. Changing this creates a\nnew server."
+                },
+                "Size": {
+                    "type": "string",
+                    "description": "Partition size. Changing this creates a new server."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPass": {
+            "type": "string",
+            "description": "The admin user password for the server.\nChanging this creates a new server."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The availability zone in which to create\nthe server. Changing this creates a new server."
+        },
+        "FlavorId": {
+            "type": "string",
+            "description": "The flavor ID of\nthe desired flavor for the server. Changing this resizes the existing server."
+        },
+        "FlavorName": {
+            "type": "string",
+            "description": "The name of the\ndesired flavor for the server. Changing this resizes the existing server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The image ID of the desired image for the server.\nChanging this creates a new server."
+        },
+        "ImageName": {
+            "type": "string",
+            "description": "The name of the desired image for the server.\nIf `image_id` is empty, this argument will be used to get the image's id.\nChanging this creates a new server."
+        },
+        "KeyPair": {
+            "type": "string",
+            "description": "The name of a key pair to put on the server. The key\npair must already be created and associated with the tenant's account.\nChanging this creates a new server."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "Metadata key/value pairs to make available from\nwithin the server. Changing this updates the existing server metadata."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the resource."
+        },
+        "NicPhysicalPorts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicPhysicalPortsDefinition3"
+            }
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The user data to provide when launching the server.\nChanging this creates a new server."
+        },
+        "Filesystems": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilesystemsDefinition"
+            }
+        },
+        "LvmVolumeGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LvmVolumeGroupsDefinition"
+            }
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworksDefinition"
+            }
+        },
+        "Personality": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PersonalityDefinition"
+            }
+        },
+        "RaidArrays": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RaidArraysDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NicPhysicalPorts"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

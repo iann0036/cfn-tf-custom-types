@@ -1,0 +1,221 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateDns",
+    "description": "`thunder_slb_template_dns` Provides details about thunder slb template dns",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateDns/docs/README.md",
+    "definitions": {
+        "ClassListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "LidList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LidListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResponseRateLimitingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "EnableLog": {
+                    "type": "number"
+                },
+                "FilterResponseRate": {
+                    "type": "number"
+                },
+                "ResponseRate": {
+                    "type": "number"
+                },
+                "SlipRate": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Window": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LidListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionValue": {
+                    "type": "string"
+                },
+                "ConnRateLimit": {
+                    "type": "number"
+                },
+                "Lidnum": {
+                    "type": "number"
+                },
+                "Lockout": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "number"
+                },
+                "LogInterval": {
+                    "type": "number"
+                },
+                "OverLimitAction": {
+                    "type": "number"
+                },
+                "Per": {
+                    "type": "number"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultPolicy": {
+            "type": "string",
+            "description": "\u2018nocache\u2019: Cache disable; \u2018cache\u2019: Cache enable;."
+        },
+        "DisableDnsTemplate": {
+            "type": "number",
+            "description": "Disable DNS template."
+        },
+        "DnssecServiceGroup": {
+            "type": "string",
+            "description": "Use different service group if DNSSEC DO bit set (Service Group Name)."
+        },
+        "Drop": {
+            "type": "number",
+            "description": "Drop the malformed query."
+        },
+        "EnableCacheSharing": {
+            "type": "number",
+            "description": "Enable DNS cache sharing."
+        },
+        "Forward": {
+            "type": "string",
+            "description": "Forward to service group (Service group name)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxCacheEntrySize": {
+            "type": "number",
+            "description": "Define maximum cache entry size (Maximum cache entry size per VIP)."
+        },
+        "MaxCacheSize": {
+            "type": "number",
+            "description": "Define maximum cache size (Maximum cache entry per VIP)."
+        },
+        "MaxQueryLength": {
+            "type": "number",
+            "description": "Define Maximum DNS Query Length, default is unlimited (Specify Maximum Length)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specify a class list name."
+        },
+        "Period": {
+            "type": "number",
+            "description": "Period in minutes."
+        },
+        "QueryIdSwitch": {
+            "type": "number",
+            "description": "Use DNS query ID to create sesion."
+        },
+        "RedirectToTcpPort": {
+            "type": "number",
+            "description": "Direct the client to retry with TCP for DNS UDP request."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ClassList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClassListDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResponseRateLimiting": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseRateLimitingDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

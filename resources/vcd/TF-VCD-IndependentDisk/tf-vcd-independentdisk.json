@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::VCD::IndependentDisk",
+    "description": "Provides a vCloud Director independent disk resource. This can be used to create and delete independent disks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-IndependentDisk/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BusSubType": {
+            "type": "string",
+            "description": "Disk bus subtype. Values can be: `buslogic`, `lsilogic`, `lsilogicsas`, `VirtualSCSI` for `SCSI` and `ahci` for `SATA`."
+        },
+        "BusType": {
+            "type": "string",
+            "description": "Disk bus type. Values can be: `IDE`, `SCSI`, `SATA`."
+        },
+        "DatastoreName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number"
+        },
+        "IsAttached": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Disk name."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "OwnerName": {
+            "type": "string"
+        },
+        "SizeInMb": {
+            "type": "number",
+            "description": "Size of disk in MB."
+        },
+        "StorageProfile": {
+            "type": "string",
+            "description": "The name of storage profile where disk will be created."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SizeInMb"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DatastoreName",
+        "/properties/Id",
+        "/properties/Iops",
+        "/properties/IsAttached",
+        "/properties/OwnerName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

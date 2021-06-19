@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Alicloud::RosStackGroup",
+    "description": "CloudFormation equivalent of alicloud_ros_stack_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-RosStackGroup/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ParameterKey": {
+                    "type": "string"
+                },
+                "ParameterValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountIds": {
+            "type": "string"
+        },
+        "AdministrationRoleName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExecutionRoleName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OperationDescription": {
+            "type": "string"
+        },
+        "OperationPreferences": {
+            "type": "string"
+        },
+        "RegionIds": {
+            "type": "string"
+        },
+        "StackGroupId": {
+            "type": "string"
+        },
+        "StackGroupName": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TemplateBody": {
+            "type": "string"
+        },
+        "TemplateUrl": {
+            "type": "string"
+        },
+        "TemplateVersion": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StackGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/StackGroupId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateLogging",
+    "description": "`thunder_slb_template_logging` Provides details about thunder slb template logging",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateLogging/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Auto": {
+            "type": "string",
+            "description": "\u2018auto\u2019: Configure auto NAT for logging, default is auto enabled;."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Specfiy a format string for web logging (format string(less than 250 characters) for web logging)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepEnd": {
+            "type": "number",
+            "description": "Number of unmasked characters at the end (default: 0)."
+        },
+        "KeepStart": {
+            "type": "number",
+            "description": "Number of unmasked characters at the beginning (default: 0)."
+        },
+        "LocalLogging": {
+            "type": "number",
+            "description": "1 to enable local logging (1 to enable local logging, default 0)."
+        },
+        "Mask": {
+            "type": "string",
+            "description": "Character to mask the matched pattern (default: X)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Logging Template Name."
+        },
+        "PcreMask": {
+            "type": "string",
+            "description": "Mask matched PCRE pattern in the log."
+        },
+        "Pool": {
+            "type": "string",
+            "description": "Specify NAT pool or pool group."
+        },
+        "PoolShared": {
+            "type": "string",
+            "description": "Specify NAT pool or pool group."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Bind a Service Group to the logging template (Service Group Name)."
+        },
+        "SharedPartitionPool": {
+            "type": "number",
+            "description": "Reference a NAT pool or pool group from shared partition."
+        },
+        "SharedPartitionTcpProxyTemplate": {
+            "type": "number",
+            "description": "Reference a TCP Proxy template from shared partition."
+        },
+        "TcpProxy": {
+            "type": "string",
+            "description": "TCP proxy template (TCP Proxy Config name)."
+        },
+        "TemplateTcpProxyShared": {
+            "type": "string",
+            "description": "TCP Proxy Template name."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

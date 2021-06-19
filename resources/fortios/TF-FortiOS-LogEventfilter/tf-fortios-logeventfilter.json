@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::FortiOS::LogEventfilter",
+    "description": "Configure log event filters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogEventfilter/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cifs": {
+            "type": "string",
+            "description": "Enable/disable CIFS logging. Valid values: `enable`, `disable`."
+        },
+        "ComplianceCheck": {
+            "type": "string",
+            "description": "Enable/disable PCI DSS compliance check logging. Valid values: `enable`, `disable`."
+        },
+        "Connector": {
+            "type": "string",
+            "description": "Enable/disable SDN connector logging. Valid values: `enable`, `disable`."
+        },
+        "Endpoint": {
+            "type": "string",
+            "description": "Enable/disable endpoint event logging. Valid values: `enable`, `disable`."
+        },
+        "Event": {
+            "type": "string",
+            "description": "Enable/disable event logging. Valid values: `enable`, `disable`."
+        },
+        "Fortiextender": {
+            "type": "string",
+            "description": "Enable/disable FortiExtender logging. Valid values: `enable`, `disable`."
+        },
+        "Ha": {
+            "type": "string",
+            "description": "Enable/disable ha event logging. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Router": {
+            "type": "string",
+            "description": "Enable/disable router event logging. Valid values: `enable`, `disable`."
+        },
+        "Sdwan": {
+            "type": "string",
+            "description": "Enable/disable SD-WAN logging. Valid values: `enable`, `disable`."
+        },
+        "SecurityRating": {
+            "type": "string",
+            "description": "Enable/disable Security Rating result logging. Valid values: `enable`, `disable`."
+        },
+        "SwitchController": {
+            "type": "string",
+            "description": "Enable/disable Switch-Controller logging. Valid values: `enable`, `disable`."
+        },
+        "System": {
+            "type": "string",
+            "description": "Enable/disable system event logging. Valid values: `enable`, `disable`."
+        },
+        "User": {
+            "type": "string",
+            "description": "Enable/disable user authentication event logging. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vpn": {
+            "type": "string",
+            "description": "Enable/disable VPN event logging. Valid values: `enable`, `disable`."
+        },
+        "WanOpt": {
+            "type": "string",
+            "description": "Enable/disable WAN optimization event logging. Valid values: `enable`, `disable`."
+        },
+        "WirelessActivity": {
+            "type": "string",
+            "description": "Enable/disable wireless event logging. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

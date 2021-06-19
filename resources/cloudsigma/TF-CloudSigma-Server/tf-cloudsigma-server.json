@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::CloudSigma::Server",
+    "description": "Provides a CloudSigma Server resource. This can be used to create, modify,\nand delete Servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudsigma/TF-CloudSigma-Server/docs/README.md",
+    "definitions": {
+        "DriveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VlanUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "number",
+            "description": "Server's CPU Clock speed measured in MHz."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Address": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Server's RAM measured in bytes."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human readable name of server."
+        },
+        "ResourceUri": {
+            "type": "string"
+        },
+        "Smp": {
+            "type": "number"
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of the tags UUIDs to be applied to the server."
+        },
+        "VncPassword": {
+            "type": "string",
+            "description": "VNC Password to connect to server."
+        },
+        "Drive": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DriveDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cpu",
+        "Memory",
+        "Name",
+        "VncPassword"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ipv4Address",
+        "/properties/ResourceUri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

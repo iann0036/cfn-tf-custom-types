@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::Heroku::ReviewAppConfig",
+    "description": "Provides a resource for configuring review apps. Using this resource also enables review apps for a pipeline.\n\n-> **IMPORTANT!**\nThis resource can only be used after you create a pipeline, and the pipeline has been connected to a Github repository.\nPlease visit this [help article](https://devcenter.heroku.com/articles/github-integration-review-apps#setup)\nfor more information.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-ReviewAppConfig/docs/README.md",
+    "definitions": {
+        "DeployTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomaticReviewApps": {
+            "type": "boolean",
+            "description": "If true, this will trigger the creation of review apps when pull-requests\nare opened in the repo. Defaults to `false`."
+        },
+        "BaseName": {
+            "type": "string",
+            "description": "A unique prefix that will be used to create review app names."
+        },
+        "DestroyStaleApps": {
+            "type": "boolean",
+            "description": "If `true`, this will trigger automatic deletion of review apps when they\u2019re stale.\nDefaults to `false`."
+        },
+        "Id": {
+            "type": "string",
+            "description": "Unique identifier of deploy target.\n* `type` - (Required) Type of deploy target. Must be either `space` or `region`."
+        },
+        "OrgRepo": {
+            "type": "string",
+            "description": "The full_name of the repository that you want to enable review-apps from.\nExample `heroku/homebrew-brew`."
+        },
+        "PipelineId": {
+            "type": "string",
+            "description": "The UUID of an existing pipeline."
+        },
+        "RepoId": {
+            "type": "number"
+        },
+        "StaleDays": {
+            "type": "number",
+            "description": "Destroy stale review apps automatically after these many days without any deploys.\nMust be set with `destroy_stale_apps` and value needs to be between `1` and `30` inclusive."
+        },
+        "WaitForCi": {
+            "type": "boolean",
+            "description": "If true, review apps will only be created when CI passes. Defaults to `false`."
+        },
+        "DeployTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeployTargetDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OrgRepo",
+        "PipelineId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RepoId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

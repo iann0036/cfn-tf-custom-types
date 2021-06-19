@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AzureDevOps::GroupMembership",
+    "description": "Manages group membership within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-GroupMembership/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "The descriptor of the group being managed.\n- `members` - (Required) A list of user or group descriptors that will become members of the group.\n> NOTE: It's possible to define group members both within the `azuredevops_group_membership resource` via the members block and by using the `azuredevops_group` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts.\n- `mode` - (Optional) The mode how the resource manages group members.\n- `mode == add`: the resource will ensure that all specified members will be part of the referenced group\n- `mode == overwrite`: the resource will replace all existing members with the members specified within the `members` block\n> NOTE: To clear all members from a group, specify an empty list of descriptors in the `members` attribute and set the `mode` member to `overwrite`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of user or group descriptors that will become members of the group.\n> NOTE: It's possible to define group members both within the `azuredevops_group_membership resource` via the members block and by using the `azuredevops_group` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts.\n- `mode` - (Optional) The mode how the resource manages group members.\n- `mode == add`: the resource will ensure that all specified members will be part of the referenced group\n- `mode == overwrite`: the resource will replace all existing members with the members specified within the `members` block\n> NOTE: To clear all members from a group, specify an empty list of descriptors in the `members` attribute and set the `mode` member to `overwrite`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The mode how the resource manages group members.\n- `mode == add`: the resource will ensure that all specified members will be part of the referenced group\n- `mode == overwrite`: the resource will replace all existing members with the members specified within the `members` block\n> NOTE: To clear all members from a group, specify an empty list of descriptors in the `members` attribute and set the `mode` member to `overwrite`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Group",
+        "Members"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

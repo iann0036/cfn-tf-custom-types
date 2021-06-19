@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::DigitalOcean::Record",
+    "description": "Provides a DigitalOcean DNS record resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Record/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to add the record to."
+        },
+        "Flags": {
+            "type": "number",
+            "description": "The flags of the record. Only valid when type is `CAA`. Must be between 0 and 255."
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The hostname of the record. Use `@` for records on domain's name itself."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port of the record. Only valid when type is `SRV`.  Must be between 1 and 65535."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the record. Only valid when type is `MX` or `SRV`. Must be between 0 and 65535."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "The tag of the record. Only valid when type is `CAA`. Must be one of `issue`, `issuewild`, or `iodef`."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The time to live for the record, in seconds. Must be at least 0."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of record. Must be one of `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NS`, `TXT`, or `SRV`."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the record."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "The weight of the record. Only valid when type is `SRV`.  Must be between 0 and 65535."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

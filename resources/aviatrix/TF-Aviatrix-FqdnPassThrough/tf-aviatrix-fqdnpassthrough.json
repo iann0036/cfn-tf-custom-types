@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::Aviatrix::FqdnPassThrough",
+    "description": "The **aviatrix_fqdn_pass_through** resource manages FQDN filter pass-through for Aviatrix gateways.\n\n~> **NOTE:** The **aviatrix_fqdn_pass_through** resource must be created after the **aviatrix_fqdn** resource to be created successfully. To ensure that Terraform orders the creation of these resources correctly please use a `depends_on` meta-argument so that the **aviatrix_fqdn** resource is created before the **aviatrix_fqdn_pass_through** resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FqdnPassThrough/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Gateway name to apply pass-through rules to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PassThroughCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of origin CIDR's to allow to pass-through FQDN filtering rules. Minimum list length: 1."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwName",
+        "PassThroughCidrs"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::SumoLogic::SamlConfiguration",
+    "description": "Provides a [Sumologic SAML Configuration][1].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-SamlConfiguration/docs/README.md",
+    "definitions": {
+        "OnDemandProvisioningEnabledDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FirstNameAttribute": {
+                    "type": "string"
+                },
+                "LastNameAttribute": {
+                    "type": "string"
+                },
+                "OnDemandProvisioningRoles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "OnDemandProvisioningRoles"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthnRequestUrl": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "ConfigurationName": {
+            "type": "string"
+        },
+        "DebugMode": {
+            "type": "boolean"
+        },
+        "DisableRequestedAuthnContext": {
+            "type": "boolean"
+        },
+        "EmailAttribute": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsRedirectBinding": {
+            "type": "boolean"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "LogoutEnabled": {
+            "type": "boolean"
+        },
+        "LogoutUrl": {
+            "type": "string"
+        },
+        "RolesAttribute": {
+            "type": "string"
+        },
+        "SignAuthnRequest": {
+            "type": "boolean"
+        },
+        "SpInitiatedLoginEnabled": {
+            "type": "boolean"
+        },
+        "SpInitiatedLoginPath": {
+            "type": "string"
+        },
+        "X509cert1": {
+            "type": "string"
+        },
+        "X509cert2": {
+            "type": "string"
+        },
+        "X509cert3": {
+            "type": "string"
+        },
+        "OnDemandProvisioningEnabled": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnDemandProvisioningEnabledDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigurationName",
+        "Issuer",
+        "X509cert1"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

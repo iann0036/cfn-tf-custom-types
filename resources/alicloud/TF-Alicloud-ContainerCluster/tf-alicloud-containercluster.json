@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::Alicloud::ContainerCluster",
+    "description": "-> **NOTE:** This resource name has been replaced by [`alicloud_cs_swarm`](https://www.terraform.io/docs/providers/alicloud/r/cs_swarm.html) from [version 1.8.2](https://releases.hashicorp.com/terraform-provider-alicloud/1.8.2/).\nPlease update it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ContainerCluster/docs/README.md",
+    "definitions": {
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eip": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateIp": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentVersion": {
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "DiskCategory": {
+            "type": "string"
+        },
+        "DiskSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "IsOutdated": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "NeedSlb": {
+            "type": "boolean"
+        },
+        "NodeNumber": {
+            "type": "number"
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodesDefinition"
+            }
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ReleaseEip": {
+            "type": "boolean"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "SlbId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "InstanceType",
+        "Password",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AgentVersion",
+        "/properties/Id",
+        "/properties/Nodes",
+        "/properties/SecurityGroupId",
+        "/properties/SlbId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

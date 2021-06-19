@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::SignalFx::HeatmapChart",
+    "description": "This chart type displays the specified plot in a heatmap fashion. This format is similar to the [Infrastructure Navigator](https://signalfx-product-docs.readthedocs-hosted.com/en/latest/built-in-content/infra-nav.html#infra), with squares representing each source for the selected metric, and the color of each square representing the value range of the metric.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-HeatmapChart/docs/README.md",
+    "definitions": {
+        "ColorRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "MaxValue": {
+                    "type": "number"
+                },
+                "MinValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Color"
+            ]
+        },
+        "ColorScaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Gt": {
+                    "type": "number"
+                },
+                "Gte": {
+                    "type": "number"
+                },
+                "Lt": {
+                    "type": "number"
+                },
+                "Lte": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Color"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the chart."
+        },
+        "DisableSampling": {
+            "type": "boolean",
+            "description": "If `false`, samples a subset of the output MTS, which improves UI performance. `false` by default."
+        },
+        "GroupBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Properties to group by in the heatmap (in nesting order)."
+        },
+        "HideTimestamp": {
+            "type": "boolean",
+            "description": "Whether to show the timestamp in the chart. `false` by default."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait for late datapoints."
+        },
+        "MinimumResolution": {
+            "type": "number",
+            "description": "The minimum resolution (in seconds) to use for computing the underlying program."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the chart."
+        },
+        "ProgramText": {
+            "type": "string",
+            "description": "Signalflow program text for the chart. More info at <https://developers.signalfx.com/docs/signalflow-overview>."
+        },
+        "RefreshInterval": {
+            "type": "number",
+            "description": "How often (in seconds) to refresh the values of the heatmap."
+        },
+        "SortBy": {
+            "type": "string",
+            "description": "The property to use when sorting the elements. Must be prepended with `+` for ascending or `-` for descending (e.g. `-foo`)."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The property value is a string that denotes the geographic region associated with the time zone, (default UTC)."
+        },
+        "UnitPrefix": {
+            "type": "string",
+            "description": "Must be `\"Metric\"` or `\"Binary`\". `\"Metric\"` by default."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "ColorRange": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ColorRangeDefinition"
+            },
+            "maxItems": 1
+        },
+        "ColorScale": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ColorScaleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProgramText"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

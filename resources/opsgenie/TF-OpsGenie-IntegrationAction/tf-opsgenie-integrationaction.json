@@ -1,0 +1,405 @@
+{
+    "typeName": "TF::OpsGenie::IntegrationAction",
+    "description": "Manages advanced actions for Integrations within Opsgenie. This applies for the following resources:\n* [`opsgenie_api_integration`](api_integration.html)\n* [`opsgenie_email_integration`](email_integration.html)\n\nThe actions that are supported are:\n* `create`\n* `close`\n* `acknowledge`\n* `add_note`\n* `ignore`",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-IntegrationAction/docs/README.md",
+    "definitions": {
+        "AcknowledgeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Note": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AddNoteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Note": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "CloseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Note": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "CreateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertActions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Alias": {
+                    "type": "string"
+                },
+                "AppendAttachments": {
+                    "type": "boolean"
+                },
+                "CustomPriority": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Entity": {
+                    "type": "string"
+                },
+                "ExtraProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtraPropertiesDefinition"
+                    }
+                },
+                "IgnoreAlertActionsFromPayload": {
+                    "type": "boolean"
+                },
+                "IgnoreExtraPropertiesFromPayload": {
+                    "type": "boolean"
+                },
+                "IgnoreRespondersFromPayload": {
+                    "type": "boolean"
+                },
+                "IgnoreTagsFromPayload": {
+                    "type": "boolean"
+                },
+                "IgnoreTeamsFromPayload": {
+                    "type": "boolean"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Note": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                },
+                "Responders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RespondersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ExtraPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IgnoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RespondersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Type"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Not": {
+                    "type": "boolean"
+                },
+                "Operation": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationId": {
+            "type": "string",
+            "description": "ID of the parent integration resource to bind to."
+        },
+        "Acknowledge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AcknowledgeDefinition"
+            }
+        },
+        "AddNote": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddNoteDefinition"
+            }
+        },
+        "Close": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloseDefinition"
+            }
+        },
+        "Create": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreateDefinition"
+            }
+        },
+        "Ignore": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IgnoreDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IntegrationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

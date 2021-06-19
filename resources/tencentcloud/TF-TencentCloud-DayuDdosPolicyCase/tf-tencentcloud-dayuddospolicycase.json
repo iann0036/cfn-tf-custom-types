@@ -1,0 +1,180 @@
+{
+    "typeName": "TF::TencentCloud::DayuDdosPolicyCase",
+    "description": "Use this resource to create dayu DDoS policy case\n\n~> **NOTE:** when a dayu DDoS policy case is created, there will be a dayu DDoS policy created with the same prefix name in the same time. This resource only supports Anti-DDoS of type `bgp`, `bgp-multip` and `bgpip`. One Anti-DDoS resource can only has one DDoS policy case resource. When there is only one Anti-DDoS resource and one policy case, those two resource will be bind automatically.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-DayuDdosPolicyCase/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppProtocols": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "App protocol set of the DDoS policy case."
+        },
+        "AppType": {
+            "type": "string",
+            "description": "App type of the DDoS policy case. Valid values: `WEB`, `GAME`, `APP` and `OTHER`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "HasAbroad": {
+            "type": "string",
+            "description": "Indicate whether the service involves overseas or not. Valid values: `no` and `yes`."
+        },
+        "HasInitiateTcp": {
+            "type": "string",
+            "description": "Indicate whether the service actively initiates TCP requests or not. Valid values: `no` and `yes`."
+        },
+        "HasInitiateUdp": {
+            "type": "string",
+            "description": "Indicate whether the actively initiate UDP requests or not. Valid values: `no` and `yes`."
+        },
+        "HasVpn": {
+            "type": "string",
+            "description": "Indicate whether the service involves VPN service or not. Valid values: `no` and `yes`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTcpPackageLen": {
+            "type": "string",
+            "description": "The max length of TCP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_tcp_package_len`."
+        },
+        "MaxUdpPackageLen": {
+            "type": "string",
+            "description": "The max length of UDP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_udp_package_len`."
+        },
+        "MinTcpPackageLen": {
+            "type": "string",
+            "description": "The minimum length of TCP message package, valid value length should be greater than 0 and less than 1500."
+        },
+        "MinUdpPackageLen": {
+            "type": "string",
+            "description": "The minimum length of UDP message package, valid value length should be greater than 0 and less than 1500."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DDoS policy case. Length should between 1 and 64."
+        },
+        "PeerTcpPort": {
+            "type": "string",
+            "description": "The port that actively initiates TCP requests. Valid value ranges: (1~65535)."
+        },
+        "PeerUdpPort": {
+            "type": "string",
+            "description": "The port that actively initiates UDP requests. Valid value ranges: (1~65535)."
+        },
+        "PlatformTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Platform set of the DDoS policy case."
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "Type of the resource that the DDoS policy case works for. Valid values: `bgpip`, `bgp` and `bgp-multip`."
+        },
+        "SceneId": {
+            "type": "string"
+        },
+        "TcpEndPort": {
+            "type": "string",
+            "description": "End port of the TCP service. Valid value ranges: (0~65535). It must be greater than `tcp_start_port`."
+        },
+        "TcpFootprint": {
+            "type": "string",
+            "description": "The fixed signature of TCP protocol load, valid value length is range from 1 to 512."
+        },
+        "TcpStartPort": {
+            "type": "string",
+            "description": "Start port of the TCP service. Valid value ranges: (0~65535)."
+        },
+        "UdpEndPort": {
+            "type": "string",
+            "description": "End port of the UDP service. Valid value ranges: (0~65535). It must be greater than `udp_start_port`."
+        },
+        "UdpFootprint": {
+            "type": "string",
+            "description": "The fixed signature of TCP protocol load, valid value length is range from 1 to 512."
+        },
+        "UdpStartPort": {
+            "type": "string",
+            "description": "Start port of the UDP service. Valid value ranges: (0~65535)."
+        },
+        "WebApiUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Web API url set."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppProtocols",
+        "AppType",
+        "HasAbroad",
+        "HasInitiateTcp",
+        "Name",
+        "PlatformTypes",
+        "ResourceType",
+        "TcpEndPort",
+        "TcpStartPort",
+        "UdpEndPort",
+        "UdpStartPort",
+        "WebApiUrls"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/SceneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

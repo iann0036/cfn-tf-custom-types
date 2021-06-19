@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::AWS::Ec2CapacityReservation",
+    "description": "Provides an EC2 Capacity Reservation. This allows you to reserve capacity for your Amazon EC2 instances in a specific Availability Zone for any duration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2CapacityReservation/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The Availability Zone in which to create the Capacity Reservation."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "Indicates whether the Capacity Reservation supports EBS-optimized instances."
+        },
+        "EndDate": {
+            "type": "string",
+            "description": "The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)."
+        },
+        "EndDateType": {
+            "type": "string",
+            "description": "Indicates the way in which the Capacity Reservation ends. Specify either `unlimited` or `limited`."
+        },
+        "EphemeralStorage": {
+            "type": "boolean",
+            "description": "Indicates whether the Capacity Reservation supports instances with temporary, block-level storage."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number",
+            "description": "The number of instances for which to reserve capacity."
+        },
+        "InstanceMatchCriteria": {
+            "type": "string",
+            "description": "Indicates the type of instance launches that the Capacity Reservation accepts. Specify either `open` or `targeted`."
+        },
+        "InstancePlatform": {
+            "type": "string",
+            "description": "The type of operating system for which to reserve capacity. Valid options are `Linux/UNIX`, `Red Hat Enterprise Linux`, `SUSE Linux`, `Windows`, `Windows with SQL Server`, `Windows with SQL Server Enterprise`, `Windows with SQL Server Standard` or `Windows with SQL Server Web`."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The instance type for which to reserve capacity."
+        },
+        "OutpostArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation."
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Tenancy": {
+            "type": "string",
+            "description": "Indicates the tenancy of the Capacity Reservation. Specify either `default` or `dedicated`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "InstanceCount",
+        "InstancePlatform",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/OwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

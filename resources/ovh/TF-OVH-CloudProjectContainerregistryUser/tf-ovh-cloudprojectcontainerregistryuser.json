@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::OVH::CloudProjectContainerregistryUser",
+    "description": "Creates a user for a container registry associated with a public cloud project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-CloudProjectContainerregistryUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Login": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "RegistryId": {
+            "type": "string",
+            "description": "Registry ID."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_CLOUD_PROJECT_SERVICE` environment variable is used."
+        },
+        "User": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Login",
+        "RegistryId",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Password",
+        "/properties/User"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

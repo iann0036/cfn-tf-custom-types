@@ -1,0 +1,186 @@
+{
+    "typeName": "TF::OctopusDeploy::Variable",
+    "description": "CloudFormation equivalent of octopusdeploy_variable",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-Variable/docs/README.md",
+    "definitions": {
+        "PromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Actions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Machines": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Roles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EncryptedValue": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEditable": {
+            "type": "boolean"
+        },
+        "IsSensitive": {
+            "type": "boolean"
+        },
+        "KeyFingerprint": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PgpKey": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "SensitiveValue": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        },
+        "Prompt": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PromptDefinition"
+            },
+            "maxItems": 1
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScopeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EncryptedValue",
+        "/properties/Id",
+        "/properties/KeyFingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PgpKey",
+        "/properties/SensitiveValue"
+    ]
+}

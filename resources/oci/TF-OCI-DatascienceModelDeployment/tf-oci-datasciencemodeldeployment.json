@@ -1,0 +1,319 @@
+{
+    "typeName": "TF::OCI::DatascienceModelDeployment",
+    "description": "This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.\n\nCreates a new model deployment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatascienceModelDeployment/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CategoryLogDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Predict": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredictDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ModelDeploymentConfigurationDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentType": {
+                    "type": "string"
+                },
+                "ModelConfigurationDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModelConfigurationDetailsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DeploymentType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogGroupId": {
+                    "type": "string"
+                },
+                "LogId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogGroupId",
+                "LogId"
+            ]
+        },
+        "PredictDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogGroupId": {
+                    "type": "string"
+                },
+                "LogId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogGroupId",
+                "LogId"
+            ]
+        },
+        "ModelConfigurationDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BandwidthMbps": {
+                    "type": "number"
+                },
+                "ModelId": {
+                    "type": "string"
+                },
+                "InstanceConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstanceConfigurationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ScalingPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScalingPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ModelId"
+            ]
+        },
+        "InstanceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceShapeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceShapeName"
+            ]
+        },
+        "ScalingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "PolicyType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceCount",
+                "PolicyType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment."
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) A short description of the model deployment."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "ModelDeploymentUrl": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "CategoryLogDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CategoryLogDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ModelDeploymentConfigurationDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ModelDeploymentConfigurationDetailsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/ModelDeploymentUrl",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::DigitalOcean::KubernetesNodePool",
+    "description": "Provides a DigitalOcean Kubernetes node pool resource. While the default node pool must be defined in the `digitalocean_kubernetes_cluster` resource, this resource can be used to add additional ones to a cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-KubernetesNodePool/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "DropletId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Effect",
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActualNodeCount": {
+            "type": "number"
+        },
+        "AutoScale": {
+            "type": "boolean",
+            "description": "Enable auto-scaling of the number of nodes in the node pool within the given min/max range."
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of the Kubernetes cluster to which the node pool is associated."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A map of key/value pairs to apply to nodes in the pool. The labels are exposed in the Kubernetes API as labels in the metadata of the corresponding [Node resources](https://kubernetes.io/docs/concepts/architecture/nodes/)."
+        },
+        "MaxNodes": {
+            "type": "number",
+            "description": "If auto-scaling is enabled, this represents the maximum number of nodes that the node pool can be scaled up to."
+        },
+        "MinNodes": {
+            "type": "number",
+            "description": "If auto-scaling is enabled, this represents the minimum number of nodes that the node pool can be scaled down to."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the node pool."
+        },
+        "NodeCount": {
+            "type": "number",
+            "description": "The number of Droplet instances in the node pool. If auto-scaling is enabled, this should only be set if the desired result is to explicitly reset the number of nodes to this value. If auto-scaling is enabled, and the node count is outside of the given min/max range, it will use the min nodes value."
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodesDefinition"
+            }
+        },
+        "Size": {
+            "type": "string",
+            "description": "The slug identifier for the type of Droplet to be used as workers in the node pool."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tag names to be applied to the Kubernetes cluster."
+        },
+        "Taint": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaintDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "Name",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActualNodeCount",
+        "/properties/Id",
+        "/properties/Nodes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

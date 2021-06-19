@@ -1,0 +1,396 @@
+{
+    "typeName": "TF::AWS::Macie2ClassificationJob",
+    "description": "Provides a resource to manage an [AWS Macie Classification Job](https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Macie2ClassificationJob/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UserPausedDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JobExpiresAt": {
+                    "type": "string"
+                },
+                "JobImminentExpirationHealthEventArn": {
+                    "type": "string"
+                },
+                "JobPausedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "S3JobDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketDefinitions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BucketDefinitionsDefinition"
+                    }
+                },
+                "Scoping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopingDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScheduleFrequencyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DailySchedule": {
+                    "type": "boolean",
+                    "description": "Specifies a daily recurrence pattern for running the job."
+                },
+                "MonthlySchedule": {
+                    "type": "number",
+                    "description": "Specifies a monthly recurrence pattern for running the job."
+                },
+                "WeeklySchedule": {
+                    "type": "string",
+                    "description": "Specifies a weekly recurrence pattern for running the job."
+                }
+            },
+            "required": []
+        },
+        "BucketDefinitionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string",
+                    "description": "The unique identifier for the AWS account that owns the buckets."
+                },
+                "Buckets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array that lists the names of the buckets."
+                }
+            },
+            "required": [
+                "AccountId",
+                "Buckets"
+            ]
+        },
+        "ScopingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Excludes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Includes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IncludesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExcludesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "And": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AndDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IncludesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "And": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AndDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SimpleScopeTerm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SimpleScopeTermDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TagScopeTerm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagScopeTermDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SimpleScopeTermDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string",
+                    "description": "The operator to use in a condition. Valid values are: `EQ`, `GT`, `GTE`, `LT`, `LTE`, `NE`, `CONTAINS`, `STARTS_WITH`."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "The object property to use in the condition."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array that lists the values to use in the condition."
+                }
+            },
+            "required": []
+        },
+        "TagScopeTermDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string",
+                    "description": "The operator to use in the condition."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "The tag key to use in the condition."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "The type of object to apply the condition to."
+                },
+                "TagValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagValuesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CustomDataIdentifierIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The custom data identifiers to use for data analysis and classification."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A custom description of the job. The description can contain as many as 200 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialRun": {
+            "type": "boolean",
+            "description": "Specifies whether to analyze all existing, eligible objects immediately after the job is created."
+        },
+        "JobArn": {
+            "type": "string"
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "JobStatus": {
+            "type": "string",
+            "description": "The status for the job. Valid values are: `CANCELLED`, `RUNNING` and `USER_PAUSED`."
+        },
+        "JobType": {
+            "type": "string",
+            "description": "The schedule for running the job. Valid values are: `ONE_TIME` - Run the job only once. If you specify this value, don't specify a value for the `schedule_frequency` property. `SCHEDULED` - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the `schedule_frequency` property to define the recurrence pattern for the job."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A custom name for the job. The name can contain as many as 500 characters. If omitted, Terraform will assign a random, unique name. Conflicts with `name_prefix`."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
+        },
+        "SamplingPercentage": {
+            "type": "number",
+            "description": "The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of key-value pairs that specifies the tags to associate with the job. A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UserPausedDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserPausedDetailsDefinition"
+            }
+        },
+        "S3JobDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3JobDefinitionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ScheduleFrequency": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleFrequencyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "JobType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/JobArn",
+        "/properties/JobId",
+        "/properties/UserPausedDetails"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,376 @@
+{
+    "typeName": "TF::OpsGenie::NotificationPolicy",
+    "description": "Manages a Notification Policy within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-NotificationPolicy/docs/README.md",
+    "definitions": {
+        "AutoCloseActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DurationDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoRestartActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxRepeatCount": {
+                    "type": "number",
+                    "description": "How many times to repeat. This is a integer attribute."
+                },
+                "Duration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DurationDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxRepeatCount"
+            ]
+        },
+        "DeDuplicationActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "- Count."
+                },
+                "DeDuplicationActionType": {
+                    "type": "string",
+                    "description": "Deduplication type. Possible values are: \"value-based\", \"frequency-based\"."
+                },
+                "Duration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DurationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Count",
+                "DeDuplicationActionType"
+            ]
+        },
+        "DelayActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DelayOption": {
+                    "type": "string",
+                    "description": "Defines until what day to delay or for what duration. Possible values are: `for-duration`, `next-time`, `next-weekday`, `next-monday`, `next-tuesday`, `next-wednesday`, `next-thursday`, `next-friday`, `next-saturday`, `next-sunday`."
+                },
+                "UntilHour": {
+                    "type": "number",
+                    "description": "Until what hour notifications will be delayed. If `delay_option` is set to antyhing else then `for-duration` this has to be set."
+                },
+                "UntilMinute": {
+                    "type": "number",
+                    "description": "Until what minute on `until_hour` notifications will be delayed. If `delay_option` is set to antyhing else then `for-duration` this has to be set."
+                },
+                "Duration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DurationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DelayOption"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "Defines if restriction should apply daily on given hours or on certain days and hours. Possible values are: `time-of-day`, `weekday-and-time-of-day`."
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionDefinition"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "DurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeAmount": {
+                    "type": "number",
+                    "description": "A amount of time in `time_units`. This is a integer attribute."
+                },
+                "TimeUnit": {
+                    "type": "string",
+                    "description": "Valid time units are: `minutes`, `hours`, `days`. Default: `minutes`."
+                }
+            },
+            "required": [
+                "TimeAmount"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string",
+                    "description": "User defined value that will be compared with alert field according to the operation. Default: empty string."
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "Specifies which alert field will be used in condition. Possible values are `message`, `alias`, `description`, `source`, `entity`, `tags`, `actions`, `details`, `extra-properties`, `recipients`, `teams`, `priority`."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "If `field` is set as extra-properties, key could be used for key-value pair."
+                },
+                "Not": {
+                    "type": "boolean",
+                    "description": "Indicates behaviour of the given operation. Default: `false`."
+                },
+                "Operation": {
+                    "type": "string",
+                    "description": "It is the operation that will be executed for the given field and key. Possible operations are `matches`, `contains`, `starts-with`, `ends-with`, `equals`, `contains-key`, `contains-value`, `greater-than`, `less-than`, `is-empty`, `equals-ignore-whitespace`."
+                },
+                "Order": {
+                    "type": "number",
+                    "description": "Order of the condition in conditions list."
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        },
+        "RestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number",
+                    "description": "Ending hour of restriction."
+                },
+                "EndMin": {
+                    "type": "number",
+                    "description": "Ending minute of restriction on defined `end_hour`."
+                },
+                "StartHour": {
+                    "type": "number",
+                    "description": "Starting hour of restriction."
+                },
+                "StartMin": {
+                    "type": "number",
+                    "description": "Staring minute of restriction on defined `start_hour`."
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string",
+                    "description": "Ending day of restriction (eg. `wednesday`)."
+                },
+                "EndHour": {
+                    "type": "number",
+                    "description": "Ending hour of restriction on defined `end_day`."
+                },
+                "EndMin": {
+                    "type": "number",
+                    "description": "Ending minute of restriction on defined `end_hour`."
+                },
+                "StartDay": {
+                    "type": "string",
+                    "description": "Starting day of restriction (eg. `monday`)."
+                },
+                "StartHour": {
+                    "type": "number",
+                    "description": "Starting hour of restriction on defined `start_day`."
+                },
+                "StartMin": {
+                    "type": "number",
+                    "description": "Staring minute of restriction on defined `start_hour`."
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "If policy should be enabled. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the notification policy."
+        },
+        "PolicyDescription": {
+            "type": "string",
+            "description": "Description of the policy. This can be max 512 characters."
+        },
+        "Suppress": {
+            "type": "boolean",
+            "description": "Suppress value of the policy. Values are: `true`, `false`. Default: `false`."
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "Id of team that this policy belons to."
+        },
+        "AutoCloseAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoCloseActionDefinition"
+            }
+        },
+        "AutoRestartAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoRestartActionDefinition"
+            }
+        },
+        "DeDuplicationAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeDuplicationActionDefinition"
+            }
+        },
+        "DelayAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DelayActionDefinition"
+            }
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            },
+            "minItems": 1
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestrictionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TeamId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

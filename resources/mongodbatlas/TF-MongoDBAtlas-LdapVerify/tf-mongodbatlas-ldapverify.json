@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::MongoDBAtlas::LdapVerify",
+    "description": "`mongodbatlas_ldap_verify` provides an LDAP Verify resource. This allows a a verification of an LDAP configuration over TLS for an Atlas project. Atlas retains only the most recent request for each project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-LdapVerify/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "ValidationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Status": {
+                    "type": "string"
+                },
+                "ValidationType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthzQueryTemplate": {
+            "type": "string",
+            "description": "An LDAP query template that Atlas executes to obtain the LDAP groups to which the authenticated user belongs. Used only for user authorization. Use the {USER} placeholder in the URL to substitute the authenticated username. The query is relative to the host specified with hostname. The formatting for the query must conform to RFC4515 and RFC 4516. If you do not provide a query template, Atlas attempts to use the default value: `{USER}?memberOf?base`."
+        },
+        "BindPassword": {
+            "type": "string",
+            "description": "The password used to authenticate the `bind_username`."
+        },
+        "BindUsername": {
+            "type": "string",
+            "description": "The user DN that Atlas uses to connect to the LDAP server. Must be the full DN, such as `CN=BindUser,CN=Users,DC=myldapserver,DC=mycompany,DC=com`."
+        },
+        "CaCertificate": {
+            "type": "string",
+            "description": "CA certificate used to verify the identify of the LDAP server. Self-signed certificates are allowed."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname or IP address of the LDAP server. The server must be visible to the internet or connected to your Atlas cluster with VPC Peering."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port to which the LDAP server listens for client connections. Default: `636`."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique ID for the project to configure LDAP."
+        },
+        "RequestId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Validations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ValidationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BindPassword",
+        "BindUsername",
+        "Hostname",
+        "Port",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/RequestId",
+        "/properties/Status",
+        "/properties/Validations"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

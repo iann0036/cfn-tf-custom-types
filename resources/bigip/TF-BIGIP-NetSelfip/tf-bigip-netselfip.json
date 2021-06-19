@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::BIGIP::NetSelfip",
+    "description": "`bigip_net_selfip` Manages a selfip configuration\n\nResource should be named with their \"full path\". The full path is the combination of the partition + name of the resource, for example /Common/my-selfip.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-NetSelfip/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "The Self IP's address and netmask."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the selfip."
+        },
+        "TrafficGroup": {
+            "type": "string",
+            "description": "Specifies the traffic group, defaults to `traffic-group-local-only` if not specified."
+        },
+        "Vlan": {
+            "type": "string",
+            "description": "Specifies the VLAN for which you are setting a self IP address. This setting must be provided when a self IP is created."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip",
+        "Name",
+        "Vlan"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

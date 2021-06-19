@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::FortiOS::FmgSystemLicenseVm",
+    "description": "This resource supports uploading VM license to FortiGate through FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgSystemLicenseVm/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "ADOM that the target device belongs to. default is 'root'."
+        },
+        "FileContent": {
+            "type": "string",
+            "description": "The license file, it needs to be base64 encoded."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string",
+            "description": "Target name, which is managed by FortiManager."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FileContent",
+        "Target"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

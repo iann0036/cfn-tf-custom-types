@@ -1,0 +1,354 @@
+{
+    "typeName": "TF::Thunder::InterfaceManagement",
+    "description": "`thunder_interface_management` Provides details about thunder interface management",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceManagement/docs/README.md",
+    "definitions": {
+        "AccessListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclId": {
+                    "type": "number"
+                },
+                "AclName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BroadcastRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BcastRateLimitEnable": {
+                    "type": "number"
+                },
+                "Rate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ControlAppsUseMgmtPort": {
+                    "type": "number"
+                },
+                "DefaultGateway": {
+                    "type": "string"
+                },
+                "Dhcp": {
+                    "type": "number"
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4Netmask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressType": {
+                    "type": "string"
+                },
+                "DefaultIpv6Gateway": {
+                    "type": "string"
+                },
+                "Inbound": {
+                    "type": "number"
+                },
+                "Ipv6Addr": {
+                    "type": "string"
+                },
+                "V6AclName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LldpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "EnableCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnableCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NotificationCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotificationCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TxDot1Cfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TxDot1CfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TxTlvsCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TxTlvsCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SecondaryIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ControlAppsUseMgmtPort": {
+                    "type": "number"
+                },
+                "DefaultGateway": {
+                    "type": "string"
+                },
+                "Dhcp": {
+                    "type": "number"
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4Netmask": {
+                    "type": "string"
+                },
+                "SecondaryIp": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EnableCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RtEnable": {
+                    "type": "number"
+                },
+                "Rx": {
+                    "type": "number"
+                },
+                "Tx": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NotificationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotifEnable": {
+                    "type": "number"
+                },
+                "Notification": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxDot1CfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkAggregation": {
+                    "type": "number"
+                },
+                "TxDot1Tlvs": {
+                    "type": "number"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxTlvsCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "number"
+                },
+                "ManagementAddress": {
+                    "type": "number"
+                },
+                "PortDescription": {
+                    "type": "number"
+                },
+                "SystemCapabilities": {
+                    "type": "number"
+                },
+                "SystemDescription": {
+                    "type": "number"
+                },
+                "SystemName": {
+                    "type": "number"
+                },
+                "TxTlvs": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable Management Port; \u2018disable\u2019: Disable Management Port;."
+        },
+        "Duplexity": {
+            "type": "string",
+            "description": "\u2018Full\u2019: Full; \u2018Half\u2019: Half; \u2018auto\u2019: Auto;."
+        },
+        "FlowControl": {
+            "type": "number",
+            "description": "Enable 802.3x flow control on full duplex port."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Speed": {
+            "type": "string",
+            "description": "\u201810\u2019: 10 Mbs/sec; \u2018100\u2019: 100 Mbs/sec; \u20181000\u2019: 1 Gb/sec; \u2018auto\u2019: Auto Negotiate Speed;  (Interface Speed)."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AccessList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessListDefinition"
+            },
+            "maxItems": 1
+        },
+        "BroadcastRateLimit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BroadcastRateLimitDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ipv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6Definition"
+            }
+        },
+        "Lldp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LldpDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        },
+        "SecondaryIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryIpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

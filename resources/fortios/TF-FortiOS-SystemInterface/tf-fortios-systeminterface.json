@@ -1,0 +1,1438 @@
+{
+    "typeName": "TF::FortiOS::SystemInterface",
+    "description": "Configure interfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemInterface/docs/README.md",
+    "definitions": {
+        "ClientOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number",
+                    "description": "DHCP client option code."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "DHCP option IPs."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "DHCP client option type. Valid values: `hex`, `string`, `ip`, `fqdn`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "DHCP client option value."
+                }
+            },
+            "required": []
+        },
+        "FailAlertInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Names of the physical interfaces belonging to the aggregate or redundant interface."
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autoconf": {
+                    "type": "string",
+                    "description": "Enable/disable address auto config. Valid values: `enable`, `disable`."
+                },
+                "CliConn6Status": {
+                    "type": "number",
+                    "description": "CLI IPv6 connection status."
+                },
+                "Dhcp6ClientOptions": {
+                    "type": "string",
+                    "description": "DHCPv6 client options. Valid values: `rapid`, `iapd`, `iana`."
+                },
+                "Dhcp6InformationRequest": {
+                    "type": "string",
+                    "description": "Enable/disable DHCPv6 information request. Valid values: `enable`, `disable`."
+                },
+                "Dhcp6PrefixDelegation": {
+                    "type": "string",
+                    "description": "Enable/disable DHCPv6 prefix delegation. Valid values: `enable`, `disable`."
+                },
+                "Dhcp6PrefixHint": {
+                    "type": "string",
+                    "description": "DHCPv6 prefix that will be used as a hint to the upstream DHCPv6 server."
+                },
+                "Dhcp6PrefixHintPlt": {
+                    "type": "number",
+                    "description": "DHCPv6 prefix hint preferred life time (sec), 0 means unlimited lease time."
+                },
+                "Dhcp6PrefixHintVlt": {
+                    "type": "number",
+                    "description": "DHCPv6 prefix hint valid life time (sec)."
+                },
+                "Dhcp6RelayIp": {
+                    "type": "string",
+                    "description": "DHCPv6 relay IP address."
+                },
+                "Dhcp6RelayService": {
+                    "type": "string",
+                    "description": "Enable/disable DHCPv6 relay. Valid values: `disable`, `enable`."
+                },
+                "Dhcp6RelayType": {
+                    "type": "string",
+                    "description": "DHCPv6 relay type. Valid values: `regular`."
+                },
+                "Icmp6SendRedirect": {
+                    "type": "string",
+                    "description": "Enable/disable sending of ICMPv6 redirects. Valid values: `enable`, `disable`."
+                },
+                "InterfaceIdentifier": {
+                    "type": "string",
+                    "description": "IPv6 interface identifier."
+                },
+                "Ip6Address": {
+                    "type": "string",
+                    "description": "Primary IPv6 address prefix, syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx."
+                },
+                "Ip6Allowaccess": {
+                    "type": "string",
+                    "description": "Allow management access to the interface."
+                },
+                "Ip6DefaultLife": {
+                    "type": "number",
+                    "description": "Default life (sec)."
+                },
+                "Ip6DnsServerOverride": {
+                    "type": "string",
+                    "description": "Enable/disable using the DNS server acquired by DHCP. Valid values: `enable`, `disable`."
+                },
+                "Ip6HopLimit": {
+                    "type": "number",
+                    "description": "Hop limit (0 means unspecified)."
+                },
+                "Ip6LinkMtu": {
+                    "type": "number",
+                    "description": "IPv6 link MTU."
+                },
+                "Ip6ManageFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the managed flag. Valid values: `enable`, `disable`."
+                },
+                "Ip6MaxInterval": {
+                    "type": "number",
+                    "description": "IPv6 maximum interval (4 to 1800 sec)."
+                },
+                "Ip6MinInterval": {
+                    "type": "number",
+                    "description": "IPv6 minimum interval (3 to 1350 sec)."
+                },
+                "Ip6Mode": {
+                    "type": "string",
+                    "description": "Addressing mode (static, DHCP, delegated). Valid values: `static`, `dhcp`, `pppoe`, `delegated`."
+                },
+                "Ip6OtherFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the other IPv6 flag. Valid values: `enable`, `disable`."
+                },
+                "Ip6PrefixMode": {
+                    "type": "string",
+                    "description": "Assigning a prefix from DHCP or RA. Valid values: `dhcp6`, `ra`."
+                },
+                "Ip6ReachableTime": {
+                    "type": "number",
+                    "description": "IPv6 reachable time (milliseconds; 0 means unspecified)."
+                },
+                "Ip6RetransTime": {
+                    "type": "number",
+                    "description": "IPv6 retransmit time (milliseconds; 0 means unspecified)."
+                },
+                "Ip6SendAdv": {
+                    "type": "string",
+                    "description": "Enable/disable sending advertisements about the interface. Valid values: `enable`, `disable`."
+                },
+                "Ip6Subnet": {
+                    "type": "string",
+                    "description": "Subnet to routing prefix, syntax: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx."
+                },
+                "Ip6UpstreamInterface": {
+                    "type": "string",
+                    "description": "Interface name providing delegated information."
+                },
+                "NdCert": {
+                    "type": "string",
+                    "description": "Neighbor discovery certificate."
+                },
+                "NdCgaModifier": {
+                    "type": "string",
+                    "description": "Neighbor discovery CGA modifier."
+                },
+                "NdMode": {
+                    "type": "string",
+                    "description": "Neighbor discovery mode. Valid values: `basic`, `SEND-compatible`."
+                },
+                "NdSecurityLevel": {
+                    "type": "number",
+                    "description": "Neighbor discovery security level (0 - 7; 0 = least secure, default = 0)."
+                },
+                "NdTimestampDelta": {
+                    "type": "number",
+                    "description": "Neighbor discovery timestamp delta value (1 - 3600 sec; default = 300)."
+                },
+                "NdTimestampFuzz": {
+                    "type": "number",
+                    "description": "Neighbor discovery timestamp fuzz factor (1 - 60 sec; default = 1)."
+                },
+                "UniqueAutoconfAddr": {
+                    "type": "string",
+                    "description": "Enable/disable unique auto config address. Valid values: `enable`, `disable`."
+                },
+                "Vrip6LinkLocal": {
+                    "type": "string",
+                    "description": "Link-local IPv6 address of virtual router."
+                },
+                "VrrpVirtualMac6": {
+                    "type": "string",
+                    "description": "Enable/disable virtual MAC for VRRP. Valid values: `enable`, `disable`."
+                },
+                "Ip6DelegatedPrefixList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ip6DelegatedPrefixListDefinition"
+                    }
+                },
+                "Ip6ExtraAddr": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ip6ExtraAddrDefinition"
+                    }
+                },
+                "Ip6PrefixList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ip6PrefixListDefinition"
+                    }
+                },
+                "Vrrp6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Vrrp6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ManagedDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Managed dev identifier."
+                }
+            },
+            "required": []
+        },
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceName": {
+                    "type": "string",
+                    "description": "Physical interface name."
+                }
+            },
+            "required": []
+        },
+        "SecondaryipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Allowaccess": {
+                    "type": "string",
+                    "description": "Management access settings for the secondary IP address."
+                },
+                "Detectprotocol": {
+                    "type": "string",
+                    "description": "Protocols used to detect the server. Valid values: `ping`, `tcp-echo`, `udp-echo`."
+                },
+                "Detectserver": {
+                    "type": "string",
+                    "description": "Gateway's ping server for this IP."
+                },
+                "Gwdetect": {
+                    "type": "string",
+                    "description": "Enable/disable detect gateway alive for first. Valid values: `enable`, `disable`."
+                },
+                "HaPriority": {
+                    "type": "number",
+                    "description": "HA election priority for the PING server."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Secondary IP address of the interface."
+                },
+                "PingServStatus": {
+                    "type": "number",
+                    "description": "PING server status."
+                }
+            },
+            "required": []
+        },
+        "SecurityGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Names of user groups that can authenticate with the captive portal."
+                }
+            },
+            "required": []
+        },
+        "TaggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Tag category."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Tagging entry name."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VrrpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptMode": {
+                    "type": "string",
+                    "description": "Enable/disable accept mode. Valid values: `enable`, `disable`."
+                },
+                "AdvInterval": {
+                    "type": "number",
+                    "description": "Advertisement interval (1 - 255 seconds)."
+                },
+                "IgnoreDefaultRoute": {
+                    "type": "string",
+                    "description": "Enable/disable ignoring of default route when checking destination. Valid values: `enable`, `disable`."
+                },
+                "Preempt": {
+                    "type": "string",
+                    "description": "Enable/disable preempt mode. Valid values: `enable`, `disable`."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Priority of the virtual router (1 - 255)."
+                },
+                "StartTime": {
+                    "type": "number",
+                    "description": "Startup time (1 - 255 seconds)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this VRRP configuration. Valid values: `enable`, `disable`."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "VRRP version. Valid values: `2`, `3`."
+                },
+                "Vrdst": {
+                    "type": "string",
+                    "description": "Monitor the route to this destination."
+                },
+                "VrdstPriority": {
+                    "type": "number",
+                    "description": "Priority of the virtual router when the virtual router destination becomes unreachable (0 - 254)."
+                },
+                "Vrgrp": {
+                    "type": "number",
+                    "description": "VRRP group ID (1 - 65535)."
+                },
+                "Vrid": {
+                    "type": "number",
+                    "description": "Virtual router identifier (1 - 255)."
+                },
+                "Vrip": {
+                    "type": "string",
+                    "description": "IP address of the virtual router."
+                },
+                "ProxyArp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProxyArpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Ip6DelegatedPrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutonomousFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the autonomous flag. Valid values: `enable`, `disable`."
+                },
+                "OnlinkFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the onlink flag. Valid values: `enable`, `disable`."
+                },
+                "PrefixId": {
+                    "type": "number",
+                    "description": "Prefix ID."
+                },
+                "Rdnss": {
+                    "type": "string",
+                    "description": "Recursive DNS server option."
+                },
+                "RdnssService": {
+                    "type": "string",
+                    "description": "Recursive DNS service option. Valid values: `delegated`, `default`, `specify`."
+                },
+                "Subnet": {
+                    "type": "string",
+                    "description": "Add subnet ID to routing prefix."
+                },
+                "UpstreamInterface": {
+                    "type": "string",
+                    "description": "Name of the interface that provides delegated information."
+                }
+            },
+            "required": []
+        },
+        "Ip6ExtraAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string",
+                    "description": "IPv6 address prefix."
+                }
+            },
+            "required": []
+        },
+        "Ip6PrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutonomousFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the autonomous flag. Valid values: `enable`, `disable`."
+                },
+                "OnlinkFlag": {
+                    "type": "string",
+                    "description": "Enable/disable the onlink flag. Valid values: `enable`, `disable`."
+                },
+                "PreferredLifeTime": {
+                    "type": "number",
+                    "description": "Preferred life time (sec)."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "IPv6 prefix."
+                },
+                "Rdnss": {
+                    "type": "string",
+                    "description": "Recursive DNS server option."
+                },
+                "ValidLifeTime": {
+                    "type": "number",
+                    "description": "Valid life time (sec)."
+                },
+                "Dnssl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsslDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Vrrp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptMode": {
+                    "type": "string",
+                    "description": "Enable/disable accept mode. Valid values: `enable`, `disable`."
+                },
+                "AdvInterval": {
+                    "type": "number",
+                    "description": "Advertisement interval (1 - 255 seconds)."
+                },
+                "Preempt": {
+                    "type": "string",
+                    "description": "Enable/disable preempt mode. Valid values: `enable`, `disable`."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Priority of the virtual router (1 - 255)."
+                },
+                "StartTime": {
+                    "type": "number",
+                    "description": "Startup time (1 - 255 seconds)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable VRRP. Valid values: `enable`, `disable`."
+                },
+                "Vrdst6": {
+                    "type": "string",
+                    "description": "Monitor the route to this destination."
+                },
+                "Vrgrp": {
+                    "type": "number",
+                    "description": "VRRP group ID (1 - 65535)."
+                },
+                "Vrid": {
+                    "type": "number",
+                    "description": "Virtual router identifier (1 - 255)."
+                },
+                "Vrip6": {
+                    "type": "string",
+                    "description": "IPv6 address of the virtual router."
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Tag name."
+                }
+            },
+            "required": []
+        },
+        "ProxyArpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Set IP addresses of proxy ARP."
+                }
+            },
+            "required": []
+        },
+        "DnsslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string",
+                    "description": "Domain name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcName": {
+            "type": "string",
+            "description": "PPPoE server name."
+        },
+        "Aggregate": {
+            "type": "string",
+            "description": "Aggregate interface."
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "Frame distribution algorithm. Valid values: `L2`, `L3`, `L4`."
+        },
+        "Alias": {
+            "type": "string",
+            "description": "Alias will be displayed with the interface name to make it easier to distinguish."
+        },
+        "Allowaccess": {
+            "type": "string",
+            "description": "Permitted types of management access to this interface."
+        },
+        "ApDiscover": {
+            "type": "string",
+            "description": "Enable/disable automatic registration of unknown FortiAP devices. Valid values: `enable`, `disable`."
+        },
+        "Arpforward": {
+            "type": "string",
+            "description": "Enable/disable ARP forwarding. Valid values: `enable`, `disable`."
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "PPP authentication type to use. Valid values: `auto`, `pap`, `chap`, `mschapv1`, `mschapv2`."
+        },
+        "AutoAuthExtensionDevice": {
+            "type": "string",
+            "description": "Enable/disable automatic authorization of dedicated Fortinet extension device on this interface. Valid values: `enable`, `disable`."
+        },
+        "Autogenerated": {
+            "type": "string",
+            "description": "Indicates whether the interface is automatically created by FortiGate, for example, created during the VPN creation process. If it is, set it to \"auto\", else keep it empty."
+        },
+        "BandwidthMeasureTime": {
+            "type": "number",
+            "description": "Bandwidth measure time."
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Bidirectional Forwarding Detection (BFD) settings. Valid values: `global`, `enable`, `disable`."
+        },
+        "BfdDesiredMinTx": {
+            "type": "number",
+            "description": "BFD desired minimal transmit interval."
+        },
+        "BfdDetectMult": {
+            "type": "number",
+            "description": "BFD detection multiplier."
+        },
+        "BfdRequiredMinRx": {
+            "type": "number",
+            "description": "BFD required minimal receive interval."
+        },
+        "BroadcastForticlientDiscovery": {
+            "type": "string",
+            "description": "Enable/disable broadcasting FortiClient discovery messages. Valid values: `enable`, `disable`."
+        },
+        "BroadcastForward": {
+            "type": "string",
+            "description": "Enable/disable broadcast forwarding. Valid values: `enable`, `disable`."
+        },
+        "CaptivePortal": {
+            "type": "number",
+            "description": "Enable/disable captive portal."
+        },
+        "CliConnStatus": {
+            "type": "number",
+            "description": "CLI connection status."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "DedicatedTo": {
+            "type": "string",
+            "description": "Configure interface for single purpose. Valid values: `none`, `management`."
+        },
+        "Defaultgw": {
+            "type": "string",
+            "description": "Enable to get the gateway IP from the DHCP or PPPoE server. Valid values: `enable`, `disable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DetectedPeerMtu": {
+            "type": "number",
+            "description": "MTU of detected peer (0 - 4294967295)."
+        },
+        "Detectprotocol": {
+            "type": "string",
+            "description": "Protocols used to detect the server. Valid values: `ping`, `tcp-echo`, `udp-echo`."
+        },
+        "Detectserver": {
+            "type": "string",
+            "description": "Gateway's ping server for this IP."
+        },
+        "DeviceAccessList": {
+            "type": "string",
+            "description": "Device access list."
+        },
+        "DeviceIdentification": {
+            "type": "string",
+            "description": "Enable/disable passively gathering of device identity information about the devices on the network connected to this interface. Valid values: `enable`, `disable`."
+        },
+        "DeviceIdentificationActiveScan": {
+            "type": "string",
+            "description": "Enable/disable active gathering of device identity information about the devices on the network connected to this interface. Valid values: `enable`, `disable`."
+        },
+        "DeviceNetscan": {
+            "type": "string",
+            "description": "Enable/disable inclusion of devices detected on this interface in network vulnerability scans. Valid values: `disable`, `enable`."
+        },
+        "DeviceUserIdentification": {
+            "type": "string",
+            "description": "Enable/disable passive gathering of user identity information about users on this interface. Valid values: `enable`, `disable`."
+        },
+        "Devindex": {
+            "type": "number",
+            "description": "Device Index."
+        },
+        "DhcpClientIdentifier": {
+            "type": "string",
+            "description": "DHCP client identifier."
+        },
+        "DhcpRelayAgentOption": {
+            "type": "string",
+            "description": "Enable/disable DHCP relay agent option. Valid values: `enable`, `disable`."
+        },
+        "DhcpRelayInterface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "DhcpRelayInterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "DhcpRelayIp": {
+            "type": "string",
+            "description": "DHCP relay IP address."
+        },
+        "DhcpRelayService": {
+            "type": "string",
+            "description": "Enable/disable allowing this interface to act as a DHCP relay. Valid values: `disable`, `enable`."
+        },
+        "DhcpRelayType": {
+            "type": "string",
+            "description": "DHCP relay type (regular or IPsec). Valid values: `regular`, `ipsec`."
+        },
+        "DhcpRenewTime": {
+            "type": "number",
+            "description": "DHCP renew time in seconds (300-604800), 0 means use the renew time provided by the server."
+        },
+        "DiscRetryTimeout": {
+            "type": "number",
+            "description": "Time in seconds to wait before retrying to start a PPPoE discovery, 0 means no timeout."
+        },
+        "DisconnectThreshold": {
+            "type": "number",
+            "description": "Time in milliseconds to wait before sending a notification that this interface is down or disconnected."
+        },
+        "Distance": {
+            "type": "number",
+            "description": "Distance for routes learned through PPPoE or DHCP, lower distance indicates preferred route."
+        },
+        "DnsServerOverride": {
+            "type": "string",
+            "description": "Enable/disable use DNS acquired by DHCP or PPPoE. Valid values: `enable`, `disable`."
+        },
+        "DropFragment": {
+            "type": "string",
+            "description": "Enable/disable drop fragment packets. Valid values: `enable`, `disable`."
+        },
+        "DropOverlappedFragment": {
+            "type": "string",
+            "description": "Enable/disable drop overlapped fragment packets. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EgressShapingProfile": {
+            "type": "string",
+            "description": "Outgoing traffic shaping profile."
+        },
+        "EndpointCompliance": {
+            "type": "string",
+            "description": "Enable/disable endpoint compliance enforcement. Valid values: `enable`, `disable`."
+        },
+        "EstimatedDownstreamBandwidth": {
+            "type": "number",
+            "description": "Estimated maximum downstream bandwidth (kbps). Used to estimate link utilization."
+        },
+        "EstimatedUpstreamBandwidth": {
+            "type": "number",
+            "description": "Estimated maximum upstream bandwidth (kbps). Used to estimate link utilization."
+        },
+        "ExplicitFtpProxy": {
+            "type": "string",
+            "description": "Enable/disable the explicit FTP proxy on this interface. Valid values: `enable`, `disable`."
+        },
+        "ExplicitWebProxy": {
+            "type": "string",
+            "description": "Enable/disable the explicit web proxy on this interface. Valid values: `enable`, `disable`."
+        },
+        "External": {
+            "type": "string",
+            "description": "Enable/disable identifying the interface as an external interface (which usually means it's connected to the Internet). Valid values: `enable`, `disable`."
+        },
+        "FailActionOnExtender": {
+            "type": "string",
+            "description": "Action on extender when interface fail . Valid values: `soft-restart`, `hard-restart`, `reboot`."
+        },
+        "FailAlertMethod": {
+            "type": "string",
+            "description": "Select link-failed-signal or link-down method to alert about a failed link. Valid values: `link-failed-signal`, `link-down`."
+        },
+        "FailDetect": {
+            "type": "string",
+            "description": "Enable/disable fail detection features for this interface. Valid values: `enable`, `disable`."
+        },
+        "FailDetectOption": {
+            "type": "string",
+            "description": "Options for detecting that this interface has failed. Valid values: `detectserver`, `link-down`."
+        },
+        "Fortiheartbeat": {
+            "type": "string",
+            "description": "Enable/disable FortiHeartBeat (FortiTelemetry on GUI). Valid values: `enable`, `disable`."
+        },
+        "Fortilink": {
+            "type": "string",
+            "description": "Enable FortiLink to dedicate this interface to manage other Fortinet devices. Valid values: `enable`, `disable`."
+        },
+        "FortilinkBackupLink": {
+            "type": "number",
+            "description": "fortilink split interface backup link."
+        },
+        "FortilinkNeighborDetect": {
+            "type": "string",
+            "description": "Protocol for FortiGate neighbor discovery. Valid values: `lldp`, `fortilink`."
+        },
+        "FortilinkSplitInterface": {
+            "type": "string",
+            "description": "Enable/disable FortiLink split interface to connect member link to different FortiSwitch in stack for uplink redundancy. Valid values: `enable`, `disable`."
+        },
+        "FortilinkStacking": {
+            "type": "string",
+            "description": "Enable/disable FortiLink switch-stacking on this interface. Valid values: `enable`, `disable`."
+        },
+        "ForwardDomain": {
+            "type": "number",
+            "description": "Transparent mode forward domain."
+        },
+        "Gwdetect": {
+            "type": "string",
+            "description": "Enable/disable detect gateway alive for first. Valid values: `enable`, `disable`."
+        },
+        "HaPriority": {
+            "type": "number",
+            "description": "HA election priority for the PING server."
+        },
+        "IcmpAcceptRedirect": {
+            "type": "string",
+            "description": "Enable/disable ICMP accept redirect. Valid values: `enable`, `disable`."
+        },
+        "IcmpSendRedirect": {
+            "type": "string",
+            "description": "Enable/disable ICMP send redirect. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentAccept": {
+            "type": "string",
+            "description": "Enable/disable authentication for this interface. Valid values: `enable`, `disable`."
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "PPPoE auto disconnect after idle timeout seconds, 0 means no timeout."
+        },
+        "Inbandwidth": {
+            "type": "number",
+            "description": "Bandwidth limit for incoming traffic (0 - 16776000 kbps), 0 means unlimited."
+        },
+        "IngressShapingProfile": {
+            "type": "string",
+            "description": "Incoming traffic shaping profile."
+        },
+        "IngressSpilloverThreshold": {
+            "type": "number",
+            "description": "Ingress Spillover threshold (0 - 16776000 kbps)."
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "Internal": {
+            "type": "number",
+            "description": "Implicitly created."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "Interface IPv4 address and subnet mask, syntax: X.X.X.X/24."
+        },
+        "IpManagedByFortiipam": {
+            "type": "string",
+            "description": "Enable/disable automatic IP address assignment of this interface by FortiIPAM. Valid values: `enable`, `disable`."
+        },
+        "Ipmac": {
+            "type": "string",
+            "description": "Enable/disable IP/MAC binding. Valid values: `enable`, `disable`."
+        },
+        "IpsSnifferMode": {
+            "type": "string",
+            "description": "Enable/disable the use of this interface as a one-armed sniffer. Valid values: `enable`, `disable`."
+        },
+        "Ipunnumbered": {
+            "type": "string",
+            "description": "Unnumbered IP used for PPPoE interfaces for which no unique local address is provided."
+        },
+        "L2forward": {
+            "type": "string",
+            "description": "Enable/disable l2 forwarding. Valid values: `enable`, `disable`."
+        },
+        "LacpHaSlave": {
+            "type": "string",
+            "description": "LACP HA slave. Valid values: `enable`, `disable`."
+        },
+        "LacpMode": {
+            "type": "string",
+            "description": "LACP mode. Valid values: `static`, `passive`, `active`."
+        },
+        "LacpSpeed": {
+            "type": "string",
+            "description": "How often the interface sends LACP messages. Valid values: `slow`, `fast`."
+        },
+        "LcpEchoInterval": {
+            "type": "number",
+            "description": "Time in seconds between PPPoE Link Control Protocol (LCP) echo requests."
+        },
+        "LcpMaxEchoFails": {
+            "type": "number",
+            "description": "Maximum missed LCP echo messages before disconnect."
+        },
+        "LinkUpDelay": {
+            "type": "number",
+            "description": "Number of milliseconds to wait before considering a link is up."
+        },
+        "LldpNetworkPolicy": {
+            "type": "string",
+            "description": "LLDP-MED network policy profile."
+        },
+        "LldpReception": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) reception. Valid values: `enable`, `disable`, `vdom`."
+        },
+        "LldpTransmission": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) transmission. Valid values: `enable`, `disable`, `vdom`."
+        },
+        "Macaddr": {
+            "type": "string",
+            "description": "Change the interface's MAC address."
+        },
+        "ManagedSubnetworkSize": {
+            "type": "string",
+            "description": "Number of IP addresses to be allocated by FortiIPAM and used by this FortiGate unit's DHCP server settings. Valid values: `256`, `512`, `1024`, `2048`, `4096`, `8192`, `16384`, `32768`, `65536`."
+        },
+        "ManagementIp": {
+            "type": "string",
+            "description": "High Availability in-band management IP address of this interface."
+        },
+        "MeasuredDownstreamBandwidth": {
+            "type": "number",
+            "description": "Measured downstream bandwidth (kbps)."
+        },
+        "MeasuredUpstreamBandwidth": {
+            "type": "number",
+            "description": "Measured upstream bandwidth (kbps)."
+        },
+        "MinLinks": {
+            "type": "number",
+            "description": "Minimum number of aggregated ports that must be up."
+        },
+        "MinLinksDown": {
+            "type": "string",
+            "description": "Action to take when less than the configured minimum number of links are active. Valid values: `operational`, `administrative`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Addressing mode (static, DHCP, PPPoE). Valid values: `static`, `dhcp`, `pppoe`."
+        },
+        "MonitorBandwidth": {
+            "type": "string",
+            "description": "Enable monitoring bandwidth on this interface. Valid values: `enable`, `disable`."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "MTU value for this interface."
+        },
+        "MtuOverride": {
+            "type": "string",
+            "description": "Enable to set a custom MTU for this interface. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Ndiscforward": {
+            "type": "string",
+            "description": "Enable/disable NDISC forwarding. Valid values: `enable`, `disable`."
+        },
+        "NetbiosForward": {
+            "type": "string",
+            "description": "Enable/disable NETBIOS forwarding. Valid values: `disable`, `enable`."
+        },
+        "NetflowSampler": {
+            "type": "string",
+            "description": "Enable/disable NetFlow on this interface and set the data that NetFlow collects (rx, tx, or both). Valid values: `disable`, `tx`, `rx`, `both`."
+        },
+        "Outbandwidth": {
+            "type": "number",
+            "description": "Bandwidth limit for outgoing traffic (0 - 16776000 kbps)."
+        },
+        "PadtRetryTimeout": {
+            "type": "number",
+            "description": "PPPoE Active Discovery Terminate (PADT) used to terminate sessions after an idle time."
+        },
+        "Password": {
+            "type": "string",
+            "description": "PPPoE account's password."
+        },
+        "PingServStatus": {
+            "type": "number",
+            "description": "PING server status."
+        },
+        "PollingInterval": {
+            "type": "number",
+            "description": "sFlow polling interval (1 - 255 sec)."
+        },
+        "PppoeUnnumberedNegotiate": {
+            "type": "string",
+            "description": "Enable/disable PPPoE unnumbered negotiation. Valid values: `enable`, `disable`."
+        },
+        "PptpAuthType": {
+            "type": "string",
+            "description": "PPTP authentication type. Valid values: `auto`, `pap`, `chap`, `mschapv1`, `mschapv2`."
+        },
+        "PptpClient": {
+            "type": "string",
+            "description": "Enable/disable PPTP client. Valid values: `enable`, `disable`."
+        },
+        "PptpPassword": {
+            "type": "string",
+            "description": "PPTP password."
+        },
+        "PptpServerIp": {
+            "type": "string",
+            "description": "PPTP server IP address."
+        },
+        "PptpTimeout": {
+            "type": "number",
+            "description": "Idle timer in minutes (0 for disabled)."
+        },
+        "PptpUser": {
+            "type": "string",
+            "description": "PPTP user name."
+        },
+        "PreserveSessionRoute": {
+            "type": "string",
+            "description": "Enable/disable preservation of session route when dirty. Valid values: `enable`, `disable`."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Priority of learned routes."
+        },
+        "PriorityOverride": {
+            "type": "string",
+            "description": "Enable/disable fail back to higher priority port once recovered. Valid values: `enable`, `disable`."
+        },
+        "ProxyCaptivePortal": {
+            "type": "string",
+            "description": "Enable/disable proxy captive portal on this interface. Valid values: `enable`, `disable`."
+        },
+        "RedundantInterface": {
+            "type": "string",
+            "description": "Redundant interface."
+        },
+        "RemoteIp": {
+            "type": "string",
+            "description": "Remote IP address of tunnel."
+        },
+        "ReplacemsgOverrideGroup": {
+            "type": "string",
+            "description": "Replacement message override group."
+        },
+        "RingRx": {
+            "type": "number",
+            "description": "RX ring size."
+        },
+        "RingTx": {
+            "type": "number",
+            "description": "TX ring size."
+        },
+        "Role": {
+            "type": "string",
+            "description": "Interface role. Valid values: `lan`, `wan`, `dmz`, `undefined`."
+        },
+        "SampleDirection": {
+            "type": "string",
+            "description": "Data that NetFlow collects (rx, tx, or both). Valid values: `tx`, `rx`, `both`."
+        },
+        "SampleRate": {
+            "type": "number",
+            "description": "sFlow sample rate (10 - 99999)."
+        },
+        "ScanBotnetConnections": {
+            "type": "string",
+            "description": "Enable monitoring or blocking connections to Botnet servers through this interface. Valid values: `disable`, `block`, `monitor`."
+        },
+        "SecondaryIp": {
+            "type": "string"
+        },
+        "SecurityExemptList": {
+            "type": "string",
+            "description": "Name of security-exempt-list."
+        },
+        "SecurityExternalLogout": {
+            "type": "string",
+            "description": "URL of external authentication logout server."
+        },
+        "SecurityExternalWeb": {
+            "type": "string",
+            "description": "URL of external authentication web server."
+        },
+        "SecurityMacAuthBypass": {
+            "type": "string",
+            "description": "Enable/disable MAC authentication bypass. Valid values: `mac-auth-only`, `enable`, `disable`."
+        },
+        "SecurityMode": {
+            "type": "string",
+            "description": "Turn on captive portal authentication for this interface. Valid values: `none`, `captive-portal`, `802.1X`."
+        },
+        "SecurityRedirectUrl": {
+            "type": "string",
+            "description": "URL redirection after disclaimer/authentication."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "PPPoE service name."
+        },
+        "SflowSampler": {
+            "type": "string",
+            "description": "Enable/disable sFlow on this interface. Valid values: `enable`, `disable`."
+        },
+        "SnmpIndex": {
+            "type": "number",
+            "description": "Permanent SNMP Index of the interface."
+        },
+        "Speed": {
+            "type": "string",
+            "description": "Interface speed. The default setting and the options available depend on the interface hardware. Valid values: `auto`, `10full`, `10half`, `100full`, `100half`, `1000full`, `1000half`, `1000auto`."
+        },
+        "SpilloverThreshold": {
+            "type": "number",
+            "description": "Egress Spillover threshold (0 - 16776000 kbps), 0 means unlimited."
+        },
+        "SrcCheck": {
+            "type": "string",
+            "description": "Enable/disable source IP check. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Bring the interface up or shut the interface down. Valid values: `up`, `down`."
+        },
+        "Stpforward": {
+            "type": "string",
+            "description": "Enable/disable STP forwarding. Valid values: `enable`, `disable`."
+        },
+        "StpforwardMode": {
+            "type": "string",
+            "description": "Configure STP forwarding mode. Valid values: `rpl-all-ext-id`, `rpl-bridge-ext-id`, `rpl-nothing`."
+        },
+        "Subst": {
+            "type": "string",
+            "description": "Enable to always send packets from this interface to a destination MAC address. Valid values: `enable`, `disable`."
+        },
+        "SubstituteDstMac": {
+            "type": "string",
+            "description": "Destination MAC address that all packets are sent to from this interface."
+        },
+        "SwcFirstCreate": {
+            "type": "number",
+            "description": "Initial create for switch-controller VLANs."
+        },
+        "SwcVlan": {
+            "type": "number",
+            "description": "Creation status for switch-controller VLANs."
+        },
+        "Switch": {
+            "type": "string",
+            "description": "Contained in switch."
+        },
+        "SwitchControllerAccessVlan": {
+            "type": "string",
+            "description": "Block FortiSwitch port-to-port traffic. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerArpInspection": {
+            "type": "string",
+            "description": "Enable/disable FortiSwitch ARP inspection. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerDhcpSnooping": {
+            "type": "string",
+            "description": "Switch controller DHCP snooping. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerDhcpSnoopingOption82": {
+            "type": "string",
+            "description": "Switch controller DHCP snooping option82. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerDhcpSnoopingVerifyMac": {
+            "type": "string",
+            "description": "Switch controller DHCP snooping verify MAC. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerFeature": {
+            "type": "string",
+            "description": "Interface's purpose when assigning traffic (read only). Valid values: `none`, `default-vlan`, `quarantine`, `rspan`, `voice`, `video`, `nac`."
+        },
+        "SwitchControllerIgmpSnooping": {
+            "type": "string",
+            "description": "Switch controller IGMP snooping. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerIgmpSnoopingFastLeave": {
+            "type": "string",
+            "description": "Switch controller IGMP snooping fast-leave. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerIgmpSnoopingProxy": {
+            "type": "string",
+            "description": "Switch controller IGMP snooping proxy. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerIotScanning": {
+            "type": "string",
+            "description": "Enable/disable managed FortiSwitch IoT scanning. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerLearningLimit": {
+            "type": "number",
+            "description": "Limit the number of dynamic MAC addresses on this VLAN (1 - 128, 0 = no limit, default)."
+        },
+        "SwitchControllerMgmtVlan": {
+            "type": "number",
+            "description": "VLAN to use for FortiLink management purposes."
+        },
+        "SwitchControllerNac": {
+            "type": "string",
+            "description": "Integrated NAC settings for managed FortiSwitch."
+        },
+        "SwitchControllerRspanMode": {
+            "type": "string",
+            "description": "Stop Layer2 MAC learning and interception of BPDUs and other packets on this interface. Valid values: `disable`, `enable`."
+        },
+        "SwitchControllerSourceIp": {
+            "type": "string",
+            "description": "Source IP address used in FortiLink over L3 connections. Valid values: `outbound`, `fixed`."
+        },
+        "SwitchControllerTrafficPolicy": {
+            "type": "string",
+            "description": "Switch controller traffic policy for the VLAN."
+        },
+        "TcpMss": {
+            "type": "number",
+            "description": "TCP maximum segment size. 0 means do not change segment size."
+        },
+        "TrustIp61": {
+            "type": "string",
+            "description": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts)."
+        },
+        "TrustIp62": {
+            "type": "string",
+            "description": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts)."
+        },
+        "TrustIp63": {
+            "type": "string",
+            "description": "Trusted IPv6 host for dedicated management traffic (::/0 for all hosts)."
+        },
+        "TrustIp1": {
+            "type": "string",
+            "description": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts)."
+        },
+        "TrustIp2": {
+            "type": "string",
+            "description": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts)."
+        },
+        "TrustIp3": {
+            "type": "string",
+            "description": "Trusted host for dedicated management traffic (0.0.0.0/24 for all hosts)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Interface type."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username of the PPPoE account, provided by your ISP."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "Interface is in this virtual domain (VDOM)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vindex": {
+            "type": "number",
+            "description": "Switch control interface VLAN ID."
+        },
+        "VlanProtocol": {
+            "type": "string",
+            "description": "Ethernet protocol of VLAN. Valid values: `8021q`, `8021ad`."
+        },
+        "Vlanforward": {
+            "type": "string",
+            "description": "Enable/disable traffic forwarding between VLANs on this interface. Valid values: `enable`, `disable`."
+        },
+        "Vlanid": {
+            "type": "number",
+            "description": "VLAN ID (1 - 4094)."
+        },
+        "Vrf": {
+            "type": "number",
+            "description": "Virtual Routing Forwarding ID."
+        },
+        "VrrpVirtualMac": {
+            "type": "string",
+            "description": "Enable/disable use of virtual MAC for VRRP. Valid values: `enable`, `disable`."
+        },
+        "Wccp": {
+            "type": "string",
+            "description": "Enable/disable WCCP on this interface. Used for encapsulated WCCP communication between WCCP clients and servers. Valid values: `enable`, `disable`."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Default weight for static routes (if route has no weight configured)."
+        },
+        "WinsIp": {
+            "type": "string",
+            "description": "WINS server IP."
+        },
+        "ClientOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientOptionsDefinition"
+            }
+        },
+        "FailAlertInterfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FailAlertInterfacesDefinition"
+            }
+        },
+        "Ipv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6Definition"
+            },
+            "maxItems": 1
+        },
+        "ManagedDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedDeviceDefinition"
+            }
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberDefinition"
+            }
+        },
+        "Secondaryip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryipDefinition"
+            }
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecurityGroupsDefinition"
+            }
+        },
+        "Tagging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaggingDefinition"
+            }
+        },
+        "Vrrp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VrrpDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Vdom"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PptpPassword"
+    ]
+}

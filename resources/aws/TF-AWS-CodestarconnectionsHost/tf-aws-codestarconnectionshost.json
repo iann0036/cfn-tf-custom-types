@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::AWS::CodestarconnectionsHost",
+    "description": "Provides a CodeStar Host.\n\n~> **NOTE:** The `aws_codestarconnections_host` resource is created in the state `PENDING`. Authentication with the host provider must be completed in the AWS Console. For more information visit [Set up a pending host](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-host-setup.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodestarconnectionsHost/docs/README.md",
+    "definitions": {
+        "VpcConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "he ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed."
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed."
+                },
+                "TlsCertificate": {
+                    "type": "string",
+                    "description": "The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed."
+                },
+                "VpcId": {
+                    "type": "string",
+                    "description": "The ID of the Amazon VPC connected to the infrastructure where your provider type is installed."
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "SubnetIds",
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the host to be created. The name must be unique in the calling AWS account."
+        },
+        "ProviderEndpoint": {
+            "type": "string",
+            "description": "The endpoint of the infrastructure to be represented by the host after it is created."
+        },
+        "ProviderType": {
+            "type": "string",
+            "description": "The name of the external provider where your third-party code repository is configured."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VpcConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProviderEndpoint",
+        "ProviderType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::AWS::ApiGatewayDocumentationPart",
+    "description": "Provides a settings of an API Gateway Documentation Part.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayDocumentationPart/docs/README.md",
+    "definitions": {
+        "LocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Properties": {
+            "type": "string",
+            "description": "A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., \"{ \\\"description\\\": \\\"The API does ...\\\" }\". Only Swagger-compliant key-value pairs can be exported and, hence, published."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated Rest API."
+        },
+        "Location": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LocationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Properties",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

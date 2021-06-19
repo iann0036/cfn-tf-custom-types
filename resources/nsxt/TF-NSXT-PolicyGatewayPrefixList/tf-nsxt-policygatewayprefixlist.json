@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::NSXT::PolicyGatewayPrefixList",
+    "description": "This resource provides a method for the management of a Tier-0 Gateway Prefix List.\n\n# Example Usage\n\n```hcl\ndata \"nsxt_policy_tier0_gateway\" \"gw1\" {\n  display_name = \"gw1\"\n}\n\nresource \"nsxt_policy_gateway_prefix_list\" \"pf1\" {\n  gateway_path = data.nsxt_policy_tier0_gateway.gw1.path\n  display_name = \"t0_prefix_list\"\n  description  = \"Prefix list for tier0 GW gw1\"\n\n  prefix {\n    action  = \"PERMIT\"\n    network = \"4.4.0.0/20\"\n    le      = 23\n    ge      = 20\n  }\n\n  tag {\n    scope = \"color\"\n    tag   = \"red\"\n  }\n}\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyGatewayPrefixList/docs/README.md",
+    "definitions": {
+        "PrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ge": {
+                    "type": "number"
+                },
+                "Le": {
+                    "type": "number"
+                },
+                "Network": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Gateway where the prefix is defined."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "Prefix": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrefixDefinition"
+            },
+            "minItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

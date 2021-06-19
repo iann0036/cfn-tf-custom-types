@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::FortiOS::RouterPolicy6",
+    "description": "Configure IPv6 routing policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterPolicy6/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "Dst": {
+            "type": "string",
+            "description": "Destination IPv6 prefix."
+        },
+        "EndPort": {
+            "type": "number",
+            "description": "End destination port number (1 - 65535)."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "IPv6 address of the gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputDevice": {
+            "type": "string",
+            "description": "Incoming interface name. Configuration examples: for FortiOS Version <= \"6.2.4\": `input_device  = \"port2\"`, for FortiOS Version >= \"6.2.4\": `input_device  = \"\\\"fortilink\\\" \\\"port1\\\"\"`."
+        },
+        "OutputDevice": {
+            "type": "string",
+            "description": "Outgoing interface name."
+        },
+        "Protocol": {
+            "type": "number",
+            "description": "Protocol number (0 - 255)."
+        },
+        "SeqNum": {
+            "type": "number",
+            "description": "Sequence number."
+        },
+        "Src": {
+            "type": "string",
+            "description": "Source IPv6 prefix."
+        },
+        "StartPort": {
+            "type": "number",
+            "description": "Start destination port number (1 - 65535)."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this policy route. Valid values: `enable`, `disable`."
+        },
+        "Tos": {
+            "type": "string",
+            "description": "Type of service bit pattern."
+        },
+        "TosMask": {
+            "type": "string",
+            "description": "Type of service evaluated bits."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InputDevice"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,203 @@
+{
+    "typeName": "TF::Cloudflare::Healthcheck",
+    "description": "Standalone Health Checks provide a way to monitor origin servers without needing a Cloudflare Load Balancer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-Healthcheck/docs/README.md",
+    "definitions": {
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Header",
+                "Values"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "The hostname or IP address of the origin server to run health checks on."
+        },
+        "AllowInsecure": {
+            "type": "boolean"
+        },
+        "CheckRegions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of regions from which to run health checks. If not set Cloudflare will pick a default region. Valid values: `WNAM`, `ENAM`, `WEU`, `EEU`, `NSAM`, `SSAM`, `OC`, `ME`, `NAF`, `SAF`, `IN`, `SEAS`, `NEAS`, `ALL_REGIONS`."
+        },
+        "ConsecutiveFails": {
+            "type": "number",
+            "description": "The number of consecutive fails required from a health check before changing the health to unhealthy. (Default: `1`)."
+        },
+        "ConsecutiveSuccesses": {
+            "type": "number",
+            "description": "The number of consecutive successes required from a health check before changing the health to healthy. (Default: `1`)."
+        },
+        "CreatedOn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-readable description of the health check."
+        },
+        "ExpectedBody": {
+            "type": "string"
+        },
+        "ExpectedCodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FollowRedirects": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations. (Default: `60`)."
+        },
+        "Method": {
+            "type": "string"
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed."
+        },
+        "NotificationEmailAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of email addresses we want to send the notifications to."
+        },
+        "NotificationSuspended": {
+            "type": "boolean",
+            "description": "Whether the notifications are suspended or not. Useful for maintenance periods. Valid values: `true` or `false` (Default: `false`)."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number to connect to for the health check.  Valid values are in the range `0-65535` (Default: `80`)."
+        },
+        "Retries": {
+            "type": "number",
+            "description": "The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. (Default: `2`)."
+        },
+        "Suspended": {
+            "type": "boolean",
+            "description": "If suspended, no health checks are sent to the origin. Valid values: `true` or `false` (Default: `false`)."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "The timeout (in seconds) before marking the health check as failed. (Default: `5`)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The protocol to use for the health check. Valid values: `HTTP`, `HTTPS`, `TCP`."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID to which apply settings."
+        },
+        "Header": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "Name",
+        "Type",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOn",
+        "/properties/Id",
+        "/properties/ModifiedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

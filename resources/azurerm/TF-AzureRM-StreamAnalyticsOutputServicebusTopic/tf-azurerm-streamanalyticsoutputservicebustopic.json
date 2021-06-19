@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::AzureRM::StreamAnalyticsOutputServicebusTopic",
+    "description": "Manages a Stream Analytics Output to a ServiceBus Topic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StreamAnalyticsOutputServicebusTopic/docs/README.md",
+    "definitions": {
+        "SerializationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encoding": {
+                    "type": "string",
+                    "description": "The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`."
+                },
+                "FieldDelimiter": {
+                    "type": "string",
+                    "description": "The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `   ` (tab), `|` (pipe) and `;`."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Specifies the format of the JSON the output will be written in. Possible values are `Array` and `LineSeparated`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The serialization format used for outgoing data streams. Possible values are `Avro`, `Csv` and `Json`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Stream Output. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
+        },
+        "ServicebusNamespace": {
+            "type": "string",
+            "description": "The namespace that is associated with the desired Event Hub, Service Bus Topic, Service Bus Topic, etc."
+        },
+        "SharedAccessPolicyKey": {
+            "type": "string",
+            "description": "The shared access policy key for the specified shared access policy."
+        },
+        "SharedAccessPolicyName": {
+            "type": "string",
+            "description": "The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc."
+        },
+        "StreamAnalyticsJobName": {
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
+        },
+        "TopicName": {
+            "type": "string",
+            "description": "The name of the Service Bus Topic."
+        },
+        "Serialization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SerializationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "ServicebusNamespace",
+        "SharedAccessPolicyKey",
+        "SharedAccessPolicyName",
+        "StreamAnalyticsJobName",
+        "TopicName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SharedAccessPolicyKey"
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::FortiOS::ReportDataset",
+    "description": "Report dataset configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ReportDataset/docs/README.md",
+    "definitions": {
+        "FieldDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Displayname": {
+                    "type": "string",
+                    "description": "Display name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Field ID (1 to number of columns in SQL result)."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Field type. Valid values: `text`, `integer`, `double`."
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataType": {
+                    "type": "string",
+                    "description": "Data type. Valid values: `text`, `integer`, `double`, `long-integer`, `date-time`."
+                },
+                "DisplayName": {
+                    "type": "string",
+                    "description": "Display name."
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "SQL field name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Parameter ID (1 to number of columns in SQL result)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Policy": {
+            "type": "number",
+            "description": "Used by monitor policy."
+        },
+        "Query": {
+            "type": "string",
+            "description": "SQL query statement."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Field": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FieldDefinition"
+            }
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

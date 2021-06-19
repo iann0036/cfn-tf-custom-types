@@ -1,0 +1,331 @@
+{
+    "typeName": "TF::FortiOS::WanoptProfile",
+    "description": "Configure WAN optimization profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WanoptProfile/docs/README.md",
+    "definitions": {
+        "CifsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ByteCaching": {
+                    "type": "string",
+                    "description": "Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache. Valid values: `enable`, `disable`."
+                },
+                "LogTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Single port number or port number range for CIFS. Only packets with a destination port number that matches this port number or range are accepted by this profile."
+                },
+                "PreferChunking": {
+                    "type": "string",
+                    "description": "Select dynamic or fixed-size data chunking for HTTP WAN Optimization. Valid values: `dynamic`, `fix`."
+                },
+                "ProtocolOpt": {
+                    "type": "string",
+                    "description": "Select Protocol specific optimitation or generic TCP optimization. Valid values: `protocol`, `tcp`."
+                },
+                "SecureTunnel": {
+                    "type": "string",
+                    "description": "Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810). Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP WAN Optimization. Valid values: `enable`, `disable`."
+                },
+                "TunnelSharing": {
+                    "type": "string",
+                    "description": "Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols. Valid values: `private`, `shared`, `express-shared`."
+                }
+            },
+            "required": []
+        },
+        "FtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ByteCaching": {
+                    "type": "string",
+                    "description": "Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache. Valid values: `enable`, `disable`."
+                },
+                "LogTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Single port number or port number range for FTP. Only packets with a destination port number that matches this port number or range are accepted by this profile."
+                },
+                "PreferChunking": {
+                    "type": "string",
+                    "description": "Select dynamic or fixed-size data chunking for HTTP WAN Optimization. Valid values: `dynamic`, `fix`."
+                },
+                "ProtocolOpt": {
+                    "type": "string",
+                    "description": "Select Protocol specific optimitation or generic TCP optimization. Valid values: `protocol`, `tcp`."
+                },
+                "SecureTunnel": {
+                    "type": "string",
+                    "description": "Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810). Valid values: `enable`, `disable`."
+                },
+                "Ssl": {
+                    "type": "string",
+                    "description": "Enable/disable SSL/TLS offloading (hardware acceleration) for traffic in this tunnel. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP WAN Optimization. Valid values: `enable`, `disable`."
+                },
+                "TunnelSharing": {
+                    "type": "string",
+                    "description": "Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols. Valid values: `private`, `shared`, `express-shared`."
+                }
+            },
+            "required": []
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ByteCaching": {
+                    "type": "string",
+                    "description": "Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache. Valid values: `enable`, `disable`."
+                },
+                "LogTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Single port number or port number range for HTTP. Only packets with a destination port number that matches this port number or range are accepted by this profile."
+                },
+                "PreferChunking": {
+                    "type": "string",
+                    "description": "Select dynamic or fixed-size data chunking for HTTP WAN Optimization. Valid values: `dynamic`, `fix`."
+                },
+                "ProtocolOpt": {
+                    "type": "string",
+                    "description": "Select Protocol specific optimitation or generic TCP optimization. Valid values: `protocol`, `tcp`."
+                },
+                "SecureTunnel": {
+                    "type": "string",
+                    "description": "Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810). Valid values: `enable`, `disable`."
+                },
+                "Ssl": {
+                    "type": "string",
+                    "description": "Enable/disable SSL/TLS offloading (hardware acceleration) for HTTPS traffic in this tunnel. Valid values: `enable`, `disable`."
+                },
+                "SslPort": {
+                    "type": "number",
+                    "description": "Port on which to expect HTTPS traffic for SSL/TLS offloading."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP WAN Optimization. Valid values: `enable`, `disable`."
+                },
+                "TunnelNonHttp": {
+                    "type": "string",
+                    "description": "Configure how to process non-HTTP traffic when a profile configured for HTTP traffic accepts a non-HTTP session. Can occur if an application sends non-HTTP traffic using an HTTP destination port. Valid values: `enable`, `disable`."
+                },
+                "TunnelSharing": {
+                    "type": "string",
+                    "description": "Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols. Valid values: `private`, `shared`, `express-shared`."
+                },
+                "UnknownHttpVersion": {
+                    "type": "string",
+                    "description": "How to handle HTTP sessions that do not comply with HTTP 0.9, 1.0, or 1.1. Valid values: `reject`, `tunnel`, `best-effort`."
+                }
+            },
+            "required": []
+        },
+        "MapiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ByteCaching": {
+                    "type": "string",
+                    "description": "Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache. Valid values: `enable`, `disable`."
+                },
+                "LogTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Single port number or port number range for MAPI. Only packets with a destination port number that matches this port number or range are accepted by this profile."
+                },
+                "SecureTunnel": {
+                    "type": "string",
+                    "description": "Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810). Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP WAN Optimization. Valid values: `enable`, `disable`."
+                },
+                "TunnelSharing": {
+                    "type": "string",
+                    "description": "Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols. Valid values: `private`, `shared`, `express-shared`."
+                }
+            },
+            "required": []
+        },
+        "TcpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ByteCaching": {
+                    "type": "string",
+                    "description": "Enable/disable byte-caching for HTTP. Byte caching reduces the amount of traffic by caching file data sent across the WAN and in future serving if from the cache. Valid values: `enable`, `disable`."
+                },
+                "ByteCachingOpt": {
+                    "type": "string",
+                    "description": "Select whether TCP byte-caching uses system memory only or both memory and disk space. Valid values: `mem-only`, `mem-disk`."
+                },
+                "LogTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Port": {
+                    "type": "string",
+                    "description": "Single port number or port number range for TCP. Only packets with a destination port number that matches this port number or range are accepted by this profile."
+                },
+                "SecureTunnel": {
+                    "type": "string",
+                    "description": "Enable/disable securing the WAN Opt tunnel using SSL. Secure and non-secure tunnels use the same TCP port (7810). Valid values: `enable`, `disable`."
+                },
+                "Ssl": {
+                    "type": "string",
+                    "description": "Enable/disable SSL/TLS offloading. Valid values: `enable`, `disable`."
+                },
+                "SslPort": {
+                    "type": "number",
+                    "description": "Port on which to expect HTTPS traffic for SSL/TLS offloading."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP WAN Optimization. Valid values: `enable`, `disable`."
+                },
+                "TunnelSharing": {
+                    "type": "string",
+                    "description": "Tunnel sharing mode for aggressive/non-aggressive and/or interactive/non-interactive protocols. Valid values: `private`, `shared`, `express-shared`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthGroup": {
+            "type": "string",
+            "description": "Optionally add an authentication group to restrict access to the WAN Optimization tunnel to peers in the authentication group."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Transparent": {
+            "type": "string",
+            "description": "Enable/disable transparent mode. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Cifs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CifsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ftp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Mapi": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MapiDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tcp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TcpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

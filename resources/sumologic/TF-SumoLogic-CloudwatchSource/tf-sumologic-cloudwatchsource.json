@@ -1,0 +1,291 @@
+{
+    "typeName": "TF::SumoLogic::CloudwatchSource",
+    "description": "Provides a [Sumologic CloudWatch source][2].\n\n__IMPORTANT:__ The AWS credentials are stored in plain-text in the state. This is a potential security issue.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-CloudwatchSource/docs/README.md",
+    "definitions": {
+        "FieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "DefaultDateFormatsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "Locator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Format"
+            ]
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterType": {
+                    "type": "string"
+                },
+                "Mask": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Regexp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FilterType",
+                "Name",
+                "Regexp"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "LimitToNamespaces": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LimitToRegions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PathExpression": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "TagFilters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagFiltersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TagFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomaticDateParsing": {
+            "type": "boolean"
+        },
+        "Category": {
+            "type": "string"
+        },
+        "CollectorId": {
+            "type": "number"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "CutoffRelativeTime": {
+            "type": "string"
+        },
+        "CutoffTimestamp": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Fields": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FieldsDefinition"
+            }
+        },
+        "ForceTimezone": {
+            "type": "boolean"
+        },
+        "HostName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManualPrefixRegexp": {
+            "type": "string"
+        },
+        "MultilineProcessingEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Paused": {
+            "type": "boolean"
+        },
+        "ScanInterval": {
+            "type": "number"
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "UseAutolineMatching": {
+            "type": "boolean"
+        },
+        "Authentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "DefaultDateFormats": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultDateFormatsDefinition"
+            }
+        },
+        "Filters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FiltersDefinition"
+            }
+        },
+        "Path": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PathDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CollectorId",
+        "ContentType",
+        "Name",
+        "Paused",
+        "ScanInterval"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

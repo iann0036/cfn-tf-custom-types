@@ -1,0 +1,260 @@
+{
+    "typeName": "TF::Panos::PanoramaSnmptrapServerProfile",
+    "description": "This resource allows you to add/update/delete Panorama snmptrap server profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaSnmptrapServerProfile/docs/README.md",
+    "definitions": {
+        "AuthPasswordEncDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthPasswordRawDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrivPasswordEncDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrivPasswordRawDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "V2cServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "string",
+                    "description": "The SNMP community."
+                },
+                "Manager": {
+                    "type": "string",
+                    "description": "The hostname."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The server name."
+                }
+            },
+            "required": [
+                "Community",
+                "Manager",
+                "Name"
+            ]
+        },
+        "V3ServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthPassword": {
+                    "type": "string",
+                    "description": "SNMP auth password."
+                },
+                "EngineId": {
+                    "type": "string",
+                    "description": "The engine ID."
+                },
+                "Manager": {
+                    "type": "string",
+                    "description": "The hostname."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The server name."
+                },
+                "PrivPassword": {
+                    "type": "string",
+                    "description": "SNMP priv password."
+                },
+                "User": {
+                    "type": "string",
+                    "description": "Username."
+                }
+            },
+            "required": [
+                "AuthPassword",
+                "Manager",
+                "Name",
+                "PrivPassword",
+                "User"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthPasswordEnc": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthPasswordEncDefinition"
+            }
+        },
+        "AuthPasswordRaw": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthPasswordRawDefinition"
+            }
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location.  Mutually exclusive with\n`template` and `template_stack`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group's name."
+        },
+        "PrivPasswordEnc": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PrivPasswordEncDefinition"
+            }
+        },
+        "PrivPasswordRaw": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PrivPasswordRawDefinition"
+            }
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location.  Mutually exclusive with\n`template_stack` and `device_group`."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack location.  Mutually exclusive\nwith `template` and `device_group`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys.  This will likely be `shared`, and it should be\ndefined if you specified either `template` or `template_stack`."
+        },
+        "V2cServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/V2cServerDefinition"
+            }
+        },
+        "V3Server": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/V3ServerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AuthPasswordEnc",
+        "/properties/AuthPasswordRaw",
+        "/properties/Id",
+        "/properties/PrivPasswordEnc",
+        "/properties/PrivPasswordRaw"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthPasswordEnc",
+        "/properties/AuthPasswordRaw",
+        "/properties/PrivPasswordEnc",
+        "/properties/PrivPasswordRaw",
+        "/definitions/V3ServerDefinition/AuthPassword",
+        "/definitions/V3ServerDefinition/PrivPassword"
+    ]
+}

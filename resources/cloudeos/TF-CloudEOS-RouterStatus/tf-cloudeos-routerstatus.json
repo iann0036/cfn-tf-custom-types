@@ -1,0 +1,245 @@
+{
+    "typeName": "TF::CloudEOS::RouterStatus",
+    "description": "The `cloudeos_router_status` resource should be created after a CloudEOS router has been deployed. It sends all the information\nabout the deployed CloudEOS router to CVaaS. Unlike `cloudeos_router_config` which takes minimal input about how the\nCloudEOS router should be deployed, `cloudeos_router_status` provides detailed deployment information after the router\nis deployed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-RouterStatus/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilitySetId": {
+            "type": "string",
+            "description": "Availability Set."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability Zone in which the router is deployed in."
+        },
+        "CloudProvider": {
+            "type": "string",
+            "description": "CloudProvider type. Supports only aws or azure."
+        },
+        "Cnps": {
+            "type": "string",
+            "description": "Cloud Network Private Segments ( VRF name )."
+        },
+        "CvContainer": {
+            "type": "string",
+            "description": "Container in CVaaS to which the router will be added to."
+        },
+        "DeploymentStatus": {
+            "type": "string"
+        },
+        "HaName": {
+            "type": "string",
+            "description": "Cloud HA pair name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Instance ID of deployed CloudEOS."
+        },
+        "InternalRtTableIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of internal interface route table IDs."
+        },
+        "IntfId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interface IDs attached to the routers."
+        },
+        "IntfName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interface names for the routers."
+        },
+        "IntfPrivateIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of private IPs attached to the interfaces."
+        },
+        "IntfSubnetId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of subnet IDs of interfaces."
+        },
+        "IntfType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interface types. Values supported : public, internal, private."
+        },
+        "IsRr": {
+            "type": "boolean",
+            "description": "true if this CloudEOS acts as a Route Reflector."
+        },
+        "PrimaryNetworkInterfaceId": {
+            "type": "string"
+        },
+        "PrivateRtTableIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of private interface route table IDs."
+        },
+        "PublicIp": {
+            "type": "string",
+            "description": "Public IP of interface."
+        },
+        "PublicRtTableIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of public route table IDs."
+        },
+        "Region": {
+            "type": "string",
+            "description": "Region of deployment."
+        },
+        "RgLocation": {
+            "type": "string",
+            "description": "Resource group location, only for Azure."
+        },
+        "RgName": {
+            "type": "string",
+            "description": "Resource group name, only for Azure."
+        },
+        "RouterBgpAsn": {
+            "type": "string"
+        },
+        "RoutingResourceInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC/VNET ID of the VPC in which the CloudEOS is deployed in."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudProvider",
+        "InstanceType",
+        "IntfId",
+        "IntfName",
+        "IntfPrivateIp",
+        "IntfSubnetId",
+        "IntfType",
+        "Region",
+        "TfId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,299 @@
+{
+    "typeName": "TF::FortiOS::SystemAutomationaction",
+    "description": "Action for automation stitches.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAutomationaction/docs/README.md",
+    "definitions": {
+        "EmailToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Email address."
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string",
+                    "description": "Request header."
+                }
+            },
+            "required": []
+        },
+        "SdnConnectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "SDN connector name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accprofile": {
+            "type": "string",
+            "description": "Access profile for CLI script action to access FortiGate features."
+        },
+        "ActionType": {
+            "type": "string",
+            "description": "Action type."
+        },
+        "AlicloudAccessKeyId": {
+            "type": "string",
+            "description": "AliCloud AccessKey ID."
+        },
+        "AlicloudAccessKeySecret": {
+            "type": "string",
+            "description": "AliCloud AccessKey secret."
+        },
+        "AlicloudAccountId": {
+            "type": "string",
+            "description": "AliCloud account ID."
+        },
+        "AlicloudFunction": {
+            "type": "string",
+            "description": "AliCloud function name."
+        },
+        "AlicloudFunctionAuthorization": {
+            "type": "string",
+            "description": "AliCloud function authorization type. Valid values: `anonymous`, `function`."
+        },
+        "AlicloudFunctionDomain": {
+            "type": "string",
+            "description": "AliCloud function domain."
+        },
+        "AlicloudRegion": {
+            "type": "string",
+            "description": "AliCloud region."
+        },
+        "AlicloudService": {
+            "type": "string",
+            "description": "AliCloud service name."
+        },
+        "AlicloudVersion": {
+            "type": "string",
+            "description": "AliCloud version."
+        },
+        "AwsApiId": {
+            "type": "string",
+            "description": "AWS API Gateway ID."
+        },
+        "AwsApiKey": {
+            "type": "string",
+            "description": "AWS API Gateway API key."
+        },
+        "AwsApiPath": {
+            "type": "string",
+            "description": "AWS API Gateway path."
+        },
+        "AwsApiStage": {
+            "type": "string",
+            "description": "AWS API Gateway deployment stage name."
+        },
+        "AwsDomain": {
+            "type": "string",
+            "description": "AWS domain."
+        },
+        "AwsRegion": {
+            "type": "string",
+            "description": "AWS region."
+        },
+        "AzureApiKey": {
+            "type": "string",
+            "description": "Azure function API key."
+        },
+        "AzureApp": {
+            "type": "string",
+            "description": "Azure function application name."
+        },
+        "AzureDomain": {
+            "type": "string",
+            "description": "Azure function domain."
+        },
+        "AzureFunction": {
+            "type": "string",
+            "description": "Azure function name."
+        },
+        "AzureFunctionAuthorization": {
+            "type": "string",
+            "description": "Azure function authorization level. Valid values: `anonymous`, `function`, `admin`."
+        },
+        "Delay": {
+            "type": "number",
+            "description": "Delay before execution (in seconds)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmailBody": {
+            "type": "string",
+            "description": "Email body."
+        },
+        "EmailFrom": {
+            "type": "string",
+            "description": "Email sender name."
+        },
+        "EmailSubject": {
+            "type": "string",
+            "description": "Email subject."
+        },
+        "GcpFunction": {
+            "type": "string",
+            "description": "Google Cloud function name."
+        },
+        "GcpFunctionDomain": {
+            "type": "string",
+            "description": "Google Cloud function domain."
+        },
+        "GcpFunctionRegion": {
+            "type": "string",
+            "description": "Google Cloud function region."
+        },
+        "GcpProject": {
+            "type": "string",
+            "description": "Google Cloud Platform project name."
+        },
+        "HttpBody": {
+            "type": "string",
+            "description": "Request body (if necessary). Should be serialized json string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Message": {
+            "type": "string",
+            "description": "Message content."
+        },
+        "Method": {
+            "type": "string",
+            "description": "Request method (POST, PUT, GET, PATCH or DELETE). Valid values: `post`, `put`, `get`, `patch`, `delete`."
+        },
+        "MinimumInterval": {
+            "type": "number",
+            "description": "Limit execution to no more than once in this interval (in seconds)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Protocol port."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Request protocol. Valid values: `http`, `https`."
+        },
+        "ReplacementMessage": {
+            "type": "string",
+            "description": "Enable/disable replacement message. Valid values: `enable`, `disable`."
+        },
+        "Required": {
+            "type": "string",
+            "description": "Required in action chain. Valid values: `enable`, `disable`."
+        },
+        "Script": {
+            "type": "string",
+            "description": "CLI script."
+        },
+        "SecurityTag": {
+            "type": "string",
+            "description": "NSX security tag."
+        },
+        "TlsCertificate": {
+            "type": "string",
+            "description": "Custom TLS certificate for API request."
+        },
+        "Uri": {
+            "type": "string",
+            "description": "Request API URI."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "EmailTo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailToDefinition"
+            }
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeadersDefinition"
+            }
+        },
+        "SdnConnector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SdnConnectorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AlicloudAccessKeySecret",
+        "/properties/AwsApiKey",
+        "/properties/AzureApiKey"
+    ]
+}

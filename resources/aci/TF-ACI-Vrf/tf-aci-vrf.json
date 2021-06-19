@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::ACI::Vrf",
+    "description": "CloudFormation equivalent of aci_vrf",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-Vrf/docs/README.md",
+    "definitions": {
+        "RelationFvRsCtxToBgpCtxAfPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Af": {
+                    "type": "string"
+                },
+                "TnBgpCtxAfPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Af",
+                "TnBgpCtxAfPolName"
+            ]
+        },
+        "RelationFvRsCtxToEigrpCtxAfPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Af": {
+                    "type": "string"
+                },
+                "TnEigrpCtxAfPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Af",
+                "TnEigrpCtxAfPolName"
+            ]
+        },
+        "RelationFvRsCtxToOspfCtxPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Af": {
+                    "type": "string"
+                },
+                "TnOspfCtxPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Af",
+                "TnOspfCtxPolName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "BdEnforcedEnable": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpDataPlaneLearning": {
+            "type": "string"
+        },
+        "KnwMcastAct": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PcEnfDir": {
+            "type": "string"
+        },
+        "PcEnfPref": {
+            "type": "string"
+        },
+        "RelationFvRsBgpCtxPol": {
+            "type": "string"
+        },
+        "RelationFvRsCtxMcastTo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsCtxMonPol": {
+            "type": "string"
+        },
+        "RelationFvRsCtxToEpRet": {
+            "type": "string"
+        },
+        "RelationFvRsCtxToExtRouteTagPol": {
+            "type": "string"
+        },
+        "RelationFvRsOspfCtxPol": {
+            "type": "string"
+        },
+        "RelationFvRsVrfValidationPol": {
+            "type": "string"
+        },
+        "TenantDn": {
+            "type": "string"
+        },
+        "RelationFvRsCtxToBgpCtxAfPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsCtxToBgpCtxAfPolDefinition"
+            }
+        },
+        "RelationFvRsCtxToEigrpCtxAfPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsCtxToEigrpCtxAfPolDefinition"
+            }
+        },
+        "RelationFvRsCtxToOspfCtxPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsCtxToOspfCtxPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

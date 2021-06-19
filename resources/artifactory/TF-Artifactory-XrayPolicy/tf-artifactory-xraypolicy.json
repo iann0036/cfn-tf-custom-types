@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::Artifactory::XrayPolicy",
+    "description": "CloudFormation equivalent of artifactory_xray_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-XrayPolicy/docs/README.md",
+    "definitions": {
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Actions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Criteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CriteriaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "Priority"
+            ]
+        },
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomSeverity": {
+                    "type": "string"
+                },
+                "FailBuild": {
+                    "type": "boolean"
+                },
+                "Mails": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Webhooks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BlockDownload": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BlockDownloadDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowUnknown": {
+                    "type": "boolean"
+                },
+                "AllowedLicenses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "BannedLicenses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MinSeverity": {
+                    "type": "string"
+                },
+                "CvssRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CvssRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BlockDownloadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Unscanned": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Active",
+                "Unscanned"
+            ]
+        },
+        "CvssRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "From": {
+                    "type": "number"
+                },
+                "To": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "From",
+                "To"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Author": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Modified": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Author",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/Modified"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

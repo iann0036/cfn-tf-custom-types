@@ -1,0 +1,545 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeInstanceTemplate",
+    "description": "CloudFormation equivalent of google_compute_instance_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeInstanceTemplate/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfidentialInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableConfidentialCompute": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnableConfidentialCompute"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDelete": {
+                    "type": "boolean"
+                },
+                "Boot": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "DiskName": {
+                    "type": "string"
+                },
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "ResourcePolicies": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourceImage": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "DiskEncryptionKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiskEncryptionKeyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuestAcceleratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Count",
+                "Type"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Network": {
+                    "type": "string"
+                },
+                "NetworkIp": {
+                    "type": "string"
+                },
+                "NicType": {
+                    "type": "string"
+                },
+                "Subnetwork": {
+                    "type": "string"
+                },
+                "SubnetworkProject": {
+                    "type": "string"
+                },
+                "AccessConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessConfigDefinition"
+                    }
+                },
+                "AliasIpRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AliasIpRangeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ReservationAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "SpecificReservation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpecificReservationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "SchedulingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticRestart": {
+                    "type": "boolean"
+                },
+                "MinNodeCpus": {
+                    "type": "number"
+                },
+                "OnHostMaintenance": {
+                    "type": "string"
+                },
+                "Preemptible": {
+                    "type": "boolean"
+                },
+                "NodeAffinities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NodeAffinitiesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Scopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Scopes"
+            ]
+        },
+        "ShieldedInstanceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                },
+                "EnableVtpm": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiskEncryptionKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeySelfLink": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeySelfLink"
+            ]
+        },
+        "AccessConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NatIp": {
+                    "type": "string"
+                },
+                "NetworkTier": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AliasIpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpCidrRange": {
+                    "type": "string"
+                },
+                "SubnetworkRangeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpCidrRange"
+            ]
+        },
+        "SpecificReservationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "NodeAffinitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Operator",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanIpForward": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableDisplay": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceDescription": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "MachineType": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "MetadataFingerprint": {
+            "type": "string"
+        },
+        "MetadataStartupScript": {
+            "type": "string"
+        },
+        "MinCpuPlatform": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TagsFingerprint": {
+            "type": "string"
+        },
+        "ConfidentialInstanceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfidentialInstanceConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            },
+            "minItems": 1
+        },
+        "GuestAccelerator": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuestAcceleratorDefinition"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "ReservationAffinity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReservationAffinityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Scheduling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchedulingDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceAccountDefinition"
+            },
+            "maxItems": 1
+        },
+        "ShieldedInstanceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShieldedInstanceConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MachineType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MetadataFingerprint",
+        "/properties/SelfLink",
+        "/properties/TagsFingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

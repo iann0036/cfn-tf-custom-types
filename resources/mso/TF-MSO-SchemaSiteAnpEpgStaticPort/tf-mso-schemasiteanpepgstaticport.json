@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::MSO::SchemaSiteAnpEpgStaticPort",
+    "description": "CloudFormation equivalent of mso_schema_site_anp_epg_static_port",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaSiteAnpEpgStaticPort/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnpName": {
+            "type": "string"
+        },
+        "DeploymentImmediacy": {
+            "type": "string"
+        },
+        "EpgName": {
+            "type": "string"
+        },
+        "Fex": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Leaf": {
+            "type": "string"
+        },
+        "MicroSegVlan": {
+            "type": "number"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PathType": {
+            "type": "string"
+        },
+        "Pod": {
+            "type": "string"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "SiteId": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "Vlan": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AnpName",
+        "DeploymentImmediacy",
+        "EpgName",
+        "Leaf",
+        "Mode",
+        "Path",
+        "PathType",
+        "Pod",
+        "SchemaId",
+        "SiteId",
+        "TemplateName",
+        "Vlan"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

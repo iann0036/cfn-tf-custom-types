@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::ACI::L3ExtSubnet",
+    "description": "CloudFormation equivalent of aci_l3_ext_subnet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3ExtSubnet/docs/README.md",
+    "definitions": {
+        "RelationL3extRsSubnetToProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string"
+                },
+                "TnRtctrlProfileName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Direction",
+                "TnRtctrlProfileName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aggregate": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExternalNetworkInstanceProfileDn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "RelationL3extRsSubnetToRtSumm": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationL3extRsSubnetToProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationL3extRsSubnetToProfileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalNetworkInstanceProfileDn",
+        "Ip"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

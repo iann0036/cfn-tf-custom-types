@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::TencentCloud::CbsSnapshot",
+    "description": "Provides a resource to create a CBS snapshot.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CbsSnapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DiskType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Percent": {
+            "type": "number"
+        },
+        "SnapshotName": {
+            "type": "string",
+            "description": "Name of the snapshot."
+        },
+        "SnapshotStatus": {
+            "type": "string"
+        },
+        "StorageId": {
+            "type": "string",
+            "description": "ID of the the CBS which this snapshot created from."
+        },
+        "StorageSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SnapshotName",
+        "StorageId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/DiskType",
+        "/properties/Id",
+        "/properties/Percent",
+        "/properties/SnapshotStatus",
+        "/properties/StorageSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

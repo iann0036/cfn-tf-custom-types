@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::AWS::EmrManagedScalingPolicy",
+    "description": "Provides a Managed Scaling policy for EMR Cluster. With Amazon EMR versions 5.30.0 and later (except for Amazon EMR 6.0.0), you can enable EMR managed scaling to automatically increase or decrease the number of instances or units in your cluster based on workload. See [Using EMR Managed Scaling in Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-scaling.html) for more information.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EmrManagedScalingPolicy/docs/README.md",
+    "definitions": {
+        "ComputeLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaximumCapacityUnits": {
+                    "type": "number"
+                },
+                "MaximumCoreCapacityUnits": {
+                    "type": "number"
+                },
+                "MaximumOndemandCapacityUnits": {
+                    "type": "number"
+                },
+                "MinimumCapacityUnits": {
+                    "type": "number"
+                },
+                "UnitType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MaximumCapacityUnits",
+                "MinimumCapacityUnits",
+                "UnitType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The id of the EMR cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ComputeLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ComputeLimitsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

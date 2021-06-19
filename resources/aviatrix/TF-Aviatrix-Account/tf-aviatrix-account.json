@@ -1,0 +1,217 @@
+{
+    "typeName": "TF::Aviatrix::Account",
+    "description": "The **aviatrix_account** resource allows the creation and management of Aviatrix cloud accounts.\n\n~> **NOTE:** With the release of Controller 5.4 (compatible with Aviatrix provider R2.13), Role-Based Access Control (RBAC) is now integrated into the Accounts workflow. Any **aviatrix_account** created in 5.3 by default will have admin privileges (attached to the 'admin' RBAC permission group). In 5.4, any new accounts created will not be attached to any RBAC group unless otherwise specified through the **aviatrix_rbac_group_access_account_attachment** resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Account/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AlicloudAccessKey": {
+            "type": "string"
+        },
+        "AlicloudAccountId": {
+            "type": "string"
+        },
+        "AlicloudSecretKey": {
+            "type": "string"
+        },
+        "ArmApplicationId": {
+            "type": "string"
+        },
+        "ArmApplicationKey": {
+            "type": "string"
+        },
+        "ArmDirectoryId": {
+            "type": "string"
+        },
+        "ArmSubscriptionId": {
+            "type": "string"
+        },
+        "AuditAccount": {
+            "type": "boolean"
+        },
+        "AwsAccessKey": {
+            "type": "string"
+        },
+        "AwsAccountNumber": {
+            "type": "string"
+        },
+        "AwsGatewayRoleApp": {
+            "type": "string"
+        },
+        "AwsGatewayRoleEc2": {
+            "type": "string"
+        },
+        "AwsIam": {
+            "type": "boolean"
+        },
+        "AwsRoleApp": {
+            "type": "string"
+        },
+        "AwsRoleEc2": {
+            "type": "string"
+        },
+        "AwsSecretKey": {
+            "type": "string"
+        },
+        "AwschinaAccessKey": {
+            "type": "string"
+        },
+        "AwschinaAccountNumber": {
+            "type": "string"
+        },
+        "AwschinaIam": {
+            "type": "boolean"
+        },
+        "AwschinaRoleApp": {
+            "type": "string"
+        },
+        "AwschinaRoleEc2": {
+            "type": "string"
+        },
+        "AwschinaSecretKey": {
+            "type": "string"
+        },
+        "AwsgovAccessKey": {
+            "type": "string"
+        },
+        "AwsgovAccountNumber": {
+            "type": "string"
+        },
+        "AwsgovIam": {
+            "type": "boolean"
+        },
+        "AwsgovRoleApp": {
+            "type": "string"
+        },
+        "AwsgovRoleEc2": {
+            "type": "string"
+        },
+        "AwsgovSecretKey": {
+            "type": "string"
+        },
+        "AzurechinaApplicationId": {
+            "type": "string"
+        },
+        "AzurechinaApplicationKey": {
+            "type": "string"
+        },
+        "AzurechinaDirectoryId": {
+            "type": "string"
+        },
+        "AzurechinaSubscriptionId": {
+            "type": "string"
+        },
+        "AzuregovApplicationId": {
+            "type": "string"
+        },
+        "AzuregovApplicationKey": {
+            "type": "string"
+        },
+        "AzuregovDirectoryId": {
+            "type": "string"
+        },
+        "AzuregovSubscriptionId": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "GcloudProjectCredentialsFilepath": {
+            "type": "string"
+        },
+        "GcloudProjectId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OciApiPrivateKeyFilepath": {
+            "type": "string"
+        },
+        "OciCompartmentId": {
+            "type": "string"
+        },
+        "OciTenancyId": {
+            "type": "string"
+        },
+        "OciUserId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AlicloudAccessKey",
+        "/properties/AlicloudSecretKey",
+        "/properties/ArmApplicationId",
+        "/properties/ArmApplicationKey",
+        "/properties/ArmDirectoryId",
+        "/properties/AwsAccessKey",
+        "/properties/AwsSecretKey",
+        "/properties/AwschinaAccessKey",
+        "/properties/AwschinaSecretKey",
+        "/properties/AwsgovAccessKey",
+        "/properties/AwsgovSecretKey",
+        "/properties/AzurechinaApplicationId",
+        "/properties/AzurechinaApplicationKey",
+        "/properties/AzurechinaDirectoryId",
+        "/properties/AzuregovApplicationId",
+        "/properties/AzuregovApplicationKey",
+        "/properties/AzuregovDirectoryId",
+        "/properties/OciApiPrivateKeyFilepath",
+        "/properties/OciCompartmentId",
+        "/properties/OciTenancyId",
+        "/properties/OciUserId"
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::TencentCloud::ClbTargetGroup",
+    "description": "Provides a resource to create a CLB target group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbTargetGroup/docs/README.md",
+    "definitions": {
+        "TargetGroupInstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindIp": {
+                    "type": "string",
+                    "description": "The internal ip of target group instance."
+                },
+                "NewPort": {
+                    "type": "number",
+                    "description": "The new port of target group instance."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "The port of target group instance."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "The weight of target group instance."
+                }
+            },
+            "required": [
+                "BindIp",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "The default port of target group, add server after can use it."
+        },
+        "TargetGroupName": {
+            "type": "string",
+            "description": "Target group name."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID, default is based on the network."
+        },
+        "TargetGroupInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetGroupInstancesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

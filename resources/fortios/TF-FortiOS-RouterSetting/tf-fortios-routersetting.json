@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::FortiOS::RouterSetting",
+    "description": "Configure router settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BgpDebugFlags": {
+            "type": "string",
+            "description": "bgp_debug_flags."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Hostname for this virtual domain router."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgmpDebugFlags": {
+            "type": "string",
+            "description": "igmp_debug_flags."
+        },
+        "ImiDebugFlags": {
+            "type": "string",
+            "description": "imi_debug_flags."
+        },
+        "IsisDebugFlags": {
+            "type": "string",
+            "description": "isis_debug_flags."
+        },
+        "Ospf6DebugEventsFlags": {
+            "type": "string",
+            "description": "ospf6_debug_events_flags."
+        },
+        "Ospf6DebugIfsmFlags": {
+            "type": "string",
+            "description": "ospf6_debug_ifsm_flags."
+        },
+        "Ospf6DebugLsaFlags": {
+            "type": "string",
+            "description": "ospf6_debug_lsa_flags."
+        },
+        "Ospf6DebugNfsmFlags": {
+            "type": "string",
+            "description": "ospf6_debug_nfsm_flags."
+        },
+        "Ospf6DebugNsmFlags": {
+            "type": "string",
+            "description": "ospf6_debug_nsm_flags."
+        },
+        "Ospf6DebugPacketFlags": {
+            "type": "string",
+            "description": "ospf6_debug_packet_flags."
+        },
+        "Ospf6DebugRouteFlags": {
+            "type": "string",
+            "description": "ospf6_debug_route_flags."
+        },
+        "OspfDebugEventsFlags": {
+            "type": "string",
+            "description": "ospf_debug_events_flags."
+        },
+        "OspfDebugIfsmFlags": {
+            "type": "string",
+            "description": "ospf_debug_ifsm_flags."
+        },
+        "OspfDebugLsaFlags": {
+            "type": "string",
+            "description": "ospf_debug_lsa_flags."
+        },
+        "OspfDebugNfsmFlags": {
+            "type": "string",
+            "description": "ospf_debug_nfsm_flags."
+        },
+        "OspfDebugNsmFlags": {
+            "type": "string",
+            "description": "ospf_debug_nsm_flags."
+        },
+        "OspfDebugPacketFlags": {
+            "type": "string",
+            "description": "ospf_debug_packet_flags."
+        },
+        "OspfDebugRouteFlags": {
+            "type": "string",
+            "description": "ospf_debug_route_flags."
+        },
+        "PimdmDebugFlags": {
+            "type": "string",
+            "description": "pimdm_debug_flags."
+        },
+        "PimsmDebugJoinpruneFlags": {
+            "type": "string",
+            "description": "pimsm_debug_joinprune_flags."
+        },
+        "PimsmDebugSimpleFlags": {
+            "type": "string",
+            "description": "pimsm_debug_simple_flags."
+        },
+        "PimsmDebugTimerFlags": {
+            "type": "string",
+            "description": "pimsm_debug_timer_flags."
+        },
+        "RipDebugFlags": {
+            "type": "string",
+            "description": "rip_debug_flags."
+        },
+        "RipngDebugFlags": {
+            "type": "string",
+            "description": "ripng_debug_flags."
+        },
+        "ShowFilter": {
+            "type": "string",
+            "description": "Prefix-list as filter for showing routes."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

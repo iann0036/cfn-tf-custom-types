@@ -1,0 +1,446 @@
+{
+    "typeName": "TF::ILert::AlertSource",
+    "description": "An [alert source](https://api.ilert.com/api-docs/#tag/Alert-Sources) represents the connection between your tools (usually a monitoring system, a ticketing tool, or an application) and iLert. We often refer to alert sources as inbound integrations.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-AlertSource/docs/README.md",
+    "definitions": {
+        "AutotaskMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Secret": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "WebServer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Secret",
+                "Username"
+            ]
+        },
+        "EmailPredicateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Criteria": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Criteria",
+                "Field"
+            ]
+        },
+        "EmailResolvePredicateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Criteria": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Criteria",
+                "Field"
+            ]
+        },
+        "HeartbeatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntervalSec": {
+                    "type": "number"
+                },
+                "Summary": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResolveKeyExtractorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Criteria": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Criteria",
+                "Field"
+            ]
+        },
+        "SupportHoursDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRaiseIncidents": {
+                    "type": "boolean"
+                },
+                "Timezone": {
+                    "type": "string"
+                },
+                "SupportDays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SupportDaysDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SupportDaysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Friday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FridayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Monday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MondayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Saturday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SaturdayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sunday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SundayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Thursday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThursdayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tuesday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TuesdayDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Wednesday": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WednesdayDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "FridayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MondayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SaturdayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SundayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ThursdayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TuesdayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WednesdayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "The state of the alert source. Default: `true`.\n- `incident_priority_rule` - (Optional) The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "AutoResolutionTimeout": {
+            "type": "string",
+            "description": "The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "EmailFiltered": {
+            "type": "boolean",
+            "description": "The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "EmailResolveFiltered": {
+            "type": "boolean",
+            "description": "The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "EscalationPolicy": {
+            "type": "string",
+            "description": "The escalation policy id used by this alert source.\n- `incident_creation` - (Optional) iLert receives events from your monitoring systems and can then create incidents in different ways. This option is recommended. Allowed values are `ONE_INCIDENT_PER_EMAIL`, `ONE_INCIDENT_PER_EMAIL_SUBJECT`, `ONE_PENDING_INCIDENT_ALLOWED`, `ONE_OPEN_INCIDENT_ALLOWED`, `OPEN_RESOLVE_ON_EXTRACTION`.\n- `active` - (Optional) The state of the alert source. Default: `true`.\n- `incident_priority_rule` - (Optional) The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "FilterOperator": {
+            "type": "string",
+            "description": "The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncidentCreation": {
+            "type": "string",
+            "description": "iLert receives events from your monitoring systems and can then create incidents in different ways. This option is recommended. Allowed values are `ONE_INCIDENT_PER_EMAIL`, `ONE_INCIDENT_PER_EMAIL_SUBJECT`, `ONE_PENDING_INCIDENT_ALLOWED`, `ONE_OPEN_INCIDENT_ALLOWED`, `OPEN_RESOLVE_ON_EXTRACTION`.\n- `active` - (Optional) The state of the alert source. Default: `true`.\n- `incident_priority_rule` - (Optional) The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "IncidentPriorityRule": {
+            "type": "string",
+            "description": "The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "IntegrationKey": {
+            "type": "string"
+        },
+        "IntegrationType": {
+            "type": "string",
+            "description": "The integration type of the alert source. Allowed values are `NAGIOS`, `ICINGA`, `EMAIL`, `SMS`, `API`, `CRN`, `HEARTBEAT`, `PRTG`, `PINGDOM`, `CLOUDWATCH`, `AWSPHD`, `STACKDRIVER`, `INSTANA`, `ZABBIX`, `SOLARWINDS`, `PROMETHEUS`, `NEWRELIC`, `GRAFANA`, `GITHUB`, `DATADOG`, `UPTIMEROBOT`, `APPDYNAMICS`, `DYNATRACE`, `TOPDESK`, `STATUSCAKE`, `MONITOR`, `TOOL`, `CHECKMK`, `AUTOTASK`, `AWSBUDGET`, `KENTIXAM`, `JIRA`, `CONSUL`, `ZAMMAD`, `SIGNALFX`, `SPLUNK`, `KUBERNETES`, `SEMATEXT`, `SENTRY`, `SUMOLOGIC`, `RAYGUN`, `MXTOOLBOX`, `ESWATCHER`, `AMAZONSNS`, `KAPACITOR`, `CORTEXXSOAR`.\n- `escalation_policy` - (Required) The escalation policy id used by this alert source.\n- `incident_creation` - (Optional) iLert receives events from your monitoring systems and can then create incidents in different ways. This option is recommended. Allowed values are `ONE_INCIDENT_PER_EMAIL`, `ONE_INCIDENT_PER_EMAIL_SUBJECT`, `ONE_PENDING_INCIDENT_ALLOWED`, `ONE_OPEN_INCIDENT_ALLOWED`, `OPEN_RESOLVE_ON_EXTRACTION`.\n- `active` - (Optional) The state of the alert source. Default: `true`.\n- `incident_priority_rule` - (Optional) The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "IntegrationUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the alert source.\n- `integration_type` - (Required) The integration type of the alert source. Allowed values are `NAGIOS`, `ICINGA`, `EMAIL`, `SMS`, `API`, `CRN`, `HEARTBEAT`, `PRTG`, `PINGDOM`, `CLOUDWATCH`, `AWSPHD`, `STACKDRIVER`, `INSTANA`, `ZABBIX`, `SOLARWINDS`, `PROMETHEUS`, `NEWRELIC`, `GRAFANA`, `GITHUB`, `DATADOG`, `UPTIMEROBOT`, `APPDYNAMICS`, `DYNATRACE`, `TOPDESK`, `STATUSCAKE`, `MONITOR`, `TOOL`, `CHECKMK`, `AUTOTASK`, `AWSBUDGET`, `KENTIXAM`, `JIRA`, `CONSUL`, `ZAMMAD`, `SIGNALFX`, `SPLUNK`, `KUBERNETES`, `SEMATEXT`, `SENTRY`, `SUMOLOGIC`, `RAYGUN`, `MXTOOLBOX`, `ESWATCHER`, `AMAZONSNS`, `KAPACITOR`, `CORTEXXSOAR`.\n- `escalation_policy` - (Required) The escalation policy id used by this alert source.\n- `incident_creation` - (Optional) iLert receives events from your monitoring systems and can then create incidents in different ways. This option is recommended. Allowed values are `ONE_INCIDENT_PER_EMAIL`, `ONE_INCIDENT_PER_EMAIL_SUBJECT`, `ONE_PENDING_INCIDENT_ALLOWED`, `ONE_OPEN_INCIDENT_ALLOWED`, `OPEN_RESOLVE_ON_EXTRACTION`.\n- `active` - (Optional) The state of the alert source. Default: `true`.\n- `incident_priority_rule` - (Optional) The incident priority rule. This option is recommended. Allowed values are `HIGH`, `LOW`, `HIGH_DURING_SUPPORT_HOURS`, `LOW_DURING_SUPPORT_HOURS`.\n- `auto_resolution_timeout` - (Optional) The auto resolution timeout. Allowed values are `PT10M`, `PT20M`, `PT30M`, `PT40M`, `PT50M`, `PT60M`, `PT90M`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `PT12H`, `PT24H` (`H` means hour and `M` means minute).\n- `email` - (Optional) The email address. This option is required if `integration_type` is `EMAIL`.\n- `email_filtered` - (Optional) The email filtered. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_filtered` - (Optional) The email resolve filtered. This option is required if `integration_type` is `EMAIL`.\n- `filter_operator` - (Optional) The filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_filter_operator` - (Optional) The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "ResolveFilterOperator": {
+            "type": "string",
+            "description": "The resolve filter operator. This option is required if `integration_type` is `EMAIL`. Allowed values are `AND` and `OR`.\n- `resolve_key_extractor` - (Optional) A [resolve key extractor](#resolve-key-extractor-arguments) block. This option is required if `integration_type` is `EMAIL`.\n- `email_predicate` - (Optional) One or more [email predicate](#email-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `email_resolve_predicate` - (Optional) One or more [email resolve predicate](#email-resolve-predicate-arguments) blocks. This option is required if `integration_type` is `EMAIL`.\n- `heartbeat` - (Optional) A [heartbeat](#heartbeat-arguments) block. This option is required if `integration_type` is `HEARTBEAT`.\n- `support_hours` - (Optional) A [support_hours](#support-hours-arguments) block. This option is allowed if `incident_priority_rule` is `HIGH_DURING_SUPPORT_HOURS` or `LOW_DURING_SUPPORT_HOURS`.\n- `autotask_metadata` - (Optional) An [autotask metadata](#autotask-metadata-arguments) block. This option is required if `integration_type` is `AUTOTASK`.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of related team ids."
+        },
+        "AutotaskMetadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutotaskMetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "EmailPredicate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailPredicateDefinition"
+            }
+        },
+        "EmailResolvePredicate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailResolvePredicateDefinition"
+            }
+        },
+        "Heartbeat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeartbeatDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResolveKeyExtractor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResolveKeyExtractorDefinition"
+            },
+            "maxItems": 1
+        },
+        "SupportHours": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SupportHoursDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EscalationPolicy",
+        "IntegrationType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IntegrationKey",
+        "/properties/IntegrationUrl",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/IntegrationKey",
+        "/properties/IntegrationUrl"
+    ]
+}

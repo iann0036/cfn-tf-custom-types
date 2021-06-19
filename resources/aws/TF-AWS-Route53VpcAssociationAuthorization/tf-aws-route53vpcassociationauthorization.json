@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::AWS::Route53VpcAssociationAuthorization",
+    "description": "Authorizes a VPC in a peer account to be associated with a local Route53 Hosted Zone.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Route53VpcAssociationAuthorization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC to authorize for association with the private hosted zone."
+        },
+        "VpcRegion": {
+            "type": "string",
+            "description": "The VPC's region. Defaults to the region of the AWS provider."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The ID of the private hosted zone that you want to authorize associating a VPC with."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

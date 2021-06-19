@@ -1,0 +1,226 @@
+{
+    "typeName": "TF::Panos::PanoramaIkeGateway",
+    "description": "This resource allows you to add/update/delete Panorama IKE gateways\nfor both templates and template stacks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaIkeGateway/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "The auth type.  Valid values are `pre-shared-key`\n(the default), or `certificate`."
+        },
+        "CertBaseUrl": {
+            "type": "string",
+            "description": "The host and directory part of URL for local\ncertificates."
+        },
+        "CertEnableHashAndUrl": {
+            "type": "boolean",
+            "description": "Set to `true` to use\nhash-and-url for local certificate."
+        },
+        "CertEnableStrictValidation": {
+            "type": "boolean",
+            "description": "Set to `true` to enable\nstrict validation of peer's extended key use."
+        },
+        "CertPermitPayloadMismatch": {
+            "type": "boolean",
+            "description": "Set to `true` to permit\npeer identification and certificate payload identification mismatch."
+        },
+        "CertProfile": {
+            "type": "string",
+            "description": "Profile for certificate valdiation during IKE\nnegotiation."
+        },
+        "CertUseManagementAsSource": {
+            "type": "boolean",
+            "description": "Set to `true` to\nuse management interface IP as source to retrieve http certificates."
+        },
+        "DeadPeerDetectionInterval": {
+            "type": "number",
+            "description": "The dead peer detection interval."
+        },
+        "DeadPeerDetectionRetry": {
+            "type": "number",
+            "description": "Number of retries before disconnection."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Set to `true` to disable."
+        },
+        "EnableDeadPeerDetection": {
+            "type": "boolean",
+            "description": "Set to `true` to enable dead\npeer detection."
+        },
+        "EnableFragmentation": {
+            "type": "boolean",
+            "description": "Set to `true` to enable fragmentation."
+        },
+        "EnableIpv6": {
+            "type": "boolean",
+            "description": "Enable IPv6 or not."
+        },
+        "EnableLivenessCheck": {
+            "type": "boolean",
+            "description": "Set to `true` to\nenable sending empty information liveness check message."
+        },
+        "EnableNatTraversal": {
+            "type": "boolean",
+            "description": "Set to `true` to enable NAT\ntraversal."
+        },
+        "EnablePassiveMode": {
+            "type": "boolean",
+            "description": "Set to `true` to enable passive\nmode (responder only)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ikev1CryptoProfile": {
+            "type": "string",
+            "description": "IKEv1 crypto profile."
+        },
+        "Ikev1ExchangeMode": {
+            "type": "string",
+            "description": "The IKEv1 exchange mode."
+        },
+        "Ikev2CookieValidation": {
+            "type": "boolean",
+            "description": "Set to `true` to require cookie."
+        },
+        "Ikev2CryptoProfile": {
+            "type": "string",
+            "description": "IKEv2 crypto profile."
+        },
+        "Interface": {
+            "type": "string",
+            "description": "The interface."
+        },
+        "LivenessCheckInterval": {
+            "type": "number",
+            "description": "Delay interval before\nsending probing packets (in seconds)."
+        },
+        "LocalCert": {
+            "type": "string",
+            "description": "The local certificate name."
+        },
+        "LocalIdType": {
+            "type": "string",
+            "description": "The local ID type.  Valid values are `ipaddr`,\n`fqdn`, `ufqdn`, `keyid`, or `dn`."
+        },
+        "LocalIdValue": {
+            "type": "string",
+            "description": "The local ID value."
+        },
+        "LocalIpAddressType": {
+            "type": "string",
+            "description": "The local IP address type.  Valid\nvalues for this are `ip`, `floating-ip`, or an empty string (the default)\nwhich is `None`."
+        },
+        "LocalIpAddressValue": {
+            "type": "string",
+            "description": "The IP address if `local_ip_address_type`\nis set to `ip`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The object's name."
+        },
+        "NatTraversalEnableUdpChecksum": {
+            "type": "boolean",
+            "description": "Set to `true` to enable\nNAT traversal UDP checksum."
+        },
+        "NatTraversalKeepAlive": {
+            "type": "number",
+            "description": "Sending interval for NAT\nkeep-alive packets (in seconds).  For versions 6.1 - 8.1, this param, if specified,\nshould be a multiple of 10 between 10 and 3600 to be valid."
+        },
+        "PeerIdCheck": {
+            "type": "string",
+            "description": "Enable peer ID wildcard match for certificate\nauthentication.  Valid values are `exact` or `wildcard`."
+        },
+        "PeerIdType": {
+            "type": "string",
+            "description": "The peer ID type.  Valid values are `ipaddr`,\n`fqdn`, `ufqdn`, `keyid`, or `dn`."
+        },
+        "PeerIdValue": {
+            "type": "string",
+            "description": "The peer ID value."
+        },
+        "PeerIpType": {
+            "type": "string",
+            "description": "The peer IP type.  Valid values are `ip`,\n`dynamic`, and `fqdn` (PANOS 8.1+)."
+        },
+        "PeerIpValue": {
+            "type": "string",
+            "description": "The peer IP value."
+        },
+        "PreSharedKey": {
+            "type": "string",
+            "description": "The pre-shared key value."
+        },
+        "PreSharedKeyEnc": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "Version": {
+            "type": "string",
+            "description": "The IKE gateway version.  Valid values are\n`ikev1`, (the default), `ikev2`, or `ikev2-preferred`.  For PAN-OS 6.1, only\n`ikev1` is acceptable."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PreSharedKeyEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PreSharedKey",
+        "/properties/PreSharedKeyEnc"
+    ]
+}

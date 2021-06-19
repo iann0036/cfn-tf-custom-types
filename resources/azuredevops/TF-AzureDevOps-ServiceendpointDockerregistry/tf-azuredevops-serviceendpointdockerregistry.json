@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointDockerregistry",
+    "description": "Manages a Docker Registry service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointDockerregistry/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The name you will use to refer to this service connection in task inputs.\n- `docker_registry` - (Optional) The URL of the Docker registry. (Default: \"https://index.docker.io/v1/\")\n- `docker_username` - (Optional) The identifier of the Docker account user.\n- `docker_email` - (Optional) The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "DockerEmail": {
+            "type": "string",
+            "description": "The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "DockerPassword": {
+            "type": "string",
+            "description": "The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "DockerPasswordHash": {
+            "type": "string"
+        },
+        "DockerRegistry": {
+            "type": "string",
+            "description": "The URL of the Docker registry. (Default: \"https://index.docker.io/v1/\")\n- `docker_username` - (Optional) The identifier of the Docker account user.\n- `docker_email` - (Optional) The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "DockerUsername": {
+            "type": "string",
+            "description": "The identifier of the Docker account user.\n- `docker_email` - (Optional) The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The name you will use to refer to this service connection in task inputs.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs.\n- `docker_registry` - (Optional) The URL of the Docker registry. (Default: \"https://index.docker.io/v1/\")\n- `docker_username` - (Optional) The identifier of the Docker account user.\n- `docker_email` - (Optional) The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "RegistryType": {
+            "type": "string",
+            "description": "Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The name you will use to refer to this service connection in task inputs.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs.\n- `docker_registry` - (Optional) The URL of the Docker registry. (Default: \"https://index.docker.io/v1/\")\n- `docker_username` - (Optional) The identifier of the Docker account user.\n- `docker_email` - (Optional) The email for Docker account user.\n- `docker_password` - (Optional) The password for the account user identified above.\n- `registry_type` - (Optional) Can be \"DockerHub\" or \"Others\" (Default \"DockerHub\")."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DockerPasswordHash",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DockerPassword",
+        "/properties/DockerPasswordHash"
+    ]
+}

@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::ECL::SecurityNetworkBasedWafSingleV2",
+    "description": "Manages a V2 Network Based WAF(Single) resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-SecurityNetworkBasedWafSingleV2/docs/README.md",
+    "definitions": {
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string",
+                    "description": "Comments for the port."
+                },
+                "Enable": {
+                    "type": "string",
+                    "description": "Set \"true\" to enable the port \"false\" to disable the port."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "IP Address of the port."
+                },
+                "IpAddressPrefix": {
+                    "type": "number",
+                    "description": "IP Address prefix of the port."
+                },
+                "Mtu": {
+                    "type": "string",
+                    "description": "MTU value in the configuration of the port."
+                },
+                "NetworkId": {
+                    "type": "string",
+                    "description": "Network ID to which the port is associated."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "UUID\tSubnet IDto which the port is associated."
+                }
+            },
+            "required": [
+                "Enable"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AzGroup": {
+            "type": "string",
+            "description": "Set availability zone."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseKind": {
+            "type": "string",
+            "description": "Set \"02\" or \"04\" or \"08\" as WAF plan."
+        },
+        "Locale": {
+            "type": "string",
+            "description": "Messages are displayed in Japanese or English depending on this value.\nja: Japanese, en: English. Default value is \"en\"."
+        },
+        "OperatingMode": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID of the owner (UUID)."
+        },
+        "Port": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AzGroup",
+        "LicenseKind",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

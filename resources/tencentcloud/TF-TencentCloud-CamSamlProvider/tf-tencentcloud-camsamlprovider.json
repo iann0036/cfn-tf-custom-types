@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::TencentCloud::CamSamlProvider",
+    "description": "Provides a resource to create a CAM SAML provider.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CamSamlProvider/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the CAM SAML provider."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetaData": {
+            "type": "string",
+            "description": "The meta data document of the CAM SAML provider."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of CAM SAML provider."
+        },
+        "ProviderArn": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "MetaData",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/ProviderArn",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

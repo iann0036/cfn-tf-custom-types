@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Metal::Connection",
+    "description": "Use this resource to request of create an Interconnection from [Equinix Fabric - software-defined interconnections](https://metal.equinix.com/developers/docs/networking/fabric/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-Connection/docs/README.md",
+    "definitions": {
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "LinkStatus": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "Speed": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "VirtualCircuitIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the connection resource."
+        },
+        "Facility": {
+            "type": "string",
+            "description": "Facility where the connection will be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metro": {
+            "type": "string",
+            "description": "Metro where the connection will be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the connection resource."
+        },
+        "OrganizationId": {
+            "type": "string",
+            "description": "ID of the organization responsible for the connection."
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortsDefinition"
+            }
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "ID of the project where the connection is scoped to, must be set for shared connection."
+        },
+        "Redundancy": {
+            "type": "string",
+            "description": "Connection redundancy - redundant or primary."
+        },
+        "Speed": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Token": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Connection type - dedicated or shared."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "OrganizationId",
+        "Redundancy",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ports",
+        "/properties/Speed",
+        "/properties/Status",
+        "/properties/Token"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

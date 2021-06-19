@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::Alicloud::FcFunctionAsyncInvokeConfig",
+    "description": "CloudFormation equivalent of alicloud_fc_function_async_invoke_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-FcFunctionAsyncInvokeConfig/docs/README.md",
+    "definitions": {
+        "DestinationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnFailureDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OnSuccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnSuccessDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OnFailureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "OnSuccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "FunctionName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedTime": {
+            "type": "string"
+        },
+        "MaximumEventAgeInSeconds": {
+            "type": "number"
+        },
+        "MaximumRetryAttempts": {
+            "type": "number"
+        },
+        "Qualifier": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "DestinationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedTime",
+        "/properties/Id",
+        "/properties/LastModifiedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

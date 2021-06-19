@@ -1,0 +1,705 @@
+{
+    "typeName": "TF::AWS::CodebuildProject",
+    "description": "Provides a CodeBuild Project resource. See also the [`aws_codebuild_webhook` resource](/docs/providers/aws/r/codebuild_webhook.html), which manages the webhook to the source (e.g. the \"rebuild every time a code change is pushed\" option in the CodeBuild web console).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodebuildProject/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ArtifactsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactIdentifier": {
+                    "type": "string"
+                },
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamespaceType": {
+                    "type": "string"
+                },
+                "OverrideArtifactName": {
+                    "type": "boolean"
+                },
+                "Packaging": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "BuildBatchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CombineArtifacts": {
+                    "type": "boolean"
+                },
+                "ServiceRole": {
+                    "type": "string"
+                },
+                "TimeoutInMins": {
+                    "type": "number"
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ServiceRole"
+            ]
+        },
+        "CacheDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Modes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EnvironmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ComputeType": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullCredentialsType": {
+                    "type": "string"
+                },
+                "PrivilegedMode": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "EnvironmentVariable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentVariableDefinition"
+                    }
+                },
+                "RegistryCredential": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegistryCredentialDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ComputeType",
+                "Image",
+                "Type"
+            ]
+        },
+        "FileSystemLocationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Identifier": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "MountOptions": {
+                    "type": "string"
+                },
+                "MountPoint": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LogsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLogsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3Logs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3LogsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SecondaryArtifactsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactIdentifier": {
+                    "type": "string"
+                },
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamespaceType": {
+                    "type": "string"
+                },
+                "OverrideArtifactName": {
+                    "type": "boolean"
+                },
+                "Packaging": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactIdentifier",
+                "Type"
+            ]
+        },
+        "SecondarySourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buildspec": {
+                    "type": "string"
+                },
+                "GitCloneDepth": {
+                    "type": "number"
+                },
+                "InsecureSsl": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "ReportBuildStatus": {
+                    "type": "boolean"
+                },
+                "SourceIdentifier": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Auth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "BuildStatusConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BuildStatusConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GitSubmodulesConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitSubmodulesConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "SourceIdentifier",
+                "Type"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buildspec": {
+                    "type": "string"
+                },
+                "GitCloneDepth": {
+                    "type": "number"
+                },
+                "InsecureSsl": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "ReportBuildStatus": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Auth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "BuildStatusConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BuildStatusConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GitSubmodulesConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitSubmodulesConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "VpcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "Subnets",
+                "VpcId"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComputeTypesAllowed": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaximumBuildsAllowed": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EnvironmentVariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "RegistryCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Credential": {
+                    "type": "string"
+                },
+                "CredentialProvider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Credential",
+                "CredentialProvider"
+            ]
+        },
+        "CloudwatchLogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupName": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StreamName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3LogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resource": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "BuildStatusConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "TargetUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GitSubmodulesConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FetchSubmodules": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "FetchSubmodules"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BadgeEnabled": {
+            "type": "boolean",
+            "description": "Generates a publicly-accessible URL for the projects build badge. Available as `badge_url` attribute when enabled."
+        },
+        "BadgeUrl": {
+            "type": "string"
+        },
+        "BuildTimeout": {
+            "type": "number",
+            "description": "Number of minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes."
+        },
+        "ConcurrentBuildLimit": {
+            "type": "number",
+            "description": "Specify a maximum number of concurrent builds for the project. The value specified must be greater than 0 and less than the account concurrent running builds limit."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Short description of the project."
+        },
+        "EncryptionKey": {
+            "type": "string",
+            "description": "AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's build output artifacts."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Project's name."
+        },
+        "QueuedTimeout": {
+            "type": "number",
+            "description": "Number of minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours."
+        },
+        "ServiceRole": {
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account."
+        },
+        "SourceVersion": {
+            "type": "string",
+            "description": "Version of the build input to be built for this project. If not specified, the latest version is used."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Artifacts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArtifactsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "BuildBatchConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BuildBatchConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Cache": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CacheDefinition"
+            },
+            "maxItems": 1
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnvironmentDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "FileSystemLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FileSystemLocationsDefinition"
+            }
+        },
+        "LogsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SecondaryArtifacts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecondaryArtifactsDefinition"
+            },
+            "maxItems": 12
+        },
+        "SecondarySources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecondarySourcesDefinition"
+            },
+            "maxItems": 12
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServiceRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/BadgeUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthDefinition/Resource"
+    ]
+}

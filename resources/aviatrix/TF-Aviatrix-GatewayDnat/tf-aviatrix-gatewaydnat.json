@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::Aviatrix::GatewayDnat",
+    "description": "The **aviatrix_gateway_dnat** resource configures and manages policies for destination NAT function for Aviatrix gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-GatewayDnat/docs/README.md",
+    "definitions": {
+        "DnatPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Connection": {
+                    "type": "string"
+                },
+                "DnatIps": {
+                    "type": "string"
+                },
+                "DnatPort": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "ExcludeRtb": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "Mark": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Name of the Aviatrix gateway the custom DNAT will be configured for."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SyncToHa": {
+            "type": "boolean",
+            "description": "Sync the policies to the HA gateway. Valid values: true, false. Default: true."
+        },
+        "DnatPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnatPolicyDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,196 @@
+{
+    "typeName": "TF::Alicloud::NatGateway",
+    "description": "Provides a resource to create a VPC NAT Gateway.\n\n\n-> **NOTE:** Resource bandwidth packages will not be supported since 00:00 on November 4, 2017, and public IP can be replaced be elastic IPs.\nIf a Nat Gateway has already bought some bandwidth packages, it can not bind elastic IP and you have to submit the [work order](https://selfservice.console.aliyun.com/ticket/createIndex) to solve.\nIf you want to add public IP, you can use resource 'alicloud_eip_association' to bind several elastic IPs for one Nat Gateway.\n\n-> **NOTE:** From version 1.7.1, this resource has deprecated bandwidth packages.\nBut, in order to manage stock bandwidth packages, version 1.13.0 re-support configuring 'bandwidth_packages'.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-NatGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BandwidthPackagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bandwidth": {
+                    "type": "number"
+                },
+                "IpCount": {
+                    "type": "number"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bandwidth",
+                "IpCount"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthPackageIds": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the nat gateway, This description can have a string of 2 to 256 characters, It cannot begin with http:// or https://. Defaults to null."
+        },
+        "DryRun": {
+            "type": "boolean"
+        },
+        "Force": {
+            "type": "boolean"
+        },
+        "ForwardTableIds": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "The billing method of the nat gateway. Valid values are \"PrePaid\" and \"PostPaid\". Default to \"PostPaid\"."
+        },
+        "InternetChargeType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the nat gateway. The value can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin or end with a hyphen, and must not begin with http:// or https://. Defaults to null."
+        },
+        "NatGatewayName": {
+            "type": "string"
+        },
+        "NatType": {
+            "type": "string"
+        },
+        "PaymentType": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "The duration that you will buy the resource, in month. It is valid when `instance_charge_type` is `PrePaid`. Default to 1. Valid values: [1-9, 12, 24, 36]. At present, the provider does not support modify \"period\" and you can do that via web console."
+        },
+        "SnatTableIds": {
+            "type": "string"
+        },
+        "Spec": {
+            "type": "string",
+            "description": "It has been deprecated from provider version 1.7.1, and new field 'specification' can replace it."
+        },
+        "Specification": {
+            "type": "string",
+            "description": "The specification of the nat gateway. Valid values are `Small`, `Middle` and `Large`. Default to `Small`. Details refer to [Nat Gateway Specification](https://www.alibabacloud.com/help/doc-detail/42757.htm)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID."
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "BandwidthPackages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BandwidthPackagesDefinition"
+            },
+            "maxItems": 4
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BandwidthPackageIds",
+        "/properties/ForwardTableIds",
+        "/properties/Id",
+        "/properties/SnatTableIds",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

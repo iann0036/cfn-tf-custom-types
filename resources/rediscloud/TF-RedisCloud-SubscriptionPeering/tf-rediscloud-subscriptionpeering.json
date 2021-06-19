@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::RedisCloud::SubscriptionPeering",
+    "description": "Creates an AWS or GCP VPC peering for an existing Redis Enterprise Cloud Subscription, allowing access to your subscription databases as if they were on the same network.\n\nFor AWS, peering should be accepted by the other side.\nFor GCP, the opposite peering request should be submitted.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rediscloud/TF-RedisCloud-SubscriptionPeering/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string",
+            "description": "AWS account ID that the VPC to be peered lives in."
+        },
+        "AwsPeeringId": {
+            "type": "string"
+        },
+        "GcpNetworkName": {
+            "type": "string",
+            "description": "The name of the network to be peered."
+        },
+        "GcpPeeringId": {
+            "type": "string"
+        },
+        "GcpProjectId": {
+            "type": "string",
+            "description": "GCP project ID that the VPC to be peered lives in."
+        },
+        "GcpRedisNetworkName": {
+            "type": "string"
+        },
+        "GcpRedisProjectId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProviderName": {
+            "type": "string",
+            "description": "The cloud provider to use with the vpc peering, (either `AWS` or `GCP`). Default: \u2018AWS\u2019."
+        },
+        "Region": {
+            "type": "string",
+            "description": "AWS Region that the VPC to be peered lives in."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubscriptionId": {
+            "type": "string",
+            "description": "A valid subscription predefined in the current account."
+        },
+        "VpcCidr": {
+            "type": "string",
+            "description": "CIDR range of the VPC to be peered."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "Identifier of the VPC to be peered."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SubscriptionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsPeeringId",
+        "/properties/GcpPeeringId",
+        "/properties/GcpRedisNetworkName",
+        "/properties/GcpRedisProjectId",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

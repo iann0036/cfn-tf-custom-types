@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::AzureRM::RoleAssignment",
+    "description": "Assigns a given Principal (User or Group) to a given Role.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-RoleAssignment/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Condition": {
+            "type": "string",
+            "description": "The condition that limits the resources that the role can be assigned to. Changing this forces a new resource to be created."
+        },
+        "ConditionVersion": {
+            "type": "string",
+            "description": "The version of the condition. Possible values are `1.0` or `2.0`. Changing this forces a new resource to be created."
+        },
+        "DelegatedManagedIdentityResourceId": {
+            "type": "string",
+            "description": "The delegated Azure Resource Id which contains a Managed Identity. Changing this forces a new resource to be created."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for this Role Assignment. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique UUID/GUID for this Role Assignment - one will be generated if not specified. Changing this forces a new resource to be created."
+        },
+        "PrincipalId": {
+            "type": "string",
+            "description": "The ID of the Principal (User, Group or Service Principal) to assign the Role Definition to. Changing this forces a new resource to be created."
+        },
+        "PrincipalType": {
+            "type": "string"
+        },
+        "RoleDefinitionId": {
+            "type": "string",
+            "description": "The Scoped-ID of the Role Definition. Changing this forces a new resource to be created. Conflicts with `role_definition_name`."
+        },
+        "RoleDefinitionName": {
+            "type": "string",
+            "description": "The name of a built-in Role. Changing this forces a new resource to be created. Conflicts with `role_definition_id`."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "The scope at which the Role Assignment applies to, such as `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333`, `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup`, or `/subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM`, or `/providers/Microsoft.Management/managementGroups/myMG`. Changing this forces a new resource to be created."
+        },
+        "SkipServicePrincipalAadCheck": {
+            "type": "boolean",
+            "description": "If the `principal_id` is a newly provisioned `Service Principal` set this value to `true` to skip the `Azure Active Directory` check which may fail due to replication lag. This argument is only valid if the `principal_id` is a `Service Principal` identity. If it is not a `Service Principal` identity it will cause the role assignment to fail. Defaults to `false`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PrincipalId",
+        "Scope"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PrincipalType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

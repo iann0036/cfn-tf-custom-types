@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::PrismaCloud::EnterpriseSettings",
+    "description": "Manages enterprise settings config.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-EnterpriseSettings/docs/README.md",
+    "definitions": {
+        "DefaultPoliciesEnabledDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnomalyAlertDisposition": {
+            "type": "string",
+            "description": "Anomaly alert disposition (`low`, `medium`, or `high`)."
+        },
+        "AnomalyTrainingModelThreshold": {
+            "type": "string",
+            "description": "Anomaly training model threshold (`low`, `medium`, or `high`)."
+        },
+        "ApplyDefaultPoliciesEnabled": {
+            "type": "boolean",
+            "description": "Apply default policies enabled."
+        },
+        "DefaultPoliciesEnabled": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefaultPoliciesEnabledDefinition"
+            },
+            "description": "Default policies enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RequireAlertDismissalNote": {
+            "type": "boolean",
+            "description": "Require alert dismissal note."
+        },
+        "SessionTimeout": {
+            "type": "number",
+            "description": "Browser session timeout."
+        },
+        "UserAttributionInNotification": {
+            "type": "boolean",
+            "description": "User attribution in notification."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

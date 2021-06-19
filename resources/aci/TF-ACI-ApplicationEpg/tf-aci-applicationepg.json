@@ -1,0 +1,192 @@
+{
+    "typeName": "TF::ACI::ApplicationEpg",
+    "description": "CloudFormation equivalent of aci_application_epg",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-ApplicationEpg/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ApplicationProfileDn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExceptionTag": {
+            "type": "string"
+        },
+        "FloodOnEncap": {
+            "type": "string"
+        },
+        "FwdCtrl": {
+            "type": "string"
+        },
+        "HasMcastSource": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAttrBasedEpg": {
+            "type": "string"
+        },
+        "MatchT": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PcEnfPref": {
+            "type": "string"
+        },
+        "PrefGrMemb": {
+            "type": "string"
+        },
+        "Prio": {
+            "type": "string"
+        },
+        "RelationFvRsAepgMonPol": {
+            "type": "string"
+        },
+        "RelationFvRsBd": {
+            "type": "string"
+        },
+        "RelationFvRsCons": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsConsIf": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsCustQosPol": {
+            "type": "string"
+        },
+        "RelationFvRsDppPol": {
+            "type": "string"
+        },
+        "RelationFvRsFcPathAtt": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsGraphDef": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsIntraEpg": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsNodeAtt": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProtBy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProvDef": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsSecInherited": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsTrustCtrl": {
+            "type": "string"
+        },
+        "Shutdown": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationProfileDn",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

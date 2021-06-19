@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::Vultr::ReservedIp",
+    "description": "Provides a Vultr reserved IP resource. This can be used to create, read, modify, and delete reserved IP addresses on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-ReservedIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The VPS ID you want this reserved IP to be attached to."
+        },
+        "IpType": {
+            "type": "string",
+            "description": "The type of reserved IP that you want. Either \"v4\" or \"v6\"."
+        },
+        "Label": {
+            "type": "string",
+            "description": "The label you want to give your reserved IP."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region ID that you want the reserved IP to be created in."
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "SubnetSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpType",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Subnet",
+        "/properties/SubnetSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

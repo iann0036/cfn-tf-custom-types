@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::FortiOS::UserLocal",
+    "description": "Configure local users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserLocal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthConcurrentOverride": {
+            "type": "string",
+            "description": "Enable/disable overriding the policy-auth-concurrent under config system global. Valid values: `enable`, `disable`."
+        },
+        "AuthConcurrentValue": {
+            "type": "number",
+            "description": "Maximum number of concurrent logins permitted from the same user."
+        },
+        "Authtimeout": {
+            "type": "number",
+            "description": "Time in minutes before the authentication timeout for a user is reached."
+        },
+        "EmailTo": {
+            "type": "string",
+            "description": "Two-factor recipient's email address."
+        },
+        "Fortitoken": {
+            "type": "string",
+            "description": "Two-factor recipient's FortiToken serial number."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "User ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "Name of LDAP server with which the user must authenticate."
+        },
+        "Name": {
+            "type": "string",
+            "description": "User name."
+        },
+        "Passwd": {
+            "type": "string",
+            "description": "User's password."
+        },
+        "PasswdPolicy": {
+            "type": "string",
+            "description": "Password policy to apply to this user, as defined in config user password-policy."
+        },
+        "PasswdTime": {
+            "type": "string",
+            "description": "Time of the last password update."
+        },
+        "PpkIdentity": {
+            "type": "string",
+            "description": "IKEv2 Postquantum Preshared Key Identity."
+        },
+        "PpkSecret": {
+            "type": "string",
+            "description": "IKEv2 Postquantum Preshared Key (ASCII string or hexadecimal encoded with a leading 0x)."
+        },
+        "RadiusServer": {
+            "type": "string",
+            "description": "Name of RADIUS server with which the user must authenticate."
+        },
+        "SmsCustomServer": {
+            "type": "string",
+            "description": "Two-factor recipient's SMS server."
+        },
+        "SmsPhone": {
+            "type": "string",
+            "description": "Two-factor recipient's mobile phone number."
+        },
+        "SmsServer": {
+            "type": "string",
+            "description": "Send SMS through FortiGuard or other external server. Valid values: `fortiguard`, `custom`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable allowing the local user to authenticate with the FortiGate unit. Valid values: `enable`, `disable`."
+        },
+        "TacacsServer": {
+            "type": "string",
+            "description": "Name of TACACS+ server with which the user must authenticate."
+        },
+        "TwoFactor": {
+            "type": "string",
+            "description": "Enable/disable two-factor authentication."
+        },
+        "TwoFactorAuthentication": {
+            "type": "string",
+            "description": "Authentication method by FortiToken Cloud. Valid values: `fortitoken`, `email`, `sms`."
+        },
+        "TwoFactorNotification": {
+            "type": "string",
+            "description": "Notification method for user activation by FortiToken Cloud. Valid values: `email`, `sms`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Authentication method. Valid values: `password`, `radius`, `tacacs+`, `ldap`."
+        },
+        "UsernameCaseInsensitivity": {
+            "type": "string",
+            "description": "Enable/disable case sensitivity when performing username matching (uppercase and lowercase letters are treated either as distinct or equivalent). Valid values: `enable`, `disable`."
+        },
+        "UsernameCaseSensitivity": {
+            "type": "string",
+            "description": "Enable/disable case sensitivity when performing username matching (uppercase and lowercase letters are treated either as distinct or equivalent). Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Workstation": {
+            "type": "string",
+            "description": "Name of the remote user workstation, if you want to limit the user to authenticate only from a particular workstation."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Status",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Passwd",
+        "/properties/PpkSecret"
+    ]
+}

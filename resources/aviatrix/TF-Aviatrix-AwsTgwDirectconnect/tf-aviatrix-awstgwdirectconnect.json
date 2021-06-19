@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwDirectconnect",
+    "description": "The **aviatrix_aws_tgw_directconnect** resource allows the creation and management of Aviatrix-created AWS TGW DirectConnect connections.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwDirectconnect/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedPrefix": {
+            "type": "string"
+        },
+        "DirectconnectAccountName": {
+            "type": "string"
+        },
+        "DxGatewayId": {
+            "type": "string"
+        },
+        "EnableLearnedCidrsApproval": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityDomainName": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllowedPrefix",
+        "DirectconnectAccountName",
+        "DxGatewayId",
+        "SecurityDomainName",
+        "TgwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

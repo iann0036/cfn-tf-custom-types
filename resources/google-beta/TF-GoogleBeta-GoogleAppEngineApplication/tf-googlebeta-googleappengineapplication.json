@@ -1,0 +1,190 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleAppEngineApplication",
+    "description": "CloudFormation equivalent of google_app_engine_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleAppEngineApplication/docs/README.md",
+    "definitions": {
+        "UrlDispatchRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                }
+            }
+        },
+        "FeatureSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SplitHealthChecks": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "SplitHealthChecks"
+            ]
+        },
+        "IapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Oauth2ClientId": {
+                    "type": "string"
+                },
+                "Oauth2ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Oauth2ClientId",
+                "Oauth2ClientSecret"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string"
+        },
+        "AuthDomain": {
+            "type": "string"
+        },
+        "CodeBucket": {
+            "type": "string"
+        },
+        "DatabaseType": {
+            "type": "string"
+        },
+        "DefaultBucket": {
+            "type": "string"
+        },
+        "DefaultHostname": {
+            "type": "string"
+        },
+        "GcrDomain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocationId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServingStatus": {
+            "type": "string"
+        },
+        "UrlDispatchRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlDispatchRuleDefinition"
+            }
+        },
+        "FeatureSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FeatureSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Iap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IapDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LocationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppId",
+        "/properties/CodeBucket",
+        "/properties/DefaultBucket",
+        "/properties/DefaultHostname",
+        "/properties/GcrDomain",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/UrlDispatchRule"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/IapDefinition/Oauth2ClientSecret"
+    ]
+}

@@ -1,0 +1,262 @@
+{
+    "typeName": "TF::Dynatrace::MaintenanceWindow",
+    "description": "CloudFormation equivalent of dynatrace_maintenance_window",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-MaintenanceWindow/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterVersion": {
+                    "type": "string"
+                },
+                "ConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "CurrentConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "RecurrenceType": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ZoneId": {
+                    "type": "string"
+                },
+                "Recurrence": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecurrenceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "End",
+                "RecurrenceType",
+                "Start",
+                "ZoneId"
+            ]
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Entities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Matches": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfMonth": {
+                    "type": "number"
+                },
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "DurationMinutes": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DurationMinutes",
+                "StartTime"
+            ]
+        },
+        "MatchesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MzId": {
+                    "type": "string"
+                },
+                "TagCombination": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SuppressSynthMonExec": {
+            "type": "boolean"
+        },
+        "Suppression": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScopeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Suppression",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

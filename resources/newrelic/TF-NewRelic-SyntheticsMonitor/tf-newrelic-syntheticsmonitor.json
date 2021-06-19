@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::NewRelic::SyntheticsMonitor",
+    "description": "Use this resource to create, update, and delete a synthetics monitor in New Relic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-SyntheticsMonitor/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BypassHeadRequest": {
+            "type": "boolean",
+            "description": "Bypass HEAD request.\n* `treat_redirect_as_failure` - (Optional) Fail the monitor check if redirected."
+        },
+        "Frequency": {
+            "type": "number",
+            "description": "The interval (in minutes) at which this monitor should run.\n* `status` - (Required) The monitor status (i.e. `ENABLED`, `MUTED`, `DISABLED`).\n* `locations` - (Required) The locations in which this monitor should be run.\n* `sla_threshold` - (Optional) The base threshold for the SLA report."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The locations in which this monitor should be run.\n* `sla_threshold` - (Optional) The base threshold for the SLA report."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of this monitor.\n* `type` - (Required) The monitor type. Valid values are `SIMPLE`, `BROWSER`, `SCRIPT_BROWSER`, and `SCRIPT_API`.\n* `frequency` - (Required) The interval (in minutes) at which this monitor should run.\n* `status` - (Required) The monitor status (i.e. `ENABLED`, `MUTED`, `DISABLED`).\n* `locations` - (Required) The locations in which this monitor should be run.\n* `sla_threshold` - (Optional) The base threshold for the SLA report."
+        },
+        "SlaThreshold": {
+            "type": "number",
+            "description": "The base threshold for the SLA report."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The monitor status (i.e. `ENABLED`, `MUTED`, `DISABLED`).\n* `locations` - (Required) The locations in which this monitor should be run.\n* `sla_threshold` - (Optional) The base threshold for the SLA report."
+        },
+        "TreatRedirectAsFailure": {
+            "type": "boolean",
+            "description": "Fail the monitor check if redirected."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The monitor type. Valid values are `SIMPLE`, `BROWSER`, `SCRIPT_BROWSER`, and `SCRIPT_API`.\n* `frequency` - (Required) The interval (in minutes) at which this monitor should run.\n* `status` - (Required) The monitor status (i.e. `ENABLED`, `MUTED`, `DISABLED`).\n* `locations` - (Required) The locations in which this monitor should be run.\n* `sla_threshold` - (Optional) The base threshold for the SLA report."
+        },
+        "Uri": {
+            "type": "string",
+            "description": "The URI for the monitor to hit.\n* `validation_string` - (Optional) The string to validate against in the response.\n* `verify_ssl` - (Optional) Verify SSL."
+        },
+        "ValidationString": {
+            "type": "string",
+            "description": "The string to validate against in the response.\n* `verify_ssl` - (Optional) Verify SSL."
+        },
+        "VerifySsl": {
+            "type": "boolean",
+            "description": "Verify SSL."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Frequency",
+        "Locations",
+        "Name",
+        "Status",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

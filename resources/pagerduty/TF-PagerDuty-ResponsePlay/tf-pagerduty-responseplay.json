@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::PagerDuty::ResponsePlay",
+    "description": "A [response play](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Services/get_services) allows you to create packages of Incident Actions that can be applied during an Incident's life cycle.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-ResponsePlay/docs/README.md",
+    "definitions": {
+        "ResponderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SubscriberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConferenceNumber": {
+            "type": "string"
+        },
+        "ConferenceUrl": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description of the response play.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `type` - (Optional)  A string that determines the schema of the object. If not set, the default value is \"response_play\".\n* `team` - (Optional) The ID of the team associated with the response play.\n* `subscriber` - (Required) A user and/or team to be added as a subscriber to any incident on which this response play is run. There can be multiple subscribers defined on a single response play.\n* `subscribers_message` - (Optional) The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "From": {
+            "type": "string",
+            "description": "The email of the user attributed to the request. Needs to be a valid email address of a user in the PagerDuty account.\n* `description` - (Optional) A human-friendly description of the response play.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `type` - (Optional)  A string that determines the schema of the object. If not set, the default value is \"response_play\".\n* `team` - (Optional) The ID of the team associated with the response play.\n* `subscriber` - (Required) A user and/or team to be added as a subscriber to any incident on which this response play is run. There can be multiple subscribers defined on a single response play.\n* `subscribers_message` - (Optional) The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the response play.\n* `from` - (Required) The email of the user attributed to the request. Needs to be a valid email address of a user in the PagerDuty account.\n* `description` - (Optional) A human-friendly description of the response play.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `type` - (Optional)  A string that determines the schema of the object. If not set, the default value is \"response_play\".\n* `team` - (Optional) The ID of the team associated with the response play.\n* `subscriber` - (Required) A user and/or team to be added as a subscriber to any incident on which this response play is run. There can be multiple subscribers defined on a single response play.\n* `subscribers_message` - (Optional) The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "RespondersMessage": {
+            "type": "string",
+            "description": "The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "Runnability": {
+            "type": "string",
+            "description": "String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "SubscribersMessage": {
+            "type": "string",
+            "description": "The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "Team": {
+            "type": "string",
+            "description": "The ID of the team associated with the response play.\n* `subscriber` - (Required) A user and/or team to be added as a subscriber to any incident on which this response play is run. There can be multiple subscribers defined on a single response play.\n* `subscribers_message` - (Optional) The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "Type": {
+            "type": "string",
+            "description": "A string that determines the schema of the object. If not set, the default value is \"response_play\".\n* `team` - (Optional) The ID of the team associated with the response play.\n* `subscriber` - (Required) A user and/or team to be added as a subscriber to any incident on which this response play is run. There can be multiple subscribers defined on a single response play.\n* `subscribers_message` - (Optional) The content of the notification that will be sent to all incident subscribers upon the running of this response play. Note that this includes any users who may have already been subscribed to the incident prior to the running of this response play. If empty, no notifications will be sent.\n* `responder` - (Required) A user and/or escalation policy to be requested as a responder to any incident on which this response play is run. There can be multiple responders defined on a single response play.\n* `responders_message` - (Optional) The message body of the notification that will be sent to this response play's set of responders. If empty, a default response request notification will be sent.\n* `runnability` - (Optional) String representing how this response play is allowed to be run. Valid options are:."
+        },
+        "Responder": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponderDefinition"
+            }
+        },
+        "Subscriber": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubscriberDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "From",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

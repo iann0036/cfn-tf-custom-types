@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::FortiOS::UserFssopolling",
+    "description": "Configure FSSO active directory servers for polling mode.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserFssopolling/docs/README.md",
+    "definitions": {
+        "AdgrpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultDomain": {
+            "type": "string",
+            "description": "Default domain managed by this Active Directory server."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Active Directory server ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "LDAP server name used in LDAP connection strings."
+        },
+        "LogonHistory": {
+            "type": "number",
+            "description": "Number of hours of logon history to keep, 0 means keep all history."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password required to log into this Active Directory server."
+        },
+        "PollingFrequency": {
+            "type": "number",
+            "description": "Polling frequency (every 1 to 30 seconds)."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port to communicate with this Active Directory server."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Host name or IP address of the Active Directory server."
+        },
+        "SmbNtlmv1Auth": {
+            "type": "string",
+            "description": "Enable/disable support of NTLMv1 for Samba authentication. Valid values: `enable`, `disable`."
+        },
+        "Smbv1": {
+            "type": "string",
+            "description": "Enable/disable support of SMBv1 for Samba. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable polling for the status of this Active Directory server. Valid values: `enable`, `disable`."
+        },
+        "User": {
+            "type": "string",
+            "description": "User name required to log into this Active Directory server."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Adgrp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdgrpDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LdapServer",
+        "Server",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

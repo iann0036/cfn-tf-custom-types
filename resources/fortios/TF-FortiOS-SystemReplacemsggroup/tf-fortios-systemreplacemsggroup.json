@@ -1,0 +1,652 @@
+{
+    "typeName": "TF::FortiOS::SystemReplacemsggroup",
+    "description": "Configure replacement message groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemReplacemsggroup/docs/README.md",
+    "definitions": {
+        "AdminDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "AlertmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "AuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "AutomationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag. Valid values: `none`, `text`, `html`."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "CustomMessageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "DeviceDetectionPortalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "EcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag. Valid values: `none`, `text`, `html`, `wml`."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "FortiguardWfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "FtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "IcapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "MailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "NacQuarDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "NntpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "SpamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "SslvpnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "TrafficQuotaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "UtmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        },
+        "WebproxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buffer": {
+                    "type": "string",
+                    "description": "Message string."
+                },
+                "Format": {
+                    "type": "string",
+                    "description": "Format flag."
+                },
+                "Header": {
+                    "type": "string",
+                    "description": "Header flag. Valid values: `none`, `http`, `8bit`."
+                },
+                "MsgType": {
+                    "type": "string",
+                    "description": "Message type."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GroupType": {
+            "type": "string",
+            "description": "Group type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Group name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Admin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdminDefinition"
+            }
+        },
+        "Alertmail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertmailDefinition"
+            }
+        },
+        "Auth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthDefinition"
+            }
+        },
+        "Automation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomationDefinition"
+            }
+        },
+        "CustomMessage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomMessageDefinition"
+            }
+        },
+        "DeviceDetectionPortal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeviceDetectionPortalDefinition"
+            }
+        },
+        "Ec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EcDefinition"
+            }
+        },
+        "FortiguardWf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FortiguardWfDefinition"
+            }
+        },
+        "Ftp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtpDefinition"
+            }
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            }
+        },
+        "Icap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcapDefinition"
+            }
+        },
+        "Mail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MailDefinition"
+            }
+        },
+        "NacQuar": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NacQuarDefinition"
+            }
+        },
+        "Nntp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NntpDefinition"
+            }
+        },
+        "Spam": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpamDefinition"
+            }
+        },
+        "Sslvpn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslvpnDefinition"
+            }
+        },
+        "TrafficQuota": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficQuotaDefinition"
+            }
+        },
+        "Utm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UtmDefinition"
+            }
+        },
+        "Webproxy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebproxyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

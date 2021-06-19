@@ -1,0 +1,195 @@
+{
+    "typeName": "TF::AzureRM::Eventhub",
+    "description": "Manages a Event Hubs as a nested resource within a Event Hubs namespace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-Eventhub/docs/README.md",
+    "definitions": {
+        "CaptureDescriptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Specifies if the Capture Description is Enabled."
+                },
+                "Encoding": {
+                    "type": "string",
+                    "description": "Specifies the Encoding used for the Capture Description. Possible values are `Avro` and `AvroDeflate`."
+                },
+                "IntervalInSeconds": {
+                    "type": "number",
+                    "description": "Specifies the time interval in seconds at which the capture will happen. Values can be between `60` and `900` seconds. Defaults to `300` seconds."
+                },
+                "SizeLimitInBytes": {
+                    "type": "number",
+                    "description": "Specifies the amount of data built up in your EventHub before a Capture Operation occurs. Value should be between `10485760` and `524288000`  bytes. Defaults to `314572800` bytes."
+                },
+                "SkipEmptyArchives": {
+                    "type": "boolean",
+                    "description": "Specifies if empty files should not be emitted if no events occur during the Capture time window.  Defaults to `false`."
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Enabled",
+                "Encoding"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArchiveNameFormat": {
+                    "type": "string",
+                    "description": "The Blob naming convention for archiving. e.g. `{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}`. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order."
+                },
+                "BlobContainerName": {
+                    "type": "string",
+                    "description": "The name of the Container within the Blob Storage Account where messages should be archived."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The Name of the Destination where the capture should take place. At this time the only supported value is `EventHubArchive.AzureBlockBlob`."
+                },
+                "StorageAccountId": {
+                    "type": "string",
+                    "description": "The ID of the Blob Storage Account where messages should be archived."
+                }
+            },
+            "required": [
+                "ArchiveNameFormat",
+                "BlobContainerName",
+                "Name",
+                "StorageAccountId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MessageRetention": {
+            "type": "number",
+            "description": "Specifies the number of days to retain the events for this Event Hub."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the EventHub resource. Changing this forces a new resource to be created."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace. Changing this forces a new resource to be created."
+        },
+        "PartitionCount": {
+            "type": "number",
+            "description": "Specifies the current number of shards on the Event Hub. Changing this forces a new resource to be created."
+        },
+        "PartitionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the EventHub's parent Namespace exists. Changing this forces a new resource to be created."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Specifies the status of the Event Hub resource. Possible values are `Active`, `Disabled` and `SendDisabled`. Defaults to `Active`."
+        },
+        "CaptureDescription": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CaptureDescriptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MessageRetention",
+        "Name",
+        "NamespaceName",
+        "PartitionCount",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PartitionIds"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

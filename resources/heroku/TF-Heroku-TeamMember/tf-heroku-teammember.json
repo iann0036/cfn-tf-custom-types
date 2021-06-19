@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Heroku::TeamMember",
+    "description": "A [Heroku Team Member](https://devcenter.heroku.com/articles/platform-api-reference#team-member) receives access to everything owned by the Team.\n\nTo create a Heroku Team, use the [New Team](https://dashboard.heroku.com/teams/new) feature of Heroku Dashboard. For Heroku Enterprise accounts, new Teams may be created within the account by users with the right permissions.\n\nA Heroku \"team\" was originally called an \"organization\", and that is still the identifier used elsewhere in this provider. For [`heroku_app`](app.html) & [`heroku_space`](space.html) resources, set the Heroku Team name as the \"organization\".",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-TeamMember/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Email": {
+            "type": "string",
+            "description": "Email address of the member."
+        },
+        "Federated": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string",
+            "description": "The role to assign the member. See [the API docs](https://devcenter.heroku.com/articles/platform-api-reference#team-member) for available options."
+        },
+        "Team": {
+            "type": "string",
+            "description": "The name of the Heroku Team."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Role",
+        "Team"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

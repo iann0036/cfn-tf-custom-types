@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Cloudflare::AuthenticatedOriginPulls",
+    "description": "Provides a Cloudflare Authenticated Origin Pulls resource. An `cloudflare_authenticated_origin_pulls` resource is required to use Per-Zone or Per-Hostname Authenticated Origin Pulls.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-AuthenticatedOriginPulls/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthenticatedOriginPullsCertificate": {
+            "type": "string",
+            "description": "The id of an uploaded Authenticated Origin Pulls certificate. If no hostname is provided, this certificate will be used zone wide as Per-Zone Authenticated Origin Pulls.\n- `hostname` - (Optional) Specify a hostname to enable Per-Hostname Authenticated Origin Pulls on, using the provided certificate.\n- `enabled` - (Required) Whether or not to enable Authenticated Origin Pulls on the given zone or hostname."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether or not to enable Authenticated Origin Pulls on the given zone or hostname."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Specify a hostname to enable Per-Hostname Authenticated Origin Pulls on, using the provided certificate.\n- `enabled` - (Required) Whether or not to enable Authenticated Origin Pulls on the given zone or hostname."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID to upload the certificate to.\n- `authenticated_origin_pulls_certificate` - (Optional) The id of an uploaded Authenticated Origin Pulls certificate. If no hostname is provided, this certificate will be used zone wide as Per-Zone Authenticated Origin Pulls.\n- `hostname` - (Optional) Specify a hostname to enable Per-Hostname Authenticated Origin Pulls on, using the provided certificate.\n- `enabled` - (Required) Whether or not to enable Authenticated Origin Pulls on the given zone or hostname."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

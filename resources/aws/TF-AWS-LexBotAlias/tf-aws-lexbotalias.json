@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::AWS::LexBotAlias",
+    "description": "Provides an Amazon Lex Bot Alias resource. For more information see\n[Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LexBotAlias/docs/README.md",
+    "definitions": {
+        "ConversationLogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IamRoleArn": {
+                    "type": "string"
+                },
+                "LogSettings": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LogSettingsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IamRoleArn"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LogSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "LogType": {
+                    "type": "string"
+                },
+                "ResourceArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination",
+                "LogType",
+                "ResourceArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BotName": {
+            "type": "string",
+            "description": "The name of the bot."
+        },
+        "BotVersion": {
+            "type": "string",
+            "description": "The name of the bot."
+        },
+        "Checksum": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the alias. Must be less than or equal to 200 characters in length."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the alias. The name is not case sensitive. Must be less than or equal to 100 characters in length."
+        },
+        "ConversationLogs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConversationLogsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BotName",
+        "BotVersion",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Checksum",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

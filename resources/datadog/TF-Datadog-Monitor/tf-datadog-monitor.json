@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::Datadog::Monitor",
+    "description": "CloudFormation equivalent of datadog_monitor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-Monitor/docs/README.md",
+    "definitions": {
+        "MonitorThresholdWindowsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoveryWindow": {
+                    "type": "string"
+                },
+                "TriggerWindow": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MonitorThresholdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Critical": {
+                    "type": "string"
+                },
+                "CriticalRecovery": {
+                    "type": "string"
+                },
+                "Ok": {
+                    "type": "string"
+                },
+                "Unknown": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "string"
+                },
+                "WarningRecovery": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableLogsSample": {
+            "type": "boolean"
+        },
+        "EscalationMessage": {
+            "type": "string"
+        },
+        "EvaluationDelay": {
+            "type": "number"
+        },
+        "ForceDelete": {
+            "type": "boolean"
+        },
+        "GroupbySimpleMonitor": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeTags": {
+            "type": "boolean"
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Message": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NewHostDelay": {
+            "type": "number"
+        },
+        "NoDataTimeframe": {
+            "type": "number"
+        },
+        "NotifyAudit": {
+            "type": "boolean"
+        },
+        "NotifyNoData": {
+            "type": "boolean"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Query": {
+            "type": "string"
+        },
+        "RenotifyInterval": {
+            "type": "number"
+        },
+        "RequireFullWindow": {
+            "type": "boolean"
+        },
+        "RestrictedRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TimeoutH": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Validate": {
+            "type": "boolean"
+        },
+        "MonitorThresholdWindows": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorThresholdWindowsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MonitorThresholds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorThresholdsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Message",
+        "Name",
+        "Query",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

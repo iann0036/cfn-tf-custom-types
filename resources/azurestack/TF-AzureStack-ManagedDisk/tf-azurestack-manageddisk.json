@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::AzureStack::ManagedDisk",
+    "description": "Manage a managed disk.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurestack/TF-AzureStack-ManagedDisk/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateOption": {
+            "type": "string",
+            "description": "The method to use when creating the managed disk. Possible values include:\n* `Import` - Import a VHD file in to the managed disk (VHD specified with `source_uri`).\n* `Empty` - Create an empty managed disk.\n* `Copy` - Copy an existing managed disk or snapshot (specified with `source_resource_id`).\n* `FromImage` - Copy a Platform Image (specified with `image_reference_id`)."
+        },
+        "DiskSizeGb": {
+            "type": "number",
+            "description": "Specifies the size of the managed disk to create in gigabytes.\nIf `create_option` is `Copy` or `FromImage`, then the value must be equal to or greater than the source's size."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageReferenceId": {
+            "type": "string",
+            "description": "ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specified the supported Azure location where the resource exists.\nChanging this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the managed disk. Changing this forces a\nnew resource to be created."
+        },
+        "OsType": {
+            "type": "string",
+            "description": "Specify a value when the source of an `Import` or `Copy`\noperation targets a source that contains an operating system. Valid values are `Linux` or `Windows`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create\nthe managed disk."
+        },
+        "SourceResourceId": {
+            "type": "string",
+            "description": "ID of an existing managed disk to copy `create_option` is `Copy`."
+        },
+        "SourceUri": {
+            "type": "string",
+            "description": "URI to a valid VHD file to be used when `create_option` is `Import`."
+        },
+        "StorageAccountType": {
+            "type": "string",
+            "description": "The type of storage to use for the managed disk.\nAllowable values are `Standard_LRS` or `Premium_LRS`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CreateOption",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "StorageAccountType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

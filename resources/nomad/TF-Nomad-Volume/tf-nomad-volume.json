@@ -1,0 +1,244 @@
+{
+    "typeName": "TF::Nomad::Volume",
+    "description": "Manages an external volume in Nomad.\n\nThis can be used to register external volumes in a Nomad cluster.\n\n~> **Warning:** this resource will store any sensitive values placed in\n  `secrets` or `mount_options` in the Terraform's state file. Take care to\n  [protect your state file](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nomad/TF-Nomad-Volume/docs/README.md",
+    "definitions": {
+        "ContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecretsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CapabilityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessMode": {
+                    "type": "string"
+                },
+                "AttachmentMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessMode",
+                "AttachmentMode"
+            ]
+        },
+        "MountOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "MountFlags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "AttachmentMode": {
+            "type": "string"
+        },
+        "Context": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContextDefinition"
+            }
+        },
+        "ControllerRequired": {
+            "type": "boolean"
+        },
+        "ControllersExpected": {
+            "type": "number"
+        },
+        "ControllersHealthy": {
+            "type": "number"
+        },
+        "DeregisterOnDestroy": {
+            "type": "boolean"
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NodesExpected": {
+            "type": "number"
+        },
+        "NodesHealthy": {
+            "type": "number"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        },
+        "PluginId": {
+            "type": "string"
+        },
+        "PluginProvider": {
+            "type": "string"
+        },
+        "PluginProviderVersion": {
+            "type": "string"
+        },
+        "Schedulable": {
+            "type": "boolean"
+        },
+        "Secrets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecretsDefinition"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VolumeId": {
+            "type": "string"
+        },
+        "Capability": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CapabilityDefinition"
+            }
+        },
+        "MountOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MountOptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalId",
+        "Name",
+        "PluginId",
+        "VolumeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ControllerRequired",
+        "/properties/ControllersExpected",
+        "/properties/ControllersHealthy",
+        "/properties/Id",
+        "/properties/NodesExpected",
+        "/properties/NodesHealthy",
+        "/properties/PluginProvider",
+        "/properties/PluginProviderVersion",
+        "/properties/Schedulable"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Secrets"
+    ]
+}

@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Akamai::GtmAsmap",
+    "description": "Use the `akamai_gtm_asmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester's IP address. \n\nYou can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin. \n\n~> **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmAsmap/docs/README.md",
+    "definitions": {
+        "DefaultDatacenterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "Nickname": {
+                    "type": "string"
+                }
+            }
+        },
+        "AssignmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsNumbers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "Nickname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AsNumbers",
+                "DatacenterId",
+                "Nickname"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultDatacenter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultDatacenterDefinition"
+            }
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        },
+        "Assignment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AssignmentDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultDatacenter",
+        "Domain",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

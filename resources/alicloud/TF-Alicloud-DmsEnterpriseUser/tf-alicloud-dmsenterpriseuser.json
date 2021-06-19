@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Alicloud::DmsEnterpriseUser",
+    "description": "Provides a DMS Enterprise User resource. For information about Alidms Enterprise User and how to use it, see [What is Resource Alidms Enterprise User](https://www.alibabacloud.com/help/doc-detail/98001.htm).\n\n-> **NOTE:** Available in 1.90.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DmsEnterpriseUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxExecuteCount": {
+            "type": "number",
+            "description": "Maximum number of inquiries on the day."
+        },
+        "MaxResultCount": {
+            "type": "number",
+            "description": "Query the maximum number of rows on the day."
+        },
+        "Mobile": {
+            "type": "string",
+            "description": "The DingTalk number or mobile number of the user."
+        },
+        "NickName": {
+            "type": "string",
+            "description": "The nickname of the user."
+        },
+        "RoleNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The roles that the user plays."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The state of DMS Enterprise User. Valid values: `NORMAL`, `DISABLE`."
+        },
+        "Tid": {
+            "type": "number",
+            "description": "The tenant ID."
+        },
+        "Uid": {
+            "type": "string",
+            "description": "The Alibaba Cloud unique ID (UID) of the user to add."
+        },
+        "UserName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Uid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

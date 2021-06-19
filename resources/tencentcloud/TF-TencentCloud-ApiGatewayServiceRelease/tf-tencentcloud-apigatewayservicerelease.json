@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayServiceRelease",
+    "description": "Use this resource to create API gateway service release.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayServiceRelease/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnvironmentName": {
+            "type": "string",
+            "description": "API gateway service environment name to be released. Valid values: `test`, `prepub`, `release`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ReleaseDesc": {
+            "type": "string",
+            "description": "This release description of the API gateway service."
+        },
+        "ReleaseVersion": {
+            "type": "string",
+            "description": "The release version."
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "ID of API gateway service."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvironmentName",
+        "ReleaseDesc",
+        "ServiceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

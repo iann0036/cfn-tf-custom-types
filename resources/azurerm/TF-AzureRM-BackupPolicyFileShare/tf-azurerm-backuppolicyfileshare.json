@@ -1,0 +1,291 @@
+{
+    "typeName": "TF::AzureRM::BackupPolicyFileShare",
+    "description": "Manages an Azure File Share Backup Policy within a Recovery Services vault.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-BackupPolicyFileShare/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BackupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Frequency": {
+                    "type": "string",
+                    "description": "Sets the backup frequency. Currently, only `Daily` is supported."
+                },
+                "Time": {
+                    "type": "string",
+                    "description": "The time of day to perform the backup in 24-hour format. Times must be either on the hour or half hour (e.g. 12:00, 12:30, 13:00, etc.)."
+                }
+            },
+            "required": [
+                "Frequency",
+                "Time"
+            ]
+        },
+        "RetentionDailyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "The number of daily backups to keep. Must be between `1` and `200` (inclusive)."
+                }
+            },
+            "required": [
+                "Count"
+            ]
+        },
+        "RetentionMonthlyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "The number of monthly backups to keep. Must be between `1` and `120`."
+                },
+                "Weekdays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The weekday backups to retain . Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
+                },
+                "Weeks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The weeks of the month to retain backups of. Must be one of `First`, `Second`, `Third`, `Fourth`, `Last`."
+                }
+            },
+            "required": [
+                "Count",
+                "Weekdays",
+                "Weeks"
+            ]
+        },
+        "RetentionWeeklyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "The number of daily backups to keep. Must be between `1` and `200` (inclusive)."
+                },
+                "Weekdays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The weekday backups to retain. Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
+                }
+            },
+            "required": [
+                "Count",
+                "Weekdays"
+            ]
+        },
+        "RetentionYearlyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "The number of yearly backups to keep. Must be between `1` and `10`."
+                },
+                "Months": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The months of the year to retain backups of. Must be one of `January`, `February`, `March`, `April`, `May`, `June`, `July`, `Augest`, `September`, `October`, `November` and `December`."
+                },
+                "Weekdays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The weekday backups to retain . Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
+                },
+                "Weeks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The weeks of the month to retain backups of. Must be one of `First`, `Second`, `Third`, `Fourth`, `Last`."
+                }
+            },
+            "required": [
+                "Count",
+                "Months",
+                "Weekdays",
+                "Weeks"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the policy. Changing this forces a new resource to be created."
+        },
+        "RecoveryVaultName": {
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the policy. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Specifies the timezone. [the possible values are defined here](http://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/). Defaults to `UTC`."
+        },
+        "Backup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RetentionDaily": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionDailyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RetentionMonthly": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionMonthlyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetentionWeekly": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionWeeklyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetentionYearly": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionYearlyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RecoveryVaultName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,201 @@
+{
+    "typeName": "TF::AzureRM::IothubDps",
+    "description": "Manages an IotHub Device Provisioning Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-IothubDps/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LinkedHubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationWeight": {
+                    "type": "number",
+                    "description": "The weight applied to the IoT Hub. Defaults to 0."
+                },
+                "ApplyAllocationPolicy": {
+                    "type": "boolean",
+                    "description": "Determines whether to apply allocation policies to the IoT Hub. Defaults to false."
+                },
+                "ConnectionString": {
+                    "type": "string",
+                    "description": "The connection string to connect to the IoT Hub. Changing this forces a new resource."
+                },
+                "Location": {
+                    "type": "string",
+                    "description": "The location of the IoT hub. Changing this forces a new resource."
+                }
+            },
+            "required": [
+                "ConnectionString",
+                "Location"
+            ]
+        },
+        "SkuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capacity": {
+                    "type": "number",
+                    "description": "The number of provisioned IoT Device Provisioning Service units."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the sku. Currently can only be set to `S1`."
+                }
+            },
+            "required": [
+                "Capacity",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationPolicy": {
+            "type": "string"
+        },
+        "DeviceProvisioningHostName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdScope": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be createc. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Iot Device Provisioning Service resource. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group under which the Iot Device Provisioning Service resource has to be created. Changing this forces a new resource to be created."
+        },
+        "ServiceOperationsHostName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "LinkedHub": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinkedHubDefinition"
+            }
+        },
+        "Sku": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SkuDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllocationPolicy",
+        "/properties/DeviceProvisioningHostName",
+        "/properties/Id",
+        "/properties/IdScope",
+        "/properties/ServiceOperationsHostName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/LinkedHubDefinition/ConnectionString"
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::CloudScale::Subnet",
+    "description": "Provides a cloudscale.ch Subnet resource. This can be used to create, modify, and delete subnets.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-Subnet/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string",
+            "description": "The address range in CIDR notation. Must be at least /24."
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of DNS resolver IP addresses, that act as DNS servers."
+        },
+        "GatewayAddress": {
+            "type": "string",
+            "description": "The gateway address of the subnet."
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkHref": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "NetworkUuid": {
+            "type": "string",
+            "description": "The network of the subnet."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cidr"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id",
+        "/properties/NetworkHref",
+        "/properties/NetworkName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

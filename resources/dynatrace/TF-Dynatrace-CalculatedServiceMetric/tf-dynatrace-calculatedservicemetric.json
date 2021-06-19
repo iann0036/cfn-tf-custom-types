@@ -1,0 +1,932 @@
+{
+    "typeName": "TF::Dynatrace::CalculatedServiceMetric",
+    "description": "CloudFormation equivalent of dynatrace_calculated_service_metric",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-CalculatedServiceMetric/docs/README.md",
+    "definitions": {
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimension": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TopX": {
+                    "type": "number"
+                },
+                "TopXAggregation": {
+                    "type": "string"
+                },
+                "TopXDirection": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Placeholders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlaceholdersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Dimension",
+                "Name",
+                "TopX",
+                "TopXAggregation",
+                "TopXDirection"
+            ]
+        },
+        "MetricDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "string"
+                },
+                "RequestAttribute": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Metric"
+            ]
+        },
+        "ConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Comparison": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ComparisonDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "PlaceholdersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Placeholder": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlaceholderDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ComparisonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Boolean": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BooleanDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EsbInputNodeType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EsbInputNodeTypeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FailedState": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FailedStateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FailureReason": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FailureReasonDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FastString": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FastStringDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FlawState": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlawStateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Generic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GenericDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpMethod": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpMethodDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpStatusClass": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpStatusClassDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IibInputNodeType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IibInputNodeTypeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Number": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NumberRequestAttribute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberRequestAttributeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ServiceType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTypeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "String": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StringRequestAttribute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringRequestAttributeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ZosCallType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZosCallTypeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PlaceholderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string"
+                },
+                "Attribute": {
+                    "type": "string"
+                },
+                "DelimiterOrRegex": {
+                    "type": "string"
+                },
+                "EndDelimiter": {
+                    "type": "string"
+                },
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Normalization": {
+                    "type": "string"
+                },
+                "RequestAttribute": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "UseFromChildCalls": {
+                    "type": "boolean"
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Attribute",
+                "Kind",
+                "Name"
+            ]
+        },
+        "BooleanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EsbInputNodeTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FailedStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FailureReasonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FastStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FlawStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GenericDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "HttpMethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpStatusClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IibInputNodeTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NumberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NumberRequestAttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchOnChildCalls": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "RequestAttribute": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RequestAttribute"
+            ]
+        },
+        "ServiceTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StringRequestAttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "MatchOnChildCalls": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "RequestAttribute": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RequestAttribute"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValuesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ZosCallTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ManagementZone": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ServiceTag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceTagDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "TagKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagKeyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "ValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Key"
+            ]
+        },
+        "TagKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EntityId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagementZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MetricKey": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Unit": {
+            "type": "string"
+        },
+        "UnitDisplayName": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            }
+        },
+        "DimensionDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DimensionDefinitionDefinition"
+            },
+            "maxItems": 1
+        },
+        "MetricDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricDefinitionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MetricKey",
+        "Name",
+        "Unit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

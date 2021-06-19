@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::RedisCloud::CloudAccount",
+    "description": "Creates a Cloud Account resource representing the access credentials to a cloud provider account, (`AWS`).\nRedis Enterprise Cloud uses these credentials to provision databases within your infrastructure.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rediscloud/TF-RedisCloud-CloudAccount/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKeyId": {
+            "type": "string",
+            "description": "Cloud provider access key."
+        },
+        "AccessSecretKey": {
+            "type": "string",
+            "description": "Cloud provider secret key.\nNote that drift cannot currently be detected for this."
+        },
+        "ConsolePassword": {
+            "type": "string",
+            "description": "Cloud provider management console password.\nNote that drift cannot currently be detected for this."
+        },
+        "ConsoleUsername": {
+            "type": "string",
+            "description": "Cloud provider management console username.\nNote that drift cannot currently be detected for this."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Display name of the account."
+        },
+        "ProviderType": {
+            "type": "string",
+            "description": "Cloud provider type - either `AWS` or `GCP`.\nNote that drift cannot currently be detected for this."
+        },
+        "SignInLoginUrl": {
+            "type": "string",
+            "description": "Cloud provider management console login URL.\nNote that drift cannot currently be detected for this."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessKeyId",
+        "AccessSecretKey",
+        "ConsolePassword",
+        "ConsoleUsername",
+        "Name",
+        "ProviderType",
+        "SignInLoginUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccessSecretKey",
+        "/properties/ConsolePassword"
+    ]
+}

@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::Google::ComputeRegionPerInstanceConfig",
+    "description": "A config defined for a single managed instance that belongs to an instance group manager. It preserves the instance name\nacross instance group manager operations and can define stateful disks or metadata that are unique to the instance.\nThis resource works with regional instance group managers.\n\n\nTo get more information about RegionPerInstanceConfig, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroupManagers)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/stateful-migs#per-instance_configs)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeRegionPerInstanceConfig/docs/README.md",
+    "definitions": {
+        "PreservedStateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "Disk": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DiskDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteRule": {
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "Source"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinimalAction": {
+            "type": "string",
+            "description": "The minimal action to perform on the instance during an update.\nDefault is `NONE`. Possible values are:."
+        },
+        "MostDisruptiveAllowedAction": {
+            "type": "string",
+            "description": "The most disruptive action to perform on the instance during an update.\nDefault is `REPLACE`. Possible values are:."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RegionInstanceGroupManager": {
+            "type": "string"
+        },
+        "RemoveInstanceStateOnDestroy": {
+            "type": "boolean",
+            "description": "When true, deleting this config will immediately remove any specified state from the underlying instance.\nWhen false, deleting this config will *not* immediately remove any state from the underlying instance.\nState will be removed on the next instance recreation or update."
+        },
+        "PreservedState": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreservedStateDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RegionInstanceGroupManager"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

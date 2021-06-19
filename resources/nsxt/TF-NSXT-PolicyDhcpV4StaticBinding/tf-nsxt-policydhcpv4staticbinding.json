@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::NSXT::PolicyDhcpV4StaticBinding",
+    "description": "This resource provides a method for the management of IPv4 DHCP Static Binding.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC (NSX version 3.0.0 and up)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyDhcpV4StaticBinding/docs/README.md",
+    "definitions": {
+        "DhcpGenericOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Code",
+                "Values"
+            ]
+        },
+        "DhcpOption121Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Network": {
+                    "type": "string"
+                },
+                "NextHop": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Network",
+                "NextHop"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "GatewayAddress": {
+            "type": "string",
+            "description": "Gateway IPv4 Address. When not specified, gateway address is auto-assigned from segment configuration."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Hostname to assign to the host."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "The IPv4 address must belong to the subnet, if any, configured on Segment."
+        },
+        "LeaseTime": {
+            "type": "number",
+            "description": "Lease time, in seconds. Defaults to 86400."
+        },
+        "MacAddress": {
+            "type": "string",
+            "description": "MAC address of the host."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SegmentPath": {
+            "type": "string",
+            "description": "Policy path for segment to configure this binding on."
+        },
+        "DhcpGenericOption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DhcpGenericOptionDefinition"
+            }
+        },
+        "DhcpOption121": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DhcpOption121Definition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "IpAddress",
+        "MacAddress",
+        "SegmentPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

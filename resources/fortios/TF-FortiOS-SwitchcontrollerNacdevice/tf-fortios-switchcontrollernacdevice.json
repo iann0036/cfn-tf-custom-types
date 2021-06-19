@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerNacdevice",
+    "description": "Configure/list NAC devices learned on the managed FortiSwitch ports which matches NAC policy. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerNacdevice/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the learned NAC device."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Device ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastKnownPort": {
+            "type": "string",
+            "description": "Managed FortiSwitch port where NAC device is last learned."
+        },
+        "LastKnownSwitch": {
+            "type": "string",
+            "description": "Managed FortiSwitch where NAC device is last learned."
+        },
+        "LastSeen": {
+            "type": "number",
+            "description": "Device last seen."
+        },
+        "Mac": {
+            "type": "string",
+            "description": "MAC address of the learned NAC device."
+        },
+        "MacPolicy": {
+            "type": "string",
+            "description": "MAC policy to be applied on this learned NAC device."
+        },
+        "MatchedNacPolicy": {
+            "type": "string",
+            "description": "Matched NAC policy for the learned NAC device."
+        },
+        "PortPolicy": {
+            "type": "string",
+            "description": "Port policy to be applied on this learned NAC device."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the learned NAC device. Set enable to authorize the NAC device. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

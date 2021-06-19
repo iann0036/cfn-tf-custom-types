@@ -1,0 +1,673 @@
+{
+    "typeName": "TF::Linode::Instance",
+    "description": "Provides a Linode Instance resource.  This can be used to create, modify, and delete Linodes.\nFor more information, see [Getting Started with Linode](https://linode.com/docs/getting-started/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createLinodeInstance).\n\nThe Linode Guide, [Use Terraform to Provision Linode Environments](https://www.linode.com/docs/applications/configuration-management/how-to-build-your-infrastructure-using-terraform-and-linode/), provides step-by-step guidance and additional examples.\n\nLinode Instances can also use [provisioners](https://www.terraform.io/docs/provisioners/index.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-Instance/docs/README.md",
+    "definitions": {
+        "BackupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "Window": {
+                    "type": "string"
+                }
+            }
+        },
+        "BackupsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Schedule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BackupsDefinition"
+                    }
+                }
+            }
+        },
+        "SpecsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disk": {
+                    "type": "number"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Transfer": {
+                    "type": "number"
+                },
+                "Vcpus": {
+                    "type": "number"
+                }
+            }
+        },
+        "StackscriptDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlertsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cpu": {
+                    "type": "number"
+                },
+                "Io": {
+                    "type": "number"
+                },
+                "NetworkIn": {
+                    "type": "number"
+                },
+                "NetworkOut": {
+                    "type": "number"
+                },
+                "TransferQuota": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comments": {
+                    "type": "string"
+                },
+                "Kernel": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "MemoryLimit": {
+                    "type": "number"
+                },
+                "RootDevice": {
+                    "type": "string"
+                },
+                "RunLevel": {
+                    "type": "string"
+                },
+                "VirtMode": {
+                    "type": "string"
+                },
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DevicesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Helpers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HelpersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthorizedKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuthorizedUsers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Filesystem": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "RootPass": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "StackscriptData": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StackscriptDataDefinition2"
+                    }
+                },
+                "StackscriptId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Label",
+                "Size"
+            ]
+        },
+        "StackscriptDataDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpamAddress": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Purpose": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sda": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdaDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdb": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdbDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SddDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sde": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sdh": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdhDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HelpersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DevtmpfsAutomount": {
+                    "type": "boolean"
+                },
+                "Distro": {
+                    "type": "boolean"
+                },
+                "ModulesDep": {
+                    "type": "boolean"
+                },
+                "Network": {
+                    "type": "boolean"
+                },
+                "UpdatedbDisabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SdaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SddDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SdhDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AuthorizedUsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackupId": {
+            "type": "number"
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupsDefinition2"
+            }
+        },
+        "BackupsEnabled": {
+            "type": "boolean",
+            "description": "If this field is set to true, the created Linode will automatically be enrolled in the Linode Backup service. This will incur an additional charge. The cost for the Backup service is dependent on the Type of Linode deployed."
+        },
+        "BootConfigLabel": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "The display group of the Linode instance."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Ipv6": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The Linode's label is for display purposes only. If no label is provided for a Linode, a default will be assigned."
+        },
+        "PrivateIp": {
+            "type": "boolean",
+            "description": "If true, the created Linode will have private networking enabled, allowing use of the 192.168.128.0/17 network within the Linode's region. It can be enabled on an existing Linode but it can't be disabled."
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "This is the location where the Linode is deployed. Examples are `\"us-east\"`, `\"us-west\"`, `\"ap-south\"`, etc. See all regions [here](https://api.linode.com/v4/regions). *Changing `region` forces the creation of a new Linode Instance.*."
+        },
+        "RootPass": {
+            "type": "string"
+        },
+        "Specs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecsDefinition"
+            }
+        },
+        "StackscriptData": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StackscriptDataDefinition"
+            }
+        },
+        "StackscriptId": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SwapSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags applied to this object. Tags are for organizational purposes only."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The Linode type defines the pricing, CPU, disk, and RAM specs of the instance. Examples are `\"g6-nanode-1\"`, `\"g6-standard-2\"`, `\"g6-highmem-16\"`, `\"g6-dedicated-16\"`, etc. See all types [here](https://api.linode.com/v4/linode/types)."
+        },
+        "WatchdogEnabled": {
+            "type": "boolean",
+            "description": "The watchdog, named Lassie, is a Shutdown Watchdog that monitors your Linode and will reboot it if it powers off unexpectedly. It works by issuing a boot job when your Linode powers off without a shutdown job being responsible. To prevent a loop, Lassie will give up if there have been more than 5 boot jobs issued within 15 minutes."
+        },
+        "Alerts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            }
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Backups",
+        "/properties/Id",
+        "/properties/IpAddress",
+        "/properties/Ipv4",
+        "/properties/Ipv6",
+        "/properties/PrivateIpAddress",
+        "/properties/Specs",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RootPass",
+        "/properties/StackscriptData",
+        "/definitions/DiskDefinition/RootPass",
+        "/definitions/DiskDefinition/StackscriptData"
+    ]
+}

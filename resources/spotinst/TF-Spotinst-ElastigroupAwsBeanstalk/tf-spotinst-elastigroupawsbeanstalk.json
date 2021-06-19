@@ -1,0 +1,255 @@
+{
+    "typeName": "TF::Spotinst::ElastigroupAwsBeanstalk",
+    "description": "Provides a Spotinst AWS group resource using Elastic Beanstalk.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-ElastigroupAwsBeanstalk/docs/README.md",
+    "definitions": {
+        "DeploymentPreferencesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticRoll": {
+                    "type": "boolean"
+                },
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "Strategy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StrategyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ManagedActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PlatformUpdate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlatformUpdateDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adjustment": {
+                    "type": "string"
+                },
+                "AdjustmentPercentage": {
+                    "type": "string"
+                },
+                "BatchSizePercentage": {
+                    "type": "string"
+                },
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "GracePeriod": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxCapacity": {
+                    "type": "string"
+                },
+                "MinCapacity": {
+                    "type": "string"
+                },
+                "ScaleMaxCapacity": {
+                    "type": "string"
+                },
+                "ScaleMinCapacity": {
+                    "type": "string"
+                },
+                "ScaleTargetCapacity": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TargetCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ShouldDrainInstances": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "PlatformUpdateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                },
+                "UpdateLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BeanstalkEnvironmentId": {
+            "type": "string",
+            "description": "The id of an existing Beanstalk environment."
+        },
+        "BeanstalkEnvironmentName": {
+            "type": "string",
+            "description": "The name of an existing Beanstalk environment."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceTypesSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more instance types. To maximize the availability of Spot instances, select as many instance types as possible."
+        },
+        "Maintenance": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group name."
+        },
+        "Product": {
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`.\nFor EC2 Classic instances:  `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The AWS region your group will be created in. Cannot be changed after the group has been created."
+        },
+        "DeploymentPreferences": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentPreferencesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ManagedActions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedActionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredCapacity",
+        "InstanceTypesSpot",
+        "MaxSize",
+        "MinSize",
+        "Name",
+        "Product",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

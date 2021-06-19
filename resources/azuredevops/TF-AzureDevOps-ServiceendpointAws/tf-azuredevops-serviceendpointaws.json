@@ -1,0 +1,160 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointAws",
+    "description": "Manages a AWS service endpoint within Azure DevOps. Using this service endpoint requires you to first install [AWS Toolkit for Azure DevOps](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointAws/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKeyId": {
+            "type": "string",
+            "description": "The AWS access key ID for signing programmatic requests."
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Service Endpoint description. Defaults to `Managed by Terraform`."
+        },
+        "ExternalId": {
+            "type": "string",
+            "description": "A unique identifier that is used by third parties when assuming roles in their customers' accounts, aka cross-account role access."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name."
+        },
+        "RoleSessionName": {
+            "type": "string",
+            "description": "Optional identifier for the assumed role session."
+        },
+        "RoleToAssume": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the role to assume."
+        },
+        "SecretAccessKey": {
+            "type": "string",
+            "description": "The AWS secret access key for signing programmatic requests."
+        },
+        "SecretAccessKeyHash": {
+            "type": "string"
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The Service Endpoint name."
+        },
+        "SessionToken": {
+            "type": "string",
+            "description": "The AWS session token for signing programmatic requests."
+        },
+        "SessionTokenHash": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessKeyId",
+        "ProjectId",
+        "SecretAccessKey",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SecretAccessKeyHash",
+        "/properties/SessionTokenHash"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SecretAccessKey",
+        "/properties/SecretAccessKeyHash",
+        "/properties/SessionToken",
+        "/properties/SessionTokenHash"
+    ]
+}

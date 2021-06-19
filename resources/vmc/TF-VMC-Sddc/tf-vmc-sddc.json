@@ -1,0 +1,283 @@
+{
+    "typeName": "TF::VMC::Sddc",
+    "description": "Provides a resource to provision a SingleAZ or MultiAZ SDDC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vmc/TF-VMC-Sddc/docs/README.md",
+    "definitions": {
+        "ClusterInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SddcSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccountLinkSddcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectedAccountId": {
+                    "type": "string"
+                },
+                "CustomerSubnetIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MicrosoftLicensingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MssqlLicensing": {
+                    "type": "string"
+                },
+                "WindowsLicensing": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CloudPassword": {
+            "type": "string"
+        },
+        "CloudUsername": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "Cluster identifier."
+        },
+        "ClusterInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClusterInfoDefinition"
+            }
+        },
+        "DelayAccountLink": {
+            "type": "boolean",
+            "description": "Boolean flag identifying whether account linking should be delayed\nor not for the SDDC."
+        },
+        "DeploymentType": {
+            "type": "string",
+            "description": "Denotes if request is for a SingleAZ or a MultiAZ SDDC. Default : SingleAZ."
+        },
+        "EdrsPolicyType": {
+            "type": "string"
+        },
+        "EnableEdrs": {
+            "type": "boolean"
+        },
+        "HostInstanceType": {
+            "type": "string",
+            "description": "The instance type for the esx hosts in the primary cluster of the SDDC. Possible values : I3_METAL, I3EN_METAL and R5_METAL. Default value : I3_METAL. Currently I3EN_METAL host_instance_type does not support 1NODE and 2 node SDDC deployment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntranetMtuUplink": {
+            "type": "number"
+        },
+        "MaxHosts": {
+            "type": "number"
+        },
+        "MinHosts": {
+            "type": "number"
+        },
+        "NsxtReverseProxyUrl": {
+            "type": "string"
+        },
+        "NumHost": {
+            "type": "number",
+            "description": "The number of hosts."
+        },
+        "ProviderType": {
+            "type": "string",
+            "description": "Determines what additional properties are available based on cloud\nprovider. Default value : AWS."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The AWS specific (e.g us-west-2) or VMC specific region (e.g US_WEST_2) of the cloud resources to work in."
+        },
+        "SddcName": {
+            "type": "string",
+            "description": "Name of the SDDC."
+        },
+        "SddcSize": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SddcSizeDefinition"
+            }
+        },
+        "SddcState": {
+            "type": "string"
+        },
+        "SddcTemplateId": {
+            "type": "string",
+            "description": "If provided, configuration from the template will applied to the provisioned SDDC."
+        },
+        "SddcType": {
+            "type": "string",
+            "description": "Denotes the sddc type , if the value is null or empty, the type is considered\nas default."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The size of the vCenter and NSX appliances. 'large' or 'LARGE' SDDC size corresponds to a large vCenter appliance and large NSX appliance. 'medium' or 'MEDIUM' SDDC size corresponds to medium vCenter appliance and medium NSX appliance. Default : 'medium'."
+        },
+        "SkipCreatingVxlan": {
+            "type": "boolean",
+            "description": "Boolean value to skip creating vxlan for compute gateway for SDDC provisioning."
+        },
+        "SsoDomain": {
+            "type": "string",
+            "description": "The SSO domain name to use for vSphere users. If not specified, vmc.local will be used."
+        },
+        "StorageCapacity": {
+            "type": "string",
+            "description": "The storage capacity value to be requested for the SDDC primary cluster.\nThis variable is only for R5_METAL. Possible values are 15TB, 20TB, 25TB, 30TB, 35TB per host."
+        },
+        "VcUrl": {
+            "type": "string"
+        },
+        "VpcCidr": {
+            "type": "string",
+            "description": "SDDC management network CIDR. Only prefix of 16, 20 and 23 are supported. Note : Specify a private subnet range (RFC 1918) to be used for\nvCenter Server, NSX Manager, and ESXi hosts. Choose a range that will not conflict with other networks you will connect to this SDDC.\nMinimum CIDR sizes : /23 for up to 27 hosts, /20 for up to 251 hosts, /16 for up to 4091 hosts.\nReserved CIDRs : 10.0.0.0/15, 172.31.0.0/16."
+        },
+        "VxlanSubnet": {
+            "type": "string",
+            "description": "A logical network segment that will be created with the SDDC under the compute gateway."
+        },
+        "AccountLinkSddcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccountLinkSddcConfigDefinition"
+            }
+        },
+        "MicrosoftLicensingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MicrosoftLicensingConfigDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NumHost",
+        "Region",
+        "SddcName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityZones",
+        "/properties/CloudPassword",
+        "/properties/CloudUsername",
+        "/properties/ClusterId",
+        "/properties/ClusterInfo",
+        "/properties/Id",
+        "/properties/NsxtReverseProxyUrl",
+        "/properties/SddcSize",
+        "/properties/SddcState",
+        "/properties/VcUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

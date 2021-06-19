@@ -1,0 +1,233 @@
+{
+    "typeName": "TF::AWS::CloudfrontCachePolicy",
+    "description": "CloudFormation equivalent of aws_cloudfront_cache_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudfrontCachePolicy/docs/README.md",
+    "definitions": {
+        "ParametersInCacheKeyAndForwardedToOriginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableAcceptEncodingBrotli": {
+                    "type": "boolean"
+                },
+                "EnableAcceptEncodingGzip": {
+                    "type": "boolean"
+                },
+                "CookiesConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookiesConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "HeadersConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "QueryStringsConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringsConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CookiesConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieBehavior": {
+                    "type": "string"
+                },
+                "Cookies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookiesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CookieBehavior"
+            ]
+        },
+        "HeadersConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderBehavior": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "QueryStringsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueryStringBehavior": {
+                    "type": "string"
+                },
+                "QueryStrings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "QueryStringBehavior"
+            ]
+        },
+        "CookiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "QueryStringsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "A comment to describe the cache policy."
+        },
+        "DefaultTtl": {
+            "type": "number",
+            "description": "The default amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "number",
+            "description": "The maximum amount of time, in seconds, that objects stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated."
+        },
+        "MinTtl": {
+            "type": "number",
+            "description": "The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name to identify the cache policy."
+        },
+        "ParametersInCacheKeyAndForwardedToOrigin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersInCacheKeyAndForwardedToOriginDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

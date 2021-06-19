@@ -1,0 +1,486 @@
+{
+    "typeName": "TF::AzureRM::MonitorActionGroup",
+    "description": "Manages an Action Group within Azure Monitor.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorActionGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ArmRoleReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the ARM role receiver."
+                },
+                "RoleId": {
+                    "type": "string",
+                    "description": "The arm role id."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                }
+            },
+            "required": [
+                "Name",
+                "RoleId"
+            ]
+        },
+        "AutomationRunbookReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomationAccountId": {
+                    "type": "string",
+                    "description": "The automation account ID which holds this runbook and authenticates to Azure resources."
+                },
+                "IsGlobalRunbook": {
+                    "type": "boolean",
+                    "description": "Indicates whether this instance is global runbook."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the automation runbook receiver."
+                },
+                "RunbookName": {
+                    "type": "string",
+                    "description": "The name for this runbook."
+                },
+                "ServiceUri": {
+                    "type": "string",
+                    "description": "The URI where webhooks should be sent."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                },
+                "WebhookResourceId": {
+                    "type": "string",
+                    "description": "The resource id for webhook linked to this runbook."
+                }
+            },
+            "required": [
+                "AutomationAccountId",
+                "IsGlobalRunbook",
+                "Name",
+                "RunbookName",
+                "ServiceUri",
+                "WebhookResourceId"
+            ]
+        },
+        "AzureAppPushReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmailAddress": {
+                    "type": "string",
+                    "description": "The email address of the user signed into the mobile app who will receive push notifications from this receiver."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Azure app push receiver."
+                }
+            },
+            "required": [
+                "EmailAddress",
+                "Name"
+            ]
+        },
+        "AzureFunctionReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionAppResourceId": {
+                    "type": "string",
+                    "description": "The Azure resource ID of the function app."
+                },
+                "FunctionName": {
+                    "type": "string",
+                    "description": "The function name in the function app."
+                },
+                "HttpTriggerUrl": {
+                    "type": "string",
+                    "description": "The http trigger url where http request sent to."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Azure Function receiver."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                }
+            },
+            "required": [
+                "FunctionAppResourceId",
+                "FunctionName",
+                "HttpTriggerUrl",
+                "Name"
+            ]
+        },
+        "EmailReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmailAddress": {
+                    "type": "string",
+                    "description": "The email address of this receiver."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the email receiver. Names must be unique (case-insensitive) across all receivers within an action group."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                }
+            },
+            "required": [
+                "EmailAddress",
+                "Name"
+            ]
+        },
+        "ItsmReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionId": {
+                    "type": "string",
+                    "description": "The unique connection identifier of the ITSM connection."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the ITSM receiver."
+                },
+                "Region": {
+                    "type": "string",
+                    "description": "The region of the workspace."
+                },
+                "TicketConfiguration": {
+                    "type": "string",
+                    "description": "A JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as well."
+                },
+                "WorkspaceId": {
+                    "type": "string",
+                    "description": "The Azure Log Analytics workspace ID where this connection is defined."
+                }
+            },
+            "required": [
+                "ConnectionId",
+                "Name",
+                "Region",
+                "TicketConfiguration",
+                "WorkspaceId"
+            ]
+        },
+        "LogicAppReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CallbackUrl": {
+                    "type": "string",
+                    "description": "The callback url where http request sent to."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the logic app receiver."
+                },
+                "ResourceId": {
+                    "type": "string",
+                    "description": "The Azure resource ID of the logic app."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                }
+            },
+            "required": [
+                "CallbackUrl",
+                "Name",
+                "ResourceId"
+            ]
+        },
+        "SmsReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string",
+                    "description": "The country code of the SMS receiver."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the SMS receiver. Names must be unique (case-insensitive) across all receivers within an action group."
+                },
+                "PhoneNumber": {
+                    "type": "string",
+                    "description": "The phone number of the SMS receiver."
+                }
+            },
+            "required": [
+                "CountryCode",
+                "Name",
+                "PhoneNumber"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VoiceReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string",
+                    "description": "The country code of the voice receiver."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the voice receiver."
+                },
+                "PhoneNumber": {
+                    "type": "string",
+                    "description": "The phone number of the voice receiver."
+                }
+            },
+            "required": [
+                "CountryCode",
+                "Name",
+                "PhoneNumber"
+            ]
+        },
+        "WebhookReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the webhook receiver. Names must be unique (case-insensitive) across all receivers within an action group."
+                },
+                "ServiceUri": {
+                    "type": "string",
+                    "description": "The URI where webhooks should be sent."
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
+                },
+                "AadAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AadAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "ServiceUri"
+            ]
+        },
+        "AadAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentifierUri": {
+                    "type": "string"
+                },
+                "ObjectId": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ObjectId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Action Group. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Action Group instance."
+        },
+        "ShortName": {
+            "type": "string",
+            "description": "The short name of the action group. This will be used in SMS messages."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ArmRoleReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArmRoleReceiverDefinition"
+            }
+        },
+        "AutomationRunbookReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomationRunbookReceiverDefinition"
+            }
+        },
+        "AzureAppPushReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureAppPushReceiverDefinition"
+            }
+        },
+        "AzureFunctionReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFunctionReceiverDefinition"
+            }
+        },
+        "EmailReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailReceiverDefinition"
+            }
+        },
+        "ItsmReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ItsmReceiverDefinition"
+            }
+        },
+        "LogicAppReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogicAppReceiverDefinition"
+            }
+        },
+        "SmsReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmsReceiverDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VoiceReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VoiceReceiverDefinition"
+            }
+        },
+        "WebhookReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebhookReceiverDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "ShortName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "typeName": "TF::AzureRM::StorageBlob",
+    "description": "Manages a Blob within a Storage Container.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageBlob/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessTier": {
+            "type": "string",
+            "description": "The access tier of the storage blob. Possible values are `Archive`, `Cool` and `Hot`."
+        },
+        "ContentMd5": {
+            "type": "string",
+            "description": "The MD5 sum of the blob contents. Cannot be defined if `source_uri` is defined, or if blob type is Append or Page. Changing this forces a new resource to be created."
+        },
+        "ContentType": {
+            "type": "string",
+            "description": "The content type of the storage blob. Cannot be defined if `source_uri` is defined. Defaults to `application/octet-stream`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "A map of custom blob metadata."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the storage blob. Must be unique within the storage container the blob is located."
+        },
+        "Parallelism": {
+            "type": "number",
+            "description": "The number of workers per CPU core to run for concurrent uploads. Defaults to `8`."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Used only for `page` blobs to specify the size in bytes of the blob to be created. Must be a multiple of 512. Defaults to 0."
+        },
+        "Source": {
+            "type": "string",
+            "description": "An absolute path to a file on the local system. This field cannot be specified for Append blobs and cannot be specified if `source_content` or `source_uri` is specified."
+        },
+        "SourceContent": {
+            "type": "string",
+            "description": "The content for this blob which should be defined inline. This field can only be specified for Block blobs and cannot be specified if `source` or `source_uri` is specified."
+        },
+        "SourceUri": {
+            "type": "string",
+            "description": "The URI of an existing blob, or a file in the Azure File service, to use as the source contents\nfor the blob to be created. Changing this forces a new resource to be created. This field cannot be specified for Append blobs and cannot be specified if `source` or `source_content` is specified."
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage container.\nChanging this forces a new resource to be created."
+        },
+        "StorageContainerName": {
+            "type": "string",
+            "description": "The name of the storage container in which this blob should be created."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the storage blob to be created. Possible values are `Append`, `Block` or `Page`. Changing this forces a new resource to be created."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StorageAccountName",
+        "StorageContainerName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

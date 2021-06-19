@@ -1,0 +1,186 @@
+{
+    "typeName": "TF::AzureRM::FirewallNatRuleCollection",
+    "description": "Manages a NAT Rule Collection within an Azure Firewall.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FirewallNatRuleCollection/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Specifies a description for the rule."
+                },
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of destination IP addresses and/or IP ranges."
+                },
+                "DestinationPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of destination ports."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the rule."
+                },
+                "Protocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of protocols. Possible values are `Any`, `ICMP`, `TCP` and `UDP`.  If `action` is `Dnat`, protocols can only be `TCP` and `UDP`."
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of source IP addresses and/or IP ranges."
+                },
+                "SourceIpGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of source IP Group IDs for the rule."
+                },
+                "TranslatedAddress": {
+                    "type": "string",
+                    "description": "The address of the service behind the Firewall."
+                },
+                "TranslatedPort": {
+                    "type": "string",
+                    "description": "The port of the service behind the Firewall."
+                }
+            },
+            "required": [
+                "DestinationAddresses",
+                "DestinationPorts",
+                "Name",
+                "Protocols",
+                "TranslatedAddress",
+                "TranslatedPort"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Specifies the action the rule will apply to matching traffic. Possible values are `Dnat` and `Snat`."
+        },
+        "AzureFirewallName": {
+            "type": "string",
+            "description": "Specifies the name of the Firewall in which the NAT Rule Collection should be created. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the NAT Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Specifies the priority of the rule collection. Possible values are between `100` - `65000`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "AzureFirewallName",
+        "Name",
+        "Priority",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::AzureDevOps::RepositoryPolicyFilePathPattern",
+    "description": "Manage a file path pattern repository policy within Azure DevOps project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-RepositoryPolicyFilePathPattern/docs/README.md",
+    "definitions": {
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilepathPatterns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Block pushes from introducing file paths that match the following patterns. Exact paths begin with \"/\". You can specify exact paths and wildcards. You can also specify multiple paths using \";\" as a separator. Paths prefixed with \"!\" are excluded. Order is important.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined\nat least once."
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RepositoryId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RepositoryId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blocking": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project in which the policy will be created.\n- `enabled` - (Optional) A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

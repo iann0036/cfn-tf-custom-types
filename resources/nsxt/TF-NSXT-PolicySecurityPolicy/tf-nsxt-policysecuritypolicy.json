@@ -1,0 +1,237 @@
+{
+    "typeName": "TF::NSXT::PolicySecurityPolicy",
+    "description": "This resource provides a method for the management of Security Policy and rules under it.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicySecurityPolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationsExcluded": {
+                    "type": "boolean"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IpVersion": {
+                    "type": "string"
+                },
+                "LogLabel": {
+                    "type": "string"
+                },
+                "Logged": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "NsxId": {
+                    "type": "string"
+                },
+                "Profiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SequenceNumber": {
+                    "type": "number"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourcesExcluded": {
+                    "type": "boolean"
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DisplayName"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string",
+            "description": "Category of this policy. For local manager must be one of `Ethernet`, `Emergency`, `Infrastructure`, `Environment`, `Application`. For global manager must be one of: `Infrastructure`, `Environment`, `Application`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments for security policy lock/unlock."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource.\n* `action` - (Optional) Rule action, one of `ALLOW`, `DROP`, `REJECT` and `JUMP_TO_APPLICATION`. Default is `ALLOW`. `JUMP_TO_APPLICATION` is only applicable in `Environment` category.\n* `destination_groups` - (Optional) Set of group paths that serve as the destination for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `source_groups` - (Optional) Set of group paths that serve as the source for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `sources_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `direction` - (Optional) Traffic direction, one of `IN`, `OUT` or `IN_OUT`. Default is `IN_OUT`.\n* `disabled` - (Optional) Flag to disable this rule. Default is false.\n* `ip_version` - (Optional) Version of IP protocol, one of `IPV4`, `IPV6`, `IPV4_IPV6`. Default is `IPV4_IPV6`.\n* `logged` - (Optional) Flag to enable packet logging. Default is false.\n* `notes` - (Optional) Additional notes on changes.\n* `profiles` - (Optional) Set of profile paths relevant for this rule.\n* `scope` - (Optional) Set of policy object paths where the rule is applied.\n* `services` - (Optional) Set of service paths to match.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource.\n* `description` - (Optional) Description of the resource.\n* `action` - (Optional) Rule action, one of `ALLOW`, `DROP`, `REJECT` and `JUMP_TO_APPLICATION`. Default is `ALLOW`. `JUMP_TO_APPLICATION` is only applicable in `Environment` category.\n* `destination_groups` - (Optional) Set of group paths that serve as the destination for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `source_groups` - (Optional) Set of group paths that serve as the source for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `sources_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `direction` - (Optional) Traffic direction, one of `IN`, `OUT` or `IN_OUT`. Default is `IN_OUT`.\n* `disabled` - (Optional) Flag to disable this rule. Default is false.\n* `ip_version` - (Optional) Version of IP protocol, one of `IPV4`, `IPV6`, `IPV4_IPV6`. Default is `IPV4_IPV6`.\n* `logged` - (Optional) Flag to enable packet logging. Default is false.\n* `notes` - (Optional) Additional notes on changes.\n* `profiles` - (Optional) Set of profile paths relevant for this rule.\n* `scope` - (Optional) Set of policy object paths where the rule is applied.\n* `services` - (Optional) Set of service paths to match.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to use for the resource. This domain must already exist. For VMware Cloud on AWS use `cgw`. For Global Manager, please use site id for this field. If not specified, this field is default to `default`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean",
+            "description": "Indicates whether a security policy should be locked. If locked by a user, no other user would be able to modify this policy."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of policy object paths where the rule is applied.\n* `services` - (Optional) Set of service paths to match.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule."
+        },
+        "SequenceNumber": {
+            "type": "number",
+            "description": "This field is used to resolve conflicts between security policies across domains."
+        },
+        "Stateful": {
+            "type": "boolean",
+            "description": "If true, state of the network connects are tracked and a stateful packet inspection is performed. Default is true."
+        },
+        "TcpStrict": {
+            "type": "boolean",
+            "description": "Ensures that a 3 way TCP handshake is done before the data packets are sent. Default is false."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1000
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

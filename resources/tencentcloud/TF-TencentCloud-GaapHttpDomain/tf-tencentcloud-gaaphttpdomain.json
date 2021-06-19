@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::TencentCloud::GaapHttpDomain",
+    "description": "Provides a resource to create a forward domain of layer7 listener.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapHttpDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BasicAuth": {
+            "type": "boolean",
+            "description": "Indicates whether basic authentication is enable, default value is `false`."
+        },
+        "BasicAuthId": {
+            "type": "string",
+            "description": "ID of the basic authentication."
+        },
+        "CertificateId": {
+            "type": "string",
+            "description": "ID of the server certificate, default value is `default`."
+        },
+        "ClientCertificateId": {
+            "type": "string",
+            "description": "It has been deprecated from version 1.26.0. Set `client_certificate_ids` instead. ID of the client certificate, default value is `default`."
+        },
+        "ClientCertificateIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of the poly client certificate."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Forward domain of the layer7 listener."
+        },
+        "GaapAuth": {
+            "type": "boolean",
+            "description": "Indicates whether SSL certificate authentication is enable, default value is `false`."
+        },
+        "GaapAuthId": {
+            "type": "string",
+            "description": "ID of the SSL certificate."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "ID of the layer7 listener."
+        },
+        "RealserverAuth": {
+            "type": "boolean",
+            "description": "Indicates whether realserver authentication is enable, default value is `false`."
+        },
+        "RealserverCertificateDomain": {
+            "type": "string",
+            "description": "CA certificate domain of the realserver."
+        },
+        "RealserverCertificateId": {
+            "type": "string",
+            "description": "It has been deprecated from version 1.28.0. Set `realserver_certificate_ids` instead. CA certificate ID of the realserver."
+        },
+        "RealserverCertificateIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "CA certificate ID list of the realserver."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "ListenerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

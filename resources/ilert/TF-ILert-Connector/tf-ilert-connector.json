@@ -1,0 +1,452 @@
+{
+    "typeName": "TF::ILert::Connector",
+    "description": "A [connector](https://docs.ilert.com/getting-started/intro#connectors-and-connections-outbond-integrations) is created globally in iLert and usually contains all the information to connect with the target system.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-Connector/docs/README.md",
+    "definitions": {
+        "AutotaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Email",
+                "Password",
+                "Url"
+            ]
+        },
+        "AwsLambdaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authorization": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AzureFaasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authorization": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DatadogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "DiscordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "GithubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "GoogleFaasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authorization": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JiraDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Email",
+                "Password",
+                "Url"
+            ]
+        },
+        "MattermostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "MicrosoftTeamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ServicenowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Url",
+                "Username"
+            ]
+        },
+        "StatusPageIoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "SysdigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "TopdeskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Url",
+                "Username"
+            ]
+        },
+        "ZammadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey",
+                "Url"
+            ]
+        },
+        "ZendeskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey",
+                "Email",
+                "Url"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the connector.\n- `type` - (Required) The type of the connector. Allowed values are `aws_lambda`, `azure_faas`, `datadog`, `discord`, `email`, `github`, `google_faas`, `jira`, `microsoft_teams`, `servicenow`, `slack`, `sysdig`, `topdesk`, `webhook`, `zapier`, `zendesk`, `autotask`, `mattermost`, `zammad`, `status_page_io`.\n- `datadog` - (Optional) A [datadog](#datadog-arguments) block.\n- `jira` - (Optional) A [jira](#jira-arguments) block.\n- `microsoft_teams` - (Optional) A [microsoft_teams](#microsoft-teams-arguments) block.\n- `servicenow` - (Optional) A [servicenow](#servicenow-arguments) block.\n- `zendesk` - (Optional) A [zendesk](#zendesk-arguments) block.\n- `discord` - (Optional) A [discord](#discord-arguments) block.\n- `github` - (Optional) A [github](#github-arguments) block.\n- `topdesk` - (Optional) A [topdesk](#topdesk-arguments) block.\n- `aws_lambda` - (Optional) A [aws_lambda](#aws-lambda-arguments) block.\n- `azure_faas` - (Optional) A [azure_faas](#azure-function-arguments) block.\n- `google_faas` - (Optional) A [google_faas](#google-cloud-function-arguments) block.\n- `sysdig` - (Optional) A [sysdig](#sysdig-arguments) block.\n- `autotask` - (Optional) A [autotask](#autotask-arguments) block.\n- `mattermost` - (Optional) A [mattermost](#mattermost-arguments) block.\n- `zammad` - (Optional) A [zammad](#zammad-arguments) block.\n- `status_page_io` - (Optional) A [status_page_io](#statuspage-arguments) block."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the connector. Allowed values are `aws_lambda`, `azure_faas`, `datadog`, `discord`, `email`, `github`, `google_faas`, `jira`, `microsoft_teams`, `servicenow`, `slack`, `sysdig`, `topdesk`, `webhook`, `zapier`, `zendesk`, `autotask`, `mattermost`, `zammad`, `status_page_io`.\n- `datadog` - (Optional) A [datadog](#datadog-arguments) block.\n- `jira` - (Optional) A [jira](#jira-arguments) block.\n- `microsoft_teams` - (Optional) A [microsoft_teams](#microsoft-teams-arguments) block.\n- `servicenow` - (Optional) A [servicenow](#servicenow-arguments) block.\n- `zendesk` - (Optional) A [zendesk](#zendesk-arguments) block.\n- `discord` - (Optional) A [discord](#discord-arguments) block.\n- `github` - (Optional) A [github](#github-arguments) block.\n- `topdesk` - (Optional) A [topdesk](#topdesk-arguments) block.\n- `aws_lambda` - (Optional) A [aws_lambda](#aws-lambda-arguments) block.\n- `azure_faas` - (Optional) A [azure_faas](#azure-function-arguments) block.\n- `google_faas` - (Optional) A [google_faas](#google-cloud-function-arguments) block.\n- `sysdig` - (Optional) A [sysdig](#sysdig-arguments) block.\n- `autotask` - (Optional) A [autotask](#autotask-arguments) block.\n- `mattermost` - (Optional) A [mattermost](#mattermost-arguments) block.\n- `zammad` - (Optional) A [zammad](#zammad-arguments) block.\n- `status_page_io` - (Optional) A [status_page_io](#statuspage-arguments) block."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Autotask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutotaskDefinition"
+            },
+            "maxItems": 1
+        },
+        "AwsLambda": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsLambdaDefinition"
+            },
+            "maxItems": 1
+        },
+        "AzureFaas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFaasDefinition"
+            },
+            "maxItems": 1
+        },
+        "Datadog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatadogDefinition"
+            },
+            "maxItems": 1
+        },
+        "Discord": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiscordDefinition"
+            },
+            "maxItems": 1
+        },
+        "Github": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GithubDefinition"
+            },
+            "maxItems": 1
+        },
+        "GoogleFaas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GoogleFaasDefinition"
+            },
+            "maxItems": 1
+        },
+        "Jira": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JiraDefinition"
+            },
+            "maxItems": 1
+        },
+        "Mattermost": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MattermostDefinition"
+            },
+            "maxItems": 1
+        },
+        "MicrosoftTeams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MicrosoftTeamsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Servicenow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServicenowDefinition"
+            },
+            "maxItems": 1
+        },
+        "StatusPageIo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusPageIoDefinition"
+            },
+            "maxItems": 1
+        },
+        "Sysdig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SysdigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Topdesk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TopdeskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Zammad": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZammadDefinition"
+            },
+            "maxItems": 1
+        },
+        "Zendesk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZendeskDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AutotaskDefinition/Password",
+        "/definitions/AwsLambdaDefinition/Authorization",
+        "/definitions/AzureFaasDefinition/Authorization",
+        "/definitions/DatadogDefinition/ApiKey",
+        "/definitions/GithubDefinition/ApiKey",
+        "/definitions/GoogleFaasDefinition/Authorization",
+        "/definitions/JiraDefinition/Password",
+        "/definitions/ServicenowDefinition/Password",
+        "/definitions/StatusPageIoDefinition/ApiKey",
+        "/definitions/SysdigDefinition/ApiKey",
+        "/definitions/TopdeskDefinition/Password",
+        "/definitions/ZammadDefinition/ApiKey",
+        "/definitions/ZendeskDefinition/ApiKey"
+    ]
+}

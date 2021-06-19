@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::GitHub::RepositoryPullRequest",
+    "description": "CloudFormation equivalent of github_repository_pull_request",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryPullRequest/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseRef": {
+            "type": "string"
+        },
+        "BaseRepository": {
+            "type": "string"
+        },
+        "BaseSha": {
+            "type": "string"
+        },
+        "Body": {
+            "type": "string"
+        },
+        "Draft": {
+            "type": "boolean"
+        },
+        "HeadRef": {
+            "type": "string"
+        },
+        "HeadSha": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaintainerCanModify": {
+            "type": "boolean"
+        },
+        "Number": {
+            "type": "number"
+        },
+        "OpenedAt": {
+            "type": "number"
+        },
+        "OpenedBy": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BaseRef",
+        "BaseRepository",
+        "HeadRef",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BaseSha",
+        "/properties/Draft",
+        "/properties/HeadSha",
+        "/properties/Id",
+        "/properties/Labels",
+        "/properties/Number",
+        "/properties/OpenedAt",
+        "/properties/OpenedBy",
+        "/properties/State",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

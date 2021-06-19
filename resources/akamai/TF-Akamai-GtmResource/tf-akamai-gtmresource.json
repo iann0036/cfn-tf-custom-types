@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::Akamai::GtmResource",
+    "description": "The `akamai_gtm_resource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second. \n\n~> **Note** Import requires an ID with this format: `existing_domain_name`:\n`existing_resource_name`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmResource/docs/README.md",
+    "definitions": {
+        "ResourceInstanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "LoadObject": {
+                    "type": "string"
+                },
+                "LoadObjectPort": {
+                    "type": "number"
+                },
+                "LoadServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseDefaultLoadObject": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "DatacenterId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregationType": {
+            "type": "string"
+        },
+        "ConstrainedProperty": {
+            "type": "string"
+        },
+        "DecayRate": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "HostHeader": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaderString": {
+            "type": "string"
+        },
+        "LeastSquaresDecay": {
+            "type": "number"
+        },
+        "LoadImbalancePercentage": {
+            "type": "number"
+        },
+        "MaxUMultiplicativeIncrement": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UpperBound": {
+            "type": "number"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        },
+        "ResourceInstance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceInstanceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AggregationType",
+        "Domain",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

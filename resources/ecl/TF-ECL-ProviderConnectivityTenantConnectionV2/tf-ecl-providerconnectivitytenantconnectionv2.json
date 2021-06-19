@@ -1,0 +1,243 @@
+{
+    "typeName": "TF::ECL::ProviderConnectivityTenantConnectionV2",
+    "description": "Manages a Provider Connectivity v2 Tenant Connection resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-ProviderConnectivityTenantConnectionV2/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AttachmentOptsBaremetalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SegmentationId": {
+                    "type": "number",
+                    "description": "Segmentation id used for port.\nOnly valid for device_type = ECL::Baremetal::Server."
+                },
+                "SegmentationType": {
+                    "type": "string",
+                    "description": "Segmentation type used for port.\nOnly valid for device_type = ECL::Baremetal::Server. (flat/vlan)."
+                },
+                "AllowedAddressPairs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedAddressPairsDefinition"
+                    }
+                },
+                "FixedIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedIpsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AttachmentOptsComputeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedAddressPairs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedAddressPairsDefinition"
+                    }
+                },
+                "FixedIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedIpsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AttachmentOptsVnaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FixedIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedIpsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AllowedAddressPairsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FixedIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of tenant_connection."
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "ID of the device of the device_type."
+        },
+        "DeviceInterfaceId": {
+            "type": "string",
+            "description": "ID of the interface of the device.\nRequired for device_type in ECL::Baremetal::Server, ECL::VirtualNetworkAppliance::VSRX.\nFor device_type: ECL::Baremetal::Server, network_physical_port_id should be used.\nFor ECL::VirtualNetworkAppliance::VSRX, interfaces.interface_<slot_number> should be used."
+        },
+        "DeviceType": {
+            "type": "string",
+            "description": "device type.\n(ECL::Compute::Server/ECL::Baremetal::Server/ECL::VirtualNetworkAppliance::VSRX)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of tenant_connection."
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "PortId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "tenant_connection tags."
+        },
+        "TenantConnectionRequestId": {
+            "type": "string",
+            "description": "ID of the tenant_connection_request."
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "TenantIdOther": {
+            "type": "string"
+        },
+        "AttachmentOptsBaremetal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentOptsBaremetalDefinition"
+            },
+            "maxItems": 1
+        },
+        "AttachmentOptsCompute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentOptsComputeDefinition"
+            },
+            "maxItems": 1
+        },
+        "AttachmentOptsVna": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentOptsVnaDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceId",
+        "DeviceType",
+        "TenantConnectionRequestId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NetworkId",
+        "/properties/PortId",
+        "/properties/Status",
+        "/properties/TenantId",
+        "/properties/TenantIdOther"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,186 @@
+{
+    "typeName": "TF::FortiOS::SystemCentralmanagement",
+    "description": "Configure central management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemCentralmanagement/docs/README.md",
+    "definitions": {
+        "ServerListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddrType": {
+                    "type": "string",
+                    "description": "Indicate whether the FortiGate communicates with the override server using an IPv4 address, an IPv6 address or a FQDN. Valid values: `ipv4`, `ipv6`, `fqdn`."
+                },
+                "Fqdn": {
+                    "type": "string",
+                    "description": "FQDN address of override server."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "ServerAddress": {
+                    "type": "string",
+                    "description": "IPv4 address of override server."
+                },
+                "ServerAddress6": {
+                    "type": "string",
+                    "description": "IPv6 address of override server."
+                },
+                "ServerType": {
+                    "type": "string",
+                    "description": "FortiGuard service type. Valid values: `update`, `rating`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowMonitor": {
+            "type": "string",
+            "description": "Enable/disable allowing the central management server to remotely monitor this FortiGate Valid values: `enable`, `disable`."
+        },
+        "AllowPushConfiguration": {
+            "type": "string",
+            "description": "Enable/disable allowing the central management server to push configuration changes to this FortiGate. Valid values: `enable`, `disable`."
+        },
+        "AllowPushFirmware": {
+            "type": "string",
+            "description": "Enable/disable allowing the central management server to push firmware updates to this FortiGate. Valid values: `enable`, `disable`."
+        },
+        "AllowRemoteFirmwareUpgrade": {
+            "type": "string",
+            "description": "Enable/disable remotely upgrading the firmware on this FortiGate from the central management server. Valid values: `enable`, `disable`."
+        },
+        "CaCert": {
+            "type": "string",
+            "description": "CA certificate to be used by FGFM protocol."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EncAlgorithm": {
+            "type": "string",
+            "description": "Encryption strength for communications between the FortiGate and central management. Valid values: `default`, `high`, `low`."
+        },
+        "Fmg": {
+            "type": "string",
+            "description": "IP address or FQDN of the FortiManager."
+        },
+        "FmgSourceIp": {
+            "type": "string",
+            "description": "IPv4 source address that this FortiGate uses when communicating with FortiManager."
+        },
+        "FmgSourceIp6": {
+            "type": "string",
+            "description": "IPv6 source address that this FortiGate uses when communicating with FortiManager."
+        },
+        "FmgUpdatePort": {
+            "type": "string",
+            "description": "Port used to communicate with FortiManager that is acting as a FortiGuard update server. Valid values: `8890`, `443`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeDefaultServers": {
+            "type": "string",
+            "description": "Enable/disable inclusion of public FortiGuard servers in the override server list. Valid values: `enable`, `disable`."
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "LocalCert": {
+            "type": "string",
+            "description": "Certificate to be used by FGFM protocol."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Central management mode. Valid values: `normal`, `backup`."
+        },
+        "ScheduleConfigRestore": {
+            "type": "string",
+            "description": "Enable/disable allowing the central management server to restore the configuration of this FortiGate. Valid values: `enable`, `disable`."
+        },
+        "ScheduleScriptRestore": {
+            "type": "string",
+            "description": "Enable/disable allowing the central management server to restore the scripts stored on this FortiGate. Valid values: `enable`, `disable`."
+        },
+        "SerialNumber": {
+            "type": "string",
+            "description": "Serial number."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Central management type. Valid values: `fortimanager`, `fortiguard`, `none`."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "Virtual domain (VDOM) name to use when communicating with FortiManager."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ServerList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

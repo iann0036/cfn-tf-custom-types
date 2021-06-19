@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::DigitalOcean::DatabaseConnectionPool",
+    "description": "Provides a DigitalOcean database connection pool resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-DatabaseConnectionPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The ID of the source database cluster. Note: This must be a PostgreSQL cluster."
+        },
+        "DbName": {
+            "type": "string",
+            "description": "The database for use with the connection pool."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The PGBouncer transaction mode for the connection pool. The allowed values are session, transaction, and statement."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the database connection pool."
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateHost": {
+            "type": "string"
+        },
+        "PrivateUri": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number",
+            "description": "The desired size of the PGBouncer connection pool."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string",
+            "description": "The name of the database user for use with the connection pool."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "DbName",
+        "Mode",
+        "Name",
+        "Size",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Host",
+        "/properties/Id",
+        "/properties/Password",
+        "/properties/Port",
+        "/properties/PrivateHost",
+        "/properties/PrivateUri",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateUri",
+        "/properties/Uri"
+    ]
+}

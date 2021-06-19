@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Thunder::NtpAuthKey",
+    "description": "`thunder_ntp_auth_key` Provides details about thunder ntp auth key",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-NtpAuthKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlgType": {
+            "type": "string",
+            "description": "\u2018M\u2019: encryption using MD5; \u2018SHA\u2019: encryption using SHA; \u2018SHA1\u2019: encryption using SHA1;."
+        },
+        "AscKey": {
+            "type": "string"
+        },
+        "Encrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED password string)."
+        },
+        "HexEncrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED password string)."
+        },
+        "HexKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "number",
+            "description": "authentication key."
+        },
+        "KeyType": {
+            "type": "string",
+            "description": "\u2018ascii\u2019: key string in ASCII form; \u2018hex\u2019: key string in hex form;."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

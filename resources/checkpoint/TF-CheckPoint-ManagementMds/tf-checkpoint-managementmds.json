@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::CheckPoint::ManagementMds",
+    "description": "This resource allows you to execute Check Point MDS.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementMds/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Domain objects identified by the name or UID."
+        },
+        "GlobalDomains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Global domain objects identified by the name or UID."
+        },
+        "Hardware": {
+            "type": "string",
+            "description": "Hardware name. For example: Open server, Smart-1, Other."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "IpPoolFirst": {
+            "type": "string",
+            "description": "First IP address in the range."
+        },
+        "IpPoolLast": {
+            "type": "string",
+            "description": "Last IP address in the range."
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "IPv4 address."
+        },
+        "Ipv6Address": {
+            "type": "string",
+            "description": "IPv6 address."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "OneTimePassword": {
+            "type": "string",
+            "description": "Secure internal connection one time password."
+        },
+        "Os": {
+            "type": "string",
+            "description": "Operating system name. For example: Gaia, Linux, SecurePlatform."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Type of the management server."
+        },
+        "SicName": {
+            "type": "string",
+            "description": "Name of the Secure Internal Connection Trust."
+        },
+        "SicState": {
+            "type": "string",
+            "description": "State the Secure Internal Connection Trust."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers."
+        },
+        "Version": {
+            "type": "string",
+            "description": "System version."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Domains",
+        "/properties/GlobalDomains",
+        "/properties/Id",
+        "/properties/SicName",
+        "/properties/SicState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

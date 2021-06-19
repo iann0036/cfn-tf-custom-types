@@ -1,0 +1,990 @@
+{
+    "typeName": "TF::OCI::ApigatewayDeployment",
+    "description": "This resource provides the Deployment resource in Oracle Cloud Infrastructure API Gateway service.\n\nCreates a new deployment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ApigatewayDeployment/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoggingPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingPoliciesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RequestPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestPoliciesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Routes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RoutesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoggingPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessLogDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ExecutionLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecutionLogDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RequestPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authorization": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthorizationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "BodyValidation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BodyValidationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Cors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CorsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HeaderTransformations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderTransformationsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HeaderValidations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderValidationsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryParameterTransformations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParameterTransformationsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "QueryParameterValidations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParameterValidationsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResponseCacheLookup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseCacheLookupDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Backend": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackendDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "LoggingPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingPoliciesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RequestPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestPoliciesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResponsePolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponsePoliciesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "AccessLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ExecutionLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "LogLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audiences": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FunctionId": {
+                    "type": "string"
+                },
+                "IsAnonymousAccessAllowed": {
+                    "type": "boolean"
+                },
+                "Issuers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxClockSkewInSeconds": {
+                    "type": "number"
+                },
+                "TokenAuthScheme": {
+                    "type": "string"
+                },
+                "TokenHeader": {
+                    "type": "string"
+                },
+                "TokenQueryParam": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "PublicKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicKeysDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VerifyClaims": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VerifyClaimsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "CorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExposedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsAllowCredentialsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxAgeInSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllowedOrigins"
+            ]
+        },
+        "RateLimitingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RateInRequestsPerSecond": {
+                    "type": "number"
+                },
+                "RateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RateInRequestsPerSecond",
+                "RateKey"
+            ]
+        },
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "string"
+                },
+                "ConnectTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "FunctionId": {
+                    "type": "string"
+                },
+                "IsSslVerifyDisabled": {
+                    "type": "boolean"
+                },
+                "ReadTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "SendTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ResponsePoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderTransformations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderTransformationsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResponseCacheStore": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseCacheStoreDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PublicKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsSslVerifyDisabled": {
+                    "type": "boolean"
+                },
+                "MaxCacheDurationInHours": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeysDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "VerifyClaimsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedScope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BodyValidationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Required": {
+                    "type": "boolean"
+                },
+                "ValidationMode": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ContentDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeaderTransformationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterHeadersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RenameHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RenameHeadersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SetHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetHeadersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HeaderValidationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ValidationMode": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "QueryParameterTransformationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterQueryParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterQueryParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RenameQueryParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RenameQueryParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SetQueryParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetQueryParametersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "QueryParameterValidationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ValidationMode": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResponseCacheLookupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheKeyAdditions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "IsPrivateCachingEnabled": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ResponseCacheStoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeToLiveInSeconds": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TimeToLiveInSeconds",
+                "Type"
+            ]
+        },
+        "KeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alg": {
+                    "type": "string"
+                },
+                "E": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "KeyOps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Kid": {
+                    "type": "string"
+                },
+                "Kty": {
+                    "type": "string"
+                },
+                "N": {
+                    "type": "string"
+                },
+                "Use": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Format"
+            ]
+        },
+        "ContentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MediaType": {
+                    "type": "string"
+                },
+                "ValidationType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MediaType",
+                "ValidationType"
+            ]
+        },
+        "FilterHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RenameHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SetHeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "FilterQueryParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RenameQueryParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SetQueryParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Required": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ItemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IfExists": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "GatewayId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "PathPrefix": {
+            "type": "string",
+            "description": "A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm)."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Specification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "GatewayId",
+        "PathPrefix"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

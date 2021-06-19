@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::AzureRM::AppServiceEnvironment",
+    "description": "Manages an App Service Environment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AppServiceEnvironment/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClusterSettingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Cluster Setting."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value for the Cluster Setting."
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedUserIpCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Allowed user added IP ranges on the ASE database. Use the addresses you want to set as the explicit egress address ranges."
+        },
+        "FrontEndScaleFactor": {
+            "type": "number",
+            "description": "Scale factor for front end instances. Possible values are between `5` and `15`. Defaults to `15`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalIpAddress": {
+            "type": "string"
+        },
+        "InternalLoadBalancingMode": {
+            "type": "string",
+            "description": "Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values are `None`, `Web`, `Publishing` and combined value `\"Web, Publishing\"`. Defaults to `None`."
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the App Service Environment. Changing this forces a new resource to be created."
+        },
+        "OutboundIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PricingTier": {
+            "type": "string",
+            "description": "Pricing tier for the front end instances. Possible values are `I1`, `I2` and `I3`. Defaults to `I1`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the App Service Environment exists. Defaults to the Resource Group of the Subnet (specified by `subnet_id`)."
+        },
+        "ServiceIpAddress": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of the Subnet which the App Service Environment should be connected to. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. Changing this forces a new resource to be created."
+        },
+        "UserWhitelistedIpRanges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClusterSetting": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterSettingDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InternalIpAddress",
+        "/properties/Location",
+        "/properties/OutboundIpAddresses",
+        "/properties/ServiceIpAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

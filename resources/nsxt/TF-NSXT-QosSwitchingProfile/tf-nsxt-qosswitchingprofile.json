@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::NSXT::QosSwitchingProfile",
+    "description": "Provides a resource to configure Qos switching profile on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-QosSwitchingProfile/docs/README.md",
+    "definitions": {
+        "EgressRateShaperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwMbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwMbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IngressBroadcastRateShaperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwKbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwKbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IngressRateShaperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwMbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwMbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClassOfService": {
+            "type": "number",
+            "description": "Class of service."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "DscpPriority": {
+            "type": "number",
+            "description": "DSCP Priority (0-63)."
+        },
+        "DscpTrusted": {
+            "type": "boolean",
+            "description": "Trust mode for DSCP (False by default)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "EgressRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EgressRateShaperDefinition"
+            },
+            "maxItems": 1
+        },
+        "IngressBroadcastRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IngressBroadcastRateShaperDefinition"
+            },
+            "maxItems": 1
+        },
+        "IngressRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IngressRateShaperDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

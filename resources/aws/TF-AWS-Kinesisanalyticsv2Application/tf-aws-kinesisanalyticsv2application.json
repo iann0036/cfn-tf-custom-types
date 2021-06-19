@@ -1,0 +1,1026 @@
+{
+    "typeName": "TF::AWS::Kinesisanalyticsv2Application",
+    "description": "Manages a Kinesis Analytics v2 Application.\nThis resource can be used to manage both Kinesis Data Analytics for SQL applications and Kinesis Data Analytics for Apache Flink applications.\n\n-> **Note:** Kinesis Data Analytics for SQL applications created using this resource cannot currently be viewed in the AWS Console. To manage Kinesis Data Analytics for SQL applications that can also be viewed in the AWS Console, use the [`aws_kinesis_analytics_application`](/docs/providers/aws/r/kinesis_analytics_application.html) resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Kinesisanalyticsv2Application/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApplicationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationCodeConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationCodeConfigurationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ApplicationSnapshotConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationSnapshotConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EnvironmentProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentPropertiesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FlinkApplicationConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlinkApplicationConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RunConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SqlApplicationConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SqlApplicationConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VpcConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudwatchLoggingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogStreamArn": {
+                    "type": "string",
+                    "description": "The ARN of the CloudWatch log stream to receive application messages."
+                }
+            },
+            "required": [
+                "LogStreamArn"
+            ]
+        },
+        "ApplicationCodeConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CodeContentType": {
+                    "type": "string",
+                    "description": "Specifies whether the code content is in text or zip format. Valid values: `PLAINTEXT`, `ZIPFILE`."
+                },
+                "CodeContent": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CodeContentDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CodeContentType"
+            ]
+        },
+        "ApplicationSnapshotConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SnapshotsEnabled": {
+                    "type": "boolean",
+                    "description": "Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application."
+                }
+            },
+            "required": [
+                "SnapshotsEnabled"
+            ]
+        },
+        "EnvironmentPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PropertyGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PropertyGroupDefinition"
+                    },
+                    "maxItems": 50,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "FlinkApplicationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckpointConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CheckpointConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MonitoringConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonitoringConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ParallelismConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParallelismConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RunConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationRestoreConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationRestoreConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FlinkRunConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlinkRunConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SqlApplicationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Input": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Output": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OutputDefinition"
+                    },
+                    "maxItems": 3
+                },
+                "ReferenceDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReferenceDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "VpcConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The [Security Group](/docs/providers/aws/r/security_group.html) IDs used by the VPC configuration."
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The [Subnet](/docs/providers/aws/r/subnet.html) IDs used by the VPC configuration."
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "SubnetIds"
+            ]
+        },
+        "CodeContentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TextContent": {
+                    "type": "string",
+                    "description": "The text-format code for the application."
+                },
+                "S3ContentLocation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3ContentLocationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PropertyGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PropertyGroupId": {
+                    "type": "string",
+                    "description": "The key of the application execution property key-value map."
+                },
+                "PropertyMap": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertyMapDefinition"
+                    },
+                    "description": "Application execution property key-value map."
+                }
+            },
+            "required": [
+                "PropertyGroupId",
+                "PropertyMap"
+            ]
+        },
+        "PropertyMapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CheckpointConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckpointInterval": {
+                    "type": "number",
+                    "description": "Describes the interval in milliseconds between checkpoint operations."
+                },
+                "CheckpointingEnabled": {
+                    "type": "boolean",
+                    "description": "Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application."
+                },
+                "ConfigurationType": {
+                    "type": "string",
+                    "description": "Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. Valid values: `CUSTOM`, `DEFAULT`. Set this attribute to `CUSTOM` in order for any specified `checkpointing_enabled`, `checkpoint_interval`, or `min_pause_between_checkpoints` attribute values to be effective. If this attribute is set to `DEFAULT`, the application will always use the following values:\n* `checkpointing_enabled = true`\n* `checkpoint_interval = 60000`\n* `min_pause_between_checkpoints = 5000`."
+                },
+                "MinPauseBetweenCheckpoints": {
+                    "type": "number",
+                    "description": "Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start."
+                }
+            },
+            "required": [
+                "ConfigurationType"
+            ]
+        },
+        "MonitoringConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigurationType": {
+                    "type": "string",
+                    "description": "Describes whether to use the default CloudWatch logging configuration for an application. Valid values: `CUSTOM`, `DEFAULT`. Set this attribute to `CUSTOM` in order for any specified `log_level` or `metrics_level` attribute values to be effective."
+                },
+                "LogLevel": {
+                    "type": "string",
+                    "description": "Describes the verbosity of the CloudWatch Logs for an application. Valid values: `DEBUG`, `ERROR`, `INFO`, `WARN`."
+                },
+                "MetricsLevel": {
+                    "type": "string",
+                    "description": "Describes the granularity of the CloudWatch Logs for an application. Valid values: `APPLICATION`, `OPERATOR`, `PARALLELISM`, `TASK`."
+                }
+            },
+            "required": [
+                "ConfigurationType"
+            ]
+        },
+        "ParallelismConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoScalingEnabled": {
+                    "type": "boolean",
+                    "description": "Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput."
+                },
+                "ConfigurationType": {
+                    "type": "string",
+                    "description": "Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. Valid values: `CUSTOM`, `DEFAULT`. Set this attribute to `CUSTOM` in order for any specified `auto_scaling_enabled`, `parallelism`, or `parallelism_per_kpu` attribute values to be effective."
+                },
+                "Parallelism": {
+                    "type": "number",
+                    "description": "Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform."
+                },
+                "ParallelismPerKpu": {
+                    "type": "number",
+                    "description": "Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application."
+                }
+            },
+            "required": [
+                "ConfigurationType"
+            ]
+        },
+        "ApplicationRestoreConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationRestoreType": {
+                    "type": "string",
+                    "description": "Specifies how the application should be restored. Valid values: `RESTORE_FROM_CUSTOM_SNAPSHOT`, `RESTORE_FROM_LATEST_SNAPSHOT`, `SKIP_RESTORE_FROM_SNAPSHOT`."
+                },
+                "SnapshotName": {
+                    "type": "string",
+                    "description": "The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if `RESTORE_FROM_CUSTOM_SNAPSHOT` is specified for `application_restore_type`."
+                }
+            },
+            "required": []
+        },
+        "FlinkRunConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowNonRestoredState": {
+                    "type": "boolean",
+                    "description": "When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to the new program. Default is `false`."
+                }
+            },
+            "required": []
+        },
+        "InputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamePrefix": {
+                    "type": "string",
+                    "description": "The name prefix to use when creating an in-application stream."
+                },
+                "InputParallelism": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputParallelismDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InputProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InputSchema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputSchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "InputStartingPositionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputStartingPositionConfigurationDefinition"
+                    }
+                },
+                "KinesisFirehoseInput": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisFirehoseInputDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KinesisStreamsInput": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisStreamsInputDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "NamePrefix"
+            ]
+        },
+        "OutputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the in-application stream."
+                },
+                "DestinationSchema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationSchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "KinesisFirehoseOutput": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisFirehoseOutputDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KinesisStreamsOutput": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisStreamsOutputDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LambdaOutput": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaOutputDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ReferenceDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TableName": {
+                    "type": "string",
+                    "description": "The name of the in-application table to create."
+                },
+                "ReferenceSchema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReferenceSchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "S3ReferenceDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3ReferenceDataSourceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "TableName"
+            ]
+        },
+        "S3ContentLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string",
+                    "description": "The ARN for the S3 bucket containing the application code."
+                },
+                "FileKey": {
+                    "type": "string",
+                    "description": "The file key for the object containing the application code."
+                },
+                "ObjectVersion": {
+                    "type": "string",
+                    "description": "The version of the object containing the application code."
+                }
+            },
+            "required": [
+                "BucketArn",
+                "FileKey"
+            ]
+        },
+        "InputParallelismDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number",
+                    "description": "The number of in-application streams to create."
+                }
+            },
+            "required": []
+        },
+        "InputProcessingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InputLambdaProcessor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InputLambdaProcessorDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "InputSchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordEncoding": {
+                    "type": "string",
+                    "description": "Specifies the encoding of the records in the streaming source. For example, `UTF-8`."
+                },
+                "RecordColumn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordColumnDefinition"
+                    },
+                    "maxItems": 1000,
+                    "minItems": 1
+                },
+                "RecordFormat": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordFormatDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "InputStartingPositionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InputStartingPosition": {
+                    "type": "string",
+                    "description": "The starting position on the stream. Valid values: `LAST_STOPPED_POINT`, `NOW`, `TRIM_HORIZON`."
+                }
+            },
+            "required": []
+        },
+        "KinesisFirehoseInputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the delivery stream."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "KinesisStreamsInputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the input Kinesis data stream to read."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "DestinationSchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordFormatType": {
+                    "type": "string",
+                    "description": "Specifies the format of the records on the output stream. Valid values: `CSV`, `JSON`."
+                }
+            },
+            "required": [
+                "RecordFormatType"
+            ]
+        },
+        "KinesisFirehoseOutputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the destination delivery stream to write to."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "KinesisStreamsOutputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the destination Kinesis data stream to write to."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "LambdaOutputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the destination Lambda function to write to."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "ReferenceSchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordEncoding": {
+                    "type": "string",
+                    "description": "Specifies the encoding of the records in the streaming source. For example, `UTF-8`."
+                },
+                "RecordColumn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordColumnDefinition"
+                    },
+                    "maxItems": 1000,
+                    "minItems": 1
+                },
+                "RecordFormat": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordFormatDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "S3ReferenceDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string",
+                    "description": "The ARN of the S3 bucket."
+                },
+                "FileKey": {
+                    "type": "string",
+                    "description": "The object key name containing the reference data."
+                }
+            },
+            "required": [
+                "BucketArn",
+                "FileKey"
+            ]
+        },
+        "InputLambdaProcessorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string",
+                    "description": "The ARN of the Lambda function that operates on records in the stream."
+                }
+            },
+            "required": [
+                "ResourceArn"
+            ]
+        },
+        "RecordColumnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mapping": {
+                    "type": "string",
+                    "description": "A reference to the data element in the streaming input or the reference data source."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the column that is created in the in-application input stream or reference table."
+                },
+                "SqlType": {
+                    "type": "string",
+                    "description": "The type of column created in the in-application input stream or reference table."
+                }
+            },
+            "required": [
+                "Name",
+                "SqlType"
+            ]
+        },
+        "RecordFormatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordFormatType": {
+                    "type": "string",
+                    "description": "The type of record format. Valid values: `CSV`, `JSON`."
+                },
+                "MappingParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MappingParametersDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "RecordFormatType"
+            ]
+        },
+        "MappingParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CsvMappingParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvMappingParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "JsonMappingParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JsonMappingParametersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CsvMappingParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordColumnDelimiter": {
+                    "type": "string",
+                    "description": "The column delimiter. For example, in a CSV format, a comma (`,`) is the typical column delimiter."
+                },
+                "RecordRowDelimiter": {
+                    "type": "string",
+                    "description": "The row delimiter. For example, in a CSV format, `\\n` is the typical row delimiter."
+                }
+            },
+            "required": [
+                "RecordColumnDelimiter",
+                "RecordRowDelimiter"
+            ]
+        },
+        "JsonMappingParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordRowPath": {
+                    "type": "string",
+                    "description": "The path to the top-level parent that contains the records."
+                }
+            },
+            "required": [
+                "RecordRowPath"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreateTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A summary description of the application."
+        },
+        "ForceStop": {
+            "type": "boolean",
+            "description": "Whether to force stop an unresponsive Flink-based application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdateTimestamp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the application."
+        },
+        "RuntimeEnvironment": {
+            "type": "string",
+            "description": "The runtime environment for the application. Valid values: `SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`."
+        },
+        "ServiceExecutionRole": {
+            "type": "string",
+            "description": "The ARN of the [IAM role](/docs/providers/aws/r/iam_role.html) used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources."
+        },
+        "StartApplication": {
+            "type": "boolean",
+            "description": "Whether to start or stop the application."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the application. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VersionId": {
+            "type": "number"
+        },
+        "ApplicationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "CloudwatchLoggingOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RuntimeEnvironment",
+        "ServiceExecutionRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreateTimestamp",
+        "/properties/Id",
+        "/properties/LastUpdateTimestamp",
+        "/properties/Status",
+        "/properties/VersionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

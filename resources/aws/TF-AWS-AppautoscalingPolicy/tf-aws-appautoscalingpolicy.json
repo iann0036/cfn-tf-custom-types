@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::AWS::AppautoscalingPolicy",
+    "description": "Provides an Application AutoScaling Policy resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppautoscalingPolicy/docs/README.md",
+    "definitions": {
+        "StepScalingPolicyConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdjustmentType": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "MetricAggregationType": {
+                    "type": "string"
+                },
+                "MinAdjustmentMagnitude": {
+                    "type": "number"
+                },
+                "StepAdjustment": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StepAdjustmentDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TargetTrackingScalingPolicyConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableScaleIn": {
+                    "type": "boolean"
+                },
+                "ScaleInCooldown": {
+                    "type": "number"
+                },
+                "ScaleOutCooldown": {
+                    "type": "number"
+                },
+                "TargetValue": {
+                    "type": "number"
+                },
+                "CustomizedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomizedMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "TargetValue"
+            ]
+        },
+        "StepAdjustmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricIntervalLowerBound": {
+                    "type": "string"
+                },
+                "MetricIntervalUpperBound": {
+                    "type": "string"
+                },
+                "ScalingAdjustment": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ScalingAdjustment"
+            ]
+        },
+        "CustomizedMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "Statistic"
+            ]
+        },
+        "PredefinedMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the policy. Must be between 1 and 255 characters in length."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "The policy type. Valid values are `StepScaling` and `TargetTrackingScaling`. Defaults to `StepScaling`. Certain services only support only one policy type. For more information see the [Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) and [Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html) documentation."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
+        },
+        "ScalableDimension": {
+            "type": "string",
+            "description": "The scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
+        },
+        "ServiceNamespace": {
+            "type": "string",
+            "description": "The AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
+        },
+        "StepScalingPolicyConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepScalingPolicyConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "TargetTrackingScalingPolicyConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetTrackingScalingPolicyConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceId",
+        "ScalableDimension",
+        "ServiceNamespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

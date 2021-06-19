@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::GitHub::RepositoryMilestone",
+    "description": "Provides a GitHub repository milestone resource.\n\nThis resource allows you to create and manage milestones for a Github Repository within an organization or user account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryMilestone/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the milestone."
+        },
+        "DueDate": {
+            "type": "string",
+            "description": "The milestone due date. In `yyyy-mm-dd` format."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Number": {
+            "type": "number"
+        },
+        "Owner": {
+            "type": "string",
+            "description": "The owner of the Github Repository."
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The name of the Github Repository."
+        },
+        "State": {
+            "type": "string",
+            "description": "The state of the milestone. Either `open` or `closed`. Default: `open`."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The title of the milestone."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Owner",
+        "Repository",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Number"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

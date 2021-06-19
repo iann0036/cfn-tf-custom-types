@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Alicloud::EssLifecycleHook",
+    "description": "Provides a ESS lifecycle hook resource. More about Ess lifecycle hook, see [LifecycleHook](https://www.alibabacloud.com/help/doc-detail/73839.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EssLifecycleHook/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultResult": {
+            "type": "string",
+            "description": "Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses. Applicable value: CONTINUE, ABANDON, default value: CONTINUE."
+        },
+        "HeartbeatTimeout": {
+            "type": "number",
+            "description": "Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook times out, Auto Scaling performs the action defined in the default_result parameter. Default value: 600."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleTransition": {
+            "type": "string",
+            "description": "Type of Scaling activity attached to lifecycle hook. Supported value: SCALE_OUT, SCALE_IN."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the lifecycle hook, which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain number, underscores `_`, hypens `-`, and decimal point `.`. If this parameter value is not specified, the default value is lifecycle hook id."
+        },
+        "NotificationArn": {
+            "type": "string",
+            "description": "The Arn of notification target."
+        },
+        "NotificationMetadata": {
+            "type": "string",
+            "description": "Additional information that you want to include when Auto Scaling sends a message to the notification target."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "The ID of the Auto Scaling group to which you want to assign the lifecycle hook."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LifecycleTransition",
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

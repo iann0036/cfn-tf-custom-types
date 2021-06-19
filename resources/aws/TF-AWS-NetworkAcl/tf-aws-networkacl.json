@@ -1,0 +1,211 @@
+{
+    "typeName": "TF::AWS::NetworkAcl",
+    "description": "Provides an network ACL resource. You might set up network ACLs with rules similar\nto your security groups in order to add an additional layer of security to your VPC.\n\n~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently\nprovides both a standalone [Network ACL Rule](network_acl_rule.html) resource and a Network ACL resource with rules\ndefined in-line. At this time you cannot use a Network ACL with in-line rules\nin conjunction with any Network ACL Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkAcl/docs/README.md",
+    "definitions": {
+        "EgressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "FromPort": {
+                    "type": "number"
+                },
+                "IcmpCode": {
+                    "type": "number"
+                },
+                "IcmpType": {
+                    "type": "number"
+                },
+                "Ipv6CidrBlock": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RuleNo": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            }
+        },
+        "IngressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "FromPort": {
+                    "type": "number"
+                },
+                "IcmpCode": {
+                    "type": "number"
+                },
+                "IcmpType": {
+                    "type": "number"
+                },
+                "Ipv6CidrBlock": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RuleNo": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Egress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EgressDefinition"
+            },
+            "description": "Specifies an egress rule. Parameters defined below.\nThis argument is processed in [attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ingress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IngressDefinition"
+            },
+            "description": "Specifies an ingress rule. Parameters defined below.\nThis argument is processed in [attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html)."
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Subnet IDs to apply the ACL to."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of the associated VPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/OwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

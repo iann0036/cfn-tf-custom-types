@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Okta::GroupRule",
+    "description": "Creates an Okta Group Rule.\n\nThis resource allows you to create and configure an Okta Group Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-GroupRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExpressionType": {
+            "type": "string",
+            "description": "The expression type to use to invoke the rule. The default\nis `\"urn:okta:expression:1.0\"`."
+        },
+        "ExpressionValue": {
+            "type": "string",
+            "description": "The expression value."
+        },
+        "GroupAssignments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of group ids to assign the users to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Group Rule."
+        },
+        "RemoveAssignedUsers": {
+            "type": "boolean",
+            "description": "This tells the provider to remove users added by this rule from the assigned\ngroup after destroying this resource. Default is `false`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the group rule."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExpressionValue",
+        "GroupAssignments",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

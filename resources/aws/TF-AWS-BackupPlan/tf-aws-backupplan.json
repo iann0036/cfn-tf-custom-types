@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::AWS::BackupPlan",
+    "description": "Provides an AWS Backup plan resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-BackupPlan/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdvancedBackupSettingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackupOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackupOptionsDefinition"
+                    }
+                },
+                "ResourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackupOptions",
+                "ResourceType"
+            ]
+        },
+        "BackupOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CompletionWindow": {
+                    "type": "number"
+                },
+                "EnableContinuousBackup": {
+                    "type": "boolean"
+                },
+                "RecoveryPointTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecoveryPointTagsDefinition"
+                    }
+                },
+                "RuleName": {
+                    "type": "string"
+                },
+                "Schedule": {
+                    "type": "string"
+                },
+                "StartWindow": {
+                    "type": "number"
+                },
+                "TargetVaultName": {
+                    "type": "string"
+                },
+                "CopyAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CopyActionDefinition"
+                    }
+                },
+                "Lifecycle": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RuleName",
+                "TargetVaultName"
+            ]
+        },
+        "RecoveryPointTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CopyActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationVaultArn": {
+                    "type": "string"
+                },
+                "Lifecycle": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DestinationVaultArn"
+            ]
+        },
+        "LifecycleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColdStorageAfter": {
+                    "type": "number"
+                },
+                "DeleteAfter": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The display name of a backup plan."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Metadata that you can assign to help organize the plans you create. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Version": {
+            "type": "string"
+        },
+        "AdvancedBackupSetting": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdvancedBackupSettingDefinition"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

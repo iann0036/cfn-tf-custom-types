@@ -1,0 +1,523 @@
+{
+    "typeName": "TF::AVI::Cloudproperties",
+    "description": "The CloudProperties resource allows the creation and management of Avi CloudProperties",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Cloudproperties/docs/README.md",
+    "definitions": {
+        "CcPropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RpcPollInterval": {
+                    "type": "number"
+                },
+                "RpcQueueSize": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HypPropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Htype": {
+                    "type": "string"
+                },
+                "MaxIpsPerNic": {
+                    "type": "number"
+                },
+                "MaxNics": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Htype"
+            ]
+        },
+        "InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlavorRegexFilter": {
+                    "type": "string"
+                },
+                "Htypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Vtype": {
+                    "type": "string"
+                },
+                "CcaProps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CcaPropsDefinition"
+                    }
+                },
+                "ControllerProps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ControllerPropsDefinition"
+                    }
+                },
+                "FlavorProps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlavorPropsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Vtype"
+            ]
+        },
+        "CcaPropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsyncRetries": {
+                    "type": "number"
+                },
+                "AsyncRetriesDelay": {
+                    "type": "number"
+                },
+                "PollDurationTarget": {
+                    "type": "number"
+                },
+                "PollFastTarget": {
+                    "type": "number"
+                },
+                "PollSlowTarget": {
+                    "type": "number"
+                },
+                "VnicRetries": {
+                    "type": "number"
+                },
+                "VnicRetriesDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ControllerPropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowAdminNetworkUpdates": {
+                    "type": "boolean"
+                },
+                "AllowIpForwarding": {
+                    "type": "boolean"
+                },
+                "AllowUnauthenticatedApis": {
+                    "type": "boolean"
+                },
+                "AllowUnauthenticatedNodes": {
+                    "type": "boolean"
+                },
+                "ApiIdleTimeout": {
+                    "type": "number"
+                },
+                "ApiPerfLoggingThreshold": {
+                    "type": "number"
+                },
+                "AppviewxCompatMode": {
+                    "type": "boolean"
+                },
+                "AsyncPatchMergePeriod": {
+                    "type": "number"
+                },
+                "AsyncPatchRequestCleanupDuration": {
+                    "type": "number"
+                },
+                "AttachIpRetryInterval": {
+                    "type": "number"
+                },
+                "AttachIpRetryLimit": {
+                    "type": "number"
+                },
+                "BmUseAnsible": {
+                    "type": "boolean"
+                },
+                "CheckVsvipFqdnSyntax": {
+                    "type": "boolean"
+                },
+                "CleanupExpiredAuthtokenTimeoutPeriod": {
+                    "type": "number"
+                },
+                "CleanupSessionsTimeoutPeriod": {
+                    "type": "number"
+                },
+                "CloudReconcile": {
+                    "type": "boolean"
+                },
+                "ClusterIpGratuitousArpPeriod": {
+                    "type": "number"
+                },
+                "ConsistencyCheckTimeoutPeriod": {
+                    "type": "number"
+                },
+                "ControllerResourceInfoCollectionPeriod": {
+                    "type": "number"
+                },
+                "CrashedSeReboot": {
+                    "type": "number"
+                },
+                "DeadSeDetectionTimer": {
+                    "type": "number"
+                },
+                "DefaultMinimumApiTimeout": {
+                    "type": "number"
+                },
+                "DelOfflineSeAfterRebootDelay": {
+                    "type": "number"
+                },
+                "DnsRefreshPeriod": {
+                    "type": "number"
+                },
+                "Dummy": {
+                    "type": "number"
+                },
+                "EditSystemLimits": {
+                    "type": "boolean"
+                },
+                "EnableApiSharding": {
+                    "type": "boolean"
+                },
+                "EnableMemoryBalancer": {
+                    "type": "boolean"
+                },
+                "EnableResmgrLogCachePrint": {
+                    "type": "boolean"
+                },
+                "FatalErrorLeaseTime": {
+                    "type": "number"
+                },
+                "FederatedDatastoreCleanupDuration": {
+                    "type": "number"
+                },
+                "FileObjectCleanupPeriod": {
+                    "type": "number"
+                },
+                "MaxDeadSeInGrp": {
+                    "type": "number"
+                },
+                "MaxPcapPerTenant": {
+                    "type": "number"
+                },
+                "MaxSeSpawnIntervalDelay": {
+                    "type": "number"
+                },
+                "MaxSeqAttachIpFailures": {
+                    "type": "number"
+                },
+                "MaxSeqVnicFailures": {
+                    "type": "number"
+                },
+                "MaxThreadsCcVipBgWorker": {
+                    "type": "number"
+                },
+                "PermissionScopedSharedAdminNetworks": {
+                    "type": "boolean"
+                },
+                "PersistenceKeyRotatePeriod": {
+                    "type": "number"
+                },
+                "PortalRequestBurstLimit": {
+                    "type": "number"
+                },
+                "PortalRequestRateLimit": {
+                    "type": "number"
+                },
+                "PortalToken": {
+                    "type": "string"
+                },
+                "ProcessLockedUseraccountsTimeoutPeriod": {
+                    "type": "number"
+                },
+                "ProcessPkiProfileTimeoutPeriod": {
+                    "type": "number"
+                },
+                "QueryHostFail": {
+                    "type": "number"
+                },
+                "ResmgrLogCachingPeriod": {
+                    "type": "number"
+                },
+                "SafenetHsmVersion": {
+                    "type": "string"
+                },
+                "SeCreateTimeout": {
+                    "type": "number"
+                },
+                "SeFailoverAttemptInterval": {
+                    "type": "number"
+                },
+                "SeFromMarketplace": {
+                    "type": "string"
+                },
+                "SeOfflineDel": {
+                    "type": "number"
+                },
+                "SeSpawnRetryInterval": {
+                    "type": "number"
+                },
+                "SeVnicCooldown": {
+                    "type": "number"
+                },
+                "SeVnicGcWaitTime": {
+                    "type": "number"
+                },
+                "SecureChannelCleanupTimeout": {
+                    "type": "number"
+                },
+                "SecureChannelControllerTokenTimeout": {
+                    "type": "number"
+                },
+                "SecureChannelSeTokenTimeout": {
+                    "type": "number"
+                },
+                "SeupgradeCopyPoolSize": {
+                    "type": "number"
+                },
+                "SeupgradeFabricPoolSize": {
+                    "type": "number"
+                },
+                "SeupgradeSegroupMinDeadTimeout": {
+                    "type": "number"
+                },
+                "SharedSslCertificates": {
+                    "type": "boolean"
+                },
+                "SslCertificateExpiryWarningDays": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "UnresponsiveSeReboot": {
+                    "type": "number"
+                },
+                "UpgradeDnsTtl": {
+                    "type": "number"
+                },
+                "UpgradeFatSeLeaseTime": {
+                    "type": "number"
+                },
+                "UpgradeLeaseTime": {
+                    "type": "number"
+                },
+                "UpgradeSePerVsScaleOpsTxnTime": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VnicOpFailTime": {
+                    "type": "number"
+                },
+                "VsApicScaleoutTimeout": {
+                    "type": "number"
+                },
+                "VsAwaitingSeTimeout": {
+                    "type": "number"
+                },
+                "VsKeyRotatePeriod": {
+                    "type": "number"
+                },
+                "VsScaleoutReadyCheckInterval": {
+                    "type": "number"
+                },
+                "VsSeAttachIpFail": {
+                    "type": "number"
+                },
+                "VsSeBootupFail": {
+                    "type": "number"
+                },
+                "VsSeCreateFail": {
+                    "type": "number"
+                },
+                "VsSePingFail": {
+                    "type": "number"
+                },
+                "VsSeVnicFail": {
+                    "type": "number"
+                },
+                "VsSeVnicIpFail": {
+                    "type": "number"
+                },
+                "WarmstartSeReconnectWaitTime": {
+                    "type": "number"
+                },
+                "WarmstartVsResyncWaitTime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FlavorPropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cost": {
+                    "type": "string"
+                },
+                "DiskGb": {
+                    "type": "number"
+                },
+                "EnhancedNw": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsRecommended": {
+                    "type": "boolean"
+                },
+                "MaxIp6sPerNic": {
+                    "type": "number"
+                },
+                "MaxIpsPerNic": {
+                    "type": "number"
+                },
+                "MaxNics": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Public": {
+                    "type": "boolean"
+                },
+                "RamMb": {
+                    "type": "number"
+                },
+                "Vcpus": {
+                    "type": "number"
+                },
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetaDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ]
+        },
+        "MetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CcVtypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Cloud types supported by cloudconnector. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "CcProps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CcPropsDefinition"
+            }
+        },
+        "HypProps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HypPropsDefinition"
+            }
+        },
+        "Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InfoDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ControllerPropsDefinition/PortalToken"
+    ]
+}

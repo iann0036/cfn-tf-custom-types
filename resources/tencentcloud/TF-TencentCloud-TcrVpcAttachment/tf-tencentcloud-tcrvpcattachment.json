@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::TencentCloud::TcrVpcAttachment",
+    "description": "Use this resource to create tcr vpc attachment to manage access of internal endpoint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-TcrVpcAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessIp": {
+            "type": "string"
+        },
+        "EnablePublicDomainDns": {
+            "type": "boolean",
+            "description": "Whether to enable public domain dns. Default value is `false`."
+        },
+        "EnableVpcDomainDns": {
+            "type": "boolean",
+            "description": "Whether to enable vpc domain dns. Default value is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "ID of the TCR instance."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of subnet."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessIp",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

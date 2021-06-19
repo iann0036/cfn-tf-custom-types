@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::AWS::WorklinkFleet",
+    "description": "CloudFormation equivalent of aws_worklink_fleet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-WorklinkFleet/docs/README.md",
+    "definitions": {
+        "IdentityProviderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SamlMetadata": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SamlMetadata",
+                "Type"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "SubnetIds",
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AuditStreamArn": {
+            "type": "string",
+            "description": "The ARN of the Amazon Kinesis data stream that receives the audit events. Kinesis data stream name must begin with `\"AmazonWorkLink-\"`."
+        },
+        "CompanyCode": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "DeviceCaCertificate": {
+            "type": "string",
+            "description": "The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The name of the fleet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A region-unique name for the AMI."
+        },
+        "OptimizeForEndUserLocation": {
+            "type": "boolean",
+            "description": "The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. Defaults to `true`."
+        },
+        "IdentityProvider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityProviderDefinition"
+            },
+            "maxItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CompanyCode",
+        "/properties/CreatedTime",
+        "/properties/Id",
+        "/properties/LastUpdatedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

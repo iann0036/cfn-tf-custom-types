@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::AWS::AppsyncResolver",
+    "description": "Provides an AppSync Resolver.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppsyncResolver/docs/README.md",
+    "definitions": {
+        "CachingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CachingKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PipelineConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Functions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API ID for the GraphQL API."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DataSource": {
+            "type": "string",
+            "description": "The DataSource name."
+        },
+        "Field": {
+            "type": "string",
+            "description": "The field name from the schema defined in the GraphQL API."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string",
+            "description": "The resolver type. Valid values are `UNIT` and `PIPELINE`."
+        },
+        "RequestTemplate": {
+            "type": "string",
+            "description": "The request mapping template for UNIT resolver or 'before mapping template' for PIPELINE resolver. Required for non-Lambda resolvers."
+        },
+        "ResponseTemplate": {
+            "type": "string",
+            "description": "The response mapping template for UNIT resolver or 'after mapping template' for PIPELINE resolver. Required for non-Lambda resolvers."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type name from the schema defined in the GraphQL API."
+        },
+        "CachingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CachingConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "PipelineConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PipelineConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "Field",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

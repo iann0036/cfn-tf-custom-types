@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Equinix::NetworkAclTemplate",
+    "description": "Resource `equinix_network_acl_template` allows creation and management of\nEquinix Network Edge device Access Control List templates.\n\nDevice ACL templates give possibility to define set of rules will allowed inbound\ntraffic. Templates can be assigned to the network devices.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-NetworkAclTemplate/docs/README.md",
+    "definitions": {
+        "InboundRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DstPort": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DstPort",
+                "Protocol",
+                "SrcPort",
+                "Subnets"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "ACL template description."
+        },
+        "DeviceAclStatus": {
+            "type": "string"
+        },
+        "DeviceId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetroCode": {
+            "type": "string",
+            "description": "ACL template location metro code."
+        },
+        "Name": {
+            "type": "string",
+            "description": "ACL template name."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "InboundRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundRuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MetroCode",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeviceAclStatus",
+        "/properties/DeviceId",
+        "/properties/Id",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

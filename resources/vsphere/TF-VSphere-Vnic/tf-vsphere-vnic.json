@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::VSphere::Vnic",
+    "description": "Provides a VMware vSphere vnic resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-Vnic/docs/README.md",
+    "definitions": {
+        "Ipv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dhcp": {
+                    "type": "boolean"
+                },
+                "Gw": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Autoconfig": {
+                    "type": "boolean"
+                },
+                "Dhcp": {
+                    "type": "boolean"
+                },
+                "Gw": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DistributedPortGroup": {
+            "type": "string",
+            "description": "Key of the distributed portgroup the nic will connect to."
+        },
+        "DistributedSwitchPort": {
+            "type": "string",
+            "description": "UUID of the DVSwitch the nic will be attached to. Do not set if you set portgroup."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mac": {
+            "type": "string",
+            "description": "MAC address of the interface."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "MTU of the interface."
+        },
+        "Netstack": {
+            "type": "string",
+            "description": "TCP/IP stack setting for this interface. Possible values are 'defaultTcpipStack', 'vmotion', 'vSphereProvisioning'. Changing this will force the creation of a new interface since it's not possible to change the stack once it gets created. (Default: `defaultTcpipStack`)."
+        },
+        "Portgroup": {
+            "type": "string",
+            "description": "Portgroup to attach the nic to. Do not set if you set distributed_switch_port."
+        },
+        "Ipv4": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv4Definition"
+            },
+            "maxItems": 1
+        },
+        "Ipv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6Definition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Host"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

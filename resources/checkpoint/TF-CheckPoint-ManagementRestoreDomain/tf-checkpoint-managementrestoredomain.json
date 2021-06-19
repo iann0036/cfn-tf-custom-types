@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::CheckPoint::ManagementRestoreDomain",
+    "description": "This command resource allows you to execute Check Point Restore Domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementRestoreDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainIpAddress": {
+            "type": "string",
+            "description": "IPv4 address.<br><font color=\"red\">Required only for</font> importing Security Management Server into Multi-Domain Server."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Domain name. Should be unique in the MDS.<br><font color=\"red\">Required only for</font> importing Security Management Server into Multi-Domain Server."
+        },
+        "DomainServerName": {
+            "type": "string",
+            "description": "Multi Domain server name.<br><font color=\"red\">Required only for</font> importing Security Management Server into Multi-Domain Server."
+        },
+        "FilePath": {
+            "type": "string",
+            "description": "Path to the backup file to be restored. <br>Should be the full file path (example, \"/var/log/domain1_backup.tgz\")."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TaskId": {
+            "type": "string",
+            "description": "Asynchronous task unique identifier."
+        },
+        "VerifyOnly": {
+            "type": "boolean",
+            "description": "If true, verify that the import operation is valid for this input file and this environment <br>Note: Restore operation will not be executed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainIpAddress",
+        "DomainName",
+        "DomainServerName",
+        "FilePath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TaskId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

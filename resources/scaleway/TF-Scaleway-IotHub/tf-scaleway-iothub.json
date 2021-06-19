@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::Scaleway::IotHub",
+    "description": "-> **Note:** This terraform resource is currently in beta and might include breaking change in future releases.\n\nCreates and manages Scaleway IoT Hub Instances. For more information, see [the documentation](https://developers.scaleway.com/en/products/iot/api).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-IotHub/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectedDeviceCount": {
+            "type": "number"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DeviceAutoProvisioning": {
+            "type": "boolean"
+        },
+        "DeviceCount": {
+            "type": "number"
+        },
+        "DisableEvents": {
+            "type": "boolean"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "EventsTopicPrefix": {
+            "type": "string"
+        },
+        "HubCa": {
+            "type": "string"
+        },
+        "HubCaChallenge": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "ProductPlan": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProductPlan"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectedDeviceCount",
+        "/properties/CreatedAt",
+        "/properties/DeviceCount",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/OrganizationId",
+        "/properties/Status",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

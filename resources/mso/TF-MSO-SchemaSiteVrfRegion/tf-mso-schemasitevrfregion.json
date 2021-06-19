@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::MSO::SchemaSiteVrfRegion",
+    "description": "CloudFormation equivalent of mso_schema_site_vrf_region",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaSiteVrfRegion/docs/README.md",
+    "definitions": {
+        "HubNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CidrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrIp": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "CidrIp",
+                "Primary"
+            ]
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Usage": {
+                    "type": "string"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ip",
+                "Zone"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HubNetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HubNetworkDefinition"
+            }
+        },
+        "HubNetworkEnable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RegionName": {
+            "type": "string"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "SiteId": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "VpnGateway": {
+            "type": "boolean"
+        },
+        "VrfName": {
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CidrDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RegionName",
+        "SchemaId",
+        "SiteId",
+        "TemplateName",
+        "VrfName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,209 @@
+{
+    "typeName": "TF::Fastly::ServiceWafConfiguration",
+    "description": "Defines a set of Web Application Firewall configuration options that can be used to populate a service WAF. This resource will configure rules, thresholds and other settings for a WAF.\n\n\n~> **Warning:** Terraform will take precedence over any changes you make in the UI or API. Such changes are likely to be reversed if you run Terraform again.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-ServiceWafConfiguration/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ModsecRuleId": {
+                    "type": "number"
+                },
+                "Revision": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ModsecRuleId",
+                "Status"
+            ]
+        },
+        "RuleExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "ExclusionType": {
+                    "type": "string"
+                },
+                "ModsecRuleIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Condition",
+                "ExclusionType",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedHttpVersions": {
+            "type": "string"
+        },
+        "AllowedMethods": {
+            "type": "string"
+        },
+        "AllowedRequestContentType": {
+            "type": "string"
+        },
+        "AllowedRequestContentTypeCharset": {
+            "type": "string"
+        },
+        "ArgLength": {
+            "type": "number"
+        },
+        "ArgNameLength": {
+            "type": "number"
+        },
+        "CombinedFileSizes": {
+            "type": "number"
+        },
+        "CriticalAnomalyScore": {
+            "type": "number"
+        },
+        "CrsValidateUtf8Encoding": {
+            "type": "boolean"
+        },
+        "ErrorAnomalyScore": {
+            "type": "number"
+        },
+        "HighRiskCountryCodes": {
+            "type": "string"
+        },
+        "HttpViolationScoreThreshold": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundAnomalyScoreThreshold": {
+            "type": "number"
+        },
+        "LfiScoreThreshold": {
+            "type": "number"
+        },
+        "MaxFileSize": {
+            "type": "number"
+        },
+        "MaxNumArgs": {
+            "type": "number"
+        },
+        "NoticeAnomalyScore": {
+            "type": "number"
+        },
+        "ParanoiaLevel": {
+            "type": "number"
+        },
+        "PhpInjectionScoreThreshold": {
+            "type": "number"
+        },
+        "RceScoreThreshold": {
+            "type": "number"
+        },
+        "RestrictedExtensions": {
+            "type": "string"
+        },
+        "RestrictedHeaders": {
+            "type": "string"
+        },
+        "RfiScoreThreshold": {
+            "type": "number"
+        },
+        "SessionFixationScoreThreshold": {
+            "type": "number"
+        },
+        "SqlInjectionScoreThreshold": {
+            "type": "number"
+        },
+        "TotalArgLength": {
+            "type": "number"
+        },
+        "WafId": {
+            "type": "string"
+        },
+        "WarningAnomalyScore": {
+            "type": "number"
+        },
+        "XssScoreThreshold": {
+            "type": "number"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        },
+        "RuleExclusion": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleExclusionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "WafId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

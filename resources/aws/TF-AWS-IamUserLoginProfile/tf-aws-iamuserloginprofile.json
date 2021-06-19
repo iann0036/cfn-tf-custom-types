@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::AWS::IamUserLoginProfile",
+    "description": "Manages an IAM User Login Profile with limited support for password creation during Terraform resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.\n\n-> To reset an IAM User login password via Terraform, you can use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) or change any of the arguments.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-IamUserLoginProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EncryptedPassword": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyFingerprint": {
+            "type": "string"
+        },
+        "PasswordLength": {
+            "type": "number",
+            "description": "The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
+        },
+        "PasswordResetRequired": {
+            "type": "boolean",
+            "description": "Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
+        },
+        "PgpKey": {
+            "type": "string",
+            "description": "Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument."
+        },
+        "User": {
+            "type": "string",
+            "description": "The IAM user's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PgpKey",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EncryptedPassword",
+        "/properties/Id",
+        "/properties/KeyFingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::Okta::AuthServer",
+    "description": "Creates an Authorization Server.\n\nThis resource allows you to create and configure an Authorization Server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Audiences": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The recipients that the tokens are intended for. This becomes the `aud` claim in an access token."
+        },
+        "CredentialsLastRotated": {
+            "type": "string"
+        },
+        "CredentialsNextRotation": {
+            "type": "string"
+        },
+        "CredentialsRotationMode": {
+            "type": "string",
+            "description": "The key rotation mode for the authorization server. Can be `\"AUTO\"` or `\"MANUAL\"`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the authorization server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "IssuerMode": {
+            "type": "string",
+            "description": "Allows you to use a custom issuer URL. It can be set to `\"CUSTOM_URL\"` or `\"ORG_URL\"`."
+        },
+        "Kid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the authorization server."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the auth server. It defaults to `\"ACTIVE\"`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Audiences",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CredentialsLastRotated",
+        "/properties/CredentialsNextRotation",
+        "/properties/Id",
+        "/properties/Issuer",
+        "/properties/Kid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

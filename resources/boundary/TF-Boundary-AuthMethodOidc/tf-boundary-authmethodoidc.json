@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Boundary::AuthMethodOidc",
+    "description": "CloudFormation equivalent of boundary_auth_method_oidc",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/boundary/TF-Boundary-AuthMethodOidc/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedAudiences": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ApiUrlPrefix": {
+            "type": "string"
+        },
+        "CallbackUrl": {
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "ClientSecretHmac": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisableDiscoveredConfigValidation": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpCaCerts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsPrimaryForScope": {
+            "type": "boolean"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "MaxAge": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ScopeId": {
+            "type": "string"
+        },
+        "SigningAlgorithms": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScopeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

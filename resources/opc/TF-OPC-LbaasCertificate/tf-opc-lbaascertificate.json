@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::OPC::LbaasCertificate",
+    "description": "The `opc_lbaas_certificate` resource creates and manages an Load Balancer Classic TLS/SSL Digital Certificate.\n\nServer certificates are used to secure the connection between clients and the load balancers. Trusted certificates are used to secure the connection between the load balancer and the origin servers in the server pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-LbaasCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateBody": {
+            "type": "string",
+            "description": "The Certificate data in PEM format."
+        },
+        "CertificateChain": {
+            "type": "string",
+            "description": "PEM encoded bodies of all certificates in the chain up to and including the CA certificate. This is not need when the certificate is self signed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Certificate."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "The private key data in PEM format. Only required for Server Certificates."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Sets the Certificate Type. `TRUSTED` or `SERVER`."
+        },
+        "Uri": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateBody",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKey"
+    ]
+}

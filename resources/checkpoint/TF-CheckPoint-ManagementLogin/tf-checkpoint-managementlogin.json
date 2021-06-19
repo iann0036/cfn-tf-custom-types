@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::CheckPoint::ManagementLogin",
+    "description": "This command resource allows you to log in to the server with username and password.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementLogin/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContinueLastSession": {
+            "type": "boolean",
+            "description": "When 'continue-last-session' is set to 'True', the new session would continue where the last session was stopped. This option is available when the administrator has only one session that can be continued. If there is more than one session, see 'switch-session' API."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Use domain to login to specific domain. Domain can be identified by name or UID."
+        },
+        "EnterLastPublishedSession": {
+            "type": "boolean",
+            "description": "Login to the last published session. Such login is done with the Read Only permissions."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Administrator password."
+        },
+        "ReadOnly": {
+            "type": "boolean",
+            "description": "Login with Read Only permissions. This parameter is not considered in case continue-last-session is true."
+        },
+        "SessionComments": {
+            "type": "string",
+            "description": "Session comments."
+        },
+        "SessionDescription": {
+            "type": "string",
+            "description": "Session description."
+        },
+        "SessionName": {
+            "type": "string",
+            "description": "Session unique name."
+        },
+        "SessionTimeout": {
+            "type": "number",
+            "description": "Session expiration timeout in seconds. Default 600 seconds."
+        },
+        "User": {
+            "type": "string",
+            "description": "Session unique identifier. Specify it to publish a different session than the one you currently use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Password",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

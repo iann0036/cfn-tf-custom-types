@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::Cloudflare::SpectrumApplication",
+    "description": "Provides a Cloudflare Spectrum Application. You can extend the power of Cloudflare's DDoS, TLS, and IP Firewall to your other TCP-based services.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-SpectrumApplication/docs/README.md",
+    "definitions": {
+        "DnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "OriginDnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "OriginPortRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArgoSmartRouting": {
+            "type": "boolean",
+            "description": ". Enables Argo Smart Routing. Defaults to `false`."
+        },
+        "EdgeIpConnectivity": {
+            "type": "string",
+            "description": ". Choose which types of IP addresses will be provisioned for this subdomain. Valid values are: `all`, `ipv4`, `ipv6`. Defaults to `all`."
+        },
+        "EdgeIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": ". A list of edge IPs (IPv4 and/or IPv6) to configure Spectrum application to. Requires [Bring Your Own IP](https://developers.cloudflare.com/spectrum/getting-started/byoip/) provisioned."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpFirewall": {
+            "type": "boolean",
+            "description": "Enables the IP Firewall for this application. Defaults to `true`."
+        },
+        "OriginDirect": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of destination addresses to the origin. e.g. `tcp://192.0.2.1:22`."
+        },
+        "OriginPort": {
+            "type": "number",
+            "description": "If using `origin_dns` and not `origin_port_range`, this is a required attribute. Origin port to proxy traffice to e.g. `22`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The port configuration at Cloudflare\u2019s edge. e.g. `tcp/22`."
+        },
+        "ProxyProtocol": {
+            "type": "string",
+            "description": "Enables a proxy protocol to the origin. Valid values are: `off`, `v1`, `v2`, and `simple`. Defaults to `off`."
+        },
+        "Tls": {
+            "type": "string",
+            "description": "TLS configuration option for Cloudflare to connect to your origin. Valid values are: `off`, `flexible`, `full` and `strict`. Defaults to `off`."
+        },
+        "TrafficType": {
+            "type": "string",
+            "description": "Sets application type. Valid values are: `direct`, `http`, `https`.  Defaults to `direct`."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID to add the application to."
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "OriginDns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OriginDnsDefinition"
+            },
+            "maxItems": 1
+        },
+        "OriginPortRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OriginPortRangeDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Protocol",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

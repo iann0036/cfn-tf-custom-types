@@ -1,0 +1,305 @@
+{
+    "typeName": "TF::Panos::UrlFilteringSecurityProfile",
+    "description": "Manages URL filtering security profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-UrlFilteringSecurityProfile/docs/README.md",
+    "definitions": {
+        "HttpHeaderInsertionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Header domains."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Header type."
+                },
+                "HttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MachineLearningModelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Model action."
+                },
+                "Model": {
+                    "type": "string",
+                    "description": "Machine learning model."
+                }
+            },
+            "required": [
+                "Action",
+                "Model"
+            ]
+        },
+        "HttpHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string"
+                },
+                "Log": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Header",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of categories to alert."
+        },
+        "AllowCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of categories to allow."
+        },
+        "AllowList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Allow list."
+        },
+        "BlockCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of categories to block."
+        },
+        "BlockList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Block list."
+        },
+        "BlockListAction": {
+            "type": "string",
+            "description": "Block list action."
+        },
+        "ContinueCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of categories to continue."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "DynamicUrl": {
+            "type": "boolean",
+            "description": "Dynamic URL."
+        },
+        "ExpiredLicenseAction": {
+            "type": "boolean",
+            "description": "Expired license action."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogContainerPageOnly": {
+            "type": "boolean",
+            "description": "Log container page only."
+        },
+        "LogHttpHeaderReferer": {
+            "type": "boolean",
+            "description": "HTTP header logging: Referer."
+        },
+        "LogHttpHeaderUserAgent": {
+            "type": "boolean",
+            "description": "HTTP header logging: User-Agent."
+        },
+        "LogHttpHeaderXff": {
+            "type": "boolean",
+            "description": "HTTP header logging: X-Forwarded-For."
+        },
+        "MachineLearningExceptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of machine learning exceptions."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "OverrideCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of categories to override."
+        },
+        "SafeSearchEnforcement": {
+            "type": "boolean",
+            "description": "Safe search enforcement."
+        },
+        "TrackContainerPage": {
+            "type": "boolean",
+            "description": "Track the container page."
+        },
+        "UcdAlertCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Categories alerted on with\nuser credential submission."
+        },
+        "UcdAllowCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Categories allowed with user\ncredential submission."
+        },
+        "UcdBlockCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Categories blocked with\nuser credential submission."
+        },
+        "UcdContinueCategories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Categories continued with\nuser credential submission."
+        },
+        "UcdLogSeverity": {
+            "type": "string",
+            "description": "User credential\ndetection: valid username detected log severity."
+        },
+        "UcdMode": {
+            "type": "string",
+            "description": "User credential detection mode.  Valid values are\n`disabled` (default), `ip-user`, `domain-credentials`, or `group-mapping`."
+        },
+        "UcdModeGroupMapping": {
+            "type": "string",
+            "description": "User\ncredential detection: the group mapping settings."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys location (default: `vsys1`)."
+        },
+        "HttpHeaderInsertion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpHeaderInsertionDefinition"
+            }
+        },
+        "MachineLearningModel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MachineLearningModelDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

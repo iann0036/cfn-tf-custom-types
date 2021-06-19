@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::TencentCloud::AsLifecycleHook",
+    "description": "Provides a resource for an AS (Auto scaling) lifecycle hook.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AsLifecycleHook/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultResult": {
+            "type": "string",
+            "description": "Defines the action the AS group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. Valid values: `CONTINUE` and `ABANDON`. The default value is `CONTINUE`."
+        },
+        "HeartbeatTimeout": {
+            "type": "number",
+            "description": "Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. Valid value ranges: (30~7200). and default value is `300`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleHookName": {
+            "type": "string",
+            "description": "The name of the lifecycle hook."
+        },
+        "LifecycleTransition": {
+            "type": "string",
+            "description": "The instance state to which you want to attach the lifecycle hook. Valid values: `INSTANCE_LAUNCHING` and `INSTANCE_TERMINATING`."
+        },
+        "NotificationMetadata": {
+            "type": "string",
+            "description": "Contains additional information that you want to include any time AS sends a message to the notification target."
+        },
+        "NotificationQueueName": {
+            "type": "string",
+            "description": "For CMQ_QUEUE type, a name of queue must be set."
+        },
+        "NotificationTargetType": {
+            "type": "string",
+            "description": "Target type. Valid values: `CMQ_QUEUE`, `CMQ_TOPIC`."
+        },
+        "NotificationTopicName": {
+            "type": "string",
+            "description": "For CMQ_TOPIC type, a name of topic must be set."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "ID of a scaling group."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LifecycleHookName",
+        "LifecycleTransition",
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

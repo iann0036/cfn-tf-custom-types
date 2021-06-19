@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Scaleway::InstancePrivateNic",
+    "description": "Creates and manages Scaleway Instance Private NICs. For more information, see\n[the documentation](https://developers.scaleway.com/en/products/instance/api/#private-nics-a42eea).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-InstancePrivateNic/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "PrivateNetworkId": {
+            "type": "string"
+        },
+        "ServerId": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PrivateNetworkId",
+        "ServerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MacAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

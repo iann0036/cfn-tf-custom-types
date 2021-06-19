@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::TencentCloud::GaapLayer7Listener",
+    "description": "Provides a resource to create a layer7 listener of GAAP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapLayer7Listener/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "number",
+            "description": "Authentication type of the layer7 listener. `0` is one-way authentication and `1` is mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
+        },
+        "CertificateId": {
+            "type": "string",
+            "description": "Certificate ID of the layer7 listener. NOTES: Only supports listeners of `HTTPS` protocol."
+        },
+        "ClientCertificateId": {
+            "type": "string",
+            "description": "It has been deprecated from version 1.26.0. Set `client_certificate_ids` instead. ID of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
+        },
+        "ClientCertificateIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ForwardProtocol": {
+            "type": "string",
+            "description": "Protocol type of the forwarding. Valid value: `HTTP` and `HTTPS`. NOTES: Only supports listeners of `HTTPS` protocol."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the layer7 listener, the maximum length is 30."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port of the layer7 listener."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol of the layer7 listener. Valid value: `HTTP` and `HTTPS`."
+        },
+        "ProxyId": {
+            "type": "string",
+            "description": "ID of the GAAP proxy."
+        },
+        "Status": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Port",
+        "Protocol",
+        "ProxyId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::Databricks::Permissions",
+    "description": "CloudFormation equivalent of databricks_permissions",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-Permissions/docs/README.md",
+    "definitions": {
+        "AccessControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupName": {
+                    "type": "string"
+                },
+                "PermissionLevel": {
+                    "type": "string"
+                },
+                "ServicePrincipalName": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PermissionLevel"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ClusterPolicyId": {
+            "type": "string"
+        },
+        "DirectoryId": {
+            "type": "string"
+        },
+        "DirectoryPath": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstancePoolId": {
+            "type": "string"
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "NotebookId": {
+            "type": "string"
+        },
+        "NotebookPath": {
+            "type": "string"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "SqlAlertId": {
+            "type": "string"
+        },
+        "SqlDashboardId": {
+            "type": "string"
+        },
+        "SqlEndpointId": {
+            "type": "string"
+        },
+        "SqlQueryId": {
+            "type": "string"
+        },
+        "AccessControl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AccessControlDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "typeName": "TF::TencentCloud::ClbInstance",
+    "description": "Provides a resource to create a CLB instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressIpVersion": {
+            "type": "string",
+            "description": "IP version, only applicable to open CLB. Valid values are `ipv4`, `ipv6` and `IPv6FullChain`."
+        },
+        "ClbName": {
+            "type": "string",
+            "description": "Name of the CLB. The name can only contain Chinese characters, English letters, numbers, underscore and hyphen '-'."
+        },
+        "ClbVips": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetBandwidthMaxOut": {
+            "type": "number",
+            "description": "Max bandwidth out, only applicable to open CLB. Valid value ranges is [1, 2048]. Unit is MB."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Internet charge type, only applicable to open CLB. Valid values are `TRAFFIC_POSTPAID_BY_HOUR`, `BANDWIDTH_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`."
+        },
+        "LoadBalancerPassToTarget": {
+            "type": "boolean",
+            "description": "Whether the target allow flow come from clb. If value is true, only check security group of clb, or check both clb and backend instance security group."
+        },
+        "MasterZoneId": {
+            "type": "string",
+            "description": "Setting master zone id of cross available zone disaster recovery, only applicable to open CLB."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Type of CLB instance. Valid values: `OPEN` and `INTERNAL`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "ID of the project within the CLB instance, `0` - Default Project."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Security groups of the CLB instance. Supports both `OPEN` and `INTERNAL` CLBs."
+        },
+        "SlaveZoneId": {
+            "type": "string",
+            "description": "Setting slave zone id of cross available zone disaster recovery, only applicable to open CLB. this zone will undertake traffic when the master is down."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Subnet ID of the CLB. Effective only for CLB within the VPC. Only supports `INTERNAL` CLBs. Default is `ipv4`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The available tags within this CLB."
+        },
+        "TargetRegionInfoRegion": {
+            "type": "string",
+            "description": "Region information of backend services are attached the CLB instance. Only supports `OPEN` CLBs."
+        },
+        "TargetRegionInfoVpcId": {
+            "type": "string",
+            "description": "Vpc information of backend services are attached the CLB instance. Only supports `OPEN` CLBs."
+        },
+        "VipIsp": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID of the CLB."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "Available zone id, only applicable to open CLB."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbName",
+        "NetworkType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClbVips",
+        "/properties/Id",
+        "/properties/VipIsp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

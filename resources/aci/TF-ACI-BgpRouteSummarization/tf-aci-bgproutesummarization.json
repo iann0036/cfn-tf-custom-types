@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::ACI::BgpRouteSummarization",
+    "description": "Manages ACI BGP Route Summarization",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BgpRouteSummarization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object BGP route summarization.\n- `attrmap` - (Optional) Summary attribute map.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"as-set\", \"\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object BGP route summarization."
+        },
+        "Attrmap": {
+            "type": "string",
+            "description": "Summary attribute map.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"as-set\", \"\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object BGP route summarization."
+        },
+        "Ctrl": {
+            "type": "string",
+            "description": "The control state.\nAllowed values: \"as-set\", \"\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object BGP route summarization."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of Object BGP route summarization.\n- `annotation` - (Optional) Annotation for object BGP route summarization.\n- `attrmap` - (Optional) Summary attribute map.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"as-set\", \"\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object BGP route summarization."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object BGP route summarization."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent tenant object.\n- `name` - (Required) Name of Object BGP route summarization.\n- `annotation` - (Optional) Annotation for object BGP route summarization.\n- `attrmap` - (Optional) Summary attribute map.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"as-set\", \"\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object BGP route summarization."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

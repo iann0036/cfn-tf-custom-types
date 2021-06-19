@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeRouterPeer",
+    "description": "CloudFormation equivalent of google_compute_router_peer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeRouterPeer/docs/README.md",
+    "definitions": {
+        "AdvertisedIpRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Range"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertiseMode": {
+            "type": "string"
+        },
+        "AdvertisedGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AdvertisedRoutePriority": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "ManagementType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PeerAsn": {
+            "type": "number"
+        },
+        "PeerIpAddress": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Router": {
+            "type": "string"
+        },
+        "AdvertisedIpRanges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvertisedIpRangesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Name",
+        "PeerAsn",
+        "PeerIpAddress",
+        "Router"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IpAddress",
+        "/properties/ManagementType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

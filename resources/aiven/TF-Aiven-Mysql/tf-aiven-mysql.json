@@ -1,0 +1,441 @@
+{
+    "typeName": "TF::Aiven::Mysql",
+    "description": "CloudFormation equivalent of aiven_mysql",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-Mysql/docs/README.md",
+    "definitions": {
+        "ComponentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Component": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "KafkaAuthenticationMethod": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Route": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "boolean"
+                },
+                "Usage": {
+                    "type": "string"
+                }
+            }
+        },
+        "MysqlUserConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AdminUsername": {
+                    "type": "string"
+                },
+                "BackupHour": {
+                    "type": "string"
+                },
+                "BackupMinute": {
+                    "type": "string"
+                },
+                "BinlogRetentionPeriod": {
+                    "type": "string"
+                },
+                "IpFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MysqlVersion": {
+                    "type": "string"
+                },
+                "ProjectToForkFrom": {
+                    "type": "string"
+                },
+                "RecoveryTargetTime": {
+                    "type": "string"
+                },
+                "ServiceToForkFrom": {
+                    "type": "string"
+                },
+                "Migration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MigrationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Mysql": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MysqlDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivateAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivateAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PrivatelinkAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrivatelinkAccessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PublicAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicAccessDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ServiceIntegrationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IntegrationType": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IntegrationType",
+                "SourceServiceName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MigrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbname": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "IgnoreDbs": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MysqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectTimeout": {
+                    "type": "string"
+                },
+                "DefaultTimeZone": {
+                    "type": "string"
+                },
+                "GroupConcatMaxLen": {
+                    "type": "string"
+                },
+                "InformationSchemaStatsExpiry": {
+                    "type": "string"
+                },
+                "InnodbFtMinTokenSize": {
+                    "type": "string"
+                },
+                "InnodbFtServerStopwordTable": {
+                    "type": "string"
+                },
+                "InnodbLockWaitTimeout": {
+                    "type": "string"
+                },
+                "InnodbLogBufferSize": {
+                    "type": "string"
+                },
+                "InnodbOnlineAlterLogMaxSize": {
+                    "type": "string"
+                },
+                "InnodbPrintAllDeadlocks": {
+                    "type": "string"
+                },
+                "InnodbRollbackOnTimeout": {
+                    "type": "string"
+                },
+                "InteractiveTimeout": {
+                    "type": "string"
+                },
+                "LongQueryTime": {
+                    "type": "string"
+                },
+                "MaxAllowedPacket": {
+                    "type": "string"
+                },
+                "MaxHeapTableSize": {
+                    "type": "string"
+                },
+                "NetReadTimeout": {
+                    "type": "string"
+                },
+                "NetWriteTimeout": {
+                    "type": "string"
+                },
+                "SlowQueryLog": {
+                    "type": "string"
+                },
+                "SortBufferSize": {
+                    "type": "string"
+                },
+                "SqlMode": {
+                    "type": "string"
+                },
+                "SqlRequirePrimaryKey": {
+                    "type": "string"
+                },
+                "TmpTableSize": {
+                    "type": "string"
+                },
+                "WaitTimeout": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mysql": {
+                    "type": "string"
+                },
+                "Mysqlx": {
+                    "type": "string"
+                },
+                "Prometheus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivatelinkAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mysql": {
+                    "type": "string"
+                },
+                "Mysqlx": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mysql": {
+                    "type": "string"
+                },
+                "Mysqlx": {
+                    "type": "string"
+                },
+                "Prometheus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudName": {
+            "type": "string"
+        },
+        "Components": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceWindowDow": {
+            "type": "string"
+        },
+        "MaintenanceWindowTime": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ProjectVpcId": {
+            "type": "string"
+        },
+        "ServiceHost": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "ServicePassword": {
+            "type": "string"
+        },
+        "ServicePort": {
+            "type": "number"
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "ServiceUri": {
+            "type": "string"
+        },
+        "ServiceUsername": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TerminationProtection": {
+            "type": "boolean"
+        },
+        "Mysql": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MysqlDefinition"
+            },
+            "maxItems": 1
+        },
+        "MysqlUserConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MysqlUserConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceIntegrations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceIntegrationsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Components",
+        "/properties/Id",
+        "/properties/ServiceHost",
+        "/properties/ServicePassword",
+        "/properties/ServicePort",
+        "/properties/ServiceType",
+        "/properties/ServiceUri",
+        "/properties/ServiceUsername",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ServicePassword",
+        "/properties/ServiceUri",
+        "/definitions/MysqlUserConfigDefinition/AdminPassword",
+        "/definitions/MigrationDefinition/Password"
+    ]
+}

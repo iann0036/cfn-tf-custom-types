@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Alicloud::SslVpnClientCert",
+    "description": "Provides a SSL VPN client cert resource.\n\n-> **NOTE:** Terraform will auto build SSL VPN client certs while it uses `alicloud_ssl_vpn_client_cert` to build a ssl vpn client certs resource.\nIt depends on VPN instance and SSL VPN Server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SslVpnClientCert/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CaCert": {
+            "type": "string"
+        },
+        "ClientCert": {
+            "type": "string"
+        },
+        "ClientConfig": {
+            "type": "string"
+        },
+        "ClientKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the client certificate.\n- `ssl_vpn_server_id` - (Required, ForceNew) The ID of the SSL-VPN server."
+        },
+        "SslVpnServerId": {
+            "type": "string",
+            "description": "The ID of the SSL-VPN server."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SslVpnServerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CaCert",
+        "/properties/ClientCert",
+        "/properties/ClientConfig",
+        "/properties/ClientKey",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CaCert",
+        "/properties/ClientCert",
+        "/properties/ClientConfig",
+        "/properties/ClientKey"
+    ]
+}

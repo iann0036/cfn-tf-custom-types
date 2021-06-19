@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AVI::Vcenterserver",
+    "description": "The VCenterServer resource allows the creation and management of Avi VCenterServer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Vcenterserver/docs/README.md",
+    "definitions": {
+        "ContentLibDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "Vcenter belongs to cloud. It is a reference to an object of type cloud. Field introduced in 20.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Availabilty zone where vcenter list belongs to. Field introduced in 20.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Vcenter belongs to tenant. It is a reference to an object of type tenant. Field introduced in 20.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VcenterCredentialsRef": {
+            "type": "string",
+            "description": "Credentials to access vcenter. It is a reference to an object of type cloudconnectoruser. Field introduced in 20.1.1."
+        },
+        "VcenterUrl": {
+            "type": "string",
+            "description": "Vcenter hostname or ip address. Field introduced in 20.1.1."
+        },
+        "ContentLib": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContentLibDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VcenterCredentialsRef",
+        "VcenterUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

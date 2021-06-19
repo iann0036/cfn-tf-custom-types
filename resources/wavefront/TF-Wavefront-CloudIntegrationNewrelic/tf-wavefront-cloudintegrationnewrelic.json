@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Wavefront::CloudIntegrationNewrelic",
+    "description": "CloudFormation equivalent of wavefront_cloud_integration_newrelic",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-CloudIntegrationNewrelic/docs/README.md",
+    "definitions": {
+        "AdditionalTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetricFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppName": {
+                    "type": "string"
+                },
+                "MetricFilterRegex": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalTagsDefinition"
+            }
+        },
+        "ApiKey": {
+            "type": "string"
+        },
+        "AppFilterRegex": {
+            "type": "string"
+        },
+        "ForceSave": {
+            "type": "boolean"
+        },
+        "HostFilterRegex": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricFilterDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "ServiceRefreshRateInMinutes": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiKey",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey"
+    ]
+}

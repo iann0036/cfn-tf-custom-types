@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::FortiOS::SystemDnsdatabase",
+    "description": "Configure DNS databases.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemDnsdatabase/docs/README.md",
+    "definitions": {
+        "DnsEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanonicalName": {
+                    "type": "string",
+                    "description": "Canonical name of the host."
+                },
+                "Hostname": {
+                    "type": "string",
+                    "description": "Name of the host."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "DNS entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the host."
+                },
+                "Ipv6": {
+                    "type": "string",
+                    "description": "IPv6 address of the host."
+                },
+                "Preference": {
+                    "type": "number",
+                    "description": "DNS entry preference, 0 is the highest preference (0 - 65535, default = 10)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable resource record status. Valid values: `enable`, `disable`."
+                },
+                "Ttl": {
+                    "type": "number",
+                    "description": "Time-to-live for this entry (0 to 2147483647 sec, default = 0)."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Resource record type. Valid values: `A`, `NS`, `CNAME`, `MX`, `AAAA`, `PTR`, `PTR_V6`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowTransfer": {
+            "type": "string",
+            "description": "DNS zone transfer IP address list."
+        },
+        "Authoritative": {
+            "type": "string",
+            "description": "Enable/disable authoritative zone. Valid values: `enable`, `disable`."
+        },
+        "Contact": {
+            "type": "string",
+            "description": "Email address of the administrator for this zone.\nYou can specify only the username (e.g. admin) or full email address (e.g. admin@test.com)\nWhen using a simple username, the domain of the email will be this zone."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Forwarder": {
+            "type": "string",
+            "description": "DNS zone forwarder IP address list."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpMaster": {
+            "type": "string",
+            "description": "IP address of master DNS server. Entries in this master DNS server and imported into the DNS zone."
+        },
+        "IpPrimary": {
+            "type": "string",
+            "description": "IP address of primary DNS server. Entries in this primary DNS server and imported into the DNS zone."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Zone name."
+        },
+        "PrimaryName": {
+            "type": "string",
+            "description": "Domain name of the default DNS server for this zone."
+        },
+        "RrMax": {
+            "type": "number",
+            "description": "Maximum number of resource records (10 - 65536, 0 means infinite)."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP for forwarding to DNS server."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this DNS zone. Valid values: `enable`, `disable`."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "Default time-to-live value for the entries of this DNS zone (0 - 2147483647 sec, default = 86400)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Zone type (master to manage entries directly, slave to import entries from other zones)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "View": {
+            "type": "string",
+            "description": "Zone view (public to serve public clients, shadow to serve internal clients). Valid values: `shadow`, `public`."
+        },
+        "DnsEntry": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsEntryDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Authoritative",
+        "Domain",
+        "Name",
+        "Ttl",
+        "Type",
+        "View"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

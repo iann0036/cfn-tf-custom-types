@@ -1,0 +1,201 @@
+{
+    "typeName": "TF::SignalFx::AwsIntegration",
+    "description": "SignalFx AWS CloudWatch integrations. For help with this integration see [Monitoring Amazon Web Services](https://docs.signalfx.com/en/latest/integrations/amazon-web-services.html#monitor-amazon-web-services).\n\n~> **NOTE** When managing integrations you'll need to use an admin token to authenticate the SignalFx provider.\n\n~> **WARNING** This resource implements a part of a workflow. You must use it with one of either `signalfx_aws_external_integration` or `signalfx_aws_token_integration`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-AwsIntegration/docs/README.md",
+    "definitions": {
+        "CustomNamespaceSyncRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultAction": {
+                    "type": "string"
+                },
+                "FilterAction": {
+                    "type": "string"
+                },
+                "FilterSource": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Namespace"
+            ]
+        },
+        "NamespaceSyncRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultAction": {
+                    "type": "string"
+                },
+                "FilterAction": {
+                    "type": "string"
+                },
+                "FilterSource": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Namespace"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthMethod": {
+            "type": "string"
+        },
+        "CustomCloudwatchNamespaces": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of custom AWS CloudWatch namespaces to monitor. Custom namespaces contain custom metrics that you define in AWS; SignalFx imports the metrics so you can monitor them."
+        },
+        "EnableAwsUsage": {
+            "type": "boolean",
+            "description": "Flag that controls how SignalFx imports usage metrics from AWS to use with AWS Cost Optimizer. If `true`, SignalFx imports the metrics."
+        },
+        "EnableCheckLargeVolume": {
+            "type": "boolean",
+            "description": "Controls how SignalFx checks for large amounts of data for this AWS integration. If `true`, SignalFx monitors the amount of data coming in from the integration."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the integration is enabled."
+        },
+        "ExternalId": {
+            "type": "string",
+            "description": "The `external_id` property from one of a `signalfx_aws_external_integration` or `signalfx_aws_token_integration`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImportCloudWatch": {
+            "type": "boolean",
+            "description": "Flag that controls how SignalFx imports Cloud Watch metrics. If true, SignalFx imports Cloud Watch metrics from AWS."
+        },
+        "IntegrationId": {
+            "type": "string",
+            "description": "The id of one of a `signalfx_aws_external_integration` or `signalfx_aws_token_integration`."
+        },
+        "Key": {
+            "type": "string",
+            "description": "If you specify `auth_method = \\\"SecurityToken\\\"` in your request to create an AWS integration object, use this property to specify the key."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamedToken": {
+            "type": "string"
+        },
+        "PollRate": {
+            "type": "number",
+            "description": "AWS poll rate (in seconds). Value between `60` and `300`."
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of AWS regions that SignalFx should monitor."
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "Role ARN that you add to an existing AWS integration object. **Note**: Ensure you use the `arn` property of your role, not the id!."
+        },
+        "Services": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of AWS services that you want SignalFx to monitor. Each element is a string designating an AWS service. Conflicts with `namespace_sync_rule`. See the documentation for [Creating Integrations](https://developers.signalfx.com/integrations_reference.html#operation/Create%20Integration) for valida values."
+        },
+        "Token": {
+            "type": "string"
+        },
+        "UseGetMetricDataMethod": {
+            "type": "boolean",
+            "description": "Enable the use of Amazon's `GetMetricData` for collecting metrics. Note that this requires the inclusion of the `\"cloudwatch:GetMetricData\"` permission."
+        },
+        "CustomNamespaceSyncRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomNamespaceSyncRuleDefinition"
+            }
+        },
+        "NamespaceSyncRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NamespaceSyncRuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "IntegrationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AuthMethod",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ExternalId",
+        "/properties/Key"
+    ]
+}

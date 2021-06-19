@@ -1,0 +1,1919 @@
+{
+    "typeName": "TF::AVI::Cloud",
+    "description": "The Cloud resource allows the creation and management of Avi Cloud",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Cloud/docs/README.md",
+    "definitions": {
+        "ApicConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApicAdminTenant": {
+                    "type": "string"
+                },
+                "ApicDomain": {
+                    "type": "string"
+                },
+                "ApicName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ApicPassword": {
+                    "type": "string"
+                },
+                "ApicUsername": {
+                    "type": "string"
+                },
+                "ContextAware": {
+                    "type": "string"
+                },
+                "SeTunnelMode": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AwsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "AsgPollInterval": {
+                    "type": "number"
+                },
+                "FreeElasticips": {
+                    "type": "boolean"
+                },
+                "IamAssumeRole": {
+                    "type": "string"
+                },
+                "PublishVipToPublicZone": {
+                    "type": "boolean"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Route53Integration": {
+                    "type": "boolean"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "UseIamRoles": {
+                    "type": "boolean"
+                },
+                "UseSnsSqs": {
+                    "type": "boolean"
+                },
+                "Vpc": {
+                    "type": "string"
+                },
+                "VpcId": {
+                    "type": "string"
+                },
+                "EbsEncryption": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsEncryptionDefinition"
+                    }
+                },
+                "S3Encryption": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/S3EncryptionDefinition"
+                    }
+                },
+                "SqsEncryption": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SqsEncryptionDefinition"
+                    }
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZonesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "VpcId"
+            ]
+        },
+        "AzureConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CloudCredentialsRef": {
+                    "type": "string"
+                },
+                "DesId": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "ResourceGroup": {
+                    "type": "string"
+                },
+                "SubscriptionId": {
+                    "type": "string"
+                },
+                "UseAzureDns": {
+                    "type": "boolean"
+                },
+                "UseEnhancedHa": {
+                    "type": "boolean"
+                },
+                "UseManagedDisks": {
+                    "type": "boolean"
+                },
+                "UseStandardAlb": {
+                    "type": "boolean"
+                },
+                "NetworkInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkInfoDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudstackConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "ApiUrl": {
+                    "type": "string"
+                },
+                "CntrPublicIp": {
+                    "type": "string"
+                },
+                "Hypervisor": {
+                    "type": "string"
+                },
+                "MgmtNetworkName": {
+                    "type": "string"
+                },
+                "MgmtNetworkUuid": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKeyId",
+                "ApiUrl",
+                "MgmtNetworkName",
+                "SecretAccessKey"
+            ]
+        },
+        "CustomTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagKey": {
+                    "type": "string"
+                },
+                "TagVal": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TagKey"
+            ]
+        },
+        "DnsResolversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FixedTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "ResolverName": {
+                    "type": "string"
+                },
+                "UseMgmt": {
+                    "type": "boolean"
+                },
+                "NameserverIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NameserverIpsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ResolverName"
+            ]
+        },
+        "DockerConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppSyncFrequency": {
+                    "type": "number"
+                },
+                "CaTlsKeyAndCertificateRef": {
+                    "type": "string"
+                },
+                "ClientTlsKeyAndCertificateRef": {
+                    "type": "string"
+                },
+                "ContainerPortMatchHttpService": {
+                    "type": "boolean"
+                },
+                "CoredumpDirectory": {
+                    "type": "string"
+                },
+                "DisableAutoBackendServiceSync": {
+                    "type": "boolean"
+                },
+                "DisableAutoFrontendServiceSync": {
+                    "type": "boolean"
+                },
+                "DisableAutoSeCreation": {
+                    "type": "boolean"
+                },
+                "EnableEventSubscription": {
+                    "type": "boolean"
+                },
+                "FeproxyContainerPortAsService": {
+                    "type": "boolean"
+                },
+                "FeproxyVipsEnableProxyArp": {
+                    "type": "boolean"
+                },
+                "FleetEndpoint": {
+                    "type": "string"
+                },
+                "HttpContainerPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "SeDeploymentMethod": {
+                    "type": "string"
+                },
+                "SeSpawnRate": {
+                    "type": "number"
+                },
+                "SeVolume": {
+                    "type": "string"
+                },
+                "ServicesAccessibleAllInterfaces": {
+                    "type": "boolean"
+                },
+                "SshUserRef": {
+                    "type": "string"
+                },
+                "UcpNodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseContainerIpPort": {
+                    "type": "boolean"
+                },
+                "UseControllerImage": {
+                    "type": "boolean"
+                },
+                "DockerRegistrySe": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DockerRegistrySeDefinition"
+                    }
+                },
+                "EastWestPlacementSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EastWestPlacementSubnetDefinition"
+                    }
+                },
+                "SeExcludeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeExcludeAttributesDefinition"
+                    }
+                },
+                "SeIncludeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeIncludeAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GcpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudCredentialsRef": {
+                    "type": "string"
+                },
+                "FirewallTargetTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "GcsBucketName": {
+                    "type": "string"
+                },
+                "GcsProjectId": {
+                    "type": "string"
+                },
+                "RegionName": {
+                    "type": "string"
+                },
+                "SeProjectId": {
+                    "type": "string"
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EncryptionKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionKeysDefinition"
+                    }
+                },
+                "NetworkConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkConfigDefinition"
+                    },
+                    "minItems": 1
+                },
+                "VipAllocationStrategy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VipAllocationStrategyDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "RegionName",
+                "SeProjectId",
+                "Zones"
+            ]
+        },
+        "LinuxserverConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SeInbandMgmt": {
+                    "type": "boolean"
+                },
+                "SeLogDiskPath": {
+                    "type": "string"
+                },
+                "SeLogDiskSizeGb": {
+                    "type": "number"
+                },
+                "SeSysDiskPath": {
+                    "type": "string"
+                },
+                "SeSysDiskSizeGb": {
+                    "type": "number"
+                },
+                "SshUserRef": {
+                    "type": "string"
+                },
+                "Hosts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NsxConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AviNsxPrefix": {
+                    "type": "string"
+                },
+                "NsxManagerName": {
+                    "type": "string"
+                },
+                "NsxManagerPassword": {
+                    "type": "string"
+                },
+                "NsxManagerUsername": {
+                    "type": "string"
+                },
+                "NsxPollTime": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AviNsxPrefix",
+                "NsxManagerName",
+                "NsxManagerPassword",
+                "NsxManagerUsername"
+            ]
+        },
+        "NsxtConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomateDfwRules": {
+                    "type": "boolean"
+                },
+                "DomainId": {
+                    "type": "string"
+                },
+                "EnforcementpointId": {
+                    "type": "string"
+                },
+                "NsxtCredentialsRef": {
+                    "type": "string"
+                },
+                "NsxtUrl": {
+                    "type": "string"
+                },
+                "SiteId": {
+                    "type": "string"
+                },
+                "DataNetworkConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DataNetworkConfigDefinition"
+                    },
+                    "minItems": 1
+                },
+                "ManagementNetworkConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ManagementNetworkConfigDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "NsxtCredentialsRef",
+                "NsxtUrl"
+            ]
+        },
+        "OpenstackConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminTenant": {
+                    "type": "string"
+                },
+                "AdminTenantUuid": {
+                    "type": "string"
+                },
+                "AllowedAddressPairs": {
+                    "type": "boolean"
+                },
+                "AntiAffinity": {
+                    "type": "boolean"
+                },
+                "AuthUrl": {
+                    "type": "string"
+                },
+                "ConfigDrive": {
+                    "type": "boolean"
+                },
+                "ContrailDisablePolicy": {
+                    "type": "boolean"
+                },
+                "ContrailEndpoint": {
+                    "type": "string"
+                },
+                "ContrailPlugin": {
+                    "type": "boolean"
+                },
+                "ExternalNetworks": {
+                    "type": "boolean"
+                },
+                "FreeFloatingips": {
+                    "type": "boolean"
+                },
+                "Hypervisor": {
+                    "type": "string"
+                },
+                "ImgFormat": {
+                    "type": "string"
+                },
+                "ImportKeystoneTenants": {
+                    "type": "boolean"
+                },
+                "Insecure": {
+                    "type": "boolean"
+                },
+                "KeystoneHost": {
+                    "type": "string"
+                },
+                "MapAdminToCloudadmin": {
+                    "type": "boolean"
+                },
+                "MgmtNetworkName": {
+                    "type": "string"
+                },
+                "MgmtNetworkUuid": {
+                    "type": "string"
+                },
+                "NameOwner": {
+                    "type": "boolean"
+                },
+                "NeutronRbac": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Privilege": {
+                    "type": "string"
+                },
+                "ProvName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "boolean"
+                },
+                "TenantSe": {
+                    "type": "boolean"
+                },
+                "UseAdminUrl": {
+                    "type": "boolean"
+                },
+                "UseInternalEndpoints": {
+                    "type": "boolean"
+                },
+                "UseKeystoneAuth": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "CustomSeImageProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomSeImagePropertiesDefinition"
+                    }
+                },
+                "HypervisorProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HypervisorPropertiesDefinition"
+                    }
+                },
+                "ProviderVipNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProviderVipNetworksDefinition"
+                    }
+                },
+                "RoleMapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RoleMappingDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AdminTenant",
+                "MgmtNetworkName",
+                "Privilege",
+                "Username"
+            ]
+        },
+        "ProxyConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Port"
+            ]
+        },
+        "RancherConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "AppSyncFrequency": {
+                    "type": "number"
+                },
+                "ContainerPortMatchHttpService": {
+                    "type": "boolean"
+                },
+                "CoredumpDirectory": {
+                    "type": "string"
+                },
+                "DisableAutoBackendServiceSync": {
+                    "type": "boolean"
+                },
+                "DisableAutoFrontendServiceSync": {
+                    "type": "boolean"
+                },
+                "DisableAutoSeCreation": {
+                    "type": "boolean"
+                },
+                "EnableEventSubscription": {
+                    "type": "boolean"
+                },
+                "FeproxyContainerPortAsService": {
+                    "type": "boolean"
+                },
+                "FeproxyVipsEnableProxyArp": {
+                    "type": "boolean"
+                },
+                "FleetEndpoint": {
+                    "type": "string"
+                },
+                "HttpContainerPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "RancherServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeDeploymentMethod": {
+                    "type": "string"
+                },
+                "SeSpawnRate": {
+                    "type": "number"
+                },
+                "SeVolume": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "ServicesAccessibleAllInterfaces": {
+                    "type": "boolean"
+                },
+                "SshUserRef": {
+                    "type": "string"
+                },
+                "UseContainerIpPort": {
+                    "type": "boolean"
+                },
+                "UseControllerImage": {
+                    "type": "boolean"
+                },
+                "DockerRegistrySe": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DockerRegistrySeDefinition"
+                    }
+                },
+                "EastWestPlacementSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EastWestPlacementSubnetDefinition"
+                    }
+                },
+                "NuageController": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NuageControllerDefinition"
+                    }
+                },
+                "SeExcludeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeExcludeAttributesDefinition"
+                    }
+                },
+                "SeIncludeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeIncludeAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VcaConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Privilege": {
+                    "type": "string"
+                },
+                "VcaHost": {
+                    "type": "string"
+                },
+                "VcaInstance": {
+                    "type": "string"
+                },
+                "VcaMgmtNetwork": {
+                    "type": "string"
+                },
+                "VcaOrgnization": {
+                    "type": "string"
+                },
+                "VcaPassword": {
+                    "type": "string"
+                },
+                "VcaUsername": {
+                    "type": "string"
+                },
+                "VcaVdc": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Privilege",
+                "VcaHost",
+                "VcaInstance",
+                "VcaMgmtNetwork",
+                "VcaOrgnization",
+                "VcaPassword",
+                "VcaUsername",
+                "VcaVdc"
+            ]
+        },
+        "VcenterConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Datacenter": {
+                    "type": "string"
+                },
+                "DeactivateVmDiscovery": {
+                    "type": "boolean"
+                },
+                "ManagementNetwork": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Privilege": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VcenterTemplateSeLocation": {
+                    "type": "string"
+                },
+                "VcenterUrl": {
+                    "type": "string"
+                },
+                "ManagementIpSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ManagementIpSubnetDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Privilege"
+            ]
+        },
+        "EbsEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MasterKey": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3EncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MasterKey": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SqsEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MasterKey": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ZonesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "MgmtNetworkName": {
+                    "type": "string"
+                },
+                "MgmtNetworkUuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AvailabilityZone",
+                "MgmtNetworkName"
+            ]
+        },
+        "NetworkInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ManagementNetworkId": {
+                    "type": "string"
+                },
+                "SeNetworkId": {
+                    "type": "string"
+                },
+                "VirtualNetworkId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NameserverIpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "DockerRegistrySeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Private": {
+                    "type": "boolean"
+                },
+                "Registry": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "OshiftRegistry": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OshiftRegistryDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EastWestPlacementSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "SeExcludeAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "SeIncludeAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Attribute"
+            ]
+        },
+        "EncryptionKeysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GcsBucketKmsKeyId": {
+                    "type": "string"
+                },
+                "GcsObjectsKmsKeyId": {
+                    "type": "string"
+                },
+                "SeDiskKmsKeyId": {
+                    "type": "string"
+                },
+                "SeImageKmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "string"
+                },
+                "Inband": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InbandDefinition"
+                    }
+                },
+                "OneArm": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OneArmDefinition"
+                    }
+                },
+                "TwoArm": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TwoArmDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Config"
+            ]
+        },
+        "VipAllocationStrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "Ilb": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IlbDefinition"
+                    }
+                },
+                "Routes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RoutesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeAvailabilityZone": {
+                    "type": "string"
+                },
+                "SeGroupRef": {
+                    "type": "string"
+                },
+                "HostAttr": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostAttrDefinition"
+                    }
+                },
+                "HostIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostIpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DataNetworkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TransportZone": {
+                    "type": "string"
+                },
+                "TzType": {
+                    "type": "string"
+                },
+                "VlanSegments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Tier1SegmentConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Tier1SegmentConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "TransportZone",
+                "TzType"
+            ]
+        },
+        "ManagementNetworkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TransportZone": {
+                    "type": "string"
+                },
+                "TzType": {
+                    "type": "string"
+                },
+                "VlanSegment": {
+                    "type": "string"
+                },
+                "OverlaySegment": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OverlaySegmentDefinition"
+                    }
+                }
+            },
+            "required": [
+                "TransportZone",
+                "TzType"
+            ]
+        },
+        "CustomSeImagePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "HypervisorPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hypervisor": {
+                    "type": "string"
+                },
+                "ImageProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImagePropertiesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Hypervisor"
+            ]
+        },
+        "ProviderVipNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OsNetworkUuid": {
+                    "type": "string"
+                },
+                "OsTenantUuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RoleMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AviRole": {
+                    "type": "string"
+                },
+                "OsRole": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AviRole",
+                "OsRole"
+            ]
+        },
+        "NuageControllerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NuageOrganization": {
+                    "type": "string"
+                },
+                "NuagePassword": {
+                    "type": "string"
+                },
+                "NuagePort": {
+                    "type": "number"
+                },
+                "NuageUsername": {
+                    "type": "string"
+                },
+                "NuageVsdHost": {
+                    "type": "string"
+                },
+                "SeDomain": {
+                    "type": "string"
+                },
+                "SeEnterprise": {
+                    "type": "string"
+                },
+                "SeNetwork": {
+                    "type": "string"
+                },
+                "SePolicyGroup": {
+                    "type": "string"
+                },
+                "SeUser": {
+                    "type": "string"
+                },
+                "SeZone": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManagementIpSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "OshiftRegistryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RegistryNamespace": {
+                    "type": "string"
+                },
+                "RegistryService": {
+                    "type": "string"
+                },
+                "RegistryVip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RegistryVipDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "InbandDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VpcNetworkName": {
+                    "type": "string"
+                },
+                "VpcProjectId": {
+                    "type": "string"
+                },
+                "VpcSubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VpcNetworkName",
+                "VpcSubnetName"
+            ]
+        },
+        "OneArmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataVpcNetworkName": {
+                    "type": "string"
+                },
+                "DataVpcProjectId": {
+                    "type": "string"
+                },
+                "DataVpcSubnetName": {
+                    "type": "string"
+                },
+                "ManagementVpcNetworkName": {
+                    "type": "string"
+                },
+                "ManagementVpcProjectId": {
+                    "type": "string"
+                },
+                "ManagementVpcSubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DataVpcNetworkName",
+                "DataVpcSubnetName",
+                "ManagementVpcNetworkName",
+                "ManagementVpcSubnetName"
+            ]
+        },
+        "TwoArmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendDataVpcNetworkName": {
+                    "type": "string"
+                },
+                "BackendDataVpcProjectId": {
+                    "type": "string"
+                },
+                "BackendDataVpcSubnetName": {
+                    "type": "string"
+                },
+                "FrontendDataVpcNetworkName": {
+                    "type": "string"
+                },
+                "FrontendDataVpcProjectId": {
+                    "type": "string"
+                },
+                "FrontendDataVpcSubnetName": {
+                    "type": "string"
+                },
+                "ManagementVpcNetworkName": {
+                    "type": "string"
+                },
+                "ManagementVpcProjectId": {
+                    "type": "string"
+                },
+                "ManagementVpcSubnetName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackendDataVpcNetworkName",
+                "BackendDataVpcSubnetName",
+                "FrontendDataVpcNetworkName",
+                "FrontendDataVpcSubnetName",
+                "ManagementVpcNetworkName",
+                "ManagementVpcSubnetName"
+            ]
+        },
+        "IlbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudRouterNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchSeGroupSubnet": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HostAttrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttrKey": {
+                    "type": "string"
+                },
+                "AttrVal": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AttrKey"
+            ]
+        },
+        "HostIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "Tier1SegmentConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SegmentConfigMode": {
+                    "type": "string"
+                },
+                "Automatic": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutomaticDefinition"
+                    }
+                },
+                "Manual": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ManualDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OverlaySegmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SegmentId": {
+                    "type": "string"
+                },
+                "Tier1LrId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Tier1LrId"
+            ]
+        },
+        "ImagePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RegistryVipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "AutomaticDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumSePerSegment": {
+                    "type": "number"
+                },
+                "Tier1LrIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NsxtSegmentSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NsxtSegmentSubnetDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Tier1LrIds"
+            ]
+        },
+        "ManualDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tier1Lrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Tier1LrsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "NsxtSegmentSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "Tier1LrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SegmentId": {
+                    "type": "string"
+                },
+                "Tier1LrId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Tier1LrId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApicMode": {
+            "type": "boolean"
+        },
+        "AutoscalePollingInterval": {
+            "type": "number",
+            "description": "Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is seconds. Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition."
+        },
+        "DhcpEnabled": {
+            "type": "boolean",
+            "description": "Select the ip address management scheme."
+        },
+        "DnsProviderRef": {
+            "type": "string",
+            "description": "Dns profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile."
+        },
+        "DnsResolutionOnSe": {
+            "type": "boolean",
+            "description": "By default, pool member fqdns are resolved on the controller. When this is set, pool member fqdns are instead resolved on service engines in this cloud. This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller. Field introduced in 18.2.6. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "EastWestDnsProviderRef": {
+            "type": "string",
+            "description": "Dns profile for east-west services. It is a reference to an object of type ipamdnsproviderprofile."
+        },
+        "EastWestIpamProviderRef": {
+            "type": "string",
+            "description": "Ipam profile for east-west services. Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster. For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata. Hence, it should not be used in this profile. It is a reference to an object of type ipamdnsproviderprofile."
+        },
+        "EnableVipOnAllInterfaces": {
+            "type": "boolean",
+            "description": "Enable vip on all data interfaces for the cloud. Field introduced in 18.2.9, 20.1.1."
+        },
+        "EnableVipStaticRoutes": {
+            "type": "boolean",
+            "description": "Use static routes for vip side network resolution during virtualservice placement."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip6AutocfgEnabled": {
+            "type": "boolean",
+            "description": "Enable ipv6 auto configuration. Field introduced in 18.1.1."
+        },
+        "IpamProviderRef": {
+            "type": "string",
+            "description": "Ipam profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile."
+        },
+        "LicenseTier": {
+            "type": "string",
+            "description": "Specifies the default license tier which would be used by new se groups. This field by default inherits the value from system configuration. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS. Field introduced in 17.2.5."
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Mtu setting for the cloud. Unit is bytes."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "ObjNamePrefix": {
+            "type": "string",
+            "description": "Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the se-group template."
+        },
+        "PreferStaticRoutes": {
+            "type": "boolean",
+            "description": "Prefer static routes over interface routes during virtualservice placement."
+        },
+        "SeGroupTemplateRef": {
+            "type": "string",
+            "description": "The service engine group to use as template. It is a reference to an object of type serviceenginegroup. Field introduced in 18.2.5."
+        },
+        "StateBasedDnsRegistration": {
+            "type": "boolean",
+            "description": "Dns records for vips are added/deleted based on the operational state of the vips. Field introduced in 17.1.12. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VmcDeployment": {
+            "type": "boolean",
+            "description": "This deployment is vmware on aws cloud. Field introduced in 20.1.5, 21.1.1."
+        },
+        "Vtype": {
+            "type": "string",
+            "description": "Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise edition."
+        },
+        "ApicConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ApicConfigurationDefinition"
+            }
+        },
+        "AwsConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AwsConfigurationDefinition"
+            }
+        },
+        "AzureConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureConfigurationDefinition"
+            }
+        },
+        "CloudstackConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudstackConfigurationDefinition"
+            }
+        },
+        "CustomTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomTagsDefinition"
+            }
+        },
+        "DnsResolvers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsResolversDefinition"
+            }
+        },
+        "DockerConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DockerConfigurationDefinition"
+            }
+        },
+        "GcpConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GcpConfigurationDefinition"
+            }
+        },
+        "LinuxserverConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinuxserverConfigurationDefinition"
+            }
+        },
+        "NsxConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NsxConfigurationDefinition"
+            }
+        },
+        "NsxtConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NsxtConfigurationDefinition"
+            }
+        },
+        "OpenstackConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OpenstackConfigurationDefinition"
+            }
+        },
+        "ProxyConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProxyConfigurationDefinition"
+            }
+        },
+        "RancherConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RancherConfigurationDefinition"
+            }
+        },
+        "VcaConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VcaConfigurationDefinition"
+            }
+        },
+        "VcenterConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VcenterConfigurationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Vtype"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ApicConfigurationDefinition/ApicPassword",
+        "/definitions/AwsConfigurationDefinition/AccessKeyId",
+        "/definitions/AwsConfigurationDefinition/SecretAccessKey",
+        "/definitions/CloudstackConfigurationDefinition/AccessKeyId",
+        "/definitions/CloudstackConfigurationDefinition/SecretAccessKey",
+        "/definitions/NsxConfigurationDefinition/NsxManagerPassword",
+        "/definitions/OpenstackConfigurationDefinition/Password",
+        "/definitions/ProxyConfigurationDefinition/Password",
+        "/definitions/RancherConfigurationDefinition/SecretKey",
+        "/definitions/VcaConfigurationDefinition/VcaPassword",
+        "/definitions/VcenterConfigurationDefinition/Password",
+        "/definitions/DockerRegistrySeDefinition/Password",
+        "/definitions/NuageControllerDefinition/NuagePassword"
+    ]
+}

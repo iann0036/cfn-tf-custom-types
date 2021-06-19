@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::TencentCloud::SqlserverInstance",
+    "description": "Use this resource to create SQL Server instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SqlserverInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability zone."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Pay type of the SQL Server instance. For now, only `POSTPAID_BY_HOUR` is valid."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "Version of the SQL Server database engine. Allowed values are `2008R2`(SQL Server 2008 Enterprise), `2012SP3`(SQL Server 2012 Enterprise), `2016SP1` (SQL Server 2016 Enterprise), `201602`(SQL Server 2016 Standard) and `2017`(SQL Server 2017 Enterprise). Default is `2008R2`."
+        },
+        "HaType": {
+            "type": "string",
+            "description": "Instance type. `DUAL` (dual-server high availability), `CLUSTER` (cluster). Default is `DUAL`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceStartTime": {
+            "type": "string",
+            "description": "Start time of the maintenance in one day, format like `HH:mm`."
+        },
+        "MaintenanceTimeSpan": {
+            "type": "number",
+            "description": "The timespan of maintenance in one day, unit is hour."
+        },
+        "MaintenanceWeekSet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of integer indicates weekly maintenance. For example, [2,7] presents do weekly maintenance on every Tuesday and Sunday."
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Memory size (in GB). Allowed value must be larger than `memory` that data source `tencentcloud_sqlserver_specinfos` provides."
+        },
+        "MultiZones": {
+            "type": "boolean",
+            "description": "Indicate whether to deploy across availability zones."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the SQL Server instance."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Project ID, default value is 0."
+        },
+        "RoFlag": {
+            "type": "string"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Security group bound to the instance."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "Storage": {
+            "type": "number",
+            "description": "Disk size (in GB). Allowed value must be a multiple of 10. The storage must be set with the limit of `storage_min` and `storage_max` which data source `tencentcloud_sqlserver_specinfos` provides."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of subnet."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The tags of the SQL Server."
+        },
+        "Vip": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC."
+        },
+        "Vport": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Memory",
+        "Name",
+        "Storage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/RoFlag",
+        "/properties/Status",
+        "/properties/Vip",
+        "/properties/Vport"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

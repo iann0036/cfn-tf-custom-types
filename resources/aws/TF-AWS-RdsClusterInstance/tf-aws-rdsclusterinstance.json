@@ -1,0 +1,240 @@
+{
+    "typeName": "TF::AWS::RdsClusterInstance",
+    "description": "Provides an RDS Cluster Instance Resource. A Cluster Instance Resource defines\nattributes that are specific to a single instance in a [RDS Cluster][3],\nspecifically running Amazon Aurora.\n\nUnlike other RDS resources that support replication, with Amazon Aurora you do\nnot designate a primary and subsequent replicas. Instead, you simply add RDS\nInstances and Aurora manages the replication. You can use the [count][5]\nmeta-parameter to make multiple instances and join them all to the same RDS\nCluster, or you may specify different Cluster Instance resources with various\n`instance_class` sizes.\n\nFor more information on Amazon Aurora, see [Aurora on Amazon RDS][2] in the Amazon RDS User Guide.\n\n~> **NOTE:** Deletion Protection from the RDS service can only be enabled at the cluster level, not for individual cluster instances. You can still add the [`prevent_destroy` lifecycle behavior](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy) to your Terraform resource configuration if you desi...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-RdsClusterInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Specifies whether any database modifications\nare applied immediately, or during the next maintenance window. Default is`false`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean",
+            "description": "Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window. Default `true`."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The EC2 Availability Zone that the DB instance is created in. See [docs](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html) about the details."
+        },
+        "CaCertIdentifier": {
+            "type": "string",
+            "description": "The identifier of the CA certificate for the DB instance."
+        },
+        "ClusterIdentifier": {
+            "type": "string",
+            "description": "The identifier of the [`aws_rds_cluster`](/docs/providers/aws/r/rds_cluster.html) in which to launch this instance."
+        },
+        "CopyTagsToSnapshot": {
+            "type": "boolean"
+        },
+        "DbParameterGroupName": {
+            "type": "string",
+            "description": "The name of the DB parameter group to associate with this instance."
+        },
+        "DbSubnetGroupName": {
+            "type": "string",
+            "description": "A DB subnet group to associate with this DB instance. **NOTE:** This must match the `db_subnet_group_name` of the attached [`aws_rds_cluster`](/docs/providers/aws/r/rds_cluster.html)."
+        },
+        "DbiResourceId": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string",
+            "description": "The name of the database engine to be used for the RDS instance. Defaults to `aurora`. Valid Values: `aurora`, `aurora-mysql`, `aurora-postgresql`.\nFor information on the difference between the available Aurora MySQL engines\nsee [Comparison between Aurora MySQL 1 and Aurora MySQL 2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Updates.20180206.html)\nin the Amazon RDS User Guide."
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "The database engine version. When managing the engine version in the cluster, it is recommended to add the [lifecycle `ignore_changes` configuration](https://www.terraform.io/docs/configuration/meta-arguments/lifecycle.html#ignore_changes) for this argument to prevent Terraform from proposing changes to the instance engine version directly."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string",
+            "description": "The identifier for the RDS instance, if omitted, Terraform will assign a random, unique identifier."
+        },
+        "IdentifierPrefix": {
+            "type": "string",
+            "description": "Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`."
+        },
+        "InstanceClass": {
+            "type": "string",
+            "description": "The instance class to use. For details on CPU\nand memory, see [Scaling Aurora DB Instances][4]. Aurora uses `db.*` instance classes/types. Please see [AWS Documentation][7] for currently available instance classes and complete details."
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "MonitoringInterval": {
+            "type": "number",
+            "description": "The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid Values: 0, 1, 5, 10, 15, 30, 60."
+        },
+        "MonitoringRoleArn": {
+            "type": "string",
+            "description": "The ARN for the IAM role that permits RDS to send\nenhanced monitoring metrics to CloudWatch Logs. You can find more information on the [AWS Documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html)\nwhat IAM permissions are needed to allow Enhanced Monitoring for RDS Instances."
+        },
+        "PerformanceInsightsEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether Performance Insights is enabled or not."
+        },
+        "PerformanceInsightsKmsKeyId": {
+            "type": "string",
+            "description": "The ARN for the KMS key to encrypt Performance Insights data. When specifying `performance_insights_kms_key_id`, `performance_insights_enabled` needs to be set to true."
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PreferredBackupWindow": {
+            "type": "string",
+            "description": "The daily time range during which automated backups are created if automated backups are enabled.\nEg: \"04:00-09:00\"."
+        },
+        "PreferredMaintenanceWindow": {
+            "type": "string",
+            "description": "The window to perform maintenance in.\nSyntax: \"ddd:hh24:mi-ddd:hh24:mi\". Eg: \"Mon:00:00-Mon:03:00\"."
+        },
+        "PromotionTier": {
+            "type": "number",
+            "description": "Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoted to writer."
+        },
+        "PubliclyAccessible": {
+            "type": "boolean",
+            "description": "Bool to control if instance is publicly accessible.\nDefault `false`. See the documentation on [Creating DB Instances][6] for more\ndetails on controlling this property."
+        },
+        "StorageEncrypted": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the instance. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Writer": {
+            "type": "boolean"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterIdentifier",
+        "InstanceClass"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DbiResourceId",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/KmsKeyId",
+        "/properties/Port",
+        "/properties/StorageEncrypted",
+        "/properties/Writer"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

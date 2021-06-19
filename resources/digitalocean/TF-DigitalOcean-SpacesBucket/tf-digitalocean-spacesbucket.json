@@ -1,0 +1,227 @@
+{
+    "typeName": "TF::DigitalOcean::SpacesBucket",
+    "description": "Provides a bucket resource for Spaces, DigitalOcean's object storage product.\n\nThe [Spaces API](https://developers.digitalocean.com/documentation/spaces/) was\ndesigned to be interoperable with Amazon's AWS S3 API. This allows users to\ninteract with the service while using the tools they already know. Spaces\nmirrors S3's authentication framework and requests to Spaces require a key pair\nsimilar to Amazon's Access ID and Secret Key.\n\nThe authentication requirement can be met by either setting the\n`SPACES_ACCESS_KEY_ID` and `SPACES_SECRET_ACCESS_KEY` environment variables or\nthe provider's `spaces_access_id` and `spaces_secret_key` arguments to the\naccess ID and secret you generate via the DigitalOcean control panel. For\nexample:\n\n```\nprovider \"digitalocean\" {\n  token             = var.digitalocean_token\n\n  spaces_access_id  = var.access_id\n  spaces_secret_key = var.secret_key\n}\n\nresource \"digitalocean_spaces_bucket\" \"static-assets\" {\n  # ...\n}\n```\n\nFor more information, See [An Introduction to DigitalOcean ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-SpacesBucket/docs/README.md",
+    "definitions": {
+        "CorsRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of headers that will be included in the CORS preflight request's `Access-Control-Request-Headers`. A header may contain one wildcard (e.g. `x-amz-*`)."
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of HTTP methods (e.g. `GET`) which are allowed from the specified origin."
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of hosts from which requests using the specified methods are allowed. A host may contain one wildcard (e.g. http://*.example.com)."
+                },
+                "MaxAgeSeconds": {
+                    "type": "number",
+                    "description": "The time in seconds that browser can cache the response for a preflight request."
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "AllowedOrigins"
+            ]
+        },
+        "LifecycleRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AbortIncompleteMultipartUploadDays": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Specifies lifecycle rule status."
+                },
+                "Id": {
+                    "type": "string",
+                    "description": "Unique identifier for the rule."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Object key prefix identifying one or more objects to which the rule applies."
+                },
+                "Expiration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ExpirationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NoncurrentVersionExpiration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoncurrentVersionExpirationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "VersioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Enable versioning. Once you version-enable a bucket, it can never return to an unversioned\nstate. You can, however, suspend versioning on that bucket."
+                }
+            },
+            "required": []
+        },
+        "ExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string",
+                    "description": "Specifies the date/time after which you want applicable objects to expire. The argument uses\nRFC3339 format, e.g. \"2020-03-22T15:03:55Z\" or parts thereof e.g. \"2019-02-28\"."
+                },
+                "Days": {
+                    "type": "number",
+                    "description": "Specifies the number of days after object creation when the applicable objects will expire."
+                },
+                "ExpiredObjectDeleteMarker": {
+                    "type": "boolean",
+                    "description": "On a versioned bucket (versioning-enabled or versioning-suspended\nbucket), setting this to true directs Spaces to delete expired object delete markers."
+                }
+            },
+            "required": []
+        },
+        "NoncurrentVersionExpirationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number",
+                    "description": "Specifies the number of days after which an object's non-current versions expire."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string",
+            "description": "Canned ACL applied on bucket creation (`private` or `public-read`)."
+        },
+        "BucketDomainName": {
+            "type": "string"
+        },
+        "ForceDestroy": {
+            "type": "boolean",
+            "description": "Unless `true`, the bucket will only be destroyed if empty (Defaults to `false`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the bucket."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region where the bucket resides (Defaults to `nyc3`)."
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "CorsRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsRuleDefinition"
+            }
+        },
+        "LifecycleRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRuleDefinition"
+            }
+        },
+        "Versioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersioningDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BucketDomainName",
+        "/properties/Id",
+        "/properties/Urn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

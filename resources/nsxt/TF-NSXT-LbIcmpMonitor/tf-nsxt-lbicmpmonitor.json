@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::NSXT::LbIcmpMonitor",
+    "description": "Provides a resource to configure lb icmp monitor on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LbIcmpMonitor/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataLength": {
+            "type": "number",
+            "description": "The data size (in bytes) of the ICMP healthcheck packet."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "FallCount": {
+            "type": "number",
+            "description": "Number of consecutive checks must fail before marking it down."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The frequency at which the system issues the monitor check (in seconds)."
+        },
+        "MonitorPort": {
+            "type": "string",
+            "description": "If the monitor port is specified, it would override pool member port setting for healthcheck. Port range is not supported."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RiseCount": {
+            "type": "number",
+            "description": "Number of consecutive checks must pass before marking it up."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Number of seconds the target has in which to respond to the monitor request."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

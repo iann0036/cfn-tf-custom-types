@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::VRA::Blueprint",
+    "description": "Creates a VMware vRealize Automation (vRA) cloud template resource, formerly known as a blueprint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-Blueprint/docs/README.md",
+    "definitions": {
+        "ValidationMessagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ValidationMessagesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Message": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValidationMessagesDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ResourceName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "Blueprint YAML content."
+        },
+        "ContentSourceId": {
+            "type": "string"
+        },
+        "ContentSourcePath": {
+            "type": "string"
+        },
+        "ContentSourceSyncAt": {
+            "type": "string"
+        },
+        "ContentSourceSyncMessages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ContentSourceSyncStatus": {
+            "type": "string"
+        },
+        "ContentSourceType": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "ID of project that entity belongs to."
+        },
+        "ProjectName": {
+            "type": "string"
+        },
+        "RequestScopeOrg": {
+            "type": "boolean",
+            "description": "Flag to indicate whether blueprint can be requested from any project in the organization that entity belongs to."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TotalReleasedVersions": {
+            "type": "number"
+        },
+        "TotalVersions": {
+            "type": "number"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "UpdatedBy": {
+            "type": "string"
+        },
+        "Valid": {
+            "type": "boolean"
+        },
+        "ValidationMessages": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ValidationMessagesDefinition2"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ContentSourceId",
+        "/properties/ContentSourcePath",
+        "/properties/ContentSourceSyncAt",
+        "/properties/ContentSourceSyncMessages",
+        "/properties/ContentSourceSyncStatus",
+        "/properties/ContentSourceType",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/OrgId",
+        "/properties/ProjectName",
+        "/properties/SelfLink",
+        "/properties/Status",
+        "/properties/TotalReleasedVersions",
+        "/properties/TotalVersions",
+        "/properties/UpdatedAt",
+        "/properties/UpdatedBy",
+        "/properties/Valid",
+        "/properties/ValidationMessages"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1467 @@
+{
+    "typeName": "TF::Fastly::ServiceCompute",
+    "description": "Provides a Fastly Compute@Edge service. Compute@Edge is a computation platform capable of running custom binaries that you compile on your own systems and upload to Fastly. Security and portability is provided by compiling your code to [WebAssembly](https://webassembly.org/), which is run at the edge using [Lucet](https://github.com/bytecodealliance/lucet), an open-source WebAssembly runtime created by Fastly. A compute service encompasses Domains and Backends.\n\nThe Service resource requires a domain name that is correctly set up to direct\ntraffic to the Fastly service. See Fastly's guide on [Adding CNAME Records][fastly-cname]\non their documentation site for guidance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-ServiceCompute/docs/README.md",
+    "definitions": {
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "AutoLoadbalance": {
+                    "type": "boolean"
+                },
+                "BetweenBytesTimeout": {
+                    "type": "number"
+                },
+                "ConnectTimeout": {
+                    "type": "number"
+                },
+                "ErrorThreshold": {
+                    "type": "number"
+                },
+                "FirstByteTimeout": {
+                    "type": "number"
+                },
+                "Healthcheck": {
+                    "type": "string"
+                },
+                "MaxConn": {
+                    "type": "number"
+                },
+                "MaxTlsVersion": {
+                    "type": "string"
+                },
+                "MinTlsVersion": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideHost": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Shield": {
+                    "type": "string"
+                },
+                "SslCaCert": {
+                    "type": "string"
+                },
+                "SslCertHostname": {
+                    "type": "string"
+                },
+                "SslCheckCert": {
+                    "type": "boolean"
+                },
+                "SslCiphers": {
+                    "type": "string"
+                },
+                "SslClientCert": {
+                    "type": "string"
+                },
+                "SslClientKey": {
+                    "type": "string"
+                },
+                "SslHostname": {
+                    "type": "string"
+                },
+                "SslSniHostname": {
+                    "type": "string"
+                },
+                "UseSsl": {
+                    "type": "boolean"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address",
+                "Name"
+            ]
+        },
+        "BigqueryloggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dataset": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Table": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dataset",
+                "Name",
+                "ProjectId",
+                "Table"
+            ]
+        },
+        "BlobstorageloggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "Container": {
+                    "type": "string"
+                },
+                "FileMaxBytes": {
+                    "type": "number"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "SasToken": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountName",
+                "Container",
+                "Name"
+            ]
+        },
+        "DictionaryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForceDestroy": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "WriteOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DirectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backends": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Capacity": {
+                    "type": "number"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Quorum": {
+                    "type": "number"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "Shield": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Backends",
+                "Name"
+            ]
+        },
+        "DomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "GcsloggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Name"
+            ]
+        },
+        "HealthcheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckInterval": {
+                    "type": "number"
+                },
+                "ExpectedResponse": {
+                    "type": "number"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "HttpVersion": {
+                    "type": "string"
+                },
+                "Initial": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Window": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Host",
+                "Name",
+                "Path"
+            ]
+        },
+        "HttpsloggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "JsonFormat": {
+                    "type": "string"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RequestMaxBytes": {
+                    "type": "number"
+                },
+                "RequestMaxEntries": {
+                    "type": "number"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "LogentriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "UseTls": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingCloudfilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "BucketName",
+                "Name",
+                "User"
+            ]
+        },
+        "LoggingDatadogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingDigitaloceanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "BucketName",
+                "Name",
+                "SecretKey"
+            ]
+        },
+        "LoggingElasticsearchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Pipeline": {
+                    "type": "string"
+                },
+                "RequestMaxBytes": {
+                    "type": "number"
+                },
+                "RequestMaxEntries": {
+                    "type": "number"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Name",
+                "Url"
+            ]
+        },
+        "LoggingFtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address",
+                "Name",
+                "Password",
+                "Path",
+                "User"
+            ]
+        },
+        "LoggingGooglepubsubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ProjectId",
+                "Topic"
+            ]
+        },
+        "LoggingHerokuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token",
+                "Url"
+            ]
+        },
+        "LoggingHoneycombDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dataset": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dataset",
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingKafkaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "Brokers": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParseLogKeyvals": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "RequestMaxBytes": {
+                    "type": "number"
+                },
+                "RequiredAcks": {
+                    "type": "string"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                },
+                "UseTls": {
+                    "type": "boolean"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Brokers",
+                "Name",
+                "Topic"
+            ]
+        },
+        "LoggingKinesisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "IamRole": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Topic"
+            ]
+        },
+        "LoggingLogglyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingLogshuttleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token",
+                "Url"
+            ]
+        },
+        "LoggingNewrelicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingOpenstackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "BucketName",
+                "Name",
+                "Url",
+                "User"
+            ]
+        },
+        "LoggingScalyrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "LoggingSftpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "SshKnownHosts": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address",
+                "Name",
+                "Path",
+                "SshKnownHosts",
+                "User"
+            ]
+        },
+        "PackageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filename": {
+                    "type": "string"
+                },
+                "SourceCodeHash": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filename"
+            ]
+        },
+        "PapertrailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address",
+                "Name",
+                "Port"
+            ]
+        },
+        "S3loggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Acl": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionCodec": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "Redundancy": {
+                    "type": "string"
+                },
+                "S3AccessKey": {
+                    "type": "string"
+                },
+                "S3IamRole": {
+                    "type": "string"
+                },
+                "S3SecretKey": {
+                    "type": "string"
+                },
+                "ServerSideEncryption": {
+                    "type": "string"
+                },
+                "ServerSideEncryptionKmsKeyId": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Name"
+            ]
+        },
+        "SplunkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "SumologicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "SyslogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "UseTls": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Address",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Activate": {
+            "type": "boolean"
+        },
+        "ActiveVersion": {
+            "type": "number"
+        },
+        "ClonedVersion": {
+            "type": "number"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "VersionComment": {
+            "type": "string"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendDefinition"
+            },
+            "minItems": 1
+        },
+        "Bigquerylogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BigqueryloggingDefinition"
+            }
+        },
+        "Blobstoragelogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BlobstorageloggingDefinition"
+            }
+        },
+        "Dictionary": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DictionaryDefinition"
+            }
+        },
+        "Director": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DirectorDefinition"
+            }
+        },
+        "Domain": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DomainDefinition"
+            },
+            "minItems": 1
+        },
+        "Gcslogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GcsloggingDefinition"
+            }
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HealthcheckDefinition"
+            }
+        },
+        "Httpslogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpsloggingDefinition"
+            }
+        },
+        "Logentries": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogentriesDefinition"
+            }
+        },
+        "LoggingCloudfiles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingCloudfilesDefinition"
+            }
+        },
+        "LoggingDatadog": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingDatadogDefinition"
+            }
+        },
+        "LoggingDigitalocean": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingDigitaloceanDefinition"
+            }
+        },
+        "LoggingElasticsearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingElasticsearchDefinition"
+            }
+        },
+        "LoggingFtp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingFtpDefinition"
+            }
+        },
+        "LoggingGooglepubsub": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingGooglepubsubDefinition"
+            }
+        },
+        "LoggingHeroku": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingHerokuDefinition"
+            }
+        },
+        "LoggingHoneycomb": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingHoneycombDefinition"
+            }
+        },
+        "LoggingKafka": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingKafkaDefinition"
+            }
+        },
+        "LoggingKinesis": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingKinesisDefinition"
+            }
+        },
+        "LoggingLoggly": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingLogglyDefinition"
+            }
+        },
+        "LoggingLogshuttle": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingLogshuttleDefinition"
+            }
+        },
+        "LoggingNewrelic": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingNewrelicDefinition"
+            }
+        },
+        "LoggingOpenstack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingOpenstackDefinition"
+            }
+        },
+        "LoggingScalyr": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingScalyrDefinition"
+            }
+        },
+        "LoggingSftp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingSftpDefinition"
+            }
+        },
+        "Package": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PackageDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Papertrail": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PapertrailDefinition"
+            }
+        },
+        "S3logging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3loggingDefinition"
+            }
+        },
+        "Splunk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SplunkDefinition"
+            }
+        },
+        "Sumologic": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SumologicDefinition"
+            }
+        },
+        "Syslog": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SyslogDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActiveVersion",
+        "/properties/ClonedVersion",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/BackendDefinition/SslClientCert",
+        "/definitions/BackendDefinition/SslClientKey",
+        "/definitions/BigqueryloggingDefinition/Email",
+        "/definitions/BigqueryloggingDefinition/SecretKey",
+        "/definitions/BlobstorageloggingDefinition/SasToken",
+        "/definitions/GcsloggingDefinition/SecretKey",
+        "/definitions/HttpsloggingDefinition/TlsCaCert",
+        "/definitions/HttpsloggingDefinition/TlsClientCert",
+        "/definitions/HttpsloggingDefinition/TlsClientKey",
+        "/definitions/LoggingCloudfilesDefinition/AccessKey",
+        "/definitions/LoggingDatadogDefinition/Token",
+        "/definitions/LoggingDigitaloceanDefinition/AccessKey",
+        "/definitions/LoggingDigitaloceanDefinition/SecretKey",
+        "/definitions/LoggingElasticsearchDefinition/Password",
+        "/definitions/LoggingElasticsearchDefinition/TlsCaCert",
+        "/definitions/LoggingElasticsearchDefinition/TlsClientCert",
+        "/definitions/LoggingElasticsearchDefinition/TlsClientKey",
+        "/definitions/LoggingFtpDefinition/Password",
+        "/definitions/LoggingGooglepubsubDefinition/SecretKey",
+        "/definitions/LoggingHerokuDefinition/Token",
+        "/definitions/LoggingHoneycombDefinition/Token",
+        "/definitions/LoggingKafkaDefinition/Password",
+        "/definitions/LoggingKafkaDefinition/TlsCaCert",
+        "/definitions/LoggingKafkaDefinition/TlsClientCert",
+        "/definitions/LoggingKafkaDefinition/TlsClientKey",
+        "/definitions/LoggingKinesisDefinition/AccessKey",
+        "/definitions/LoggingKinesisDefinition/SecretKey",
+        "/definitions/LoggingLogglyDefinition/Token",
+        "/definitions/LoggingLogshuttleDefinition/Token",
+        "/definitions/LoggingNewrelicDefinition/Token",
+        "/definitions/LoggingOpenstackDefinition/AccessKey",
+        "/definitions/LoggingScalyrDefinition/Token",
+        "/definitions/LoggingSftpDefinition/Password",
+        "/definitions/LoggingSftpDefinition/SecretKey",
+        "/definitions/S3loggingDefinition/S3AccessKey",
+        "/definitions/S3loggingDefinition/S3SecretKey",
+        "/definitions/SplunkDefinition/TlsClientKey",
+        "/definitions/SplunkDefinition/Token",
+        "/definitions/SyslogDefinition/TlsClientKey"
+    ]
+}

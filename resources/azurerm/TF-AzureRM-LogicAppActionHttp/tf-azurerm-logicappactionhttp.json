@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::AzureRM::LogicAppActionHttp",
+    "description": "Manages an HTTP Action within a Logic App Workflow",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LogicAppActionHttp/docs/README.md",
+    "definitions": {
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RunAfterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionName": {
+                    "type": "string",
+                    "description": "Specifies the name of the precedent HTTP Action."
+                },
+                "ActionResult": {
+                    "type": "string",
+                    "description": "Specifies the expected result of the precedent HTTP Action, only after which the current HTTP Action will be triggered. Possible values include `Succeeded`, `Failed`, `Skipped` and `TimedOut`."
+                }
+            },
+            "required": [
+                "ActionName",
+                "ActionResult"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Body": {
+            "type": "string",
+            "description": "Specifies the HTTP Body that should be sent to the `uri` when this HTTP Action is triggered."
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeadersDefinition"
+            },
+            "description": "Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicAppId": {
+            "type": "string",
+            "description": "Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created."
+        },
+        "Method": {
+            "type": "string",
+            "description": "Specifies the HTTP Method which should be used for this HTTP Action. Possible values include `DELETE`, `GET`, `PATCH`, `POST` and `PUT`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the HTTP Action to be created within the Logic App Workflow. Changing this forces a new resource to be created."
+        },
+        "Uri": {
+            "type": "string",
+            "description": "Specifies the URI which will be called when this HTTP Action is triggered."
+        },
+        "RunAfter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RunAfterDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LogicAppId",
+        "Method",
+        "Name",
+        "Uri"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

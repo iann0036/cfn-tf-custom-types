@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Artifactory::VirtualRepository",
+    "description": "CloudFormation equivalent of artifactory_virtual_repository",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-VirtualRepository/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArtifactoryRequestsCanRetrieveRemoteArtifacts": {
+            "type": "boolean"
+        },
+        "DebianTrivialLayout": {
+            "type": "boolean"
+        },
+        "DefaultDeploymentRepo": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExcludesPattern": {
+            "type": "string"
+        },
+        "ForceNugetAuthentication": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludesPattern": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "KeyPair": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "PackageType": {
+            "type": "string"
+        },
+        "PomRepositoryReferencesCleanupPolicy": {
+            "type": "string"
+        },
+        "RepoLayoutRef": {
+            "type": "string"
+        },
+        "Repositories": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "PackageType",
+        "Repositories"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

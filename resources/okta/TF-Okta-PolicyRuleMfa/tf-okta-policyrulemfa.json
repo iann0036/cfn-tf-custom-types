@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Okta::PolicyRuleMfa",
+    "description": "Creates an MFA Policy Rule.\n\nThis resource allows you to create and configure an MFA Policy Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-PolicyRuleMfa/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enroll": {
+            "type": "string",
+            "description": "When a user should be prompted for MFA. It can be `\"CHALLENGE\"`, `\"LOGIN\"`, or `\"NEVER\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Policy Rule Name."
+        },
+        "NetworkConnection": {
+            "type": "string",
+            "description": "Network selection mode: `\"ANYWHERE\"`, `\"ZONE\"`, `\"ON_NETWORK\"`, or `\"OFF_NETWORK\"`."
+        },
+        "NetworkExcludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The network zones to exclude. Conflicts with `network_includes`."
+        },
+        "NetworkIncludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The network zones to include. Conflicts with `network_excludes`."
+        },
+        "Policyid": {
+            "type": "string",
+            "description": "Policy ID."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Policy Rule Priority, this attribute can be set to a valid priority. To avoid endless diff situation we error if an invalid priority is provided. API defaults it to the last (lowest) if not there."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Policy Rule Status: `\"ACTIVE\"` or `\"INACTIVE\"`."
+        },
+        "UsersExcluded": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Policyid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::OVH::DedicatedCephAcl",
+    "description": "Add a new access ACL for the given network/mask.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DedicatedCephAcl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Family": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "The network mask to apply."
+        },
+        "Network": {
+            "type": "string",
+            "description": "The network IP to authorize."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your dedicated CEPH."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Netmask",
+        "Network",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Family",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

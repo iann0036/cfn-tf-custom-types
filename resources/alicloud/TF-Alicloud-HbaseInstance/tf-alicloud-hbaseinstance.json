@@ -1,0 +1,268 @@
+{
+    "typeName": "TF::Alicloud::HbaseInstance",
+    "description": "Provides a HBase instance resource supports replica set instances only. the HBase provides stable, reliable, and automatic scalable database services. \nIt offers a full range of database solutions, such as disaster recovery, backup, recovery, monitoring, and alarms.\nYou can see detail product introduction [here](https://help.aliyun.com/product/49055.html)\n\n-> **NOTE:**  Available in 1.67.0+\n\n-> **NOTE:**  The following regions don't support create Classic network HBase instance.\n[`cn-hangzhou`,`cn-shanghai`,`cn-qingdao`,`cn-beijing`,`cn-shenzhen`,`ap-southeast-1a`,.....]\nthe official website mark  more regions. or you can call [DescribeRegions](https://help.aliyun.com/document_detail/144489.html)\n\n-> **NOTE:**  Create HBase instance or change instance type and storage would cost 15 minutes. Please make full preparation",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-HbaseInstance/docs/README.md",
+    "definitions": {
+        "SlbConnAddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnAddr": {
+                    "type": "string"
+                },
+                "ConnAddrPort": {
+                    "type": "string"
+                },
+                "NetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UiProxyConnAddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnAddr": {
+                    "type": "string"
+                },
+                "ConnAddrPort": {
+                    "type": "string"
+                },
+                "NetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "ZkConnAddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnAddr": {
+                    "type": "string"
+                },
+                "ConnAddrPort": {
+                    "type": "string"
+                },
+                "NetType": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string"
+        },
+        "AutoRenew": {
+            "type": "boolean",
+            "description": "`true`, `false`, System default to `false`, valid when pay_type = PrePaid."
+        },
+        "ColdStorageSize": {
+            "type": "number",
+            "description": "0 or 0+. 0 means is_cold_storage = false. 0+ means is_cold_storage = true."
+        },
+        "CoreDiskSize": {
+            "type": "number",
+            "description": "User-defined HBase instance one core node's storage space.Unit: GB. Value range:\n- Custom storage space; value range: [400, 8000]\n- 40-GB increments."
+        },
+        "CoreDiskType": {
+            "type": "string",
+            "description": "Valid values are `cloud_ssd`, `cloud_efficiency`, `local_hdd_pro`, `local_ssd_pro`. local_disk size is fixed."
+        },
+        "CoreInstanceQuantity": {
+            "type": "number",
+            "description": "default=2. if core_instance_quantity > 1,this is cluster's instance.  if core_instance_quantity = 1,this is a single instance."
+        },
+        "CoreInstanceType": {
+            "type": "string"
+        },
+        "DeletionProtection": {
+            "type": "boolean",
+            "description": "the switch of delete protection. true: delete protect, false: no delete protect. you must set false when you want to delete cluster."
+        },
+        "Duration": {
+            "type": "number",
+            "description": "1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 60, valid when pay_type = PrePaid. unit: month."
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "hbase major version. hbase:1.1/2.0, hbaseue:2.0, bds:1.0, unsupport other engine temporarily. Value options can refer to the latest docs [CreateInstance](https://help.aliyun.com/document_detail/144607.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImmediateDeleteFlag": {
+            "type": "boolean"
+        },
+        "IpWhite": {
+            "type": "string"
+        },
+        "MaintainEndTime": {
+            "type": "string",
+            "description": "The end time of the operation and maintenance time period of the instance, in the format of HH:mmZ (UTC time)."
+        },
+        "MaintainStartTime": {
+            "type": "string",
+            "description": "The start time of the operation and maintenance time period of the instance, in the format of HH:mmZ (UTC time)."
+        },
+        "MasterInstanceQuantity": {
+            "type": "number"
+        },
+        "MasterInstanceType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "HBase instance name. Length must be 2-128 characters long. Only Chinese characters, English letters, numbers, period (.), underline (_), or dash (-) are permitted."
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PayType": {
+            "type": "string",
+            "description": "Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SlbConnAddrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlbConnAddrsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "UiProxyConnAddrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UiProxyConnAddrsDefinition"
+            }
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "if vswitch_id is not empty, that mean net_type = vpc and has a same region. if vswitch_id is empty, net_type_classic."
+        },
+        "ZkConnAddrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZkConnAddrsDefinition"
+            }
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The Zone to launch the HBase instance. if vswitch_id is not empty, this zone_id can be \"\" or consistent."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CoreInstanceType",
+        "EngineVersion",
+        "MasterInstanceType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MasterInstanceQuantity",
+        "/properties/SlbConnAddrs",
+        "/properties/UiProxyConnAddrs",
+        "/properties/ZkConnAddrs"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

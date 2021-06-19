@@ -1,0 +1,198 @@
+{
+    "typeName": "TF::FortiOS::AlertemailSetting",
+    "description": "Configure alert email settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-AlertemailSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminLoginLogs": {
+            "type": "string",
+            "description": "Enable/disable administrator login/logout logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "AlertInterval": {
+            "type": "number",
+            "description": "Alert alert interval in minutes."
+        },
+        "AmcInterfaceBypassMode": {
+            "type": "string",
+            "description": "Enable/disable Fortinet Advanced Mezzanine Card (AMC) interface bypass mode logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "AntivirusLogs": {
+            "type": "string",
+            "description": "Enable/disable antivirus logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "ConfigurationChangesLogs": {
+            "type": "string",
+            "description": "Enable/disable configuration change logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "CriticalInterval": {
+            "type": "number",
+            "description": "Critical alert interval in minutes."
+        },
+        "DebugInterval": {
+            "type": "number",
+            "description": "Debug alert interval in minutes."
+        },
+        "EmailInterval": {
+            "type": "number",
+            "description": "Interval between sending alert emails (1 - 99999 min, default = 5)."
+        },
+        "EmergencyInterval": {
+            "type": "number",
+            "description": "Emergency alert interval in minutes."
+        },
+        "ErrorInterval": {
+            "type": "number",
+            "description": "Error alert interval in minutes."
+        },
+        "FdsLicenseExpiringDays": {
+            "type": "number"
+        },
+        "FdsLicenseExpiringWarning": {
+            "type": "string"
+        },
+        "FdsUpdateLogs": {
+            "type": "string"
+        },
+        "FilterMode": {
+            "type": "string",
+            "description": "How to filter log messages that are sent to alert emails. Valid values: `category`, `threshold`."
+        },
+        "FipsCcErrors": {
+            "type": "string"
+        },
+        "FirewallAuthenticationFailureLogs": {
+            "type": "string",
+            "description": "Enable/disable firewall authentication failure logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "FortiguardLogQuotaWarning": {
+            "type": "string",
+            "description": "Enable/disable FortiCloud log quota warnings in alert email. Valid values: `enable`, `disable`."
+        },
+        "FssoDisconnectLogs": {
+            "type": "string"
+        },
+        "HaLogs": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InformationInterval": {
+            "type": "number",
+            "description": "Information alert interval in minutes."
+        },
+        "IpsLogs": {
+            "type": "string"
+        },
+        "IpsecErrorsLogs": {
+            "type": "string"
+        },
+        "LocalDiskUsage": {
+            "type": "number",
+            "description": "Disk usage percentage at which to send alert email (1 - 99 percent, default = 75)."
+        },
+        "LogDiskUsageWarning": {
+            "type": "string",
+            "description": "Enable/disable disk usage warnings in alert email. Valid values: `enable`, `disable`."
+        },
+        "Mailto1": {
+            "type": "string",
+            "description": "Email address to send alert email to (usually a system administrator) (max. 64 characters)."
+        },
+        "Mailto2": {
+            "type": "string",
+            "description": "Optional second email address to send alert email to (max. 64 characters)."
+        },
+        "Mailto3": {
+            "type": "string",
+            "description": "Optional third email address to send alert email to (max. 64 characters)."
+        },
+        "NotificationInterval": {
+            "type": "number",
+            "description": "Notification alert interval in minutes."
+        },
+        "PppErrorsLogs": {
+            "type": "string"
+        },
+        "Severity": {
+            "type": "string",
+            "description": "Lowest severity level to log. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+        },
+        "SshLogs": {
+            "type": "string",
+            "description": "Enable/disable SSH logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "SslvpnAuthenticationErrorsLogs": {
+            "type": "string",
+            "description": "Enable/disable SSL-VPN authentication error logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Name that appears in the From: field of alert emails (max. 36 characters)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ViolationTrafficLogs": {
+            "type": "string",
+            "description": "Enable/disable violation traffic logs in alert email. Valid values: `enable`, `disable`."
+        },
+        "WarningInterval": {
+            "type": "number",
+            "description": "Warning alert interval in minutes."
+        },
+        "WebfilterLogs": {
+            "type": "string",
+            "description": "Enable/disable web filter logs in alert email. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

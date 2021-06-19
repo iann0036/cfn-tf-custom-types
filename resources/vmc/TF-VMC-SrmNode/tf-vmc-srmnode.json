@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::VMC::SrmNode",
+    "description": "Provides a resource to add an instance to SDDC after site recovery has been activated.\n~> **Note:** SRM node resource depends on site recovery resource creation. Site recovery must be activated to add SRM node instance. For details on how to activate site recovery refer to the site recovery resource [vmc_site_recovery](https://www.terraform.io/docs/providers/vmc/r/site_recovery.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vmc/TF-VMC-SrmNode/docs/README.md",
+    "definitions": {
+        "SrmInstanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SddcId": {
+            "type": "string",
+            "description": "SDDC identifier."
+        },
+        "SrmInstance": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SrmInstanceDefinition"
+            }
+        },
+        "SrmNodeExtensionKeySuffix": {
+            "type": "string",
+            "description": "Custom extension key suffix for SRM. If not specified, default extension key will be used.\nThe custom extension suffix must contain 13 characters or less, be composed of letters, numbers, ., - characters.\nThe extension suffix must begin and end with a letter or number. The suffix is appended to com.vmware.vcDr- to form the full extension key."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SddcId",
+        "SrmNodeExtensionKeySuffix"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SrmInstance"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

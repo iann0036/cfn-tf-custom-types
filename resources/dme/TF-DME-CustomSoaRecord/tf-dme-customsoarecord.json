@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::DME::CustomSoaRecord",
+    "description": "CloudFormation equivalent of dme_custom_soa_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dme/TF-DME-CustomSoaRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comp": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Expire": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NegativeCache": {
+            "type": "number"
+        },
+        "Refresh": {
+            "type": "number"
+        },
+        "Retry": {
+            "type": "number"
+        },
+        "Serial": {
+            "type": "number"
+        },
+        "Ttl": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Comp",
+        "Email",
+        "Expire",
+        "Name",
+        "NegativeCache",
+        "Refresh",
+        "Retry",
+        "Serial",
+        "Ttl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

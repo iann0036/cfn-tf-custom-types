@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::WafregionalWebAclAssociation",
+    "description": "Manages an association with WAF Regional Web ACL.\n\n-> **Note:** An Application Load Balancer can only be associated with one WAF Regional WebACL.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-WafregionalWebAclAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceArn": {
+            "type": "string",
+            "description": "ARN of the resource to associate with. For example, an Application Load Balancer or API Gateway Stage."
+        },
+        "WebAclId": {
+            "type": "string",
+            "description": "The ID of the WAF Regional WebACL to create an association."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceArn",
+        "WebAclId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

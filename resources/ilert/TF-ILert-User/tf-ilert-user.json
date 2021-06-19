@@ -1,0 +1,231 @@
+{
+    "typeName": "TF::ILert::User",
+    "description": "An [user](https://api.ilert.com/api-docs/#tag/Users) is a member of a iLert account that have the ability to interact with incidents and other data on the account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-User/docs/README.md",
+    "definitions": {
+        "HighPriorityNotificationPreferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delay": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "LandlineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "string"
+                },
+                "RegionCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Number",
+                "RegionCode"
+            ]
+        },
+        "LowPriorityNotificationPreferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delay": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "MobileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "string"
+                },
+                "RegionCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Number",
+                "RegionCode"
+            ]
+        },
+        "OnCallNotificationPreferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BeforeMin": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Department": {
+            "type": "string",
+            "description": "The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Email": {
+            "type": "string",
+            "description": "The user's email address.\n- `mobile` - (Optional) The [mobile](#mobile-arguments) block.\n- `landline` - (Optional) The [landline](#landline-arguments) block.\n- `timezone` - (Optional) The user's timezone. Allowed values are `Europe/Berlin`, `America/New_York`, `America/Los_Angeles`, `Asia/Istanbul`.\n- `position` - (Optional) The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "FirstName": {
+            "type": "string",
+            "description": "The first name of the user.\n- `last_name` - (Required) The last name of the user.\n- `email` - (Required) The user's email address.\n- `mobile` - (Optional) The [mobile](#mobile-arguments) block.\n- `landline` - (Optional) The [landline](#landline-arguments) block.\n- `timezone` - (Optional) The user's timezone. Allowed values are `Europe/Berlin`, `America/New_York`, `America/Los_Angeles`, `Asia/Istanbul`.\n- `position` - (Optional) The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Language": {
+            "type": "string",
+            "description": "The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "LastName": {
+            "type": "string",
+            "description": "The last name of the user.\n- `email` - (Required) The user's email address.\n- `mobile` - (Optional) The [mobile](#mobile-arguments) block.\n- `landline` - (Optional) The [landline](#landline-arguments) block.\n- `timezone` - (Optional) The user's timezone. Allowed values are `Europe/Berlin`, `America/New_York`, `America/Los_Angeles`, `Asia/Istanbul`.\n- `position` - (Optional) The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Position": {
+            "type": "string",
+            "description": "The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "SubscribedIncidentUpdateNotificationTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "SubscribedIncidentUpdateStates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The user's timezone. Allowed values are `Europe/Berlin`, `America/New_York`, `America/Los_Angeles`, `Asia/Istanbul`.\n- `position` - (Optional) The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username of the user.\n- `first_name` - (Required) The first name of the user.\n- `last_name` - (Required) The last name of the user.\n- `email` - (Required) The user's email address.\n- `mobile` - (Optional) The [mobile](#mobile-arguments) block.\n- `landline` - (Optional) The [landline](#landline-arguments) block.\n- `timezone` - (Optional) The user's timezone. Allowed values are `Europe/Berlin`, `America/New_York`, `America/Los_Angeles`, `Asia/Istanbul`.\n- `position` - (Optional) The user's position.\n- `department` - (Optional) The user's department.\n- `language` - (Optional) The user's language. Allowed values are `en`, `de`.\n- `role` - (Optional) The user's role. Allowed values are `ADMIN`, `USER`, `RESPONDER` or `STAKEHOLDER`. Default: `USER`\n- `high_priority_notification_preference` - (Optional) One or more [high priority notification preference](#high-priority-notification-preference-arguments) blocks.\n- `low_priority_notification_preference` - (Optional) One or more [low priority notification preference](#low-priority-notification-preference-arguments) blocks.\n- `on_call_notification_preference` - (Optional) One or more [on-call notification preference](#on-call-notification-preference-arguments) blocks.\n- `subscribed_incident_update_states` - (Optional) A list of subscribed incident update states. Allowed values are `ACCEPTED`, `ESCALATED` or `RESOLVED`.\n- `subscribed_incident_update_notification_types` - (Optional) A list of subscribed incident update notification types. Allowed values are `EMAIL`, `ANDROID`, `IPHONE`, `SMS`, `VOICE_MOBILE` or `VOICE_LANDLINE`."
+        },
+        "HighPriorityNotificationPreference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HighPriorityNotificationPreferenceDefinition"
+            }
+        },
+        "Landline": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LandlineDefinition"
+            },
+            "maxItems": 1
+        },
+        "LowPriorityNotificationPreference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LowPriorityNotificationPreferenceDefinition"
+            }
+        },
+        "Mobile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MobileDefinition"
+            },
+            "maxItems": 1
+        },
+        "OnCallNotificationPreference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnCallNotificationPreferenceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "FirstName",
+        "LastName",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

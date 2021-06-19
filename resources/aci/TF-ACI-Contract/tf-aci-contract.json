@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::ACI::Contract",
+    "description": "CloudFormation equivalent of aci_contract",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-Contract/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotation": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "FilterName": {
+                    "type": "string"
+                },
+                "NameAlias": {
+                    "type": "string"
+                },
+                "FilterEntry": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterEntryDefinition"
+                    }
+                }
+            },
+            "required": [
+                "FilterName"
+            ]
+        },
+        "FilterEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplyToFrag": {
+                    "type": "string"
+                },
+                "ArpOpc": {
+                    "type": "string"
+                },
+                "DFromPort": {
+                    "type": "string"
+                },
+                "DToPort": {
+                    "type": "string"
+                },
+                "EntryAnnotation": {
+                    "type": "string"
+                },
+                "EntryDescription": {
+                    "type": "string"
+                },
+                "EntryNameAlias": {
+                    "type": "string"
+                },
+                "EtherT": {
+                    "type": "string"
+                },
+                "FilterEntryName": {
+                    "type": "string"
+                },
+                "Icmpv4T": {
+                    "type": "string"
+                },
+                "Icmpv6T": {
+                    "type": "string"
+                },
+                "MatchDscp": {
+                    "type": "string"
+                },
+                "Prot": {
+                    "type": "string"
+                },
+                "SFromPort": {
+                    "type": "string"
+                },
+                "SToPort": {
+                    "type": "string"
+                },
+                "Stateful": {
+                    "type": "string"
+                },
+                "TcpRules": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FilterEntryName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FilterEntryIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FilterIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "Prio": {
+            "type": "string"
+        },
+        "RelationVzRsGraphAtt": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "TargetDscp": {
+            "type": "string"
+        },
+        "TenantDn": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

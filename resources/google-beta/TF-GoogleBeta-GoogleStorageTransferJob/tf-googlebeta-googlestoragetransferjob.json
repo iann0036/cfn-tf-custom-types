@@ -1,0 +1,425 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleStorageTransferJob",
+    "description": "CloudFormation equivalent of google_storage_transfer_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleStorageTransferJob/docs/README.md",
+    "definitions": {
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScheduleEndDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleEndDateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScheduleStartDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleStartDateDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "StartTimeOfDay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartTimeOfDayDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TransferSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsS3DataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsS3DataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureBlobStorageDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureBlobStorageDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcsDataSink": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSinkDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcsDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpDataSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ObjectConditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ObjectConditionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TransferOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TransferOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScheduleEndDateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "ScheduleStartDateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "StartTimeOfDayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hours": {
+                    "type": "number"
+                },
+                "Minutes": {
+                    "type": "number"
+                },
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Hours",
+                "Minutes",
+                "Nanos",
+                "Seconds"
+            ]
+        },
+        "AwsS3DataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "AwsAccessKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsAccessKeyDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "AzureBlobStorageDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Container": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "StorageAccount": {
+                    "type": "string"
+                },
+                "AzureCredentials": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureCredentialsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Container",
+                "StorageAccount"
+            ]
+        },
+        "GcsDataSinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "GcsDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "HttpDataSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ListUrl"
+            ]
+        },
+        "ObjectConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxTimeElapsedSinceLastModification": {
+                    "type": "string"
+                },
+                "MinTimeElapsedSinceLastModification": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TransferOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteObjectsFromSourceAfterTransfer": {
+                    "type": "boolean"
+                },
+                "DeleteObjectsUniqueInSink": {
+                    "type": "boolean"
+                },
+                "OverwriteObjectsAlreadyExistingInSink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AwsAccessKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKeyId",
+                "SecretAccessKey"
+            ]
+        },
+        "AzureCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SasToken": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SasToken"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "DeletionTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModificationTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TransferSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TransferSpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/DeletionTime",
+        "/properties/Id",
+        "/properties/LastModificationTime",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AwsAccessKeyDefinition/AccessKeyId",
+        "/definitions/AwsAccessKeyDefinition/SecretAccessKey",
+        "/definitions/AzureCredentialsDefinition/SasToken"
+    ]
+}

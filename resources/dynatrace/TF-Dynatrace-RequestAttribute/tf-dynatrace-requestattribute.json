@@ -1,0 +1,419 @@
+{
+    "typeName": "TF::Dynatrace::RequestAttribute",
+    "description": "CloudFormation equivalent of dynatrace_request_attribute",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-RequestAttribute/docs/README.md",
+    "definitions": {
+        "DataSourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapturingAndStorageLocation": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IibNodeType": {
+                    "type": "string"
+                },
+                "ParameterName": {
+                    "type": "string"
+                },
+                "SessionAttributeTechnology": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Technology": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "CicsSdkMethodNodeCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CicsSdkMethodNodeConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IibLabelMethodNodeCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IibLabelMethodNodeConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IibMethodNodeCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IibMethodNodeConditionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MethodsDefinition"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ValueProcessing": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueProcessingDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled",
+                "Source"
+            ]
+        },
+        "CicsSdkMethodNodeConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        },
+        "IibLabelMethodNodeConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        },
+        "IibMethodNodeConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        },
+        "MethodsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArgumentIndex": {
+                    "type": "number"
+                },
+                "Capture": {
+                    "type": "string"
+                },
+                "DeepObjectAccess": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MethodDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Capture"
+            ]
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostGroup": {
+                    "type": "string"
+                },
+                "ProcessGroup": {
+                    "type": "string"
+                },
+                "ServiceTechnology": {
+                    "type": "string"
+                },
+                "TagOfProcessGroup": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ValueProcessingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SplitAt": {
+                    "type": "string"
+                },
+                "Trim": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ValueExtractorRegex": {
+                    "type": "string"
+                },
+                "ExtractSubstring": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtractSubstringDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ValueCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueConditionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArgumentTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ClassName": {
+                    "type": "string"
+                },
+                "FileName": {
+                    "type": "string"
+                },
+                "FileNameMatcher": {
+                    "type": "string"
+                },
+                "MethodName": {
+                    "type": "string"
+                },
+                "Modifiers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ReturnType": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Visibility": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MethodName",
+                "ReturnType",
+                "Visibility"
+            ]
+        },
+        "ExtractSubstringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delimiter": {
+                    "type": "string"
+                },
+                "EndDelimiter": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Delimiter",
+                "Position"
+            ]
+        },
+        "ValueConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aggregation": {
+            "type": "string"
+        },
+        "Confidential": {
+            "type": "boolean"
+        },
+        "DataType": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Normalization": {
+            "type": "string"
+        },
+        "SkipPersonalDataMasking": {
+            "type": "boolean"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "DataSources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataSourcesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Aggregation",
+        "DataType",
+        "Name",
+        "Normalization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

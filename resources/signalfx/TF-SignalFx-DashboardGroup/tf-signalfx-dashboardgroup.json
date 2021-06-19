@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::SignalFx::DashboardGroup",
+    "description": "In the SignalFx web UI, a [dashboard group](https://developers.signalfx.com/dashboard_groups_reference.html) is a collection of dashboards.\n\n~> **NOTE** Dashboard groups cannot be accessed directly, but just via a dashboard contained in them. This is the reason why make show won't show any of yours dashboard groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-DashboardGroup/docs/README.md",
+    "definitions": {
+        "DashboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DashboardId": {
+                    "type": "string"
+                },
+                "DescriptionOverride": {
+                    "type": "string"
+                },
+                "NameOverride": {
+                    "type": "string"
+                },
+                "FilterOverride": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FilterOverrideDefinition"
+                    }
+                },
+                "VariableOverride": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VariableOverrideDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DashboardId"
+            ]
+        },
+        "ImportQualifierDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "string"
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FilterOverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negated": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Property",
+                "Values"
+            ]
+        },
+        "VariableOverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Property": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ValuesSuggested": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Property"
+            ]
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negated": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Property",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedWriterTeams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Team IDs that have write access to this dashboard group. Remember to use an admin's token if using this feature and to include that admin's team (or user id in `authorized_writer_teams`)."
+        },
+        "AuthorizedWriterUsers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "User IDs that have write access to this dashboard group. Remember to use an admin's token if using this feature and to include that admin's user id (or team id in `authorized_writer_teams`)."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the dashboard group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the dashboard group."
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Team IDs to associate the dashboard group to."
+        },
+        "Dashboard": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DashboardDefinition"
+            }
+        },
+        "ImportQualifier": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImportQualifierDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

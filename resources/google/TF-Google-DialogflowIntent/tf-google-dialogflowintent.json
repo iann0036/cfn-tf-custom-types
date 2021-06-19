@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::Google::DialogflowIntent",
+    "description": "Represents a Dialogflow intent. Intents convert a number of user expressions or patterns into an action. An action\nis an extraction of a user command or sentence semantics.\n\n\nTo get more information about Intent, see:\n\n* [API documentation](https://cloud.google.com/dialogflow/docs/reference/rest/v2/projects.agent.intents)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/dialogflow/docs/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DialogflowIntent/docs/README.md",
+    "definitions": {
+        "FollowupIntentInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FollowupIntentName": {
+                    "type": "string"
+                },
+                "ParentFollowupIntentName": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "DefaultResponsePlatforms": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Events": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FollowupIntentInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FollowupIntentInfoDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputContextNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsFallback": {
+            "type": "boolean"
+        },
+        "MlDisabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ParentFollowupIntentName": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "ResetContexts": {
+            "type": "boolean"
+        },
+        "RootFollowupIntentName": {
+            "type": "string"
+        },
+        "WebhookState": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FollowupIntentInfo",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/RootFollowupIntentName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

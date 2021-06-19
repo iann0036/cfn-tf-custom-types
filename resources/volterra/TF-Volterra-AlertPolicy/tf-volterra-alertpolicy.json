@@ -1,0 +1,293 @@
+{
+    "typeName": "TF::Volterra::AlertPolicy",
+    "description": "CloudFormation equivalent of volterra_alert_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-AlertPolicy/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NotificationParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "boolean"
+                },
+                "GroupInterval": {
+                    "type": "string"
+                },
+                "GroupWait": {
+                    "type": "string"
+                },
+                "Individual": {
+                    "type": "boolean"
+                },
+                "RepeatInterval": {
+                    "type": "string"
+                },
+                "VesIoGroup": {
+                    "type": "boolean"
+                },
+                "Custom": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ReceiversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alertname": {
+                    "type": "string"
+                },
+                "AlertnameRegex": {
+                    "type": "string"
+                },
+                "Any": {
+                    "type": "boolean"
+                },
+                "DontSend": {
+                    "type": "boolean"
+                },
+                "Send": {
+                    "type": "boolean"
+                },
+                "Custom": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomDefinition"
+                    }
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GroupDefinition"
+                    }
+                },
+                "NotificationParameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NotificationParametersDefinition"
+                    }
+                },
+                "Severity": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeverityDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "string"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SeverityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "string"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AlertnameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "string"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NotificationParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NotificationParametersDefinition"
+            }
+        },
+        "Receivers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReceiversDefinition"
+            }
+        },
+        "Routes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

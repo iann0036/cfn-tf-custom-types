@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::Splunk::OutputsTcpSyslog",
+    "description": "Access the configuration of a forwarded server configured to provide data in standard syslog format.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-OutputsTcpSyslog/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "If true, disables global syslog settings."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details."
+        },
+        "Server": {
+            "type": "string",
+            "description": "host:port of the server where syslog data should be sent."
+        },
+        "SyslogSourcetype": {
+            "type": "string",
+            "description": "Specifies a rule for handling data in addition to that provided by the \"syslog\" sourcetype. By default, there is no value for syslogSourceType.\n<br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string \"syslog\" receives this special treatment.\nTo match a source type explicitly, use the pattern \"sourcetype::sourcetype_name.\" For example\nsyslogSourcetype = sourcetype::apache_common\nData that is \"syslog\" or matches this setting is assumed to already be in syslog format.\nData that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations."
+        },
+        "TimestampFormat": {
+            "type": "string",
+            "description": "Format of timestamp to add at start of the events to be forwarded.\nThe format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Protocol to use to send syslog data. Valid values: (tcp | udp )."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

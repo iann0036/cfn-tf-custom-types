@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerSnmpcommunity",
+    "description": "Configure FortiSwitch SNMP v1/v2c communities globally.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerSnmpcommunity/docs/README.md",
+    "definitions": {
+        "HostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Host entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the SNMP manager (host)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Events": {
+            "type": "string",
+            "description": "SNMP notifications (traps) to send. Valid values: `cpu-high`, `mem-low`, `log-full`, `intf-ip`, `ent-conf-change`."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "SNMP community ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "SNMP community name."
+        },
+        "QueryV1Port": {
+            "type": "number",
+            "description": "SNMP v1 query port (default = 161)."
+        },
+        "QueryV1Status": {
+            "type": "string",
+            "description": "Enable/disable SNMP v1 queries. Valid values: `disable`, `enable`."
+        },
+        "QueryV2cPort": {
+            "type": "number",
+            "description": "SNMP v2c query port (default = 161)."
+        },
+        "QueryV2cStatus": {
+            "type": "string",
+            "description": "Enable/disable SNMP v2c queries. Valid values: `disable`, `enable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this SNMP community. Valid values: `disable`, `enable`."
+        },
+        "TrapV1Lport": {
+            "type": "number",
+            "description": "SNMP v2c trap local port (default = 162)."
+        },
+        "TrapV1Rport": {
+            "type": "number",
+            "description": "SNMP v2c trap remote port (default = 162)."
+        },
+        "TrapV1Status": {
+            "type": "string",
+            "description": "Enable/disable SNMP v1 traps. Valid values: `disable`, `enable`."
+        },
+        "TrapV2cLport": {
+            "type": "number",
+            "description": "SNMP v2c trap local port (default = 162)."
+        },
+        "TrapV2cRport": {
+            "type": "number",
+            "description": "SNMP v2c trap remote port (default = 162)."
+        },
+        "TrapV2cStatus": {
+            "type": "string",
+            "description": "Enable/disable SNMP v2c traps. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Hosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

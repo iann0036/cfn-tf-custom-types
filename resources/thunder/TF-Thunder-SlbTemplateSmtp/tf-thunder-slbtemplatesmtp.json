@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateSmtp",
+    "description": "`thunder_slb_template_smtp` Provides details about thunder slb template smtp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateSmtp/docs/README.md",
+    "definitions": {
+        "ClientDomainSwitchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchString": {
+                    "type": "string"
+                },
+                "ServiceGroup": {
+                    "type": "string"
+                },
+                "SwitchingType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CommandDisableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Logging": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientStarttlsType": {
+            "type": "string",
+            "description": "\u2018optional\u2019: STARTTLS is optional requirement; \u2018enforced\u2019: Must issue STARTTLS command before mail transaction;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "SMTP Template Name."
+        },
+        "ServerDomain": {
+            "type": "string",
+            "description": "Config the domain of the email servers (Server\u2019s domain, default is \u201cmail-server-domain\u201d)."
+        },
+        "ServerStarttlsType": {
+            "type": "string",
+            "description": "\u2018optional\u2019: STARTTLS is optional requirement; \u2018enforced\u2019: Must issue STARTTLS command before mail transaction;."
+        },
+        "ServiceReadyMsg": {
+            "type": "string",
+            "description": "Set SMTP service ready message (SMTP service ready message, default is \u201cESMTP mail service ready\u201d)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ClientDomainSwitching": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientDomainSwitchingDefinition"
+            }
+        },
+        "CommandDisable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CommandDisableDefinition"
+            }
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

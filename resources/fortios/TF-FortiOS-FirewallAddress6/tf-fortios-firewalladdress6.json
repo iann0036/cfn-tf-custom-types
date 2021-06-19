@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::FortiOS::FirewallAddress6",
+    "description": "Configure IPv6 firewall addresses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallAddress6/docs/README.md",
+    "definitions": {
+        "ListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string",
+                    "description": "IP."
+                }
+            },
+            "required": []
+        },
+        "SubnetSegmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Subnet segment type. Valid values: `any`, `specific`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Subnet segment value."
+                }
+            },
+            "required": []
+        },
+        "TaggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "Tag category."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Tagging entry name."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Tag name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheTtl": {
+            "type": "number",
+            "description": "Minimal TTL of individual IPv6 addresses in FQDN cache."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Integer value to determine the color of the icon in the GUI (range 1 to 32, default = 0, which sets the value to 1)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Country": {
+            "type": "string",
+            "description": "IPv6 addresses associated to a specific country."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EndIp": {
+            "type": "string",
+            "description": "Final IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx)."
+        },
+        "EndMac": {
+            "type": "string",
+            "description": "Last MAC address in the range."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully qualified domain name."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Host Address."
+        },
+        "HostType": {
+            "type": "string",
+            "description": "Host type. Valid values: `any`, `specific`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip6": {
+            "type": "string",
+            "description": "IPv6 address prefix (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/xxx)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Address name."
+        },
+        "ObjId": {
+            "type": "string",
+            "description": "Object ID for NSX."
+        },
+        "Sdn": {
+            "type": "string",
+            "description": "SDN."
+        },
+        "StartIp": {
+            "type": "string",
+            "description": "First IP address (inclusive) in the range for the address (format: xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx)."
+        },
+        "StartMac": {
+            "type": "string",
+            "description": "First MAC address in the range."
+        },
+        "Template": {
+            "type": "string",
+            "description": "IPv6 address template."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of IPv6 address object (default = ipprefix)."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "Enable/disable the visibility of the object in the GUI. Valid values: `enable`, `disable`."
+        },
+        "List": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ListDefinition"
+            }
+        },
+        "SubnetSegment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubnetSegmentDefinition"
+            }
+        },
+        "Tagging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaggingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

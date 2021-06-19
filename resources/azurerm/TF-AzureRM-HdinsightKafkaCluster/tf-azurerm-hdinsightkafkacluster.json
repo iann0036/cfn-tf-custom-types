@@ -1,0 +1,663 @@
+{
+    "typeName": "TF::AzureRM::HdinsightKafkaCluster",
+    "description": "Manages a HDInsight Kafka Cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-HdinsightKafkaCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ComponentVersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kafka": {
+                    "type": "string",
+                    "description": "The version of Kafka which should be used for this HDInsight Kafka Cluster. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Kafka"
+            ]
+        },
+        "GatewayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the Ambari portal enabled? The HDInsight API doesn't support disabling gateway anymore."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Head Nodes. Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Head Nodes. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "MetastoresDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ambari": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AmbariDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Hive": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HiveDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Oozie": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OozieDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogAnalyticsWorkspaceId": {
+                    "type": "string",
+                    "description": "The Operations Management Suite (OMS) workspace ID."
+                },
+                "PrimaryKey": {
+                    "type": "string",
+                    "description": "The Operations Management Suite (OMS) workspace key."
+                }
+            },
+            "required": [
+                "LogAnalyticsWorkspaceId",
+                "PrimaryKey"
+            ]
+        },
+        "RestProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupId": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Security Group ID."
+                }
+            },
+            "required": [
+                "SecurityGroupId"
+            ]
+        },
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeadNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadNodeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "KafkaManagementNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KafkaManagementNodeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WorkerNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkerNodeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ZookeeperNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZookeeperNodeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "StorageAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsDefault": {
+                    "type": "boolean",
+                    "description": "Is this the Default Storage Account for the HDInsight Hadoop Cluster? Changing this forces a new resource to be created."
+                },
+                "StorageAccountKey": {
+                    "type": "string",
+                    "description": "The Access Key which should be used to connect to the Storage Account. Changing this forces a new resource to be created."
+                },
+                "StorageContainerId": {
+                    "type": "string",
+                    "description": "The ID of the Storage Container. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "IsDefault",
+                "StorageAccountKey",
+                "StorageContainerId"
+            ]
+        },
+        "StorageAccountGen2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilesystemId": {
+                    "type": "string",
+                    "description": "The ID of the Gen2 Filesystem. Changing this forces a new resource to be created."
+                },
+                "IsDefault": {
+                    "type": "boolean",
+                    "description": "Is this the Default Storage Account for the HDInsight Hadoop Cluster? Changing this forces a new resource to be created."
+                },
+                "ManagedIdentityResourceId": {
+                    "type": "string",
+                    "description": "The ID of Managed Identity to use for accessing the Gen2 filesystem. Changing this forces a new resource to be created."
+                },
+                "StorageResourceId": {
+                    "type": "string",
+                    "description": "The ID of the Storage Account. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "FilesystemId",
+                "IsDefault",
+                "ManagedIdentityResourceId",
+                "StorageResourceId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AmbariDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseName": {
+                    "type": "string",
+                    "description": "The external Hive metastore's existing SQL database.  Changing this forces a new resource to be created."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The external Ambari metastore's existing SQL server admin password.  Changing this forces a new resource to be created."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "The fully-qualified domain name (FQDN) of the SQL server to use for the external Ambari metastore.  Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The external Ambari metastore's existing SQL server admin username.  Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "Password",
+                "Server",
+                "Username"
+            ]
+        },
+        "HiveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseName": {
+                    "type": "string",
+                    "description": "The external Hive metastore's existing SQL database.  Changing this forces a new resource to be created."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The external Hive metastore's existing SQL server admin password.  Changing this forces a new resource to be created."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "The fully-qualified domain name (FQDN) of the SQL server to use for the external Hive metastore.  Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The external Hive metastore's existing SQL server admin username.  Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "Password",
+                "Server",
+                "Username"
+            ]
+        },
+        "OozieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseName": {
+                    "type": "string",
+                    "description": "The external Oozie metastore's existing SQL database.  Changing this forces a new resource to be created."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The external Oozie metastore's existing SQL server admin password.  Changing this forces a new resource to be created."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "The fully-qualified domain name (FQDN) of the SQL server to use for the external Oozie metastore.  Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The external Oozie metastore's existing SQL server admin username.  Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "Password",
+                "Server",
+                "Username"
+            ]
+        },
+        "HeadNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VirtualNetworkId": {
+                    "type": "string"
+                },
+                "VmSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Username",
+                "VmSize"
+            ]
+        },
+        "KafkaManagementNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Kafka Management Nodes. Changing this forces a new resource to be created."
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Kafka Management Nodes. Changing this forces a new resource to be created."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Kafka Management Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Kafka Management Nodes. Changing this forces a new resource to be created."
+                },
+                "VirtualNetworkId": {
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Kafka Management Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "VmSize": {
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Kafka Management Nodes. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Username",
+                "VmSize"
+            ]
+        },
+        "WorkerNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinInstanceCount": {
+                    "type": "number",
+                    "description": "The minimum number of instances which should be run for the Worker Nodes. Changing this forces a new resource to be created."
+                },
+                "NumberOfDisksPerNode": {
+                    "type": "number",
+                    "description": "The number of Data Disks which should be assigned to each Worker Node, which can be between 1 and 8. Changing this forces a new resource to be created."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Worker Nodes. Changing this forces a new resource to be created."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "TargetInstanceCount": {
+                    "type": "number",
+                    "description": "The number of instances which should be run for the Worker Nodes."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
+                },
+                "VirtualNetworkId": {
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "VmSize": {
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Worker Nodes. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "NumberOfDisksPerNode",
+                "TargetInstanceCount",
+                "Username",
+                "VmSize"
+            ]
+        },
+        "ZookeeperNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Zookeeper Nodes. Changing this forces a new resource to be created."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
+                },
+                "VirtualNetworkId": {
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
+                },
+                "VmSize": {
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Zookeeper Nodes. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Username",
+                "VmSize"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterVersion": {
+            "type": "string",
+            "description": "Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created."
+        },
+        "EncryptionInTransitEnabled": {
+            "type": "boolean",
+            "description": "Whether encryption in transit is enabled for this HDInsight Kafka Cluster. Changing this forces a new resource to be created."
+        },
+        "HttpsEndpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KafkaRestProxyEndpoint": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the Azure Region which this HDInsight Kafka Cluster should exist. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name for this HDInsight Kafka Cluster. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which this HDInsight Kafka Cluster should exist. Changing this forces a new resource to be created."
+        },
+        "SshEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of Tags which should be assigned to this HDInsight Kafka Cluster."
+        },
+        "Tier": {
+            "type": "string",
+            "description": "Specifies the Tier which should be used for this HDInsight Kafka Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created."
+        },
+        "TlsMinVersion": {
+            "type": "string"
+        },
+        "ComponentVersion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentVersionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Gateway": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GatewayDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Metastores": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetastoresDefinition"
+            },
+            "maxItems": 1
+        },
+        "Monitor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorDefinition"
+            },
+            "maxItems": 1
+        },
+        "RestProxy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestProxyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "StorageAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageAccountDefinition"
+            }
+        },
+        "StorageAccountGen2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageAccountGen2Definition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterVersion",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Tier"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HttpsEndpoint",
+        "/properties/Id",
+        "/properties/KafkaRestProxyEndpoint",
+        "/properties/SshEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/GatewayDefinition/Password",
+        "/definitions/MonitorDefinition/PrimaryKey",
+        "/definitions/StorageAccountDefinition/StorageAccountKey",
+        "/definitions/AmbariDefinition/Password",
+        "/definitions/HiveDefinition/Password",
+        "/definitions/OozieDefinition/Password",
+        "/definitions/HeadNodeDefinition/Password",
+        "/definitions/KafkaManagementNodeDefinition/Password",
+        "/definitions/WorkerNodeDefinition/Password",
+        "/definitions/ZookeeperNodeDefinition/Password"
+    ]
+}

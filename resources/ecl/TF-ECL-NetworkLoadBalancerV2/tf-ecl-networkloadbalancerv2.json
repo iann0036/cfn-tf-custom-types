@@ -1,0 +1,272 @@
+{
+    "typeName": "TF::ECL::NetworkLoadBalancerV2",
+    "description": "Manages a V2 Load Balancer resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-NetworkLoadBalancerV2/docs/README.md",
+    "definitions": {
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Load Balancer Interface description."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "The physical IP address associated with the interface.\nThe IP address must be in the network specified as the argument `network_id`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Load Balancer Interface."
+                },
+                "NetworkId": {
+                    "type": "string",
+                    "description": "The UUID of the network associated with the interface."
+                },
+                "SlotNumber": {
+                    "type": "number",
+                    "description": "The slot number of interface."
+                },
+                "VirtualIpAddress": {
+                    "type": "string",
+                    "description": "The virtual IP address associated with the interface. The IP address must be in\nthe network specified as the argument `network_id`."
+                },
+                "VirtualIpProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualIpPropertiesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "SlotNumber"
+            ]
+        },
+        "SyslogServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclLogging": {
+                    "type": "string",
+                    "description": "Should syslog record acl info. Must be\none of \"ENABLED\" and \"DISABLED\"."
+                },
+                "AppflowLogging": {
+                    "type": "string",
+                    "description": "Should syslog record appflow info. Must be\none of \"ENABLED\" and \"DISABLED\"."
+                },
+                "DateFormat": {
+                    "type": "string",
+                    "description": "Date format utilized by syslog. Must be\none of \"DDMMYYYY\", \"MMDDYYYY\" and \"YYYYMMDD\"."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Load Balancer Syslog Server description."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "IP address of syslog server. The syslog server\nIP address must be in the network connected to the Load Balancer Interface\ndefined as the argument `interfaces`. Changing this creates a new syslog server."
+                },
+                "LogFacility": {
+                    "type": "string",
+                    "description": "Log facility for syslog. Must be\none of \"LOCAL0\", \"LOCAL1\", \"LOCAL2\", \"LOCAL3\", \"LOCAL4\", \"LOCAL5\",\n\"LOCAL6\" and \"LOCAL7\"."
+                },
+                "LogLevel": {
+                    "type": "string",
+                    "description": "Valid elements for log_level are\n\"ALERT\", \"CRITICAL\", \"EMERGENCY\", \"INFORMATIONAL\", \"NOTICE\",\n\"ALL\", \"DEBUG\", \"ERROR\", \"NONE\", \"WARNING\". `log_level` value can be assigned\ncombining multiple elements as \"ALERT|CRITICAL|EMERGENCY\".\nCaution: Can not combine \"ALL\" or \"NONE\" with the others."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Load Balancer Syslog Server.\nChanging this creates a new syslog server."
+                },
+                "PortNumber": {
+                    "type": "number",
+                    "description": "The port number of syslog server.\nThis value is integer, no less than 1 and no more than 65535.\nChanging this creates a new syslog server."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "The priority of syslog server.\nThis value is integer, no less than 0 and no more than 255."
+                },
+                "TcpLogging": {
+                    "type": "string",
+                    "description": "Should syslog record tcp protocol info. Must be\none of \"NONE\" and \"ALL\"."
+                },
+                "TenantId": {
+                    "type": "string",
+                    "description": "The owner of the syslog server. Required\nif admin wants to create a syslog server for another tenant.\nChanging this creates a new syslog server."
+                },
+                "TimeZone": {
+                    "type": "string",
+                    "description": "Time zone utilized by syslog. Must be\none of \"GMT_TIME\" and \"LOCAL_TIME\"."
+                },
+                "TransportType": {
+                    "type": "string",
+                    "description": "Protocol for syslog transport. Must be\n\"UDP\"."
+                },
+                "UserConfigurableLogMessages": {
+                    "type": "string",
+                    "description": "Can user configure log messages.\nMust be one of \"YES\" and \"NO\"."
+                }
+            },
+            "required": [
+                "IpAddress",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualIpPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Protocol": {
+                    "type": "string",
+                    "description": "Redundancy Protocol. Must be \"vrrp\"."
+                },
+                "Vrid": {
+                    "type": "number",
+                    "description": "VRRP group identifier. This value is integer,\nno less than 1 and no more than 255."
+                }
+            },
+            "required": [
+                "Protocol",
+                "Vrid"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "string"
+        },
+        "AdminUsername": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The availability zone in which to create\nthe Load Balancer. Changing this creates a new Load Balancer."
+        },
+        "DefaultGateway": {
+            "type": "string",
+            "description": "IP address of default gateway. The default gateway\nIP address must be in the network connected to the Load Balancer Interface\ndefined as the argument `interfaces`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Load Balancer description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerPlanId": {
+            "type": "string",
+            "description": "The UUID of Load Balancer Plan uses\nby the Load Balancer."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Load Balancer."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The owner of the Load Balancer. Required\nif admin wants to create a Load Balancer for another tenant.\nChanging this creates a new Load Balancer."
+        },
+        "UserPassword": {
+            "type": "string"
+        },
+        "UserUsername": {
+            "type": "string"
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfacesDefinition"
+            }
+        },
+        "SyslogServers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SyslogServersDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerPlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdminPassword",
+        "/properties/AdminUsername",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/UserPassword",
+        "/properties/UserUsername"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword",
+        "/properties/UserPassword"
+    ]
+}

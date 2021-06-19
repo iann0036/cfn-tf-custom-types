@@ -1,0 +1,365 @@
+{
+    "typeName": "TF::AzureRM::VirtualNetworkGateway",
+    "description": "Manages a Virtual Network Gateway to establish secure, cross-premises connectivity.\n\n-> **Note:** Please be aware that provisioning a Virtual Network Gateway takes a long time (between 30 minutes and 1 hour)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualNetworkGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BgpSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number"
+                },
+                "PeerWeight": {
+                    "type": "number"
+                },
+                "PeeringAddress": {
+                    "type": "string"
+                },
+                "PeeringAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PeeringAddressesDefinition"
+                    },
+                    "maxItems": 2
+                }
+            },
+            "required": []
+        },
+        "CustomRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressPrefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "A user-defined name of the IP configuration. Defaults to\n`vnetGatewayConfig`."
+                },
+                "PrivateIpAddressAllocation": {
+                    "type": "string",
+                    "description": "Defines how the private IP address\nof the gateways virtual interface is assigned. Valid options are `Static` or\n`Dynamic`. Defaults to `Dynamic`."
+                },
+                "PublicIpAddressId": {
+                    "type": "string",
+                    "description": "The ID of the public ip address to associate\nwith the Virtual Network Gateway."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the gateway subnet of a virtual network in\nwhich the virtual network gateway will be created. It is mandatory that\nthe associated subnet is named `GatewaySubnet`. Therefore, each virtual\nnetwork can contain at most a single Virtual Network Gateway."
+                }
+            },
+            "required": [
+                "PublicIpAddressId",
+                "SubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpnClientConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AadAudience": {
+                    "type": "string",
+                    "description": "The client id of the Azure VPN application.\nSee [Create an Active Directory (AD) tenant for P2S OpenVPN protocol connections](https://docs.microsoft.com/en-gb/azure/vpn-gateway/openvpn-azure-ad-tenant-multi-app) for values\nThis setting is incompatible with the use of\n`root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`."
+                },
+                "AadIssuer": {
+                    "type": "string",
+                    "description": "The STS url for your tenant\nThis setting is incompatible with the use of\n`root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`."
+                },
+                "AadTenant": {
+                    "type": "string",
+                    "description": "AzureAD Tenant URL\nThis setting is incompatible with the use of\n`root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`."
+                },
+                "AddressSpace": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The address space out of which ip addresses for\nvpn clients will be taken. You can provide more than one address space, e.g.\nin CIDR notation."
+                },
+                "RadiusServerAddress": {
+                    "type": "string",
+                    "description": "The address of the Radius server.\nThis setting is incompatible with the use of\n`aad_tenant`, `aad_audience`, `aad_issuer`, `root_certificate` and `revoked_certificate`."
+                },
+                "RadiusServerSecret": {
+                    "type": "string",
+                    "description": "The secret used by the Radius server.\nThis setting is incompatible with the use of\n`aad_tenant`, `aad_audience`, `aad_issuer`, `root_certificate` and `revoked_certificate`."
+                },
+                "VpnClientProtocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of the protocols supported by the vpn client.\nThe supported values are `SSTP`, `IkeV2` and `OpenVPN`.\nValues `SSTP` and `IkeV2` are incompatible with the use of\n`aad_tenant`, `aad_audience` and `aad_issuer`."
+                },
+                "RevokedCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RevokedCertificateDefinition"
+                    }
+                },
+                "RootCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RootCertificateDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AddressSpace"
+            ]
+        },
+        "PeeringAddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApipaAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Azure custom APIPA addresses assigned to the BGP peer of the Virtual Network Gateway."
+                },
+                "IpConfigurationName": {
+                    "type": "string",
+                    "description": "The name of the IP configuration of this Virtual Network Gateway. In case there are multiple `ip_configuration` blocks defined, this property is **required** to specify."
+                }
+            },
+            "required": []
+        },
+        "RevokedCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Thumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Thumbprint"
+            ]
+        },
+        "RootCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "A user-defined name of the revoked certificate."
+                },
+                "PublicCertData": {
+                    "type": "string",
+                    "description": "The SHA1 thumbprint of the certificate to be\nrevoked."
+                }
+            },
+            "required": [
+                "Name",
+                "PublicCertData"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveActive": {
+            "type": "boolean",
+            "description": "If `true`, an active-active Virtual Network Gateway\nwill be created. An active-active gateway requires a `HighPerformance` or an\n`UltraPerformance` sku. If `false`, an active-standby gateway will be created.\nDefaults to `false`."
+        },
+        "DefaultLocalNetworkGatewayId": {
+            "type": "string",
+            "description": "The ID of the local network gateway\nthrough which outbound Internet traffic from the virtual network in which the\ngateway is created will be routed (*forced tunnelling*). Refer to the\n[Azure documentation on forced tunnelling](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm).\nIf not specified, forced tunnelling is disabled."
+        },
+        "EnableBgp": {
+            "type": "boolean",
+            "description": "If `true`, BGP (Border Gateway Protocol) will be enabled\nfor this Virtual Network Gateway. Defaults to `false`."
+        },
+        "Generation": {
+            "type": "string",
+            "description": "The Generation of the Virtual Network gateway. Possible values include `Generation1`, `Generation2` or `None`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location/region where the Virtual Network Gateway is\nlocated. Changing the location/region forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Virtual Network Gateway. Changing the name\nforces a new resource to be created."
+        },
+        "PrivateIpAddressEnabled": {
+            "type": "boolean",
+            "description": "Should private IP be enabled on this gateway for connections? Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Virtual Network Gateway. Changing the resource group name forces\na new resource to be created."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "Configuration of the size and capacity of the virtual network\ngateway. Valid options are `Basic`, `Standard`, `HighPerformance`, `UltraPerformance`,\n`ErGw1AZ`, `ErGw2AZ`, `ErGw3AZ`, `VpnGw1`, `VpnGw2`, `VpnGw3`, `VpnGw4`,`VpnGw5`, `VpnGw1AZ`,\n`VpnGw2AZ`, `VpnGw3AZ`,`VpnGw4AZ` and `VpnGw5AZ` and depend on the `type`, `vpn_type` and\n`generation` arguments.\nA `PolicyBased` gateway only supports the `Basic` sku. Further, the `UltraPerformance`\nsku is only supported by an `ExpressRoute` gateway."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the Virtual Network Gateway. Valid options are\n`Vpn` or `ExpressRoute`. Changing the type forces a new resource to be created."
+        },
+        "VpnType": {
+            "type": "string",
+            "description": "The routing type of the Virtual Network Gateway. Valid\noptions are `RouteBased` or `PolicyBased`. Defaults to `RouteBased`."
+        },
+        "BgpSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BgpSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "CustomRoute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomRouteDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpConfigurationDefinition"
+            },
+            "maxItems": 2,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VpnClientConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpnClientConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Sku",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Akamai::NetworklistNetworkList",
+    "description": "Use the `akamai_networklist_network_list` resource to create a network list, or to modify an existing list.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-NetworklistNetworkList/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description to be assigned to the network list."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "List": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Mode": {
+            "type": "string",
+            "description": "A string specifying the interpretation of the `list` parameter. Must be one of the following:."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name to be assigned to the network list."
+        },
+        "NetworkListId": {
+            "type": "string"
+        },
+        "SyncPoint": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the network list; must be either \"IP\" or \"GEO\"."
+        },
+        "Uniqueid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Mode",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NetworkListId",
+        "/properties/SyncPoint",
+        "/properties/Uniqueid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

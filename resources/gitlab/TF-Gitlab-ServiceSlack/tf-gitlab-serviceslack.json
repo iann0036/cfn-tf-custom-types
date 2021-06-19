@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::Gitlab::ServiceSlack",
+    "description": "This resource allows you to manage Slack notifications integration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-ServiceSlack/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BranchesToBeNotified": {
+            "type": "string",
+            "description": "Branches to send notifications for. Valid options are \"all\", \"default\", \"protected\", and \"default_and_protected\"."
+        },
+        "ConfidentialIssueChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive confidential issue events notifications."
+        },
+        "ConfidentialIssuesEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for confidential issues events."
+        },
+        "ConfidentialNoteEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for confidential note events."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssueChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive issue events notifications."
+        },
+        "IssuesEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for issues events."
+        },
+        "JobEvents": {
+            "type": "boolean"
+        },
+        "MergeRequestChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive merge request events notifications."
+        },
+        "MergeRequestsEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for merge requests events."
+        },
+        "NoteChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive note events notifications."
+        },
+        "NoteEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for note events."
+        },
+        "NotifyOnlyBrokenPipelines": {
+            "type": "boolean",
+            "description": "Send notifications for broken pipelines."
+        },
+        "NotifyOnlyDefaultBranch": {
+            "type": "boolean",
+            "description": "DEPRECATED: This parameter has been replaced with `branches_to_be_notified`."
+        },
+        "PipelineChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive pipeline events notifications."
+        },
+        "PipelineEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for pipeline events."
+        },
+        "Project": {
+            "type": "string",
+            "description": "ID of the project you want to activate integration on."
+        },
+        "PushChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive push events notifications."
+        },
+        "PushEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for push events."
+        },
+        "TagPushChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive tag push events notifications."
+        },
+        "TagPushEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for tag push events."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username to use."
+        },
+        "Webhook": {
+            "type": "string",
+            "description": "Webhook URL (ex.: https://hooks.slack.com/services/...)."
+        },
+        "WikiPageChannel": {
+            "type": "string",
+            "description": "The name of the channel to receive wiki page events notifications."
+        },
+        "WikiPageEvents": {
+            "type": "boolean",
+            "description": "Enable notifications for wiki page events."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "Webhook"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/JobEvents"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

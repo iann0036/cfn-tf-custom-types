@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::OVH::DedicatedServerInstallTask",
+    "description": "Install your Dedicated Server.\n\n> NOTE: After some delay, if the task is marked as `done`, the Provider\nmay purge it. To avoid raising errors when terraform refreshes its plan, \n404 errors are ignored on Resource Read, thus some information may be lost\nafter a while.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DedicatedServerInstallTask/docs/README.md",
+    "definitions": {
+        "DetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChangeLog": {
+                    "type": "string",
+                    "description": "Template change log details."
+                },
+                "CustomHostname": {
+                    "type": "string",
+                    "description": "Set up the server using the provided hostname instead of the default hostname."
+                },
+                "DiskGroupId": {
+                    "type": "number",
+                    "description": "Disk group id."
+                },
+                "InstallRtm": {
+                    "type": "boolean",
+                    "description": "set to true to install RTM."
+                },
+                "InstallSqlServer": {
+                    "type": "boolean",
+                    "description": "set to true to install sql server (Windows template only)."
+                },
+                "Language": {
+                    "type": "string",
+                    "description": "language."
+                },
+                "NoRaid": {
+                    "type": "boolean",
+                    "description": "set to true to disable RAID."
+                },
+                "PostInstallationScriptLink": {
+                    "type": "string",
+                    "description": "Indicate the URL where your postinstall customisation script is located."
+                },
+                "PostInstallationScriptReturn": {
+                    "type": "string",
+                    "description": "Indicate the string returned by your postinstall customisation script on successful execution. Advice: your script should return a unique validation string in case of succes. A good example is 'loh1Xee7eo OK OK OK UGh8Ang1Gu'."
+                },
+                "ResetHwRaid": {
+                    "type": "boolean",
+                    "description": "set to true to make a hardware raid reset."
+                },
+                "SoftRaidDevices": {
+                    "type": "number",
+                    "description": "soft raid devices."
+                },
+                "SshKeyName": {
+                    "type": "string",
+                    "description": "Name of the ssh key that should be installed. Password login will be disabled."
+                },
+                "UseDistribKernel": {
+                    "type": "boolean",
+                    "description": "Use the distribution's native kernel instead of the recommended OVH Kernel."
+                },
+                "UseSpla": {
+                    "type": "boolean",
+                    "description": "set to true to use SPLA."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootidOnDestroy": {
+            "type": "number",
+            "description": "If set, reboot the server on the specified boot id during destroy phase."
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "DoneDate": {
+            "type": "string"
+        },
+        "Function": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdate": {
+            "type": "string"
+        },
+        "PartitionSchemeName": {
+            "type": "string",
+            "description": "Partition scheme name."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The service_name of your dedicated server."
+        },
+        "StartDate": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string",
+            "description": "Template name."
+        },
+        "Details": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Comment",
+        "/properties/DoneDate",
+        "/properties/Function",
+        "/properties/Id",
+        "/properties/LastUpdate",
+        "/properties/StartDate",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

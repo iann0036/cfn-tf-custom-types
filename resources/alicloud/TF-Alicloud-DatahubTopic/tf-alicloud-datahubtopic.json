@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Alicloud::DatahubTopic",
+    "description": "The topic is the basic unit of Datahub data source and is used to define one kind of data or stream. It contains a set of subscriptions. You can manage the datahub source of an application by using topics. [Refer to details](https://help.aliyun.com/document_detail/47440.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DatahubTopic/docs/README.md",
+    "definitions": {
+        "RecordSchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment of the datahub topic. It cannot be longer than 255 characters."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifyTime": {
+            "type": "string"
+        },
+        "LifeCycle": {
+            "type": "number",
+            "description": "How many days this topic lives. The permitted range of values is [1, 7]. The default value is 3."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the datahub topic. Its length is limited to 1-128 and only characters such as letters, digits and '_' are allowed. It is case-insensitive."
+        },
+        "ProjectName": {
+            "type": "string",
+            "description": "The name of the datahub project that this topic belongs to. It is case-insensitive."
+        },
+        "RecordSchema": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RecordSchemaDefinition"
+            },
+            "description": "Schema of this topic, required only for TUPLE topic. Supported data types (case-insensitive) are:\n- BIGINT\n- STRING\n- BOOLEAN\n- DOUBLE\n- TIMESTAMP."
+        },
+        "RecordType": {
+            "type": "string",
+            "description": "The type of this topic. Its value must be one of {BLOB, TUPLE}. For BLOB topic, data will be organized as binary and encoded by BASE64. For TUPLE topic, data has fixed schema. The default value is \"TUPLE\" with a schema {STRING}."
+        },
+        "ShardCount": {
+            "type": "number",
+            "description": "The number of shards this topic contains. The permitted range of values is [1, 10]. The default value is 1."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/LastModifyTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

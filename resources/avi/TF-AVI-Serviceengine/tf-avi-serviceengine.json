@@ -1,0 +1,507 @@
+{
+    "typeName": "TF::AVI::Serviceengine",
+    "description": "The ServiceEngine resource allows the creation and management of Avi ServiceEngine",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Serviceengine/docs/README.md",
+    "definitions": {
+        "DataVnicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adapter": {
+                    "type": "string"
+                },
+                "AggregatorChgd": {
+                    "type": "boolean"
+                },
+                "CanSeDpTakeover": {
+                    "type": "boolean"
+                },
+                "Connected": {
+                    "type": "boolean"
+                },
+                "DelPending": {
+                    "type": "boolean"
+                },
+                "DeleteVnic": {
+                    "type": "boolean"
+                },
+                "DhcpEnabled": {
+                    "type": "boolean"
+                },
+                "DpDeletionDone": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IfName": {
+                    "type": "string"
+                },
+                "Ip6AutocfgEnabled": {
+                    "type": "boolean"
+                },
+                "IsAsm": {
+                    "type": "boolean"
+                },
+                "IsAviInternalNetwork": {
+                    "type": "boolean"
+                },
+                "IsHsm": {
+                    "type": "boolean"
+                },
+                "IsMgmt": {
+                    "type": "boolean"
+                },
+                "IsPortchannel": {
+                    "type": "boolean"
+                },
+                "LinkUp": {
+                    "type": "boolean"
+                },
+                "LinuxName": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Mtu": {
+                    "type": "number"
+                },
+                "NetworkName": {
+                    "type": "string"
+                },
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "PciId": {
+                    "type": "string"
+                },
+                "PortUuid": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "number"
+                },
+                "VrfId": {
+                    "type": "number"
+                },
+                "VrfRef": {
+                    "type": "string"
+                },
+                "Members": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MembersDefinition"
+                    }
+                },
+                "VlanInterfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VlanInterfacesDefinition"
+                    }
+                },
+                "VnicNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VnicNetworksDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MacAddress"
+            ]
+        },
+        "MgmtVnicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adapter": {
+                    "type": "string"
+                },
+                "AggregatorChgd": {
+                    "type": "boolean"
+                },
+                "CanSeDpTakeover": {
+                    "type": "boolean"
+                },
+                "Connected": {
+                    "type": "boolean"
+                },
+                "DelPending": {
+                    "type": "boolean"
+                },
+                "DeleteVnic": {
+                    "type": "boolean"
+                },
+                "DhcpEnabled": {
+                    "type": "boolean"
+                },
+                "DpDeletionDone": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IfName": {
+                    "type": "string"
+                },
+                "Ip6AutocfgEnabled": {
+                    "type": "boolean"
+                },
+                "IsAsm": {
+                    "type": "boolean"
+                },
+                "IsAviInternalNetwork": {
+                    "type": "boolean"
+                },
+                "IsHsm": {
+                    "type": "boolean"
+                },
+                "IsMgmt": {
+                    "type": "boolean"
+                },
+                "IsPortchannel": {
+                    "type": "boolean"
+                },
+                "LinkUp": {
+                    "type": "boolean"
+                },
+                "LinuxName": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Mtu": {
+                    "type": "number"
+                },
+                "NetworkName": {
+                    "type": "string"
+                },
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "PciId": {
+                    "type": "string"
+                },
+                "PortUuid": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "number"
+                },
+                "VrfId": {
+                    "type": "number"
+                },
+                "VrfRef": {
+                    "type": "string"
+                },
+                "Members": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MembersDefinition"
+                    }
+                },
+                "VlanInterfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VlanInterfacesDefinition"
+                    }
+                },
+                "VnicNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VnicNetworksDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MacAddress"
+            ]
+        },
+        "ResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoresPerSocket": {
+                    "type": "number"
+                },
+                "Disk": {
+                    "type": "number"
+                },
+                "HyperThreading": {
+                    "type": "boolean"
+                },
+                "HypervisorMode": {
+                    "type": "boolean"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "NumDatapathProcesses": {
+                    "type": "number"
+                },
+                "NumVcpus": {
+                    "type": "number"
+                },
+                "Sockets": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Disk",
+                "Memory",
+                "NumVcpus"
+            ]
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "IfName": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IfName"
+            ]
+        },
+        "VlanInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DhcpEnabled": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IfName": {
+                    "type": "string"
+                },
+                "Ip6AutocfgEnabled": {
+                    "type": "boolean"
+                },
+                "IsMgmt": {
+                    "type": "boolean"
+                },
+                "VlanId": {
+                    "type": "number"
+                },
+                "VrfRef": {
+                    "type": "string"
+                },
+                "VnicNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VnicNetworksDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IfName"
+            ]
+        },
+        "VnicNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CtlrAlloc": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Placeholder for description of property availability_zone of obj type serviceengine field type string  type str."
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud."
+        },
+        "ContainerMode": {
+            "type": "boolean",
+            "description": "Boolean flag to set container_mode."
+        },
+        "ContainerType": {
+            "type": "string",
+            "description": "Enum options - container_type_bridge, container_type_host, container_type_host_dpdk."
+        },
+        "ControllerCreated": {
+            "type": "boolean",
+            "description": "Boolean flag to set controller_created."
+        },
+        "ControllerIp": {
+            "type": "string",
+            "description": "Placeholder for description of property controller_ip of obj type serviceengine field type string  type str."
+        },
+        "EnableState": {
+            "type": "string",
+            "description": "Inorder to disable se set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE."
+        },
+        "Flavor": {
+            "type": "string",
+            "description": "Placeholder for description of property flavor of obj type serviceengine field type string  type str."
+        },
+        "HostRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type vimgrhostruntime."
+        },
+        "Hypervisor": {
+            "type": "string",
+            "description": "Enum options - default, vmware_esx, kvm, vmware_vsan, xen."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "SeGroupRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type serviceenginegroup."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "DataVnics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataVnicsDefinition"
+            }
+        },
+        "MgmtVnic": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MgmtVnicDefinition"
+            }
+        },
+        "Resources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourcesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

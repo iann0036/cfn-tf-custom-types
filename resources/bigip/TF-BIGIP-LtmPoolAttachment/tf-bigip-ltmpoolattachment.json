@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::BIGIP::LtmPoolAttachment",
+    "description": "`bigip_ltm_pool_attachment` Manages nodes membership in pools",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmPoolAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionLimit": {
+            "type": "number",
+            "description": "Specifies a maximum established connection limit for a pool member or node.The default is 0, meaning that there is no limit to the number of connections."
+        },
+        "ConnectionRateLimit": {
+            "type": "string",
+            "description": "Specifies the maximum number of connections-per-second allowed for a pool member,The default is 0."
+        },
+        "DynamicRatio": {
+            "type": "number",
+            "description": "Specifies the fixed ratio value used for a node during ratio load balancing."
+        },
+        "FqdnAutopopulate": {
+            "type": "string",
+            "description": "Specifies whether the system automatically creates ephemeral nodes using the IP addresses returned by the resolution of a DNS query for a node defined by an FQDN. The default is enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Node": {
+            "type": "string",
+            "description": "Pool member address/fqdn with service port, (ex: `1.1.1.1:80/www.google.com:80`). (Note: Member will be in same partition of Pool)."
+        },
+        "Pool": {
+            "type": "string",
+            "description": "Name of the pool to which members should be attached,it should be \"full path\".The full path is the combination of the partition + name of the pool.(For example `/Common/my-pool`) or partition + directory + name of the pool (For example `/Common/test/my-pool`).When including directory in fullpath we have to make sure it is created in the given partition before using it."
+        },
+        "PriorityGroup": {
+            "type": "number",
+            "description": "Specifies a number representing the priority group for the pool member. The default is 0, meaning that the member has no priority."
+        },
+        "Ratio": {
+            "type": "number",
+            "description": "\"Specifies the ratio weight to assign to the pool member. Valid values range from 1 through 65535. The default is 1, which means that each pool member has an equal ratio proportion.\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Node",
+        "Pool"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

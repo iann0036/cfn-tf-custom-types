@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::VpnsslwebRealm",
+    "description": "CloudFormation equivalent of fortios_vpnsslweb_realm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnsslwebRealm/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoginPage": {
+            "type": "string",
+            "description": "Replacement HTML for SSL-VPN login page."
+        },
+        "MaxConcurrentUser": {
+            "type": "number",
+            "description": "Maximum concurrent users (0 - 65535, 0 means unlimited)."
+        },
+        "NasIp": {
+            "type": "string",
+            "description": "IP address used as a NAS-IP to communicate with the RADIUS server."
+        },
+        "RadiusPort": {
+            "type": "number",
+            "description": "RADIUS service port number (0 - 65535, 0 means user.radius.radius-port)."
+        },
+        "RadiusServer": {
+            "type": "string",
+            "description": "RADIUS server associated with realm."
+        },
+        "UrlPath": {
+            "type": "string",
+            "description": "URL path to access SSL-VPN login page."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VirtualHost": {
+            "type": "string",
+            "description": "Virtual host name for realm."
+        },
+        "VirtualHostOnly": {
+            "type": "string",
+            "description": "Enable/disable enforcement of virtual host method for SSL-VPN client access. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

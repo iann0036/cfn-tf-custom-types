@@ -1,0 +1,313 @@
+{
+    "typeName": "TF::PrismaCloud::Policy",
+    "description": "Manage a specific policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-Policy/docs/README.md",
+    "definitions": {
+        "ComplianceMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComplianceId": {
+                    "type": "string"
+                },
+                "CustomAssigned": {
+                    "type": "boolean"
+                },
+                "RequirementDescription": {
+                    "type": "string"
+                },
+                "RequirementId": {
+                    "type": "string"
+                },
+                "RequirementName": {
+                    "type": "string"
+                },
+                "SectionDescription": {
+                    "type": "string"
+                },
+                "SectionId": {
+                    "type": "string"
+                },
+                "SectionLabel": {
+                    "type": "string"
+                },
+                "StandardDescription": {
+                    "type": "string"
+                },
+                "StandardName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RemediationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CliScriptJsonSchemaString": {
+                    "type": "string"
+                },
+                "CliScriptTemplate": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "TemplateType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiName": {
+                    "type": "string"
+                },
+                "CloudAccount": {
+                    "type": "string"
+                },
+                "CloudType": {
+                    "type": "string"
+                },
+                "Criteria": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                },
+                "ResourceIdPath": {
+                    "type": "string"
+                },
+                "ResourceType": {
+                    "type": "string"
+                },
+                "RuleType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Criteria",
+                "Name",
+                "Parameters",
+                "RuleType"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "string",
+            "description": "Cloud type."
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedOn": {
+            "type": "number"
+        },
+        "Deleted": {
+            "type": "boolean",
+            "description": "Deleted."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels."
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedOn": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Policy name."
+        },
+        "OpenAlertsCount": {
+            "type": "number"
+        },
+        "Overridden": {
+            "type": "boolean",
+            "description": "Overridden."
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "PolicyId": {
+            "type": "string"
+        },
+        "PolicyMode": {
+            "type": "string"
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "Policy type.  Valid values are `config`, `audit_event`, or `network`."
+        },
+        "Recommendation": {
+            "type": "string",
+            "description": "Remediation recommendation."
+        },
+        "Remediable": {
+            "type": "boolean",
+            "description": "Is remediable or not."
+        },
+        "RestrictAlertDismissal": {
+            "type": "boolean",
+            "description": "Restrict alert dismissal."
+        },
+        "RuleLastModifiedOn": {
+            "type": "number"
+        },
+        "Severity": {
+            "type": "string",
+            "description": "Severity.  Valid values are `low` (default), `medium`, or `high`."
+        },
+        "SystemDefault": {
+            "type": "boolean",
+            "description": "If policy is a system default policy or not."
+        },
+        "ComplianceMetadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComplianceMetadataDefinition"
+            }
+        },
+        "Remediation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemediationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PolicyType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedBy",
+        "/properties/CreatedOn",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedOn",
+        "/properties/OpenAlertsCount",
+        "/properties/Owner",
+        "/properties/PolicyId",
+        "/properties/PolicyMode",
+        "/properties/RuleLastModifiedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

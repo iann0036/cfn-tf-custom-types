@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::ACI::NodeMgmtEpg",
+    "description": "Manages ACI Node Management EPg",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-NodeMgmtEpg/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Encap": {
+            "type": "string"
+        },
+        "ExceptionTag": {
+            "type": "string"
+        },
+        "FloodOnEncap": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagementProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent management profile object. Default value: \"uni/tn-mgmt/mgmtp-default\"."
+        },
+        "MatchT": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PrefGrMemb": {
+            "type": "string"
+        },
+        "Prio": {
+            "type": "string"
+        },
+        "RelationFvRsCons": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsConsIf": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsCustQosPol": {
+            "type": "string"
+        },
+        "RelationFvRsIntraEpg": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProtBy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsProv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsSecInherited": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationMgmtRsInBStNode": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationMgmtRsMgmtBd": {
+            "type": "string"
+        },
+        "RelationMgmtRsOoBCtx": {
+            "type": "string"
+        },
+        "RelationMgmtRsOoBProv": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationMgmtRsOoBStNode": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of node management EPg to be configured.\nAllowed values: \"in_band\", \"out_of_band\".\n- `management_profile_dn` - (Optional) Distinguished name of parent management profile object. Default value: \"uni/tn-mgmt/mgmtp-default\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ManagementProfileDn",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

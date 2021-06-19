@@ -1,0 +1,412 @@
+{
+    "typeName": "TF::TencentCloud::CdnDomain",
+    "description": "Provides a resource to create a CDN domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CdnDomain/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Http2Switch": {
+                    "type": "string",
+                    "description": "HTTP2 configuration switch. Valid values are `on` and `off`. and default value is `off`."
+                },
+                "HttpsSwitch": {
+                    "type": "string",
+                    "description": "HTTPS configuration switch. Valid values are `on` and `off`."
+                },
+                "OcspStaplingSwitch": {
+                    "type": "string",
+                    "description": "OCSP configuration switch. Valid values are `on` and `off`. and default value is `off`."
+                },
+                "SpdySwitch": {
+                    "type": "string",
+                    "description": "Spdy configuration switch. Valid values are `on` and `off`. and default value is `off`. This parameter is for white-list customer."
+                },
+                "VerifyClient": {
+                    "type": "string",
+                    "description": "Client certificate authentication feature. Valid values are `on` and `off`. and default value is `off`."
+                },
+                "ClientCertificateConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientCertificateConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ForceRedirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForceRedirectDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ServerCertificateConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerCertificateConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "HttpsSwitch"
+            ]
+        },
+        "OriginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackupOriginList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Backup origin server list. Valid values can be ip or domain name. When modifying the backup origin server, you need to enter the corresponding `backup_origin_type`."
+                },
+                "BackupOriginType": {
+                    "type": "string",
+                    "description": "Backup origin server type, which supports the following types: `domain`: domain name type, `ip`: IP list used as origin server."
+                },
+                "BackupServerName": {
+                    "type": "string",
+                    "description": "Host header used when accessing the backup origin server. If left empty, the ServerName of master origin server will be used by default."
+                },
+                "CosPrivateAccess": {
+                    "type": "string",
+                    "description": "When OriginType is COS, you can specify if access to private buckets is allowed. Valid values are `on` and `off`. and default value is `off`."
+                },
+                "OriginList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Master origin server list. Valid values can be ip or domain name. When modifying the origin server, you need to enter the corresponding `origin_type`."
+                },
+                "OriginPullProtocol": {
+                    "type": "string",
+                    "description": "Origin-pull protocol configuration. `http`: forced HTTP origin-pull, `follow`: protocol follow origin-pull, `https`: forced HTTPS origin-pull. This only supports origin server port 443 for origin-pull."
+                },
+                "OriginType": {
+                    "type": "string",
+                    "description": "Master origin server type. The following types are supported: `domain`: domain name type, `cos`: COS origin, `ip`: IP list used as origin server, `ipv6`: origin server list is a single IPv6 address, `ip_ipv6`: origin server list is multiple IPv4 addresses and an IPv6 address."
+                },
+                "ServerName": {
+                    "type": "string",
+                    "description": "Host header used when accessing the master origin server. If left empty, the acceleration domain name will be used by default."
+                }
+            },
+            "required": [
+                "OriginList",
+                "OriginType"
+            ]
+        },
+        "RequestHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Switch": {
+                    "type": "string",
+                    "description": "Custom request header configuration switch. Valid values are `on` and `off`. and default value is `off`."
+                },
+                "HeaderRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RuleCacheDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheTime": {
+                    "type": "number",
+                    "description": "Cache expiration time setting, the unit is second, the maximum can be set to 365 days."
+                },
+                "CompareMaxAge": {
+                    "type": "string",
+                    "description": "Advanced cache expiration configuration. When it is turned on, it will compare the max-age value returned by the origin site with the cache expiration time set in CacheRules, and take the minimum value to cache at the node. Valid values are `on` and `off`. Default value is `off`."
+                },
+                "FollowOriginSwitch": {
+                    "type": "string",
+                    "description": "Follow the source station configuration switch. Valid values are `on` and `off`."
+                },
+                "IgnoreCacheControl": {
+                    "type": "string",
+                    "description": "Force caching. After opening, the no-store and no-cache resources returned by the origin site will also be cached in accordance with the CacheRules rules. Valid values are `on` and `off`. Default value is `off`."
+                },
+                "IgnoreSetCookie": {
+                    "type": "string",
+                    "description": "Ignore the Set-Cookie header of the origin site. Valid values are `on` and `off`. Default value is `off`. This parameter is for white-list customer."
+                },
+                "NoCacheSwitch": {
+                    "type": "string",
+                    "description": "Cache configuration switch. Valid values are `on` and `off`."
+                },
+                "ReValidate": {
+                    "type": "string",
+                    "description": "Always check back to origin. Valid values are `on` and `off`. Default value is `off`."
+                },
+                "RulePaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Matching content under the corresponding type of CacheType: `all`: fill *, `file`: fill in the suffix name, such as jpg, txt, `directory`: fill in the path, such as /xxx/test, `path`: fill in the absolute path, such as /xxx/test.html, `index`: fill /, `default`: Fill `no max-age`."
+                },
+                "RuleType": {
+                    "type": "string",
+                    "description": "Rule type. The following types are supported: `all`: all documents take effect, `file`: the specified file suffix takes effect, `directory`: the specified path takes effect, `path`: specify the absolute path to take effect, `index`: home page, `default`: effective when the source site has no max-age."
+                },
+                "Switch": {
+                    "type": "string",
+                    "description": "Cache configuration switch. Valid values are `on` and `off`."
+                }
+            },
+            "required": [
+                "CacheTime"
+            ]
+        },
+        "ClientCertificateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CertificateContent"
+            ]
+        },
+        "ForceRedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectStatusCode": {
+                    "type": "number"
+                },
+                "RedirectType": {
+                    "type": "string"
+                },
+                "Switch": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerCertificateConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateContent": {
+                    "type": "string",
+                    "description": "Server certificate information. This is required when uploading an external certificate, which should contain the complete certificate chain."
+                },
+                "CertificateId": {
+                    "type": "string",
+                    "description": "Server certificate ID."
+                },
+                "Message": {
+                    "type": "string",
+                    "description": "Certificate remarks."
+                },
+                "PrivateKey": {
+                    "type": "string",
+                    "description": "Server key information. This is required when uploading an external certificate."
+                }
+            },
+            "required": []
+        },
+        "HeaderRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderMode": {
+                    "type": "string"
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "RulePaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RuleType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HeaderMode",
+                "HeaderName",
+                "HeaderValue",
+                "RulePaths",
+                "RuleType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Area": {
+            "type": "string",
+            "description": "Domain name acceleration region. `mainland`: acceleration inside mainland China, `overseas`: acceleration outside mainland China, `global`: global acceleration. Overseas acceleration service must be enabled to use overseas acceleration and global acceleration."
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Name of the acceleration domain."
+        },
+        "FullUrlCache": {
+            "type": "boolean",
+            "description": "Whether to enable full-path cache. Default value is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "The project CDN belongs to, default to 0."
+        },
+        "RangeOriginSwitch": {
+            "type": "string",
+            "description": "Sharding back to source configuration switch. Valid values are `on` and `off`. Default value is `on`."
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "Acceleration domain name service type. `web`: static acceleration, `download`: download acceleration, `media`: streaming media VOD acceleration."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of cdn domain."
+        },
+        "HttpsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Origin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OriginDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RequestHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestHeaderDefinition"
+            },
+            "maxItems": 1
+        },
+        "RuleCache": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleCacheDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "ServiceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

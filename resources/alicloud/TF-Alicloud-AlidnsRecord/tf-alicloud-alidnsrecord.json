@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Alicloud::AlidnsRecord",
+    "description": "Provides a Alidns Record resource. For information about Alidns Domain Record and how to use it, see [What is Resource Alidns Record](https://www.alibabacloud.com/help/en/doc-detail/29772.htm).\n\n-> **NOTE:** Available in v1.85.0+.\n\n-> **NOTE:** When the site is an international site, the `type` neither supports `REDIRECT_URL` nor `REDIRECT_URL`",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-AlidnsRecord/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Name of the domain. This name without suffix can have a string of 1 to 63 characters, must contain only alphanumeric characters or \"-\", and must not begin or end with \"-\", and \"-\" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lang": {
+            "type": "string",
+            "description": "User language."
+        },
+        "Line": {
+            "type": "string",
+            "description": "The resolution line of domain record. Valid values: `default`, `telecom`, `unicom`, `mobile`, `oversea`, `edu`, `drpeng`, `btvn`. When the `type` is `FORWORD_URL`, this parameter must be `default`. Default value is `default`. For checking all resolution lines enumeration please visit [Alibaba Cloud DNS doc](https://www.alibabacloud.com/help/doc-detail/34339.htm) or using alicloud_dns_resolution_lines in data source to get the value."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of domain record. Valid values: `[1-10]`. When the `type` is `MX`, this parameter is required."
+        },
+        "Remark": {
+            "type": "string",
+            "description": "The remark of the domain record."
+        },
+        "Rr": {
+            "type": "string",
+            "description": "Host record for the domain record. This host_record can have at most 253 characters, and each part split with `.` can have at most 63 characters, and must contain only alphanumeric characters or hyphens, such as `-`, `.`, `*`, `@`, and must not begin or end with `-`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the domain record. Valid values: `ENABLE`,`DISABLE`."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The effective time of domain record. Its scope depends on the edition of the cloud resolution. Free is `[600, 86400]`, Basic is `[120, 86400]`, Standard is `[60, 86400]`, Ultimate is `[10, 86400]`, Exclusive is `[1, 86400]`. Default value is `600`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of domain record. Valid values: `A`,`NS`,`MX`,`TXT`,`CNAME`,`SRV`,`AAAA`,`CAA`, `REDIRECT_URL` and `FORWORD_URL`."
+        },
+        "UserClientIp": {
+            "type": "string",
+            "description": "The IP address of the client."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of domain record, When the `type` is `MX`,`NS`,`CNAME`,`SRV`, the server will treat the `value` as a fully qualified domain name, so it's no need to add a `.` at the end."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName",
+        "Rr",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

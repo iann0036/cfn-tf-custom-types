@@ -1,0 +1,372 @@
+{
+    "typeName": "TF::OPC::LbaasPolicy",
+    "description": "The `opc_lbaas_policy` resource creates and manages a Load Balancer Classic Policy for a Load Balancer Classic instance.\n\nThe Policy resource supports the definition of distinct Policy types:\n\n- [Application Cookie Stickiness Policy](#application-cookie-stickiness-policy)\n- [CloudGate Policy](#cloudgate-policy)\n- [Load Balancer Cookie Stickiness Policy](#load-balancer-cookie-stickiness-policy)\n- [Load Balancing Mechanism Policy](#load-balancing-mechanism-policy)\n- [Rate Limiting Request Policy](#rate-limiting-request-policy)\n- [Redirect Policy](#redirect-policy)\n- [Resource Access Control Policy](#resource-access-control-policy)\n- [Set Request Header Policy](#set-request-header-policy)\n- [SSL Negotiation Policy](#set-negotiation-policy)\n- [Trusted Certificate Policy](#trusted-certificate-policy)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-LbaasPolicy/docs/README.md",
+    "definitions": {
+        "ApplicationCookieStickinessPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CookieName"
+            ]
+        },
+        "CloudgatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudgateApplication": {
+                    "type": "string"
+                },
+                "CloudgatePolicyName": {
+                    "type": "string"
+                },
+                "IdentityServiceInstanceGuid": {
+                    "type": "string"
+                },
+                "VirtualHostnameForPolicyAttribution": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VirtualHostnameForPolicyAttribution"
+            ]
+        },
+        "LoadBalancerCookieStickinessPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpirationPeriod": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "CookieExpirationPeriod"
+            ]
+        },
+        "LoadBalancingMechanismPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoadBalancingMechanism": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancingMechanism"
+            ]
+        },
+        "RateLimitingRequestPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSize": {
+                    "type": "number"
+                },
+                "DelayExcessiveRequests": {
+                    "type": "boolean"
+                },
+                "HttpErrorCode": {
+                    "type": "number"
+                },
+                "LoggingLevel": {
+                    "type": "string"
+                },
+                "RateLimitingCriteria": {
+                    "type": "string"
+                },
+                "RequestsPerSecond": {
+                    "type": "number"
+                },
+                "Zone": {
+                    "type": "string"
+                },
+                "ZoneMemorySize": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BurstSize",
+                "DelayExcessiveRequests",
+                "RequestsPerSecond",
+                "Zone"
+            ]
+        },
+        "RedirectPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectUri": {
+                    "type": "string"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "RedirectUri",
+                "ResponseCode"
+            ]
+        },
+        "ResourceAccessControlPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeniedClients": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Disposition": {
+                    "type": "string"
+                },
+                "PermittedClients": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Disposition"
+            ]
+        },
+        "SetRequestHeaderPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionWhenHeaderExists": {
+                    "type": "string"
+                },
+                "ActionWhenHeaderValueIs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionWhenHeaderValueIsNot": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HeaderName"
+            ]
+        },
+        "SslNegotiationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "ServerOrderPreference": {
+                    "type": "string"
+                },
+                "SslCiphers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SslProtocol": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Port",
+                "SslProtocol"
+            ]
+        },
+        "TrustedCertificatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrustedCertificate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TrustedCertificate"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancer": {
+            "type": "string",
+            "description": "The parent Load Balancer the Listener."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Listener."
+        },
+        "State": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "ApplicationCookieStickinessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationCookieStickinessPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "CloudgatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudgatePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancerCookieStickinessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerCookieStickinessPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancingMechanismPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancingMechanismPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RateLimitingRequestPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RateLimitingRequestPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RedirectPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedirectPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResourceAccessControlPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceAccessControlPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "SetRequestHeaderPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SetRequestHeaderPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "SslNegotiationPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslNegotiationPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "TrustedCertificatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedCertificatePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancer",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/Type",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

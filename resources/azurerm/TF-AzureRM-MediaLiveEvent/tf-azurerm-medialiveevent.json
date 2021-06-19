@@ -1,0 +1,268 @@
+{
+    "typeName": "TF::AzureRM::MediaLiveEvent",
+    "description": "Manages a Live Event.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MediaLiveEvent/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CrossSiteAccessPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientAccessPolicy": {
+                    "type": "string"
+                },
+                "CrossDomainPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EncodingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyFrameInterval": {
+                    "type": "string"
+                },
+                "PresetName": {
+                    "type": "string"
+                },
+                "StretchMode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InputDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessToken": {
+                    "type": "string"
+                },
+                "KeyFrameIntervalDuration": {
+                    "type": "string"
+                },
+                "StreamingProtocol": {
+                    "type": "string"
+                },
+                "IpAccessControlAllow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAccessControlAllowDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PreviewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlternativeMediaId": {
+                    "type": "string"
+                },
+                "PreviewLocator": {
+                    "type": "string"
+                },
+                "StreamingPolicyName": {
+                    "type": "string"
+                },
+                "IpAccessControlAllow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAccessControlAllowDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAccessControlAllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubnetPrefixLength": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoStartEnabled": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HostnamePrefix": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "MediaServicesAccountName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TranscriptionLanguages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UseStaticHostname": {
+            "type": "boolean"
+        },
+        "CrossSiteAccessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrossSiteAccessPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Encoding": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncodingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Input": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Preview": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreviewDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "MediaServicesAccountName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,269 @@
+{
+    "typeName": "TF::OPC::ComputeOrchestratedInstance",
+    "description": "The `opc_compute_orchestrated_instance` resource creates and manages an orchestration containing a number of\ninstances in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeOrchestratedInstance/docs/README.md",
+    "definitions": {
+        "InstanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootOrder": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "ImageList": {
+                    "type": "string"
+                },
+                "InstanceAttributes": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Persistent": {
+                    "type": "boolean"
+                },
+                "ReverseDns": {
+                    "type": "boolean"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NetworkingInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkingInfoDefinition"
+                    }
+                },
+                "Storage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Shape"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkingInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IpNetwork": {
+                    "type": "string"
+                },
+                "IsDefaultGateway": {
+                    "type": "boolean"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "NameServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Nat": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SearchDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SecLists": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SharedNetwork": {
+                    "type": "boolean"
+                },
+                "Vnic": {
+                    "type": "string"
+                },
+                "VnicSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Index"
+            ]
+        },
+        "StorageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "Volume": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Volume"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DesiredState": {
+            "type": "string",
+            "description": "The desired state of the orchestration. Permitted values are:."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the orchestration."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Instance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredState",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

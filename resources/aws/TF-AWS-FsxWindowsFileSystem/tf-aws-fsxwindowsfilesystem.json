@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::AWS::FsxWindowsFileSystem",
+    "description": "Manages a FSx Windows File System. See the [FSx Windows Guide](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html) for more information.\n\n~> **NOTE:** Either the `active_directory_id` argument or `self_managed_active_directory` configuration block must be specified.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-FsxWindowsFileSystem/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SelfManagedActiveDirectoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DomainName": {
+                    "type": "string"
+                },
+                "FileSystemAdministratorsGroup": {
+                    "type": "string"
+                },
+                "OrganizationalUnitDistinguishedName": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DnsIps",
+                "DomainName",
+                "Password",
+                "Username"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveDirectoryId": {
+            "type": "string",
+            "description": "The ID for an existing Microsoft Active Directory instance that the file system should join when it's created. Cannot be specified with `self_managed_active_directory`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutomaticBackupRetentionDays": {
+            "type": "number",
+            "description": "The number of days to retain automatic backups. Minimum of `0` and maximum of `90`. Defaults to `7`. Set to `0` to disable."
+        },
+        "CopyTagsToBackups": {
+            "type": "boolean",
+            "description": "A boolean flag indicating whether tags on the file system should be copied to backups. Defaults to `false`."
+        },
+        "DailyAutomaticBackupStartTime": {
+            "type": "string",
+            "description": "The preferred time (in `HH:MM` format) to take daily automatic backups, in the UTC time zone."
+        },
+        "DeploymentType": {
+            "type": "string",
+            "description": "Specifies the file system deployment type, valid values are `MULTI_AZ_1`, `SINGLE_AZ_1` and `SINGLE_AZ_2`. Default value is `SINGLE_AZ_1`."
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key."
+        },
+        "NetworkInterfaceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PreferredFileServerIp": {
+            "type": "string"
+        },
+        "PreferredSubnetId": {
+            "type": "string",
+            "description": "Specifies the subnet in which you want the preferred file server to be located. Required for when deployment type is `MULTI_AZ_1`."
+        },
+        "RemoteAdministrationEndpoint": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces."
+        },
+        "SkipFinalBackup": {
+            "type": "boolean",
+            "description": "When enabled, will skip the default final backup taken when the file system is deleted. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`."
+        },
+        "StorageCapacity": {
+            "type": "number",
+            "description": "Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536. If the storage type is set to `HDD` the minimum value is 2000."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "Specifies the storage type, Valid values are `SSD` and `HDD`. `HDD` is supported on `SINGLE_AZ_2` and `MULTI_AZ_1` Windows file system deployment types. Default value is `SSD`."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of IDs for the subnets that the file system will be accessible from. To specify more than a single subnet set `deployment_type` to `MULTI_AZ_1`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the file system. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ThroughputCapacity": {
+            "type": "number",
+            "description": "Throughput (megabytes per second) of the file system in power of 2 increments. Minimum of `8` and maximum of `2048`."
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "WeeklyMaintenanceStartTime": {
+            "type": "string",
+            "description": "The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone."
+        },
+        "SelfManagedActiveDirectory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SelfManagedActiveDirectoryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StorageCapacity",
+        "SubnetIds",
+        "ThroughputCapacity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DnsName",
+        "/properties/Id",
+        "/properties/NetworkInterfaceIds",
+        "/properties/OwnerId",
+        "/properties/PreferredFileServerIp",
+        "/properties/RemoteAdministrationEndpoint",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SelfManagedActiveDirectoryDefinition/Password"
+    ]
+}

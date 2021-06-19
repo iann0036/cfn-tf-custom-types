@@ -1,0 +1,350 @@
+{
+    "typeName": "TF::AWS::AutoscalingPolicy",
+    "description": "Provides an AutoScaling Scaling Policy resource.\n\n~> **NOTE:** You may want to omit `desired_capacity` attribute from attached `aws_autoscaling_group`\nwhen using autoscaling policies. It's good practice to pick either\n[manual](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-manual-scaling.html)\nor [dynamic](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html)\n(policy-based) scaling.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AutoscalingPolicy/docs/README.md",
+    "definitions": {
+        "PredictiveScalingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxCapacityBreachBehavior": {
+                    "type": "string"
+                },
+                "MaxCapacityBuffer": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "SchedulingBufferTime": {
+                    "type": "string"
+                },
+                "MetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricSpecificationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "StepAdjustmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricIntervalLowerBound": {
+                    "type": "string"
+                },
+                "MetricIntervalUpperBound": {
+                    "type": "string"
+                },
+                "ScalingAdjustment": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ScalingAdjustment"
+            ]
+        },
+        "TargetTrackingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableScaleIn": {
+                    "type": "boolean",
+                    "description": "Indicates whether scale in by the target tracking policy is disabled."
+                },
+                "TargetValue": {
+                    "type": "number",
+                    "description": "The target value for the metric."
+                },
+                "CustomizedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomizedMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "TargetValue"
+            ]
+        },
+        "MetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetValue": {
+                    "type": "number"
+                },
+                "PredefinedLoadMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedLoadMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedMetricPairSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedMetricPairSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedScalingMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedScalingMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "TargetValue"
+            ]
+        },
+        "CustomizedMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "MetricDimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDimensionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "Statistic"
+            ]
+        },
+        "PredefinedMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType"
+            ]
+        },
+        "PredefinedLoadMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType",
+                "ResourceLabel"
+            ]
+        },
+        "PredefinedMetricPairSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType",
+                "ResourceLabel"
+            ]
+        },
+        "PredefinedScalingMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType",
+                "ResourceLabel"
+            ]
+        },
+        "MetricDimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustmentType": {
+            "type": "string",
+            "description": "Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingGroupName": {
+            "type": "string",
+            "description": "The name of the autoscaling group."
+        },
+        "Cooldown": {
+            "type": "number",
+            "description": "The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start."
+        },
+        "EstimatedInstanceWarmup": {
+            "type": "number",
+            "description": "The estimated time, in seconds, until a newly launched instance will contribute CloudWatch metrics. Without a value, AWS will default to the group's specified cooldown period."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricAggregationType": {
+            "type": "string",
+            "description": "The aggregation type for the policy's metrics. Valid values are \"Minimum\", \"Maximum\", and \"Average\". Without a value, AWS will treat the aggregation type as \"Average\"."
+        },
+        "MinAdjustmentMagnitude": {
+            "type": "number",
+            "description": "Minimum value to scale by when `adjustment_type` is set to `PercentChangeInCapacity`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the policy."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "The policy type, either \"SimpleScaling\", \"StepScaling\", \"TargetTrackingScaling\", or \"PredictiveScaling\". If this value isn't provided, AWS will default to \"SimpleScaling.\"."
+        },
+        "ScalingAdjustment": {
+            "type": "number",
+            "description": "The number of members by which to\nscale, when the adjustment bounds are breached. A positive value scales\nup. A negative value scales down."
+        },
+        "PredictiveScalingConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PredictiveScalingConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "StepAdjustment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StepAdjustmentDefinition"
+            }
+        },
+        "TargetTrackingConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetTrackingConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutoscalingGroupName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,250 @@
+{
+    "typeName": "TF::Logzio::Endpoint",
+    "description": "CloudFormation equivalent of logzio_endpoint",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logzio/TF-Logzio-Endpoint/docs/README.md",
+    "definitions": {
+        "BigPandaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiToken": {
+                    "type": "string"
+                },
+                "AppKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiToken",
+                "AppKey"
+            ]
+        },
+        "CustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyTemplate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BodyTemplateDefinition"
+                    }
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BodyTemplate",
+                "Method",
+                "Url"
+            ]
+        },
+        "BodyTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiKey"
+            ]
+        },
+        "PagerDutyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServiceKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceKey"
+            ]
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "VictoropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageType": {
+                    "type": "string"
+                },
+                "RoutingKey": {
+                    "type": "string"
+                },
+                "ServiceApiKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MessageType",
+                "RoutingKey",
+                "ServiceApiKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EndpointType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "BigPanda": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BigPandaDefinition"
+            }
+        },
+        "Custom": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomDefinition"
+            }
+        },
+        "DataDog": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DataDogDefinition"
+            }
+        },
+        "PagerDuty": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PagerDutyDefinition"
+            }
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            }
+        },
+        "Victorops": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VictoropsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "EndpointType",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,40 @@
+# TF::ZeroTier::Network RouteDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#target" title="Target">Target</a>" : <i>String</i>,
+    "<a href="#via" title="Via">Via</a>" : <i>String</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#target" title="Target">Target</a>: <i>String</i>
+<a href="#via" title="Via">Via</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### Target
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Via
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

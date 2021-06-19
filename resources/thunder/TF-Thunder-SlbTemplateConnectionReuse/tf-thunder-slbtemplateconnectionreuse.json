@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateConnectionReuse",
+    "description": "`thunder_slb_template_connection_reuse` Provides details about thunder slb template connection reuse",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateConnectionReuse/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepAliveConn": {
+            "type": "number",
+            "description": "Keep a number of server connections open."
+        },
+        "LimitPerServer": {
+            "type": "number",
+            "description": "Max Server Connections allowed (Connections per Server Port (default 1000))."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Connection Reuse Template Name."
+        },
+        "NumConnPerPort": {
+            "type": "number",
+            "description": "Connections per Server Port (default 100)."
+        },
+        "Preopen": {
+            "type": "number",
+            "description": "Preopen server connection."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout in seconds. Multiple of 60 (def 2400)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

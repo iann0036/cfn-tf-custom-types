@@ -1,0 +1,692 @@
+{
+    "typeName": "TF::AzureRM::ServiceFabricCluster",
+    "description": "Manages a Service Fabric Cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ServiceFabricCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureActiveDirectoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientApplicationId": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Client ID which should be used for the Client Application."
+                },
+                "ClusterApplicationId": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Cluster Application ID."
+                },
+                "TenantId": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Tenant ID."
+                }
+            },
+            "required": [
+                "ClientApplicationId",
+                "ClusterApplicationId",
+                "TenantId"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Thumbprint": {
+                    "type": "string",
+                    "description": "The Thumbprint of the Certificate."
+                },
+                "ThumbprintSecondary": {
+                    "type": "string",
+                    "description": "The Secondary Thumbprint of the Certificate."
+                },
+                "X509StoreName": {
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
+                }
+            },
+            "required": [
+                "Thumbprint",
+                "X509StoreName"
+            ]
+        },
+        "CertificateCommonNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "X509StoreName": {
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
+                },
+                "CommonNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CommonNamesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "X509StoreName"
+            ]
+        },
+        "ClientCertificateCommonNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string",
+                    "description": "The common or subject name of the certificate."
+                },
+                "IsAdmin": {
+                    "type": "boolean",
+                    "description": "Does the Client Certificate have Admin Access to the cluster? Non-admin clients can only perform read only operations on the cluster."
+                },
+                "IssuerThumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CommonName",
+                "IsAdmin"
+            ]
+        },
+        "ClientCertificateThumbprintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsAdmin": {
+                    "type": "boolean",
+                    "description": "Does the Client Certificate have Admin Access to the cluster? Non-admin clients can only perform read only operations on the cluster."
+                },
+                "Thumbprint": {
+                    "type": "string",
+                    "description": "The Thumbprint associated with the Client Certificate."
+                }
+            },
+            "required": [
+                "IsAdmin",
+                "Thumbprint"
+            ]
+        },
+        "DiagnosticsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlobEndpoint": {
+                    "type": "string",
+                    "description": "The Blob Endpoint of the Storage Account."
+                },
+                "ProtectedAccountKeyName": {
+                    "type": "string",
+                    "description": "The protected diagnostics storage key name, such as `StorageAccountKey1`."
+                },
+                "QueueEndpoint": {
+                    "type": "string",
+                    "description": "The Queue Endpoint of the Storage Account."
+                },
+                "StorageAccountName": {
+                    "type": "string",
+                    "description": "The name of the Storage Account where the Diagnostics should be sent to."
+                },
+                "TableEndpoint": {
+                    "type": "string",
+                    "description": "The Table Endpoint of the Storage Account."
+                }
+            },
+            "required": [
+                "BlobEndpoint",
+                "ProtectedAccountKeyName",
+                "QueueEndpoint",
+                "StorageAccountName",
+                "TableEndpoint"
+            ]
+        },
+        "FabricSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Fabric Setting, such as `Security` or `Federation`."
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    },
+                    "description": "A map containing settings for the specified Fabric Setting."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodeTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capacities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacitiesDefinition"
+                    },
+                    "description": "The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has."
+                },
+                "ClientEndpointPort": {
+                    "type": "number",
+                    "description": "The Port used for the Client Endpoint for this Node Type. Changing this forces a new resource to be created."
+                },
+                "DurabilityLevel": {
+                    "type": "string",
+                    "description": "The Durability Level for this Node Type. Possible values include `Bronze`, `Gold` and `Silver`. Defaults to `Bronze`. Changing this forces a new resource to be created."
+                },
+                "HttpEndpointPort": {
+                    "type": "number",
+                    "description": "The Port used for the HTTP Endpoint for this Node Type. Changing this forces a new resource to be created."
+                },
+                "InstanceCount": {
+                    "type": "number",
+                    "description": "The number of nodes for this Node Type."
+                },
+                "IsPrimary": {
+                    "type": "boolean",
+                    "description": "Is this the Primary Node Type? Changing this forces a new resource to be created."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Node Type. Changing this forces a new resource to be created."
+                },
+                "PlacementProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlacementPropertiesDefinition"
+                    },
+                    "description": "The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run."
+                },
+                "ReverseProxyEndpointPort": {
+                    "type": "number",
+                    "description": "The Port used for the Reverse Proxy Endpoint  for this Node Type. Changing this will upgrade the cluster."
+                },
+                "ApplicationPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationPortsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EphemeralPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EphemeralPortsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ClientEndpointPort",
+                "HttpEndpointPort",
+                "InstanceCount",
+                "IsPrimary",
+                "Name"
+            ]
+        },
+        "CapacitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PlacementPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ReverseProxyCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Thumbprint": {
+                    "type": "string",
+                    "description": "The Thumbprint of the Certificate."
+                },
+                "ThumbprintSecondary": {
+                    "type": "string",
+                    "description": "The Secondary Thumbprint of the Certificate."
+                },
+                "X509StoreName": {
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
+                }
+            },
+            "required": [
+                "Thumbprint",
+                "X509StoreName"
+            ]
+        },
+        "ReverseProxyCertificateCommonNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "X509StoreName": {
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
+                },
+                "CommonNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CommonNamesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "X509StoreName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpgradePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForceRestartEnabled": {
+                    "type": "boolean"
+                },
+                "HealthCheckRetryTimeout": {
+                    "type": "string"
+                },
+                "HealthCheckStableDuration": {
+                    "type": "string"
+                },
+                "HealthCheckWaitDuration": {
+                    "type": "string"
+                },
+                "UpgradeDomainTimeout": {
+                    "type": "string"
+                },
+                "UpgradeReplicaSetCheckTimeout": {
+                    "type": "string"
+                },
+                "UpgradeTimeout": {
+                    "type": "string"
+                },
+                "DeltaHealthPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeltaHealthPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HealthPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CommonNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateCommonName": {
+                    "type": "string",
+                    "description": "The common or subject name of the certificate."
+                },
+                "CertificateIssuerThumbprint": {
+                    "type": "string",
+                    "description": "The Issuer Thumbprint of the Certificate."
+                }
+            },
+            "required": [
+                "CertificateCommonName"
+            ]
+        },
+        "ApplicationPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPort": {
+                    "type": "number",
+                    "description": "The end of the Application Port Range on this Node Type."
+                },
+                "StartPort": {
+                    "type": "number",
+                    "description": "The start of the Application Port Range on this Node Type."
+                }
+            },
+            "required": [
+                "EndPort",
+                "StartPort"
+            ]
+        },
+        "EphemeralPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPort": {
+                    "type": "number",
+                    "description": "The end of the Ephemeral Port Range on this Node Type."
+                },
+                "StartPort": {
+                    "type": "number",
+                    "description": "The start of the Ephemeral Port Range on this Node Type."
+                }
+            },
+            "required": [
+                "EndPort",
+                "StartPort"
+            ]
+        },
+        "DeltaHealthPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxDeltaUnhealthyApplicationsPercent": {
+                    "type": "number"
+                },
+                "MaxDeltaUnhealthyNodesPercent": {
+                    "type": "number"
+                },
+                "MaxUpgradeDomainDeltaUnhealthyNodesPercent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HealthPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxUnhealthyApplicationsPercent": {
+                    "type": "number"
+                },
+                "MaxUnhealthyNodesPercent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddOnFeatures": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A List of one or more features which should be enabled, such as `DnsService`."
+        },
+        "ClusterCodeVersion": {
+            "type": "string",
+            "description": "Required if Upgrade Mode set to `Manual`, Specifies the Version of the Cluster Code of the cluster."
+        },
+        "ClusterEndpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the Azure Region where the Service Fabric Cluster should exist. Changing this forces a new resource to be created."
+        },
+        "ManagementEndpoint": {
+            "type": "string",
+            "description": "Specifies the Management Endpoint of the cluster such as `http://example.com`. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Service Fabric Cluster. Changing this forces a new resource to be created."
+        },
+        "ReliabilityLevel": {
+            "type": "string",
+            "description": "Specifies the Reliability Level of the Cluster. Possible values include `None`, `Bronze`, `Silver`, `Gold` and `Platinum`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Service Fabric Cluster exists. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "UpgradeMode": {
+            "type": "string",
+            "description": "Specifies the Upgrade Mode of the cluster. Possible values are `Automatic` or `Manual`."
+        },
+        "VmImage": {
+            "type": "string",
+            "description": "Specifies the Image expected for the Service Fabric Cluster, such as `Windows`. Changing this forces a new resource to be created."
+        },
+        "AzureActiveDirectory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureActiveDirectoryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDefinition"
+            },
+            "maxItems": 1
+        },
+        "CertificateCommonNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateCommonNamesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClientCertificateCommonName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientCertificateCommonNameDefinition"
+            }
+        },
+        "ClientCertificateThumbprint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientCertificateThumbprintDefinition"
+            }
+        },
+        "DiagnosticsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiagnosticsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "FabricSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FabricSettingsDefinition"
+            }
+        },
+        "NodeType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeTypeDefinition"
+            },
+            "minItems": 1
+        },
+        "ReverseProxyCertificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReverseProxyCertificateDefinition"
+            },
+            "maxItems": 1
+        },
+        "ReverseProxyCertificateCommonNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReverseProxyCertificateCommonNamesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UpgradePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpgradePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "ManagementEndpoint",
+        "Name",
+        "ReliabilityLevel",
+        "ResourceGroupName",
+        "UpgradeMode",
+        "VmImage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterEndpoint",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,373 @@
+{
+    "typeName": "TF::Google::MonitoringAlertPolicy",
+    "description": "A description of the conditions under which some aspect of your system is\nconsidered to be \"unhealthy\" and the ways to notify people or services\nabout this state.\n\n\nTo get more information about AlertPolicy, see:\n\n* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.alertPolicies)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/monitoring/alerts/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-MonitoringAlertPolicy/docs/README.md",
+    "definitions": {
+        "CreationRecordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MutateTime": {
+                    "type": "string"
+                },
+                "MutatedBy": {
+                    "type": "string"
+                }
+            }
+        },
+        "UserLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "ConditionAbsent": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionAbsentDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ConditionMonitoringQueryLanguage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionMonitoringQueryLanguageDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ConditionThreshold": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionThresholdDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DisplayName"
+            ]
+        },
+        "DocumentationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "MimeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ConditionAbsentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "string"
+                },
+                "Aggregations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AggregationsDefinition"
+                    }
+                },
+                "Trigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TriggerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        },
+        "ConditionMonitoringQueryLanguageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Trigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TriggerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Duration",
+                "Query"
+            ]
+        },
+        "ConditionThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "DenominatorFilter": {
+                    "type": "string"
+                },
+                "Duration": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "string"
+                },
+                "ThresholdValue": {
+                    "type": "number"
+                },
+                "Aggregations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AggregationsDefinition"
+                    }
+                },
+                "DenominatorAggregations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DenominatorAggregationsDefinition"
+                    }
+                },
+                "Trigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TriggerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Comparison",
+                "Duration"
+            ]
+        },
+        "AggregationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlignmentPeriod": {
+                    "type": "string"
+                },
+                "CrossSeriesReducer": {
+                    "type": "string"
+                },
+                "GroupByFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PerSeriesAligner": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DenominatorAggregationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlignmentPeriod": {
+                    "type": "string"
+                },
+                "CrossSeriesReducer": {
+                    "type": "string"
+                },
+                "GroupByFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PerSeriesAligner": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Combiner": {
+            "type": "string"
+        },
+        "CreationRecord": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreationRecordDefinition"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotificationChannels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Project": {
+            "type": "string"
+        },
+        "UserLabels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserLabelsDefinition"
+            }
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            },
+            "minItems": 1
+        },
+        "Documentation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DocumentationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Combiner",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationRecord",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

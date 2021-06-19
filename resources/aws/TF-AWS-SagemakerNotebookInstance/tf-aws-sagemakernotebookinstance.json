@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::AWS::SagemakerNotebookInstance",
+    "description": "Provides a Sagemaker Notebook Instance resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SagemakerNotebookInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalCodeRepositories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of up to three Git repositories to associate with the notebook instance.\nThese can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in [AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html) or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DefaultCodeRepository": {
+            "type": "string",
+            "description": "The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in [AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html) or in any other Git repository."
+        },
+        "DirectInternetAccess": {
+            "type": "string",
+            "description": "Set to `Disabled` to disable internet access to notebook. Requires `security_groups` and `subnet_id` to be set. Supported values: `Enabled` (Default) or `Disabled`. If set to `Disabled`, the notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The name of ML compute instance type."
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption."
+        },
+        "LifecycleConfigName": {
+            "type": "string",
+            "description": "The name of a lifecycle configuration to associate with the notebook instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the notebook instance (must be unique)."
+        },
+        "NetworkInterfaceId": {
+            "type": "string"
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "The ARN of the IAM role to be used by the notebook instance which allows SageMaker to call other services on your behalf."
+        },
+        "RootAccess": {
+            "type": "string",
+            "description": "Whether root access is `Enabled` or `Disabled` for users of the notebook instance. The default value is `Enabled`."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The associated security groups."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The VPC subnet ID."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Url": {
+            "type": "string"
+        },
+        "VolumeSize": {
+            "type": "number",
+            "description": "The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceType",
+        "Name",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/NetworkInterfaceId",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

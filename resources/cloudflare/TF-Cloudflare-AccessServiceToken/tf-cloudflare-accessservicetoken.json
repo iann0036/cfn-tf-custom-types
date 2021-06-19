@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::Cloudflare::AccessServiceToken",
+    "description": "Access Service Tokens are used for service-to-service communication\nwhen an application is behind Cloudflare Access.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-AccessServiceToken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The ID of the account where the Access Service is being created. Conflicts with `zone_id`."
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "ExpiresAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinDaysForRenewal": {
+            "type": "number",
+            "description": "Regenerates the token if terraform is run within the specified amount of days before expiration."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Friendly name of the token's intent."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The ID of the zone where the Access Service is being created. Conflicts with `account_id`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientId",
+        "/properties/ClientSecret",
+        "/properties/ExpiresAt",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret"
+    ]
+}

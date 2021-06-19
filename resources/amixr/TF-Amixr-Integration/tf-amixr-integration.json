@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Amixr::Integration",
+    "description": "[Integrations](https://api-docs.amixr.io/#integrations) are sources of alerts and incidents for Amixr.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/amixr/TF-Amixr-Integration/docs/README.md",
+    "definitions": {
+        "TemplatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupingKey": {
+                    "type": "string"
+                },
+                "ResolveSignal": {
+                    "type": "string"
+                },
+                "Slack": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SlackDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageUrl": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultRouteId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service integration.\n* `type` - (Required) The type of integration. Can be:\n`grafana`, `webhook`, `alertmanager`, `kapacitor` , `fabric`,\n`newrelic`, `datadog`, `pagerduty`, `pingdom`,\n`elastalert`, `amazon_sns`, `curler`, `sentry`,\n`formatted_webhook`, `heartbeat`, `demo`, `stackdriver`,\n`uptimerobot`, `sentry_platform`, `zabbix`, `prtg`\nor `inbound_email`.\n* `templates` - (Optional) Jinja2 templates for Alert payload. Includes:\n- `grouping_key`- (Optional) Template for the key by which alerts are grouped.\n- `resolve_signal`- (Optional) Template for sending a signal to resolve the Incident. This template should output one of the following values: ok, true, 1 (case insensitive)\n- `slack`- (Optional) Templates for Slack:\n- `title`- (Optional) Template for Alert title.\n- `message`- (Optional) Template for Alert message.\n- `image_url`- (Optional) Template for Alert image url."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of integration. Can be:\n`grafana`, `webhook`, `alertmanager`, `kapacitor` , `fabric`,\n`newrelic`, `datadog`, `pagerduty`, `pingdom`,\n`elastalert`, `amazon_sns`, `curler`, `sentry`,\n`formatted_webhook`, `heartbeat`, `demo`, `stackdriver`,\n`uptimerobot`, `sentry_platform`, `zabbix`, `prtg`\nor `inbound_email`.\n* `templates` - (Optional) Jinja2 templates for Alert payload. Includes:\n- `grouping_key`- (Optional) Template for the key by which alerts are grouped.\n- `resolve_signal`- (Optional) Template for sending a signal to resolve the Incident. This template should output one of the following values: ok, true, 1 (case insensitive)\n- `slack`- (Optional) Templates for Slack:\n- `title`- (Optional) Template for Alert title.\n- `message`- (Optional) Template for Alert message.\n- `image_url`- (Optional) Template for Alert image url."
+        },
+        "Templates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplatesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultRouteId",
+        "/properties/Id",
+        "/properties/Link"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

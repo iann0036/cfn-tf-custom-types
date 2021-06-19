@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::FortiOS::LogSyslogSetting",
+    "description": "Provides a resource to configure logging to remote Syslog logging servers.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_logsyslogd_setting`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogSyslogSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Facility": {
+            "type": "string",
+            "description": "Remote syslog facility."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Log format."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Remote syslog logging over UDP/Reliable TCP."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Server listen port."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Address of remote syslog server."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address of syslog."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable remote syslog logging."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

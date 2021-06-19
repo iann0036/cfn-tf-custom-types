@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Vault::TransformTemplate",
+    "description": "This resource supports the \"/transform/template/{name}\" Vault endpoint.\n\nIt creates or updates a template with the given name. If a template with the name does not exist,\nit will be created. If the template exists, it will be updated with the new attributes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-TransformTemplate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alphabet": {
+            "type": "string",
+            "description": "The alphabet to use for this template. This is only used during FPE transformations."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the template."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to where the back-end is mounted within Vault."
+        },
+        "Pattern": {
+            "type": "string",
+            "description": "The pattern used for matching. Currently, only regular expression pattern is supported."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The pattern type to use for match detection. Currently, only regex is supported."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Path"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::Amixr::Route",
+    "description": "[Routes](https://api-docs.amixr.io/#routes) allow to direct different alerts to different messenger channels and Escalation Policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/amixr/TF-Amixr-Route/docs/README.md",
+    "definitions": {
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChannelId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ChannelId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationId": {
+            "type": "string",
+            "description": "The ID of the integration.\n* `routing_regex` - (Required) Python Regex query. Amixr choose the route for an alert in case there is a match inside the whole alert payload.\n* `position` - (Required) The position of the route (starts from 0)\n* `slack` - (Optional) Dictionary with slack-specific settings for a route. Includes:\n- `channel_id` - Slack channel id. Alerts will be directed to this channel in Slack."
+        },
+        "Position": {
+            "type": "number",
+            "description": "The position of the route (starts from 0)\n* `slack` - (Optional) Dictionary with slack-specific settings for a route. Includes:\n- `channel_id` - Slack channel id. Alerts will be directed to this channel in Slack."
+        },
+        "RoutingRegex": {
+            "type": "string",
+            "description": "Python Regex query. Amixr choose the route for an alert in case there is a match inside the whole alert payload.\n* `position` - (Required) The position of the route (starts from 0)\n* `slack` - (Optional) Dictionary with slack-specific settings for a route. Includes:\n- `channel_id` - Slack channel id. Alerts will be directed to this channel in Slack."
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IntegrationId",
+        "Position",
+        "RoutingRegex"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

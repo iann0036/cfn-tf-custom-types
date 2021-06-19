@@ -1,0 +1,233 @@
+{
+    "typeName": "TF::AzureRM::DevTestSchedule",
+    "description": "Manages automated startup and shutdown schedules for Azure Dev Test Lab.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DevTestSchedule/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DailyRecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Time"
+            ]
+        },
+        "HourlyRecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minute": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Minute"
+            ]
+        },
+        "NotificationSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Status": {
+                    "type": "string"
+                },
+                "TimeInMinutes": {
+                    "type": "number"
+                },
+                "WebhookUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WeeklyRecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "string"
+                },
+                "WeekDays": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Time"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabName": {
+            "type": "string",
+            "description": "The name of the dev test lab. Changing this forces a new resource to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the schedule is created. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the dev test lab schedule. Valid value for name depends on the `task_type`. For instance for task_type `LabVmsStartupTask` the name needs to be `LabVmAutoStart`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the dev test lab schedule. Changing this forces a new resource to be created."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of the notification. Possible values are `Enabled` and `Disabled`. Defaults to `Disabled`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TaskType": {
+            "type": "string",
+            "description": "The task type of the schedule. Possible values include `LabVmsShutdownTask` and `LabVmAutoStart`."
+        },
+        "TimeZoneId": {
+            "type": "string",
+            "description": "The time zone ID (e.g. Pacific Standard time)."
+        },
+        "DailyRecurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DailyRecurrenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "HourlyRecurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HourlyRecurrenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "NotificationSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationSettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WeeklyRecurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WeeklyRecurrenceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LabName",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "TaskType",
+        "TimeZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

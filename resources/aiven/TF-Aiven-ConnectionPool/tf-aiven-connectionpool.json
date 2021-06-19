@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::Aiven::ConnectionPool",
+    "description": "CloudFormation equivalent of aiven_connection_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-ConnectionPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionUri": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PoolMode": {
+            "type": "string"
+        },
+        "PoolName": {
+            "type": "string"
+        },
+        "PoolSize": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabaseName",
+        "PoolName",
+        "Project",
+        "ServiceName",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectionUri",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ConnectionUri"
+    ]
+}

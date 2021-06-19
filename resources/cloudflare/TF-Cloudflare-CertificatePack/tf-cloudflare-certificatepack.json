@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Cloudflare::CertificatePack",
+    "description": "Provides a Cloudflare Certificate Pack resource that is used to provision\nmanaged TLS certificates.\n\n~> **Important:** Certificate packs are not able to be updated in place and if\nyou require a zero downtime rotation, you need to use Terraform's meta-arguments\nfor [`lifecycle`](https://www.terraform.io/docs/configuration/resources.html#lifecycle-lifecycle-customizations) blocks.\n`create_before_destroy` should be suffice for most scenarios (exceptions are\nthings like missing entitlements, high ranking domain). To completely\nde-risk rotations, use you can create multiple resources using a 2-phase change\nwhere you have both resources live at once and you remove the old one once\nyou've confirmed the certificate is available.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-CertificatePack/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateAuthority": {
+            "type": "string",
+            "description": "Which certificate\nauthority to issue the certificate pack. Allowed values: `\"digicert\"`,\n`\"lets_encrypt\"`."
+        },
+        "CloudflareBranding": {
+            "type": "boolean",
+            "description": "Whether or not to include\nCloudflare branding. This will add `sni.cloudflaressl.com` as the Common Name\nif set to `true`."
+        },
+        "Hosts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of hostnames to provision the certificate pack for.\nNote: If using Let's Encrypt, you cannot use individual subdomains and only a\nwildcard for subdomain is available."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Certificate pack configuration type.\nAllowed values: `\"custom\"`, `\"dedicated_custom\"`, `\"advanced\"`."
+        },
+        "ValidationMethod": {
+            "type": "string",
+            "description": "Which validation method to\nuse in order to prove domain ownership. Allowed values: `\"txt\"`, `\"http\"`, `\"email\"`."
+        },
+        "ValidityDays": {
+            "type": "number",
+            "description": "How long the certificate is valid\nfor. Note: If using Let's Encrypt, this value can only be 90 days.\nAllowed values: 14, 30, 90, 365."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone to which the certificate pack should be added."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hosts",
+        "Type",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

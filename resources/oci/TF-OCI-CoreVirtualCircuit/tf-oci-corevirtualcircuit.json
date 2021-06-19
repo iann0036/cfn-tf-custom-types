@@ -1,0 +1,268 @@
+{
+    "typeName": "TF::OCI::CoreVirtualCircuit",
+    "description": "This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new virtual circuit to use with Oracle Cloud\nInfrastructure FastConnect. For more information, see\n[FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).\n\nFor the purposes of access control, you must provide the OCID of the\ncompartment where you want the virtual circuit to reside. If you're\nnot sure which compartment to use, put the virtual circuit in the\nsame compartment with the DRG it's using. For more information about\ncompartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\nFor information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the virtual circuit.\nIt does not have to be unique, and you can change it. Avoid entering confidential informatio...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreVirtualCircuit/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CrossConnectMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BgpMd5authKey": {
+                    "type": "string"
+                },
+                "CrossConnectOrCrossConnectGroupId": {
+                    "type": "string"
+                },
+                "CustomerBgpPeeringIp": {
+                    "type": "string"
+                },
+                "CustomerBgpPeeringIpv6": {
+                    "type": "string"
+                },
+                "OracleBgpPeeringIp": {
+                    "type": "string"
+                },
+                "OracleBgpPeeringIpv6": {
+                    "type": "string"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PublicPrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CidrBlock": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CidrBlock"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthShapeName": {
+            "type": "string",
+            "description": "(Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`."
+        },
+        "BgpIpv6sessionState": {
+            "type": "string"
+        },
+        "BgpManagement": {
+            "type": "string"
+        },
+        "BgpSessionState": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the virtual circuit."
+        },
+        "CustomerAsn": {
+            "type": "string",
+            "description": "(Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)."
+        },
+        "CustomerBgpAsn": {
+            "type": "number",
+            "description": "(Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "GatewayId": {
+            "type": "string",
+            "description": "(Updatable) For private virtual circuits only. The OCID of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OracleBgpAsn": {
+            "type": "number"
+        },
+        "ProviderServiceId": {
+            "type": "string",
+            "description": "The OCID of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices)."
+        },
+        "ProviderServiceKeyName": {
+            "type": "string",
+            "description": "(Updatable) The service key name offered by the provider (if the customer is connecting via a provider)."
+        },
+        "ProviderState": {
+            "type": "string"
+        },
+        "ReferenceComment": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`."
+        },
+        "RoutingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market."
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16)."
+        },
+        "CrossConnectMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrossConnectMappingsDefinition"
+            }
+        },
+        "PublicPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PublicPrefixesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BgpIpv6sessionState",
+        "/properties/BgpManagement",
+        "/properties/BgpSessionState",
+        "/properties/Id",
+        "/properties/OracleBgpAsn",
+        "/properties/ProviderState",
+        "/properties/ReferenceComment",
+        "/properties/ServiceType",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

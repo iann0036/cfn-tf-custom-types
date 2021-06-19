@@ -1,0 +1,186 @@
+{
+    "typeName": "TF::FortiOS::SystemLinkmonitor",
+    "description": "Configure Link Health Monitor.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemLinkmonitor/docs/README.md",
+    "definitions": {
+        "ServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Server address."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddrMode": {
+            "type": "string",
+            "description": "Address mode (IPv4 or IPv6). Valid values: `ipv4`, `ipv6`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Failtime": {
+            "type": "number",
+            "description": "Number of retry attempts before the server is considered down (1 - 10, default = 5)."
+        },
+        "GatewayIp": {
+            "type": "string",
+            "description": "Gateway IP address used to probe the server."
+        },
+        "GatewayIp6": {
+            "type": "string",
+            "description": "Gateway IPv6 address used to probe the server."
+        },
+        "HaPriority": {
+            "type": "number",
+            "description": "HA election priority (1 - 50)."
+        },
+        "HttpAgent": {
+            "type": "string",
+            "description": "String in the http-agent field in the HTTP header."
+        },
+        "HttpGet": {
+            "type": "string",
+            "description": "If you are monitoring an HTML server you can send an HTTP-GET request with a custom string. Use this option to define the string."
+        },
+        "HttpMatch": {
+            "type": "string",
+            "description": "String that you expect to see in the HTTP-GET requests of the traffic to be monitored."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Detection interval (1 - 3600 sec, default = 5)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Link monitor name."
+        },
+        "PacketSize": {
+            "type": "number",
+            "description": "Packet size of a twamp test session,."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Twamp controller password in authentication mode."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number of the traffic to be used to monitor the server."
+        },
+        "ProbeCount": {
+            "type": "number",
+            "description": "Number of most recent probes that should be used to calculate latency and jitter (5 - 30, default = 30)."
+        },
+        "ProbeTimeout": {
+            "type": "number",
+            "description": "Time to wait before a probe packet is considered lost (500 - 5000 msec, default = 500)."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocols used to monitor the server."
+        },
+        "Recoverytime": {
+            "type": "number",
+            "description": "Number of successful responses received before server is considered recovered (1 - 10, default = 5)."
+        },
+        "SecurityMode": {
+            "type": "string",
+            "description": "Twamp controller security mode. Valid values: `none`, `authentication`."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address used in packet to the server."
+        },
+        "SourceIp6": {
+            "type": "string",
+            "description": "Source IPv6 address used in packet to the server."
+        },
+        "Srcintf": {
+            "type": "string",
+            "description": "Interface that receives the traffic to be monitored."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this link monitor. Valid values: `enable`, `disable`."
+        },
+        "UpdateCascadeInterface": {
+            "type": "string",
+            "description": "Enable/disable update cascade interface. Valid values: `enable`, `disable`."
+        },
+        "UpdateStaticRoute": {
+            "type": "string",
+            "description": "Enable/disable updating the static route. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Server": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

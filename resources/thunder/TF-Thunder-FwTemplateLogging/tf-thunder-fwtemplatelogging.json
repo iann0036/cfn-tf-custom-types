@@ -1,0 +1,307 @@
+{
+    "typeName": "TF::Thunder::FwTemplateLogging",
+    "description": "`thunder_fw_template_logging` Provides details about thunder fw template logging",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-FwTemplateLogging/docs/README.md",
+    "definitions": {
+        "IncludeHttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FileExtension": {
+                    "type": "number"
+                },
+                "L4SessionInfo": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "number"
+                },
+                "RequestNumber": {
+                    "type": "number"
+                },
+                "HeaderCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IncludeRadiusAttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FramedIpv6Prefix": {
+                    "type": "number"
+                },
+                "InsertIfNotExisting": {
+                    "type": "number"
+                },
+                "NoQuote": {
+                    "type": "number"
+                },
+                "PrefixLength": {
+                    "type": "string"
+                },
+                "ZeroInCustomAttr": {
+                    "type": "number"
+                },
+                "AttrCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttrCfgDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpRequests": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RuleHttpRequests": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleHttpRequestsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SourceAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Ipv6": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HeaderCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomHeaderName": {
+                    "type": "string"
+                },
+                "CustomMaxLength": {
+                    "type": "number"
+                },
+                "HttpHeader": {
+                    "type": "string"
+                },
+                "MaxLength": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AttrCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attr": {
+                    "type": "string"
+                },
+                "AttrEvent": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuleHttpRequestsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableSequenceCheck": {
+                    "type": "number"
+                },
+                "IncludeAllHeaders": {
+                    "type": "number"
+                },
+                "LogEveryHttpRequest": {
+                    "type": "number"
+                },
+                "MaxUrlLen": {
+                    "type": "number"
+                },
+                "DestPort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestPortDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DestPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestPortNumber": {
+                    "type": "number"
+                },
+                "IncludeByteCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Facility": {
+            "type": "string",
+            "description": "\u2018kernel\u2019: 0: Kernel; \u2018user\u2019: 1: User-level; \u2018mail\u2019: 2: Mail; \u2018daemon\u2019: 3: System daemons; \u2018security-authorization\u2019: 4: Security/authorization; \u2018syslog\u2019: 5: Syslog internal; \u2018line-printer\u2019: 6: Line printer; \u2018news\u2019: 7: Network news; \u2018uucp\u2019: 8: UUCP subsystem; \u2018cron\u2019: 9: Time-related; \u2018security-authorization-private\u2019: 10: Private security/authorization; \u2018ftp\u2019: 11: FTP; \u2018ntp\u2019: 12: NTP; \u2018audit\u2019: 13: Audit; \u2018alert\u2019: 14: Alert; \u2018clock\u2019: 15: Clock-related; \u2018local0\u2019: 16: Local use 0; \u2018local1\u2019: 17: Local use 1; \u2018local2\u2019: 18: Local use 2; \u2018local3\u2019: 19: Local use 3; \u2018local4\u2019: 20: Local use 4; \u2018local5\u2019: 21: Local use 5; \u2018local6\u2019: 22: Local use 6; \u2018local7\u2019: 23: Local use 7;."
+        },
+        "Format": {
+            "type": "string",
+            "description": "\u2018ascii\u2019: A10 Text logging format (ASCII); \u2018cef\u2019: Common Event Format for logging (default);."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeDestFqdn": {
+            "type": "number",
+            "description": "Include destination FQDN string."
+        },
+        "MergedStyle": {
+            "type": "number",
+            "description": "Merge creation and deletion of session logs to one."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Logging Template Name."
+        },
+        "Resolution": {
+            "type": "string",
+            "description": "\u2018seconds\u2019: Logging timestamp resolution in seconds (default); \u201810-milliseconds\u2019: Logging timestamp resolution in 10s of milli-seconds;."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Bind a Service Group to the logging template (Service Group Name)."
+        },
+        "Severity": {
+            "type": "string",
+            "description": "\u2018emergency\u2019: 0: Emergency; \u2018alert\u2019: 1: Alert; \u2018critical\u2019: 2: Critical; \u2018error\u2019: 3: Error; \u2018warning\u2019: 4: Warning; \u2018notice\u2019: 5: Notice; \u2018informational\u2019: 6: Informational; \u2018debug\u2019: 7: Debug;."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "IncludeHttp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncludeHttpDefinition"
+            },
+            "maxItems": 1
+        },
+        "IncludeRadiusAttribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncludeRadiusAttributeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Log": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourceAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceAddressDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

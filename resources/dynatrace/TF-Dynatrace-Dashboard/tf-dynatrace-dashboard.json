@@ -1,0 +1,622 @@
+{
+    "typeName": "TF::Dynatrace::Dashboard",
+    "description": "CloudFormation equivalent of dynatrace_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-Dashboard/docs/README.md",
+    "definitions": {
+        "DashboardMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Shared": {
+                    "type": "boolean"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ValidFilterKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DynamicFilters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicFiltersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SharingDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SharingDetailsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterVersion": {
+                    "type": "string"
+                },
+                "ConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "CurrentConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignedEntities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ChartVisible": {
+                    "type": "boolean"
+                },
+                "Configured": {
+                    "type": "boolean"
+                },
+                "CustomName": {
+                    "type": "string"
+                },
+                "ExcludeMaintenanceWindows": {
+                    "type": "boolean"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Markdown": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "TileType": {
+                    "type": "string"
+                },
+                "TimeFrameShift": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Visualization": {
+                    "type": "string"
+                },
+                "Bounds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BoundsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FilterConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VisualizationConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VisualizationConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "TileType"
+            ]
+        },
+        "DynamicFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TagSuggestionTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filters"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntityType": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": [
+                "EntityType"
+            ]
+        },
+        "SharingDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkShared": {
+                    "type": "boolean"
+                },
+                "Published": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BoundsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Height": {
+                    "type": "number"
+                },
+                "Left": {
+                    "type": "number"
+                },
+                "Top": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Height",
+                "Left",
+                "Top",
+                "Width"
+            ]
+        },
+        "FilterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomName": {
+                    "type": "string"
+                },
+                "DefaultName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ChartConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChartConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CustomName",
+                "DefaultName",
+                "Type"
+            ]
+        },
+        "VisualizationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HasAxisBucketing": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManagementZoneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ChartConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AxisLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AxisLimitsDefinition"
+                    }
+                },
+                "LeftAxisCustomUnit": {
+                    "type": "string"
+                },
+                "Legend": {
+                    "type": "boolean"
+                },
+                "RightAxisCustomUnit": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ResultMetadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResultMetadataDefinition"
+                    }
+                },
+                "Series": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeriesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "AxisLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResultMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string"
+                },
+                "AggregationRate": {
+                    "type": "string"
+                },
+                "EntityType": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                },
+                "Percentile": {
+                    "type": "number"
+                },
+                "SortAscending": {
+                    "type": "boolean"
+                },
+                "SortColumn": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Aggregation",
+                "EntityType",
+                "Metric",
+                "Type"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomColor": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "LastModified": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntityDimension": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "DashboardMetadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DashboardMetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

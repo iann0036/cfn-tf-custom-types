@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::FortiOS::NetworkingRouteStatic",
+    "description": "Provides a resource to configure static route of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_router_static`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-NetworkingRouteStatic/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blackhole": {
+            "type": "string",
+            "description": "Enable/disable black hole."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "Device": {
+            "type": "string",
+            "description": "Gateway out interface or tunnel."
+        },
+        "Distance": {
+            "type": "string",
+            "description": "Administrative distance."
+        },
+        "Dst": {
+            "type": "string",
+            "description": "Destination IP and mask for this route."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "Gateway IP for this route."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetService": {
+            "type": "number",
+            "description": "Application ID in the Internet service database."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Administrative priority."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this static route. default is \"enable\"."
+        },
+        "Weight": {
+            "type": "string",
+            "description": "Administrative weight."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Device",
+        "Gateway"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

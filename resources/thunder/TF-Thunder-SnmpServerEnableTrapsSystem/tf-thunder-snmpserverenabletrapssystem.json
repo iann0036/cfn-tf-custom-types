@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsSystem",
+    "description": "`thunder_snmp_server_enable_traps_system` Provides details about thunder snmp server enable traps system",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsSystem/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all system group traps."
+        },
+        "ControlCpuHigh": {
+            "type": "number",
+            "description": "Enable control CPU usage high trap."
+        },
+        "DataCpuHigh": {
+            "type": "number",
+            "description": "Enable data CPU usage high trap."
+        },
+        "Fan": {
+            "type": "number",
+            "description": "Enable system fan trap."
+        },
+        "FileSysReadOnly": {
+            "type": "number",
+            "description": "Enable file system read-only trap."
+        },
+        "HighDiskUse": {
+            "type": "number",
+            "description": "Enable system high disk usage trap."
+        },
+        "HighMemoryUse": {
+            "type": "number",
+            "description": "Enable system high memory usage trap."
+        },
+        "HighTemp": {
+            "type": "number",
+            "description": "Enable system high temperature trap."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseManagement": {
+            "type": "number",
+            "description": "Enable system license management traps."
+        },
+        "LowTemp": {
+            "type": "number",
+            "description": "Enable system low temperature trap."
+        },
+        "PacketDrop": {
+            "type": "number",
+            "description": "Enable system packet dropped trap."
+        },
+        "Power": {
+            "type": "number",
+            "description": "Enable system power supply trap."
+        },
+        "PriDisk": {
+            "type": "number",
+            "description": "Enable system primary hard disk trap."
+        },
+        "Restart": {
+            "type": "number",
+            "description": "Enable system restart trap."
+        },
+        "SecDisk": {
+            "type": "number",
+            "description": "Enable system secondary hard disk trap."
+        },
+        "Shutdown": {
+            "type": "number",
+            "description": "Enable system shutdown trap."
+        },
+        "SmpResourceEvent": {
+            "type": "number",
+            "description": "Enable system smp resource event trap."
+        },
+        "Start": {
+            "type": "number",
+            "description": "Enable system start trap."
+        },
+        "SyslogSeverityOne": {
+            "type": "number"
+        },
+        "TacacsServerUpDown": {
+            "type": "number",
+            "description": "Enable system TACACS monitor server up/down trap."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

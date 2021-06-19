@@ -1,0 +1,168 @@
+# TF::GoogleBeta::GoogleOsConfigPatchDeployment
+
+CloudFormation equivalent of google_os_config_patch_deployment
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::GoogleBeta::GoogleOsConfigPatchDeployment",
+    "Properties" : {
+        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#duration" title="Duration">Duration</a>" : <i>String</i>,
+        "<a href="#patchdeploymentid" title="PatchDeploymentId">PatchDeploymentId</a>" : <i>String</i>,
+        "<a href="#project" title="Project">Project</a>" : <i>String</i>,
+        "<a href="#instancefilter" title="InstanceFilter">InstanceFilter</a>" : <i>[ <a href="instancefilterdefinition.md">InstanceFilterDefinition</a>, ... ]</i>,
+        "<a href="#onetimeschedule" title="OneTimeSchedule">OneTimeSchedule</a>" : <i>[ <a href="onetimescheduledefinition.md">OneTimeScheduleDefinition</a>, ... ]</i>,
+        "<a href="#patchconfig" title="PatchConfig">PatchConfig</a>" : <i>[ <a href="patchconfigdefinition.md">PatchConfigDefinition</a>, ... ]</i>,
+        "<a href="#recurringschedule" title="RecurringSchedule">RecurringSchedule</a>" : <i>[ <a href="recurringscheduledefinition.md">RecurringScheduleDefinition</a>, ... ]</i>,
+        "<a href="#rollout" title="Rollout">Rollout</a>" : <i>[ <a href="rolloutdefinition.md">RolloutDefinition</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::GoogleBeta::GoogleOsConfigPatchDeployment
+Properties:
+    <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#duration" title="Duration">Duration</a>: <i>String</i>
+    <a href="#patchdeploymentid" title="PatchDeploymentId">PatchDeploymentId</a>: <i>String</i>
+    <a href="#project" title="Project">Project</a>: <i>String</i>
+    <a href="#instancefilter" title="InstanceFilter">InstanceFilter</a>: <i>
+      - <a href="instancefilterdefinition.md">InstanceFilterDefinition</a></i>
+    <a href="#onetimeschedule" title="OneTimeSchedule">OneTimeSchedule</a>: <i>
+      - <a href="onetimescheduledefinition.md">OneTimeScheduleDefinition</a></i>
+    <a href="#patchconfig" title="PatchConfig">PatchConfig</a>: <i>
+      - <a href="patchconfigdefinition.md">PatchConfigDefinition</a></i>
+    <a href="#recurringschedule" title="RecurringSchedule">RecurringSchedule</a>: <i>
+      - <a href="recurringscheduledefinition.md">RecurringScheduleDefinition</a></i>
+    <a href="#rollout" title="Rollout">Rollout</a>: <i>
+      - <a href="rolloutdefinition.md">RolloutDefinition</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+</pre>
+
+## Properties
+
+#### Description
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Duration
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PatchDeploymentId
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Project
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InstanceFilter
+
+_Required_: No
+
+_Type_: List of <a href="instancefilterdefinition.md">InstanceFilterDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OneTimeSchedule
+
+_Required_: No
+
+_Type_: List of <a href="onetimescheduledefinition.md">OneTimeScheduleDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PatchConfig
+
+_Required_: No
+
+_Type_: List of <a href="patchconfigdefinition.md">PatchConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RecurringSchedule
+
+_Required_: No
+
+_Type_: List of <a href="recurringscheduledefinition.md">RecurringScheduleDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Rollout
+
+_Required_: No
+
+_Type_: List of <a href="rolloutdefinition.md">RolloutDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Timeouts
+
+_Required_: No
+
+_Type_: <a href="timeoutsdefinition.md">TimeoutsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### CreateTime
+
+Returns the <code>CreateTime</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
+
+#### LastExecuteTime
+
+Returns the <code>LastExecuteTime</code> value.
+
+#### Name
+
+Returns the <code>Name</code> value.
+
+#### UpdateTime
+
+Returns the <code>UpdateTime</code> value.
+

@@ -1,0 +1,436 @@
+# TF::Google::ComputeInstance
+
+Manages a VM instance resource within GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/instances)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/instances).
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::Google::ComputeInstance",
+    "Properties" : {
+        "<a href="#allowstoppingforupdate" title="AllowStoppingForUpdate">AllowStoppingForUpdate</a>" : <i>Boolean</i>,
+        "<a href="#canipforward" title="CanIpForward">CanIpForward</a>" : <i>Boolean</i>,
+        "<a href="#deletionprotection" title="DeletionProtection">DeletionProtection</a>" : <i>Boolean</i>,
+        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#desiredstatus" title="DesiredStatus">DesiredStatus</a>" : <i>String</i>,
+        "<a href="#enabledisplay" title="EnableDisplay">EnableDisplay</a>" : <i>Boolean</i>,
+        "<a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>" : <i>[ <a href="guestacceleratordefinition.md">GuestAcceleratorDefinition</a>, ... ]</i>,
+        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labelsdefinition.md">LabelsDefinition</a>, ... ]</i>,
+        "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadatadefinition.md">MetadataDefinition</a>, ... ]</i>,
+        "<a href="#metadatastartupscript" title="MetadataStartupScript">MetadataStartupScript</a>" : <i>String</i>,
+        "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#project" title="Project">Project</a>" : <i>String</i>,
+        "<a href="#resourcepolicies" title="ResourcePolicies">ResourcePolicies</a>" : <i>[ String, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
+        "<a href="#attacheddisk" title="AttachedDisk">AttachedDisk</a>" : <i>[ <a href="attacheddiskdefinition.md">AttachedDiskDefinition</a>, ... ]</i>,
+        "<a href="#bootdisk" title="BootDisk">BootDisk</a>" : <i>[ <a href="bootdiskdefinition.md">BootDiskDefinition</a>, ... ]</i>,
+        "<a href="#confidentialinstanceconfig" title="ConfidentialInstanceConfig">ConfidentialInstanceConfig</a>" : <i>[ <a href="confidentialinstanceconfigdefinition.md">ConfidentialInstanceConfigDefinition</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterfacedefinition.md">NetworkInterfaceDefinition</a>, ... ]</i>,
+        "<a href="#reservationaffinity" title="ReservationAffinity">ReservationAffinity</a>" : <i>[ <a href="reservationaffinitydefinition.md">ReservationAffinityDefinition</a>, ... ]</i>,
+        "<a href="#scheduling" title="Scheduling">Scheduling</a>" : <i>[ <a href="schedulingdefinition.md">SchedulingDefinition</a>, ... ]</i>,
+        "<a href="#scratchdisk" title="ScratchDisk">ScratchDisk</a>" : <i>[ <a href="scratchdiskdefinition.md">ScratchDiskDefinition</a>, ... ]</i>,
+        "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>[ <a href="serviceaccountdefinition.md">ServiceAccountDefinition</a>, ... ]</i>,
+        "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::Google::ComputeInstance
+Properties:
+    <a href="#allowstoppingforupdate" title="AllowStoppingForUpdate">AllowStoppingForUpdate</a>: <i>Boolean</i>
+    <a href="#canipforward" title="CanIpForward">CanIpForward</a>: <i>Boolean</i>
+    <a href="#deletionprotection" title="DeletionProtection">DeletionProtection</a>: <i>Boolean</i>
+    <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#desiredstatus" title="DesiredStatus">DesiredStatus</a>: <i>String</i>
+    <a href="#enabledisplay" title="EnableDisplay">EnableDisplay</a>: <i>Boolean</i>
+    <a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>: <i>
+      - <a href="guestacceleratordefinition.md">GuestAcceleratorDefinition</a></i>
+    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
+    <a href="#labels" title="Labels">Labels</a>: <i>
+      - <a href="labelsdefinition.md">LabelsDefinition</a></i>
+    <a href="#machinetype" title="MachineType">MachineType</a>: <i>String</i>
+    <a href="#metadata" title="Metadata">Metadata</a>: <i>
+      - <a href="metadatadefinition.md">MetadataDefinition</a></i>
+    <a href="#metadatastartupscript" title="MetadataStartupScript">MetadataStartupScript</a>: <i>String</i>
+    <a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#project" title="Project">Project</a>: <i>String</i>
+    <a href="#resourcepolicies" title="ResourcePolicies">ResourcePolicies</a>: <i>
+      - String</i>
+    <a href="#tags" title="Tags">Tags</a>: <i>
+      - String</i>
+    <a href="#zone" title="Zone">Zone</a>: <i>String</i>
+    <a href="#attacheddisk" title="AttachedDisk">AttachedDisk</a>: <i>
+      - <a href="attacheddiskdefinition.md">AttachedDiskDefinition</a></i>
+    <a href="#bootdisk" title="BootDisk">BootDisk</a>: <i>
+      - <a href="bootdiskdefinition.md">BootDiskDefinition</a></i>
+    <a href="#confidentialinstanceconfig" title="ConfidentialInstanceConfig">ConfidentialInstanceConfig</a>: <i>
+      - <a href="confidentialinstanceconfigdefinition.md">ConfidentialInstanceConfigDefinition</a></i>
+    <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
+      - <a href="networkinterfacedefinition.md">NetworkInterfaceDefinition</a></i>
+    <a href="#reservationaffinity" title="ReservationAffinity">ReservationAffinity</a>: <i>
+      - <a href="reservationaffinitydefinition.md">ReservationAffinityDefinition</a></i>
+    <a href="#scheduling" title="Scheduling">Scheduling</a>: <i>
+      - <a href="schedulingdefinition.md">SchedulingDefinition</a></i>
+    <a href="#scratchdisk" title="ScratchDisk">ScratchDisk</a>: <i>
+      - <a href="scratchdiskdefinition.md">ScratchDiskDefinition</a></i>
+    <a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>
+      - <a href="serviceaccountdefinition.md">ServiceAccountDefinition</a></i>
+    <a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>: <i>
+      - <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeoutsdefinition.md">TimeoutsDefinition</a></i>
+</pre>
+
+## Properties
+
+#### AllowStoppingForUpdate
+
+If true, allows Terraform to stop the instance to update its properties.
+If you try to update a property that requires stopping the instance without setting this field, the update will fail.
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CanIpForward
+
+Whether to allow sending and receiving of
+packets with non-matching source or destination IPs.
+This defaults to false.
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DeletionProtection
+
+Enable deletion protection on this instance. Defaults to false.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `terraform destroy`), or the instance cannot be deleted and the Terraform run will not complete successfully.
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Description
+
+A brief description of this resource.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DesiredStatus
+
+Desired status of the instance. Either
+`"RUNNING"` or `"TERMINATED"`.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EnableDisplay
+
+Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
+**Note**: [`allow_stopping_for_update`](#allow_stopping_for_update) must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GuestAccelerator
+
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with [`on_host_maintenance`](#on_host_maintenance) option set to TERMINATE.
+**Note**: This field uses [attr-as-block mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html) to avoid
+breaking users during the 0.12 upgrade. To explicitly send a list
+of zero objects you must use the following syntax:
+`example=[]`
+For more details about this behavior, see [this section](https://www.terraform.io/docs/configuration/attr-as-blocks.html#defining-a-fixed-object-collection-value).
+
+_Required_: No
+
+_Type_: List of <a href="guestacceleratordefinition.md">GuestAcceleratorDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Hostname
+
+A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid.
+Valid format is a series of labels 1-63 characters long matching the regular expression `[a-z]([-a-z0-9]*[a-z0-9])`, concatenated with periods.
+The entire hostname must not exceed 253 characters. Changing this forces a new resource to be created.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Labels
+
+A map of key/value label pairs to assign to the instance.
+
+_Required_: No
+
+_Type_: List of <a href="labelsdefinition.md">LabelsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MachineType
+
+The machine type to create.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Metadata
+
+Metadata key/value pairs to make available from
+within the instance. Ssh keys attached in the Cloud Console will be removed.
+Add them to your config in order to keep them attached to your instance.
+
+_Required_: No
+
+_Type_: List of <a href="metadatadefinition.md">MetadataDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MetadataStartupScript
+
+An alternative to using the
+startup-script metadata key, except this one forces the instance to be
+recreated (thus re-running the script) if it is changed. This replaces the
+startup-script metadata key on the created instance and thus the two
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `terraform state` commands, depending on your use case.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MinCpuPlatform
+
+Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as
+`Intel Haswell` or `Intel Skylake`. See the complete list [here](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
+**Note**: [`allow_stopping_for_update`](#allow_stopping_for_update) must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+A unique name for the resource, required by GCE.
+Changing this forces a new resource to be created.
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ResourcePolicies
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Tags
+
+A list of network tags to attach to the instance.
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Zone
+
+The zone that the machine should be created in. If it is not provided, the provider zone is used.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AttachedDisk
+
+_Required_: No
+
+_Type_: List of <a href="attacheddiskdefinition.md">AttachedDiskDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### BootDisk
+
+_Required_: No
+
+_Type_: List of <a href="bootdiskdefinition.md">BootDiskDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConfidentialInstanceConfig
+
+_Required_: No
+
+_Type_: List of <a href="confidentialinstanceconfigdefinition.md">ConfidentialInstanceConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NetworkInterface
+
+_Required_: No
+
+_Type_: List of <a href="networkinterfacedefinition.md">NetworkInterfaceDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ReservationAffinity
+
+_Required_: No
+
+_Type_: List of <a href="reservationaffinitydefinition.md">ReservationAffinityDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Scheduling
+
+_Required_: No
+
+_Type_: List of <a href="schedulingdefinition.md">SchedulingDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ScratchDisk
+
+_Required_: No
+
+_Type_: List of <a href="scratchdiskdefinition.md">ScratchDiskDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServiceAccount
+
+_Required_: No
+
+_Type_: List of <a href="serviceaccountdefinition.md">ServiceAccountDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ShieldedInstanceConfig
+
+_Required_: No
+
+_Type_: List of <a href="shieldedinstanceconfigdefinition.md">ShieldedInstanceConfigDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Timeouts
+
+_Required_: No
+
+_Type_: <a href="timeoutsdefinition.md">TimeoutsDefinition</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### CpuPlatform
+
+Returns the <code>CpuPlatform</code> value.
+
+#### CurrentStatus
+
+Returns the <code>CurrentStatus</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
+
+#### InstanceId
+
+Returns the <code>InstanceId</code> value.
+
+#### LabelFingerprint
+
+Returns the <code>LabelFingerprint</code> value.
+
+#### MetadataFingerprint
+
+Returns the <code>MetadataFingerprint</code> value.
+
+#### SelfLink
+
+Returns the <code>SelfLink</code> value.
+
+#### TagsFingerprint
+
+Returns the <code>TagsFingerprint</code> value.
+

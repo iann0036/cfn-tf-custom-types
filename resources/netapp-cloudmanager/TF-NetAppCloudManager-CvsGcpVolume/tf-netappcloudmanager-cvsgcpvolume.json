@@ -1,0 +1,274 @@
+{
+    "typeName": "TF::NetAppCloudManager::CvsGcpVolume",
+    "description": "Provides a netapp-cloudmanager_cvs_gcp_volume resource. This can be used to create, and delete volumes for Cloud Volume Service on GCP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-CvsGcpVolume/docs/README.md",
+    "definitions": {
+        "ExportPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SnapshotPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "DailySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailyScheduleDefinition"
+                    }
+                },
+                "HourlySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HourlyScheduleDefinition"
+                    }
+                },
+                "MonthlySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonthlyScheduleDefinition"
+                    }
+                },
+                "WeeklySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeeklyScheduleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedClients": {
+                    "type": "string"
+                },
+                "Nfsv3": {
+                    "type": "boolean"
+                },
+                "Nfsv4": {
+                    "type": "boolean"
+                },
+                "RuleIndex": {
+                    "type": "number"
+                },
+                "UnixReadOnly": {
+                    "type": "boolean"
+                },
+                "UnixReadWrite": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DailyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HourlyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MonthlyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysOfMonth": {
+                    "type": "string"
+                },
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WeeklyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string",
+            "description": "The name of the account."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the volume."
+        },
+        "Network": {
+            "type": "string",
+            "description": "The network VPC of the volume."
+        },
+        "ProtocolTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region where the volume is created."
+        },
+        "ServiceLevel": {
+            "type": "string",
+            "description": "['low' or 'medium' or 'high']."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The volume size, supported with decimal numbers."
+        },
+        "SizeUnit": {
+            "type": "string",
+            "description": "[ 'gb' ]."
+        },
+        "VolumePath": {
+            "type": "string",
+            "description": "The volume path."
+        },
+        "WorkingEnvironmentName": {
+            "type": "string",
+            "description": "The working environment name."
+        },
+        "ExportPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExportPolicyDefinition"
+            }
+        },
+        "SnapshotPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "Name",
+        "Network",
+        "ProtocolTypes",
+        "Region",
+        "Size",
+        "SizeUnit",
+        "WorkingEnvironmentName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

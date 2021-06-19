@@ -1,0 +1,628 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBigqueryJob",
+    "description": "CloudFormation equivalent of google_bigquery_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBigqueryJob/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Reason": {
+                    "type": "string"
+                }
+            }
+        },
+        "StatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Reason": {
+                    "type": "string"
+                }
+            }
+        },
+        "StatusDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorResult": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition"
+                    }
+                },
+                "Errors": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition2"
+                    }
+                },
+                "State": {
+                    "type": "string"
+                }
+            }
+        },
+        "CopyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateDisposition": {
+                    "type": "string"
+                },
+                "WriteDisposition": {
+                    "type": "string"
+                },
+                "DestinationEncryptionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationEncryptionConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DestinationTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationTableDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourceTables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceTablesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExtractDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Compression": {
+                    "type": "string"
+                },
+                "DestinationFormat": {
+                    "type": "string"
+                },
+                "DestinationUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FieldDelimiter": {
+                    "type": "string"
+                },
+                "PrintHeader": {
+                    "type": "boolean"
+                },
+                "UseAvroLogicalTypes": {
+                    "type": "boolean"
+                },
+                "SourceModel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceModelDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourceTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceTableDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DestinationUris"
+            ]
+        },
+        "LoadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowJaggedRows": {
+                    "type": "boolean"
+                },
+                "AllowQuotedNewlines": {
+                    "type": "boolean"
+                },
+                "Autodetect": {
+                    "type": "boolean"
+                },
+                "CreateDisposition": {
+                    "type": "string"
+                },
+                "Encoding": {
+                    "type": "string"
+                },
+                "FieldDelimiter": {
+                    "type": "string"
+                },
+                "IgnoreUnknownValues": {
+                    "type": "boolean"
+                },
+                "MaxBadRecords": {
+                    "type": "number"
+                },
+                "NullMarker": {
+                    "type": "string"
+                },
+                "ProjectionFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Quote": {
+                    "type": "string"
+                },
+                "SchemaUpdateOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                },
+                "SourceFormat": {
+                    "type": "string"
+                },
+                "SourceUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WriteDisposition": {
+                    "type": "string"
+                },
+                "DestinationEncryptionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationEncryptionConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DestinationTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationTableDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "TimePartitioning": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimePartitioningDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "SourceUris"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowLargeResults": {
+                    "type": "boolean"
+                },
+                "CreateDisposition": {
+                    "type": "string"
+                },
+                "FlattenResults": {
+                    "type": "boolean"
+                },
+                "MaximumBillingTier": {
+                    "type": "number"
+                },
+                "MaximumBytesBilled": {
+                    "type": "string"
+                },
+                "ParameterMode": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "SchemaUpdateOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseLegacySql": {
+                    "type": "boolean"
+                },
+                "UseQueryCache": {
+                    "type": "boolean"
+                },
+                "WriteDisposition": {
+                    "type": "string"
+                },
+                "DefaultDataset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultDatasetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DestinationEncryptionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationEncryptionConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DestinationTable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationTableDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ScriptOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UserDefinedFunctionResources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UserDefinedFunctionResourcesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DestinationEncryptionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "DestinationTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TableId"
+            ]
+        },
+        "SourceTablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TableId"
+            ]
+        },
+        "SourceModelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ModelId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId",
+                "ModelId",
+                "ProjectId"
+            ]
+        },
+        "SourceTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TableId"
+            ]
+        },
+        "TimePartitioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationMs": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "DefaultDatasetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId"
+            ]
+        },
+        "ScriptOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyResultStatement": {
+                    "type": "string"
+                },
+                "StatementByteBudget": {
+                    "type": "string"
+                },
+                "StatementTimeoutMs": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UserDefinedFunctionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InlineCode": {
+                    "type": "string"
+                },
+                "ResourceUri": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "JobTimeoutMs": {
+            "type": "string"
+        },
+        "JobType": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition3"
+            }
+        },
+        "UserEmail": {
+            "type": "string"
+        },
+        "Copy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CopyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Extract": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtractDefinition"
+            },
+            "maxItems": 1
+        },
+        "Load": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadDefinition"
+            },
+            "maxItems": 1
+        },
+        "Query": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "JobId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/JobType",
+        "/properties/Status",
+        "/properties/UserEmail"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

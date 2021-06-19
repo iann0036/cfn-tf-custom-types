@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::Rancher2::GlobalDnsProvider",
+    "description": "Provides a Rancher V2 Global DNS Provider resource. This can be used to create Global DNS Providers for Rancher V2. Supported Global DNS Providers: `alidns, cloudflare, route53`",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-GlobalDnsProvider/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlidnsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "SecretKey"
+            ]
+        },
+        "CloudflareConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiEmail": {
+                    "type": "string"
+                },
+                "ApiKey": {
+                    "type": "string"
+                },
+                "ProxySetting": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ApiEmail",
+                "ApiKey"
+            ]
+        },
+        "Route53ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "CredentialsPath": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "ZoneType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "SecretKey"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            },
+            "description": "Annotations for Global DNS Provider (map)."
+        },
+        "DnsProvider": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "Labels for Global DNS Provider (map)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Global DNS Provider (string)."
+        },
+        "RootDomain": {
+            "type": "string",
+            "description": "The user ID to assign Global DNS Provider (string)."
+        },
+        "AlidnsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlidnsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "CloudflareConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudflareConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Route53Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Route53ConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RootDomain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DnsProvider",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

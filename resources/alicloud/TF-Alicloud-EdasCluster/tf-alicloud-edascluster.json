@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Alicloud::EdasCluster",
+    "description": "Provides an EDAS cluster resource.\n\n-> **NOTE:** Available in 1.82.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EdasCluster/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The name of the cluster that you want to create."
+        },
+        "ClusterType": {
+            "type": "number",
+            "description": "The type of the cluster that you want to create. Valid values only: 2: ECS cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogicalRegionId": {
+            "type": "string",
+            "description": "The ID of the namespace where you want to create the application. You can call the ListUserDefineRegion operation to query the namespace ID."
+        },
+        "NetworkMode": {
+            "type": "number",
+            "description": "The network type of the cluster that you want to create. Valid values: 1: classic network. 2: VPC."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of the Virtual Private Cloud (VPC) for the cluster."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "ClusterType",
+        "NetworkMode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

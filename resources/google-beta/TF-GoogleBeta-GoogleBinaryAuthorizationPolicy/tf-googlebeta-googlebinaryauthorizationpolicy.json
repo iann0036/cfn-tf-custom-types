@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBinaryAuthorizationPolicy",
+    "description": "CloudFormation equivalent of google_binary_authorization_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBinaryAuthorizationPolicy/docs/README.md",
+    "definitions": {
+        "AdmissionWhitelistPatternsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamePattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NamePattern"
+            ]
+        },
+        "ClusterAdmissionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cluster": {
+                    "type": "string"
+                },
+                "EnforcementMode": {
+                    "type": "string"
+                },
+                "EvaluationMode": {
+                    "type": "string"
+                },
+                "RequireAttestationsBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Cluster",
+                "EnforcementMode",
+                "EvaluationMode"
+            ]
+        },
+        "DefaultAdmissionRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnforcementMode": {
+                    "type": "string"
+                },
+                "EvaluationMode": {
+                    "type": "string"
+                },
+                "RequireAttestationsBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "EnforcementMode",
+                "EvaluationMode"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GlobalPolicyEvaluationMode": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "AdmissionWhitelistPatterns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdmissionWhitelistPatternsDefinition"
+            }
+        },
+        "ClusterAdmissionRules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClusterAdmissionRulesDefinition"
+            }
+        },
+        "DefaultAdmissionRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultAdmissionRuleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

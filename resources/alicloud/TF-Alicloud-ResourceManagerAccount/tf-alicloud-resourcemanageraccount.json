@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Alicloud::ResourceManagerAccount",
+    "description": "Provides a Resource Manager Account resource. Member accounts are containers for resources in a resource directory. These accounts isolate resources and serve as organizational units in the resource directory. You can create member accounts in a folder and then manage them in a unified manner.\nFor information about Resource Manager Account and how to use it, see [What is Resource Manager Account](https://www.alibabacloud.com/help/en/doc-detail/111231.htm).\n\n-> **NOTE:** Available in v1.83.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ResourceManagerAccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountNamePrefix": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Member name. The length is 2 ~ 50 characters or Chinese characters, which can include Chinese characters, English letters, numbers, underscores (_), dots (.) And dashes (-)."
+        },
+        "FolderId": {
+            "type": "string",
+            "description": "The ID of the parent folder."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JoinMethod": {
+            "type": "string"
+        },
+        "JoinTime": {
+            "type": "string"
+        },
+        "ModifyTime": {
+            "type": "string"
+        },
+        "PayerAccountId": {
+            "type": "string",
+            "description": "Settlement account ID. If the value is empty, the current account will be used for settlement."
+        },
+        "ResourceDirectoryId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/JoinMethod",
+        "/properties/JoinTime",
+        "/properties/ModifyTime",
+        "/properties/ResourceDirectoryId",
+        "/properties/Status",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

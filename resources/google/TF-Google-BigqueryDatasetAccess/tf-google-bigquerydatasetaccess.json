@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::Google::BigqueryDatasetAccess",
+    "description": "Gives dataset access for a single entity. This resource is intended to be used in cases where\nit is not possible to compile a full list of access blocks to include in a\n`google_bigquery_dataset` resource, to enable them to be added separately.\n\n~> **Note:** If this resource is used alongside a `google_bigquery_dataset` resource, the\ndataset resource must either have no defined `access` blocks or a `lifecycle` block with\n`ignore_changes = [access]` so they don't fight over which accesses should be on the dataset.\n\n\nTo get more information about DatasetAccess, see:\n\n* [API documentation](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets)\n* How-to Guides\n    * [Controlling access to datasets](https://cloud.google.com/bigquery/docs/dataset-access-controls)\n\n~> **Warning:** You must specify the role field using the legacy format `OWNER` instead of `roles/bigquery.dataOwner`. \nThe API does accept both formats but it will always return the legacy format which results in Terraform\nshowing permanen...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigqueryDatasetAccess/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId",
+                "ProjectId",
+                "TableId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiUpdatedMember": {
+            "type": "boolean"
+        },
+        "DatasetId": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "GroupByEmail": {
+            "type": "string"
+        },
+        "IamMember": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Role": {
+            "type": "string"
+        },
+        "SpecialGroup": {
+            "type": "string"
+        },
+        "UserByEmail": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "View": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatasetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiUpdatedMember",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

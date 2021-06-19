@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::Alicloud::EssAlarm",
+    "description": "Provides a ESS alarm task resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EssAlarm/docs/README.md",
+    "definitions": {
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlarmActions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of actions to execute when this alarm transition into an ALARM state. Each action is specified as ess scaling rule ari."
+        },
+        "CloudMonitorGroupId": {
+            "type": "number",
+            "description": "Defines the application group id defined by CMS which is assigned when you upload custom metric to CMS, only available for custom metirc."
+        },
+        "ComparisonOperator": {
+            "type": "string",
+            "description": "The arithmetic operation to use when comparing the specified Statistic and Threshold. The specified Statistic value is used as the first operand. Supported value: >=, <=, >, <. Defaults to >=."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for the alarm."
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DimensionsDefinition"
+            },
+            "description": "The dimension map for the alarm's associated metric (documented below). For all metrics, you can not set the dimension key as \"scaling_group\" or \"userId\", which is set by default, the second dimension for metric, such as \"device\" for \"PackagesNetIn\", need to be set by users."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Whether to enable specific ess alarm. Default to true."
+        },
+        "EvaluationCount": {
+            "type": "number",
+            "description": "The number of times that needs to satisfies comparison condition before transition into ALARM state. Defaults to 3."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string",
+            "description": "The name for the alarm's associated metric. See [Block_metricNames_and_dimensions](#block-metricnames_and_dimensions) below for details."
+        },
+        "MetricType": {
+            "type": "string",
+            "description": "The type for the alarm's associated metric. Supported value: system, custom. \"system\" means the metric data is collected by Aliyun Cloud Monitor Service(CMS), \"custom\" means the metric data is upload to CMS by users. Defaults to system."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for ess alarm."
+        },
+        "Period": {
+            "type": "number",
+            "description": "The period in seconds over which the specified statistic is applied. Supported value: 60, 120, 300, 900. Defaults to 300."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "The scaling group associated with this alarm, the 'ForceNew' attribute is available in 1.56.0+."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Statistics": {
+            "type": "string",
+            "description": "The statistic to apply to the alarm's associated metric. Supported value: Average, Minimum, Maximum. Defaults to Average."
+        },
+        "Threshold": {
+            "type": "string",
+            "description": "The value against which the specified statistics is compared."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlarmActions",
+        "MetricName",
+        "ScalingGroupId",
+        "Threshold"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

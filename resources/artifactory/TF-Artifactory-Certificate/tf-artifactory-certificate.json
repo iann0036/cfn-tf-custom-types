@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Artifactory::Certificate",
+    "description": "CloudFormation equivalent of artifactory_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/artifactory/TF-Artifactory-Certificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuedBy": {
+            "type": "string"
+        },
+        "IssuedOn": {
+            "type": "string"
+        },
+        "IssuedTo": {
+            "type": "string"
+        },
+        "ValidUntil": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Alias",
+        "Content"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/IssuedBy",
+        "/properties/IssuedOn",
+        "/properties/IssuedTo",
+        "/properties/ValidUntil"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Content"
+    ]
+}

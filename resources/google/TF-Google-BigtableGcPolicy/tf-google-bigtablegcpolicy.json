@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Google::BigtableGcPolicy",
+    "description": "Creates a Google Cloud Bigtable GC Policy inside a family. For more information see\n[the official documentation](https://cloud.google.com/bigtable/) and\n[API](https://cloud.google.com/bigtable/docs/go/reference).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigtableGcPolicy/docs/README.md",
+    "definitions": {
+        "MaxAgeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number",
+                    "description": "Number of days before applying GC policy."
+                },
+                "Duration": {
+                    "type": "string",
+                    "description": "Duration before applying GC policy (ex. \"8h\"). This is required when `days` isn't set."
+                }
+            },
+            "required": []
+        },
+        "MaxVersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "number",
+                    "description": "Number of version before applying the GC policy."
+                }
+            },
+            "required": [
+                "Number"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ColumnFamily": {
+            "type": "string",
+            "description": "The name of the column family."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the Bigtable instance."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "If multiple policies are set, you should choose between `UNION` OR `INTERSECTION`."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it is not provided, the provider project is used."
+        },
+        "Table": {
+            "type": "string",
+            "description": "The name of the table."
+        },
+        "MaxAge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxAgeDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaxVersion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxVersionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ColumnFamily",
+        "InstanceName",
+        "Table"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,705 @@
+{
+    "typeName": "TF::Dynatrace::Notification",
+    "description": "CloudFormation equivalent of dynatrace_notification",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-Notification/docs/README.md",
+    "definitions": {
+        "AnsibleTowerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptAnyCertificate": {
+                    "type": "boolean"
+                },
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "CustomMessage": {
+                    "type": "string"
+                },
+                "JobTemplateId": {
+                    "type": "number"
+                },
+                "JobTemplateUrl": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AcceptAnyCertificate",
+                "Active",
+                "AlertingProfile",
+                "CustomMessage",
+                "JobTemplateId",
+                "JobTemplateUrl",
+                "Name",
+                "Username"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Name",
+                "Type"
+            ]
+        },
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "BccReceivers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Body": {
+                    "type": "string"
+                },
+                "CcReceivers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Receivers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subject": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Body",
+                "Name",
+                "Subject"
+            ]
+        },
+        "HipchatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Message",
+                "Name"
+            ]
+        },
+        "JiraDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "IssueType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "ProjectKey": {
+                    "type": "string"
+                },
+                "Summary": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Description",
+                "IssueType",
+                "Name",
+                "ProjectKey",
+                "Summary",
+                "Url",
+                "Username"
+            ]
+        },
+        "OpsGenieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Domain",
+                "Message",
+                "Name"
+            ]
+        },
+        "PagerDutyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Account": {
+                    "type": "string"
+                },
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ServiceApiKey": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Account",
+                "Active",
+                "AlertingProfile",
+                "Name",
+                "ServiceName"
+            ]
+        },
+        "ServiceNowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "InstanceName": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "SendEvents": {
+                    "type": "boolean"
+                },
+                "SendIncidents": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Message",
+                "Name",
+                "SendEvents",
+                "SendIncidents",
+                "Username"
+            ]
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Channel": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Channel",
+                "Name",
+                "Title"
+            ]
+        },
+        "TrelloDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "ApplicationKey": {
+                    "type": "string"
+                },
+                "AuthorizationToken": {
+                    "type": "string"
+                },
+                "BoardId": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "ListId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResolvedListId": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "ApplicationKey",
+                "BoardId",
+                "Description",
+                "ListId",
+                "Name",
+                "ResolvedListId",
+                "Text"
+            ]
+        },
+        "VictorOpsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RoutingKey": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Active",
+                "AlertingProfile",
+                "Message",
+                "Name",
+                "RoutingKey"
+            ]
+        },
+        "WebHookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptAnyCertificate": {
+                    "type": "boolean"
+                },
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NotifyEventMerges": {
+                    "type": "boolean"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AcceptAnyCertificate",
+                "Active",
+                "AlertingProfile",
+                "Name",
+                "Payload",
+                "Url"
+            ]
+        },
+        "XmattersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptAnyCertificate": {
+                    "type": "boolean"
+                },
+                "Active": {
+                    "type": "boolean"
+                },
+                "AlertingProfile": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "AcceptAnyCertificate",
+                "Active",
+                "AlertingProfile",
+                "Name",
+                "Payload",
+                "Url"
+            ]
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "AnsibleTower": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnsibleTowerDefinition"
+            },
+            "maxItems": 1
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Hipchat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HipchatDefinition"
+            },
+            "maxItems": 1
+        },
+        "Jira": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JiraDefinition"
+            },
+            "maxItems": 1
+        },
+        "OpsGenie": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OpsGenieDefinition"
+            },
+            "maxItems": 1
+        },
+        "PagerDuty": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PagerDutyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceNow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceNowDefinition"
+            },
+            "maxItems": 1
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            },
+            "maxItems": 1
+        },
+        "Trello": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrelloDefinition"
+            },
+            "maxItems": 1
+        },
+        "VictorOps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VictorOpsDefinition"
+            },
+            "maxItems": 1
+        },
+        "WebHook": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebHookDefinition"
+            },
+            "maxItems": 1
+        },
+        "Xmatters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/XmattersDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

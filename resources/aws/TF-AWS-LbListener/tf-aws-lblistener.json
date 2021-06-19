@@ -1,0 +1,440 @@
+{
+    "typeName": "TF::AWS::LbListener",
+    "description": "Provides a Load Balancer Listener resource.\n\n~> **Note:** `aws_alb_listener` is known as `aws_lb_listener`. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LbListener/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DefaultActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Order": {
+                    "type": "number"
+                },
+                "TargetGroupArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "AuthenticateCognito": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateCognitoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AuthenticateOidc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateOidcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FixedResponse": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedResponseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Forward": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthenticateCognitoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationRequestExtraParamsDefinition"
+                    }
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "UserPoolArn": {
+                    "type": "string"
+                },
+                "UserPoolClientId": {
+                    "type": "string"
+                },
+                "UserPoolDomain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserPoolArn",
+                "UserPoolClientId",
+                "UserPoolDomain"
+            ]
+        },
+        "AuthenticationRequestExtraParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthenticateOidcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationRequestExtraParamsDefinition2"
+                    }
+                },
+                "AuthorizationEndpoint": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "Issuer": {
+                    "type": "string"
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "TokenEndpoint": {
+                    "type": "string"
+                },
+                "UserInfoEndpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthorizationEndpoint",
+                "ClientId",
+                "ClientSecret",
+                "Issuer",
+                "TokenEndpoint",
+                "UserInfoEndpoint"
+            ]
+        },
+        "AuthenticationRequestExtraParamsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FixedResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "MessageBody": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType"
+            ]
+        },
+        "ForwardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Stickiness": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StickinessDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TargetGroup": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupDefinition"
+                    },
+                    "maxItems": 5,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatusCode"
+            ]
+        },
+        "StickinessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        },
+        "TargetGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Arn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlpnPolicy": {
+            "type": "string",
+            "description": "Name of the Application-Layer Protocol Negotiation (ALPN) policy. Can be set if `protocol` is `TLS`. Valid values are `HTTP1Only`, `HTTP2Only`, `HTTP2Optional`, `HTTP2Preferred`, and `None`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string",
+            "description": "ARN of the default SSL server certificate. Exactly one certificate is required if the protocol is HTTPS. For adding additional SSL certificates, see the [`aws_lb_listener_certificate` resource](/docs/providers/aws/r/lb_listener_certificate.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerArn": {
+            "type": "string",
+            "description": "ARN of the load balancer."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port on which the load balancer is listening. Not valid for Gateway Load Balancers."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol for connections from clients to the load balancer. For Application Load Balancers, valid values are `HTTP` and `HTTPS`, with a default of `HTTP`. For Network Load Balancers, valid values are `TCP`, `TLS`, `UDP`, and `TCP_UDP`. Not valid to use `UDP` or `TCP_UDP` if dual-stack mode is enabled. Not valid for Gateway Load Balancers."
+        },
+        "SslPolicy": {
+            "type": "string",
+            "description": "Name of the SSL Policy for the listener. Required if `protocol` is `HTTPS` or `TLS`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "DefaultAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultActionDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthenticateOidcDefinition/ClientSecret"
+    ]
+}

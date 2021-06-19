@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::Google::DataCatalogEntry",
+    "description": "Entry Metadata. A Data Catalog Entry resource represents another resource in Google Cloud Platform\n(such as a BigQuery dataset or a Pub/Sub topic) or outside of Google Cloud Platform. Clients can use\nthe linkedResource field in the Entry resource to refer to the original resource ID of the source system.\n\nAn Entry resource contains resource details, such as its schema. An Entry can also be used to attach\nflexible metadata, such as a Tag.\n\n\nTo get more information about Entry, see:\n\n* [API documentation](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/data-catalog/docs)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=data_catalog_entry_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-ima...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataCatalogEntry/docs/README.md",
+    "definitions": {
+        "BigqueryDateShardedSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dataset": {
+                    "type": "string"
+                },
+                "ShardCount": {
+                    "type": "number"
+                },
+                "TablePrefix": {
+                    "type": "string"
+                }
+            }
+        },
+        "BigqueryTableSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupedEntry": {
+                    "type": "string"
+                }
+            }
+        },
+        "BigqueryTableSpecDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ViewQuery": {
+                    "type": "string"
+                }
+            }
+        },
+        "BigqueryTableSpecDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TableSourceType": {
+                    "type": "string"
+                },
+                "TableSpec": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BigqueryTableSpecDefinition"
+                    }
+                },
+                "ViewSpec": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BigqueryTableSpecDefinition2"
+                    }
+                }
+            }
+        },
+        "GcsFilesetSpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilePatterns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "FilePatterns"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BigqueryDateShardedSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BigqueryDateShardedSpecDefinition"
+            }
+        },
+        "BigqueryTableSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BigqueryTableSpecDefinition3"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "EntryGroup": {
+            "type": "string"
+        },
+        "EntryId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegratedSystem": {
+            "type": "string"
+        },
+        "LinkedResource": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserSpecifiedSystem": {
+            "type": "string"
+        },
+        "UserSpecifiedType": {
+            "type": "string"
+        },
+        "GcsFilesetSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GcsFilesetSpecDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EntryGroup",
+        "EntryId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BigqueryDateShardedSpec",
+        "/properties/BigqueryTableSpec",
+        "/properties/Id",
+        "/properties/IntegratedSystem",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

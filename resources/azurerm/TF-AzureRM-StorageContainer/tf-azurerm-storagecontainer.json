@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::AzureRM::StorageContainer",
+    "description": "Manages a Container within an Azure Storage Account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageContainer/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContainerAccessType": {
+            "type": "string",
+            "description": "The Access Level configured for this Container. Possible values are `blob`, `container` or `private`. Defaults to `private`."
+        },
+        "HasImmutabilityPolicy": {
+            "type": "boolean"
+        },
+        "HasLegalHold": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "A mapping of MetaData for this Container. All metadata keys should be lowercase."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Container which should be created within the Storage Account."
+        },
+        "ResourceManagerId": {
+            "type": "string"
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "The name of the Storage Account where the Container should be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StorageAccountName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HasImmutabilityPolicy",
+        "/properties/HasLegalHold",
+        "/properties/Id",
+        "/properties/ResourceManagerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

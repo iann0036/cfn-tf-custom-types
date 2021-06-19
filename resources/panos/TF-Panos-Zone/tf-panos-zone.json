@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::Panos::Zone",
+    "description": "This resource allows you to add/update/delete zones.\n\nThis resource has some overlap with the `panos_zone_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_zone` spec does not define the\n`interfaces` field.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-Zone/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableUserId": {
+            "type": "boolean",
+            "description": "Boolean to enable user identification."
+        },
+        "ExcludeAcls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Users from these addresses/subnets will not\nbe identified.  This can be an address object, an address group, a single\nIP address, or an IP address subnet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeAcls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Users from these addresses/subnets will\nbe identified.  This can be an address object, an address group, a single\nIP address, or an IP address subnet."
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of interfaces to associated with this zone.  Leave\nthis undefined if you want to use `panos_zone_entry` resources."
+        },
+        "LogSetting": {
+            "type": "string",
+            "description": "Log setting."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The zone's mode.  This can be `layer3`, `layer2`,\n`virtual-wire`, `tap`, or `tunnel`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The zone's name."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the zone into (default: `vsys1`)."
+        },
+        "ZoneProfile": {
+            "type": "string",
+            "description": "The zone protection profile."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

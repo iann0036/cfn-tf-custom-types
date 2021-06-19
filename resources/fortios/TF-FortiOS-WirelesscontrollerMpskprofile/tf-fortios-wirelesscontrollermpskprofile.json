@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerMpskprofile",
+    "description": "Configure MPSK profile. Applies to FortiOS Version `>= 6.4.2`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerMpskprofile/docs/README.md",
+    "definitions": {
+        "MpskGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "MPSK group name."
+                },
+                "VlanId": {
+                    "type": "number",
+                    "description": "Optional VLAN ID."
+                },
+                "VlanType": {
+                    "type": "string",
+                    "description": "MPSK group VLAN options. Valid values: `no-vlan`, `fixed-vlan`."
+                },
+                "MpskKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MpskKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MpskKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string",
+                    "description": "Comment."
+                },
+                "ConcurrentClientLimitType": {
+                    "type": "string",
+                    "description": "MPSK client limit type options. Valid values: `default`, `unlimited`, `specified`."
+                },
+                "ConcurrentClients": {
+                    "type": "number",
+                    "description": "Number of clients that can connect using this pre-shared key (1 - 65535, default is 256)."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "MAC address."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Pre-shared key name."
+                },
+                "Passphrase": {
+                    "type": "string",
+                    "description": "WPA Pre-shared key."
+                },
+                "MpskSchedules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MpskSchedulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MpskSchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Schedule name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MpskConcurrentClients": {
+            "type": "number",
+            "description": "Maximum number of concurrent clients that connect using the same passphrase in multiple PSK authentication (0 - 65535, default = 0, meaning no limitation)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "MPSK profile name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "MpskGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MpskGroupDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/MpskKeyDefinition/Passphrase"
+    ]
+}

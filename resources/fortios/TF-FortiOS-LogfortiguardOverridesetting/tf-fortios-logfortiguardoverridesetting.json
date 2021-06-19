@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::LogfortiguardOverridesetting",
+    "description": "Override global FortiCloud logging settings for this VDOM.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogfortiguardOverridesetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxLogRate": {
+            "type": "number",
+            "description": "FortiCloud maximum log rate in MBps (0 = unlimited)."
+        },
+        "Override": {
+            "type": "string",
+            "description": "Overriding FortiCloud settings for this VDOM or use global settings. Valid values: `enable`, `disable`."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Set log transmission priority. Valid values: `default`, `low`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable logging to FortiCloud. Valid values: `enable`, `disable`."
+        },
+        "UploadDay": {
+            "type": "string",
+            "description": "Day of week to roll logs."
+        },
+        "UploadInterval": {
+            "type": "string",
+            "description": "Frequency of uploading log files to FortiCloud. Valid values: `daily`, `weekly`, `monthly`."
+        },
+        "UploadOption": {
+            "type": "string",
+            "description": "Configure how log messages are sent to FortiCloud. Valid values: `store-and-upload`, `realtime`, `1-minute`, `5-minute`."
+        },
+        "UploadTime": {
+            "type": "string",
+            "description": "Time of day to roll logs (hh:mm)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

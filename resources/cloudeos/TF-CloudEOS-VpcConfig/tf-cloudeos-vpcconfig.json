@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::CloudEOS::VpcConfig",
+    "description": "The `cloudeos_vpc_config` resource sends the deployment information about the AWS VPC and Azure VNET to CVaaS.\nCVaaS returns the peering information required by the Leaf VPC/VNETs to create a VPC/VNET Peering connection with its\ncorresponding Edge.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-VpcConfig/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClosId": {
+            "type": "string"
+        },
+        "ClosName": {
+            "type": "string",
+            "description": "CLOS Name this VPC refers to for attributes."
+        },
+        "CloudProvider": {
+            "type": "string"
+        },
+        "Cnps": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerRgName": {
+            "type": "string"
+        },
+        "PeerVnetId": {
+            "type": "string"
+        },
+        "PeerVnetName": {
+            "type": "string"
+        },
+        "PeerVpcCidr": {
+            "type": "string"
+        },
+        "PeerVpcId": {
+            "type": "string"
+        },
+        "Peervpcidr": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RgName": {
+            "type": "string",
+            "description": "Resource group name, only valid for Azure."
+        },
+        "Role": {
+            "type": "string",
+            "description": "CloudEdge or CloudLeaf."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "TopologyId": {
+            "type": "string"
+        },
+        "TopologyName": {
+            "type": "string",
+            "description": "Name of topology resource."
+        },
+        "VnetName": {
+            "type": "string",
+            "description": "VNET name, only valid for Azure."
+        },
+        "WanId": {
+            "type": "string"
+        },
+        "WanName": {
+            "type": "string",
+            "description": "WAN Name this VPC refers to for attributes."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudProvider",
+        "Cnps",
+        "Region",
+        "Role",
+        "TopologyName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PeerRgName",
+        "/properties/PeerVnetId",
+        "/properties/PeerVnetName",
+        "/properties/PeerVpcCidr",
+        "/properties/PeerVpcId",
+        "/properties/Peervpcidr",
+        "/properties/TfId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

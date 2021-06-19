@@ -1,0 +1,469 @@
+{
+    "typeName": "TF::Rancher2::ClusterLogging",
+    "description": "CloudFormation equivalent of rancher2_cluster_logging",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-ClusterLogging/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OutputTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomTargetConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content"
+            ]
+        },
+        "ElasticsearchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthPassword": {
+                    "type": "string"
+                },
+                "AuthUsername": {
+                    "type": "string"
+                },
+                "Certificate": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "ClientKeyPass": {
+                    "type": "string"
+                },
+                "DateFormat": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "IndexPrefix": {
+                    "type": "string"
+                },
+                "SslVerify": {
+                    "type": "boolean"
+                },
+                "SslVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "FluentdConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "EnableTls": {
+                    "type": "boolean"
+                },
+                "FluentServers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FluentServersDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "KafkaConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BrokerEndpoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Certificate": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                },
+                "ZookeeperEndpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Topic"
+            ]
+        },
+        "SplunkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "ClientKeyPass": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Index": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SslVerify": {
+                    "type": "boolean"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Token"
+            ]
+        },
+        "SyslogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ClientCert": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "EnableTls": {
+                    "type": "boolean"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Program": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "SslVerify": {
+                    "type": "boolean"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FluentServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "SharedKey": {
+                    "type": "string"
+                },
+                "Standby": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "EnableJsonParsing": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamespaceId": {
+            "type": "string"
+        },
+        "OutputFlushInterval": {
+            "type": "number"
+        },
+        "OutputTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OutputTagsDefinition"
+            }
+        },
+        "CustomTargetConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomTargetConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElasticsearchConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "FluentdConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FluentdConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "KafkaConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KafkaConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SplunkConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SplunkConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SyslogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SyslogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "Kind",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CustomTargetConfigDefinition/Certificate",
+        "/definitions/CustomTargetConfigDefinition/ClientCert",
+        "/definitions/CustomTargetConfigDefinition/ClientKey",
+        "/definitions/ElasticsearchConfigDefinition/AuthPassword",
+        "/definitions/ElasticsearchConfigDefinition/AuthUsername",
+        "/definitions/ElasticsearchConfigDefinition/Certificate",
+        "/definitions/ElasticsearchConfigDefinition/ClientCert",
+        "/definitions/ElasticsearchConfigDefinition/ClientKey",
+        "/definitions/ElasticsearchConfigDefinition/ClientKeyPass",
+        "/definitions/FluentdConfigDefinition/Certificate",
+        "/definitions/KafkaConfigDefinition/Certificate",
+        "/definitions/KafkaConfigDefinition/ClientCert",
+        "/definitions/KafkaConfigDefinition/ClientKey",
+        "/definitions/SplunkConfigDefinition/Certificate",
+        "/definitions/SplunkConfigDefinition/ClientCert",
+        "/definitions/SplunkConfigDefinition/ClientKey",
+        "/definitions/SplunkConfigDefinition/ClientKeyPass",
+        "/definitions/SplunkConfigDefinition/Token",
+        "/definitions/SyslogConfigDefinition/Certificate",
+        "/definitions/SyslogConfigDefinition/ClientCert",
+        "/definitions/SyslogConfigDefinition/ClientKey",
+        "/definitions/SyslogConfigDefinition/Token",
+        "/definitions/FluentServersDefinition/Password",
+        "/definitions/FluentServersDefinition/SharedKey",
+        "/definitions/FluentServersDefinition/Username"
+    ]
+}

@@ -1,0 +1,622 @@
+{
+    "typeName": "TF::Thunder::SlbTemplatePolicy",
+    "description": "`thunder_slb_template_policy` Provides details about thunder slb template policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplatePolicy/docs/README.md",
+    "definitions": {
+        "BwListIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionInterval": {
+                    "type": "number"
+                },
+                "BwListAction": {
+                    "type": "string"
+                },
+                "Fail": {
+                    "type": "number"
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "LoggingDrpRst": {
+                    "type": "number"
+                },
+                "PbslbInterval": {
+                    "type": "number"
+                },
+                "PbslbLogging": {
+                    "type": "number"
+                },
+                "ServiceGroup": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClassListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIpL3Dest": {
+                    "type": "number"
+                },
+                "ClientIpL7Header": {
+                    "type": "number"
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "LidList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LidListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForwardPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcosEventLog": {
+                    "type": "number"
+                },
+                "LocalLogging": {
+                    "type": "number"
+                },
+                "NoClientConnReuse": {
+                    "type": "number"
+                },
+                "RequireWebCategory": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "ActionList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionListDefinition"
+                    }
+                },
+                "Filtering": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilteringDefinition"
+                    }
+                },
+                "SanFiltering": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SanFilteringDefinition"
+                    }
+                },
+                "SourceList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LidListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionValue": {
+                    "type": "string"
+                },
+                "BwPer": {
+                    "type": "number"
+                },
+                "BwRateLimit": {
+                    "type": "number"
+                },
+                "ConnLimit": {
+                    "type": "number"
+                },
+                "ConnPer": {
+                    "type": "number"
+                },
+                "ConnRateLimit": {
+                    "type": "number"
+                },
+                "DirectAction": {
+                    "type": "number"
+                },
+                "DirectActionInterval": {
+                    "type": "number"
+                },
+                "DirectActionValue": {
+                    "type": "string"
+                },
+                "DirectFail": {
+                    "type": "number"
+                },
+                "DirectLoggingDrpRst": {
+                    "type": "number"
+                },
+                "DirectPbslbInterval": {
+                    "type": "number"
+                },
+                "DirectPbslbLogging": {
+                    "type": "number"
+                },
+                "DirectServiceGroup": {
+                    "type": "string"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Lidnum": {
+                    "type": "number"
+                },
+                "Lockout": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "number"
+                },
+                "OverLimitAction": {
+                    "type": "number"
+                },
+                "RequestLimit": {
+                    "type": "number"
+                },
+                "RequestPer": {
+                    "type": "number"
+                },
+                "RequestRateLimit": {
+                    "type": "number"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Dns64": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dns64Definition"
+                    },
+                    "maxItems": 1
+                },
+                "ResponseCodeRateLimit": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseCodeRateLimitDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ActionListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action1": {
+                    "type": "string"
+                },
+                "DropMessage": {
+                    "type": "string"
+                },
+                "DropRedirectUrl": {
+                    "type": "string"
+                },
+                "DropResponseCode": {
+                    "type": "number"
+                },
+                "FakeSg": {
+                    "type": "string"
+                },
+                "FallBack": {
+                    "type": "string"
+                },
+                "FallBackSnat": {
+                    "type": "string"
+                },
+                "ForwardSnat": {
+                    "type": "string"
+                },
+                "HttpStatusCode": {
+                    "type": "string"
+                },
+                "Log": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RealSg": {
+                    "type": "string"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FilteringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SsliUrlFiltering": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SanFilteringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SsliUrlFilteringSan": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SourceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchAny": {
+                    "type": "number"
+                },
+                "MatchAuthorizePolicy": {
+                    "type": "string"
+                },
+                "MatchClassList": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Dns64Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disable": {
+                    "type": "number"
+                },
+                "ExclusiveAnswer": {
+                    "type": "number"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseCodeRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CodeRangeEnd": {
+                    "type": "number"
+                },
+                "CodeRangeStart": {
+                    "type": "number"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Any": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ClassListList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClassListListDefinition"
+                    }
+                },
+                "WebCategoryListList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebCategoryListListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AnyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClassListListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "DestClassList": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "WebCategoryListListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "WebCategoryList": {
+                    "type": "string"
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BwListName": {
+            "type": "string",
+            "description": "Specify a blacklist/whitelist name."
+        },
+        "FullDomainTree": {
+            "type": "number",
+            "description": "Share counters between geo-location and sub regions."
+        },
+        "Id": {
+            "type": "string",
+            "description": "Specify id that maps to service group (The id number)."
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Specify log interval in minutes, by default system will log every over limit instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Class list name or geo-location-class-list name."
+        },
+        "OverLimit": {
+            "type": "number",
+            "description": "Specify operation in case over limit."
+        },
+        "OverLimitLockup": {
+            "type": "number",
+            "description": "Don\u2019t accept any new connection for certain time (Lockup duration (minute))."
+        },
+        "OverLimitLogging": {
+            "type": "number",
+            "description": "Log a message."
+        },
+        "OverLimitReset": {
+            "type": "number",
+            "description": "Reset the connection when it exceeds limit."
+        },
+        "Overlap": {
+            "type": "number",
+            "description": "Use overlap mode for geo-location to do longest match."
+        },
+        "Share": {
+            "type": "number",
+            "description": "Share counters between virtual ports and virtual servers."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Define timeout value of PBSLB dynamic entry (Timeout value (minute, default is 5))."
+        },
+        "UseDestinationIp": {
+            "type": "number",
+            "description": "Use destination IP to match the policy."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "BwListId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BwListIdDefinition"
+            }
+        },
+        "ClassList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClassListDefinition"
+            },
+            "maxItems": 1
+        },
+        "ForwardPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::MongoDBAtlas::CloudProviderSnapshotBackupPolicy",
+    "description": "`mongodbatlas_cloud_provider_snapshot_backup_policy` provides a resource that enables you to view and modify the snapshot schedule and retention settings for an Atlas cluster with Cloud Backup enabled.  A default policy is created automatically when Cloud Backup is enabled for the cluster.\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find `groupId` in the official documentation.\n\n# Examples - Modifying Polices\nWhen Cloud Backup is enabled for a cluster MongoDB Atlas automatically creates a default Cloud Backup schedule for the cluster with four policy items; hourly, daily, weekly, and monthly. Because of this default creation this provider automatically saves the Cloud Backup Snapshot Policy into the Terraform state when a cluster is created/modified to use Cloud Backup. If the default works well for you then you do not need to do anything other than create a cluster with Cloud Backup enabled and your Terraform state will have this information if you need it. However, if you want the po...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-CloudProviderSnapshotBackupPolicy/docs/README.md",
+    "definitions": {
+        "PoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "PolicyItem": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PolicyItemDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "PolicyItemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FrequencyInterval": {
+                    "type": "number"
+                },
+                "FrequencyType": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "RetentionUnit": {
+                    "type": "string"
+                },
+                "RetentionValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FrequencyInterval",
+                "FrequencyType",
+                "Id",
+                "RetentionUnit",
+                "RetentionValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The name of the Atlas cluster that contains the snapshot backup policy you want to retrieve."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NextSnapshot": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique identifier of the project for the Atlas cluster."
+        },
+        "ReferenceHourOfDay": {
+            "type": "number",
+            "description": "UTC Hour of day between 0 and 23, inclusive, representing which hour of the day that Atlas takes snapshots for backup policy items."
+        },
+        "ReferenceMinuteOfHour": {
+            "type": "number",
+            "description": "UTC Minutes after referenceHourOfDay that Atlas takes snapshots for backup policy items. Must be between 0 and 59, inclusive."
+        },
+        "RestoreWindowDays": {
+            "type": "number",
+            "description": "Number of days back in time you can restore to with point-in-time accuracy. Must be a positive, non-zero integer."
+        },
+        "UpdateSnapshots": {
+            "type": "boolean",
+            "description": "Specify true to apply the retention changes in the updated backup policy to snapshots that Atlas took previously."
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PoliciesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterId",
+        "/properties/Id",
+        "/properties/NextSnapshot"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

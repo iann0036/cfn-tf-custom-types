@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Google::BillingSubaccount",
+    "description": "Allows creation and management of a Google Cloud Billing Subaccount.\n\n!> **WARNING:** Deleting this Terraform resource will not delete or close the billing subaccount.\n\n```hcl\nresource \"google_billing_subaccount\" \"subaccount\" {\n    display_name = \"My Billing Account\"\n    master_billing_account = \"012345-567890-ABCDEF\"\n}\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BillingSubaccount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingAccountId": {
+            "type": "string"
+        },
+        "DeletionPolicy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MasterBillingAccount": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Open": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "MasterBillingAccount"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BillingAccountId",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Open"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

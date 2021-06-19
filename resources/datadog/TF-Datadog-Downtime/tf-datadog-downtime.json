@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Datadog::Downtime",
+    "description": "CloudFormation equivalent of datadog_downtime",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-Downtime/docs/README.md",
+    "definitions": {
+        "RecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Period": {
+                    "type": "number"
+                },
+                "Rrule": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UntilDate": {
+                    "type": "number"
+                },
+                "UntilOccurrences": {
+                    "type": "number"
+                },
+                "WeekDays": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean"
+        },
+        "ActiveChildId": {
+            "type": "number"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "End": {
+            "type": "number"
+        },
+        "EndDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Message": {
+            "type": "string"
+        },
+        "MonitorId": {
+            "type": "number"
+        },
+        "MonitorTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Start": {
+            "type": "number"
+        },
+        "StartDate": {
+            "type": "string"
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "Recurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RecurrenceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Scope"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Active",
+        "/properties/ActiveChildId",
+        "/properties/Disabled",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

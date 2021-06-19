@@ -1,0 +1,219 @@
+{
+    "typeName": "TF::Rancher2::AuthConfigFreeipa",
+    "description": "CloudFormation equivalent of rancher2_auth_config_freeipa",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-AuthConfigFreeipa/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "AllowedPrincipalIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "ConnectionTimeout": {
+            "type": "number"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "GroupDnAttribute": {
+            "type": "string"
+        },
+        "GroupMemberMappingAttribute": {
+            "type": "string"
+        },
+        "GroupMemberUserAttribute": {
+            "type": "string"
+        },
+        "GroupNameAttribute": {
+            "type": "string"
+        },
+        "GroupObjectClass": {
+            "type": "string"
+        },
+        "GroupSearchAttribute": {
+            "type": "string"
+        },
+        "GroupSearchBase": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NestedGroupMembershipEnabled": {
+            "type": "boolean"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServiceAccountDistinguishedName": {
+            "type": "string"
+        },
+        "ServiceAccountPassword": {
+            "type": "string"
+        },
+        "TestPassword": {
+            "type": "string"
+        },
+        "TestUsername": {
+            "type": "string"
+        },
+        "Tls": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserDisabledBitMask": {
+            "type": "number"
+        },
+        "UserEnabledAttribute": {
+            "type": "string"
+        },
+        "UserLoginAttribute": {
+            "type": "string"
+        },
+        "UserMemberAttribute": {
+            "type": "string"
+        },
+        "UserNameAttribute": {
+            "type": "string"
+        },
+        "UserObjectClass": {
+            "type": "string"
+        },
+        "UserSearchAttribute": {
+            "type": "string"
+        },
+        "UserSearchBase": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Servers",
+        "ServiceAccountDistinguishedName",
+        "ServiceAccountPassword",
+        "TestPassword",
+        "TestUsername",
+        "UserSearchBase"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Certificate",
+        "/properties/ServiceAccountDistinguishedName",
+        "/properties/ServiceAccountPassword",
+        "/properties/TestPassword"
+    ]
+}

@@ -1,0 +1,407 @@
+{
+    "typeName": "TF::NSXT::PolicyTier0Gateway",
+    "description": "This resource provides a method for the management of a Tier-0 gateway or VRF-Lite gateway.\n\nThis resource is applicable to NSX Global Manager and NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyTier0Gateway/docs/README.md",
+    "definitions": {
+        "BgpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ecmp": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "GracefulRestartMode": {
+                    "type": "string"
+                },
+                "GracefulRestartStaleRouteTimer": {
+                    "type": "number"
+                },
+                "GracefulRestartTimer": {
+                    "type": "number"
+                },
+                "InterSrIbgp": {
+                    "type": "boolean"
+                },
+                "LocalAsNum": {
+                    "type": "string"
+                },
+                "MultipathRelax": {
+                    "type": "boolean"
+                },
+                "RouteAggregation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteAggregationDefinition"
+                    },
+                    "maxItems": 1000
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IntersiteConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FallbackSitePaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrimarySitePath": {
+                    "type": "string"
+                },
+                "TransitSubnet": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LocaleServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EdgeClusterPath": {
+                    "type": "string"
+                },
+                "PreferredEdgePaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RedistributionConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedistributionConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "EdgeClusterPath"
+            ]
+        },
+        "RedistributionConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "OspfEnabled": {
+                    "type": "boolean"
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VrfConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EvpnTransitVni": {
+                    "type": "number"
+                },
+                "GatewayPath": {
+                    "type": "string"
+                },
+                "RouteDistinguisher": {
+                    "type": "string"
+                },
+                "RouteTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteTargetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "GatewayPath"
+            ]
+        },
+        "RouteAggregationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "SummaryOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "RouteMapPath": {
+                    "type": "string"
+                },
+                "Types": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RouteTargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressFamily": {
+                    "type": "string"
+                },
+                "AutoMode": {
+                    "type": "boolean"
+                },
+                "ExportTargets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ImportTargets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultRuleLogging": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if the default rule logging will be enabled or not. The default value is false."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DhcpConfigPath": {
+            "type": "string",
+            "description": "Policy path to DHCP server or relay configuration to use for this gateway."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "EdgeClusterPath": {
+            "type": "string",
+            "description": "The path of the edge cluster where the Tier-0 is placed.\n* `preferred_edge_paths` - (Optional) Policy paths to edge nodes. Specified edge is used as preferred edge cluster member when failover mode is set to `PREEMPTIVE`."
+        },
+        "EnableFirewall": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if the edge firewall will be enabled or not. The default value is true."
+        },
+        "FailoverMode": {
+            "type": "string",
+            "description": "This failover mode determines, whether the preferred service router instance for given logical router will preempt the peer. Accepted values are PREEMPTIVE/NON_PREEMPTIVE."
+        },
+        "ForceWhitelisting": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if white-listing will be forced or not. The default value is false. This argument is deprecated and will be removed. Please use `nsxt_policy_predefined_gateway_policy` resource to control default action."
+        },
+        "HaMode": {
+            "type": "string",
+            "description": "High-availability Mode for Tier-0. Valid values are `ACTIVE_ACTIVE` and `ACTIVE_STANDBY`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalTransitSubnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Internal transit subnets in CIDR format. At most 1 CIDR."
+        },
+        "Ipv6DadProfilePath": {
+            "type": "string",
+            "description": "Policy path to IPv6 DAD profile."
+        },
+        "Ipv6NdraProfilePath": {
+            "type": "string",
+            "description": "Policy path to IPv6 NDRA profile."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "RdAdminAddress": {
+            "type": "string",
+            "description": "Route distinguisher administrator address. If using EVPN service, then this attribute should be defined if auto generation of route distinguisher on VRF configuration is needed."
+        },
+        "RedistributionSet": {
+            "type": "boolean"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "TransitSubnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Transit subnets in CIDR format."
+        },
+        "BgpConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BgpConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntersiteConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntersiteConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "LocaleService": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocaleServiceDefinition"
+            }
+        },
+        "RedistributionConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributionConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        },
+        "VrfConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VrfConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/RedistributionSet",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

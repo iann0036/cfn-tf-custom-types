@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::PrismaCloud::SavedSearch",
+    "description": "Manage a saved search on the Prisma Cloud Platform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-SavedSearch/docs/README.md",
+    "definitions": {
+        "TimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Absolute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AbsoluteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Relative": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RelativeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ToNow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ToNowDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AbsoluteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "RelativeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Amount": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Amount",
+                "Unit"
+            ]
+        },
+        "ToNowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Unit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Query": {
+            "type": "string",
+            "description": "The RQL query."
+        },
+        "Saved": {
+            "type": "boolean"
+        },
+        "SearchId": {
+            "type": "string",
+            "description": "The search ID."
+        },
+        "TimeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRangeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Query",
+        "SearchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Saved"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

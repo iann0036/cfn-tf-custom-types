@@ -1,0 +1,258 @@
+{
+    "typeName": "TF::FortiOS::RouterPolicy",
+    "description": "Configure IPv4 routing policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterPolicy/docs/README.md",
+    "definitions": {
+        "DstDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Subnet": {
+                    "type": "string",
+                    "description": "IP and mask."
+                }
+            },
+            "required": []
+        },
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address/group name."
+                }
+            },
+            "required": []
+        },
+        "InputDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Custom Destination Internet Service name."
+                }
+            },
+            "required": []
+        },
+        "InternetServiceIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Destination Internet Service ID."
+                }
+            },
+            "required": []
+        },
+        "SrcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Subnet": {
+                    "type": "string",
+                    "description": "IP and mask."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address/group name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action of the policy route. Valid values: `deny`, `permit`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DstNegate": {
+            "type": "string",
+            "description": "Enable/disable negating destination address match. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EndPort": {
+            "type": "number",
+            "description": "End destination port number (0 - 65535)."
+        },
+        "EndSourcePort": {
+            "type": "number",
+            "description": "End source port number (0 - 65535)."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "IP address of the gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputDeviceNegate": {
+            "type": "string",
+            "description": "Enable/disable negation of input device match. Valid values: `enable`, `disable`."
+        },
+        "OutputDevice": {
+            "type": "string",
+            "description": "Outgoing interface name."
+        },
+        "Protocol": {
+            "type": "number",
+            "description": "Protocol number (0 - 255)."
+        },
+        "SeqNum": {
+            "type": "number",
+            "description": "Sequence number."
+        },
+        "SrcNegate": {
+            "type": "string",
+            "description": "Enable/disable negating source address match. Valid values: `enable`, `disable`."
+        },
+        "StartPort": {
+            "type": "number",
+            "description": "Start destination port number (0 - 65535)."
+        },
+        "StartSourcePort": {
+            "type": "number",
+            "description": "Start source port number (0 - 65535)."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this policy route. Valid values: `enable`, `disable`."
+        },
+        "Tos": {
+            "type": "string",
+            "description": "Type of service bit pattern."
+        },
+        "TosMask": {
+            "type": "string",
+            "description": "Type of service evaluated bits."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Dst": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstDefinition"
+            }
+        },
+        "Dstaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DstaddrDefinition"
+            }
+        },
+        "InputDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputDeviceDefinition"
+            }
+        },
+        "InternetServiceCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceCustomDefinition"
+            }
+        },
+        "InternetServiceId": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InternetServiceIdDefinition"
+            }
+        },
+        "Src": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcDefinition"
+            }
+        },
+        "Srcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcaddrDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

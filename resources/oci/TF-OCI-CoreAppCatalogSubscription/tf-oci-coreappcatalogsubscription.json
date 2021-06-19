@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::OCI::CoreAppCatalogSubscription",
+    "description": "This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.\n\nCreate a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreAppCatalogSubscription/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The compartmentID for the subscription."
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "EulaLink": {
+            "type": "string",
+            "description": "EULA link."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListingId": {
+            "type": "string",
+            "description": "The OCID of the listing."
+        },
+        "ListingResourceId": {
+            "type": "string"
+        },
+        "ListingResourceVersion": {
+            "type": "string",
+            "description": "Listing resource version."
+        },
+        "OracleTermsOfUseLink": {
+            "type": "string",
+            "description": "Oracle TOU link."
+        },
+        "PublisherName": {
+            "type": "string"
+        },
+        "Signature": {
+            "type": "string",
+            "description": "A generated signature for this listing resource version retrieved the agreements API."
+        },
+        "Summary": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeRetrieved": {
+            "type": "string",
+            "description": "Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "ListingId",
+        "ListingResourceVersion",
+        "OracleTermsOfUseLink",
+        "Signature",
+        "TimeRetrieved"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DisplayName",
+        "/properties/Id",
+        "/properties/ListingResourceId",
+        "/properties/PublisherName",
+        "/properties/Summary",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

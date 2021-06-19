@@ -1,0 +1,492 @@
+{
+    "typeName": "TF::AWS::ElasticsearchDomain",
+    "description": "Manages an AWS Elasticsearch Domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElasticsearchDomain/docs/README.md",
+    "definitions": {
+        "AdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdvancedSecurityOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "InternalUserDatabaseEnabled": {
+                    "type": "boolean"
+                },
+                "MasterUserOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MasterUserOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ClusterConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DedicatedMasterCount": {
+                    "type": "number"
+                },
+                "DedicatedMasterEnabled": {
+                    "type": "boolean"
+                },
+                "DedicatedMasterType": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WarmCount": {
+                    "type": "number"
+                },
+                "WarmEnabled": {
+                    "type": "boolean"
+                },
+                "WarmType": {
+                    "type": "string"
+                },
+                "ZoneAwarenessEnabled": {
+                    "type": "boolean"
+                },
+                "ZoneAwarenessConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZoneAwarenessConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CognitoOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IdentityPoolId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UserPoolId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IdentityPoolId",
+                "RoleArn",
+                "UserPoolId"
+            ]
+        },
+        "DomainEndpointOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomEndpoint": {
+                    "type": "string"
+                },
+                "CustomEndpointCertificateArn": {
+                    "type": "string"
+                },
+                "CustomEndpointEnabled": {
+                    "type": "boolean"
+                },
+                "EnforceHttps": {
+                    "type": "boolean"
+                },
+                "TlsSecurityPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EbsEnabled": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EbsEnabled"
+            ]
+        },
+        "EncryptAtRestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "LogPublishingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogGroupArn": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "LogType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudwatchLogGroupArn",
+                "LogType"
+            ]
+        },
+        "NodeToNodeEncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "SnapshotOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomatedSnapshotStartHour": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AutomatedSnapshotStartHour"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpcOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MasterUserOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MasterUserArn": {
+                    "type": "string"
+                },
+                "MasterUserName": {
+                    "type": "string"
+                },
+                "MasterUserPassword": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ZoneAwarenessConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZoneCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessPolicies": {
+            "type": "string",
+            "description": "IAM policy document specifying the access policies for the domain."
+        },
+        "AdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdvancedOptionsDefinition"
+            },
+            "description": "Key-value string pairs to specify advanced configuration options. Note that the values for these configuration options must be strings (wrapped in quotes) or they may be wrong and cause a perpetual diff, causing Terraform to want to recreate your Elasticsearch domain on every apply."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Name of the domain."
+        },
+        "ElasticsearchVersion": {
+            "type": "string",
+            "description": "Version of Elasticsearch to deploy. Defaults to `1.5`."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KibanaEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "AdvancedSecurityOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvancedSecurityOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ClusterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "CognitoOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CognitoOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "DomainEndpointOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DomainEndpointOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "EbsOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EbsOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "EncryptAtRest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptAtRestDefinition"
+            },
+            "maxItems": 1
+        },
+        "LogPublishingOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogPublishingOptionsDefinition"
+            }
+        },
+        "NodeToNodeEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeToNodeEncryptionDefinition"
+            },
+            "maxItems": 1
+        },
+        "SnapshotOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VpcOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcOptionsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainId",
+        "/properties/Endpoint",
+        "/properties/Id",
+        "/properties/KibanaEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/MasterUserOptionsDefinition/MasterUserPassword"
+    ]
+}

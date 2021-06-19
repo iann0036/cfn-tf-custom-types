@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::FortiOS::RouterStatic",
+    "description": "Configure IPv4 static routing tables.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterStatic/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Enable/disable Bidirectional Forwarding Detection (BFD). Valid values: `enable`, `disable`."
+        },
+        "Blackhole": {
+            "type": "string",
+            "description": "Enable/disable black hole. Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "Device": {
+            "type": "string",
+            "description": "Gateway out interface or tunnel."
+        },
+        "Distance": {
+            "type": "number",
+            "description": "Administrative distance (1 - 255)."
+        },
+        "Dst": {
+            "type": "string",
+            "description": "Destination IP and mask for this route."
+        },
+        "Dstaddr": {
+            "type": "string",
+            "description": "Name of firewall address or address group."
+        },
+        "DynamicGateway": {
+            "type": "string",
+            "description": "Enable use of dynamic gateway retrieved from a DHCP or PPP server. Valid values: `enable`, `disable`."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "Gateway IP for this route."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetService": {
+            "type": "number",
+            "description": "Application ID in the Internet service database."
+        },
+        "InternetServiceCustom": {
+            "type": "string",
+            "description": "Application name in the Internet service custom database."
+        },
+        "LinkMonitorExempt": {
+            "type": "string",
+            "description": "Enable/disable withdrawing this route when link monitor or health check is down. Valid values: `enable`, `disable`."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Administrative priority (0 - 4294967295)."
+        },
+        "Sdwan": {
+            "type": "string",
+            "description": "Enable/disable egress through SD-WAN. Valid values: `enable`, `disable`."
+        },
+        "SeqNum": {
+            "type": "number",
+            "description": "Sequence number."
+        },
+        "Src": {
+            "type": "string",
+            "description": "Source prefix for this route."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this static route. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VirtualWanLink": {
+            "type": "string",
+            "description": "Enable/disable egress through the virtual-wan-link. Valid values: `enable`, `disable`."
+        },
+        "Vrf": {
+            "type": "number",
+            "description": "Virtual Routing Forwarding ID."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Administrative weight (0 - 255)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

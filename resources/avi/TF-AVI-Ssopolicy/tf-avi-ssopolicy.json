@@ -1,0 +1,471 @@
+{
+    "typeName": "TF::AVI::Ssopolicy",
+    "description": "The SSOPolicy resource allows the creation and management of Avi SSOPolicy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Ssopolicy/docs/README.md",
+    "definitions": {
+        "AuthenticationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultAuthProfileRef": {
+                    "type": "string"
+                },
+                "AuthnRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthnRulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DefaultAuthProfileRef"
+            ]
+        },
+        "AuthorizationPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthzRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthzRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "AuthnRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "AuthzRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessTokenDefinition"
+                    }
+                },
+                "AttrMatches": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttrMatchesDefinition"
+                    }
+                },
+                "HostHdr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostHdrDefinition"
+                    }
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MethodDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AccessTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TokenName": {
+                    "type": "string"
+                },
+                "Matches": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AttrMatchesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributeName": {
+                    "type": "string"
+                },
+                "AttributeValueList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AttributeValueListDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "AttributeName"
+            ]
+        },
+        "HostHdrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "MethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Methods"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "MatchesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BoolMatch": {
+                    "type": "boolean"
+                },
+                "IntMatch": {
+                    "type": "number"
+                },
+                "IsMandatory": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Validate": {
+                    "type": "boolean"
+                },
+                "StringMatch": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StringMatchDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IsMandatory",
+                "Name",
+                "Type",
+                "Validate"
+            ]
+        },
+        "AttributeValueListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "StringMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the sso policy. Field introduced in 18.2.3."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Uuid of the tenant. It is a reference to an object of type tenant. Field introduced in 18.2.3."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Sso policy type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP. Field introduced in 18.2.5."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AuthenticationPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthenticationPolicyDefinition"
+            },
+            "minItems": 1
+        },
+        "AuthorizationPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationPolicyDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

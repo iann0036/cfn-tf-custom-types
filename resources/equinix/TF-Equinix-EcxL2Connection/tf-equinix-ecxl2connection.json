@@ -1,0 +1,264 @@
+{
+    "typeName": "TF::Equinix::EcxL2Connection",
+    "description": "Resource `equinix_ecx_l2_connection` allows creation and management of Equinix Fabric\nlayer 2 connections.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-EcxL2Connection/docs/README.md",
+    "definitions": {
+        "AdditionalInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "SecondaryConnectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthorizationKey": {
+                    "type": "string",
+                    "description": "Text field based on the service profile\nyou want to connect to."
+                },
+                "DeviceInterfaceId": {
+                    "type": "number",
+                    "description": "Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "DeviceUuid": {
+                    "type": "string",
+                    "description": "Identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "secondary connection name\n- `speed` - (Optional) Speed/Bandwidth to be allocated to the connection.\n- `speed_unit` - (Optional) Unit of the speed/bandwidth to be allocated\nto the connection.\n- `port_uuid` - (Required when `device_uuid` is not set) Identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when `port_uuid` is not set) Identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "PortUuid": {
+                    "type": "string",
+                    "description": "Identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when `port_uuid` is not set) Identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "ProfileUuid": {
+                    "type": "string"
+                },
+                "SellerMetroCode": {
+                    "type": "string",
+                    "description": "The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "SellerRegion": {
+                    "type": "string",
+                    "description": "The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "Speed": {
+                    "type": "number",
+                    "description": "Speed/Bandwidth to be allocated to the connection.\n- `speed_unit` - (Optional) Unit of the speed/bandwidth to be allocated\nto the connection.\n- `port_uuid` - (Required when `device_uuid` is not set) Identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when `port_uuid` is not set) Identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "SpeedUnit": {
+                    "type": "string",
+                    "description": "Unit of the speed/bandwidth to be allocated\nto the connection.\n- `port_uuid` - (Required when `device_uuid` is not set) Identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when `port_uuid` is not set) Identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device. If not specified then first available interface\nwill be selected.\n- `vlan_stag` - (Required when `port_uuid` is set)\n- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "VlanCtag": {
+                    "type": "number",
+                    "description": "- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                },
+                "VlanStag": {
+                    "type": "number",
+                    "description": "- `vlan_ctag` - (Optional, can be set with `port_uuid`)\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\ndestination (Z side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `authorization_key` - (Optional) Text field based on the service profile\nyou want to connect to."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizationKey": {
+            "type": "string",
+            "description": "Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "DeviceInterfaceId": {
+            "type": "number",
+            "description": "Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "DeviceUuid": {
+            "type": "string",
+            "description": "Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "NamedTag": {
+            "type": "string",
+            "description": "The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of email addresses used for sending connection\nupdate notifications.\n- `purchase_order_number` - (Optional) Connection's purchase order number to reflect\non the invoice\n- `port_uuid` - (Required when device_uuid is not set) Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "PortUuid": {
+            "type": "string",
+            "description": "Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "ProfileUuid": {
+            "type": "string",
+            "description": "Unique identifier of the service provider's profile.\n- `speed` - (Required) Speed/Bandwidth to be allocated to the connection.\n- `speed_unit` - (Required) Unit of the speed/bandwidth to be allocated\nto the connection.\n- `notifications` - (Required) A list of email addresses used for sending connection\nupdate notifications.\n- `purchase_order_number` - (Optional) Connection's purchase order number to reflect\non the invoice\n- `port_uuid` - (Required when device_uuid is not set) Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "ProviderStatus": {
+            "type": "string"
+        },
+        "PurchaseOrderNumber": {
+            "type": "string",
+            "description": "Connection's purchase order number to reflect\non the invoice\n- `port_uuid` - (Required when device_uuid is not set) Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "RedundancyType": {
+            "type": "string"
+        },
+        "RedundantUuid": {
+            "type": "string"
+        },
+        "SellerMetroCode": {
+            "type": "string",
+            "description": "The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "SellerRegion": {
+            "type": "string",
+            "description": "The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "Speed": {
+            "type": "number",
+            "description": "Speed/Bandwidth to be allocated to the connection.\n- `speed_unit` - (Required) Unit of the speed/bandwidth to be allocated\nto the connection.\n- `notifications` - (Required) A list of email addresses used for sending connection\nupdate notifications.\n- `purchase_order_number` - (Optional) Connection's purchase order number to reflect\non the invoice\n- `port_uuid` - (Required when device_uuid is not set) Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "SpeedUnit": {
+            "type": "string",
+            "description": "Unit of the speed/bandwidth to be allocated\nto the connection.\n- `notifications` - (Required) A list of email addresses used for sending connection\nupdate notifications.\n- `purchase_order_number` - (Optional) Connection's purchase order number to reflect\non the invoice\n- `port_uuid` - (Required when device_uuid is not set) Unique identifier of\nthe buyer's port from which the connection would originate.\n- `device_uuid` - (Required when port_uuid is not set) Unique identifier of\nthe Network Edge virtual device from which the connection would originate.\n- `device_interface_id` - (Optional) Applicable with `device_uuid`, identifier of\nnetwork interface on a given device, used for a connection. If not specified then\nfirst available interface will be selected.\n- `vlan_stag` - (Required when port_uuid is set) S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VlanCtag": {
+            "type": "number",
+            "description": "C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "VlanStag": {
+            "type": "number",
+            "description": "S-Tag/Outer-Tag of the connection\n\\- a numeric character ranging from 2 - 4094.\n- `vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection - a numeric\ncharacter ranging from 2 - 4094.\n- `named_tag` - (Optional) The type of peering to set up in case when connecting\nto Azure Express Route. One of _\"Public\"_, _\"Private\"_, _\"Microsoft\"_, _\"Manual\"_\n- `additional_info` - (Optional) one or more additional information key-value objects\n- `name` - (Required) additional information key\n- `value` - (Required) additional information value\n- `zside_port_uuid` - (Optional) Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "ZsidePortUuid": {
+            "type": "string",
+            "description": "Unique identifier of the port on the remote side\n(z-side).\n- `zside_vlan_stag` - (Optional) S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "ZsideVlanCtag": {
+            "type": "number",
+            "description": "C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "ZsideVlanStag": {
+            "type": "number",
+            "description": "S-Tag/Outer-Tag of the connection on the remote\nside (z side).\n- `zside_vlan_ctag` - (Optional) C-Tag/Inner-Tag of the connection on the remote\nside (z-side).\n- `seller_region` - (Optional) The region in which the seller port resides.\n- `seller_metro_code` - (Optional) The metro code that denotes the connection\u2019s\nremote side (z-side).\n- `authorization_key` - (Optional) Text field used to authorize connection on the\nprovider side. Value depends on a provider service profile used for connection.\n- `secondary_connection` - (Optional) Definition of secondary connection for\nredundant, HA connectivity."
+        },
+        "AdditionalInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdditionalInfoDefinition"
+            }
+        },
+        "SecondaryConnection": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryConnectionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Notifications",
+        "Speed",
+        "SpeedUnit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ProviderStatus",
+        "/properties/RedundancyType",
+        "/properties/RedundantUuid",
+        "/properties/Status",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

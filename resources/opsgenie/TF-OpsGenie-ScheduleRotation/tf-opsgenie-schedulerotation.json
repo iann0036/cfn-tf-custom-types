@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::OpsGenie::ScheduleRotation",
+    "description": "Manages a Schedule Rotation within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-ScheduleRotation/docs/README.md",
+    "definitions": {
+        "ParticipantDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "The id of the responder."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The responder type."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "This parameter should be set to `time-of-day` or `weekday-and-time-of-day`."
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionDefinition"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number",
+                    "description": "Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "EndMin": {
+                    "type": "number",
+                    "description": "Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "StartHour": {
+                    "type": "number",
+                    "description": "Value of the hour that frame will start.\n* `start_min` - (Required) Value of the minute that frame will start. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "StartMin": {
+                    "type": "number",
+                    "description": "Value of the minute that frame will start. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string",
+                    "description": "Value of the day that frame will end.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "EndHour": {
+                    "type": "number",
+                    "description": "Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "EndMin": {
+                    "type": "number",
+                    "description": "Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "StartDay": {
+                    "type": "string",
+                    "description": "Value of the day that frame will start.\n* `start_hour` - (Required) Value of the hour that frame will start\n* `start_min` - (Required) Value of the minute that frame will start. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.\n* `end_day` - (Required) Value of the day that frame will end.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "StartHour": {
+                    "type": "number",
+                    "description": "Value of the hour that frame will start\n* `start_min` - (Required) Value of the minute that frame will start. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.\n* `end_day` - (Required) Value of the day that frame will end.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                },
+                "StartMin": {
+                    "type": "number",
+                    "description": "Value of the minute that frame will start. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.\n* `end_day` - (Required) Value of the day that frame will end.\n* `end_hour` - (Required) Value of the hour that frame will end.\n* `end_min` - (Required) Value of the minute that frame will end. Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndDate": {
+            "type": "string",
+            "description": "This parameter takes a date format as (yyyy-MM-dd'T'HH:mm:ssZ) (e.g. 2019-06-11T08:00:00+02:00). Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Length": {
+            "type": "number",
+            "description": "Length of the rotation with default value 1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of rotation."
+        },
+        "ScheduleId": {
+            "type": "string",
+            "description": "Identifier of the schedule."
+        },
+        "StartDate": {
+            "type": "string",
+            "description": "This parameter takes a date format as (yyyy-MM-dd'T'HH:mm:ssZ) (e.g. 2019-06-11T08:00:00+02:00). Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of rotation. May be one of daily, weekly and hourly."
+        },
+        "Participant": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParticipantDefinition"
+            },
+            "minItems": 1
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestrictionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScheduleId",
+        "StartDate",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::NSXT::PolicyEvpnConfig",
+    "description": "This resource provides a method to configure EVPN on T0 Gateway. A single resource should be configured per Gateway.\n\nThis resource is applicable to NSX Policy Manager only.\nThis resource is supported with NSX 3.1.0 onwards.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyEvpnConfig/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the resource.\n* `gateway_path` - (Required) Policy Path for Tier0 Gateway to configure EVPN on.\n* `mode` - (Required) EVPN Mode, one of `INLINE` or `ROUTE_SERVER`. In `ROUTE_SERVER` mode, edge nodes participate in the BGP EVPN control plane route exchanges only and do not participate in the data forwarding\n* `vni_pool_path` - (Optional) This setting is only applicable (and required) with `INLINE` mode.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name for the resource.\n* `description` - (Optional) Description for the resource.\n* `gateway_path` - (Required) Policy Path for Tier0 Gateway to configure EVPN on.\n* `mode` - (Required) EVPN Mode, one of `INLINE` or `ROUTE_SERVER`. In `ROUTE_SERVER` mode, edge nodes participate in the BGP EVPN control plane route exchanges only and do not participate in the data forwarding\n* `vni_pool_path` - (Optional) This setting is only applicable (and required) with `INLINE` mode.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this resource."
+        },
+        "EvpnTenantPath": {
+            "type": "string"
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Policy Path for Tier0 Gateway to configure EVPN on.\n* `mode` - (Required) EVPN Mode, one of `INLINE` or `ROUTE_SERVER`. In `ROUTE_SERVER` mode, edge nodes participate in the BGP EVPN control plane route exchanges only and do not participate in the data forwarding\n* `vni_pool_path` - (Optional) This setting is only applicable (and required) with `INLINE` mode.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this resource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "EVPN Mode, one of `INLINE` or `ROUTE_SERVER`. In `ROUTE_SERVER` mode, edge nodes participate in the BGP EVPN control plane route exchanges only and do not participate in the data forwarding\n* `vni_pool_path` - (Optional) This setting is only applicable (and required) with `INLINE` mode.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "VniPoolPath": {
+            "type": "string",
+            "description": "This setting is only applicable (and required) with `INLINE` mode.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this resource."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath",
+        "Mode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

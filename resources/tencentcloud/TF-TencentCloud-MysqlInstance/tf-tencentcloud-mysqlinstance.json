@@ -1,0 +1,236 @@
+{
+    "typeName": "TF::TencentCloud::MysqlInstance",
+    "description": "Provides a mysql instance resource to create master database instances.\n\n~> **NOTE:** If this mysql has readonly instance, the terminate operation of the mysql does NOT take effect immediately, maybe takes for several hours. so during that time, VPCs associated with that mysql instance can't be terminated also.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MysqlInstance/docs/README.md",
+    "definitions": {
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number",
+            "description": "Auto renew flag. NOTES: Only supported prepaid instance."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Indicates which availability zone will be used."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Pay type of instance. Valid values:`PREPAID`, `POSTPAID`. Default is `POSTPAID`."
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "The version number of the database engine to use. Supported versions include 5.5/5.6/5.7/8.0, and default is 5.7."
+        },
+        "FirstSlaveZone": {
+            "type": "string",
+            "description": "Zone information about first slave instance."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete instance directly or not. Default is `false`. If set true, the instance will be deleted instead of staying recycle bin. Note: only works for `PREPAID` instance. When the main mysql instance set true, this para of the readonly mysql instance will not take effect."
+        },
+        "Gtid": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of a mysql instance."
+        },
+        "InternetHost": {
+            "type": "string"
+        },
+        "InternetPort": {
+            "type": "number"
+        },
+        "InternetService": {
+            "type": "number",
+            "description": "Indicates whether to enable the access to an instance from public network: 0 - No, 1 - Yes."
+        },
+        "IntranetIp": {
+            "type": "string"
+        },
+        "IntranetPort": {
+            "type": "number",
+            "description": "Public access port. Valid value ranges: [1024~65535]. The default value is `3306`."
+        },
+        "Locked": {
+            "type": "number"
+        },
+        "MemSize": {
+            "type": "number",
+            "description": "Memory size (in MB)."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "List of parameters to use."
+        },
+        "PayType": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.36.0. Please use `charge_type` instead. Pay type of instance. Valid values: `0`, `1`. `0`: prepaid, `1`: postpaid."
+        },
+        "Period": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.36.0. Please use `prepaid_period` instead. Period of instance. NOTES: Only supported prepaid instance."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "Period of instance. NOTES: Only supported prepaid instance."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Project ID, default value is 0."
+        },
+        "RootPassword": {
+            "type": "string",
+            "description": "Password of root account. This parameter can be specified when you purchase master instances, but it should be ignored when you purchase read-only instances or disaster recovery instances."
+        },
+        "SecondSlaveZone": {
+            "type": "string",
+            "description": "Zone information about second slave instance."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Security groups to use."
+        },
+        "SlaveDeployMode": {
+            "type": "number",
+            "description": "Availability zone deployment method. Available values: 0 - Single availability zone; 1 - Multiple availability zones."
+        },
+        "SlaveSyncMode": {
+            "type": "number",
+            "description": "Data replication mode. 0 - Async replication; 1 - Semisync replication; 2 - Strongsync replication."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Private network ID. If `vpc_id` is set, this value is required."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Instance tags."
+        },
+        "TaskStatus": {
+            "type": "number"
+        },
+        "VolumeSize": {
+            "type": "number",
+            "description": "Disk size (in GB)."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC, which can be modified once every 24 hours and can't be removed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "MemSize",
+        "RootPassword",
+        "VolumeSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gtid",
+        "/properties/Id",
+        "/properties/InternetHost",
+        "/properties/InternetPort",
+        "/properties/IntranetIp",
+        "/properties/Locked",
+        "/properties/Status",
+        "/properties/TaskStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RootPassword"
+    ]
+}

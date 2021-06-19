@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::AzureDevOps::BranchPolicyMinReviewers",
+    "description": "Branch policy for reviewers on pull requests. Includes the minimum number of reviewers and other conditions.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-BranchPolicyMinReviewers/docs/README.md",
+    "definitions": {
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowCompletionWithRejectsOrWaits": {
+                    "type": "boolean"
+                },
+                "LastPusherCannotApprove": {
+                    "type": "boolean"
+                },
+                "OnLastIterationRequireVote": {
+                    "type": "boolean"
+                },
+                "OnPushResetAllVotes": {
+                    "type": "boolean"
+                },
+                "OnPushResetApprovedVotes": {
+                    "type": "boolean"
+                },
+                "ReviewerCount": {
+                    "type": "number",
+                    "description": "The number of reviewers needed to approve.\n- `submitter_can_vote` - (Optional) Allow requesters to approve their own changes. Defaults to `false`.\n- `last_pusher_cannot_approve`(Optional) Prohibit the most recent pusher from approving their own changes. Defaults to `false`.\n- `allow_completion_with_rejects_or_waits` (Optional) Allow completion even if some reviewers vote to wait or reject. Defaults to `false`.\n- `on_push_reset_approved_votes` (Optional) When new changes are pushed reset all approval votes (does not reset votes to reject or wait). Defaults to `false`.\n- `on_push_reset_all_votes` (Optional) When new changes are pushed reset all code reviewer votes. Defaults to `false`.\n- `on_last_iteration_require_vote` (Optional) On last iteration require vote. Defaults to `false`."
+                },
+                "SubmitterCanVote": {
+                    "type": "boolean",
+                    "description": "Allow requesters to approve their own changes. Defaults to `false`.\n- `last_pusher_cannot_approve`(Optional) Prohibit the most recent pusher from approving their own changes. Defaults to `false`.\n- `allow_completion_with_rejects_or_waits` (Optional) Allow completion even if some reviewers vote to wait or reject. Defaults to `false`.\n- `on_push_reset_approved_votes` (Optional) When new changes are pushed reset all approval votes (does not reset votes to reject or wait). Defaults to `false`.\n- `on_push_reset_all_votes` (Optional) When new changes are pushed reset all code reviewer votes. Defaults to `false`.\n- `on_last_iteration_require_vote` (Optional) On last iteration require vote. Defaults to `false`."
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchType": {
+                    "type": "string"
+                },
+                "RepositoryId": {
+                    "type": "string",
+                    "description": "The repository ID. Needed only if the scope of the policy will be limited to a single repository.\n- `repository_ref` - (Optional) The ref pattern to use for the match. If `match_type` is `Exact`, this should be a qualified ref such as `refs/heads/master`. If `match_type` is `Prefix`, this should be a ref path such as `refs/heads/releases`.\n- `match_type` (Optional) The match type to use when applying the policy. Supported values are `Exact` (default) or `Prefix`."
+                },
+                "RepositoryRef": {
+                    "type": "string",
+                    "description": "The ref pattern to use for the match. If `match_type` is `Exact`, this should be a qualified ref such as `refs/heads/master`. If `match_type` is `Prefix`, this should be a ref path such as `refs/heads/releases`.\n- `match_type` (Optional) The match type to use when applying the policy. Supported values are `Exact` (default) or `Prefix`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blocking": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project in which the policy will be created.\n- `enabled` - (Optional) A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::VCD::EdgegatewaySettings",
+    "description": "Provides a resource that can update vCloud Director edge gateway global settings either as System Administrator or as\nOrganization user.\n\nThe main use case of this resource is to allow both providers and tenants to change edge gateways global settings (such as\nenabling load balancing or firewall) when the edge gateway was created outside of Terraform.\nA second use case is when the provider creates the edge gateway using Terraform, and then delegates the tenant to change\nsome settings for further operations.\n\n~> **Warning:** The edge gateway settings info is tied to an edge gateway. Thus, there could be only one instance per \nedge gateway. Using a different definition for the same edge gateway ID will result in a previous instance to be overwritten.\n\n!> **Warning:** Using a `vcd_edgegateway` and a `vcd_edgegateway_settings` for the same entity does not work correctly,\nas the main purpose of this resource is to handle general settings when the edge gateway was created outside of Terraform.\nIf users can crea...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-EdgegatewaySettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EdgeGatewayId": {
+            "type": "string",
+            "description": "The edge gateway ID. (Required if `edge_gateway_name` is not set)."
+        },
+        "EdgeGatewayName": {
+            "type": "string",
+            "description": "A unique name for the edge gateway. (Required if `edge_gateway_id` is not set)."
+        },
+        "FwDefaultRuleAction": {
+            "type": "string"
+        },
+        "FwDefaultRuleLoggingEnabled": {
+            "type": "boolean"
+        },
+        "FwEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbAccelerationEnabled": {
+            "type": "boolean",
+            "description": "Enable to configure the load balancer."
+        },
+        "LbEnabled": {
+            "type": "boolean",
+            "description": "Enable load balancing. Default is `false`."
+        },
+        "LbLoggingEnabled": {
+            "type": "boolean",
+            "description": "Enables the edge gateway load balancer to collect traffic logs.\nDefault is `false`. Note: **only System administrators can change this property**. It is ignored by API for Org users."
+        },
+        "LbLoglevel": {
+            "type": "string",
+            "description": "Choose the severity of events to be logged. One of `emergency`,\n`alert`, `critical`, `error`, `warning`, `notice`, `info`, `debug`. Note: **only System administrators can change this property**. It is ignored by API for Org users."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to which the VDC belongs. Optional if defined at provider level."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC that owns the edge gateway. Optional if defined at provider level."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::Civo::Snapshot",
+    "description": "Provides a resource which can be used to create a snapshot from an existing Civo Instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-Snapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompletedAt": {
+            "type": "string"
+        },
+        "CronTiming": {
+            "type": "string",
+            "description": "If a valid cron string is passed, the snapshot will be saved as an automated snapshot\ncontinuing to automatically update based on the schedule of the cron sequence provided\nThe default is nil meaning the snapshot will be saved as a one-off snapshot."
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The ID of the Instance from which the snapshot will be taken."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the instance snapshot."
+        },
+        "NextExecution": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RequestedAt": {
+            "type": "string"
+        },
+        "Safe": {
+            "type": "boolean",
+            "description": "If `true` the instance will be shut down during the snapshot to ensure all files\nare in a consistent state (e.g. database tables aren't in the middle of being optimised\nand hence risking corruption). The default is `false` so you experience no interruption\nof service, but a small risk of corruption."
+        },
+        "SizeGb": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TemplateId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompletedAt",
+        "/properties/Hostname",
+        "/properties/Id",
+        "/properties/NextExecution",
+        "/properties/Region",
+        "/properties/RequestedAt",
+        "/properties/SizeGb",
+        "/properties/State",
+        "/properties/TemplateId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

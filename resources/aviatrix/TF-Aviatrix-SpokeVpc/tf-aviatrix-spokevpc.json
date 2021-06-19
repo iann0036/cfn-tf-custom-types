@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Aviatrix::SpokeVpc",
+    "description": "The aviatrix_spoke_vpc resource allows to create and manage Aviatrix Spoke Gateways.\n\n!> **WARNING:** The `aviatrix_spoke_vpc` resource is deprecated as of **Release 2.0**. It is currently kept for backward-compatibility and will be removed in the future. Please use the spoke gateway resource instead. If this is already in the state, please remove it from the state file and import as `aviatrix_spoke_gateway`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-SpokeVpc/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "This parameter represents the name of a Cloud-Account in Aviatrix controller."
+        },
+        "CloudInstanceId": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number",
+            "description": "Type of cloud service provider. AWS=1, GCP=4, ARM=8."
+        },
+        "EnableNat": {
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Name of the gateway which is going to be created."
+        },
+        "HaGwSize": {
+            "type": "string",
+            "description": "HA Gateway Size. Mandatory if HA is enabled (ha_subnet is set). Example: \"t2.micro\"."
+        },
+        "HaSubnet": {
+            "type": "string",
+            "description": "HA Subnet. Required for enabling HA for AWS/ARM gateways. Setting to empty/unset will disable HA. Setting to a valid subnet (Example: 10.12.0.0/24) will create an HA gateway on the subnet."
+        },
+        "HaZone": {
+            "type": "string",
+            "description": "HA Zone. Required for enabling HA for GCP gateway. Setting to empty/unset will disable HA. Setting to a valid zone will create an HA gateway in the zone. Example: \"us-west1-c\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SingleAzHa": {
+            "type": "string",
+            "description": "Set to \"enabled\" if this feature is desired."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Public Subnet Info. Example: AWS: \"CIDRZONESubnetName\", etc..."
+        },
+        "TagList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Instance tag of cloud provider. Example: key1:value1,key002:value002, etc... Only AWS (cloud_type is \"1\") is supported."
+        },
+        "TransitGw": {
+            "type": "string",
+            "description": "Specify the transit Gateway."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC-ID/VNet-Name of cloud provider. Required if cloud_type is \"1\" or \"4\". Example: AWS: \"vpc-abcd1234\", etc..."
+        },
+        "VpcReg": {
+            "type": "string",
+            "description": "Region of cloud provider. Example: AWS: \"us-east-1\", GCP: \"us-west1-b\", ARM: \"East US 2\", etc..."
+        },
+        "VpcSize": {
+            "type": "string",
+            "description": "Size of the gateway instance. Example: AWS: \"t2.large\", GCP: \"f1.micro\", ARM: \"StandardD2\", etc..."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType",
+        "GwName",
+        "Subnet",
+        "VpcId",
+        "VpcReg",
+        "VpcSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudInstanceId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

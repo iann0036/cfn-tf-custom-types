@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::ZeroTier::Member",
+    "description": "CloudFormation equivalent of zerotier_member",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/zerotier/TF-ZeroTier-Member/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowEthernetBridging": {
+            "type": "boolean"
+        },
+        "Authorized": {
+            "type": "boolean"
+        },
+        "Capabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Hidden": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAssignments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MemberId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "NoAutoAssignIps": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MemberId",
+        "NetworkId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

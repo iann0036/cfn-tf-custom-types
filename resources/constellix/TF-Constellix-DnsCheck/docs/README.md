@@ -1,0 +1,128 @@
+# TF::Constellix::DnsCheck
+
+CloudFormation equivalent of constellix_dns_check
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "TF::Constellix::DnsCheck",
+    "Properties" : {
+        "<a href="#checksites" title="CheckSites">CheckSites</a>" : <i>[ Double, ... ]</i>,
+        "<a href="#expectedresponse" title="ExpectedResponse">ExpectedResponse</a>" : <i>String</i>,
+        "<a href="#fqdn" title="Fqdn">Fqdn</a>" : <i>String</i>,
+        "<a href="#interval" title="Interval">Interval</a>" : <i>String</i>,
+        "<a href="#intervalpolicy" title="IntervalPolicy">IntervalPolicy</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#resolver" title="Resolver">Resolver</a>" : <i>String</i>,
+        "<a href="#verificationpolicy" title="VerificationPolicy">VerificationPolicy</a>" : <i>String</i>
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: TF::Constellix::DnsCheck
+Properties:
+    <a href="#checksites" title="CheckSites">CheckSites</a>: <i>
+      - Double</i>
+    <a href="#expectedresponse" title="ExpectedResponse">ExpectedResponse</a>: <i>String</i>
+    <a href="#fqdn" title="Fqdn">Fqdn</a>: <i>String</i>
+    <a href="#interval" title="Interval">Interval</a>: <i>String</i>
+    <a href="#intervalpolicy" title="IntervalPolicy">IntervalPolicy</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#resolver" title="Resolver">Resolver</a>: <i>String</i>
+    <a href="#verificationpolicy" title="VerificationPolicy">VerificationPolicy</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### CheckSites
+
+_Required_: Yes
+
+_Type_: List of Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExpectedResponse
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Fqdn
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Interval
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IntervalPolicy
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Resolver
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VerificationPolicy
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
+

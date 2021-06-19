@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::VCD::NetworkDirect",
+    "description": "Provides a vCloud Director Org VDC Network directly connected to an external network. This can be used to create,\nmodify, and delete internal networks for vApps to connect.\n\nSupported in provider *v2.0+*\n\n~> **Note:** Only `System Administrator` can create an organization virtual datacenter network that connects\ndirectly to an external network. You must use `System Adminstrator` account in `provider` configuration\nand then provide `org` and `vdc` arguments for direct networks to work.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-NetworkDirect/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description of the network."
+        },
+        "ExternalNetwork": {
+            "type": "string",
+            "description": "The name of the external network."
+        },
+        "ExternalNetworkDns1": {
+            "type": "string"
+        },
+        "ExternalNetworkDns2": {
+            "type": "string"
+        },
+        "ExternalNetworkDnsSuffix": {
+            "type": "string"
+        },
+        "ExternalNetworkGateway": {
+            "type": "string"
+        },
+        "ExternalNetworkNetmask": {
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the network."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when\nconnected as sysadmin working across different organisations."
+        },
+        "Shared": {
+            "type": "boolean",
+            "description": "Defines if this network is shared between multiple VDCs\nin the Org.  Defaults to `false`."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalNetwork",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExternalNetworkDns1",
+        "/properties/ExternalNetworkDns2",
+        "/properties/ExternalNetworkDnsSuffix",
+        "/properties/ExternalNetworkGateway",
+        "/properties/ExternalNetworkNetmask",
+        "/properties/Href",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

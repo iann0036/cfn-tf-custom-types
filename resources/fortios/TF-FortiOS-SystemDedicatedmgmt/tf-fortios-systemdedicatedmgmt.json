@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::FortiOS::SystemDedicatedmgmt",
+    "description": "Configure dedicated management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemDedicatedmgmt/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultGateway": {
+            "type": "string",
+            "description": "Default gateway for dedicated management interface."
+        },
+        "DhcpEndIp": {
+            "type": "string",
+            "description": "DHCP end IP for dedicated management."
+        },
+        "DhcpNetmask": {
+            "type": "string",
+            "description": "DHCP netmask."
+        },
+        "DhcpServer": {
+            "type": "string",
+            "description": "Enable/disable DHCP server on management interface. Valid values: `enable`, `disable`."
+        },
+        "DhcpStartIp": {
+            "type": "string",
+            "description": "DHCP start IP for dedicated management."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Dedicated management interface."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable dedicated management. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,221 @@
+{
+    "typeName": "TF::Thunder::RouterOspfRedistribute",
+    "description": "`thunder_router_ospf_redistribute` Provides details about thunder router ospf redistribute",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterOspfRedistribute/docs/README.md",
+    "definitions": {
+        "IpNatFloatingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpNatFloatingIpForward": {
+                    "type": "string"
+                },
+                "IpNatPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricOspf": {
+                    "type": "number"
+                },
+                "MetricTypeOspf": {
+                    "type": "string"
+                },
+                "Ospf": {
+                    "type": "number"
+                },
+                "ProcessId": {
+                    "type": "number"
+                },
+                "RouteMapOspf": {
+                    "type": "string"
+                },
+                "TagOspf": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RedistListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "number"
+                },
+                "MetricType": {
+                    "type": "string"
+                },
+                "RouteMap": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VipFloatingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VipAddress": {
+                    "type": "string"
+                },
+                "VipFloatingIpForward": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VipListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricTypeVip": {
+                    "type": "string"
+                },
+                "MetricVip": {
+                    "type": "number"
+                },
+                "RouteMapVip": {
+                    "type": "string"
+                },
+                "TagVip": {
+                    "type": "number"
+                },
+                "TypeVip": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpNat": {
+            "type": "number"
+        },
+        "MetricIpNat": {
+            "type": "number"
+        },
+        "MetricTypeIpNat": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "number"
+        },
+        "RouteMapIpNat": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "TagIpNat": {
+            "type": "number"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "IpNatFloatingList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNatFloatingListDefinition"
+            }
+        },
+        "OspfList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OspfListDefinition"
+            }
+        },
+        "RedistList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistListDefinition"
+            }
+        },
+        "VipFloatingList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VipFloatingListDefinition"
+            }
+        },
+        "VipList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VipListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

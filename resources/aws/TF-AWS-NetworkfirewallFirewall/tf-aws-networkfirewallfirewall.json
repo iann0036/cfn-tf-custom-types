@@ -1,0 +1,216 @@
+{
+    "typeName": "TF::AWS::NetworkfirewallFirewall",
+    "description": "Provides an AWS Network Firewall Firewall Resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkfirewallFirewall/docs/README.md",
+    "definitions": {
+        "FirewallStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointId": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "FirewallStatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attachment": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FirewallStatusDefinition"
+                    }
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                }
+            }
+        },
+        "FirewallStatusDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SyncStates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FirewallStatusDefinition2"
+                    }
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SubnetMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DeleteProtection": {
+            "type": "boolean",
+            "description": "A boolean flag indicating whether it is possible to delete the firewall. Defaults to `false`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A friendly description of the firewall."
+        },
+        "FirewallPolicyArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the VPC Firewall policy."
+        },
+        "FirewallPolicyChangeProtection": {
+            "type": "boolean",
+            "description": "A boolean flag indicating whether it is possible to change the associated firewall policy. Defaults to `false`."
+        },
+        "FirewallStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallStatusDefinition3"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A friendly name of the firewall."
+        },
+        "SubnetChangeProtection": {
+            "type": "boolean",
+            "description": "A boolean flag indicating whether it is possible to change the associated subnet(s). Defaults to `false`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of resource tags to associate with the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UpdateToken": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The unique identifier of the VPC where AWS Network Firewall should create the firewall."
+        },
+        "SubnetMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubnetMappingDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallPolicyArn",
+        "Name",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/FirewallStatus",
+        "/properties/Id",
+        "/properties/UpdateToken"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

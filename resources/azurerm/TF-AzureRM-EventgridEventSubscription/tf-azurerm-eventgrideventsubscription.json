@@ -1,0 +1,664 @@
+{
+    "typeName": "TF::AzureRM::EventgridEventSubscription",
+    "description": "Manages an EventGrid Event Subscription",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-EventgridEventSubscription/docs/README.md",
+    "definitions": {
+        "AdvancedFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BoolEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BoolEqualsDefinition"
+                    }
+                },
+                "NumberGreaterThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberGreaterThanDefinition"
+                    }
+                },
+                "NumberGreaterThanOrEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberGreaterThanOrEqualsDefinition"
+                    }
+                },
+                "NumberIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberInDefinition"
+                    }
+                },
+                "NumberLessThan": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberLessThanDefinition"
+                    }
+                },
+                "NumberLessThanOrEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberLessThanOrEqualsDefinition"
+                    }
+                },
+                "NumberNotIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NumberNotInDefinition"
+                    }
+                },
+                "StringBeginsWith": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringBeginsWithDefinition"
+                    }
+                },
+                "StringContains": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringContainsDefinition"
+                    }
+                },
+                "StringEndsWith": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringEndsWithDefinition"
+                    }
+                },
+                "StringIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringInDefinition"
+                    }
+                },
+                "StringNotIn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringNotInDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AzureFunctionEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Function where the Event Subscription will receive events. This must be the functions ID in format {function_app.id}/functions/{name}."
+                },
+                "MaxEventsPerBatch": {
+                    "type": "number",
+                    "description": "Maximum number of events per batch."
+                },
+                "PreferredBatchSizeInKilobytes": {
+                    "type": "number",
+                    "description": "Preferred batch size in Kilobytes."
+                }
+            },
+            "required": [
+                "FunctionId"
+            ]
+        },
+        "EventhubEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventhubId": {
+                    "type": "string",
+                    "description": "Specifies the id of the eventhub where the Event Subscription will receive events."
+                }
+            },
+            "required": []
+        },
+        "HybridConnectionEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HybridConnectionId": {
+                    "type": "string",
+                    "description": "Specifies the id of the hybrid connection where the Event Subscription will receive events."
+                }
+            },
+            "required": []
+        },
+        "RetryPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventTimeToLive": {
+                    "type": "number",
+                    "description": "Specifies the time to live (in minutes) for events. Supported range is `1` to `1440`. Defaults to `1440`. See [official documentation](https://docs.microsoft.com/en-us/azure/event-grid/manage-event-delivery#set-retry-policy) for more details."
+                },
+                "MaxDeliveryAttempts": {
+                    "type": "number",
+                    "description": "Specifies the maximum number of delivery retry attempts for events."
+                }
+            },
+            "required": [
+                "EventTimeToLive",
+                "MaxDeliveryAttempts"
+            ]
+        },
+        "StorageBlobDeadLetterDestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageAccountId": {
+                    "type": "string",
+                    "description": "Specifies the id of the storage account id where the storage blob is located."
+                },
+                "StorageBlobContainerName": {
+                    "type": "string",
+                    "description": "Specifies the name of the Storage blob container that is the destination of the deadletter events."
+                }
+            },
+            "required": [
+                "StorageAccountId",
+                "StorageBlobContainerName"
+            ]
+        },
+        "StorageQueueEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueueName": {
+                    "type": "string",
+                    "description": "Specifies the name of the storage queue where the Event Subscription will receive events."
+                },
+                "StorageAccountId": {
+                    "type": "string",
+                    "description": "Specifies the id of the storage account id where the storage queue is located."
+                }
+            },
+            "required": [
+                "QueueName",
+                "StorageAccountId"
+            ]
+        },
+        "SubjectFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean",
+                    "description": "Specifies if `subject_begins_with` and `subject_ends_with` case sensitive. This value defaults to `false`."
+                },
+                "SubjectBeginsWith": {
+                    "type": "string",
+                    "description": "A string to filter events for an event subscription based on a resource path prefix."
+                },
+                "SubjectEndsWith": {
+                    "type": "string",
+                    "description": "A string to filter events for an event subscription based on a resource path suffix."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WebhookEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveDirectoryAppIdOrUri": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Application ID or URI to get the access token that will be included as the bearer token in delivery requests."
+                },
+                "ActiveDirectoryTenantId": {
+                    "type": "string",
+                    "description": "The Azure Active Directory Tenant ID to get the access token that will be included as the bearer token in delivery requests."
+                },
+                "MaxEventsPerBatch": {
+                    "type": "number",
+                    "description": "Maximum number of events per batch."
+                },
+                "PreferredBatchSizeInKilobytes": {
+                    "type": "number",
+                    "description": "Preferred batch size in Kilobytes."
+                },
+                "Url": {
+                    "type": "string",
+                    "description": "Specifies the url of the webhook where the Event Subscription will receive events."
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "BoolEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberGreaterThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberGreaterThanOrEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "NumberLessThanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberLessThanOrEqualsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NumberNotInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringBeginsWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringContainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringEndsWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "StringNotInDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EventDeliverySchema": {
+            "type": "string",
+            "description": "Specifies the event delivery schema for the event subscription. Possible values include: `EventGridSchema`, `CloudEventSchemaV1_0`, `CustomInputSchema`. Defaults to `EventGridSchema`. Changing this forces a new resource to be created."
+        },
+        "EventhubEndpointId": {
+            "type": "string",
+            "description": "Specifies the id where the Event Hub is located."
+        },
+        "ExpirationTimeUtc": {
+            "type": "string",
+            "description": "Specifies the expiration time of the event subscription (Datetime Format `RFC 3339`)."
+        },
+        "HybridConnectionEndpointId": {
+            "type": "string",
+            "description": "Specifies the id where the Hybrid Connection is located."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludedEventTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of applicable event types that need to be part of the event subscription."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of labels to assign to the event subscription."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the EventGrid Event Subscription resource. Changing this forces a new resource to be created."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "Specifies the scope at which the EventGrid Event Subscription should be created. Changing this forces a new resource to be created."
+        },
+        "ServiceBusQueueEndpointId": {
+            "type": "string",
+            "description": "Specifies the id where the Service Bus Queue is located."
+        },
+        "ServiceBusTopicEndpointId": {
+            "type": "string",
+            "description": "Specifies the id where the Service Bus Topic is located."
+        },
+        "TopicName": {
+            "type": "string"
+        },
+        "AdvancedFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvancedFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "AzureFunctionEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFunctionEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "EventhubEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventhubEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "HybridConnectionEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HybridConnectionEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "RetryPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetryPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageBlobDeadLetterDestination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageBlobDeadLetterDestinationDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageQueueEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageQueueEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "SubjectFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubjectFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WebhookEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebhookEndpointDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Scope"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

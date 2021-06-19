@@ -1,0 +1,1486 @@
+{
+    "typeName": "TF::Intersight::BiosPolicy",
+    "description": "Policy for setting BIOS tokens on the endpoint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/intersight/TF-Intersight-BiosPolicy/docs/README.md",
+    "definitions": {
+        "AncestorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "OrganizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ParentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProfilesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "Moid": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "Selector": {
+                    "type": "string"
+                }
+            }
+        },
+        "VersionContextDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalProperties": {
+                    "type": "string"
+                },
+                "ClassId": {
+                    "type": "string"
+                },
+                "InterestedMos": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition"
+                    }
+                },
+                "NrVersion": {
+                    "type": "string"
+                },
+                "ObjectType": {
+                    "type": "string"
+                },
+                "RefMo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionContextDefinition2"
+                    }
+                },
+                "Timestamp": {
+                    "type": "string"
+                },
+                "VersionType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountMoid": {
+            "type": "string"
+        },
+        "AcsControlGpu1state": {
+            "type": "string"
+        },
+        "AcsControlGpu2state": {
+            "type": "string"
+        },
+        "AcsControlGpu3state": {
+            "type": "string"
+        },
+        "AcsControlGpu4state": {
+            "type": "string"
+        },
+        "AcsControlGpu5state": {
+            "type": "string"
+        },
+        "AcsControlGpu6state": {
+            "type": "string"
+        },
+        "AcsControlGpu7state": {
+            "type": "string"
+        },
+        "AcsControlGpu8state": {
+            "type": "string"
+        },
+        "AcsControlSlot11state": {
+            "type": "string"
+        },
+        "AcsControlSlot12state": {
+            "type": "string"
+        },
+        "AcsControlSlot13state": {
+            "type": "string"
+        },
+        "AcsControlSlot14state": {
+            "type": "string"
+        },
+        "AdditionalProperties": {
+            "type": "string"
+        },
+        "AdjacentCacheLinePrefetch": {
+            "type": "string"
+        },
+        "AdvancedMemTest": {
+            "type": "string"
+        },
+        "AllUsbDevices": {
+            "type": "string"
+        },
+        "Altitude": {
+            "type": "string"
+        },
+        "Ancestors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AncestorsDefinition"
+            }
+        },
+        "AspmSupport": {
+            "type": "string"
+        },
+        "AssertNmiOnPerr": {
+            "type": "string"
+        },
+        "AssertNmiOnSerr": {
+            "type": "string"
+        },
+        "AutoCcState": {
+            "type": "string"
+        },
+        "AutonumousCstateEnable": {
+            "type": "string"
+        },
+        "BaudRate": {
+            "type": "string"
+        },
+        "BmeDmaMitigation": {
+            "type": "string"
+        },
+        "BootOptionNumRetry": {
+            "type": "string"
+        },
+        "BootOptionReCoolDown": {
+            "type": "string"
+        },
+        "BootOptionRetry": {
+            "type": "string"
+        },
+        "BootPerformanceMode": {
+            "type": "string"
+        },
+        "BurstAndPostponedRefresh": {
+            "type": "string"
+        },
+        "CbsCmnApbdis": {
+            "type": "string"
+        },
+        "CbsCmnCpuCpb": {
+            "type": "string"
+        },
+        "CbsCmnCpuGenDowncoreCtrl": {
+            "type": "string"
+        },
+        "CbsCmnCpuGlobalCstateCtrl": {
+            "type": "string"
+        },
+        "CbsCmnCpuL1streamHwPrefetcher": {
+            "type": "string"
+        },
+        "CbsCmnCpuL2streamHwPrefetcher": {
+            "type": "string"
+        },
+        "CbsCmnCpuSmee": {
+            "type": "string"
+        },
+        "CbsCmnCpuStreamingStoresCtrl": {
+            "type": "string"
+        },
+        "CbsCmnDeterminismSlider": {
+            "type": "string"
+        },
+        "CbsCmnEfficiencyModeEn": {
+            "type": "string"
+        },
+        "CbsCmnFixedSocPstate": {
+            "type": "string"
+        },
+        "CbsCmnGnbNbIommu": {
+            "type": "string"
+        },
+        "CbsCmnGnbSmuDfCstates": {
+            "type": "string"
+        },
+        "CbsCmnGnbSmucppc": {
+            "type": "string"
+        },
+        "CbsCmnMemCtrlBankGroupSwapDdr4": {
+            "type": "string"
+        },
+        "CbsCmnMemMapBankInterleaveDdr4": {
+            "type": "string"
+        },
+        "CbsCmncTdpCtl": {
+            "type": "string"
+        },
+        "CbsCpuCcdCtrlSsp": {
+            "type": "string"
+        },
+        "CbsCpuCoreCtrl": {
+            "type": "string"
+        },
+        "CbsCpuSmtCtrl": {
+            "type": "string"
+        },
+        "CbsDbgCpuSnpMemCover": {
+            "type": "string"
+        },
+        "CbsDbgCpuSnpMemSizeCover": {
+            "type": "string"
+        },
+        "CbsDfCmnAcpiSratL3numa": {
+            "type": "string"
+        },
+        "CbsDfCmnDramNps": {
+            "type": "string"
+        },
+        "CbsDfCmnMemIntlv": {
+            "type": "string"
+        },
+        "CbsDfCmnMemIntlvSize": {
+            "type": "string"
+        },
+        "CbsSevSnpSupport": {
+            "type": "string"
+        },
+        "CdnEnable": {
+            "type": "string"
+        },
+        "CdnSupport": {
+            "type": "string"
+        },
+        "ChannelInterLeave": {
+            "type": "string"
+        },
+        "CiscoAdaptiveMemTraining": {
+            "type": "string"
+        },
+        "CiscoDebugLevel": {
+            "type": "string"
+        },
+        "CiscoOpromLaunchOptimization": {
+            "type": "string"
+        },
+        "CiscoXgmiMaxSpeed": {
+            "type": "string"
+        },
+        "CkeLowPolicy": {
+            "type": "string"
+        },
+        "ClassId": {
+            "type": "string"
+        },
+        "ClosedLoopThermThrotl": {
+            "type": "string"
+        },
+        "CmciEnable": {
+            "type": "string"
+        },
+        "ConfigTdp": {
+            "type": "string"
+        },
+        "ConfigTdpLevel": {
+            "type": "string"
+        },
+        "ConsoleRedirection": {
+            "type": "string"
+        },
+        "CoreMultiProcessing": {
+            "type": "string"
+        },
+        "CpuEnergyPerformance": {
+            "type": "string"
+        },
+        "CpuFrequencyFloor": {
+            "type": "string"
+        },
+        "CpuPerformance": {
+            "type": "string"
+        },
+        "CpuPowerManagement": {
+            "type": "string"
+        },
+        "CrQos": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CrfastgoConfig": {
+            "type": "string"
+        },
+        "DcpmmFirmwareDowngrade": {
+            "type": "string"
+        },
+        "DemandScrub": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DirectCacheAccess": {
+            "type": "string"
+        },
+        "DomainGroupMoid": {
+            "type": "string"
+        },
+        "DramClockThrottling": {
+            "type": "string"
+        },
+        "DramRefreshRate": {
+            "type": "string"
+        },
+        "DramSwThermalThrottling": {
+            "type": "string"
+        },
+        "EadrSupport": {
+            "type": "string"
+        },
+        "EdpcEn": {
+            "type": "string"
+        },
+        "EnableClockSpreadSpec": {
+            "type": "string"
+        },
+        "EnableMktme": {
+            "type": "string"
+        },
+        "EnableSgx": {
+            "type": "string"
+        },
+        "EnableTme": {
+            "type": "string"
+        },
+        "EnergyEfficientTurbo": {
+            "type": "string"
+        },
+        "EngPerfTuning": {
+            "type": "string"
+        },
+        "EnhancedIntelSpeedStepTech": {
+            "type": "string"
+        },
+        "EpochUpdate": {
+            "type": "string"
+        },
+        "EppEnable": {
+            "type": "string"
+        },
+        "EppProfile": {
+            "type": "string"
+        },
+        "ExecuteDisableBit": {
+            "type": "string"
+        },
+        "ExtendedApic": {
+            "type": "string"
+        },
+        "FlowControl": {
+            "type": "string"
+        },
+        "Frb2enable": {
+            "type": "string"
+        },
+        "HardwarePrefetch": {
+            "type": "string"
+        },
+        "HwpmEnable": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImcInterleave": {
+            "type": "string"
+        },
+        "IntelDynamicSpeedSelect": {
+            "type": "string"
+        },
+        "IntelHyperThreadingTech": {
+            "type": "string"
+        },
+        "IntelSpeedSelect": {
+            "type": "string"
+        },
+        "IntelTurboBoostTech": {
+            "type": "string"
+        },
+        "IntelVirtualizationTechnology": {
+            "type": "string"
+        },
+        "IntelVtForDirectedIo": {
+            "type": "string"
+        },
+        "IntelVtdCoherencySupport": {
+            "type": "string"
+        },
+        "IntelVtdInterruptRemapping": {
+            "type": "string"
+        },
+        "IntelVtdPassThroughDmaSupport": {
+            "type": "string"
+        },
+        "IntelVtdatsSupport": {
+            "type": "string"
+        },
+        "IohErrorEnable": {
+            "type": "string"
+        },
+        "IohResource": {
+            "type": "string"
+        },
+        "IpPrefetch": {
+            "type": "string"
+        },
+        "Ipv4http": {
+            "type": "string"
+        },
+        "Ipv4pxe": {
+            "type": "string"
+        },
+        "Ipv6http": {
+            "type": "string"
+        },
+        "Ipv6pxe": {
+            "type": "string"
+        },
+        "KtiPrefetch": {
+            "type": "string"
+        },
+        "LegacyOsRedirection": {
+            "type": "string"
+        },
+        "LegacyUsbSupport": {
+            "type": "string"
+        },
+        "LlcPrefetch": {
+            "type": "string"
+        },
+        "LomPort0state": {
+            "type": "string"
+        },
+        "LomPort1state": {
+            "type": "string"
+        },
+        "LomPort2state": {
+            "type": "string"
+        },
+        "LomPort3state": {
+            "type": "string"
+        },
+        "LomPortsAllState": {
+            "type": "string"
+        },
+        "LvDdrMode": {
+            "type": "string"
+        },
+        "MakeDeviceNonBootable": {
+            "type": "string"
+        },
+        "MemoryBandwidthBoost": {
+            "type": "string"
+        },
+        "MemoryInterLeave": {
+            "type": "string"
+        },
+        "MemoryMappedIoAbove4gb": {
+            "type": "string"
+        },
+        "MemoryRefreshRate": {
+            "type": "string"
+        },
+        "MemorySizeLimit": {
+            "type": "string"
+        },
+        "MemoryThermalThrottling": {
+            "type": "string"
+        },
+        "MirroringMode": {
+            "type": "string"
+        },
+        "MmcfgBase": {
+            "type": "string"
+        },
+        "ModTime": {
+            "type": "string"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkStack": {
+            "type": "string"
+        },
+        "NumaOptimized": {
+            "type": "string"
+        },
+        "NvmdimmPerformConfig": {
+            "type": "string"
+        },
+        "ObjectType": {
+            "type": "string"
+        },
+        "Onboard10gbitLom": {
+            "type": "string"
+        },
+        "OnboardGbitLom": {
+            "type": "string"
+        },
+        "OnboardScuStorageSupport": {
+            "type": "string"
+        },
+        "OnboardScuStorageSwStack": {
+            "type": "string"
+        },
+        "OperationMode": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrganizationDefinition"
+            }
+        },
+        "OsBootWatchdogTimer": {
+            "type": "string"
+        },
+        "OsBootWatchdogTimerPolicy": {
+            "type": "string"
+        },
+        "OsBootWatchdogTimerTimeout": {
+            "type": "string"
+        },
+        "OutOfBandMgmtPort": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PackageCstateLimit": {
+            "type": "string"
+        },
+        "PanicHighWatermark": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParentDefinition"
+            }
+        },
+        "PartialCacheLineSparing": {
+            "type": "string"
+        },
+        "PartialMirrorModeConfig": {
+            "type": "string"
+        },
+        "PartialMirrorPercent": {
+            "type": "string"
+        },
+        "PartialMirrorValue1": {
+            "type": "string"
+        },
+        "PartialMirrorValue2": {
+            "type": "string"
+        },
+        "PartialMirrorValue3": {
+            "type": "string"
+        },
+        "PartialMirrorValue4": {
+            "type": "string"
+        },
+        "PatrolScrub": {
+            "type": "string"
+        },
+        "PatrolScrubDuration": {
+            "type": "string"
+        },
+        "PcIeRasSupport": {
+            "type": "string"
+        },
+        "PcIeSsdHotPlugSupport": {
+            "type": "string"
+        },
+        "PchUsb30mode": {
+            "type": "string"
+        },
+        "PciOptionRoMs": {
+            "type": "string"
+        },
+        "PciRomClp": {
+            "type": "string"
+        },
+        "PcieAriSupport": {
+            "type": "string"
+        },
+        "PciePllSsc": {
+            "type": "string"
+        },
+        "PcieSlotMraid1linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotMraid1optionRom": {
+            "type": "string"
+        },
+        "PcieSlotMraid2linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotMraid2optionRom": {
+            "type": "string"
+        },
+        "PcieSlotMstorraidLinkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotMstorraidOptionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme1linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme1optionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme2linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme2optionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme3linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme3optionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme4linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme4optionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme5linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme5optionRom": {
+            "type": "string"
+        },
+        "PcieSlotNvme6linkSpeed": {
+            "type": "string"
+        },
+        "PcieSlotNvme6optionRom": {
+            "type": "string"
+        },
+        "PermissionResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PermissionResourcesDefinition"
+            }
+        },
+        "PopSupport": {
+            "type": "string"
+        },
+        "PostErrorPause": {
+            "type": "string"
+        },
+        "PostPackageRepair": {
+            "type": "string"
+        },
+        "ProcessorC1e": {
+            "type": "string"
+        },
+        "ProcessorC3report": {
+            "type": "string"
+        },
+        "ProcessorC6report": {
+            "type": "string"
+        },
+        "ProcessorCstate": {
+            "type": "string"
+        },
+        "Profiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProfilesDefinition"
+            }
+        },
+        "Psata": {
+            "type": "string"
+        },
+        "PstateCoordType": {
+            "type": "string"
+        },
+        "PuttyKeyPad": {
+            "type": "string"
+        },
+        "PwrPerfTuning": {
+            "type": "string"
+        },
+        "QpiLinkFrequency": {
+            "type": "string"
+        },
+        "QpiLinkSpeed": {
+            "type": "string"
+        },
+        "QpiSnoopMode": {
+            "type": "string"
+        },
+        "RankInterLeave": {
+            "type": "string"
+        },
+        "RedirectionAfterPost": {
+            "type": "string"
+        },
+        "SataModeSelect": {
+            "type": "string"
+        },
+        "SelectMemoryRasConfiguration": {
+            "type": "string"
+        },
+        "SelectPprType": {
+            "type": "string"
+        },
+        "SerialPortAenable": {
+            "type": "string"
+        },
+        "Sev": {
+            "type": "string"
+        },
+        "SgxAutoRegistrationAgent": {
+            "type": "string"
+        },
+        "SgxEpoch0": {
+            "type": "string"
+        },
+        "SgxEpoch1": {
+            "type": "string"
+        },
+        "SgxFactoryReset": {
+            "type": "string"
+        },
+        "SgxLePubKeyHash0": {
+            "type": "string"
+        },
+        "SgxLePubKeyHash1": {
+            "type": "string"
+        },
+        "SgxLePubKeyHash2": {
+            "type": "string"
+        },
+        "SgxLePubKeyHash3": {
+            "type": "string"
+        },
+        "SgxLeWr": {
+            "type": "string"
+        },
+        "SgxPackageInfoInBandAccess": {
+            "type": "string"
+        },
+        "SgxQos": {
+            "type": "string"
+        },
+        "SharedScope": {
+            "type": "string"
+        },
+        "SinglePctlEnable": {
+            "type": "string"
+        },
+        "Slot10linkSpeed": {
+            "type": "string"
+        },
+        "Slot10state": {
+            "type": "string"
+        },
+        "Slot11linkSpeed": {
+            "type": "string"
+        },
+        "Slot11state": {
+            "type": "string"
+        },
+        "Slot12linkSpeed": {
+            "type": "string"
+        },
+        "Slot12state": {
+            "type": "string"
+        },
+        "Slot13state": {
+            "type": "string"
+        },
+        "Slot14state": {
+            "type": "string"
+        },
+        "Slot1linkSpeed": {
+            "type": "string"
+        },
+        "Slot1state": {
+            "type": "string"
+        },
+        "Slot2linkSpeed": {
+            "type": "string"
+        },
+        "Slot2state": {
+            "type": "string"
+        },
+        "Slot3linkSpeed": {
+            "type": "string"
+        },
+        "Slot3state": {
+            "type": "string"
+        },
+        "Slot4linkSpeed": {
+            "type": "string"
+        },
+        "Slot4state": {
+            "type": "string"
+        },
+        "Slot5linkSpeed": {
+            "type": "string"
+        },
+        "Slot5state": {
+            "type": "string"
+        },
+        "Slot6linkSpeed": {
+            "type": "string"
+        },
+        "Slot6state": {
+            "type": "string"
+        },
+        "Slot7linkSpeed": {
+            "type": "string"
+        },
+        "Slot7state": {
+            "type": "string"
+        },
+        "Slot8linkSpeed": {
+            "type": "string"
+        },
+        "Slot8state": {
+            "type": "string"
+        },
+        "Slot9linkSpeed": {
+            "type": "string"
+        },
+        "Slot9state": {
+            "type": "string"
+        },
+        "SlotFlomLinkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme10linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme10optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme11linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme11optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme12linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme12optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme13optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme14optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme15optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme16optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme17optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme18optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme19optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme1linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme1optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme20optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme21optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme22optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme23optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme24optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme2linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme2optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme3linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme3optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme4linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme4optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme5linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme5optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme6linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme6optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme7linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme7optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme8linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme8optionRom": {
+            "type": "string"
+        },
+        "SlotFrontNvme9linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontNvme9optionRom": {
+            "type": "string"
+        },
+        "SlotFrontSlot5linkSpeed": {
+            "type": "string"
+        },
+        "SlotFrontSlot6linkSpeed": {
+            "type": "string"
+        },
+        "SlotGpu1state": {
+            "type": "string"
+        },
+        "SlotGpu2state": {
+            "type": "string"
+        },
+        "SlotGpu3state": {
+            "type": "string"
+        },
+        "SlotGpu4state": {
+            "type": "string"
+        },
+        "SlotGpu5state": {
+            "type": "string"
+        },
+        "SlotGpu6state": {
+            "type": "string"
+        },
+        "SlotGpu7state": {
+            "type": "string"
+        },
+        "SlotGpu8state": {
+            "type": "string"
+        },
+        "SlotHbaLinkSpeed": {
+            "type": "string"
+        },
+        "SlotHbaState": {
+            "type": "string"
+        },
+        "SlotLom1link": {
+            "type": "string"
+        },
+        "SlotLom2link": {
+            "type": "string"
+        },
+        "SlotMezzState": {
+            "type": "string"
+        },
+        "SlotMlomLinkSpeed": {
+            "type": "string"
+        },
+        "SlotMlomState": {
+            "type": "string"
+        },
+        "SlotMraidLinkSpeed": {
+            "type": "string"
+        },
+        "SlotMraidState": {
+            "type": "string"
+        },
+        "SlotN10state": {
+            "type": "string"
+        },
+        "SlotN11state": {
+            "type": "string"
+        },
+        "SlotN12state": {
+            "type": "string"
+        },
+        "SlotN13state": {
+            "type": "string"
+        },
+        "SlotN14state": {
+            "type": "string"
+        },
+        "SlotN15state": {
+            "type": "string"
+        },
+        "SlotN16state": {
+            "type": "string"
+        },
+        "SlotN17state": {
+            "type": "string"
+        },
+        "SlotN18state": {
+            "type": "string"
+        },
+        "SlotN19state": {
+            "type": "string"
+        },
+        "SlotN1state": {
+            "type": "string"
+        },
+        "SlotN20state": {
+            "type": "string"
+        },
+        "SlotN21state": {
+            "type": "string"
+        },
+        "SlotN22state": {
+            "type": "string"
+        },
+        "SlotN23state": {
+            "type": "string"
+        },
+        "SlotN24state": {
+            "type": "string"
+        },
+        "SlotN2state": {
+            "type": "string"
+        },
+        "SlotN3state": {
+            "type": "string"
+        },
+        "SlotN4state": {
+            "type": "string"
+        },
+        "SlotN5state": {
+            "type": "string"
+        },
+        "SlotN6state": {
+            "type": "string"
+        },
+        "SlotN7state": {
+            "type": "string"
+        },
+        "SlotN8state": {
+            "type": "string"
+        },
+        "SlotN9state": {
+            "type": "string"
+        },
+        "SlotRaidLinkSpeed": {
+            "type": "string"
+        },
+        "SlotRaidState": {
+            "type": "string"
+        },
+        "SlotRearNvme1linkSpeed": {
+            "type": "string"
+        },
+        "SlotRearNvme1state": {
+            "type": "string"
+        },
+        "SlotRearNvme2linkSpeed": {
+            "type": "string"
+        },
+        "SlotRearNvme2state": {
+            "type": "string"
+        },
+        "SlotRearNvme3linkSpeed": {
+            "type": "string"
+        },
+        "SlotRearNvme3state": {
+            "type": "string"
+        },
+        "SlotRearNvme4linkSpeed": {
+            "type": "string"
+        },
+        "SlotRearNvme4state": {
+            "type": "string"
+        },
+        "SlotRearNvme5state": {
+            "type": "string"
+        },
+        "SlotRearNvme6state": {
+            "type": "string"
+        },
+        "SlotRearNvme7state": {
+            "type": "string"
+        },
+        "SlotRearNvme8state": {
+            "type": "string"
+        },
+        "SlotRiser1linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser1slot1linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser1slot2linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser1slot3linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser2linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser2slot4linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser2slot5linkSpeed": {
+            "type": "string"
+        },
+        "SlotRiser2slot6linkSpeed": {
+            "type": "string"
+        },
+        "SlotSasState": {
+            "type": "string"
+        },
+        "SlotSsdSlot1linkSpeed": {
+            "type": "string"
+        },
+        "SlotSsdSlot2linkSpeed": {
+            "type": "string"
+        },
+        "Smee": {
+            "type": "string"
+        },
+        "SmtMode": {
+            "type": "string"
+        },
+        "Snc": {
+            "type": "string"
+        },
+        "SnoopyModeFor2lm": {
+            "type": "string"
+        },
+        "SnoopyModeForAd": {
+            "type": "string"
+        },
+        "SparingMode": {
+            "type": "string"
+        },
+        "SrIov": {
+            "type": "string"
+        },
+        "StreamerPrefetch": {
+            "type": "string"
+        },
+        "SvmMode": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TerminalType": {
+            "type": "string"
+        },
+        "TpmControl": {
+            "type": "string"
+        },
+        "TpmPendingOperation": {
+            "type": "string"
+        },
+        "TpmSupport": {
+            "type": "string"
+        },
+        "Tsme": {
+            "type": "string"
+        },
+        "TxtSupport": {
+            "type": "string"
+        },
+        "UcsmBootOrderRule": {
+            "type": "string"
+        },
+        "UfsDisable": {
+            "type": "string"
+        },
+        "UmaBasedClustering": {
+            "type": "string"
+        },
+        "UsbEmul6064": {
+            "type": "string"
+        },
+        "UsbPortFront": {
+            "type": "string"
+        },
+        "UsbPortInternal": {
+            "type": "string"
+        },
+        "UsbPortKvm": {
+            "type": "string"
+        },
+        "UsbPortRear": {
+            "type": "string"
+        },
+        "UsbPortSdCard": {
+            "type": "string"
+        },
+        "UsbPortVmedia": {
+            "type": "string"
+        },
+        "UsbXhciSupport": {
+            "type": "string"
+        },
+        "VersionContext": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionContextDefinition3"
+            }
+        },
+        "VgaPriority": {
+            "type": "string"
+        },
+        "VmdEnable": {
+            "type": "string"
+        },
+        "VolMemoryMode": {
+            "type": "string"
+        },
+        "WorkLoadConfig": {
+            "type": "string"
+        },
+        "XptPrefetch": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

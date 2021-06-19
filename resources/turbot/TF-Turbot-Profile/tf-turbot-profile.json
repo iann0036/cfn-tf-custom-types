@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Turbot::Profile",
+    "description": "The `Turbot Profile` resource adds support for creating user profiles. It is used to create, manage and delete profile settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-Profile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DirectoryPoolId": {
+            "type": "string",
+            "description": "Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of the profile.\n- `email` - (Required) Email ID associated with the profile.\n- `family_name` - (Required) Last name of the user associated with the profile.\n- `given_name` - (Required) First name of the user associated with the profile.\n- `parent` - (Required) The `aka` or `id` of the level at which the profile is created.\n- `profile_id` - (Required) An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "Email": {
+            "type": "string",
+            "description": "Email ID associated with the profile.\n- `family_name` - (Required) Last name of the user associated with the profile.\n- `given_name` - (Required) First name of the user associated with the profile.\n- `parent` - (Required) The `aka` or `id` of the level at which the profile is created.\n- `profile_id` - (Required) An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "ExternalId": {
+            "type": "string",
+            "description": "A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "FamilyName": {
+            "type": "string",
+            "description": "Last name of the user associated with the profile.\n- `given_name` - (Required) First name of the user associated with the profile.\n- `parent` - (Required) The `aka` or `id` of the level at which the profile is created.\n- `profile_id` - (Required) An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "GivenName": {
+            "type": "string",
+            "description": "First name of the user associated with the profile.\n- `parent` - (Required) The `aka` or `id` of the level at which the profile is created.\n- `profile_id` - (Required) An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastLoginTimestamp": {
+            "type": "string",
+            "description": "The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "MiddleName": {
+            "type": "string",
+            "description": "Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "The `aka` or `id` of the level at which the profile is created.\n- `profile_id` - (Required) An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Picture": {
+            "type": "string",
+            "description": "A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "ProfileId": {
+            "type": "string",
+            "description": "An unique identifier of the profile.\n- `title` - (Required) Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Name of the profile.\n- `directory_pool_id` - (Optional) Pool ID for the directory in the current resource. Allows grouping of related directories e.g. SAML for authentication and LDAP for AD searching.\n- `external_id` - (Optional) A link between the local directory and the profile.\n- `last_login_timestamp` - (Optional) The most recent login through the profile.\n- `middle_name` - (Optional) Middle name of the user associated with the profile.\n- `picture` - (Optional) A valid URL which contains a picture which will be associated to the profile.\n- `status` - (Optional) Status of the profile, which defaults to `Active`. Valid options are `Active` and `Inactive`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Email",
+        "FamilyName",
+        "GivenName",
+        "Parent",
+        "ProfileId",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ParentAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

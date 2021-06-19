@@ -1,0 +1,260 @@
+{
+    "typeName": "TF::CloudScale::Server",
+    "description": "Provides a cloudscale.ch Server resource. This can be used to create, modify, and delete servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-Server/docs/README.md",
+    "definitions": {
+        "ServerGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "VolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DevicePath": {
+                    "type": "string"
+                },
+                "SizeGb": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkUuid": {
+                    "type": "string"
+                },
+                "NoAddress": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "AddressesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowStoppingForUpdate": {
+            "type": "boolean",
+            "description": "If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires stopping the instance without setting this field, the update will fail."
+        },
+        "BulkVolumeSizeGb": {
+            "type": "number",
+            "description": "The size in GB of the bulk storage volume of the new server. If this parameter is not specified, no bulk storage volume will be attached to the server. Valid values are multiples of 100."
+        },
+        "FlavorSlug": {
+            "type": "string",
+            "description": "The slug (name) of the flavor to use for the new server. Possible values can be found in our [API documentation](https://www.cloudscale.ch/en/api/v1#flavors).\n**Note:** If you want to update this value after initial creation, you must set [`allow_stopping_for_update`](#allow_stopping_for_update) to `true`."
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageSlug": {
+            "type": "string",
+            "description": "The slug (name) of the image to use for the new server. Possible values can be found in our [API documentation](https://www.cloudscale.ch/en/api/v1#images)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the new server. The name has to be a valid host name or a fully qualified domain name (FQDN)."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of the default user of the new server. When omitted, no password will be set."
+        },
+        "PrivateIpv4Address": {
+            "type": "string"
+        },
+        "PublicIpv4Address": {
+            "type": "string"
+        },
+        "PublicIpv6Address": {
+            "type": "string"
+        },
+        "ServerGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServerGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerGroupsDefinition"
+            }
+        },
+        "SshFingerprints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SshHostKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of SSH public keys. Use the full content of your \\*.pub file here."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The desired state of a server. Can be `running` (default) or `stopped`."
+        },
+        "UseIpv6": {
+            "type": "boolean",
+            "description": "Enable/disable IPv6 on the public network interface of the new server. Can be `true` (default) or `false`."
+        },
+        "UsePrivateNetwork": {
+            "type": "boolean",
+            "description": "Attach the `default` private network interface to the new server. Can be `true` or `false` (default). Use [`interfaces`](#interfaces) option for advanced setups."
+        },
+        "UsePublicNetwork": {
+            "type": "boolean",
+            "description": "Attach the public network interface to the new server. Can be `true` (default) or `false`. Use [`interfaces`](#interfaces) option for advanced setups."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "User data (custom cloud-config settings) to use for the new server. Needs to be valid YAML. A default configuration will be used if this parameter is not specified or set to null. Use only if you are an advanced user with knowledge of cloud-config and cloud-init."
+        },
+        "VolumeSizeGb": {
+            "type": "number",
+            "description": "The size in GB of the SSD root volume of the new server."
+        },
+        "Volumes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VolumesDefinition"
+            }
+        },
+        "ZoneSlug": {
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfacesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FlavorSlug",
+        "ImageSlug",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id",
+        "/properties/PrivateIpv4Address",
+        "/properties/PublicIpv4Address",
+        "/properties/PublicIpv6Address",
+        "/properties/ServerGroups",
+        "/properties/SshFingerprints",
+        "/properties/SshHostKeys",
+        "/properties/Volumes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

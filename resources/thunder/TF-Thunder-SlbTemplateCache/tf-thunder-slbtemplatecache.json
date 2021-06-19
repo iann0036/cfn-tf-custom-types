@@ -1,0 +1,180 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateCache",
+    "description": "`thunder_slb_template_cache` Provides details about thunder slb template cache",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateCache/docs/README.md",
+    "definitions": {
+        "LocalUriPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalUri": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UriPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheAction": {
+                    "type": "string"
+                },
+                "CacheValue": {
+                    "type": "number"
+                },
+                "Invalidate": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptReloadReq": {
+            "type": "number",
+            "description": "Accept reload requests via cache-control directives in HTTP headers."
+        },
+        "Age": {
+            "type": "number",
+            "description": "Specify duration in seconds cached content valid, default is 3600 seconds (seconds that the cached content is valid (default 3600 seconds))."
+        },
+        "DefaultPolicyNocache": {
+            "type": "number",
+            "description": "Specify default policy to be to not cache."
+        },
+        "DisableInsertAge": {
+            "type": "number",
+            "description": "Disable insertion of age header in response served from RAM cache."
+        },
+        "DisableInsertVia": {
+            "type": "number",
+            "description": "Disable insertion of via header in response served from RAM cache."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Logging": {
+            "type": "string",
+            "description": "Specify logging template (Logging Config name)."
+        },
+        "MaxCacheSize": {
+            "type": "number",
+            "description": "Specify maximum cache size in megabytes, default is 80MB (RAM cache size in megabytes (default 80MB))."
+        },
+        "MaxContentSize": {
+            "type": "number",
+            "description": "Maximum size (bytes) of response that can be cached - default 81920 (80KB)."
+        },
+        "MinContentSize": {
+            "type": "number",
+            "description": "Minimum size (bytes) of response that can be cached - default 512."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specify cache template name."
+        },
+        "RemoveCookies": {
+            "type": "number",
+            "description": "Remove cookies in response and cache."
+        },
+        "ReplacementPolicy": {
+            "type": "string",
+            "description": "\u2018LFU\u2019: LFU;."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "VerifyHost": {
+            "type": "number",
+            "description": "Verify request using host before sending response from RAM cache."
+        },
+        "LocalUriPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LocalUriPolicyDefinition"
+            }
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        },
+        "UriPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UriPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

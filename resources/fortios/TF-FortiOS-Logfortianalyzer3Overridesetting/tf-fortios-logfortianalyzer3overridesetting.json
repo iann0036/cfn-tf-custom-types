@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::FortiOS::Logfortianalyzer3Overridesetting",
+    "description": "Override FortiAnalyzer settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Logfortianalyzer3Overridesetting/docs/README.md",
+    "definitions": {
+        "SerialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Serial Number."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "_ChangeIp": {
+            "type": "number",
+            "description": "Hidden attribute."
+        },
+        "AccessConfig": {
+            "type": "string",
+            "description": "Enable/disable FortiAnalyzer access to configuration and data. Valid values: `enable`, `disable`."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "Certificate used to communicate with FortiAnalyzer."
+        },
+        "CertificateVerification": {
+            "type": "string",
+            "description": "Enable/disable identity verification of FortiAnalyzer by use of certificate. Valid values: `enable`, `disable`."
+        },
+        "ConnTimeout": {
+            "type": "number",
+            "description": "FortiAnalyzer connection time-out in seconds (for status and log buffer)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EncAlgorithm": {
+            "type": "string",
+            "description": "Enable/disable sending FortiAnalyzer log data with SSL encryption. Valid values: `high-medium`, `high`, `low`."
+        },
+        "FazType": {
+            "type": "number",
+            "description": "Hidden setting index of FortiAnalyzer."
+        },
+        "HmacAlgorithm": {
+            "type": "string",
+            "description": "FortiAnalyzer IPsec tunnel HMAC algorithm. Valid values: `sha256`, `sha1`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "IpsArchive": {
+            "type": "string",
+            "description": "Enable/disable IPS packet archive logging. Valid values: `enable`, `disable`."
+        },
+        "MaxLogRate": {
+            "type": "number",
+            "description": "FortiAnalyzer maximum log rate in MBps (0 = unlimited)."
+        },
+        "MgmtName": {
+            "type": "string",
+            "description": "Hidden management name of FortiAnalyzer."
+        },
+        "MonitorFailureRetryPeriod": {
+            "type": "number",
+            "description": "Time between FortiAnalyzer connection retries in seconds (for status and log buffer)."
+        },
+        "MonitorKeepalivePeriod": {
+            "type": "number",
+            "description": "Time between OFTP keepalives in seconds (for status and log buffer)."
+        },
+        "Override": {
+            "type": "string",
+            "description": "Enable/disable overriding FortiAnalyzer settings or use global settings. Valid values: `enable`, `disable`."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Set log transmission priority. Valid values: `default`, `low`."
+        },
+        "Reliable": {
+            "type": "string",
+            "description": "Enable/disable reliable logging to FortiAnalyzer. Valid values: `enable`, `disable`."
+        },
+        "Server": {
+            "type": "string",
+            "description": "The remote FortiAnalyzer."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IPv4 or IPv6 address used to communicate with FortiAnalyzer."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable logging to FortiAnalyzer. Valid values: `enable`, `disable`."
+        },
+        "UploadDay": {
+            "type": "string",
+            "description": "Day of week (month) to upload logs."
+        },
+        "UploadInterval": {
+            "type": "string",
+            "description": "Frequency to upload log files to FortiAnalyzer. Valid values: `daily`, `weekly`, `monthly`."
+        },
+        "UploadOption": {
+            "type": "string",
+            "description": "Enable/disable logging to hard disk and then uploading to FortiAnalyzer. Valid values: `store-and-upload`, `realtime`, `1-minute`, `5-minute`."
+        },
+        "UploadTime": {
+            "type": "string",
+            "description": "Time to upload logs (hh:mm)."
+        },
+        "UseManagementVdom": {
+            "type": "string",
+            "description": "Enable/disable use of management VDOM IP address as source IP for logs sent to FortiAnalyzer. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Serial": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SerialDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

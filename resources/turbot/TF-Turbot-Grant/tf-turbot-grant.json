@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::Turbot::Grant",
+    "description": "The `Turbot Grant` resource adds support for grants in Turbot. Turbot grant presents a cleaner and more explicit separation of duties on how users are managed in Turbot.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-Grant/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identity": {
+            "type": "string",
+            "description": "The profile for which the permissions are being granted."
+        },
+        "IdentityAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Level": {
+            "type": "string",
+            "description": "The permission level to be granted. This is the `aka` of a permission level resource.\n- `identity` - (Required) The profile for which the permissions are being granted."
+        },
+        "PermissionLevelAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PermissionTypeAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Resource": {
+            "type": "string",
+            "description": "The id or `aka` of the resource for which permissions are being granted.\n- `type` - (Required) The type of permissions being granted. This is the `aka` of a permission type resource.\n- `level` - (Required) The permission level to be granted. This is the `aka` of a permission level resource.\n- `identity` - (Required) The profile for which the permissions are being granted."
+        },
+        "ResourceAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of permissions being granted. This is the `aka` of a permission type resource.\n- `level` - (Required) The permission level to be granted. This is the `aka` of a permission level resource.\n- `identity` - (Required) The profile for which the permissions are being granted."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Identity",
+        "Level",
+        "Resource",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IdentityAkas",
+        "/properties/PermissionLevelAkas",
+        "/properties/PermissionTypeAkas",
+        "/properties/ResourceAkas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

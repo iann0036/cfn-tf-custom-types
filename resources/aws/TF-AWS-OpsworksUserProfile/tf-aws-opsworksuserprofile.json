@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::OpsworksUserProfile",
+    "description": "Provides an OpsWorks User Profile resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-OpsworksUserProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowSelfManagement": {
+            "type": "boolean",
+            "description": "Whether users can specify their own SSH public key through the My Settings page."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SshPublicKey": {
+            "type": "string",
+            "description": "The users public key."
+        },
+        "SshUsername": {
+            "type": "string",
+            "description": "The ssh username, with witch this user wants to log in."
+        },
+        "UserArn": {
+            "type": "string",
+            "description": "The user's IAM ARN."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SshUsername",
+        "UserArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Alicloud::DnsDomain",
+    "description": "Provides a DNS domain resource.\n\n-> **NOTE:** The domain name which you want to add must be already registered and had not added by another account. Every domain name can only exist in a unique group.\n\n-> **NOTE:** Available in v1.81.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DnsDomain/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Name of the domain. This name without suffix can have a string of 1 to 63 characters(domain name subject, excluding suffix), must contain only alphanumeric characters or \"-\", and must not begin or end with \"-\", and \"-\" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "Id of the group in which the domain will add. If not supplied, then use default group."
+        },
+        "GroupName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lang": {
+            "type": "string",
+            "description": "User language."
+        },
+        "PunyCode": {
+            "type": "string"
+        },
+        "Remark": {
+            "type": "string",
+            "description": "Remarks information for your domain name."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the dns domain belongs."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource.\n- Key: It can be up to 64 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It cannot be a null string.\n- Value: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It can be a null string."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DnsServers",
+        "/properties/DomainId",
+        "/properties/GroupName",
+        "/properties/Id",
+        "/properties/PunyCode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

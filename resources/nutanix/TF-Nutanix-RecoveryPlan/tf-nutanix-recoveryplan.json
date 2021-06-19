@@ -1,0 +1,690 @@
+{
+    "typeName": "TF::Nutanix::RecoveryPlan",
+    "description": "Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanix/TF-Nutanix-RecoveryPlan/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CategoriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OwnerReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FloatingIpAssignmentList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FloatingIpAssignmentListDefinition"
+                    }
+                },
+                "NetworkMappingList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkMappingListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProjectReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StageListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DelayTimeSecs": {
+                    "type": "number"
+                },
+                "StageUuid": {
+                    "type": "string"
+                },
+                "StageWork": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StageWorkDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "FloatingIpAssignmentListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZoneUrl": {
+                    "type": "string"
+                },
+                "VmIpAssignmentList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VmIpAssignmentListDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "AvailabilityZoneUrl"
+            ]
+        },
+        "NetworkMappingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreNetworksStretched": {
+                    "type": "boolean"
+                },
+                "AvailabilityZoneNetworkMappingList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AvailabilityZoneNetworkMappingListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StageWorkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoverEntities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecoverEntitiesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "VmIpAssignmentListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecoveryFloatingIpConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecoveryFloatingIpConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TestFloatingIpConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TestFloatingIpConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VmNicInformation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VmNicInformationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "VmReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VmReferenceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AvailabilityZoneNetworkMappingListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZoneUrl": {
+                    "type": "string"
+                },
+                "ClusterReferenceList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClusterReferenceListDefinition"
+                    }
+                },
+                "RecoveryIpAssignmentList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecoveryIpAssignmentListDefinition"
+                    }
+                },
+                "RecoveryNetwork": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecoveryNetworkDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TestIpAssignmentList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TestIpAssignmentListDefinition"
+                    }
+                },
+                "TestNetwork": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TestNetworkDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RecoverEntitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntityInfoList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntityInfoListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RecoveryFloatingIpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "ShouldAllocateDynamically": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TestFloatingIpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "ShouldAllocateDynamically": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "VmNicInformationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uuid"
+            ]
+        },
+        "VmReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Kind"
+            ]
+        },
+        "ClusterReferenceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Kind",
+                "Uuid"
+            ]
+        },
+        "RecoveryIpAssignmentListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpConfigList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpConfigListDefinition"
+                    },
+                    "minItems": 1
+                },
+                "VmReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VmReferenceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RecoveryNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "UseVpcReference": {
+                    "type": "boolean"
+                },
+                "SubnetList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetListDefinition"
+                    }
+                },
+                "VirtualNetworkReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkReferenceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VpcReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcReferenceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TestIpAssignmentListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpConfigList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpConfigListDefinition"
+                    },
+                    "minItems": 1
+                },
+                "VmReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VmReferenceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TestNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "UseVpcReference": {
+                    "type": "boolean"
+                },
+                "SubnetList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetListDefinition"
+                    }
+                },
+                "VirtualNetworkReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkReferenceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VpcReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcReferenceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "EntityInfoListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyEntityReferenceKind": {
+                    "type": "string"
+                },
+                "AnyEntityReferenceName": {
+                    "type": "string"
+                },
+                "AnyEntityReferenceUuid": {
+                    "type": "string"
+                },
+                "Categories": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CategoriesDefinition"
+                    }
+                },
+                "ScriptList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScriptListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpConfigListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "SubnetListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalConnectivityState": {
+                    "type": "string"
+                },
+                "GatewayIp": {
+                    "type": "string"
+                },
+                "PrefixLength": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "GatewayIp",
+                "PrefixLength"
+            ]
+        },
+        "VirtualNetworkReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpcReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScriptListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableScriptExec": {
+                    "type": "boolean"
+                },
+                "Timeout": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EnableScriptExec"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for Recovery Plan."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for the Recovery Plan."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CategoriesDefinition"
+            }
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OwnerReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProjectReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "StageList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StageListDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

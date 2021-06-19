@@ -1,0 +1,582 @@
+{
+    "typeName": "TF::FortiOS::SystemSettings",
+    "description": "Configure VDOM settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSettings/docs/README.md",
+    "definitions": {
+        "GuiDefaultPolicyColumnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Select column name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowLinkdownPath": {
+            "type": "string",
+            "description": "Enable/disable link down path. Valid values: `enable`, `disable`."
+        },
+        "AllowSubnetOverlap": {
+            "type": "string",
+            "description": "Enable/disable allowing interface subnets to use overlapping IP addresses. Valid values: `enable`, `disable`."
+        },
+        "Asymroute": {
+            "type": "string",
+            "description": "Enable/disable IPv4 asymmetric routing. Valid values: `enable`, `disable`."
+        },
+        "Asymroute6": {
+            "type": "string",
+            "description": "Enable/disable asymmetric IPv6 routing. Valid values: `enable`, `disable`."
+        },
+        "Asymroute6Icmp": {
+            "type": "string",
+            "description": "Enable/disable asymmetric ICMPv6 routing. Valid values: `enable`, `disable`."
+        },
+        "AsymrouteIcmp": {
+            "type": "string",
+            "description": "Enable/disable ICMP asymmetric routing. Valid values: `enable`, `disable`."
+        },
+        "AuxiliarySession": {
+            "type": "string",
+            "description": "Enable/disable auxiliary session. Valid values: `enable`, `disable`."
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Enable/disable Bi-directional Forwarding Detection (BFD) on all interfaces. Valid values: `enable`, `disable`."
+        },
+        "BfdDesiredMinTx": {
+            "type": "number",
+            "description": "BFD desired minimal transmit interval (1 - 100000 ms, default = 50)."
+        },
+        "BfdDetectMult": {
+            "type": "number",
+            "description": "BFD detection multiplier (1 - 50, default = 3)."
+        },
+        "BfdDontEnforceSrcPort": {
+            "type": "string",
+            "description": "Enable to not enforce verifying the source port of BFD Packets. Valid values: `enable`, `disable`."
+        },
+        "BfdRequiredMinRx": {
+            "type": "number",
+            "description": "BFD required minimal receive interval (1 - 100000 ms, default = 50)."
+        },
+        "BlockLandAttack": {
+            "type": "string",
+            "description": "Enable/disable blocking of land attacks. Valid values: `disable`, `enable`."
+        },
+        "CentralNat": {
+            "type": "string",
+            "description": "Enable/disable central NAT. Valid values: `enable`, `disable`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "VDOM comments."
+        },
+        "ComplianceCheck": {
+            "type": "string",
+            "description": "Enable/disable PCI DSS compliance checking. Valid values: `enable`, `disable`."
+        },
+        "ConsolidatedFirewallMode": {
+            "type": "string",
+            "description": "Consolidated firewall mode."
+        },
+        "DefaultVoipAlgMode": {
+            "type": "string",
+            "description": "Configure how the FortiGate handles VoIP traffic when a policy that accepts the traffic doesn't include a VoIP profile. Valid values: `proxy-based`, `kernel-helper-based`."
+        },
+        "DenyTcpWithIcmp": {
+            "type": "string",
+            "description": "Enable/disable denying TCP by sending an ICMP communication prohibited packet. Valid values: `enable`, `disable`."
+        },
+        "Device": {
+            "type": "string",
+            "description": "Interface to use for management access for NAT mode."
+        },
+        "Dhcp6ServerIp": {
+            "type": "string",
+            "description": "DHCPv6 server IPv6 address."
+        },
+        "DhcpProxy": {
+            "type": "string",
+            "description": "Enable/disable the DHCP Proxy. Valid values: `enable`, `disable`."
+        },
+        "DhcpProxyInterface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "DhcpProxyInterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "DhcpServerIp": {
+            "type": "string",
+            "description": "DHCP Server IPv4 address."
+        },
+        "DiscoveredDeviceTimeout": {
+            "type": "number",
+            "description": "Timeout for discovered devices (1 - 365 days, default = 28)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EcmpMaxPaths": {
+            "type": "number",
+            "description": "Maximum number of Equal Cost Multi-Path (ECMP) next-hops. Set to 1 to disable ECMP routing (1 - 100, default = 10)."
+        },
+        "EmailPortalCheckDns": {
+            "type": "string",
+            "description": "Enable/disable using DNS to validate email addresses collected by a captive portal. Valid values: `disable`, `enable`."
+        },
+        "FirewallSessionDirty": {
+            "type": "string",
+            "description": "Select how to manage sessions affected by firewall policy configuration changes. Valid values: `check-all`, `check-new`, `check-policy-option`."
+        },
+        "FwSessionHairpin": {
+            "type": "string",
+            "description": "Enable/disable checking for a matching policy each time hairpin traffic goes through the FortiGate. Valid values: `enable`, `disable`."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "Transparent mode IPv4 default gateway IP address."
+        },
+        "Gateway6": {
+            "type": "string",
+            "description": "Transparent mode IPv4 default gateway IP address."
+        },
+        "GuiAdvancedPolicy": {
+            "type": "string",
+            "description": "Enable/disable advanced policy configuration on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiAllowUnnamedPolicy": {
+            "type": "string",
+            "description": "Enable/disable the requirement for policy naming on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiAntivirus": {
+            "type": "string",
+            "description": "Enable/disable AntiVirus on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiApProfile": {
+            "type": "string",
+            "description": "Enable/disable FortiAP profiles on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiApplicationControl": {
+            "type": "string",
+            "description": "Enable/disable application control on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDhcpAdvanced": {
+            "type": "string",
+            "description": "Enable/disable advanced DHCP options on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDlp": {
+            "type": "string",
+            "description": "Enable/disable DLP on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDnsDatabase": {
+            "type": "string",
+            "description": "Enable/disable DNS database settings on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDnsfilter": {
+            "type": "string",
+            "description": "Enable/disable DNS Filtering on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDomainIpReputation": {
+            "type": "string",
+            "description": "Enable/disable Domain and IP Reputation on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDosPolicy": {
+            "type": "string",
+            "description": "Enable/disable DoS policies on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDynamicProfileDisplay": {
+            "type": "string",
+            "description": "Enable/disable RADIUS Single Sign On (RSSO) on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiDynamicRouting": {
+            "type": "string",
+            "description": "Enable/disable dynamic routing on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiEmailCollection": {
+            "type": "string",
+            "description": "Enable/disable email collection on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiEndpointControl": {
+            "type": "string",
+            "description": "Enable/disable endpoint control on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiEndpointControlAdvanced": {
+            "type": "string",
+            "description": "Enable/disable advanced endpoint control options on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiExplicitProxy": {
+            "type": "string",
+            "description": "Enable/disable the explicit proxy on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiFileFilter": {
+            "type": "string",
+            "description": "Enable/disable File-filter on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiFortiapSplitTunneling": {
+            "type": "string",
+            "description": "Enable/disable FortiAP split tunneling on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiFortiextenderController": {
+            "type": "string",
+            "description": "Enable/disable FortiExtender on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiIcap": {
+            "type": "string",
+            "description": "Enable/disable ICAP on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiImplicitPolicy": {
+            "type": "string",
+            "description": "Enable/disable implicit firewall policies on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiIps": {
+            "type": "string",
+            "description": "Enable/disable IPS on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiLoadBalance": {
+            "type": "string",
+            "description": "Enable/disable server load balancing on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiLocalInPolicy": {
+            "type": "string",
+            "description": "Enable/disable Local-In policies on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiLocalReports": {
+            "type": "string",
+            "description": "Enable/disable local reports on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiMulticastPolicy": {
+            "type": "string",
+            "description": "Enable/disable multicast firewall policies on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiMultipleInterfacePolicy": {
+            "type": "string",
+            "description": "Enable/disable adding multiple interfaces to a policy on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiMultipleUtmProfiles": {
+            "type": "string",
+            "description": "Enable/disable multiple UTM profiles on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiNat4664": {
+            "type": "string",
+            "description": "Enable/disable NAT46 and NAT64 settings on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiObjectColors": {
+            "type": "string",
+            "description": "Enable/disable object colors on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiPerPolicyDisclaimer": {
+            "type": "string",
+            "description": "Enable/disable policy disclaimer on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiPolicyBasedIpsec": {
+            "type": "string",
+            "description": "Enable/disable policy-based IPsec VPN on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiPolicyDisclaimer": {
+            "type": "string",
+            "description": "Enable/disable policy disclaimer on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiPolicyLearning": {
+            "type": "string",
+            "description": "Enable/disable firewall policy learning mode on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiReplacementMessageGroups": {
+            "type": "string",
+            "description": "Enable/disable replacement message groups on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiSecurityProfileGroup": {
+            "type": "string",
+            "description": "Enable/disable Security Profile Groups on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiSpamfilter": {
+            "type": "string",
+            "description": "Enable/disable Antispam on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiSslvpnPersonalBookmarks": {
+            "type": "string",
+            "description": "Enable/disable SSL-VPN personal bookmark management on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiSslvpnRealms": {
+            "type": "string",
+            "description": "Enable/disable SSL-VPN realms on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiSwitchController": {
+            "type": "string",
+            "description": "Enable/disable the switch controller on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiThreatWeight": {
+            "type": "string",
+            "description": "Enable/disable threat weight on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiTrafficShaping": {
+            "type": "string",
+            "description": "Enable/disable traffic shaping on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiVoipProfile": {
+            "type": "string",
+            "description": "Enable/disable VoIP profiles on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiVpn": {
+            "type": "string",
+            "description": "Enable/disable VPN tunnels on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWafProfile": {
+            "type": "string",
+            "description": "Enable/disable Web Application Firewall on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWanLoadBalancing": {
+            "type": "string",
+            "description": "Enable/disable SD-WAN on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWanoptCache": {
+            "type": "string",
+            "description": "Enable/disable WAN Optimization and Web Caching on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWebfilter": {
+            "type": "string",
+            "description": "Enable/disable Web filtering on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWebfilterAdvanced": {
+            "type": "string",
+            "description": "Enable/disable advanced web filtering on the GUI. Valid values: `enable`, `disable`."
+        },
+        "GuiWirelessController": {
+            "type": "string",
+            "description": "Enable/disable the wireless controller on the GUI. Valid values: `enable`, `disable`."
+        },
+        "HttpExternalDest": {
+            "type": "string",
+            "description": "Offload HTTP traffic to FortiWeb or FortiCache. Valid values: `fortiweb`, `forticache`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeDnFormat": {
+            "type": "string",
+            "description": "Configure IKE ASN.1 Distinguished Name format conventions. Valid values: `with-space`, `no-space`."
+        },
+        "IkeNattPort": {
+            "type": "number",
+            "description": "UDP port for IKE/IPsec traffic in NAT-T mode (default 4500)."
+        },
+        "IkePort": {
+            "type": "number",
+            "description": "UDP port for IKE/IPsec traffic (default 500)."
+        },
+        "IkeQuickCrashDetect": {
+            "type": "string",
+            "description": "Enable/disable IKE quick crash detection (RFC 6290). Valid values: `enable`, `disable`."
+        },
+        "IkeSessionResume": {
+            "type": "string",
+            "description": "Enable/disable IKEv2 session resumption (RFC 5723). Valid values: `enable`, `disable`."
+        },
+        "ImplicitAllowDns": {
+            "type": "string",
+            "description": "Enable/disable implicitly allowing DNS traffic. Valid values: `enable`, `disable`."
+        },
+        "InspectionMode": {
+            "type": "string",
+            "description": "Inspection mode (proxy-based or flow-based). Valid values: `proxy`, `flow`."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IP address and netmask."
+        },
+        "Ip6": {
+            "type": "string",
+            "description": "IPv6 address prefix for NAT mode."
+        },
+        "LinkDownAccess": {
+            "type": "string",
+            "description": "Enable/disable link down access traffic. Valid values: `enable`, `disable`."
+        },
+        "LldpReception": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) reception for this VDOM or apply global settings to this VDOM. Valid values: `enable`, `disable`, `global`."
+        },
+        "LldpTransmission": {
+            "type": "string",
+            "description": "Enable/disable Link Layer Discovery Protocol (LLDP) transmission for this VDOM or apply global settings to this VDOM. Valid values: `enable`, `disable`, `global`."
+        },
+        "MacTtl": {
+            "type": "number",
+            "description": "Duration of MAC addresses in Transparent mode (300 - 8640000 sec, default = 300)."
+        },
+        "Manageip": {
+            "type": "string",
+            "description": "Transparent mode IPv4 management IP address and netmask."
+        },
+        "Manageip6": {
+            "type": "string",
+            "description": "Transparent mode IPv6 management IP address and netmask."
+        },
+        "MulticastForward": {
+            "type": "string",
+            "description": "Enable/disable multicast forwarding. Valid values: `enable`, `disable`."
+        },
+        "MulticastSkipPolicy": {
+            "type": "string",
+            "description": "Enable/disable allowing multicast traffic through the FortiGate without a policy check. Valid values: `enable`, `disable`."
+        },
+        "MulticastTtlNotchange": {
+            "type": "string",
+            "description": "Enable/disable preventing the FortiGate from changing the TTL for forwarded multicast packets. Valid values: `enable`, `disable`."
+        },
+        "NgfwMode": {
+            "type": "string",
+            "description": "Next Generation Firewall (NGFW) mode. Valid values: `profile-based`, `policy-based`."
+        },
+        "Opmode": {
+            "type": "string",
+            "description": "Firewall operation mode (NAT or Transparent). Valid values: `nat`, `transparent`."
+        },
+        "PrpTrailerAction": {
+            "type": "string",
+            "description": "Enable/disable action to take on PRP trailer. Valid values: `enable`, `disable`."
+        },
+        "SccpPort": {
+            "type": "number",
+            "description": "TCP port the SCCP proxy monitors for SCCP traffic (0 - 65535, default = 2000)."
+        },
+        "SctpSessionWithoutInit": {
+            "type": "string",
+            "description": "Enable/disable SCTP session creation without SCTP INIT. Valid values: `enable`, `disable`."
+        },
+        "SesDeniedTraffic": {
+            "type": "string",
+            "description": "Enable/disable including denied session in the session table. Valid values: `enable`, `disable`."
+        },
+        "SipExpectation": {
+            "type": "string",
+            "description": "Enable/disable the SIP kernel session helper to create an expectation for port 5060. Valid values: `enable`, `disable`."
+        },
+        "SipHelper": {
+            "type": "string",
+            "description": "Enable/disable the SIP session helper to process SIP sessions unless SIP sessions are accepted by the SIP application layer gateway (ALG). Valid values: `enable`, `disable`."
+        },
+        "SipNatTrace": {
+            "type": "string",
+            "description": "Enable/disable recording the original SIP source IP address when NAT is used. Valid values: `enable`, `disable`."
+        },
+        "SipSslPort": {
+            "type": "number",
+            "description": "TCP port the SIP proxy monitors for SIP SSL/TLS traffic (0 - 65535, default = 5061)."
+        },
+        "SipTcpPort": {
+            "type": "number",
+            "description": "TCP port the SIP proxy monitors for SIP traffic (0 - 65535, default = 5060)."
+        },
+        "SipUdpPort": {
+            "type": "number",
+            "description": "UDP port the SIP proxy monitors for SIP traffic (0 - 65535, default = 5060)."
+        },
+        "SnatHairpinTraffic": {
+            "type": "string",
+            "description": "Enable/disable source NAT (SNAT) for hairpin traffic. Valid values: `enable`, `disable`."
+        },
+        "SslSshProfile": {
+            "type": "string",
+            "description": "Profile for SSL/SSH inspection."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this VDOM. Valid values: `enable`, `disable`."
+        },
+        "StrictSrcCheck": {
+            "type": "string",
+            "description": "Enable/disable strict source verification. Valid values: `enable`, `disable`."
+        },
+        "TcpSessionWithoutSyn": {
+            "type": "string",
+            "description": "Enable/disable allowing TCP session without SYN flags. Valid values: `enable`, `disable`."
+        },
+        "Utf8SpamTagging": {
+            "type": "string",
+            "description": "Enable/disable converting antispam tags to UTF-8 for better non-ASCII character support. Valid values: `enable`, `disable`."
+        },
+        "V4EcmpMode": {
+            "type": "string",
+            "description": "IPv4 Equal-cost multi-path (ECMP) routing and load balancing mode. Valid values: `source-ip-based`, `weight-based`, `usage-based`, `source-dest-ip-based`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VpnStatsLog": {
+            "type": "string",
+            "description": "Enable/disable periodic VPN log statistics for one or more types of VPN. Separate names with a space. Valid values: `ipsec`, `pptp`, `l2tp`, `ssl`."
+        },
+        "VpnStatsPeriod": {
+            "type": "number",
+            "description": "Period to send VPN log statistics (0 or 60 - 86400 sec)."
+        },
+        "WccpCacheEngine": {
+            "type": "string",
+            "description": "Enable/disable WCCP cache engine. Valid values: `enable`, `disable`."
+        },
+        "GuiDefaultPolicyColumns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuiDefaultPolicyColumnsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

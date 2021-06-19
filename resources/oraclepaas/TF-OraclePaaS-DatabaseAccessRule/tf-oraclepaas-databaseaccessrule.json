@@ -1,0 +1,109 @@
+{
+    "typeName": "TF::OraclePaaS::DatabaseAccessRule",
+    "description": "The `oraclepaas_database_access_rule` resource creates and manages a Database Access Rule for an Oracle Database Cloud service instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oraclepaas/TF-OraclePaaS-DatabaseAccessRule/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Access Rule."
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Determines whether the access rule is enabled. Default is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Access Rule."
+        },
+        "Ports": {
+            "type": "string",
+            "description": "The port or range of ports to allow traffic on."
+        },
+        "ServiceInstanceId": {
+            "type": "string",
+            "description": "The name of the database service instance to attach\nthe access rule to."
+        },
+        "Source": {
+            "type": "string",
+            "description": "The IP addresses and subnets from which traffic is allowed. Valid values are\n`DB`, `PUBLIC-INTERNET`, or a single IP address or comma-separated list of subnets (in CIDR format) or IPv4 addresses."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name",
+        "Ports",
+        "ServiceInstanceId",
+        "Source"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

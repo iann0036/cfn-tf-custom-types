@@ -1,0 +1,390 @@
+{
+    "typeName": "TF::AWS::AutoscalingplansScalingPlan",
+    "description": "Manages an AWS Auto Scaling scaling plan.\nMore information can be found in the [AWS Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html).\n\n~> **NOTE:** The AWS Auto Scaling service uses an AWS IAM service-linked role to manage predictive scaling of Amazon EC2 Auto Scaling groups. The service attempts to automatically create this role the first time a scaling plan with predictive scaling enabled is created.\nAn [`aws_iam_service_linked_role`](/docs/providers/aws/r/iam_service_linked_role.html) resource can be used to manually manage this role.\nSee the [AWS documentation](https://docs.aws.amazon.com/autoscaling/plans/userguide/aws-auto-scaling-service-linked-roles.html#create-service-linked-role-manual) for more details.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AutoscalingplansScalingPlan/docs/README.md",
+    "definitions": {
+        "ApplicationSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudformationStackArn": {
+                    "type": "string",
+                    "description": "The Amazon Resource Name (ARN) of a AWS CloudFormation stack."
+                },
+                "TagFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagFilterDefinition"
+                    },
+                    "maxItems": 50
+                }
+            },
+            "required": []
+        },
+        "ScalingInstructionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableDynamicScaling": {
+                    "type": "boolean",
+                    "description": "Boolean controlling whether dynamic scaling by AWS Auto Scaling is disabled. Defaults to `false`."
+                },
+                "MaxCapacity": {
+                    "type": "number",
+                    "description": "The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for `predictive_scaling_max_capacity_behavior`."
+                },
+                "MinCapacity": {
+                    "type": "number",
+                    "description": "The minimum capacity of the resource."
+                },
+                "PredictiveScalingMaxCapacityBehavior": {
+                    "type": "string",
+                    "description": "Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource.\nValid values: `SetForecastCapacityToMaxCapacity`, `SetMaxCapacityAboveForecastCapacity`, `SetMaxCapacityToForecastCapacity`."
+                },
+                "PredictiveScalingMaxCapacityBuffer": {
+                    "type": "number",
+                    "description": "The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity."
+                },
+                "PredictiveScalingMode": {
+                    "type": "string",
+                    "description": "The predictive scaling mode. Valid values: `ForecastAndScale`, `ForecastOnly`."
+                },
+                "ResourceId": {
+                    "type": "string",
+                    "description": "The ID of the resource. This string consists of the resource type and unique identifier."
+                },
+                "ScalableDimension": {
+                    "type": "string",
+                    "description": "The scalable dimension associated with the resource. Valid values: `autoscaling:autoScalingGroup:DesiredCapacity`, `dynamodb:index:ReadCapacityUnits`, `dynamodb:index:WriteCapacityUnits`, `dynamodb:table:ReadCapacityUnits`, `dynamodb:table:WriteCapacityUnits`, `ecs:service:DesiredCount`, `ec2:spot-fleet-request:TargetCapacity`, `rds:cluster:ReadReplicaCount`."
+                },
+                "ScalingPolicyUpdateBehavior": {
+                    "type": "string",
+                    "description": "Controls whether a resource's externally created scaling policies are kept or replaced. Valid values: `KeepExternalPolicies`, `ReplaceExternalPolicies`. Defaults to `KeepExternalPolicies`."
+                },
+                "ScheduledActionBufferTime": {
+                    "type": "number",
+                    "description": "The amount of time, in seconds, to buffer the run time of scheduled scaling actions when scaling out."
+                },
+                "ServiceNamespace": {
+                    "type": "string",
+                    "description": "The namespace of the AWS service. Valid values: `autoscaling`, `dynamodb`, `ecs`, `ec2`, `rds`."
+                },
+                "CustomizedLoadMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomizedLoadMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedLoadMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedLoadMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TargetTrackingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetTrackingConfigurationDefinition"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxCapacity",
+                "MinCapacity",
+                "ResourceId",
+                "ScalableDimension",
+                "ServiceNamespace"
+            ]
+        },
+        "TagFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string",
+                    "description": "The tag key."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The tag values."
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "CustomizedLoadMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    },
+                    "description": "The dimensions of the metric."
+                },
+                "MetricName": {
+                    "type": "string",
+                    "description": "The name of the metric."
+                },
+                "Namespace": {
+                    "type": "string",
+                    "description": "The namespace of the metric."
+                },
+                "Statistic": {
+                    "type": "string",
+                    "description": "The statistic of the metric. Currently, the value must always be `Sum`."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "The unit of the metric."
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "Statistic"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PredefinedLoadMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedLoadMetricType": {
+                    "type": "string",
+                    "description": "The metric type. Valid values: `ALBTargetGroupRequestCount`, `ASGTotalCPUUtilization`, `ASGTotalNetworkIn`, `ASGTotalNetworkOut`."
+                },
+                "ResourceLabel": {
+                    "type": "string",
+                    "description": "Identifies the resource associated with the metric type."
+                }
+            },
+            "required": [
+                "PredefinedLoadMetricType"
+            ]
+        },
+        "TargetTrackingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableScaleIn": {
+                    "type": "boolean",
+                    "description": "Boolean indicating whether scale in by the target tracking scaling policy is disabled. Defaults to `false`."
+                },
+                "EstimatedInstanceWarmup": {
+                    "type": "number",
+                    "description": "The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.\nThis value is used only if the resource is an Auto Scaling group."
+                },
+                "ScaleInCooldown": {
+                    "type": "number",
+                    "description": "The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.\nThis value is not used if the scalable resource is an Auto Scaling group."
+                },
+                "ScaleOutCooldown": {
+                    "type": "number",
+                    "description": "The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.\nThis value is not used if the scalable resource is an Auto Scaling group."
+                },
+                "TargetValue": {
+                    "type": "number",
+                    "description": "The target value for the metric."
+                },
+                "CustomizedScalingMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomizedScalingMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PredefinedScalingMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedScalingMetricSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "TargetValue"
+            ]
+        },
+        "CustomizedScalingMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition2"
+                    },
+                    "description": "The dimensions of the metric."
+                },
+                "MetricName": {
+                    "type": "string",
+                    "description": "The name of the metric."
+                },
+                "Namespace": {
+                    "type": "string",
+                    "description": "The namespace of the metric."
+                },
+                "Statistic": {
+                    "type": "string",
+                    "description": "The statistic of the metric. Valid values: `Average`, `Maximum`, `Minimum`, `SampleCount`, `Sum`."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "The unit of the metric."
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "Statistic"
+            ]
+        },
+        "DimensionsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PredefinedScalingMetricSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedScalingMetricType": {
+                    "type": "string",
+                    "description": "The metric type. Valid values: `ALBRequestCountPerTarget`, `ASGAverageCPUUtilization`, `ASGAverageNetworkIn`, `ASGAverageNetworkOut`, `DynamoDBReadCapacityUtilization`, `DynamoDBWriteCapacityUtilization`, `ECSServiceAverageCPUUtilization`, `ECSServiceAverageMemoryUtilization`, `EC2SpotFleetRequestAverageCPUUtilization`, `EC2SpotFleetRequestAverageNetworkIn`, `EC2SpotFleetRequestAverageNetworkOut`, `RDSReaderAverageCPUUtilization`, `RDSReaderAverageDatabaseConnections`."
+                },
+                "ResourceLabel": {
+                    "type": "string",
+                    "description": "Identifies the resource associated with the metric type."
+                }
+            },
+            "required": [
+                "PredefinedScalingMetricType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes."
+        },
+        "ScalingPlanVersion": {
+            "type": "number"
+        },
+        "ApplicationSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationSourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ScalingInstruction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingInstructionDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ScalingPlanVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

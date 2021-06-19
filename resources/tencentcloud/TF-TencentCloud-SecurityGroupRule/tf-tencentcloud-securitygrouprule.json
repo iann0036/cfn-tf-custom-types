@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::TencentCloud::SecurityGroupRule",
+    "description": "Provides a resource to create security group rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SecurityGroupRule/docs/README.md",
+    "definitions": {
+        "AddressTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupId": {
+                    "type": "string",
+                    "description": "Address template group ID, conflicts with `template_id`."
+                },
+                "TemplateId": {
+                    "type": "string",
+                    "description": "Address template ID, conflicts with `group_id`."
+                }
+            },
+            "required": []
+        },
+        "ProtocolTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupId": {
+                    "type": "string",
+                    "description": "Address template group ID, conflicts with `template_id`."
+                },
+                "TemplateId": {
+                    "type": "string",
+                    "description": "Address template ID, conflicts with `group_id`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrIp": {
+            "type": "string",
+            "description": "An IP address network or segment, and conflict with `source_sgid` and `address_template`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the security group rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpProtocol": {
+            "type": "string",
+            "description": "Type of IP protocol. Valid values: `TCP`, `UDP` and `ICMP`. Default to all types protocol, and conflicts with `protocol_template`."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "Rule policy of security group. Valid values: `ACCEPT` and `DROP`."
+        },
+        "PortRange": {
+            "type": "string",
+            "description": "Range of the port. The available value can be one, multiple or one segment. E.g. `80`, `80,90` and `80-90`. Default to all ports, and confilicts with `protocol_template`."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "ID of the security group to be queried."
+        },
+        "SourceSgid": {
+            "type": "string",
+            "description": "ID of the nested security group, and conflicts with `cidr_ip` and `address_template`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the security group rule. Valid values: `ingress` and `egress`."
+        },
+        "AddressTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddressTemplateDefinition"
+            },
+            "maxItems": 1
+        },
+        "ProtocolTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProtocolTemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Policy",
+        "SecurityGroupId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

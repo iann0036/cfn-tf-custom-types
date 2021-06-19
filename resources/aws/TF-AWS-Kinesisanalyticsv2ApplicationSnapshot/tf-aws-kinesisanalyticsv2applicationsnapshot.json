@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::Kinesisanalyticsv2ApplicationSnapshot",
+    "description": "Manages a Kinesis Analytics v2 Application Snapshot.\nSnapshots are the AWS implementation of [Flink Savepoints](https://ci.apache.org/projects/flink/flink-docs-release-1.11/ops/state/savepoints.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Kinesisanalyticsv2ApplicationSnapshot/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationName": {
+            "type": "string",
+            "description": "The name of an existing  [Kinesis Analytics v2 Application](/docs/providers/aws/r/kinesisanalyticsv2_application.html). Note that the application must be running for a snapshot to be created."
+        },
+        "ApplicationVersionId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SnapshotCreationTimestamp": {
+            "type": "string"
+        },
+        "SnapshotName": {
+            "type": "string",
+            "description": "The name of the application snapshot."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationName",
+        "SnapshotName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApplicationVersionId",
+        "/properties/Id",
+        "/properties/SnapshotCreationTimestamp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

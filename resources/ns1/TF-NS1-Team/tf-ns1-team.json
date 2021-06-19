@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::NS1::Team",
+    "description": "Provides a NS1 Team resource. This can be used to create, modify, and delete\nteams. The credentials used must have the `manage_teams` permission set.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ns1/TF-NS1-Team/docs/README.md",
+    "definitions": {
+        "IpWhitelistDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountManageAccountSettings": {
+            "type": "boolean",
+            "description": "Whether the team can modify account settings."
+        },
+        "AccountManageApikeys": {
+            "type": "boolean",
+            "description": "Whether the team can modify account apikeys."
+        },
+        "AccountManageIpWhitelist": {
+            "type": "boolean",
+            "description": "Whether the team can manage ip whitelist."
+        },
+        "AccountManagePaymentMethods": {
+            "type": "boolean",
+            "description": "Whether the team can modify account payment methods."
+        },
+        "AccountManagePlan": {
+            "type": "boolean",
+            "description": "Whether the team can modify the account plan."
+        },
+        "AccountManageTeams": {
+            "type": "boolean",
+            "description": "Whether the team can modify other teams in the account."
+        },
+        "AccountManageUsers": {
+            "type": "boolean",
+            "description": "Whether the team can modify account users."
+        },
+        "AccountViewActivityLog": {
+            "type": "boolean",
+            "description": "Whether the team can view activity logs."
+        },
+        "AccountViewInvoices": {
+            "type": "boolean",
+            "description": "Whether the team can view invoices."
+        },
+        "DataManageDatafeeds": {
+            "type": "boolean",
+            "description": "Whether the team can modify data feeds."
+        },
+        "DataManageDatasources": {
+            "type": "boolean",
+            "description": "Whether the team can modify data sources."
+        },
+        "DataPushToDatafeeds": {
+            "type": "boolean",
+            "description": "Whether the team can publish to data feeds."
+        },
+        "DhcpManageDhcp": {
+            "type": "boolean",
+            "description": "Whether the team can manage DHCP.\nOnly relevant for the DDI product."
+        },
+        "DhcpViewDhcp": {
+            "type": "boolean",
+            "description": "Whether the team can view DHCP.\nOnly relevant for the DDI product."
+        },
+        "DnsManageZones": {
+            "type": "boolean",
+            "description": "Whether the team can modify the accounts zones."
+        },
+        "DnsViewZones": {
+            "type": "boolean",
+            "description": "Whether the team can view the accounts zones."
+        },
+        "DnsZonesAllow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of zones that the team may access."
+        },
+        "DnsZonesAllowByDefault": {
+            "type": "boolean",
+            "description": "If true, enable the `dns_zones_allow` list, otherwise enable the `dns_zones_deny` list."
+        },
+        "DnsZonesDeny": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of zones that the team may not access."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpamManageIpam": {
+            "type": "boolean",
+            "description": "Whether the team can manage IPAM.\nOnly relevant for the DDI product."
+        },
+        "IpamViewIpam": {
+            "type": "boolean",
+            "description": "Whether the team can view IPAM.\nOnly relevant for the DDI product."
+        },
+        "MonitoringManageJobs": {
+            "type": "boolean",
+            "description": "Whether the team can modify monitoring jobs."
+        },
+        "MonitoringManageLists": {
+            "type": "boolean",
+            "description": "Whether the team can modify notification lists."
+        },
+        "MonitoringViewJobs": {
+            "type": "boolean",
+            "description": "Whether the team can view monitoring jobs."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The free form name of the team."
+        },
+        "SecurityManageActiveDirectory": {
+            "type": "boolean",
+            "description": "Whether the team can manage global active directory.\nOnly relevant for the DDI product."
+        },
+        "SecurityManageGlobal2fa": {
+            "type": "boolean",
+            "description": "Whether the team can manage global two factor authentication."
+        },
+        "IpWhitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpWhitelistDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

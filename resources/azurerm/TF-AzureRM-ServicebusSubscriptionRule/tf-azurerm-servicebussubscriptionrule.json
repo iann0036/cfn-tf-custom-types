@@ -1,0 +1,192 @@
+{
+    "typeName": "TF::AzureRM::ServicebusSubscriptionRule",
+    "description": "Manages a ServiceBus Subscription Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ServicebusSubscriptionRule/docs/README.md",
+    "definitions": {
+        "CorrelationFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string",
+                    "description": "Content type of the message."
+                },
+                "CorrelationId": {
+                    "type": "string",
+                    "description": "Identifier of the correlation."
+                },
+                "Label": {
+                    "type": "string",
+                    "description": "Application specific label."
+                },
+                "MessageId": {
+                    "type": "string",
+                    "description": "Identifier of the message."
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    },
+                    "description": "A list of user defined properties to be included in the filter. Specified as a map of name/value pairs."
+                },
+                "ReplyTo": {
+                    "type": "string",
+                    "description": "Address of the queue to reply to."
+                },
+                "ReplyToSessionId": {
+                    "type": "string",
+                    "description": "Session identifier to reply to."
+                },
+                "SessionId": {
+                    "type": "string",
+                    "description": "Session identifier."
+                },
+                "To": {
+                    "type": "string",
+                    "description": "Address to send to."
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Represents set of actions written in SQL language-based syntax that is performed against a BrokeredMessage."
+        },
+        "FilterType": {
+            "type": "string",
+            "description": "Type of filter to be applied to a BrokeredMessage. Possible values are `SqlFilter` and `CorrelationFilter`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Subscription Rule. Changing this forces a new resource to be created."
+        },
+        "NamespaceName": {
+            "type": "string",
+            "description": "The name of the ServiceBus Namespace in which the ServiceBus Topic exists. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in the ServiceBus Namespace exists. Changing this forces a new resource to be created."
+        },
+        "SqlFilter": {
+            "type": "string",
+            "description": "Represents a filter written in SQL language-based syntax that to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `SqlFilter`."
+        },
+        "SubscriptionName": {
+            "type": "string",
+            "description": "The name of the ServiceBus Subscription in which this Rule should be created. Changing this forces a new resource to be created."
+        },
+        "TopicName": {
+            "type": "string",
+            "description": "The name of the ServiceBus Topic in which the ServiceBus Subscription exists. Changing this forces a new resource to be created."
+        },
+        "CorrelationFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorrelationFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FilterType",
+        "Name",
+        "NamespaceName",
+        "ResourceGroupName",
+        "SubscriptionName",
+        "TopicName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

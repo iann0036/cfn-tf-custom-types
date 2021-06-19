@@ -1,0 +1,436 @@
+{
+    "typeName": "TF::OraclePaaS::DatabaseServiceInstance",
+    "description": "The `oraclepaas_database_service_instance` resource creates and manages a an Oracle Database Cloud Service instance on the Oracle Cloud Platform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oraclepaas/TF-OraclePaaS-DatabaseServiceInstance/docs/README.md",
+    "definitions": {
+        "BackupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "CreateIfMissing": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "DatabaseConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "BackupDestination": {
+                    "type": "string"
+                },
+                "BackupStorageVolumeSize": {
+                    "type": "number"
+                },
+                "CharacterSet": {
+                    "type": "string"
+                },
+                "DataStorageVolumeSize": {
+                    "type": "number"
+                },
+                "DbDemo": {
+                    "type": "string"
+                },
+                "DisasterRecovery": {
+                    "type": "boolean"
+                },
+                "FailoverDatabase": {
+                    "type": "boolean"
+                },
+                "GoldenGate": {
+                    "type": "boolean"
+                },
+                "IsRac": {
+                    "type": "boolean"
+                },
+                "NationalCharacterSet": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "Sid": {
+                    "type": "string"
+                },
+                "SnapshotName": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                },
+                "Timezone": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UsableStorage": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AdminPassword",
+                "UsableStorage"
+            ]
+        },
+        "DefaultAccessRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableDbConsole": {
+                    "type": "boolean"
+                },
+                "EnableDbExpress": {
+                    "type": "boolean"
+                },
+                "EnableDbListener": {
+                    "type": "boolean"
+                },
+                "EnableEmConsole": {
+                    "type": "boolean"
+                },
+                "EnableHttp": {
+                    "type": "boolean"
+                },
+                "EnableHttpSsl": {
+                    "type": "boolean"
+                },
+                "EnableRacDbListener": {
+                    "type": "boolean"
+                },
+                "EnableRacOns": {
+                    "type": "boolean"
+                },
+                "EnableScanListener": {
+                    "type": "boolean"
+                },
+                "EnableSsh": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HybridDisasterRecoveryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "InstantiateFromBackupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "DatabaseId": {
+                    "type": "string"
+                },
+                "DecryptionKey": {
+                    "type": "string"
+                },
+                "OnPremise": {
+                    "type": "boolean"
+                },
+                "ServiceId": {
+                    "type": "string"
+                },
+                "WalletFileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudStorageContainer",
+                "DatabaseId"
+            ]
+        },
+        "StandbyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AvailabilityDomain",
+                "Subnet"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string",
+            "description": "Name of the availability domain within the region where the Oracle Database Cloud Service instance is to be provisioned."
+        },
+        "BringYourOwnLicense": {
+            "type": "boolean",
+            "description": "Specify if you want to use an existing perpetual license to Oracle Database to establish the right to use Oracle Database on the new instance.\nDefault value is `false`."
+        },
+        "CloudStorageContainer": {
+            "type": "string"
+        },
+        "ComputeSiteName": {
+            "type": "string"
+        },
+        "DbaasMonitorUrl": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the Service Instance."
+        },
+        "DesiredState": {
+            "type": "string",
+            "description": "Specifies the desired state of the service instance. Allowed values are `start`, `stop`,\nand `restart`."
+        },
+        "Edition": {
+            "type": "string",
+            "description": "Database edition for the service instance. Possible values are `SE`, `EE`, `EE_HP`, or `EE_EP`."
+        },
+        "EmUrl": {
+            "type": "string"
+        },
+        "GlassfishUrl": {
+            "type": "string"
+        },
+        "HighPerformanceStorage": {
+            "type": "boolean",
+            "description": "Specifies whether the service instance will be provisioned with high performance storage.\nDefault value is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityDomain": {
+            "type": "string"
+        },
+        "IpNetwork": {
+            "type": "string",
+            "description": "This attribute is only applicable to accounts where regions are supported. The three-part name of an IP network to which the service instance is added. For example: /Compute-identity_domain/user/object."
+        },
+        "IpReservations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Groups one or more IP reservations in use on this service instance. This attribute is only applicable to accounts where regions are supported."
+        },
+        "Level": {
+            "type": "string",
+            "description": "Service level for the service instance. Possible values are `BASIC` or `PAAS`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Service Instance."
+        },
+        "NotificationEmail": {
+            "type": "string",
+            "description": "The email address to send notifications around successful or unsuccessful completions of the instance-creation operation."
+        },
+        "Region": {
+            "type": "string",
+            "description": "Specifies the location where the service instance is provisioned (only for accounts where regions are supported)."
+        },
+        "Shape": {
+            "type": "string",
+            "description": "Desired compute shape. Possible values are `oc3`, `oc4`, `oc5`, `oc6`, `oc1m`, `oc2m`, `oc3m`, or `oc4m`."
+        },
+        "SshPublicKey": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Name of the subnet within the region where the Oracle Database Cloud Service instance is to be provisioned."
+        },
+        "SubscriptionType": {
+            "type": "string",
+            "description": "Billing unit. Possible values are `HOURLY` or `MONTHLY`."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "Oracle Database software version; one of: `12.2.0.1`, `12.1.0.2`, or `11.2.0.4`."
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupsDefinition"
+            },
+            "maxItems": 1
+        },
+        "DatabaseConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "DefaultAccessRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultAccessRulesDefinition"
+            },
+            "maxItems": 1
+        },
+        "HybridDisasterRecovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HybridDisasterRecoveryDefinition"
+            },
+            "maxItems": 1
+        },
+        "InstantiateFromBackup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstantiateFromBackupDefinition"
+            },
+            "maxItems": 1
+        },
+        "Standby": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StandbyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Edition",
+        "Name",
+        "Shape",
+        "SshPublicKey",
+        "SubscriptionType",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudStorageContainer",
+        "/properties/ComputeSiteName",
+        "/properties/DbaasMonitorUrl",
+        "/properties/EmUrl",
+        "/properties/GlassfishUrl",
+        "/properties/Id",
+        "/properties/IdentityDomain",
+        "/properties/Status",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/BackupsDefinition/CloudStoragePassword",
+        "/definitions/BackupsDefinition/CloudStorageUsername",
+        "/definitions/DatabaseConfigurationDefinition/AdminPassword",
+        "/definitions/HybridDisasterRecoveryDefinition/CloudStoragePassword",
+        "/definitions/InstantiateFromBackupDefinition/CloudStoragePassword",
+        "/definitions/InstantiateFromBackupDefinition/CloudStorageUsername"
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::ACI::ConfigurationExportPolicy",
+    "description": "Manages ACI Configuration Export Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-ConfigurationExportPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminSt": {
+            "type": "string",
+            "description": "admin state of the export policy\nAllowed values: \"untriggered\", \"triggered\"\n- `annotation` - (Optional) annotation for object configuration_export_policy.\n- `description` - (Optional) Description for object configuration_export_policy.\n- `format` - (Optional) export data format\nAllowed values: \"xml\", \"json\"\n- `include_secure_fields` - (Optional) include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "annotation for object configuration_export_policy.\n- `description` - (Optional) Description for object configuration_export_policy.\n- `format` - (Optional) export data format\nAllowed values: \"xml\", \"json\"\n- `include_secure_fields` - (Optional) include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object configuration_export_policy.\n- `format` - (Optional) export data format\nAllowed values: \"xml\", \"json\"\n- `include_secure_fields` - (Optional) include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "Format": {
+            "type": "string",
+            "description": "export data format\nAllowed values: \"xml\", \"json\"\n- `include_secure_fields` - (Optional) include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeSecureFields": {
+            "type": "string",
+            "description": "include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "MaxSnapshotCount": {
+            "type": "string",
+            "description": "max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "Name": {
+            "type": "string",
+            "description": "name of Object configuration_export_policy.\n- `admin_st` - (Optional) admin state of the export policy\nAllowed values: \"untriggered\", \"triggered\"\n- `annotation` - (Optional) annotation for object configuration_export_policy.\n- `description` - (Optional) Description for object configuration_export_policy.\n- `format` - (Optional) export data format\nAllowed values: \"xml\", \"json\"\n- `include_secure_fields` - (Optional) include_secure_fields for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `max_snapshot_count` - (Optional) max_snapshot_count for object configuration_export_policy.\n- `name_alias` - (Optional) name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "name_alias for object configuration_export_policy.\n- `snapshot` - (Optional) snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "RelationConfigRsExportDestination": {
+            "type": "string",
+            "description": "Relation to class fileRemotePath. Cardinality - ONE_TO_ONE. Type - String.\n- `relation_trig_rs_triggerable` - (Optional) Relation to class trigTriggerable. Cardinality - ONE_TO_ONE. Type - String.\n- `relation_config_rs_remote_path` - (Optional) Relation to class fileRemotePath. Cardinality - N_TO_ONE. Type - String.\n- `relation_config_rs_export_scheduler` - (Optional) Relation to class trigSchedP. Cardinality - ONE_TO_ONE. Type - String."
+        },
+        "RelationConfigRsExportScheduler": {
+            "type": "string",
+            "description": "Relation to class trigSchedP. Cardinality - ONE_TO_ONE. Type - String."
+        },
+        "RelationConfigRsRemotePath": {
+            "type": "string",
+            "description": "Relation to class fileRemotePath. Cardinality - N_TO_ONE. Type - String.\n- `relation_config_rs_export_scheduler` - (Optional) Relation to class trigSchedP. Cardinality - ONE_TO_ONE. Type - String."
+        },
+        "RelationTrigRsTriggerable": {
+            "type": "string",
+            "description": "Relation to class trigTriggerable. Cardinality - ONE_TO_ONE. Type - String.\n- `relation_config_rs_remote_path` - (Optional) Relation to class fileRemotePath. Cardinality - N_TO_ONE. Type - String.\n- `relation_config_rs_export_scheduler` - (Optional) Relation to class trigSchedP. Cardinality - ONE_TO_ONE. Type - String."
+        },
+        "Snapshot": {
+            "type": "string",
+            "description": "snapshot for object configuration_export_policy.\nAllowed values: \"no\", \"yes\"\n- `target_dn` - (Optional) target export object."
+        },
+        "TargetDn": {
+            "type": "string",
+            "description": "target export object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

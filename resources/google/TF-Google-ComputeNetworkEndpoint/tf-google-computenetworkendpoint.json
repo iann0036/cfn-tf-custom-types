@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Google::ComputeNetworkEndpoint",
+    "description": "A Network endpoint represents a IP address and port combination that is\npart of a specific network endpoint group (NEG). NEGs are zonal\ncollections of these endpoints for GCP resources within a\nsingle subnet. **NOTE**: Network endpoints cannot be created outside of a\nnetwork endpoint group.\n\n\nTo get more information about NetworkEndpoint, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkEndpointGroups)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeNetworkEndpoint/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "NetworkEndpointGroup": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Instance",
+        "IpAddress",
+        "NetworkEndpointGroup",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

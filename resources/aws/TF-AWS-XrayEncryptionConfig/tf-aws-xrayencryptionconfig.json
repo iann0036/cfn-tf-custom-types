@@ -1,0 +1,69 @@
+{
+    "typeName": "TF::AWS::XrayEncryptionConfig",
+    "description": "Creates and manages an AWS XRay Encryption Config.\n\n~> **NOTE:** Removing this resource from Terraform has no effect to the encryption configuration within X-Ray.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-XrayEncryptionConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "An AWS KMS customer master key (CMK) ARN."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of encryption. Set to `KMS` to use your own key for encryption. Set to `NONE` for default encryption."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

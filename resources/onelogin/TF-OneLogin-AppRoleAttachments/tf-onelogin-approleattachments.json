@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::OneLogin::AppRoleAttachments",
+    "description": "Manage App Role Attachment resources.\n\nThis resource allows you to create and configure App Roles Attachments. The App Role Attachment is not an API-managed resource and is only a means to attach roles to apps in Terraform to avoid complications with circular dependencies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/onelogin/TF-OneLogin-AppRoleAttachments/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "number",
+            "description": "The id of the App resource to which the role should belong."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RoleId": {
+            "type": "number",
+            "description": "The id of the Role being attached to the App."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "RoleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

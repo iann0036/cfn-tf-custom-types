@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::AWS::ElasticacheGlobalReplicationGroup",
+    "description": "Provides an ElastiCache Global Replication Group resource, which manages replication between two or more Replication Groups in different regions. For more information, see the [ElastiCache User Guide](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElasticacheGlobalReplicationGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActualEngineVersion": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AtRestEncryptionEnabled": {
+            "type": "boolean"
+        },
+        "AuthTokenEnabled": {
+            "type": "boolean"
+        },
+        "CacheNodeType": {
+            "type": "string"
+        },
+        "ClusterEnabled": {
+            "type": "boolean"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersionActual": {
+            "type": "string"
+        },
+        "GlobalReplicationGroupDescription": {
+            "type": "string"
+        },
+        "GlobalReplicationGroupId": {
+            "type": "string"
+        },
+        "GlobalReplicationGroupIdSuffix": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrimaryReplicationGroupId": {
+            "type": "string"
+        },
+        "TransitEncryptionEnabled": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GlobalReplicationGroupIdSuffix",
+        "PrimaryReplicationGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActualEngineVersion",
+        "/properties/Arn",
+        "/properties/AtRestEncryptionEnabled",
+        "/properties/AuthTokenEnabled",
+        "/properties/CacheNodeType",
+        "/properties/ClusterEnabled",
+        "/properties/Engine",
+        "/properties/EngineVersionActual",
+        "/properties/GlobalReplicationGroupId",
+        "/properties/Id",
+        "/properties/TransitEncryptionEnabled"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

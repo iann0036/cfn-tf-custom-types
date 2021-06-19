@@ -1,0 +1,372 @@
+{
+    "typeName": "TF::Google::ComputeInstanceGroupManager",
+    "description": "The Google Compute Engine Instance Group Manager API creates and manages pools\nof homogeneous Compute Engine virtual machine instances from a common instance\ntemplate. For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/manager)\nand [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroupManagers)\n\n~> **Note:** Use [google_compute_region_instance_group_manager](/docs/providers/google/r/compute_region_instance_group_manager.html) to create a regional (multi-zone) instance group manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeInstanceGroupManager/docs/README.md",
+    "definitions": {
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllEffective": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "StatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HasStatefulConfig": {
+                    "type": "boolean"
+                },
+                "PerInstanceConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition"
+                    }
+                }
+            }
+        },
+        "StatusDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsReached": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "StatusDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsStable": {
+                    "type": "boolean"
+                },
+                "Stateful": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition2"
+                    }
+                },
+                "VersionTarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition3"
+                    }
+                }
+            }
+        },
+        "AutoHealingPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheck": {
+                    "type": "string",
+                    "description": "The health check resource that signals autohealing."
+                },
+                "InitialDelaySec": {
+                    "type": "number",
+                    "description": "The number of seconds that the managed instance group waits before\nit applies autohealing policies to new instances or recently recreated instances. Between 0 and 3600."
+                }
+            },
+            "required": [
+                "HealthCheck",
+                "InitialDelaySec"
+            ]
+        },
+        "NamedPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Port"
+            ]
+        },
+        "StatefulDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteRule": {
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpdatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurgeFixed": {
+                    "type": "number",
+                    "description": ", The maximum number of instances that can be created above the specified targetSize during the update process. Conflicts with `max_surge_percent`. If neither is set, defaults to 1."
+                },
+                "MaxSurgePercent": {
+                    "type": "number",
+                    "description": ", The maximum number of instances(calculated as percentage) that can be created above the specified targetSize during the update process. Conflicts with `max_surge_fixed`."
+                },
+                "MaxUnavailableFixed": {
+                    "type": "number",
+                    "description": ", The maximum number of instances that can be unavailable during the update process. Conflicts with `max_unavailable_percent`. If neither is set, defaults to 1."
+                },
+                "MaxUnavailablePercent": {
+                    "type": "number",
+                    "description": ", The maximum number of instances(calculated as percentage) that can be unavailable during the update process. Conflicts with `max_unavailable_fixed`."
+                },
+                "MinReadySec": {
+                    "type": "number",
+                    "description": ", Minimum number of seconds to wait for after a newly created instance becomes available. This value must be from range [0, 3600]."
+                },
+                "MinimalAction": {
+                    "type": "string",
+                    "description": "- Minimal action to be taken on an instance. You can specify either `RESTART` to restart existing instances or `REPLACE` to delete and create new instances from the target template. If you specify a `RESTART`, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action."
+                },
+                "ReplacementMethod": {
+                    "type": "string",
+                    "description": ", The instance replacement method for managed instance groups. Valid values are: \"RECREATE\", \"SUBSTITUTE\". If SUBSTITUTE (default), the group replaces VM instances with new instances that have randomly generated names. If RECREATE, instance names are preserved.  You must also set max_unavailable_fixed or max_unavailable_percent to be greater than 0.\n- - -."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "- The type of update process. You can specify either `PROACTIVE` so that the instance group manager proactively executes actions in order to bring instances to their target versions or `OPPORTUNISTIC` so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls)."
+                }
+            },
+            "required": [
+                "MinimalAction",
+                "Type"
+            ]
+        },
+        "VersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceTemplate": {
+                    "type": "string",
+                    "description": "- The full URL to an instance template from which all new instances of this version will be created."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "- Version name."
+                },
+                "TargetSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetSizeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "InstanceTemplate"
+            ]
+        },
+        "TargetSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fixed": {
+                    "type": "number",
+                    "description": ", The number of instances which are managed for this version. Conflicts with `percent`."
+                },
+                "Percent": {
+                    "type": "number",
+                    "description": ", The number of instances (calculated as percentage) which are managed for this version. Conflicts with `fixed`.\nNote that when using `percent`, rounding will be in favor of explicitly set `target_size` values; a managed instance group with 2 instances and 2 `version`s,\none of which has a `target_size.percent` of `60` will create 2 instances of that `version`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseInstanceName": {
+            "type": "string",
+            "description": "The base instance name to use for\ninstances in this group. The value must be a valid\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt) name. Supported characters\nare lowercase letters, numbers, and hyphens (-). Instances are named by\nappending a hyphen and a random four-character string to the base instance\nname."
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional textual description of the instance\ngroup manager."
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceGroup": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the instance group manager. Must be 1-63\ncharacters long and comply with\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters\ninclude lowercase letters, numbers, and hyphens."
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition4"
+            }
+        },
+        "TargetPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The full URL of all target pools to which new\ninstances in the group are added. Updating the target pools attribute does\nnot affect existing instances."
+        },
+        "TargetSize": {
+            "type": "number",
+            "description": "The target number of running instances for this managed\ninstance group. This value should always be explicitly set unless this resource is attached to\nan autoscaler, in which case it should never be set. Defaults to `0`."
+        },
+        "WaitForInstances": {
+            "type": "boolean",
+            "description": "Whether to wait for all instances to be created/updated before\nreturning. Note that if this is set to true and the operation does not succeed, Terraform will\ncontinue trying until it times out."
+        },
+        "WaitForInstancesStatus": {
+            "type": "string",
+            "description": "When used with `wait_for_instances` it specifies the status to wait for.\nWhen `STABLE` is specified this resource will wait until the instances are stable before returning. When `UPDATED` is\nset, it will wait for the version target to be reached and any per instance configs to be effective as well as all\ninstances to be stable before returning. The possible values are `STABLE` and `UPDATED`."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The zone that instances in this group should be created\nin."
+        },
+        "AutoHealingPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoHealingPoliciesDefinition"
+            },
+            "maxItems": 1
+        },
+        "NamedPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NamedPortDefinition"
+            }
+        },
+        "StatefulDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StatefulDiskDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Version": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BaseInstanceName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/InstanceGroup",
+        "/properties/Operation",
+        "/properties/SelfLink",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

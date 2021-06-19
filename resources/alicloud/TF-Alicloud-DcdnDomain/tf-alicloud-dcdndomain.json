@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::Alicloud::DcdnDomain",
+    "description": "You can use DCDN to improve the overall performance of your website and accelerate content delivery to improve user experience. For information about Alicloud DCDN Domain and how to use it, see [What is Resource Alicloud DCDN Domain](https://www.alibabacloud.com/help/en/doc-detail/130628.htm).\n\n-> **NOTE:** Available in v1.94.0+.\n\n-> **NOTE:** You must activate the Dynamic Route for CDN (DCDN) service before you create an accelerated domain.\n\n-> **NOTE:** Make sure that you have obtained an Internet content provider (ICP) filling for the accelerated domain.\n\n-> **NOTE:** If the origin content is not saved on Alibaba Cloud, the content must be reviewed by Alibaba Cloud. The review will be completed by the next working day after you submit the application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DcdnDomain/docs/README.md",
+    "definitions": {
+        "SourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertName": {
+            "type": "string",
+            "description": "Indicates the name of the certificate if the HTTPS protocol is enabled."
+        },
+        "CertType": {
+            "type": "string",
+            "description": "The type of the certificate. Valid values:\n`free`: a free certificate.\n`cas`: a certificate purchased from Alibaba Cloud SSL Certificates Service.\n`upload`: a user uploaded certificate."
+        },
+        "CheckUrl": {
+            "type": "string",
+            "description": "The URL that is used to test the accessibility of the origin."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The name of the accelerated domain."
+        },
+        "ForceSet": {
+            "type": "string",
+            "description": "Specifies whether to check the certificate name for duplicates. If you set the value to 1, the system does not perform the check and overwrites the information of the existing certificate with the same name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The ID of the resource group."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "The acceleration region."
+        },
+        "SecurityToken": {
+            "type": "string"
+        },
+        "SslPri": {
+            "type": "string",
+            "description": "The private key. Specify this parameter only if you enable the SSL certificate."
+        },
+        "SslProtocol": {
+            "type": "string",
+            "description": "Indicates whether the SSL certificate is enabled. Valid values: `on` enabled, `off` disabled."
+        },
+        "SslPub": {
+            "type": "string",
+            "description": "Indicates the public key of the certificate if the HTTPS protocol is enabled."
+        },
+        "Status": {
+            "type": "string",
+            "description": "The status of DCDN Domain. Valid values: `online`, `offline`. Default to `online`."
+        },
+        "TopLevelDomain": {
+            "type": "string",
+            "description": "The top-level domain name."
+        },
+        "Sources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SourcesDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::Wirelesscontrollerhotspot20H2qpwanmetric",
+    "description": "Configure WAN metrics.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Wirelesscontrollerhotspot20H2qpwanmetric/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DownlinkLoad": {
+            "type": "number",
+            "description": "Downlink load."
+        },
+        "DownlinkSpeed": {
+            "type": "number",
+            "description": "Downlink speed (in kilobits/s)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinkAtCapacity": {
+            "type": "string",
+            "description": "Link at capacity. Valid values: `enable`, `disable`."
+        },
+        "LinkStatus": {
+            "type": "string",
+            "description": "Link status. Valid values: `up`, `down`, `in-test`."
+        },
+        "LoadMeasurementDuration": {
+            "type": "number",
+            "description": "Load measurement duration (in tenths of a second)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "WAN metric name."
+        },
+        "SymmetricWanLink": {
+            "type": "string",
+            "description": "WAN link symmetry. Valid values: `symmetric`, `asymmetric`."
+        },
+        "UplinkLoad": {
+            "type": "number",
+            "description": "Uplink load."
+        },
+        "UplinkSpeed": {
+            "type": "number",
+            "description": "Uplink speed (in kilobits/s)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

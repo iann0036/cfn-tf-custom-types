@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::OPC::LbaasListener",
+    "description": "The `opc_lbaas_listener` resource creates and manages a Load Balancer Classic Listener for a Load Balancer Classic instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-LbaasListener/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BalancerProtocol": {
+            "type": "string",
+            "description": "transport protocol that will be accepted for all incoming requests to the selected load balancer listener. `HTTP` or `HTTPS`. If set to HTTPS then you must also set the server `certificates`."
+        },
+        "Certificates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The URI of the server security certificate."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Boolean flag to enable or disable the Listener. Default is `true` (enabled)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancer": {
+            "type": "string",
+            "description": "The parent Load Balancer the Listener."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Listener."
+        },
+        "OperationDetails": {
+            "type": "string"
+        },
+        "ParentListener": {
+            "type": "string"
+        },
+        "PathPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of paths to configure the listener to accept only requests that are targeted to a specific path within the URI of the request."
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port on which the Load Balancer is listening."
+        },
+        "ServerPool": {
+            "type": "string",
+            "description": "URI of the Server Pool resource to which the load balancer distributes requests."
+        },
+        "ServerProtocol": {
+            "type": "string",
+            "description": "The protocol to be used for routing traffic to the origin servers in the server pool. `HTTP` or `HTTPS`. If set to `HTTPS` then you must include a Trusted Certificate Policy in the `policies`."
+        },
+        "State": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "VirtualHosts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Configure the listener to only accept URI requests that include the host names listed in this field."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BalancerProtocol",
+        "LoadBalancer",
+        "Name",
+        "Port",
+        "ServerProtocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OperationDetails",
+        "/properties/ParentListener",
+        "/properties/State",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

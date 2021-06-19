@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::Gridscale::K8s",
+    "description": "Provides a k8s cluster resource. This can be used to create, modify, and delete k8s cluster resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-K8s/docs/README.md",
+    "definitions": {
+        "ListenPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "NodePoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cores": {
+                    "type": "number"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NodeCount": {
+                    "type": "number"
+                },
+                "Storage": {
+                    "type": "number"
+                },
+                "StorageType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cores",
+                "Memory",
+                "Name",
+                "NodeCount",
+                "Storage",
+                "StorageType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kubeconfig": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "ListenPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ListenPortDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the node pool.\n* `node_count` - Number of worker nodes.\n* `cores` - (Immutable) Cores per worker node.\n* `memory` - (Immutable) Memory per worker node (in GiB).\n* `storage` - (Immutable) Storage per worker node (in GiB).\n* `storage_type` - (Immutable) Storage type (one of storage, storage_high, storage_insane)."
+        },
+        "NetworkUuid": {
+            "type": "string"
+        },
+        "Release": {
+            "type": "string",
+            "description": "The Kubernetes release of this instance. Define which release will be used to create the cluster. For convenience, please use [gscloud](https://github.com/gridscale/gscloud) to get the list of available release numbers."
+        },
+        "SecurityZoneUuid": {
+            "type": "string",
+            "description": "Security zone UUID linked to the Kubernetes resource. If `security_zone_uuid` is not set, the default security zone will be created (if it doesn't exist) and linked. A change of this argument necessitates the re-creation of the resource."
+        },
+        "ServiceTemplateUuid": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UsageInMinutes": {
+            "type": "number"
+        },
+        "NodePool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodePoolDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Release"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Kubeconfig",
+        "/properties/ListenPort",
+        "/properties/NetworkUuid",
+        "/properties/ServiceTemplateUuid",
+        "/properties/Status",
+        "/properties/UsageInMinutes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Kubeconfig"
+    ]
+}

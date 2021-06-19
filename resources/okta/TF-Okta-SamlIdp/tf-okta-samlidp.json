@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::Okta::SamlIdp",
+    "description": "CloudFormation equivalent of okta_saml_idp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-SamlIdp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountLinkAction": {
+            "type": "string"
+        },
+        "AccountLinkGroupInclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AcsBinding": {
+            "type": "string"
+        },
+        "AcsType": {
+            "type": "string"
+        },
+        "Audience": {
+            "type": "string"
+        },
+        "DeprovisionedAction": {
+            "type": "string"
+        },
+        "GroupsAction": {
+            "type": "string"
+        },
+        "GroupsAssignment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "GroupsAttribute": {
+            "type": "string"
+        },
+        "GroupsFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "IssuerMode": {
+            "type": "string"
+        },
+        "Kid": {
+            "type": "string"
+        },
+        "MaxClockSkew": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameFormat": {
+            "type": "string"
+        },
+        "ProfileMaster": {
+            "type": "boolean"
+        },
+        "ProvisioningAction": {
+            "type": "string"
+        },
+        "RequestSignatureAlgorithm": {
+            "type": "string"
+        },
+        "RequestSignatureScope": {
+            "type": "string"
+        },
+        "ResponseSignatureAlgorithm": {
+            "type": "string"
+        },
+        "ResponseSignatureScope": {
+            "type": "string"
+        },
+        "SsoBinding": {
+            "type": "string"
+        },
+        "SsoDestination": {
+            "type": "string"
+        },
+        "SsoUrl": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubjectFilter": {
+            "type": "string"
+        },
+        "SubjectFormat": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubjectMatchAttribute": {
+            "type": "string"
+        },
+        "SubjectMatchType": {
+            "type": "string"
+        },
+        "SuspendedAction": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UsernameTemplate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Issuer",
+        "Kid",
+        "Name",
+        "SsoUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Audience",
+        "/properties/Id",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

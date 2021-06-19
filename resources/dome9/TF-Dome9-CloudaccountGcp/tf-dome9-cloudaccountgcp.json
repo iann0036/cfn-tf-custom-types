@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Dome9::CloudaccountGcp",
+    "description": "This resource is used to onboard GCP cloud accounts to Dome9. This is the first and pre-requisite step in order to apply  Dome9 features, such as compliance testing, on the account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-CloudaccountGcp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientEmail": {
+            "type": "string",
+            "description": "GCP client email."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Client id."
+        },
+        "ClientX509CertUrl": {
+            "type": "string",
+            "description": "client x509 certificate URL."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "The domain name."
+        },
+        "GsuiteUser": {
+            "type": "string",
+            "description": "The Gsuite user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Google account name in Dome9."
+        },
+        "OrganizationalUnitId": {
+            "type": "string",
+            "description": "Organizational Unit that this cloud account will be attached to."
+        },
+        "OrganizationalUnitName": {
+            "type": "string"
+        },
+        "OrganizationalUnitPath": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "Private key."
+        },
+        "PrivateKeyId": {
+            "type": "string",
+            "description": "Private key ID."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Project ID."
+        },
+        "Vendor": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientEmail",
+        "ClientId",
+        "ClientX509CertUrl",
+        "Name",
+        "PrivateKey",
+        "PrivateKeyId",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OrganizationalUnitName",
+        "/properties/OrganizationalUnitPath",
+        "/properties/Vendor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKey",
+        "/properties/PrivateKeyId"
+    ]
+}

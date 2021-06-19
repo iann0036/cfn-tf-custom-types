@@ -1,0 +1,498 @@
+{
+    "typeName": "TF::AzureRM::MonitorAutoscaleSetting",
+    "description": "Manages a AutoScale Setting which can be applied to Virtual Machine Scale Sets, App Services and other scalable resources.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorAutoscaleSetting/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NotificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EmailDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Webhook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebhookDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the profile."
+                },
+                "Capacity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "FixedDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedDateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Recurrence": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecurrenceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomEmails": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies a list of custom email addresses to which the email notifications will be sent."
+                },
+                "SendToSubscriptionAdministrator": {
+                    "type": "boolean",
+                    "description": "Should email notifications be sent to the subscription administrator? Defaults to `false`."
+                },
+                "SendToSubscriptionCoAdministrator": {
+                    "type": "boolean",
+                    "description": "Should email notifications be sent to the subscription co-administrator? Defaults to `false`."
+                }
+            },
+            "required": []
+        },
+        "WebhookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    },
+                    "description": "A map of settings."
+                },
+                "ServiceUri": {
+                    "type": "string",
+                    "description": "The HTTPS URI which should receive scale notifications."
+                }
+            },
+            "required": [
+                "ServiceUri"
+            ]
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CapacityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "number",
+                    "description": "The number of instances that are available for scaling if metrics are not available for evaluation. The default is only used if the current instance count is lower than the default. Valid values are between `0` and `1000`."
+                },
+                "Maximum": {
+                    "type": "number",
+                    "description": "The maximum number of instances for this resource. Valid values are between `0` and `1000`."
+                },
+                "Minimum": {
+                    "type": "number",
+                    "description": "The minimum number of instances for this resource. Valid values are between `0` and `1000`."
+                }
+            },
+            "required": [
+                "Default",
+                "Maximum",
+                "Minimum"
+            ]
+        },
+        "FixedDateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string",
+                    "description": "Specifies the end date for the profile, formatted as an RFC3339 date string."
+                },
+                "Start": {
+                    "type": "string",
+                    "description": "Specifies the start date for the profile, formatted as an RFC3339 date string."
+                },
+                "Timezone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "RecurrenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of days that this profile takes effect on. Possible values include `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` and `Sunday`."
+                },
+                "Hours": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "A list containing a single item, which specifies the Hour interval at which this recurrence should be triggered (in 24-hour time). Possible values are from `0` to `23`."
+                },
+                "Minutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "A list containing a single item which specifies the Minute interval at which this recurrence should be triggered."
+                },
+                "Timezone": {
+                    "type": "string",
+                    "description": "The Time Zone used for the `hours` field. A list of [possible values can be found here](https://msdn.microsoft.com/en-us/library/azure/dn931928.aspx). Defaults to `UTC`."
+                }
+            },
+            "required": [
+                "Days",
+                "Hours",
+                "Minutes"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricTrigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricTriggerDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ScaleAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScaleActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetricTriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string",
+                    "description": "The name of the metric that defines what the rule monitors, such as `Percentage CPU` for `Virtual Machine Scale Sets` and `CpuPercentage` for `App Service Plan`."
+                },
+                "MetricNamespace": {
+                    "type": "string",
+                    "description": "The namespace of the metric that defines what the rule monitors, such as `microsoft.compute/virtualmachinescalesets` for `Virtual Machine Scale Sets`."
+                },
+                "MetricResourceId": {
+                    "type": "string",
+                    "description": "The ID of the Resource which the Rule monitors."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "Specifies the operator used to compare the metric data and threshold. Possible values are: `Equals`, `NotEquals`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan`, `LessThanOrEqual`."
+                },
+                "Statistic": {
+                    "type": "string",
+                    "description": "Specifies how the metrics from multiple instances are combined. Possible values are `Average`, `Min` and `Max`."
+                },
+                "Threshold": {
+                    "type": "number",
+                    "description": "Specifies the threshold of the metric that triggers the scale action."
+                },
+                "TimeAggregation": {
+                    "type": "string",
+                    "description": "Specifies how the data that's collected should be combined over time. Possible values include `Average`, `Count`, `Maximum`, `Minimum`, `Last` and `Total`. Defaults to `Average`."
+                },
+                "TimeGrain": {
+                    "type": "string",
+                    "description": "Specifies the granularity of metrics that the rule monitors, which must be one of the pre-defined values returned from the metric definitions for the metric. This value must be between 1 minute and 12 hours an be formatted as an ISO 8601 string."
+                },
+                "TimeWindow": {
+                    "type": "string",
+                    "description": "Specifies the time range for which data is collected, which must be greater than the delay in metric collection (which varies from resource to resource). This value must be between 5 minutes and 12 hours and be formatted as an ISO 8601 string."
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "MetricResourceId",
+                "Operator",
+                "Statistic",
+                "Threshold",
+                "TimeAggregation",
+                "TimeGrain",
+                "TimeWindow"
+            ]
+        },
+        "ScaleActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cooldown": {
+                    "type": "string",
+                    "description": "The amount of time to wait since the last scaling action before this action occurs. Must be between 1 minute and 1 week and formatted as a ISO 8601 string."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "The scale direction. Possible values are `Increase` and `Decrease`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of action that should occur. Possible values are `ChangeCount`, `ExactCount` and `PercentChangeCount`."
+                },
+                "Value": {
+                    "type": "number",
+                    "description": "The number of instances involved in the scaling action. Defaults to `1`."
+                }
+            },
+            "required": [
+                "Cooldown",
+                "Direction",
+                "Type",
+                "Value"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the dimension."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "The dimension operator. Possible values are `Equals` and `NotEquals`. `Equals` means being equal to any of the values. `NotEquals` means being not equal to any of the values."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of dimension values."
+                }
+            },
+            "required": [
+                "Name",
+                "Operator",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Specifies whether automatic scaling is enabled for the target resource. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the AutoScale Setting should exist. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the AutoScale Setting. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in the AutoScale Setting should be created. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TargetResourceId": {
+            "type": "string",
+            "description": "Specifies the resource ID of the resource that the autoscale setting should be added to."
+        },
+        "Notification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Profile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProfileDefinition"
+            },
+            "maxItems": 20,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "TargetResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "typeName": "TF::AzureRM::MonitorDiagnosticSetting",
+    "description": "Manages a Diagnostic Setting for an existing Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorDiagnosticSetting/docs/README.md",
+    "definitions": {
+        "LogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "The name of a Diagnostic Log Category for this Resource."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is this Diagnostic Log enabled? Defaults to `true`."
+                },
+                "RetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Category"
+            ]
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string",
+                    "description": "The name of a Diagnostic Metric Category for this Resource."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is this Diagnostic Metric enabled? Defaults to `true`."
+                },
+                "RetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetentionPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Category"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number",
+                    "description": "The number of days for which this Retention Policy should apply."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is this Retention Policy enabled?."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EventhubAuthorizationRuleId": {
+            "type": "string",
+            "description": "Specifies the ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data. Changing this forces a new resource to be created."
+        },
+        "EventhubName": {
+            "type": "string",
+            "description": "Specifies the name of the Event Hub where Diagnostics Data should be sent. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogAnalyticsDestinationType": {
+            "type": "string",
+            "description": "When set to 'Dedicated' logs sent to a Log Analytics workspace will go into resource specific tables, instead of the legacy AzureDiagnostics table."
+        },
+        "LogAnalyticsWorkspaceId": {
+            "type": "string",
+            "description": "Specifies the ID of a Log Analytics Workspace where Diagnostics Data should be sent."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Diagnostic Setting. Changing this forces a new resource to be created."
+        },
+        "StorageAccountId": {
+            "type": "string",
+            "description": "The ID of the Storage Account where logs should be sent. Changing this forces a new resource to be created."
+        },
+        "TargetResourceId": {
+            "type": "string",
+            "description": "The ID of an existing Resource on which to configure Diagnostic Settings. Changing this forces a new resource to be created."
+        },
+        "Log": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogDefinition"
+            }
+        },
+        "Metric": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetricDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TargetResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,211 @@
+{
+    "typeName": "TF::NSXT::LbHttpsMonitor",
+    "description": "Provides a resource to configure lb https monitor on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LbHttpsMonitor/docs/README.md",
+    "definitions": {
+        "RequestHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateChainDepth": {
+            "type": "number",
+            "description": "Authentication depth is used to set the verification depth in the server certificates chain."
+        },
+        "Ciphers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of supported SSL ciphers."
+        },
+        "ClientCertificateId": {
+            "type": "string",
+            "description": "Client certificate can be specified to support client authentication."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "FallCount": {
+            "type": "number",
+            "description": "Number of consecutive checks that must fail before marking it down."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The frequency at which the system issues the monitor check (in seconds)."
+        },
+        "IsSecure": {
+            "type": "boolean"
+        },
+        "MonitorPort": {
+            "type": "string",
+            "description": "If the monitor port is specified, it would override pool member port setting for healthcheck. A port range is not supported."
+        },
+        "Protocols": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "SSL versions TLS1.1 and TLS1.2 are supported and enabled by default. SSLv2, SSLv3, and TLS1.0 are supported, but disabled by default."
+        },
+        "RequestBody": {
+            "type": "string",
+            "description": "String to send as HTTP health check request body. Valid only for certain HTTP methods like POST."
+        },
+        "RequestMethod": {
+            "type": "string",
+            "description": "Health check method for HTTP monitor type. Valid values are GET, HEAD, PUT, POST and OPTIONS."
+        },
+        "RequestUrl": {
+            "type": "string",
+            "description": "URL used for HTTP monitor."
+        },
+        "RequestVersion": {
+            "type": "string",
+            "description": "HTTP request version. Valid values are HTTP_VERSION_1_0 and HTTP_VERSION_1_1."
+        },
+        "ResponseBody": {
+            "type": "string",
+            "description": "If response body is specified, healthcheck HTTP response body is matched against the specified string and server is considered healthy only if there is a match (regular expressions not supported). If response body string is not specified, HTTP healthcheck is considered successful if the HTTP response status code is among configured values."
+        },
+        "ResponseStatusCodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "HTTP response status code should be a valid HTTP status code."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RiseCount": {
+            "type": "number",
+            "description": "Number of consecutive checks that must pass before marking it up."
+        },
+        "ServerAuth": {
+            "type": "string",
+            "description": "Server authentication mode - REQUIRED or IGNORE."
+        },
+        "ServerAuthCaIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "If server auth type is REQUIRED, server certificate must be signed by one of the trusted Certificate Authorities (CAs), also referred to as root CAs, whose self signed certificates are specified."
+        },
+        "ServerAuthCrlIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A Certificate Revocation List (CRL) can be specified in the server-side SSL profile binding to disallow compromised server certificates."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Number of seconds the target has to respond to the monitor request."
+        },
+        "RequestHeader": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestHeaderDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IsSecure",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

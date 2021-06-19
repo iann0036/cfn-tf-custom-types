@@ -1,0 +1,171 @@
+{
+    "typeName": "TF::AzureRM::CostManagementExportResourceGroup",
+    "description": "Manages an Azure Cost Management Export for a Resource Group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-CostManagementExportResourceGroup/docs/README.md",
+    "definitions": {
+        "DeliveryInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerName": {
+                    "type": "string",
+                    "description": "The name of the container where exports will be uploaded."
+                },
+                "RootFolderPath": {
+                    "type": "string",
+                    "description": "The path of the directory where exports will be uploaded."
+                },
+                "StorageAccountId": {
+                    "type": "string",
+                    "description": "The storage account id where exports will be delivered."
+                }
+            },
+            "required": [
+                "ContainerName",
+                "RootFolderPath",
+                "StorageAccountId"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TimeFrame": {
+                    "type": "string",
+                    "description": "The time frame for pulling data for the query. If custom, then a specific time period must be provided. Possible values include: `WeekToDate`, `MonthToDate`, `YearToDate`, `TheLastWeek`, `TheLastMonth`, `TheLastYear`, `Custom`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of the query."
+                }
+            },
+            "required": [
+                "TimeFrame",
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "Is the cost management export active? Default is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Cost Management Export. Changing this forces a new resource to be created."
+        },
+        "RecurrencePeriodEnd": {
+            "type": "string",
+            "description": "The date the export will stop capturing information."
+        },
+        "RecurrencePeriodStart": {
+            "type": "string",
+            "description": "The date the export will start capturing information."
+        },
+        "RecurrenceType": {
+            "type": "string",
+            "description": "How often the requested information will be exported. Valid values include `Annually`, `Daily`, `Monthly`, `Weekly`."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The id of the resource group in which to export information."
+        },
+        "DeliveryInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeliveryInfoDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Query": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RecurrencePeriodEnd",
+        "RecurrencePeriodStart",
+        "RecurrenceType",
+        "ResourceGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

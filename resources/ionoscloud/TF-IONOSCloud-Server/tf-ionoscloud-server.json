@@ -1,0 +1,286 @@
+{
+    "typeName": "TF::IONOSCloud::Server",
+    "description": "Manages a Server on IonosCloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ionoscloud/TF-IONOSCloud-Server/docs/README.md",
+    "definitions": {
+        "NicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dhcp": {
+                    "type": "boolean"
+                },
+                "FirewallActive": {
+                    "type": "boolean"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Lan": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Nat": {
+                    "type": "boolean"
+                },
+                "Firewall": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FirewallDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Lan"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Default": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "Bus": {
+                    "type": "string"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "ImageName": {
+                    "type": "string"
+                },
+                "ImagePassword": {
+                    "type": "string"
+                },
+                "LicenceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "SshKeyPath": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DiskType",
+                "Size"
+            ]
+        },
+        "FirewallDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IcmpCode": {
+                    "type": "string"
+                },
+                "IcmpType": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Ips": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PortRangeEnd": {
+                    "type": "number"
+                },
+                "PortRangeStart": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourceIp": {
+                    "type": "string"
+                },
+                "SourceMac": {
+                    "type": "string"
+                },
+                "TargetIp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "BootCdrom": {
+            "type": "string"
+        },
+        "BootImage": {
+            "type": "string"
+        },
+        "BootVolume": {
+            "type": "string"
+        },
+        "Cores": {
+            "type": "number"
+        },
+        "CpuFamily": {
+            "type": "string"
+        },
+        "DatacenterId": {
+            "type": "string"
+        },
+        "FirewallruleId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageName": {
+            "type": "string"
+        },
+        "ImagePassword": {
+            "type": "string"
+        },
+        "LicenceType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PrimaryIp": {
+            "type": "string"
+        },
+        "PrimaryNic": {
+            "type": "string"
+        },
+        "Ram": {
+            "type": "number"
+        },
+        "SshKeyPath": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Nic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Volume": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VolumeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cores",
+        "DatacenterId",
+        "Name",
+        "Ram"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BootVolume",
+        "/properties/FirewallruleId",
+        "/properties/Id",
+        "/properties/PrimaryIp",
+        "/properties/PrimaryNic"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ImagePassword"
+    ]
+}

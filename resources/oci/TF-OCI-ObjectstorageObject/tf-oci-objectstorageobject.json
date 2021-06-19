@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::OCI::ObjectstorageObject",
+    "description": "This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.\n\nCreates a new object or overwrites an existing object with the same name. The maximum object size allowed by\nPutObject is 50 GiB.\n\nSee [Object Names](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)\nfor object naming requirements. \n\nSee [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)\nfor request signature requirements.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ObjectstorageObject/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SourceUriDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "DestinationObjectIfMatchEtag": {
+                    "type": "string"
+                },
+                "DestinationObjectIfNoneMatchEtag": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Object": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SourceObjectIfMatchEtag": {
+                    "type": "string"
+                },
+                "SourceVersionId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Namespace",
+                "Object",
+                "Region"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`."
+        },
+        "CacheControl": {
+            "type": "string",
+            "description": "The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions."
+        },
+        "Content": {
+            "type": "string",
+            "description": "The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined."
+        },
+        "ContentDisposition": {
+            "type": "string",
+            "description": "The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser."
+        },
+        "ContentEncoding": {
+            "type": "string",
+            "description": "The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object."
+        },
+        "ContentLanguage": {
+            "type": "string",
+            "description": "The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language."
+        },
+        "ContentLength": {
+            "type": "string",
+            "description": "(Updatable) The content length of the body."
+        },
+        "ContentMd5": {
+            "type": "string",
+            "description": "(Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:."
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "DeleteAllObjectVersions": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Object": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "StorageTier": {
+            "type": "string"
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "WorkRequestId": {
+            "type": "string"
+        },
+        "SourceUriDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceUriDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Namespace",
+        "Object"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ContentLength",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/VersionId",
+        "/properties/WorkRequestId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

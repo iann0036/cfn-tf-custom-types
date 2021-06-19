@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::OVH::MeIdentityUser",
+    "description": "Creates an identity user.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-MeIdentityUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Creation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "User description."
+        },
+        "Email": {
+            "type": "string",
+            "description": "User's email."
+        },
+        "Group": {
+            "type": "string",
+            "description": "User's group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdate": {
+            "type": "string"
+        },
+        "Login": {
+            "type": "string",
+            "description": "User's login suffix."
+        },
+        "Password": {
+            "type": "string",
+            "description": "User's password."
+        },
+        "PasswordLastUpdate": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "Login",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Creation",
+        "/properties/Id",
+        "/properties/LastUpdate",
+        "/properties/PasswordLastUpdate",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

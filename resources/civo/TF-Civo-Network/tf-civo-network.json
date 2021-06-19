@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Civo::Network",
+    "description": "CloudFormation equivalent of civo_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-Network/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Default": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Default",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

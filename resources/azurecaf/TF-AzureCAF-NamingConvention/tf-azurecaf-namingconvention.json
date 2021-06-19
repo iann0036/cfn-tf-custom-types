@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::AzureCAF::NamingConvention",
+    "description": "The resource naming_convention implements a set of methodologies to apply consistent resource naming using the default Microsoft Cloud Adoption Framework for Azure recommendations as per https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging.\n\nThe naming_convention is the initial resource released as part of the azurecaf provider, the naming_convention supports a fixed set of resources as described in the documention. In order to provider more flexibility and support the large breadth of Azure resources available you can use the azurecaf_name resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurecaf/TF-AzureCAF-NamingConvention/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Convention": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxLength": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Postfix": {
+            "type": "string"
+        },
+        "Prefix": {
+            "type": "string"
+        },
+        "Prefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceType": {
+            "type": "string"
+        },
+        "Result": {
+            "type": "string"
+        },
+        "Suffixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Result"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

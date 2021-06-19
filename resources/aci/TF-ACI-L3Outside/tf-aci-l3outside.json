@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::ACI::L3Outside",
+    "description": "Manages ACI L3 Outside",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3Outside/docs/README.md",
+    "definitions": {
+        "RelationL3extRsDampeningPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Af": {
+                    "type": "string"
+                },
+                "TnRtctrlProfileName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Af",
+                "TnRtctrlProfileName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "annotation for object l3_outside.\n- `enforce_rtctrl` - (Optional) enforce route control type. Allowed values are \"import\" and \"export\". Default is \"export\".\n- `name_alias` - (Optional) name_alias for object l3_outside.\n- `target_dscp` - (Optional) The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnforceRtctrl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "enforce route control type. Allowed values are \"import\" and \"export\". Default is \"export\".\n- `name_alias` - (Optional) name_alias for object l3_outside.\n- `target_dscp` - (Optional) The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "name of Object l3_outside.\n- `annotation` - (Optional) annotation for object l3_outside.\n- `enforce_rtctrl` - (Optional) enforce route control type. Allowed values are \"import\" and \"export\". Default is \"export\".\n- `name_alias` - (Optional) name_alias for object l3_outside.\n- `target_dscp` - (Optional) The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "name_alias for object l3_outside.\n- `target_dscp` - (Optional) The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "RelationL3extRsEctx": {
+            "type": "string",
+            "description": "Relation to class fvCtx. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_out_to_bd_public_subnet_holder` - (Optional) Relation to class fvBDPublicSubnetHolder. Cardinality - N_TO_M. Type - Set of String.\n- `relation_l3ext_rs_interleak_pol` - (Optional) Relation to class rtctrlProfile. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_l3_dom_att` - (Optional) Relation to class extnwDomP. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsInterleakPol": {
+            "type": "string",
+            "description": "Relation to class rtctrlProfile. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_l3_dom_att` - (Optional) Relation to class extnwDomP. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsL3DomAtt": {
+            "type": "string",
+            "description": "Relation to class extnwDomP. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationL3extRsOutToBdPublicSubnetHolder": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Relation to class fvBDPublicSubnetHolder. Cardinality - N_TO_M. Type - Set of String.\n- `relation_l3ext_rs_interleak_pol` - (Optional) Relation to class rtctrlProfile. Cardinality - N_TO_ONE. Type - String.\n- `relation_l3ext_rs_l3_dom_att` - (Optional) Relation to class extnwDomP. Cardinality - N_TO_ONE. Type - String."
+        },
+        "TargetDscp": {
+            "type": "string",
+            "description": "The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent Tenant object.\n- `name` - (Required) name of Object l3_outside.\n- `annotation` - (Optional) annotation for object l3_outside.\n- `enforce_rtctrl` - (Optional) enforce route control type. Allowed values are \"import\" and \"export\". Default is \"export\".\n- `name_alias` - (Optional) name_alias for object l3_outside.\n- `target_dscp` - (Optional) The target differentiated services code point (DSCP) of the path attached to the layer 3 outside profile. Allowed values are \"CS0\", \"CS1\", \"AF11\", \"AF12\", \"AF13\", \"CS2\", \"AF21\", \"AF22\", \"AF23\", \"CS3\", \"AF31\", \"AF32\", \"AF33\", \"CS4\", \"AF41\", \"AF42\", \"AF43\", \"CS5\", \"VA\", \"EF\", \"CS6\", \"CS7\" and \"unspecified\". Default is \"unspecified\"."
+        },
+        "RelationL3extRsDampeningPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationL3extRsDampeningPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

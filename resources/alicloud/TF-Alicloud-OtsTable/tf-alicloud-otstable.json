@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::Alicloud::OtsTable",
+    "description": "Provides an OTS table resource.\n\n-> **NOTE:** From Provider version 1.10.0, the provider field 'ots_instance_name' has been deprecated and\nyou should use resource alicloud_ots_table's new field 'instance_name' and 'table_name' to re-import this resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-OtsTable/docs/README.md",
+    "definitions": {
+        "PrimaryKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviationCellVersionInSec": {
+            "type": "string",
+            "description": "The max version offset of the table. The valid value is 1-9223372036854775807. Defaults to 86400."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the OTS instance in which table will located."
+        },
+        "MaxVersion": {
+            "type": "number",
+            "description": "The maximum number of versions stored in this table. The valid value is 1-2147483647."
+        },
+        "TableName": {
+            "type": "string",
+            "description": "The table name of the OTS instance. If changed, a new table would be created."
+        },
+        "TimeToLive": {
+            "type": "number",
+            "description": "The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired."
+        },
+        "PrimaryKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrimaryKeyDefinition"
+            },
+            "maxItems": 4,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "MaxVersion",
+        "TableName",
+        "TimeToLive"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

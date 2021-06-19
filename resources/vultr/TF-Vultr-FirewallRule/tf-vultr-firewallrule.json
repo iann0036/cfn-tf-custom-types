@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Vultr::FirewallRule",
+    "description": "Provides a Vultr Firewall Rule resource. This can be used to create, read, modify, and delete Firewall rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-FirewallRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FirewallGroupId": {
+            "type": "string",
+            "description": "The firewall group that the firewall rule will belong to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpType": {
+            "type": "string",
+            "description": "The type of ip for this firewall rule. Possible values (v4, v6) **Note** they must be lowercase."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "A simple note for a given firewall rule."
+        },
+        "Port": {
+            "type": "string",
+            "description": "TCP/UDP only. This field can be a specific port or a colon separated port range."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The type of protocol for this firewall rule. Possible values (icmp, tcp, udp, gre, esp, ah) **Note** they must be lowercase."
+        },
+        "Source": {
+            "type": "string",
+            "description": "Possible values (\"\", cloudflare)."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "IP address that you want to define for this firewall rule."
+        },
+        "SubnetSize": {
+            "type": "number",
+            "description": "The number of bits for the subnet in CIDR notation. Example: 32."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallGroupId",
+        "IpType",
+        "Protocol",
+        "Subnet",
+        "SubnetSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

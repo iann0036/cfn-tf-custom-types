@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Panos::BgpConditionalAdv",
+    "description": "This resource allows you to add/update/delete a BGP conditional advertisement.\n\n~> **Note:** In the PAN-OS GUI, this resource cannot be created without also\ncreating at least one non-exist filter and one advertise filter.  The API behaves\na little differently:  you can create the conditional advertisement itself, but\nthe API will start throwing errors if you try to update it and there is not at\nleast one non-exist filter and one advertise filter.  In order for a conditional\nadvertisement to be valid, you must specify at least one non-exist and one\nadvertise filter.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-BgpConditionalAdv/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "UsedBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of BGP peer groups that use this rule."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this BGP\nconditional advertisement to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

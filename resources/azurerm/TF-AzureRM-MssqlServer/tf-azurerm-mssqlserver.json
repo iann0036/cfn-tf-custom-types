@@ -1,0 +1,241 @@
+{
+    "typeName": "TF::AzureRM::MssqlServer",
+    "description": "Manages a Microsoft SQL Azure Database Server.\n\n~> **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MssqlServer/docs/README.md",
+    "definitions": {
+        "ExtendedAuditingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogMonitoringEnabled": {
+                    "type": "boolean"
+                },
+                "RetentionInDays": {
+                    "type": "number"
+                },
+                "StorageAccountAccessKey": {
+                    "type": "string"
+                },
+                "StorageAccountAccessKeyIsSecondary": {
+                    "type": "boolean"
+                },
+                "StorageEndpoint": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AzureadAdministratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoginUsername": {
+                    "type": "string"
+                },
+                "ObjectId": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoginUsername",
+                "ObjectId"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the identity type of the Microsoft SQL Server. At this time the only allowed value is `SystemAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdministratorLogin": {
+            "type": "string",
+            "description": "The administrator login name for the new server. Changing this forces a new resource to be created."
+        },
+        "AdministratorLoginPassword": {
+            "type": "string",
+            "description": "The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx)."
+        },
+        "ConnectionPolicy": {
+            "type": "string",
+            "description": "The connection policy the server will use. Possible values are `Default`, `Proxy`, and `Redirect`. Defaults to `Default`."
+        },
+        "ExtendedAuditingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtendedAuditingPolicyDefinition"
+            },
+            "description": "A `extended_auditing_policy` block as defined below."
+        },
+        "FullyQualifiedDomainName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "MinimumTlsVersion": {
+            "type": "string",
+            "description": "The Minimum TLS Version for all SQL Database and SQL Data Warehouse databases associated with the server. Valid values are: `1.0`, `1.1` and `1.2`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Microsoft SQL Server. This needs to be globally unique within Azure."
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Whether or not public network access is allowed for this server. Defaults to `true`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Microsoft SQL Server."
+        },
+        "RestorableDroppedDatabaseIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Version": {
+            "type": "string",
+            "description": "The version for the new server. Valid values are: 2.0 (for v11 server) and 12.0 (for v12 server)."
+        },
+        "AzureadAdministrator": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureadAdministratorDefinition"
+            },
+            "maxItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdministratorLogin",
+        "AdministratorLoginPassword",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FullyQualifiedDomainName",
+        "/properties/Id",
+        "/properties/RestorableDroppedDatabaseIds"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdministratorLoginPassword"
+    ]
+}

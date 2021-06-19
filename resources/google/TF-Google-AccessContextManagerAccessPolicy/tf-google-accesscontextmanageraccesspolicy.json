@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Google::AccessContextManagerAccessPolicy",
+    "description": "AccessPolicy is a container for AccessLevels (which define the necessary\nattributes to use GCP services) and ServicePerimeters (which define\nregions of services able to freely pass data within a perimeter). An\naccess policy is globally visible within an organization, and the\nrestrictions it specifies apply to all projects within an organization.\n\n\nTo get more information about AccessPolicy, see:\n\n* [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies)\n* How-to Guides\n    * [Access Policy Quickstart](https://cloud.google.com/access-context-manager/docs/quickstart)\n\n~> **Warning:** If you are using User ADCs (Application Default Credentials) with this resource,\nyou must specify a `billing_project` and set `user_project_override` to true \nin the provider configuration. Otherwise the ACM API will return a 403 error. \nYour account must have the `serviceusage.services.use` permission on the \n`billing_project` you defined.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-AccessContextManagerAccessPolicy/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

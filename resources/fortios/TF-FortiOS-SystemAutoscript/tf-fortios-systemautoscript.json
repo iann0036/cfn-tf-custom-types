@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::FortiOS::SystemAutoscript",
+    "description": "Configure auto script.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAutoscript/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Repeat interval in seconds."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Auto script name."
+        },
+        "OutputSize": {
+            "type": "number",
+            "description": "Number of megabytes to limit script output to (10 - 1024, default = 10)."
+        },
+        "Repeat": {
+            "type": "number",
+            "description": "Number of times to repeat this script (0 = infinite)."
+        },
+        "Script": {
+            "type": "string",
+            "description": "List of FortiOS CLI commands to repeat."
+        },
+        "Start": {
+            "type": "string",
+            "description": "Script starting mode. Valid values: `manual`, `auto`."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Maximum running time for this script in seconds (0 = no timeout)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

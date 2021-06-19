@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::TencentCloud::CcnBandwidthLimit",
+    "description": "Provides a resource to limit CCN bandwidth.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CcnBandwidthLimit/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthLimit": {
+            "type": "number",
+            "description": "Limitation of bandwidth."
+        },
+        "CcnId": {
+            "type": "string",
+            "description": "ID of the CCN."
+        },
+        "DstRegion": {
+            "type": "string",
+            "description": "Destination area restriction. If the `CCN` rate limit type is `OUTER_REGION_LIMIT`, this value does not need to be set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Limitation of region."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CcnId",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::Vultr::StartupScript",
+    "description": "Provides a Vultr Startup Script resource. This can be used to create, read, modify, and delete Startup Scripts.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-StartupScript/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DateModified": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the given script."
+        },
+        "Script": {
+            "type": "string",
+            "description": "Contents of the startup script base64 encoded."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of startup script. Possible values are boot or pxe - default is boot."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Script"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DateCreated",
+        "/properties/DateModified",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

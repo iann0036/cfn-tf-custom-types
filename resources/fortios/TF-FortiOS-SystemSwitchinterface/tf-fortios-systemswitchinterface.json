@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::FortiOS::SystemSwitchinterface",
+    "description": "Configure software switch interfaces by grouping physical and WiFi interfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSwitchinterface/docs/README.md",
+    "definitions": {
+        "MemberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceName": {
+                    "type": "string",
+                    "description": "Physical interface name."
+                }
+            },
+            "required": []
+        },
+        "SpanSourcePortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceName": {
+                    "type": "string",
+                    "description": "Physical interface name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntraSwitchPolicy": {
+            "type": "string",
+            "description": "Allow any traffic between switch interfaces or require firewall policies to allow traffic between switch interfaces. Valid values: `implicit`, `explicit`."
+        },
+        "MacTtl": {
+            "type": "number",
+            "description": "Duration for which MAC addresses are held in the ARP table (300 - 8640000 sec, default = 300)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface name (name cannot be in use by any other interfaces, VLANs, or inter-VDOM links)."
+        },
+        "Span": {
+            "type": "string",
+            "description": "Enable/disable port spanning. Port spanning echoes traffic received by the software switch to the span destination port. Valid values: `disable`, `enable`."
+        },
+        "SpanDestPort": {
+            "type": "string",
+            "description": "SPAN destination port name. All traffic on the SPAN source ports is echoed to the SPAN destination port."
+        },
+        "SpanDirection": {
+            "type": "string",
+            "description": "The direction in which the SPAN port operates, either: rx, tx, or both. Valid values: `rx`, `tx`, `both`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of switch based on functionality: switch for normal functionality, or hub to duplicate packets to all port members. Valid values: `switch`, `hub`."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "VDOM that the software switch belongs to."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberDefinition"
+            }
+        },
+        "SpanSourcePort": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpanSourcePortDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

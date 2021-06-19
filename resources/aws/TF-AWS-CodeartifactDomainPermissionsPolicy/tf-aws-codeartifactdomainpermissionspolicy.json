@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::AWS::CodeartifactDomainPermissionsPolicy",
+    "description": "Provides a CodeArtifact Domains Permissions Policy Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodeartifactDomainPermissionsPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The name of the domain on which to set the resource policy."
+        },
+        "DomainOwner": {
+            "type": "string",
+            "description": "The account number of the AWS account that owns the domain."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PolicyDocument": {
+            "type": "string",
+            "description": "A JSON policy string to be set as the access control resource policy on the provided domain."
+        },
+        "PolicyRevision": {
+            "type": "string",
+            "description": "The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy."
+        },
+        "ResourceArn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "PolicyDocument"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourceArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

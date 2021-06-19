@@ -1,0 +1,665 @@
+{
+    "typeName": "TF::AWS::NetworkfirewallRuleGroup",
+    "description": "Provides an AWS Network Firewall Rule Group Resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkfirewallRuleGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RuleGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RuleVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleVariablesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RulesSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesSourceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RuleVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpSetsDefinition"
+                    }
+                },
+                "PortSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PortSetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RulesString": {
+                    "type": "string"
+                },
+                "RulesSourceList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesSourceListDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StatefulRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatefulRuleDefinition"
+                    }
+                },
+                "StatelessRulesAndCustomActions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatelessRulesAndCustomActionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "IpSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpSetDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "PortSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "PortSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortSetDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RulesSourceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GeneratedRulesType": {
+                    "type": "string"
+                },
+                "TargetTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Targets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "GeneratedRulesType",
+                "TargetTypes",
+                "Targets"
+            ]
+        },
+        "StatefulRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "RuleOption": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RuleOptionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "StatelessRulesAndCustomActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomActionDefinition"
+                    }
+                },
+                "StatelessRule": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatelessRuleDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "PortSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Definition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Definition"
+            ]
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                },
+                "DestinationPort": {
+                    "type": "string"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination",
+                "DestinationPort",
+                "Direction",
+                "Protocol",
+                "Source",
+                "SourcePort"
+            ]
+        },
+        "RuleOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keyword": {
+                    "type": "string"
+                },
+                "Settings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Keyword"
+            ]
+        },
+        "CustomActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionName": {
+                    "type": "string"
+                },
+                "ActionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinitionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ActionName"
+            ]
+        },
+        "StatelessRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number"
+                },
+                "RuleDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinitionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Priority"
+            ]
+        },
+        "ActionDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublishMetricAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublishMetricActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RuleDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Actions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchAttributesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Actions"
+            ]
+        },
+        "PublishMetricActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Protocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    }
+                },
+                "DestinationPort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DestinationPortDefinition"
+                    }
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    }
+                },
+                "SourcePort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SourcePortDefinition"
+                    }
+                },
+                "TcpFlag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TcpFlagDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressDefinition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AddressDefinition"
+            ]
+        },
+        "DestinationPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FromPort"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressDefinition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AddressDefinition"
+            ]
+        },
+        "SourcePortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FromPort"
+            ]
+        },
+        "TcpFlagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Flags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Masks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Flags"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Capacity": {
+            "type": "number",
+            "description": "The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A friendly description of the rule group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A friendly name of the rule group."
+        },
+        "Rules": {
+            "type": "string",
+            "description": "The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless `rule_group` is specified."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of key:value pairs to associate with the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: `STATEFUL` or `STATELESS`."
+        },
+        "UpdateToken": {
+            "type": "string"
+        },
+        "RuleGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleGroupDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Capacity",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/UpdateToken"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

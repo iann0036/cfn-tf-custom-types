@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::Scaleway::IotRoute",
+    "description": "CloudFormation equivalent of scaleway_iot_route",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-IotRoute/docs/README.md",
+    "definitions": {
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbname": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dbname",
+                "Host",
+                "Password",
+                "Port",
+                "Query",
+                "Username"
+            ]
+        },
+        "RestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "Verb": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Headers",
+                "Uri",
+                "Verb"
+            ]
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "BucketRegion": {
+                    "type": "string"
+                },
+                "ObjectPrefix": {
+                    "type": "string"
+                },
+                "Strategy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "BucketRegion",
+                "Strategy"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "HubId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Topic": {
+            "type": "string"
+        },
+        "Database": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestDefinition"
+            },
+            "maxItems": 1
+        },
+        "S3": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Definition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HubId",
+        "Name",
+        "Topic"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DatabaseDefinition/Password"
+    ]
+}

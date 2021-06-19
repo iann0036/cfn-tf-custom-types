@@ -1,0 +1,375 @@
+{
+    "typeName": "TF::AzureRM::MonitorMetricAlert",
+    "description": "Manages a Metric Alert within Azure Monitor.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorMetricAlert/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionGroupId": {
+                    "type": "string",
+                    "description": "The ID of the Action Group can be sourced from [the `azurerm_monitor_action_group` resource](./monitor_action_group.html)."
+                },
+                "WebhookProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WebhookPropertiesDefinition"
+                    },
+                    "description": "The map of custom string properties to include with the post operation. These data are appended to the webhook payload."
+                }
+            },
+            "required": [
+                "ActionGroupId"
+            ]
+        },
+        "WebhookPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApplicationInsightsWebTestLocationAvailabilityCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComponentId": {
+                    "type": "string",
+                    "description": "The ID of the Application Insights Resource."
+                },
+                "FailedLocationCount": {
+                    "type": "number",
+                    "description": "The number of failed locations."
+                },
+                "WebTestId": {
+                    "type": "string",
+                    "description": "The ID of the Application Insights Web Test."
+                }
+            },
+            "required": [
+                "ComponentId",
+                "FailedLocationCount",
+                "WebTestId"
+            ]
+        },
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string",
+                    "description": "The statistic that runs over the metric values. Possible values are `Average`, `Count`, `Minimum`, `Maximum` and `Total`."
+                },
+                "MetricName": {
+                    "type": "string",
+                    "description": "One of the metric names to be monitored."
+                },
+                "MetricNamespace": {
+                    "type": "string",
+                    "description": "One of the metric namespaces to be monitored."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "The criteria operator. Possible values are `Equals`, `NotEquals`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan` and `LessThanOrEqual`."
+                },
+                "SkipMetricValidation": {
+                    "type": "boolean",
+                    "description": "Skip the metric validation to allow creating an alert rule on a custom metric that isn't yet emitted? Defaults to `false`."
+                },
+                "Threshold": {
+                    "type": "number",
+                    "description": "The criteria threshold value that activates the alert."
+                },
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Aggregation",
+                "MetricName",
+                "MetricNamespace",
+                "Operator",
+                "Threshold"
+            ]
+        },
+        "DynamicCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string",
+                    "description": "The statistic that runs over the metric values. Possible values are `Average`, `Count`, `Minimum`, `Maximum` and `Total`."
+                },
+                "AlertSensitivity": {
+                    "type": "string",
+                    "description": "The extent of deviation required to trigger an alert. Possible values are `Low`, `Medium` and `High`."
+                },
+                "EvaluationFailureCount": {
+                    "type": "number",
+                    "description": "The number of violations to trigger an alert. Should be smaller or equal to `evaluation_total_count`."
+                },
+                "EvaluationTotalCount": {
+                    "type": "number",
+                    "description": "The number of aggregated lookback points. The lookback time window is calculated based on the aggregation granularity (`window_size`) and the selected number of aggregated points."
+                },
+                "IgnoreDataBefore": {
+                    "type": "string",
+                    "description": "The [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date from which to start learning the metric historical data and calculate the dynamic thresholds."
+                },
+                "MetricName": {
+                    "type": "string",
+                    "description": "One of the metric names to be monitored."
+                },
+                "MetricNamespace": {
+                    "type": "string",
+                    "description": "One of the metric namespaces to be monitored."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "The criteria operator. Possible values are `LessThan`, `GreaterThan` and `GreaterOrLessThan`."
+                },
+                "SkipMetricValidation": {
+                    "type": "boolean",
+                    "description": "Skip the metric validation to allow creating an alert rule on a custom metric that isn't yet emitted? Defaults to `false`."
+                },
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Aggregation",
+                "AlertSensitivity",
+                "MetricName",
+                "MetricNamespace",
+                "Operator"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "One of the dimension names."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "The dimension operator. Possible values are `Include`, `Exclude` and `StartsWith`."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of dimension values."
+                }
+            },
+            "required": [
+                "Name",
+                "Operator",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoMitigate": {
+            "type": "boolean",
+            "description": "Should the alerts in this Metric Alert be auto resolved? Defaults to `true`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of this Metric Alert."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Should this Metric Alert be enabled? Defaults to `true`."
+        },
+        "Frequency": {
+            "type": "string",
+            "description": "The evaluation frequency of this Metric Alert, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M` and `PT1H`. Defaults to `PT1M`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Metric Alert. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Metric Alert instance."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A set of strings of resource IDs at which the metric criteria should be applied."
+        },
+        "Severity": {
+            "type": "number",
+            "description": "The severity of this Metric Alert. Possible values are `0`, `1`, `2`, `3` and `4`. Defaults to `3`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TargetResourceLocation": {
+            "type": "string",
+            "description": "The location of the target resource."
+        },
+        "TargetResourceType": {
+            "type": "string",
+            "description": "The resource type (e.g. `Microsoft.Compute/virtualMachines`) of the target resource."
+        },
+        "WindowSize": {
+            "type": "string",
+            "description": "The period of time that is used to monitor alert activity, represented in ISO 8601 duration format. This value must be greater than `frequency`. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M`, `PT1H`, `PT6H`, `PT12H` and `P1D`. Defaults to `PT5M`."
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            }
+        },
+        "ApplicationInsightsWebTestLocationAvailabilityCriteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationInsightsWebTestLocationAvailabilityCriteriaDefinition"
+            },
+            "maxItems": 1
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CriteriaDefinition"
+            }
+        },
+        "DynamicCriteria": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DynamicCriteriaDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "Scopes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

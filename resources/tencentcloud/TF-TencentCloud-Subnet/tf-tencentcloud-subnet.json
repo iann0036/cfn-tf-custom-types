@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::TencentCloud::Subnet",
+    "description": "Provide a resource to create a VPC subnet.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Subnet/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The availability zone within which the subnet should be created."
+        },
+        "AvailableIpCount": {
+            "type": "number"
+        },
+        "CidrBlock": {
+            "type": "string",
+            "description": "A network address block of the subnet."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "IsMulticast": {
+            "type": "boolean",
+            "description": "Indicates whether multicast is enabled. The default value is 'true'."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of subnet to be created."
+        },
+        "RouteTableId": {
+            "type": "string",
+            "description": "ID of a routing table to which the subnet should be associated."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of the subnet."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC to be associated."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "CidrBlock",
+        "Name",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableIpCount",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/IsDefault"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

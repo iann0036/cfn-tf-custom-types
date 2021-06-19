@@ -1,0 +1,353 @@
+{
+    "typeName": "TF::Aviatrix::Gateway",
+    "description": "The **aviatrix_gateway** resource allows the creation and management of Aviatrix gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Gateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AdditionalCidrs": {
+            "type": "string"
+        },
+        "AdditionalCidrsDesignatedGateway": {
+            "type": "string"
+        },
+        "AllocateNewEip": {
+            "type": "boolean"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "CloudInstanceId": {
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "CustomerManagedKeys": {
+            "type": "string"
+        },
+        "DuoApiHostname": {
+            "type": "string"
+        },
+        "DuoIntegrationKey": {
+            "type": "string"
+        },
+        "DuoPushMode": {
+            "type": "string"
+        },
+        "DuoSecretKey": {
+            "type": "string"
+        },
+        "Eip": {
+            "type": "string"
+        },
+        "ElbDnsName": {
+            "type": "string"
+        },
+        "ElbName": {
+            "type": "string"
+        },
+        "EnableDesignatedGateway": {
+            "type": "boolean"
+        },
+        "EnableElb": {
+            "type": "boolean"
+        },
+        "EnableEncryptVolume": {
+            "type": "boolean"
+        },
+        "EnableJumboFrame": {
+            "type": "boolean"
+        },
+        "EnableLdap": {
+            "type": "boolean"
+        },
+        "EnableMonitorGatewaySubnets": {
+            "type": "boolean"
+        },
+        "EnablePublicSubnetFiltering": {
+            "type": "boolean"
+        },
+        "EnableVpcDnsServer": {
+            "type": "boolean"
+        },
+        "EnableVpnNat": {
+            "type": "boolean"
+        },
+        "FaultDomain": {
+            "type": "string"
+        },
+        "FqdnLanCidr": {
+            "type": "string"
+        },
+        "FqdnLanInterface": {
+            "type": "string"
+        },
+        "FqdnLanVpcId": {
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string"
+        },
+        "GwSize": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number"
+        },
+        "InsaneMode": {
+            "type": "boolean"
+        },
+        "InsaneModeAz": {
+            "type": "string"
+        },
+        "LdapBaseDn": {
+            "type": "string"
+        },
+        "LdapBindDn": {
+            "type": "string"
+        },
+        "LdapPassword": {
+            "type": "string"
+        },
+        "LdapServer": {
+            "type": "string"
+        },
+        "LdapUsernameAttribute": {
+            "type": "string"
+        },
+        "MaxVpnConn": {
+            "type": "string"
+        },
+        "MonitorExcludeList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NameServers": {
+            "type": "string"
+        },
+        "OktaToken": {
+            "type": "string"
+        },
+        "OktaUrl": {
+            "type": "string"
+        },
+        "OktaUsernameSuffix": {
+            "type": "string"
+        },
+        "OtpMode": {
+            "type": "string"
+        },
+        "PeeringHaAvailabilityDomain": {
+            "type": "string"
+        },
+        "PeeringHaCloudInstanceId": {
+            "type": "string"
+        },
+        "PeeringHaEip": {
+            "type": "string"
+        },
+        "PeeringHaFaultDomain": {
+            "type": "string"
+        },
+        "PeeringHaGwName": {
+            "type": "string"
+        },
+        "PeeringHaGwSize": {
+            "type": "string"
+        },
+        "PeeringHaInsaneModeAz": {
+            "type": "string"
+        },
+        "PeeringHaPrivateIp": {
+            "type": "string"
+        },
+        "PeeringHaSubnet": {
+            "type": "string"
+        },
+        "PeeringHaZone": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PublicDnsServer": {
+            "type": "string"
+        },
+        "PublicSubnetFilteringGuardDutyEnforced": {
+            "type": "boolean"
+        },
+        "PublicSubnetFilteringHaRouteTables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublicSubnetFilteringRouteTables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RenegotiationInterval": {
+            "type": "number"
+        },
+        "SamlEnabled": {
+            "type": "boolean"
+        },
+        "SearchDomains": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SingleAzHa": {
+            "type": "boolean"
+        },
+        "SingleIpSnat": {
+            "type": "boolean"
+        },
+        "SplitTunnel": {
+            "type": "boolean"
+        },
+        "StorageName": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "TagList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TunnelDetectionTime": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcReg": {
+            "type": "string"
+        },
+        "VpnAccess": {
+            "type": "boolean"
+        },
+        "VpnCidr": {
+            "type": "string"
+        },
+        "VpnProtocol": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType",
+        "GwName",
+        "GwSize",
+        "Subnet",
+        "VpcId",
+        "VpcReg"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudInstanceId",
+        "/properties/ElbDnsName",
+        "/properties/FqdnLanInterface",
+        "/properties/Id",
+        "/properties/PeeringHaCloudInstanceId",
+        "/properties/PeeringHaGwName",
+        "/properties/PeeringHaPrivateIp",
+        "/properties/PrivateIp",
+        "/properties/PublicDnsServer",
+        "/properties/SecurityGroupId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CustomerManagedKeys",
+        "/properties/DuoSecretKey",
+        "/properties/LdapPassword",
+        "/properties/OktaToken"
+    ]
+}

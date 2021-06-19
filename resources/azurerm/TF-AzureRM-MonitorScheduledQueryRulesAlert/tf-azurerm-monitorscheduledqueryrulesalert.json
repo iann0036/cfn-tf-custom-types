@@ -1,0 +1,260 @@
+{
+    "typeName": "TF::AzureRM::MonitorScheduledQueryRulesAlert",
+    "description": "Manages an AlertingAction Scheduled Query Rules resource within Azure Monitor.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MonitorScheduledQueryRulesAlert/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of action group reference resource IDs."
+                },
+                "CustomWebhookPayload": {
+                    "type": "string",
+                    "description": "Custom payload to be sent for all webhook payloads in alerting action."
+                },
+                "EmailSubject": {
+                    "type": "string",
+                    "description": "Custom subject override for all email ids in Azure action group."
+                }
+            },
+            "required": [
+                "ActionGroup"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string",
+                    "description": "Evaluation operation for rule - 'Equal', 'GreaterThan' or 'LessThan'."
+                },
+                "Threshold": {
+                    "type": "number",
+                    "description": "Result or count threshold based on which rule should be triggered.  Values must be between 0 and 10000 inclusive."
+                },
+                "MetricTrigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricTriggerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Operator",
+                "Threshold"
+            ]
+        },
+        "MetricTriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricColumn": {
+                    "type": "string"
+                },
+                "MetricTriggerType": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MetricColumn",
+                "MetricTriggerType",
+                "Operator",
+                "Threshold"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedResourceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Resource IDs referred into query."
+        },
+        "DataSourceId": {
+            "type": "string",
+            "description": "The resource URI over which log search query is to be run."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the scheduled query rule."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether this scheduled query rule is enabled.  Default is `true`."
+        },
+        "Frequency": {
+            "type": "number",
+            "description": "Frequency (in minutes) at which rule condition should be evaluated.  Values must be between 5 and 1440 (inclusive)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the scheduled query rule. Changing this forces a new resource to be created."
+        },
+        "Query": {
+            "type": "string",
+            "description": "Log search query."
+        },
+        "QueryType": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the scheduled query rule instance."
+        },
+        "Severity": {
+            "type": "number",
+            "description": "Severity of the alert. Possible values include: 0, 1, 2, 3, or 4."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Throttling": {
+            "type": "number",
+            "description": "Time (in minutes) for which Alerts should be throttled or suppressed.  Values must be between 0 and 10000 (inclusive)."
+        },
+        "TimeWindow": {
+            "type": "number",
+            "description": "Time window for which data needs to be fetched for query (must be greater than or equal to `frequency`).  Values must be between 5 and 2880 (inclusive)."
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Trigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TriggerDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DataSourceId",
+        "Frequency",
+        "Location",
+        "Name",
+        "Query",
+        "ResourceGroupName",
+        "TimeWindow"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

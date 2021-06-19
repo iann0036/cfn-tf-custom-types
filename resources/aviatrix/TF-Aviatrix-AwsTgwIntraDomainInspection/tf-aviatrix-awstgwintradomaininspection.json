@@ -1,0 +1,72 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwIntraDomainInspection",
+    "description": "The **aviatrix_aws_tgw_intra_domain_inspection** resource allows the creation and management of intra domain inspection of security domains in an AWS TGW.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwIntraDomainInspection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FirewallDomainName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RouteDomainName": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallDomainName",
+        "RouteDomainName",
+        "TgwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::AWS::S3outpostsEndpoint",
+    "description": "Provides a resource to manage an S3 Outposts Endpoint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-S3outpostsEndpoint/docs/README.md",
+    "definitions": {
+        "NetworkInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkInterfaceId": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkInterfaces": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfacesDefinition"
+            }
+        },
+        "OutpostId": {
+            "type": "string",
+            "description": "Identifier of the Outpost to contain this endpoint."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "Identifier of the EC2 Security Group."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Identifier of the EC2 Subnet."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OutpostId",
+        "SecurityGroupId",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CidrBlock",
+        "/properties/CreationTime",
+        "/properties/Id",
+        "/properties/NetworkInterfaces"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::NSXT::PolicyTier0GatewayHaVipConfig",
+    "description": "This resource provides a method for the management of a Tier-0 gateway HA Vip config. Note that this configuration can be defined only for Active-Standby Tier0 gateway.\n\n# Example Usage\n\n```hcl\ndata \"nsxt_policy_tier0_gateway\" \"gw1\" {\n  display_name = \"gw1\"\n}\n\nresource \"nsxt_policy_tier0_gateway_interface\" \"if1\" {\n  display_name = \"segment0_interface\"\n  description  = \"connection to segment1\"\n  type         = \"EXTERNAL\"\n  gateway_path = data.nsxt_policy_tier0_gateway.gw1.path\n  segment_path = nsxt_policy_vlan_segment.segment1.path\n  subnets      = [\"12.12.2.1/24\"]\n}\n\nresource \"nsxt_policy_tier0_gateway_interface\" \"if2\" {\n  display_name = \"segment0_interface\"\n  description  = \"connection to segment2\"\n  type         = \"EXTERNAL\"\n  gateway_path = data.nsxt_policy_tier0_gateway.gw1.path\n  segment_path = nsxt_policy_vlan_segment.segment2.path\n  subnets      = [\"12.12.2.2/24\"]\n}\n\nresource \"nsxt_policy_tier0_gateway_ha_vip_config\" \"ha-vip\" {\n  config {\n    enabled                  = true\n    external_interface_p...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyTier0GatewayHaVipConfig/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ExternalInterfacePaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VipSubnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ExternalInterfacePaths",
+                "VipSubnets"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "Tier0Id": {
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LocaleServiceId",
+        "/properties/Tier0Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

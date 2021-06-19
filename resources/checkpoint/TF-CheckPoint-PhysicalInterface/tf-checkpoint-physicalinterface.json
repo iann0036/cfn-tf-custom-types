@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::CheckPoint::PhysicalInterface",
+    "description": "This resource allows you to set a Physical interface.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-PhysicalInterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoNegotiation": {
+            "type": "string",
+            "description": "Configure auto-negotiation. Activating Auto-Negotiation will skip the speed and duplex configuration."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "interface Comments."
+        },
+        "Duplex": {
+            "type": "string",
+            "description": "duplex for the interface. Duplex is not relevant when 'auto_negotiation' is enabled."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Interface state."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "IPv4 address to set for the interface."
+        },
+        "Ipv4MaskLength": {
+            "type": "number",
+            "description": "Interface IPv4 address mask length."
+        },
+        "Ipv6Address": {
+            "type": "string",
+            "description": "IPv6 address to set for the interface."
+        },
+        "Ipv6Autoconfig": {
+            "type": "string",
+            "description": "Configure IPv6 auto-configuration true/false."
+        },
+        "Ipv6MaskLength": {
+            "type": "number",
+            "description": "Interface IPv6 address mask length."
+        },
+        "MacAddr": {
+            "type": "string",
+            "description": "Configure hardware address."
+        },
+        "MonitorMode": {
+            "type": "string",
+            "description": "Set monitor mode for the interface true/false."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "Interface Mtu."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "RxRingsize": {
+            "type": "string",
+            "description": "Set receive buffer size for the interface."
+        },
+        "Speed": {
+            "type": "string",
+            "description": "Interface link speed. Speed is not relevant when 'auto_negotiation' is enabled."
+        },
+        "TxRingsize": {
+            "type": "string",
+            "description": "Set transmit buffer size for the interface."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

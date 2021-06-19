@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::ACI::BgpPeerConnectivityProfile",
+    "description": "Manages ACI BGP Peer Connectivity Profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BgpPeerConnectivityProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Addr": {
+            "type": "string",
+            "description": "The peer IP address.\n- `addr_t_ctrl` - (Optional) Ucast/Mcast Addr Type AF Control. (Multiple Comma-Delimited values are allowed. E.g., \"af-mcast,af-ucast\"). Apply \"\" to clear all the values.\nAllowed values: \"af-mcast\", \"af-ucast\". Default value: \"af-ucast\".\n- `allowed_self_as_cnt` - (Optional) The number of occurrences of a local Autonomous System Number (ASN). Default value: \"3\".\n- `description` - (Optional) Description for object bgp peer connectivity profile.\n- `annotation` - (Optional) Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "AddrTCtrl": {
+            "type": "string",
+            "description": "Ucast/Mcast Addr Type AF Control. (Multiple Comma-Delimited values are allowed. E.g., \"af-mcast,af-ucast\"). Apply \"\" to clear all the values.\nAllowed values: \"af-mcast\", \"af-ucast\". Default value: \"af-ucast\".\n- `allowed_self_as_cnt` - (Optional) The number of occurrences of a local Autonomous System Number (ASN). Default value: \"3\".\n- `description` - (Optional) Description for object bgp peer connectivity profile.\n- `annotation` - (Optional) Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "AllowedSelfAsCnt": {
+            "type": "string",
+            "description": "The number of occurrences of a local Autonomous System Number (ASN). Default value: \"3\".\n- `description` - (Optional) Description for object bgp peer connectivity profile.\n- `annotation` - (Optional) Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "AsNumber": {
+            "type": "string",
+            "description": "A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Ctrl": {
+            "type": "string",
+            "description": "The peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object bgp peer connectivity profile.\n- `annotation` - (Optional) Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalAsn": {
+            "type": "string"
+        },
+        "LocalAsnPropagate": {
+            "type": "string",
+            "description": "The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "LogicalNodeProfileDn": {
+            "type": "string",
+            "description": "Distinguished name of parent logical node profile object.\n- `addr` - (Required) The peer IP address.\n- `addr_t_ctrl` - (Optional) Ucast/Mcast Addr Type AF Control. (Multiple Comma-Delimited values are allowed. E.g., \"af-mcast,af-ucast\"). Apply \"\" to clear all the values.\nAllowed values: \"af-mcast\", \"af-ucast\". Default value: \"af-ucast\".\n- `allowed_self_as_cnt` - (Optional) The number of occurrences of a local Autonomous System Number (ASN). Default value: \"3\".\n- `description` - (Optional) Description for object bgp peer connectivity profile.\n- `annotation` - (Optional) Annotation for object bgp peer connectivity profile.\n- `ctrl` - (Optional)\nThe peer controls specify which Border Gateway Protocol (BGP) attributes are sent to a peer. (Multiple Comma-Delimited values are allowed. E.g., \"allow-self-as,as-override\"). Apply \"\" to clear all the values.\nAllowed values: \"allow-self-as\", \"as-override\", \"dis-peer-as-check\", \"nh-self\", \"send-com\", \"send-ext-com\". Default value: \"\".\n- `name_alias` - (Optional) Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object bgp peer connectivity profile.\n- `password` - (Optional, Sensitive) Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Peer password. If `password` is set, the peer password will reset when terraform configuration is applied.\n- `peer_ctrl` - (Optional) The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "PeerCtrl": {
+            "type": "string",
+            "description": "The peer controls. (Multiple Comma-Delimited values are allowed. E.g., \"bfd,dis-conn-check\"). Apply \"\" to clear all the values.\nAllowed values: \"bfd\", \"dis-conn-check\". Default value: \"\".\n- `private_a_sctrl` - (Optional) Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "PrivateASctrl": {
+            "type": "string",
+            "description": "Remove private AS. (Multiple Comma-Delimited values are allowed. E.g., \"remove-all,remove-exclusive\"). Apply \"\" to clear all the values.\nAllowed values: \"remove-all\", \"remove-exclusive\", \"replace-as\". Default value: \"\".\n- `ttl` - (Optional) Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RelationBgpRsPeerPfxPol": {
+            "type": "string",
+            "description": "Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "Specifies time to live (TTL). Default value: \"1\".\n- `weight` - (Optional) The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        },
+        "Weight": {
+            "type": "string",
+            "description": "The weight of the fault in calculating the health score of an object. A higher weight causes a higher degradation of the health score of the affected object. Default value: \"0\".\n- `as_number` - (Optional) A number that uniquely identifies an autonomous system.\n- `local_asn ` - (Optional) The local autonomous system number (ASN).\n- `local_asn_propagate` - (Optional) The local Autonomous System Number (ASN) configuration.\nAllowed values: \"dual-as\", \"no-prepend\", \"none\", \"replace-as\". Default value: \"none\".\n- `relation_bgp_rs_peer_pfx_pol` - (Optional) Relation to class bgpPeerPfxPol. Cardinality - N_TO_ONE. Type - String."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Addr",
+        "LogicalNodeProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

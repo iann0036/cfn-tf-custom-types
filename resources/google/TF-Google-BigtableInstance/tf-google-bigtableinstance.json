@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::Google::BigtableInstance",
+    "description": "Creates a Google Bigtable instance. For more information see:\n\n* [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.clusters)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/bigtable/docs)\n\n\n-> **Note**: It is strongly recommended to set `lifecycle { prevent_destroy = true }`\non instances in order to prevent accidental data loss. See\n[Terraform docs](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy)\nfor more information on lifecycle parameters.\n\n-> **Note**: On newer versions of the provider, you must explicitly set `deletion_protection=false`\n(and run `terraform apply` to write the field to state) in order to destroy an instance.\nIt is recommended to not set this field (or set it to true) until you're ready to destroy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigtableInstance/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterId": {
+                    "type": "string",
+                    "description": "The ID of the Cloud Bigtable cluster."
+                },
+                "NumNodes": {
+                    "type": "number",
+                    "description": "The number of nodes in your Cloud Bigtable cluster.\nRequired, with a minimum of `1` for a `PRODUCTION` instance. Must be left unset\nfor a `DEVELOPMENT` instance."
+                },
+                "StorageType": {
+                    "type": "string",
+                    "description": "The storage type to use. One of `\"SSD\"` or\n`\"HDD\"`. Defaults to `\"SSD\"`."
+                },
+                "Zone": {
+                    "type": "string",
+                    "description": "The zone to create the Cloud Bigtable cluster in. If it not\nspecified, the provider zone is used. Each cluster must have a different zone in the same region. Zones that support\nBigtable instances are noted on the [Cloud Bigtable locations page](https://cloud.google.com/bigtable/docs/locations)."
+                }
+            },
+            "required": [
+                "ClusterId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeletionProtection": {
+            "type": "boolean",
+            "description": "Whether or not to allow Terraform to destroy the instance. Unless this field is set to false\nin Terraform state, a `terraform destroy` or `terraform apply` that would delete the instance will fail."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The human-readable display name of the Bigtable instance. Defaults to the instance `name`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The instance type to create. One of `\"DEVELOPMENT\"` or `\"PRODUCTION\"`. Defaults to `\"PRODUCTION\"`.\nIt is recommended to leave this field unspecified since the distinction between `\"DEVELOPMENT\"` and `\"PRODUCTION\"` instances is going away,\nand all instances will become `\"PRODUCTION\"` instances. This means that new and existing `\"DEVELOPMENT\"` instances will be converted to\n`\"PRODUCTION\"` instances. It is recommended for users to use `\"PRODUCTION\"` instances in any case, since a 1-node `\"PRODUCTION\"` instance\nis functionally identical to a `\"DEVELOPMENT\"` instance, but without the accompanying restrictions."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A set of key/value label pairs to assign to the resource. Label keys must follow the requirements at https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "Cluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

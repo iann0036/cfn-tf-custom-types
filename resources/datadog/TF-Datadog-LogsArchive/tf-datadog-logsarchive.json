@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::Datadog::LogsArchive",
+    "description": "CloudFormation equivalent of datadog_logs_archive",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/datadog/TF-Datadog-LogsArchive/docs/README.md",
+    "definitions": {
+        "AzureArchiveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "Container": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "StorageAccount": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientId",
+                "Container",
+                "StorageAccount",
+                "TenantId"
+            ]
+        },
+        "GcsArchiveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "ClientEmail": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "ClientEmail",
+                "Path",
+                "ProjectId"
+            ]
+        },
+        "S3ArchiveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "Bucket": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "RoleName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountId",
+                "Bucket",
+                "Path",
+                "RoleName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeTags": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Query": {
+            "type": "string"
+        },
+        "RehydrationTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AzureArchive": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureArchiveDefinition"
+            },
+            "maxItems": 1
+        },
+        "GcsArchive": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GcsArchiveDefinition"
+            },
+            "maxItems": 1
+        },
+        "S3Archive": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3ArchiveDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Query"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

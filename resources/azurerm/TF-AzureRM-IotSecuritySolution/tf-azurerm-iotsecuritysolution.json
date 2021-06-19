@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::AzureRM::IotSecuritySolution",
+    "description": "Manages an iot security solution.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-IotSecuritySolution/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RecommendationsEnabledDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcrAuthentication": {
+                    "type": "boolean",
+                    "description": "Is Principal Authentication enabled for the ACR repository? Defaults to `true`."
+                },
+                "AgentSendUnutilizedMsg": {
+                    "type": "boolean",
+                    "description": "Is Agent send underutilized messages enabled? Defaults to `true`."
+                },
+                "Baseline": {
+                    "type": "boolean",
+                    "description": "Is Security related system configuration issues identified? Defaults to `true`."
+                },
+                "EdgeHubMemOptimize": {
+                    "type": "boolean",
+                    "description": "Is IoT Edge Hub memory optimized? Defaults to `true`."
+                },
+                "EdgeLoggingOption": {
+                    "type": "boolean",
+                    "description": "Is logging configured for IoT Edge module? Defaults to `true`."
+                },
+                "InconsistentModuleSettings": {
+                    "type": "boolean",
+                    "description": "Is inconsistent module settings enabled for SecurityGroup? Defaults to `true`."
+                },
+                "InstallAgent": {
+                    "type": "boolean",
+                    "description": "is Azure IoT Security agent installed? Defaults to `true`."
+                },
+                "IpFilterDenyAll": {
+                    "type": "boolean",
+                    "description": "Is Default IP filter policy denied? Defaults to `true`."
+                },
+                "IpFilterPermissiveRule": {
+                    "type": "boolean",
+                    "description": "Is IP filter rule source allowable IP range too large? Defaults to `true`."
+                },
+                "OpenPorts": {
+                    "type": "boolean",
+                    "description": "Is any ports open on the device? Defaults to `true`."
+                },
+                "PermissiveFirewallPolicy": {
+                    "type": "boolean",
+                    "description": "Does firewall policy exist which allow necessary communication to/from the device? Defaults to `true`."
+                },
+                "PermissiveInputFirewallRules": {
+                    "type": "boolean",
+                    "description": "Is only necessary addresses or ports are permitted in? Defaults to `true`."
+                },
+                "PermissiveOutputFirewallRules": {
+                    "type": "boolean",
+                    "description": "Is only necessary addresses or ports are permitted out? Defaults to `true`."
+                },
+                "PrivilegedDockerOptions": {
+                    "type": "boolean",
+                    "description": "Is high level permissions are needed for the module? Defaults to `true`."
+                },
+                "SharedCredentials": {
+                    "type": "boolean",
+                    "description": "Is any credentials shared among devices? Defaults to `true`."
+                },
+                "VulnerableTlsCipherSuite": {
+                    "type": "boolean",
+                    "description": "Does TLS cipher suite need to be updated? Defaults to `true`."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Specifies the Display Name for this Iot Security Solution."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Is the Iot Security Solution enabled? Defaults to `true`."
+        },
+        "EventsToExport": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of data which is to exported to analytic workspace. Valid values include `RawEvents`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IothubIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the IoT Hub resource IDs to which this Iot Security Solution is applied."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "LogAnalyticsWorkspaceId": {
+            "type": "string",
+            "description": "Specifies the Log Analytics Workspace ID to which the security data will be sent."
+        },
+        "LogUnmaskedIpsEnabled": {
+            "type": "boolean",
+            "description": "Should ip addressed be unmasked in the log? Defaults to `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Iot Security Solution. Changing this forces a new resource to be created."
+        },
+        "QueryForResources": {
+            "type": "string",
+            "description": "An Azure Resource Graph query used to set the resources monitored."
+        },
+        "QuerySubscriptionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of subscription Ids on which the user defined resources query should be executed."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the name of the resource group in which to create the Iot Security Solution. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "RecommendationsEnabled": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RecommendationsEnabledDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "IothubIds",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

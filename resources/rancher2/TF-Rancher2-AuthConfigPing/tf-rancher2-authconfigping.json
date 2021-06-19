@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::Rancher2::AuthConfigPing",
+    "description": "CloudFormation equivalent of rancher2_auth_config_ping",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-AuthConfigPing/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "AllowedPrincipalIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "DisplayNameField": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "GroupsField": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpMetadataContent": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RancherApiHost": {
+            "type": "string"
+        },
+        "SpCert": {
+            "type": "string"
+        },
+        "SpKey": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UidField": {
+            "type": "string"
+        },
+        "UserNameField": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayNameField",
+        "GroupsField",
+        "IdpMetadataContent",
+        "RancherApiHost",
+        "SpCert",
+        "SpKey",
+        "UidField",
+        "UserNameField"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/IdpMetadataContent",
+        "/properties/SpCert",
+        "/properties/SpKey"
+    ]
+}

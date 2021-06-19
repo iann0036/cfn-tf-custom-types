@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::OpenNebula::SecurityGroup",
+    "description": "Provides an OpenNebula security group resource.\n\nThis resource allows you to manage security groups on your OpenNebula clusters. When applied,\na new security group is created. When destroyed, this security group is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-SecurityGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IcmpType": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "string"
+                },
+                "RuleType": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol",
+                "RuleType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Commit": {
+            "type": "boolean",
+            "description": "Flag to commit changes on Virtual Machine on security group update. Defaults to `true`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the security group."
+        },
+        "Gid": {
+            "type": "number"
+        },
+        "Gname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "Name of the group which owns the security group. Defaults to the caller primary group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the security group."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on security group. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Security group tags (Key = Value)."
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uname": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gid",
+        "/properties/Gname",
+        "/properties/Id",
+        "/properties/Uid",
+        "/properties/Uname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

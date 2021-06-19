@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateSmpp",
+    "description": "`thunder_slb_template_smpp` Provides details about thunder slb template smpp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateSmpp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientEnquireLink": {
+            "type": "number",
+            "description": "Respond client ENQUIRE_LINK packet directly instead of forwarding to server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "SMPP Template Name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Configure the password used to bind."
+        },
+        "ServerEnquireLink": {
+            "type": "number",
+            "description": "Send server ENQUIRE_LINK packet for every persist connection when enable conn-reuse."
+        },
+        "ServerEnquireLinkVal": {
+            "type": "number",
+            "description": "Set interval of keep-alive packet for each persistent connection (second, default is 30)."
+        },
+        "ServerSelectionPerRequest": {
+            "type": "number",
+            "description": "Force server selection on every SMPP request when enable conn-reuse."
+        },
+        "User": {
+            "type": "string",
+            "description": "Configure the user to bind (The name used to bind)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

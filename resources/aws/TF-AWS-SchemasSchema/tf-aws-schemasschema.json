@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::AWS::SchemasSchema",
+    "description": "Provides an EventBridge Schema resource.\n\n~> **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SchemasSchema/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "The schema specification. Must be a valid Open API 3.0 spec."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the schema. Maximum of 256 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the schema. Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @."
+        },
+        "RegistryName": {
+            "type": "string",
+            "description": "The name of the registry in which this schema belongs."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the schema. Valid values: `OpenApi3`."
+        },
+        "Version": {
+            "type": "string"
+        },
+        "VersionCreatedDate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "Name",
+        "RegistryName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/LastModified",
+        "/properties/Version",
+        "/properties/VersionCreatedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

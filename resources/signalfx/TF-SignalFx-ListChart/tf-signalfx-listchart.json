@@ -1,0 +1,226 @@
+{
+    "typeName": "TF::SignalFx::ListChart",
+    "description": "This chart type displays current data values in a list format.\n\nThe name of each value in the chart reflects the name of the plot and any associated dimensions. We recommend you click the Pencil icon and give the plot a meaningful name, as in plot B below. Otherwise, just the raw metric name will be displayed on the chart, as in plot A below.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-ListChart/docs/README.md",
+    "definitions": {
+        "ColorScaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Gt": {
+                    "type": "number"
+                },
+                "Gte": {
+                    "type": "number"
+                },
+                "Lt": {
+                    "type": "number"
+                },
+                "Lte": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Color"
+            ]
+        },
+        "LegendOptionsFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Property"
+            ]
+        },
+        "VizOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ValuePrefix": {
+                    "type": "string"
+                },
+                "ValueSuffix": {
+                    "type": "string"
+                },
+                "ValueUnit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ColorBy": {
+            "type": "string",
+            "description": "Must be one of `\"Scale\"`, `\"Dimension\"` or `\"Metric\"`. `\"Dimension\"` by default."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the chart."
+        },
+        "DisableSampling": {
+            "type": "boolean",
+            "description": "If `false`, samples a subset of the output MTS, which improves UI performance. `false` by default."
+        },
+        "EndTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "HideMissingValues": {
+            "type": "boolean",
+            "description": "Determines whether to hide missing data points in the chart. If `true`, missing data points in the chart would be hidden. `false` by default."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LegendFieldsToHide": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of properties that should not be displayed in the chart legend (i.e. dimension names). All the properties are visible by default. Deprecated, please use `legend_options_fields`."
+        },
+        "MaxDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait for late datapoints."
+        },
+        "MaxPrecision": {
+            "type": "number",
+            "description": "Maximum number of digits to display when rounding values up or down."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the chart."
+        },
+        "ProgramText": {
+            "type": "string",
+            "description": "Signalflow program text for the chart. More info[in the SignalFx docs](https://developers.signalfx.com/signalflow_analytics/signalflow_overview.html#_signalflow_programming_language)."
+        },
+        "RefreshInterval": {
+            "type": "number",
+            "description": "How often (in seconds) to refresh the values of the list."
+        },
+        "SecondaryVisualization": {
+            "type": "string",
+            "description": "The type of secondary visualization. Can be `None`, `Radial`, `Linear`, or `Sparkline`. If unset, the SignalFx default is used (`Sparkline`)."
+        },
+        "SortBy": {
+            "type": "string",
+            "description": "The property to use when sorting the elements. Use `value` if you want to sort by value. Must be prepended with `+` for ascending or `-` for descending (e.g. `-foo`). Note there are some special values for some of the options provided in the UX: `\"value\"` for Value, `\"sf_originatingMetric\"` for Metric, and `\"sf_metric\"` for plot."
+        },
+        "StartTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "TimeRange": {
+            "type": "number",
+            "description": "How many seconds ago from which to display data. For example, the last hour would be `3600`, etc. Conflicts with `start_time` and `end_time`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "The property value is a string that denotes the geographic region associated with the time zone, (default UTC)."
+        },
+        "UnitPrefix": {
+            "type": "string",
+            "description": "Must be `\"Metric\"` or `\"Binary`\". `\"Metric\"` by default."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "ColorScale": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ColorScaleDefinition"
+            }
+        },
+        "LegendOptionsFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LegendOptionsFieldsDefinition"
+            }
+        },
+        "VizOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VizOptionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProgramText"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

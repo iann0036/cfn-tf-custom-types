@@ -1,0 +1,218 @@
+{
+    "typeName": "TF::Dome9::CloudaccountAws",
+    "description": "CloudFormation equivalent of dome9_cloudaccount_aws",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-CloudaccountAws/docs/README.md",
+    "definitions": {
+        "IamSafeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RolesArns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UsersArns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "IamSafeDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsGroupArn": {
+                    "type": "string"
+                },
+                "AwsPolicyArn": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "RestrictedIamEntities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IamSafeDefinition"
+                    }
+                }
+            }
+        },
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "Arn": {
+                    "type": "string"
+                },
+                "IamUser": {
+                    "type": "string"
+                },
+                "Secret": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Arn",
+                "Secret",
+                "Type"
+            ]
+        },
+        "NetSecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Regions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegionsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RegionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NewGroupBehavior": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Region"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowReadOnly": {
+            "type": "boolean"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "ExternalAccountNumber": {
+            "type": "string"
+        },
+        "FullProtection": {
+            "type": "boolean"
+        },
+        "IamSafe": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IamSafeDefinition2"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFetchingSuspended": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationalUnitId": {
+            "type": "string"
+        },
+        "Vendor": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "NetSec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetSecDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllowReadOnly",
+        "/properties/CreationDate",
+        "/properties/ExternalAccountNumber",
+        "/properties/FullProtection",
+        "/properties/IamSafe",
+        "/properties/Id",
+        "/properties/IsFetchingSuspended",
+        "/properties/Vendor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/Secret"
+    ]
+}

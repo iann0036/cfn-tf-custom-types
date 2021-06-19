@@ -1,0 +1,301 @@
+{
+    "typeName": "TF::Google::DataLossPreventionStoredInfoType",
+    "description": "Allows creation of custom info types.\n\n\nTo get more information about StoredInfoType, see:\n\n* [API documentation](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.storedInfoTypes)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/dlp/docs/creating-stored-infotypes)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=dlp_stored_info_type_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataLossPreventionStoredInfoType/docs/README.md",
+    "definitions": {
+        "DictionaryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStoragePath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudStoragePathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WordList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WordListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LargeCustomDictionaryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BigQueryField": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BigQueryFieldDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CloudStorageFileSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudStorageFileSetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OutputPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutputPathDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RegexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupIndexes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Pattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Pattern"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CloudStoragePathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "WordListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Words": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Words"
+            ]
+        },
+        "BigQueryFieldDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FieldDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Table": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TableDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudStorageFileSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "OutputPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "FieldDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetId": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "TableId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatasetId",
+                "ProjectId",
+                "TableId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Dictionary": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DictionaryDefinition"
+            },
+            "maxItems": 1
+        },
+        "LargeCustomDictionary": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LargeCustomDictionaryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Regex": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RegexDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

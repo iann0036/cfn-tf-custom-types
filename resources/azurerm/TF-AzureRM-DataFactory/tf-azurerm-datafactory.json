@@ -1,0 +1,276 @@
+{
+    "typeName": "TF::AzureRM::DataFactory",
+    "description": "Manages an Azure Data Factory (Version 2).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DataFactory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GithubConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string",
+                    "description": "Specifies the GitHub account name."
+                },
+                "BranchName": {
+                    "type": "string",
+                    "description": "Specifies the branch of the repository to get code from."
+                },
+                "GitUrl": {
+                    "type": "string",
+                    "description": "Specifies the GitHub Enterprise host name. For example: https://github.mydomain.com. Use https://github.com for open source repositories."
+                },
+                "RepositoryName": {
+                    "type": "string",
+                    "description": "Specifies the name of the git repository."
+                },
+                "RootFolder": {
+                    "type": "string",
+                    "description": "Specifies the root folder within the repository. Set to `/` for the top level."
+                }
+            },
+            "required": [
+                "AccountName",
+                "BranchName",
+                "GitUrl",
+                "RepositoryName",
+                "RootFolder"
+            ]
+        },
+        "GlobalParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the global parameter name."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the global parameter type. Possible Values are `Array`, `Bool`, `Float`, `Int`, `Object` or `String`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Specifies the global parameter value."
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Value"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies the IDs of user assigned identities. Requiered if `UserAssigned` type is used."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the identity type of the Data Factory. Possible values are `SystemAssigned` and `UserAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VstsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string",
+                    "description": "Specifies the VSTS account name."
+                },
+                "BranchName": {
+                    "type": "string",
+                    "description": "Specifies the branch of the repository to get code from."
+                },
+                "ProjectName": {
+                    "type": "string",
+                    "description": "Specifies the name of the VSTS project."
+                },
+                "RepositoryName": {
+                    "type": "string",
+                    "description": "Specifies the name of the git repository."
+                },
+                "RootFolder": {
+                    "type": "string",
+                    "description": "Specifies the root folder within the repository. Set to `/` for the top level."
+                },
+                "TenantId": {
+                    "type": "string",
+                    "description": "Specifies the Tenant ID associated with the VSTS account."
+                }
+            },
+            "required": [
+                "AccountName",
+                "BranchName",
+                "ProjectName",
+                "RepositoryName",
+                "RootFolder",
+                "TenantId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomerManagedKeyId": {
+            "type": "string",
+            "description": "Specifies the Azure Key Vault Key ID to be used as the Customer Managed Key (CMK) for double encryption. Required with user assigned identity."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Data Factory. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
+        },
+        "PublicNetworkEnabled": {
+            "type": "boolean",
+            "description": "Is the Data Factory visible to the public network? Defaults to `true`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "GithubConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GithubConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "GlobalParameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GlobalParameterDefinition"
+            }
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "VstsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VstsConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

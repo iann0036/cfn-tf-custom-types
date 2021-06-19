@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AVI::Scheduler",
+    "description": "The Scheduler resource allows the creation and management of Avi Scheduler",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Scheduler/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupConfigRef": {
+            "type": "string",
+            "description": "Backup configuration to be executed by this scheduler. It is a reference to an object of type backupconfiguration."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Boolean flag to set enabled."
+        },
+        "EndDateTime": {
+            "type": "string",
+            "description": "Scheduler end date and time."
+        },
+        "Frequency": {
+            "type": "number",
+            "description": "Frequency at which custom scheduler will run. Allowed values are 0-60."
+        },
+        "FrequencyUnit": {
+            "type": "string",
+            "description": "Unit at which custom scheduler will run. Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK, SCHEDULER_FREQUENCY_UNIT_MONTH."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of scheduler."
+        },
+        "RunMode": {
+            "type": "string",
+            "description": "Scheduler run mode. Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW."
+        },
+        "RunScriptRef": {
+            "type": "string",
+            "description": "Control script to be executed by this scheduler. It is a reference to an object of type alertscriptconfig."
+        },
+        "SchedulerAction": {
+            "type": "string",
+            "description": "Define scheduler action. Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP."
+        },
+        "StartDateTime": {
+            "type": "string",
+            "description": "Scheduler start date and time."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::FortiOS::Wirelesscontrollerhotspot20H2qpconncapability",
+    "description": "Configure connection capability.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Wirelesscontrollerhotspot20H2qpconncapability/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EspPort": {
+            "type": "string",
+            "description": "Set ESP port service (used by IPsec VPNs) status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "FtpPort": {
+            "type": "string",
+            "description": "Set FTP port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "HttpPort": {
+            "type": "string",
+            "description": "Set HTTP port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "IcmpPort": {
+            "type": "string",
+            "description": "Set ICMP port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ikev2Port": {
+            "type": "string",
+            "description": "Set IKEv2 port service for IPsec VPN status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "Ikev2XxPort": {
+            "type": "string",
+            "description": "Set UDP port 4500 (which may be used by IKEv2 for IPsec VPN) service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Connection capability name."
+        },
+        "PptpVpnPort": {
+            "type": "string",
+            "description": "Set Point to Point Tunneling Protocol (PPTP) VPN port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "SshPort": {
+            "type": "string",
+            "description": "Set SSH port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "TlsPort": {
+            "type": "string",
+            "description": "Set TLS VPN (HTTPS) port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VoipTcpPort": {
+            "type": "string",
+            "description": "Set VoIP TCP port service status. Valid values: `closed`, `open`, `unknown`."
+        },
+        "VoipUdpPort": {
+            "type": "string",
+            "description": "Set VoIP UDP port service status. Valid values: `closed`, `open`, `unknown`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

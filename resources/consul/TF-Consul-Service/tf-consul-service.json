@@ -1,0 +1,208 @@
+{
+    "typeName": "TF::Consul::Service",
+    "description": "A high-level resource for creating a Service in Consul in the Consul catalog. This\nis appropriate for registering [external services](https://www.consul.io/docs/guides/external.html) and\ncan be used to create services addressable by Consul that cannot be registered\nwith a [local agent](https://www.consul.io/docs/agent/basics.html).\n\n-> **NOTE:** If a Consul agent is running on the node where this service is\nregistered, it is not recommended to use this resource as the service will be\nremoved during the next [anti-entropy synchronisation](https://www.consul.io/docs/architecture/anti-entropy).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-Service/docs/README.md",
+    "definitions": {
+        "MetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckId": {
+                    "type": "string"
+                },
+                "DeregisterCriticalServiceAfter": {
+                    "type": "string"
+                },
+                "Http": {
+                    "type": "string"
+                },
+                "Interval": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Tcp": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "string"
+                },
+                "TlsSkipVerify": {
+                    "type": "boolean"
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    }
+                }
+            },
+            "required": [
+                "CheckId",
+                "Interval",
+                "Name",
+                "Timeout"
+            ]
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "The address of the service. Defaults to the\naddress of the node."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
+        },
+        "EnableTagOverride": {
+            "type": "boolean",
+            "description": "Specifies to disable the\nanti-entropy feature for this service's tags. Defaults to `false`."
+        },
+        "External": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Meta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetaDefinition"
+            },
+            "description": "A map of arbitrary KV metadata linked to the service\ninstance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the header."
+        },
+        "Namespace": {
+            "type": "string",
+            "description": "The namespace to create the service within."
+        },
+        "Node": {
+            "type": "string",
+            "description": "The name of the node the to register the service on."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port of the service."
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of values that are opaque to Consul,\nbut can be used to distinguish between services or nodes."
+        },
+        "Check": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CheckDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Node"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

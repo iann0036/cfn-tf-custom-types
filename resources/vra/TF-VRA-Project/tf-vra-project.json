@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::VRA::Project",
+    "description": "CloudFormation equivalent of vra_project",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-Project/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Extensibility": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ExtensibilityDefinition"
+                    }
+                },
+                "Network": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDefinition"
+                    }
+                },
+                "Storage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StorageDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ZoneAssignmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuLimit": {
+                    "type": "number"
+                },
+                "MaxInstances": {
+                    "type": "number"
+                },
+                "MemoryLimitMb": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "StorageLimitGb": {
+                    "type": "number"
+                },
+                "ZoneId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ZoneId"
+            ]
+        },
+        "ExtensibilityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        },
+        "StorageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Mandatory": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Expression",
+                "Mandatory"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Administrators": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of administrator users associated with the project. Only administrators can manage project's configuration."
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            },
+            "description": "The project custom properties which are added to all requests in this project."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MachineNamingTemplate": {
+            "type": "string",
+            "description": "The naming template to be used for resources provisioned in this project."
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of member users associated with the project."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OperationTimeout": {
+            "type": "number",
+            "description": "The timeout that should be used for Blueprint operations and Provisioning tasks. The timeout is in seconds."
+        },
+        "SharedResources": {
+            "type": "boolean",
+            "description": "Specifies whether the resources in this projects are shared or not. If not set default will be used."
+        },
+        "Viewers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Constraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConstraintsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ZoneAssignments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ZoneAssignmentsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

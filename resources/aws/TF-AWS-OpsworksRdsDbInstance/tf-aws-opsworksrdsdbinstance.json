@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::OpsworksRdsDbInstance",
+    "description": "Provides an OpsWorks RDS DB Instance resource.\n\n~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-OpsworksRdsDbInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DbPassword": {
+            "type": "string",
+            "description": "A db password."
+        },
+        "DbUser": {
+            "type": "string",
+            "description": "A db username."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RdsDbInstanceArn": {
+            "type": "string",
+            "description": "The db instance to register for this stack. Changing this will force a new resource."
+        },
+        "StackId": {
+            "type": "string",
+            "description": "The stack to register a db instance for. Changing this will force a new resource."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbPassword",
+        "DbUser",
+        "RdsDbInstanceArn",
+        "StackId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DbPassword"
+    ]
+}

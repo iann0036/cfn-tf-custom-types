@@ -1,0 +1,253 @@
+{
+    "typeName": "TF::OpsGenie::TeamRoutingRule",
+    "description": "Manages a Team Routing Rule within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-TeamRoutingRule/docs/README.md",
+    "definitions": {
+        "CriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "Type of the operation will be applied on conditions. Should be one of `match-all`, `match-any-condition` or `match-all-conditions`."
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "NotifyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionDefinition"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RestrictionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "Specifies which alert field will be used in condition. Possible values are `message`, `alias`, `description`, `source`, `entity`, `tags`, `actions`, `extra-properties`, `recipients`, `teams` or `priority`."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "If field is set as extra-properties, key could be used for key-value pair."
+                },
+                "Not": {
+                    "type": "boolean",
+                    "description": "Indicates behaviour of the given operation. Default value is false."
+                },
+                "Operation": {
+                    "type": "string",
+                    "description": "It is the operation that will be executed for the given field and key. Possible operations are `matches`, `contains`, `starts-with`, `ends-with`, `equals`, `contains-key`, `contains-value`, `greater-than`, `less-than`, `is-empty` and `equals-ignore-whitespace`."
+                },
+                "Order": {
+                    "type": "number",
+                    "description": "Order of the condition in conditions list."
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        },
+        "RestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "RestrictionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string"
+                },
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartDay": {
+                    "type": "string"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the team routing rule."
+        },
+        "Order": {
+            "type": "number",
+            "description": "The order of the team routing rule within the rules. order value is actually the index of the team routing rule whose minimum value is 0 and whose maximum value is n-1 (number of team routing rules is n)."
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "Id of the team owning the routing rule."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Timezone of team routing rule. If timezone field is not given, account timezone is used as default.You can refer to Supported Locale IDs for available timezones."
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriteriaDefinition"
+            }
+        },
+        "Notify": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotifyDefinition"
+            },
+            "minItems": 1
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestrictionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TeamId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

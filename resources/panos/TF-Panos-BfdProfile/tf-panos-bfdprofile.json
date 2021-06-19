@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Panos::BfdProfile",
+    "description": "This resource allows you to add/update/delete BFD profiles.\n\n~> **Note:** This resource is only applicable for PAN-OS 7.1+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-BfdProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DetectionMultiplier": {
+            "type": "number",
+            "description": "Multiplier sent to remote\nsystem.  Default is `3`."
+        },
+        "HoldTime": {
+            "type": "number",
+            "description": "Delay transmission and reception of control\npackets in ms."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinimumRxInterval": {
+            "type": "number",
+            "description": "Required minimum RX interval in\nms.  Default is `1000`."
+        },
+        "MinimumRxTtl": {
+            "type": "number",
+            "description": "Minimum accepted ttl on received BFD\npacket."
+        },
+        "MinimumTxInterval": {
+            "type": "number",
+            "description": "Desired minimum TX interval in\nms.  Default is `1000`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "BFD operation mode.  Valid values are `active` (default)\nor `passive`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The BBFD profile's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

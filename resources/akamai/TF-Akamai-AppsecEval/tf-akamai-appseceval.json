@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Akamai::AppsecEval",
+    "description": "Use the `akamai_appsec_eval` resource to perform evaluation mode operations such as Start, Stop, Restart, Update, or Complete.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecEval/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "CurrentRuleset": {
+            "type": "string"
+        },
+        "EvalOperation": {
+            "type": "string",
+            "description": "The operation to perform: START, STOP, RESTART, UPDATE, or COMPLETE."
+        },
+        "EvalStatus": {
+            "type": "string"
+        },
+        "EvaluatingRuleset": {
+            "type": "string"
+        },
+        "ExpirationDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OutputText": {
+            "type": "string"
+        },
+        "SecurityPolicyId": {
+            "type": "string",
+            "description": "The ID of the security policy to use."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the security configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "EvalOperation",
+        "SecurityPolicyId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CurrentRuleset",
+        "/properties/EvalStatus",
+        "/properties/EvaluatingRuleset",
+        "/properties/ExpirationDate",
+        "/properties/Id",
+        "/properties/OutputText"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

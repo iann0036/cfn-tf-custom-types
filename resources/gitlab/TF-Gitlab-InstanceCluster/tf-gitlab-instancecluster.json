@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::Gitlab::InstanceCluster",
+    "description": "This resource allows you to create and manage instance clusters for your GitLab instances.\nFor further information on clusters, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ee/user/instance/clusters/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-InstanceCluster/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterType": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The base domain of the cluster."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Determines if cluster is active or not. Defaults to `true`. This attribute cannot be read."
+        },
+        "EnvironmentScope": {
+            "type": "string",
+            "description": "The associated environment to the cluster. Defaults to `*`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubernetesApiUrl": {
+            "type": "string",
+            "description": "The URL to access the Kubernetes API."
+        },
+        "KubernetesAuthorizationType": {
+            "type": "string",
+            "description": "The cluster authorization type. Valid values are `rbac`, `abac`, `unknown_authorization`. Defaults to `rbac`."
+        },
+        "KubernetesCaCert": {
+            "type": "string",
+            "description": "TLS certificate (needed if API is using a self-signed TLS certificate)."
+        },
+        "KubernetesNamespace": {
+            "type": "string",
+            "description": "The unique namespace related to the instance."
+        },
+        "KubernetesToken": {
+            "type": "string",
+            "description": "The token to authenticate against Kubernetes. This attribute cannot be read."
+        },
+        "Managed": {
+            "type": "boolean",
+            "description": "Determines if cluster is managed by gitlab or not. Defaults to `true`. This attribute cannot be read."
+        },
+        "ManagementProjectId": {
+            "type": "string",
+            "description": "The ID of the management project for the cluster."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of cluster."
+        },
+        "PlatformType": {
+            "type": "string"
+        },
+        "ProviderType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KubernetesApiUrl",
+        "KubernetesToken",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterType",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/PlatformType",
+        "/properties/ProviderType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KubernetesToken"
+    ]
+}

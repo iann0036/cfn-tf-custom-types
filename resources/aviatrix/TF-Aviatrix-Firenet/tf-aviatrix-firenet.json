@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::Aviatrix::Firenet",
+    "description": "The **aviatrix_firenet** resource allows the creation and management of [Aviatrix Firewall Networks](https://docs.aviatrix.com/HowTos/firewall_network_faq.html).\n\n~> **NOTE:** This resource is used in conjunction with multiple other resources that may include, and are not limited to: **firewall_instance**, **firewall_instance_association**, **aws_tgw**, and **transit_gateway** resources or even **aviatrix_fqdn**, under the Aviatrix FireNet solution. Explicit dependencies may be set using `depends_on`. For more information on proper FireNet configuration, please see the workflow [here](https://docs.aviatrix.com/HowTos/firewall_network_workflow.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Firenet/docs/README.md",
+    "definitions": {
+        "FirewallInstanceAssociationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attached": {
+                    "type": "boolean"
+                },
+                "EgressInterface": {
+                    "type": "string"
+                },
+                "FirenetGwName": {
+                    "type": "string"
+                },
+                "FirewallName": {
+                    "type": "string"
+                },
+                "InstanceId": {
+                    "type": "string"
+                },
+                "LanInterface": {
+                    "type": "string"
+                },
+                "ManagementInterface": {
+                    "type": "string"
+                },
+                "VendorType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FirenetGwName",
+                "InstanceId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EgressEnabled": {
+            "type": "boolean"
+        },
+        "EgressStaticCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HashingAlgorithm": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InspectionEnabled": {
+            "type": "boolean"
+        },
+        "KeepAliveViaLanInterfaceEnabled": {
+            "type": "boolean"
+        },
+        "ManageFirewallInstanceAssociation": {
+            "type": "boolean"
+        },
+        "TgwSegmentationForEgressEnabled": {
+            "type": "boolean"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "FirewallInstanceAssociation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallInstanceAssociationDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

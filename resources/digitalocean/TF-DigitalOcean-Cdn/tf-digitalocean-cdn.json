@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::DigitalOcean::Cdn",
+    "description": "Provides a DigitalOcean CDN Endpoint resource for use with Spaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Cdn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "string",
+            "description": "**Deprecated** The ID of a DigitalOcean managed TLS certificate used for SSL when a custom subdomain is provided."
+        },
+        "CertificateName": {
+            "type": "string",
+            "description": "The unique name of a DigitalOcean managed TLS certificate used for SSL when a custom subdomain is provided."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CustomDomain": {
+            "type": "string",
+            "description": "The fully qualified domain name (FQDN) of the custom subdomain used with the CDN Endpoint."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Origin": {
+            "type": "string",
+            "description": "The fully qualified domain name, (FQDN) for a Space."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The time to live for the CDN Endpoint, in seconds. Default is 3600 seconds."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Origin"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Endpoint",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleStorageDefaultObjectAccessControl",
+    "description": "CloudFormation equivalent of google_storage_default_object_access_control",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleStorageDefaultObjectAccessControl/docs/README.md",
+    "definitions": {
+        "ProjectTeamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProjectNumber": {
+                    "type": "string"
+                },
+                "Team": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Entity": {
+            "type": "string"
+        },
+        "EntityId": {
+            "type": "string"
+        },
+        "Generation": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Object": {
+            "type": "string"
+        },
+        "ProjectTeam": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProjectTeamDefinition"
+            }
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Entity",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Domain",
+        "/properties/Email",
+        "/properties/EntityId",
+        "/properties/Generation",
+        "/properties/Id",
+        "/properties/ProjectTeam"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

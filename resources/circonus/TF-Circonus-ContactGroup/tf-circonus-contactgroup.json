@@ -1,0 +1,332 @@
+{
+    "typeName": "TF::Circonus::ContactGroup",
+    "description": "The ``circonus_contact_group`` resource creates and manages a\n[Circonus Contact Group](https://login.circonus.com/user/docs/Alerting/ContactGroups).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-ContactGroup/docs/README.md",
+    "definitions": {
+        "AlertOptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EscalateAfter": {
+                    "type": "string"
+                },
+                "EscalateTo": {
+                    "type": "string"
+                },
+                "Reminder": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Severity"
+            ]
+        },
+        "EmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "PagerDutyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Account": {
+                    "type": "string"
+                },
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "ServiceKey": {
+                    "type": "string"
+                },
+                "WebhookUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Account",
+                "ServiceKey",
+                "WebhookUrl"
+            ]
+        },
+        "SlackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buttons": {
+                    "type": "boolean"
+                },
+                "Channel": {
+                    "type": "string"
+                },
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "Team": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Channel",
+                "Team"
+            ]
+        },
+        "SmsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VictoropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "Critical": {
+                    "type": "number"
+                },
+                "Info": {
+                    "type": "number"
+                },
+                "Team": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ApiKey",
+                "Critical",
+                "Info",
+                "Team",
+                "Warning"
+            ]
+        },
+        "XmppDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregationWindow": {
+            "type": "string",
+            "description": "The aggregation window for batching up alert\nnotifications."
+        },
+        "AlwaysSendClear": {
+            "type": "boolean"
+        },
+        "GroupType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "number"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LongMessage": {
+            "type": "string",
+            "description": "The bulk of the message used in long form alert\nmessages."
+        },
+        "LongSubject": {
+            "type": "string",
+            "description": "The subject used in long form alert messages."
+        },
+        "LongSummary": {
+            "type": "string",
+            "description": "The brief summary used in long form alert messages."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the contact group."
+        },
+        "ShortMessage": {
+            "type": "string",
+            "description": "The subject used in short form alert messages."
+        },
+        "ShortSummary": {
+            "type": "string",
+            "description": "The brief summary used in short form alert\nmessages."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags attached to the Contact Group."
+        },
+        "AlertOption": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlertOptionDefinition"
+            }
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            }
+        },
+        "PagerDuty": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PagerDutyDefinition"
+            }
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SlackDefinition"
+            }
+        },
+        "Sms": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Victorops": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VictoropsDefinition"
+            }
+        },
+        "Xmpp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/XmppDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LastModified",
+        "/properties/LastModifiedBy"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/PagerDutyDefinition/ServiceKey",
+        "/definitions/VictoropsDefinition/ApiKey"
+    ]
+}

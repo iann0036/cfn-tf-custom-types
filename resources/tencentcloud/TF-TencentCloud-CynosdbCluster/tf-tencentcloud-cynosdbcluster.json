@@ -1,0 +1,314 @@
+{
+    "typeName": "TF::TencentCloud::CynosdbCluster",
+    "description": "Provide a resource to create a CynosDB cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CynosdbCluster/docs/README.md",
+    "definitions": {
+        "RoGroupAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "RoGroupInstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string"
+                },
+                "InstanceName": {
+                    "type": "string"
+                }
+            }
+        },
+        "RwGroupAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "RwGroupInstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string"
+                },
+                "InstanceName": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number",
+            "description": "Auto renew flag. Valid values are `0`(MANUAL_RENEW), `1`(AUTO_RENEW). Default value is `0`. Only works for PREPAID cluster."
+        },
+        "AvailableZone": {
+            "type": "string",
+            "description": "The available zone of the CynosDB Cluster."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`. Default value is `POSTPAID_BY_HOUR`."
+        },
+        "Charset": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "Name of CynosDB cluster."
+        },
+        "ClusterStatus": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DbType": {
+            "type": "string",
+            "description": "Type of CynosDB, and available values include `MYSQL`."
+        },
+        "DbVersion": {
+            "type": "string",
+            "description": "Version of CynosDB, which is related to `db_type`. For `MYSQL`, available value is `5.7`."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete cluster instance directly or not. Default is false. If set true, the cluster and its `All RELATED INSTANCES` will be deleted instead of staying recycle bin. Note: works for both `PREPAID` and `POSTPAID_BY_HOUR` cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCpuCore": {
+            "type": "number",
+            "description": "The number of CPU cores of read-write type instance in the CynosDB cluster. Note: modification of this field will take effect immediately, if want to upgrade on maintenance window, please upgrade from console."
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InstanceMaintainDuration": {
+            "type": "number",
+            "description": "Duration time for maintenance, unit in second. `3600` by default."
+        },
+        "InstanceMaintainStartTime": {
+            "type": "number",
+            "description": "Offset time from 00:00, unit in second. For example, 03:00am should be `10800`. `10800` by default."
+        },
+        "InstanceMaintainWeekdays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Weekdays for maintenance. `[\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\", \"Sun\"]` by default."
+        },
+        "InstanceMemorySize": {
+            "type": "number",
+            "description": "Memory capacity of read-write type instance, unit in GB. Note: modification of this field will take effect immediately, if want to upgrade on maintenance window, please upgrade from console."
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceStatus": {
+            "type": "string"
+        },
+        "InstanceStorageSize": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of `root` account."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port of CynosDB cluster."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `24`, `36`. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "ID of the project. `0` by default."
+        },
+        "RoGroupAddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoGroupAddrDefinition"
+            }
+        },
+        "RoGroupId": {
+            "type": "string"
+        },
+        "RoGroupInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoGroupInstancesDefinition"
+            }
+        },
+        "RoGroupSg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "IDs of security group for `ro_group`."
+        },
+        "RwGroupAddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RwGroupAddrDefinition"
+            }
+        },
+        "RwGroupId": {
+            "type": "string"
+        },
+        "RwGroupInstances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RwGroupInstancesDefinition"
+            }
+        },
+        "RwGroupSg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "IDs of security group for `rw_group`."
+        },
+        "StorageLimit": {
+            "type": "number",
+            "description": "Storage limit of CynosDB cluster instance, unit in GB."
+        },
+        "StorageUsed": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of the subnet within this VPC."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The tags of the CynosDB cluster."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailableZone",
+        "ClusterName",
+        "DbType",
+        "DbVersion",
+        "InstanceCpuCore",
+        "InstanceMemorySize",
+        "Password",
+        "StorageLimit",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Charset",
+        "/properties/ClusterStatus",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/InstanceId",
+        "/properties/InstanceName",
+        "/properties/InstanceStatus",
+        "/properties/InstanceStorageSize",
+        "/properties/RoGroupAddr",
+        "/properties/RoGroupId",
+        "/properties/RoGroupInstances",
+        "/properties/RwGroupAddr",
+        "/properties/RwGroupId",
+        "/properties/RwGroupInstances",
+        "/properties/StorageUsed"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

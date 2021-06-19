@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::AzureDevOps::ServiceendpointAzurecr",
+    "description": "Manages a Azure Container Registry service endpoint within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-ServiceendpointAzurecr/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppObjectId": {
+            "type": "string"
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            }
+        },
+        "AzSpnRoleAssignmentId": {
+            "type": "string"
+        },
+        "AzSpnRolePermissions": {
+            "type": "string"
+        },
+        "AzurecrName": {
+            "type": "string",
+            "description": "The Azure container registry name.\n- `azurecr_subscription_id` - (Required) The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "AzurecrSpnTenantid": {
+            "type": "string",
+            "description": "The tenant id of the service principal.\n- `azurecr_name` - (Required) The Azure container registry name.\n- `azurecr_subscription_id` - (Required) The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "AzurecrSubscriptionId": {
+            "type": "string",
+            "description": "The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "AzurecrSubscriptionName": {
+            "type": "string",
+            "description": "The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The name you will use to refer to this service connection in task inputs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID or project name.\n- `service_endpoint_name` - (Required) The name you will use to refer to this service connection in task inputs.\n- `resource_group` - (Required) The resource group to which the container registry belongs.\n- `azurecr_spn_tenantid` - (Required) The tenant id of the service principal.\n- `azurecr_name` - (Required) The Azure container registry name.\n- `azurecr_subscription_id` - (Required) The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "ResourceGroup": {
+            "type": "string",
+            "description": "The resource group to which the container registry belongs.\n- `azurecr_spn_tenantid` - (Required) The tenant id of the service principal.\n- `azurecr_name` - (Required) The Azure container registry name.\n- `azurecr_subscription_id` - (Required) The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "ServiceEndpointName": {
+            "type": "string",
+            "description": "The name you will use to refer to this service connection in task inputs.\n- `resource_group` - (Required) The resource group to which the container registry belongs.\n- `azurecr_spn_tenantid` - (Required) The tenant id of the service principal.\n- `azurecr_name` - (Required) The Azure container registry name.\n- `azurecr_subscription_id` - (Required) The subscription id of the Azure targets.\n- `azurecr_subscription_name` - (Required) The subscription name of the Azure targets.\n- `description` - (Optional) The name you will use to refer to this service connection in task inputs."
+        },
+        "ServicePrincipalId": {
+            "type": "string"
+        },
+        "SpnObjectId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AzurecrName",
+        "AzurecrSpnTenantid",
+        "AzurecrSubscriptionId",
+        "AzurecrSubscriptionName",
+        "ProjectId",
+        "ResourceGroup",
+        "ServiceEndpointName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppObjectId",
+        "/properties/AzSpnRoleAssignmentId",
+        "/properties/AzSpnRolePermissions",
+        "/properties/Id",
+        "/properties/ServicePrincipalId",
+        "/properties/SpnObjectId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

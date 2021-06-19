@@ -1,0 +1,317 @@
+{
+    "typeName": "TF::Spotinst::OceanGkeImport",
+    "description": "Manages a Spotinst Ocean GKE resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanGkeImport/docs/README.md",
+    "definitions": {
+        "AutoscalerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoHeadroomPercentage": {
+                    "type": "number"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "IsAutoConfig": {
+                    "type": "boolean"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Down": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Headroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimitsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BackendServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocationType": {
+                    "type": "string"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "NamedPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NamedPortsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ServiceName"
+            ]
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShutdownHours": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShutdownHoursDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tasks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TasksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxScaleDownPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "GpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxMemoryGib": {
+                    "type": "number"
+                },
+                "MaxVcpu": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NamedPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Ports"
+            ]
+        },
+        "ShutdownHoursDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "TimeWindows": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "TimeWindows"
+            ]
+        },
+        "TasksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "CronExpression": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CronExpression",
+                "IsEnabled",
+                "TaskType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterControllerId": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The GKE cluster name."
+        },
+        "ControllerClusterId": {
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The number of instances to launch and maintain in the cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The zone the master cluster is located in."
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The upper limit of instances the cluster can scale up to."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The lower limit of instances the cluster can scale down to."
+        },
+        "Whitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Instance types allowed in the Ocean cluster."
+        },
+        "Autoscaler": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscalerDefinition"
+            },
+            "maxItems": 1
+        },
+        "BackendServices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendServicesDefinition"
+            }
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "Location"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterControllerId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

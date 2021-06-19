@@ -1,0 +1,319 @@
+{
+    "typeName": "TF::Nomad::Job",
+    "description": "Manages a job registered in Nomad.\n\nThis can be used to initialize your cluster with system jobs, common services,\nand more. In day to day Nomad use it is common for developers to submit jobs to\nNomad directly, such as for general app deployment. In addition to these apps, a\nNomad cluster often runs core system services that are ideally setup during\ninfrastructure creation. This resource is ideal for the latter type of job, but\ncan be used to manage any job within Nomad.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nomad/TF-Nomad-Job/docs/README.md",
+    "definitions": {
+        "TaskGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaskGroupsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaskGroupsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Volume": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaskGroupsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TaskGroupsDefinition2"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "VolumeMounts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaskGroupsDefinition3"
+                    }
+                }
+            }
+        },
+        "TaskGroupsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "TaskGroupsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TaskGroupsDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Task": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaskGroupsDefinition4"
+                    }
+                },
+                "Volumes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TaskGroupsDefinition5"
+                    }
+                }
+            }
+        },
+        "Hcl2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowFs": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Vars": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VarsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Datacenters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "DeploymentStatus": {
+            "type": "string"
+        },
+        "DeregisterOnDestroy": {
+            "type": "boolean"
+        },
+        "DeregisterOnIdChange": {
+            "type": "boolean"
+        },
+        "Detach": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Jobspec": {
+            "type": "string"
+        },
+        "Json": {
+            "type": "boolean"
+        },
+        "ModifyIndex": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "PolicyOverride": {
+            "type": "boolean"
+        },
+        "PurgeOnDestroy": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "TaskGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaskGroupsDefinition6"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Hcl2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Hcl2Definition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Jobspec"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllocationIds",
+        "/properties/Datacenters",
+        "/properties/DeploymentId",
+        "/properties/DeploymentStatus",
+        "/properties/Id",
+        "/properties/ModifyIndex",
+        "/properties/Name",
+        "/properties/Namespace",
+        "/properties/Region",
+        "/properties/TaskGroups",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::TencentCloud::DcGateway",
+    "description": "Provides a resource to creating direct connect gateway instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-DcGateway/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CnnRouteType": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EnableBgp": {
+            "type": "boolean"
+        },
+        "GatewayType": {
+            "type": "string",
+            "description": "Type of the gateway. Valid value: `NORMAL` and `NAT`. Default is `NORMAL`. NOTES: CCN only supports `NORMAL` and a VPC can create two DCGs, the one is NAT type and the other is non-NAT type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DCG."
+        },
+        "NetworkInstanceId": {
+            "type": "string",
+            "description": "If the `network_type` value is `VPC`, the available value is VPC ID. But when the `network_type` value is `CCN`, the available value is CCN instance ID."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Type of associated network. Valid value: `VPC` and `CCN`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NetworkInstanceId",
+        "NetworkType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CnnRouteType",
+        "/properties/CreateTime",
+        "/properties/EnableBgp",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

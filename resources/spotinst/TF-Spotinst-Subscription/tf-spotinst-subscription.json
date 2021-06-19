@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::Spotinst::Subscription",
+    "description": "Provides a Spotinst subscription resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-Subscription/docs/README.md",
+    "definitions": {
+        "FormatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string",
+            "description": "The endpoint the notification will be sent to. url in case of `\"http\"`/`\"https\"`/`\"web\"`, email address in case of `\"email\"`/`\"email-json\"` and sns-topic-arn in case of `\"aws-sns\"`."
+        },
+        "EventType": {
+            "type": "string",
+            "description": "The event to send the notification when triggered. Valid values: `\"AWS_EC2_INSTANCE_TERMINATE\"`, `\"AWS_EC2_INSTANCE_TERMINATED\"`, `\"AWS_EC2_INSTANCE_LAUNCH\"`, `\"AWS_EC2_INSTANCE_READY_SIGNAL_TIMEOUT\"`, `\"AWS_EC2_CANT_SPIN_OD\"`, `\"AWS_EC2_INSTANCE_UNHEALTHY_IN_ELB\"`, `\"GROUP_ROLL_FAILED\"`, `\"GROUP_ROLL_FINISHED\"`,\n`\"CANT_SCALE_UP_GROUP_MAX_CAPACITY\"`,\n`\"GROUP_UPDATED\"`,\n`\"AWS_EMR_PROVISION_TIMEOUT\"`,\n`\"GROUP_BEANSTALK_INIT_READY\"`,\n`\"AZURE_VM_TERMINATED\"`,\n`\"AZURE_VM_TERMINATE\"`,\n`\"AWS_EC2_MANAGED_INSTANCE_PAUSING\"`,\n`\"AWS_EC2_MANAGED_INSTANCE_RESUMING\"`,\n`\"AWS_EC2_MANAGED_INSTANCE_RECYCLING\"`,`\"AWS_EC2_MANAGED_INSTANCE_DELETING\"`.\nOcean Events:`\"CLUSTER_ROLL_FINISHED\"`,`\"GROUP_ROLL_FAILED\"`."
+        },
+        "Format": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FormatDefinition"
+            },
+            "description": "The format of the notification content (JSON Format - Key+Value). Valid Values : `\"instance-id\"`, `\"event\"`, `\"resource-id\"`, `\"resource-name\"`, `\"subnet-id\"`, `\"availability-zone\"`, `\"reason\"`, `\"private-ip\"`, `\"launchspec-id\"`\nExample: {\"event\": `\"event\"`, `\"resourceId\"`: `\"resource-id\"`, `\"resourceName\"`: `\"resource-name\"`\", `\"myCustomKey\"`: `\"My content is set here\"` }\nDefault: {`\"event\"`: `\"<event>\"`, `\"instanceId\"`: `\"<instance-id>\"`, `\"resourceId\"`: `\"<resource-id>\"`, `\"resourceName\"`: `\"<resource-name>\"` }."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The protocol to send the notification. Valid values: `\"email\"`, `\"email-json\"`, `\"aws-sns\"`, `\"web\"`.\nThe following values are deprecated: `\"http\"` , `\"https\"`\nYou can use the generic `\"web\"` protocol instead.\n`\"aws-sns\"` is only supported with AWS provider."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "Spotinst Resource id (Elastigroup or Ocean ID)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Endpoint",
+        "EventType",
+        "Protocol",
+        "ResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

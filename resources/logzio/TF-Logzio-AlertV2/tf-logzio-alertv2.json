@@ -1,0 +1,296 @@
+{
+    "typeName": "TF::Logzio::AlertV2",
+    "description": "CloudFormation equivalent of logzio_alert_v2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logzio/TF-Logzio-AlertV2/docs/README.md",
+    "definitions": {
+        "JoinsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SubComponentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountIdsToQueryOn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "FilterMust": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "$ref": "#/definitions/FilterMustDefinition"
+                        }
+                    }
+                },
+                "FilterMustNot": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "$ref": "#/definitions/FilterMustNotDefinition"
+                        }
+                    }
+                },
+                "GroupByAggregationFields": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Operation": {
+                    "type": "string"
+                },
+                "QueryString": {
+                    "type": "string"
+                },
+                "ShouldQueryOnAllAccounts": {
+                    "type": "boolean"
+                },
+                "ValueAggregationField": {
+                    "type": "string"
+                },
+                "ValueAggregationType": {
+                    "type": "string"
+                },
+                "Columns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColumnsDefinition"
+                    }
+                },
+                "SeverityThresholdTiers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeverityThresholdTiersDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "QueryString",
+                "ValueAggregationType"
+            ]
+        },
+        "FilterMustDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FilterMustNotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ColumnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FieldName": {
+                    "type": "string"
+                },
+                "Regex": {
+                    "type": "string"
+                },
+                "Sort": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SeverityThresholdTiersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Severity": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Severity",
+                "Threshold"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertNotificationEndpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "CorrelationOperator": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "Joins": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "array",
+                "insertionOrder": true,
+                "items": {
+                    "$ref": "#/definitions/JoinsDefinition"
+                }
+            }
+        },
+        "NotificationEmails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "OutputType": {
+            "type": "string"
+        },
+        "SearchTimeframeMinutes": {
+            "type": "number"
+        },
+        "SuppressNotificationsMinutes": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "UpdatedBy": {
+            "type": "string"
+        },
+        "SubComponents": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubComponentsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SearchTimeframeMinutes",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Id",
+        "/properties/UpdatedAt",
+        "/properties/UpdatedBy"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

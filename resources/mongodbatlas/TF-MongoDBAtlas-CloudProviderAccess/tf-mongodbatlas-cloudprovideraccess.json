@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::MongoDBAtlas::CloudProviderAccess",
+    "description": "CloudFormation equivalent of mongodbatlas_cloud_provider_access",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-CloudProviderAccess/docs/README.md",
+    "definitions": {
+        "FeatureUsagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FeatureId": {
+                    "type": "string"
+                },
+                "FeatureType": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AtlasAssumedRoleExternalId": {
+            "type": "string"
+        },
+        "AtlasAwsAccountArn": {
+            "type": "string"
+        },
+        "AuthorizedDate": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "FeatureUsages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FeatureUsagesDefinition"
+            }
+        },
+        "IamAssumedRoleArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "ProviderName": {
+            "type": "string"
+        },
+        "RoleId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "ProviderName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AtlasAssumedRoleExternalId",
+        "/properties/AtlasAwsAccountArn",
+        "/properties/AuthorizedDate",
+        "/properties/CreatedDate",
+        "/properties/FeatureUsages",
+        "/properties/Id",
+        "/properties/RoleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

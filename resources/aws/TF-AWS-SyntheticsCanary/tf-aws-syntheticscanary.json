@@ -1,0 +1,280 @@
+{
+    "typeName": "TF::AWS::SyntheticsCanary",
+    "description": "Provides a Synthetics Canary resource.\n\n~> **NOTE:** When you create a canary, AWS creates supporting implicit resources. See the Amazon CloudWatch Synthetics documentation on [DeleteCanary](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html) for a full list. Neither AWS nor Terraform deletes these implicit resources automatically when the canary is deleted. Before deleting a canary, ensure you have all the information about the canary that you need to delete the implicit resources using Terraform shell commands, the AWS Console, or AWS CLI.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SyntheticsCanary/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimelineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Created": {
+                    "type": "string"
+                },
+                "LastModified": {
+                    "type": "string"
+                },
+                "LastStarted": {
+                    "type": "string"
+                },
+                "LastStopped": {
+                    "type": "string"
+                }
+            }
+        },
+        "RunConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveTracing": {
+                    "type": "boolean"
+                },
+                "MemoryInMb": {
+                    "type": "number"
+                },
+                "TimeoutInSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DurationInSeconds": {
+                    "type": "number"
+                },
+                "Expression": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Expression"
+            ]
+        },
+        "VpcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ArtifactS3Location": {
+            "type": "string",
+            "description": "Location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary."
+        },
+        "EngineArn": {
+            "type": "string"
+        },
+        "ExecutionRoleArn": {
+            "type": "string",
+            "description": "ARN of the IAM role to be used to run the canary. see [AWS Docs](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html#API_CreateCanary_RequestSyntax) for permissions needs for IAM Role."
+        },
+        "FailureRetentionPeriod": {
+            "type": "number",
+            "description": "Number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days."
+        },
+        "Handler": {
+            "type": "string",
+            "description": "Entry point to use for the source code when running the canary. This value must end with the string `.handler` ."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for this canary. Has a maximum length of 21 characters. Valid characters are lowercase alphanumeric, hyphen, or underscore."
+        },
+        "RuntimeVersion": {
+            "type": "string",
+            "description": "Runtime version to use for the canary. Versions change often so consult the [Amazon CloudWatch documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html) for the latest valid versions. Values include `syn-python-selenium-1.0`, `syn-nodejs-puppeteer-3.0`, `syn-nodejs-2.2`, `syn-nodejs-2.1`, `syn-nodejs-2.0`, and `syn-1.0`."
+        },
+        "S3Bucket": {
+            "type": "string",
+            "description": "Full bucket name which is used if your canary script is located in S3. The bucket must already exist. Specify the full bucket name including s3:// as the start of the bucket name. **Conflicts with `zip_file`.**."
+        },
+        "S3Key": {
+            "type": "string",
+            "description": "S3 key of your script. **Conflicts with `zip_file`.**."
+        },
+        "S3Version": {
+            "type": "string",
+            "description": "S3 version ID of your script. **Conflicts with `zip_file`.**."
+        },
+        "SourceLocationArn": {
+            "type": "string"
+        },
+        "StartCanary": {
+            "type": "boolean",
+            "description": "Whether to run or stop the canary."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SuccessRetentionPeriod": {
+            "type": "number",
+            "description": "Number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Timeline": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimelineDefinition"
+            }
+        },
+        "ZipFile": {
+            "type": "string",
+            "description": "ZIP file that contains the script, if you input your canary script directly into the canary instead of referring to an S3 location. It can be up to 5 MB. **Conflicts with `s3_bucket`, `s3_key`, and `s3_version`.**."
+        },
+        "RunConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RunConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ArtifactS3Location",
+        "ExecutionRoleArn",
+        "Handler",
+        "Name",
+        "RuntimeVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/EngineArn",
+        "/properties/Id",
+        "/properties/SourceLocationArn",
+        "/properties/Status",
+        "/properties/Timeline"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

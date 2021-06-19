@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::AWS::DxBgpPeer",
+    "description": "Provides a Direct Connect BGP peer resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DxBgpPeer/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "string",
+            "description": "The address family for the BGP peer. `ipv4 ` or `ipv6`."
+        },
+        "AmazonAddress": {
+            "type": "string",
+            "description": "The IPv4 CIDR address to use to send traffic to Amazon.\nRequired for IPv4 BGP peers on public virtual interfaces."
+        },
+        "AwsDevice": {
+            "type": "string"
+        },
+        "BgpAsn": {
+            "type": "number",
+            "description": "The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration."
+        },
+        "BgpAuthKey": {
+            "type": "string",
+            "description": "The authentication key for BGP configuration."
+        },
+        "BgpPeerId": {
+            "type": "string"
+        },
+        "BgpStatus": {
+            "type": "string"
+        },
+        "CustomerAddress": {
+            "type": "string",
+            "description": "The IPv4 CIDR destination address to which Amazon should send traffic.\nRequired for IPv4 BGP peers on public virtual interfaces."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VirtualInterfaceId": {
+            "type": "string",
+            "description": "The ID of the Direct Connect virtual interface on which to create the BGP peer."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AddressFamily",
+        "BgpAsn",
+        "VirtualInterfaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsDevice",
+        "/properties/BgpPeerId",
+        "/properties/BgpStatus",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::Constellix::AaaaRecord",
+    "description": "Manages one or more AAAA records within the specified domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/constellix/TF-Constellix-AaaaRecord/docs/README.md",
+    "definitions": {
+        "GeoLocationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RecordFailoverValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckId": {
+                    "type": "number"
+                },
+                "DisableFlag": {
+                    "type": "string"
+                },
+                "SortOrder": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DisableFlag",
+                "SortOrder",
+                "Value"
+            ]
+        },
+        "RoundrobinDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableFlag": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DisableFlag",
+                "Value"
+            ]
+        },
+        "RoundrobinFailoverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableFlag": {
+                    "type": "string"
+                },
+                "SortOrder": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SortOrder",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContactIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "GeoLocation": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GeoLocationDefinition"
+            }
+        },
+        "GtdRegion": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Noanswer": {
+            "type": "boolean"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "Pools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "RecordFailoverDisableFlag": {
+            "type": "string"
+        },
+        "RecordFailoverFailoverType": {
+            "type": "string"
+        },
+        "RecordOption": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "RecordFailoverValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RecordFailoverValuesDefinition"
+            }
+        },
+        "Roundrobin": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoundrobinDefinition"
+            }
+        },
+        "RoundrobinFailover": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoundrobinFailoverDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "SourceType",
+        "Ttl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

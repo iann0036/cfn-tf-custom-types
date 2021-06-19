@@ -1,0 +1,302 @@
+{
+    "typeName": "TF::FortiOS::ExtendercontrollerExtender1",
+    "description": "Extender controller configuration.\n\n-> The resource applies to FortiOS Version >= 6.4.2. For FortiOS Version < 6.4.2, see `fortios_extendercontroller_extender`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ExtendercontrollerExtender1/docs/README.md",
+    "definitions": {
+        "ControllerReportDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number",
+                    "description": "Controller report interval."
+                },
+                "SignalThreshold": {
+                    "type": "number",
+                    "description": "Controller report signal threshold."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "FortiExtender controller report status. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "Modem1Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnStatus": {
+                    "type": "number",
+                    "description": "Connection status."
+                },
+                "DefaultSim": {
+                    "type": "string",
+                    "description": "Default SIM selection. Valid values: `sim1`, `sim2`, `carrier`, `cost`."
+                },
+                "Gps": {
+                    "type": "string",
+                    "description": "FortiExtender GPS enable/disable. Valid values: `disable`, `enable`."
+                },
+                "Ifname": {
+                    "type": "string",
+                    "description": "FortiExtender interface name."
+                },
+                "PreferredCarrier": {
+                    "type": "string",
+                    "description": "Preferred carrier."
+                },
+                "RedundantIntf": {
+                    "type": "string",
+                    "description": "Redundant interface."
+                },
+                "RedundantMode": {
+                    "type": "string",
+                    "description": "FortiExtender mode. Valid values: `disable`, `enable`."
+                },
+                "Sim1Pin": {
+                    "type": "string",
+                    "description": "SIM #1 PIN status. Valid values: `disable`, `enable`."
+                },
+                "Sim1PinCode": {
+                    "type": "string",
+                    "description": "SIM #1 PIN password."
+                },
+                "Sim2Pin": {
+                    "type": "string",
+                    "description": "SIM #2 PIN status. Valid values: `disable`, `enable`."
+                },
+                "Sim2PinCode": {
+                    "type": "string",
+                    "description": "SIM #2 PIN password."
+                },
+                "AutoSwitch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoSwitchDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Modem2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnStatus": {
+                    "type": "number",
+                    "description": "Connection status."
+                },
+                "DefaultSim": {
+                    "type": "string",
+                    "description": "Default SIM selection. Valid values: `sim1`, `sim2`, `carrier`, `cost`."
+                },
+                "Gps": {
+                    "type": "string",
+                    "description": "FortiExtender GPS enable/disable. Valid values: `disable`, `enable`."
+                },
+                "Ifname": {
+                    "type": "string",
+                    "description": "FortiExtender interface name."
+                },
+                "PreferredCarrier": {
+                    "type": "string",
+                    "description": "Preferred carrier."
+                },
+                "RedundantIntf": {
+                    "type": "string",
+                    "description": "Redundant interface."
+                },
+                "RedundantMode": {
+                    "type": "string",
+                    "description": "FortiExtender mode. Valid values: `disable`, `enable`."
+                },
+                "Sim1Pin": {
+                    "type": "string",
+                    "description": "SIM #1 PIN status. Valid values: `disable`, `enable`."
+                },
+                "Sim1PinCode": {
+                    "type": "string",
+                    "description": "SIM #1 PIN password."
+                },
+                "Sim2Pin": {
+                    "type": "string",
+                    "description": "SIM #2 PIN status. Valid values: `disable`, `enable`."
+                },
+                "Sim2PinCode": {
+                    "type": "string",
+                    "description": "SIM #2 PIN password."
+                },
+                "AutoSwitch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoSwitchDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoSwitchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dataplan": {
+                    "type": "string",
+                    "description": "Automatically switch based on data usage. Valid values: `disable`, `enable`."
+                },
+                "Disconnect": {
+                    "type": "string",
+                    "description": "Auto switch by disconnect. Valid values: `disable`, `enable`."
+                },
+                "DisconnectPeriod": {
+                    "type": "number",
+                    "description": "Automatically switch based on disconnect period."
+                },
+                "DisconnectThreshold": {
+                    "type": "number",
+                    "description": "Automatically switch based on disconnect threshold."
+                },
+                "Signal": {
+                    "type": "string",
+                    "description": "Automatically switch based on signal strength. Valid values: `disable`, `enable`."
+                },
+                "SwitchBack": {
+                    "type": "string",
+                    "description": "Auto switch with switch back multi-options. Valid values: `time`, `timer`."
+                },
+                "SwitchBackTime": {
+                    "type": "string",
+                    "description": "Automatically switch over to preferred SIM/carrier at a specified time in UTC (HH:MM)."
+                },
+                "SwitchBackTimer": {
+                    "type": "number",
+                    "description": "Automatically switch over to preferred SIM/carrier after the given time (3600 - 2147483647 sec)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authorized": {
+            "type": "string",
+            "description": "FortiExtender Administration (enable or disable). Valid values: `disable`, `enable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "ExtName": {
+            "type": "string",
+            "description": "FortiExtender name."
+        },
+        "Fosid": {
+            "type": "string",
+            "description": "FortiExtender serial number."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoginPassword": {
+            "type": "string",
+            "description": "FortiExtender login password."
+        },
+        "Name": {
+            "type": "string",
+            "description": "FortiExtender entry name."
+        },
+        "Vdom": {
+            "type": "number",
+            "description": "VDOM."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ControllerReport": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ControllerReportDefinition"
+            },
+            "maxItems": 1
+        },
+        "Modem1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Modem1Definition"
+            },
+            "maxItems": 1
+        },
+        "Modem2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Modem2Definition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Authorized",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/LoginPassword",
+        "/definitions/Modem1Definition/Sim1PinCode",
+        "/definitions/Modem1Definition/Sim2PinCode",
+        "/definitions/Modem2Definition/Sim1PinCode",
+        "/definitions/Modem2Definition/Sim2PinCode"
+    ]
+}

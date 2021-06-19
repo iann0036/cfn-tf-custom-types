@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::VMC::Cluster",
+    "description": "Provides a resource to manage clusters.\n~> **Note:** Cluster resource implicitly depends on SDDC resource creation. SDDC must be provisioned before a cluster can be created. For details on how to provision a SDDC refer to [vmc_sddc](https://www.terraform.io/docs/providers/vmc/r/sddc.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vmc/TF-VMC-Cluster/docs/README.md",
+    "definitions": {
+        "ClusterInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MicrosoftLicensingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MssqlLicensing": {
+                    "type": "string"
+                },
+                "WindowsLicensing": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClusterInfoDefinition"
+            }
+        },
+        "EdrsPolicyType": {
+            "type": "string"
+        },
+        "EnableEdrs": {
+            "type": "boolean"
+        },
+        "HostCpuCoresCount": {
+            "type": "number",
+            "description": "Customize CPU cores on hosts in a cluster. Specify number of cores to be enabled on hosts in a cluster."
+        },
+        "HostInstanceType": {
+            "type": "string",
+            "description": "The instance type for the esx hosts added to this cluster. Possible values are: I3_METAL, I3EN_METAL and R5_METAL. Default value: I3_METAL."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxHosts": {
+            "type": "number"
+        },
+        "MinHosts": {
+            "type": "number"
+        },
+        "NumHosts": {
+            "type": "number",
+            "description": "Number of hosts in the cluster. The number of hosts must be between 3 - 16 hosts for a cluster."
+        },
+        "SddcId": {
+            "type": "string",
+            "description": "SDDC identifier."
+        },
+        "StorageCapacity": {
+            "type": "string",
+            "description": "For EBS-backed instances i.e: for R5_METAL only, the requested storage capacity in GiB."
+        },
+        "MicrosoftLicensingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MicrosoftLicensingConfigDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NumHosts",
+        "SddcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterInfo",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

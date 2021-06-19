@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::AWS::AmplifyBackendEnvironment",
+    "description": "Provides an Amplify Backend Environment resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AmplifyBackendEnvironment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "The unique ID for an Amplify app."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DeploymentArtifacts": {
+            "type": "string",
+            "description": "The name of deployment artifacts."
+        },
+        "EnvironmentName": {
+            "type": "string",
+            "description": "The name for the backend environment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StackName": {
+            "type": "string",
+            "description": "The AWS CloudFormation stack name of a backend environment."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "EnvironmentName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::NSXT::SwitchSecuritySwitchingProfile",
+    "description": "Provides a resource to configure switch security switching profile on NSX-T manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-SwitchSecuritySwitchingProfile/docs/README.md",
+    "definitions": {
+        "RateLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "RxBroadcast": {
+                    "type": "number"
+                },
+                "RxMulticast": {
+                    "type": "number"
+                },
+                "TxBroadcast": {
+                    "type": "number"
+                },
+                "TxMulticast": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlockClientDhcp": {
+            "type": "boolean",
+            "description": "Indicates whether DHCP client blocking is enabled."
+        },
+        "BlockNonIp": {
+            "type": "boolean",
+            "description": "Indicates whether blocking of all traffic except IP/(G)ARP/BPDU is enabled."
+        },
+        "BlockServerDhcp": {
+            "type": "boolean",
+            "description": "Indicates whether DHCP server blocking is enabled."
+        },
+        "BpduFilterEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether BPDU filter is enabled."
+        },
+        "BpduFilterWhitelist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of allowed MAC addresses to be excluded from BPDU filtering, if enabled."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RateLimits": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RateLimitsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

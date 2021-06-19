@@ -1,0 +1,679 @@
+{
+    "typeName": "TF::AWS::EmrCluster",
+    "description": "Provides an Elastic MapReduce Cluster, a web service that makes it easy to\nprocess large amounts of data efficiently. See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/elastic-mapreduce/)\nfor more information.\n\nTo configure [Instance Groups](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html#emr-plan-instance-groups) for [task nodes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-master-core-task-nodes.html#emr-plan-task), see the [`aws_emr_instance_group` resource](/docs/providers/aws/r/emr_instance_group.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EmrCluster/docs/README.md",
+    "definitions": {
+        "StepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StepDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Jar": {
+                    "type": "string"
+                },
+                "MainClass": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepDefinition"
+                    }
+                }
+            }
+        },
+        "StepDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionOnFailure": {
+                    "type": "string"
+                },
+                "HadoopJarStep": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StepDefinition2"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BootstrapActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Path"
+            ]
+        },
+        "CoreInstanceFleetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "TargetOnDemandCapacity": {
+                    "type": "number"
+                },
+                "TargetSpotCapacity": {
+                    "type": "number"
+                },
+                "InstanceTypeConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InstanceTypeConfigsDefinition"
+                    }
+                },
+                "LaunchSpecifications": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchSpecificationsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CoreInstanceGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscalingPolicy": {
+                    "type": "string"
+                },
+                "BidPrice": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "Ec2AttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalMasterSecurityGroups": {
+                    "type": "string"
+                },
+                "AdditionalSlaveSecurityGroups": {
+                    "type": "string"
+                },
+                "EmrManagedMasterSecurityGroup": {
+                    "type": "string"
+                },
+                "EmrManagedSlaveSecurityGroup": {
+                    "type": "string"
+                },
+                "InstanceProfile": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "ServiceAccessSecurityGroup": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "InstanceProfile"
+            ]
+        },
+        "KerberosAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdDomainJoinPassword": {
+                    "type": "string"
+                },
+                "AdDomainJoinUser": {
+                    "type": "string"
+                },
+                "CrossRealmTrustPrincipalPassword": {
+                    "type": "string"
+                },
+                "KdcAdminPassword": {
+                    "type": "string"
+                },
+                "Realm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KdcAdminPassword",
+                "Realm"
+            ]
+        },
+        "MasterInstanceFleetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "TargetOnDemandCapacity": {
+                    "type": "number"
+                },
+                "TargetSpotCapacity": {
+                    "type": "number"
+                },
+                "InstanceTypeConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InstanceTypeConfigsDefinition"
+                    }
+                },
+                "LaunchSpecifications": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchSpecificationsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MasterInstanceGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BidPrice": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "InstanceTypeConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BidPrice": {
+                    "type": "string"
+                },
+                "BidPriceAsPercentageOfOnDemandPrice": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "number"
+                },
+                "Configurations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConfigurationsDefinition"
+                    }
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfigDefinition"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "LaunchSpecificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnDemandSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnDemandSpecificationDefinition"
+                    }
+                },
+                "SpotSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpotSpecificationDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EbsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Size",
+                "Type"
+            ]
+        },
+        "ConfigurationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classification": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OnDemandSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AllocationStrategy"
+            ]
+        },
+        "SpotSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                },
+                "BlockDurationMinutes": {
+                    "type": "number"
+                },
+                "TimeoutAction": {
+                    "type": "string"
+                },
+                "TimeoutDurationMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllocationStrategy",
+                "TimeoutAction",
+                "TimeoutDurationMinutes"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalInfo": {
+            "type": "string",
+            "description": "A JSON string for selecting additional features such as adding proxy information. Note: Currently there is no API to retrieve the value of this argument after EMR cluster creation from provider, therefore Terraform cannot detect drift from the actual EMR cluster if its value is changed outside Terraform."
+        },
+        "Applications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of applications for the cluster. Valid values are: `Flink`, `Hadoop`, `Hive`, `Mahout`, `Pig`, `Spark`, and `JupyterHub` (as of EMR 5.14.0). Case insensitive."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingRole": {
+            "type": "string",
+            "description": "An IAM role for automatic scaling policies. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group."
+        },
+        "ClusterState": {
+            "type": "string"
+        },
+        "Configurations": {
+            "type": "string",
+            "description": "List of configurations supplied for the EMR cluster you are creating. Supply a configuration object for applications to override their default configuration. See [AWS Documentation](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html) for more information."
+        },
+        "ConfigurationsJson": {
+            "type": "string",
+            "description": "A JSON string for supplying list of configurations for the EMR cluster."
+        },
+        "CustomAmiId": {
+            "type": "string",
+            "description": "A custom Amazon Linux AMI for the cluster (instead of an EMR-owned AMI). Available in Amazon EMR version 5.7.0 and later."
+        },
+        "EbsRootVolumeSize": {
+            "type": "number",
+            "description": "Size in GiB of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepJobFlowAliveWhenNoSteps": {
+            "type": "boolean",
+            "description": "Switch on/off run cluster with no steps or when all steps are complete (default is on)."
+        },
+        "LogUri": {
+            "type": "string",
+            "description": "S3 bucket to write the log files of the job flow. If a value is not provided, logs are not created."
+        },
+        "MasterPublicDns": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the job flow."
+        },
+        "ReleaseLabel": {
+            "type": "string",
+            "description": "The release label for the Amazon EMR release."
+        },
+        "ScaleDownBehavior": {
+            "type": "string",
+            "description": "The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an `instance group` is resized."
+        },
+        "SecurityConfiguration": {
+            "type": "string",
+            "description": "The security configuration name to attach to the EMR cluster. Only valid for EMR clusters with `release_label` 4.8.0 or greater."
+        },
+        "ServiceRole": {
+            "type": "string",
+            "description": "IAM role that will be assumed by the Amazon EMR service to access AWS resources."
+        },
+        "Step": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepDefinition3"
+            },
+            "description": "List of steps to run when creating the cluster. Defined below. It is highly recommended to utilize the [lifecycle configuration block](https://www.terraform.io/docs/configuration/meta-arguments/lifecycle.html) with `ignore_changes` if other steps are being managed outside of Terraform. This argument is processed in [attribute-as-blocks mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html)."
+        },
+        "StepConcurrencyLevel": {
+            "type": "number",
+            "description": "The number of steps that can be executed concurrently. You can specify a maximum of 256 steps. Only valid for EMR clusters with `release_label` 5.28.0 or greater. (default is 1)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "list of tags to apply to the EMR Cluster. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TerminationProtection": {
+            "type": "boolean",
+            "description": "Switch on/off termination protection (default is `false`, except when using multiple master nodes). Before attempting to destroy the resource when termination protection is enabled, this configuration must be applied with its value set to `false`."
+        },
+        "VisibleToAllUsers": {
+            "type": "boolean",
+            "description": "Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. Default `true`."
+        },
+        "BootstrapAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootstrapActionDefinition"
+            }
+        },
+        "CoreInstanceFleet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CoreInstanceFleetDefinition"
+            },
+            "maxItems": 1
+        },
+        "CoreInstanceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CoreInstanceGroupDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ec2Attributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ec2AttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "KerberosAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KerberosAttributesDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterInstanceFleet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterInstanceFleetDefinition"
+            },
+            "maxItems": 1
+        },
+        "MasterInstanceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterInstanceGroupDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ReleaseLabel",
+        "ServiceRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ClusterState",
+        "/properties/Id",
+        "/properties/MasterPublicDns"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/KerberosAttributesDefinition/AdDomainJoinPassword",
+        "/definitions/KerberosAttributesDefinition/CrossRealmTrustPrincipalPassword",
+        "/definitions/KerberosAttributesDefinition/KdcAdminPassword"
+    ]
+}

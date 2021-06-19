@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::FortiOS::FirewallshaperPeripshaper",
+    "description": "Configure per-IP traffic shaper.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallshaperPeripshaper/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthUnit": {
+            "type": "string",
+            "description": "Unit of measurement for maximum bandwidth for this shaper (Kbps, Mbps or Gbps). Valid values: `kbps`, `mbps`, `gbps`."
+        },
+        "DiffservForward": {
+            "type": "string",
+            "description": "Enable/disable changing the Forward (original) DiffServ setting applied to traffic accepted by this shaper. Valid values: `enable`, `disable`."
+        },
+        "DiffservReverse": {
+            "type": "string",
+            "description": "Enable/disable changing the Reverse (reply) DiffServ setting applied to traffic accepted by this shaper. Valid values: `enable`, `disable`."
+        },
+        "DiffservcodeForward": {
+            "type": "string",
+            "description": "Forward (original) DiffServ setting to be applied to traffic accepted by this shaper."
+        },
+        "DiffservcodeRev": {
+            "type": "string",
+            "description": "Reverse (reply) DiffServ setting to be applied to traffic accepted by this shaper."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxBandwidth": {
+            "type": "number",
+            "description": "Upper bandwidth limit enforced by this shaper (0 - 16776000). 0 means no limit. Units depend on the bandwidth-unit setting."
+        },
+        "MaxConcurrentSession": {
+            "type": "number",
+            "description": "Maximum number of concurrent sessions allowed by this shaper (0 - 2097000). 0 means no limit."
+        },
+        "MaxConcurrentTcpSession": {
+            "type": "number",
+            "description": "Maximum number of concurrent TCP sessions allowed by this shaper (0 - 2097000). 0 means no limit."
+        },
+        "MaxConcurrentUdpSession": {
+            "type": "number",
+            "description": "Maximum number of concurrent UDP sessions allowed by this shaper (0 - 2097000). 0 means no limit."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Traffic shaper name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

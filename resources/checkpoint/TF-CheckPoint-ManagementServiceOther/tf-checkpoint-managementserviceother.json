@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::CheckPoint::ManagementServiceOther",
+    "description": "This resource allows you to execute Check Point Service Other.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementServiceOther/docs/README.md",
+    "definitions": {
+        "AggressiveAgingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptReplies": {
+            "type": "boolean",
+            "description": "Specifies whether Other Service replies are to be accepted."
+        },
+        "Action": {
+            "type": "string",
+            "description": "Contains an INSPECT expression that defines the action to take if a rule containing this service is matched.\nExample: set r_mhandler &open_ssl_handler sets a handler on the connection."
+        },
+        "AggressiveAging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AggressiveAgingDefinition"
+            },
+            "description": "Sets short (aggressive) timeouts for idle connections.aggressive_aging blocks are documented below."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "IpProtocol": {
+            "type": "number",
+            "description": "IP protocol number."
+        },
+        "KeepConnectionsOpenAfterPolicyInstallation": {
+            "type": "boolean",
+            "description": "Keep connections open after policy has been installed even if they are not allowed under the new policy. This overrides the settings in the Connection Persistence page. If you change this property, the change will not affect open connections, but only future connections."
+        },
+        "Match": {
+            "type": "string",
+            "description": "Contains an INSPECT expression that defines the matching criteria. The connection is examined against the expression during the first packet.\nExample: tcp, dport = 21, direction = 0 matches incoming FTP control connections."
+        },
+        "MatchForAny": {
+            "type": "boolean",
+            "description": "Indicates whether this service is used when 'Any' is set as the rule's service and there are several service objects with the same source port and protocol."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "OverrideDefaultSettings": {
+            "type": "boolean",
+            "description": "Indicates whether this service is a Data Domain service which has been overridden."
+        },
+        "SessionTimeout": {
+            "type": "number",
+            "description": "Time (in seconds) before the session times out."
+        },
+        "SyncConnectionsOnCluster": {
+            "type": "boolean",
+            "description": "Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers.tags blocks are documented below."
+        },
+        "UseDefaultSessionTimeout": {
+            "type": "boolean",
+            "description": "Use default virtual session timeout."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

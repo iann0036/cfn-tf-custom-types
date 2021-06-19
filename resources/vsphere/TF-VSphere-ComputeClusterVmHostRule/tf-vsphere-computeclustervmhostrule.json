@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::VSphere::ComputeClusterVmHostRule",
+    "description": "The `vsphere_compute_cluster_vm_host_rule` resource can be used to manage\nVM-to-host rules in a cluster, either created by the\n[`vsphere_compute_cluster`][tf-vsphere-cluster-resource] resource or looked up\nby the [`vsphere_compute_cluster`][tf-vsphere-cluster-data-source] data source.\n\n[tf-vsphere-cluster-resource]: /docs/providers/vsphere/r/compute_cluster.html\n[tf-vsphere-cluster-data-source]: /docs/providers/vsphere/d/compute_cluster.html\n\nThis resource can create both _affinity rules_, where virtual machines run on\nspecified hosts, or _anti-affinity_ rules, where virtual machines run on hosts\noutside of the ones specified in the rule. Virtual machines and hosts are\nsupplied via groups, which can be managed via the\n[`vsphere_compute_cluster_vm_group`][tf-vsphere-cluster-vm-group-resource] and\n[`vsphere_compute_cluster_host_group`][tf-vsphere-cluster-host-group-resource]\nresources.\n\n[tf-vsphere-cluster-vm-group-resource]: /docs/providers/vsphere/r/compute_cluster_vm_group.html\n[tf-vsphere-cluster-host-g...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-ComputeClusterVmHostRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AffinityHostGroupName": {
+            "type": "string",
+            "description": "When this field is used, the virtual\nmachines defined in [`vm_group_name`](#vm_group_name) will be run on the\nhosts defined in this host group."
+        },
+        "AntiAffinityHostGroupName": {
+            "type": "string",
+            "description": "When this field is used, the\nvirtual machines defined in [`vm_group_name`](#vm_group_name) will _not_ be\nrun on the hosts defined in this host group."
+        },
+        "ComputeClusterId": {
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the group in.  Forces a new\nresource if changed."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable this rule in the cluster. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mandatory": {
+            "type": "boolean",
+            "description": "When this value is `true`, prevents any virtual\nmachine operations that may violate this rule. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule. This must be unique in the\ncluster."
+        },
+        "VmGroupName": {
+            "type": "string",
+            "description": "The name of the virtual machine group to use\nwith this rule."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ComputeClusterId",
+        "Name",
+        "VmGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

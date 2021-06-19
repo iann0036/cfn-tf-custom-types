@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::TencentCloud::MysqlBackupPolicy",
+    "description": "Provides a mysql policy resource to create a backup policy.\n\n~> **NOTE:** This attribute `backup_model` only support 'physical' in Terraform TencentCloud provider version 1.16.2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MysqlBackupPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupModel": {
+            "type": "string",
+            "description": "Backup method. Supported values include: `physical` - physical backup."
+        },
+        "BackupTime": {
+            "type": "string",
+            "description": "Instance backup time, in the format of 'HH:mm-HH:mm'. Time setting interval is four hours. Default to `02:00-06:00`. The following value can be supported: `02:00-06:00`, `06:00-10:00`, `10:00-14:00`, `14:00-18:00`, `18:00-22:00`, and `22:00-02:00`."
+        },
+        "BinlogPeriod": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MysqlId": {
+            "type": "string",
+            "description": "Instance ID to which policies will be applied."
+        },
+        "RetentionPeriod": {
+            "type": "number",
+            "description": "Instance backup retention days. Valid value ranges: [7~730]. And default value is `7`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MysqlId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BinlogPeriod",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::MongoDBAtlas::NetworkContainer",
+    "description": "`mongodbatlas_network_container` provides a Network Peering Container resource. The resource lets you create, edit and delete network peering containers. The resource requires your Project ID.  Each cloud provider requires slightly different attributes so read the argument reference carefully. \n\n Network peering container is a general term used to describe any cloud providers' VPC/VNet concept.  Containers only need to be created if the peering connection to the cloud provider will be created before the first cluster that requires the container.  If the cluster has been/will be created first Atlas automatically creates the required container per the \"containers per cloud provider\" information that follows (in this case you can obtain the container id from the cluster resource attribute `container_id`).\n \nThe following is the maximum number of Network Peering containers per cloud provider:\n<br> &#8226;  GCP -  One container per project.\n<br> &#8226;  AWS and Azure - One container per cloud provider region....",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-NetworkContainer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AtlasCidrBlock": {
+            "type": "string",
+            "description": "CIDR block that Atlas uses for the Network Peering containers in your project.  Atlas uses the specified CIDR block for all other Network Peering connections created in the project. The Atlas CIDR block must be at least a /24 and at most a /21 in one of the following [private networks](https://tools.ietf.org/html/rfc1918.html#section-3):\n* Lower bound: 10.0.0.0 -\tUpper bound: 10.255.255.255 -\tPrefix: 10/8\n* Lower bound: 172.16.0.0 -\tUpper bound:172.31.255.255 -\tPrefix:\t172.16/12\n* Lower bound: 192.168.0.0 -\tUpper bound:192.168.255.255 -\tPrefix:\t192.168/16."
+        },
+        "AzureSubscriptionId": {
+            "type": "string"
+        },
+        "ContainerId": {
+            "type": "string"
+        },
+        "GcpProjectId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Unique identifier for the Atlas project for this Network Peering Container."
+        },
+        "ProviderName": {
+            "type": "string",
+            "description": "Cloud provider for this Network Peering connection.  Accepted values are GCP, AWS, AZURE. If omitted, Atlas sets this parameter to AWS."
+        },
+        "Provisioned": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Atlas region where the container resides, see the reference list for Atlas Azure region names [Azure](https://docs.atlas.mongodb.com/reference/microsoft-azure/)."
+        },
+        "RegionName": {
+            "type": "string",
+            "description": "The Atlas AWS region name for where this container will exist, see the reference list for Atlas AWS region names [AWS](https://docs.atlas.mongodb.com/reference/amazon-aws/)."
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Atlas regions where the container resides. Provide this field only if you provide an `atlas_cidr_block` smaller than `/18`. [GCP Regions values](https://docs.atlas.mongodb.com/reference/api/vpc-create-container/#request-body-parameters)."
+        },
+        "VnetName": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AtlasCidrBlock",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AzureSubscriptionId",
+        "/properties/ContainerId",
+        "/properties/GcpProjectId",
+        "/properties/Id",
+        "/properties/NetworkName",
+        "/properties/Provisioned",
+        "/properties/VnetName",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

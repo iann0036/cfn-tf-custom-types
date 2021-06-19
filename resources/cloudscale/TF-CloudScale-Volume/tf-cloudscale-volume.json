@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::CloudScale::Volume",
+    "description": "Provides a cloudscale.ch Volume (block storage) resource. This can be used to create, modify, and delete Volumes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-Volume/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the new volume."
+        },
+        "ServerUuids": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of server UUIDs. Default to an empty list. Currently a volume can only be attached to one server UUID."
+        },
+        "SizeGb": {
+            "type": "number",
+            "description": "The volume size in GB. Valid values are multiples of 1 for type \"ssd\" and multiples of 100 for type \"bulk\"."
+        },
+        "Type": {
+            "type": "string",
+            "description": "For SSD/NVMe volumes specify \"ssd\" (default) or use \"bulk\" for our HDD cluster with NVMe caching. This is the only attribute that cannot be altered."
+        },
+        "ZoneSlug": {
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SizeGb"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,749 @@
+{
+    "typeName": "TF::Spotinst::ElastigroupGcp",
+    "description": "Provides a Spotinst elastigroup GCP resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-ElastigroupGcp/docs/README.md",
+    "definitions": {
+        "BackendServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocationType": {
+                    "type": "string"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "NamedPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NamedPortsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ServiceName"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDelete": {
+                    "type": "boolean"
+                },
+                "Boot": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "InitializeParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InitializeParamsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GpuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Count",
+                "Type"
+            ]
+        },
+        "InstanceTypesCustomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MemoryGib": {
+                    "type": "number"
+                },
+                "Vcpu": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MemoryGib",
+                "Vcpu"
+            ]
+        },
+        "IntegrationDockerSwarmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MasterHost": {
+                    "type": "string"
+                },
+                "MasterPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MasterHost",
+                "MasterPort"
+            ]
+        },
+        "IntegrationGkeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoUpdate": {
+                    "type": "boolean"
+                },
+                "AutoscaleCooldown": {
+                    "type": "number"
+                },
+                "AutoscaleIsAutoConfig": {
+                    "type": "boolean"
+                },
+                "AutoscaleIsEnabled": {
+                    "type": "boolean"
+                },
+                "ClusterId": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "AutoscaleDown": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDownDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleHeadroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleHeadroomDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AutoscaleLabels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleLabelsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Network": {
+                    "type": "string"
+                },
+                "AccessConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessConfigsDefinition"
+                    }
+                },
+                "AliasIpRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AliasIpRangesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Network"
+            ]
+        },
+        "ScalingDownPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "number"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        },
+        "ScalingUpPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "number"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CronExpression": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxCapacity": {
+                    "type": "string"
+                },
+                "MinCapacity": {
+                    "type": "string"
+                },
+                "TargetCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Region": {
+                    "type": "string"
+                },
+                "SubnetNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Region",
+                "SubnetNames"
+            ]
+        },
+        "NamedPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Ports"
+            ]
+        },
+        "InitializeParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "string"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "SourceImage": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceImage"
+            ]
+        },
+        "AutoscaleDownDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EvaluationPeriods": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleHeadroomDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "AccessConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AliasIpRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpCidrRange": {
+                    "type": "string"
+                },
+                "SubnetworkRangeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IpCidrRange",
+                "SubnetworkRangeName"
+            ]
+        },
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoHealing": {
+            "type": "boolean"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of availability zones for the group."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The region your GCP group will be created in."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
+        },
+        "DrainingTimeout": {
+            "type": "number",
+            "description": "Time (seconds) the instance is allowed to run after it is detached from the group. This is to allow the instance time to drain all the current TCP connections before terminating it."
+        },
+        "FallbackToOndemand": {
+            "type": "boolean",
+            "description": "Activate fallback-to-on-demand. When provisioning an instance, if no Preemptible market is available, fallback-to-on-demand will provision an On-Demand instance to maintain the group capacity."
+        },
+        "HealthCheckGracePeriod": {
+            "type": "number"
+        },
+        "HealthCheckType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceTypesOndemand": {
+            "type": "string",
+            "description": "The regular VM instance type to use for mixed-type groups and when falling back to on-demand. Required if instance_types_preemptible is not set."
+        },
+        "InstanceTypesPreemptible": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The preemptible VMs instance type. To maximize cost savings and market availability, select as many types as possible. Required if instance_types_ondemand is not set."
+        },
+        "IpForwarding": {
+            "type": "boolean"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group name."
+        },
+        "OndemandCount": {
+            "type": "number"
+        },
+        "PreemptiblePercentage": {
+            "type": "number",
+            "description": "Percentage of Preemptible VMs to spin up from the \"desired_capacity\"."
+        },
+        "ServiceAccount": {
+            "type": "string",
+            "description": "The email of the service account in which the group instances will be launched."
+        },
+        "ShutdownScript": {
+            "type": "string",
+            "description": "The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/)."
+        },
+        "StartupScript": {
+            "type": "string",
+            "description": "Create and run your own startup scripts on your virtual machines to perform automated tasks every time your instance boots up."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Tags to mark created instances."
+        },
+        "UnhealthyDuration": {
+            "type": "number"
+        },
+        "BackendServices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendServicesDefinition"
+            }
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Gpu": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GpuDefinition"
+            }
+        },
+        "InstanceTypesCustom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceTypesCustomDefinition"
+            }
+        },
+        "IntegrationDockerSwarm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationDockerSwarmDefinition"
+            },
+            "maxItems": 1
+        },
+        "IntegrationGke": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationGkeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "ScalingDownPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingDownPolicyDefinition"
+            }
+        },
+        "ScalingUpPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingUpPolicyDefinition"
+            }
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubnetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredCapacity",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

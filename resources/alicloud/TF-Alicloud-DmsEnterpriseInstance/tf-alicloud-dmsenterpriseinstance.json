@@ -1,0 +1,200 @@
+{
+    "typeName": "TF::Alicloud::DmsEnterpriseInstance",
+    "description": "Provides a DMS Enterprise Instance resource.\n\n-> **NOTE:** API users must first register in DMS.\n-> **NOTE:** Available in 1.81.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DmsEnterpriseInstance/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataLinkName": {
+            "type": "string",
+            "description": "Cross-database query datalink name."
+        },
+        "DatabasePassword": {
+            "type": "string",
+            "description": "Database access password."
+        },
+        "DatabaseUser": {
+            "type": "string",
+            "description": "Database access account."
+        },
+        "DbaId": {
+            "type": "string"
+        },
+        "DbaNickName": {
+            "type": "string"
+        },
+        "DbaUid": {
+            "type": "number",
+            "description": "The DBA of the instance is passed into the Alibaba Cloud uid of the DBA."
+        },
+        "DdlOnline": {
+            "type": "number",
+            "description": "Whether to use online services, currently only supports MySQL and PolarDB. Valid values: `0` Not used, `1` Native online DDL priority, `2` DMS lock-free table structure change priority."
+        },
+        "EcsInstanceId": {
+            "type": "string",
+            "description": "ECS instance ID. The value of InstanceSource is the ECS self-built library. This value must be passed."
+        },
+        "EcsRegion": {
+            "type": "string",
+            "description": "The region where the instance is located. This value must be passed when the value of InstanceSource is RDS, ECS self-built library, and VPC dedicated line IDC."
+        },
+        "EnvType": {
+            "type": "string",
+            "description": "Environment type. Valid values: `product` production environment, `dev` development environment, `pre` pre-release environment, `test` test environment, `sit` SIT environment, `uat` UAT environment, `pet` pressure test environment, `stag` STAG environment."
+        },
+        "ExportTimeout": {
+            "type": "number",
+            "description": "Export timeout, unit: s (seconds)."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Host address of the target database."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceAlias": {
+            "type": "string",
+            "description": "Instance alias, to help users quickly distinguish positioning."
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceSource": {
+            "type": "string",
+            "description": "The source of the database instance. Valid values: `PUBLIC_OWN`, `RDS`, `ECS_OWN`, `VPC_IDC`."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Database type. Valid values: `MySQL`, `SQLServer`, `PostgreSQL`, `Oracle,` `DRDS`, `OceanBase`, `Mongo`, `Redis`."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Network type. Valid values: `CLASSIC`, `VPC`."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Access port of the target database."
+        },
+        "QueryTimeout": {
+            "type": "number",
+            "description": "Query timeout time, unit: s (seconds)."
+        },
+        "SafeRule": {
+            "type": "string",
+            "description": "The security rule of the instance is passed into the name of the security rule in the enterprise."
+        },
+        "SafeRuleId": {
+            "type": "string"
+        },
+        "Sid": {
+            "type": "string",
+            "description": "The SID. This value must be passed when InstanceType is PostgreSQL or Oracle."
+        },
+        "SkipTest": {
+            "type": "boolean"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tid": {
+            "type": "number",
+            "description": "The tenant ID."
+        },
+        "UseDsql": {
+            "type": "number",
+            "description": "Whether to enable cross-instance query. Valid values: `0` not open, `1` open."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID. This value must be passed when the value of InstanceSource is VPC dedicated line IDC."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabasePassword",
+        "DatabaseUser",
+        "DbaUid",
+        "EnvType",
+        "ExportTimeout",
+        "Host",
+        "InstanceSource",
+        "InstanceType",
+        "NetworkType",
+        "Port",
+        "QueryTimeout",
+        "SafeRule"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DbaNickName",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DatabasePassword"
+    ]
+}

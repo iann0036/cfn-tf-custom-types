@@ -1,0 +1,250 @@
+{
+    "typeName": "TF::Alicloud::EmrCluster",
+    "description": "Provides a EMR Cluster resource. With this you can create, read, and release  EMR Cluster. \n\n-> **NOTE:** Available in 1.57.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EmrCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BootstrapActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arg": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HostGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoRenew": {
+                    "type": "boolean"
+                },
+                "ChargeType": {
+                    "type": "string"
+                },
+                "DiskCapacity": {
+                    "type": "string"
+                },
+                "DiskCount": {
+                    "type": "string"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "GpuDriver": {
+                    "type": "string"
+                },
+                "HostGroupName": {
+                    "type": "string"
+                },
+                "HostGroupType": {
+                    "type": "string"
+                },
+                "InstanceList": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "NodeCount": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "SysDiskCapacity": {
+                    "type": "string"
+                },
+                "SysDiskType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Charge Type for this cluster. Supported value: PostPaid or PrePaid. Default value: PostPaid."
+        },
+        "ClusterType": {
+            "type": "string",
+            "description": "EMR Cluster Type, e.g. HADOOP, KAFKA, DRUID, GATEWAY etc. You can find all valid EMR cluster type in emr web console. Supported 'GATEWAY' available in 1.61.0+."
+        },
+        "DepositType": {
+            "type": "string"
+        },
+        "EasEnable": {
+            "type": "boolean"
+        },
+        "EmrVer": {
+            "type": "string",
+            "description": "EMR Version, e.g. EMR-3.22.0. You can find the all valid EMR Version in emr web console."
+        },
+        "HighAvailabilityEnable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsOpenPublicIp": {
+            "type": "boolean"
+        },
+        "KeyPairName": {
+            "type": "string"
+        },
+        "MasterPwd": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of emr cluster. The name length must be less than 64. Supported characters: chinese character, english character, number, \"-\", \"_\"."
+        },
+        "OptionSoftwareList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Period": {
+            "type": "number"
+        },
+        "RelatedClusterId": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SshEnable": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "UseLocalMetadb": {
+            "type": "boolean"
+        },
+        "UserDefinedEmrEcsRole": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "Zone ID, e.g. cn-huhehaote-a."
+        },
+        "BootstrapAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BootstrapActionDefinition"
+            }
+        },
+        "HostGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HostGroupDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterType",
+        "EmrVer",
+        "Name",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

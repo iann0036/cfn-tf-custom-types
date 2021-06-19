@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::AWS::ServicecatalogPortfolioShare",
+    "description": "Manages a Service Catalog Portfolio Share. Shares the specified portfolio with the specified account or organization node. You can share portfolios to an organization, an organizational unit, or a specific account.\n\nIf the portfolio share with the specified account or organization node already exists, using this resource to re-create the share will have no effect and will not return an error. You can then use this resource to update the share.\n\n~> **NOTE:** Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. If a delegated admin is de-registered, they can no longer create portfolio shares.\n\n~> **NOTE:** AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.\n\n~> **NOTE:** You can't share a shared resource, including portfolios that contain a shared product.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogPortfolioShare/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptLanguage": {
+            "type": "string",
+            "description": "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`."
+        },
+        "Accepted": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PortfolioId": {
+            "type": "string",
+            "description": "Portfolio identifier."
+        },
+        "PrincipalId": {
+            "type": "string",
+            "description": "Identifier of the principal with whom you will share the portfolio. Valid values AWS account IDs and ARNs of AWS Organizations and organizational units."
+        },
+        "ShareTagOptions": {
+            "type": "boolean",
+            "description": "Whether to enable sharing of `aws_servicecatalog_tag_option` resources when creating the portfolio share."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of portfolio share. Valid values are `ACCOUNT` (an external account), `ORGANIZATION` (a share to every account in an organization), `ORGANIZATIONAL_UNIT`, `ORGANIZATION_MEMBER_ACCOUNT` (a share to an account in an organization)."
+        },
+        "WaitForAcceptance": {
+            "type": "boolean",
+            "description": "Whether to wait (up to the timeout) for the share to be accepted. Organizational shares are automatically accepted."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PortfolioId",
+        "PrincipalId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accepted",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

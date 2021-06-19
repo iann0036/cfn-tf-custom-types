@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Alicloud::DbAccountPrivilege",
+    "description": "Provides an RDS account privilege resource and used to grant several database some access privilege. A database can be granted by multiple account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-DbAccountPrivilege/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "A specified account name."
+        },
+        "DbNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of specified database name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The Id of instance in which account belongs."
+        },
+        "Privilege": {
+            "type": "string",
+            "description": "The privilege of one account access database. Valid values:\n- ReadOnly: This value is only for MySQL, MariaDB and SQL Server\n- ReadWrite: This value is only for MySQL, MariaDB and SQL Server\n- DDLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB\n- DMLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB\n- DBOwner: (Available in 1.64.0+) This value is only for SQL Server and PostgreSQL."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "DbNames",
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

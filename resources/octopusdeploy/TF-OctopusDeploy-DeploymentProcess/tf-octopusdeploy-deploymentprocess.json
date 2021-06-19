@@ -1,0 +1,1560 @@
+{
+    "typeName": "TF::OctopusDeploy::DeploymentProcess",
+    "description": "CloudFormation equivalent of octopusdeploy_deployment_process",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-DeploymentProcess/docs/README.md",
+    "definitions": {
+        "StepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "ConditionExpression": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PackageRequirement": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition"
+                    }
+                },
+                "StartTrigger": {
+                    "type": "string"
+                },
+                "TargetRoles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WindowSize": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "ApplyTerraformTemplateAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplyTerraformTemplateActionDefinition"
+                    }
+                },
+                "DeployKubernetesSecretAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeployKubernetesSecretActionDefinition"
+                    }
+                },
+                "DeployPackageAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeployPackageActionDefinition"
+                    }
+                },
+                "DeployWindowsServiceAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeployWindowsServiceActionDefinition"
+                    }
+                },
+                "ManualInterventionAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManualInterventionActionDefinition"
+                    }
+                },
+                "RunKubectlScriptAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunKubectlScriptActionDefinition"
+                    }
+                },
+                "RunScriptAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunScriptActionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition2"
+                    }
+                },
+                "RunOnServer": {
+                    "type": "boolean"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WorkerPoolId": {
+                    "type": "string"
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ActionType",
+                "Name"
+            ]
+        },
+        "PropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApplyTerraformTemplateActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition3"
+                    }
+                },
+                "RunOnServer": {
+                    "type": "boolean"
+                },
+                "TemplateParameters": {
+                    "type": "string"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AdvancedOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AdvancedOptionsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "AwsAccount": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AwsAccountDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureAccount": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AzureAccountDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Template": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TemplateDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertiesDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeployKubernetesSecretActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition4"
+                    }
+                },
+                "RunOnServer": {
+                    "type": "boolean"
+                },
+                "SecretName": {
+                    "type": "string"
+                },
+                "SecretValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretValuesDefinition"
+                    }
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "SecretName",
+                "SecretValues"
+            ]
+        },
+        "PropertiesDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecretValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeployPackageActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition5"
+                    }
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "WindowsService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WindowsServiceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertiesDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DeployWindowsServiceActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arguments": {
+                    "type": "string"
+                },
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "CreateOrUpdateService": {
+                    "type": "boolean"
+                },
+                "CustomAccountName": {
+                    "type": "string"
+                },
+                "CustomAccountPassword": {
+                    "type": "string"
+                },
+                "Dependencies": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExecutablePath": {
+                    "type": "string"
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition6"
+                    }
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "StartMode": {
+                    "type": "string"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ExecutablePath",
+                "Name",
+                "ServiceName"
+            ]
+        },
+        "PropertiesDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ManualInterventionActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Instructions": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition7"
+                    }
+                },
+                "ResponsibleTeams": {
+                    "type": "string"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Instructions",
+                "Name"
+            ]
+        },
+        "PropertiesDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RunKubectlScriptActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition8"
+                    }
+                },
+                "RunOnServer": {
+                    "type": "boolean"
+                },
+                "ScriptFileName": {
+                    "type": "string"
+                },
+                "ScriptParameters": {
+                    "type": "string"
+                },
+                "ScriptSource": {
+                    "type": "string"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertiesDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RunScriptActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CanBeUsedForProjectVersioning": {
+                    "type": "boolean"
+                },
+                "Channels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Condition": {
+                    "type": "string"
+                },
+                "Environments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludedEnvironments": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Features": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IsDisabled": {
+                    "type": "boolean"
+                },
+                "IsRequired": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition9"
+                    }
+                },
+                "RunOnServer": {
+                    "type": "boolean"
+                },
+                "ScriptBody": {
+                    "type": "string"
+                },
+                "ScriptFileName": {
+                    "type": "string"
+                },
+                "ScriptParameters": {
+                    "type": "string"
+                },
+                "ScriptSource": {
+                    "type": "string"
+                },
+                "ScriptSyntax": {
+                    "type": "string"
+                },
+                "TenantTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VariableSubstitutionInFiles": {
+                    "type": "string"
+                },
+                "ActionTemplate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionTemplateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Package": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PackageDefinition"
+                    }
+                },
+                "PrimaryPackage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimaryPackageDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PropertiesDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ActionTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommunityActionTemplateId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FeedId": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PackageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcquisitionLocation": {
+                    "type": "string"
+                },
+                "ExtractDuringDeployment": {
+                    "type": "boolean"
+                },
+                "FeedId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PackageId": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition10"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "PackageId"
+            ]
+        },
+        "PropertiesDefinition10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrimaryPackageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcquisitionLocation": {
+                    "type": "string"
+                },
+                "FeedId": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PackageId": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertiesDefinition11"
+                    }
+                }
+            },
+            "required": [
+                "PackageId"
+            ]
+        },
+        "PropertiesDefinition11": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowAdditionalPluginDownloads": {
+                    "type": "boolean"
+                },
+                "ApplyParameters": {
+                    "type": "string"
+                },
+                "InitParameters": {
+                    "type": "string"
+                },
+                "PluginCacheDirectory": {
+                    "type": "string"
+                },
+                "Workspace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AwsAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Region": {
+                    "type": "string"
+                },
+                "UseInstanceRole": {
+                    "type": "boolean"
+                },
+                "Variable": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RoleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AzureAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Variable": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalVariableFiles": {
+                    "type": "string"
+                },
+                "Directory": {
+                    "type": "string"
+                },
+                "RunAutomaticFileSubstitution": {
+                    "type": "boolean"
+                },
+                "TargetFiles": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WindowsServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arguments": {
+                    "type": "string"
+                },
+                "CreateOrUpdateService": {
+                    "type": "boolean"
+                },
+                "CustomAccountName": {
+                    "type": "string"
+                },
+                "CustomAccountPassword": {
+                    "type": "string"
+                },
+                "Dependencies": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "ExecutablePath": {
+                    "type": "string"
+                },
+                "ServiceAccount": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "StartMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExecutablePath",
+                "ServiceName"
+            ]
+        },
+        "RoleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "ExternalId": {
+                    "type": "string"
+                },
+                "RoleSessionName": {
+                    "type": "string"
+                },
+                "SessionDuration": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastSnapshotId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Step": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DeployWindowsServiceActionDefinition/CustomAccountPassword",
+        "/definitions/WindowsServiceDefinition/CustomAccountPassword"
+    ]
+}

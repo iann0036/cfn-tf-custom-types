@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Packet::ProjectSshKey",
+    "description": "Provides an Equinix Metal project SSH key resource to manage project-specific SSH keys.\nProject SSH keys will only be populated onto servers that belong to that project, in contrast to User SSH Keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/packet/TF-Packet-ProjectSshKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the SSH key for identification."
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of parent project."
+        },
+        "PublicKey": {
+            "type": "string",
+            "description": "The public key. If this is a file, it can be read using the file interpolation function."
+        },
+        "Updated": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId",
+        "PublicKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/OwnerId",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

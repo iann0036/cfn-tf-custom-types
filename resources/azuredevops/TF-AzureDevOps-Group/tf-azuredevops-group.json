@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::AzureDevOps::Group",
+    "description": "Manages a group within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-Group/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Description of the Project.\n- `members` - (Optional)\n> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "Descriptor": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The name of a new Azure DevOps group that is not backed by an external provider. The `origin_id` and `mail` arguments cannot be used simultaneously with `display_name`.\n- `description` - (Optional) The Description of the Project.\n- `members` - (Optional)\n> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mail": {
+            "type": "string",
+            "description": "The mail address as a reference to an existing group from an external AD or AAD backed provider. The `scope`, `origin_id` and `display_name` arguments cannot be used simultaneously with `mail`.\n- `display_name` - (Optional) The name of a new Azure DevOps group that is not backed by an external provider. The `origin_id` and `mail` arguments cannot be used simultaneously with `display_name`.\n- `description` - (Optional) The Description of the Project.\n- `members` - (Optional)\n> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "OriginId": {
+            "type": "string",
+            "description": "The OriginID as a reference to a group from an external AD or AAD backed provider. The `scope`, `mail` and `display_name` arguments cannot be used simultaneously with `origin_id`.\n- `mail` - (Optional) The mail address as a reference to an existing group from an external AD or AAD backed provider. The `scope`, `origin_id` and `display_name` arguments cannot be used simultaneously with `mail`.\n- `display_name` - (Optional) The name of a new Azure DevOps group that is not backed by an external provider. The `origin_id` and `mail` arguments cannot be used simultaneously with `display_name`.\n- `description` - (Optional) The Description of the Project.\n- `members` - (Optional)\n> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "PrincipalName": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "string",
+            "description": "The scope of the group. A descriptor referencing the scope (collection, project) in which the group should be created. If omitted, will be created in the scope of the enclosing account or organization.x\n- `origin_id` - (Optional) The OriginID as a reference to a group from an external AD or AAD backed provider. The `scope`, `mail` and `display_name` arguments cannot be used simultaneously with `origin_id`.\n- `mail` - (Optional) The mail address as a reference to an existing group from an external AD or AAD backed provider. The `scope`, `origin_id` and `display_name` arguments cannot be used simultaneously with `mail`.\n- `display_name` - (Optional) The name of a new Azure DevOps group that is not backed by an external provider. The `origin_id` and `mail` arguments cannot be used simultaneously with `display_name`.\n- `description` - (Optional) The Description of the Project.\n- `members` - (Optional)\n> NOTE: It's possible to define group members both within the `azuredevops_group` resource via the members block and by using the `azuredevops_group_membership` resource. However it's not possible to use both methods to manage group members, since there'll be conflicts."
+        },
+        "SubjectKind": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Descriptor",
+        "/properties/Domain",
+        "/properties/Id",
+        "/properties/Origin",
+        "/properties/PrincipalName",
+        "/properties/SubjectKind",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,495 @@
+{
+    "typeName": "TF::AWS::AutoscalingGroup",
+    "description": "Provides an Auto Scaling Group resource.\n\n-> **Note:** You must specify either `launch_configuration`, `launch_template`, or `mixed_instances_policy`.\n\n~> **NOTE on Auto Scaling Groups and ASG Attachments:** Terraform currently provides\nboth a standalone [`aws_autoscaling_attachment`](autoscaling_attachment.html) resource\n(describing an ASG attached to an ELB or ALB), and an [`aws_autoscaling_group`](autoscaling_group.html)\nwith `load_balancers` and `target_group_arns` defined in-line. These two methods are not\nmutually-exclusive. If `aws_autoscaling_attachment` resources are used, either alone or with inline\n`load_balancers` or `target_group_arns`, the `aws_autoscaling_group` resource must be configured\nto ignore changes to the `load_balancers` and `target_group_arns` arguments within a\n[`lifecycle` configuration block](https://www.terraform.io/docs/configuration/meta-arguments/lifecycle.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AutoscalingGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InitialLifecycleHookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultResult": {
+                    "type": "string"
+                },
+                "HeartbeatTimeout": {
+                    "type": "number"
+                },
+                "LifecycleTransition": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NotificationMetadata": {
+                    "type": "string"
+                },
+                "NotificationTargetArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LifecycleTransition",
+                "Name"
+            ]
+        },
+        "InstanceRefreshDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Strategy": {
+                    "type": "string"
+                },
+                "Triggers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Preferences": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreferencesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Strategy"
+            ]
+        },
+        "LaunchTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateSpecificationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverrideDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MixedInstancesPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstancesDistribution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstancesDistributionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LaunchTemplate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "PropagateAtLaunch": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "PropagateAtLaunch",
+                "Value"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WarmPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxGroupPreparedCapacity": {
+                    "type": "number"
+                },
+                "MinSize": {
+                    "type": "number"
+                },
+                "PoolState": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PreferencesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceWarmup": {
+                    "type": "string"
+                },
+                "MinHealthyPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "InstancesDistributionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnDemandAllocationStrategy": {
+                    "type": "string"
+                },
+                "OnDemandBaseCapacity": {
+                    "type": "number"
+                },
+                "OnDemandPercentageAboveBaseCapacity": {
+                    "type": "number"
+                },
+                "SpotAllocationStrategy": {
+                    "type": "string"
+                },
+                "SpotInstancePools": {
+                    "type": "number"
+                },
+                "SpotMaxPrice": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LaunchTemplateSpecificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateId": {
+                    "type": "string"
+                },
+                "LaunchTemplateName": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "string"
+                },
+                "LaunchTemplateSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateSpecificationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of one or more availability zones for the group. Used for EC2-Classic and default subnets when not specified with `vpc_zone_identifier` argument. Conflicts with `vpc_zone_identifier`."
+        },
+        "CapacityRebalance": {
+            "type": "boolean",
+            "description": "Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled."
+        },
+        "DefaultCooldown": {
+            "type": "number",
+            "description": "The amount of time, in seconds, after a scaling activity completes before another scaling activity can start."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "The number of Amazon EC2 instances that\nshould be running in the group. (See also [Waiting for\nCapacity](#waiting-for-capacity) below.)."
+        },
+        "EnabledMetrics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of metrics to collect. The allowed values are `GroupDesiredCapacity`, `GroupInServiceCapacity`, `GroupPendingCapacity`, `GroupMinSize`, `GroupMaxSize`, `GroupInServiceInstances`, `GroupPendingInstances`, `GroupStandbyInstances`, `GroupStandbyCapacity`, `GroupTerminatingCapacity`, `GroupTerminatingInstances`, `GroupTotalCapacity`, `GroupTotalInstances`."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Allows deleting the Auto Scaling Group without waiting\nfor all instances in the pool to terminate.  You can force an Auto Scaling Group to delete\neven if it's in the process of scaling a resource. Normally, Terraform\ndrains all the instances before deleting the group.  This bypasses that\nbehavior and potentially leaves resources dangling."
+        },
+        "ForceDeleteWarmPool": {
+            "type": "boolean"
+        },
+        "HealthCheckGracePeriod": {
+            "type": "number",
+            "description": "Time (in seconds) after instance comes into service before checking health."
+        },
+        "HealthCheckType": {
+            "type": "string",
+            "description": "\"EC2\" or \"ELB\". Controls how health checking is done."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LaunchConfiguration": {
+            "type": "string",
+            "description": "The name of the launch configuration to use."
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaxInstanceLifetime": {
+            "type": "number"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "The maximum size of the Auto Scaling Group."
+        },
+        "MetricsGranularity": {
+            "type": "string",
+            "description": "The granularity to associate with the metrics to collect. The only valid value is `1Minute`. Default is `1Minute`."
+        },
+        "MinElbCapacity": {
+            "type": "number",
+            "description": "Setting this causes Terraform to wait for\nthis number of instances from this Auto Scaling Group to show up healthy in the\nELB only on creation. Updates will not wait on ELB instance number changes.\n(See also [Waiting for Capacity](#waiting-for-capacity) below.)."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "The minimum size of the Auto Scaling Group.\n(See also [Waiting for Capacity](#waiting-for-capacity) below.)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Auto Scaling Group. By default generated by Terraform. Conflicts with `name_prefix`."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
+        },
+        "PlacementGroup": {
+            "type": "string"
+        },
+        "ProtectFromScaleIn": {
+            "type": "boolean"
+        },
+        "ServiceLinkedRoleArn": {
+            "type": "string"
+        },
+        "SuspendedProcesses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of processes to suspend for the Auto Scaling Group. The allowed values are `Launch`, `Terminate`, `HealthCheck`, `ReplaceUnhealthy`, `AZRebalance`, `AlarmNotification`, `ScheduledActions`, `AddToLoadBalancer`.\nNote that if you suspend either the `Launch` or `Terminate` process types, it can prevent your Auto Scaling Group from functioning properly."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "array",
+                "insertionOrder": true,
+                "items": {
+                    "$ref": "#/definitions/TagsDefinition"
+                }
+            }
+        },
+        "TargetGroupArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TerminationPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcZoneIdentifier": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WaitForCapacityTimeout": {
+            "type": "string"
+        },
+        "WaitForElbCapacity": {
+            "type": "number",
+            "description": "Setting this will cause Terraform to wait\nfor exactly this number of healthy instances from this Auto Scaling Group in\nall attached load balancers on both create and update operations. (Takes\nprecedence over `min_elb_capacity` behavior.)\n(See also [Waiting for Capacity](#waiting-for-capacity) below.)."
+        },
+        "InitialLifecycleHook": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InitialLifecycleHookDefinition"
+            }
+        },
+        "InstanceRefresh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceRefreshDefinition"
+            },
+            "maxItems": 1
+        },
+        "LaunchTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplateDefinition"
+            },
+            "maxItems": 1
+        },
+        "MixedInstancesPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MixedInstancesPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WarmPool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WarmPoolDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxSize",
+        "MinSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

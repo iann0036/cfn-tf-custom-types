@@ -1,0 +1,396 @@
+{
+    "typeName": "TF::OctopusDeploy::OfflinePackageDropDeploymentTarget",
+    "description": "CloudFormation equivalent of octopusdeploy_offline_package_drop_deployment_target",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-OfflinePackageDropDeploymentTarget/docs/README.md",
+    "definitions": {
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationType": {
+                    "type": "string"
+                },
+                "DropFolderPath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AadClientCredentialSecret": {
+                    "type": "string"
+                },
+                "AadCredentialType": {
+                    "type": "string"
+                },
+                "AadUserCredentialUsername": {
+                    "type": "string"
+                },
+                "AccountId": {
+                    "type": "string"
+                },
+                "ApplicationsDirectory": {
+                    "type": "string"
+                },
+                "CertificateSignatureAlgorithm": {
+                    "type": "string"
+                },
+                "CertificateStoreLocation": {
+                    "type": "string"
+                },
+                "CertificateStoreName": {
+                    "type": "string"
+                },
+                "ClientCertificateVariable": {
+                    "type": "string"
+                },
+                "CloudServiceName": {
+                    "type": "string"
+                },
+                "ClusterCertificate": {
+                    "type": "string"
+                },
+                "ClusterUrl": {
+                    "type": "string"
+                },
+                "CommunicationStyle": {
+                    "type": "string"
+                },
+                "ConnectionEndpoint": {
+                    "type": "string"
+                },
+                "DefaultWorkerPoolId": {
+                    "type": "string"
+                },
+                "DotNetCorePlatform": {
+                    "type": "string"
+                },
+                "Fingerprint": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ProxyId": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "RunningInContainer": {
+                    "type": "boolean"
+                },
+                "SecurityMode": {
+                    "type": "string"
+                },
+                "ServerCertificateThumbprint": {
+                    "type": "string"
+                },
+                "SkipTlsVerification": {
+                    "type": "boolean"
+                },
+                "Slot": {
+                    "type": "string"
+                },
+                "StorageAccountName": {
+                    "type": "string"
+                },
+                "SwapIfPossible": {
+                    "type": "boolean"
+                },
+                "Thumbprint": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "UseCurrentInstanceCount": {
+                    "type": "boolean"
+                },
+                "WebAppName": {
+                    "type": "string"
+                },
+                "WebAppSlotName": {
+                    "type": "string"
+                },
+                "WorkingDirectory": {
+                    "type": "string"
+                },
+                "Authentication": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    }
+                },
+                "TentacleVersionDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TentacleVersionDetailsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "CommunicationStyle"
+            ]
+        },
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "AdminLogin": {
+                    "type": "string"
+                },
+                "AssumeRole": {
+                    "type": "boolean"
+                },
+                "AssumeRoleExternalId": {
+                    "type": "string"
+                },
+                "AssumeRoleSessionDuration": {
+                    "type": "number"
+                },
+                "AssumedRoleArn": {
+                    "type": "string"
+                },
+                "AssumedRoleSession": {
+                    "type": "string"
+                },
+                "AuthenticationType": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ClusterResourceGroup": {
+                    "type": "string"
+                },
+                "UseInstanceRole": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FeedId": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TentacleVersionDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UpgradeLocked": {
+                    "type": "boolean"
+                },
+                "UpgradeRequired": {
+                    "type": "boolean"
+                },
+                "UpgradeSuggested": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationsDirectory": {
+            "type": "string"
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HasLatestCalamari": {
+            "type": "boolean"
+        },
+        "HealthStatus": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDisabled": {
+            "type": "boolean"
+        },
+        "IsInProcess": {
+            "type": "boolean"
+        },
+        "MachinePolicyId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OperatingSystem": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ShellName": {
+            "type": "string"
+        },
+        "ShellVersion": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusSummary": {
+            "type": "string"
+        },
+        "TenantTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TenantedDeploymentParticipation": {
+            "type": "string"
+        },
+        "Tenants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "WorkingDirectory": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Endpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationsDirectory",
+        "Environments",
+        "Name",
+        "Roles",
+        "WorkingDirectory"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HasLatestCalamari",
+        "/properties/Id",
+        "/properties/IsInProcess"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

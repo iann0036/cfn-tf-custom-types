@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Gitlab::GroupMembership",
+    "description": "This resource allows you to add a user to an existing group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-GroupMembership/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessLevel": {
+            "type": "string",
+            "description": "Acceptable values are: guest, reporter, developer, maintainer, owner."
+        },
+        "ExpiresAt": {
+            "type": "string",
+            "description": "Expiration date for the group membership. Format: `YYYY-MM-DD`."
+        },
+        "GroupId": {
+            "type": "string",
+            "description": "The id of the group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "UserId": {
+            "type": "number",
+            "description": "The id of the user."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessLevel",
+        "GroupId",
+        "UserId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::SignalFx::AzureIntegration",
+    "description": "SignalFx Azure integrations. For help with this integration see [Monitoring Microsoft Azure](https://docs.signalfx.com/en/latest/integrations/azure-info.html#connect-to-azure).\n\n~> **NOTE** When managing integrations you'll need to use an admin token to authenticate the SignalFx provider. Otherwise you'll receive a 4xx error.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-AzureIntegration/docs/README.md",
+    "definitions": {
+        "CustomNamespacesPerServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Service": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Namespaces",
+                "Service"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "Azure application ID for the SignalFx app. To learn how to get this ID, see the topic [Connect to Microsoft Azure](https://docs.signalfx.com/en/latest/getting-started/send-data.html#connect-to-microsoft-azure) in the product documentation."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the integration is enabled."
+        },
+        "Environment": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration."
+        },
+        "NamedToken": {
+            "type": "string"
+        },
+        "PollRate": {
+            "type": "number",
+            "description": "AWS poll rate (in seconds). One of `60` or `300`."
+        },
+        "SecretKey": {
+            "type": "string",
+            "description": "Azure secret key that associates the SignalFx app in Azure with the Azure tenant ID. To learn how to get this ID, see the topic [Connect to Microsoft Azure](https://docs.signalfx.com/en/latest/integrations/azure-info.html#connect-to-azure) in the product documentation."
+        },
+        "Services": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Microsoft Azure service names for the Azure services you want SignalFx to monitor. See the documentation for [Creating Integrations](https://developers.signalfx.com/integrations_reference.html#operation/Create%20Integration) for valida values."
+        },
+        "Subscriptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Azure subscriptions that SignalFx should monitor."
+        },
+        "SyncGuestOsNamespaces": {
+            "type": "boolean",
+            "description": "If enabled, SignalFx will try to sync additional namespaces for VMs (including VMs in scale sets): telegraf/mem, telegraf/cpu, azure.vm.windows.guest (these are namespaces recommended by Azure when enabling their Diagnostic Extension). If there are no metrics there, no new datapoints will be ingested. Defaults to false."
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "CustomNamespacesPerService": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomNamespacesPerServiceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "Enabled",
+        "Name",
+        "SecretKey",
+        "Services",
+        "Subscriptions",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AppId",
+        "/properties/Environment",
+        "/properties/SecretKey"
+    ]
+}

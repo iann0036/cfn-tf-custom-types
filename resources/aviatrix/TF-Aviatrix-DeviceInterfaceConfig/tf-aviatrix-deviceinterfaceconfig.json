@@ -1,0 +1,72 @@
+{
+    "typeName": "TF::Aviatrix::DeviceInterfaceConfig",
+    "description": "The **aviatrix_device_interface_config** resource allows the configuration of the primary WAN interface and IP for a device, for use in CloudWAN.\n\n~> **NOTE:** Before configuring WAN interface and IP, the device must be registered with the Aviatrix controller via the `aviatrix_device_registration` resource. To guarantee the correct order of resource creation please set an explicit or implicit dependency on the corresponding `aviatrix_device_registration` resource. For an example of an implicit dependency please see the Example Usage section below. For explicit dependency please utilize a `depends_on` meta-argument within this resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-DeviceInterfaceConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WanPrimaryInterface": {
+            "type": "string"
+        },
+        "WanPrimaryInterfacePublicIp": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceName",
+        "WanPrimaryInterface",
+        "WanPrimaryInterfacePublicIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

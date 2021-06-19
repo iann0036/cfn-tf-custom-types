@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::VRA::StorageProfileAws",
+    "description": "CloudFormation equivalent of vra_storage_profile_aws",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-StorageProfileAws/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DefaultItem": {
+            "type": "boolean",
+            "description": "Indicates if this storage profile is a default profile."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "DeviceType": {
+            "type": "string",
+            "description": "Indicates the type of storage device."
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "string",
+            "description": "Indicates maximum I/O operations per second in range(1-20,000)."
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "RegionId": {
+            "type": "string",
+            "description": "A link to the region that is associated with the storage profile."
+        },
+        "SupportsEncryption": {
+            "type": "boolean",
+            "description": "Indicates whether this storage profile supports encryption or not."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "VolumeType": {
+            "type": "string",
+            "description": "Indicates the type of volume associated with type of storage."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultItem",
+        "Name",
+        "RegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/ExternalRegionId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrganizationId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

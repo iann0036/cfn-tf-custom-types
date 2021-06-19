@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::MSO::SchemaTemplateAnpEpg",
+    "description": "CloudFormation equivalent of mso_schema_template_anp_epg",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaTemplateAnpEpg/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnpName": {
+            "type": "string"
+        },
+        "BdName": {
+            "type": "string"
+        },
+        "BdSchemaId": {
+            "type": "string"
+        },
+        "BdTemplateName": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntersiteMulticastSource": {
+            "type": "boolean"
+        },
+        "IntraEpg": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PreferredGroup": {
+            "type": "boolean"
+        },
+        "ProxyArp": {
+            "type": "boolean"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "UsegEpg": {
+            "type": "boolean"
+        },
+        "VrfName": {
+            "type": "string"
+        },
+        "VrfSchemaId": {
+            "type": "string"
+        },
+        "VrfTemplateName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AnpName",
+        "BdName",
+        "Name",
+        "SchemaId",
+        "TemplateName",
+        "VrfName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

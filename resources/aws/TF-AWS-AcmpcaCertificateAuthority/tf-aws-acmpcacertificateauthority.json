@@ -1,0 +1,291 @@
+{
+    "typeName": "TF::AWS::AcmpcaCertificateAuthority",
+    "description": "Provides a resource to manage AWS Certificate Manager Private Certificate Authorities (ACM PCA Certificate Authorities).\n\n~> **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificate_signing_request` attribute and import the signed certificate outside of Terraform. Terraform can support another resource to manage that workflow automatically in the future.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AcmpcaCertificateAuthority/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CertificateAuthorityConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyAlgorithm": {
+                    "type": "string"
+                },
+                "SigningAlgorithm": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "KeyAlgorithm",
+                "SigningAlgorithm"
+            ]
+        },
+        "RevocationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CrlConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CrlConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SubjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "DistinguishedNameQualifier": {
+                    "type": "string"
+                },
+                "GenerationQualifier": {
+                    "type": "string"
+                },
+                "GivenName": {
+                    "type": "string"
+                },
+                "Initials": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "Pseudonym": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Surname": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CrlConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomCname": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ExpirationInDays": {
+                    "type": "number"
+                },
+                "S3BucketName": {
+                    "type": "string"
+                },
+                "S3ObjectAcl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExpirationInDays"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "CertificateSigningRequest": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the certificate authority is enabled or disabled. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotAfter": {
+            "type": "string"
+        },
+        "NotBefore": {
+            "type": "string"
+        },
+        "PermanentDeletionTimeInDays": {
+            "type": "number",
+            "description": "The number of days to make a CA restorable after it has been deleted, must be between 7 to 30 days, with default to 30 days."
+        },
+        "Serial": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Specifies a key-value map of user-defined tags that are attached to the certificate authority. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the certificate authority. Defaults to `SUBORDINATE`. Valid values: `ROOT` and `SUBORDINATE`."
+        },
+        "CertificateAuthorityConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateAuthorityConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RevocationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevocationConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Certificate",
+        "/properties/CertificateChain",
+        "/properties/CertificateSigningRequest",
+        "/properties/Id",
+        "/properties/NotAfter",
+        "/properties/NotBefore",
+        "/properties/Serial",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

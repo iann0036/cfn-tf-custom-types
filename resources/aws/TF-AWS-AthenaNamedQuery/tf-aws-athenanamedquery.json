@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::AWS::AthenaNamedQuery",
+    "description": "Provides an Athena Named Query resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AthenaNamedQuery/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Database": {
+            "type": "string",
+            "description": "The database to which the query belongs."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A brief explanation of the query. Maximum length of 1024."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The plain language name for the query. Maximum length of 128."
+        },
+        "Query": {
+            "type": "string",
+            "description": "The text of the query itself. In other words, all query statements. Maximum length of 262144."
+        },
+        "Workgroup": {
+            "type": "string",
+            "description": "The workgroup to which the query belongs. Defaults to `primary`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Database",
+        "Name",
+        "Query"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

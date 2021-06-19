@@ -1,0 +1,208 @@
+{
+    "typeName": "TF::OpenNebula::Group",
+    "description": "Provides an OpenNebula group resource.\n\nThis resource allows you to manage groups on your OpenNebula clusters. When applied,\na new group is created. When destroyed, it is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-Group/docs/README.md",
+    "definitions": {
+        "QuotasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatastoreQuotas": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatastoreQuotasDefinition"
+                    }
+                },
+                "ImageQuotas": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageQuotasDefinition"
+                    }
+                },
+                "NetworkQuotas": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkQuotasDefinition"
+                    }
+                },
+                "VmQuotas": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VmQuotasDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DatastoreQuotasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Images": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ImageQuotasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "RunningVms": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "NetworkQuotasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "Leases": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "VmQuotasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cpu": {
+                    "type": "number"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "RunningCpu": {
+                    "type": "number"
+                },
+                "RunningMemory": {
+                    "type": "number"
+                },
+                "RunningVms": {
+                    "type": "number"
+                },
+                "SystemDiskSize": {
+                    "type": "number"
+                },
+                "Vms": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Admins": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "List of Administrator user IDs part of the group."
+        },
+        "DeleteOnDestruction": {
+            "type": "boolean",
+            "description": "Flag to delete the group on destruction. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the group."
+        },
+        "Template": {
+            "type": "string",
+            "description": "Group template content in OpenNebula XML or String format. Used to provide SUSNTONE arguments."
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Quotas": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/QuotasDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

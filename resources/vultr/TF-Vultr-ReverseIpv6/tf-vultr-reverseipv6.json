@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::Vultr::ReverseIpv6",
+    "description": "Provides a Vultr Reverse IPv6 resource. This can be used to create, read,\nmodify, and delete reverse DNS records for IPv6 addresses. Upon success, DNS\nchanges may take 6-12 hours to become active.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-ReverseIpv6/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The ID of the server you want to set an IPv6\nreverse DNS record for."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "The IPv6 address used in the reverse DNS record."
+        },
+        "Reverse": {
+            "type": "string",
+            "description": "The hostname used in the IPv6 reverse DNS record."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "Ip",
+        "Reverse"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Linode::InstanceIp",
+    "description": "~> **NOTICE:** You may need to contact support to increase your instance IP limit before you can allocate additional IPs.\n\nManages a Linode instance IP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-InstanceIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinodeId": {
+            "type": "number",
+            "description": "The ID of the Linode to allocate an IPv4 address for."
+        },
+        "Prefix": {
+            "type": "number"
+        },
+        "Public": {
+            "type": "boolean",
+            "description": "Whether the IPv4 address is public or private. Defaults to true."
+        },
+        "Rdns": {
+            "type": "string",
+            "description": "The reverse DNS assigned to this address."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SubnetMask": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LinodeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/Gateway",
+        "/properties/Id",
+        "/properties/Prefix",
+        "/properties/Region",
+        "/properties/SubnetMask",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

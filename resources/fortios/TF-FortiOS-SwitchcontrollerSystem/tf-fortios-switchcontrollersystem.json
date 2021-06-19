@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerSystem",
+    "description": "Configure system-wide switch controller settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerSystem/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataSyncInterval": {
+            "type": "number",
+            "description": "Time interval between collection of switch data (30 - 1800 sec, default = 60, 0 = disable)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IotHoldoff": {
+            "type": "number",
+            "description": "MAC entry's creation time. Time must be greater than this value for an entry to be created (default = 5 mins)."
+        },
+        "IotMacIdle": {
+            "type": "number",
+            "description": "MAC entry's idle time. MAC entry is removed after this value (default = 1440 mins)."
+        },
+        "IotScanInterval": {
+            "type": "number",
+            "description": "IoT scan interval (2 - 4294967295 mins, default = 60 mins, 0 = disable)."
+        },
+        "IotWeightThreshold": {
+            "type": "number",
+            "description": "MAC entry's confidence value. Value is re-queried when below this value (default = 1, 0 = disable)."
+        },
+        "NacPeriodicInterval": {
+            "type": "number",
+            "description": "Periodic time interval to run NAC engine (5 - 60 sec, default = 15)."
+        },
+        "ParallelProcess": {
+            "type": "number",
+            "description": "Maximum number of parallel processes (1 - 300, default = 1)."
+        },
+        "ParallelProcessOverride": {
+            "type": "string",
+            "description": "Enable/disable parallel process override. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

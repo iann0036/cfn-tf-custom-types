@@ -1,0 +1,205 @@
+{
+    "typeName": "TF::AzureRM::VpnGateway",
+    "description": "Manages a VPN Gateway within a Virtual Hub, which enables Site-to-Site communication.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VpnGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BgpSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number",
+                    "description": "The ASN of the BGP Speaker. Changing this forces a new resource to be created."
+                },
+                "PeerWeight": {
+                    "type": "number",
+                    "description": "The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created."
+                },
+                "Instance0BgpPeeringAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Instance0BgpPeeringAddressDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Instance1BgpPeeringAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Instance1BgpPeeringAddressDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Asn",
+                "PeerWeight"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Instance0BgpPeeringAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "CustomIps"
+            ]
+        },
+        "Instance1BgpPeeringAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "CustomIps"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure location where this VPN Gateway should be created. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Name which should be used for this VPN Gateway. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The Name of the Resource Group in which this VPN Gateway should be created. Changing this forces a new resource to be created."
+        },
+        "ScaleUnit": {
+            "type": "number",
+            "description": "The Scale Unit for this VPN Gateway. Defaults to `1`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the VPN Gateway."
+        },
+        "VirtualHubId": {
+            "type": "string",
+            "description": "The ID of the Virtual Hub within which this VPN Gateway should be created. Changing this forces a new resource to be created."
+        },
+        "BgpSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BgpSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "VirtualHubId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

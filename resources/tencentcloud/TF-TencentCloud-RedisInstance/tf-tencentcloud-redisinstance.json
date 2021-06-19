@@ -1,0 +1,171 @@
+{
+    "typeName": "TF::TencentCloud::RedisInstance",
+    "description": "Provides a resource to create a Redis instance and set its attributes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-RedisInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The available zone ID of an instance to be created, please refer to `tencentcloud_redis_zone_config.list`."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values: `PREPAID` and `POSTPAID`. Default value is `POSTPAID`. Note: TencentCloud International only supports `POSTPAID`. Caution that update operation on this field will delete old instances and create new with new charge type."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete Redis instance directly or not. Default is false. If set true, the instance will be deleted instead of staying recycle bin. Note: only works for `PREPAID` instance."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "MemSize": {
+            "type": "number",
+            "description": "The memory volume of an available instance(in MB), please refer to `tencentcloud_redis_zone_config.list[zone].mem_sizes`. When redis is standard type, it represents total memory size of the instance; when Redis is cluster type, it represents memory size of per sharding."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Instance name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for a Redis user, which should be 8 to 16 characters."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port used to access a redis instance. The default value is 6379. And this value can't be changed after creation, or the Redis instance will be recreated."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when charge_type is set to `PREPAID`. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `24`, `36`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Specifies which project the instance should belong to."
+        },
+        "RedisReplicasNum": {
+            "type": "number",
+            "description": "The number of instance copies. This is not required for standalone and master slave versions."
+        },
+        "RedisShardNum": {
+            "type": "number",
+            "description": "The number of instance shard. This is not required for standalone and master slave versions."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID of security group. If both vpc_id and subnet_id are not set, this argument should not be set either."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Specifies which subnet the instance should belong to."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Instance tags."
+        },
+        "Type": {
+            "type": "string",
+            "description": "It has been deprecated from version 1.33.1. Please use 'type_id' instead. Instance type. Available values: `cluster_ckv`,`cluster_redis5.0`,`cluster_redis`,`master_slave_ckv`,`master_slave_redis5.0`,`master_slave_redis`,`standalone_redis`, specific region support specific types, need to refer data `tencentcloud_redis_zone_config`."
+        },
+        "TypeId": {
+            "type": "number",
+            "description": "Instance type. Available values reference data source `tencentcloud_redis_zone_config` or [document](https://intl.cloud.tencent.com/document/product/239/32069)."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the vpc with which the instance is to be associated."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "MemSize",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Ip",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

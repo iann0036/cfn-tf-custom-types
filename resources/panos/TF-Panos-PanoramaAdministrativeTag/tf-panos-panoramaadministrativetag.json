@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::Panos::PanoramaAdministrativeTag",
+    "description": "This resource allows you to add/update/delete Panorama administrative tags.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaAdministrativeTag/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "The tag's color.  This should be either an empty string\n(no color) or a string such as `color1` or `color15`.  Note that for maximum\nportability, you should limit color usage to `color16`, which was available\nin PAN-OS 6.1.  PAN-OS 8.1's colors go up to `color42`.  The value `color18`\nis reserved internally by PAN-OS and thus not available for use."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The administrative tag's description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group to put the administrative tag into\n(default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The administrative tag's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

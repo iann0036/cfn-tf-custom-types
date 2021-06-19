@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::MSO::User",
+    "description": "CloudFormation equivalent of mso_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-User/docs/README.md",
+    "definitions": {
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessType": {
+                    "type": "string"
+                },
+                "Roleid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Roleid"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountStatus": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "FirstName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string"
+        },
+        "Phone": {
+            "type": "string"
+        },
+        "UserPassword": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "UserPassword",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

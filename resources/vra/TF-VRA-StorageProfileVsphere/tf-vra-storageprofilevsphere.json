@@ -1,0 +1,190 @@
+{
+    "typeName": "TF::VRA::StorageProfileVsphere",
+    "description": "CloudFormation equivalent of vra_storage_profile_vsphere",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-StorageProfileVsphere/docs/README.md",
+    "definitions": {
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudAccountId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DatastoreId": {
+            "type": "string",
+            "description": "Id of the vSphere Datastore for placing disk and VM."
+        },
+        "DefaultItem": {
+            "type": "boolean",
+            "description": "Indicates if this storage profile is a default profile."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "DiskMode": {
+            "type": "string",
+            "description": "Type of mode for the disk."
+        },
+        "DiskType": {
+            "type": "string",
+            "description": "Indicates the performance tier for the storage type. Premium disks are SSD backed and Standard disks are HDD backed."
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LimitIops": {
+            "type": "string",
+            "description": "The upper bound for the I/O operations per second allocated for each virtual disk."
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "ProvisioningType": {
+            "type": "string",
+            "description": "Type of provisioning policy for the disk."
+        },
+        "RegionId": {
+            "type": "string",
+            "description": "The Id of the region that is associated with the storage profile."
+        },
+        "Shares": {
+            "type": "string",
+            "description": "A specific number of shares assigned to each virtual machine."
+        },
+        "SharesLevel": {
+            "type": "string",
+            "description": "Indicates whether this storage profile supports encryption or not."
+        },
+        "StoragePolicyId": {
+            "type": "string",
+            "description": "Id of the vSphere Storage Policy to be applied."
+        },
+        "SupportsEncryption": {
+            "type": "boolean",
+            "description": "Indicates whether this storage policy should support encryption or not."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultItem",
+        "Name",
+        "RegionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudAccountId",
+        "/properties/CreatedAt",
+        "/properties/ExternalRegionId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrgId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

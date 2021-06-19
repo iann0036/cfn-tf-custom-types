@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::AWS::StoragegatewayStoredIscsiVolume",
+    "description": "Manages an AWS Storage Gateway stored iSCSI volume.\n\n~> **NOTE:** The gateway must have a working storage added (e.g. via the [`aws_storagegateway_working_storage`](/docs/providers/aws/r/storagegateway_working_storage.html) resource) before the volume is operational to clients, however the Storage Gateway API will allow volume creation without error in that case and return volume status as `WORKING STORAGE NOT CONFIGURED`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-StoragegatewayStoredIscsiVolume/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ChapEnabled": {
+            "type": "boolean"
+        },
+        "DiskId": {
+            "type": "string",
+            "description": "The unique identifier for the gateway local disk that is configured as a stored volume."
+        },
+        "GatewayArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsEncrypted": {
+            "type": "boolean",
+            "description": "`true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Optional."
+        },
+        "KmsKey": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is `true`."
+        },
+        "LunNumber": {
+            "type": "number"
+        },
+        "NetworkInterfaceId": {
+            "type": "string",
+            "description": "The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted."
+        },
+        "NetworkInterfacePort": {
+            "type": "number"
+        },
+        "PreserveExistingData": {
+            "type": "boolean",
+            "description": "Specify this field as `true` if you want to preserve the data on the local disk. Otherwise, specifying this field as false creates an empty volume."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "The snapshot ID of the snapshot to restore as the new stored volume. e.g. `snap-1122aabb`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value mapping of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TargetArn": {
+            "type": "string"
+        },
+        "TargetName": {
+            "type": "string",
+            "description": "The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. The target name must be unique across all volumes of a gateway."
+        },
+        "VolumeAttachmentStatus": {
+            "type": "string"
+        },
+        "VolumeId": {
+            "type": "string"
+        },
+        "VolumeSizeInBytes": {
+            "type": "number"
+        },
+        "VolumeStatus": {
+            "type": "string"
+        },
+        "VolumeType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DiskId",
+        "GatewayArn",
+        "NetworkInterfaceId",
+        "PreserveExistingData",
+        "TargetName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ChapEnabled",
+        "/properties/Id",
+        "/properties/LunNumber",
+        "/properties/NetworkInterfacePort",
+        "/properties/TargetArn",
+        "/properties/VolumeAttachmentStatus",
+        "/properties/VolumeId",
+        "/properties/VolumeSizeInBytes",
+        "/properties/VolumeStatus",
+        "/properties/VolumeType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

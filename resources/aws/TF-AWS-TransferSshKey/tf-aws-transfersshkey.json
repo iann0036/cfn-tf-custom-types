@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::AWS::TransferSshKey",
+    "description": "Provides a AWS Transfer User SSH Key resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-TransferSshKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Body": {
+            "type": "string",
+            "description": "The public key portion of an SSH key pair."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerId": {
+            "type": "string",
+            "description": "The Server ID of the Transfer Server (e.g. `s-12345678`)."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "The name of the user account that is assigned to one or more servers."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Body",
+        "ServerId",
+        "UserName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

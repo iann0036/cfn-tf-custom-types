@@ -1,0 +1,212 @@
+{
+    "typeName": "TF::BIGIP::SysIapp",
+    "description": "`bigip_sys_iapp` resource helps you to deploy Application Services template that can be used to automate and orchestrate Layer 4-7 applications service deployments using F5 Network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-SysIapp/docs/README.md",
+    "definitions": {
+        "ListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Persists": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColumnNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EncryptedColumns": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Rows": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RowsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RowsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Row": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Devicegroup": {
+            "type": "string"
+        },
+        "ExecuteAction": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InheritedDevicegroup": {
+            "type": "string"
+        },
+        "InheritedTrafficGroup": {
+            "type": "string"
+        },
+        "Jsonfile": {
+            "type": "string",
+            "description": "Refer to the Json file which will be deployed on F5 BIG-IP."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the iApp."
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "StrictUpdates": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateModified": {
+            "type": "string"
+        },
+        "TemplatePrerequisiteErrors": {
+            "type": "string"
+        },
+        "TrafficGroup": {
+            "type": "string"
+        },
+        "Lists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ListsDefinition"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Tables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TablesDefinition"
+            }
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VariablesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

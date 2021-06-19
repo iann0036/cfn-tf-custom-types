@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Thunder::SlbTemplatePersistCookie",
+    "description": "`thunder_slb_template_persist_cookie` Provides details about thunder slb template persist cookie",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplatePersistCookie/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CookieName": {
+            "type": "string",
+            "description": "Set cookie name (Cookie name, default \u201csto-id\u201d)."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Set cookie domain."
+        },
+        "DontHonorConnRules": {
+            "type": "number",
+            "description": "Do not observe connection rate rules."
+        },
+        "EncryptLevel": {
+            "type": "number",
+            "description": "Encryption level for cookie name / value."
+        },
+        "Encrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED password string)."
+        },
+        "Expire": {
+            "type": "number",
+            "description": "Set cookie expiration time (Expiration in seconds)."
+        },
+        "Httponly": {
+            "type": "number",
+            "description": "Enable HttpOnly attribute."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertAlways": {
+            "type": "number",
+            "description": "Insert persist cookie to every reponse."
+        },
+        "MatchType": {
+            "type": "number",
+            "description": "Persist for server, default is port."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Cookie persistence (Cookie persistence template name)."
+        },
+        "PassPhrase": {
+            "type": "string",
+            "description": "Set passphrase for encryption."
+        },
+        "PassThru": {
+            "type": "number",
+            "description": "Pass thru mode - Server sends the persist cookie."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Set cookie path (Cookie path, default is \u201c/\u201d)."
+        },
+        "ScanAllMembers": {
+            "type": "number",
+            "description": "Persist within the same server SCAN."
+        },
+        "Secure": {
+            "type": "number",
+            "description": "Enable secure attribute."
+        },
+        "Server": {
+            "type": "number",
+            "description": "Persist to the same server, default is port."
+        },
+        "ServerServiceGroup": {
+            "type": "number",
+            "description": "Persist to the same server and within the same service group."
+        },
+        "ServiceGroup": {
+            "type": "number",
+            "description": "Persist within the same service group."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

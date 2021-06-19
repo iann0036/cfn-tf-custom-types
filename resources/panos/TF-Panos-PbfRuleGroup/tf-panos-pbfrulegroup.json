@@ -1,0 +1,295 @@
+{
+    "typeName": "TF::Panos::PbfRuleGroup",
+    "description": "This resource allows you to add/update/delete policy based forwarding rule groups.\n\nThis resource manages clusters of policy based forwarding rules in a single vsys,\nenforcing both the contents of individual rules as well as their\nordering.  Rules are defined in a `rule` config block.\n\nAlthough you cannot modify non-group PBF rules with this\nresource, the `position_keyword` and `position_reference` parameters allow you\nto reference some other PBF rule that already exists, using it as\na means to ensure some rough placement within the ruleset as a whole.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PbfRuleGroup/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveActiveDeviceBinding": {
+                    "type": "string",
+                    "description": "The active-active device binding."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "The rule description."
+                },
+                "Disabled": {
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The rule name."
+                },
+                "Schedule": {
+                    "type": "string",
+                    "description": "The schedule."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of tags for this rule."
+                },
+                "Uuid": {
+                    "type": "string",
+                    "description": "The UUID for the rule."
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Forwarding": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardingDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Addresses",
+                "Applications",
+                "Services"
+            ]
+        },
+        "ForwardingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "EgressInterface": {
+                    "type": "string"
+                },
+                "NextHopType": {
+                    "type": "string"
+                },
+                "NextHopValue": {
+                    "type": "string"
+                },
+                "Vsys": {
+                    "type": "string"
+                },
+                "Monitor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonitorDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SymmetricReturn": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SymmetricReturnDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Interfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Addresses",
+                "Users"
+            ]
+        },
+        "MonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableIfUnreachable": {
+                    "type": "boolean"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Profile": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SymmetricReturnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PositionKeyword": {
+            "type": "string",
+            "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
+        },
+        "PositionReference": {
+            "type": "string",
+            "description": "Required if `position_keyword` is one of the\n\"above\" or \"below\" variants, this is the name of a non-group rule to use\nas a reference to place this group."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the rule into (default:\n`vsys1`)."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

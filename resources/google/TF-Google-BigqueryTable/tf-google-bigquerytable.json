@@ -1,0 +1,452 @@
+{
+    "typeName": "TF::Google::BigqueryTable",
+    "description": "Creates a table resource in a dataset for Google BigQuery. For more information see\n[the official documentation](https://cloud.google.com/bigquery/docs/) and\n[API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).\n\n-> **Note**: On newer versions of the provider, you must explicitly set `deletion_protection=false`\n(and run `terraform apply` to write the field to state) in order to destroy an instance.\nIt is recommended to not set this field (or set it to true) until you're ready to destroy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigqueryTable/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EncryptionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string",
+                    "description": "The self link or full name of a key which should be used to\nencrypt this table.  Note that the default bigquery service account will need to have\nencrypt/decrypt permissions on this key - you may want to see the\n`google_bigquery_default_service_account` datasource and the\n`google_kms_crypto_key_iam_binding` resource."
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "ExternalDataConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autodetect": {
+                    "type": "boolean",
+                    "description": "- Let BigQuery try to autodetect the schema\nand format of the table."
+                },
+                "Compression": {
+                    "type": "string"
+                },
+                "IgnoreUnknownValues": {
+                    "type": "boolean"
+                },
+                "MaxBadRecords": {
+                    "type": "number"
+                },
+                "Schema": {
+                    "type": "string",
+                    "description": "A JSON schema for the external table. Schema is required\nfor CSV and JSON formats if autodetect is not on. Schema is disallowed\nfor Google Cloud Bigtable, Cloud Datastore backups, Avro, ORC and Parquet formats.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nFurthermore drift for this field cannot not be detected because BigQuery\nonly uses this schema to compute the effective schema for the table, therefore\nany changes on the configured value will force the table to be recreated.\nThis schema is effectively only applied when creating a table from an external\ndatasource, after creation the computed schema will be stored in\n`google_bigquery_table.schema`."
+                },
+                "SourceFormat": {
+                    "type": "string"
+                },
+                "SourceUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of the fully-qualified URIs that point to\nyour data in Google Cloud."
+                },
+                "CsvOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GoogleSheetsOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoogleSheetsOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HivePartitioningOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HivePartitioningOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Autodetect",
+                "SourceFormat",
+                "SourceUris"
+            ]
+        },
+        "MaterializedViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableRefresh": {
+                    "type": "boolean",
+                    "description": "Specifies whether to use BigQuery's automatic refresh for this materialized view when the base table is updated.\nThe default value is true."
+                },
+                "Query": {
+                    "type": "string",
+                    "description": "A query whose result is persisted."
+                },
+                "RefreshIntervalMs": {
+                    "type": "number",
+                    "description": "The maximum frequency at which this materialized view will be refreshed.\nThe default value is 1800000."
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "RangePartitioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string",
+                    "description": "The field used to determine how to create a range-based\npartition."
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Field"
+            ]
+        },
+        "TimePartitioningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationMs": {
+                    "type": "number",
+                    "description": "Number of milliseconds for which to keep the\nstorage for a partition."
+                },
+                "Field": {
+                    "type": "string",
+                    "description": "The field used to determine how to create a time-based\npartition. If time-based partitioning is enabled without this value, the\ntable is partitioned based on the load time."
+                },
+                "RequirePartitionFilter": {
+                    "type": "boolean",
+                    "description": "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The supported types are DAY, HOUR, MONTH, and YEAR,\nwhich will generate one partition per day, hour, month, and year, respectively."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ViewDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string",
+                    "description": "A query that BigQuery executes when the view is referenced."
+                },
+                "UseLegacySql": {
+                    "type": "boolean",
+                    "description": "Specifies whether to use BigQuery's legacy SQL for this view.\nThe default value is true. If set to false, the view will use BigQuery's standard SQL."
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "CsvOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowJaggedRows": {
+                    "type": "boolean"
+                },
+                "AllowQuotedNewlines": {
+                    "type": "boolean"
+                },
+                "Encoding": {
+                    "type": "string"
+                },
+                "FieldDelimiter": {
+                    "type": "string"
+                },
+                "Quote": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Quote"
+            ]
+        },
+        "GoogleSheetsOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HivePartitioningOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "RequirePartitionFilter": {
+                    "type": "boolean",
+                    "description": "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified."
+                },
+                "SourceUriPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number",
+                    "description": "End of the range partitioning, exclusive."
+                },
+                "Interval": {
+                    "type": "number",
+                    "description": "The width of each range within the partition."
+                },
+                "Start": {
+                    "type": "number",
+                    "description": "Start of the range partitioning, inclusive."
+                }
+            },
+            "required": [
+                "End",
+                "Interval",
+                "Start"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Clustering": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order."
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "DatasetId": {
+            "type": "string",
+            "description": "The dataset ID to create the table in.\nChanging this forces a new resource to be created."
+        },
+        "DeletionProtection": {
+            "type": "boolean",
+            "description": "Whether or not to allow Terraform to destroy the instance. Unless this field is set to false\nin Terraform state, a `terraform destroy` or `terraform apply` that would delete the instance will fail."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The field description."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "number",
+            "description": "The time when this table expires, in\nmilliseconds since the epoch. If not present, the table will persist\nindefinitely. Expired tables will be deleted and their storage\nreclaimed."
+        },
+        "FriendlyName": {
+            "type": "string",
+            "description": "A descriptive name for the table."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A mapping of labels to assign to the resource."
+        },
+        "LastModifiedTime": {
+            "type": "number"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "NumBytes": {
+            "type": "number"
+        },
+        "NumLongTermBytes": {
+            "type": "number"
+        },
+        "NumRows": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "Schema": {
+            "type": "string",
+            "description": "A JSON schema for the table.\n~>**NOTE:** Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nIf the API returns a different value for the same schema, e.g. it\nswitched the order of values or replaced `STRUCT` field type with `RECORD`\nfield type, we currently cannot suppress the recurring diff this causes.\nAs a workaround, we recommend using the schema as returned by the API."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "TableId": {
+            "type": "string",
+            "description": "A unique ID for the resource.\nChanging this forces a new resource to be created."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalDataConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalDataConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaterializedView": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaterializedViewDefinition"
+            },
+            "maxItems": 1
+        },
+        "RangePartitioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangePartitioningDefinition"
+            },
+            "maxItems": 1
+        },
+        "TimePartitioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimePartitioningDefinition"
+            },
+            "maxItems": 1
+        },
+        "View": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatasetId",
+        "TableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/LastModifiedTime",
+        "/properties/Location",
+        "/properties/NumBytes",
+        "/properties/NumLongTermBytes",
+        "/properties/NumRows",
+        "/properties/SelfLink",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::Cloudtamerio::OuCloudAccessRole",
+    "description": "CloudFormation equivalent of cloudtamerio_ou_cloud_access_role",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudtamerio/TF-Cloudtamerio-OuCloudAccessRole/docs/README.md",
+    "definitions": {
+        "AwsIamPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "UserGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsIamPath": {
+            "type": "string"
+        },
+        "AwsIamPermissionsBoundary": {
+            "type": "number"
+        },
+        "AwsIamRoleName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdated": {
+            "type": "string"
+        },
+        "LongTermAccessKeys": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OuId": {
+            "type": "number"
+        },
+        "ShortTermAccessKeys": {
+            "type": "boolean"
+        },
+        "WebAccess": {
+            "type": "boolean"
+        },
+        "AwsIamPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsIamPoliciesDefinition"
+            }
+        },
+        "UserGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserGroupsDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AwsIamRoleName",
+        "Name",
+        "OuId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

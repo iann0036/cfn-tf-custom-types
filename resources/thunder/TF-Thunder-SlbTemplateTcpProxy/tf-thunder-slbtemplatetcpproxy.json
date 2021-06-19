@@ -1,0 +1,239 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateTcpProxy",
+    "description": "`thunder_slb_template_tcp_proxy` Provides details about thunder slb template tcp proxy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateTcpProxy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AckAggressiveness": {
+            "type": "string",
+            "description": "\u2018low\u2019: Delayed ACK; \u2018medium\u2019: Delayed ACK, with ACK on each packet with PUSH flag; \u2018high\u2019: ACK on each packet;."
+        },
+        "AliveIfActive": {
+            "type": "number",
+            "description": "keep connection alive if active traffic."
+        },
+        "BackendWscale": {
+            "type": "number",
+            "description": "The TCP window scale used for the server side, default is off (number)."
+        },
+        "DelSessionOnServerDown": {
+            "type": "number",
+            "description": "Delete session if the server/port goes down (either disabled/hm down)."
+        },
+        "Disable": {
+            "type": "number",
+            "description": "send reset to client when server is disabled."
+        },
+        "DisableAbc": {
+            "type": "number",
+            "description": "Appropriate Byte Counting RFC 3465 Disabled, default is enabled (Appropriate Byte Counting (ABC) is enabled by default)."
+        },
+        "DisableSack": {
+            "type": "number",
+            "description": "disable Selective Ack Option."
+        },
+        "DisableTcpTimestamps": {
+            "type": "number",
+            "description": "disable TCP Timestamps Option."
+        },
+        "DisableWindowScale": {
+            "type": "number",
+            "description": "disable TCP Window-Scale Option."
+        },
+        "Down": {
+            "type": "number",
+            "description": "send reset to client when server is down."
+        },
+        "DynamicBufferAllocation": {
+            "type": "number",
+            "description": "Optimally adjust the transmit and receive buffer sizes of TCP proxy while keeping their sum constant."
+        },
+        "EarlyRetransmit": {
+            "type": "number",
+            "description": "Configure the Early-Retransmit Algorithm (RFC 5827) (Early-Retransmit is disabled by default)."
+        },
+        "FinTimeout": {
+            "type": "number",
+            "description": "FIN timeout (sec), default is 5 (number)."
+        },
+        "ForceDeleteTimeout": {
+            "type": "number",
+            "description": "The maximum time that a session can stay in the system before being deleted, default is off (number (second))."
+        },
+        "ForceDeleteTimeout100ms": {
+            "type": "number",
+            "description": "The maximum time that a session can stay in the system before being deleted, default is off (number in 100ms)."
+        },
+        "HalfCloseIdleTimeout": {
+            "type": "number",
+            "description": "TCP Half Close Idle Timeout (sec), default is off (number)."
+        },
+        "HalfOpenIdleTimeout": {
+            "type": "number",
+            "description": "TCP Half Open Idle Timeout (sec), default is off (number)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "Idle Timeout (Interval of 60 seconds), default is 600 (idle timeout in second, default 600)."
+        },
+        "InitCwnd": {
+            "type": "number",
+            "description": "The initial congestion control window size (packets), default is 10 (number)."
+        },
+        "InitialWindowSize": {
+            "type": "number",
+            "description": "Set the initial window size, default is off (number)."
+        },
+        "InsertClientIp": {
+            "type": "number",
+            "description": "Insert client ip into TCP option."
+        },
+        "InvalidRateLimit": {
+            "type": "number",
+            "description": "Invalid Packet Response Rate Limit (ms), default is 500 (number default 500 challenges)."
+        },
+        "KeepaliveInterval": {
+            "type": "number",
+            "description": "Interval between keepalive probes (sec), default is off (number)."
+        },
+        "KeepaliveProbes": {
+            "type": "number",
+            "description": "Number of keepalive probes sent, default is off."
+        },
+        "LimitedSlowstart": {
+            "type": "number",
+            "description": "RFC 3742 Limited Slow-Start for TCP with Large Congestion Windows (number)."
+        },
+        "Maxburst": {
+            "type": "number",
+            "description": "The max packet count sent per transmission event (number)."
+        },
+        "MinRto": {
+            "type": "number",
+            "description": "The minmum retransmission timeout, default is 200ms (number)."
+        },
+        "Mss": {
+            "type": "number",
+            "description": "Responding MSS to use if client MSS is large, default is off (number)."
+        },
+        "Nagle": {
+            "type": "number",
+            "description": "Enable Nagle Algorithm."
+        },
+        "Name": {
+            "type": "string",
+            "description": "TCP Proxy Template Name."
+        },
+        "PshFlagOptimization": {
+            "type": "number",
+            "description": "Enable Optimized PSH Flag Use."
+        },
+        "Qos": {
+            "type": "number",
+            "description": "QOS level (number)."
+        },
+        "ReassemblyLimit": {
+            "type": "number",
+            "description": "The reassembly queuing limit, default is 25 segments (number)."
+        },
+        "ReassemblyTimeout": {
+            "type": "number",
+            "description": "The reassembly timeout, default is 30sec (number)."
+        },
+        "ReceiveBuffer": {
+            "type": "number",
+            "description": "TCP Receive Buffer (default 200k) (number)."
+        },
+        "Reno": {
+            "type": "number",
+            "description": "Enable Reno Congestion Control Algorithm."
+        },
+        "ResetFwd": {
+            "type": "number",
+            "description": "send reset to server if error happens."
+        },
+        "ResetRev": {
+            "type": "number",
+            "description": "send reset to client if error happens."
+        },
+        "RetransmitRetries": {
+            "type": "number",
+            "description": "Number of Retries for Retransmit, default is 5."
+        },
+        "ServerDownAction": {
+            "type": "string",
+            "description": "\u2018FIN\u2019: FIN Connection; \u2018RST\u2019: Reset Connection;."
+        },
+        "SynRetries": {
+            "type": "number",
+            "description": "SYN Retry Numbers, default is 5."
+        },
+        "Timewait": {
+            "type": "number",
+            "description": "Timewait Threshold (sec), default 5 (number)."
+        },
+        "TransmitBuffer": {
+            "type": "number",
+            "description": "TCP Transmit Buffer (default 200k) (number)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

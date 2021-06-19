@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::Alicloud::ForwardEntry",
+    "description": "Provides a forward resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-ForwardEntry/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExternalIp": {
+            "type": "string",
+            "description": "The external ip address, the ip must along bandwidth package public ip which `alicloud_nat_gateway` argument `bandwidth_packages`."
+        },
+        "ExternalPort": {
+            "type": "string",
+            "description": "The external port, valid value is 1~65535|any."
+        },
+        "ForwardEntryId": {
+            "type": "string"
+        },
+        "ForwardEntryName": {
+            "type": "string"
+        },
+        "ForwardTableId": {
+            "type": "string",
+            "description": "The value can get from `alicloud_nat_gateway` Attributes \"forward_table_ids\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalIp": {
+            "type": "string",
+            "description": "The internal ip, must a private ip."
+        },
+        "InternalPort": {
+            "type": "string",
+            "description": "The internal port, valid value is 1~65535|any."
+        },
+        "IpProtocol": {
+            "type": "string",
+            "description": "The ip protocal, valid value is tcp|udp|any."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of forward entry."
+        },
+        "PortBreak": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalIp",
+        "ExternalPort",
+        "ForwardTableId",
+        "InternalIp",
+        "InternalPort",
+        "IpProtocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ForwardEntryId",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

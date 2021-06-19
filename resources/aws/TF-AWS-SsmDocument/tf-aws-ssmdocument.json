@@ -1,0 +1,268 @@
+{
+    "typeName": "TF::AWS::SsmDocument",
+    "description": "Provides an SSM Document resource\n\n~> **NOTE on updating SSM documents:** Only documents with a schema version of 2.0\nor greater can update their content once created, see [SSM Schema Features][1]. To update a document with an older\nschema version you must recreate the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmDocument/docs/README.md",
+    "definitions": {
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "PermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AttachmentsSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "The JSON or YAML content of the document."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "DefaultVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DocumentFormat": {
+            "type": "string",
+            "description": "The format of the document. Valid document types include: `JSON` and `YAML`."
+        },
+        "DocumentType": {
+            "type": "string",
+            "description": "The type of the document. Valid document types include: `Automation`, `Command`, `Package`, `Policy`, and `Session`."
+        },
+        "DocumentVersion": {
+            "type": "string"
+        },
+        "Hash": {
+            "type": "string"
+        },
+        "HashType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LatestVersion": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the document."
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParameterDefinition"
+            }
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PermissionsDefinition"
+            },
+            "description": "Additional Permissions to attach to the document. See [Permissions](#permissions) below for details."
+        },
+        "PlatformTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SchemaVersion": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the object. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "TargetType": {
+            "type": "string",
+            "description": "The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see AWS Resource Types Reference (http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)."
+        },
+        "VersionName": {
+            "type": "string",
+            "description": "A field specifying the version of the artifact you are creating with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document and cannot be changed for an existing document version."
+        },
+        "AttachmentsSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentsSourceDefinition"
+            },
+            "maxItems": 20
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "DocumentType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/DefaultVersion",
+        "/properties/Description",
+        "/properties/DocumentVersion",
+        "/properties/Hash",
+        "/properties/HashType",
+        "/properties/Id",
+        "/properties/LatestVersion",
+        "/properties/Owner",
+        "/properties/Parameter",
+        "/properties/PlatformTypes",
+        "/properties/SchemaVersion",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

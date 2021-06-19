@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::AWS::Route",
+    "description": "Provides a resource to create a routing table entry (a route) in a VPC routing table.\n\n~> **NOTE on Route Tables and Routes:** Terraform currently provides both a standalone Route resource and a [Route Table](route_table.html) resource with routes defined in-line. At this time you cannot use a Route Table with in-line routes in conjunction with any Route resources. Doing so will cause a conflict of rule settings and will overwrite rules.\n\n~> **NOTE on `gateway_id` attribute:** The AWS API is very forgiving with the resource ID passed in the `gateway_id` attribute. For example an `aws_route` resource can be created with an [`aws_nat_gateway`](nat_gateway.html) or [`aws_egress_only_internet_gateway`](egress_only_internet_gateway.html) ID specified for the `gateway_id` attribute. Specifying anything other than an [`aws_internet_gateway`](internet_gateway.html) or [`aws_vpn_gateway`](vpn_gateway.html) ID will lead to Terraform reporting a permanent diff between your configuration and recorded state, as the AW...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Route/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CarrierGatewayId": {
+            "type": "string",
+            "description": "Identifier of a carrier gateway. This attribute can only be used when the VPC contains a subnet which is associated with a Wavelength Zone."
+        },
+        "DestinationCidrBlock": {
+            "type": "string",
+            "description": "The destination CIDR block."
+        },
+        "DestinationIpv6CidrBlock": {
+            "type": "string",
+            "description": "The destination IPv6 CIDR block."
+        },
+        "DestinationPrefixListId": {
+            "type": "string",
+            "description": "The ID of a [managed prefix list](ec2_managed_prefix_list.html) destination."
+        },
+        "EgressOnlyGatewayId": {
+            "type": "string",
+            "description": "Identifier of a VPC Egress Only Internet Gateway."
+        },
+        "GatewayId": {
+            "type": "string",
+            "description": "Identifier of a VPC internet gateway or a virtual private gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "Identifier of an EC2 instance."
+        },
+        "InstanceOwnerId": {
+            "type": "string"
+        },
+        "LocalGatewayId": {
+            "type": "string",
+            "description": "Identifier of a Outpost local gateway."
+        },
+        "NatGatewayId": {
+            "type": "string",
+            "description": "Identifier of a VPC NAT gateway."
+        },
+        "NetworkInterfaceId": {
+            "type": "string",
+            "description": "Identifier of an EC2 network interface."
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "RouteTableId": {
+            "type": "string",
+            "description": "The ID of the routing table."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TransitGatewayId": {
+            "type": "string",
+            "description": "Identifier of an EC2 Transit Gateway."
+        },
+        "VpcEndpointId": {
+            "type": "string",
+            "description": "Identifier of a VPC Endpoint."
+        },
+        "VpcPeeringConnectionId": {
+            "type": "string",
+            "description": "Identifier of a VPC peering connection."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RouteTableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InstanceOwnerId",
+        "/properties/Origin",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

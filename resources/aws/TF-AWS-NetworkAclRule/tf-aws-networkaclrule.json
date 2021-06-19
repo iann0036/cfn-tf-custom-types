@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AWS::NetworkAclRule",
+    "description": "Creates an entry (a rule) in a network ACL with the specified rule number.\n\n~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently\nprovides both a standalone Network ACL Rule resource and a [Network ACL](network_acl.html) resource with rules\ndefined in-line. At this time you cannot use a Network ACL with in-line rules\nin conjunction with any Network ACL Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-NetworkAclRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string",
+            "description": "The network range to allow or deny, in CIDR notation (for example 172.16.0.0/24 )."
+        },
+        "Egress": {
+            "type": "boolean",
+            "description": "Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet). Default `false`."
+        },
+        "FromPort": {
+            "type": "number",
+            "description": "The from port to match."
+        },
+        "IcmpCode": {
+            "type": "string",
+            "description": "ICMP protocol: The ICMP code. Required if specifying ICMP for the protocol. e.g. -1."
+        },
+        "IcmpType": {
+            "type": "string",
+            "description": "ICMP protocol: The ICMP type. Required if specifying ICMP for the protocol. e.g. -1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6CidrBlock": {
+            "type": "string",
+            "description": "The IPv6 CIDR block to allow or deny."
+        },
+        "NetworkAclId": {
+            "type": "string",
+            "description": "The ID of the network ACL."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The protocol. A value of -1 means all protocols."
+        },
+        "RuleAction": {
+            "type": "string",
+            "description": "Indicates whether to allow or deny the traffic that matches the rule. Accepted values: `allow` | `deny`."
+        },
+        "RuleNumber": {
+            "type": "number",
+            "description": "The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number."
+        },
+        "ToPort": {
+            "type": "number",
+            "description": "The to port to match."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkAclId",
+        "Protocol",
+        "RuleAction",
+        "RuleNumber"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AzureRM::NetworkWatcherFlowLog",
+    "description": "Manages a Network Watcher Flow Log.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NetworkWatcherFlowLog/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number",
+                    "description": "The number of days to retain flow log records."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Boolean flag to enable/disable retention."
+                }
+            },
+            "required": [
+                "Days",
+                "Enabled"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrafficAnalyticsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Boolean flag to enable/disable traffic analytics."
+                },
+                "IntervalInMinutes": {
+                    "type": "number",
+                    "description": "How frequently service should do flow analytics in minutes."
+                },
+                "WorkspaceId": {
+                    "type": "string",
+                    "description": "The resource guid of the attached workspace."
+                },
+                "WorkspaceRegion": {
+                    "type": "string",
+                    "description": "The location of the attached workspace."
+                },
+                "WorkspaceResourceId": {
+                    "type": "string",
+                    "description": "The resource ID of the attached workspace."
+                }
+            },
+            "required": [
+                "Enabled",
+                "WorkspaceId",
+                "WorkspaceRegion",
+                "WorkspaceResourceId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Should Network Flow Logging be Enabled?."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the Network Watcher Flow Log resides. Changing this forces a new resource to be created. Defaults to the `location` of the Network Watcher."
+        },
+        "NetworkSecurityGroupId": {
+            "type": "string",
+            "description": "The ID of the Network Security Group for which to enable flow logs for. Changing this forces a new resource to be created."
+        },
+        "NetworkWatcherName": {
+            "type": "string",
+            "description": "The name of the Network Watcher. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Network Watcher was deployed. Changing this forces a new resource to be created."
+        },
+        "StorageAccountId": {
+            "type": "string",
+            "description": "The ID of the Storage Account where flow logs are stored."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags which should be assigned to the Network Watcher Flow Log."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version (revision) of the flow log. Possible values are `1` and `2`."
+        },
+        "RetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionPolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "TrafficAnalytics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficAnalyticsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "NetworkSecurityGroupId",
+        "NetworkWatcherName",
+        "ResourceGroupName",
+        "StorageAccountId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

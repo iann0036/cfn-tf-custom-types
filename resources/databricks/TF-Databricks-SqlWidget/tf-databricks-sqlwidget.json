@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::Databricks::SqlWidget",
+    "description": "CloudFormation equivalent of databricks_sql_widget",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-SqlWidget/docs/README.md",
+    "definitions": {
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapTo": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "PositionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PosX": {
+                    "type": "number"
+                },
+                "PosY": {
+                    "type": "number"
+                },
+                "SizeX": {
+                    "type": "number"
+                },
+                "SizeY": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "PosX",
+                "PosY",
+                "SizeX",
+                "SizeY"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DashboardId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Text": {
+            "type": "string"
+        },
+        "VisualizationId": {
+            "type": "string"
+        },
+        "WidgetId": {
+            "type": "string"
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParameterDefinition"
+            }
+        },
+        "Position": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PositionDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DashboardId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

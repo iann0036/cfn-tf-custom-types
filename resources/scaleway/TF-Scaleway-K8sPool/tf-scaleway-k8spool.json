@@ -1,0 +1,214 @@
+{
+    "typeName": "TF::Scaleway::K8sPool",
+    "description": "Creates and manages Scaleway Kubernetes cluster pools. For more information, see [the documentation](https://developers.scaleway.com/en/products/k8s/api/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-K8sPool/docs/README.md",
+    "definitions": {
+        "KubeletArgsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PublicIp": {
+                    "type": "string"
+                },
+                "PublicIpV6": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpgradePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "number"
+                },
+                "MaxUnavailable": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Autohealing": {
+            "type": "boolean"
+        },
+        "Autoscaling": {
+            "type": "boolean"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ContainerRuntime": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CurrentSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubeletArgs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KubeletArgsDefinition"
+            }
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeType": {
+            "type": "string"
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodesDefinition"
+            }
+        },
+        "PlacementGroupId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "WaitForPoolReady": {
+            "type": "boolean"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UpgradePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpgradePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "Name",
+        "NodeType",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/CurrentSize",
+        "/properties/Id",
+        "/properties/Nodes",
+        "/properties/Status",
+        "/properties/UpdatedAt",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

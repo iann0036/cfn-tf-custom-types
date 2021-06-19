@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Alicloud::SecurityGroupRule",
+    "description": "Provides a security group rule resource.\nRepresents a single `ingress` or `egress` group rule, which can be added to external Security Groups.\n\n-> **NOTE:**  `nic_type` should set to `intranet` when security group type is `vpc` or specifying the `source_security_group_id`. In this situation it does not distinguish between intranet and internet, the rule is effective on them both.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SecurityGroupRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrIp": {
+            "type": "string",
+            "description": "The target IP address range. The default value is 0.0.0.0/0 (which means no restriction will be applied). Other supported formats include 10.159.6.18/12. Only IPv4 is supported."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the security group rule. The description can be up to 1 to 512 characters in length. Defaults to null."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpProtocol": {
+            "type": "string",
+            "description": "The protocol. Can be `tcp`, `udp`, `icmp`, `gre` or `all`."
+        },
+        "NicType": {
+            "type": "string",
+            "description": "Network type, can be either `internet` or `intranet`, the default value is `internet`."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "Authorization policy, can be either `accept` or `drop`, the default value is `accept`."
+        },
+        "PortRange": {
+            "type": "string",
+            "description": "The range of port numbers relevant to the IP protocol. Default to \"-1/-1\". When the protocol is tcp or udp, each side port number range from 1 to 65535 and '-1/-1' will be invalid.\nFor example, `1/200` means that the range of the port numbers is 1-200. Other protocols' 'port_range' can only be \"-1/-1\", and other values will be invalid."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Authorization policy priority, with parameter values: `1-100`, default value: 1."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "The security group to apply this rule to."
+        },
+        "SourceGroupOwnerAccount": {
+            "type": "string",
+            "description": "The Alibaba Cloud user account Id of the target security group when security groups are authorized across accounts.  This parameter is invalid if `cidr_ip` has already been set."
+        },
+        "SourceSecurityGroupId": {
+            "type": "string",
+            "description": "The target security group ID within the same region. If this field is specified, the `nic_type` can only select `intranet`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of rule being created. Valid options are `ingress` (inbound) or `egress` (outbound)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpProtocol",
+        "SecurityGroupId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

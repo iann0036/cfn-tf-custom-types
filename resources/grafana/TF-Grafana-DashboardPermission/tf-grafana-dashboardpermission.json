@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Grafana::DashboardPermission",
+    "description": "CloudFormation equivalent of grafana_dashboard_permission",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/grafana/TF-Grafana-DashboardPermission/docs/README.md",
+    "definitions": {
+        "PermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Permission": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "TeamId": {
+                    "type": "number"
+                },
+                "UserId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Permission"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DashboardId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PermissionsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DashboardId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

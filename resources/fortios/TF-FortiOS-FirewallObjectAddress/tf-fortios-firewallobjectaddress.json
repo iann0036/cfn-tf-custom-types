@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::FortiOS::FirewallObjectAddress",
+    "description": "Provides a resource to configure firewall addresses used in firewall policies of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_firewall_address`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallObjectAddress/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedInterface": {
+            "type": "string",
+            "description": "Network interface associated with address."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Country": {
+            "type": "string",
+            "description": "IP addresses associated to a specific country."
+        },
+        "EndIp": {
+            "type": "string",
+            "description": "Final IP address (inclusive) in the range for the address."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully Qualified Domain Name address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Address name."
+        },
+        "ShowInAddressList": {
+            "type": "string",
+            "description": "Enable/disable address visibility in the GUI. default is \"enable\"."
+        },
+        "StartIp": {
+            "type": "string",
+            "description": "First IP address (inclusive) in the range for the address."
+        },
+        "StaticRouteConfigure": {
+            "type": "string",
+            "description": "Enable/disable use of this address in the static route configuration. default is \"disable\"."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "IP address and subnet mask of address."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of address(Support ipmask, iprange, fqdn and geography)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

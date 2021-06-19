@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::OPC::ComputeSecurityApplication",
+    "description": "The ``opc_compute_security_application`` resource creates and manages a security application in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeSecurityApplication/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Dport": {
+            "type": "string",
+            "description": "The port, or range of ports, to enable for this application, e.g `8080`, `6000-7000`. This must be set if the `protocol` is set to `tcp` or `udp`."
+        },
+        "Icmpcode": {
+            "type": "string",
+            "description": "The ICMP code to enable for this application, if the `protocol` is `icmp`. Must be one of\n`admin`, `df`, `host`, `network`, `port` or `protocol`."
+        },
+        "Icmptype": {
+            "type": "string",
+            "description": "The ICMP type to enable for this application, if the `protocol` is `icmp`. Must be one of\n`echo`, `reply`, `ttl`, `traceroute`, `unreachable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The unique (within the identity domain) name of the application."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The protocol to enable for this application. Must be one of\n`tcp`, `udp`, `ah`, `esp`, `icmp`, `icmpv6`, `igmp`, `ipip`, `gre`, `mplsip`, `ospf`, `pim`, `rdp`, `sctp` or `all`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

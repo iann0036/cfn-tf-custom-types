@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::OpsGenie::ApiIntegration",
+    "description": "Manages an API Integration within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-ApiIntegration/docs/README.md",
+    "definitions": {
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RespondersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "The id of the responder."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The responder type."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowWriteAccess": {
+            "type": "boolean",
+            "description": "This parameter is for configuring the write access of integration. If write access is restricted, the integration will not be authorized to write within any domain. Default: `true`."
+        },
+        "ApiKey": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "This parameter is for specifying whether the integration will be enabled or not. Default: `true`."
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeadersDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreRespondersFromPayload": {
+            "type": "boolean",
+            "description": "If enabled, the integration will ignore recipients sent in request payloads. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration. Name must be unique for each integration."
+        },
+        "OwnerTeamId": {
+            "type": "string",
+            "description": "Owner team id of the integration."
+        },
+        "SuppressNotifications": {
+            "type": "boolean",
+            "description": "If enabled, notifications that come from alerts will be suppressed. Default: `false`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the integration (API, Marid, Prometheus, etc). The full list of options can be found [here](https://docs.opsgenie.com/docs/integration-types-to-use-with-api)."
+        },
+        "WebhookUrl": {
+            "type": "string",
+            "description": "It is required if type is `Webhook`. This is the url Opsgenie will be sending request to."
+        },
+        "Responders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RespondersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiKey",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey"
+    ]
+}

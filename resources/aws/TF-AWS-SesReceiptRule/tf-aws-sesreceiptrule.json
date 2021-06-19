@@ -1,0 +1,302 @@
+{
+    "typeName": "TF::AWS::SesReceiptRule",
+    "description": "Provides an SES receipt rule resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SesReceiptRule/docs/README.md",
+    "definitions": {
+        "AddHeaderActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HeaderName",
+                "HeaderValue",
+                "Position"
+            ]
+        },
+        "BounceActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Message": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "Sender": {
+                    "type": "string"
+                },
+                "SmtpReplyCode": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Message",
+                "Position",
+                "Sender",
+                "SmtpReplyCode"
+            ]
+        },
+        "LambdaActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                },
+                "InvocationType": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn",
+                "Position"
+            ]
+        },
+        "S3ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "ObjectKeyPrefix": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Position"
+            ]
+        },
+        "SnsActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encoding": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Position",
+                "TopicArn"
+            ]
+        },
+        "StopActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Position": {
+                    "type": "number"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Position",
+                "Scope"
+            ]
+        },
+        "WorkmailActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OrganizationArn": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OrganizationArn",
+                "Position"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "After": {
+            "type": "string",
+            "description": "The name of the rule to place this rule after."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "If true, the rule will be enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule."
+        },
+        "Recipients": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of email addresses."
+        },
+        "RuleSetName": {
+            "type": "string",
+            "description": "The name of the rule set."
+        },
+        "ScanEnabled": {
+            "type": "boolean",
+            "description": "If true, incoming emails will be scanned for spam and viruses."
+        },
+        "TlsPolicy": {
+            "type": "string",
+            "description": "Require or Optional."
+        },
+        "AddHeaderAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AddHeaderActionDefinition"
+            }
+        },
+        "BounceAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BounceActionDefinition"
+            }
+        },
+        "LambdaAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LambdaActionDefinition"
+            }
+        },
+        "S3Action": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3ActionDefinition"
+            }
+        },
+        "SnsAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SnsActionDefinition"
+            }
+        },
+        "StopAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StopActionDefinition"
+            }
+        },
+        "WorkmailAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WorkmailActionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RuleSetName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

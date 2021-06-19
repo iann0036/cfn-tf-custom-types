@@ -1,0 +1,477 @@
+{
+    "typeName": "TF::Databricks::Pipeline",
+    "description": "CloudFormation equivalent of databricks_pipeline",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-Pipeline/docs/README.md",
+    "definitions": {
+        "ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomTagsDefinition"
+                    }
+                },
+                "DriverNodeTypeId": {
+                    "type": "string"
+                },
+                "InstancePoolId": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "NodeTypeId": {
+                    "type": "string"
+                },
+                "NumWorkers": {
+                    "type": "number"
+                },
+                "SparkConf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkConfDefinition"
+                    }
+                },
+                "SparkEnvVars": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkEnvVarsDefinition"
+                    }
+                },
+                "SshPublicKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Autoscale": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AwsAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsAttributesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ClusterLogConf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterLogConfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InitScripts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitScriptsDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": []
+        },
+        "CustomTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkConfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkEnvVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LibraryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Jar": {
+                    "type": "string"
+                },
+                "Whl": {
+                    "type": "string"
+                },
+                "Maven": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MavenDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Notebook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotebookDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AutoscaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxWorkers": {
+                    "type": "number"
+                },
+                "MinWorkers": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AwsAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceProfileArn": {
+                    "type": "string"
+                },
+                "ZoneId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClusterLogConfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "InitScriptsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MavenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Coordinates": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Coordinates"
+            ]
+        },
+        "NotebookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "DbfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CannedAcl": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "EnableEncryption": {
+                    "type": "boolean"
+                },
+                "EncryptionType": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "KmsKey": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowDuplicateNames": {
+            "type": "boolean"
+        },
+        "Configuration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigurationDefinition"
+            }
+        },
+        "Continuous": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Storage": {
+            "type": "string"
+        },
+        "Cluster": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClusterDefinition"
+            }
+        },
+        "Filters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FiltersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Library": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LibraryDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

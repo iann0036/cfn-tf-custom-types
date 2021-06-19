@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::Scaleway::RdbInstance",
+    "description": "Creates and manages Scaleway Database Instances.\nFor more information, see [the documentation](https://developers.scaleway.com/en/products/rdb/api).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-RdbInstance/docs/README.md",
+    "definitions": {
+        "ReadReplicasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "DisableBackup": {
+            "type": "boolean"
+        },
+        "EndpointIp": {
+            "type": "string"
+        },
+        "EndpointPort": {
+            "type": "number"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsHaCluster": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeType": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "ReadReplicas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReadReplicasDefinition"
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SettingsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UserName": {
+            "type": "string"
+        },
+        "VolumeSizeInGb": {
+            "type": "number"
+        },
+        "VolumeType": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Engine",
+        "NodeType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/EndpointIp",
+        "/properties/EndpointPort",
+        "/properties/Id",
+        "/properties/OrganizationId",
+        "/properties/ReadReplicas"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

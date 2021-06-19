@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementOpenidConnectProvider",
+    "description": "Manages an OpenID Connect Provider within a API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementOpenidConnectProvider/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the API Management Service in which this OpenID Connect Provider should be created. Changing this forces a new resource to be created."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The Client ID used for the Client Application."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "The Client Secret used for the Client Application."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this OpenID Connect Provider."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "A user-friendly name for this OpenID Connect Provider."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetadataEndpoint": {
+            "type": "string",
+            "description": "The URI of the Metadata endpoint."
+        },
+        "Name": {
+            "type": "string",
+            "description": "the Name of the OpenID Connect Provider which should be created within the API Management Service. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "ClientId",
+        "ClientSecret",
+        "DisplayName",
+        "MetadataEndpoint",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientId",
+        "/properties/ClientSecret"
+    ]
+}

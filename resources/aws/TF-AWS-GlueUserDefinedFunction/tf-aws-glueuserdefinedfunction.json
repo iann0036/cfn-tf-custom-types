@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::AWS::GlueUserDefinedFunction",
+    "description": "Provides a Glue User Defined Function Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlueUserDefinedFunction/docs/README.md",
+    "definitions": {
+        "ResourceUrisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceType": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceType",
+                "Uri"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CatalogId": {
+            "type": "string",
+            "description": "ID of the Glue Catalog to create the function in. If omitted, this defaults to the AWS Account ID."
+        },
+        "ClassName": {
+            "type": "string",
+            "description": "The Java class that contains the function code."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "The name of the Database to create the Function."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the function."
+        },
+        "OwnerName": {
+            "type": "string",
+            "description": "The owner of the function."
+        },
+        "OwnerType": {
+            "type": "string",
+            "description": "The owner type. can be one of `USER`, `ROLE`, and `GROUP`."
+        },
+        "ResourceUris": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceUrisDefinition"
+            },
+            "maxItems": 1000
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClassName",
+        "DatabaseName",
+        "Name",
+        "OwnerName",
+        "OwnerType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreateTime",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

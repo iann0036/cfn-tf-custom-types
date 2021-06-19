@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::TencentCloud::ClbListenerRule",
+    "description": "Provides a resource to create a CLB listener rule.\n\n-> **NOTE:** This resource only be applied to the HTTP or HTTPS listeners.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbListenerRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateCaId": {
+            "type": "string",
+            "description": "ID of the client certificate. NOTES: Only supports listeners of HTTPS protocol."
+        },
+        "CertificateId": {
+            "type": "string",
+            "description": "ID of the server certificate. NOTES: Only supports listeners of HTTPS protocol."
+        },
+        "CertificateSslMode": {
+            "type": "string",
+            "description": "Type of certificate. Valid values: `UNIDIRECTIONAL`, `MUTUAL`. NOTES: Only supports listeners of HTTPS protocol."
+        },
+        "ClbId": {
+            "type": "string",
+            "description": "ID of CLB instance."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name of the listener rule."
+        },
+        "ForwardType": {
+            "type": "string",
+            "description": "Forwarding protocol between the CLB instance and real server. Valid values: `HTTP`, `HTTPS`, `TRPC`."
+        },
+        "HealthCheckHealthNum": {
+            "type": "number",
+            "description": "Health threshold of health check, and the default is `3`. If a success result is returned for the health check 3 consecutive times, indicates that the forwarding is normal. The value range is [2-10]. NOTES: TCP/UDP/TCP_SSL listener allows direct configuration, HTTP/HTTPS listener needs to be configured in `tencentcloud_clb_listener_rule`."
+        },
+        "HealthCheckHttpCode": {
+            "type": "number",
+            "description": "HTTP Status Code. The default is 31. Valid value ranges: [1~31]. `1 means the return value '1xx' is health. `2` means the return value '2xx' is health. `4` means the return value '3xx' is health. `8` means the return value '4xx' is health. 16 means the return value '5xx' is health. If you want multiple return codes to indicate health, need to add the corresponding values. NOTES: The 'HTTP' health check of the 'TCP' listener only supports specifying one health check status code. NOTES: Only supports listeners of 'HTTP' and 'HTTPS' protocol."
+        },
+        "HealthCheckHttpDomain": {
+            "type": "string",
+            "description": "Domain name of health check. NOTES: Only supports listeners of `HTTP` and `HTTPS` protocol."
+        },
+        "HealthCheckHttpMethod": {
+            "type": "string",
+            "description": "Methods of health check. NOTES: Only supports listeners of `HTTP` and `HTTPS` protocol. The default is `HEAD`, the available value are `HEAD` and `GET`."
+        },
+        "HealthCheckHttpPath": {
+            "type": "string",
+            "description": "Path of health check. NOTES: Only supports listeners of `HTTP` and `HTTPS` protocol."
+        },
+        "HealthCheckIntervalTime": {
+            "type": "number",
+            "description": "Interval time of health check. Valid value ranges: (5~300) sec. and the default is `5` sec. NOTES: TCP/UDP/TCP_SSL listener allows direct configuration, HTTP/HTTPS listener needs to be configured in `tencentcloud_clb_listener_rule`."
+        },
+        "HealthCheckSwitch": {
+            "type": "boolean",
+            "description": "Indicates whether health check is enabled."
+        },
+        "HealthCheckUnhealthNum": {
+            "type": "number",
+            "description": "Unhealthy threshold of health check, and the default is `3`. If the unhealthy result is returned 3 consecutive times, indicates that the forwarding is abnormal. The value range is [2-10].  NOTES: TCP/UDP/TCP_SSL listener allows direct configuration, HTTP/HTTPS listener needs to be configured in `tencentcloud_clb_listener_rule`."
+        },
+        "Http2Switch": {
+            "type": "boolean",
+            "description": "Indicate to apply HTTP2.0 protocol or not."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "ID of CLB listener."
+        },
+        "RuleId": {
+            "type": "string"
+        },
+        "Scheduler": {
+            "type": "string",
+            "description": "Scheduling method of the CLB listener rules. Valid values: `WRR`, `IP HASH`, `LEAST_CONN`. The default is `WRR`.  NOTES: TCP/UDP/TCP_SSL listener allows direct configuration, HTTP/HTTPS listener needs to be configured in `tencentcloud_clb_listener_rule`."
+        },
+        "SessionExpireTime": {
+            "type": "number",
+            "description": "Time of session persistence within the CLB listener. NOTES: Available when scheduler is specified as `WRR`, and not available when listener protocol is `TCP_SSL`.  NOTES: TCP/UDP/TCP_SSL listener allows direct configuration, HTTP/HTTPS listener needs to be configured in `tencentcloud_clb_listener_rule`."
+        },
+        "TargetType": {
+            "type": "string",
+            "description": "Backend target type. Valid values: `NODE`, `TARGETGROUP`. `NODE` means to bind ordinary nodes, `TARGETGROUP` means to bind target group."
+        },
+        "Url": {
+            "type": "string",
+            "description": "Url of the listener rule."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbId",
+        "Domain",
+        "ListenerId",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RuleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

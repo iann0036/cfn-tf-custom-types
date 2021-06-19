@@ -1,0 +1,73 @@
+{
+    "typeName": "TF::AzureDevOps::AgentPool",
+    "description": "Manages an agent pool within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-AgentPool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoProvision": {
+            "type": "boolean",
+            "description": "Specifies whether or not a queue should be automatically provisioned for each project collection. Defaults to `false`.\n- `pool_type` - (Optional) Specifies whether the agent pool type is Automation or Deployment. Defaults to `automation`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the agent pool.\n- `auto_provision` - (Optional) Specifies whether or not a queue should be automatically provisioned for each project collection. Defaults to `false`.\n- `pool_type` - (Optional) Specifies whether the agent pool type is Automation or Deployment. Defaults to `automation`."
+        },
+        "PoolType": {
+            "type": "string",
+            "description": "Specifies whether the agent pool type is Automation or Deployment. Defaults to `automation`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

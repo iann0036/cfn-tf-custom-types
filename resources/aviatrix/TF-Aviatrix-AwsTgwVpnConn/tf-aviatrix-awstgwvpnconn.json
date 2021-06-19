@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgwVpnConn",
+    "description": "The **aviatrix_aws_tgw_vpn_conn** resource allows the creation and management of Aviatrix AWS TGW VPN connections in their selected Security Domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgwVpnConn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "ConnectionType": {
+            "type": "string"
+        },
+        "EnableLearnedCidrsApproval": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsideIpCidrTun1": {
+            "type": "string"
+        },
+        "InsideIpCidrTun2": {
+            "type": "string"
+        },
+        "PreSharedKeyTun1": {
+            "type": "string"
+        },
+        "PreSharedKeyTun2": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "RemoteAsNumber": {
+            "type": "string"
+        },
+        "RemoteCidr": {
+            "type": "string"
+        },
+        "RouteDomainName": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        },
+        "VpnId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionName",
+        "PublicIp",
+        "RouteDomainName",
+        "TgwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VpnId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PreSharedKeyTun1",
+        "/properties/PreSharedKeyTun2"
+    ]
+}

@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::OCI::KmsEncryptedData",
+    "description": "This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.\n\nEncrypts data using the given [EncryptDataDetails](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/datatypes/EncryptDataDetails) resource.\nPlaintext included in the example request is a base64-encoded value of a UTF-8 string.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-KmsEncryptedData/docs/README.md",
+    "definitions": {
+        "AssociatedDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoggingContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedData": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AssociatedDataDefinition"
+            },
+            "description": "Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters."
+        },
+        "Ciphertext": {
+            "type": "string"
+        },
+        "CryptoEndpoint": {
+            "type": "string",
+            "description": "The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint."
+        },
+        "EncryptionAlgorithm": {
+            "type": "string",
+            "description": "The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and  that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the  key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).  `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash  and uses OAEP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "The OCID of the key to encrypt with."
+        },
+        "KeyVersionId": {
+            "type": "string",
+            "description": "The OCID of the key version used to encrypt the ciphertext."
+        },
+        "LoggingContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoggingContextDefinition"
+            },
+            "description": "Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled."
+        },
+        "Plaintext": {
+            "type": "string",
+            "description": "The plaintext data to encrypt."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CryptoEndpoint",
+        "KeyId",
+        "Plaintext"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Ciphertext",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::FortiOS::UserFortitoken",
+    "description": "Configure FortiToken.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserFortitoken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationCode": {
+            "type": "string",
+            "description": "Mobile token user activation-code."
+        },
+        "ActivationExpire": {
+            "type": "number",
+            "description": "Mobile token user activation-code expire time."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "License": {
+            "type": "string",
+            "description": "Mobile token license."
+        },
+        "OsVer": {
+            "type": "string",
+            "description": "Device Mobile Version."
+        },
+        "RegId": {
+            "type": "string",
+            "description": "Device Reg ID."
+        },
+        "Seed": {
+            "type": "string",
+            "description": "Token seed."
+        },
+        "SerialNumber": {
+            "type": "string",
+            "description": "Serial number."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status Valid values: `active`, `lock`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

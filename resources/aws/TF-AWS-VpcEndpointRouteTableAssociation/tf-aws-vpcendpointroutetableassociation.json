@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::VpcEndpointRouteTableAssociation",
+    "description": "Manages a VPC Endpoint Route Table Association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VpcEndpointRouteTableAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RouteTableId": {
+            "type": "string",
+            "description": "Identifier of the EC2 Route Table to be associated with the VPC Endpoint."
+        },
+        "VpcEndpointId": {
+            "type": "string",
+            "description": "Identifier of the VPC Endpoint with which the EC2 Route Table will be associated."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RouteTableId",
+        "VpcEndpointId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

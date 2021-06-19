@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::VCD::LbAppProfile",
+    "description": "Provides a vCloud Director Edge Gateway Load Balancer Application Profile resource. An application\nprofile defines the behavior of the load balancer for a particular type of network traffic. After\nconfiguring a profile, you associate it with a virtual server. The virtual server then processes\ntraffic according to the values specified in the profile.\n\n~> **Note:** This resource does not currently support attaching  Pool and Virtual\nServer certificates. The `enable_pool_side_ssl` only toggles the option, but does not setup\ncertificates.\n\n~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge\ngateway (edge gateway must be advanced).\nThis depends on NSX version to work properly. Please refer to [VMware Product Interoperability\nMatrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) \nto check supported vCloud director and NSX for vSphere configurations.\n\n~> **Note:** The vCloud Director API for NSX supports a subset of the operat...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-LbAppProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CookieMode": {
+            "type": "string",
+            "description": "The mode by which the cookie should be inserted. One of 'insert',\n'prefix', or 'appsession'."
+        },
+        "CookieName": {
+            "type": "string",
+            "description": "Used to uniquely identify the session the first time a client accesses\nthe site. The load balancer refers to this cookie when connecting subsequent requests in the\nsession, so that they all go to the same virtual server. Only applies for\n`persistence_mechanism` 'cookie'."
+        },
+        "EdgeGateway": {
+            "type": "string",
+            "description": "The name of the edge gateway on which the application profile is to be created."
+        },
+        "EnablePoolSideSsl": {
+            "type": "boolean",
+            "description": "Enable to define the certificate, CAs, or CRLs used to\nauthenticate the load balancer from the server side. **Note:** This resource does not currently\nsupport attaching Pool and Virtual Server certificates therefore this toggle only enables it. To\nmake it fully work certificates must be currently attached manually."
+        },
+        "EnableSslPassthrough": {
+            "type": "boolean",
+            "description": "Enable SSL authentication to be passed through to the\nvirtual server. Otherwise SSL authentication takes place at the destination address."
+        },
+        "Expiration": {
+            "type": "number",
+            "description": "Length of time in seconds that persistence stays in effect."
+        },
+        "HttpRedirectUrl": {
+            "type": "string",
+            "description": "The URL to which traffic that arrives at the destination address\nshould be redirected. Only applies for types `http` and `https`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertXForwardedHttpHeader": {
+            "type": "boolean",
+            "description": "Enables 'X-Forwarded-For' header for identifying\nthe originating IP address of a client connecting to a Web server through the load balancer.\nOnly applies for types `http` and `https`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Application profile name."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
+        },
+        "PersistenceMechanism": {
+            "type": "string",
+            "description": "Persistence mechanism for the profile. One of 'cookie',\n'ssl-sessionid', 'sourceip'."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Protocol type used to send requests to the server. One of `tcp`, `udp`,\n`http`, or `https`."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

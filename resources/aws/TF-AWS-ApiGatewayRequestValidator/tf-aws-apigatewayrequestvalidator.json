@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::ApiGatewayRequestValidator",
+    "description": "Manages an API Gateway Request Validator.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayRequestValidator/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the request validator."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the associated Rest API."
+        },
+        "ValidateRequestBody": {
+            "type": "boolean",
+            "description": "Boolean whether to validate request body. Defaults to `false`."
+        },
+        "ValidateRequestParameters": {
+            "type": "boolean",
+            "description": "Boolean whether to validate request parameters. Defaults to `false`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::AzureRM::StreamAnalyticsStreamInputBlob",
+    "description": "Manages a Stream Analytics Stream Input Blob.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StreamAnalyticsStreamInputBlob/docs/README.md",
+    "definitions": {
+        "SerializationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encoding": {
+                    "type": "string",
+                    "description": "The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`."
+                },
+                "FieldDelimiter": {
+                    "type": "string",
+                    "description": "The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `   ` (tab), `|` (pipe) and `;`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The serialization format used for incoming data streams. Possible values are `Avro`, `Csv` and `Json`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DateFormat": {
+            "type": "string",
+            "description": "The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Stream Input Blob. Changing this forces a new resource to be created."
+        },
+        "PathPattern": {
+            "type": "string",
+            "description": "The blob path pattern. Not a regular expression. It represents a pattern against which blob names will be matched to determine whether or not they should be included as input or output to the job."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
+        },
+        "StorageAccountKey": {
+            "type": "string",
+            "description": "The Access Key which should be used to connect to this Storage Account."
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "The name of the Storage Account."
+        },
+        "StorageContainerName": {
+            "type": "string",
+            "description": "The name of the Container within the Storage Account."
+        },
+        "StreamAnalyticsJobName": {
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
+        },
+        "TimeFormat": {
+            "type": "string",
+            "description": "The time format. Wherever `{time}` appears in `path_pattern`, the value of this property is used as the time format instead."
+        },
+        "Serialization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SerializationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DateFormat",
+        "Name",
+        "PathPattern",
+        "ResourceGroupName",
+        "StorageAccountKey",
+        "StorageAccountName",
+        "StorageContainerName",
+        "StreamAnalyticsJobName",
+        "TimeFormat"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/StorageAccountKey"
+    ]
+}

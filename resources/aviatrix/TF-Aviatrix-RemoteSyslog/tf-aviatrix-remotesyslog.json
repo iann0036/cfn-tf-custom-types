@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::Aviatrix::RemoteSyslog",
+    "description": "The **aviatrix_remote_syslog** resource allows the enabling and disabling of remote syslog.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-RemoteSyslog/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CaCertificateFile": {
+            "type": "string"
+        },
+        "ExcludedGateways": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Index": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Notls": {
+            "type": "boolean"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateKeyFile": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "PublicCertificateFile": {
+            "type": "string"
+        },
+        "Server": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Port",
+        "Server"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Notls",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

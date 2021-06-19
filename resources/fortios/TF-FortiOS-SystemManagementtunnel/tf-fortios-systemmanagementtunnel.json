@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::FortiOS::SystemManagementtunnel",
+    "description": "Management tunnel configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemManagementtunnel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowCollectStatistics": {
+            "type": "string",
+            "description": "Enable/disable collection of run time statistics. Valid values: `enable`, `disable`."
+        },
+        "AllowConfigRestore": {
+            "type": "string",
+            "description": "Enable/disable allow config restore. Valid values: `enable`, `disable`."
+        },
+        "AllowPushConfiguration": {
+            "type": "string",
+            "description": "Enable/disable push configuration. Valid values: `enable`, `disable`."
+        },
+        "AllowPushFirmware": {
+            "type": "string",
+            "description": "Enable/disable push firmware. Valid values: `enable`, `disable`."
+        },
+        "AuthorizedManagerOnly": {
+            "type": "string",
+            "description": "Enable/disable restriction of authorized manager only. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SerialNumber": {
+            "type": "string",
+            "description": "Serial number."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable FGFM tunnel. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

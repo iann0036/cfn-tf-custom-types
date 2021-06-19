@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::GitHub::RepositoryCollaborator",
+    "description": "Provides a GitHub repository collaborator resource.\n\nThis resource allows you to add/remove collaborators from repositories in your\norganization or personal account. For organization repositories, collaborators can\nhave explicit (and differing levels of) read, write, or administrator access to \nspecific repositories, without giving the user full organization membership. \nFor personal repositories, collaborators can only be granted write\n(implictly includes read) permission. \n\nWhen applied, an invitation will be sent to the user to become a collaborator\non a repository. When destroyed, either the invitation will be cancelled or the\ncollaborator will be removed from the repository.\n\nFurther documentation on GitHub collaborators:\n\n- [Adding outside collaborators to your personal repositories](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories)\n- [Adding outside collaborators to repositories in your organization](https://help.github...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-RepositoryCollaborator/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvitationId": {
+            "type": "string"
+        },
+        "Permission": {
+            "type": "string",
+            "description": "The permission of the outside collaborator for the repository.\nMust be one of `pull`, `push`, `maintain`, `triage` or `admin` for organization-owned repositories.\nMust be `push` for personal repositories. Defaults to `push`."
+        },
+        "PermissionDiffSuppression": {
+            "type": "boolean"
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The GitHub repository."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The user to add to the repository as a collaborator."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Repository",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InvitationId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

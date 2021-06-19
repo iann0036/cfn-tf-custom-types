@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::Tfe::TeamOrganizationMember",
+    "description": "Add or remove a team member using a\n[tfe_organization_membership](organization_membership.html).\n\n~> **NOTE** on managing team memberships: Terraform currently provides three\nresources for managing team memberships. This is the preferred method as it\nallows you to add a member to a team by email address.\n\n~> **NOTE:** This resource requires using the provider with Terraform Cloud or\nan instance of Terraform Enterprise at least as recent as v202004-1.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-TeamOrganizationMember/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OrganizationMembershipId": {
+            "type": "string",
+            "description": "ID of the organization membership."
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "ID of the team."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OrganizationMembershipId",
+        "TeamId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

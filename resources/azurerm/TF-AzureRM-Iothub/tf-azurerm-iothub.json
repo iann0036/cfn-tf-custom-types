@@ -1,0 +1,430 @@
+{
+    "typeName": "TF::AzureRM::Iothub",
+    "description": "Manages an IotHub\n\n~> **NOTE:** Endpoints can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azurerm_iothub` resource is not supported.\n\n~> **NOTE:** Routes can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_route` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.\n\n~> **NOTE:** Enrichments can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_enrichment` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.\n\n~> **NOTE:** Fallback route can be defined either directly on the `azurer...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-Iothub/docs/README.md",
+    "definitions": {
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchFrequencyInSeconds": {
+                    "type": "number"
+                },
+                "ConnectionString": {
+                    "type": "string"
+                },
+                "ContainerName": {
+                    "type": "string"
+                },
+                "Encoding": {
+                    "type": "string"
+                },
+                "FileNameFormat": {
+                    "type": "string"
+                },
+                "MaxChunkSizeInBytes": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "EnrichmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            }
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "EndpointNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            }
+        },
+        "SharedAccessPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyName": {
+                    "type": "string"
+                },
+                "Permissions": {
+                    "type": "string"
+                },
+                "PrimaryKey": {
+                    "type": "string"
+                },
+                "SecondaryKey": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FallbackRouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string",
+                    "description": "The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Used to specify whether the fallback route is enabled."
+                },
+                "EndpointNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The endpoints to which messages that satisfy the condition are routed. Currently only 1 endpoint is allowed."
+                },
+                "Source": {
+                    "type": "string",
+                    "description": "The source that the routing rule is to be applied to, such as `DeviceMessages`. Possible values include: `RoutingSourceInvalid`, `RoutingSourceDeviceMessages`, `RoutingSourceTwinChangeEvents`, `RoutingSourceDeviceLifecycleEvents`, `RoutingSourceDeviceJobLifecycleEvents`."
+                }
+            },
+            "required": []
+        },
+        "FileUploadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionString": {
+                    "type": "string",
+                    "description": "The connection string for the Azure Storage account to which files are uploaded."
+                },
+                "ContainerName": {
+                    "type": "string",
+                    "description": "The name of the root container where you upload files. The container need not exist but should be creatable using the connection_string specified."
+                },
+                "DefaultTtl": {
+                    "type": "string",
+                    "description": "The period of time for which a file upload notification message is available to consume before it is expired by the IoT hub, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 1 minute and 48 hours, and evaluates to 'PT1H' by default."
+                },
+                "LockDuration": {
+                    "type": "string",
+                    "description": "The lock duration for the file upload notifications queue, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 5 and 300 seconds, and evaluates to 'PT1M' by default."
+                },
+                "MaxDeliveryCount": {
+                    "type": "number",
+                    "description": "The number of times the IoT hub attempts to deliver a file upload notification message. It evaluates to 10 by default."
+                },
+                "Notifications": {
+                    "type": "boolean",
+                    "description": "Used to specify whether file notifications are sent to IoT Hub on upload. It evaluates to false by default."
+                },
+                "SasTtl": {
+                    "type": "string",
+                    "description": "The period of time for which the SAS URI generated by IoT Hub for file upload is valid, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 1 minute and 24 hours, and evaluates to 'PT1H' by default."
+                }
+            },
+            "required": [
+                "ConnectionString",
+                "ContainerName"
+            ]
+        },
+        "IpFilterRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The desired action for requests captured by this rule. Possible values are  `Accept`, `Reject`."
+                },
+                "IpMask": {
+                    "type": "string",
+                    "description": "The IP address range in CIDR notation for the rule."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the filter."
+                }
+            },
+            "required": [
+                "Action",
+                "IpMask",
+                "Name"
+            ]
+        },
+        "SkuDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capacity": {
+                    "type": "number",
+                    "description": "The number of provisioned IoT Hub units."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the sku. Possible values are `B1`, `B2`, `B3`, `F1`, `S1`, `S2`, and `S3`."
+                }
+            },
+            "required": [
+                "Capacity",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointDefinition"
+            },
+            "description": "An `endpoint` block as defined below."
+        },
+        "Enrichment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnrichmentDefinition"
+            },
+            "description": "A `enrichment` block as defined below."
+        },
+        "EventHubEventsEndpoint": {
+            "type": "string"
+        },
+        "EventHubEventsPath": {
+            "type": "string"
+        },
+        "EventHubOperationsEndpoint": {
+            "type": "string"
+        },
+        "EventHubOperationsPath": {
+            "type": "string"
+        },
+        "EventHubPartitionCount": {
+            "type": "number",
+            "description": "The number of device-to-cloud partitions used by backing event hubs. Must be between `2` and `128`."
+        },
+        "EventHubRetentionInDays": {
+            "type": "number",
+            "description": "The event hub retention to use in days. Must be between `1` and `7`."
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created."
+        },
+        "MinTlsVersion": {
+            "type": "string",
+            "description": "Specifies the minimum TLS version to support for this hub. The only valid value is `1.2`. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the IotHub resource. Changing this forces a new resource to be created."
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Is the IotHub resource accessible from a public network?."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created."
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            },
+            "description": "A `route` block as defined below."
+        },
+        "SharedAccessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SharedAccessPolicyDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "FallbackRoute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FallbackRouteDefinition"
+            },
+            "maxItems": 1
+        },
+        "FileUpload": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FileUploadDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpFilterRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpFilterRuleDefinition"
+            }
+        },
+        "Sku": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SkuDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EventHubEventsEndpoint",
+        "/properties/EventHubEventsPath",
+        "/properties/EventHubOperationsEndpoint",
+        "/properties/EventHubOperationsPath",
+        "/properties/Hostname",
+        "/properties/Id",
+        "/properties/SharedAccessPolicy",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/FileUploadDefinition/ConnectionString"
+    ]
+}

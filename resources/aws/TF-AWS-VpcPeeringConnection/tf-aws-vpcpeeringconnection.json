@@ -1,0 +1,201 @@
+{
+    "typeName": "TF::AWS::VpcPeeringConnection",
+    "description": "Provides a resource to manage a VPC peering connection.\n\n~> **NOTE on VPC Peering Connections and VPC Peering Connection Options:** Terraform provides\nboth a standalone [VPC Peering Connection Options](vpc_peering_connection_options.html) and a VPC Peering Connection\nresource with `accepter` and `requester` attributes. Do not manage options for the same VPC peering\nconnection in both a VPC Peering Connection resource and a VPC Peering Connection Options resource.\nDoing so will cause a conflict of options and will overwrite the options.\nUsing a VPC Peering Connection Options resource decouples management of the connection options from\nmanagement of the VPC Peering Connection and allows options to be set correctly in cross-account scenarios.\n\n-> **Note:** For cross-account (requester's AWS account differs from the accepter's AWS account) or inter-region\nVPC Peering Connections use the `aws_vpc_peering_connection` resource to manage the requester's side of the\nconnection and use the `aws_vpc_peering_connecti...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-VpcPeeringConnection/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccepterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "RequesterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptStatus": {
+            "type": "string"
+        },
+        "AutoAccept": {
+            "type": "boolean",
+            "description": "Accept the peering (both VPCs need to be in the same AWS account)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerOwnerId": {
+            "type": "string",
+            "description": "The AWS account ID of the owner of the peer VPC.\nDefaults to the account ID the [AWS provider][1] is currently connected to."
+        },
+        "PeerRegion": {
+            "type": "string",
+            "description": "The region of the accepter VPC of the VPC Peering Connection. `auto_accept` must be `false`,\nand use the `aws_vpc_peering_connection_accepter` to manage the accepter side."
+        },
+        "PeerVpcId": {
+            "type": "string",
+            "description": "The ID of the VPC with which you are creating the VPC Peering Connection."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of the requester VPC."
+        },
+        "Accepter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccepterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Requester": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequesterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PeerVpcId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AcceptStatus",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::FortiOS::WebproxyGlobal",
+    "description": "Configure Web proxy global settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyGlobal/docs/README.md",
+    "definitions": {
+        "LearnClientIpSrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "LearnClientIpSrcaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "FastPolicyMatch": {
+            "type": "string",
+            "description": "Enable/disable fast matching algorithm for explicit and transparent proxy policy. Valid values: `enable`, `disable`."
+        },
+        "ForwardProxyAuth": {
+            "type": "string",
+            "description": "Enable/disable forwarding proxy authentication headers. Valid values: `enable`, `disable`."
+        },
+        "ForwardServerAffinityTimeout": {
+            "type": "number",
+            "description": "Period of time before the source IP's traffic is no longer assigned to the forwarding server (6 - 60 min, default = 30)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LearnClientIp": {
+            "type": "string",
+            "description": "Enable/disable learning the client's IP address from headers. Valid values: `enable`, `disable`."
+        },
+        "LearnClientIpFromHeader": {
+            "type": "string",
+            "description": "Learn client IP address from the specified headers. Valid values: `true-client-ip`, `x-real-ip`, `x-forwarded-for`."
+        },
+        "MaxMessageLength": {
+            "type": "number",
+            "description": "Maximum length of HTTP message, not including body (16 - 256 Kbytes, default = 32)."
+        },
+        "MaxRequestLength": {
+            "type": "number",
+            "description": "Maximum length of HTTP request line (2 - 64 Kbytes, default = 4)."
+        },
+        "MaxWafBodyCacheLength": {
+            "type": "number",
+            "description": "Maximum length of HTTP messages processed by Web Application Firewall (WAF) (10 - 1024 Kbytes, default = 32)."
+        },
+        "ProxyFqdn": {
+            "type": "string",
+            "description": "Fully Qualified Domain Name (FQDN) that clients connect to (default = default.fqdn) to connect to the explicit web proxy."
+        },
+        "SslCaCert": {
+            "type": "string",
+            "description": "SSL CA certificate for SSL interception."
+        },
+        "SslCert": {
+            "type": "string",
+            "description": "SSL certificate for SSL interception."
+        },
+        "StrictWebCheck": {
+            "type": "string",
+            "description": "Enable/disable strict web checking to block web sites that send incorrect headers that don't conform to HTTP 1.1. Valid values: `enable`, `disable`."
+        },
+        "TunnelNonHttp": {
+            "type": "string",
+            "description": "Enable/disable allowing non-HTTP traffic. Allowed non-HTTP traffic is tunneled. Valid values: `enable`, `disable`."
+        },
+        "UnknownHttpVersion": {
+            "type": "string",
+            "description": "Action to take when an unknown version of HTTP is encountered: reject, allow (tunnel), or proceed with best-effort. Valid values: `reject`, `tunnel`, `best-effort`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WebproxyProfile": {
+            "type": "string",
+            "description": "Name of the web proxy profile to apply when explicit proxy traffic is allowed by default and traffic is accepted that does not match an explicit proxy policy."
+        },
+        "LearnClientIpSrcaddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LearnClientIpSrcaddrDefinition"
+            }
+        },
+        "LearnClientIpSrcaddr6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LearnClientIpSrcaddr6Definition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProxyFqdn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

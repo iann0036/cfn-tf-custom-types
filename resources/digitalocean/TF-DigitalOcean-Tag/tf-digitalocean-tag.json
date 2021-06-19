@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::DigitalOcean::Tag",
+    "description": "Provides a DigitalOcean Tag resource. A Tag is a label that can be applied to a\nDroplet resource in order to better organize or facilitate the lookups and\nactions on it. Tags created with this resource can be referenced in your Droplet\nconfiguration via their ID or name.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-Tag/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatabasesCount": {
+            "type": "number"
+        },
+        "DropletsCount": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImagesCount": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the tag."
+        },
+        "TotalResourceCount": {
+            "type": "number"
+        },
+        "VolumeSnapshotsCount": {
+            "type": "number"
+        },
+        "VolumesCount": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DatabasesCount",
+        "/properties/DropletsCount",
+        "/properties/Id",
+        "/properties/ImagesCount",
+        "/properties/TotalResourceCount",
+        "/properties/VolumeSnapshotsCount",
+        "/properties/VolumesCount"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

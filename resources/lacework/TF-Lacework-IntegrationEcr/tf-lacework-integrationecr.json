@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::Lacework::IntegrationEcr",
+    "description": "Use this resource to integrate an Amazon Container Registry (ECR) with Lacework to assess, identify,\nand report vulnerabilities found in the operating system software packages in a Docker container\nimage.\n\n~> **Note:** Assessing a retagged ECR image is not supported because ECR does not consider it a new\nimage and does not create a new entry. To assess a retagged image, use on-demand assessment through\nthe Lacework CLI. For more information, see the [container vulnerability section in the Lacework CLI\ndocumentation](https://github.com/lacework/go-sdk/wiki/CLI-Documentation#container-vulnerability-assessments).\n\nThis resource has two authentication methods:\n\n* AWS Access Key-Based Authentication\n* AWS IAM Role-Based Authentication\n\n!> **Warning:** It is possible to switch authentication methods but the resource\nwill be destroyed and recreated. This will generate a new `INT_GUID`.\n\nFor more information, see [Integrate Amazon Container Registry documentation](https://support.lacework.com/hc/en-us/articles/36...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-IntegrationEcr/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "ExternalId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsAuthType": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "LimitByLabel": {
+            "type": "string",
+            "description": "An image label to limit the assessment of images with matching label. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "LimitByRepos": {
+            "type": "string",
+            "description": "A comma-separated list of repositories to assess. (without spaces recommended)."
+        },
+        "LimitByTag": {
+            "type": "string",
+            "description": "An image tag to limit the assessment of images with matching tag. If you specify `limit_by_tag` and `limit_by_label` limits, they function as an `AND`. Supported field input are `mytext*mytext`, `mytext`, `mytext*`, or `mytext`. Only one `*` wildcard is supported. Defaults to `*`."
+        },
+        "LimitNumImgs": {
+            "type": "number",
+            "description": "The maximum number of newest container images to assess per repository. Must be one of `5`, `10`, or `15`. Defaults to `5`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The ECR integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "RegistryDomain": {
+            "type": "string",
+            "description": "The Amazon Container Registry (ECR) domain in the format `YourAWSAccount.dkr.ecr.YourRegion.amazonaws.com`, where `YourAWSAcount` is the AWS account number for the AWS IAM user that has a role with permissions to access the ECR and `YourRegion` is your AWS region such as `us-west-2`."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RegistryDomain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsAuthType",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CredentialsDefinition/SecretAccessKey"
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::FortiOS::RouterStatic6",
+    "description": "Configure IPv6 static routing tables.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterStatic6/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bfd": {
+            "type": "string",
+            "description": "Enable/disable Bidirectional Forwarding Detection (BFD). Valid values: `enable`, `disable`."
+        },
+        "Blackhole": {
+            "type": "string",
+            "description": "Enable/disable black hole. Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "Device": {
+            "type": "string",
+            "description": "Gateway out interface or tunnel."
+        },
+        "Devindex": {
+            "type": "number",
+            "description": "Device index (0 - 4294967295)."
+        },
+        "Distance": {
+            "type": "number",
+            "description": "Administrative distance (1 - 255)."
+        },
+        "Dst": {
+            "type": "string",
+            "description": "Destination IPv6 prefix."
+        },
+        "Gateway": {
+            "type": "string",
+            "description": "IPv6 address of the gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinkMonitorExempt": {
+            "type": "string",
+            "description": "Enable/disable withdrawal of this static route when link monitor or health check is down. Valid values: `enable`, `disable`."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Administrative priority (0 - 4294967295)."
+        },
+        "Sdwan": {
+            "type": "string",
+            "description": "Enable/disable egress through the SD-WAN. Valid values: `enable`, `disable`."
+        },
+        "SeqNum": {
+            "type": "number",
+            "description": "Sequence number."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this static route. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VirtualWanLink": {
+            "type": "string",
+            "description": "Enable/disable egress through the virtual-wan-link. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Device"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

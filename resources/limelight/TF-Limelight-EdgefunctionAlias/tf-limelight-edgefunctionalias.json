@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Limelight::EdgefunctionAlias",
+    "description": "This resource provides a way to manage EdgeFunction Aliases in Limelight Networks.\nIn order to create a new EdgeFunction Alias for a version other than `$LATEST`, the version\nmust be created out-of-band using the EdgeFunction CLI or REST API.\nFor more details see the [API docs](https://support.limelight.com/public/openapi/edgefunctions/index.html#tag/Aliases)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/limelight/TF-Limelight-EdgefunctionAlias/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for the EdgeFunction alias."
+        },
+        "FunctionName": {
+            "type": "string",
+            "description": "The EdgeFunction's name to create the alias for."
+        },
+        "FunctionVersion": {
+            "type": "string",
+            "description": "The EdgeFunction's version to create the alias for.\nIf a version other than `$LATEST` is used, this version must already exist."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the EdgeFunction alias."
+        },
+        "RevisionId": {
+            "type": "number"
+        },
+        "Shortname": {
+            "type": "string",
+            "description": "The account name (shortname)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName",
+        "FunctionVersion",
+        "Name",
+        "Shortname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RevisionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

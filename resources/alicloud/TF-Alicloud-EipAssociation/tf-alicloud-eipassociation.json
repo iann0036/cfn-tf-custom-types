@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Alicloud::EipAssociation",
+    "description": "Provides an Alicloud EIP Association resource for associating Elastic IP to ECS Instance, SLB Instance or Nat Gateway.\n\n-> **NOTE:** `alicloud_eip_association` is useful in scenarios where EIPs are either\n pre-existing or distributed to customers or users and therefore cannot be changed.\n\n-> **NOTE:** From version 1.7.1, the resource support to associate EIP to SLB Instance or Nat Gateway.\n\n-> **NOTE:** One EIP can only be associated with ECS or SLB instance which in the VPC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EipAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationId": {
+            "type": "string",
+            "description": "The allocation EIP ID."
+        },
+        "Force": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The ID of the ECS or SLB instance or Nat Gateway."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The type of cloud product that the eip instance to bind."
+        },
+        "PrivateIpAddress": {
+            "type": "string",
+            "description": "The private IP address in the network segment of the vswitch which has been assigned."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllocationId",
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

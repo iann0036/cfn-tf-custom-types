@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::MSO::SchemaTemplateContract",
+    "description": "CloudFormation equivalent of mso_schema_template_contract",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaTemplateContract/docs/README.md",
+    "definitions": {
+        "FilterRelationshipsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContractName": {
+            "type": "string"
+        },
+        "Directives": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FilterRelationships": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilterRelationshipsDefinition"
+            }
+        },
+        "FilterType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContractName",
+        "Directives",
+        "FilterRelationships",
+        "SchemaId",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

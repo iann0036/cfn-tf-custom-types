@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementApiVersionSet",
+    "description": "Manages an API Version Set within an API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementApiVersionSet/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the [API Management Service](api_management.html) in which the API Version Set should exist. Changing this forces a new resource to be created."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of API Version Set."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this API Version Set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the API Version Set. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the parent API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "VersionHeaderName": {
+            "type": "string",
+            "description": "The name of the Header which should be read from Inbound Requests which defines the API Version."
+        },
+        "VersionQueryName": {
+            "type": "string",
+            "description": "The name of the Query String which should be read from Inbound Requests which defines the API Version."
+        },
+        "VersioningScheme": {
+            "type": "string",
+            "description": "Specifies where in an Inbound HTTP Request that the API Version should be read from. Possible values are `Header`, `Query` and `Segment`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "DisplayName",
+        "Name",
+        "ResourceGroupName",
+        "VersioningScheme"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Gitlab::PipelineSchedule",
+    "description": "This resource allows you to create and manage pipeline schedules.\nFor further information on clusters, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/user/project/pipelines/schedules.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-PipelineSchedule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "The activation of pipeline schedule. If false is set, the pipeline schedule will deactivated initially."
+        },
+        "Cron": {
+            "type": "string",
+            "description": "The cron (e.g. `0 1 * * *`)."
+        },
+        "CronTimezone": {
+            "type": "string",
+            "description": "The timezone."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the pipeline schedule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The name or id of the project to add the schedule to."
+        },
+        "Ref": {
+            "type": "string",
+            "description": "The branch/tag name to be triggered."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cron",
+        "Description",
+        "Project",
+        "Ref"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

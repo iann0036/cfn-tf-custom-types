@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::OCI::DatabaseMaintenanceRun",
+    "description": "This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.\n\nUpdates the properties of a maintenance run, such as the state of a maintenance run.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseMaintenanceRun/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) If `FALSE`, skips the maintenance run."
+        },
+        "IsPatchNowEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) If set to `TRUE`, starts patching immediately."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "MaintenanceRunId": {
+            "type": "string",
+            "description": "The maintenance run OCID."
+        },
+        "MaintenanceSubtype": {
+            "type": "string"
+        },
+        "MaintenanceType": {
+            "type": "string"
+        },
+        "PatchFailureCount": {
+            "type": "number"
+        },
+        "PatchId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run."
+        },
+        "PatchingMode": {
+            "type": "string",
+            "description": "(Updatable) Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING."
+        },
+        "PeerMaintenanceRunId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TargetResourceId": {
+            "type": "string"
+        },
+        "TargetResourceType": {
+            "type": "string"
+        },
+        "TimeEnded": {
+            "type": "string"
+        },
+        "TimeScheduled": {
+            "type": "string",
+            "description": "(Updatable) The scheduled date and time of the maintenance run to update."
+        },
+        "TimeStarted": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaintenanceRunId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompartmentId",
+        "/properties/Description",
+        "/properties/DisplayName",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/MaintenanceSubtype",
+        "/properties/MaintenanceType",
+        "/properties/PatchFailureCount",
+        "/properties/PeerMaintenanceRunId",
+        "/properties/State",
+        "/properties/TargetResourceId",
+        "/properties/TargetResourceType",
+        "/properties/TimeEnded",
+        "/properties/TimeStarted"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,260 @@
+{
+    "typeName": "TF::FortiOS::WebproxyExplicit",
+    "description": "Configure explicit Web proxy settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyExplicit/docs/README.md",
+    "definitions": {
+        "PacPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comments": {
+                    "type": "string",
+                    "description": "Optional comments."
+                },
+                "PacFileData": {
+                    "type": "string",
+                    "description": "PAC file contents enclosed in quotes (maximum of 256K bytes)."
+                },
+                "PacFileName": {
+                    "type": "string",
+                    "description": "Pac file name."
+                },
+                "Policyid": {
+                    "type": "number",
+                    "description": "Policy ID."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable policy. Valid values: `enable`, `disable`."
+                },
+                "Dstaddr": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DstaddrDefinition"
+                    }
+                },
+                "Srcaddr": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SrcaddrDefinition"
+                    }
+                },
+                "Srcaddr6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Srcaddr6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "SrcaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Srcaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "FtpIncomingPort": {
+            "type": "string",
+            "description": "Accept incoming FTP-over-HTTP requests on one or more ports (0 - 65535, default = 0; use the same as HTTP)."
+        },
+        "FtpOverHttp": {
+            "type": "string",
+            "description": "Enable to proxy FTP-over-HTTP sessions sent from a web browser. Valid values: `enable`, `disable`."
+        },
+        "HttpIncomingPort": {
+            "type": "string",
+            "description": "Accept incoming HTTP requests on one or more ports (0 - 65535, default = 8080)."
+        },
+        "HttpsIncomingPort": {
+            "type": "string",
+            "description": "Accept incoming HTTPS requests on one or more ports (0 - 65535, default = 0, use the same as HTTP)."
+        },
+        "HttpsReplacementMessage": {
+            "type": "string",
+            "description": "Enable/disable sending the client a replacement message for HTTPS requests. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncomingIp": {
+            "type": "string",
+            "description": "Restrict the explicit HTTP proxy to only accept sessions from this IP address. An interface must have this IP address."
+        },
+        "IncomingIp6": {
+            "type": "string",
+            "description": "Restrict the explicit web proxy to only accept sessions from this IPv6 address. An interface must have this IPv6 address."
+        },
+        "Ipv6Status": {
+            "type": "string",
+            "description": "Enable/disable allowing an IPv6 web proxy destination in policies and all IPv6 related entries in this command. Valid values: `enable`, `disable`."
+        },
+        "MessageUponServerError": {
+            "type": "string",
+            "description": "Enable/disable displaying a replacement message when a server error is detected. Valid values: `enable`, `disable`."
+        },
+        "OutgoingIp": {
+            "type": "string",
+            "description": "Outgoing HTTP requests will have this IP address as their source address. An interface must have this IP address."
+        },
+        "OutgoingIp6": {
+            "type": "string",
+            "description": "Outgoing HTTP requests will leave this IPv6. Multiple interfaces can be specified. Interfaces must have these IPv6 addresses."
+        },
+        "PacFileData": {
+            "type": "string",
+            "description": "PAC file contents enclosed in quotes (maximum of 256K bytes)."
+        },
+        "PacFileName": {
+            "type": "string",
+            "description": "Pac file name."
+        },
+        "PacFileServerPort": {
+            "type": "string",
+            "description": "Port number that PAC traffic from client web browsers uses to connect to the explicit web proxy (0 - 65535, default = 0; use the same as HTTP)."
+        },
+        "PacFileServerStatus": {
+            "type": "string",
+            "description": "Enable/disable Proxy Auto-Configuration (PAC) for users of this explicit proxy profile. Valid values: `enable`, `disable`."
+        },
+        "PacFileUrl": {
+            "type": "string",
+            "description": "PAC file access URL."
+        },
+        "PrefDnsResult": {
+            "type": "string",
+            "description": "Prefer resolving addresses using the configured IPv4 or IPv6 DNS server (default = ipv4). Valid values: `ipv4`, `ipv6`."
+        },
+        "Realm": {
+            "type": "string",
+            "description": "Authentication realm used to identify the explicit web proxy (maximum of 63 characters)."
+        },
+        "SecDefaultAction": {
+            "type": "string",
+            "description": "Accept or deny explicit web proxy sessions when no web proxy firewall policy exists. Valid values: `accept`, `deny`."
+        },
+        "Socks": {
+            "type": "string",
+            "description": "Enable/disable the SOCKS proxy. Valid values: `enable`, `disable`."
+        },
+        "SocksIncomingPort": {
+            "type": "string",
+            "description": "Accept incoming SOCKS proxy requests on one or more ports (0 - 65535, default = 0; use the same as HTTP)."
+        },
+        "SslAlgorithm": {
+            "type": "string",
+            "description": "Relative strength of encryption algorithms accepted in HTTPS deep scan: high, medium, or low. Valid values: `high`, `medium`, `low`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable the explicit Web proxy for HTTP and HTTPS session. Valid values: `enable`, `disable`."
+        },
+        "StrictGuest": {
+            "type": "string",
+            "description": "Enable/disable strict guest user checking by the explicit web proxy. Valid values: `enable`, `disable`."
+        },
+        "TraceAuthNoRsp": {
+            "type": "string",
+            "description": "Enable/disable logging timed-out authentication requests. Valid values: `enable`, `disable`."
+        },
+        "UnknownHttpVersion": {
+            "type": "string",
+            "description": "Either reject unknown HTTP traffic as malformed or handle unknown HTTP traffic as best as the proxy server can."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "PacPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PacPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,602 @@
+{
+    "typeName": "TF::AWS::AppmeshVirtualGateway",
+    "description": "Provides an AWS App Mesh virtual gateway resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppmeshVirtualGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendDefaults": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackendDefaultsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Listener": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ListenerDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Logging": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BackendDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ListenerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionPool": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConnectionPoolDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HealthCheck": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthCheckDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PortMapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortMappingDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Tls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LoggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessLogDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ClientPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConnectionPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Grpc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GrpcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Http": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Http2": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Http2Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HealthCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthyThreshold": {
+                    "type": "number",
+                    "description": "The number of consecutive successful health checks that must occur before declaring listener healthy."
+                },
+                "IntervalMillis": {
+                    "type": "number",
+                    "description": "The time period in milliseconds between each health check execution."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "The destination path for the health check request. This is only required if the specified protocol is `http` or `http2`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "The destination port for the health check request. This port must match the port defined in the `port_mapping` for the listener."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The protocol for the health check request. Valid values are `http`, `http2`, and `grpc`."
+                },
+                "TimeoutMillis": {
+                    "type": "number",
+                    "description": "The amount of time to wait when receiving a response from the health check, in milliseconds."
+                },
+                "UnhealthyThreshold": {
+                    "type": "number",
+                    "description": "The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy."
+                }
+            },
+            "required": [
+                "HealthyThreshold",
+                "IntervalMillis",
+                "Protocol",
+                "TimeoutMillis",
+                "UnhealthyThreshold"
+            ]
+        },
+        "PortMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number",
+                    "description": "The port used for the port mapping."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The protocol used for the port mapping. Valid values are `http`, `http2`, `tcp` and `grpc`."
+                }
+            },
+            "required": [
+                "Port",
+                "Protocol"
+            ]
+        },
+        "TlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enforce": {
+                    "type": "boolean",
+                    "description": "Whether the policy is enforced. Default is `true`."
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "One or more ports that the policy is enforced for."
+                },
+                "Certificate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Validation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValidationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AccessLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "GrpcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxRequests": {
+                    "type": "number",
+                    "description": "Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster. Minimum value of `1`."
+                }
+            },
+            "required": [
+                "MaxRequests"
+            ]
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxConnections": {
+                    "type": "number",
+                    "description": "Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster. Minimum value of `1`."
+                },
+                "MaxPendingRequests": {
+                    "type": "number",
+                    "description": "Number of overflowing requests after `max_connections` Envoy will queue to upstream cluster. Minimum value of `1`."
+                }
+            },
+            "required": [
+                "MaxConnections"
+            ]
+        },
+        "Http2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxRequests": {
+                    "type": "number",
+                    "description": "Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster. Minimum value of `1`."
+                }
+            },
+            "required": [
+                "MaxRequests"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ValidationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SubjectAlternativeNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectAlternativeNamesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Trust": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TrustDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateChain": {
+                    "type": "string",
+                    "description": "The certificate trust chain for a certificate stored on the file system of the mesh endpoint that the proxy is running on. Must be between 1 and 255 characters in length."
+                }
+            },
+            "required": [
+                "CertificateChain"
+            ]
+        },
+        "SdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretName": {
+                    "type": "string",
+                    "description": "The name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust."
+                }
+            },
+            "required": [
+                "SecretName"
+            ]
+        },
+        "SubjectAlternativeNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TrustDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Acm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AcmDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Sds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SdsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exact": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The values sent must match the specified values exactly."
+                }
+            },
+            "required": [
+                "Exact"
+            ]
+        },
+        "AcmDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthorityArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "One or more ACM Amazon Resource Name (ARN)s."
+                }
+            },
+            "required": [
+                "CertificateAuthorityArns"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "MeshName": {
+            "type": "string",
+            "description": "The name of the service mesh in which to create the virtual gateway. Must be between 1 and 255 characters in length."
+        },
+        "MeshOwner": {
+            "type": "string",
+            "description": "The AWS account ID of the service mesh's owner. Defaults to the account ID the [AWS provider][1] is currently connected to."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name to use for the virtual gateway. Must be between 1 and 255 characters in length."
+        },
+        "ResourceOwner": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MeshName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/ResourceOwner"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

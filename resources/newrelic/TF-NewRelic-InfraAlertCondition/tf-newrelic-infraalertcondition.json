@@ -1,0 +1,176 @@
+{
+    "typeName": "TF::NewRelic::InfraAlertCondition",
+    "description": "Use this resource to create and manage Infrastructure alert conditions in New Relic.\n\n-> **NOTE:** The [newrelic_nrql_alert_condition](nrql_alert_condition.html) resource is preferred for configuring alerts conditions. In most cases feature parity can be achieved with a NRQL query. Other condition types may be deprecated in the future and receive fewer product updates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-InfraAlertCondition/docs/README.md",
+    "definitions": {
+        "CriticalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        },
+        "WarningDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comparison": {
+            "type": "string",
+            "description": "The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "CreatedAt": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Event": {
+            "type": "string",
+            "description": "The metric event; for example, `SystemSample` or `StorageSample`.  Supported by the `infra_metric` condition type.\n* `select` - (Required) The attribute name to identify the metric being targeted; for example, `cpuPercent`, `diskFreePercent`, or `memoryResidentSizeBytes`.  The underlying API will automatically populate this value for Infrastructure integrations (for example `diskFreePercent`), so make sure to explicitly include this value to avoid diff issues.  Supported by the `infra_metric` condition type.\n* `comparison` - (Required) The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationProvider": {
+            "type": "string",
+            "description": "For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Infrastructure alert condition's name.\n* `type` - (Required) The type of Infrastructure alert condition.  Valid values are  `infra_process_running`, `infra_metric`, and `infra_host_not_reporting`.\n* `event` - (Required) The metric event; for example, `SystemSample` or `StorageSample`.  Supported by the `infra_metric` condition type.\n* `select` - (Required) The attribute name to identify the metric being targeted; for example, `cpuPercent`, `diskFreePercent`, or `memoryResidentSizeBytes`.  The underlying API will automatically populate this value for Infrastructure integrations (for example `diskFreePercent`), so make sure to explicitly include this value to avoid diff issues.  Supported by the `infra_metric` condition type.\n* `comparison` - (Required) The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "PolicyId": {
+            "type": "number",
+            "description": "The ID of the alert policy where this condition should be used.\n* `name` - (Required) The Infrastructure alert condition's name.\n* `type` - (Required) The type of Infrastructure alert condition.  Valid values are  `infra_process_running`, `infra_metric`, and `infra_host_not_reporting`.\n* `event` - (Required) The metric event; for example, `SystemSample` or `StorageSample`.  Supported by the `infra_metric` condition type.\n* `select` - (Required) The attribute name to identify the metric being targeted; for example, `cpuPercent`, `diskFreePercent`, or `memoryResidentSizeBytes`.  The underlying API will automatically populate this value for Infrastructure integrations (for example `diskFreePercent`), so make sure to explicitly include this value to avoid diff issues.  Supported by the `infra_metric` condition type.\n* `comparison` - (Required) The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "ProcessWhere": {
+            "type": "string",
+            "description": "Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "RunbookUrl": {
+            "type": "string",
+            "description": "Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Select": {
+            "type": "string",
+            "description": "The attribute name to identify the metric being targeted; for example, `cpuPercent`, `diskFreePercent`, or `memoryResidentSizeBytes`.  The underlying API will automatically populate this value for Infrastructure integrations (for example `diskFreePercent`), so make sure to explicitly include this value to avoid diff issues.  Supported by the `infra_metric` condition type.\n* `comparison` - (Required) The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of Infrastructure alert condition.  Valid values are  `infra_process_running`, `infra_metric`, and `infra_host_not_reporting`.\n* `event` - (Required) The metric event; for example, `SystemSample` or `StorageSample`.  Supported by the `infra_metric` condition type.\n* `select` - (Required) The attribute name to identify the metric being targeted; for example, `cpuPercent`, `diskFreePercent`, or `memoryResidentSizeBytes`.  The underlying API will automatically populate this value for Infrastructure integrations (for example `diskFreePercent`), so make sure to explicitly include this value to avoid diff issues.  Supported by the `infra_metric` condition type.\n* `comparison` - (Required) The operator used to evaluate the threshold value.  Valid values are `above`, `below`, and `equal`.  Supported by the `infra_metric` and `infra_process_running` condition types.\n* `critical` - (Required) Identifies the threshold parameters for opening a critical alert violation. See [Thresholds](#thresholds) below for details.\n* `warning` - (Optional) Identifies the threshold parameters for opening a warning alert violation. See [Thresholds](#thresholds) below for details.\n* `enabled` - (Optional) Whether the condition is turned on or off.  Valid values are `true` and `false`.  Defaults to `true`.\n* `where` - (Optional) If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "UpdatedAt": {
+            "type": "number"
+        },
+        "ViolationCloseTimer": {
+            "type": "number",
+            "description": "Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Where": {
+            "type": "string",
+            "description": "If applicable, this identifies any Infrastructure host filters used; for example: `hostname LIKE '%cassandra%'`.\n* `process_where` - (Optional) Any filters applied to processes; for example: `commandName = 'java'`.  Required by the `infra_process_running` condition type.\n* `integration_provider` - (Optional) For alerts on integrations, use this instead of `event`.  Supported by the `infra_metric` condition type.\n* `description` - (Optional) The description of the Infrastructure alert condition.\n* `runbook_url` - (Optional) Runbook URL to display in notifications.\n* `violation_close_timer` - (Optional) Determines how much time will pass before a violation is automatically closed. Setting the time limit to 0 prevents a violation from being force-closed."
+        },
+        "Critical": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CriticalDefinition"
+            },
+            "maxItems": 1
+        },
+        "Warning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WarningDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PolicyId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

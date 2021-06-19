@@ -1,0 +1,355 @@
+{
+    "typeName": "TF::TencentCloud::KubernetesNodePool",
+    "description": "Provide a resource to create an auto scaling group for kubernetes cluster.\n\n~> **NOTE:**  We recommend the usage of one cluster with essential worker config + node pool to manage cluster and nodes. Its a more flexible way than manage worker config with tencentcloud_kubernetes_cluster, tencentcloud_kubernetes_scale_worker or exist node management of `tencentcloud_kubernetes_attachment`. Cause some unchangeable parameters of `worker_config` may cause the whole cluster resource `force new`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-KubernetesNodePool/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AutoScalingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnhancedMonitorService": {
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud monitor service. Default is TRUE."
+                },
+                "EnhancedSecurityService": {
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud security service. Default is TRUE."
+                },
+                "InstanceType": {
+                    "type": "string",
+                    "description": "Specified types of CVM instance."
+                },
+                "InternetChargeType": {
+                    "type": "string",
+                    "description": "Charge types for network traffic. Valid value: `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `TRAFFIC_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`."
+                },
+                "InternetMaxBandwidthOut": {
+                    "type": "number",
+                    "description": "Max bandwidth of Internet access in Mbps. Default is `0`."
+                },
+                "KeyIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "ID list of keys."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Password to access."
+                },
+                "PublicIpAssigned": {
+                    "type": "boolean",
+                    "description": "Specify whether to assign an Internet IP address."
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Security groups to which a CVM instance belongs."
+                },
+                "SystemDiskSize": {
+                    "type": "number",
+                    "description": "Volume of system disk in GB. Default is `50`."
+                },
+                "SystemDiskType": {
+                    "type": "string",
+                    "description": "Type of a CVM disk. Valid value: `CLOUD_PREMIUM` and `CLOUD_SSD`. Default is `CLOUD_PREMIUM`."
+                },
+                "DataDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDiskDefinition"
+                    },
+                    "maxItems": 11
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "NodeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredPodNum": {
+                    "type": "number",
+                    "description": "Indicate to set desired pod number in node. valid when the cluster is podCIDR."
+                },
+                "DockerGraphPath": {
+                    "type": "string",
+                    "description": "Docker graph path. Default is `/var/lib/docker`."
+                },
+                "ExtraArgs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Custom parameter information related to the node. This is a white-list parameter."
+                },
+                "IsSchedule": {
+                    "type": "boolean",
+                    "description": "Indicate to schedule the adding node or not. Default is true."
+                },
+                "MountTarget": {
+                    "type": "string",
+                    "description": "Mount target. Default is not mounting."
+                },
+                "UserData": {
+                    "type": "string",
+                    "description": "Base64-encoded User Data text, the length limit is 16KB."
+                },
+                "DataDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDiskDefinition"
+                    },
+                    "maxItems": 11
+                }
+            },
+            "required": []
+        },
+        "TaintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string",
+                    "description": "Effect of the taint. Valid values are: `NoSchedule`, `PreferNoSchedule`, `NoExecute`."
+                },
+                "Key": {
+                    "type": "string",
+                    "description": "Key of the taint. The taint key name does not exceed 63 characters, only supports English, numbers,'/','-', and does not allow beginning with ('/')."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Value of the taint."
+                }
+            },
+            "required": [
+                "Effect",
+                "Key",
+                "Value"
+            ]
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoFormatAndMount": {
+                    "type": "boolean",
+                    "description": "Indicate whether to auto format and mount or not. Default is `false`."
+                },
+                "DiskSize": {
+                    "type": "number",
+                    "description": "Volume of disk in GB. Default is `0`."
+                },
+                "DiskType": {
+                    "type": "string",
+                    "description": "Types of disk. Valid value: `CLOUD_PREMIUM` and `CLOUD_SSD`."
+                },
+                "FileSystem": {
+                    "type": "string",
+                    "description": "File system, e.g. `ext3/ext4/xfs`."
+                },
+                "MountTarget": {
+                    "type": "string",
+                    "description": "Mount target."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoScalingGroupId": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "ID of the cluster."
+        },
+        "DeleteKeepInstance": {
+            "type": "boolean",
+            "description": "Indicate to keep the CVM instance when delete the node pool. Default is `true`."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "Desired capacity ot the node. If `enable_auto_scale` is set `true`, this will be a computed parameter."
+        },
+        "EnableAutoScale": {
+            "type": "boolean",
+            "description": "Indicate whether to enable auto scaling or not."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "Labels of kubernetes node pool created nodes. The label key name does not exceed 63 characters, only supports English, numbers,'/','-', and does not allow beginning with ('/')."
+        },
+        "LaunchConfigId": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "Maximum number of node."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "Minimum number of node."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the node pool. The name does not exceed 25 characters, and only supports Chinese, English, numbers, underscores, separators (`-`) and decimal points."
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "NodeOs": {
+            "type": "string",
+            "description": "Operating system of the cluster, the available values include: `tlinux2.4x86_64`, `ubuntu18.04.1x86_64`, `ubuntu16.04.1 LTSx86_64`, `centos7.6.0_x64` and `centos7.2x86_64`. Default is 'tlinux2.4x86_64'. This parameter will only affect new nodes, not including the existing nodes."
+        },
+        "NodeOsType": {
+            "type": "string",
+            "description": "The image version of the node. Valida values are `DOCKER_CUSTOMIZE` and `GENERAL`. Default is `GENERAL`. This parameter will only affect new nodes, not including the existing nodes."
+        },
+        "RetryPolicy": {
+            "type": "string",
+            "description": "Available values for retry policies include `IMMEDIATE_RETRY` and `INCREMENTAL_INTERVALS`."
+        },
+        "ScalingMode": {
+            "type": "string",
+            "description": "Auto scaling mode. Valid values are `CLASSIC_SCALING`(scaling by create/destroy instances), `WAKE_UP_STOPPED_SCALING`(Boot priority for expansion. When expanding the capacity, the shutdown operation is given priority to the shutdown of the instance. If the number of instances is still lower than the expected number of instances after the startup, the instance will be created, and the method of destroying the instance will still be used for shrinking)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of subnet, and for VPC it is required."
+        },
+        "Unschedulable": {
+            "type": "number",
+            "description": "Sets whether the joining node participates in the schedule. Default is '0'. Participate in scheduling."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC network."
+        },
+        "AutoScalingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoScalingConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "NodeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Taints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaintsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "MaxSize",
+        "MinSize",
+        "Name",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AutoScalingGroupId",
+        "/properties/Id",
+        "/properties/LaunchConfigId",
+        "/properties/NodeCount",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AutoScalingConfigDefinition/Password"
+    ]
+}

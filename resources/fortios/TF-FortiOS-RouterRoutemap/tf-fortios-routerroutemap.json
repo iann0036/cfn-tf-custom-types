@@ -1,0 +1,320 @@
+{
+    "typeName": "TF::FortiOS::RouterRoutemap",
+    "description": "Configure route maps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterRoutemap/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `permit`, `deny`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Rule ID."
+                },
+                "MatchAsPath": {
+                    "type": "string",
+                    "description": "Match BGP AS path list."
+                },
+                "MatchCommunity": {
+                    "type": "string",
+                    "description": "Match BGP community list."
+                },
+                "MatchCommunityExact": {
+                    "type": "string",
+                    "description": "Enable/disable exact matching of communities. Valid values: `enable`, `disable`."
+                },
+                "MatchFlags": {
+                    "type": "number",
+                    "description": "BGP flag value to match (0 - 65535)."
+                },
+                "MatchInterface": {
+                    "type": "string",
+                    "description": "Match interface configuration."
+                },
+                "MatchIp6Address": {
+                    "type": "string",
+                    "description": "Match IPv6 address permitted by access-list6 or prefix-list6."
+                },
+                "MatchIp6Nexthop": {
+                    "type": "string",
+                    "description": "Match next hop IPv6 address passed by access-list6 or prefix-list6."
+                },
+                "MatchIpAddress": {
+                    "type": "string",
+                    "description": "Match IP address permitted by access-list or prefix-list."
+                },
+                "MatchIpNexthop": {
+                    "type": "string",
+                    "description": "Match next hop IP address passed by access-list or prefix-list."
+                },
+                "MatchMetric": {
+                    "type": "number",
+                    "description": "Match metric for redistribute routes."
+                },
+                "MatchOrigin": {
+                    "type": "string",
+                    "description": "Match BGP origin code. Valid values: `none`, `egp`, `igp`, `incomplete`."
+                },
+                "MatchRouteType": {
+                    "type": "string",
+                    "description": "Match route type. Valid values: `1`, `2`, `none`."
+                },
+                "MatchTag": {
+                    "type": "number",
+                    "description": "Match tag."
+                },
+                "MatchVrf": {
+                    "type": "number",
+                    "description": "Match VRF ID."
+                },
+                "SetAggregatorAs": {
+                    "type": "number",
+                    "description": "BGP aggregator AS."
+                },
+                "SetAggregatorIp": {
+                    "type": "string",
+                    "description": "BGP aggregator IP."
+                },
+                "SetAspathAction": {
+                    "type": "string",
+                    "description": "Specify preferred action of set-aspath. Valid values: `prepend`, `replace`."
+                },
+                "SetAtomicAggregate": {
+                    "type": "string",
+                    "description": "Enable/disable BGP atomic aggregate attribute. Valid values: `enable`, `disable`."
+                },
+                "SetCommunityAdditive": {
+                    "type": "string",
+                    "description": "Enable/disable adding set-community to existing community. Valid values: `enable`, `disable`."
+                },
+                "SetCommunityDelete": {
+                    "type": "string",
+                    "description": "Delete communities matching community list."
+                },
+                "SetDampeningMaxSuppress": {
+                    "type": "number",
+                    "description": "Maximum duration to suppress a route (1 - 255 min, 0 = unset)."
+                },
+                "SetDampeningReachabilityHalfLife": {
+                    "type": "number",
+                    "description": "Reachability half-life time for the penalty (1 - 45 min, 0 = unset)."
+                },
+                "SetDampeningReuse": {
+                    "type": "number",
+                    "description": "Value to start reusing a route (1 - 20000, 0 = unset)."
+                },
+                "SetDampeningSuppress": {
+                    "type": "number",
+                    "description": "Value to start suppressing a route (1 - 20000, 0 = unset)."
+                },
+                "SetDampeningUnreachabilityHalfLife": {
+                    "type": "number",
+                    "description": "Unreachability Half-life time for the penalty (1 - 45 min, 0 = unset)."
+                },
+                "SetFlags": {
+                    "type": "number",
+                    "description": "BGP flags value (0 - 65535)."
+                },
+                "SetIp6Nexthop": {
+                    "type": "string",
+                    "description": "IPv6 global address of next hop."
+                },
+                "SetIp6NexthopLocal": {
+                    "type": "string",
+                    "description": "IPv6 local address of next hop."
+                },
+                "SetIpNexthop": {
+                    "type": "string",
+                    "description": "IP address of next hop."
+                },
+                "SetLocalPreference": {
+                    "type": "number",
+                    "description": "BGP local preference path attribute."
+                },
+                "SetMetric": {
+                    "type": "number",
+                    "description": "Metric value."
+                },
+                "SetMetricType": {
+                    "type": "string",
+                    "description": "Metric type. Valid values: `1`, `2`, `none`."
+                },
+                "SetOrigin": {
+                    "type": "string",
+                    "description": "BGP origin code. Valid values: `none`, `egp`, `igp`, `incomplete`."
+                },
+                "SetOriginatorId": {
+                    "type": "string",
+                    "description": "BGP originator ID attribute."
+                },
+                "SetRouteTag": {
+                    "type": "number",
+                    "description": "Route tag for routing table."
+                },
+                "SetTag": {
+                    "type": "number",
+                    "description": "Tag value."
+                },
+                "SetWeight": {
+                    "type": "number",
+                    "description": "BGP weight for routing table."
+                },
+                "SetAspath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetAspathDefinition"
+                    }
+                },
+                "SetCommunity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetCommunityDefinition"
+                    }
+                },
+                "SetExtcommunityRt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetExtcommunityRtDefinition"
+                    }
+                },
+                "SetExtcommunitySoo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SetExtcommunitySooDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SetAspathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "As": {
+                    "type": "string",
+                    "description": "AS number (0 - 42949672). NOTE: Use quotes for repeating numbers, e.g.: \"1 1 2\"."
+                }
+            },
+            "required": []
+        },
+        "SetCommunityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "string",
+                    "description": "Attribute: AA|AA:NN|internet|local-AS|no-advertise|no-export."
+                }
+            },
+            "required": []
+        },
+        "SetExtcommunityRtDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "string",
+                    "description": "AA:NN."
+                }
+            },
+            "required": []
+        },
+        "SetExtcommunitySooDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "string",
+                    "description": "AA:NN."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

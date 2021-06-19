@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::FortiOS::LogSetting",
+    "description": "Configure general log settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogSetting/docs/README.md",
+    "definitions": {
+        "CustomLogFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FieldId": {
+                    "type": "string",
+                    "description": "Custom log field."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BriefTrafficFormat": {
+            "type": "string",
+            "description": "Enable/disable brief format traffic logging. Valid values: `enable`, `disable`."
+        },
+        "DaemonLog": {
+            "type": "string",
+            "description": "Enable/disable daemon logging. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ExpolicyImplicitLog": {
+            "type": "string",
+            "description": "Enable/disable explicit proxy firewall implicit policy logging. Valid values: `enable`, `disable`."
+        },
+        "FazOverride": {
+            "type": "string",
+            "description": "Enable/disable override FortiAnalyzer settings. Valid values: `enable`, `disable`."
+        },
+        "Fwpolicy6ImplicitLog": {
+            "type": "string",
+            "description": "Enable/disable implicit firewall policy6 logging. Valid values: `enable`, `disable`."
+        },
+        "FwpolicyImplicitLog": {
+            "type": "string",
+            "description": "Enable/disable implicit firewall policy logging. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalInAllow": {
+            "type": "string",
+            "description": "Enable/disable local-in-allow logging. Valid values: `enable`, `disable`."
+        },
+        "LocalInDenyBroadcast": {
+            "type": "string",
+            "description": "Enable/disable local-in-deny-broadcast logging. Valid values: `enable`, `disable`."
+        },
+        "LocalInDenyUnicast": {
+            "type": "string",
+            "description": "Enable/disable local-in-deny-unicast logging. Valid values: `enable`, `disable`."
+        },
+        "LocalOut": {
+            "type": "string",
+            "description": "Enable/disable local-out logging. Valid values: `enable`, `disable`."
+        },
+        "LogInvalidPacket": {
+            "type": "string",
+            "description": "Enable/disable invalid packet traffic logging. Valid values: `enable`, `disable`."
+        },
+        "LogPolicyComment": {
+            "type": "string",
+            "description": "Enable/disable inserting policy comments into traffic logs. Valid values: `enable`, `disable`."
+        },
+        "LogPolicyName": {
+            "type": "string",
+            "description": "Enable/disable inserting policy name into traffic logs. Valid values: `enable`, `disable`."
+        },
+        "LogUserInUpper": {
+            "type": "string",
+            "description": "Enable/disable logs with user-in-upper. Valid values: `enable`, `disable`."
+        },
+        "NeighborEvent": {
+            "type": "string",
+            "description": "Enable/disable neighbor event logging. Valid values: `enable`, `disable`."
+        },
+        "ResolveIp": {
+            "type": "string",
+            "description": "Enable/disable adding resolved domain names to traffic logs if possible. Valid values: `enable`, `disable`."
+        },
+        "ResolvePort": {
+            "type": "string",
+            "description": "Enable/disable adding resolved service names to traffic logs. Valid values: `enable`, `disable`."
+        },
+        "SyslogOverride": {
+            "type": "string",
+            "description": "Enable/disable override Syslog settings. Valid values: `enable`, `disable`."
+        },
+        "UserAnonymize": {
+            "type": "string",
+            "description": "Enable/disable anonymizing user names in log messages. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "CustomLogFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomLogFieldsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

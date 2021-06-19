@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::Vault::ApproleAuthBackendLogin",
+    "description": "Logs into Vault using the AppRole auth backend. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/approle) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-ApproleAuthBackendLogin/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string",
+            "description": "The unique path of the Vault backend to log in with."
+        },
+        "ClientToken": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LeaseDuration": {
+            "type": "number"
+        },
+        "LeaseStarted": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Renewable": {
+            "type": "boolean"
+        },
+        "RoleId": {
+            "type": "string",
+            "description": "The ID of the role to log in with."
+        },
+        "SecretId": {
+            "type": "string",
+            "description": "The secret ID of the role to log in with. Required\nunless `bind_secret_id` is set to false on the role."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RoleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/ClientToken",
+        "/properties/Id",
+        "/properties/LeaseDuration",
+        "/properties/LeaseStarted",
+        "/properties/Metadata",
+        "/properties/Policies",
+        "/properties/Renewable"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,222 @@
+{
+    "typeName": "TF::Google::FolderOrganizationPolicy",
+    "description": "Allows management of Organization policies for a Google Folder. For more information see\n[the official documentation](https://cloud.google.com/resource-manager/docs/organization-policy/overview) and\n[API](https://cloud.google.com/resource-manager/reference/rest/v1/folders/setOrgPolicy).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-FolderOrganizationPolicy/docs/README.md",
+    "definitions": {
+        "BooleanPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enforced": {
+                    "type": "boolean",
+                    "description": "If true, then the Policy is enforced. If false, then any configuration is acceptable."
+                }
+            },
+            "required": [
+                "Enforced"
+            ]
+        },
+        "ListPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InheritFromParent": {
+                    "type": "boolean",
+                    "description": "If set to true, the values from the effective Policy of the parent resource\nare inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy."
+                },
+                "SuggestedValue": {
+                    "type": "string",
+                    "description": "The Google Cloud Console will try to default to a configuration that matches the value specified in this field."
+                },
+                "Allow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Deny": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DenyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RestorePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "boolean",
+                    "description": "May only be set to true. If set, then the default Policy is restored."
+                }
+            },
+            "required": [
+                "Default"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean",
+                    "description": "The policy allows or denies all values."
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The policy can define specific values that are allowed or denied."
+                }
+            },
+            "required": []
+        },
+        "DenyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Constraint": {
+            "type": "string",
+            "description": "The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints)."
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The resource name of the folder to set the policy for. Its format is folders/{folder_id}."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number",
+            "description": "Version of the Policy. Default version is 0."
+        },
+        "BooleanPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BooleanPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ListPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ListPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "RestorePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RestorePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Constraint",
+        "Folder"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

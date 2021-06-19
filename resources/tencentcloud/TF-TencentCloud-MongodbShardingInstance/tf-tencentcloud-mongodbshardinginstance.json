@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::TencentCloud::MongodbShardingInstance",
+    "description": "Provide a resource to create a Mongodb sharding instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MongodbShardingInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number",
+            "description": "Auto renew flag. Valid values are `0`(NOTIFY_AND_MANUAL_RENEW), `1`(NOTIFY_AND_AUTO_RENEW) and `2`(DISABLE_NOTIFY_AND_MANUAL_RENEW). Default value is `0`. Note: only works for PREPAID instance. Only supports`0` and `1` for creation."
+        },
+        "AvailableZone": {
+            "type": "string",
+            "description": "The available zone of the Mongodb."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`. Default value is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR`. Caution that update operation on this field will delete old instances and create new one with new charge type."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "Version of the Mongodb, and available values include `MONGO_3_WT` (represents MongoDB 3.2 WiredTiger Edition), `MONGO_3_ROCKS` (represents MongoDB 3.2 RocksDB Edition), `MONGO_36_WT` (represents MongoDB 3.6 WiredTiger Edition) and `MONGO_40_WT` (represents MongoDB 4.0 WiredTiger Edition)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "Name of the Mongodb instance."
+        },
+        "MachineType": {
+            "type": "string",
+            "description": "Type of Mongodb instance, and available values include `HIO`(or `GIO` which will be deprecated, represents high IO) and `HIO10G`(or `TGIO` which will be deprecated, represents 10-gigabit high IO)."
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Memory size. The minimum value is 2, and unit is GB. Memory and volume must be upgraded or degraded simultaneously."
+        },
+        "NodesPerShard": {
+            "type": "number",
+            "description": "Number of nodes per shard, at least 3(one master and two slaves)."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of this Mongodb account."
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36. NOTE: it only works when charge_type is set to `PREPAID`."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "ID of the project which the instance belongs."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID of the security group. NOTE: for instance which `engine_version` is `MONGO_40_WT`, `security_groups` is not supported."
+        },
+        "ShardQuantity": {
+            "type": "number",
+            "description": "Number of sharding."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of the subnet within this VPC. The value is required if `vpc_id` is set."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The tags of the Mongodb. Key name `project` is system reserved and can't be used."
+        },
+        "Vip": {
+            "type": "string"
+        },
+        "Volume": {
+            "type": "number",
+            "description": "Disk size. The minimum value is 25, and unit is GB. Memory and volume must be upgraded or degraded simultaneously."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC."
+        },
+        "Vport": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailableZone",
+        "EngineVersion",
+        "InstanceName",
+        "MachineType",
+        "Memory",
+        "NodesPerShard",
+        "Password",
+        "ShardQuantity",
+        "Volume"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/Vip",
+        "/properties/Vport"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

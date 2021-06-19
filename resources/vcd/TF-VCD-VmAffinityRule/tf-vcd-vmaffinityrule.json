@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::VCD::VmAffinityRule",
+    "description": "Provides a vCloud Director VM affinity rule resource. This can be\nused to create, modify, and delete VM affinity and anti-affinity rules.\n\nSupported in provider *v2.9+*\n\n~> **Note:** The vCD UI defines two different entities (*Affinity Rules* and *Anti-Affinity Rules*). This resource combines both\nentities: they are differentiated by the `polarity` property (see below).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VmAffinityRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of VM affinity rule. Duplicates are allowed, although the name can be used to retrieve\nthe rule (as data source or when importing) only if it is unique."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organizations."
+        },
+        "Polarity": {
+            "type": "string",
+            "description": "One of `Affinity` or `Anti-Affinity`. This property cannot be changed. Once created, if we\nneed to change polarity, we need to remove the rule and create a new one."
+        },
+        "Required": {
+            "type": "boolean"
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "VmIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Polarity",
+        "VmIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::TencentCloud::DayuL7Rule",
+    "description": "Use this resource to create dayu layer 7 rule\n\n~> **NOTE:** This resource only support resource Anti-DDoS of type `bgpip`",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-DayuL7Rule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain that the layer 7 rule works for. Valid string length ranges from 0 to 80."
+        },
+        "HealthCheckCode": {
+            "type": "number",
+            "description": "HTTP Status Code. The default is `26`. Valid value ranges: [1~31]. `1` means the return value '1xx' is health. `2` means the return value '2xx' is health. `4` means the return value '3xx' is health. `8` means the return value '4xx' is health. `16` means the return value '5xx' is health. If you want multiple return codes to indicate health, need to add the corresponding values."
+        },
+        "HealthCheckHealthNum": {
+            "type": "number",
+            "description": "Health threshold of health check, and the default is `3`. If a success result is returned for the health check 3 consecutive times, indicates that the forwarding is normal. The value range is [2-10]."
+        },
+        "HealthCheckInterval": {
+            "type": "number",
+            "description": "Interval time of health check. Valid value ranges: [10~60]sec. The default is 15 sec."
+        },
+        "HealthCheckMethod": {
+            "type": "string",
+            "description": "Methods of health check. The default is 'HEAD', the available value are 'HEAD' and 'GET'."
+        },
+        "HealthCheckPath": {
+            "type": "string",
+            "description": "Path of health check. The default is `/`."
+        },
+        "HealthCheckSwitch": {
+            "type": "boolean",
+            "description": "Indicates whether health check is enabled. The default is `false`."
+        },
+        "HealthCheckUnhealthNum": {
+            "type": "number",
+            "description": "Unhealthy threshold of health check, and the default is `3`. If the unhealthy result is returned 3 consecutive times, indicates that the forwarding is abnormal. The value range is [2-10]."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the rule."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol of the rule. Valid values: `http`, `https`."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "ID of the resource that the layer 7 rule works for."
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "Type of the resource that the layer 7 rule works for, valid value is `bgpip`."
+        },
+        "RuleId": {
+            "type": "string"
+        },
+        "SourceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Source list of the rule, it can be a set of ip sources or a set of domain sources. The number of items ranges from 1 to 16."
+        },
+        "SourceType": {
+            "type": "number",
+            "description": "Source type, `1` for source of host, `2` for source of IP."
+        },
+        "SslId": {
+            "type": "string",
+            "description": "SSL ID, when the `protocol` is `https`, the field should be set with valid SSL id."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "Switch": {
+            "type": "boolean",
+            "description": "Indicate the rule will take effect or not."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name",
+        "Protocol",
+        "ResourceId",
+        "ResourceType",
+        "SourceList",
+        "SourceType",
+        "Switch"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RuleId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

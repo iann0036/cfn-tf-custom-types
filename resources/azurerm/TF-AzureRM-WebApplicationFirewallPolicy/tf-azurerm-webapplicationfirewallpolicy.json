@@ -1,0 +1,376 @@
+{
+    "typeName": "TF::AzureRM::WebApplicationFirewallPolicy",
+    "description": "Manages a Azure Web Application Firewall Policy instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-WebApplicationFirewallPolicy/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Type of action."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Gets name of the resource that is unique within a policy. This name can be used to access the resource."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value."
+                },
+                "RuleType": {
+                    "type": "string",
+                    "description": "Describes the type of rule."
+                },
+                "MatchConditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchConditionsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Action",
+                "Priority",
+                "RuleType"
+            ]
+        },
+        "ManagedRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclusion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionDefinition"
+                    }
+                },
+                "ManagedRuleSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagedRuleSetDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "PolicySettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Describes if the policy is in enabled state or disabled state. Defaults to `true`."
+                },
+                "FileUploadLimitInMb": {
+                    "type": "number",
+                    "description": "The File Upload Limit in MB. Accepted values are in the range `1` to `750`. Defaults to `100`."
+                },
+                "MaxRequestBodySizeInKb": {
+                    "type": "number",
+                    "description": "The Maximum Request Body Size in KB.  Accepted values are in the range `8` to `128`. Defaults to `128`."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Describes if it is in detection mode or prevention mode at the policy level. Defaults to `Prevention`."
+                },
+                "RequestBodyCheck": {
+                    "type": "boolean",
+                    "description": "Is Request Body Inspection enabled? Defaults to `true`."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of match values."
+                },
+                "NegationCondition": {
+                    "type": "boolean",
+                    "description": "Describes if this is negate condition or not."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "Describes operator to be matched."
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of transformations to do before the match is attempted."
+                },
+                "MatchVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchVariablesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MatchValues",
+                "Operator"
+            ]
+        },
+        "ExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchVariable": {
+                    "type": "string",
+                    "description": "The name of the Match Variable. Possible values: `RequestArgNames`, `RequestCookieNames`, `RequestHeaderNames`."
+                },
+                "Selector": {
+                    "type": "string",
+                    "description": "Describes field of the matchVariable collection."
+                },
+                "SelectorMatchOperator": {
+                    "type": "string",
+                    "description": "Describes operator to be matched. Possible values: `Contains`, `EndsWith`, `Equals`, `EqualsAny`, `StartsWith`."
+                }
+            },
+            "required": [
+                "MatchVariable",
+                "Selector",
+                "SelectorMatchOperator"
+            ]
+        },
+        "ManagedRuleSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The rule set type. Possible values: `Microsoft_BotManagerRuleSet` and `OWASP`."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "The rule set version. Possible values: `0.1`, `1.0`, `2.2.9`, `3.0`, `3.1` and `3.2`."
+                },
+                "RuleGroupOverride": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleGroupOverrideDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        },
+        "MatchVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Selector": {
+                    "type": "string",
+                    "description": "Describes field of the matchVariable collection."
+                },
+                "VariableName": {
+                    "type": "string",
+                    "description": "The name of the Match Variable."
+                }
+            },
+            "required": [
+                "VariableName"
+            ]
+        },
+        "RuleGroupOverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisabledRules": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "One or more Rule ID's."
+                },
+                "RuleGroupName": {
+                    "type": "string",
+                    "description": "The name of the Rule Group."
+                }
+            },
+            "required": [
+                "DisabledRules",
+                "RuleGroupName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HttpListenerIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of HTTP Listener IDs from an `azurerm_application_gateway`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Resource location. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the policy. Changing this forces a new resource to be created."
+        },
+        "PathBasedRuleIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of URL Path Map Path Rule IDs from an `azurerm_application_gateway`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the Web Application Firewall Policy."
+        },
+        "CustomRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomRulesDefinition"
+            }
+        },
+        "ManagedRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedRulesDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "PolicySettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicySettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HttpListenerIds",
+        "/properties/Id",
+        "/properties/PathBasedRuleIds"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

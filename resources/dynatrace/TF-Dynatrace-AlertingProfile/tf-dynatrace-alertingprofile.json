@@ -1,0 +1,306 @@
+{
+    "typeName": "TF::Dynatrace::AlertingProfile",
+    "description": "CloudFormation equivalent of dynatrace_alerting_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-AlertingProfile/docs/README.md",
+    "definitions": {
+        "EventTypeFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "CustomEventFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomEventFilterDefinition"
+                    }
+                },
+                "PredefinedEventFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedEventFilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterVersion": {
+                    "type": "string"
+                },
+                "ConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "CurrentConfigurationVersions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DelayInMinutes": {
+                    "type": "number"
+                },
+                "SeverityLevel": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "TagFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagFilterDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DelayInMinutes",
+                "SeverityLevel"
+            ]
+        },
+        "CustomEventFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "CustomDescriptionFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomDescriptionFilterDefinition"
+                    }
+                },
+                "CustomTitleFilter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomTitleFilterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PredefinedEventFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventType": {
+                    "type": "string"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EventType"
+            ]
+        },
+        "TagFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeMode": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "TagFilters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagFiltersDefinition"
+                    }
+                }
+            },
+            "required": [
+                "IncludeMode"
+            ]
+        },
+        "CustomDescriptionFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseInsensitive": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        },
+        "CustomTitleFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseInsensitive": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Operator",
+                "Value"
+            ]
+        },
+        "TagFiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MzId": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "EventTypeFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventTypeFiltersDefinition"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

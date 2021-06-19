@@ -1,0 +1,427 @@
+{
+    "typeName": "TF::FortiOS::SystemdhcpServer",
+    "description": "Configure DHCP servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemdhcpServer/docs/README.md",
+    "definitions": {
+        "ExcludeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIp": {
+                    "type": "string",
+                    "description": "End of IP range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "StartIp": {
+                    "type": "string",
+                    "description": "Start of IP range."
+                }
+            },
+            "required": []
+        },
+        "IpRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIp": {
+                    "type": "string",
+                    "description": "End of IP range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "StartIp": {
+                    "type": "string",
+                    "description": "Start of IP range."
+                }
+            },
+            "required": []
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number",
+                    "description": "DHCP option code."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "DHCP option IPs."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "DHCP option type. Valid values: `hex`, `string`, `ip`, `fqdn`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "DHCP option value."
+                }
+            },
+            "required": []
+        },
+        "ReservedAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Options for the DHCP server to configure the client with the reserved MAC address. Valid values: `assign`, `block`, `reserved`."
+                },
+                "CircuitId": {
+                    "type": "string",
+                    "description": "Option 82 circuit-ID of the client that will get the reserved IP address."
+                },
+                "CircuitIdType": {
+                    "type": "string",
+                    "description": "DHCP option type. Valid values: `hex`, `string`."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP address to be reserved for the MAC address."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "MAC address of the client that will get the reserved IP address."
+                },
+                "RemoteId": {
+                    "type": "string",
+                    "description": "Option 82 remote-ID of the client that will get the reserved IP address."
+                },
+                "RemoteIdType": {
+                    "type": "string",
+                    "description": "DHCP option type. Valid values: `hex`, `string`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "DHCP reserved-address type. Valid values: `mac`, `option82`."
+                }
+            },
+            "required": []
+        },
+        "TftpServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TftpServer": {
+                    "type": "string",
+                    "description": "TFTP server."
+                }
+            },
+            "required": []
+        },
+        "VciStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VciString": {
+                    "type": "string",
+                    "description": "VCI strings."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoConfiguration": {
+            "type": "string",
+            "description": "Enable/disable auto configuration. Valid values: `disable`, `enable`."
+        },
+        "AutoManagedStatus": {
+            "type": "string",
+            "description": "Enable/disable use of this DHCP server once this interface has been assigned an IP address from FortiIPAM. Valid values: `disable`, `enable`."
+        },
+        "ConflictedIpTimeout": {
+            "type": "number",
+            "description": "Time in seconds to wait after a conflicted IP address is removed from the DHCP range before it can be reused."
+        },
+        "DdnsAuth": {
+            "type": "string",
+            "description": "DDNS authentication mode. Valid values: `disable`, `tsig`."
+        },
+        "DdnsKey": {
+            "type": "string",
+            "description": "DDNS update key (base 64 encoding)."
+        },
+        "DdnsKeyname": {
+            "type": "string",
+            "description": "DDNS update key name."
+        },
+        "DdnsServerIp": {
+            "type": "string",
+            "description": "DDNS server IP."
+        },
+        "DdnsTtl": {
+            "type": "number",
+            "description": "TTL."
+        },
+        "DdnsUpdate": {
+            "type": "string",
+            "description": "Enable/disable DDNS update for DHCP. Valid values: `disable`, `enable`."
+        },
+        "DdnsUpdateOverride": {
+            "type": "string",
+            "description": "Enable/disable DDNS update override for DHCP. Valid values: `disable`, `enable`."
+        },
+        "DdnsZone": {
+            "type": "string",
+            "description": "Zone of your domain name (ex. DDNS.com)."
+        },
+        "DefaultGateway": {
+            "type": "string",
+            "description": "Default gateway IP address assigned by the DHCP server."
+        },
+        "DhcpSettingsFromFortiipam": {
+            "type": "string",
+            "description": "Enable/disable populating of DHCP server settings from FortiIPAM. Valid values: `disable`, `enable`."
+        },
+        "DnsServer1": {
+            "type": "string",
+            "description": "DNS server 1."
+        },
+        "DnsServer2": {
+            "type": "string",
+            "description": "DNS server 2."
+        },
+        "DnsServer3": {
+            "type": "string",
+            "description": "DNS server 3."
+        },
+        "DnsServer4": {
+            "type": "string",
+            "description": "DNS server 4."
+        },
+        "DnsService": {
+            "type": "string",
+            "description": "Options for assigning DNS servers to DHCP clients. Valid values: `local`, `default`, `specify`."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name suffix for the IP addresses that the DHCP server assigns to clients."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Filename": {
+            "type": "string",
+            "description": "Name of the boot file on the TFTP server."
+        },
+        "ForticlientOnNetStatus": {
+            "type": "string",
+            "description": "Enable/disable FortiClient-On-Net service for this DHCP server. Valid values: `disable`, `enable`."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "DHCP server can assign IP configurations to clients connected to this interface."
+        },
+        "IpMode": {
+            "type": "string",
+            "description": "Method used to assign client IP. Valid values: `range`, `usrgrp`."
+        },
+        "IpsecLeaseHold": {
+            "type": "number",
+            "description": "DHCP over IPsec leases expire this many seconds after tunnel down (0 to disable forced-expiry)."
+        },
+        "LeaseTime": {
+            "type": "number",
+            "description": "Lease time in seconds, 0 means unlimited."
+        },
+        "MacAclDefaultAction": {
+            "type": "string",
+            "description": "MAC access control default action (allow or block assigning IP settings). Valid values: `assign`, `block`."
+        },
+        "Netmask": {
+            "type": "string",
+            "description": "Netmask assigned by the DHCP server."
+        },
+        "NextServer": {
+            "type": "string",
+            "description": "IP address of a server (for example, a TFTP sever) that DHCP clients can download a boot file from."
+        },
+        "NtpServer1": {
+            "type": "string",
+            "description": "NTP server 1."
+        },
+        "NtpServer2": {
+            "type": "string",
+            "description": "NTP server 2."
+        },
+        "NtpServer3": {
+            "type": "string",
+            "description": "NTP server 3."
+        },
+        "NtpService": {
+            "type": "string",
+            "description": "Options for assigning Network Time Protocol (NTP) servers to DHCP clients. Valid values: `local`, `default`, `specify`."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "DHCP server can be a normal DHCP server or an IPsec DHCP server. Valid values: `regular`, `ipsec`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable this DHCP configuration. Valid values: `disable`, `enable`."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Select the time zone to be assigned to DHCP clients. Valid values: `01`, `02`, `03`, `04`, `05`, `81`, `06`, `07`, `08`, `09`, `10`, `11`, `12`, `13`, `74`, `14`, `77`, `15`, `87`, `16`, `17`, `18`, `19`, `20`, `75`, `21`, `22`, `23`, `24`, `80`, `79`, `25`, `26`, `27`, `28`, `78`, `29`, `30`, `31`, `32`, `33`, `34`, `35`, `36`, `37`, `38`, `83`, `84`, `40`, `85`, `41`, `42`, `43`, `39`, `44`, `46`, `47`, `51`, `48`, `45`, `49`, `50`, `52`, `53`, `54`, `55`, `56`, `57`, `58`, `59`, `60`, `62`, `63`, `61`, `64`, `65`, `66`, `67`, `68`, `69`, `70`, `71`, `72`, `00`, `82`, `73`, `86`, `76`."
+        },
+        "TimezoneOption": {
+            "type": "string",
+            "description": "Options for the DHCP server to set the client's time zone. Valid values: `disable`, `default`, `specify`."
+        },
+        "VciMatch": {
+            "type": "string",
+            "description": "Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WifiAc1": {
+            "type": "string",
+            "description": "WiFi Access Controller 1 IP address (DHCP option 138, RFC 5417)."
+        },
+        "WifiAc2": {
+            "type": "string",
+            "description": "WiFi Access Controller 2 IP address (DHCP option 138, RFC 5417)."
+        },
+        "WifiAc3": {
+            "type": "string",
+            "description": "WiFi Access Controller 3 IP address (DHCP option 138, RFC 5417)."
+        },
+        "WifiAcService": {
+            "type": "string",
+            "description": "Options for assigning WiFi Access Controllers to DHCP clients Valid values: `specify`, `local`."
+        },
+        "WinsServer1": {
+            "type": "string",
+            "description": "WINS server 1."
+        },
+        "WinsServer2": {
+            "type": "string",
+            "description": "WINS server 2."
+        },
+        "ExcludeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExcludeRangeDefinition"
+            }
+        },
+        "IpRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpRangeDefinition"
+            }
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            }
+        },
+        "ReservedAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReservedAddressDefinition"
+            }
+        },
+        "TftpServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TftpServerDefinition"
+            }
+        },
+        "VciString": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VciStringDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Fosid",
+        "Interface",
+        "Netmask"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DdnsKey"
+    ]
+}

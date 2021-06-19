@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::MongoDBAtlas::PrivateEndpoint",
+    "description": "`mongodbatlas_private_endpoint` provides a Private Endpoint resource. This represents a Private Endpoint Connection that can be created in an Atlas project.\n\n!> **WARNING:** This resource is deprecated and will be removed in the next major version\n                Please transition to privatelink_endpoint as soon as possible. [PrivateLink Endpoints] (https://docs.atlas.mongodb.com/reference/api/private-endpoints/)\n\n~> **IMPORTANT:**You must have one of the following roles to successfully handle the resource:\n  * Organization Owner\n  * Project Owner\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find group_id in the official documentation.\n\n-> **NOTE:** A network container is created for a private endpoint to reside in if one does not yet exist in the project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-PrivateEndpoint/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndpointServiceName": {
+            "type": "string"
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterfaceEndpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PrivateLinkId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Required \tUnique identifier for the project."
+        },
+        "ProviderName": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Cloud provider region in which you want to create the private endpoint connection.\nAccepted values are:\n* `us-east-1`\n* `us-east-2`\n* `us-west-1`\n* `us-west-2`\n* `ca-central-1`\n* `sa-east-1`\n* `eu-north-1`\n* `eu-west-1`\n* `eu-west-2`\n* `eu-west-3`\n* `eu-central-1`\n* `me-south-1`\n* `ap-northeast-1`\n* `ap-northeast-2`\n* `ap-south-1`\n* `ap-southeast-1`\n* `ap-southeast-2`\n* `ap-east-1`."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "ProviderName",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointServiceName",
+        "/properties/ErrorMessage",
+        "/properties/Id",
+        "/properties/InterfaceEndpoints",
+        "/properties/PrivateLinkId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

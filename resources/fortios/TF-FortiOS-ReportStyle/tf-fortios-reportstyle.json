@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::FortiOS::ReportStyle",
+    "description": "Report style configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ReportStyle/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Align": {
+            "type": "string",
+            "description": "Alignment. Valid values: `left`, `center`, `right`, `justify`."
+        },
+        "BgColor": {
+            "type": "string",
+            "description": "Background color."
+        },
+        "BorderBottom": {
+            "type": "string",
+            "description": "Border bottom."
+        },
+        "BorderLeft": {
+            "type": "string",
+            "description": "Border left."
+        },
+        "BorderRight": {
+            "type": "string",
+            "description": "Border right."
+        },
+        "BorderTop": {
+            "type": "string",
+            "description": "Border top."
+        },
+        "ColumnGap": {
+            "type": "string",
+            "description": "Column gap."
+        },
+        "ColumnSpan": {
+            "type": "string",
+            "description": "Column span. Valid values: `none`, `all`."
+        },
+        "FgColor": {
+            "type": "string",
+            "description": "Foreground color."
+        },
+        "FontFamily": {
+            "type": "string",
+            "description": "Font family. Valid values: `Verdana`, `Arial`, `Helvetica`, `Courier`, `Times`."
+        },
+        "FontSize": {
+            "type": "string",
+            "description": "Font size."
+        },
+        "FontStyle": {
+            "type": "string",
+            "description": "Font style. Valid values: `normal`, `italic`."
+        },
+        "FontWeight": {
+            "type": "string",
+            "description": "Font weight. Valid values: `normal`, `bold`."
+        },
+        "Height": {
+            "type": "string",
+            "description": "Height."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LineHeight": {
+            "type": "string",
+            "description": "Text line height."
+        },
+        "MarginBottom": {
+            "type": "string",
+            "description": "Margin bottom."
+        },
+        "MarginLeft": {
+            "type": "string",
+            "description": "Margin left."
+        },
+        "MarginRight": {
+            "type": "string",
+            "description": "Margin right."
+        },
+        "MarginTop": {
+            "type": "string",
+            "description": "Margin top."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Report style name."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Report style options. Valid values: `font`, `text`, `color`, `align`, `size`, `margin`, `border`, `padding`, `column`."
+        },
+        "PaddingBottom": {
+            "type": "string",
+            "description": "Padding bottom."
+        },
+        "PaddingLeft": {
+            "type": "string",
+            "description": "Padding left."
+        },
+        "PaddingRight": {
+            "type": "string",
+            "description": "Padding right."
+        },
+        "PaddingTop": {
+            "type": "string",
+            "description": "Padding top."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Width": {
+            "type": "string",
+            "description": "Width."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

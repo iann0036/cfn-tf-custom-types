@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::NutanixKPS::Node",
+    "description": "CloudFormation equivalent of nutanixkps_node",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanixkps/TF-NutanixKPS-Node/docs/README.md",
+    "definitions": {
+        "RoleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Master": {
+                    "type": "boolean"
+                },
+                "Worker": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Master",
+                "Worker"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "IsBootstrapMaster": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "ServiceDomainId": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "WaitForOnboarding": {
+            "type": "boolean"
+        },
+        "WaitTimeoutMinutes": {
+            "type": "number"
+        },
+        "Role": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoleDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Gateway",
+        "IpAddress",
+        "Name",
+        "SerialNumber",
+        "ServiceDomainId",
+        "Subnet"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,242 @@
+{
+    "typeName": "TF::AWS::ElasticacheCluster",
+    "description": "Provides an ElastiCache Cluster resource, which manages either a\n[Memcached cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html), a\n[single-node Redis instance](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html), or a\n[read replica in a Redis (Cluster Mode Enabled) replication group].\n\nFor working with Redis (Cluster Mode Enabled) replication groups, see the\n[`aws_elasticache_replication_group` resource](/docs/providers/aws/r/elasticache_replication_group.html).\n\n~> **Note:** When you change an attribute, such as `num_cache_nodes`, by default\nit is applied in the next maintenance window. Because of this, Terraform may report\na difference in its planning phase because the actual modification has not yet taken\nplace. You can use the `apply_immediately` flag to instruct the service to apply the\nchange immediately. Using `apply_immediately` can result in a brief downtime as the server reboots.\nSee the AWS Documentation on Modifying an ElastiCache Cache Cluste...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElasticacheCluster/docs/README.md",
+    "definitions": {
+        "CacheNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Whether any database modifications are applied immediately, or during the next maintenance window. Default is `false`. See [Amazon ElastiCache Documentation for more information.](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html)."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Availability Zone for the cache cluster. If you want to create cache nodes in multi-az, use `preferred_availability_zones` instead. Default: System chosen Availability Zone. Changing this value will re-create the resource."
+        },
+        "AzMode": {
+            "type": "string",
+            "description": "Whether the nodes in this Memcached node group are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region. Valid values for this parameter are `single-az` or `cross-az`, default is `single-az`. If you want to choose `cross-az`, `num_cache_nodes` must be greater than `1`."
+        },
+        "CacheNodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CacheNodesDefinition"
+            }
+        },
+        "ClusterAddress": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ConfigurationEndpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "EngineVersionActual": {
+            "type": "string"
+        },
+        "FinalSnapshotIdentifier": {
+            "type": "string",
+            "description": "Name of your final cluster snapshot. If omitted, no final snapshot will be made."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "string"
+        },
+        "NodeType": {
+            "type": "string"
+        },
+        "NotificationTopicArn": {
+            "type": "string"
+        },
+        "NumCacheNodes": {
+            "type": "number"
+        },
+        "ParameterGroupName": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PreferredAvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the Availability Zones in which cache nodes are created. If you are creating your cluster in an Amazon VPC you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group. The number of Availability Zones listed must equal the value of `num_cache_nodes`. If you want all the nodes in the same Availability Zone, use `availability_zone` instead, or repeat the Availability Zone multiple times in the list. Default: System chosen Availability Zones. Detecting drift of existing node availability zone is not currently supported. Updating this argument by itself to migrate existing node availability zones is not currently supported and will show a perpetual difference."
+        },
+        "ReplicationGroupId": {
+            "type": "string",
+            "description": "ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotArns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotName": {
+            "type": "string",
+            "description": "Name of a snapshot from which to restore data into the new node group. Changing `snapshot_name` forces a new resource."
+        },
+        "SnapshotRetentionLimit": {
+            "type": "number",
+            "description": "Number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off. Please note that setting a `snapshot_retention_limit` is not supported on cache.t1.micro cache nodes."
+        },
+        "SnapshotWindow": {
+            "type": "string",
+            "description": "Daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. Example: 05:00-09:00."
+        },
+        "SubnetGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CacheNodes",
+        "/properties/ClusterAddress",
+        "/properties/ConfigurationEndpoint",
+        "/properties/EngineVersionActual",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

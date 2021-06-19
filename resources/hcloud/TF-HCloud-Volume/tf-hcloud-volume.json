@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::HCloud::Volume",
+    "description": "Provides a Hetzner Cloud volume resource to manage volumes.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-Volume/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Automount": {
+            "type": "boolean",
+            "description": "Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Format volume after creation. `xfs` or `ext4`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LinuxDevice": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Location of the volume to create, not allowed if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the volume to create (must be unique per project).\n- `size` - (Required, int) Size of the volume (in GB).\n- `server_id` - (Optional, int) Server to attach the Volume to, not allowed if location argument is passed.\n- `location` - (Optional, string) Location of the volume to create, not allowed if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
+        },
+        "ServerId": {
+            "type": "number",
+            "description": "Server to attach the Volume to, not allowed if location argument is passed.\n- `location` - (Optional, string) Location of the volume to create, not allowed if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
+        },
+        "Size": {
+            "type": "number",
+            "description": "Size of the volume (in GB).\n- `server_id` - (Optional, int) Server to attach the Volume to, not allowed if location argument is passed.\n- `location` - (Optional, string) Location of the volume to create, not allowed if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LinuxDevice"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

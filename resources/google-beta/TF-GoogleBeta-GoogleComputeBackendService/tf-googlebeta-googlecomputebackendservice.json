@@ -1,0 +1,550 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeBackendService",
+    "description": "CloudFormation equivalent of google_compute_backend_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeBackendService/docs/README.md",
+    "definitions": {
+        "BackendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BalancingMode": {
+                    "type": "string"
+                },
+                "CapacityScaler": {
+                    "type": "number"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Group": {
+                    "type": "string"
+                },
+                "MaxConnections": {
+                    "type": "number"
+                },
+                "MaxConnectionsPerEndpoint": {
+                    "type": "number"
+                },
+                "MaxConnectionsPerInstance": {
+                    "type": "number"
+                },
+                "MaxRate": {
+                    "type": "number"
+                },
+                "MaxRatePerEndpoint": {
+                    "type": "number"
+                },
+                "MaxRatePerInstance": {
+                    "type": "number"
+                },
+                "MaxUtilization": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Group"
+            ]
+        },
+        "CdnPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheMode": {
+                    "type": "string"
+                },
+                "ClientTtl": {
+                    "type": "number"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "NegativeCaching": {
+                    "type": "boolean"
+                },
+                "ServeWhileStale": {
+                    "type": "number"
+                },
+                "SignedUrlCacheMaxAgeSec": {
+                    "type": "number"
+                },
+                "CacheKeyPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheKeyPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NegativeCachingPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NegativeCachingPolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CircuitBreakersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxConnections": {
+                    "type": "number"
+                },
+                "MaxPendingRequests": {
+                    "type": "number"
+                },
+                "MaxRequests": {
+                    "type": "number"
+                },
+                "MaxRequestsPerConnection": {
+                    "type": "number"
+                },
+                "MaxRetries": {
+                    "type": "number"
+                },
+                "ConnectTimeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConnectTimeoutDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConsistentHashDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpHeaderName": {
+                    "type": "string"
+                },
+                "MinimumRingSize": {
+                    "type": "number"
+                },
+                "HttpCookie": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpCookieDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Oauth2ClientId": {
+                    "type": "string"
+                },
+                "Oauth2ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Oauth2ClientId",
+                "Oauth2ClientSecret"
+            ]
+        },
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "SampleRate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "OutlierDetectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsecutiveErrors": {
+                    "type": "number"
+                },
+                "ConsecutiveGatewayFailure": {
+                    "type": "number"
+                },
+                "EnforcingConsecutiveErrors": {
+                    "type": "number"
+                },
+                "EnforcingConsecutiveGatewayFailure": {
+                    "type": "number"
+                },
+                "EnforcingSuccessRate": {
+                    "type": "number"
+                },
+                "MaxEjectionPercent": {
+                    "type": "number"
+                },
+                "SuccessRateMinimumHosts": {
+                    "type": "number"
+                },
+                "SuccessRateRequestVolume": {
+                    "type": "number"
+                },
+                "SuccessRateStdevFactor": {
+                    "type": "number"
+                },
+                "BaseEjectionTime": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BaseEjectionTimeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Interval": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IntervalDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CacheKeyPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeHost": {
+                    "type": "boolean"
+                },
+                "IncludeProtocol": {
+                    "type": "boolean"
+                },
+                "IncludeQueryString": {
+                    "type": "boolean"
+                },
+                "QueryStringBlacklist": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "QueryStringWhitelist": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NegativeCachingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ConnectTimeoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        },
+        "HttpCookieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TtlDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BaseEjectionTimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        },
+        "IntervalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        },
+        "TtlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AffinityCookieTtlSec": {
+            "type": "number"
+        },
+        "ConnectionDrainingTimeoutSec": {
+            "type": "number"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "CustomRequestHeaders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomResponseHeaders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableCdn": {
+            "type": "boolean"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "HealthChecks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancingScheme": {
+            "type": "string"
+        },
+        "LocalityLbPolicy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PortName": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "SecurityPolicy": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SessionAffinity": {
+            "type": "string"
+        },
+        "TimeoutSec": {
+            "type": "number"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BackendDefinition"
+            }
+        },
+        "CdnPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CdnPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "CircuitBreakers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CircuitBreakersDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConsistentHash": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConsistentHashDefinition"
+            },
+            "maxItems": 1
+        },
+        "Iap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IapDefinition"
+            },
+            "maxItems": 1
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OutlierDetection": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutlierDetectionDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/IapDefinition/Oauth2ClientSecret"
+    ]
+}

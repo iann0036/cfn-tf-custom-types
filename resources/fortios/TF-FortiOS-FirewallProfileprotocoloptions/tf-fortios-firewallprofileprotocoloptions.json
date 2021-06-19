@@ -1,0 +1,769 @@
+{
+    "typeName": "TF::FortiOS::FirewallProfileprotocoloptions",
+    "description": "Configure protocol options.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallProfileprotocoloptions/docs/README.md",
+    "definitions": {
+        "CifsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainController": {
+                    "type": "string",
+                    "description": "Domain for which to decrypt CIFS traffic."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `oversize`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 445)."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "ServerCredentialType": {
+                    "type": "string",
+                    "description": "CIFS server credential type. Valid values: `none`, `credential-replication`, `credential-keytab`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "TcpWindowMaximum": {
+                    "type": "number",
+                    "description": "Maximum dynamic TCP window size (default = 8MB)."
+                },
+                "TcpWindowMinimum": {
+                    "type": "number",
+                    "description": "Minimum dynamic TCP window size (default = 128KB)."
+                },
+                "TcpWindowSize": {
+                    "type": "number",
+                    "description": "Set TCP static window size (default = 256KB)."
+                },
+                "TcpWindowType": {
+                    "type": "string",
+                    "description": "Specify type of TCP window to use for this protocol. Valid values: `system`, `static`, `dynamic`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                },
+                "ServerKeytab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerKeytabDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 53)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "FtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComfortAmount": {
+                    "type": "number",
+                    "description": "Amount of data to send in a transmission for client comforting (1 - 10240 bytes, default = 1)."
+                },
+                "ComfortInterval": {
+                    "type": "number",
+                    "description": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10)."
+                },
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `clientcomfort`, `oversize`, `splice`, `bypass-rest-command`, `bypass-mode-command`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 21)."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "StreamBasedUncompressedLimit": {
+                    "type": "number",
+                    "description": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.)."
+                },
+                "TcpWindowMaximum": {
+                    "type": "number",
+                    "description": "Maximum dynamic TCP window size."
+                },
+                "TcpWindowMinimum": {
+                    "type": "number",
+                    "description": "Minimum dynamic TCP window size."
+                },
+                "TcpWindowSize": {
+                    "type": "number",
+                    "description": "Set TCP static window size."
+                },
+                "TcpWindowType": {
+                    "type": "string",
+                    "description": "TCP window type to use for this protocol. Valid values: `system`, `static`, `dynamic`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockPageStatusCode": {
+                    "type": "number",
+                    "description": "Code number returned for blocked HTTP pages (non-FortiGuard only) (100 - 599, default = 403)."
+                },
+                "ComfortAmount": {
+                    "type": "number",
+                    "description": "Amount of data to send in a transmission for client comforting (1 - 10240 bytes, default = 1)."
+                },
+                "ComfortInterval": {
+                    "type": "number",
+                    "description": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10)."
+                },
+                "FortinetBar": {
+                    "type": "string",
+                    "description": "Enable/disable Fortinet bar on HTML content. Valid values: `enable`, `disable`."
+                },
+                "FortinetBarPort": {
+                    "type": "number",
+                    "description": "Port for use by Fortinet Bar (1 - 65535, default = 8011)."
+                },
+                "HttpPolicy": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP policy check. Valid values: `disable`, `enable`."
+                },
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `clientcomfort`, `servercomfort`, `oversize`, `chunkedbypass`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 80)."
+                },
+                "PostLang": {
+                    "type": "string",
+                    "description": "ID codes for character sets to be used to convert to UTF-8 for banned words and DLP on HTTP posts (maximum of 5 character sets). Valid values: `jisx0201`, `jisx0208`, `jisx0212`, `gb2312`, `ksc5601-ex`, `euc-jp`, `sjis`, `iso2022-jp`, `iso2022-jp-1`, `iso2022-jp-2`, `euc-cn`, `ces-gbk`, `hz`, `ces-big5`, `euc-kr`, `iso2022-jp-3`, `iso8859-1`, `tis620`, `cp874`, `cp1252`, `cp1251`."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "RangeBlock": {
+                    "type": "string",
+                    "description": "Enable/disable blocking of partial downloads. Valid values: `disable`, `enable`."
+                },
+                "RetryCount": {
+                    "type": "number",
+                    "description": "Number of attempts to retry HTTP connection (0 - 100, default = 0)."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "StreamBasedUncompressedLimit": {
+                    "type": "number",
+                    "description": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.)."
+                },
+                "StreamingContentBypass": {
+                    "type": "string",
+                    "description": "Enable/disable bypassing of streaming content from buffering. Valid values: `enable`, `disable`."
+                },
+                "StripXForwardedFor": {
+                    "type": "string",
+                    "description": "Enable/disable stripping of HTTP X-Forwarded-For header. Valid values: `disable`, `enable`."
+                },
+                "SwitchingProtocols": {
+                    "type": "string",
+                    "description": "Bypass from scanning, or block a connection that attempts to switch protocol. Valid values: `bypass`, `block`."
+                },
+                "TcpWindowMaximum": {
+                    "type": "number",
+                    "description": "Maximum dynamic TCP window size (default = 8MB)."
+                },
+                "TcpWindowMinimum": {
+                    "type": "number",
+                    "description": "Minimum dynamic TCP window size (default = 128KB)."
+                },
+                "TcpWindowSize": {
+                    "type": "number",
+                    "description": "Set TCP static window size (default = 256KB)."
+                },
+                "TcpWindowType": {
+                    "type": "string",
+                    "description": "Specify type of TCP window to use for this protocol. Valid values: `system`, `static`, `dynamic`."
+                },
+                "TunnelNonHttp": {
+                    "type": "string",
+                    "description": "Configure how to process non-HTTP traffic when a profile configured for HTTP traffic accepts a non-HTTP session. Can occur if an application sends non-HTTP traffic using an HTTP destination port. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                },
+                "UnknownHttpVersion": {
+                    "type": "string",
+                    "description": "How to handle HTTP sessions that do not comply with HTTP 0.9, 1.0, or 1.1. Valid values: `reject`, `tunnel`, `best-effort`."
+                }
+            },
+            "required": []
+        },
+        "ImapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `fragmail`, `oversize`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 143)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "MailSignatureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Signature": {
+                    "type": "string",
+                    "description": "Email signature to be added to outgoing email (if the signature contains spaces, enclose with quotation marks)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable adding an email signature to SMTP email messages as they pass through the FortiGate. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "MapiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `fragmail`, `oversize`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 135)."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "NntpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `oversize`, `splice`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 119)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "Pop3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `fragmail`, `oversize`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 110)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "SmtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InspectAll": {
+                    "type": "string",
+                    "description": "Enable/disable the inspection of all ports for the protocol. Valid values: `enable`, `disable`."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `fragmail`, `oversize`, `splice`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "Ports": {
+                    "type": "number",
+                    "description": "Ports to scan for content (1 - 65535, default = 25)."
+                },
+                "ProxyAfterTcpHandshake": {
+                    "type": "string",
+                    "description": "Proxy traffic after the TCP 3-way handshake has been established (not before). Valid values: `enable`, `disable`."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "ServerBusy": {
+                    "type": "string",
+                    "description": "Enable/disable SMTP server busy when server not available. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the active status of scanning for this protocol. Valid values: `enable`, `disable`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "SshDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComfortAmount": {
+                    "type": "number",
+                    "description": "Amount of data to send in a transmission for client comforting (1 - 65535 bytes, default = 1)."
+                },
+                "ComfortInterval": {
+                    "type": "number",
+                    "description": "Period of time between start, or last transmission, and the next client comfort transmission of data (1 - 900 sec, default = 10)."
+                },
+                "Options": {
+                    "type": "string",
+                    "description": "One or more options that can be applied to the session. Valid values: `oversize`, `clientcomfort`, `servercomfort`."
+                },
+                "OversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory file size that can be scanned (1 - 383 MB, default = 10)."
+                },
+                "ScanBzip2": {
+                    "type": "string",
+                    "description": "Enable/disable scanning of BZip2 compressed files. Valid values: `enable`, `disable`."
+                },
+                "SslOffloaded": {
+                    "type": "string",
+                    "description": "SSL decryption and encryption performed by an external device. Valid values: `no`, `yes`."
+                },
+                "StreamBasedUncompressedLimit": {
+                    "type": "number",
+                    "description": "Maximum stream-based uncompressed data size that will be scanned (MB, 0 = unlimited (default).  Stream-based uncompression used only under certain conditions.)."
+                },
+                "TcpWindowMaximum": {
+                    "type": "number",
+                    "description": "Maximum dynamic TCP window size."
+                },
+                "TcpWindowMinimum": {
+                    "type": "number",
+                    "description": "Minimum dynamic TCP window size."
+                },
+                "TcpWindowSize": {
+                    "type": "number",
+                    "description": "Set TCP static window size."
+                },
+                "TcpWindowType": {
+                    "type": "string",
+                    "description": "TCP window type to use for this protocol. Valid values: `system`, `static`, `dynamic`."
+                },
+                "UncompressedNestLimit": {
+                    "type": "number",
+                    "description": "Maximum nested levels of compression that can be uncompressed and scanned (2 - 100, default = 12)."
+                },
+                "UncompressedOversizeLimit": {
+                    "type": "number",
+                    "description": "Maximum in-memory uncompressed file size that can be scanned (0 - 383 MB, 0 = unlimited, default = 10)."
+                }
+            },
+            "required": []
+        },
+        "ServerKeytabDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keytab": {
+                    "type": "string",
+                    "description": "Base64 encoded keytab file containing credential of the server."
+                },
+                "Principal": {
+                    "type": "string",
+                    "description": "Service principal.  For example, \"host/cifsserver.example.com@example.com\"."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Optional comments."
+        },
+        "FeatureSet": {
+            "type": "string",
+            "description": "Flow/proxy feature set. Valid values: `flow`, `proxy`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "OversizeLog": {
+            "type": "string",
+            "description": "Enable/disable logging for antivirus oversize file blocking. Valid values: `disable`, `enable`."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Name of the replacement message group to be used."
+        },
+        "RpcOverHttp": {
+            "type": "string",
+            "description": "Enable/disable inspection of RPC over HTTP. Valid values: `enable`, `disable`."
+        },
+        "SwitchingProtocolsLog": {
+            "type": "string",
+            "description": "Enable/disable logging for HTTP/HTTPS switching protocols. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Cifs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CifsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ftp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Imap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImapDefinition"
+            },
+            "maxItems": 1
+        },
+        "MailSignature": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MailSignatureDefinition"
+            },
+            "maxItems": 1
+        },
+        "Mapi": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MapiDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nntp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NntpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Pop3": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Pop3Definition"
+            },
+            "maxItems": 1
+        },
+        "Smtp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

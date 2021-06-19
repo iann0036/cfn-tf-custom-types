@@ -1,0 +1,278 @@
+{
+    "typeName": "TF::NSXT::PolicyService",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX Policy.\n\nThis resource is applicable to NSX Global Manager, NSX Policy Manager and VMC.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyService/docs/README.md",
+    "definitions": {
+        "AlgorithmEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationPort": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "SourcePorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Algorithm",
+                "DestinationPort"
+            ]
+        },
+        "EtherTypeEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "EtherType": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EtherType"
+            ]
+        },
+        "IcmpEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IcmpCode": {
+                    "type": "string"
+                },
+                "IcmpType": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "IgmpEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpProtocolEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "L4PortSetEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourcePorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the service entry.\n* `destination_port` - (Required) a single destination port.\n* `source_ports` - (Optional) Set of source ports/ranges.\n* `algorithm` - (Required) Algorithm one of \"ORACLE_TNS\", \"FTP\", \"SUN_RPC_TCP\", \"SUN_RPC_UDP\", \"MS_RPC_TCP\", \"MS_RPC_UDP\", \"NBNS_BROADCAST\", \"NBDG_BROADCAST\", \"TFTP\"."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the service entry.\n* `description` - (Optional) Description of the service entry.\n* `destination_port` - (Required) a single destination port.\n* `source_ports` - (Optional) Set of source ports/ranges.\n* `algorithm` - (Required) Algorithm one of \"ORACLE_TNS\", \"FTP\", \"SUN_RPC_TCP\", \"SUN_RPC_UDP\", \"MS_RPC_TCP\", \"MS_RPC_UDP\", \"NBNS_BROADCAST\", \"NBDG_BROADCAST\", \"TFTP\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource.\nThe service must contain at least 1 entry (of at least one of the types), and possibly more."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "AlgorithmEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlgorithmEntryDefinition"
+            }
+        },
+        "EtherTypeEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EtherTypeEntryDefinition"
+            }
+        },
+        "IcmpEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IcmpEntryDefinition"
+            }
+        },
+        "IgmpEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IgmpEntryDefinition"
+            }
+        },
+        "IpProtocolEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpProtocolEntryDefinition"
+            }
+        },
+        "L4PortSetEntry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/L4PortSetEntryDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

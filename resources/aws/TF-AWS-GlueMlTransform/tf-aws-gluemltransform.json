@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::AWS::GlueMlTransform",
+    "description": "Provides a Glue ML Transform resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlueMlTransform/docs/README.md",
+    "definitions": {
+        "SchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InputRecordTablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CatalogId": {
+                    "type": "string"
+                },
+                "ConnectionName": {
+                    "type": "string"
+                },
+                "DatabaseName": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "TableName"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TransformType": {
+                    "type": "string"
+                },
+                "FindMatchesParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FindMatchesParametersDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "TransformType"
+            ]
+        },
+        "FindMatchesParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccuracyCostTradeOff": {
+                    "type": "number"
+                },
+                "EnforceProvidedLabels": {
+                    "type": "boolean"
+                },
+                "PrecisionRecallTradeOff": {
+                    "type": "number"
+                },
+                "PrimaryKeyColumnName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GlueVersion": {
+            "type": "string",
+            "description": "The version of glue to use, for example \"1.0\". For information about available versions, see the [AWS Glue Release Notes](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabelCount": {
+            "type": "number"
+        },
+        "MaxCapacity": {
+            "type": "number"
+        },
+        "MaxRetries": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NumberOfWorkers": {
+            "type": "number",
+            "description": "The number of workers of a defined `worker_type` that are allocated when an ML Transform runs. Required with `worker_type`."
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchemaDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "WorkerType": {
+            "type": "string",
+            "description": "The type of predefined worker that is allocated when an ML Transform runs. Accepts a value of `Standard`, `G.1X`, or `G.2X`. Required with `number_of_workers`."
+        },
+        "InputRecordTables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputRecordTablesDefinition"
+            },
+            "minItems": 1
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/LabelCount",
+        "/properties/Schema"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

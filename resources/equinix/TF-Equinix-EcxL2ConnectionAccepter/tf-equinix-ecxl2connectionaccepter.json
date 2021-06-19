@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Equinix::EcxL2ConnectionAccepter",
+    "description": "Resource `equinix_ecx_l2_connection_accepter` is used to accept Equinix Fabric \nlayer 2 connection on provider side.\n\nResource leverages Equinix Fabric integration with service providers.\nCurrently supported providers are:\n\n* `AWS` (AWS Direct Connect)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-EcxL2ConnectionAccepter/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string",
+            "description": "Access Key used to accept connection on provider side."
+        },
+        "AwsConnectionId": {
+            "type": "string"
+        },
+        "AwsProfile": {
+            "type": "string",
+            "description": "AWS Profile Name for retrieving credentials from\nshared credentials file."
+        },
+        "ConnectionId": {
+            "type": "string",
+            "description": "Identifier of Layer 2 connection that will be accepted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string",
+            "description": "Secret Key used to accept connection on provider side."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AwsConnectionId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccessKey",
+        "/properties/SecretKey"
+    ]
+}

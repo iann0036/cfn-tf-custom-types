@@ -1,0 +1,628 @@
+{
+    "typeName": "TF::AVI::Healthmonitor",
+    "description": "The HealthMonitor resource allows the creation and management of Avi HealthMonitor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Healthmonitor/docs/README.md",
+    "definitions": {
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "DnsMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Qtype": {
+                    "type": "string"
+                },
+                "QueryName": {
+                    "type": "string"
+                },
+                "Rcode": {
+                    "type": "string"
+                },
+                "RecordType": {
+                    "type": "string"
+                },
+                "ResponseString": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "QueryName"
+            ]
+        },
+        "ExternalMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommandCode": {
+                    "type": "string"
+                },
+                "CommandParameters": {
+                    "type": "string"
+                },
+                "CommandPath": {
+                    "type": "string"
+                },
+                "CommandVariables": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CommandCode"
+            ]
+        },
+        "HttpMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "string"
+                },
+                "ExactHttpRequest": {
+                    "type": "boolean"
+                },
+                "HttpRequest": {
+                    "type": "string"
+                },
+                "HttpRequestBody": {
+                    "type": "string"
+                },
+                "HttpResponse": {
+                    "type": "string"
+                },
+                "HttpResponseCode": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaintenanceCode": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "MaintenanceResponse": {
+                    "type": "string"
+                },
+                "ResponseSize": {
+                    "type": "number"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "HttpResponseCode"
+            ]
+        },
+        "HttpsMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "string"
+                },
+                "ExactHttpRequest": {
+                    "type": "boolean"
+                },
+                "HttpRequest": {
+                    "type": "string"
+                },
+                "HttpRequestBody": {
+                    "type": "string"
+                },
+                "HttpResponse": {
+                    "type": "string"
+                },
+                "HttpResponseCode": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaintenanceCode": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "MaintenanceResponse": {
+                    "type": "string"
+                },
+                "ResponseSize": {
+                    "type": "number"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "HttpResponseCode"
+            ]
+        },
+        "ImapMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Folder": {
+                    "type": "string"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ImapsMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Folder": {
+                    "type": "string"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "Pop3MonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Pop3sMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RadiusMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SharedSecret": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "SharedSecret",
+                "Username"
+            ]
+        },
+        "SipMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SipMonitorTransport": {
+                    "type": "string"
+                },
+                "SipRequestCode": {
+                    "type": "string"
+                },
+                "SipResponse": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SmtpMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domainname": {
+                    "type": "string"
+                },
+                "MailData": {
+                    "type": "string"
+                },
+                "RecipientsIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SenderId": {
+                    "type": "string"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SmtpsMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domainname": {
+                    "type": "string"
+                },
+                "MailData": {
+                    "type": "string"
+                },
+                "RecipientsIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SenderId": {
+                    "type": "string"
+                },
+                "SslAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SslAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TcpMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaintenanceResponse": {
+                    "type": "string"
+                },
+                "TcpHalfOpen": {
+                    "type": "boolean"
+                },
+                "TcpRequest": {
+                    "type": "string"
+                },
+                "TcpResponse": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UdpMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaintenanceResponse": {
+                    "type": "string"
+                },
+                "UdpRequest": {
+                    "type": "string"
+                },
+                "UdpResponse": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SslAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PkiProfileRef": {
+                    "type": "string"
+                },
+                "ServerName": {
+                    "type": "string"
+                },
+                "SslKeyAndCertificateRef": {
+                    "type": "string"
+                },
+                "SslProfileRef": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SslProfileRef"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowDuplicateMonitors": {
+            "type": "boolean",
+            "description": "By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently. In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not desired. Use this knob to allow duplicates. Field introduced in 18.2.8. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "DisableQuickstart": {
+            "type": "boolean",
+            "description": "During addition of a server or healthmonitors or during bootup, avi performs sequential health checks rather than waiting for send-interval to kick in, to mark the server up as soon as possible. This knob may be used to turn this feature off. Field introduced in 18.2.7. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "FailedChecks": {
+            "type": "number",
+            "description": "Number of continuous failed health checks before the server is marked down. Allowed values are 1-50."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsFederated": {
+            "type": "boolean",
+            "description": "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 17.1.3. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "MonitorPort": {
+            "type": "number",
+            "description": "Use this port instead of the port defined for the server in the pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool. Allowed values are 1-65535. Special values are 0 - 'use server port'."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user friendly name for this health monitor."
+        },
+        "ReceiveTimeout": {
+            "type": "number",
+            "description": "A valid response from the server is expected within the receive timeout window. This timeout must be less than the send interval. If server status is regularly flapping up and down, consider increasing this value. Allowed values are 1-2400. Unit is sec."
+        },
+        "SendInterval": {
+            "type": "number",
+            "description": "Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Unit is sec."
+        },
+        "SuccessfulChecks": {
+            "type": "number",
+            "description": "Number of continuous successful health checks before server is marked up. Allowed values are 1-50."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS. Allowed in basic(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition, essentials(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp) edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Authentication": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthenticationDefinition"
+            }
+        },
+        "DnsMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DnsMonitorDefinition"
+            }
+        },
+        "ExternalMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExternalMonitorDefinition"
+            }
+        },
+        "HttpMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpMonitorDefinition"
+            }
+        },
+        "HttpsMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpsMonitorDefinition"
+            }
+        },
+        "ImapMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImapMonitorDefinition"
+            }
+        },
+        "ImapsMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImapsMonitorDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Pop3Monitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Pop3MonitorDefinition"
+            }
+        },
+        "Pop3sMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Pop3sMonitorDefinition"
+            }
+        },
+        "RadiusMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RadiusMonitorDefinition"
+            }
+        },
+        "SipMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SipMonitorDefinition"
+            }
+        },
+        "SmtpMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmtpMonitorDefinition"
+            }
+        },
+        "SmtpsMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmtpsMonitorDefinition"
+            }
+        },
+        "TcpMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpMonitorDefinition"
+            }
+        },
+        "UdpMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UdpMonitorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AuthenticationDefinition/Password",
+        "/definitions/AuthenticationDefinition/Username",
+        "/definitions/RadiusMonitorDefinition/Password",
+        "/definitions/RadiusMonitorDefinition/SharedSecret"
+    ]
+}

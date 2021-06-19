@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::DME::Failover",
+    "description": "CloudFormation equivalent of dme_failover",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dme/TF-DME-Failover/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoFailover": {
+            "type": "string"
+        },
+        "ContactList": {
+            "type": "string"
+        },
+        "DnsFqdn": {
+            "type": "string"
+        },
+        "DnsTimeout": {
+            "type": "string"
+        },
+        "Failover": {
+            "type": "string"
+        },
+        "HttpFile": {
+            "type": "string"
+        },
+        "HttpFqdn": {
+            "type": "string"
+        },
+        "HttpQueryString": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip1": {
+            "type": "string"
+        },
+        "Ip2": {
+            "type": "string"
+        },
+        "Ip3": {
+            "type": "string"
+        },
+        "Ip4": {
+            "type": "string"
+        },
+        "Ip5": {
+            "type": "string"
+        },
+        "MaxEmails": {
+            "type": "string"
+        },
+        "Monitor": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string"
+        },
+        "ProtocolId": {
+            "type": "string"
+        },
+        "RecordId": {
+            "type": "string"
+        },
+        "SendString": {
+            "type": "string"
+        },
+        "Sensitivity": {
+            "type": "string"
+        },
+        "SystemDescription": {
+            "type": "string"
+        },
+        "Timeout": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Port",
+        "RecordId",
+        "Sensitivity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

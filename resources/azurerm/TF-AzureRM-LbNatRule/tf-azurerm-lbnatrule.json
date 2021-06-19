@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::AzureRM::LbNatRule",
+    "description": "Manages a Load Balancer NAT Rule.\n\n-> **NOTE:** This resource cannot be used with with virtual machine scale sets, instead use the `azurerm_lb_nat_pool` resource.\n\n~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LbNatRule/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendIpConfigurationId": {
+            "type": "string"
+        },
+        "BackendPort": {
+            "type": "number",
+            "description": "The port used for internal connections on the endpoint. Possible values range between 1 and 65535, inclusive."
+        },
+        "EnableFloatingIp": {
+            "type": "boolean",
+            "description": "Are the Floating IPs enabled for this Load Balncer Rule? A \"floating\u201d IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`."
+        },
+        "EnableTcpReset": {
+            "type": "boolean",
+            "description": "Is TCP Reset enabled for this Load Balancer Rule? Defaults to `false`."
+        },
+        "FrontendIpConfigurationId": {
+            "type": "string"
+        },
+        "FrontendIpConfigurationName": {
+            "type": "string",
+            "description": "The name of the frontend IP configuration exposing this rule."
+        },
+        "FrontendPort": {
+            "type": "number",
+            "description": "The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 1 and 65534, inclusive."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeoutInMinutes": {
+            "type": "number",
+            "description": "Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30` minutes. Defaults to `4` minutes."
+        },
+        "LoadbalancerId": {
+            "type": "string",
+            "description": "The ID of the Load Balancer in which to create the NAT Rule."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the NAT Rule."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackendPort",
+        "FrontendIpConfigurationName",
+        "FrontendPort",
+        "LoadbalancerId",
+        "Name",
+        "Protocol",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackendIpConfigurationId",
+        "/properties/FrontendIpConfigurationId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

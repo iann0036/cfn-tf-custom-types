@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::Okta::AppSwa",
+    "description": "Creates an SWA Application.\n\nThis resource allows you to create and configure an SWA Application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppSwa/docs/README.md",
+    "definitions": {
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessibilityErrorRedirectUrl": {
+            "type": "string",
+            "description": "Custom error page URL."
+        },
+        "AccessibilitySelfService": {
+            "type": "boolean",
+            "description": "Enable self-service. By default, it is `false`."
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean",
+            "description": "Display auto submit toolbar."
+        },
+        "ButtonField": {
+            "type": "string",
+            "description": "Login button field."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Groups associated with the application. See `okta_app_group_assignment` for a more flexible approach."
+        },
+        "HideIos": {
+            "type": "boolean",
+            "description": "Do not display application icon on mobile app."
+        },
+        "HideWeb": {
+            "type": "boolean",
+            "description": "Do not display application icon to users."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "The display name of the Application."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PasswordField": {
+            "type": "string",
+            "description": "Login password field."
+        },
+        "PreconfiguredApp": {
+            "type": "string",
+            "description": "name of application from the Okta Integration Network, if not included a custom app will be created."
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Status of application. By default, it is `\"ACTIVE\"`."
+        },
+        "Url": {
+            "type": "string",
+            "description": "Login URL."
+        },
+        "UrlRegex": {
+            "type": "string",
+            "description": "A regex that further restricts URL to the specified regex."
+        },
+        "UserNameTemplate": {
+            "type": "string"
+        },
+        "UserNameTemplateSuffix": {
+            "type": "string"
+        },
+        "UserNameTemplateType": {
+            "type": "string"
+        },
+        "UsernameField": {
+            "type": "string",
+            "description": "Login username field."
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::Panos::CustomDataPatternObject",
+    "description": "Manages custom data pattern objects.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-CustomDataPatternObject/docs/README.md",
+    "definitions": {
+        "FilePropertyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FileProperty": {
+                    "type": "string",
+                    "description": "File property."
+                },
+                "FileType": {
+                    "type": "string",
+                    "description": "The file type."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "PropertyValue": {
+                    "type": "string",
+                    "description": "Property value."
+                }
+            },
+            "required": [
+                "FileProperty",
+                "FileType",
+                "Name",
+                "PropertyValue"
+            ]
+        },
+        "PredefinedPatternDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FileTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of file types."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RegexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FileTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of file types."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "The regex."
+                }
+            },
+            "required": [
+                "Name",
+                "Regex"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type.  Valid values are `file-properties` (default),\n`predefined`, or `regex`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys location (default: `vsys1`)."
+        },
+        "FileProperty": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilePropertyDefinition"
+            }
+        },
+        "PredefinedPattern": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PredefinedPatternDefinition"
+            }
+        },
+        "Regex": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RegexDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

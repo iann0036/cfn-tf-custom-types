@@ -1,0 +1,362 @@
+{
+    "typeName": "TF::CheckPoint::ManagementSimpleCluster",
+    "description": "This resource allows you to execute Check Point Simple Cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementSimpleCluster/docs/README.md",
+    "definitions": {
+        "FirewallSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VpnSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4MaskLength": {
+                    "type": "string"
+                },
+                "Ipv4NetworkMask": {
+                    "type": "string"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Ipv6MaskLength": {
+                    "type": "string"
+                },
+                "Ipv6NetworkMask": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AntiSpoofingSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecurityZoneSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TopologySettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OneTimePassword": {
+                    "type": "string"
+                },
+                "Interfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfacesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AntiBot": {
+            "type": "boolean",
+            "description": "Anti-Bot blade enabled."
+        },
+        "AntiVirus": {
+            "type": "boolean",
+            "description": "Anti-Virus blade enabled."
+        },
+        "ApplicationControl": {
+            "type": "boolean",
+            "description": "Application Control blade enabled."
+        },
+        "ClusterMode": {
+            "type": "string",
+            "description": "Cluster mode."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "ContentAwareness": {
+            "type": "boolean",
+            "description": "Content Awareness blade enabled."
+        },
+        "DataAwareness": {
+            "type": "boolean",
+            "description": "Data Awareness blade enabled."
+        },
+        "DynamicIp": {
+            "type": "boolean",
+            "description": "Dynamic IP address."
+        },
+        "Firewall": {
+            "type": "boolean",
+            "description": "Firewall blade enabled."
+        },
+        "FirewallSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FirewallSettingsDefinition"
+            },
+            "description": "Firewall settings. firewall_settings blocks are documented below."
+        },
+        "Hardware": {
+            "type": "string",
+            "description": "Cluster platform hardware name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Ips": {
+            "type": "boolean",
+            "description": "Intrusion Prevention System blade enabled."
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "IPv4 address."
+        },
+        "Ipv6Address": {
+            "type": "string",
+            "description": "IPv6 address."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "OsName": {
+            "type": "string",
+            "description": "Cluster Operating system name."
+        },
+        "SaveLogsLocally": {
+            "type": "boolean",
+            "description": "Enable save logs locally."
+        },
+        "SendAlertsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send alerts to identified by the name."
+        },
+        "SendLogsToBackupServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Backup server(s) to send logs to identified by the name."
+        },
+        "SendLogsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send logs to identified by the name."
+        },
+        "SicName": {
+            "type": "string",
+            "description": "Secure Internal Communication name."
+        },
+        "SicState": {
+            "type": "string",
+            "description": "Secure Internal Communication state."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tags identified by name."
+        },
+        "ThreatEmulation": {
+            "type": "boolean",
+            "description": "Threat Emulation blade enabled."
+        },
+        "UrlFiltering": {
+            "type": "boolean",
+            "description": "URL Filtering blade enabled."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Cluster platform version."
+        },
+        "Vpn": {
+            "type": "boolean",
+            "description": "VPN blade enabled."
+        },
+        "VpnSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VpnSettingsDefinition"
+            },
+            "description": "Cluster VPN settings. vpn_settings blocks are documented below."
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfacesDefinition"
+            }
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MembersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DynamicIp",
+        "/properties/Id",
+        "/properties/SicName",
+        "/properties/SicState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Gitlab::ProjectHook",
+    "description": "This resource allows you to create and manage hooks for your GitLab projects.\nFor further information on hooks, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-ProjectHook/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfidentialIssuesEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for confidential issues events."
+        },
+        "ConfidentialNoteEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for confidential notes events."
+        },
+        "DeploymentEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for deployment events."
+        },
+        "EnableSslVerification": {
+            "type": "boolean",
+            "description": "Enable ssl verification when invoking the hook."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuesEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for issues events."
+        },
+        "JobEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for job events."
+        },
+        "MergeRequestsEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for merge requests."
+        },
+        "NoteEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for notes events."
+        },
+        "PipelineEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for pipeline events."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The name or id of the project to add the hook to."
+        },
+        "PushEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for push events."
+        },
+        "PushEventsBranchFilter": {
+            "type": "string",
+            "description": "Invoke the hook for push events on matching branches only."
+        },
+        "TagPushEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for tag push events."
+        },
+        "Token": {
+            "type": "string",
+            "description": "A token to present when invoking the hook."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The url of the hook to invoke."
+        },
+        "WikiPageEvents": {
+            "type": "boolean",
+            "description": "Invoke the hook for wiki page events."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

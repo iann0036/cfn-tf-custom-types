@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::PrismaCloud::UserRole",
+    "description": "Manage an user role.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-UserRole/docs/README.md",
+    "definitions": {
+        "AccountGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of accessible account group IDs."
+        },
+        "AccountGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccountGroupsDefinition"
+            }
+        },
+        "AssociatedUsers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of associated application users which cannot exist in the system without the user role."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedTs": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the role."
+        },
+        "RestrictDismissalAccess": {
+            "type": "boolean",
+            "description": "Restrict dismissal access."
+        },
+        "RoleId": {
+            "type": "string"
+        },
+        "RoleType": {
+            "type": "string",
+            "description": "User role type.  Valid valies are `System Admin`, `Account Group Admin`, `Account Group Read Only`, `Cloud Provisioning Admin`, or `Account and Cloud Provisioning Admin`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RoleType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountGroups",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedTs",
+        "/properties/RoleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

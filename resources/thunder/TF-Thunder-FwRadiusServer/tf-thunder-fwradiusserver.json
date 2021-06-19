@@ -1,0 +1,210 @@
+{
+    "typeName": "TF::Thunder::FwRadiusServer",
+    "description": "`thunder_fw_radius_server` Provides details about thunder fw radius server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-FwRadiusServer/docs/README.md",
+    "definitions": {
+        "AttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributeValue": {
+                    "type": "string"
+                },
+                "CustomNumber": {
+                    "type": "number"
+                },
+                "CustomVendor": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Number": {
+                    "type": "number"
+                },
+                "PrefixLength": {
+                    "type": "string"
+                },
+                "PrefixNumber": {
+                    "type": "number"
+                },
+                "PrefixVendor": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Vendor": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RemoteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpListEncrypted": {
+                    "type": "string"
+                },
+                "IpListName": {
+                    "type": "string"
+                },
+                "IpListSecret": {
+                    "type": "number"
+                },
+                "IpListSecretString": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountingInterimUpdate": {
+            "type": "string",
+            "description": "\u2018ignore\u2019: Ignore (default); \u2018append-entry\u2019: Append the AVPs to existing entry; \u2018replace-entry\u2019: Replace the AVPs of existing entry;."
+        },
+        "AccountingOn": {
+            "type": "string",
+            "description": "\u2018ignore\u2019: Ignore (default); \u2018delete-entries-using-attribute\u2019: Delete entries matching attribute in RADIUS Table;."
+        },
+        "AccountingStart": {
+            "type": "string",
+            "description": "\u2018ignore\u2019: Ignore; \u2018append-entry\u2019: Append the AVPs to existing entry (default); \u2018replace-entry\u2019: Replace the AVPs of existing entry;."
+        },
+        "AccountingStop": {
+            "type": "string",
+            "description": "\u2018ignore\u2019: Ignore; \u2018delete-entry\u2019: Delete the entry (default);."
+        },
+        "AttributeName": {
+            "type": "string",
+            "description": "\u2018msisdn\u2019: Clear using MSISDN; \u2018imei\u2019: Clear using IMEI; \u2018imsi\u2019: Clear using IMSI;."
+        },
+        "CustomAttributeName": {
+            "type": "string",
+            "description": "Clear using customized attribute."
+        },
+        "Encrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED secret string)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenPort": {
+            "type": "number",
+            "description": "Configure the listen port of RADIUS server (Port number)."
+        },
+        "Secret": {
+            "type": "number",
+            "description": "Configure shared secret."
+        },
+        "SecretString": {
+            "type": "string",
+            "description": "The RADIUS secret."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Vrid": {
+            "type": "number",
+            "description": "Join a VRRP-A failover group."
+        },
+        "Attribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttributeDefinition"
+            }
+        },
+        "Remote": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

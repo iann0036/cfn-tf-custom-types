@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::TencentCloud::GaapLayer4Listener",
+    "description": "Provides a resource to create a layer4 listener of GAAP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-GaapLayer4Listener/docs/README.md",
+    "definitions": {
+        "RealserverBindSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "ID of the GAAP realserver."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP of the GAAP realserver."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Port of the GAAP realserver."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Scheduling weight, default value is `1`. The range of values is [1,100]."
+                }
+            },
+            "required": [
+                "Id",
+                "Ip",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectTimeout": {
+            "type": "number",
+            "description": "Timeout of the health check response, should less than interval, default value is 2s. NOTES: Only supports listeners of `TCP` protocol and require less than `interval`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "HealthCheck": {
+            "type": "boolean",
+            "description": "Indicates whether health check is enable, default value is `false`. NOTES: Only supports listeners of `TCP` protocol."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Interval of the health check, default value is 5s. NOTES: Only supports listeners of `TCP` protocol."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the layer4 listener, the maximum length is 30."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port of the layer4 listener."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol of the layer4 listener. Valid value: `TCP` and `UDP`."
+        },
+        "ProxyId": {
+            "type": "string",
+            "description": "ID of the GAAP proxy."
+        },
+        "RealserverType": {
+            "type": "string",
+            "description": "Type of the realserver. Valid value: `IP` and `DOMAIN`. NOTES: when the `protocol` is specified as `TCP` and the `scheduler` is specified as `wrr`, the item can only be set to `IP`."
+        },
+        "Scheduler": {
+            "type": "string",
+            "description": "Scheduling policy of the layer4 listener, default value is `rr`. Valid value: `rr`, `wrr` and `lc`."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "RealserverBindSet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RealserverBindSetDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Port",
+        "Protocol",
+        "ProxyId",
+        "RealserverType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

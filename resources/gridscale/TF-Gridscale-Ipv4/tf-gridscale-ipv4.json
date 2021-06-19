@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Gridscale::Ipv4",
+    "description": "Provides an IPv4 address resource. This can be used to create, modify, and delete IPv4 addresses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Ipv4/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CurrentPrice": {
+            "type": "number"
+        },
+        "DeleteBlock": {
+            "type": "boolean"
+        },
+        "Failover": {
+            "type": "boolean",
+            "description": "Sets failover mode for this IP. If true, then this IP is no longer available for DHCP and can no longer be related to any server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "LocationCountry": {
+            "type": "string"
+        },
+        "LocationIata": {
+            "type": "string"
+        },
+        "LocationName": {
+            "type": "string"
+        },
+        "LocationUuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "Prefix": {
+            "type": "string"
+        },
+        "ReverseDns": {
+            "type": "string",
+            "description": "Defines the reverse DNS entry for the IP address (PTR Resource Record)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UsageInMinutes": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/CurrentPrice",
+        "/properties/DeleteBlock",
+        "/properties/Id",
+        "/properties/Ip",
+        "/properties/LocationCountry",
+        "/properties/LocationIata",
+        "/properties/LocationName",
+        "/properties/LocationUuid",
+        "/properties/Prefix",
+        "/properties/Status",
+        "/properties/UsageInMinutes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

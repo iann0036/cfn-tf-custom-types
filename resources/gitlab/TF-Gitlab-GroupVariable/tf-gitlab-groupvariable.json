@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Gitlab::GroupVariable",
+    "description": "This resource allows you to create and manage CI/CD variables for your GitLab groups.\nFor further information on variables, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/ci/variables/README.html#variables).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-GroupVariable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "The name or id of the group to add the hook to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The name of the variable."
+        },
+        "Masked": {
+            "type": "boolean"
+        },
+        "Protected": {
+            "type": "boolean",
+            "description": "If set to `true`, the variable will be passed only to pipelines running on protected branches and tags. Defaults to `false`."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the variable."
+        },
+        "VariableType": {
+            "type": "string",
+            "description": "The type of a variable. Available types are: env_var (default) and file."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Group",
+        "Key",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Value"
+    ]
+}

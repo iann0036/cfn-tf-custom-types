@@ -1,0 +1,384 @@
+{
+    "typeName": "TF::FortiOS::RouterMulticast",
+    "description": "Configure router multicast.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterMulticast/docs/README.md",
+    "definitions": {
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bfd": {
+                    "type": "string",
+                    "description": "Enable/disable Protocol Independent Multicast (PIM) Bidirectional Forwarding Detection (BFD). Valid values: `enable`, `disable`."
+                },
+                "CiscoExcludeGenid": {
+                    "type": "string",
+                    "description": "Exclude GenID from hello packets (compatibility with old Cisco IOS). Valid values: `enable`, `disable`."
+                },
+                "DrPriority": {
+                    "type": "number",
+                    "description": "DR election priority."
+                },
+                "HelloHoldtime": {
+                    "type": "number",
+                    "description": "Time before old neighbor information expires (0 - 65535 sec, default = 105)."
+                },
+                "HelloInterval": {
+                    "type": "number",
+                    "description": "Interval between sending PIM hello messages (0 - 65535 sec, default = 30)."
+                },
+                "MulticastFlow": {
+                    "type": "string",
+                    "description": "Acceptable source for multicast group."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                },
+                "NeighbourFilter": {
+                    "type": "string",
+                    "description": "Routers acknowledged as neighbor routers."
+                },
+                "Passive": {
+                    "type": "string",
+                    "description": "Enable/disable listening to IGMP but not participating in PIM. Valid values: `enable`, `disable`."
+                },
+                "PimMode": {
+                    "type": "string",
+                    "description": "PIM operation mode. Valid values: `sparse-mode`, `dense-mode`."
+                },
+                "PropagationDelay": {
+                    "type": "number",
+                    "description": "Delay flooding packets on this interface (100 - 5000 msec, default = 500)."
+                },
+                "RpCandidate": {
+                    "type": "string",
+                    "description": "Enable/disable compete to become RP in elections. Valid values: `enable`, `disable`."
+                },
+                "RpCandidateGroup": {
+                    "type": "string",
+                    "description": "Multicast groups managed by this RP."
+                },
+                "RpCandidateInterval": {
+                    "type": "number",
+                    "description": "RP candidate advertisement interval (1 - 16383 sec, default = 60)."
+                },
+                "RpCandidatePriority": {
+                    "type": "number",
+                    "description": "Router's priority as RP."
+                },
+                "RpfNbrFailBack": {
+                    "type": "string",
+                    "description": "Enable/disable fail back for RPF neighbor query. Valid values: `enable`, `disable`."
+                },
+                "RpfNbrFailBackFilter": {
+                    "type": "string",
+                    "description": "Filter for fail back RPF neighbors."
+                },
+                "StateRefreshInterval": {
+                    "type": "number",
+                    "description": "Interval between sending state-refresh packets (1 - 100 sec, default = 60)."
+                },
+                "StaticGroup": {
+                    "type": "string",
+                    "description": "Statically set multicast groups to forward out."
+                },
+                "TtlThreshold": {
+                    "type": "number",
+                    "description": "Minimum TTL of multicast packets that will be forwarded (applied only to new multicast routes) (1 - 255, default = 1)."
+                },
+                "Igmp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IgmpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "JoinGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JoinGroupDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PimSmGlobalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptRegisterList": {
+                    "type": "string",
+                    "description": "Sources allowed to register packets with this Rendezvous Point (RP)."
+                },
+                "AcceptSourceList": {
+                    "type": "string",
+                    "description": "Sources allowed to send multicast traffic."
+                },
+                "BsrAllowQuickRefresh": {
+                    "type": "string",
+                    "description": "Enable/disable accept BSR quick refresh packets from neighbors. Valid values: `enable`, `disable`."
+                },
+                "BsrCandidate": {
+                    "type": "string",
+                    "description": "Enable/disable allowing this router to become a bootstrap router (BSR). Valid values: `enable`, `disable`."
+                },
+                "BsrHash": {
+                    "type": "number",
+                    "description": "BSR hash length (0 - 32, default = 10)."
+                },
+                "BsrInterface": {
+                    "type": "string",
+                    "description": "Interface to advertise as candidate BSR."
+                },
+                "BsrPriority": {
+                    "type": "number",
+                    "description": "BSR priority (0 - 255, default = 0)."
+                },
+                "CiscoCrpPrefix": {
+                    "type": "string",
+                    "description": "Enable/disable making candidate RP compatible with old Cisco IOS. Valid values: `enable`, `disable`."
+                },
+                "CiscoIgnoreRpSetPriority": {
+                    "type": "string",
+                    "description": "Use only hash for RP selection (compatibility with old Cisco IOS). Valid values: `enable`, `disable`."
+                },
+                "CiscoRegisterChecksum": {
+                    "type": "string",
+                    "description": "Checksum entire register packet(for old Cisco IOS compatibility). Valid values: `enable`, `disable`."
+                },
+                "CiscoRegisterChecksumGroup": {
+                    "type": "string",
+                    "description": "Cisco register checksum only these groups."
+                },
+                "JoinPruneHoldtime": {
+                    "type": "number",
+                    "description": "Join/prune holdtime (1 - 65535, default = 210)."
+                },
+                "MessageInterval": {
+                    "type": "number",
+                    "description": "Period of time between sending periodic PIM join/prune messages in seconds (1 - 65535, default = 60)."
+                },
+                "NullRegisterRetries": {
+                    "type": "number",
+                    "description": "Maximum retries of null register (1 - 20, default = 1)."
+                },
+                "RegisterRateLimit": {
+                    "type": "number",
+                    "description": "Limit of packets/sec per source registered through this RP (0 - 65535, default = 0 which means unlimited)."
+                },
+                "RegisterRpReachability": {
+                    "type": "string",
+                    "description": "Enable/disable check RP is reachable before registering packets. Valid values: `enable`, `disable`."
+                },
+                "RegisterSource": {
+                    "type": "string",
+                    "description": "Override source address in register packets. Valid values: `disable`, `interface`, `ip-address`."
+                },
+                "RegisterSourceInterface": {
+                    "type": "string",
+                    "description": "Override with primary interface address."
+                },
+                "RegisterSourceIp": {
+                    "type": "string",
+                    "description": "Override with local IP address."
+                },
+                "RegisterSupression": {
+                    "type": "number",
+                    "description": "Period of time to honor register-stop message (1 - 65535 sec, default = 60)."
+                },
+                "RpRegisterKeepalive": {
+                    "type": "number",
+                    "description": "Timeout for RP receiving data on (S,G) tree (1 - 65535 sec, default = 185)."
+                },
+                "SptThreshold": {
+                    "type": "string",
+                    "description": "Enable/disable switching to source specific trees. Valid values: `enable`, `disable`."
+                },
+                "SptThresholdGroup": {
+                    "type": "string",
+                    "description": "Groups allowed to switch to source tree."
+                },
+                "Ssm": {
+                    "type": "string",
+                    "description": "Enable/disable source specific multicast. Valid values: `enable`, `disable`."
+                },
+                "SsmRange": {
+                    "type": "string",
+                    "description": "Groups allowed to source specific multicast."
+                },
+                "RpAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RpAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IgmpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessGroup": {
+                    "type": "string",
+                    "description": "Groups IGMP hosts are allowed to join."
+                },
+                "ImmediateLeaveGroup": {
+                    "type": "string",
+                    "description": "Groups to drop membership for immediately after receiving IGMPv2 leave."
+                },
+                "LastMemberQueryCount": {
+                    "type": "number",
+                    "description": "Number of group specific queries before removing group (2 - 7, default = 2)."
+                },
+                "LastMemberQueryInterval": {
+                    "type": "number",
+                    "description": "Timeout between IGMPv2 leave and removing group (1 - 65535 msec, default = 1000)."
+                },
+                "QueryInterval": {
+                    "type": "number",
+                    "description": "Interval between queries to IGMP hosts (1 - 65535 sec, default = 125)."
+                },
+                "QueryMaxResponseTime": {
+                    "type": "number",
+                    "description": "Maximum time to wait for a IGMP query response (1 - 25 sec, default = 10)."
+                },
+                "QueryTimeout": {
+                    "type": "number",
+                    "description": "Timeout between queries before becoming querier for network (60 - 900, default = 255)."
+                },
+                "RouterAlertCheck": {
+                    "type": "string",
+                    "description": "Enable/disable require IGMP packets contain router alert option. Valid values: `enable`, `disable`."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "Maximum version of IGMP to support. Valid values: `3`, `2`, `1`."
+                }
+            },
+            "required": []
+        },
+        "JoinGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Multicast group IP address."
+                }
+            },
+            "required": []
+        },
+        "RpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Group": {
+                    "type": "string",
+                    "description": "Groups to use this RP."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "IpAddress": {
+                    "type": "string",
+                    "description": "RP router address."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MulticastRouting": {
+            "type": "string",
+            "description": "Enable/disable IP multicast routing. Valid values: `enable`, `disable`."
+        },
+        "RouteLimit": {
+            "type": "number",
+            "description": "Maximum number of multicast routes."
+        },
+        "RouteThreshold": {
+            "type": "number",
+            "description": "Generate warnings when the number of multicast routes exceeds this number, must not be greater than route-limit."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceDefinition"
+            }
+        },
+        "PimSmGlobal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PimSmGlobalDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::AzureRM::SpringCloudAppMysqlAssociation",
+    "description": "Associates a [Spring Cloud Application](spring_cloud_app.html) with a [MySQL Database](mysql_database.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SpringCloudAppMysqlAssociation/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "Specifies the name of the MySQL Database which the Spring Cloud App should be associated with."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MysqlServerId": {
+            "type": "string",
+            "description": "Specifies the ID of the MySQL Server. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Specifies the password which should be used when connecting to the MySQL Database from the Spring Cloud App."
+        },
+        "SpringCloudAppId": {
+            "type": "string",
+            "description": "Specifies the ID of the Spring Cloud Application where this Association is created. Changing this forces a new resource to be created."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Specifies the username which should be used when connecting to the MySQL Database from the Spring Cloud App."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabaseName",
+        "MysqlServerId",
+        "Name",
+        "Password",
+        "SpringCloudAppId",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

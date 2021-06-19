@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::Panos::Licensing",
+    "description": "This resource manages the licenses installed on the PAN-OS firewall.\n\nInstalling the standard auth code for the standard PAN-OS license key for the\nfirewall causes the firewall to reboot.  Thus it is recommended that you use\nthis resource in a separate step of your overall firewall provisioning, as\nusing this resource will cause the firewall to be temporarily inaccessible.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-Licensing/docs/README.md",
+    "definitions": {
+        "LicensesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthCode": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Expired": {
+                    "type": "string"
+                },
+                "Expires": {
+                    "type": "string"
+                },
+                "Feature": {
+                    "type": "string"
+                },
+                "Issued": {
+                    "type": "string"
+                },
+                "Serial": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthCodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of auth codes to install."
+        },
+        "Delicense": {
+            "type": "boolean",
+            "description": "Leave as `true` if you want to delicense\nthe firewall when this resource is removed, otherwise set to `false` to\nprevent firewall delicensing.  Delicensing requires that the licensing\nAPI key has been installed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Licenses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LicensesDefinition"
+            }
+        },
+        "Mode": {
+            "type": "string",
+            "description": "For `delicense` of `true`, the type of delicensing to\nperform.  Right now, only `auto` is supported (no manual delicensing)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthCodes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Licenses"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,220 @@
+{
+    "typeName": "TF::LaunchDarkly::FeatureFlagEnvironment",
+    "description": "Provides a LaunchDarkly environment-specific feature flag resource.\n\nThis resource allows you to create and manage environment-specific feature flags attributes within your LaunchDarkly organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-FeatureFlagEnvironment/docs/README.md",
+    "definitions": {
+        "FlagFallthroughDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketBy": {
+                    "type": "string"
+                },
+                "RolloutWeights": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Variation": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PrerequisitesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlagKey": {
+                    "type": "string"
+                },
+                "Variation": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FlagKey",
+                "Variation"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketBy": {
+                    "type": "string"
+                },
+                "RolloutWeights": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Variation": {
+                    "type": "number"
+                },
+                "Clauses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClausesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UserTargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClausesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attribute": {
+                    "type": "string"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Op": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Attribute",
+                "Negate",
+                "Op",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnvKey": {
+            "type": "string",
+            "description": "The environment key."
+        },
+        "FlagId": {
+            "type": "string",
+            "description": "The feature flag's unique `id` in the format `project_key/flag_key`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OffVariation": {
+            "type": "number",
+            "description": "The index of the variation to serve if targeting is disabled."
+        },
+        "TargetingEnabled": {
+            "type": "boolean",
+            "description": "Whether targeting is enabled."
+        },
+        "TrackEvents": {
+            "type": "boolean",
+            "description": "Whether to send event data back to LaunchDarkly."
+        },
+        "FlagFallthrough": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FlagFallthroughDefinition"
+            },
+            "maxItems": 1
+        },
+        "Prerequisites": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrerequisitesDefinition"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        },
+        "UserTargets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserTargetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvKey",
+        "FlagId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

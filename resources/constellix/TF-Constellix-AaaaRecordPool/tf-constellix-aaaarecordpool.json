@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::Constellix::AaaaRecordPool",
+    "description": "Manages the pools of AAAA records.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/constellix/TF-Constellix-AaaaRecordPool/docs/README.md",
+    "definitions": {
+        "ValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckId": {
+                    "type": "number"
+                },
+                "DisableFlag": {
+                    "type": "string"
+                },
+                "Policy": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Policy",
+                "Value",
+                "Weight"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisableFlag": {
+            "type": "boolean"
+        },
+        "FailedFlag": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinAvailableFailover": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "NumReturn": {
+            "type": "number"
+        },
+        "Values": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ValuesDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MinAvailableFailover",
+        "Name",
+        "NumReturn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

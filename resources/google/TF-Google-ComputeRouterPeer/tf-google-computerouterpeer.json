@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::Google::ComputeRouterPeer",
+    "description": "BGP information that must be configured into the routing stack to\nestablish BGP peering. This information must specify the peer ASN\nand either the interface name, IP address, or peer IP address.\nPlease refer to RFC4273.\n\n\nTo get more information about RouterBgpPeer, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)\n* How-to Guides\n    * [Google Cloud Router](https://cloud.google.com/router/docs/)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeRouterPeer/docs/README.md",
+    "definitions": {
+        "AdvertisedIpRangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Range"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertiseMode": {
+            "type": "string"
+        },
+        "AdvertisedGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AdvertisedRoutePriority": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "ManagementType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PeerAsn": {
+            "type": "number"
+        },
+        "PeerIpAddress": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Router": {
+            "type": "string"
+        },
+        "AdvertisedIpRanges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdvertisedIpRangesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Name",
+        "PeerAsn",
+        "PeerIpAddress",
+        "Router"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IpAddress",
+        "/properties/ManagementType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

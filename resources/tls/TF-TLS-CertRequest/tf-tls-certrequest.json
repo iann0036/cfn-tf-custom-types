@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::TLS::CertRequest",
+    "description": "Generates a *Certificate Signing Request* (CSR) in PEM format, which is the\ntypical format used to request a certificate from a certificate authority.\n\nThis resource is intended to be used in conjunction with a Terraform provider\nfor a particular certificate authority in order to provision a new certificate.\nThis is a *logical resource*, so it contributes only to the current Terraform\nstate and does not create any external managed resources.\n\n~> **Compatibility Note** From Terraform 0.7.0 to 0.7.4 this resource was\nconverted to a data source, and the resource form of it was deprecated. This\nturned out to be a design error since a cert request includes a random number\nin the form of the signature nonce, and so the data source form of this\nresource caused non-convergent configuration. The data source form is no longer\nsupported as of Terraform 0.7.5 and any users should return to using the\nresource form.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tls/TF-TLS-CertRequest/docs/README.md",
+    "definitions": {
+        "SubjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "PostalCode": {
+                    "type": "string"
+                },
+                "Province": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "StreetAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertRequestPem": {
+            "type": "string"
+        },
+        "DnsNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of DNS names for which a certificate is being requested."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of IP addresses for which a certificate is being requested."
+        },
+        "KeyAlgorithm": {
+            "type": "string",
+            "description": "The name of the algorithm for the key provided\nin `private_key_pem`."
+        },
+        "PrivateKeyPem": {
+            "type": "string",
+            "description": "PEM-encoded private key data. This can be\nread from a separate file using the ``file`` interpolation function. Only\nan irreversable secure hash of the private key will be stored in the Terraform\nstate."
+        },
+        "Uris": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of URIs for which a certificate is being requested."
+        },
+        "Subject": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubjectDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyAlgorithm",
+        "PrivateKeyPem"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertRequestPem",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrivateKeyPem"
+    ]
+}

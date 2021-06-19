@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::AWS::Ec2ClientVpnRoute",
+    "description": "Provides additional routes for AWS Client VPN endpoints. For more information on usage, please see the\n[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2ClientVpnRoute/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientVpnEndpointId": {
+            "type": "string",
+            "description": "The ID of the Client VPN endpoint."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A brief description of the authorization rule."
+        },
+        "DestinationCidrBlock": {
+            "type": "string",
+            "description": "The IPv4 address range, in CIDR notation, of the route destination."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "TargetVpcSubnetId": {
+            "type": "string",
+            "description": "The ID of the Subnet to route the traffic through. It must already be attached to the Client VPN."
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientVpnEndpointId",
+        "DestinationCidrBlock",
+        "TargetVpcSubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Origin",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

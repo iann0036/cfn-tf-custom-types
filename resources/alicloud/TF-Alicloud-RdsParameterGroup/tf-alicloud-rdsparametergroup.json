@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Alicloud::RdsParameterGroup",
+    "description": "CloudFormation equivalent of alicloud_rds_parameter_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-RdsParameterGroup/docs/README.md",
+    "definitions": {
+        "ParamDetailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ParamName": {
+                    "type": "string"
+                },
+                "ParamValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ParamName",
+                "ParamValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ParameterGroupDesc": {
+            "type": "string"
+        },
+        "ParameterGroupName": {
+            "type": "string"
+        },
+        "ParamDetail": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParamDetailDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Engine",
+        "EngineVersion",
+        "ParameterGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

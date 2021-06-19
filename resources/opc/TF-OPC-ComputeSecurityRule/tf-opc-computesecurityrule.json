@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::OPC::ComputeSecurityRule",
+    "description": "The ``opc_compute_security_rule`` resource creates and manages a security rule in an Oracle Cloud Infrastructure Compute Classic identity domain.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeSecurityRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string",
+            "description": "Name of the ACL that contains this security rule."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the security rule."
+        },
+        "DstIpAddressPrefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of IP address prefix set names to match the packet's destination IP address."
+        },
+        "DstVnicSet": {
+            "type": "string",
+            "description": "Name of virtual NIC set containing the packet's destination virtual NIC."
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "FlowDirection": {
+            "type": "string",
+            "description": "Specify the direction of flow of traffic, which is relative to the instances, for this security rule. Allowed values are ingress or egress."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the security rule."
+        },
+        "SecurityProtocols": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of security protocol object names to match the packet's protocol and port."
+        },
+        "SrcIpAddressPrefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of names of IP address prefix set to match the packet's source IP address."
+        },
+        "SrcVnicSet": {
+            "type": "string",
+            "description": "Name of virtual NIC set containing the packet's source virtual NIC."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of tags that may be applied to the security rule."
+        },
+        "Uri": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FlowDirection",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::OCI::MarketplaceListingPackageAgreement",
+    "description": "CloudFormation equivalent of oci_marketplace_listing_package_agreement",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-MarketplaceListingPackageAgreement/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgreementId": {
+            "type": "string"
+        },
+        "Author": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "ContentUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListingId": {
+            "type": "string"
+        },
+        "PackageVersion": {
+            "type": "string"
+        },
+        "Prompt": {
+            "type": "string"
+        },
+        "Signature": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AgreementId",
+        "ListingId",
+        "PackageVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Author",
+        "/properties/CompartmentId",
+        "/properties/ContentUrl",
+        "/properties/Id",
+        "/properties/Prompt",
+        "/properties/Signature"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

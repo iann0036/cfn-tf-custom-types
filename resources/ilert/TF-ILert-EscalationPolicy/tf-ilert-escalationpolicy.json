@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::ILert::EscalationPolicy",
+    "description": "An [escalation policy](https://api.ilert.com/api-docs/#tag/Escalation-Policies) connects an alert source with the users that are responsible for this alert source. It defines which users or on-call schedules should be notified when an incident is created.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ilert/TF-ILert-EscalationPolicy/docs/README.md",
+    "definitions": {
+        "EscalationRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EscalationTimeout": {
+                    "type": "number"
+                },
+                "Schedule": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Frequency": {
+            "type": "number",
+            "description": "The number of times the escalation policy will repeat after reaching the end of its escalation. This option is allowed if `repeating` is `true`. Default: `1`.\n- `escalation_rule` - (Optional) One or more [escalation rule](#escalation-rule-arguments) blocks.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the escalation policy.\n- `repeating` - (Optional) Indicates whether or not the escalation policy will repeat. Default: `true`.\n- `frequency` - (Optional) The number of times the escalation policy will repeat after reaching the end of its escalation. This option is allowed if `repeating` is `true`. Default: `1`.\n- `escalation_rule` - (Optional) One or more [escalation rule](#escalation-rule-arguments) blocks.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Repeating": {
+            "type": "boolean",
+            "description": "Indicates whether or not the escalation policy will repeat. Default: `true`.\n- `frequency` - (Optional) The number of times the escalation policy will repeat after reaching the end of its escalation. This option is allowed if `repeating` is `true`. Default: `1`.\n- `escalation_rule` - (Optional) One or more [escalation rule](#escalation-rule-arguments) blocks.\n- `teams` - (Optional) A list of related team ids."
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of related team ids."
+        },
+        "EscalationRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EscalationRuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

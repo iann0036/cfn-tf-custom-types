@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::FortiOS::UserNacpolicy",
+    "description": "Configure NAC policy matching pattern to identify matching NAC devices. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserNacpolicy/docs/README.md",
+    "definitions": {
+        "SwitchScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SwitchId": {
+                    "type": "string",
+                    "description": "Managed FortiSwitch name from available options."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string",
+            "description": "Category of NAC policy."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the NAC policy matching pattern."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EmsTag": {
+            "type": "string",
+            "description": "NAC policy matching EMS tag."
+        },
+        "Family": {
+            "type": "string",
+            "description": "NAC policy matching family."
+        },
+        "Host": {
+            "type": "string",
+            "description": "NAC policy matching host."
+        },
+        "HwVendor": {
+            "type": "string",
+            "description": "NAC policy matching hardware vendor."
+        },
+        "HwVersion": {
+            "type": "string",
+            "description": "NAC policy matching hardware version."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mac": {
+            "type": "string",
+            "description": "NAC policy matching MAC address."
+        },
+        "Name": {
+            "type": "string",
+            "description": "NAC policy name."
+        },
+        "Os": {
+            "type": "string",
+            "description": "NAC policy matching operating system."
+        },
+        "Src": {
+            "type": "string",
+            "description": "NAC policy matching source."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable NAC policy. Valid values: `enable`, `disable`."
+        },
+        "SwVersion": {
+            "type": "string",
+            "description": "NAC policy matching software version."
+        },
+        "SwitchAutoAuth": {
+            "type": "string",
+            "description": "NAC device auto authorization when discovered and nac-policy matched. Valid values: `global`, `disable`, `enable`."
+        },
+        "SwitchFortilink": {
+            "type": "string",
+            "description": "FortiLink interface for which this NAC policy belongs to."
+        },
+        "SwitchMacPolicy": {
+            "type": "string",
+            "description": "switch-mac-policy to be applied on the matched NAC policy."
+        },
+        "SwitchPortPolicy": {
+            "type": "string",
+            "description": "switch-port-policy to be applied on the matched NAC policy."
+        },
+        "Type": {
+            "type": "string",
+            "description": "NAC policy matching type."
+        },
+        "User": {
+            "type": "string",
+            "description": "NAC policy matching user."
+        },
+        "UserGroup": {
+            "type": "string",
+            "description": "NAC policy matching user group."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "SwitchScope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SwitchScopeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::MongoDBAtlas::Auditing",
+    "description": "`mongodbatlas_auditing` provides an Auditing resource. This allows auditing to be created.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-Auditing/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuditAuthorizationSuccess": {
+            "type": "boolean",
+            "description": "JSON-formatted audit filter used by the project."
+        },
+        "AuditFilter": {
+            "type": "string",
+            "description": "Indicates whether the auditing system captures successful authentication attempts for audit filters using the \"atype\" : \"authCheck\" auditing event. For more information, see auditAuthorizationSuccess."
+        },
+        "ConfigurationType": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Denotes whether or not the project associated with the {project_id} has database auditing enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique ID for the project to configure auditing."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigurationType",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

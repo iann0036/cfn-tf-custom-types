@@ -1,0 +1,219 @@
+{
+    "typeName": "TF::AzureRM::HealthcareService",
+    "description": "Manages a Healthcare Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-HealthcareService/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthenticationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "string",
+                    "description": "The intended audience to receive authentication tokens for the service. The default value is https://azurehealthcareapis.com."
+                },
+                "Authority": {
+                    "type": "string",
+                    "description": "The Azure Active Directory (tenant) that serves as the authentication authority to access the service. The default authority is the Directory defined in the authentication scheme in use when running Terraform.\nAuthority must be registered to Azure AD and in the following format: https://{Azure-AD-endpoint}/{tenant-id}."
+                },
+                "SmartProxyEnabled": {
+                    "type": "boolean",
+                    "description": "Enables the 'SMART on FHIR' option for mobile and web implementations."
+                }
+            },
+            "required": []
+        },
+        "CorsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowCredentials": {
+                    "type": "boolean",
+                    "description": "If credentials are allowed via CORS."
+                },
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A set of headers to be allowed via CORS."
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The methods to be allowed via CORS."
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A set of origins to be allowed via CORS."
+                },
+                "MaxAgeInSeconds": {
+                    "type": "number",
+                    "description": "The max age to be allowed via CORS."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessPolicyObjectIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CosmosdbKeyVaultKeyVersionlessId": {
+            "type": "string",
+            "description": "A versionless Key Vault Key ID for CMK encryption of the backing database. Changing this forces a new resource to be created."
+        },
+        "CosmosdbThroughput": {
+            "type": "number",
+            "description": "The provisioned throughput for the backing database. Range of `400`-`1000`. Defaults to `400`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string",
+            "description": "The type of the service. Values at time of publication are: `fhir`, `fhir-Stu3` and `fhir-R4`. Default value is `fhir`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure Region where the Service should be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service instance. Used for service endpoint, must be unique within the audience."
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Whether public network access is enabled or disabled for this service instance."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the Service."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "AuthenticationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "CorsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

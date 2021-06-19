@@ -1,0 +1,219 @@
+{
+    "typeName": "TF::AzureRM::NetworkInterface",
+    "description": "Manages a Network Interface.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NetworkInterface/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "A name used for this IP Configuration."
+                },
+                "Primary": {
+                    "type": "boolean",
+                    "description": "Is this the Primary IP Configuration? Must be `true` for the first `ip_configuration` when multiple are specified. Defaults to `false`."
+                },
+                "PrivateIpAddress": {
+                    "type": "string"
+                },
+                "PrivateIpAddressAllocation": {
+                    "type": "string",
+                    "description": "The allocation method used for the Private IP Address. Possible values are `Dynamic` and `Static`."
+                },
+                "PrivateIpAddressVersion": {
+                    "type": "string",
+                    "description": "The IP Version to use. Possible values are `IPv4` or `IPv6`. Defaults to `IPv4`."
+                },
+                "PublicIpAddressId": {
+                    "type": "string",
+                    "description": "Reference to a Public IP Address to associate with this NIC."
+                },
+                "SubnetId": {
+                    "type": "string",
+                    "description": "The ID of the Subnet where this Network Interface should be located in."
+                }
+            },
+            "required": [
+                "Name",
+                "PrivateIpAddressAllocation"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppliedDnsServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of IP Addresses defining the DNS Servers which should be used for this Network Interface."
+        },
+        "EnableAcceleratedNetworking": {
+            "type": "boolean",
+            "description": "Should Accelerated Networking be enabled? Defaults to `false`."
+        },
+        "EnableIpForwarding": {
+            "type": "boolean",
+            "description": "Should IP Forwarding be enabled? Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalDnsNameLabel": {
+            "type": "string",
+            "description": "The (relative) DNS Name used for internal communications between Virtual Machines in the same Virtual Network."
+        },
+        "InternalDomainNameSuffix": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location where the Network Interface should exist. Changing this forces a new resource to be created."
+        },
+        "MacAddress": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Network Interface. Changing this forces a new resource to be created."
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "PrivateIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the Network Interface. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VirtualMachineId": {
+            "type": "string"
+        },
+        "IpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpConfigurationDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppliedDnsServers",
+        "/properties/Id",
+        "/properties/InternalDomainNameSuffix",
+        "/properties/MacAddress",
+        "/properties/PrivateIpAddress",
+        "/properties/PrivateIpAddresses",
+        "/properties/VirtualMachineId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

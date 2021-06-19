@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Circonus::Worksheet",
+    "description": "The ``circonus_worksheet`` resource creates and manages a\n[Circonus Worksheet](https://login.circonus.com/resources/api/calls/worksheet).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-Worksheet/docs/README.md",
+    "definitions": {
+        "SmartQueriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Query"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of what the worksheet is for."
+        },
+        "Favourite": {
+            "type": "boolean",
+            "description": "Mark (star) this worksheet as a favorite. Default is `false`."
+        },
+        "Graphs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of graphs that compose this worksheet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string",
+            "description": "A place to store notes about this worksheet."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags assigned to this worksheet."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The title of the worksheet."
+        },
+        "SmartQueries": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmartQueriesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

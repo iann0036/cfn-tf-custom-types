@@ -1,0 +1,325 @@
+{
+    "typeName": "TF::AWS::RedshiftCluster",
+    "description": "Provides a Redshift Cluster Resource.\n\n~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-RedshiftCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LoggingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "S3KeyPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enable"
+            ]
+        },
+        "SnapshotCopyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationRegion": {
+                    "type": "string"
+                },
+                "GrantName": {
+                    "type": "string"
+                },
+                "RetentionPeriod": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DestinationRegion"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowVersionUpgrade": {
+            "type": "boolean",
+            "description": "If true , major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. Default is true."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutomatedSnapshotRetentionPeriod": {
+            "type": "number",
+            "description": "The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with create-cluster-snapshot. Default is 1."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency."
+        },
+        "ClusterIdentifier": {
+            "type": "string",
+            "description": "The Cluster Identifier. Must be a lower case\nstring."
+        },
+        "ClusterParameterGroupName": {
+            "type": "string",
+            "description": "The name of the parameter group to be associated with this cluster."
+        },
+        "ClusterPublicKey": {
+            "type": "string"
+        },
+        "ClusterRevisionNumber": {
+            "type": "string"
+        },
+        "ClusterSecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security groups to be associated with this cluster."
+        },
+        "ClusterSubnetGroupName": {
+            "type": "string",
+            "description": "The name of a cluster subnet group to be associated with this cluster. If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC)."
+        },
+        "ClusterType": {
+            "type": "string",
+            "description": "The cluster type to use. Either `single-node` or `multi-node`."
+        },
+        "ClusterVersion": {
+            "type": "string",
+            "description": "The version of the Amazon Redshift engine software that you want to deploy on the cluster.\nThe version selected runs on all the nodes in the cluster."
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "The name of the first database to be created when the cluster is created.\nIf you do not provide a name, Amazon Redshift will create a default database called `dev`."
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "ElasticIp": {
+            "type": "string",
+            "description": "The Elastic IP (EIP) address for the cluster."
+        },
+        "Encrypted": {
+            "type": "boolean",
+            "description": "If true , the data in the cluster is encrypted at rest."
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "EnhancedVpcRouting": {
+            "type": "boolean",
+            "description": "If true , enhanced VPC routing is enabled."
+        },
+        "FinalSnapshotIdentifier": {
+            "type": "string",
+            "description": "The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, `skip_final_snapshot` must be false."
+        },
+        "IamRoles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of IAM Role ARNs to associate with the cluster. A Maximum of 10 can be associated to the cluster at any time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The ARN for the KMS encryption key. When specifying `kms_key_id`, `encrypted` needs to be set to true."
+        },
+        "MasterPassword": {
+            "type": "string",
+            "description": "Password for the master DB user.\nNote that this may show up in logs, and it will be stored in the state file. Password must contain at least 8 chars and\ncontain at least one uppercase letter, one lowercase letter, and one number."
+        },
+        "MasterUsername": {
+            "type": "string",
+            "description": "Username for the master DB user."
+        },
+        "NodeType": {
+            "type": "string",
+            "description": "The node type to be provisioned for the cluster."
+        },
+        "NumberOfNodes": {
+            "type": "number",
+            "description": "The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node. Default is 1."
+        },
+        "OwnerAccount": {
+            "type": "string",
+            "description": "The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port number on which the cluster accepts incoming connections.\nThe cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections. Default port is 5439."
+        },
+        "PreferredMaintenanceWindow": {
+            "type": "string",
+            "description": "The weekly time range (in UTC) during which automated cluster maintenance can occur.\nFormat: ddd:hh24:mi-ddd:hh24:mi."
+        },
+        "PubliclyAccessible": {
+            "type": "boolean",
+            "description": "If true, the cluster can be accessed from a public network. Default is `true`."
+        },
+        "SkipFinalSnapshot": {
+            "type": "boolean",
+            "description": "Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If true , a final cluster snapshot is not created. If false , a final cluster snapshot is created before the cluster is deleted. Default is false."
+        },
+        "SnapshotClusterIdentifier": {
+            "type": "string",
+            "description": "The name of the cluster the source snapshot was created from."
+        },
+        "SnapshotIdentifier": {
+            "type": "string",
+            "description": "The name of the snapshot from which to create the new cluster."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster."
+        },
+        "Logging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingDefinition"
+            },
+            "maxItems": 1
+        },
+        "SnapshotCopy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotCopyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterIdentifier",
+        "NodeType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DnsName",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/MasterPassword"
+    ]
+}

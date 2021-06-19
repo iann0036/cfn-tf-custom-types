@@ -1,0 +1,251 @@
+{
+    "typeName": "TF::AVI::Cloudconnectoruser",
+    "description": "The CloudConnectorUser resource allows the creation and management of Avi CloudConnectorUser",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Cloudconnectoruser/docs/README.md",
+    "definitions": {
+        "AzureServiceprincipalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationId": {
+                    "type": "string"
+                },
+                "AuthenticationToken": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AzureUserpassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "TenantName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GcpCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServiceAccountKeyfileData": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NsxtCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OciCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fingerprint": {
+                    "type": "string"
+                },
+                "KeyContent": {
+                    "type": "string"
+                },
+                "PassPhrase": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TencentCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretId": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecretId",
+                "SecretKey"
+            ]
+        },
+        "VcenterCredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Placeholder for description of property password of obj type cloudconnectoruser field type string  type str."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "Placeholder for description of property private_key of obj type cloudconnectoruser field type string  type str."
+        },
+        "PublicKey": {
+            "type": "string",
+            "description": "Placeholder for description of property public_key of obj type cloudconnectoruser field type string  type str."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AzureServiceprincipal": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureServiceprincipalDefinition"
+            }
+        },
+        "AzureUserpass": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureUserpassDefinition"
+            }
+        },
+        "GcpCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GcpCredentialsDefinition"
+            }
+        },
+        "NsxtCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NsxtCredentialsDefinition"
+            }
+        },
+        "OciCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OciCredentialsDefinition"
+            }
+        },
+        "TencentCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TencentCredentialsDefinition"
+            }
+        },
+        "VcenterCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VcenterCredentialsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateKey",
+        "/definitions/AzureServiceprincipalDefinition/AuthenticationToken",
+        "/definitions/AzureUserpassDefinition/Password",
+        "/definitions/GcpCredentialsDefinition/ServiceAccountKeyfileData",
+        "/definitions/NsxtCredentialsDefinition/Password",
+        "/definitions/OciCredentialsDefinition/Fingerprint",
+        "/definitions/OciCredentialsDefinition/KeyContent",
+        "/definitions/OciCredentialsDefinition/PassPhrase",
+        "/definitions/TencentCredentialsDefinition/SecretId",
+        "/definitions/TencentCredentialsDefinition/SecretKey",
+        "/definitions/VcenterCredentialsDefinition/Password"
+    ]
+}

@@ -1,0 +1,220 @@
+{
+    "typeName": "TF::FortiOS::DlpSensor",
+    "description": "Configure DLP sensors.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-DlpSensor/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take with content that this DLP sensor matches. Valid values: `allow`, `log-only`, `block`, `quarantine-ip`."
+                },
+                "Archive": {
+                    "type": "string",
+                    "description": "Enable/disable DLP archiving. Valid values: `disable`, `enable`."
+                },
+                "CompanyIdentifier": {
+                    "type": "string",
+                    "description": "Enter a company identifier watermark to match. Only watermarks that your company has placed on the files are matched."
+                },
+                "Expiry": {
+                    "type": "string",
+                    "description": "Quarantine duration in days, hours, minutes format (dddhhmm)."
+                },
+                "FileSize": {
+                    "type": "number",
+                    "description": "Match files this size or larger (0 - 4294967295 kbytes)."
+                },
+                "FileType": {
+                    "type": "number",
+                    "description": "Select the number of a DLP file pattern table to match."
+                },
+                "FilterBy": {
+                    "type": "string",
+                    "description": "Select the type of content to match. Valid values: `credit-card`, `ssn`, `regexp`, `file-type`, `file-size`, `fingerprint`, `watermark`, `encrypted`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "MatchPercentage": {
+                    "type": "number",
+                    "description": "Percentage of fingerprints in the fingerprint databases designated with the selected fp-sensitivity to match."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Filter name."
+                },
+                "Proto": {
+                    "type": "string",
+                    "description": "Check messages or files over one or more of these protocols."
+                },
+                "Regexp": {
+                    "type": "string",
+                    "description": "Enter a regular expression to match (max. 255 characters)."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Select the severity or threat level that matches this filter. Valid values: `info`, `low`, `medium`, `high`, `critical`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Select whether to check the content of messages (an email message) or files (downloaded files or email attachments).  Valid values: `file`, `message`."
+                },
+                "FpSensitivity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FpSensitivityDefinition"
+                    }
+                },
+                "Sensitivity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SensitivityDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FpSensitivityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Select a DLP sensitivity."
+                }
+            },
+            "required": []
+        },
+        "SensitivityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Select a DLP sensitivity."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DlpLog": {
+            "type": "string",
+            "description": "Enable/disable DLP logging. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ExtendedLog": {
+            "type": "string",
+            "description": "Enable/disable extended logging for data leak prevention. Valid values: `enable`, `disable`."
+        },
+        "FeatureSet": {
+            "type": "string",
+            "description": "Flow/proxy feature set. Valid values: `flow`, `proxy`."
+        },
+        "FlowBased": {
+            "type": "string",
+            "description": "Enable/disable flow-based DLP. Valid values: `enable`, `disable`."
+        },
+        "FullArchiveProto": {
+            "type": "string",
+            "description": "Protocols to always content archive."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NacQuarLog": {
+            "type": "string",
+            "description": "Enable/disable NAC quarantine logging. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the DLP sensor."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Configure DLP options."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group used by this DLP sensor."
+        },
+        "SummaryProto": {
+            "type": "string",
+            "description": "Protocols to always log summary."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,548 @@
+{
+    "typeName": "TF::AzureRM::WindowsVirtualMachine",
+    "description": "Manages a Windows Virtual Machine.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-WindowsVirtualMachine/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdditionalCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UltraSsdEnabled": {
+                    "type": "boolean",
+                    "description": "Should the capacity to enable Data Disks of the `UltraSSD_LRS` storage account type be supported on this Virtual Machine? Defaults to `false`."
+                }
+            },
+            "required": []
+        },
+        "AdditionalUnattendContentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string",
+                    "description": "The XML formatted content that is added to the unattend.xml file for the specified path and component. Changing this forces a new resource to be created."
+                },
+                "Setting": {
+                    "type": "string",
+                    "description": "The name of the setting to which the content applies. Possible values are `AutoLogon` and `FirstLogonCommands`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Content",
+                "Setting"
+            ]
+        },
+        "BootDiagnosticsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageAccountUri": {
+                    "type": "string",
+                    "description": "The Primary/Secondary Endpoint for the Azure Storage Account which should be used to store Boot Diagnostics, including Console Output and Screenshots from the Hypervisor."
+                }
+            },
+            "required": []
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of User Managed Identity ID's which should be assigned to the Windows Virtual Machine."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of Managed Identity which should be assigned to the Windows Virtual Machine. Possible values are `SystemAssigned`, `UserAssigned` and `SystemAssigned, UserAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string",
+                    "description": "The Type of Caching which should be used for the Internal OS Disk. Possible values are `None`, `ReadOnly` and `ReadWrite`."
+                },
+                "DiskEncryptionSetId": {
+                    "type": "string",
+                    "description": "The ID of the Disk Encryption Set which should be used to Encrypt this OS Disk."
+                },
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "The Size of the Internal OS Disk in GB, if you wish to vary from the size used in the image this Virtual Machine is sourced from."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name which should be used for the Internal OS Disk. Changing this forces a new resource to be created."
+                },
+                "StorageAccountType": {
+                    "type": "string",
+                    "description": "The Type of Storage Account which should back this the Internal OS Disk. Possible values are `Standard_LRS`, `StandardSSD_LRS` and `Premium_LRS`. Changing this forces a new resource to be created."
+                },
+                "WriteAcceleratorEnabled": {
+                    "type": "boolean",
+                    "description": "Should Write Accelerator be Enabled for this OS Disk? Defaults to `false`."
+                },
+                "DiffDiskSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiffDiskSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Caching",
+                "StorageAccountType"
+            ]
+        },
+        "PlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the Name of the Marketplace Image this Virtual Machine should be created from. Changing this forces a new resource to be created."
+                },
+                "Product": {
+                    "type": "string",
+                    "description": "Specifies the Product of the Marketplace Image this Virtual Machine should be created from. Changing this forces a new resource to be created."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the Publisher of the Marketplace Image this Virtual Machine should be created from. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Name",
+                "Product",
+                "Publisher"
+            ]
+        },
+        "SecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyVaultId": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault from which all Secrets should be sourced."
+                },
+                "Certificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "KeyVaultId"
+            ]
+        },
+        "SourceImageReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string",
+                    "description": "Specifies the offer of the image used to create the virtual machines."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the publisher of the image used to create the virtual machines."
+                },
+                "Sku": {
+                    "type": "string",
+                    "description": "Specifies the SKU of the image used to create the virtual machines."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "Specifies the version of the image used to create the virtual machines."
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku",
+                "Version"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WinrmListenerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string",
+                    "description": "The Secret URL of a Key Vault Certificate, which must be specified when `protocol` is set to `Https`."
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "DiffDiskSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Option": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Option"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Store": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Store",
+                "Url"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "string",
+            "description": "The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "AdminUsername": {
+            "type": "string",
+            "description": "The username of the local administrator used for the Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "AllowExtensionOperations": {
+            "type": "boolean",
+            "description": "Should Extension Operations be allowed on this Virtual Machine?."
+        },
+        "AvailabilitySetId": {
+            "type": "string",
+            "description": "Specifies the ID of the Availability Set in which the Virtual Machine should exist. Changing this forces a new resource to be created."
+        },
+        "ComputerName": {
+            "type": "string",
+            "description": "Specifies the Hostname which should be used for this Virtual Machine. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name`, then you must specify `computer_name`. Changing this forces a new resource to be created."
+        },
+        "CustomData": {
+            "type": "string",
+            "description": "The Base64-Encoded Custom Data which should be used for this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "DedicatedHostId": {
+            "type": "string",
+            "description": "The ID of a Dedicated Host where this machine should be run on."
+        },
+        "EnableAutomaticUpdates": {
+            "type": "boolean",
+            "description": "Specifies if Automatic Updates are Enabled for the Windows Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "EncryptionAtHostEnabled": {
+            "type": "boolean",
+            "description": "Should all of the disks (including the temp disk) attached to this Virtual Machine be encrypted by enabling Encryption at Host?."
+        },
+        "EvictionPolicy": {
+            "type": "string",
+            "description": "Specifies what should happen when the Virtual Machine is evicted for price reasons when using a Spot instance. At this time the only supported value is `Deallocate`. Changing this forces a new resource to be created."
+        },
+        "ExtensionsTimeBudget": {
+            "type": "string",
+            "description": "Specifies the duration allocated for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. Defaults to 90 minutes (`PT1H30M`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "Specifies the type of on-premise license (also known as [Azure Hybrid Use Benefit](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing)) which should be used for this Virtual Machine. Possible values are `None`, `Windows_Client` and `Windows_Server`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure location where the Windows Virtual Machine should exist. Changing this forces a new resource to be created."
+        },
+        "MaxBidPrice": {
+            "type": "number",
+            "description": "The maximum price you're willing to pay for this Virtual Machine, in US Dollars; which must be greater than the current spot price. If this bid price falls below the current spot price the Virtual Machine will be evicted using the `eviction_policy`. Defaults to `-1`, which means that the Virtual Machine should not be evicted for price reasons."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Windows Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "NetworkInterfaceIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": ". A list of Network Interface ID's which should be attached to this Virtual Machine. The first Network Interface ID in this list will be the Primary Network Interface on the Virtual Machine."
+        },
+        "PatchMode": {
+            "type": "string",
+            "description": "Specifies the mode of in-guest patching to this Windows Virtual Machine. Possible values are `Manual`, `AutomaticByOS` and `AutomaticByPlatform`. Defaults to `AutomaticByOS`."
+        },
+        "PlatformFaultDomain": {
+            "type": "number",
+            "description": "Specifies the Platform Fault Domain in which this Windows Virtual Machine should be created. Defaults to `-1`, which means this will be automatically assigned to a fault domain that best maintains balance across the available fault domains. Changing this forces a new Windows Virtual Machine to be created."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Specifies the priority of this Virtual Machine. Possible values are `Regular` and `Spot`. Defaults to `Regular`. Changing this forces a new resource to be created."
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "PrivateIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ProvisionVmAgent": {
+            "type": "boolean",
+            "description": "Should the Azure VM Agent be provisioned on this Virtual Machine? Defaults to `true`. Changing this forces a new resource to be created."
+        },
+        "ProximityPlacementGroupId": {
+            "type": "string",
+            "description": "The ID of the Proximity Placement Group which the Virtual Machine should be assigned to. Changing this forces a new resource to be created."
+        },
+        "PublicIpAddress": {
+            "type": "string"
+        },
+        "PublicIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Windows Virtual Machine should be exist. Changing this forces a new resource to be created."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The SKU which should be used for this Virtual Machine, such as `Standard_F2`."
+        },
+        "SourceImageId": {
+            "type": "string",
+            "description": "The ID of the Image which this Virtual Machine should be created from. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags which should be assigned to this Virtual Machine."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Specifies the Time Zone which should be used by the Virtual Machine, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/)."
+        },
+        "VirtualMachineId": {
+            "type": "string"
+        },
+        "VirtualMachineScaleSetId": {
+            "type": "string",
+            "description": "Specifies the Orchestrated Virtual Machine Scale Set that this Virtual Machine should be created within. Changing this forces a new resource to be created."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The Zone in which this Virtual Machine should be created. Changing this forces a new resource to be created."
+        },
+        "AdditionalCapabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalCapabilitiesDefinition"
+            },
+            "maxItems": 1
+        },
+        "AdditionalUnattendContent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalUnattendContentDefinition"
+            }
+        },
+        "BootDiagnostics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootDiagnosticsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "OsDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDiskDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Plan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "Secret": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecretDefinition"
+            }
+        },
+        "SourceImageReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceImageReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WinrmListener": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WinrmListenerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdminPassword",
+        "AdminUsername",
+        "Location",
+        "Name",
+        "NetworkInterfaceIds",
+        "ResourceGroupName",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PrivateIpAddress",
+        "/properties/PrivateIpAddresses",
+        "/properties/PublicIpAddress",
+        "/properties/PublicIpAddresses",
+        "/properties/VirtualMachineId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword",
+        "/properties/CustomData",
+        "/definitions/AdditionalUnattendContentDefinition/Content"
+    ]
+}

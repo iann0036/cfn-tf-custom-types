@@ -1,0 +1,242 @@
+{
+    "typeName": "TF::OCI::DatabaseBackupDestination",
+    "description": "This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.\n\nCreates a backup destination in an Exadata Cloud@Customer system.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseBackupDestination/docs/README.md",
+    "definitions": {
+        "AssociatedDatabasesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbName": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MountTypeDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalMountPointPath": {
+                    "type": "string"
+                },
+                "MountType": {
+                    "type": "string"
+                },
+                "NfsServer": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NfsServerExport": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MountType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedDatabases": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AssociatedDatabasesDefinition"
+            }
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
+        },
+        "ConnectionString": {
+            "type": "string",
+            "description": "(Updatable) The connection string for connecting to the Recovery Appliance."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The user-provided name of the backup destination."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "LocalMountPointPath": {
+            "type": "string",
+            "description": "The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.\n* `mount_type` - (Required) Mount type for backup destination.\n* `nfs_server` - (Required when mount_type=AUTOMATED_MOUNT) IP addresses for NFS Auto mount.\n* `nfs_server_export` - (Required when mount_type=AUTOMATED_MOUNT) Specifies the directory on which to mount the file system."
+        },
+        "NfsMountType": {
+            "type": "string"
+        },
+        "NfsServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "IP addresses for NFS Auto mount.\n* `nfs_server_export` - (Required when mount_type=AUTOMATED_MOUNT) Specifies the directory on which to mount the file system."
+        },
+        "NfsServerExport": {
+            "type": "string",
+            "description": "Specifies the directory on which to mount the file system."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the backup destination."
+        },
+        "VpcUsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance."
+        },
+        "MountTypeDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MountTypeDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedDatabases",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/NfsMountType",
+        "/properties/NfsServer",
+        "/properties/NfsServerExport",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

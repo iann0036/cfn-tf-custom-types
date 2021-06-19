@@ -1,0 +1,198 @@
+{
+    "typeName": "TF::TencentCloud::VodAdaptiveDynamicStreamingTemplate",
+    "description": "Provide a resource to create a VOD adaptive dynamic streaming template.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-VodAdaptiveDynamicStreamingTemplate/docs/README.md",
+    "definitions": {
+        "StreamInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RemoveAudio": {
+                    "type": "boolean",
+                    "description": "Whether to remove audio stream. Valid values: `false`: no, `true`: yes. `false` by default."
+                },
+                "Audio": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AudioDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Video": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VideoDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AudioDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AudioChannel": {
+                    "type": "string"
+                },
+                "Bitrate": {
+                    "type": "number"
+                },
+                "Codec": {
+                    "type": "string"
+                },
+                "SampleRate": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Bitrate",
+                "Codec",
+                "SampleRate"
+            ]
+        },
+        "VideoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bitrate": {
+                    "type": "number",
+                    "description": "Bitrate of video stream in Kbps. Value range: `0` and `[128, 35000]`. If the value is `0`, the bitrate of the video will be the same as that of the source video."
+                },
+                "Codec": {
+                    "type": "string",
+                    "description": "Video stream encoder. Valid values: `libx264`,`libx265`,`av1`. `libx264`: H.264, `libx265`: H.265, `av1`: AOMedia Video 1. Currently, a resolution within 640x480 must be specified for `H.265`. and the `av1` container only supports mp4."
+                },
+                "FillType": {
+                    "type": "string",
+                    "description": "Fill type. Fill refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. The following fill types are supported: `stretch`: stretch. The screenshot will be stretched frame by frame to match the aspect ratio of the source video, which may make the screenshot shorter or longer; `black`: fill with black. This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with black color blocks. Default value: black. Note: this field may return null, indicating that no valid values can be obtained."
+                },
+                "Fps": {
+                    "type": "number",
+                    "description": "Video frame rate in Hz. Value range: `[0, 60]`. If the value is `0`, the frame rate will be the same as that of the source video."
+                },
+                "Height": {
+                    "type": "number",
+                    "description": "Maximum value of the height (or short side) of a video stream in px. Value range: `0` and `[128, 4096]`. If both `width` and `height` are `0`, the resolution will be the same as that of the source video; If `width` is `0`, but `height` is not `0`, `width` will be proportionally scaled; If `width` is not `0`, but `height` is `0`, `height` will be proportionally scaled; If both `width` and `height` are not `0`, the custom resolution will be used. Default value: `0`. Note: this field may return null, indicating that no valid values can be obtained."
+                },
+                "ResolutionAdaptive": {
+                    "type": "boolean",
+                    "description": "Resolution adaption. Valid values: `true`,`false`. `true`: enabled. In this case, `width` represents the long side of a video, while `height` the short side; `false`: disabled. In this case, `width` represents the width of a video, while `height` the height. Default value: `true`. Note: this field may return null, indicating that no valid values can be obtained."
+                },
+                "Width": {
+                    "type": "number",
+                    "description": "Maximum value of the width (or long side) of a video stream in px. Value range: `0` and `[128, 4096]`. If both `width` and `height` are `0`, the resolution will be the same as that of the source video; If `width` is `0`, but `height` is not `0`, `width` will be proportionally scaled; If `width` is not `0`, but `height` is `0`, `height` will be proportionally scaled; If both `width` and `height` are not `0`, the custom resolution will be used. Default value: `0`. Note: this field may return null, indicating that no valid values can be obtained."
+                }
+            },
+            "required": [
+                "Bitrate",
+                "Codec",
+                "Fps"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Template description. Length limit: 256 characters."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DisableHigherVideoBitrate": {
+            "type": "boolean",
+            "description": "Whether to prohibit transcoding video from low bitrate to high bitrate. Valid values: `false`,`true`. `false`: no, `true`: yes. Default value: `false`."
+        },
+        "DisableHigherVideoResolution": {
+            "type": "boolean",
+            "description": "Whether to prohibit transcoding from low resolution to high resolution. Valid values: `false`,`true`. `false`: no, `true`: yes. Default value: `false`."
+        },
+        "DrmType": {
+            "type": "string",
+            "description": "DRM scheme type. Valid values: `SimpleAES`. If this field is an empty string, DRM will not be performed on the video."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Adaptive bitstream format. Valid values: `HLS`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Template name. Length limit: 64 characters."
+        },
+        "SubAppId": {
+            "type": "number",
+            "description": "Subapplication ID in VOD. If you need to access a resource in a subapplication, enter the subapplication ID in this field; otherwise, leave it empty."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "StreamInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StreamInfoDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Format",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

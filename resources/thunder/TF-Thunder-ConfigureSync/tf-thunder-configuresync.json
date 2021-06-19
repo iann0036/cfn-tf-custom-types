@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::Thunder::ConfigureSync",
+    "description": "`thunder_configure_sync` provides details about Configure Sync",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-ConfigureSync/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "Specify the destination ip address to sync."
+        },
+        "AllPartitions": {
+            "type": "number",
+            "description": "All partition configurations."
+        },
+        "AutoAuthentication": {
+            "type": "number",
+            "description": "Authenticate with local username and password."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PartitionName": {
+            "type": "string",
+            "description": "Partition name."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "Use private key for authentication."
+        },
+        "Pwd": {
+            "type": "string"
+        },
+        "PwdEnc": {
+            "type": "string"
+        },
+        "Shared": {
+            "type": "number",
+            "description": "Shared partition."
+        },
+        "Type": {
+            "type": "string",
+            "description": "\u2018running\u2019: Sync local running to peer\u2019s running configuration; \u2018all\u2019: Sync local running to peer\u2019s running configuration, and local startup to peer\u2019s startup configuration;."
+        },
+        "Usr": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

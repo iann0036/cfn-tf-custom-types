@@ -1,0 +1,1397 @@
+{
+    "typeName": "TF::Thunder::InterfaceEthernet",
+    "description": "`thunder_interface_ethernet` Provides details about thunder interface ethernet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-InterfaceEthernet/docs/README.md",
+    "definitions": {
+        "AccessListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclId": {
+                    "type": "number"
+                },
+                "AclName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BfdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Demand": {
+                    "type": "number"
+                },
+                "Echo": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Authentication": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IntervalCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IntervalCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DdosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IcmpRateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lockup": {
+                    "type": "number"
+                },
+                "LockupPeriod": {
+                    "type": "number"
+                },
+                "Normal": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Icmpv6RateLimitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LockupPeriodV6": {
+                    "type": "number"
+                },
+                "LockupV6": {
+                    "type": "number"
+                },
+                "NormalV6": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowPromiscuousVip": {
+                    "type": "number"
+                },
+                "CacheSpoofingPort": {
+                    "type": "number"
+                },
+                "Client": {
+                    "type": "number"
+                },
+                "Dhcp": {
+                    "type": "number"
+                },
+                "GenerateMembershipQuery": {
+                    "type": "number"
+                },
+                "Inside": {
+                    "type": "number"
+                },
+                "MaxRespTime": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "QueryInterval": {
+                    "type": "number"
+                },
+                "Server": {
+                    "type": "number"
+                },
+                "SlbPartitionRedirect": {
+                    "type": "number"
+                },
+                "TtlIgnore": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "AddressList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressListDefinition"
+                    }
+                },
+                "HelperAddressList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HelperAddressListDefinition"
+                    }
+                },
+                "Ospf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Rip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RipDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Router": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StatefulFirewall": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatefulFirewallDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inside": {
+                    "type": "number"
+                },
+                "Ipv6Enable": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "TtlIgnore": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "AccessListCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessListCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AddressList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressListDefinition"
+                    }
+                },
+                "Ospf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Rip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RipDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Router": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RouterAdver": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouterAdverDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StatefulFirewall": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatefulFirewallDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IsisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LldpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "EnableCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnableCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NotificationCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotificationCfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TxDot1Cfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TxDot1CfgDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TxTlvsCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TxTlvsCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "Lw4o6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inside": {
+                    "type": "number"
+                },
+                "MapTInside": {
+                    "type": "number"
+                },
+                "MapTOutside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MonitorListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MirrorIndex": {
+                    "type": "number"
+                },
+                "Monitor": {
+                    "type": "string"
+                },
+                "MonitorVlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Nptv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DomainListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrunkGroupListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminKey": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "PortPriority": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "string"
+                },
+                "TrunkNumber": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "UdldTimeoutCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UdldTimeoutCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyChainList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyChainListDefinition"
+                    }
+                },
+                "ModeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModeListDefinition"
+                    }
+                },
+                "SendOnlyList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SendOnlyListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number"
+                },
+                "MinRx": {
+                    "type": "number"
+                },
+                "Multiplier": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressType": {
+                    "type": "string"
+                },
+                "Ipv6Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HelperAddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelperAddress": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "AreaList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AreaListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uuid": {
+                    "type": "string"
+                },
+                "SplitHorizonCfg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SplitHorizonCfgDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RouterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Isis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IsisDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ospf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ripng": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RipngDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "StatefulFirewallDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "number"
+                },
+                "AclName": {
+                    "type": "string"
+                },
+                "ClassList": {
+                    "type": "string"
+                },
+                "Inside": {
+                    "type": "number"
+                },
+                "Outside": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AccessListCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inbound": {
+                    "type": "number"
+                },
+                "V6AclName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RouterAdverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AdverMtu": {
+                    "type": "number"
+                },
+                "AdverMtuDisable": {
+                    "type": "number"
+                },
+                "AdverVrid": {
+                    "type": "number"
+                },
+                "AdverVridDefault": {
+                    "type": "number"
+                },
+                "DefaultLifetime": {
+                    "type": "number"
+                },
+                "FloatingIp": {
+                    "type": "string"
+                },
+                "FloatingIpDefaultVrid": {
+                    "type": "string"
+                },
+                "HopLimit": {
+                    "type": "number"
+                },
+                "ManagedConfigAction": {
+                    "type": "string"
+                },
+                "MaxInterval": {
+                    "type": "number"
+                },
+                "MinInterval": {
+                    "type": "number"
+                },
+                "OtherConfigAction": {
+                    "type": "string"
+                },
+                "RateLimit": {
+                    "type": "number"
+                },
+                "ReachableTime": {
+                    "type": "number"
+                },
+                "RetransmitTimer": {
+                    "type": "number"
+                },
+                "UseFloatingIp": {
+                    "type": "number"
+                },
+                "UseFloatingIpDefaultVrid": {
+                    "type": "number"
+                },
+                "PrefixList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BfdCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bfd": {
+                    "type": "number"
+                },
+                "Disable": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CsnpIntervalListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CsnpInterval": {
+                    "type": "number"
+                },
+                "Level": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HelloIntervalListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "Level": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HelloIntervalMinimalListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloIntervalMinimal": {
+                    "type": "number"
+                },
+                "Level": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HelloMultiplierListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloMultiplier": {
+                    "type": "number"
+                },
+                "Level": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MeshGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Blocked": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MetricListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PasswordListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PriorityListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WideMetricListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "WideMetric": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EnableCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RtEnable": {
+                    "type": "number"
+                },
+                "Rx": {
+                    "type": "number"
+                },
+                "Tx": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NotificationCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotifEnable": {
+                    "type": "number"
+                },
+                "Notification": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxDot1CfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkAggregation": {
+                    "type": "number"
+                },
+                "TxDot1Tlvs": {
+                    "type": "number"
+                },
+                "Vlan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TxTlvsCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "number"
+                },
+                "ManagementAddress": {
+                    "type": "number"
+                },
+                "PortDescription": {
+                    "type": "number"
+                },
+                "SystemCapabilities": {
+                    "type": "number"
+                },
+                "SystemDescription": {
+                    "type": "number"
+                },
+                "SystemName": {
+                    "type": "number"
+                },
+                "TxTlvs": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DomainListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BindType": {
+                    "type": "string"
+                },
+                "DomainName": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UdldTimeoutCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fast": {
+                    "type": "number"
+                },
+                "Slow": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "KeyChainListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyChain": {
+                    "type": "string"
+                },
+                "Level": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ModeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SendOnlyListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "SendOnly": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CostCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cost": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DeadIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeadInterval": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HelloIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HelloInterval": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MtuIgnoreCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "MtuIgnore": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NeighborCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NeigInst": {
+                    "type": "number"
+                },
+                "Neighbor": {
+                    "type": "string"
+                },
+                "NeighborCost": {
+                    "type": "number"
+                },
+                "NeighborPollInterval": {
+                    "type": "number"
+                },
+                "NeighborPriority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NetworkListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BroadcastType": {
+                    "type": "string"
+                },
+                "NetworkInstanceId": {
+                    "type": "number"
+                },
+                "P2mpNbma": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PriorityCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RetransmitIntervalCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "RetransmitInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TransmitDelayCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "number"
+                },
+                "TransmitDelay": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SplitHorizonCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RipngDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rip": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrefixListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotAutonomous": {
+                    "type": "number"
+                },
+                "NotOnLink": {
+                    "type": "number"
+                },
+                "PreferredLifetime": {
+                    "type": "number"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "ValidLifetime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AreaListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AreaIdAddr": {
+                    "type": "string"
+                },
+                "AreaIdNum": {
+                    "type": "number"
+                },
+                "InstanceId": {
+                    "type": "number"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable Router Advertisements on this interface; \u2018disable\u2019: Disable Router Advertisements on this interface;."
+        },
+        "AutoNegEnable": {
+            "type": "number",
+            "description": "enable auto-negotiation."
+        },
+        "CpuProcess": {
+            "type": "number",
+            "description": "All Packets to this port are processed by CPU."
+        },
+        "CpuProcessDir": {
+            "type": "string",
+            "description": "\u2018primary\u2019: Primary board; \u2018blade\u2019: blade board; \u2018hash-dip\u2019: Hash based on the Destination IP; \u2018hash-sip\u2019: Hash based on the Source IP; \u2018hash-dmac\u2019: Hash based on the Destination MAC; \u2018hash-smac\u2019: Hash based on the Source MAC;."
+        },
+        "Duplexity": {
+            "type": "string",
+            "description": "\u2018Full\u2019: Full; \u2018Half\u2019: Half; \u2018auto\u2019: auto;."
+        },
+        "FecForcedOff": {
+            "type": "number",
+            "description": "turn off the FEC."
+        },
+        "FecForcedOn": {
+            "type": "number",
+            "description": "turn on the FEC."
+        },
+        "FlowControl": {
+            "type": "number",
+            "description": "Enable 802.3x flow control on full duplex port."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ifnum": {
+            "type": "number",
+            "description": "Ethernet interface number."
+        },
+        "L3VlanFwdDisable": {
+            "type": "number"
+        },
+        "LoadInterval": {
+            "type": "number",
+            "description": "Configure Load Interval (Seconds (5-300, Multiple of 5), default 300)."
+        },
+        "MediaTypeCopper": {
+            "type": "number",
+            "description": "Set the media type to copper."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "OSPF interface MTU (MTU size)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the interface."
+        },
+        "RemoveVlanTag": {
+            "type": "number",
+            "description": "Remove the vlan tag for egressing packets."
+        },
+        "Speed": {
+            "type": "string",
+            "description": "\u201810\u2019: 10; \u2018100\u2019: 100; \u20181000\u2019: 1000; \u2018auto\u2019: auto;."
+        },
+        "SpeedForced40g": {
+            "type": "number",
+            "description": "force the speed to be 40G on 100G link."
+        },
+        "TrafficDistributionMode": {
+            "type": "string",
+            "description": "\u2018sip\u2019: sip; \u2018dip\u2019: dip; \u2018primary\u2019: primary; \u2018blade\u2019: blade; \u2018l4-src-port\u2019: l4-src-port; \u2018l4-dst-port\u2019: l4-dst-port;."
+        },
+        "TrapSource": {
+            "type": "number",
+            "description": "The trap source."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "AccessList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessListDefinition"
+            },
+            "maxItems": 1
+        },
+        "Bfd": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BfdDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ddos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DdosDefinition"
+            },
+            "maxItems": 1
+        },
+        "IcmpRateLimit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcmpRateLimitDefinition"
+            },
+            "maxItems": 1
+        },
+        "Icmpv6RateLimit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Icmpv6RateLimitDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ipv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6Definition"
+            },
+            "maxItems": 1
+        },
+        "Isis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IsisDefinition"
+            },
+            "maxItems": 1
+        },
+        "Lldp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LldpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Lw4o6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Lw4o6Definition"
+            },
+            "maxItems": 1
+        },
+        "Map": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MapDefinition"
+            },
+            "maxItems": 1
+        },
+        "MonitorList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorListDefinition"
+            }
+        },
+        "Nptv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Nptv6Definition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        },
+        "TrunkGroupList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrunkGroupListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerLldpprofile",
+    "description": "Configure FortiSwitch LLDP profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerLldpprofile/docs/README.md",
+    "definitions": {
+        "CustomTlvsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InformationString": {
+                    "type": "string",
+                    "description": "Organizationally defined information string (0 - 507 hexadecimal bytes)."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "TLV name (not sent)."
+                },
+                "Oui": {
+                    "type": "string",
+                    "description": "Organizationally unique identifier (OUI), a 3-byte hexadecimal number, for this TLV."
+                },
+                "Subtype": {
+                    "type": "number",
+                    "description": "Organizationally defined subtype (0 - 255)."
+                }
+            },
+            "required": []
+        },
+        "MedLocationServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Location service type name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable or disable this TLV. Valid values: `disable`, `enable`."
+                },
+                "SysLocationId": {
+                    "type": "string",
+                    "description": "Location service ID."
+                }
+            },
+            "required": []
+        },
+        "MedNetworkPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignVlan": {
+                    "type": "string",
+                    "description": "Enable/disable VLAN assignment when this profile is applied on managed FortiSwitch port. Valid values: `disable`, `enable`."
+                },
+                "Dscp": {
+                    "type": "number",
+                    "description": "Advertised Differentiated Services Code Point (DSCP) value, a packet header value indicating the level of service requested for traffic, such as high priority or best effort delivery."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Policy type name."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "Advertised Layer 2 priority (0 - 7; from lowest to highest priority)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable or disable this TLV. Valid values: `disable`, `enable`."
+                },
+                "Vlan": {
+                    "type": "number",
+                    "description": "ID of VLAN to advertise, if configured on port (0 - 4094, 0 = priority tag)."
+                },
+                "VlanIntf": {
+                    "type": "string",
+                    "description": "VLAN interface to advertise; if configured on port."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoIsl": {
+            "type": "string",
+            "description": "Enable/disable auto inter-switch LAG. Valid values: `disable`, `enable`."
+        },
+        "AutoIslHelloTimer": {
+            "type": "number",
+            "description": "Auto inter-switch LAG hello timer duration (1 - 30 sec, default = 3)."
+        },
+        "AutoIslPortGroup": {
+            "type": "number",
+            "description": "Auto inter-switch LAG port group ID (0 - 9)."
+        },
+        "AutoIslReceiveTimeout": {
+            "type": "number",
+            "description": "Auto inter-switch LAG timeout if no response is received (3 - 90 sec, default = 9)."
+        },
+        "AutoMclagIcl": {
+            "type": "string",
+            "description": "Enable/disable MCLAG inter chassis link. Valid values: `disable`, `enable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MedTlvs": {
+            "type": "string",
+            "description": "Transmitted LLDP-MED TLVs (type-length-value descriptions): inventory management TLV and/or network policy TLV."
+        },
+        "N8021Tlvs": {
+            "type": "string",
+            "description": "Transmitted IEEE 802.1 TLVs. Valid values: `port-vlan-id`."
+        },
+        "N8023Tlvs": {
+            "type": "string",
+            "description": "Transmitted IEEE 802.3 TLVs."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "CustomTlvs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomTlvsDefinition"
+            }
+        },
+        "MedLocationService": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MedLocationServiceDefinition"
+            }
+        },
+        "MedNetworkPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MedNetworkPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

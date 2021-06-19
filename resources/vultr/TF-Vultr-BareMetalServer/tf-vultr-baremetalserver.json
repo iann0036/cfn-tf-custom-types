@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::Vultr::BareMetalServer",
+    "description": "Provides a Vultr bare metal server resource. This can be used to create, read, modify, and delete bare metal servers on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-BareMetalServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationEmail": {
+            "type": "boolean",
+            "description": "Whether an activation email will be sent when the server is ready."
+        },
+        "AppId": {
+            "type": "number",
+            "description": "The ID of the Vultr application to be installed on the server."
+        },
+        "CpuCount": {
+            "type": "number"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DefaultPassword": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "string"
+        },
+        "EnableIpv6": {
+            "type": "boolean",
+            "description": "Whether the server has IPv6 networking activated."
+        },
+        "GatewayV4": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname to assign to the server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "A label for the server."
+        },
+        "MacAddress": {
+            "type": "number"
+        },
+        "MainIp": {
+            "type": "string"
+        },
+        "NetmaskV4": {
+            "type": "string"
+        },
+        "Os": {
+            "type": "string"
+        },
+        "OsId": {
+            "type": "number",
+            "description": "The ID of the operating system to be installed on the server."
+        },
+        "Plan": {
+            "type": "string",
+            "description": "The ID of the plan that you want the server to subscribe to."
+        },
+        "Ram": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The ID of the region that the server is to be created in."
+        },
+        "ReservedIpv4": {
+            "type": "string",
+            "description": "IP address of the floating IP to use as the main IP of this server."
+        },
+        "ScriptId": {
+            "type": "string",
+            "description": "The ID of the startup script you want added to the server."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "The ID of the Vultr snapshot that the server will restore for the initial installation."
+        },
+        "SshKeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of SSH key IDs to apply to the server on install (only valid for Linux/FreeBSD)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string",
+            "description": "The tag to assign to the server."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Generic data store, which some provisioning tools and cloud operating systems use as a configuration file. It is generally consumed only once after an instance has been launched, but individual needs may vary."
+        },
+        "V6MainIp": {
+            "type": "string"
+        },
+        "V6Network": {
+            "type": "string"
+        },
+        "V6NetworkSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Plan",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CpuCount",
+        "/properties/DateCreated",
+        "/properties/DefaultPassword",
+        "/properties/Disk",
+        "/properties/GatewayV4",
+        "/properties/Id",
+        "/properties/MacAddress",
+        "/properties/MainIp",
+        "/properties/NetmaskV4",
+        "/properties/Os",
+        "/properties/Ram",
+        "/properties/Status",
+        "/properties/V6MainIp",
+        "/properties/V6Network",
+        "/properties/V6NetworkSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DefaultPassword"
+    ]
+}

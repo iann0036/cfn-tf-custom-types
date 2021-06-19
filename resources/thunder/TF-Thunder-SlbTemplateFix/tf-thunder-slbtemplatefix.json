@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateFix",
+    "description": "`thunder_slb_template_fix` Provides details about thunder slb template fix",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateFix/docs/README.md",
+    "definitions": {
+        "TagSwitchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Equals": {
+                    "type": "string"
+                },
+                "ServiceGroup": {
+                    "type": "string"
+                },
+                "SwitchingType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertClientIp": {
+            "type": "number",
+            "description": "Insert client ip to tag 11447."
+        },
+        "Logging": {
+            "type": "string",
+            "description": "\u2018init\u2019: init only log; \u2018term\u2019: termination only log; \u2018both\u2019: both initial and termination log;."
+        },
+        "Name": {
+            "type": "string",
+            "description": "FIX Template Name."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "TagSwitching": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagSwitchingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

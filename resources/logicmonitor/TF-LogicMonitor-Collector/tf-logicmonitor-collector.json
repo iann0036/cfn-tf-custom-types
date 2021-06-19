@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::LogicMonitor::Collector",
+    "description": "Provides a LogicMonitor collector resource. This can be used to create and manage LogicMonitor collectors.\n\n*Note:* This resource will only create the collector device in your account. See [Downloading a Collector Installer](https://www.logicmonitor.com/support/rest-api-developers-guide/collectors/downloading-a-collector-installer/) for\ninformation on how to download and install an existing collector.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logicmonitor/TF-LogicMonitor-Collector/docs/README.md",
+    "definitions": {
+        "PropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupCollectorId": {
+            "type": "number",
+            "description": "The Id of the failover Collector configured for this Collector."
+        },
+        "CollectorGroupId": {
+            "type": "number",
+            "description": "The Id of the group the Collector is in."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The Collector's description."
+        },
+        "EnableCollectorDeviceFailover": {
+            "type": "boolean",
+            "description": "Whether or not the device the Collector is installed on is enabled for fail over."
+        },
+        "EnableFailback": {
+            "type": "boolean",
+            "description": "Whether or not automatic failback is enabled for the Collector."
+        },
+        "EscalationChainId": {
+            "type": "number",
+            "description": "The Id of the escalation chain associated with this Collector."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Properties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PropertiesDefinition"
+            }
+        },
+        "ResendInterval": {
+            "type": "number",
+            "description": "The interval, in minutes, after which alert notifications for the Collector will be resent."
+        },
+        "SuppressAlertClear": {
+            "type": "boolean",
+            "description": "Whether alert clear notifications are suppressed for the Collector."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

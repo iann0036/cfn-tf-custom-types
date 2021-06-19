@@ -1,0 +1,398 @@
+{
+    "typeName": "TF::AzureRM::SpringCloudService",
+    "description": "Manages an Azure Spring Cloud Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SpringCloudService/docs/README.md",
+    "definitions": {
+        "RequiredNetworkTrafficRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string"
+                },
+                "Fqdns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigServerGitSettingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string",
+                    "description": "The default label of the Git repository, should be the branch name, tag name, or commit-id of the repository."
+                },
+                "SearchPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array of strings used to search subdirectories of the Git repository."
+                },
+                "Uri": {
+                    "type": "string",
+                    "description": "The URI of the default Git repository used as the Config Server back end, should be started with `http://`, `https://`, `git@`, or `ssh://`."
+                },
+                "HttpBasicAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpBasicAuthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Repository": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RepositoryDefinition"
+                    }
+                },
+                "SshAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SshAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppNetworkResourceGroup": {
+                    "type": "string",
+                    "description": "Specifies the Name of the resource group containing network resources of Azure Spring Cloud Apps. Changing this forces a new resource to be created."
+                },
+                "AppSubnetId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Subnet which should host the Spring Boot Applications deployed in this Spring Cloud Service. Changing this forces a new resource to be created."
+                },
+                "CidrRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of (at least 3) CIDR ranges (at least /16) which are used to host the Spring Cloud infrastructure, which must not overlap with any existing CIDR ranges in the Subnet. Changing this forces a new resource to be created."
+                },
+                "ServiceRuntimeNetworkResourceGroup": {
+                    "type": "string",
+                    "description": "Specifies the Name of the resource group containing network resources of Azure Spring Cloud Service Runtime. Changing this forces a new resource to be created."
+                },
+                "ServiceRuntimeSubnetId": {
+                    "type": "string",
+                    "description": "Specifies the ID of the Subnet where the Service Runtime components of the Spring Cloud Service will exist. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "AppSubnetId",
+                "CidrRanges",
+                "ServiceRuntimeSubnetId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TraceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstrumentationKey": {
+                    "type": "string",
+                    "description": "The Instrumentation Key used for Application Insights."
+                },
+                "SampleRate": {
+                    "type": "number",
+                    "description": "The sampling rate of Application Insights Agent. Must be between `0.0` and `100.0`. Defaults to `10.0`."
+                }
+            },
+            "required": [
+                "InstrumentationKey"
+            ]
+        },
+        "HttpBasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "The password used to access the Git repository server, required when the Git repository server supports Http Basic Authentication."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The username that's used to access the Git repository server, required when the Git repository server supports Http Basic Authentication."
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "RepositoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string",
+                    "description": "The default label of the Git repository, should be the branch name, tag name, or commit-id of the repository."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "A name to identify on the Git repository, required only if repos exists."
+                },
+                "Pattern": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array of strings used to match an application name. For each pattern, use the `{application}/{profile}` format with wildcards."
+                },
+                "SearchPaths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An array of strings used to search subdirectories of the Git repository."
+                },
+                "Uri": {
+                    "type": "string",
+                    "description": "The URI of the Git repository that's used as the Config Server back end should be started with `http://`, `https://`, `git@`, or `ssh://`."
+                },
+                "HttpBasicAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpBasicAuthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SshAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SshAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "Uri"
+            ]
+        },
+        "SshAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostKey": {
+                    "type": "string",
+                    "description": "The host key of the Git repository server, should not include the algorithm prefix as covered by `host-key-algorithm`."
+                },
+                "HostKeyAlgorithm": {
+                    "type": "string",
+                    "description": "The host key algorithm, should be `ssh-dss`, `ssh-rsa`, `ecdsa-sha2-nistp256`, `ecdsa-sha2-nistp384`, or `ecdsa-sha2-nistp521`. Required only if `host-key` exists."
+                },
+                "PrivateKey": {
+                    "type": "string",
+                    "description": "The SSH private key to access the Git repository, required when the URI starts with `git@` or `ssh://`."
+                },
+                "StrictHostKeyCheckingEnabled": {
+                    "type": "boolean",
+                    "description": "Indicates whether the Config Server instance will fail to start if the host_key does not match."
+                }
+            },
+            "required": [
+                "PrivateKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Spring Cloud Service resource. Changing this forces a new resource to be created."
+        },
+        "OutboundPublicIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RequiredNetworkTrafficRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequiredNetworkTrafficRulesDefinition"
+            }
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies The name of the resource group in which to create the Spring Cloud Service. Changing this forces a new resource to be created."
+        },
+        "SkuName": {
+            "type": "string",
+            "description": "Specifies the SKU Name for this Spring Cloud Service. Possible values are `B0` and `S0`. Defaults to `S0`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "ConfigServerGitSetting": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigServerGitSettingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Trace": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TraceDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OutboundPublicIpAddresses",
+        "/properties/RequiredNetworkTrafficRules"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/HttpBasicAuthDefinition/Password",
+        "/definitions/SshAuthDefinition/HostKey",
+        "/definitions/SshAuthDefinition/PrivateKey",
+        "/definitions/HttpBasicAuthDefinition/Password"
+    ]
+}

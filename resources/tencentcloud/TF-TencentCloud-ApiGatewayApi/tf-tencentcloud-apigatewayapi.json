@@ -1,0 +1,251 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayApi",
+    "description": "Use this resource to create API of API gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayApi/docs/README.md",
+    "definitions": {
+        "RequestParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string",
+                    "description": "Parameter default value."
+                },
+                "Desc": {
+                    "type": "string",
+                    "description": "Parameter description."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Parameter name."
+                },
+                "Position": {
+                    "type": "string",
+                    "description": "Parameter location."
+                },
+                "Required": {
+                    "type": "boolean",
+                    "description": "If this parameter required. Default value: `false`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Parameter type."
+                }
+            },
+            "required": [
+                "Name",
+                "Position",
+                "Type"
+            ]
+        },
+        "ResponseErrorCodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number",
+                    "description": "Custom response configuration error code."
+                },
+                "ConvertedCode": {
+                    "type": "number",
+                    "description": "Custom error code conversion."
+                },
+                "Desc": {
+                    "type": "string",
+                    "description": "Parameter description."
+                },
+                "Msg": {
+                    "type": "string",
+                    "description": "Custom response configuration error message."
+                },
+                "NeedConvert": {
+                    "type": "boolean",
+                    "description": "Whether to enable error code conversion. Default value: `false`."
+                }
+            },
+            "required": [
+                "Code",
+                "Msg"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiDesc": {
+            "type": "string",
+            "description": "Custom API description."
+        },
+        "ApiName": {
+            "type": "string",
+            "description": "Custom API name."
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "API authentication type. Valid values: `SECRET` (key pair authentication),`NONE` (no authentication). Default value: `NONE`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EnableCors": {
+            "type": "boolean",
+            "description": "Whether to enable CORS. Default value: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PreLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "API frontend request type. Valid values: `HTTP`, `WEBSOCKET`. Default value: `HTTP`."
+        },
+        "ReleaseLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "RequestConfigMethod": {
+            "type": "string",
+            "description": "Request frontend method configuration. Valid values: `GET`,`POST`,`PUT`,`DELETE`,`HEAD`,`ANY`. Default value: `GET`."
+        },
+        "RequestConfigPath": {
+            "type": "string",
+            "description": "Request frontend path configuration. Like `/user/getinfo`."
+        },
+        "ResponseFailExample": {
+            "type": "string",
+            "description": "Response failure sample of custom response configuration."
+        },
+        "ResponseSuccessExample": {
+            "type": "string",
+            "description": "Successful response sample of custom response configuration."
+        },
+        "ResponseType": {
+            "type": "string",
+            "description": "Return type. Valid values: `HTML`, `JSON`, `TEXT`, `BINARY`, `XML`. Default value: `HTML`."
+        },
+        "ServiceConfigMethod": {
+            "type": "string",
+            "description": "API backend service request method, such as `GET`. If `service_config_type` is `HTTP`, this parameter will be required. The frontend `request_config_method` and backend method `service_config_method` can be different."
+        },
+        "ServiceConfigMockReturnMessage": {
+            "type": "string",
+            "description": "Returned information of API backend mocking. This parameter is required when `service_config_type` is `MOCK`."
+        },
+        "ServiceConfigPath": {
+            "type": "string",
+            "description": "API backend service path, such as /path. If `service_config_type` is `HTTP`, this parameter will be required. The frontend `request_config_path` and backend path `service_config_path` can be different."
+        },
+        "ServiceConfigProduct": {
+            "type": "string",
+            "description": "Backend type. This parameter takes effect when VPC is enabled. Currently, only `clb` is supported."
+        },
+        "ServiceConfigScfFunctionName": {
+            "type": "string",
+            "description": "SCF function name. This parameter takes effect when `service_config_type` is `SCF`."
+        },
+        "ServiceConfigScfFunctionNamespace": {
+            "type": "string",
+            "description": "SCF function namespace. This parameter takes effect when `service_config_type` is `SCF`."
+        },
+        "ServiceConfigScfFunctionQualifier": {
+            "type": "string",
+            "description": "SCF function version. This parameter takes effect when `service_config_type` is `SCF`."
+        },
+        "ServiceConfigTimeout": {
+            "type": "number",
+            "description": "API backend service timeout period in seconds. Default value: `5`."
+        },
+        "ServiceConfigType": {
+            "type": "string",
+            "description": "API backend service type. Valid values: `WEBSOCKET`, `HTTP`, `SCF`, `MOCK`. Default value: `HTTP`."
+        },
+        "ServiceConfigUrl": {
+            "type": "string",
+            "description": "API backend service url. This parameter is required when `service_config_type` is `HTTP`."
+        },
+        "ServiceConfigVpcId": {
+            "type": "string",
+            "description": "Unique VPC ID."
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "Which service this API belongs. Refer to resource `tencentcloud_api_gateway_service`."
+        },
+        "TestLimit": {
+            "type": "number",
+            "description": "API QPS value. Enter a positive number to limit the API query rate per second `QPS`."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "RequestParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestParametersDefinition"
+            }
+        },
+        "ResponseErrorCodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseErrorCodesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiName",
+        "RequestConfigPath",
+        "ServiceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

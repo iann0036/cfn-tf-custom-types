@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::Splunk::AppsLocal",
+    "description": "Create, install and manage apps on your Splunk instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-AppsLocal/docs/README.md",
+    "definitions": {
+        "AclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "App": {
+                    "type": "string"
+                },
+                "CanChangePerms": {
+                    "type": "boolean"
+                },
+                "CanShareApp": {
+                    "type": "boolean"
+                },
+                "CanShareGlobal": {
+                    "type": "boolean"
+                },
+                "CanShareUser": {
+                    "type": "boolean"
+                },
+                "CanWrite": {
+                    "type": "boolean"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Removable": {
+                    "type": "boolean"
+                },
+                "Sharing": {
+                    "type": "string"
+                },
+                "Write": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Auth": {
+            "type": "string",
+            "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase."
+        },
+        "Author": {
+            "type": "string",
+            "description": "For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information."
+        },
+        "Configured": {
+            "type": "boolean",
+            "description": "Custom setup complete indication:\n<br>true = Custom app setup complete.\n<br>false = Custom app setup not complete."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Short app description also displayed below the app title in Splunk Web Launcher."
+        },
+        "ExplicitAppname": {
+            "type": "string",
+            "description": "Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename."
+        },
+        "Filename": {
+            "type": "boolean",
+            "description": "Indicates whether to use the name value as the app source location.\n<br>true indicates that name is a path to a file to install.\n<br>false indicates that name is the literal app name and that the app is created from Splunkbase using a template."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "App name displayed in Splunk Web, from five to eighty characters excluding the prefix \"Splunk for\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Literal app name or path for the file to install, depending on the value of filename.\n<br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.\n<br>filename = true indicates that name is the URL or path to the local .tar, .tgz or .spl file. If name is the Splunkbase URL, set auth or session to authenticate the request.\nThe app folder name cannot include spaces or special characters."
+        },
+        "Session": {
+            "type": "string",
+            "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth."
+        },
+        "Update": {
+            "type": "boolean",
+            "description": "File-based update indication:\n<br>true specifies that filename should be used to update an existing app. If not specified, update defaults to\n<br>false, which indicates that filename should not be used to update an existing app."
+        },
+        "Version": {
+            "type": "string",
+            "description": "App version."
+        },
+        "Visible": {
+            "type": "boolean",
+            "description": "Indicates whether the app is visible and navigable from Splunk Web.\n<br>true = App is visible and navigable.\n<br>false = App is not visible or navigable."
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

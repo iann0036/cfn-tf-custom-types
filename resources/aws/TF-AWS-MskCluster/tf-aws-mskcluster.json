@@ -1,0 +1,513 @@
+{
+    "typeName": "TF::AWS::MskCluster",
+    "description": "Manages AWS Managed Streaming for Kafka cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-MskCluster/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BrokerNodeGroupInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzDistribution": {
+                    "type": "string"
+                },
+                "ClientSubnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EbsVolumeSize": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientSubnets",
+                "EbsVolumeSize",
+                "InstanceType",
+                "SecurityGroups"
+            ]
+        },
+        "ClientAuthenticationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sasl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SaslDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Tls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConfigurationInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Arn",
+                "Revision"
+            ]
+        },
+        "EncryptionInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionAtRestKmsKeyArn": {
+                    "type": "string"
+                },
+                "EncryptionInTransit": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionInTransitDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LoggingInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BrokerLogs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BrokerLogsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "OpenMonitoringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prometheus": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrometheusDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SaslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iam": {
+                    "type": "boolean"
+                },
+                "Scram": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthorityArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EncryptionInTransitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientBroker": {
+                    "type": "string"
+                },
+                "InCluster": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "BrokerLogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLogsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Firehose": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FirehoseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PrometheusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JmxExporter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JmxExporterDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeExporter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeExporterDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudwatchLogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "LogGroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "FirehoseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeliveryStream": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "JmxExporterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnabledInBroker": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnabledInBroker"
+            ]
+        },
+        "NodeExporterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnabledInBroker": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnabledInBroker"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BootstrapBrokers": {
+            "type": "string"
+        },
+        "BootstrapBrokersSaslIam": {
+            "type": "string"
+        },
+        "BootstrapBrokersSaslScram": {
+            "type": "string"
+        },
+        "BootstrapBrokersTls": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "Name of the MSK cluster."
+        },
+        "CurrentVersion": {
+            "type": "string"
+        },
+        "EnhancedMonitoring": {
+            "type": "string",
+            "description": "Specify the desired enhanced MSK CloudWatch monitoring level.  See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KafkaVersion": {
+            "type": "string",
+            "description": "Specify the desired Kafka software version."
+        },
+        "NumberOfBrokerNodes": {
+            "type": "number",
+            "description": "The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "ZookeeperConnectString": {
+            "type": "string"
+        },
+        "BrokerNodeGroupInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BrokerNodeGroupInfoDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ClientAuthentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientAuthenticationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConfigurationInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigurationInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "EncryptionInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoggingInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingInfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "OpenMonitoring": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OpenMonitoringDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "KafkaVersion",
+        "NumberOfBrokerNodes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/BootstrapBrokers",
+        "/properties/BootstrapBrokersSaslIam",
+        "/properties/BootstrapBrokersSaslScram",
+        "/properties/BootstrapBrokersTls",
+        "/properties/CurrentVersion",
+        "/properties/Id",
+        "/properties/ZookeeperConnectString"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

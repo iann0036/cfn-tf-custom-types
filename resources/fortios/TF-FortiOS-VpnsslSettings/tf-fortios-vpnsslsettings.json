@@ -1,0 +1,497 @@
+{
+    "typeName": "TF::FortiOS::VpnsslSettings",
+    "description": "Configure SSL VPN.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnsslSettings/docs/README.md",
+    "definitions": {
+        "AuthenticationRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Auth": {
+                    "type": "string",
+                    "description": "SSL VPN authentication method restriction. Valid values: `any`, `local`, `radius`, `tacacs+`, `ldap`."
+                },
+                "Cipher": {
+                    "type": "string",
+                    "description": "SSL VPN cipher strength. Valid values: `any`, `high`, `medium`."
+                },
+                "ClientCert": {
+                    "type": "string",
+                    "description": "Enable/disable SSL VPN client certificate restrictive. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID (0 - 4294967295)."
+                },
+                "Portal": {
+                    "type": "string",
+                    "description": "SSL VPN portal."
+                },
+                "Realm": {
+                    "type": "string",
+                    "description": "SSL VPN realm."
+                },
+                "SourceAddress6Negate": {
+                    "type": "string",
+                    "description": "Enable/disable negated source IPv6 address match. Valid values: `enable`, `disable`."
+                },
+                "SourceAddressNegate": {
+                    "type": "string",
+                    "description": "Enable/disable negated source address match. Valid values: `enable`, `disable`."
+                },
+                "UserPeer": {
+                    "type": "string",
+                    "description": "Name of user peer."
+                },
+                "Groups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupsDefinition"
+                    }
+                },
+                "SourceAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceAddressDefinition"
+                    }
+                },
+                "SourceAddress6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceAddress6Definition"
+                    }
+                },
+                "SourceInterface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceInterfaceDefinition"
+                    }
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UsersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SourceAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "SourceAddress6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "IPv6 address name."
+                }
+            },
+            "required": []
+        },
+        "SourceInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "TunnelIpPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "TunnelIpv6PoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Group name."
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string",
+            "description": "Force the SSL-VPN security level. High allows only high. Medium allows medium and high. Low allows any. Valid values: `high`, `medium`, `default`, `low`."
+        },
+        "AuthSessionCheckSourceIp": {
+            "type": "string",
+            "description": "Enable/disable checking of source IP for authentication session. Valid values: `enable`, `disable`."
+        },
+        "AuthTimeout": {
+            "type": "number",
+            "description": "SSL-VPN authentication timeout (1 - 259200 sec (3 days), 0 for no timeout)."
+        },
+        "AutoTunnelStaticRoute": {
+            "type": "string",
+            "description": "Enable to auto-create static routes for the SSL-VPN tunnel IP addresses. Valid values: `enable`, `disable`."
+        },
+        "BannedCipher": {
+            "type": "string",
+            "description": "Select one or more cipher technologies that cannot be used in SSL-VPN negotiations."
+        },
+        "CheckReferer": {
+            "type": "string",
+            "description": "Enable/disable verification of referer field in HTTP request header. Valid values: `enable`, `disable`."
+        },
+        "DefaultPortal": {
+            "type": "string",
+            "description": "Default SSL VPN portal."
+        },
+        "DeflateCompressionLevel": {
+            "type": "number",
+            "description": "Compression level (0~9)."
+        },
+        "DeflateMinDataSize": {
+            "type": "number",
+            "description": "Minimum amount of data that triggers compression (200 - 65535 bytes)."
+        },
+        "DnsServer1": {
+            "type": "string",
+            "description": "DNS server 1."
+        },
+        "DnsServer2": {
+            "type": "string",
+            "description": "DNS server 2."
+        },
+        "DnsSuffix": {
+            "type": "string",
+            "description": "DNS suffix used for SSL-VPN clients."
+        },
+        "DtlsHelloTimeout": {
+            "type": "number",
+            "description": "SSLVPN maximum DTLS hello timeout (10 - 60 sec, default = 10)."
+        },
+        "DtlsMaxProtoVer": {
+            "type": "string",
+            "description": "DTLS maximum protocol version. Valid values: `dtls1-0`, `dtls1-2`."
+        },
+        "DtlsMinProtoVer": {
+            "type": "string",
+            "description": "DTLS minimum protocol version. Valid values: `dtls1-0`, `dtls1-2`."
+        },
+        "DtlsTunnel": {
+            "type": "string",
+            "description": "Enable DTLS to prevent eavesdropping, tampering, or message forgery. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Encode2fSequence": {
+            "type": "string",
+            "description": "Encode \\2F sequence to forward slash in URLs. Valid values: `enable`, `disable`."
+        },
+        "EncryptAndStorePassword": {
+            "type": "string",
+            "description": "Encrypt and store user passwords for SSL-VPN web sessions. Valid values: `enable`, `disable`."
+        },
+        "ForceTwoFactorAuth": {
+            "type": "string",
+            "description": "Enable to force two-factor authentication for all SSL-VPNs. Valid values: `enable`, `disable`."
+        },
+        "HeaderXForwardedFor": {
+            "type": "string",
+            "description": "Forward the same, add, or remove HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HstsIncludeSubdomains": {
+            "type": "string",
+            "description": "Add HSTS includeSubDomains response header. Valid values: `enable`, `disable`."
+        },
+        "HttpCompression": {
+            "type": "string",
+            "description": "Enable to allow HTTP compression over SSL-VPN tunnels. Valid values: `enable`, `disable`."
+        },
+        "HttpOnlyCookie": {
+            "type": "string",
+            "description": "Enable/disable SSL-VPN support for HttpOnly cookies. Valid values: `enable`, `disable`."
+        },
+        "HttpRequestBodyTimeout": {
+            "type": "number",
+            "description": "SSL-VPN session is disconnected if an HTTP request body is not received within this time (1 - 60 sec, default = 20)."
+        },
+        "HttpRequestHeaderTimeout": {
+            "type": "number",
+            "description": "SSL-VPN session is disconnected if an HTTP request header is not received within this time (1 - 60 sec, default = 20)."
+        },
+        "HttpsRedirect": {
+            "type": "string",
+            "description": "Enable/disable redirect of port 80 to SSL-VPN port. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "SSL VPN disconnects if idle for specified time in seconds."
+        },
+        "Ipv6DnsServer1": {
+            "type": "string",
+            "description": "IPv6 DNS server 1."
+        },
+        "Ipv6DnsServer2": {
+            "type": "string",
+            "description": "IPv6 DNS server 2."
+        },
+        "Ipv6WinsServer1": {
+            "type": "string",
+            "description": "IPv6 WINS server 1."
+        },
+        "Ipv6WinsServer2": {
+            "type": "string",
+            "description": "IPv6 WINS server 2."
+        },
+        "LoginAttemptLimit": {
+            "type": "number",
+            "description": "SSL VPN maximum login attempt times before block (0 - 10, default = 2, 0 = no limit)."
+        },
+        "LoginBlockTime": {
+            "type": "number",
+            "description": "Time for which a user is blocked from logging in after too many failed login attempts (0 - 86400 sec, default = 60)."
+        },
+        "LoginTimeout": {
+            "type": "number",
+            "description": "SSLVPN maximum login timeout (10 - 180 sec, default = 30)."
+        },
+        "Port": {
+            "type": "number",
+            "description": "SSL-VPN access port (1 - 65535)."
+        },
+        "PortPrecedence": {
+            "type": "string",
+            "description": "Enable means that if SSL-VPN connections are allowed on an interface admin GUI connections are blocked on that interface. Valid values: `enable`, `disable`."
+        },
+        "Reqclientcert": {
+            "type": "string",
+            "description": "Enable to require client certificates for all SSL-VPN users. Valid values: `enable`, `disable`."
+        },
+        "RouteSourceInterface": {
+            "type": "string",
+            "description": "Enable to allow SSL-VPN sessions to bypass routing and bind to the incoming interface. Valid values: `enable`, `disable`."
+        },
+        "Servercert": {
+            "type": "string",
+            "description": "Name of the server certificate to be used for SSL-VPNs."
+        },
+        "SourceAddress6Negate": {
+            "type": "string",
+            "description": "Enable/disable negated source IPv6 address match. Valid values: `enable`, `disable`."
+        },
+        "SourceAddressNegate": {
+            "type": "string",
+            "description": "Enable/disable negated source address match. Valid values: `enable`, `disable`."
+        },
+        "SslClientRenegotiation": {
+            "type": "string",
+            "description": "Enable to allow client renegotiation by the server if the tunnel goes down. Valid values: `disable`, `enable`."
+        },
+        "SslInsertEmptyFragment": {
+            "type": "string",
+            "description": "Enable/disable insertion of empty fragment. Valid values: `enable`, `disable`."
+        },
+        "SslMaxProtoVer": {
+            "type": "string",
+            "description": "SSL maximum protocol version. Valid values: `tls1-0`, `tls1-1`, `tls1-2`, `tls1-3`."
+        },
+        "SslMinProtoVer": {
+            "type": "string",
+            "description": "SSL minimum protocol version. Valid values: `tls1-0`, `tls1-1`, `tls1-2`, `tls1-3`."
+        },
+        "Tlsv10": {
+            "type": "string",
+            "description": "Enable/disable TLSv1.0. Valid values: `enable`, `disable`."
+        },
+        "Tlsv11": {
+            "type": "string",
+            "description": "Enable/disable TLSv1.1. Valid values: `enable`, `disable`."
+        },
+        "Tlsv12": {
+            "type": "string",
+            "description": "Enable/disable TLSv1.2. Valid values: `enable`, `disable`."
+        },
+        "Tlsv13": {
+            "type": "string",
+            "description": "Enable/disable TLSv1.3. Valid values: `enable`, `disable`."
+        },
+        "TransformBackwardSlashes": {
+            "type": "string",
+            "description": "Transform backward slashes to forward slashes in URLs. Valid values: `enable`, `disable`."
+        },
+        "TunnelConnectWithoutReauth": {
+            "type": "string",
+            "description": "Enable/disable tunnel connection without re-authorization if previous connection dropped. Valid values: `enable`, `disable`."
+        },
+        "TunnelUserSessionTimeout": {
+            "type": "number",
+            "description": "Time out value to clean up user session after tunnel connection is dropped (1 - 255 sec, default=30)."
+        },
+        "UnsafeLegacyRenegotiation": {
+            "type": "string",
+            "description": "Enable/disable unsafe legacy re-negotiation. Valid values: `enable`, `disable`."
+        },
+        "UrlObscuration": {
+            "type": "string",
+            "description": "Enable to obscure the host name of the URL of the web browser display. Valid values: `enable`, `disable`."
+        },
+        "UserPeer": {
+            "type": "string",
+            "description": "Name of user peer."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WinsServer1": {
+            "type": "string",
+            "description": "WINS server 1."
+        },
+        "WinsServer2": {
+            "type": "string",
+            "description": "WINS server 2."
+        },
+        "XContentTypeOptions": {
+            "type": "string",
+            "description": "Add HTTP X-Content-Type-Options header. Valid values: `enable`, `disable`."
+        },
+        "AuthenticationRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationRuleDefinition"
+            }
+        },
+        "SourceAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceAddressDefinition"
+            }
+        },
+        "SourceAddress6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceAddress6Definition"
+            }
+        },
+        "SourceInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceInterfaceDefinition"
+            }
+        },
+        "TunnelIpPools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TunnelIpPoolsDefinition"
+            }
+        },
+        "TunnelIpv6Pools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TunnelIpv6PoolsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

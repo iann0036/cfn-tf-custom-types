@@ -1,0 +1,710 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleOsConfigPatchDeployment",
+    "description": "CloudFormation equivalent of google_os_config_patch_deployment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleOsConfigPatchDeployment/docs/README.md",
+    "definitions": {
+        "InstanceFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "InstanceNamePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Instances": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "GroupLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupLabelsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OneTimeScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExecuteTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExecuteTime"
+            ]
+        },
+        "PatchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RebootConfig": {
+                    "type": "string"
+                },
+                "Apt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AptDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Goo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GooDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PostStep": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PostStepDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PreStep": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreStepDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WindowsUpdate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WindowsUpdateDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Yum": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/YumDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Zypper": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZypperDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RecurringScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "Monthly": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonthlyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TimeOfDay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeOfDayDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "TimeZone": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeZoneDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Weekly": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeeklyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "RolloutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "DisruptionBudget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DisruptionBudgetDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GroupLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Labels"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Excludes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExclusivePackages": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GooDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "PostStepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinuxExecStepConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinuxExecStepConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WindowsExecStepConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WindowsExecStepConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PreStepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinuxExecStepConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinuxExecStepConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WindowsExecStepConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WindowsExecStepConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "WindowsUpdateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classifications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Excludes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExclusivePatches": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "YumDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Excludes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExclusivePackages": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Minimal": {
+                    "type": "boolean"
+                },
+                "Security": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ZypperDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Categories": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Excludes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExclusivePatches": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Severities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WithOptional": {
+                    "type": "boolean"
+                },
+                "WithUpdate": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "MonthlyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MonthDay": {
+                    "type": "number"
+                },
+                "WeekDayOfMonth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeekDayOfMonthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeOfDayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hours": {
+                    "type": "number"
+                },
+                "Minutes": {
+                    "type": "number"
+                },
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeZoneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "WeeklyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DayOfWeek"
+            ]
+        },
+        "DisruptionBudgetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fixed": {
+                    "type": "number"
+                },
+                "Percentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LinuxExecStepConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedSuccessCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Interpreter": {
+                    "type": "string"
+                },
+                "LocalPath": {
+                    "type": "string"
+                },
+                "GcsObject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsObjectDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "WindowsExecStepConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedSuccessCodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Interpreter": {
+                    "type": "string"
+                },
+                "LocalPath": {
+                    "type": "string"
+                },
+                "GcsObject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsObjectDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "WeekDayOfMonthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "WeekOrdinal": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DayOfWeek",
+                "WeekOrdinal"
+            ]
+        },
+        "GcsObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "GenerationNumber": {
+                    "type": "string"
+                },
+                "Object": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "GenerationNumber",
+                "Object"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Duration": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastExecuteTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PatchDeploymentId": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "InstanceFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceFilterDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "OneTimeSchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OneTimeScheduleDefinition"
+            },
+            "maxItems": 1
+        },
+        "PatchConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PatchConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RecurringSchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RecurringScheduleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Rollout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RolloutDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PatchDeploymentId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/LastExecuteTime",
+        "/properties/Name",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,341 @@
+{
+    "typeName": "TF::AWS::AmplifyApp",
+    "description": "Provides an Amplify App resource, a fullstack serverless app hosted on the [AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html).\n\n~> **Note:** When you create/update an Amplify App from Terraform, you may end up with the error \"BadRequestException: You should at least provide one valid token\" because of authentication issues. See the section \"Repository with Tokens\" below.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AmplifyApp/docs/README.md",
+    "definitions": {
+        "EnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProductionBranchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BranchName": {
+                    "type": "string"
+                },
+                "LastDeployTime": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "ThumbnailUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AutoBranchCreationConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BasicAuthCredentials": {
+                    "type": "string",
+                    "description": "The basic authorization credentials for the autocreated branch."
+                },
+                "BuildSpec": {
+                    "type": "string",
+                    "description": "The build specification (build spec) for the autocreated branch."
+                },
+                "EnableAutoBuild": {
+                    "type": "boolean",
+                    "description": "Enables auto building for the autocreated branch."
+                },
+                "EnableBasicAuth": {
+                    "type": "boolean",
+                    "description": "Enables basic authorization for the autocreated branch."
+                },
+                "EnablePerformanceMode": {
+                    "type": "boolean",
+                    "description": "Enables performance mode for the branch."
+                },
+                "EnablePullRequestPreview": {
+                    "type": "boolean",
+                    "description": "Enables pull request previews for the autocreated branch."
+                },
+                "EnvironmentVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentVariablesDefinition2"
+                    },
+                    "description": "The environment variables for the autocreated branch."
+                },
+                "Framework": {
+                    "type": "string",
+                    "description": "The framework for the autocreated branch."
+                },
+                "PullRequestEnvironmentName": {
+                    "type": "string",
+                    "description": "The Amplify environment name for the pull request."
+                },
+                "Stage": {
+                    "type": "string",
+                    "description": "Describes the current stage for the autocreated branch. Valid values: `PRODUCTION`, `BETA`, `DEVELOPMENT`, `EXPERIMENTAL`, `PULL_REQUEST`."
+                }
+            },
+            "required": []
+        },
+        "EnvironmentVariablesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string",
+                    "description": "The condition for a URL rewrite or redirect rule, such as a country code."
+                },
+                "Source": {
+                    "type": "string",
+                    "description": "The source pattern for a URL rewrite or redirect rule."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "The status code for a URL rewrite or redirect rule. Valid values: `200`, `301`, `302`, `404`, `404-200`."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "The target pattern for a URL rewrite or redirect rule."
+                }
+            },
+            "required": [
+                "Source",
+                "Target"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessToken": {
+            "type": "string",
+            "description": "The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoBranchCreationPatterns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The automated branch creation glob patterns for an Amplify app."
+        },
+        "BasicAuthCredentials": {
+            "type": "string",
+            "description": "The credentials for basic authorization for an Amplify app."
+        },
+        "BuildSpec": {
+            "type": "string",
+            "description": "The [build specification](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html) (build spec) for an Amplify app."
+        },
+        "DefaultDomain": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for an Amplify app."
+        },
+        "EnableAutoBranchCreation": {
+            "type": "boolean",
+            "description": "Enables automated branch creation for an Amplify app."
+        },
+        "EnableBasicAuth": {
+            "type": "boolean",
+            "description": "Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app."
+        },
+        "EnableBranchAutoBuild": {
+            "type": "boolean",
+            "description": "Enables auto-building of branches for the Amplify App."
+        },
+        "EnableBranchAutoDeletion": {
+            "type": "boolean",
+            "description": "Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository."
+        },
+        "EnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariablesDefinition"
+            },
+            "description": "The environment variables map for an Amplify app."
+        },
+        "IamServiceRoleArn": {
+            "type": "string",
+            "description": "The AWS Identity and Access Management (IAM) service role for an Amplify app."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name for an Amplify app."
+        },
+        "OauthToken": {
+            "type": "string",
+            "description": "The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored."
+        },
+        "Platform": {
+            "type": "string",
+            "description": "The platform or framework for an Amplify app. Valid values: `WEB`."
+        },
+        "ProductionBranch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProductionBranchDefinition"
+            }
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The repository for an Amplify app."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value mapping of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "AutoBranchCreationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoBranchCreationConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "CustomRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomRuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DefaultDomain",
+        "/properties/Id",
+        "/properties/ProductionBranch"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccessToken",
+        "/properties/BasicAuthCredentials",
+        "/properties/OauthToken",
+        "/definitions/AutoBranchCreationConfigDefinition/BasicAuthCredentials"
+    ]
+}

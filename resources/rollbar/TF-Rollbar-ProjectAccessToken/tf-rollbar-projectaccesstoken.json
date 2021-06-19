@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::Rollbar::ProjectAccessToken",
+    "description": "CloudFormation equivalent of rollbar_project_access_token",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rollbar/TF-Rollbar-ProjectAccessToken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessToken": {
+            "type": "string"
+        },
+        "CurRateLimitWindowCount": {
+            "type": "number"
+        },
+        "CurRateLimitWindowStart": {
+            "type": "number"
+        },
+        "DateCreated": {
+            "type": "number"
+        },
+        "DateModified": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "number"
+        },
+        "RateLimitWindowCount": {
+            "type": "number"
+        },
+        "RateLimitWindowSize": {
+            "type": "number"
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId",
+        "Scopes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessToken",
+        "/properties/CurRateLimitWindowCount",
+        "/properties/CurRateLimitWindowStart",
+        "/properties/DateCreated",
+        "/properties/DateModified",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

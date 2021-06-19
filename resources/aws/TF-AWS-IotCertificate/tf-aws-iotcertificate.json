@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::AWS::IotCertificate",
+    "description": "Creates and manages an AWS IoT certificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-IotCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "Boolean flag to indicate if the certificate should be active."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificatePem": {
+            "type": "string"
+        },
+        "Csr": {
+            "type": "string",
+            "description": "The certificate signing request. Review\n[CreateCertificateFromCsr](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)\nfor more information on generating a certificate from a certificate signing request (CSR).\nIf none is specified both the certificate and keys will be generated, review [CreateKeysAndCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)\nfor more information on generating keys and a certificate."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "PublicKey": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Active"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CertificatePem",
+        "/properties/Id",
+        "/properties/PrivateKey",
+        "/properties/PublicKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CertificatePem",
+        "/properties/PrivateKey",
+        "/properties/PublicKey"
+    ]
+}

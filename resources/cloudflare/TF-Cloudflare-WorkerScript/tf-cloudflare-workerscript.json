@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::Cloudflare::WorkerScript",
+    "description": "Provides a Cloudflare worker script resource. In order for a script to be active, you'll also need to setup a `cloudflare_worker_route`. *NOTE:*  This resource uses the Cloudflare account APIs. This requires setting the `CLOUDFLARE_ACCOUNT_ID` environment variable or `account_id` provider argument.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-WorkerScript/docs/README.md",
+    "definitions": {
+        "KvNamespaceBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "NamespaceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "NamespaceId"
+            ]
+        },
+        "PlainTextBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Text"
+            ]
+        },
+        "SecretTextBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Text"
+            ]
+        },
+        "WebassemblyBindingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Module": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Module",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Content": {
+            "type": "string",
+            "description": "The script content."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The global variable for the binding in your Worker code."
+        },
+        "KvNamespaceBinding": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/KvNamespaceBindingDefinition"
+            }
+        },
+        "PlainTextBinding": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PlainTextBindingDefinition"
+            }
+        },
+        "SecretTextBinding": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecretTextBindingDefinition"
+            }
+        },
+        "WebassemblyBinding": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WebassemblyBindingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SecretTextBindingDefinition/Text"
+    ]
+}

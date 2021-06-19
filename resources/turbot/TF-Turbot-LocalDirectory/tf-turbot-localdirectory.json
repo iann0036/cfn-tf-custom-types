@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::Turbot::LocalDirectory",
+    "description": "The `Turbot Local Directory` resource adds support for local directories. It is used to create and delete directory settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-LocalDirectory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Brief description of the purpose and details of the directory.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for the directory."
+        },
+        "DirectoryType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string",
+            "description": "ID or `aka` of the parent resource.\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through a local directory. For example, email id of the user.\n- `title` - (Required) Short descriptive name for the directory.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for the directory."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ProfileIdTemplate": {
+            "type": "string",
+            "description": "A template to generate profile id for users authenticated through a local directory. For example, email id of the user.\n- `title` - (Required) Short descriptive name for the directory.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for the directory."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Labels that can be used to manage, group, categorize, search, and save metadata for the directory."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Short descriptive name for the directory.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for the directory."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent",
+        "ProfileIdTemplate",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DirectoryType",
+        "/properties/Id",
+        "/properties/ParentAkas",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

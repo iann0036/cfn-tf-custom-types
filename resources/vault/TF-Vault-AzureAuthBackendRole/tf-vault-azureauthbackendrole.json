@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::Vault::AzureAuthBackendRole",
+    "description": "Manages an Azure auth backend role in a Vault server. Roles constrain the\ninstances or principals that can perform the login operation against the\nbackend. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/azure.html) for more\ninformation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-AzureAuthBackendRole/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string"
+        },
+        "BoundGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the groups\nthat can perform the login operation that they should be using the group\nID specified by this field."
+        },
+        "BoundLocations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the virtual machines\nthat can perform the login operation that the location in their identity\ndocument must match the one specified by this field."
+        },
+        "BoundResourceGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the virtual\nmachiness that can perform the login operation that they be associated with\nthe resource group that matches the value specified by this field."
+        },
+        "BoundScaleSets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the virtual\nmachines that can perform the login operation that they must match the scale set\nspecified by this field."
+        },
+        "BoundServicePrincipalIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the\nservice principals that can perform the login operation that they should be possess\nthe ids specified by this field."
+        },
+        "BoundSubscriptionIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "If set, defines a constraint on the subscriptions\nthat can perform the login operation to ones which  matches the value specified by this\nfield."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Role": {
+            "type": "string",
+            "description": "The name of the role."
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

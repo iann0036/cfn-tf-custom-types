@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::DigitalOcean::CustomImage",
+    "description": "Provides a resource which can be used to create a [custom image](https://www.digitalocean.com/docs/images/custom-images/)\nfrom a URL. The URL must point to an image in one of the following file formats:\n\n- Raw (.img) with an MBR or GPT partition table\n- qcow2\n- VHDX\n- VDI\n- VMDK\n\nThe image may be compressed using gzip or bzip2. See the DigitalOcean Custom\nImage documentation for [additional requirements](https://www.digitalocean.com/docs/images/custom-images/#image-requirements).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-CustomImage/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "An optional description for the image."
+        },
+        "Distribution": {
+            "type": "string",
+            "description": "An optional distribution name for the image. Valid values are documented [here](https://developers.digitalocean.com/documentation/v2/#create-a-custom-image)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "number"
+        },
+        "MinDiskSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the Custom Image."
+        },
+        "Public": {
+            "type": "boolean"
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of regions. (Currently only one is supported)."
+        },
+        "SizeGigabytes": {
+            "type": "number"
+        },
+        "Slug": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of optional tags for the image."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string",
+            "description": "A URL from which the custom Linux virtual machine image may be retrieved."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Regions",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/ImageId",
+        "/properties/MinDiskSize",
+        "/properties/Public",
+        "/properties/SizeGigabytes",
+        "/properties/Slug",
+        "/properties/Status",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

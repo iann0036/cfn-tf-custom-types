@@ -1,0 +1,437 @@
+{
+    "typeName": "TF::AWS::ApprunnerService",
+    "description": "Manages an App Runner Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApprunnerService/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EncryptionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKey"
+            ]
+        },
+        "HealthCheckConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "InstanceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cpu": {
+                    "type": "string"
+                },
+                "InstanceRoleArn": {
+                    "type": "string"
+                },
+                "Memory": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceRoleArn"
+            ]
+        },
+        "SourceConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDeploymentsEnabled": {
+                    "type": "boolean"
+                },
+                "AuthenticationConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticationConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CodeRepository": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CodeRepositoryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ImageRepository": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageRepositoryDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AuthenticationConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessRoleArn": {
+                    "type": "string"
+                },
+                "ConnectionArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CodeRepositoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RepositoryUrl": {
+                    "type": "string"
+                },
+                "CodeConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CodeConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SourceCodeVersion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceCodeVersionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "RepositoryUrl"
+            ]
+        },
+        "ImageRepositoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageIdentifier": {
+                    "type": "string"
+                },
+                "ImageRepositoryType": {
+                    "type": "string"
+                },
+                "ImageConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ImageIdentifier",
+                "ImageRepositoryType"
+            ]
+        },
+        "CodeConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigurationSource": {
+                    "type": "string"
+                },
+                "CodeConfigurationValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CodeConfigurationValuesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "ConfigurationSource"
+            ]
+        },
+        "SourceCodeVersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type",
+                "Value"
+            ]
+        },
+        "ImageConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "string"
+                },
+                "RuntimeEnvironmentVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuntimeEnvironmentVariablesDefinition"
+                    }
+                },
+                "StartCommand": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuntimeEnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CodeConfigurationValuesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildCommand": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Runtime": {
+                    "type": "string"
+                },
+                "RuntimeEnvironmentVariables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuntimeEnvironmentVariablesDefinition2"
+                    }
+                },
+                "StartCommand": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Runtime"
+            ]
+        },
+        "RuntimeEnvironmentVariablesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoScalingConfigurationArn": {
+            "type": "string",
+            "description": "ARN of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "Name of the service."
+        },
+        "ServiceUrl": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "HealthCheckConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "InstanceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourceConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceConfigurationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/ServiceId",
+        "/properties/ServiceUrl",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

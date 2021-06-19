@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Akamai::AppsecSecurityPolicyProtections",
+    "description": "Use the `akamai_appsec_security_policy_protections` resource to create or modify ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-AppsecSecurityPolicyProtections/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyApiConstraints": {
+            "type": "boolean",
+            "description": "Whether to enable api constraints: either `true` or `false`."
+        },
+        "ApplyApplicationLayerControls": {
+            "type": "boolean",
+            "description": "Whether to enable application layer controls: either `true` or `false`."
+        },
+        "ApplyBotmanControls": {
+            "type": "boolean",
+            "description": "Whether to enable botman controls: either `true` or `false`."
+        },
+        "ApplyNetworkLayerControls": {
+            "type": "boolean",
+            "description": "Whether to enable network layer controls: either `true` or `false`."
+        },
+        "ApplyRateControls": {
+            "type": "boolean",
+            "description": "Whether to enable rate controls: either `true` or `false`."
+        },
+        "ApplyReputationControls": {
+            "type": "boolean",
+            "description": "Whether to enable reputation controls: either `true` or `false`."
+        },
+        "ApplySlowPostControls": {
+            "type": "boolean",
+            "description": "Whether to enable slow post controls: either `true` or `false`."
+        },
+        "ConfigId": {
+            "type": "number",
+            "description": "The ID of the security configuration to use."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityPolicyId": {
+            "type": "string",
+            "description": "The ID of the security policy to use."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version number of the security configuration to use."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigId",
+        "SecurityPolicyId",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

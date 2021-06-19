@@ -1,0 +1,244 @@
+{
+    "typeName": "TF::AWS::SignerSigningJob",
+    "description": "Creates a Signer Signing Job.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SignerSigningJob/docs/README.md",
+    "definitions": {
+        "RevocationRecordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Reason": {
+                    "type": "string"
+                },
+                "RevokedAt": {
+                    "type": "string"
+                },
+                "RevokedBy": {
+                    "type": "string"
+                }
+            }
+        },
+        "SignedObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            }
+        },
+        "SignedObjectDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SignedObjectDefinition"
+                    }
+                }
+            }
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Key",
+                "Version"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompletedAt": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreSigningJobFailure": {
+            "type": "boolean",
+            "description": "Set this argument to `true` to ignore signing job failures and retrieve failed status and reason. Default `false`."
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "JobInvoker": {
+            "type": "string"
+        },
+        "JobOwner": {
+            "type": "string"
+        },
+        "PlatformDisplayName": {
+            "type": "string"
+        },
+        "PlatformId": {
+            "type": "string"
+        },
+        "ProfileName": {
+            "type": "string",
+            "description": "The name of the profile to initiate the signing operation."
+        },
+        "ProfileVersion": {
+            "type": "string"
+        },
+        "RequestedBy": {
+            "type": "string"
+        },
+        "RevocationRecord": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevocationRecordDefinition"
+            }
+        },
+        "SignatureExpiresAt": {
+            "type": "string"
+        },
+        "SignedObject": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignedObjectDefinition2"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusReason": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProfileName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompletedAt",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/JobId",
+        "/properties/JobInvoker",
+        "/properties/JobOwner",
+        "/properties/PlatformDisplayName",
+        "/properties/PlatformId",
+        "/properties/ProfileVersion",
+        "/properties/RequestedBy",
+        "/properties/RevocationRecord",
+        "/properties/SignatureExpiresAt",
+        "/properties/SignedObject",
+        "/properties/Status",
+        "/properties/StatusReason"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

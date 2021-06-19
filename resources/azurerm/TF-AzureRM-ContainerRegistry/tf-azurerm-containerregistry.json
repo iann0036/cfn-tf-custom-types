@@ -1,0 +1,356 @@
+{
+    "typeName": "TF::AzureRM::ContainerRegistry",
+    "description": "Manages an Azure Container Registry.\n\n~> **Note:** All arguments including the access key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ContainerRegistry/docs/README.md",
+    "definitions": {
+        "EncryptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IdentityClientId": {
+                    "type": "string"
+                },
+                "KeyVaultKeyId": {
+                    "type": "string"
+                }
+            }
+        },
+        "GeoreplicationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GeoreplicationsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GeoreplicationsDefinition"
+                    }
+                },
+                "ZoneRedundancyEnabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "NetworkRuleSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "IpRange": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkRuleSetDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "NetworkRuleSetDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultAction": {
+                    "type": "string"
+                },
+                "IpRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkRuleSetDefinition"
+                    }
+                },
+                "VirtualNetwork": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkRuleSetDefinition2"
+                    }
+                }
+            }
+        },
+        "RetentionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TrustPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of User Managed Identity ID's which should be assigned to the Container Registry."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of Managed Identity which should be assigned to the Container Registry. Possible values are `SystemAssigned`, `UserAssigned` and `SystemAssigned, UserAssigned`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether the admin user is enabled. Defaults to `false`."
+        },
+        "AdminPassword": {
+            "type": "string"
+        },
+        "AdminUsername": {
+            "type": "string"
+        },
+        "Encryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionDefinition"
+            },
+            "description": "An `encryption` block as documented below."
+        },
+        "GeoreplicationLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Azure locations where the container registry should be geo-replicated."
+        },
+        "Georeplications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GeoreplicationsDefinition2"
+            },
+            "description": "A `georeplications` block as documented below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "LoginServer": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Container Registry. Changing this forces a new resource to be created."
+        },
+        "NetworkRuleSet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkRuleSetDefinition3"
+            },
+            "description": "A `network_rule_set` block as documented below."
+        },
+        "PublicNetworkAccessEnabled": {
+            "type": "boolean",
+            "description": "Whether public network access is allowed for the container registry. Defaults to `true`."
+        },
+        "QuarantinePolicyEnabled": {
+            "type": "boolean",
+            "description": "Boolean value that indicates whether quarantine policy is enabled. Defaults to `false`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Container Registry. Changing this forces a new resource to be created."
+        },
+        "RetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionPolicyDefinition"
+            },
+            "description": "A `retention_policy` block as documented below."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The SKU name of the container registry. Possible values are  `Basic`, `Standard` and `Premium`. `Classic` (which was previously `Basic`) is supported only for existing resources."
+        },
+        "StorageAccountId": {
+            "type": "string",
+            "description": "The ID of a Storage Account which must be located in the same Azure Region as the Container Registry.  Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TrustPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustPolicyDefinition"
+            },
+            "description": "A `trust_policy` block as documented below."
+        },
+        "ZoneRedundancyEnabled": {
+            "type": "boolean",
+            "description": "Whether zone redundancy is enabled for this Container Registry? Changing this forces a new resource to be created. Defaults to `false`."
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdminPassword",
+        "/properties/AdminUsername",
+        "/properties/Id",
+        "/properties/LoginServer"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword"
+    ]
+}

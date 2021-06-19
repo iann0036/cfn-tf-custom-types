@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::FortiOS::UserPeer",
+    "description": "Configure peer users.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserPeer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Ca": {
+            "type": "string",
+            "description": "Name of the CA certificate as returned by the execute vpn certificate ca list command."
+        },
+        "Cn": {
+            "type": "string",
+            "description": "Peer certificate common name."
+        },
+        "CnType": {
+            "type": "string",
+            "description": "Peer certificate common name type. Valid values: `string`, `email`, `FQDN`, `ipv4`, `ipv6`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdapMode": {
+            "type": "string",
+            "description": "Mode for LDAP peer authentication. Valid values: `password`, `principal-name`."
+        },
+        "LdapPassword": {
+            "type": "string",
+            "description": "Password for LDAP server bind."
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "Name of an LDAP server defined under the user ldap command. Performs client access rights check."
+        },
+        "LdapUsername": {
+            "type": "string",
+            "description": "Username for LDAP server bind."
+        },
+        "MandatoryCaVerify": {
+            "type": "string",
+            "description": "Determine what happens to the peer if the CA certificate is not installed. Disable to automatically consider the peer certificate as valid. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Peer name."
+        },
+        "OcspOverrideServer": {
+            "type": "string",
+            "description": "Online Certificate Status Protocol (OCSP) server for certificate retrieval."
+        },
+        "Passwd": {
+            "type": "string",
+            "description": "Peer's password used for two-factor authentication."
+        },
+        "Subject": {
+            "type": "string",
+            "description": "Peer certificate name constraints."
+        },
+        "TwoFactor": {
+            "type": "string",
+            "description": "Enable/disable two-factor authentication, applying certificate and password-based authentication. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/LdapPassword",
+        "/properties/Passwd"
+    ]
+}

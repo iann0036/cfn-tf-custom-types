@@ -1,0 +1,242 @@
+{
+    "typeName": "TF::Dome9::AwsSecurityGroup",
+    "description": "This resource has methods to add and manage Security Groups in a cloud account that is managed by Dome9.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-AwsSecurityGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inbound": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InboundDefinition"
+                    }
+                },
+                "Outbound": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OutboundDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OpenForAll": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "ProtocolType": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OutboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OpenForAll": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "ProtocolType": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDefinition"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsRegionId": {
+            "type": "string",
+            "description": "AWS region, in AWS format (e.g., \"us-east-1\"); default is us_east_1."
+        },
+        "CloudAccountName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Security Group description."
+        },
+        "Dome9CloudAccountId": {
+            "type": "string",
+            "description": "Cloud account id in Dome9."
+        },
+        "Dome9SecurityGroupName": {
+            "type": "string",
+            "description": "Name of the Security Group."
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsProtected": {
+            "type": "boolean",
+            "description": "Indicates the Security Group is in Protected mode.\n* Note: to set the protection mode, first create the Security Group, then update it with the desired protection mode value ('true' for Protected)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Security Group tags."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC id for VPC containing the Security Group."
+        },
+        "VpcName": {
+            "type": "string",
+            "description": "Security Group VPC name."
+        },
+        "Services": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServicesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Dome9CloudAccountId",
+        "Dome9SecurityGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudAccountName",
+        "/properties/ExternalId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

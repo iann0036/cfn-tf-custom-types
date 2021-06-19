@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::TencentCloud::DayuCcHttpsPolicy",
+    "description": "Use this resource to create a dayu CC self-define https policy\n\n~> **NOTE:** creating CC self-define https policy need a valid resource `tencentcloud_dayu_l7_rule`; The resource only support Anti-DDoS of resource type `bgpip`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-DayuCcHttpsPolicy/docs/README.md",
+    "definitions": {
+        "RuleListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string",
+                    "description": "Operator of the rule. Valid values are `include` and `equal`."
+                },
+                "Skey": {
+                    "type": "string",
+                    "description": "Key of the rule. Valid values are `cgi`, `ua` and `referer`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Rule value, then length should be less than 31 bytes."
+                }
+            },
+            "required": [
+                "Operator",
+                "Skey",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Action mode. Valid values are `alg` and `drop`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain that the CC self-define https policy works for, only valid when `protocol` is `https`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the CC self-define https policy. Length should between 1 and 20."
+        },
+        "PolicyId": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "ID of the resource that the CC self-define https policy works for."
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "Type of the resource that the CC self-define https policy works for, valid value is `bgpip`."
+        },
+        "RuleId": {
+            "type": "string",
+            "description": "Rule id of the domain that the CC self-define https policy works for, only valid when `protocol` is `https`."
+        },
+        "Switch": {
+            "type": "boolean",
+            "description": "Indicate the CC self-define https policy takes effect or not."
+        },
+        "RuleList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleListDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name",
+        "ResourceId",
+        "ResourceType",
+        "RuleId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/IpList",
+        "/properties/PolicyId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

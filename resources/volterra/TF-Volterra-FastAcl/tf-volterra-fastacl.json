@@ -1,0 +1,615 @@
+{
+    "typeName": "TF::Volterra::FastAcl",
+    "description": "CloudFormation equivalent of volterra_fast_acl",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-FastAcl/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LegacyAclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DestinationTypeDefinition"
+                    }
+                },
+                "NetworkType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkTypeDefinition"
+                    }
+                },
+                "SourceRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProtocolPolicerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ReAclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllPublicVips": {
+                    "type": "boolean"
+                },
+                "DefaultTenantVip": {
+                    "type": "boolean"
+                },
+                "FastAclRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FastAclRulesDefinition"
+                    }
+                },
+                "SelectedTenantVip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SelectedTenantVipDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteAclDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllServices": {
+                    "type": "boolean"
+                },
+                "InsideNetwork": {
+                    "type": "boolean"
+                },
+                "InterfaceServices": {
+                    "type": "boolean"
+                },
+                "OutsideNetwork": {
+                    "type": "boolean"
+                },
+                "VipServices": {
+                    "type": "boolean"
+                },
+                "FastAclRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FastAclRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DestinationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllServices": {
+                    "type": "boolean"
+                },
+                "InterfaceServices": {
+                    "type": "boolean"
+                },
+                "SharedVipServices": {
+                    "type": "boolean"
+                },
+                "VipServices": {
+                    "type": "boolean"
+                },
+                "DestinationIpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DestinationIpAddressDefinition"
+                    }
+                },
+                "SelectedVipAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SelectedVipAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworkTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Public": {
+                    "type": "boolean"
+                },
+                "SiteLocal": {
+                    "type": "boolean"
+                },
+                "SiteLocalInside": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SourceRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FastAclRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "IpPrefixSet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpPrefixSetDefinition"
+                    }
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    }
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    }
+                },
+                "Prefix": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrefixDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SelectedTenantVipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultTenantVip": {
+                    "type": "boolean"
+                },
+                "PublicIpRefs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpRefsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DestinationIpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Protocol": {
+                    "type": "string"
+                },
+                "Address": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressDefinition"
+                    }
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SelectedVipAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SimpleAction": {
+                    "type": "string"
+                },
+                "PolicerAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PolicerActionDefinition"
+                    }
+                },
+                "ProtocolPolicerAction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolPolicerActionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpPrefixSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Disable": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "Dns": {
+                    "type": "boolean"
+                },
+                "UserDefined": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PublicIpRefsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "boolean"
+                },
+                "Dns": {
+                    "type": "boolean"
+                },
+                "UserDefined": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PolicerActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProtocolPolicerActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ref": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RefDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "LegacyAcl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LegacyAclDefinition"
+            }
+        },
+        "ProtocolPolicer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProtocolPolicerDefinition"
+            }
+        },
+        "ReAcl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ReAclDefinition"
+            }
+        },
+        "SiteAcl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SiteAclDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

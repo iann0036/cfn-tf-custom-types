@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::FortiOS::SystemWccp",
+    "description": "Configure WCCP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemWccp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssignmentBucketFormat": {
+            "type": "string",
+            "description": "Assignment bucket format for the WCCP cache engine. Valid values: `wccp-v2`, `cisco-implementation`."
+        },
+        "AssignmentDstaddrMask": {
+            "type": "string",
+            "description": "Assignment destination address mask."
+        },
+        "AssignmentMethod": {
+            "type": "string",
+            "description": "Hash key assignment preference. Valid values: `HASH`, `MASK`, `any`."
+        },
+        "AssignmentSrcaddrMask": {
+            "type": "string",
+            "description": "Assignment source address mask."
+        },
+        "AssignmentWeight": {
+            "type": "number",
+            "description": "Assignment of hash weight/ratio for the WCCP cache engine."
+        },
+        "Authentication": {
+            "type": "string",
+            "description": "Enable/disable MD5 authentication. Valid values: `enable`, `disable`."
+        },
+        "CacheEngineMethod": {
+            "type": "string",
+            "description": "Method used to forward traffic to the routers or to return to the cache engine. Valid values: `GRE`, `L2`."
+        },
+        "CacheId": {
+            "type": "string",
+            "description": "IP address known to all routers. If the addresses are the same, use the default 0.0.0.0."
+        },
+        "ForwardMethod": {
+            "type": "string",
+            "description": "Method used to forward traffic to the cache servers. Valid values: `GRE`, `L2`, `any`."
+        },
+        "GroupAddress": {
+            "type": "string",
+            "description": "IP multicast address used by the cache routers. For the FortiGate to ignore multicast WCCP traffic, use the default 0.0.0.0."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for MD5 authentication."
+        },
+        "Ports": {
+            "type": "string",
+            "description": "Service ports."
+        },
+        "PortsDefined": {
+            "type": "string",
+            "description": "Match method. Valid values: `source`, `destination`."
+        },
+        "PrimaryHash": {
+            "type": "string",
+            "description": "Hash method. Valid values: `src-ip`, `dst-ip`, `src-port`, `dst-port`."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Service priority."
+        },
+        "Protocol": {
+            "type": "number",
+            "description": "Service protocol."
+        },
+        "ReturnMethod": {
+            "type": "string",
+            "description": "Method used to decline a redirected packet and return it to the FortiGate. Valid values: `GRE`, `L2`, `any`."
+        },
+        "RouterId": {
+            "type": "string",
+            "description": "IP address known to all cache engines. If all cache engines connect to the same FortiGate interface, use the default 0.0.0.0."
+        },
+        "RouterList": {
+            "type": "string",
+            "description": "IP addresses of one or more WCCP routers."
+        },
+        "ServerList": {
+            "type": "string",
+            "description": "IP addresses and netmasks for up to four cache servers."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Cache server type. Valid values: `forward`, `proxy`."
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "Service ID."
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "WCCP service type used by the cache server for logical interception and redirection of traffic. Valid values: `auto`, `standard`, `dynamic`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

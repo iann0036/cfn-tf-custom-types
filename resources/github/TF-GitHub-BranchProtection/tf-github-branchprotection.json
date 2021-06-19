@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::GitHub::BranchProtection",
+    "description": "Protects a GitHub branch.\n\nThis resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-BranchProtection/docs/README.md",
+    "definitions": {
+        "RequiredPullRequestReviewsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DismissStaleReviews": {
+                    "type": "boolean"
+                },
+                "DismissalRestrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RequireCodeOwnerReviews": {
+                    "type": "boolean"
+                },
+                "RequiredApprovingReviewCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RequiredStatusChecksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Contexts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Strict": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowsDeletions": {
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` to allow the branch to be deleted."
+        },
+        "AllowsForcePushes": {
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` to allow force pushes on the branch."
+        },
+        "EnforceAdmins": {
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` enforces status checks for repository administrators."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Pattern": {
+            "type": "string",
+            "description": "Identifies the protection rule pattern."
+        },
+        "PushRestrictions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of actor IDs that may push to the branch."
+        },
+        "RepositoryId": {
+            "type": "string",
+            "description": "The name or node ID of the repository associated with this branch protection rule."
+        },
+        "RequireSignedCommits": {
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` requires all commits to be signed with GPG."
+        },
+        "RequiredPullRequestReviews": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequiredPullRequestReviewsDefinition"
+            }
+        },
+        "RequiredStatusChecks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequiredStatusChecksDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Pattern",
+        "RepositoryId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

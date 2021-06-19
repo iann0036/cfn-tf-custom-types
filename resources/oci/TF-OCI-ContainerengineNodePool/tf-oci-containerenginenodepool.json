@@ -1,0 +1,357 @@
+{
+    "typeName": "TF::OCI::ContainerengineNodePool",
+    "description": "This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.\n\nCreate a new node pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ContainerengineNodePool/docs/README.md",
+    "definitions": {
+        "NodeMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodeSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageId": {
+                    "type": "string"
+                },
+                "SourceName": {
+                    "type": "string"
+                },
+                "SourceType": {
+                    "type": "string"
+                }
+            }
+        },
+        "NodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            }
+        },
+        "NodesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "Error": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NodesDefinition"
+                    }
+                },
+                "FaultDomain": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "KubernetesVersion": {
+                    "type": "string"
+                },
+                "LifecycleDetails": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NodePoolId": {
+                    "type": "string"
+                },
+                "PrivateIp": {
+                    "type": "string"
+                },
+                "PublicIp": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "InitialNodeLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodeConfigDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Size": {
+                    "type": "number"
+                },
+                "PlacementConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PlacementConfigsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Size"
+            ]
+        },
+        "NodeShapeConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MemoryInGbs": {
+                    "type": "number"
+                },
+                "Ocpus": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NodeSourceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BootVolumeSizeInGbs": {
+                    "type": "string"
+                },
+                "ImageId": {
+                    "type": "string"
+                },
+                "SourceType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ImageId",
+                "SourceType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PlacementConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AvailabilityDomain",
+                "SubnetId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The OCID of the cluster to which this node pool is attached."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment in which the node pool exists."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubernetesVersion": {
+            "type": "string",
+            "description": "(Updatable) The version of Kubernetes to install on the nodes in the node pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "(Updatable) The name of the node pool. Avoid entering confidential information."
+        },
+        "NodeImageId": {
+            "type": "string",
+            "description": "Deprecated. Use `node_source_details` instead. The OCID of the image running on the nodes in the node pool. Cannot be used when `node_image_name` is specified."
+        },
+        "NodeImageName": {
+            "type": "string",
+            "description": "Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified."
+        },
+        "NodeMetadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NodeMetadataDefinition"
+            },
+            "description": "(Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch."
+        },
+        "NodeShape": {
+            "type": "string",
+            "description": "(Updatable) The name of the node shape of the nodes in the node pool."
+        },
+        "NodeSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeSourceDefinition"
+            }
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodesDefinition2"
+            }
+        },
+        "QuantityPerSubnet": {
+            "type": "number",
+            "description": "(Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead."
+        },
+        "SshPublicKey": {
+            "type": "string",
+            "description": "(Updatable) The SSH public key on each node in the node pool on launch."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified."
+        },
+        "InitialNodeLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InitialNodeLabelsDefinition"
+            }
+        },
+        "NodeConfigDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeConfigDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodeShapeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeShapeConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NodeSourceDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeSourceDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "CompartmentId",
+        "KubernetesVersion",
+        "Name",
+        "NodeShape"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NodeSource",
+        "/properties/Nodes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

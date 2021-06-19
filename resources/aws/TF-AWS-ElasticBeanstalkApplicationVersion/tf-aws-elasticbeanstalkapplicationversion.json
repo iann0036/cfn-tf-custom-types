@@ -1,0 +1,140 @@
+{
+    "typeName": "TF::AWS::ElasticBeanstalkApplicationVersion",
+    "description": "Provides an Elastic Beanstalk Application Version Resource. Elastic Beanstalk allows\nyou to deploy and manage applications in the AWS cloud without worrying about\nthe infrastructure that runs those applications.\n\nThis resource creates a Beanstalk Application Version that can be deployed to a Beanstalk\nEnvironment.\n\n~> **NOTE on Application Version Resource:**  When using the Application Version resource with multiple\n[Elastic Beanstalk Environments](elastic_beanstalk_environment.html) it is possible that an error may be returned\nwhen attempting to delete an Application Version while it is still in use by a different environment.\nTo work around this you can either create each environment in a separate AWS account or create your `aws_elastic_beanstalk_application_version` resources with a unique names in your Elastic Beanstalk Application. For example &lt;revision&gt;-&lt;environment&gt;.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElasticBeanstalkApplicationVersion/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Application": {
+            "type": "string",
+            "description": "Name of the Beanstalk Application the version is associated with."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "S3 bucket that contains the Application Version source bundle."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Short description of the Application Version."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "On delete, force an Application Version to be deleted when it may be in use by multiple Elastic Beanstalk Environments."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "S3 object that is the Application Version source bundle."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Unique name for the this Application Version."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of tags for the Elastic Beanstalk Application Version. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Application",
+        "Bucket",
+        "Key",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

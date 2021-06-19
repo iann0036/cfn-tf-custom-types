@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::AWS::SecurityGroupRule",
+    "description": "Provides a security group rule resource. Represents a single `ingress` or\n`egress` group rule, which can be added to external Security Groups.\n\n~> **NOTE on Security Groups and Security Group Rules:** Terraform currently\nprovides both a standalone Security Group Rule resource (a single `ingress` or\n`egress` rule), and a [Security Group resource](security_group.html) with `ingress` and `egress` rules\ndefined in-line. At this time you cannot use a Security Group with in-line rules\nin conjunction with any Security Group Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.\n\n~> **NOTE:** Setting `protocol = \"all\"` or `protocol = -1` with `from_port` and `to_port` will result in the EC2 API creating a security group rule with all ports open. This API behavior cannot be controlled by Terraform and may generate warnings in the future.\n\n~> **NOTE:** Referencing Security Groups across VPC peering has certain restrictions. More information is available in the [VPC Peering User Gu...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SecurityGroupRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrBlocks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of CIDR blocks. Cannot be specified with `source_security_group_id` or `self`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the rule."
+        },
+        "FromPort": {
+            "type": "number",
+            "description": "Start port (or ICMP type number if protocol is \"icmp\" or \"icmpv6\")."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6CidrBlocks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of IPv6 CIDR blocks. Cannot be specified with `source_security_group_id` or `self`."
+        },
+        "PrefixListIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Prefix List IDs."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "Security group to apply this rule to."
+        },
+        "Self": {
+            "type": "boolean",
+            "description": "Whether the security group itself will be added as a source to this ingress rule. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `source_security_group_id`."
+        },
+        "SourceSecurityGroupId": {
+            "type": "string",
+            "description": "Security group id to allow access to/from, depending on the `type`. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `self`."
+        },
+        "ToPort": {
+            "type": "number",
+            "description": "End port (or ICMP code if protocol is \"icmp\")."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of rule being created. Valid options are `ingress` (inbound)\nor `egress` (outbound)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FromPort",
+        "Protocol",
+        "SecurityGroupId",
+        "ToPort",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

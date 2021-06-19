@@ -1,0 +1,237 @@
+{
+    "typeName": "TF::AVI::Networkservice",
+    "description": "The NetworkService resource allows the creation and management of Avi NetworkService",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Networkservice/docs/README.md",
+    "definitions": {
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RoutingServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertiseBackendNetworks": {
+                    "type": "boolean"
+                },
+                "EnableAutoGateway": {
+                    "type": "boolean"
+                },
+                "EnableRouting": {
+                    "type": "boolean"
+                },
+                "EnableVipOnAllInterfaces": {
+                    "type": "boolean"
+                },
+                "EnableVmac": {
+                    "type": "boolean"
+                },
+                "GracefulRestart": {
+                    "type": "boolean"
+                },
+                "NatPolicyRef": {
+                    "type": "string"
+                },
+                "RoutingByLinuxIpstack": {
+                    "type": "boolean"
+                },
+                "FloatingIntfIp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FloatingIntfIpDefinition"
+                    }
+                },
+                "FloatingIntfIpSe2": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FloatingIntfIpSe2Definition"
+                    }
+                },
+                "FlowtableProfile": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FlowtableProfileDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FloatingIntfIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "FloatingIntfIpSe2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "FlowtableProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IcmpIdleTimeout": {
+                    "type": "number"
+                },
+                "TcpClosedTimeout": {
+                    "type": "number"
+                },
+                "TcpConnectionSetupTimeout": {
+                    "type": "number"
+                },
+                "TcpHalfClosedTimeout": {
+                    "type": "number"
+                },
+                "TcpIdleTimeout": {
+                    "type": "number"
+                },
+                "TcpResetTimeout": {
+                    "type": "number"
+                },
+                "UdpIdleTimeout": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud. Field introduced in 18.2.5."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the networkservice. Field introduced in 18.2.5."
+        },
+        "SeGroupRef": {
+            "type": "string",
+            "description": "Service engine group to which the service is applied. It is a reference to an object of type serviceenginegroup. Field introduced in 18.2.5."
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "Indicates the type of networkservice. Enum options - ROUTING_SERVICE. Field introduced in 18.2.5."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant. Field introduced in 18.2.5."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VrfRef": {
+            "type": "string",
+            "description": "Vrf context to which the service is scoped. It is a reference to an object of type vrfcontext. Field introduced in 18.2.5."
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "RoutingService": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoutingServiceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SeGroupRef",
+        "ServiceType",
+        "VrfRef"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

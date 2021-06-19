@@ -1,0 +1,414 @@
+{
+    "typeName": "TF::Google::AccessContextManagerServicePerimeter",
+    "description": "ServicePerimeter describes a set of GCP resources which can freely import\nand export data amongst themselves, but not export outside of the\nServicePerimeter. If a request with a source within this ServicePerimeter\nhas a target outside of the ServicePerimeter, the request will be blocked.\nOtherwise the request is allowed. There are two types of Service Perimeter\n- Regular and Bridge. Regular Service Perimeters cannot overlap, a single\nGCP project can only belong to a single regular Service Perimeter. Service\nPerimeter Bridges can contain only GCP projects as members, a single GCP\nproject may belong to multiple Service Perimeter Bridges.\n\n\nTo get more information about ServicePerimeter, see:\n\n* [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters)\n* How-to Guides\n    * [Service Perimeter Quickstart](https://cloud.google.com/vpc-service-controls/docs/quickstart)\n\n~> **Warning:** If you are using User ADCs (Application Default Credentials)...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-AccessContextManagerServicePerimeter/docs/README.md",
+    "definitions": {
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLevels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RestrictedServices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EgressPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressPoliciesDefinition"
+                    }
+                },
+                "IngressPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressPoliciesDefinition"
+                    }
+                },
+                "VpcAccessibleServices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcAccessibleServicesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLevels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RestrictedServices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EgressPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressPoliciesDefinition"
+                    }
+                },
+                "IngressPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressPoliciesDefinition"
+                    }
+                },
+                "VpcAccessibleServices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VpcAccessibleServicesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EgressPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFrom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressFromDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EgressTo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EgressToDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IngressPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IngressFrom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressFromDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "IngressTo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IngressToDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "VpcAccessibleServicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedServices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EnableRestriction": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "EgressFromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Identities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IdentityType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EgressToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Operations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OperationsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IngressFromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Identities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IdentityType": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IngressToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Operations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OperationsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OperationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServiceName": {
+                    "type": "string"
+                },
+                "MethodSelectors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MethodSelectorsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLevel": {
+                    "type": "string"
+                },
+                "Resource": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MethodSelectorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Method": {
+                    "type": "string"
+                },
+                "Permission": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "PerimeterType": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "UseExplicitDryRunSpec": {
+            "type": "boolean"
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Parent",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Consul::AutopilotConfig",
+    "description": "Provides access to the [Autopilot Configuration](https://www.consul.io/docs/guides/autopilot.html)\nof Consul to automatically manage Consul servers.\n\nIt includes to automatically cleanup dead servers, monitor the status of the Raft\ncluster and stable server introduction.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-AutopilotConfig/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CleanupDeadServers": {
+            "type": "boolean",
+            "description": "Whether to remove failing servers when a\nreplacement comes online. Defaults to true."
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the agent's\ndefault datacenter and the datacenter in the provider setup."
+        },
+        "DisableUpgradeMigration": {
+            "type": "boolean",
+            "description": "Whether to disable [upgrade migrations](https://www.consul.io/docs/guides/autopilot.html#redundancy-zones).\nDefaults to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastContactThreshold": {
+            "type": "string",
+            "description": "The time after which a server is\nconsidered as unhealthy and will be removed. Defaults to `\"200ms\"`."
+        },
+        "MaxTrailingLogs": {
+            "type": "number",
+            "description": "The maximum number of Raft log entries a\nserver can trail the leader. Defaults to 250."
+        },
+        "RedundancyZoneTag": {
+            "type": "string",
+            "description": "The [redundancy zone](https://www.consul.io/docs/guides/autopilot.html#redundancy-zones)\ntag to use. Consul will try to keep one voting server by zone to take advantage\nof isolated failure domains. Defaults to an empty string."
+        },
+        "ServerStabilizationTime": {
+            "type": "string",
+            "description": "The period to wait for a server to be\nhealthy and stable before being promoted to a full, voting member. Defaults to\n`\"10s\"`."
+        },
+        "UpgradeVersionTag": {
+            "type": "string",
+            "description": "The tag to override the version information\nused during a migration. Defaults to an empty string."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

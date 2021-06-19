@@ -1,0 +1,469 @@
+{
+    "typeName": "TF::VRA::Deployment",
+    "description": "This resource provides a way to create a deployment in vRealize Automation(vRA) by either using a blueprint, or catalog item, or an inline blueprint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-Deployment/docs/README.md",
+    "definitions": {
+        "ExpenseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalExpense": {
+                    "type": "number"
+                },
+                "Code": {
+                    "type": "string"
+                },
+                "ComputeExpense": {
+                    "type": "number"
+                },
+                "LastUpdateTime": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "NetworkExpense": {
+                    "type": "number"
+                },
+                "StorageExpense": {
+                    "type": "number"
+                },
+                "TotalExpense": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "InputsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InputsIncludingDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LastRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LastRequestDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LastRequestDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionId": {
+                    "type": "string"
+                },
+                "ApprovedAt": {
+                    "type": "string"
+                },
+                "BlueprintId": {
+                    "type": "string"
+                },
+                "Cancelable": {
+                    "type": "boolean"
+                },
+                "CatalogItemId": {
+                    "type": "string"
+                },
+                "CompletedAt": {
+                    "type": "string"
+                },
+                "CompletedTasks": {
+                    "type": "number"
+                },
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "Details": {
+                    "type": "string"
+                },
+                "Dismissed": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "InitializedAt": {
+                    "type": "string"
+                },
+                "Inputs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LastRequestDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Outputs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LastRequestDefinition2"
+                    }
+                },
+                "RequestedBy": {
+                    "type": "string"
+                },
+                "ResourceName": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "TotalTasks": {
+                    "type": "number"
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            }
+        },
+        "ResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalExpense": {
+                    "type": "number"
+                },
+                "Code": {
+                    "type": "string"
+                },
+                "ComputeExpense": {
+                    "type": "number"
+                },
+                "LastUpdateTime": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "NetworkExpense": {
+                    "type": "number"
+                },
+                "StorageExpense": {
+                    "type": "number"
+                },
+                "TotalExpense": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "ResourcesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "DependsOn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Expense": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PropertiesJson": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "SyncStatus": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlueprintContent": {
+            "type": "string",
+            "description": "vRA Cloud template content. Conflicts with `blueprint_id` and `catalog_item_id`."
+        },
+        "BlueprintId": {
+            "type": "string"
+        },
+        "BlueprintVersion": {
+            "type": "string",
+            "description": "The version of the vRA cloud template to request the deployment. Used only when `blueprint_id` is provided."
+        },
+        "CatalogItemId": {
+            "type": "string",
+            "description": "The id of the vRA catalog item to request the deployment. Conflicts with `blueprint_id` and `blueprint_content`."
+        },
+        "CatalogItemVersion": {
+            "type": "string",
+            "description": "The version of the vRA catalog item to request the deployment. Used only when `catalog_item_id` is provided."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description."
+        },
+        "ExpandLastRequest": {
+            "type": "boolean"
+        },
+        "ExpandProject": {
+            "type": "boolean",
+            "description": "Flag to indicate whether to expand project information."
+        },
+        "ExpandResources": {
+            "type": "boolean"
+        },
+        "Expense": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExpenseDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Inputs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InputsDefinition"
+            },
+            "description": "Inputs provided by the user. For inputs including those with default values, refer to `inputs_including_defaults`."
+        },
+        "InputsIncludingDefaults": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InputsIncludingDefaultsDefinition"
+            }
+        },
+        "LastRequest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LastRequestDefinition3"
+            }
+        },
+        "LastUpdatedAt": {
+            "type": "string"
+        },
+        "LastUpdatedBy": {
+            "type": "string"
+        },
+        "LeaseExpireAt": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrgId": {
+            "type": "string",
+            "description": "The ID of the organization this deployment belongs to."
+        },
+        "Owner": {
+            "type": "string",
+            "description": "The user this deployment belongs to. At create, the owner is ignored but is used to update during next apply."
+        },
+        "Project": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProjectDefinition"
+            }
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The id of the project this entity belongs to."
+        },
+        "Resources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourcesDefinition2"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/CreatedBy",
+        "/properties/Expense",
+        "/properties/Id",
+        "/properties/InputsIncludingDefaults",
+        "/properties/LastRequest",
+        "/properties/LastUpdatedAt",
+        "/properties/LastUpdatedBy",
+        "/properties/OrgId",
+        "/properties/Project",
+        "/properties/Resources",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

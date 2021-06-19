@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::TLS::LocallySignedCert",
+    "description": "Generates a TLS certificate using a *Certificate Signing Request* (CSR) and\nsigns it with a provided certificate authority (CA) private key.\n\nLocally-signed certificates are generally only trusted by client software when\nsetup to use the provided CA. They are normally used in development environments\nor when deployed internally to an organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tls/TF-TLS-LocallySignedCert/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedUses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of keywords each describing a use that is permitted\nfor the issued certificate. The valid keywords are listed below."
+        },
+        "CaCertPem": {
+            "type": "string",
+            "description": "PEM-encoded certificate data for the CA."
+        },
+        "CaKeyAlgorithm": {
+            "type": "string",
+            "description": "The name of the algorithm for the key provided\nin `ca_private_key_pem`."
+        },
+        "CaPrivateKeyPem": {
+            "type": "string",
+            "description": "PEM-encoded private key data for the CA.\nThis can be read from a separate file using the ``file`` interpolation\nfunction."
+        },
+        "CertPem": {
+            "type": "string"
+        },
+        "CertRequestPem": {
+            "type": "string",
+            "description": "PEM-encoded request certificate data."
+        },
+        "EarlyRenewalHours": {
+            "type": "number",
+            "description": "If set, the resource will consider the certificate to\nhave expired the given number of hours before its actual expiry time. This can be useful\nto deploy an updated certificate in advance of the expiration of the current certificate.\nNote however that the old certificate remains valid until its true expiration time, since\nthis resource does not (and cannot) support certificate revocation. Note also that this\nadvance update can only be performed should the Terraform configuration be applied during the\nearly renewal period."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsCaCertificate": {
+            "type": "boolean",
+            "description": "Boolean controlling whether the CA flag will be set in the\ngenerated certificate. Defaults to `false`, meaning that the certificate does not represent\na certificate authority."
+        },
+        "ReadyForRenewal": {
+            "type": "boolean"
+        },
+        "SetSubjectKeyId": {
+            "type": "boolean",
+            "description": "If `true`, the certificate will include\nthe subject key identifier. Defaults to `false`, in which case the subject\nkey identifier is not set at all."
+        },
+        "ValidityEndTime": {
+            "type": "string"
+        },
+        "ValidityPeriodHours": {
+            "type": "number",
+            "description": "The number of hours after initial issuing that the\ncertificate will become invalid."
+        },
+        "ValidityStartTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllowedUses",
+        "CaCertPem",
+        "CaKeyAlgorithm",
+        "CaPrivateKeyPem",
+        "CertRequestPem",
+        "ValidityPeriodHours"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertPem",
+        "/properties/Id",
+        "/properties/ReadyForRenewal",
+        "/properties/ValidityEndTime",
+        "/properties/ValidityStartTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CaPrivateKeyPem"
+    ]
+}

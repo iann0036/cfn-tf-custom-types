@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::FortiOS::SystemEmailserver",
+    "description": "Configure the email server used by the FortiGate various things. For example, for sending email messages to users to support user authentication features.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemEmailserver/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authenticate": {
+            "type": "string",
+            "description": "Enable/disable authentication. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "SMTP server user password for authentication."
+        },
+        "Port": {
+            "type": "number",
+            "description": "SMTP server port."
+        },
+        "ReplyTo": {
+            "type": "string",
+            "description": "Reply-To email address."
+        },
+        "Security": {
+            "type": "string",
+            "description": "Connection security used by the email server. Valid values: `none`, `starttls`, `smtps`."
+        },
+        "Server": {
+            "type": "string",
+            "description": "SMTP server IP address or hostname."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "SMTP server IPv4 source IP."
+        },
+        "SourceIp6": {
+            "type": "string",
+            "description": "SMTP server IPv6 source IP."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Use FortiGuard Message service or custom email server. Valid values: `custom`."
+        },
+        "Username": {
+            "type": "string",
+            "description": "SMTP server user name for authentication."
+        },
+        "ValidateServer": {
+            "type": "string",
+            "description": "Enable/disable validation of server certificate. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

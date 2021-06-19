@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Alicloud::EssSchedule",
+    "description": "-> **NOTE:** This resource has been deprecated from [v1.45.0](https://releases.hashicorp.com/terraform-provider-alicloud/1.45.0/). New resource `alicloud_ess_scheduled_task` will replace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EssSchedule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LaunchExpirationTime": {
+            "type": "number"
+        },
+        "LaunchTime": {
+            "type": "string"
+        },
+        "MaxValue": {
+            "type": "number"
+        },
+        "MinValue": {
+            "type": "number"
+        },
+        "RecurrenceEndTime": {
+            "type": "string"
+        },
+        "RecurrenceType": {
+            "type": "string"
+        },
+        "RecurrenceValue": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        },
+        "ScheduledAction": {
+            "type": "string"
+        },
+        "ScheduledTaskName": {
+            "type": "string"
+        },
+        "TaskEnabled": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

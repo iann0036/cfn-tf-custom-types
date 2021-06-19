@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::AWS::EksAddon",
+    "description": "Manages an EKS add-on.\n\n~> **Note:** Amazon EKS add-on can only be used with Amazon EKS Clusters\nrunning version 1.18 with platform version eks.3 or later\nbecause add-ons rely on the Server-side Apply Kubernetes feature,\nwhich is only available in Kubernetes 1.18 and later.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EksAddon/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddonName": {
+            "type": "string"
+        },
+        "AddonVersion": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ModifiedAt": {
+            "type": "string"
+        },
+        "ResolveConflicts": {
+            "type": "string",
+            "description": "Define how to resolve parameter value conflicts\nwhen migrating an existing add-on to an Amazon EKS add-on or when applying\nversion updates to the add-on. Valid values are `NONE` and `OVERWRITE`."
+        },
+        "ServiceAccountRoleArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of an\nexisting IAM role to bind to the add-on's service account. The role must be\nassigned the IAM permissions required by the add-on. If you don't specify\nan existing IAM role, then the add-on uses the permissions assigned to the node\nIAM role. For more information, see [Amazon EKS node IAM role](https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html)\nin the Amazon EKS User Guide."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AddonName",
+        "ClusterName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/ModifiedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

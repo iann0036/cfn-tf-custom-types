@@ -1,0 +1,403 @@
+{
+    "typeName": "TF::PagerDuty::RulesetRule",
+    "description": "An [event rule](https://support.pagerduty.com/docs/rulesets#section-create-event-rules) allows you to set actions that should be taken on events that meet your designated rule criteria.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-RulesetRule/docs/README.md",
+    "definitions": {
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotateDefinition"
+                    }
+                },
+                "EventAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EventActionDefinition"
+                    }
+                },
+                "Extractions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtractionsDefinition"
+                    }
+                },
+                "Priority": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PriorityDefinition"
+                    }
+                },
+                "Route": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteDefinition"
+                    }
+                },
+                "Severity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeverityDefinition"
+                    }
+                },
+                "Suppress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SuppressDefinition"
+                    }
+                },
+                "Suspend": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SuspendDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Subconditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubconditionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeFrameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveBetween": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActiveBetweenDefinition"
+                    }
+                },
+                "ScheduledWeekly": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduledWeeklyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParametersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AnnotateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EventActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExtractionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Regex": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PriorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SeverityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SuppressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ThresholdTimeAmount": {
+                    "type": "number"
+                },
+                "ThresholdTimeUnit": {
+                    "type": "string"
+                },
+                "ThresholdValue": {
+                    "type": "number"
+                },
+                "Value": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SuspendDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SubconditionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Operator": {
+                    "type": "string"
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParameterDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ActiveBetweenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ScheduledWeeklyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "number"
+                },
+                "Timezone": {
+                    "type": "string"
+                },
+                "Weekdays": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Indicates whether the rule is disabled and would therefore not be evaluated."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Position": {
+            "type": "number",
+            "description": "Position/index of the rule within the ruleset."
+        },
+        "Ruleset": {
+            "type": "string",
+            "description": "The ID of the ruleset that the rule belongs to."
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "TimeFrame": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeFrameDefinition"
+            },
+            "maxItems": 1
+        },
+        "Variable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VariableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ruleset"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

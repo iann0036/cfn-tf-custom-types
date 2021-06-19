@@ -1,0 +1,178 @@
+{
+    "typeName": "TF::Panos::EmailServerProfile",
+    "description": "This resource allows you to add/update/delete email server profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-EmailServerProfile/docs/README.md",
+    "definitions": {
+        "EmailServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlsoToEmail": {
+                    "type": "string",
+                    "description": "Secondary to email address."
+                },
+                "DisplayName": {
+                    "type": "string",
+                    "description": "The display name."
+                },
+                "EmailGateway": {
+                    "type": "string",
+                    "description": "The email server."
+                },
+                "FromEmail": {
+                    "type": "string",
+                    "description": "From email address."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Server name."
+                },
+                "ToEmail": {
+                    "type": "string",
+                    "description": "To email address."
+                }
+            },
+            "required": [
+                "EmailGateway",
+                "FromEmail",
+                "Name",
+                "ToEmail"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthFormat": {
+            "type": "string",
+            "description": "Auth format."
+        },
+        "ConfigFormat": {
+            "type": "string",
+            "description": "Config format."
+        },
+        "DataFormat": {
+            "type": "string",
+            "description": "Data format."
+        },
+        "EscapeCharacter": {
+            "type": "string",
+            "description": "The escape character."
+        },
+        "EscapedCharacters": {
+            "type": "string",
+            "description": "The escaped characters (as a string)."
+        },
+        "GtpFormat": {
+            "type": "string",
+            "description": "GTP format."
+        },
+        "HipMatchFormat": {
+            "type": "string",
+            "description": "HIP match format."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IptagFormat": {
+            "type": "string",
+            "description": "IP tag format."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group's name."
+        },
+        "SctpFormat": {
+            "type": "string",
+            "description": "SCTP format."
+        },
+        "SystemFormat": {
+            "type": "string",
+            "description": "System format."
+        },
+        "ThreatFormat": {
+            "type": "string",
+            "description": "Threat format."
+        },
+        "TrafficFormat": {
+            "type": "string",
+            "description": "Traffic format."
+        },
+        "TunnelFormat": {
+            "type": "string",
+            "description": "Tunnel format."
+        },
+        "UrlFormat": {
+            "type": "string",
+            "description": "URL format."
+        },
+        "UserIdFormat": {
+            "type": "string",
+            "description": "UserID format."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys (default: `shared`)."
+        },
+        "WildfireFormat": {
+            "type": "string",
+            "description": "Wildfire format."
+        },
+        "EmailServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailServerDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

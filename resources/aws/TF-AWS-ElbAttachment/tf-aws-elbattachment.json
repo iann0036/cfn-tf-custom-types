@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::ElbAttachment",
+    "description": "Attaches an EC2 instance to an Elastic Load Balancer (ELB). For attaching resources with Application Load Balancer (ALB) or Network Load Balancer (NLB), see the [`aws_lb_target_group_attachment` resource](/docs/providers/aws/r/lb_target_group_attachment.html).\n\n~> **NOTE on ELB Instances and ELB Attachments:** Terraform currently provides\nboth a standalone ELB Attachment resource (describing an instance attached to\nan ELB), and an [Elastic Load Balancer resource](elb.html) with\n`instances` defined in-line. At this time you cannot use an ELB with in-line\ninstances in conjunction with an ELB Attachment resource. Doing so will cause a\nconflict and will overwrite attachments.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ElbAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Elb": {
+            "type": "string",
+            "description": "The name of the ELB."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string",
+            "description": "Instance ID to place in the ELB pool."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Elb",
+        "Instance"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateSnmp",
+    "description": "`thunder_slb_template_snmp` provides details about slb template snmp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateSnmp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthKey": {
+            "type": "string"
+        },
+        "AuthProto": {
+            "type": "string",
+            "description": "'sha\u2019: SHA; 'md5\u2019: MD5;."
+        },
+        "Community": {
+            "type": "string",
+            "description": "Specify community for version 2c (Community name)."
+        },
+        "ContextEngineId": {
+            "type": "string"
+        },
+        "ContextName": {
+            "type": "string",
+            "description": "Specify context name."
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "number",
+            "description": "Specify Interface ID."
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Specify interval, default is 3 (Interval, unit: second, default is 3)."
+        },
+        "Oid": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number",
+            "description": "Specify port, default is 161 (Port Number, default is 161)."
+        },
+        "PrivKey": {
+            "type": "string"
+        },
+        "PrivProto": {
+            "type": "string",
+            "description": "'aes\u2019: AES; 'des\u2019: DES;."
+        },
+        "SecurityEngineId": {
+            "type": "string"
+        },
+        "SecurityLevel": {
+            "type": "string",
+            "description": "'no-auth\u2019: No authentication; 'auth-no-priv\u2019: Authentication, but no privacy; 'auth-priv\u2019: Authentication and privacy;."
+        },
+        "SnmpName": {
+            "type": "string",
+            "description": "Specify name of snmp template."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "'v1\u2019: Version 1; 'v2c\u2019: Version 2c; 'v3\u2019: Version 3;."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

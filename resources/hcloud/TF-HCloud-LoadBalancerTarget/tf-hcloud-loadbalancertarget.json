@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::HCloud::LoadBalancerTarget",
+    "description": "Adds a target to a Hetzner Cloud Load Balancer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-LoadBalancerTarget/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IP address for an IP Target. Required if\n`type` is `ip`.\n- `use_private_ip` - (Optional, bool) use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        },
+        "LabelSelector": {
+            "type": "string",
+            "description": "Label Selector selecting targets\nfor this Load Balancer. Required if `type` is `label_selector`.\n- `ip` - (Optional, string) IP address for an IP Target. Required if\n`type` is `ip`.\n- `use_private_ip` - (Optional, bool) use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        },
+        "LoadBalancerId": {
+            "type": "number",
+            "description": "ID of the Load Balancer to which\nthe target gets attached.\n- `server_id` - (Optional, int) ID of the server which should be a\ntarget for this Load Balancer. Required if `type` is `server`\n- `label_selector` - (Optional, string) Label Selector selecting targets\nfor this Load Balancer. Required if `type` is `label_selector`.\n- `ip` - (Optional, string) IP address for an IP Target. Required if\n`type` is `ip`.\n- `use_private_ip` - (Optional, bool) use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        },
+        "ServerId": {
+            "type": "number",
+            "description": "ID of the server which should be a\ntarget for this Load Balancer. Required if `type` is `server`\n- `label_selector` - (Optional, string) Label Selector selecting targets\nfor this Load Balancer. Required if `type` is `label_selector`.\n- `ip` - (Optional, string) IP address for an IP Target. Required if\n`type` is `ip`.\n- `use_private_ip` - (Optional, bool) use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the target. Possible values\n`server`, `label_selector`, `ip`.\n- `load_balancer_id` - (Required, int) ID of the Load Balancer to which\nthe target gets attached.\n- `server_id` - (Optional, int) ID of the server which should be a\ntarget for this Load Balancer. Required if `type` is `server`\n- `label_selector` - (Optional, string) Label Selector selecting targets\nfor this Load Balancer. Required if `type` is `label_selector`.\n- `ip` - (Optional, string) IP address for an IP Target. Required if\n`type` is `ip`.\n- `use_private_ip` - (Optional, bool) use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        },
+        "UsePrivateIp": {
+            "type": "boolean",
+            "description": "use the private IP to connect to\nLoad Balancer targets. Only allowed if type is `server` or\n`label_selector`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

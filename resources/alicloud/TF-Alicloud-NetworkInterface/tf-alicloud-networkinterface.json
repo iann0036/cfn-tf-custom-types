@@ -1,0 +1,179 @@
+{
+    "typeName": "TF::Alicloud::NetworkInterface",
+    "description": "Provides an ECS Elastic Network Interface resource.\n\nFor information about Elastic Network Interface and how to use it, see [Elastic Network Interface](https://www.alibabacloud.com/help/doc-detail/58496.html).\n\n-> **NOTE** Only one of private_ips or private_ips_count can be specified when assign private IPs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-NetworkInterface/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the ENI. This description can have a string of 2 to 256 characters, It cannot begin with http:// or https://. Default value is null."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mac": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the ENI. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as \"-\", \".\", \"_\", and must not begin or end with a hyphen, and must not begin with http:// or https://. Default value is null."
+        },
+        "NetworkInterfaceName": {
+            "type": "string"
+        },
+        "PrimaryIpAddress": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string",
+            "description": "The primary private IP of the ENI."
+        },
+        "PrivateIpAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PrivateIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of secondary private IPs to assign to the ENI. Don't use both private_ips and private_ips_count in the same ENI resource block."
+        },
+        "PrivateIpsCount": {
+            "type": "number",
+            "description": "Number of secondary private IPs to assign to the ENI. Don't use both private_ips and private_ips_count in the same ENI resource block."
+        },
+        "QueueNumber": {
+            "type": "number"
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the network interface belongs."
+        },
+        "SecondaryPrivateIpAddressCount": {
+            "type": "number"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group ids to associate with."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The VSwitch to create the ENI in."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Mac",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

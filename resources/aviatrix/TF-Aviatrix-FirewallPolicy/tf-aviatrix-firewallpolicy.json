@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Aviatrix::FirewallPolicy",
+    "description": "The **aviatrix_firewall_policy** resource manages a single Stateful Firewall policy resource.\n\n~> **NOTE on Firewall and Firewall Policy resources:** Terraform currently provides both a standalone Firewall Policy resource and a Firewall resource with policies defined in-line. At this time, you cannot use a Firewall resource with in-line rules in conjunction with any Firewall Policy resources. Doing so will cause a conflict of policy settings and will overwrite policies. In order to use this resource, please set `manage_firewall_policies` in the **aviatrix_firewall** resource to false.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-FirewallPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Valid values: \"allow\", \"deny\" and \"force-drop\" (in stateful firewall rule to allow immediate packet dropping on established sessions)."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the policy. Example: \"This is policy no.1\"."
+        },
+        "DstIp": {
+            "type": "string",
+            "description": "CIDRs separated by comma or tag names such \"HR\" or \"marketing\" etc. Example: \"10.30.0.0/16,10.45.0.0/20\". The **aviatrix_firewall_tag** resource should be created prior to using the tag name."
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Gateway name to attach firewall policy to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogEnabled": {
+            "type": "boolean",
+            "description": "Valid values: true, false. Default value: false."
+        },
+        "Port": {
+            "type": "string",
+            "description": "A single port or a range of port numbers. Example: \"25\", \"25:1024\"."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": ": \"all\", \"tcp\", \"udp\", \"icmp\", \"sctp\", \"rdp\", \"dccp\"."
+        },
+        "SrcIp": {
+            "type": "string",
+            "description": "CIDRs separated by comma or tag names such \"HR\" or \"marketing\" etc. Example: \"10.30.0.0/16,10.45.0.0/20\". The **aviatrix_firewall_tag** resource should be created prior to using the tag name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "DstIp",
+        "GwName",
+        "Port",
+        "SrcIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

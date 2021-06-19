@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::ECL::SssApprovalRequestV1",
+    "description": "Manages a V2 Approval Request resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-SssApprovalRequestV1/docs/README.md",
+    "definitions": {
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiPath": {
+                    "type": "string"
+                },
+                "Body": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                }
+            }
+        },
+        "DescriptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lang": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionsDefinition"
+            }
+        },
+        "ApprovalDeadline": {
+            "type": "string"
+        },
+        "ApprovalExpire": {
+            "type": "string"
+        },
+        "Approver": {
+            "type": "boolean"
+        },
+        "ApproverId": {
+            "type": "string"
+        },
+        "ApproverType": {
+            "type": "string"
+        },
+        "Descriptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DescriptionsDefinition"
+            }
+        },
+        "ExternalRequestId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RegisteredTime": {
+            "type": "string"
+        },
+        "RequestId": {
+            "type": "string",
+            "description": "tenant_connection_request unique ID."
+        },
+        "RequestUser": {
+            "type": "boolean"
+        },
+        "RequestUserId": {
+            "type": "string"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Modify status of the approval request.(approved/denied/cancelled) Request\u2019s status can only change from \u2018registerd\u2019."
+        },
+        "UpdatedTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RequestId",
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Actions",
+        "/properties/ApprovalDeadline",
+        "/properties/ApprovalExpire",
+        "/properties/Approver",
+        "/properties/ApproverId",
+        "/properties/ApproverType",
+        "/properties/Descriptions",
+        "/properties/ExternalRequestId",
+        "/properties/Id",
+        "/properties/RegisteredTime",
+        "/properties/RequestUser",
+        "/properties/RequestUserId",
+        "/properties/Service",
+        "/properties/UpdatedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

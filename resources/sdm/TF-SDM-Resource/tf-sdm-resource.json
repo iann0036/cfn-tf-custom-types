@@ -1,0 +1,4677 @@
+{
+    "typeName": "TF::SDM::Resource",
+    "description": "A Resource is a database or server for which strongDM manages access.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sdm/TF-SDM-Resource/docs/README.md",
+    "definitions": {
+        "AksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificateKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificatePath": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AksBasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition2"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AksServiceAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreTokenKey": {
+                    "type": "string"
+                },
+                "SecretStoreTokenPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition3"
+                    }
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AksServiceAccountUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreTokenKey": {
+                    "type": "string"
+                },
+                "SecretStoreTokenPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition4"
+                    }
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AksUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificateKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificatePath": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition5"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AmazonEksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition6"
+                    }
+                }
+            },
+            "required": [
+                "ClusterName",
+                "Endpoint",
+                "Name",
+                "Region"
+            ]
+        },
+        "TagsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AmazonEksUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition7"
+                    }
+                }
+            },
+            "required": [
+                "ClusterName",
+                "Endpoint",
+                "Name",
+                "Region"
+            ]
+        },
+        "TagsDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AmazonEsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition8"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Region"
+            ]
+        },
+        "TagsDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AmazonmqAmqp091Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition9"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AthenaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Output": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition10"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Output"
+            ]
+        },
+        "TagsDefinition10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuroraMysqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition11"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition11": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuroraPostgresDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition12"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition12": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AwsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckRegion": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition13"
+                    }
+                }
+            },
+            "required": [
+                "HealthcheckRegion",
+                "Name"
+            ]
+        },
+        "TagsDefinition13": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BigQueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "Project": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePrivateKeyKey": {
+                    "type": "string"
+                },
+                "SecretStorePrivateKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition14"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Name",
+                "Project"
+            ]
+        },
+        "TagsDefinition14": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CassandraDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition15"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition15": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CitusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition16"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition16": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ClustrixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition17"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition17": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CockroachDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition18"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition18": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Db2IDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition19"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition19": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "Db2LuwDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition20"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition20": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DruidDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition21"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition21": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DynamoDbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "RoleExternalId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreAccessKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleArnPath": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdKey": {
+                    "type": "string"
+                },
+                "SecretStoreRoleExternalIdPath": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreSecretAccessKeyPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition22"
+                    }
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Name",
+                "Region"
+            ]
+        },
+        "TagsDefinition22": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ElasticDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition23"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition23": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ElasticacheRedisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition24"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition24": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GoogleGkeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreServiceAccountKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreServiceAccountKeyPath": {
+                    "type": "string"
+                },
+                "ServiceAccountKey": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition25"
+                    }
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Name"
+            ]
+        },
+        "TagsDefinition25": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GoogleGkeUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreServiceAccountKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreServiceAccountKeyPath": {
+                    "type": "string"
+                },
+                "ServiceAccountKey": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition26"
+                    }
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Name"
+            ]
+        },
+        "TagsDefinition26": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GreenplumDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition27"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition27": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthHeader": {
+                    "type": "string"
+                },
+                "DefaultPath": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HeadersBlacklist": {
+                    "type": "string"
+                },
+                "HealthcheckPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecretStoreAuthHeaderKey": {
+                    "type": "string"
+                },
+                "SecretStoreAuthHeaderPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Subdomain": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition28"
+                    }
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HealthcheckPath",
+                "Name",
+                "Subdomain",
+                "Url"
+            ]
+        },
+        "TagsDefinition28": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpBasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultPath": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HeadersBlacklist": {
+                    "type": "string"
+                },
+                "HealthcheckPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Subdomain": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition29"
+                    }
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HealthcheckPath",
+                "Name",
+                "Subdomain",
+                "Url"
+            ]
+        },
+        "TagsDefinition29": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpNoAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultPath": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HeadersBlacklist": {
+                    "type": "string"
+                },
+                "HealthcheckPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Subdomain": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition30"
+                    }
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HealthcheckPath",
+                "Name",
+                "Subdomain",
+                "Url"
+            ]
+        },
+        "TagsDefinition30": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KubernetesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificateKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificatePath": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition31"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition31": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KubernetesBasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition32"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition32": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KubernetesServiceAccountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreTokenKey": {
+                    "type": "string"
+                },
+                "SecretStoreTokenPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition33"
+                    }
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition33": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KubernetesServiceAccountUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreTokenKey": {
+                    "type": "string"
+                },
+                "SecretStoreTokenPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition34"
+                    }
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition34": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KubernetesUserImpersonationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "ClientKey": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "HealthcheckNamespace": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreCertificateAuthorityKey": {
+                    "type": "string"
+                },
+                "SecretStoreCertificateAuthorityPath": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificateKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientCertificatePath": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyKey": {
+                    "type": "string"
+                },
+                "SecretStoreClientKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition35"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition35": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MariaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition36"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition36": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MemcachedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition37"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition37": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MemsqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition38"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition38": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MongoHostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthDatabase": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition39"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthDatabase",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition39": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MongoLegacyHostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthDatabase": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ReplicaSet": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition40"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthDatabase",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition40": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MongoLegacyReplicasetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthDatabase": {
+                    "type": "string"
+                },
+                "ConnectToReplica": {
+                    "type": "boolean"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ReplicaSet": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition41"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthDatabase",
+                "Hostname",
+                "Name",
+                "ReplicaSet"
+            ]
+        },
+        "TagsDefinition41": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MongoReplicaSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthDatabase": {
+                    "type": "string"
+                },
+                "ConnectToReplica": {
+                    "type": "boolean"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ReplicaSet": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition42"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthDatabase",
+                "Hostname",
+                "Name",
+                "ReplicaSet"
+            ]
+        },
+        "TagsDefinition42": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MysqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition43"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition43": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OracleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition44"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition44": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PostgresDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition45"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition45": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrestoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition46"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition46": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RabbitmqAmqp091Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition47"
+                    }
+                },
+                "TlsRequired": {
+                    "type": "boolean"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition47": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RdpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition48"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition48": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RedisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition49"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition49": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RedshiftDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition50"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition50": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SnowflakeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Schema": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition51"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name",
+                "Schema"
+            ]
+        },
+        "TagsDefinition51": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SqlServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Database": {
+                    "type": "string"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideDatabase": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Schema": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition52"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Database",
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition52": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SshDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowDeprecatedKeyExchanges": {
+                    "type": "boolean"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortForwarding": {
+                    "type": "boolean"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition53"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition53": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SshCertDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowDeprecatedKeyExchanges": {
+                    "type": "boolean"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortForwarding": {
+                    "type": "boolean"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition54"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition54": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SshCustomerKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowDeprecatedKeyExchanges": {
+                    "type": "boolean"
+                },
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortForwarding": {
+                    "type": "boolean"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePrivateKeyKey": {
+                    "type": "string"
+                },
+                "SecretStorePrivateKeyPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition55"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name",
+                "Port"
+            ]
+        },
+        "TagsDefinition55": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SybaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition56"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition56": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SybaseIqDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition57"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition57": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TeradataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressFilter": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecretStoreId": {
+                    "type": "string"
+                },
+                "SecretStorePasswordKey": {
+                    "type": "string"
+                },
+                "SecretStorePasswordPath": {
+                    "type": "string"
+                },
+                "SecretStoreUsernameKey": {
+                    "type": "string"
+                },
+                "SecretStoreUsernamePath": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagsDefinition58"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname",
+                "Name"
+            ]
+        },
+        "TagsDefinition58": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Aks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AksDefinition"
+            }
+        },
+        "AksBasicAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AksBasicAuthDefinition"
+            }
+        },
+        "AksServiceAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AksServiceAccountDefinition"
+            }
+        },
+        "AksServiceAccountUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AksServiceAccountUserImpersonationDefinition"
+            }
+        },
+        "AksUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AksUserImpersonationDefinition"
+            }
+        },
+        "AmazonEks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AmazonEksDefinition"
+            }
+        },
+        "AmazonEksUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AmazonEksUserImpersonationDefinition"
+            }
+        },
+        "AmazonEs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AmazonEsDefinition"
+            }
+        },
+        "AmazonmqAmqp091": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AmazonmqAmqp091Definition"
+            }
+        },
+        "Athena": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AthenaDefinition"
+            }
+        },
+        "AuroraMysql": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuroraMysqlDefinition"
+            }
+        },
+        "AuroraPostgres": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuroraPostgresDefinition"
+            }
+        },
+        "Aws": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsDefinition"
+            }
+        },
+        "BigQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BigQueryDefinition"
+            }
+        },
+        "Cassandra": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CassandraDefinition"
+            }
+        },
+        "Citus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CitusDefinition"
+            }
+        },
+        "Clustrix": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClustrixDefinition"
+            }
+        },
+        "Cockroach": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CockroachDefinition"
+            }
+        },
+        "Db2I": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Db2IDefinition"
+            }
+        },
+        "Db2Luw": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Db2LuwDefinition"
+            }
+        },
+        "Druid": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DruidDefinition"
+            }
+        },
+        "DynamoDb": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DynamoDbDefinition"
+            }
+        },
+        "Elastic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticDefinition"
+            }
+        },
+        "ElasticacheRedis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticacheRedisDefinition"
+            }
+        },
+        "GoogleGke": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GoogleGkeDefinition"
+            }
+        },
+        "GoogleGkeUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GoogleGkeUserImpersonationDefinition"
+            }
+        },
+        "Greenplum": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GreenplumDefinition"
+            }
+        },
+        "HttpAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpAuthDefinition"
+            }
+        },
+        "HttpBasicAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpBasicAuthDefinition"
+            }
+        },
+        "HttpNoAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpNoAuthDefinition"
+            }
+        },
+        "Kubernetes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubernetesDefinition"
+            }
+        },
+        "KubernetesBasicAuth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubernetesBasicAuthDefinition"
+            }
+        },
+        "KubernetesServiceAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubernetesServiceAccountDefinition"
+            }
+        },
+        "KubernetesServiceAccountUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubernetesServiceAccountUserImpersonationDefinition"
+            }
+        },
+        "KubernetesUserImpersonation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KubernetesUserImpersonationDefinition"
+            }
+        },
+        "Maria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MariaDefinition"
+            }
+        },
+        "Memcached": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemcachedDefinition"
+            }
+        },
+        "Memsql": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemsqlDefinition"
+            }
+        },
+        "MongoHost": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongoHostDefinition"
+            }
+        },
+        "MongoLegacyHost": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongoLegacyHostDefinition"
+            }
+        },
+        "MongoLegacyReplicaset": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongoLegacyReplicasetDefinition"
+            }
+        },
+        "MongoReplicaSet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongoReplicaSetDefinition"
+            }
+        },
+        "Mysql": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MysqlDefinition"
+            }
+        },
+        "Oracle": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OracleDefinition"
+            }
+        },
+        "Postgres": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PostgresDefinition"
+            }
+        },
+        "Presto": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrestoDefinition"
+            }
+        },
+        "RabbitmqAmqp091": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RabbitmqAmqp091Definition"
+            }
+        },
+        "Rdp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RdpDefinition"
+            }
+        },
+        "Redis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedisDefinition"
+            }
+        },
+        "Redshift": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedshiftDefinition"
+            }
+        },
+        "Snowflake": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnowflakeDefinition"
+            }
+        },
+        "SqlServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SqlServerDefinition"
+            }
+        },
+        "Ssh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshDefinition"
+            }
+        },
+        "SshCert": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshCertDefinition"
+            }
+        },
+        "SshCustomerKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshCustomerKeyDefinition"
+            }
+        },
+        "Sybase": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SybaseDefinition"
+            }
+        },
+        "SybaseIq": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SybaseIqDefinition"
+            }
+        },
+        "Teradata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TeradataDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AksDefinition/CertificateAuthority",
+        "/definitions/AksDefinition/ClientCertificate",
+        "/definitions/AksDefinition/ClientKey",
+        "/definitions/AksBasicAuthDefinition/Password",
+        "/definitions/AksServiceAccountDefinition/Token",
+        "/definitions/AksServiceAccountUserImpersonationDefinition/Token",
+        "/definitions/AksUserImpersonationDefinition/CertificateAuthority",
+        "/definitions/AksUserImpersonationDefinition/ClientCertificate",
+        "/definitions/AksUserImpersonationDefinition/ClientKey",
+        "/definitions/AmazonEksDefinition/CertificateAuthority",
+        "/definitions/AmazonEksDefinition/SecretAccessKey",
+        "/definitions/AmazonEksUserImpersonationDefinition/CertificateAuthority",
+        "/definitions/AmazonEksUserImpersonationDefinition/SecretAccessKey",
+        "/definitions/AmazonEsDefinition/SecretAccessKey",
+        "/definitions/AmazonmqAmqp091Definition/Password",
+        "/definitions/AthenaDefinition/SecretAccessKey",
+        "/definitions/AuroraMysqlDefinition/Password",
+        "/definitions/AuroraPostgresDefinition/Password",
+        "/definitions/AwsDefinition/SecretAccessKey",
+        "/definitions/BigQueryDefinition/PrivateKey",
+        "/definitions/CassandraDefinition/Password",
+        "/definitions/CitusDefinition/Password",
+        "/definitions/ClustrixDefinition/Password",
+        "/definitions/CockroachDefinition/Password",
+        "/definitions/Db2IDefinition/Password",
+        "/definitions/Db2LuwDefinition/Password",
+        "/definitions/DruidDefinition/Password",
+        "/definitions/DynamoDbDefinition/SecretAccessKey",
+        "/definitions/ElasticDefinition/Password",
+        "/definitions/ElasticacheRedisDefinition/Password",
+        "/definitions/GoogleGkeDefinition/CertificateAuthority",
+        "/definitions/GoogleGkeDefinition/ServiceAccountKey",
+        "/definitions/GoogleGkeUserImpersonationDefinition/CertificateAuthority",
+        "/definitions/GoogleGkeUserImpersonationDefinition/ServiceAccountKey",
+        "/definitions/GreenplumDefinition/Password",
+        "/definitions/HttpAuthDefinition/AuthHeader",
+        "/definitions/HttpBasicAuthDefinition/Password",
+        "/definitions/KubernetesDefinition/CertificateAuthority",
+        "/definitions/KubernetesDefinition/ClientCertificate",
+        "/definitions/KubernetesDefinition/ClientKey",
+        "/definitions/KubernetesBasicAuthDefinition/Password",
+        "/definitions/KubernetesServiceAccountDefinition/Token",
+        "/definitions/KubernetesServiceAccountUserImpersonationDefinition/Token",
+        "/definitions/KubernetesUserImpersonationDefinition/CertificateAuthority",
+        "/definitions/KubernetesUserImpersonationDefinition/ClientCertificate",
+        "/definitions/KubernetesUserImpersonationDefinition/ClientKey",
+        "/definitions/MariaDefinition/Password",
+        "/definitions/MemsqlDefinition/Password",
+        "/definitions/MongoHostDefinition/Password",
+        "/definitions/MongoLegacyHostDefinition/Password",
+        "/definitions/MongoLegacyReplicasetDefinition/Password",
+        "/definitions/MongoReplicaSetDefinition/Password",
+        "/definitions/MysqlDefinition/Password",
+        "/definitions/OracleDefinition/Password",
+        "/definitions/PostgresDefinition/Password",
+        "/definitions/PrestoDefinition/Password",
+        "/definitions/RabbitmqAmqp091Definition/Password",
+        "/definitions/RdpDefinition/Password",
+        "/definitions/RedisDefinition/Password",
+        "/definitions/RedshiftDefinition/Password",
+        "/definitions/SnowflakeDefinition/Password",
+        "/definitions/SqlServerDefinition/Password",
+        "/definitions/SshCustomerKeyDefinition/PrivateKey",
+        "/definitions/SybaseDefinition/Password",
+        "/definitions/SybaseIqDefinition/Password",
+        "/definitions/TeradataDefinition/Password"
+    ]
+}

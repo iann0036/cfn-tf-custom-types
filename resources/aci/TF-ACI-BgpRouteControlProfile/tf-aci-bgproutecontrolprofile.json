@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::ACI::BgpRouteControlProfile",
+    "description": "Manages ACI BGP Route Control Profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BgpRouteControlProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for router control profile object.\n- `description` - (Optional) Description for router control profile object.\n- `name_alias` - (Optional) Name alias for router control profile object.\n- `route_control_profile_type` - (Optional) Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for router control profile object.\n- `name_alias` - (Optional) Name alias for router control profile object.\n- `route_control_profile_type` - (Optional) Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of router control profile object.\n- `annotation` - (Optional) Annotation for router control profile object.\n- `description` - (Optional) Description for router control profile object.\n- `name_alias` - (Optional) Name alias for router control profile object.\n- `route_control_profile_type` - (Optional) Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for router control profile object.\n- `route_control_profile_type` - (Optional) Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        },
+        "ParentDn": {
+            "type": "string",
+            "description": "Distinguished name of parent object.\n- `name` - (Required) Name of router control profile object.\n- `annotation` - (Optional) Annotation for router control profile object.\n- `description` - (Optional) Description for router control profile object.\n- `name_alias` - (Optional) Name alias for router control profile object.\n- `route_control_profile_type` - (Optional) Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        },
+        "RouteControlProfileType": {
+            "type": "string",
+            "description": "Component type for router control profile object. Allowed values are \"combinable\" and \"global\". Default value is \"combinable\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ParentDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

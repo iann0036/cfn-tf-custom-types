@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::Vault::OktaAuthBackend",
+    "description": "Provides a resource for managing an\n[Okta auth backend within Vault](https://www.vaultproject.io/docs/auth/okta.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-OktaAuthBackend/docs/README.md",
+    "definitions": {
+        "GroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupName": {
+                    "type": "string"
+                },
+                "Policies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Groups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Policies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "BaseUrl": {
+            "type": "string",
+            "description": "The Okta url. Examples: oktapreview.com, okta.com."
+        },
+        "BypassOktaMfa": {
+            "type": "boolean",
+            "description": "When true, requests by Okta for a MFA check will be bypassed. This also disallows certain status checks on the account, such as whether the password is expired."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the auth backend."
+        },
+        "Group": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GroupDefinition"
+            },
+            "description": "Associate Okta groups with policies within Vault.\n[See below for more details](#okta-group)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "string",
+            "description": "Maximum duration after which authentication will be expired\n[See the documentation for info on valid duration formats](https://golang.org/pkg/time/#ParseDuration)."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "The Okta organization. This will be the first part of the url `https://XXX.okta.com`."
+        },
+        "Path": {
+            "type": "string",
+            "description": "Path to mount the Okta auth backend."
+        },
+        "Token": {
+            "type": "string",
+            "description": "The Okta API token. This is required to query Okta for user group membership.\nIf this is not supplied only locally configured groups will be enabled."
+        },
+        "Ttl": {
+            "type": "string",
+            "description": "Duration after which authentication will be expired.\n[See the documentation for info on valid duration formats](https://golang.org/pkg/time/#ParseDuration)."
+        },
+        "User": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserDefinition"
+            },
+            "description": "Associate Okta users with groups or policies within Vault.\n[See below for more details](#okta-user)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

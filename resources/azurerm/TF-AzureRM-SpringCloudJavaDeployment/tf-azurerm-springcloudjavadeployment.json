@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::AzureRM::SpringCloudJavaDeployment",
+    "description": "Manages an Azure Spring Cloud Deployment with a Java runtime.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SpringCloudJavaDeployment/docs/README.md",
+    "definitions": {
+        "EnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "number",
+            "description": "Specifies the required cpu of the Spring Cloud Deployment. Possible Values are between `1` and `4`. Defaults to `1` if not specified."
+        },
+        "EnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariablesDefinition"
+            },
+            "description": "Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number",
+            "description": "Specifies the required instance count of the Spring Cloud Deployment. Possible Values are between `1` and `500`. Defaults to `1` if not specified."
+        },
+        "JvmOptions": {
+            "type": "string",
+            "description": "Specifies the jvm option of the Spring Cloud Deployment."
+        },
+        "MemoryInGb": {
+            "type": "number",
+            "description": "Specifies the required memory size of the Spring Cloud Deployment. Possible Values are between `1` and `8`. Defaults to `1` if not specified."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Spring Cloud Deployment. Changing this forces a new resource to be created."
+        },
+        "RuntimeVersion": {
+            "type": "string",
+            "description": "Specifies the runtime version of the Spring Cloud Deployment. Possible Values are `Java_8` and `Java_11`. Defaults to `Java_8`."
+        },
+        "SpringCloudAppId": {
+            "type": "string",
+            "description": "Specifies the id of the Spring Cloud Application in which to create the Deployment. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SpringCloudAppId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

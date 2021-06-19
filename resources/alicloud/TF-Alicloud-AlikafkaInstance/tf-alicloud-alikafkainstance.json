@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::Alicloud::AlikafkaInstance",
+    "description": "Provides an ALIKAFKA instance resource.\n\n-> **NOTE:** Available in 1.59.0+\n\n-> **NOTE:** ALIKAFKA instance resource only support create post pay instance. Creation or modification may took about 10-40 minutes.\n\n-> **NOTE:** Only the following regions support create alikafka pre paid instance.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]\n\n-> **NOTE:** Only the following regions support create alikafka post paid instance.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`]",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-AlikafkaInstance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Config": {
+            "type": "string"
+        },
+        "DeployType": {
+            "type": "number",
+            "description": "The deploy type of the instance. Currently only support two deploy type, 4: eip/vpc instance, 5: vpc instance."
+        },
+        "DiskSize": {
+            "type": "number",
+            "description": "The disk size of the instance. When modify this value, it only support adjust to a greater value."
+        },
+        "DiskType": {
+            "type": "number",
+            "description": "The disk type of the instance. 0: efficient cloud disk , 1: SSD."
+        },
+        "EipMax": {
+            "type": "number",
+            "description": "The max bandwidth of the instance. When modify this value, it only support adjust to a greater value."
+        },
+        "EndPoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IoMax": {
+            "type": "number",
+            "description": "The max value of io of the instance. When modify this value, it only support adjust to a greater value."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of your Kafka instance. The length should between 3 and 64 characters. If not set, will use instance id as instance name."
+        },
+        "PaidType": {
+            "type": "string",
+            "description": "The paid type of the instance. Support two type, \"PrePaid\": pre paid type instance, \"PostPaid\": post paid type instance. Default is PostPaid. When modify this value, it only support adjust from post pay to pre pay."
+        },
+        "SecurityGroup": {
+            "type": "string",
+            "description": "\uff08Optional, ForceNew, Available in v1.93.0+\uff09 The ID of security group for this instance. If the security group is empty, system will create a default one."
+        },
+        "ServiceVersion": {
+            "type": "string"
+        },
+        "SpecType": {
+            "type": "string",
+            "description": "The spec type of the instance. Support two type, \"normal\": normal version instance, \"professional\": professional version instance. Default is normal. When modify this value, it only support adjust from normal to professional. Note only pre paid type instance support professional specific type."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "TopicQuota": {
+            "type": "number",
+            "description": "The max num of topic can be create of the instance. When modify this value, it only adjust to a greater value."
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The ID of attaching vswitch to instance."
+        },
+        "ZoneId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeployType",
+        "DiskSize",
+        "DiskType",
+        "IoMax",
+        "TopicQuota",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndPoint",
+        "/properties/Id",
+        "/properties/VpcId",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

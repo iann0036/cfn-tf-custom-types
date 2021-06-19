@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Rancher2::Bootstrap",
+    "description": "CloudFormation equivalent of rancher2_bootstrap",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rancher2/TF-Rancher2-Bootstrap/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CurrentPassword": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Telemetry": {
+            "type": "boolean"
+        },
+        "TempToken": {
+            "type": "string"
+        },
+        "TempTokenId": {
+            "type": "string"
+        },
+        "Token": {
+            "type": "string"
+        },
+        "TokenId": {
+            "type": "string"
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenUpdate": {
+            "type": "boolean"
+        },
+        "UiDefaultLanding": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TempToken",
+        "/properties/TempTokenId",
+        "/properties/Token",
+        "/properties/TokenId",
+        "/properties/Url",
+        "/properties/User"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CurrentPassword",
+        "/properties/Password",
+        "/properties/TempToken",
+        "/properties/Token"
+    ]
+}

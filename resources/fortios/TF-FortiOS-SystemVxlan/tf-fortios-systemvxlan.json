@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::FortiOS::SystemVxlan",
+    "description": "Configure VXLAN devices.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemVxlan/docs/README.md",
+    "definitions": {
+        "RemoteIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address."
+                }
+            },
+            "required": []
+        },
+        "RemoteIp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip6": {
+                    "type": "string",
+                    "description": "IPv6 address."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Dstport": {
+            "type": "number",
+            "description": "VXLAN destination port (1 - 65535, default = 4789)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Outgoing interface for VXLAN encapsulated traffic."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "IP version to use for the VXLAN interface and so for communication over the VXLAN. IPv4 or IPv6 unicast or multicast. Valid values: `ipv4-unicast`, `ipv6-unicast`, `ipv4-multicast`, `ipv6-multicast`."
+        },
+        "MulticastTtl": {
+            "type": "number",
+            "description": "VXLAN multicast TTL (1-255, default = 0)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "VXLAN device or interface name. Must be a unique interface name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vni": {
+            "type": "number",
+            "description": "VXLAN network ID."
+        },
+        "RemoteIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteIpDefinition"
+            }
+        },
+        "RemoteIp6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteIp6Definition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "IpVersion",
+        "Vni"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

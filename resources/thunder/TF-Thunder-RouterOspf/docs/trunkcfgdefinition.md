@@ -1,0 +1,40 @@
+# TF::Thunder::RouterOspf TrunkCfgDefinition
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#trunk" title="Trunk">Trunk</a>" : <i>Double</i>,
+    "<a href="#trunkaddress" title="TrunkAddress">TrunkAddress</a>" : <i>String</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#trunk" title="Trunk">Trunk</a>: <i>Double</i>
+<a href="#trunkaddress" title="TrunkAddress">TrunkAddress</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### Trunk
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TrunkAddress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

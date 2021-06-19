@@ -1,0 +1,314 @@
+{
+    "typeName": "TF::CheckPoint::ManagementAccessRule",
+    "description": "This resource allows you to add/update/delete Check Point Access Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementAccessRule/docs/README.md",
+    "definitions": {
+        "ActionSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PositionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TrackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UserCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Confirm": {
+                    "type": "string",
+                    "description": "N/A."
+                },
+                "Frequency": {
+                    "type": "string",
+                    "description": "N/A."
+                },
+                "Interaction": {
+                    "type": "string",
+                    "description": "N/A."
+                },
+                "CustomFrequency": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomFrequencyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CustomFrequencyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Every": {
+                    "type": "number",
+                    "description": "N/A."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "N/A."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\\\"Accept\\\", \\\"Drop\\\", \\\"Ask\\\", \\\"Inform\\\", \\\"Reject\\\", \\\"User Auth\\\", \\\"Client Auth\\\", \\\"Apply Layer\\\"."
+        },
+        "ActionSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ActionSettingsDefinition"
+            },
+            "description": "Action settings. Action settings blocks are documented below."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Content": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of processed file types that this rule applies on."
+        },
+        "ContentDirection": {
+            "type": "string",
+            "description": "On which direction the file types processing is applied."
+        },
+        "ContentNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for data."
+        },
+        "CustomFields": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomFieldsDefinition"
+            },
+            "description": "Custom fields. Custom fields blocks are documented below."
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "DestinationNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for destination."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable/Disable the rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "InlineLayer": {
+            "type": "string",
+            "description": "Inline Layer identified by the name or UID. Relevant only if \\\"Action\\\" was set to \\\"Apply Layer\\\"."
+        },
+        "InstallOn": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Which Gateways identified by the name or UID to install the policy on."
+        },
+        "Layer": {
+            "type": "string",
+            "description": "Layer that the rule belongs to identified by the name or UID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Rule name."
+        },
+        "Position": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PositionDefinition"
+            },
+            "description": "Position in the rulebase. Position blocks are documented below."
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "ServiceNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for service."
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by the name or UID."
+        },
+        "SourceNegate": {
+            "type": "boolean",
+            "description": "True if negate is set for source."
+        },
+        "Time": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of time objects. For example: \\\"Weekend\\\", \\\"Off-Work\\\", \\\"Every-Day\\\"."
+        },
+        "Track": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TrackDefinition"
+            },
+            "description": "Track Settings. Track Settings blocks are documented below."
+        },
+        "Vpn": {
+            "type": "string",
+            "description": "Communities or Directional."
+        },
+        "UserCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserCheckDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Layer",
+        "Name",
+        "Position"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

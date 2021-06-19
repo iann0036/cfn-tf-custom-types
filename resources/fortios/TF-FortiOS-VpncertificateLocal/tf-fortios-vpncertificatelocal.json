@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::FortiOS::VpncertificateLocal",
+    "description": "Local keys and certificates.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpncertificateLocal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRegenerateDays": {
+            "type": "number",
+            "description": "Number of days to wait before expiry of an updated local certificate is requested (0 = disabled)."
+        },
+        "AutoRegenerateDaysWarning": {
+            "type": "number",
+            "description": "Number of days to wait before an expiry warning message is generated (0 = disabled)."
+        },
+        "CaIdentifier": {
+            "type": "string",
+            "description": "CA identifier of the CA server for signing via SCEP."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "PEM format certificate."
+        },
+        "CmpPath": {
+            "type": "string",
+            "description": "Path location inside CMP server."
+        },
+        "CmpRegenerationMethod": {
+            "type": "string",
+            "description": "CMP auto-regeneration method. Valid values: `keyupate`, `renewal`."
+        },
+        "CmpServer": {
+            "type": "string",
+            "description": "'ADDRESS:PORT' for CMP server."
+        },
+        "CmpServerCert": {
+            "type": "string",
+            "description": "CMP server certificate."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Csr": {
+            "type": "string",
+            "description": "Certificate Signing Request."
+        },
+        "EnrollProtocol": {
+            "type": "string",
+            "description": "Certificate enrollment protocol. Valid values: `none`, `scep`, `cmpv2`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeLocalid": {
+            "type": "string",
+            "description": "Local ID the FortiGate uses for authentication as a VPN client."
+        },
+        "IkeLocalidType": {
+            "type": "string",
+            "description": "IKE local ID type. Valid values: `asn1dn`, `fqdn`."
+        },
+        "LastUpdated": {
+            "type": "number",
+            "description": "Time at which certificate was last updated."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "NameEncoding": {
+            "type": "string",
+            "description": "Name encoding method for auto-regeneration. Valid values: `printable`, `utf8`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password as a PEM file."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "PEM format key, encrypted with a password."
+        },
+        "Range": {
+            "type": "string",
+            "description": "Either a global or VDOM IP address range for the certificate. Valid values: `global`, `vdom`."
+        },
+        "ScepPassword": {
+            "type": "string",
+            "description": "SCEP server challenge password for auto-regeneration."
+        },
+        "ScepUrl": {
+            "type": "string",
+            "description": "SCEP server URL."
+        },
+        "Source": {
+            "type": "string",
+            "description": "Certificate source type."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address for communications to the SCEP server."
+        },
+        "State": {
+            "type": "string",
+            "description": "Certificate Signing Request State."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PrivateKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PrivateKey",
+        "/properties/ScepPassword"
+    ]
+}

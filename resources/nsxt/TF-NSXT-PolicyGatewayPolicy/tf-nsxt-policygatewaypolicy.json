@@ -1,0 +1,230 @@
+{
+    "typeName": "TF::NSXT::PolicyGatewayPolicy",
+    "description": "This resource provides a method for the management of a Gateway Policy and its Rules.\n\nThis resource is applicable to NSX Global Manager and NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyGatewayPolicy/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationsExcluded": {
+                    "type": "boolean"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IpVersion": {
+                    "type": "string"
+                },
+                "LogLabel": {
+                    "type": "string"
+                },
+                "Logged": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "NsxId": {
+                    "type": "string"
+                },
+                "Profiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SequenceNumber": {
+                    "type": "number"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourcesExcluded": {
+                    "type": "boolean"
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DisplayName",
+                "Scope"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string",
+            "description": "The category to use for priority of this Gateway Policy. For local manager must be one of: `Emergency`, `SystemRules`, `SharedPreRules`, `LocalGatewayRules`, `AutoServiceRules` and `Default`. For global manager must be `SharedPreRules` or `LocalGatewayRules`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments for this Gateway Policy including lock/unlock comments."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource.\n* `destination_groups` - (Optional) Set of group paths that serve as the destination for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `direction` - (Optional) The traffic direction for the policy. Must be one of: `IN`, `OUT` or `IN_OUT`. Defaults to `IN_OUT`.\n* `disabled` - (Optional) A boolean value to indicate the rule is disabled. Defaults to `false`.\n* `ip_version` - (Optional) The IP Protocol for the rule. Must be one of: `IPV4`, `IPV6` or `IPV4_IPV6`. Defaults to `IPV4_IPV6`.\n* `logged` - (Optional) A boolean flag to enable packet logging.\n* `notes` - (Optional) Text for additional notes on changes for the rule.\n* `profiles` - (Optional) A list of context profiles for the rule. Note: due to platform issue, this setting is only supported with NSX 3.2 onwards.\n* `scope` - (Required) List of policy paths where the rule is applied.\n* `services` - (Optional) List of services to match.\n* `source_groups` - (Optional) Set of group paths that serve as the source for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `source_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule.\n* `action` - (Optional) The action for the Rule. Must be one of: `ALLOW`, `DROP` or `REJECT`. Defaults to `ALLOW`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource.\n* `description` - (Optional) Description of the resource.\n* `destination_groups` - (Optional) Set of group paths that serve as the destination for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `destinations_excluded` - (Optional) A boolean value indicating negation of destination groups.\n* `direction` - (Optional) The traffic direction for the policy. Must be one of: `IN`, `OUT` or `IN_OUT`. Defaults to `IN_OUT`.\n* `disabled` - (Optional) A boolean value to indicate the rule is disabled. Defaults to `false`.\n* `ip_version` - (Optional) The IP Protocol for the rule. Must be one of: `IPV4`, `IPV6` or `IPV4_IPV6`. Defaults to `IPV4_IPV6`.\n* `logged` - (Optional) A boolean flag to enable packet logging.\n* `notes` - (Optional) Text for additional notes on changes for the rule.\n* `profiles` - (Optional) A list of context profiles for the rule. Note: due to platform issue, this setting is only supported with NSX 3.2 onwards.\n* `scope` - (Required) List of policy paths where the rule is applied.\n* `services` - (Optional) List of services to match.\n* `source_groups` - (Optional) Set of group paths that serve as the source for this rule. IPs, IP ranges, or CIDRs may also be used starting in NSX-T 3.0. An empty set can be used to specify \"Any\".\n* `source_excluded` - (Optional) A boolean value indicating negation of source groups.\n* `log_label` - (Optional) Additional information (string) which will be propagated to the rule syslog.\n* `tag` - (Optional) A list of scope + tag pairs to associate with this Rule.\n* `action` - (Optional) The action for the Rule. Must be one of: `ALLOW`, `DROP` or `REJECT`. Defaults to `ALLOW`."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain to use for the Gateway Policy. This domain must already exist. For VMware Cloud on AWS use `cgw`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean",
+            "description": "A boolean value indicating if the policy is locked. If locked, no other users can update the resource."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the Gateway Policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SequenceNumber": {
+            "type": "number",
+            "description": "An int value used to resolve conflicts between security policies across domains."
+        },
+        "Stateful": {
+            "type": "boolean",
+            "description": "A boolean value to indicate if this Policy is stateful. When it is stateful, the state of the network connects are tracked and a stateful packet inspection is performed."
+        },
+        "TcpStrict": {
+            "type": "boolean",
+            "description": "A boolean value to enable/disable a 3 way TCP handshake is done before the data packets are sent."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "maxItems": 1000
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

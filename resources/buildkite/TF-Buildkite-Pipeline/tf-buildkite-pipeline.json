@@ -1,0 +1,181 @@
+{
+    "typeName": "TF::Buildkite::Pipeline",
+    "description": "CloudFormation equivalent of buildkite_pipeline",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/buildkite/TF-Buildkite-Pipeline/docs/README.md",
+    "definitions": {
+        "TeamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLevel": {
+                    "type": "string"
+                },
+                "Slug": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProviderSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildBranches": {
+                    "type": "boolean"
+                },
+                "BuildPullRequestForks": {
+                    "type": "boolean"
+                },
+                "BuildPullRequestReadyForReview": {
+                    "type": "boolean"
+                },
+                "BuildPullRequests": {
+                    "type": "boolean"
+                },
+                "BuildTags": {
+                    "type": "boolean"
+                },
+                "CancelDeletedBranchBuilds": {
+                    "type": "boolean"
+                },
+                "PrefixPullRequestForkBranchNames": {
+                    "type": "boolean"
+                },
+                "PublishBlockedAsPending": {
+                    "type": "boolean"
+                },
+                "PublishCommitStatus": {
+                    "type": "boolean"
+                },
+                "PublishCommitStatusPerStep": {
+                    "type": "boolean"
+                },
+                "PullRequestBranchFilterConfiguration": {
+                    "type": "string"
+                },
+                "PullRequestBranchFilterEnabled": {
+                    "type": "boolean"
+                },
+                "SeparatePullRequestStatuses": {
+                    "type": "boolean"
+                },
+                "SkipPullRequestBuildsForExistingCommits": {
+                    "type": "boolean"
+                },
+                "TriggerMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BranchConfiguration": {
+            "type": "string"
+        },
+        "CancelIntermediateBuilds": {
+            "type": "boolean"
+        },
+        "CancelIntermediateBuildsBranchFilter": {
+            "type": "string"
+        },
+        "DefaultBranch": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string"
+        },
+        "SkipIntermediateBuilds": {
+            "type": "boolean"
+        },
+        "SkipIntermediateBuildsBranchFilter": {
+            "type": "string"
+        },
+        "Slug": {
+            "type": "string"
+        },
+        "Steps": {
+            "type": "string"
+        },
+        "Team": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TeamDefinition"
+            }
+        },
+        "WebhookUrl": {
+            "type": "string"
+        },
+        "ProviderSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProviderSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Repository",
+        "Steps"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Slug",
+        "/properties/WebhookUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::Heroku::PipelineConfigVar",
+    "description": "Provides a resource to manage a pipeline's config vars.\n\nThe pipeline config var API can only retrieve config vars that can be set at the pipeline level.\nAdditionally, these two supported pipeline stages are:\n- [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci#setting-environment-variables-the-env-key) config vars (test stage)\n- [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps#configuration) config vars (review stage)\n\nThe development, staging & production stages do not have stage-level config vars, only those on the apps within each stage.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-PipelineConfigVar/docs/README.md",
+    "definitions": {
+        "AllVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SensitiveVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllVars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllVarsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PipelineId": {
+            "type": "string",
+            "description": "The UUID of an existing pipeline."
+        },
+        "PipelineStage": {
+            "type": "string",
+            "description": "The pipeline's stage. Supported values are `test` & `review`."
+        },
+        "SensitiveVars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SensitiveVarsDefinition"
+            },
+            "description": "This is the same as `vars`. The main difference between the two attributes is `sensitive_vars` outputs\nare redacted on-screen and replaced by a `<sensitive>` placeholder, following a terraform `plan` or `apply`.\nIt is recommended to put private keys, passwords, etc in this argument."
+        },
+        "Vars": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VarsDefinition"
+            },
+            "description": "Map of config vars that can be output in plaintext."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PipelineId",
+        "PipelineStage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllVars",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AllVars",
+        "/properties/SensitiveVars"
+    ]
+}

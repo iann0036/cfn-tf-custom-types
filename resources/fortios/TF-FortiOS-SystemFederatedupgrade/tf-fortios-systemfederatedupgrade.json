@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::FortiOS::SystemFederatedupgrade",
+    "description": "Coordinate federated upgrades within the Security Fabric. Applies to FortiOS Version `>= 7.0.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemFederatedupgrade/docs/README.md",
+    "definitions": {
+        "NodeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serial": {
+                    "type": "string",
+                    "description": "Serial number of the node to include."
+                },
+                "SetupTime": {
+                    "type": "string",
+                    "description": "When the upgrade was configured. Format hh:mm yyyy/mm/dd UTC."
+                },
+                "Time": {
+                    "type": "string",
+                    "description": "Scheduled time for the upgrade. Format hh:mm yyyy/mm/dd UTC."
+                },
+                "Timing": {
+                    "type": "string",
+                    "description": "Whether the upgrade should be run immediately, or at a scheduled time. Valid values: `immediate`, `scheduled`."
+                },
+                "UpgradePath": {
+                    "type": "string",
+                    "description": "Image IDs to upgrade through."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Current status of the upgrade. Valid values: `disabled`, `initialized`, `downloading`, `download-failed`, `ready`, `cancelled`, `confirmed`, `done`, `failed`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "NodeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

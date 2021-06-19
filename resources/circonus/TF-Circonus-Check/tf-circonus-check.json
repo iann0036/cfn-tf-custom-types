@@ -1,0 +1,1157 @@
+{
+    "typeName": "TF::Circonus::Check",
+    "description": "The ``circonus_check`` resource creates and manages a\n[Circonus Check](https://login.circonus.com/resources/api/calls/check_bundle).\n\n~> **NOTE regarding `circonus_check` vs a Circonus Check Bundle:** The\n`circonus_check` resource is implemented in terms of a\n[Circonus Check Bundle](https://login.circonus.com/resources/api/calls/check_bundle).\nThe `circonus_check` creates a higher-level abstraction over the implementation\nof a Check Bundle.  As such, the naming and structure does not map 1:1 with the\nunderlying Circonus API.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-Check/docs/README.md",
+    "definitions": {
+        "CheckByCollectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CaqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "CloudwatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "ApiSecret": {
+                    "type": "string"
+                },
+                "Dimmensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimmensionsDefinition"
+                    }
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dimmensions",
+                "Metric",
+                "Namespace",
+                "Url"
+            ]
+        },
+        "DimmensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CollectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ConsulDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclToken": {
+                    "type": "string"
+                },
+                "AllowStale": {
+                    "type": "boolean"
+                },
+                "CaChain": {
+                    "type": "string"
+                },
+                "CertificateFile": {
+                    "type": "string"
+                },
+                "CheckBlacklist": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ciphers": {
+                    "type": "string"
+                },
+                "Dc": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "HttpAddr": {
+                    "type": "string"
+                },
+                "KeyFile": {
+                    "type": "string"
+                },
+                "Node": {
+                    "type": "string"
+                },
+                "NodeBlacklist": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "ServiceBlacklist": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ctype": {
+                    "type": "string"
+                },
+                "Nameserver": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Rtype": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "ExternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arg1": {
+                    "type": "string"
+                },
+                "Arg10": {
+                    "type": "string"
+                },
+                "Arg2": {
+                    "type": "string"
+                },
+                "Arg3": {
+                    "type": "string"
+                },
+                "Arg4": {
+                    "type": "string"
+                },
+                "Arg5": {
+                    "type": "string"
+                },
+                "Arg6": {
+                    "type": "string"
+                },
+                "Arg7": {
+                    "type": "string"
+                },
+                "Arg8": {
+                    "type": "string"
+                },
+                "Arg9": {
+                    "type": "string"
+                },
+                "Command": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "OutputExtract": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Command",
+                "OutputExtract"
+            ]
+        },
+        "EnvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "AuthPassword": {
+                    "type": "string"
+                },
+                "AuthUser": {
+                    "type": "string"
+                },
+                "BodyRegexp": {
+                    "type": "string"
+                },
+                "CaChain": {
+                    "type": "string"
+                },
+                "CertificateFile": {
+                    "type": "string"
+                },
+                "Ciphers": {
+                    "type": "string"
+                },
+                "Code": {
+                    "type": "string"
+                },
+                "Extract": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition2"
+                    }
+                },
+                "KeyFile": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "ReadLimit": {
+                    "type": "number"
+                },
+                "Redirects": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "HeadersDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HttptrapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsyncMetrics": {
+                    "type": "boolean"
+                },
+                "Secret": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IcmpPingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Availability": {
+                    "type": "number"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JmxDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "MbeanDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Uri": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "MbeanProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MbeanPropertiesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Host",
+                "Port"
+            ]
+        },
+        "JsonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "AuthPassword": {
+                    "type": "string"
+                },
+                "AuthUser": {
+                    "type": "string"
+                },
+                "CaChain": {
+                    "type": "string"
+                },
+                "CertificateFile": {
+                    "type": "string"
+                },
+                "Ciphers": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition3"
+                    }
+                },
+                "KeyFile": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ReadLimit": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "HeadersDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MemcachedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "MetricFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "Regex": {
+                    "type": "string"
+                },
+                "TagQuery": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Regex",
+                "Type"
+            ]
+        },
+        "MysqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dsn": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dsn",
+                "Query"
+            ]
+        },
+        "NtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "UseControl": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "PostgresqlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dsn": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dsn",
+                "Query"
+            ]
+        },
+        "PromtextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "RedisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Command": {
+                    "type": "string"
+                },
+                "DbIndex": {
+                    "type": "number"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SmtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ehlo": {
+                    "type": "string"
+                },
+                "From": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ProxyDestAddress": {
+                    "type": "string"
+                },
+                "ProxyDestPort": {
+                    "type": "number"
+                },
+                "ProxyFamily": {
+                    "type": "string"
+                },
+                "ProxyProtocol": {
+                    "type": "boolean"
+                },
+                "ProxySourceAddress": {
+                    "type": "string"
+                },
+                "ProxySourcePort": {
+                    "type": "number"
+                },
+                "SaslAuthId": {
+                    "type": "string"
+                },
+                "SaslAuthentication": {
+                    "type": "string"
+                },
+                "SaslPassword": {
+                    "type": "string"
+                },
+                "SaslUser": {
+                    "type": "string"
+                },
+                "Starttls": {
+                    "type": "boolean"
+                },
+                "To": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "To"
+            ]
+        },
+        "SnmpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthPassphrase": {
+                    "type": "string"
+                },
+                "AuthProtocol": {
+                    "type": "string"
+                },
+                "Community": {
+                    "type": "string"
+                },
+                "ContextEngine": {
+                    "type": "string"
+                },
+                "ContextName": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PrivacyPassphrase": {
+                    "type": "string"
+                },
+                "PrivacyProtocol": {
+                    "type": "string"
+                },
+                "SecurityEngine": {
+                    "type": "string"
+                },
+                "SecurityLevel": {
+                    "type": "string"
+                },
+                "SecurityName": {
+                    "type": "string"
+                },
+                "SeparateQueries": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Oid": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OidDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Community",
+                "Version"
+            ]
+        },
+        "StatsdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SourceIp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceIp"
+            ]
+        },
+        "TcpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BannerRegexp": {
+                    "type": "string"
+                },
+                "CaChain": {
+                    "type": "string"
+                },
+                "CertificateFile": {
+                    "type": "string"
+                },
+                "Ciphers": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "KeyFile": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Tls": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Host",
+                "Port"
+            ]
+        },
+        "MbeanPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Name",
+                "Type"
+            ]
+        },
+        "OidDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Path"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "Whether or not the check is enabled or not (default\n`true`)."
+        },
+        "CheckByCollector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CheckByCollectorDefinition"
+            }
+        },
+        "CheckId": {
+            "type": "string"
+        },
+        "Checks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Created": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "number"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "MetricLimit": {
+            "type": "number",
+            "description": "Setting a metric limit will tell the Circonus\nbackend to periodically look at the check to see if there are additional\nmetrics the collector has seen that we should collect. It will not reactivate\nmetrics previously collected and then marked as inactive. Values are `0` to\ndisable, `-1` to enable all metrics or `N+` to collect up to the value `N`\n(both `-1` and `N+` can not exceed other account restrictions)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the check that will be displayed in the web\ninterface."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Notes about this check."
+        },
+        "Period": {
+            "type": "string",
+            "description": "The period between each time the check is made in\nseconds. Default is `\"60s\"`."
+        },
+        "ReverseConnectUrls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags assigned to this check."
+        },
+        "Target": {
+            "type": "string",
+            "description": "A string containing the location of the thing being\nchecked.  This value changes based on the check type.  For example, for an\n`http` check type this would be the URL you're checking. For a DNS check it\nwould be the hostname you wanted to look up."
+        },
+        "Timeout": {
+            "type": "string",
+            "description": "A string representing the maximum number\nof seconds this check should wait for a result.  Defaults to `\"10s\"`."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Uuids": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Caql": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CaqlDefinition"
+            },
+            "maxItems": 1
+        },
+        "Cloudwatch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchDefinition"
+            },
+            "maxItems": 1
+        },
+        "Collector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CollectorDefinition"
+            }
+        },
+        "Consul": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConsulDefinition"
+            },
+            "maxItems": 1
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DnsDefinition"
+            },
+            "maxItems": 1
+        },
+        "External": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalDefinition"
+            },
+            "maxItems": 1
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Httptrap": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttptrapDefinition"
+            },
+            "maxItems": 1
+        },
+        "IcmpPing": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IcmpPingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Jmx": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/JmxDefinition"
+            },
+            "maxItems": 1
+        },
+        "Json": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/JsonDefinition"
+            },
+            "maxItems": 1
+        },
+        "Memcached": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MemcachedDefinition"
+            },
+            "maxItems": 1
+        },
+        "Metric": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricDefinition"
+            }
+        },
+        "MetricFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricFilterDefinition"
+            }
+        },
+        "Mysql": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MysqlDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ntp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Postgresql": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PostgresqlDefinition"
+            },
+            "maxItems": 1
+        },
+        "Promtext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PromtextDefinition"
+            },
+            "maxItems": 1
+        },
+        "Redis": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RedisDefinition"
+            },
+            "maxItems": 1
+        },
+        "Smtp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SmtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Snmp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Statsd": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StatsdDefinition"
+            },
+            "maxItems": 1
+        },
+        "Tcp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CheckByCollector",
+        "/properties/CheckId",
+        "/properties/Checks",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/LastModified",
+        "/properties/LastModifiedBy",
+        "/properties/ReverseConnectUrls",
+        "/properties/Uuids"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CloudwatchDefinition/ApiKey",
+        "/definitions/CloudwatchDefinition/ApiSecret",
+        "/definitions/HttpDefinition/AuthPassword",
+        "/definitions/HttptrapDefinition/Secret",
+        "/definitions/JsonDefinition/AuthPassword",
+        "/definitions/RedisDefinition/Password",
+        "/definitions/SmtpDefinition/SaslPassword",
+        "/definitions/SmtpDefinition/SaslUser"
+    ]
+}

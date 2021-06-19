@@ -1,0 +1,269 @@
+{
+    "typeName": "TF::NewRelic::Dashboard",
+    "description": "CloudFormation equivalent of newrelic_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-Dashboard/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EventTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "EventTypes"
+            ]
+        },
+        "WidgetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "number"
+                },
+                "Column": {
+                    "type": "number"
+                },
+                "DrilldownDashboardId": {
+                    "type": "number"
+                },
+                "Duration": {
+                    "type": "number"
+                },
+                "EndTime": {
+                    "type": "number"
+                },
+                "EntityIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Facet": {
+                    "type": "string"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "Nrql": {
+                    "type": "string"
+                },
+                "OrderBy": {
+                    "type": "string"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "ThresholdRed": {
+                    "type": "number"
+                },
+                "ThresholdYellow": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Visualization": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "CompareWith": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CompareWithDefinition"
+                    }
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Column",
+                "Row",
+                "Title",
+                "Visualization"
+            ]
+        },
+        "CompareWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OffsetDuration": {
+                    "type": "string"
+                },
+                "Presentation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PresentationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "OffsetDuration"
+            ]
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "Units": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PresentationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Color",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DashboardUrl": {
+            "type": "string"
+        },
+        "Editable": {
+            "type": "string"
+        },
+        "GridColumnCount": {
+            "type": "number"
+        },
+        "Icon": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Visibility": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Widget": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WidgetDefinition"
+            },
+            "maxItems": 300
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DashboardUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

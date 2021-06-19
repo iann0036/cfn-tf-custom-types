@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Vault::GcpAuthBackend",
+    "description": "Provides a resource to configure the [GCP auth backend within Vault](https://www.vaultproject.io/docs/auth/gcp.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-GcpAuthBackend/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientEmail": {
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "string",
+            "description": "A JSON string containing the contents of a GCP credentials file. If this value is empty, Vault will try to use Application Default Credentials from the machine on which the Vault server is running."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the auth method."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Specifies if the auth method is local only."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path to mount the auth method \u2014 this defaults to 'gcp'."
+        },
+        "PrivateKeyId": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Credentials"
+    ]
+}

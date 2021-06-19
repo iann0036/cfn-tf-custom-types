@@ -1,0 +1,651 @@
+{
+    "typeName": "TF::DigitalOcean::App",
+    "description": "Provides a DigitalOcean App resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/digitalocean/TF-DigitalOcean-App/docs/README.md",
+    "definitions": {
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Database": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseDefinition"
+                    }
+                },
+                "Domain": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DomainDefinition"
+                    }
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "Job": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JobDefinition"
+                    }
+                },
+                "Service": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceDefinition"
+                    }
+                },
+                "StaticSite": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticSiteDefinition"
+                    }
+                },
+                "Worker": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkerDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterName": {
+                    "type": "string"
+                },
+                "DbName": {
+                    "type": "string"
+                },
+                "DbUser": {
+                    "type": "string"
+                },
+                "Engine": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Production": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Wildcard": {
+                    "type": "boolean"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "EnvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JobDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildCommand": {
+                    "type": "string"
+                },
+                "DockerfilePath": {
+                    "type": "string"
+                },
+                "EnvironmentSlug": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceSizeSlug": {
+                    "type": "string"
+                },
+                "Kind": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RunCommand": {
+                    "type": "string"
+                },
+                "SourceDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "Git": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Gitlab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitlabDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Image": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildCommand": {
+                    "type": "string"
+                },
+                "DockerfilePath": {
+                    "type": "string"
+                },
+                "EnvironmentSlug": {
+                    "type": "string"
+                },
+                "HttpPort": {
+                    "type": "number"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceSizeSlug": {
+                    "type": "string"
+                },
+                "InternalPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RunCommand": {
+                    "type": "string"
+                },
+                "SourceDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "Git": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Gitlab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitlabDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HealthCheck": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthCheckDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Image": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Routes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RoutesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "StaticSiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildCommand": {
+                    "type": "string"
+                },
+                "CatchallDocument": {
+                    "type": "string"
+                },
+                "DockerfilePath": {
+                    "type": "string"
+                },
+                "EnvironmentSlug": {
+                    "type": "string"
+                },
+                "ErrorDocument": {
+                    "type": "string"
+                },
+                "IndexDocument": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OutputDir": {
+                    "type": "string"
+                },
+                "SourceDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "Git": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Gitlab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitlabDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Routes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RoutesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "WorkerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildCommand": {
+                    "type": "string"
+                },
+                "DockerfilePath": {
+                    "type": "string"
+                },
+                "EnvironmentSlug": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceSizeSlug": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RunCommand": {
+                    "type": "string"
+                },
+                "SourceDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "Git": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Gitlab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitlabDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Image": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "GitDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "RepoCloneUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GithubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "DeployOnPush": {
+                    "type": "boolean"
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GitlabDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "DeployOnPush": {
+                    "type": "boolean"
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Registry": {
+                    "type": "string"
+                },
+                "RegistryType": {
+                    "type": "string"
+                },
+                "Repository": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RegistryType",
+                "Repository"
+            ]
+        },
+        "HealthCheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "HttpPath": {
+                    "type": "string"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveDeploymentId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DefaultIngress": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LiveUrl": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActiveDeploymentId",
+        "/properties/CreatedAt",
+        "/properties/DefaultIngress",
+        "/properties/Id",
+        "/properties/LiveUrl",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/EnvDefinition/Value",
+        "/definitions/EnvDefinition/Value"
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::ACI::L3outRouteTagPolicy",
+    "description": "Manages ACI L3out Route Tag Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outRouteTagPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3out route tag policy.\n- `name_alias` - (Optional) Name alias for object L3out route tag policy.\n- `description` - (Optional) Description for object L3out route tag policy.\n- `tag` - (Optional) Tagged number. Default value: \"4294967295\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object L3out route tag policy.\n- `tag` - (Optional) Tagged number. Default value: \"4294967295\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of Object L3out route tag policy.\n- `annotation` - (Optional) Annotation for object L3out route tag policy.\n- `name_alias` - (Optional) Name alias for object L3out route tag policy.\n- `description` - (Optional) Description for object L3out route tag policy.\n- `tag` - (Optional) Tagged number. Default value: \"4294967295\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3out route tag policy.\n- `description` - (Optional) Description for object L3out route tag policy.\n- `tag` - (Optional) Tagged number. Default value: \"4294967295\"."
+        },
+        "Tag": {
+            "type": "string",
+            "description": "Tagged number. Default value: \"4294967295\"."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent tenant object.\n- `name` - (Required) Name of Object L3out route tag policy.\n- `annotation` - (Optional) Annotation for object L3out route tag policy.\n- `name_alias` - (Optional) Name alias for object L3out route tag policy.\n- `description` - (Optional) Description for object L3out route tag policy.\n- `tag` - (Optional) Tagged number. Default value: \"4294967295\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

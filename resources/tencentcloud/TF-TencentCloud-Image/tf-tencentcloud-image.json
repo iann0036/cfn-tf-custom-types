@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::TencentCloud::Image",
+    "description": "Provide a resource to manage image.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Image/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataDiskIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Cloud disk ID list, When creating a whole machine image based on an instance, specify the data disk ID contained in the image."
+        },
+        "ForcePoweroff": {
+            "type": "boolean",
+            "description": "Set whether to force shutdown during mirroring. The default value is `false`, when set to true, it means that the mirror will be made after shutdown."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageDescription": {
+            "type": "string",
+            "description": "Image Description."
+        },
+        "ImageName": {
+            "type": "string",
+            "description": "Image name."
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "Cloud server instance ID."
+        },
+        "SnapshotIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Cloud disk snapshot ID list; creating a mirror based on a snapshot must include a system disk snapshot. It cannot be passed in simultaneously with InstanceId."
+        },
+        "Sysprep": {
+            "type": "boolean",
+            "description": "Sysprep function under Windows. When creating a Windows image, you can select true or false to enable or disable the Syspre function."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

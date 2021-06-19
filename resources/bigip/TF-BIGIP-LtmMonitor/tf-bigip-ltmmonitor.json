@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::BIGIP::LtmMonitor",
+    "description": "`bigip_ltm_monitor` Configures a custom monitor for use by health checks.\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmMonitor/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adaptive": {
+            "type": "string",
+            "description": "Specifies whether adaptive response time monitoring is enabled for this monitor. The default is `disabled`."
+        },
+        "AdaptiveLimit": {
+            "type": "number",
+            "description": "Specifies the absolute number of milliseconds that may not be exceeded by a monitor probe, regardless of Allowed Divergence."
+        },
+        "Compatibility": {
+            "type": "string",
+            "description": "Specifies, when enabled, that the SSL options setting (in OpenSSL) is set to ALL. Accepts 'enabled' or 'disabled' values, the default value is 'enabled'."
+        },
+        "Database": {
+            "type": "string",
+            "description": "Specifies the database in which the user is created."
+        },
+        "DefaultsFrom": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string",
+            "description": "Specify an alias address for monitoring."
+        },
+        "Filename": {
+            "type": "string",
+            "description": "Specifies the full path and file name of the file that the system attempts to download. The health check is successful if the system can download the file."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "Specifies, in seconds, the frequency at which the system issues the monitor check when either the resource is down or the status of the resource is unknown. The default is `5`."
+        },
+        "IpDscp": {
+            "type": "number",
+            "description": "Displays the differentiated services code point (DSCP).The default is `0 (zero)`."
+        },
+        "ManualResume": {
+            "type": "string",
+            "description": "Specifies whether the system automatically changes the status of a resource to Enabled at the next successful monitor check."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Specifies the data transfer process (DTP) mode. The default value is passive. The options are passive (Specifies that the monitor sends a data transfer request to the FTP server. When the FTP server receives the request, the FTP server then initiates and establishes the data connection.) and active (Specifies that the monitor initiates and establishes the data connection with the FTP server.)."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string",
+            "description": "Parent monitor for the system to use for setting initial values for the new monitor."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Specifies the password if the monitored target requires authentication."
+        },
+        "Receive": {
+            "type": "string",
+            "description": "Specifies the regular expression representing the text string that the monitor looks for in the returned resource."
+        },
+        "ReceiveDisable": {
+            "type": "string",
+            "description": "The system marks the node or pool member disabled when its response matches Receive Disable String but not Receive String."
+        },
+        "Reverse": {
+            "type": "string",
+            "description": "Instructs the system to mark the target resource down when the test is successful."
+        },
+        "Send": {
+            "type": "string",
+            "description": "Specifies the text string that the monitor sends to the target object."
+        },
+        "TimeUntilUp": {
+            "type": "number",
+            "description": "Specifies the number of seconds to wait after a resource first responds correctly to the monitor before setting the resource to up."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Specifies the number of seconds the target has in which to respond to the monitor request. The default is `16` seconds."
+        },
+        "Transparent": {
+            "type": "string",
+            "description": "Specifies whether the monitor operates in transparent mode."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Specifies the user name if the monitored target requires authentication."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

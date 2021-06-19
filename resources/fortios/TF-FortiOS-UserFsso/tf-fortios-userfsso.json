@@ -1,0 +1,189 @@
+{
+    "typeName": "TF::FortiOS::UserFsso",
+    "description": "Configure Fortinet Single Sign On (FSSO) agents.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserFsso/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GroupPollInterval": {
+            "type": "number",
+            "description": "Interval in minutes within to fetch groups from FSSO server, or unset to disable."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "LdapPoll": {
+            "type": "string",
+            "description": "Enable/disable automatic fetching of groups from LDAP server. Valid values: `enable`, `disable`."
+        },
+        "LdapPollFilter": {
+            "type": "string",
+            "description": "Filter used to fetch groups."
+        },
+        "LdapPollInterval": {
+            "type": "number",
+            "description": "Interval in minutes within to fetch groups from LDAP server."
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "LDAP server to get group information."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of the first FSSO collector agent."
+        },
+        "Password2": {
+            "type": "string",
+            "description": "Password of the second FSSO collector agent."
+        },
+        "Password3": {
+            "type": "string",
+            "description": "Password of the third FSSO collector agent."
+        },
+        "Password4": {
+            "type": "string",
+            "description": "Password of the fourth FSSO collector agent."
+        },
+        "Password5": {
+            "type": "string",
+            "description": "Password of the fifth FSSO collector agent."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port of the first FSSO collector agent."
+        },
+        "Port2": {
+            "type": "number",
+            "description": "Port of the second FSSO collector agent."
+        },
+        "Port3": {
+            "type": "number",
+            "description": "Port of the third FSSO collector agent."
+        },
+        "Port4": {
+            "type": "number",
+            "description": "Port of the fourth FSSO collector agent."
+        },
+        "Port5": {
+            "type": "number",
+            "description": "Port of the fifth FSSO collector agent."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Domain name or IP address of the first FSSO collector agent."
+        },
+        "Server2": {
+            "type": "string",
+            "description": "Domain name or IP address of the second FSSO collector agent."
+        },
+        "Server3": {
+            "type": "string",
+            "description": "Domain name or IP address of the third FSSO collector agent."
+        },
+        "Server4": {
+            "type": "string",
+            "description": "Domain name or IP address of the fourth FSSO collector agent."
+        },
+        "Server5": {
+            "type": "string",
+            "description": "Domain name or IP address of the fifth FSSO collector agent."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP for communications to FSSO agent."
+        },
+        "SourceIp6": {
+            "type": "string",
+            "description": "IPv6 source for communications to FSSO agent."
+        },
+        "Ssl": {
+            "type": "string",
+            "description": "Enable/disable use of SSL. Valid values: `enable`, `disable`."
+        },
+        "SslTrustedCert": {
+            "type": "string",
+            "description": "Trusted server certificate or CA certificate."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Server type."
+        },
+        "UserInfoServer": {
+            "type": "string",
+            "description": "LDAP server to get user information."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Server"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/Password2",
+        "/properties/Password3",
+        "/properties/Password4",
+        "/properties/Password5"
+    ]
+}

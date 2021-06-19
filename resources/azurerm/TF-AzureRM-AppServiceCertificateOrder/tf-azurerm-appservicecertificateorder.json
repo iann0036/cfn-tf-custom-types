@@ -1,0 +1,207 @@
+{
+    "typeName": "TF::AzureRM::AppServiceCertificateOrder",
+    "description": "Manages an App Service Certificate Order.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AppServiceCertificateOrder/docs/README.md",
+    "definitions": {
+        "CertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "KeyVaultSecretName": {
+                    "type": "string"
+                },
+                "ProvisioningState": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppServiceCertificateNotRenewableReasons": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AutoRenew": {
+            "type": "boolean",
+            "description": "true if the certificate should be automatically renewed when it expires; otherwise, false. Defaults to true."
+        },
+        "Certificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificatesDefinition"
+            }
+        },
+        "Csr": {
+            "type": "string",
+            "description": "Last CSR that was created for this order."
+        },
+        "DistinguishedName": {
+            "type": "string",
+            "description": "The Distinguished Name for the App Service Certificate Order."
+        },
+        "DomainVerificationToken": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntermediateThumbprint": {
+            "type": "string"
+        },
+        "IsPrivateKeyExternal": {
+            "type": "boolean"
+        },
+        "KeySize": {
+            "type": "number",
+            "description": "Certificate key size.  Defaults to 2048."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. Currently the only valid value is `global`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the certificate. Changing this forces a new resource to be created."
+        },
+        "ProductType": {
+            "type": "string",
+            "description": "Certificate product type, such as `Standard` or `WildCard`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the certificate. Changing this forces a new resource to be created."
+        },
+        "RootThumbprint": {
+            "type": "string"
+        },
+        "SignedCertificateThumbprint": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "ValidityInYears": {
+            "type": "number",
+            "description": "Duration in years (must be between `1` and `3`).  Defaults to `1`."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppServiceCertificateNotRenewableReasons",
+        "/properties/Certificates",
+        "/properties/DomainVerificationToken",
+        "/properties/ExpirationTime",
+        "/properties/Id",
+        "/properties/IntermediateThumbprint",
+        "/properties/IsPrivateKeyExternal",
+        "/properties/RootThumbprint",
+        "/properties/SignedCertificateThumbprint",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

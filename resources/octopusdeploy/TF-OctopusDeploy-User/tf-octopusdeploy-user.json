@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::OctopusDeploy::User",
+    "description": "CloudFormation equivalent of octopusdeploy_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-User/docs/README.md",
+    "definitions": {
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Claim": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClaimDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClaimDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsIdentifyingClaim": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IsIdentifyingClaim",
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanPasswordBeEdited": {
+            "type": "boolean"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "EmailAddress": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsActive": {
+            "type": "boolean"
+        },
+        "IsRequestor": {
+            "type": "boolean"
+        },
+        "IsService": {
+            "type": "boolean"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CanPasswordBeEdited",
+        "/properties/Id",
+        "/properties/IsRequestor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/Username"
+    ]
+}

@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::Thunder::Ethernet",
+    "description": "`thunder_ethernet` provides details about how to enable ethernet interfaces on a device",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Ethernet/docs/README.md",
+    "definitions": {
+        "EthernetListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Duplexity": {
+                    "type": "string"
+                },
+                "FlowControl": {
+                    "type": "number"
+                },
+                "Ifnum": {
+                    "type": "number"
+                },
+                "L3VlanFwdDisable": {
+                    "type": "number"
+                },
+                "LoadInterval": {
+                    "type": "number"
+                },
+                "Mtu": {
+                    "type": "number"
+                },
+                "Speed": {
+                    "type": "string"
+                },
+                "TrapSource": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dhcp": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "AddressList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddressListDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4Netmask": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "EthernetList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EthernetListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

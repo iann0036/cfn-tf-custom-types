@@ -1,0 +1,320 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataLossPreventionDeidentifyTemplate",
+    "description": "CloudFormation equivalent of google_data_loss_prevention_deidentify_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataLossPreventionDeidentifyTemplate/docs/README.md",
+    "definitions": {
+        "DeidentifyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InfoTypeTransformations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypeTransformationsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InfoTypeTransformationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Transformations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TransformationsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TransformationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypesDefinition"
+                    }
+                },
+                "PrimitiveTransformation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrimitiveTransformationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "InfoTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PrimitiveTransformationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CharacterMaskConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CharacterMaskConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ReplaceConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReplaceConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CharacterMaskConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaskingCharacter": {
+                    "type": "string"
+                },
+                "NumberToMask": {
+                    "type": "number"
+                },
+                "ReverseOrder": {
+                    "type": "boolean"
+                },
+                "CharactersToIgnore": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CharactersToIgnoreDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ReplaceConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NewValue": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NewValueDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CharactersToIgnoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CharacterToSkip": {
+                    "type": "string"
+                },
+                "CommonCharactersToIgnore": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NewValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BooleanValue": {
+                    "type": "boolean"
+                },
+                "DayOfWeekValue": {
+                    "type": "string"
+                },
+                "FloatValue": {
+                    "type": "number"
+                },
+                "IntegerValue": {
+                    "type": "number"
+                },
+                "StringValue": {
+                    "type": "string"
+                },
+                "TimestampValue": {
+                    "type": "string"
+                },
+                "DateValue": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DateValueDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TimeValue": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeValueDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DateValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hours": {
+                    "type": "number"
+                },
+                "Minutes": {
+                    "type": "number"
+                },
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "DeidentifyConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeidentifyConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

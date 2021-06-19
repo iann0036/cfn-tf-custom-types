@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::VSphere::DatastoreClusterVmAntiAffinityRule",
+    "description": "The `vsphere_datastore_cluster_vm_anti_affinity_rule` resource can be used to\nmanage VM anti-affinity rules in a datastore cluster, either created by the\n[`vsphere_datastore_cluster`][tf-vsphere-datastore-cluster-resource] resource or looked up\nby the [`vsphere_datastore_cluster`][tf-vsphere-datastore-cluster-data-source] data source.\n\n[tf-vsphere-datastore-cluster-resource]: /docs/providers/vsphere/r/datastore_cluster.html\n[tf-vsphere-datastore-cluster-data-source]: /docs/providers/vsphere/d/datastore_cluster.html\n\nThis rule can be used to tell a set to virtual machines to run on different\ndatastores within a cluster, useful for preventing single points of failure in\napplication cluster scenarios. When configured, Storage DRS will make a best effort to\nensure that the virtual machines run on different datastores, or prevent any\noperation that would keep that from happening, depending on the value of the\n[`mandatory`](#mandatory) flag.\n\n~> **NOTE:** This resource requires vCenter and is not available on d...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-DatastoreClusterVmAntiAffinityRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DatastoreClusterId": {
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the datastore cluster to put the group in.  Forces\na new resource if changed."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable this rule in the cluster. Default: `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mandatory": {
+            "type": "boolean",
+            "description": "When this value is `true`, prevents any virtual\nmachine operations that may violate this rule. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the rule. This must be unique in the cluster."
+        },
+        "VirtualMachineIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The UUIDs of the virtual machines to run\non different datastores from each other."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatastoreClusterId",
+        "Name",
+        "VirtualMachineIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

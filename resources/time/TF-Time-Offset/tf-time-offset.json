@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::Time::Offset",
+    "description": "Manages an offset time resource, which keeps an UTC timestamp stored in the Terraform state that is offset from a locally sourced base timestamp. This prevents perpetual differences caused by using the [`timestamp()` function](https://www.terraform.io/docs/configuration/functions/timestamp.html).\n\n-> Further manipulation of incoming or outgoing values can be accomplished with the [`formatdate()` function](https://www.terraform.io/docs/configuration/functions/formatdate.html) and the [`timeadd()` function](https://www.terraform.io/docs/configuration/functions/timeadd.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/time/TF-Time-Offset/docs/README.md",
+    "definitions": {
+        "TriggersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseRfc3339": {
+            "type": "string",
+            "description": "Configure the base timestamp with an UTC [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time."
+        },
+        "Day": {
+            "type": "number"
+        },
+        "Hour": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Minute": {
+            "type": "number"
+        },
+        "Month": {
+            "type": "number"
+        },
+        "OffsetDays": {
+            "type": "number",
+            "description": "Number of days to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "OffsetHours": {
+            "type": "number",
+            "description": "Number of hours to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "OffsetMinutes": {
+            "type": "number",
+            "description": "Number of minutes to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "OffsetMonths": {
+            "type": "number",
+            "description": "Number of months to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "OffsetSeconds": {
+            "type": "number",
+            "description": "Number of seconds to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "OffsetYears": {
+            "type": "number",
+            "description": "Number of years to offset the base timestamp. Conflicts with other `offset_` arguments."
+        },
+        "Rfc3339": {
+            "type": "string"
+        },
+        "Second": {
+            "type": "number"
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TriggersDefinition"
+            },
+            "description": "Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved. See [the main provider documentation](../index.html) for more information."
+        },
+        "Unix": {
+            "type": "number"
+        },
+        "Year": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Day",
+        "/properties/Hour",
+        "/properties/Id",
+        "/properties/Minute",
+        "/properties/Month",
+        "/properties/Rfc3339",
+        "/properties/Second",
+        "/properties/Unix",
+        "/properties/Year"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

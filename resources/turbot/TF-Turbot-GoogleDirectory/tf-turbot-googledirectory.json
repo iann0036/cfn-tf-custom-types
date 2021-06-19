@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::Turbot::GoogleDirectory",
+    "description": "The `Turbot Google Directory` resource adds support for google directory. It is used to create, manage and delete directory settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-GoogleDirectory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Client ID provided by Google.\n- `client_secret` - (Required) Client Secret provided by Google.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "Client Secret provided by Google.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "DirectoryType": {
+            "type": "string"
+        },
+        "GroupIdTemplate": {
+            "type": "string"
+        },
+        "HostedName": {
+            "type": "string",
+            "description": "Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyFingerprint": {
+            "type": "string"
+        },
+        "LoginNameTemplate": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string",
+            "description": "ID or `aka` of the parent resource.\n- `title` - (Required) Short descriptive name for the directory.\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through a google directory. For example, email id of the user.\n- `client_id` - (Required) Client ID provided by Google.\n- `client_secret` - (Required) Client Secret provided by Google.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PgpKey": {
+            "type": "string",
+            "description": "A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "PoolId": {
+            "type": "string"
+        },
+        "ProfileIdTemplate": {
+            "type": "string",
+            "description": "A template to generate profile id for users authenticated through a google directory. For example, email id of the user.\n- `client_id` - (Required) Client ID provided by Google.\n- `client_secret` - (Required) Client Secret provided by Google.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Title": {
+            "type": "string",
+            "description": "Short descriptive name for the directory.\n- `profile_id_template` - (Required) A template to generate profile id for users authenticated through a google directory. For example, email id of the user.\n- `client_id` - (Required) Client ID provided by Google.\n- `client_secret` - (Required) Client Secret provided by Google.\n- `description` - (Optional) Brief description of the purpose and details of the directory.\n- `hosted_name` - (Optional) Domain name of the organization.\n- `tags` - (Optional) Labels that can be used to manage, group, categorize, search, and save metadata for this directory.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "ClientSecret",
+        "Parent",
+        "ProfileIdTemplate",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DirectoryType",
+        "/properties/Id",
+        "/properties/KeyFingerprint",
+        "/properties/ParentAkas",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

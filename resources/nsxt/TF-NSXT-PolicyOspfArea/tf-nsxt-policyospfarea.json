@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::NSXT::PolicyOspfArea",
+    "description": "This resource provides a method for the management of OSPF Area. Only a single area is supported so far per Tier-0 Gateway OSPF Config.\n\nThis resource is applicable to NSX Policy Manager only.\nThis resource is supported with NSX 3.1.0 onwards.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyOspfArea/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AreaId": {
+            "type": "string"
+        },
+        "AreaType": {
+            "type": "string",
+            "description": "OSPF Area type, one of `NORMAL` or `NSSA`. Default is `NSSA`."
+        },
+        "AuthMode": {
+            "type": "string",
+            "description": "OSPF Authentication mode, one of `NONE`, `PASSWORD` or `MD5`. By default, OSPF authentication is disabled with mode `NONE`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "number",
+            "description": "Authentication secret key id, required for authenication mode `MD5`. This attribute is sensitive."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "OspfPath": {
+            "type": "string",
+            "description": "The policy path to the OSPF configuration on particular Tier-0 Gateway."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SecretKey": {
+            "type": "string",
+            "description": "Authentication secret key, required for authentication mode other than `NONE`. This attribute is sensitive. Length should not exceed 8 characters."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AreaId",
+        "DisplayName",
+        "OspfPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KeyId",
+        "/properties/SecretKey"
+    ]
+}

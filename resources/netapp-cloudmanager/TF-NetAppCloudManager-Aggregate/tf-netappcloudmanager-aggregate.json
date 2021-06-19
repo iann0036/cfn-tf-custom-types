@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::NetAppCloudManager::Aggregate",
+    "description": "Provides a netapp-cloudmanager_aggregate resource. This can be used to create a new aggregate on Cloud Volumes ONTAP.\nRequires existence of a Cloud Manager Connector and a Cloud Volumes ONTAP system.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-Aggregate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CapacityTier": {
+            "type": "string",
+            "description": "The aggregate's capacity tier for tiering cold data to object storage: ['S3', 'Blob', 'cloudStorage']. The default values for each cloud provider are as follows: Amazon => 'S3', Azure => 'Blob', GCP => 'cloudStorage'. If NONE, the capacity tier won't be set on aggregate creation."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "DiskSizeSize": {
+            "type": "number",
+            "description": "The required size of the disks. For GB, the unit can be: [100 or 500]. For TB, the unit can be: [1,2,4,8,16]. The default is '1'."
+        },
+        "DiskSizeUnit": {
+            "type": "string",
+            "description": "The disk size unit ['GB' or 'TB']. The default is 'TB'."
+        },
+        "HomeNode": {
+            "type": "string",
+            "description": "The home node that the new aggregate should belong to. The default is the first node."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number",
+            "description": "Provisioned IOPS. Needed only when 'providerVolumeType' is 'io1' or 'gp3'."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the new aggregate."
+        },
+        "NumberOfDisks": {
+            "type": "number",
+            "description": "The required number of disks in the new aggregate."
+        },
+        "ProviderVolumeType": {
+            "type": "string",
+            "description": "The cloud provider volume type. For AWS: ['gp3', 'gp2', 'io1', 'st1', 'sc1']. For Azure: ['Premium_LRS','Standard_LRS','StandardSSD_LRS']. For GCP: ['pd-ssd','pd-standard']."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "Required only when 'providerVolumeType' is 'gp3'."
+        },
+        "WorkingEnvironmentId": {
+            "type": "string",
+            "description": "The public ID of the working environment where the aggregate will be created. This argument is optional if working_environment_name is provided. You can find the ID from a previous create Cloud Volumes ONTAP action as shown in the example, or from the information page of the Cloud Volumes ONTAP working environment on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "WorkingEnvironmentName": {
+            "type": "string",
+            "description": "The working environment name where the aggregate will be created. This argument will be ignored if working_environment_id is provided."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "Name",
+        "NumberOfDisks"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

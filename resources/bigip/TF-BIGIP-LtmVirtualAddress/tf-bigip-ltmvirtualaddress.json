@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::BIGIP::LtmVirtualAddress",
+    "description": "`bigip_ltm_virtual_address` Configures Virtual Server\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/virtual_server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmVirtualAddress/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertizeRoute": {
+            "type": "string",
+            "description": "Enabled dynamic routing of the address ( In versions prior to BIG-IP 13.0.0 HF1, you can configure the Route Advertisement option for a virtual address to be either Enabled or Disabled only. Beginning with BIG-IP 13.0.0 HF1, F5 added more settings for the Route Advertisement option. In addition, the Enabled setting is deprecated and replaced by the Selective setting. For more information, please look into KB article https://support.f5.com/csp/article/K85543242 )."
+        },
+        "Arp": {
+            "type": "boolean",
+            "description": "Enable or disable ARP for the virtual address."
+        },
+        "AutoDelete": {
+            "type": "boolean",
+            "description": "Automatically delete the virtual address with the virtual server."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Max number of connections for virtual address."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable or disable the virtual address."
+        },
+        "IcmpEcho": {
+            "type": "string",
+            "description": "Specifies how the system sends responses to ICMP echo requests on a per-virtual address basis."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the virtual address."
+        },
+        "TrafficGroup": {
+            "type": "string",
+            "description": "Specify the partition and traffic group."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::AWS::Ec2TransitGatewayRoute",
+    "description": "Manages an EC2 Transit Gateway Route.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2TransitGatewayRoute/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blackhole": {
+            "type": "boolean",
+            "description": "Indicates whether to drop traffic that matches this route (default to `false`)."
+        },
+        "DestinationCidrBlock": {
+            "type": "string",
+            "description": "IPv4 or IPv6 RFC1924 CIDR used for destination matches. Routing decisions are based on the most specific match."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TransitGatewayAttachmentId": {
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway Attachment (required if `blackhole` is set to false)."
+        },
+        "TransitGatewayRouteTableId": {
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway Route Table."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationCidrBlock",
+        "TransitGatewayRouteTableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

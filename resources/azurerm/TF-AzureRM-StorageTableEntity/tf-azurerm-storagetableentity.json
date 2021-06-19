@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::AzureRM::StorageTableEntity",
+    "description": "Manages an Entity within a Table in an Azure Storage Account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-StorageTableEntity/docs/README.md",
+    "definitions": {
+        "EntityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Entity": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EntityDefinition"
+            },
+            "description": "A map of key/value pairs that describe the entity to be inserted/merged in to the storage table."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PartitionKey": {
+            "type": "string",
+            "description": "The key for the partition where the entity will be inserted/merged. Changing this forces a new resource."
+        },
+        "RowKey": {
+            "type": "string",
+            "description": "The key for the row where the entity will be inserted/merged. Changing this forces a new resource."
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage table entity.\nChanging this forces a new resource to be created."
+        },
+        "TableName": {
+            "type": "string",
+            "description": "The name of the storage table in which to create the storage table entity.\nChanging this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Entity",
+        "PartitionKey",
+        "RowKey",
+        "StorageAccountName",
+        "TableName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

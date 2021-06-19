@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::Aviatrix::GatewaySnat",
+    "description": "The **aviatrix_gateway_snat** resource configures and manages policies for customized source NAT for Aviatrix gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-GatewaySnat/docs/README.md",
+    "definitions": {
+        "SnatPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Connection": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "ExcludeRtb": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "string"
+                },
+                "Mark": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SnatIps": {
+                    "type": "string"
+                },
+                "SnatPort": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Name of the Aviatrix gateway the custom SNAT will be configured for."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SnatMode": {
+            "type": "string",
+            "description": "NAT mode. Valid values: \"customized_snat\". Default value: \"customized_snat\"."
+        },
+        "SyncToHa": {
+            "type": "boolean",
+            "description": "Sync the policies to the HA gateway. Valid values: true, false. Default: false."
+        },
+        "SnatPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnatPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

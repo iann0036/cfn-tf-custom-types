@@ -1,0 +1,1239 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerManagedswitch",
+    "description": "Configure FortiSwitch devices that are managed by this FortiGate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerManagedswitch/docs/README.md",
+    "definitions": {
+        "CustomCommandDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommandEntry": {
+                    "type": "string",
+                    "description": "List of FortiSwitch commands."
+                },
+                "CommandName": {
+                    "type": "string",
+                    "description": "Names of commands to be pushed to this FortiSwitch device, as configured under config switch-controller custom-command."
+                }
+            },
+            "required": []
+        },
+        "IgmpSnoopingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AgingTime": {
+                    "type": "number",
+                    "description": "Maximum time to retain a multicast snooping entry for which no packets have been seen (15 - 3600 sec, default = 300)."
+                },
+                "FloodUnknownMulticast": {
+                    "type": "string",
+                    "description": "Enable/disable unknown multicast flooding. Valid values: `enable`, `disable`."
+                },
+                "LocalOverride": {
+                    "type": "string",
+                    "description": "Enable/disable overriding the global IGMP snooping configuration. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "IpSourceGuardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Port": {
+                    "type": "string",
+                    "description": "Ingress interface to which source guard is bound."
+                },
+                "BindingEntry": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BindingEntryDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MirrorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dst": {
+                    "type": "string",
+                    "description": "Destination port."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Mirror name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Active/inactive mirror configuration. Valid values: `active`, `inactive`."
+                },
+                "SwitchingPacket": {
+                    "type": "string",
+                    "description": "Enable/disable switching functionality when mirroring. Valid values: `enable`, `disable`."
+                },
+                "SrcEgress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SrcEgressDefinition"
+                    }
+                },
+                "SrcIngress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SrcIngressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "N8021xSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkDownAuth": {
+                    "type": "string"
+                },
+                "LocalOverride": {
+                    "type": "string"
+                },
+                "MaxReauthAttempt": {
+                    "type": "number"
+                },
+                "ReauthPeriod": {
+                    "type": "number"
+                },
+                "TxPeriod": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessMode": {
+                    "type": "string",
+                    "description": "Access mode of the port. Valid values: `normal`, `nac`."
+                },
+                "AggregatorMode": {
+                    "type": "string",
+                    "description": "LACP member select mode. Valid values: `bandwidth`, `count`."
+                },
+                "AllowedVlansAll": {
+                    "type": "string",
+                    "description": "Enable/disable all defined vlans on this port. Valid values: `enable`, `disable`."
+                },
+                "ArpInspectionTrust": {
+                    "type": "string",
+                    "description": "Trusted or untrusted dynamic ARP inspection. Valid values: `untrusted`, `trusted`."
+                },
+                "Bundle": {
+                    "type": "string",
+                    "description": "Enable/disable Link Aggregation Group (LAG) bundling for non-FortiLink interfaces. Valid values: `enable`, `disable`."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description for port."
+                },
+                "DhcpSnoopOption82Trust": {
+                    "type": "string",
+                    "description": "Enable/disable allowance of DHCP with option-82 on untrusted interface. Valid values: `enable`, `disable`."
+                },
+                "DhcpSnooping": {
+                    "type": "string",
+                    "description": "Trusted or untrusted DHCP-snooping interface. Valid values: `untrusted`, `trusted`."
+                },
+                "DiscardMode": {
+                    "type": "string",
+                    "description": "Configure discard mode for port. Valid values: `none`, `all-untagged`, `all-tagged`."
+                },
+                "EdgePort": {
+                    "type": "string",
+                    "description": "Enable/disable this interface as an edge port, bridging connections between workstations and/or computers. Valid values: `enable`, `disable`."
+                },
+                "ExportTo": {
+                    "type": "string",
+                    "description": "Export managed-switch port to a tenant VDOM."
+                },
+                "ExportToPool": {
+                    "type": "string",
+                    "description": "Switch controller export port to pool-list."
+                },
+                "ExportToPoolFlag": {
+                    "type": "number",
+                    "description": "Switch controller export port to pool-list."
+                },
+                "FecCapable": {
+                    "type": "number",
+                    "description": "FEC capable."
+                },
+                "FecState": {
+                    "type": "string",
+                    "description": "State of forward error correction. Valid values: `disabled`, `cl74`, `cl91`."
+                },
+                "FgtPeerDeviceName": {
+                    "type": "string",
+                    "description": "FGT peer device name."
+                },
+                "FgtPeerPortName": {
+                    "type": "string",
+                    "description": "FGT peer port name."
+                },
+                "FiberPort": {
+                    "type": "number",
+                    "description": "Fiber-port."
+                },
+                "Flags": {
+                    "type": "number",
+                    "description": "Port properties flags."
+                },
+                "FlowControl": {
+                    "type": "string",
+                    "description": "Flow control direction. Valid values: `disable`, `tx`, `rx`, `both`."
+                },
+                "FortilinkPort": {
+                    "type": "number",
+                    "description": "FortiLink uplink port."
+                },
+                "IgmpSnooping": {
+                    "type": "string",
+                    "description": "Set IGMP snooping mode for the physical port interface. Valid values: `enable`, `disable`."
+                },
+                "IgmpsFloodReports": {
+                    "type": "string",
+                    "description": "Enable/disable flooding of IGMP reports to this interface when igmp-snooping enabled. Valid values: `enable`, `disable`."
+                },
+                "IgmpsFloodTraffic": {
+                    "type": "string",
+                    "description": "Enable/disable flooding of IGMP snooping traffic to this interface. Valid values: `enable`, `disable`."
+                },
+                "IpSourceGuard": {
+                    "type": "string",
+                    "description": "Enable/disable IP source guard. Valid values: `disable`, `enable`."
+                },
+                "IslLocalTrunkName": {
+                    "type": "string",
+                    "description": "ISL local trunk name."
+                },
+                "IslPeerDeviceName": {
+                    "type": "string",
+                    "description": "ISL peer device name."
+                },
+                "IslPeerPortName": {
+                    "type": "string",
+                    "description": "ISL peer port name."
+                },
+                "LacpSpeed": {
+                    "type": "string",
+                    "description": "end Link Aggregation Control Protocol (LACP) messages every 30 seconds (slow) or every second (fast). Valid values: `slow`, `fast`."
+                },
+                "LearningLimit": {
+                    "type": "number",
+                    "description": "Limit the number of dynamic MAC addresses on this Port (1 - 128, 0 = no limit, default)."
+                },
+                "LldpProfile": {
+                    "type": "string",
+                    "description": "LLDP port TLV profile."
+                },
+                "LldpStatus": {
+                    "type": "string",
+                    "description": "LLDP transmit and receive status. Valid values: `disable`, `rx-only`, `tx-only`, `tx-rx`."
+                },
+                "LoopGuard": {
+                    "type": "string",
+                    "description": "Enable/disable loop-guard on this interface, an STP optimization used to prevent network loops. Valid values: `enabled`, `disabled`."
+                },
+                "LoopGuardTimeout": {
+                    "type": "number",
+                    "description": "Loop-guard timeout (0 - 120 min, default = 45)."
+                },
+                "MacAddr": {
+                    "type": "string",
+                    "description": "Port/Trunk MAC."
+                },
+                "MaxBundle": {
+                    "type": "number",
+                    "description": "Maximum size of LAG bundle (1 - 24, default = 24)."
+                },
+                "Mclag": {
+                    "type": "string",
+                    "description": "Enable/disable multi-chassis link aggregation (MCLAG). Valid values: `enable`, `disable`."
+                },
+                "MclagIclPort": {
+                    "type": "number",
+                    "description": "MCLAG-ICL port."
+                },
+                "MediaType": {
+                    "type": "string",
+                    "description": "Media type."
+                },
+                "MemberWithdrawalBehavior": {
+                    "type": "string",
+                    "description": "Port behavior after it withdraws because of loss of control packets. Valid values: `forward`, `block`."
+                },
+                "MinBundle": {
+                    "type": "number",
+                    "description": "Minimum size of LAG bundle (1 - 24, default = 1)."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "LACP mode: ignore and do not send control messages, or negotiate 802.3ad aggregation passively or actively. Valid values: `static`, `lacp-passive`, `lacp-active`."
+                },
+                "P2pPort": {
+                    "type": "number",
+                    "description": "General peer to peer tunnel port."
+                },
+                "PacketSampleRate": {
+                    "type": "number",
+                    "description": "Packet sampling rate (0 - 99999 p/sec)."
+                },
+                "PacketSampler": {
+                    "type": "string",
+                    "description": "Enable/disable packet sampling on this interface. Valid values: `enabled`, `disabled`."
+                },
+                "PauseMeter": {
+                    "type": "number",
+                    "description": "Configure ingress pause metering rate, in kbps (default = 0, disabled)."
+                },
+                "PauseMeterResume": {
+                    "type": "string",
+                    "description": "Resume threshold for resuming traffic on ingress port. Valid values: `75%`, `50%`, `25%`."
+                },
+                "PoeCapable": {
+                    "type": "number",
+                    "description": "PoE capable."
+                },
+                "PoePreStandardDetection": {
+                    "type": "string",
+                    "description": "Enable/disable PoE pre-standard detection. Valid values: `enable`, `disable`."
+                },
+                "PoeStatus": {
+                    "type": "string",
+                    "description": "Enable/disable PoE status. Valid values: `enable`, `disable`."
+                },
+                "PortName": {
+                    "type": "string",
+                    "description": "Switch port name."
+                },
+                "PortNumber": {
+                    "type": "number",
+                    "description": "Port number."
+                },
+                "PortOwner": {
+                    "type": "string",
+                    "description": "Switch port name."
+                },
+                "PortPrefixType": {
+                    "type": "number",
+                    "description": "Port prefix type."
+                },
+                "PortSecurityPolicy": {
+                    "type": "string",
+                    "description": "Switch controller authentication policy to apply to this managed switch from available options."
+                },
+                "PortSelectionCriteria": {
+                    "type": "string",
+                    "description": "Algorithm for aggregate port selection. Valid values: `src-mac`, `dst-mac`, `src-dst-mac`, `src-ip`, `dst-ip`, `src-dst-ip`."
+                },
+                "PtpPolicy": {
+                    "type": "string",
+                    "description": "PTP policy configuration."
+                },
+                "QosPolicy": {
+                    "type": "string",
+                    "description": "Switch controller QoS policy from available options."
+                },
+                "RpvstPort": {
+                    "type": "string",
+                    "description": "Enable/disable inter-operability with rapid PVST on this interface. Valid values: `disabled`, `enabled`."
+                },
+                "SampleDirection": {
+                    "type": "string",
+                    "description": "sFlow sample direction. Valid values: `tx`, `rx`, `both`."
+                },
+                "SflowCounterInterval": {
+                    "type": "number",
+                    "description": "sFlow sampler counter polling interval (1 - 255 sec)."
+                },
+                "SflowSampleRate": {
+                    "type": "number",
+                    "description": "sFlow sampler sample rate (0 - 99999 p/sec)."
+                },
+                "SflowSampler": {
+                    "type": "string",
+                    "description": "Enable/disable sFlow protocol on this interface. Valid values: `enabled`, `disabled`."
+                },
+                "Speed": {
+                    "type": "string",
+                    "description": "Switch port speed; default and available settings depend on hardware."
+                },
+                "SpeedMask": {
+                    "type": "number",
+                    "description": "Switch port speed mask."
+                },
+                "StackingPort": {
+                    "type": "number",
+                    "description": "Stacking port."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Switch port admin status: up or down. Valid values: `up`, `down`."
+                },
+                "StickyMac": {
+                    "type": "string",
+                    "description": "Enable or disable sticky-mac on the interface. Valid values: `enable`, `disable`."
+                },
+                "StormControlPolicy": {
+                    "type": "string",
+                    "description": "Switch controller storm control policy from available options."
+                },
+                "StpBpduGuard": {
+                    "type": "string",
+                    "description": "Enable/disable STP BPDU guard on this interface. Valid values: `enabled`, `disabled`."
+                },
+                "StpBpduGuardTimeout": {
+                    "type": "number",
+                    "description": "BPDU Guard disabling protection (0 - 120 min)."
+                },
+                "StpRootGuard": {
+                    "type": "string",
+                    "description": "Enable/disable STP root guard on this interface. Valid values: `enabled`, `disabled`."
+                },
+                "StpState": {
+                    "type": "string",
+                    "description": "Enable/disable Spanning Tree Protocol (STP) on this interface. Valid values: `enabled`, `disabled`."
+                },
+                "SwitchId": {
+                    "type": "string",
+                    "description": "Switch id."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Interface type: physical or trunk port. Valid values: `physical`, `trunk`."
+                },
+                "VirtualPort": {
+                    "type": "number",
+                    "description": "Virtualized switch port."
+                },
+                "Vlan": {
+                    "type": "string",
+                    "description": "Assign switch ports to a VLAN."
+                },
+                "AllowedVlans": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedVlansDefinition"
+                    }
+                },
+                "ExportTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExportTagsDefinition"
+                    }
+                },
+                "Members": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MembersDefinition"
+                    }
+                },
+                "UntaggedVlans": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UntaggedVlansDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RemoteLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Csv": {
+                    "type": "string",
+                    "description": "Enable/disable comma-separated value (CSV) strings. Valid values: `enable`, `disable`."
+                },
+                "Facility": {
+                    "type": "string",
+                    "description": "Facility to log to remote syslog server. Valid values: `kernel`, `user`, `mail`, `daemon`, `auth`, `syslog`, `lpr`, `news`, `uucp`, `cron`, `authpriv`, `ftp`, `ntp`, `audit`, `alert`, `clock`, `local0`, `local1`, `local2`, `local3`, `local4`, `local5`, `local6`, `local7`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Remote log name."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Remote syslog server listening port."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "IPv4 address of the remote syslog server."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity of logs to be transferred to remote log server. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable logging by FortiSwitch device to a remote syslog server. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "SnmpCommunityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Events": {
+                    "type": "string",
+                    "description": "SNMP notifications (traps) to send. Valid values: `cpu-high`, `mem-low`, `log-full`, `intf-ip`, `ent-conf-change`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "SNMP community ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "SNMP community name."
+                },
+                "QueryV1Port": {
+                    "type": "number",
+                    "description": "SNMP v1 query port (default = 161)."
+                },
+                "QueryV1Status": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v1 queries. Valid values: `disable`, `enable`."
+                },
+                "QueryV2cPort": {
+                    "type": "number",
+                    "description": "SNMP v2c query port (default = 161)."
+                },
+                "QueryV2cStatus": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v2c queries. Valid values: `disable`, `enable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this SNMP community. Valid values: `disable`, `enable`."
+                },
+                "TrapV1Lport": {
+                    "type": "number",
+                    "description": "SNMP v2c trap local port (default = 162)."
+                },
+                "TrapV1Rport": {
+                    "type": "number",
+                    "description": "SNMP v2c trap remote port (default = 162)."
+                },
+                "TrapV1Status": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v1 traps. Valid values: `disable`, `enable`."
+                },
+                "TrapV2cLport": {
+                    "type": "number",
+                    "description": "SNMP v2c trap local port (default = 162)."
+                },
+                "TrapV2cRport": {
+                    "type": "number",
+                    "description": "SNMP v2c trap remote port (default = 162)."
+                },
+                "TrapV2cStatus": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v2c traps. Valid values: `disable`, `enable`."
+                },
+                "Hosts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SnmpSysinfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContactInfo": {
+                    "type": "string",
+                    "description": "Contact information."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "System description."
+                },
+                "EngineId": {
+                    "type": "string",
+                    "description": "Local SNMP engine ID string (max 24 char)."
+                },
+                "Location": {
+                    "type": "string",
+                    "description": "System location."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP. Valid values: `disable`, `enable`."
+                }
+            },
+            "required": []
+        },
+        "SnmpTrapThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrapHighCpuThreshold": {
+                    "type": "number",
+                    "description": "CPU usage when trap is sent."
+                },
+                "TrapLogFullThreshold": {
+                    "type": "number",
+                    "description": "Log disk usage when trap is sent."
+                },
+                "TrapLowMemoryThreshold": {
+                    "type": "number",
+                    "description": "Memory usage when trap is sent."
+                }
+            },
+            "required": []
+        },
+        "SnmpUserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthProto": {
+                    "type": "string",
+                    "description": "Authentication protocol. Valid values: `md5`, `sha`."
+                },
+                "AuthPwd": {
+                    "type": "string",
+                    "description": "Password for authentication protocol."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "SNMP user name."
+                },
+                "PrivProto": {
+                    "type": "string",
+                    "description": "Privacy (encryption) protocol. Valid values: `aes`, `des`."
+                },
+                "PrivPwd": {
+                    "type": "string",
+                    "description": "Password for privacy (encryption) protocol."
+                },
+                "Queries": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP queries for this user. Valid values: `disable`, `enable`."
+                },
+                "QueryPort": {
+                    "type": "number",
+                    "description": "SNMPv3 query port (default = 161)."
+                },
+                "SecurityLevel": {
+                    "type": "string",
+                    "description": "Security level for message authentication and encryption. Valid values: `no-auth-no-priv`, `auth-no-priv`, `auth-priv`."
+                }
+            },
+            "required": []
+        },
+        "StaticMacDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface name."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "MAC address."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type. Valid values: `static`, `sticky`."
+                },
+                "Vlan": {
+                    "type": "string",
+                    "description": "Vlan."
+                }
+            },
+            "required": []
+        },
+        "StormControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Broadcast": {
+                    "type": "string",
+                    "description": "Enable/disable storm control to drop broadcast traffic. Valid values: `enable`, `disable`."
+                },
+                "LocalOverride": {
+                    "type": "string",
+                    "description": "Enable to override global FortiSwitch storm control settings for this FortiSwitch. Valid values: `enable`, `disable`."
+                },
+                "Rate": {
+                    "type": "number",
+                    "description": "Rate in packets per second at which storm traffic is controlled (1 - 10000000, default = 500). Storm control drops excess traffic data rates beyond this threshold."
+                },
+                "UnknownMulticast": {
+                    "type": "string",
+                    "description": "Enable/disable storm control to drop unknown multicast traffic. Valid values: `enable`, `disable`."
+                },
+                "UnknownUnicast": {
+                    "type": "string",
+                    "description": "Enable/disable storm control to drop unknown unicast traffic. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "StpInstanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string",
+                    "description": "Instance ID."
+                },
+                "Priority": {
+                    "type": "string",
+                    "description": "Priority. Valid values: `0`, `4096`, `8192`, `12288`, `16384`, `20480`, `24576`, `28672`, `32768`, `36864`, `40960`, `45056`, `49152`, `53248`, `57344`, `61440`."
+                }
+            },
+            "required": []
+        },
+        "StpSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForwardTime": {
+                    "type": "number",
+                    "description": "Period of time a port is in listening and learning state (4 - 30 sec, default = 15)."
+                },
+                "HelloTime": {
+                    "type": "number",
+                    "description": "Period of time between successive STP frame Bridge Protocol Data Units (BPDUs) sent on a port (1 - 10 sec, default = 2)."
+                },
+                "LocalOverride": {
+                    "type": "string",
+                    "description": "Enable to configure local STP settings that override global STP settings. Valid values: `enable`, `disable`."
+                },
+                "MaxAge": {
+                    "type": "number",
+                    "description": "Maximum time before a bridge port saves its configuration BPDU information (6 - 40 sec, default = 20)."
+                },
+                "MaxHops": {
+                    "type": "number",
+                    "description": "Maximum number of hops between the root bridge and the furthest bridge (1- 40, default = 20)."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name of local STP settings configuration."
+                },
+                "PendingTimer": {
+                    "type": "number",
+                    "description": "Pending time (1 - 15 sec, default = 4)."
+                },
+                "Revision": {
+                    "type": "number",
+                    "description": "STP revision number (0 - 65535)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable STP. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "SwitchLogDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalOverride": {
+                    "type": "string",
+                    "description": "Enable to configure local logging settings that override global logging settings. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity of FortiSwitch logs that are added to the FortiGate event log. Valid values: `emergency`, `alert`, `critical`, `error`, `warning`, `notification`, `information`, `debug`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable adding FortiSwitch logs to the FortiGate event log. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "SwitchStpSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable STP. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "BindingEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntryName": {
+                    "type": "string",
+                    "description": "Configure binding pair."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Source IP for this rule."
+                },
+                "Mac": {
+                    "type": "string",
+                    "description": "MAC address for this rule."
+                }
+            },
+            "required": []
+        },
+        "SrcEgressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "SrcIngressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "AllowedVlansDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VlanName": {
+                    "type": "string",
+                    "description": "VLAN name."
+                }
+            },
+            "required": []
+        },
+        "ExportTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagName": {
+                    "type": "string",
+                    "description": "Switch tag name."
+                }
+            },
+            "required": []
+        },
+        "MembersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MemberName": {
+                    "type": "string",
+                    "description": "Interface name from available options."
+                }
+            },
+            "required": []
+        },
+        "UntaggedVlansDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VlanName": {
+                    "type": "string",
+                    "description": "VLAN name."
+                }
+            },
+            "required": []
+        },
+        "HostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Host entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the SNMP manager (host)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessProfile": {
+            "type": "string",
+            "description": "FortiSwitch access profile."
+        },
+        "DelayedRestartTrigger": {
+            "type": "number",
+            "description": "Delayed restart triggered for this FortiSwitch."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DirectlyConnected": {
+            "type": "number",
+            "description": "Directly connected FortiSwitch."
+        },
+        "DynamicCapability": {
+            "type": "number",
+            "description": "List of features this FortiSwitch supports (not configurable) that is sent to the FortiGate device for subsequent configuration initiated by the FortiGate device."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "DynamicallyDiscovered": {
+            "type": "number",
+            "description": "Dynamically discovered FortiSwitch."
+        },
+        "FirmwareProvision": {
+            "type": "string",
+            "description": "Enable/disable provisioning of firmware to FortiSwitches on join connection. Valid values: `enable`, `disable`."
+        },
+        "FirmwareProvisionVersion": {
+            "type": "string",
+            "description": "Firmware version to provision to this FortiSwitch on bootup (major.minor.build, i.e. 6.2.1234)."
+        },
+        "FlowIdentity": {
+            "type": "string",
+            "description": "Flow-tracking netflow ipfix switch identity in hex format(00000000-FFFFFFFF default=0)."
+        },
+        "FswWan1Admin": {
+            "type": "string",
+            "description": "FortiSwitch WAN1 admin status; enable to authorize the FortiSwitch as a managed switch. Valid values: `discovered`, `disable`, `enable`."
+        },
+        "FswWan1Peer": {
+            "type": "string",
+            "description": "Fortiswitch WAN1 peer port."
+        },
+        "FswWan2Admin": {
+            "type": "string",
+            "description": "FortiSwitch WAN2 admin status; enable to authorize the FortiSwitch as a managed switch. Valid values: `discovered`, `disable`, `enable`."
+        },
+        "FswWan2Peer": {
+            "type": "string",
+            "description": "FortiSwitch WAN2 peer port."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L3Discovered": {
+            "type": "number",
+            "description": "Layer 3 management discovered."
+        },
+        "MaxAllowedTrunkMembers": {
+            "type": "number",
+            "description": "FortiSwitch maximum allowed trunk members."
+        },
+        "MclagIgmpSnoopingAware": {
+            "type": "string",
+            "description": "Enable/disable MCLAG IGMP-snooping awareness. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Managed-switch name."
+        },
+        "OverrideSnmpCommunity": {
+            "type": "string",
+            "description": "Enable/disable overriding the global SNMP communities. Valid values: `enable`, `disable`."
+        },
+        "OverrideSnmpSysinfo": {
+            "type": "string",
+            "description": "Enable/disable overriding the global SNMP system information. Valid values: `disable`, `enable`."
+        },
+        "OverrideSnmpTrapThreshold": {
+            "type": "string",
+            "description": "Enable/disable overriding the global SNMP trap threshold values. Valid values: `enable`, `disable`."
+        },
+        "OverrideSnmpUser": {
+            "type": "string",
+            "description": "Enable/disable overriding the global SNMP users. Valid values: `enable`, `disable`."
+        },
+        "OwnerVdom": {
+            "type": "string",
+            "description": "VDOM which owner of port belongs to."
+        },
+        "PoeDetectionType": {
+            "type": "number",
+            "description": "PoE detection type for FortiSwitch."
+        },
+        "PoeLldpDetection": {
+            "type": "string",
+            "description": "Enable/disable PoE LLDP detection. Valid values: `enable`, `disable`."
+        },
+        "PoePreStandardDetection": {
+            "type": "string",
+            "description": "Enable/disable PoE pre-standard detection. Valid values: `enable`, `disable`."
+        },
+        "PreProvisioned": {
+            "type": "number",
+            "description": "Pre-provisioned managed switch."
+        },
+        "QosDropPolicy": {
+            "type": "string",
+            "description": "Set QoS drop-policy. Valid values: `taildrop`, `random-early-detection`."
+        },
+        "QosRedProbability": {
+            "type": "number",
+            "description": "Set QoS RED/WRED drop probability."
+        },
+        "StagedImageVersion": {
+            "type": "string",
+            "description": "Staged image version for FortiSwitch."
+        },
+        "SwitchDeviceTag": {
+            "type": "string",
+            "description": "User definable label/tag."
+        },
+        "SwitchDhcpOpt43Key": {
+            "type": "string",
+            "description": "DHCP option43 key."
+        },
+        "SwitchId": {
+            "type": "string",
+            "description": "Managed-switch id."
+        },
+        "SwitchProfile": {
+            "type": "string",
+            "description": "FortiSwitch profile."
+        },
+        "TdrSupported": {
+            "type": "string",
+            "description": "TDR supported."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Indication of switch type, physical or virtual. Valid values: `virtual`, `physical`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Version": {
+            "type": "number",
+            "description": "FortiSwitch version."
+        },
+        "CustomCommand": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomCommandDefinition"
+            }
+        },
+        "IgmpSnooping": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IgmpSnoopingDefinition"
+            },
+            "maxItems": 1
+        },
+        "IpSourceGuard": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpSourceGuardDefinition"
+            }
+        },
+        "Mirror": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MirrorDefinition"
+            }
+        },
+        "N8021xSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/N8021xSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortsDefinition"
+            }
+        },
+        "RemoteLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteLogDefinition"
+            }
+        },
+        "SnmpCommunity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpCommunityDefinition"
+            }
+        },
+        "SnmpSysinfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpSysinfoDefinition"
+            },
+            "maxItems": 1
+        },
+        "SnmpTrapThreshold": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpTrapThresholdDefinition"
+            },
+            "maxItems": 1
+        },
+        "SnmpUser": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpUserDefinition"
+            }
+        },
+        "StaticMac": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticMacDefinition"
+            }
+        },
+        "StormControl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StormControlDefinition"
+            },
+            "maxItems": 1
+        },
+        "StpInstance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StpInstanceDefinition"
+            }
+        },
+        "StpSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StpSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "SwitchLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SwitchLogDefinition"
+            },
+            "maxItems": 1
+        },
+        "SwitchStpSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SwitchStpSettingsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FswWan1Peer",
+        "SwitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/SnmpUserDefinition/AuthPwd",
+        "/definitions/SnmpUserDefinition/PrivPwd"
+    ]
+}

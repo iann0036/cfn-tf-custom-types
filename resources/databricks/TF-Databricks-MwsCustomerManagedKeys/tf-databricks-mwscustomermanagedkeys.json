@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Databricks::MwsCustomerManagedKeys",
+    "description": "CloudFormation equivalent of databricks_mws_customer_managed_keys",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-MwsCustomerManagedKeys/docs/README.md",
+    "definitions": {
+        "AwsKeyInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyAlias": {
+                    "type": "string"
+                },
+                "KeyArn": {
+                    "type": "string"
+                },
+                "KeyRegion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KeyAlias",
+                "KeyArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "CustomerManagedKeyId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "UseCases": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AwsKeyInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsKeyInfoDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "UseCases"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

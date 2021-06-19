@@ -1,0 +1,75 @@
+{
+    "typeName": "TF::OpenNebula::Acl",
+    "description": "Provides an OpenNebula ACL resource.\n\nThis resource allows you to manage ACLs on your OpenNebula clusters. When applied,\na new ACL is created. When destroyed, this ACL is removed. Note that ACLs currently cannot be changed, hence they are deleted and re-created upon change.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-Acl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Resource": {
+            "type": "string",
+            "description": "Resource component of the new rule. Any combination of valid resources, separated by a `+`."
+        },
+        "Rights": {
+            "type": "string",
+            "description": "Rights component of the new rule. Any combination of valid Rights, separated by a `+`."
+        },
+        "User": {
+            "type": "string",
+            "description": "User component of the new rule.\n- `#<id>` matches a single user id\n- `@<id>` matches a group id\n- `*` matches everything."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Resource",
+        "Rights",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

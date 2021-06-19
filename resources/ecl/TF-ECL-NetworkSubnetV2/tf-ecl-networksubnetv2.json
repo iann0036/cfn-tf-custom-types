@@ -1,0 +1,221 @@
+{
+    "typeName": "TF::ECL::NetworkSubnetV2",
+    "description": "Manages a V2 Neutron subnet resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-NetworkSubnetV2/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AllocationPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string",
+                    "description": "The ending address."
+                },
+                "Start": {
+                    "type": "string",
+                    "description": "The starting address."
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "HostRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationCidr": {
+                    "type": "string",
+                    "description": "The destination CIDR."
+                },
+                "NextHop": {
+                    "type": "string",
+                    "description": "The next hop in the route."
+                }
+            },
+            "required": [
+                "DestinationCidr",
+                "NextHop"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string",
+            "description": "CIDR representing IP range for this subnet, based on IP\nversion. You can omit this option if you are creating a subnet from a\nsubnet pool."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Subnet description."
+        },
+        "DnsNameservers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of subnet dns name servers."
+        },
+        "EnableDhcp": {
+            "type": "boolean",
+            "description": "The administrative state of the network.\nAcceptable values are \"true\" and \"false\". Changing this value enables or\ndisables the DHCP capabilities of the existing subnet. Defaults to true."
+        },
+        "GatewayIp": {
+            "type": "string",
+            "description": "Default gateway used by devices in this subnet.\nLeaving this blank and not setting `no_gateway` will cause a default\ngateway of `.1` to be used. Changing this updates the gateway IP of the\nexisting subnet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpVersion": {
+            "type": "number",
+            "description": "IP version.\nIn Enterprise Cloud service this parameter is fixed as 4."
+        },
+        "Ipv6AddressMode": {
+            "type": "string"
+        },
+        "Ipv6RaMode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the subnet. Changing this updates the name of\nthe existing subnet."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "The UUID of the parent network. Changing this\ncreates a new subnet."
+        },
+        "NoGateway": {
+            "type": "boolean",
+            "description": "Do not set a gateway IP on this subnet. Changing\nthis removes or adds a default gateway IP of the existing subnet."
+        },
+        "NtpServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of ntp servers."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a Neutron subnet. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nsubnet."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Subnet tags."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "The owner of the subnet. Required if admin wants to\ncreate a subnet for another tenant. Changing this creates a new subnet."
+        },
+        "AllocationPools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllocationPoolsDefinition"
+            }
+        },
+        "HostRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostRoutesDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cidr",
+        "NetworkId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Ipv6AddressMode",
+        "/properties/Ipv6RaMode",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

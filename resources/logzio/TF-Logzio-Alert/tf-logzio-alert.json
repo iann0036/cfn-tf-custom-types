@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::Logzio::Alert",
+    "description": "CloudFormation equivalent of logzio_alert",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logzio/TF-Logzio-Alert/docs/README.md",
+    "definitions": {
+        "SeverityThresholdTiersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Severity": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Severity",
+                "Threshold"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertNotificationEndpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "GroupByAggregationFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "NotificationEmails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "QueryString": {
+            "type": "string"
+        },
+        "SearchTimeframeMinutes": {
+            "type": "number"
+        },
+        "SuppressNotificationsMinutes": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Title": {
+            "type": "string"
+        },
+        "ValueAggregationField": {
+            "type": "string"
+        },
+        "ValueAggregationType": {
+            "type": "string"
+        },
+        "SeverityThresholdTiers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SeverityThresholdTiersDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlertNotificationEndpoints",
+        "NotificationEmails",
+        "QueryString",
+        "SearchTimeframeMinutes",
+        "Title",
+        "ValueAggregationType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

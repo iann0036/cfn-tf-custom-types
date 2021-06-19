@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Alicloud::CmsSiteMonitor",
+    "description": "This resource provides a site monitor resource and it can be used to monitor public endpoints and websites.\nDetails at https://www.alibabacloud.com/help/doc-detail/67907.htm\n\nAvailable in 1.72.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CmsSiteMonitor/docs/README.md",
+    "definitions": {
+        "IspCitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "City": {
+                    "type": "string"
+                },
+                "Isp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "City",
+                "Isp"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string",
+            "description": "The URL or IP address monitored by the site monitoring task."
+        },
+        "AlertIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of existing alert rules to be associated with the site monitoring task."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number",
+            "description": "The monitoring interval of the site monitoring task. Unit: minutes. Valid values: 1, 5, and 15. Default value: 1."
+        },
+        "OptionsJson": {
+            "type": "string",
+            "description": "The extended options of the protocol of the site monitoring task. The options vary according to the protocol."
+        },
+        "TaskName": {
+            "type": "string",
+            "description": "The name of the site monitoring task. The name must be 4 to 100 characters in length. The name can contain the following types of characters: letters, digits, and underscores."
+        },
+        "TaskState": {
+            "type": "string"
+        },
+        "TaskType": {
+            "type": "string",
+            "description": "The protocol of the site monitoring task. Currently, site monitoring supports the following protocols: HTTP, Ping, TCP, UDP, DNS, SMTP, POP3, and FTP."
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "IspCities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IspCitiesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "TaskName",
+        "TaskType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/TaskState",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

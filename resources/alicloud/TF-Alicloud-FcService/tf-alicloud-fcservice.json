@@ -1,0 +1,195 @@
+{
+    "typeName": "TF::Alicloud::FcService",
+    "description": "Provides a Alicloud Function Compute Service resource. The resource is the base of launching Function and Trigger configuration.\n For information about Service and how to use it, see [What is Function Compute](https://www.alibabacloud.com/help/doc-detail/52895.htm).\n\n-> **NOTE:** The resource requires a provider field 'account_id'. [See account_id](https://www.terraform.io/docs/providers/alicloud/index.html#account_id).\n\n-> **NOTE:** If you happen the error \"Argument 'internetAccess' is not supported\", you need to log on web console and click button \"Apply VPC Function\"\nwhich is in the upper of [Function Service Web Console](https://fc.console.aliyun.com/) page.\n\n-> **NOTE:** Currently not all regions support Function Compute Service.\nFor more details supported regions, see [Service endpoints](https://www.alibabacloud.com/help/doc-detail/52984.htm)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-FcService/docs/README.md",
+    "definitions": {
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Logstore": {
+                    "type": "string"
+                },
+                "Project": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Logstore",
+                "Project"
+            ]
+        },
+        "NasConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupId": {
+                    "type": "number"
+                },
+                "UserId": {
+                    "type": "number"
+                },
+                "MountPoints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MountPointsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "GroupId",
+                "UserId"
+            ]
+        },
+        "VpcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "VswitchIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "SecurityGroupId",
+                "VswitchIds"
+            ]
+        },
+        "MountPointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MountDir": {
+                    "type": "string"
+                },
+                "ServerAddr": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MountDir",
+                "ServerAddr"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The function compute service description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetAccess": {
+            "type": "boolean",
+            "description": "Whether to allow the service to access Internet. Default to \"true\"."
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Function Compute service name. It is the only in one Alicloud account and is conflict with \"name_prefix\"."
+        },
+        "NamePrefix": {
+            "type": "string",
+            "description": "Setting a prefix to get a only name. It is conflict with \"name\"."
+        },
+        "Publish": {
+            "type": "boolean"
+        },
+        "Role": {
+            "type": "string",
+            "description": "RAM role arn attached to the Function Compute service. This governs both who / what can invoke your Function, as well as what resources our Function has access to. See [User Permissions](https://www.alibabacloud.com/help/doc-detail/52885.htm) for more details."
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NasConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NasConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/LastModified",
+        "/properties/ServiceId",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

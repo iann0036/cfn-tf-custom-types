@@ -1,0 +1,118 @@
+{
+    "typeName": "TF::Aviatrix::Firewall",
+    "description": "The **aviatrix_firewall** resource allows the creation and management of [Aviatrix Stateful Firewall](https://docs.aviatrix.com/HowTos/stateful_firewall_faq.html) policies.\n\n~> **NOTE on Firewall and Firewall Policy resources:** Terraform currently provides both a standalone Firewall Policy resource and a Firewall resource with policies defined in-line. At this time, you cannot use a Firewall resource with in-line rules in conjunction with any Firewall Policy resources. Doing so will cause a conflict of policy settings and will overwrite policies. In order to use the **aviatrix_firewall_policy** resource, `manage_firewall_policies` must be set to false in this resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Firewall/docs/README.md",
+    "definitions": {
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DstIp": {
+                    "type": "string"
+                },
+                "LogEnabled": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcIp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "DstIp",
+                "Port",
+                "SrcIp"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseLogEnabled": {
+            "type": "boolean",
+            "description": "Indicates whether enable logging or not. Valid Values: true, false. Default value: false."
+        },
+        "BasePolicy": {
+            "type": "string",
+            "description": "New base policy. Valid Values: \"allow-all\", \"deny-all\". Default value: \"deny-all\"."
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Gateway name to attach firewall policy to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageFirewallPolicies": {
+            "type": "boolean",
+            "description": "Enable to manage firewall policies via in-line rules. If false, policies must be managed using `aviatrix_firewall_policy` resources. Default: true. Valid values: true, false. Available in provider version R2.17+."
+        },
+        "Policy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

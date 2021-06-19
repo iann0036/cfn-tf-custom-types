@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::Turbot::PolicySetting",
+    "description": "The `Turbot Policy Setting` resource adds support for setting policies for resources. It is used to create, update and delete policy settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-PolicySetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Note": {
+            "type": "string",
+            "description": "Additional notes, if desired.\n- `precedence` - (Optional) Determines whether the policy setting should be `required` or `recommended`. Defaults to `required`.\n- `template` - (Optional) Nunjucks template that is used to render the policy.\n- `template_input` - (Optional) A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "PgpKey": {
+            "type": "string",
+            "description": "A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Precedence": {
+            "type": "string",
+            "description": "Determines whether the policy setting should be `required` or `recommended`. Defaults to `required`.\n- `template` - (Optional) Nunjucks template that is used to render the policy.\n- `template_input` - (Optional) A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Resource": {
+            "type": "string",
+            "description": "The `aka` of the resource.\n- `note` - (Optional) Additional notes, if desired.\n- `precedence` - (Optional) Determines whether the policy setting should be `required` or `recommended`. Defaults to `required`.\n- `template` - (Optional) Nunjucks template that is used to render the policy.\n- `template_input` - (Optional) A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ResourceAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Template": {
+            "type": "string",
+            "description": "Nunjucks template that is used to render the policy.\n- `template_input` - (Optional) A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "TemplateInput": {
+            "type": "string",
+            "description": "A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The `aka` of the policy type to be created. This is represented by `uri` which can be found out from the overview section of the desired policy.\n- `resource` - (Required) The `aka` of the resource.\n- `note` - (Optional) Additional notes, if desired.\n- `precedence` - (Optional) Determines whether the policy setting should be `required` or `recommended`. Defaults to `required`.\n- `template` - (Optional) Nunjucks template that is used to render the policy.\n- `template_input` - (Optional) A GraphQL query as a `string` or array of GraphQL queries in `YAML` format. The GraphQL output is used as the render context when rendering the `template`\n- `valid_from_timestamp` - (Optional) The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ValidFromTimestamp": {
+            "type": "string",
+            "description": "The start of a specific time period for which the policy setting is valid.\n- `valid_to_timestamp` - (Optional) The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ValidToTimestamp": {
+            "type": "string",
+            "description": "The expiration date of a policy value.\n- `value` - (Optional) Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "Value": {
+            "type": "string",
+            "description": "Value of the policy. This could either be the value of the setting or a `yaml` string representing the setting.\n- `pgp_key` - (Optional) A base-64 encoded PGP public key, applies on resource creation. If specified, the resource is encrypted in the state file with the key specified."
+        },
+        "ValueKeyFingerprint": {
+            "type": "string"
+        },
+        "ValueSource": {
+            "type": "string"
+        },
+        "ValueSourceKeyFingerprint": {
+            "type": "string"
+        },
+        "ValueSourceUsed": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Resource",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourceAkas",
+        "/properties/ValueKeyFingerprint",
+        "/properties/ValueSource",
+        "/properties/ValueSourceKeyFingerprint",
+        "/properties/ValueSourceUsed"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

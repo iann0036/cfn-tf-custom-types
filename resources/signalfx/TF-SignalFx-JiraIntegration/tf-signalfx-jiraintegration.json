@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::SignalFx::JiraIntegration",
+    "description": "SignalFx Jira integrations. For help with this integration see [Integration with Jira](https://docs.signalfx.com/en/latest/admin-guide/integrate-notifications.html#integrate-with-jira).\n\n~> **NOTE** When managing integrations you'll need to use an admin token to authenticate the SignalFx provider. Otherwise you'll receive a 4xx error.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-JiraIntegration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiToken": {
+            "type": "string",
+            "description": "The API token for the user email."
+        },
+        "AssigneeDisplayName": {
+            "type": "string",
+            "description": "Jira display name for the assignee."
+        },
+        "AssigneeName": {
+            "type": "string",
+            "description": "Jira user name for the assignee."
+        },
+        "AuthMethod": {
+            "type": "string",
+            "description": "Authentication method used when creating the Jira integration. One of `EmailAndToken` (using `user_email` and `api_token`) or `UsernameAndPassword` (using `username` and `password`)."
+        },
+        "BaseUrl": {
+            "type": "string",
+            "description": "Base URL of the Jira instance that's integrated with SignalFx."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the integration is enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssueType": {
+            "type": "string",
+            "description": "Issue type (for example, Story) for tickets that Jira creates for detector notifications. SignalFx validates issue types, so you must specify a type that's valid for the Jira project specified in `projectKey`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password used to authenticate the Jira integration."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "Jira key of an existing project. When Jira creates a new ticket for a detector notification, the ticket is assigned to this project."
+        },
+        "UserEmail": {
+            "type": "string",
+            "description": "Email address used to authenticate the Jira integration."
+        },
+        "Username": {
+            "type": "string",
+            "description": "User name used to authenticate the Jira integration."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AssigneeName",
+        "AuthMethod",
+        "BaseUrl",
+        "Enabled",
+        "IssueType",
+        "Name",
+        "ProjectKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiToken",
+        "/properties/Password"
+    ]
+}

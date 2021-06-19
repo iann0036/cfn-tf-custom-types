@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::AzureRM::ServicebusNamespaceDisasterRecoveryConfig",
+    "description": "Manages a Disaster Recovery Config for a Service Bus Namespace.\n\n~> **NOTE:** Disaster Recovery Config is a Premium Sku only capability.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ServicebusNamespaceDisasterRecoveryConfig/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AliasPrimaryConnectionString": {
+            "type": "string"
+        },
+        "AliasSecondaryConnectionString": {
+            "type": "string"
+        },
+        "DefaultPrimaryKey": {
+            "type": "string"
+        },
+        "DefaultSecondaryKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Disaster Recovery Config. This is the alias DNS name that will be created. Changing this forces a new resource to be created."
+        },
+        "PartnerNamespaceId": {
+            "type": "string",
+            "description": "The ID of the Service Bus Namespace to replicate to."
+        },
+        "PrimaryNamespaceId": {
+            "type": "string",
+            "description": "The ID of the primary Service Bus Namespace to replicate. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PartnerNamespaceId",
+        "PrimaryNamespaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AliasPrimaryConnectionString",
+        "/properties/AliasSecondaryConnectionString",
+        "/properties/DefaultPrimaryKey",
+        "/properties/DefaultSecondaryKey",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AliasPrimaryConnectionString",
+        "/properties/AliasSecondaryConnectionString",
+        "/properties/DefaultPrimaryKey",
+        "/properties/DefaultSecondaryKey"
+    ]
+}

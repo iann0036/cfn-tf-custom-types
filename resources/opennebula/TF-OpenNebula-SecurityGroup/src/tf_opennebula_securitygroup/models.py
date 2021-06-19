@@ -1,0 +1,139 @@
+# DO NOT modify this file by hand, changes will be overwritten
+import sys
+from dataclasses import dataclass
+from inspect import getmembers, isclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseModel,
+    BaseResourceHandlerRequest,
+)
+from cloudformation_cli_python_lib.recast import recast_object
+from cloudformation_cli_python_lib.utils import deserialize_list
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseModel):
+    tfcfnid: Optional[str]
+    Commit: Optional[bool]
+    Description: Optional[str]
+    Gid: Optional[float]
+    Gname: Optional[str]
+    Group: Optional[str]
+    Id: Optional[str]
+    Name: Optional[str]
+    Permissions: Optional[str]
+    Tags: Optional[Sequence["_TagsDefinition"]]
+    Uid: Optional[float]
+    Uname: Optional[str]
+    Rule: Optional[Sequence["_RuleDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        dataclasses = {n: o for n, o in getmembers(sys.modules[__name__]) if isclass(o)}
+        recast_object(cls, json_data, dataclasses)
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            Commit=json_data.get("Commit"),
+            Description=json_data.get("Description"),
+            Gid=json_data.get("Gid"),
+            Gname=json_data.get("Gname"),
+            Group=json_data.get("Group"),
+            Id=json_data.get("Id"),
+            Name=json_data.get("Name"),
+            Permissions=json_data.get("Permissions"),
+            Tags=deserialize_list(json_data.get("Tags"), TagsDefinition),
+            Uid=json_data.get("Uid"),
+            Uname=json_data.get("Uname"),
+            Rule=deserialize_list(json_data.get("Rule"), RuleDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+
+@dataclass
+class TagsDefinition(BaseModel):
+    MapKey: Optional[str]
+    MapValue: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_TagsDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_TagsDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_TagsDefinition = TagsDefinition
+
+
+@dataclass
+class RuleDefinition(BaseModel):
+    IcmpType: Optional[str]
+    Ip: Optional[str]
+    NetworkId: Optional[str]
+    Protocol: Optional[str]
+    Range: Optional[str]
+    RuleType: Optional[str]
+    Size: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_RuleDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_RuleDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            IcmpType=json_data.get("IcmpType"),
+            Ip=json_data.get("Ip"),
+            NetworkId=json_data.get("NetworkId"),
+            Protocol=json_data.get("Protocol"),
+            Range=json_data.get("Range"),
+            RuleType=json_data.get("RuleType"),
+            Size=json_data.get("Size"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_RuleDefinition = RuleDefinition
+
+

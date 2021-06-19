@@ -1,0 +1,193 @@
+{
+    "typeName": "TF::Gridscale::Storage",
+    "description": "Provides a storage resource. This can be used to create, modify, and delete storages.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Storage/docs/README.md",
+    "definitions": {
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PasswordType": {
+                    "type": "string"
+                },
+                "Sshkeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TemplateUuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TemplateUuid"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Capacity": {
+            "type": "number",
+            "description": "required (integer - minimum: 1 - maximum: 4096)."
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CurrentPrice": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "LastUsedTemplate": {
+            "type": "string"
+        },
+        "LicenseProductNo": {
+            "type": "number"
+        },
+        "LocationCountry": {
+            "type": "string"
+        },
+        "LocationIata": {
+            "type": "string"
+        },
+        "LocationName": {
+            "type": "string"
+        },
+        "LocationUuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "ParentUuid": {
+            "type": "string"
+        },
+        "RollbackFromBackupUuid": {
+            "type": "string",
+            "description": "Rollback the storage from a specific storage backup."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "(one of storage, storage_high, storage_insane)."
+        },
+        "UsageInMinutes": {
+            "type": "number"
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Capacity",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/CurrentPrice",
+        "/properties/Id",
+        "/properties/LastUsedTemplate",
+        "/properties/LicenseProductNo",
+        "/properties/LocationCountry",
+        "/properties/LocationIata",
+        "/properties/LocationName",
+        "/properties/LocationUuid",
+        "/properties/ParentUuid",
+        "/properties/Status",
+        "/properties/UsageInMinutes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/TemplateDefinition/Password"
+    ]
+}

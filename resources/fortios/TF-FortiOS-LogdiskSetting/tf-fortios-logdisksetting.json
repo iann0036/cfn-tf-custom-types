@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::FortiOS::LogdiskSetting",
+    "description": "Settings for local disk logging.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogdiskSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Diskfull": {
+            "type": "string",
+            "description": "Action to take when disk is full. The system can overwrite the oldest log messages or stop logging when the disk is full (default = overwrite). Valid values: `overwrite`, `nolog`."
+        },
+        "DlpArchiveQuota": {
+            "type": "number",
+            "description": "DLP archive quota (MB)."
+        },
+        "FullFinalWarningThreshold": {
+            "type": "number",
+            "description": "Log full final warning threshold as a percent (3 - 100, default = 95)."
+        },
+        "FullFirstWarningThreshold": {
+            "type": "number",
+            "description": "Log full first warning threshold as a percent (1 - 98, default = 75)."
+        },
+        "FullSecondWarningThreshold": {
+            "type": "number",
+            "description": "Log full second warning threshold as a percent (2 - 99, default = 90)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "IpsArchive": {
+            "type": "string",
+            "description": "Enable/disable IPS packet archiving to the local disk. Valid values: `enable`, `disable`."
+        },
+        "LogQuota": {
+            "type": "number",
+            "description": "Disk log quota (MB)."
+        },
+        "MaxLogFileSize": {
+            "type": "number",
+            "description": "Maximum log file size before rolling (1 - 100 Mbytes)."
+        },
+        "MaxPolicyPacketCaptureSize": {
+            "type": "number",
+            "description": "Maximum size of policy sniffer in MB (0 means unlimited)."
+        },
+        "MaximumLogAge": {
+            "type": "number",
+            "description": "Delete log files older than (days)."
+        },
+        "ReportQuota": {
+            "type": "number",
+            "description": "Report quota (MB)."
+        },
+        "RollDay": {
+            "type": "string",
+            "description": "Day of week on which to roll log file. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        },
+        "RollSchedule": {
+            "type": "string",
+            "description": "Frequency to check log file for rolling. Valid values: `daily`, `weekly`."
+        },
+        "RollTime": {
+            "type": "string",
+            "description": "Time of day to roll the log file (hh:mm)."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address to use for uploading disk log files."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable local disk logging. Valid values: `enable`, `disable`."
+        },
+        "Upload": {
+            "type": "string",
+            "description": "Enable/disable uploading log files when they are rolled. Valid values: `enable`, `disable`."
+        },
+        "UploadDeleteFiles": {
+            "type": "string",
+            "description": "Delete log files after uploading (default = enable). Valid values: `enable`, `disable`."
+        },
+        "UploadDestination": {
+            "type": "string",
+            "description": "The type of server to upload log files to. Only FTP is currently supported. Valid values: `ftp-server`."
+        },
+        "UploadSslConn": {
+            "type": "string",
+            "description": "Enable/disable encrypted FTPS communication to upload log files. Valid values: `default`, `high`, `low`, `disable`."
+        },
+        "Uploaddir": {
+            "type": "string",
+            "description": "The remote directory on the FTP server to upload log files to."
+        },
+        "Uploadip": {
+            "type": "string",
+            "description": "IP address of the FTP server to upload log files to."
+        },
+        "Uploadpass": {
+            "type": "string",
+            "description": "Password required to log into the FTP server to upload disk log files."
+        },
+        "Uploadport": {
+            "type": "number",
+            "description": "TCP port to use for communicating with the FTP server (default = 21)."
+        },
+        "Uploadsched": {
+            "type": "string",
+            "description": "Set the schedule for uploading log files to the FTP server (default = disable = upload when rolling). Valid values: `disable`, `enable`."
+        },
+        "Uploadtime": {
+            "type": "string",
+            "description": "Time of day at which log files are uploaded if uploadsched is enabled (hh:mm or hh)."
+        },
+        "Uploadtype": {
+            "type": "string",
+            "description": "Types of log files to upload. Separate multiple entries with a space."
+        },
+        "Uploaduser": {
+            "type": "string",
+            "description": "Username required to log into the FTP server to upload disk log files."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Uploadpass"
+    ]
+}

@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::AzureRM::AppServiceCertificate",
+    "description": "Manages an App Service certificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AppServiceCertificate/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExpirationDate": {
+            "type": "string"
+        },
+        "FriendlyName": {
+            "type": "string"
+        },
+        "HostNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HostingEnvironmentProfileId": {
+            "type": "string",
+            "description": "Must be specified when the certificate is for an App Service Environment hosted App Service. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssueDate": {
+            "type": "string"
+        },
+        "Issuer": {
+            "type": "string"
+        },
+        "KeyVaultSecretId": {
+            "type": "string",
+            "description": "The ID of the Key Vault secret. Changing this forces a new resource to be created."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the certificate. Changing this forces a new resource to be created."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password to access the certificate's private key. Changing this forces a new resource to be created."
+        },
+        "PfxBlob": {
+            "type": "string",
+            "description": "The base64-encoded contents of the certificate. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the certificate. Changing this forces a new resource to be created."
+        },
+        "SubjectName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExpirationDate",
+        "/properties/FriendlyName",
+        "/properties/HostNames",
+        "/properties/Id",
+        "/properties/IssueDate",
+        "/properties/Issuer",
+        "/properties/SubjectName",
+        "/properties/Thumbprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password",
+        "/properties/PfxBlob"
+    ]
+}

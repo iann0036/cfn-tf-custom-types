@@ -1,0 +1,185 @@
+{
+    "typeName": "TF::Panos::PanoramaBgpPeer",
+    "description": "This resource allows you to add/update/delete a Panorama BGP peer.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaBgpPeer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressFamilyType": {
+            "type": "string",
+            "description": "Set the AFI for this\npeer.  Valid values are `ipv4` or `ipv6`."
+        },
+        "AllowIncomingConnections": {
+            "type": "boolean",
+            "description": "Allow incoming connections\n(default: `true`)."
+        },
+        "AllowOutgoingConnections": {
+            "type": "boolean",
+            "description": "Allow outgoing connections\n(default: `true`)."
+        },
+        "AuthProfile": {
+            "type": "string",
+            "description": "Auth profile."
+        },
+        "BfdProfile": {
+            "type": "string",
+            "description": "BFD profile.  This can be a specific\nBFD profile name, `None` (disables BFD), or `Inherit-vr-global-setting`."
+        },
+        "BgpPeerGroup": {
+            "type": "string",
+            "description": "The BGP peer group to put this peer into."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
+        },
+        "EnableMpBgp": {
+            "type": "boolean",
+            "description": "Enable MP BGP."
+        },
+        "EnableSenderSideLoopDetection": {
+            "type": "boolean",
+            "description": "Enable\nsender side loop detection."
+        },
+        "HoldTime": {
+            "type": "number",
+            "description": "Hold time, in seconds."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleHoldTime": {
+            "type": "number",
+            "description": "Idle hold time, in seconds."
+        },
+        "IncomingConnectionsRemotePort": {
+            "type": "number",
+            "description": "Restrict remote port for\nincoming BGP connections."
+        },
+        "KeepAliveInterval": {
+            "type": "number",
+            "description": "Keep alive interval, in\nseconds (default: `30`)."
+        },
+        "LocalAddressInterface": {
+            "type": "string",
+            "description": "Interface to accept BGP session."
+        },
+        "LocalAddressIp": {
+            "type": "string",
+            "description": "Specify exact IP address if interface has\nmultiple addresses."
+        },
+        "MaxPrefixes": {
+            "type": "string",
+            "description": "Maximum of prefixes to receive from the\npeer.  This can be a number such as `\"5000\"` (default) or `unlimited`."
+        },
+        "MinRouteAdvertisementInterval": {
+            "type": "number",
+            "description": "Minimum\nroute advertisement interval, in seconds."
+        },
+        "MultiHop": {
+            "type": "number",
+            "description": "IP TTL value used for sending BGP packet."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "OpenDelayTime": {
+            "type": "number",
+            "description": "Open delay time, in seconds."
+        },
+        "OutgoingConnectionsLocalPort": {
+            "type": "number",
+            "description": "Use specific local\nport for outgoing BGP connections."
+        },
+        "PeerAddressIp": {
+            "type": "string",
+            "description": "Peer IP address configuration."
+        },
+        "PeerAs": {
+            "type": "string",
+            "description": "Peer AS number."
+        },
+        "PeeringType": {
+            "type": "string",
+            "description": "Peering type that affects NOPEER\ncommunity value handling.  Valid values are `unspecified` (default) or\n`bilateral`."
+        },
+        "ReflectorClient": {
+            "type": "string",
+            "description": "This peer is reflector client.  Valid\nvalues are `non-client`, `client`, or `meshed-client`."
+        },
+        "SubsequentAddressFamilyMulticast": {
+            "type": "boolean",
+            "description": "Enable\nmulticast subsequent address family for this peer."
+        },
+        "SubsequentAddressFamilyUnicast": {
+            "type": "boolean",
+            "description": "Enable\nunicast subsequent address family for this peer."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this BGP\npeer to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BgpPeerGroup",
+        "LocalAddressInterface",
+        "Name",
+        "PeerAddressIp",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

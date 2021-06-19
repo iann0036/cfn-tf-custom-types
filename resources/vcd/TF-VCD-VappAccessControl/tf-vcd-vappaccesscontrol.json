@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::VCD::VappAccessControl",
+    "description": "Provides a vCloud Director Access Control structure for a vApp. This can be used to create, update, and delete access control structures for a vApp.\n\n~> **Warning:** The access control info is tied to a vApp. Thus, there could be only one instance per vApp. Using a different\ndefinition for the same vApp ID will result in a previous instance to be overwritten.\n\n-> **Note:** Access control operations run in tenant context, meaning that, even if the user is a system administrator,\nin every request it uses headers items that define the tenant context as restricted to the organization to which the vApp belongs.\n\nSupported in provider *v3.0+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-VappAccessControl/docs/README.md",
+    "definitions": {
+        "SharedWithDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLevel": {
+                    "type": "string"
+                },
+                "GroupId": {
+                    "type": "string"
+                },
+                "UserId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessLevel"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EveryoneAccessLevel": {
+            "type": "string",
+            "description": "Access level when the vApp is shared with everyone (one of `ReadOnly`, `Change`,\n`FullControl`). Required if `shared_with_everyone` is set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to which the vApp belongs. Optional if defined at provider level."
+        },
+        "SharedWithEveryone": {
+            "type": "boolean",
+            "description": "Whether the vApp is shared with everyone. If any `shared_with` blocks are included,\nthis property cannot be used."
+        },
+        "VappId": {
+            "type": "string",
+            "description": "A unique identifier for the vApp."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of organization to which the vApp belongs. Optional if defined at provider level."
+        },
+        "SharedWith": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SharedWithDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SharedWithEveryone",
+        "VappId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

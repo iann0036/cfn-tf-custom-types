@@ -1,0 +1,281 @@
+{
+    "typeName": "TF::AWS::OpsworksRailsAppLayer",
+    "description": "Provides an OpsWorks Ruby on Rails application layer resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-OpsworksRailsAppLayer/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EbsVolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number",
+                    "description": "For PIOPS volumes, the IOPS per disk."
+                },
+                "MountPoint": {
+                    "type": "string",
+                    "description": "The path to mount the EBS volume on the layer's instances."
+                },
+                "NumberOfDisks": {
+                    "type": "number",
+                    "description": "The number of disks to use for the EBS volume."
+                },
+                "RaidLevel": {
+                    "type": "string",
+                    "description": "The RAID level to use for the volume."
+                },
+                "Size": {
+                    "type": "number",
+                    "description": "The size of the volume in gigabytes."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of volume to create. This may be `standard` (the default), `io1` or `gp2`."
+                }
+            },
+            "required": [
+                "MountPoint",
+                "NumberOfDisks",
+                "Size"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppServer": {
+            "type": "string",
+            "description": "Keyword for the app server to use. Defaults to \"apache_passenger\"."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoAssignElasticIps": {
+            "type": "boolean",
+            "description": "Whether to automatically assign an elastic IP address to the layer's instances."
+        },
+        "AutoAssignPublicIps": {
+            "type": "boolean",
+            "description": "For stacks belonging to a VPC, whether to automatically assign a public IP address to each of the layer's instances."
+        },
+        "AutoHealing": {
+            "type": "boolean",
+            "description": "Whether to enable auto-healing for the layer."
+        },
+        "BundlerVersion": {
+            "type": "string",
+            "description": "When OpsWorks is managing Bundler, which version to use. Defaults to \"1.5.3\"."
+        },
+        "CustomConfigureRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomDeployRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomInstanceProfileArn": {
+            "type": "string",
+            "description": "The ARN of an IAM profile that will be used for the layer's instances."
+        },
+        "CustomJson": {
+            "type": "string",
+            "description": "Custom JSON attributes to apply to the layer."
+        },
+        "CustomSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Ids for a set of security groups to apply to the layer's instances."
+        },
+        "CustomSetupRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomShutdownRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomUndeployRecipes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DrainElbOnShutdown": {
+            "type": "boolean",
+            "description": "Whether to enable Elastic Load Balancing connection draining."
+        },
+        "ElasticLoadBalancer": {
+            "type": "string",
+            "description": "Name of an Elastic Load Balancer to attach to this layer."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallUpdatesOnBoot": {
+            "type": "boolean",
+            "description": "Whether to install OS and package updates on each instance when it boots."
+        },
+        "InstanceShutdownTimeout": {
+            "type": "number",
+            "description": "The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event."
+        },
+        "ManageBundler": {
+            "type": "boolean",
+            "description": "Whether OpsWorks should manage bundler. On by default."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-readable name for the layer."
+        },
+        "PassengerVersion": {
+            "type": "string",
+            "description": "The version of Passenger to use. Defaults to \"4.0.46\"."
+        },
+        "RubyVersion": {
+            "type": "string",
+            "description": "The version of Ruby to use. Defaults to \"2.0.0\"."
+        },
+        "RubygemsVersion": {
+            "type": "string",
+            "description": "The version of RubyGems to use. Defaults to \"2.2.2\"."
+        },
+        "StackId": {
+            "type": "string",
+            "description": "The id of the stack the layer will belong to."
+        },
+        "SystemPackages": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Names of a set of system packages to install on the layer's instances."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UseEbsOptimizedInstances": {
+            "type": "boolean",
+            "description": "Whether to use EBS-optimized instances."
+        },
+        "EbsVolume": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsVolumeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StackId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

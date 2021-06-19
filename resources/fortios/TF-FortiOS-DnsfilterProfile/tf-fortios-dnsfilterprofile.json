@@ -1,0 +1,250 @@
+{
+    "typeName": "TF::FortiOS::DnsfilterProfile",
+    "description": "Configure DNS domain filter profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-DnsfilterProfile/docs/README.md",
+    "definitions": {
+        "DnsTranslationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddrType": {
+                    "type": "string",
+                    "description": "DNS translation type (IPv4 or IPv6). Valid values: `ipv4`, `ipv6`."
+                },
+                "Dst": {
+                    "type": "string",
+                    "description": "IPv4 address or subnet on the external network to substitute for the resolved address in DNS query replies. Can be single IP address or subnet on the external network, but number of addresses must equal number of mapped IP addresses in src."
+                },
+                "Dst6": {
+                    "type": "string",
+                    "description": "IPv6 address or subnet on the external network to substitute for the resolved address in DNS query replies. Can be single IP address or subnet on the external network, but number of addresses must equal number of mapped IP addresses in src6."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Netmask": {
+                    "type": "string",
+                    "description": "If src and dst are subnets rather than single IP addresses, enter the netmask for both src and dst."
+                },
+                "Prefix": {
+                    "type": "number",
+                    "description": "If src6 and dst6 are subnets rather than single IP addresses, enter the prefix for both src6 and dst6 (1 - 128, default = 128)."
+                },
+                "Src": {
+                    "type": "string",
+                    "description": "IPv4 address or subnet on the internal network to compare with the resolved address in DNS query replies. If the resolved address matches, the resolved address is substituted with dst."
+                },
+                "Src6": {
+                    "type": "string",
+                    "description": "IPv6 address or subnet on the internal network to compare with the resolved address in DNS query replies. If the resolved address matches, the resolved address is substituted with dst6."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this DNS translation entry. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "DomainFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainFilterTable": {
+                    "type": "number",
+                    "description": "DNS domain filter table ID."
+                }
+            },
+            "required": []
+        },
+        "ExternalIpBlocklistDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "External domain block list name."
+                }
+            },
+            "required": []
+        },
+        "FtgdDnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Options": {
+                    "type": "string",
+                    "description": "FortiGuard DNS filter options. Valid values: `error-allow`, `ftgd-disable`."
+                },
+                "Filters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FiltersDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take for DNS requests matching the category. Valid values: `block`, `monitor`."
+                },
+                "Category": {
+                    "type": "number",
+                    "description": "Category number."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID number."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable DNS filter logging for this DNS profile. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlockAction": {
+            "type": "string",
+            "description": "Action to take for blocked domains. Valid values: `block`, `redirect`."
+        },
+        "BlockBotnet": {
+            "type": "string",
+            "description": "Enable/disable blocking botnet C&C DNS lookups. Valid values: `disable`, `enable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogAllDomain": {
+            "type": "string",
+            "description": "Enable/disable logging of all domains visited (detailed DNS logging). Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "RedirectPortal": {
+            "type": "string",
+            "description": "IP address of the SDNS redirect portal."
+        },
+        "RedirectPortal6": {
+            "type": "string",
+            "description": "IPv6 address of the SDNS redirect portal."
+        },
+        "SafeSearch": {
+            "type": "string",
+            "description": "Enable/disable Google, Bing, and YouTube safe search. Valid values: `disable`, `enable`."
+        },
+        "SdnsDomainLog": {
+            "type": "string",
+            "description": "Enable/disable domain filtering and botnet domain logging. Valid values: `enable`, `disable`."
+        },
+        "SdnsFtgdErrLog": {
+            "type": "string",
+            "description": "Enable/disable FortiGuard SDNS rating error logging. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "YoutubeRestrict": {
+            "type": "string",
+            "description": "Set safe search for YouTube restriction level. Valid values: `strict`, `moderate`."
+        },
+        "DnsTranslation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsTranslationDefinition"
+            }
+        },
+        "DomainFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DomainFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExternalIpBlocklist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalIpBlocklistDefinition"
+            }
+        },
+        "FtgdDns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FtgdDnsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

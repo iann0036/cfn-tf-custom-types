@@ -1,0 +1,338 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementBackend",
+    "description": "Manages a backend within an API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementBackend/docs/README.md",
+    "definitions": {
+        "CredentialsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of client certificate thumbprints to present to the backend host. The certificates must exist within the API Management Service."
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    },
+                    "description": "A mapping of header parameters to pass to the backend host. The keys are the header names and the values are a comma separated string of header values. This is converted to a list before being passed to the API."
+                },
+                "Query": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryDefinition"
+                    },
+                    "description": "A mapping of query parameters to pass to the backend host. The keys are the query names and the values are a comma separated string of query values. This is converted to a list before being passed to the API."
+                },
+                "Authorization": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthorizationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "The password to connect to the proxy server."
+                },
+                "Url": {
+                    "type": "string",
+                    "description": "The URL of the proxy server."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "The username to connect to the proxy server."
+                }
+            },
+            "required": [
+                "Url",
+                "Username"
+            ]
+        },
+        "ServiceFabricClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientCertificateThumbprint": {
+                    "type": "string",
+                    "description": "The client certificate thumbprint for the management endpoint."
+                },
+                "ManagementEndpoints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of cluster management endpoints."
+                },
+                "MaxPartitionResolutionRetries": {
+                    "type": "number",
+                    "description": "The maximum number of retries when attempting resolve the partition."
+                },
+                "ServerCertificateThumbprints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of thumbprints of the server certificates of the Service Fabric cluster."
+                },
+                "ServerX509Name": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerX509NameDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ClientCertificateThumbprint",
+                "ManagementEndpoints",
+                "MaxPartitionResolutionRetries"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ValidateCertificateChain": {
+                    "type": "boolean",
+                    "description": "Flag indicating whether SSL certificate chain validation should be done when using self-signed certificates for the backend host."
+                },
+                "ValidateCertificateName": {
+                    "type": "boolean",
+                    "description": "Flag indicating whether SSL certificate name validation should be done when using self-signed certificates for the backend host."
+                }
+            },
+            "required": []
+        },
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Parameter": {
+                    "type": "string",
+                    "description": "The authentication Parameter value."
+                },
+                "Scheme": {
+                    "type": "string",
+                    "description": "The authentication Scheme name."
+                }
+            },
+            "required": []
+        },
+        "ServerX509NameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IssuerCertificateThumbprint": {
+                    "type": "string",
+                    "description": "The thumbprint for the issuer of the certificate."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The common name of the certificate."
+                }
+            },
+            "required": [
+                "IssuerCertificateThumbprint",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The Name of the API Management Service where this backend should be created. Changing this forces a new resource to be created."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the backend."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the API Management backend. Changing this forces a new resource to be created."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The protocol used by the backend host. Possible values are `http` or `soap`."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The management URI of the backend host in an external system. This URI can be the ARM Resource ID of Logic Apps, Function Apps or API Apps, or the management endpoint of a Service Fabric cluster."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The title of the backend."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The URL of the backend host."
+        },
+        "Credentials": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CredentialsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Proxy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProxyDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceFabricCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceFabricClusterDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Tls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TlsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "Name",
+        "Protocol",
+        "ResourceGroupName",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ProxyDefinition/Password"
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "typeName": "TF::FortiOS::SystemSettingDns",
+    "description": "Provides a resource to configure DNS of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_system_dns`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSettingDns/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsOverTls": {
+            "type": "string",
+            "description": "Enable/disable/enforce DNS over TLS(available since v6.2.0). Enum: [ disable, enable, enforce ]."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Primary": {
+            "type": "string",
+            "description": "Primary DNS server IP address."
+        },
+        "Secondary": {
+            "type": "string",
+            "description": "Secondary DNS server IP address."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

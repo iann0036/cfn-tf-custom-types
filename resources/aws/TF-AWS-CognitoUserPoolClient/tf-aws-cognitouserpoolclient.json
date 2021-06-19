@@ -1,0 +1,224 @@
+{
+    "typeName": "TF::AWS::CognitoUserPoolClient",
+    "description": "Provides a Cognito User Pool Client resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CognitoUserPoolClient/docs/README.md",
+    "definitions": {
+        "AnalyticsConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationArn": {
+                    "type": "string"
+                },
+                "ApplicationId": {
+                    "type": "string"
+                },
+                "ExternalId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UserDataShared": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TokenValidityUnitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessToken": {
+                    "type": "string"
+                },
+                "IdToken": {
+                    "type": "string"
+                },
+                "RefreshToken": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessTokenValidity": {
+            "type": "number",
+            "description": "Time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in `token_validity_units`."
+        },
+        "AllowedOauthFlows": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of allowed OAuth flows (code, implicit, client_credentials)."
+        },
+        "AllowedOauthFlowsUserPoolClient": {
+            "type": "boolean",
+            "description": "Whether the client is allowed to follow the OAuth protocol when interacting with Cognito user pools."
+        },
+        "AllowedOauthScopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin)."
+        },
+        "CallbackUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of allowed callback URLs for the identity providers."
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "DefaultRedirectUri": {
+            "type": "string",
+            "description": "Default redirect URI. Must be in the list of callback URLs."
+        },
+        "ExplicitAuthFlows": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of authentication flows (ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, USER_PASSWORD_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_USER_PASSWORD_AUTH, ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH)."
+        },
+        "GenerateSecret": {
+            "type": "boolean",
+            "description": "Should an application secret be generated."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdTokenValidity": {
+            "type": "number",
+            "description": "Time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in `token_validity_units`."
+        },
+        "LogoutUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of allowed logout URLs for the identity providers."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the application client."
+        },
+        "PreventUserExistenceErrors": {
+            "type": "string",
+            "description": "Choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to `ENABLED` and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to `LEGACY`, those APIs will return a `UserNotFoundException` exception if the user does not exist in the user pool."
+        },
+        "ReadAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of user pool attributes the application client can read from."
+        },
+        "RefreshTokenValidity": {
+            "type": "number",
+            "description": "Time limit in days refresh tokens are valid for."
+        },
+        "SupportedIdentityProviders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of provider names for the identity providers that are supported on this client."
+        },
+        "UserPoolId": {
+            "type": "string",
+            "description": "User pool the client belongs to."
+        },
+        "WriteAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of user pool attributes the application client can write to."
+        },
+        "AnalyticsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnalyticsConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "TokenValidityUnits": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TokenValidityUnitsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "UserPoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientSecret",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ClientSecret"
+    ]
+}

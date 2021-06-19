@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Aviatrix::DeviceAwsTgwAttachment",
+    "description": "The **aviatrix_device_aws_tgw_attachment** resource allows the creation and management of a device and AWS TGW attachment\n\n~> **NOTE:** Before creating this attachment the device must have its WAN interface and IP configured via the `aviatrix_device_interface_config` resource. To avoid attempting to create the attachment before the interface and IP are configured use a `depends_on` meta-argument so that the `aviatrix_device_interface_config` resource is created before the attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-DeviceAwsTgwAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsTgwName": {
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "DeviceBgpAsn": {
+            "type": "number"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityDomainName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AwsTgwName",
+        "ConnectionName",
+        "DeviceBgpAsn",
+        "DeviceName",
+        "SecurityDomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

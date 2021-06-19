@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::OCI::OptimizerRecommendation",
+    "description": "This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.\n\nUpdates the recommendation that corresponds to the specified OCID.\nUse this operation to implement the following actions:\n\n  * Postpone recommendation\n  * Dismiss recommendation\n  * Reactivate recommendation",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OptimizerRecommendation/docs/README.md",
+    "definitions": {
+        "ResourceCountsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            }
+        },
+        "SupportedLevelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "SupportedLevelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SupportedLevelsDefinition"
+                    }
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CategoryId": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EstimatedCostSaving": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Importance": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RecommendationId": {
+            "type": "string",
+            "description": "The unique OCID associated with the recommendation."
+        },
+        "ResourceCounts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceCountsDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "(Updatable) The status of the recommendation."
+        },
+        "SupportedLevels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SupportedLevelsDefinition2"
+            }
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeStatusBegin": {
+            "type": "string"
+        },
+        "TimeStatusEnd": {
+            "type": "string",
+            "description": "(Updatable) The date and time the current status will change. The format is defined by RFC3339."
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RecommendationId",
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CategoryId",
+        "/properties/CompartmentId",
+        "/properties/Description",
+        "/properties/EstimatedCostSaving",
+        "/properties/Id",
+        "/properties/Importance",
+        "/properties/Name",
+        "/properties/ResourceCounts",
+        "/properties/State",
+        "/properties/SupportedLevels",
+        "/properties/TimeCreated",
+        "/properties/TimeStatusBegin",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

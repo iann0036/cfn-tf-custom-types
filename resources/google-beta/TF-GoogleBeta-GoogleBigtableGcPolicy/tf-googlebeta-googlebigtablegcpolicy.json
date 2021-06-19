@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBigtableGcPolicy",
+    "description": "CloudFormation equivalent of google_bigtable_gc_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBigtableGcPolicy/docs/README.md",
+    "definitions": {
+        "MaxAgeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                },
+                "Duration": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MaxVersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Number"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ColumnFamily": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Table": {
+            "type": "string"
+        },
+        "MaxAge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxAgeDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaxVersion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxVersionDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ColumnFamily",
+        "InstanceName",
+        "Table"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

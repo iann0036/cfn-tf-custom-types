@@ -1,0 +1,146 @@
+{
+    "typeName": "TF::MSO::Tenant",
+    "description": "CloudFormation equivalent of mso_tenant",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-Tenant/docs/README.md",
+    "definitions": {
+        "SiteAssociationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsAccessKeyId": {
+                    "type": "string"
+                },
+                "AwsAccountId": {
+                    "type": "string"
+                },
+                "AwsSecretKey": {
+                    "type": "string"
+                },
+                "AzureAccessType": {
+                    "type": "string"
+                },
+                "AzureActiveDirectoryId": {
+                    "type": "string"
+                },
+                "AzureApplicationId": {
+                    "type": "string"
+                },
+                "AzureClientSecret": {
+                    "type": "string"
+                },
+                "AzureSharedAccountId": {
+                    "type": "string"
+                },
+                "AzureSubscriptionId": {
+                    "type": "string"
+                },
+                "IsAwsAccountTrusted": {
+                    "type": "boolean"
+                },
+                "SecurityDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SiteId": {
+                    "type": "string"
+                },
+                "Vendor": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UserAssociationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UserId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SiteAssociations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SiteAssociationsDefinition"
+            }
+        },
+        "UserAssociations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserAssociationsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

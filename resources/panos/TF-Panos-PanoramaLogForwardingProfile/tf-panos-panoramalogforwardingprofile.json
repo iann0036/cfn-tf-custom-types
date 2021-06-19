@@ -1,0 +1,283 @@
+{
+    "typeName": "TF::Panos::PanoramaLogForwardingProfile",
+    "description": "This resource allows you to add/update/delete log forwarding profiles.\n\n**Minimum PAN-OS version**:  8.0",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaLogForwardingProfile/docs/README.md",
+    "definitions": {
+        "MatchListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "The description."
+                },
+                "EmailServerProfiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of email server profiles."
+                },
+                "Filter": {
+                    "type": "string",
+                    "description": "The filter (default: `All Logs`)."
+                },
+                "HttpServerProfiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of http server profiles."
+                },
+                "LogType": {
+                    "type": "string",
+                    "description": "The log type.  Valid values are `traffic` (default),\n`threat`, `wildfire`, `url`, `data`, `gtp`, `tunnel`, `auth`, or `sctp`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name."
+                },
+                "SendToPanorama": {
+                    "type": "boolean",
+                    "description": "Set to `true` to send to Panorama."
+                },
+                "SnmptrapServerProfiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of SNMP server profiles."
+                },
+                "SyslogServerProfiles": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of syslog server profiles."
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "AzureIntegration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureIntegrationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TaggingIntegration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TaggingIntegrationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AzureIntegrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureIntegration": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TaggingIntegrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "LocalRegistration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalRegistrationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PanoramaRegistration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PanoramaRegistrationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RemoteRegistration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RemoteRegistrationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LocalRegistrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Tags"
+            ]
+        },
+        "PanoramaRegistrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Tags"
+            ]
+        },
+        "RemoteRegistrationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpProfile": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "HttpProfile",
+                "Tags"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group (default: `shared`)."
+        },
+        "EnhancedLogging": {
+            "type": "boolean",
+            "description": "Set to `true` to enable enhanced logging."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The group's name."
+        },
+        "MatchList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

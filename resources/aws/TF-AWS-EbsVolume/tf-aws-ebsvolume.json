@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::AWS::EbsVolume",
+    "description": "Manages a single EBS volume.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-EbsVolume/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The AZ where the EBS volume will exist."
+        },
+        "Encrypted": {
+            "type": "boolean",
+            "description": "If true, the disk will be encrypted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number",
+            "description": "The amount of IOPS to provision for the disk. Only valid for `type` of `io1`, `io2` or `gp3`."
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The ARN for the KMS encryption key. When specifying `kms_key_id`, `encrypted` needs to be set to true. Note: Terraform must be running with credentials which have the `GenerateDataKeyWithoutPlaintext` permission on the specified KMS key as required by the [EBS KMS CMK volume provisioning process](https://docs.aws.amazon.com/kms/latest/developerguide/services-ebs.html#ebs-cmk) to prevent a volume from being created and almost immediately deleted."
+        },
+        "MultiAttachEnabled": {
+            "type": "boolean",
+            "description": "Specifies whether to enable Amazon EBS Multi-Attach. Multi-Attach is supported exclusively on `io1` volumes."
+        },
+        "OutpostArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Outpost."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The size of the drive in GiBs."
+        },
+        "SnapshotId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "The throughput that the volume supports, in MiB/s. Only valid for `type` of `gp3`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of EBS volume. Can be `standard`, `gp2`, `gp3`, `io1`, `io2`, `sc1` or `st1` (Default: `gp2`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

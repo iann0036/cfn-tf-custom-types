@@ -1,0 +1,70 @@
+{
+    "typeName": "TF::AWS::Ec2AvailabilityZoneGroup",
+    "description": "Manages an EC2 Availability Zone Group, such as updating its opt-in status.\n\n~> **NOTE:** This is an advanced Terraform resource. Terraform will automatically assume management of the EC2 Availability Zone Group without import and perform no actions on removal from configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2AvailabilityZoneGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GroupName": {
+            "type": "string",
+            "description": "Name of the Availability Zone Group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OptInStatus": {
+            "type": "string",
+            "description": "Indicates whether to enable or disable Availability Zone Group. Valid values: `opted-in` or `not-opted-in`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupName",
+        "OptInStatus"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

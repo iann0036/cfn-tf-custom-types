@@ -1,0 +1,76 @@
+{
+    "typeName": "TF::ACI::L3outBgpExternalPolicy",
+    "description": "Manages ACI L3-out BGP External Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outBgpExternalPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3-out BGP External Policy.\n- `name_alias` - (Optional) Name alias for object L3-out BGP External Policy."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L3OutsideDn": {
+            "type": "string",
+            "description": "Distinguished name of parent l3 outside object.\n- `annotation` - (Optional) Annotation for object L3-out BGP External Policy.\n- `name_alias` - (Optional) Name alias for object L3-out BGP External Policy."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3-out BGP External Policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "L3OutsideDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

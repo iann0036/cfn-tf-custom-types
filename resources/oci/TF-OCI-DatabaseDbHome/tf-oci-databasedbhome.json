@@ -1,0 +1,325 @@
+{
+    "typeName": "TF::OCI::DatabaseDbHome",
+    "description": "This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseDbHome/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "BackupId": {
+                    "type": "string"
+                },
+                "BackupTdePassword": {
+                    "type": "string"
+                },
+                "CharacterSet": {
+                    "type": "string"
+                },
+                "DatabaseId": {
+                    "type": "string"
+                },
+                "DatabaseSoftwareImageId": {
+                    "type": "string"
+                },
+                "DbName": {
+                    "type": "string"
+                },
+                "DbWorkload": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition2"
+                    }
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition2"
+                    }
+                },
+                "NcharacterSet": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "TdeWalletPassword": {
+                    "type": "string"
+                },
+                "TimeStampForPointInTimeRecovery": {
+                    "type": "string"
+                },
+                "DbBackupConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbBackupConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "AdminPassword"
+            ]
+        },
+        "DefinedTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DbBackupConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoBackupEnabled": {
+                    "type": "boolean"
+                },
+                "AutoBackupWindow": {
+                    "type": "string"
+                },
+                "RecoveryWindowInDays": {
+                    "type": "number"
+                },
+                "BackupDestinationDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BackupDestinationDetailsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BackupDestinationDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DatabaseSoftwareImageId": {
+            "type": "string"
+        },
+        "DbHomeLocation": {
+            "type": "string"
+        },
+        "DbSystemId": {
+            "type": "string"
+        },
+        "DbVersion": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDesupportedVersion": {
+            "type": "boolean"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "KmsKeyVersionId": {
+            "type": "string"
+        },
+        "LastPatchHistoryEntryId": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "VmClusterId": {
+            "type": "string"
+        },
+        "Database": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CompartmentId",
+        "/properties/DbHomeLocation",
+        "/properties/Id",
+        "/properties/LastPatchHistoryEntryId",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DatabaseDefinition/AdminPassword",
+        "/definitions/DatabaseDefinition/BackupTdePassword",
+        "/definitions/DatabaseDefinition/TdeWalletPassword"
+    ]
+}

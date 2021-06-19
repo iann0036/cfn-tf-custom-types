@@ -1,0 +1,270 @@
+{
+    "typeName": "TF::AzureRM::VirtualNetworkGatewayConnection",
+    "description": "Manages a connection in an existing Virtual Network Gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-VirtualNetworkGatewayConnection/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IpsecPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DhGroup": {
+                    "type": "string",
+                    "description": "The DH group used in IKE phase 1 for initial SA. Valid\noptions are `DHGroup1`, `DHGroup14`, `DHGroup2`, `DHGroup2048`, `DHGroup24`,\n`ECP256`, `ECP384`, or `None`."
+                },
+                "IkeEncryption": {
+                    "type": "string",
+                    "description": "The IKE encryption algorithm. Valid\noptions are `AES128`, `AES192`, `AES256`, `DES`, `DES3`, `GCMAES128`, or `GCMAES256`."
+                },
+                "IkeIntegrity": {
+                    "type": "string",
+                    "description": "The IKE integrity algorithm. Valid\noptions are `GCMAES128`, `GCMAES256`, `MD5`, `SHA1`, `SHA256`, or `SHA384`."
+                },
+                "IpsecEncryption": {
+                    "type": "string",
+                    "description": "The IPSec encryption algorithm. Valid\noptions are `AES128`, `AES192`, `AES256`, `DES`, `DES3`, `GCMAES128`, `GCMAES192`, `GCMAES256`, or `None`."
+                },
+                "IpsecIntegrity": {
+                    "type": "string",
+                    "description": "The IPSec integrity algorithm. Valid\noptions are `GCMAES128`, `GCMAES192`, `GCMAES256`, `MD5`, `SHA1`, or `SHA256`."
+                },
+                "PfsGroup": {
+                    "type": "string",
+                    "description": "The DH group used in IKE phase 2 for new child SA.\nValid options are `ECP256`, `ECP384`, `PFS1`, `PFS14`, `PFS2`, `PFS2048`, `PFS24`, `PFSMM`,\nor `None`."
+                },
+                "SaDatasize": {
+                    "type": "number",
+                    "description": "The IPSec SA payload size in KB. Must be at least\n`1024` KB. Defaults to `102400000` KB."
+                },
+                "SaLifetime": {
+                    "type": "number",
+                    "description": "The IPSec SA lifetime in seconds. Must be at least\n`300` seconds. Defaults to `27000` seconds."
+                }
+            },
+            "required": [
+                "DhGroup",
+                "IkeEncryption",
+                "IkeIntegrity",
+                "IpsecEncryption",
+                "IpsecIntegrity",
+                "PfsGroup"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TrafficSelectorPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalAddressCidrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RemoteAddressCidrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "LocalAddressCidrs",
+                "RemoteAddressCidrs"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizationKey": {
+            "type": "string",
+            "description": "The authorization key associated with the\nExpress Route Circuit. This field is required only if the type is an\nExpressRoute connection."
+        },
+        "ConnectionProtocol": {
+            "type": "string",
+            "description": "The IKE protocol version to use. Possible\nvalues are `IKEv1` and `IKEv2`. Defaults to `IKEv2`.\nChanging this value will force a resource to be created.\n-> **Note**: Only valid for `IPSec` connections on virtual network gateways with SKU `VpnGw1`, `VpnGw2`, `VpnGw3`, `VpnGw1AZ`, `VpnGw2AZ` or `VpnGw3AZ`."
+        },
+        "DpdTimeoutSeconds": {
+            "type": "number",
+            "description": "The dead peer detection timeout of this connection in seconds. Changing this forces a new resource to be created."
+        },
+        "EnableBgp": {
+            "type": "boolean",
+            "description": "If `true`, BGP (Border Gateway Protocol) is enabled\nfor this connection. Defaults to `false`."
+        },
+        "ExpressRouteCircuitId": {
+            "type": "string",
+            "description": "The ID of the Express Route Circuit\nwhen creating an ExpressRoute connection (i.e. when `type` is `ExpressRoute`).\nThe Express Route Circuit can be in the same or in a different subscription."
+        },
+        "ExpressRouteGatewayBypass": {
+            "type": "boolean",
+            "description": "If `true`, data packets will bypass ExpressRoute Gateway for data forwarding This is only valid for ExpressRoute connections."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalAzureIpAddressEnabled": {
+            "type": "boolean",
+            "description": "Use private local Azure IP for the connection. Changing this forces a new resource to be created."
+        },
+        "LocalNetworkGatewayId": {
+            "type": "string",
+            "description": "The ID of the local network gateway\nwhen creating Site-to-Site connection (i.e. when `type` is `IPsec`)."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location/region where the connection is\nlocated. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the connection. Changing the name forces a\nnew resource to be created."
+        },
+        "PeerVirtualNetworkGatewayId": {
+            "type": "string",
+            "description": "The ID of the peer virtual\nnetwork gateway when creating a VNet-to-VNet connection (i.e. when `type`\nis `Vnet2Vnet`). The peer Virtual Network Gateway can be in the same or\nin a different subscription."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the connection Changing the name forces a new resource to be created."
+        },
+        "RoutingWeight": {
+            "type": "number",
+            "description": "The routing weight. Defaults to `10`."
+        },
+        "SharedKey": {
+            "type": "string",
+            "description": "The shared IPSec key. A key could be provided if a\nSite-to-Site, VNet-to-VNet or ExpressRoute connection is created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of connection. Valid options are `IPsec`\n(Site-to-Site), `ExpressRoute` (ExpressRoute), and `Vnet2Vnet` (VNet-to-VNet).\nEach connection type requires different mandatory arguments (refer to the\nexamples above). Changing the connection type will force a new connection\nto be created."
+        },
+        "UsePolicyBasedTrafficSelectors": {
+            "type": "boolean",
+            "description": "If `true`, policy-based traffic\nselectors are enabled for this connection. Enabling policy-based traffic\nselectors requires an `ipsec_policy` block. Defaults to `false`."
+        },
+        "VirtualNetworkGatewayId": {
+            "type": "string",
+            "description": "The ID of the Virtual Network Gateway\nin which the connection will be created. Changing the gateway forces a new\nresource to be created."
+        },
+        "IpsecPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "TrafficSelectorPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficSelectorPolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Type",
+        "VirtualNetworkGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthorizationKey",
+        "/properties/SharedKey"
+    ]
+}

@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::Google::ComputeAddress",
+    "description": "Represents an Address resource.\n\nEach virtual machine instance has an ephemeral internal IP address and,\noptionally, an external IP address. To communicate between instances on\nthe same network, you can use an instance's internal IP address. To\ncommunicate with the Internet and instances outside of the same network,\nyou must specify the instance's external IP address.\n\nInternal IP addresses are ephemeral and only belong to an instance for\nthe lifetime of the instance; if the instance is deleted and recreated,\nthe instance is assigned a new internal IP address, either by Compute\nEngine or by you. External IP addresses can be either ephemeral or\nstatic.\n\n\nTo get more information about Address, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/beta/addresses)\n* How-to Guides\n    * [Reserving a Static External IP Address](https://cloud.google.com/compute/docs/instances-and-network)\n    * [Reserving a Static Internal IP Address](https://cloud.google.com/compute/docs/ip-addresses/reser...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeAddress/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AddressType": {
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NetworkTier": {
+            "type": "string"
+        },
+        "PrefixLength": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Purpose": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Subnetwork": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/SelfLink",
+        "/properties/Users"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::StackPath::ObjectStorageBucket",
+    "description": "An S3 compatible object storage bucket deployed to StackPath's edge network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/stackpath/TF-StackPath-ObjectStorageBucket/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndpointUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string",
+            "description": "A human readable label for the bucket. Bucket label only supports (a-z, 0-9, -) and must start/end with a letter or number."
+        },
+        "Region": {
+            "type": "string",
+            "description": "Bucket region (us-east-2 us-west-1 eu-central-1)."
+        },
+        "Visibility": {
+            "type": "string",
+            "description": "PRIVATE or PUBLIC, defaults to PRIVATE."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointUrl",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

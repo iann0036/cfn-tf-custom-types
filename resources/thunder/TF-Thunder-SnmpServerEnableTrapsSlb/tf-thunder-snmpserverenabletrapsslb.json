@@ -1,0 +1,175 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsSlb",
+    "description": "`thunder_snmp_server_enable_traps_slb` Provides details about thunder snmp server enable traps slb",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsSlb/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all SLB traps."
+        },
+        "ApplicationBufferLimit": {
+            "type": "number",
+            "description": "Enable application buffer reach limit trap."
+        },
+        "BwRateLimitExceed": {
+            "type": "number",
+            "description": "Enable SLB server/port bandwidth rate limit exceed trap."
+        },
+        "BwRateLimitResume": {
+            "type": "number",
+            "description": "Enable SLB server/port bandwidth rate limit resume trap."
+        },
+        "GatewayDown": {
+            "type": "number",
+            "description": "Enable SLB server gateway down trap."
+        },
+        "GatewayUp": {
+            "type": "number",
+            "description": "Enable SLB server gateway up trap."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerConnLimit": {
+            "type": "number",
+            "description": "Enable SLB server connection limit trap."
+        },
+        "ServerConnResume": {
+            "type": "number",
+            "description": "Enable SLB server connection resume trap."
+        },
+        "ServerDisabled": {
+            "type": "number",
+            "description": "Enable SLB server-disabled trap."
+        },
+        "ServerDown": {
+            "type": "number",
+            "description": "Enable SLB server-down trap."
+        },
+        "ServerSelectionFailure": {
+            "type": "number",
+            "description": "Enable SLB server selection failure trap."
+        },
+        "ServerUp": {
+            "type": "number",
+            "description": "Enable slb server up trap."
+        },
+        "ServiceConnLimit": {
+            "type": "number",
+            "description": "Enable SLB service connection limit trap."
+        },
+        "ServiceConnResume": {
+            "type": "number",
+            "description": "Enable SLB service connection resume trap."
+        },
+        "ServiceDown": {
+            "type": "number",
+            "description": "Enable SLB service-down trap."
+        },
+        "ServiceGroupDown": {
+            "type": "number",
+            "description": "Enable SLB service-group-down trap."
+        },
+        "ServiceGroupMemberDown": {
+            "type": "number",
+            "description": "Enable SLB service-group-member-down trap."
+        },
+        "ServiceGroupMemberUp": {
+            "type": "number",
+            "description": "Enable SLB service-group-member-up trap."
+        },
+        "ServiceGroupUp": {
+            "type": "number",
+            "description": "Enable SLB service-group-up trap."
+        },
+        "ServiceUp": {
+            "type": "number",
+            "description": "Enable SLB service-up trap."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "VipConnlimit": {
+            "type": "number",
+            "description": "Enable the virtual server reach conn-limit trap."
+        },
+        "VipConnratelimit": {
+            "type": "number",
+            "description": "Enable the virtual server reach conn-rate-limit trap."
+        },
+        "VipDown": {
+            "type": "number",
+            "description": "Enable SLB virtual server down trap."
+        },
+        "VipPortConnlimit": {
+            "type": "number",
+            "description": "Enable the virtual port reach conn-limit trap."
+        },
+        "VipPortConnratelimit": {
+            "type": "number",
+            "description": "Enable the virtual port reach conn-rate-limit trap."
+        },
+        "VipPortDown": {
+            "type": "number",
+            "description": "Enable SLB virtual port down trap."
+        },
+        "VipPortUp": {
+            "type": "number",
+            "description": "Enable SLB virtual port up trap."
+        },
+        "VipUp": {
+            "type": "number",
+            "description": "Enable SLB virtual server up trap."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

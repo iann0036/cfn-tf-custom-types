@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::AWS::CodedeployDeploymentConfig",
+    "description": "Provides a CodeDeploy deployment config for an application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodedeployDeploymentConfig/docs/README.md",
+    "definitions": {
+        "MinimumHealthyHostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The type can either be `FLEET_PERCENT` or `HOST_COUNT`."
+                },
+                "Value": {
+                    "type": "number",
+                    "description": "The value when the type is `FLEET_PERCENT` represents the minimum number of healthy instances as\na percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the\ndeployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.\nWhen the type is `HOST_COUNT`, the value represents the minimum number of healthy instances as an absolute value."
+                }
+            },
+            "required": []
+        },
+        "TrafficRoutingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`."
+                },
+                "TimeBasedCanary": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeBasedCanaryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TimeBasedLinear": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeBasedLinearDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeBasedCanaryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number",
+                    "description": "The number of minutes between the first and second traffic shifts of a `TimeBasedCanary` deployment."
+                },
+                "Percentage": {
+                    "type": "number",
+                    "description": "The percentage of traffic to shift in the first increment of a `TimeBasedCanary` deployment."
+                }
+            },
+            "required": []
+        },
+        "TimeBasedLinearDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number",
+                    "description": "The number of minutes between each incremental traffic shift of a `TimeBasedLinear` deployment."
+                },
+                "Percentage": {
+                    "type": "number",
+                    "description": "The percentage of traffic that is shifted at the start of each increment of a `TimeBasedLinear` deployment."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ComputePlatform": {
+            "type": "string",
+            "description": "The compute platform can be `Server`, `Lambda`, or `ECS`. Default is `Server`."
+        },
+        "DeploymentConfigId": {
+            "type": "string"
+        },
+        "DeploymentConfigName": {
+            "type": "string",
+            "description": "The name of the deployment config."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinimumHealthyHosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MinimumHealthyHostsDefinition"
+            },
+            "maxItems": 1
+        },
+        "TrafficRoutingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficRoutingConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeploymentConfigName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeploymentConfigId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

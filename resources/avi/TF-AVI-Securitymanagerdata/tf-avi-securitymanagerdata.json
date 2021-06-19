@@ -1,0 +1,173 @@
+{
+    "typeName": "TF::AVI::Securitymanagerdata",
+    "description": "The SecurityManagerData resource allows the creation and management of Avi SecurityManagerData",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Securitymanagerdata/docs/README.md",
+    "definitions": {
+        "AppLearningInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppId": {
+                    "type": "string"
+                },
+                "VsUuid": {
+                    "type": "string"
+                },
+                "UriInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UriInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UriInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UriHits": {
+                    "type": "number"
+                },
+                "UriKey": {
+                    "type": "string"
+                },
+                "ParamInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParamInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ParamInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ParamHits": {
+                    "type": "number"
+                },
+                "ParamKey": {
+                    "type": "string"
+                },
+                "ParamSizeClasses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParamSizeClassesDefinition"
+                    }
+                },
+                "ParamTypeClasses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParamTypeClassesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ParamSizeClassesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hits": {
+                    "type": "number"
+                },
+                "Len": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParamTypeClassesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hits": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtualservice name. Field introduced in 20.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant. Field introduced in 20.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AppLearningInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppLearningInfoDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

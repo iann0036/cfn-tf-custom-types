@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::Aviatrix::DeviceTransitGatewayAttachment",
+    "description": "The **aviatrix_device_transit_gateway_attachment** resource allows the creation and management of a device and Aviatrix Transit Gateway attachment for use in CloudWAN.\n\n~> **NOTE:** Before creating this attachment the device must have its WAN interface and IP configured via the `aviatrix_device_interface_config` resource. To avoid attempting to create the attachment before the interface and IP are configured use a `depends_on` meta-argument so that the `aviatrix_device_interface_config` resource is created before the attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-DeviceTransitGatewayAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "DeviceBgpAsn": {
+            "type": "number"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "EnableEventTriggeredHa": {
+            "type": "boolean"
+        },
+        "EnableGlobalAccelerator": {
+            "type": "boolean"
+        },
+        "EnableLearnedCidrsApproval": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalTunnelIp": {
+            "type": "string"
+        },
+        "ManualBgpAdvertisedCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Phase1Authentication": {
+            "type": "string"
+        },
+        "Phase1DhGroups": {
+            "type": "string"
+        },
+        "Phase1Encryption": {
+            "type": "string"
+        },
+        "Phase2Authentication": {
+            "type": "string"
+        },
+        "Phase2DhGroups": {
+            "type": "string"
+        },
+        "Phase2Encryption": {
+            "type": "string"
+        },
+        "PreSharedKey": {
+            "type": "string"
+        },
+        "RemoteTunnelIp": {
+            "type": "string"
+        },
+        "TransitGatewayBgpAsn": {
+            "type": "number"
+        },
+        "TransitGatewayName": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionName",
+        "DeviceBgpAsn",
+        "DeviceName",
+        "TransitGatewayBgpAsn",
+        "TransitGatewayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PreSharedKey"
+    ]
+}

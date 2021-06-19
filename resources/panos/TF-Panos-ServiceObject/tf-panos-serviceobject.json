@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::Panos::ServiceObject",
+    "description": "This resource allows you to add/update/delete service objects.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-ServiceObject/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The service object's description."
+        },
+        "DestinationPort": {
+            "type": "string",
+            "description": "The destination port.  This can be a single\nport number, range (1-65535), or comma separated (80,8080,443)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The service object's name."
+        },
+        "OverrideHalfClosedTimeout": {
+            "type": "number",
+            "description": "The overridden\nTCP half closed timeout."
+        },
+        "OverrideSessionTimeout": {
+            "type": "boolean",
+            "description": "Set to `true` to\noverride the default application timeouts."
+        },
+        "OverrideTimeWaitTimeout": {
+            "type": "number",
+            "description": "The overridden\nTCP wait time."
+        },
+        "OverrideTimeout": {
+            "type": "number",
+            "description": "The overridden TCP timeout."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "The service's protocol.  This should be `tcp`,\n`udp`, or `sctp` (PAN-OS 8.1+)."
+        },
+        "SourcePort": {
+            "type": "string",
+            "description": "The source port.  This can be a single port\nnumber, range (1-65535), or comma separated (80,8080,443)."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of administrative tags."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the service object into (default:\n`vsys1`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationPort",
+        "Name",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

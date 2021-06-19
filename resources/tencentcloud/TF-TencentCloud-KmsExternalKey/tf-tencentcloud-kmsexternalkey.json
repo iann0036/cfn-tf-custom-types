@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::TencentCloud::KmsExternalKey",
+    "description": "Provide a resource to create a KMS external key.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-KmsExternalKey/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string",
+            "description": "Name of CMK. The name can only contain English letters, numbers, underscore and hyphen '-'. The first character must be a letter or number."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of CMK. The maximum is 1024 bytes."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsArchived": {
+            "type": "boolean",
+            "description": "Specify whether to archive key. Default value is `false`. This field is conflict with `is_enabled`, valid when key_state is `Enabled`, `Disabled`, `Archived`."
+        },
+        "IsEnabled": {
+            "type": "boolean",
+            "description": "Specify whether to enable key. Default value is `false`. This field is conflict with `is_archived`, valid when key_state is `Enabled`, `Disabled`, `Archived`."
+        },
+        "KeyMaterialBase64": {
+            "type": "string",
+            "description": "The base64-encoded key material encrypted with the public_key. For regions using the national secret version, the length of the imported key material is required to be 128 bits, and for regions using the FIPS version, the length of the imported key material is required to be 256 bits."
+        },
+        "KeyState": {
+            "type": "string"
+        },
+        "PendingDeleteWindowInDays": {
+            "type": "number",
+            "description": "Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 7 days."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of CMK."
+        },
+        "ValidTo": {
+            "type": "number",
+            "description": "This value means the effective timestamp of the key material, 0 means it does not expire. Need to be greater than the current timestamp, the maximum support is 2147443200."
+        },
+        "WrappingAlgorithm": {
+            "type": "string",
+            "description": "The algorithm for encrypting key material. Available values include `RSAES_PKCS1_V1_5`, `RSAES_OAEP_SHA_1` and `RSAES_OAEP_SHA_256`. Default value is `RSAES_PKCS1_V1_5`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Alias"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/KeyState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/KeyMaterialBase64"
+    ]
+}

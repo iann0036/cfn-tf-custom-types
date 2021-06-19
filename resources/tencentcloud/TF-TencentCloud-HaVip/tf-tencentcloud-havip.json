@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::TencentCloud::HaVip",
+    "description": "Provides a resource to create a HA VIP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-HaVip/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressIp": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the HA VIP. The length of character is limited to 1-60."
+        },
+        "NetworkInterfaceId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Subnet ID."
+        },
+        "Vip": {
+            "type": "string",
+            "description": "Virtual IP address, it must not be occupied and in this VPC network segment. If not set, it will be assigned after resource created automatically."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AddressIp",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/InstanceId",
+        "/properties/NetworkInterfaceId",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

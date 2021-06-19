@@ -1,0 +1,106 @@
+{
+    "typeName": "TF::TencentCloud::CosBucketObject",
+    "description": "Provides a COS object resource to put an object(content or file) to the bucket.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CosBucketObject/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string",
+            "description": "The canned ACL to apply. Available values include `private`, `public-read`, and `public-read-write`. Defaults to `private`."
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of a bucket to use. Bucket format should be [custom name]-[appid], for example `mycos-1258798060`."
+        },
+        "CacheControl": {
+            "type": "string",
+            "description": "Specifies caching behavior along the request/reply chain. For further details, RFC2616 can be referred."
+        },
+        "Content": {
+            "type": "string",
+            "description": "Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text."
+        },
+        "ContentDisposition": {
+            "type": "string",
+            "description": "Specifies presentational information for the object."
+        },
+        "ContentEncoding": {
+            "type": "string",
+            "description": "Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field."
+        },
+        "ContentType": {
+            "type": "string",
+            "description": "A standard MIME type describing the format of the object data."
+        },
+        "Etag": {
+            "type": "string",
+            "description": "The ETag generated for the object (an MD5 sum of the object content)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The name of the object once it is in the bucket."
+        },
+        "Source": {
+            "type": "string",
+            "description": "The path to the source file being uploaded to the bucket."
+        },
+        "StorageClass": {
+            "type": "string",
+            "description": "Object storage type, Available values include `STANDARD`, `STANDARD_IA` and `ARCHIVE`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Key"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

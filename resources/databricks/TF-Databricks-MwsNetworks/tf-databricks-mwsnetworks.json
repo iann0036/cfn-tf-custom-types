@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::Databricks::MwsNetworks",
+    "description": "CloudFormation equivalent of databricks_mws_networks",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-MwsNetworks/docs/README.md",
+    "definitions": {
+        "ErrorMessagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorMessage": {
+                    "type": "string"
+                },
+                "ErrorType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VpcEndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataplaneRelay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RestApi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DataplaneRelay",
+                "RestApi"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcStatus": {
+            "type": "string"
+        },
+        "WorkspaceId": {
+            "type": "number"
+        },
+        "ErrorMessages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ErrorMessagesDefinition"
+            }
+        },
+        "VpcEndpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcEndpointsDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "NetworkName",
+        "SecurityGroupIds",
+        "SubnetIds",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccountId"
+    ]
+}

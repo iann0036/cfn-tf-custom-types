@@ -1,0 +1,216 @@
+{
+    "typeName": "TF::VCD::Edgegateway",
+    "description": "Provides a vCloud Director edge gateway directly connected to one or more external networks. This can be used to create\nand delete edge gateways for Org VDC networks to connect.\n\nSupported in provider *v2.4+*\n\n~> **Note:** Only `System Administrator` can create an edge gateway.\nYou must use `System Adminstrator` account in `provider` configuration\nand then provide `org` and `vdc` arguments for edge gateway to work.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-Edgegateway/docs/README.md",
+    "definitions": {
+        "ExternalNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableRateLimit": {
+                    "type": "boolean"
+                },
+                "IncomingRateLimit": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OutgoingRateLimit": {
+                    "type": "number"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Gateway": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "UseForDefaultRoute": {
+                    "type": "boolean"
+                },
+                "SuballocatePool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SuballocatePoolDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Gateway",
+                "Netmask"
+            ]
+        },
+        "SuballocatePoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Configuration": {
+            "type": "string",
+            "description": "Configuration of the vShield edge VM for this gateway. One of: `compact`, `full` (\"Large\"), `x-large`, `full4` (\"Quad Large\")."
+        },
+        "DefaultExternalNetworkIp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DistributedRouting": {
+            "type": "boolean",
+            "description": "If advanced networking enabled, also enable distributed\nrouting. Default is `false`."
+        },
+        "ExternalNetworkIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FipsModeEnabled": {
+            "type": "boolean",
+            "description": "When FIPS mode is enabled, any secure communication to or from\nthe NSX Edge uses cryptographic algorithms or protocols that are allowed by United States Federal\nInformation Processing Standards (FIPS). FIPS mode turns on the cipher suites that comply with\nFIPS. Default is `false`. **Note:** to use FIPS mode it must be enabled in vCD system settings."
+        },
+        "FwDefaultRuleAction": {
+            "type": "string"
+        },
+        "FwDefaultRuleLoggingEnabled": {
+            "type": "boolean"
+        },
+        "FwEnabled": {
+            "type": "boolean"
+        },
+        "HaEnabled": {
+            "type": "boolean",
+            "description": "Enable high availability on this edge gateway. Default is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbAccelerationEnabled": {
+            "type": "boolean",
+            "description": "Enable to configure the load balancer to use the faster L4\nengine rather than L7 engine. The L4 TCP VIP is processed before the edge gateway firewall so no\n`allow` firewall rule is required. Default is `false`. **Note:** L7 VIPs for HTTP and HTTPS are\nprocessed after the firewall, so when Acceleration Enabled is not selected, an edge gateway firewall\nrule must exist to allow access to the L7 VIP for those protocols. When Acceleration Enabled is\nselected and the server pool is in non-transparent mode, an SNAT rule is added, so you must ensure\nthat the firewall is enabled on the edge gateway."
+        },
+        "LbEnabled": {
+            "type": "boolean",
+            "description": "Enable load balancing. Default is `false`."
+        },
+        "LbLoggingEnabled": {
+            "type": "boolean",
+            "description": "Enables the edge gateway load balancer to collect traffic logs.\nDefault is `false`."
+        },
+        "LbLoglevel": {
+            "type": "string",
+            "description": "Choose the severity of events to be logged. One of `emergency`,\n`alert`, `critical`, `error`, `warning`, `notice`, `info`, `debug`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the edge gateway."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to which the VDC belongs. Optional if defined at provider level."
+        },
+        "UseDefaultRouteForDnsRelay": {
+            "type": "boolean",
+            "description": "When default route is set, it will be used for\ngateways' default routing and DNS forwarding. Default is `false`."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC that owns the edge gateway. Optional if defined at provider level."
+        },
+        "ExternalNetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExternalNetworkDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Configuration",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultExternalNetworkIp",
+        "/properties/ExternalNetworkIps",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

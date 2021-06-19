@@ -1,0 +1,263 @@
+{
+    "typeName": "TF::Google::LoggingMetric",
+    "description": "Logs-based metric can also be used to extract values from logs and create a a distribution\nof the values. The distribution records the statistics of the extracted values along with\nan optional histogram of the values as specified by the bucket options.\n\n\nTo get more information about Metric, see:\n\n* [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics/create)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/logging/docs/apis)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=logging_metric_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.sv...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-LoggingMetric/docs/README.md",
+    "definitions": {
+        "LabelExtractorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BucketOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExplicitBuckets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExplicitBucketsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ExponentialBuckets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExponentialBucketsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LinearBuckets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinearBucketsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MetricDescriptorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayName": {
+                    "type": "string"
+                },
+                "MetricKind": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MetricKind",
+                "ValueType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ExplicitBucketsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bounds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "Bounds"
+            ]
+        },
+        "ExponentialBucketsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GrowthFactor": {
+                    "type": "number"
+                },
+                "NumFiniteBuckets": {
+                    "type": "number"
+                },
+                "Scale": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LinearBucketsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumFiniteBuckets": {
+                    "type": "number"
+                },
+                "Offset": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "ValueType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Filter": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabelExtractors": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelExtractorsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ValueExtractor": {
+            "type": "string"
+        },
+        "BucketOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BucketOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MetricDescriptor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricDescriptorDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Filter",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

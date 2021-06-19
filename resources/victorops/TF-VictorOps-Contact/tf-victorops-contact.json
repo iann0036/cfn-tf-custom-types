@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::VictorOps::Contact",
+    "description": "A contact represents emails and phone numbers that can be used to contact a user.\n\nNOTE: When adding a contact phone through terraform, a user must manually verify the phone number in the web ui before\nit can be used in a paging policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/victorops/TF-VictorOps-Contact/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ComputedValue": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalId": {
+            "type": "number"
+        },
+        "Label": {
+            "type": "string",
+            "description": "What label to give this contact. Example: work."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Either \"phone\" or \"email\" depending on the type of contact you are creating."
+        },
+        "UserName": {
+            "type": "string",
+            "description": "The username of the user this phone number belongs to."
+        },
+        "Value": {
+            "type": "string",
+            "description": "A phone number or email address that will be used for this contact."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label",
+        "Type",
+        "UserName",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ComputedValue",
+        "/properties/Id",
+        "/properties/InternalId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

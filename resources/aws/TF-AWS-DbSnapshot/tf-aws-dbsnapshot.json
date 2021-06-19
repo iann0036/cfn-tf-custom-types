@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::AWS::DbSnapshot",
+    "description": "Manages an RDS database instance snapshot. For managing RDS database cluster snapshots, see the [`aws_db_cluster_snapshot` resource](/docs/providers/aws/r/db_cluster_snapshot.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DbSnapshot/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocatedStorage": {
+            "type": "number"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "DbInstanceIdentifier": {
+            "type": "string",
+            "description": "The DB Instance Identifier from which to take the snapshot."
+        },
+        "DbSnapshotArn": {
+            "type": "string"
+        },
+        "DbSnapshotIdentifier": {
+            "type": "string",
+            "description": "The Identifier for the snapshot."
+        },
+        "Encrypted": {
+            "type": "boolean"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string"
+        },
+        "OptionGroupName": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "SnapshotType": {
+            "type": "string"
+        },
+        "SourceDbSnapshotIdentifier": {
+            "type": "string"
+        },
+        "SourceRegion": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of resource tags. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbInstanceIdentifier",
+        "DbSnapshotIdentifier"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllocatedStorage",
+        "/properties/AvailabilityZone",
+        "/properties/DbSnapshotArn",
+        "/properties/Encrypted",
+        "/properties/Engine",
+        "/properties/EngineVersion",
+        "/properties/Id",
+        "/properties/Iops",
+        "/properties/KmsKeyId",
+        "/properties/LicenseModel",
+        "/properties/OptionGroupName",
+        "/properties/Port",
+        "/properties/SnapshotType",
+        "/properties/SourceDbSnapshotIdentifier",
+        "/properties/SourceRegion",
+        "/properties/Status",
+        "/properties/StorageType",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

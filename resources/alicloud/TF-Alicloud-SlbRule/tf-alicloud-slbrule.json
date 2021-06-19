@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::Alicloud::SlbRule",
+    "description": "A forwarding rule is configured in `HTTP`/`HTTPS` listener and it used to listen a list of backend servers which in one specified virtual backend server group.\nYou can add forwarding rules to a listener to forward requests based on the domain names or the URL in the request.\n\n-> **NOTE:** One virtual backend server group can be attached in multiple forwarding rules.\n\n-> **NOTE:** At least one \"Domain\" or \"Url\" must be specified when creating a new rule.\n\n-> **NOTE:** Having the same 'Domain' and 'Url' rule can not be created repeatedly in the one listener.\n\n-> **NOTE:** Rule only be created in the `HTTP` or `HTTPS` listener.\n\n-> **NOTE:** Only rule's virtual server group can be modified.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SlbRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cookie": {
+            "type": "string",
+            "description": "The cookie configured on the server. It is mandatory when `sticky_session` is \"on\" and `sticky_session_type` is \"server\". Otherwise, it will be ignored. Valid value\uff1aString in line with RFC 2965, with length being 1- 200. It only contains characters such as ASCII codes, English letters and digits instead of the comma, semicolon or spacing, and it cannot start with $."
+        },
+        "CookieTimeout": {
+            "type": "number",
+            "description": "Cookie timeout. It is mandatory when `sticky_session` is \"on\" and `sticky_session_type` is \"insert\". Otherwise, it will be ignored. Valid value range: [1-86400] in seconds."
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name of the forwarding rule. It can contain letters a-z, numbers 0-9, hyphens (-), and periods (.),\nand wildcard characters. The following two domain name formats are supported:\n- Standard domain name: www.test.com\n- Wildcard domain name: *.test.com. wildcard (*) must be the first character in the format of (*.)."
+        },
+        "FrontendPort": {
+            "type": "number",
+            "description": "The listener frontend port which is used to launch the new forwarding rule. Valid range: [1-65535]."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Whether to enable health check. Valid values are`on` and `off`. TCP and UDP listener's HealthCheck is always on, so it will be ignore when launching TCP or UDP listener. This parameter is required  and takes effect only when ListenerSync is set to off."
+        },
+        "HealthCheckConnectPort": {
+            "type": "number",
+            "description": "Port used for health check. Valid value range: [1-65535]. Default to \"None\" means the backend server port is used."
+        },
+        "HealthCheckDomain": {
+            "type": "string",
+            "description": "Domain name used for health check. When it used to launch TCP listener, `health_check_type` must be \"http\". Its length is limited to 1-80 and only characters such as letters, digits, \u2018-\u2018 and \u2018.\u2019 are allowed. When it is not set or empty,  Server Load Balancer uses the private network IP address of each backend server as Domain used for health check."
+        },
+        "HealthCheckHttpCode": {
+            "type": "string",
+            "description": "Regular health check HTTP status code. Multiple codes are segmented by \u201c,\u201d. It is required when `health_check` is on. Default to `http_2xx`.  Valid values are: `http_2xx`,  `http_3xx`, `http_4xx` and `http_5xx`."
+        },
+        "HealthCheckInterval": {
+            "type": "number",
+            "description": "Time interval of health checks. It is required when `health_check` is on. Valid value range: [1-50] in seconds. Default to 2."
+        },
+        "HealthCheckTimeout": {
+            "type": "number",
+            "description": "Maximum timeout of each health check response. It is required when `health_check` is on. Valid value range: [1-300] in seconds. Default to 5. Note: If `health_check_timeout` < `health_check_interval`, its will be replaced by `health_check_interval`."
+        },
+        "HealthCheckUri": {
+            "type": "string",
+            "description": "URI used for health check. When it used to launch TCP listener, `health_check_type` must be \"http\". Its length is limited to 1-80 and it must start with /. Only characters such as letters, digits, \u2018-\u2019, \u2018/\u2019, \u2018.\u2019, \u2018%\u2019, \u2018?\u2019, #\u2019 and \u2018&\u2019 are allowed."
+        },
+        "HealthyThreshold": {
+            "type": "number",
+            "description": "Threshold determining the result of the health check is success. It is required when `health_check` is on. Valid value range: [1-10] in seconds. Default to 3."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerSync": {
+            "type": "string",
+            "description": "Indicates whether a forwarding rule inherits the settings of a health check , session persistence, and scheduling algorithm from a listener. Default to on."
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The Load Balancer ID which is used to launch the new forwarding rule."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the forwarding rule. Our plugin provides a default name: \"tf-slb-rule\"."
+        },
+        "Scheduler": {
+            "type": "string",
+            "description": "Scheduling algorithm, Valid values are `wrr`, `rr` and `wlc`.  Default to \"wrr\". This parameter is required  and takes effect only when ListenerSync is set to off."
+        },
+        "ServerGroupId": {
+            "type": "string",
+            "description": "ID of a virtual server group that will be forwarded."
+        },
+        "StickySession": {
+            "type": "string",
+            "description": "Whether to enable session persistence, Valid values are `on` and `off`. Default to `off`. This parameter is required  and takes effect only when ListenerSync is set to off."
+        },
+        "StickySessionType": {
+            "type": "string",
+            "description": "Mode for handling the cookie. If `sticky_session` is \"on\", it is mandatory. Otherwise, it will be ignored. Valid values are `insert` and `server`. `insert` means it is inserted from Server Load Balancer; `server` means the Server Load Balancer learns from the backend server."
+        },
+        "UnhealthyThreshold": {
+            "type": "number",
+            "description": "Threshold determining the result of the health check is fail. It is required when `health_check` is on. Valid value range: [1-10] in seconds. Default to 3."
+        },
+        "Url": {
+            "type": "string",
+            "description": "Domain of the forwarding rule. It must be 2-80 characters in length. Only letters a-z, numbers 0-9,\nand characters '-' '/' '?' '%' '#' and '&' are allowed. URLs must be started with the character '/', but cannot be '/' alone."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FrontendPort",
+        "LoadBalancerId",
+        "ServerGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

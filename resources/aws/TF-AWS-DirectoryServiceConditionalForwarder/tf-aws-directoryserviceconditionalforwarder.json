@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::DirectoryServiceConditionalForwarder",
+    "description": "Provides a conditional forwarder for managed Microsoft AD in AWS Directory Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DirectoryServiceConditionalForwarder/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DirectoryId": {
+            "type": "string",
+            "description": "The id of directory."
+        },
+        "DnsIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of forwarder IP addresses."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RemoteDomainName": {
+            "type": "string",
+            "description": "The fully qualified domain name of the remote domain for which forwarders will be used."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DirectoryId",
+        "DnsIps",
+        "RemoteDomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

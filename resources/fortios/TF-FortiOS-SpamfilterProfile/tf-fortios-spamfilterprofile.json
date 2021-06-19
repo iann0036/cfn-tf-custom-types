@@ -1,0 +1,307 @@
+{
+    "typeName": "TF::FortiOS::SpamfilterProfile",
+    "description": "Configure AntiSpam profiles. Applies to FortiOS Version `<= 6.2.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SpamfilterProfile/docs/README.md",
+    "definitions": {
+        "GmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ImapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action for spam email. Valid values: `pass`, `tag`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "TagMsg": {
+                    "type": "string",
+                    "description": "Subject text or header added to spam email."
+                },
+                "TagType": {
+                    "type": "string",
+                    "description": "Tag subject or header for spam email. Valid values: `subject`, `header`, `spaminfo`."
+                }
+            },
+            "required": []
+        },
+        "MapiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action for spam email. Valid values: `pass`, `discard`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MsnHotmailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "Pop3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action for spam email. Valid values: `pass`, `tag`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "TagMsg": {
+                    "type": "string",
+                    "description": "Subject text or header added to spam email."
+                },
+                "TagType": {
+                    "type": "string",
+                    "description": "Tag subject or header for spam email. Valid values: `subject`, `header`, `spaminfo`."
+                }
+            },
+            "required": []
+        },
+        "SmtpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action for spam email. Valid values: `pass`, `tag`, `discard`."
+                },
+                "Hdrip": {
+                    "type": "string",
+                    "description": "Enable/disable SMTP email header IP checks for spamfsip, spamrbl and spambwl filters. Valid values: `disable`, `enable`."
+                },
+                "LocalOverride": {
+                    "type": "string",
+                    "description": "Enable/disable local filter to override SMTP remote check result. Valid values: `disable`, `enable`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "TagMsg": {
+                    "type": "string",
+                    "description": "Subject text or header added to spam email."
+                },
+                "TagType": {
+                    "type": "string",
+                    "description": "Tag subject or header for spam email. Valid values: `subject`, `header`, `spaminfo`."
+                }
+            },
+            "required": []
+        },
+        "YahooMailDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "External": {
+            "type": "string",
+            "description": "Enable/disable external Email inspection. Valid values: `enable`, `disable`."
+        },
+        "FlowBased": {
+            "type": "string",
+            "description": "Enable/disable flow-based spam filtering. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "Options": {
+            "type": "string",
+            "description": "Options. Valid values: `bannedword`, `spambwl`, `spamfsip`, `spamfssubmit`, `spamfschksum`, `spamfsurl`, `spamhelodns`, `spamraddrdns`, `spamrbl`, `spamhdrcheck`, `spamfsphish`."
+        },
+        "ReplacemsgGroup": {
+            "type": "string",
+            "description": "Replacement message group."
+        },
+        "SpamBwlTable": {
+            "type": "number",
+            "description": "Anti-spam black/white list table ID."
+        },
+        "SpamBwordTable": {
+            "type": "number",
+            "description": "Anti-spam banned word table ID."
+        },
+        "SpamBwordThreshold": {
+            "type": "number",
+            "description": "Spam banned word threshold."
+        },
+        "SpamFiltering": {
+            "type": "string",
+            "description": "Enable/disable spam filtering. Valid values: `enable`, `disable`."
+        },
+        "SpamIptrustTable": {
+            "type": "number",
+            "description": "Anti-spam IP trust table ID."
+        },
+        "SpamLog": {
+            "type": "string",
+            "description": "Enable/disable spam logging for email filtering. Valid values: `disable`, `enable`."
+        },
+        "SpamLogFortiguardResponse": {
+            "type": "string",
+            "description": "Enable/disable logging FortiGuard spam response. Valid values: `disable`, `enable`."
+        },
+        "SpamMheaderTable": {
+            "type": "number",
+            "description": "Anti-spam MIME header table ID."
+        },
+        "SpamRblTable": {
+            "type": "number",
+            "description": "Anti-spam DNSBL table ID."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Gmail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Imap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImapDefinition"
+            },
+            "maxItems": 1
+        },
+        "Mapi": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MapiDefinition"
+            },
+            "maxItems": 1
+        },
+        "MsnHotmail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MsnHotmailDefinition"
+            },
+            "maxItems": 1
+        },
+        "Pop3": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Pop3Definition"
+            },
+            "maxItems": 1
+        },
+        "Smtp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmtpDefinition"
+            },
+            "maxItems": 1
+        },
+        "YahooMail": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/YahooMailDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

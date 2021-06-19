@@ -1,0 +1,208 @@
+{
+    "typeName": "TF::NSXT::PolicyBgpNeighbor",
+    "description": "This resource provides a method for the management of a BGP Neighbor.\n\nThis resource is applicable to NSX Global Manager and NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyBgpNeighbor/docs/README.md",
+    "definitions": {
+        "BfdConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Multiple": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RouteFilteringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressFamily": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "InRouteFilter": {
+                    "type": "string"
+                },
+                "MaximumRoutes": {
+                    "type": "number"
+                },
+                "OutRouteFilter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AddressFamily"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAsIn": {
+            "type": "boolean",
+            "description": "Flag to enable allowas_in option for BGP neighbor. Defaults to `false`."
+        },
+        "BgpPath": {
+            "type": "string",
+            "description": "The policy path to the BGP configuration for this neighbor."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "GracefulRestartMode": {
+            "type": "string",
+            "description": "BGP Graceful Restart Configuration Mode. One of `DISABLE`, `GR_AND_HELPER` or `HELPER_ONLY`."
+        },
+        "HoldDownTime": {
+            "type": "number",
+            "description": "Wait time in seconds before declaring peer dead. Defaults to `180`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepAliveTime": {
+            "type": "number",
+            "description": "Interval between keep alive messages sent to peer. Defaults to `60`."
+        },
+        "MaximumHopLimit": {
+            "type": "number",
+            "description": "Maximum number of hops allowed to reach BGP neighbor. Defaults to `1`."
+        },
+        "NeighborAddress": {
+            "type": "string",
+            "description": "Neighbor IP Address."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the resource."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for BGP neighbor authentication. Set to the empty string to clear out the password."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "RemoteAsNum": {
+            "type": "string",
+            "description": "ASN of the neighbor in ASPLAIN/ASDOT Format."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SourceAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of up to 8 source IP Addresses for BGP peering. `ip_addresses` field of an existing `nsxt_policy_tier0_gateway_interface` can be used here."
+        },
+        "BfdConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BfdConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "RouteFiltering": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteFilteringDefinition"
+            },
+            "maxItems": 2
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BgpPath",
+        "DisplayName",
+        "NeighborAddress",
+        "RemoteAsNum"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,2660 @@
+{
+    "typeName": "TF::Kubernetes::Deployment",
+    "description": "A Deployment ensures that a specified number of pod \u201creplicas\u201d are running at any one time. In other words, a Deployment makes sure that a pod or homogeneous set of pods are always up and available. If there are too many pods, it will kill some. If there are too few, the Deployment will start more.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/kubernetes/TF-Kubernetes-Deployment/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotationsDefinition2"
+                    }
+                },
+                "GenerateName": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveDeadlineSeconds": {
+                    "type": "number"
+                },
+                "AutomountServiceAccountToken": {
+                    "type": "boolean"
+                },
+                "DnsPolicy": {
+                    "type": "string"
+                },
+                "EnableServiceLinks": {
+                    "type": "boolean"
+                },
+                "HostIpc": {
+                    "type": "boolean"
+                },
+                "HostNetwork": {
+                    "type": "boolean"
+                },
+                "HostPid": {
+                    "type": "boolean"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "NodeName": {
+                    "type": "string"
+                },
+                "NodeSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeSelectorDefinition"
+                    }
+                },
+                "PriorityClassName": {
+                    "type": "string"
+                },
+                "RestartPolicy": {
+                    "type": "string"
+                },
+                "ServiceAccountName": {
+                    "type": "string"
+                },
+                "ShareProcessNamespace": {
+                    "type": "boolean"
+                },
+                "Subdomain": {
+                    "type": "string"
+                },
+                "TerminationGracePeriodSeconds": {
+                    "type": "number"
+                },
+                "Affinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AffinityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Container": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContainerDefinition"
+                    }
+                },
+                "DnsConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HostAliases": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostAliasesDefinition"
+                    }
+                },
+                "ImagePullSecrets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImagePullSecretsDefinition"
+                    }
+                },
+                "InitContainer": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitContainerDefinition"
+                    }
+                },
+                "ReadinessGate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReadinessGateDefinition"
+                    }
+                },
+                "SecurityContext": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityContextDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Toleration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TolerationDefinition"
+                    }
+                },
+                "TopologySpreadConstraint": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TopologySpreadConstraintDefinition"
+                    }
+                },
+                "Volume": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchLabelsDefinition"
+                    }
+                },
+                "MatchExpressions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchExpressionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchLabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "RollingUpdate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollingUpdateDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Spec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpecDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "MatchExpressionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RollingUpdateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurge": {
+                    "type": "string"
+                },
+                "MaxUnavailable": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NodeSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeAffinityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PodAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodAffinityDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PodAntiAffinity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodAntiAffinityDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Command": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullPolicy": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Stdin": {
+                    "type": "boolean"
+                },
+                "StdinOnce": {
+                    "type": "boolean"
+                },
+                "TerminationMessagePath": {
+                    "type": "string"
+                },
+                "TerminationMessagePolicy": {
+                    "type": "string"
+                },
+                "Tty": {
+                    "type": "boolean"
+                },
+                "WorkingDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "EnvFrom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvFromDefinition"
+                    }
+                },
+                "Lifecycle": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LivenessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LivenessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    }
+                },
+                "ReadinessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReadinessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecurityContext": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityContextDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StartupProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartupProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VolumeMount": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DnsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nameservers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Searches": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Option": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostAliasesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostnames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostnames",
+                "Ip"
+            ]
+        },
+        "ImagePullSecretsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "InitContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Command": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullPolicy": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Stdin": {
+                    "type": "boolean"
+                },
+                "StdinOnce": {
+                    "type": "boolean"
+                },
+                "TerminationMessagePath": {
+                    "type": "string"
+                },
+                "TerminationMessagePolicy": {
+                    "type": "string"
+                },
+                "Tty": {
+                    "type": "boolean"
+                },
+                "WorkingDir": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvDefinition"
+                    }
+                },
+                "EnvFrom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvFromDefinition"
+                    }
+                },
+                "Lifecycle": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifecycleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LivenessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LivenessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortDefinition"
+                    }
+                },
+                "ReadinessProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReadinessProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Resources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourcesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecurityContext": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityContextDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StartupProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartupProbeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VolumeMount": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ReadinessGateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConditionType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConditionType"
+            ]
+        },
+        "SecurityContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "Privileged": {
+                    "type": "boolean"
+                },
+                "ReadOnlyRootFilesystem": {
+                    "type": "boolean"
+                },
+                "RunAsGroup": {
+                    "type": "string"
+                },
+                "RunAsNonRoot": {
+                    "type": "boolean"
+                },
+                "RunAsUser": {
+                    "type": "string"
+                },
+                "Capabilities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapabilitiesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SeLinuxOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeLinuxOptionsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TolerationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "TolerationSeconds": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TopologySpreadConstraintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSkew": {
+                    "type": "number"
+                },
+                "TopologyKey": {
+                    "type": "string"
+                },
+                "WhenUnsatisfiable": {
+                    "type": "string"
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "AwsElasticBlockStore": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsElasticBlockStoreDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureFile": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureFileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CephFs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CephFsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Cinder": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CinderDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ConfigMap": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigMapDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Csi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DownwardApi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DownwardApiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "EmptyDir": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EmptyDirDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Fc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FcDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FlexVolume": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlexVolumeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Flocker": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlockerDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcePersistentDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcePersistentDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GitRepo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitRepoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Glusterfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GlusterfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HostPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostPathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Iscsi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IscsiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Local": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LocalDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Nfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PersistentVolumeClaim": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PersistentVolumeClaimDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PhotonPersistentDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PhotonPersistentDiskDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Projected": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProjectedDefinition"
+                    }
+                },
+                "Quobyte": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QuobyteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Rbd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RbdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Secret": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "VsphereVolume": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VsphereVolumeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NodeAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreferredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    }
+                },
+                "RequiredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PodAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreferredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    }
+                },
+                "RequiredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PodAntiAffinityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PreferredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    }
+                },
+                "RequiredDuringSchedulingIgnoredDuringExecution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecutionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EnvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "ValueFrom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueFromDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "EnvFromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "ConfigMapRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigMapRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LifecycleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PostStart": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PostStartDefinition"
+                    }
+                },
+                "PreStop": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PreStopDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LivenessProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "Exec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerPort": {
+                    "type": "number"
+                },
+                "HostIp": {
+                    "type": "string"
+                },
+                "HostPort": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContainerPort"
+            ]
+        },
+        "ReadinessProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "Exec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Limits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LimitsDefinition"
+                    }
+                },
+                "Requests": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RequestsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StartupProbeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "InitialDelaySeconds": {
+                    "type": "number"
+                },
+                "PeriodSeconds": {
+                    "type": "number"
+                },
+                "SuccessThreshold": {
+                    "type": "number"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "Exec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VolumeMountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MountPath": {
+                    "type": "string"
+                },
+                "MountPropagation": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SubPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MountPath",
+                "Name"
+            ]
+        },
+        "OptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "CapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Add": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Drop": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeLinuxOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LabelSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchLabelsDefinition3"
+                    }
+                },
+                "MatchExpressions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchExpressionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchLabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AwsElasticBlockStoreDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Partition": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumeId"
+            ]
+        },
+        "AzureDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CachingMode": {
+                    "type": "string"
+                },
+                "DataDiskUri": {
+                    "type": "string"
+                },
+                "DiskName": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Kind": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CachingMode",
+                "DataDiskUri",
+                "DiskName"
+            ]
+        },
+        "AzureFileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretName": {
+                    "type": "string"
+                },
+                "SecretNamespace": {
+                    "type": "string"
+                },
+                "ShareName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecretName",
+                "ShareName"
+            ]
+        },
+        "CephFsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Monitors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretFile": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Monitors"
+            ]
+        },
+        "CinderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumeId"
+            ]
+        },
+        "ConfigMapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Optional": {
+                    "type": "boolean"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CsiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeAttributesDefinition"
+                    }
+                },
+                "VolumeHandle": {
+                    "type": "string"
+                },
+                "ControllerExpandSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerExpandSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ControllerPublishSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ControllerPublishSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodePublishSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodePublishSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeStageSecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeStageSecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Driver",
+                "VolumeHandle"
+            ]
+        },
+        "VolumeAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DownwardApiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EmptyDirDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Medium": {
+                    "type": "string"
+                },
+                "SizeLimit": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Lun": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "TargetWwNs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Lun",
+                "TargetWwNs"
+            ]
+        },
+        "FlexVolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Options": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionsDefinition"
+                    }
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Driver"
+            ]
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FlockerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatasetName": {
+                    "type": "string"
+                },
+                "DatasetUuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GcePersistentDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Partition": {
+                    "type": "number"
+                },
+                "PdName": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "PdName"
+            ]
+        },
+        "GitRepoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Directory": {
+                    "type": "string"
+                },
+                "Repository": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GlusterfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointsName": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EndpointsName",
+                "Path"
+            ]
+        },
+        "HostPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IscsiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "Iqn": {
+                    "type": "string"
+                },
+                "IscsiInterface": {
+                    "type": "string"
+                },
+                "Lun": {
+                    "type": "number"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "TargetPortal": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Iqn",
+                "TargetPortal"
+            ]
+        },
+        "LocalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Server": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path",
+                "Server"
+            ]
+        },
+        "PersistentVolumeClaimDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClaimName": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "PhotonPersistentDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "PdId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PdId"
+            ]
+        },
+        "ProjectedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultMode": {
+                    "type": "string"
+                },
+                "Sources": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourcesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "QuobyteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Group": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Registry": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                },
+                "Volume": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Registry",
+                "Volume"
+            ]
+        },
+        "RbdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CephMonitors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FsType": {
+                    "type": "string"
+                },
+                "Keyring": {
+                    "type": "string"
+                },
+                "RadosUser": {
+                    "type": "string"
+                },
+                "RbdImage": {
+                    "type": "string"
+                },
+                "RbdPool": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "SecretRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CephMonitors",
+                "RbdImage"
+            ]
+        },
+        "SecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Optional": {
+                    "type": "boolean"
+                },
+                "Items": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ItemsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VsphereVolumeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FsType": {
+                    "type": "string"
+                },
+                "VolumePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VolumePath"
+            ]
+        },
+        "PreferredDuringSchedulingIgnoredDuringExecutionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Weight": {
+                    "type": "number"
+                },
+                "PodAffinityTerm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PodAffinityTermDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Weight"
+            ]
+        },
+        "RequiredDuringSchedulingIgnoredDuringExecutionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TopologyKey": {
+                    "type": "string"
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ValueFromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigMapKeyRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigMapKeyRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "FieldRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FieldRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ResourceFieldRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceFieldRefDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SecretKeyRef": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretKeyRefDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConfigMapRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Optional": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "SecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PostStartDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PreStopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exec": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HttpGet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpGetDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TcpSocket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpSocketDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ExecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Command": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpGetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Scheme": {
+                    "type": "string"
+                },
+                "HttpHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpHeaderDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TcpSocketDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Port"
+            ]
+        },
+        "ItemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ControllerExpandSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ControllerPublishSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodePublishSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodeStageSecretRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigMap": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigMapDefinition"
+                    }
+                },
+                "DownwardApi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DownwardApiDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Secret": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretDefinition"
+                    }
+                },
+                "ServiceAccountToken": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceAccountTokenDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PodAffinityTermDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Namespaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TopologyKey": {
+                    "type": "string"
+                },
+                "LabelSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelSelectorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchLabelsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigMapKeyRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Optional": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "FieldRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiVersion": {
+                    "type": "string"
+                },
+                "FieldPath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResourceFieldRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerName": {
+                    "type": "string"
+                },
+                "Divisor": {
+                    "type": "string"
+                },
+                "Resource": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Resource"
+            ]
+        },
+        "SecretKeyRefDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Optional": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HttpHeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServiceAccountTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "string"
+                },
+                "ExpirationSeconds": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WaitForRollout": {
+            "type": "boolean",
+            "description": "Wait for the deployment to successfully roll out. Defaults to `true`."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

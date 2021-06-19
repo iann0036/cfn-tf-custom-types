@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::AWS::LambdaAlias",
+    "description": "Creates a Lambda function alias. Creates an alias that points to the specified Lambda function version.\n\nFor information about Lambda and how to use it, see [What is AWS Lambda?][1]\nFor information about function aliases, see [CreateAlias][2] and [AliasRoutingConfiguration][3] in the API docs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LambdaAlias/docs/README.md",
+    "definitions": {
+        "RoutingConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalVersionWeights": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalVersionWeightsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdditionalVersionWeightsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the alias."
+        },
+        "FunctionName": {
+            "type": "string",
+            "description": "Lambda Function name or ARN."
+        },
+        "FunctionVersion": {
+            "type": "string",
+            "description": "Lambda function version for which you are creating the alias. Pattern: `(\\$LATEST|[0-9]+)`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeArn": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`."
+        },
+        "RoutingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName",
+        "FunctionVersion",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/InvokeArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

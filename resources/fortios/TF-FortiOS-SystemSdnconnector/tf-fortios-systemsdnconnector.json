@@ -1,0 +1,363 @@
+{
+    "typeName": "TF::FortiOS::SystemSdnconnector",
+    "description": "Configure connection to SDN Connector.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSdnconnector/docs/README.md",
+    "definitions": {
+        "ExternalIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "External IP name."
+                }
+            },
+            "required": []
+        },
+        "NicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Network interface name."
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RouteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Route name."
+                },
+                "NextHop": {
+                    "type": "string",
+                    "description": "Next hop address."
+                }
+            },
+            "required": []
+        },
+        "RouteTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Route table name."
+                },
+                "ResourceGroup": {
+                    "type": "string",
+                    "description": "Resource group of Azure route table."
+                },
+                "SubscriptionId": {
+                    "type": "string",
+                    "description": "Subscription ID of Azure route table."
+                },
+                "Route": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "IP configuration name."
+                },
+                "PublicIp": {
+                    "type": "string",
+                    "description": "Public IP name."
+                },
+                "ResourceGroup": {
+                    "type": "string",
+                    "description": "Resource group of Azure public IP."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string",
+            "description": "AWS access key ID."
+        },
+        "ApiKey": {
+            "type": "string",
+            "description": "IBM cloud API key or service ID API key."
+        },
+        "AzureRegion": {
+            "type": "string",
+            "description": "Azure server region. Valid values: `global`, `china`, `germany`, `usgov`, `local`."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "Azure client ID (application ID)."
+        },
+        "ClientSecret": {
+            "type": "string",
+            "description": "Azure client secret (application key)."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "Compartment ID."
+        },
+        "ComputeGeneration": {
+            "type": "number",
+            "description": "Compute generation for IBM cloud infrastructure."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Domain name."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GcpProject": {
+            "type": "string",
+            "description": "GCP project name."
+        },
+        "GroupName": {
+            "type": "string",
+            "description": "Group name of computers."
+        },
+        "HaStatus": {
+            "type": "string",
+            "description": "Enable/disable use for FortiGate HA service. Valid values: `disable`, `enable`."
+        },
+        "IbmRegion": {
+            "type": "string",
+            "description": "IBM cloud region name. Valid values: `us-south`, `us-east`, `germany`, `great-britain`, `japan`, `australia`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyPasswd": {
+            "type": "string",
+            "description": "Private key password."
+        },
+        "LoginEndpoint": {
+            "type": "string",
+            "description": "Azure Stack login endpoint."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SDN connector name."
+        },
+        "OciCert": {
+            "type": "string",
+            "description": "OCI certificate."
+        },
+        "OciFingerprint": {
+            "type": "string",
+            "description": "OCI pubkey fingerprint."
+        },
+        "OciRegion": {
+            "type": "string",
+            "description": "OCI server region."
+        },
+        "OciRegionType": {
+            "type": "string",
+            "description": "OCI region type. Valid values: `commercial`, `government`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of the remote SDN connector as login credentials."
+        },
+        "PrivateKey": {
+            "type": "string",
+            "description": "Private key of GCP service account."
+        },
+        "Region": {
+            "type": "string",
+            "description": "AWS region name."
+        },
+        "ResourceGroup": {
+            "type": "string",
+            "description": "Azure resource group."
+        },
+        "ResourceUrl": {
+            "type": "string",
+            "description": "Azure Stack resource URL."
+        },
+        "SecretKey": {
+            "type": "string",
+            "description": "AWS secret access key."
+        },
+        "SecretToken": {
+            "type": "string",
+            "description": "Secret token of Kubernetes service account."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Server address of the remote SDN connector."
+        },
+        "ServerPort": {
+            "type": "number",
+            "description": "Port number of the remote SDN connector."
+        },
+        "ServiceAccount": {
+            "type": "string",
+            "description": "GCP service account email."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable connection to the remote SDN connector. Valid values: `disable`, `enable`."
+        },
+        "SubscriptionId": {
+            "type": "string",
+            "description": "Azure subscription ID."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID (directory ID)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of SDN connector."
+        },
+        "UpdateInterval": {
+            "type": "number",
+            "description": "Dynamic object update interval (0 - 3600 sec, 0 means disabled, default = 60)."
+        },
+        "UseMetadataIam": {
+            "type": "string",
+            "description": "Enable/disable using IAM role from metadata to call API. Valid values: `disable`, `enable`."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "User ID."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username of the remote SDN connector as login credentials."
+        },
+        "VcenterPassword": {
+            "type": "string",
+            "description": "vCenter server password for NSX quarantine."
+        },
+        "VcenterServer": {
+            "type": "string",
+            "description": "vCenter server address for NSX quarantine."
+        },
+        "VcenterUsername": {
+            "type": "string",
+            "description": "vCenter server username for NSX quarantine."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "AWS VPC ID."
+        },
+        "ExternalIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalIpDefinition"
+            }
+        },
+        "Nic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicDefinition"
+            }
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteDefinition"
+            }
+        },
+        "RouteTable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteTableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Status",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AccessKey",
+        "/properties/ApiKey",
+        "/properties/ClientSecret",
+        "/properties/KeyPasswd",
+        "/properties/Password",
+        "/properties/PrivateKey",
+        "/properties/SecretKey",
+        "/properties/SecretToken",
+        "/properties/VcenterPassword"
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "typeName": "TF::VMC::SiteRecovery",
+    "description": "Provides a resource to activate and deactivate site recovery for SDDC.\n\n~> **Note:** Site recovery resource implicitly depends on SDDC resource creation. SDDC must be provisioned before a site recovery can be activated. \nA 10 minute delay must be added to SDDC resource before site recovery can be activated.\nThis delay is added using using the local-exec provisioner. For details on how to provision SDDC refer to [vmc_sddc](https://www.terraform.io/docs/providers/vmc/r/sddc.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vmc/TF-VMC-SiteRecovery/docs/README.md",
+    "definitions": {
+        "SrmNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VrNodeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SddcId": {
+            "type": "string",
+            "description": "SDDC identifier."
+        },
+        "SiteRecoveryState": {
+            "type": "string"
+        },
+        "SrmExtensionKeySuffix": {
+            "type": "string"
+        },
+        "SrmNode": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SrmNodeDefinition"
+            }
+        },
+        "UserId": {
+            "type": "string"
+        },
+        "UserName": {
+            "type": "string"
+        },
+        "VrNode": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VrNodeDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SddcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SiteRecoveryState",
+        "/properties/SrmNode",
+        "/properties/UserId",
+        "/properties/UserName",
+        "/properties/VrNode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

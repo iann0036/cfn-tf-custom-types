@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::AVI::Siteversion",
+    "description": "The SiteVersion resource allows the creation and management of Avi SiteVersion",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Siteversion/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Datetime": {
+            "type": "string",
+            "description": "This field represents the creation time of the federateddiff. Field introduced in 20.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the site. Field introduced in 20.1.1."
+        },
+        "PrevTargetVersion": {
+            "type": "number",
+            "description": "Previous targer version for a site. Field introduced in 20.1.1."
+        },
+        "ReplicationState": {
+            "type": "string",
+            "description": "Replication state for a site. Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED, REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE. Field introduced in 20.1.1."
+        },
+        "SiteId": {
+            "type": "string",
+            "description": "Cluster uuid of the site. Field introduced in 20.1.1."
+        },
+        "TargetTimeline": {
+            "type": "string",
+            "description": "Target timeline of the site. Field introduced in 20.1.1."
+        },
+        "TargetVersion": {
+            "type": "number",
+            "description": "Target version of the site. Field introduced in 20.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 20.1.1."
+        },
+        "Timeline": {
+            "type": "string",
+            "description": "Timeline of the site. Field introduced in 20.1.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number",
+            "description": "Version of the site. Field introduced in 20.1.1."
+        },
+        "VersionType": {
+            "type": "string",
+            "description": "Type of message for which version is maintained. Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION. Field introduced in 20.1.1."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

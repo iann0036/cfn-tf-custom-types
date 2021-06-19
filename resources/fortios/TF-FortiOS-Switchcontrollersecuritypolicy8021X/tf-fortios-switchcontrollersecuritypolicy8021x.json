@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::FortiOS::Switchcontrollersecuritypolicy8021X",
+    "description": "Configure 802.1x MAC Authentication Bypass (MAB) policies.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Switchcontrollersecuritypolicy8021X/docs/README.md",
+    "definitions": {
+        "UserGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Group name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthFailVlan": {
+            "type": "string",
+            "description": "Enable to allow limited access to clients that cannot authenticate. Valid values: `disable`, `enable`."
+        },
+        "AuthFailVlanId": {
+            "type": "string",
+            "description": "VLAN ID on which authentication failed."
+        },
+        "AuthFailVlanid": {
+            "type": "number",
+            "description": "VLAN ID on which authentication failed."
+        },
+        "AuthserverTimeoutPeriod": {
+            "type": "number",
+            "description": "Authentication server timeout period (3 - 15 sec, default = 3)."
+        },
+        "AuthserverTimeoutVlan": {
+            "type": "string",
+            "description": "Enable/disable the authentication server timeout VLAN to allow limited access when RADIUS is unavailable.  Valid values: `disable`, `enable`."
+        },
+        "AuthserverTimeoutVlanid": {
+            "type": "string",
+            "description": "Authentication server timeout VLAN name."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EapAutoUntaggedVlans": {
+            "type": "string",
+            "description": "Enable/disable automatic inclusion of untagged VLANs. Valid values: `disable`, `enable`."
+        },
+        "EapPassthru": {
+            "type": "string",
+            "description": "Enable/disable EAP pass-through mode, allowing protocols (such as LLDP) to pass through ports for more flexible authentication. Valid values: `disable`, `enable`."
+        },
+        "FramevidApply": {
+            "type": "string",
+            "description": "Enable/disable the capability to apply the EAP/MAB frame VLAN to the port native VLAN. Valid values: `disable`, `enable`."
+        },
+        "GuestAuthDelay": {
+            "type": "number",
+            "description": "Guest authentication delay (1 - 900  sec, default = 30)."
+        },
+        "GuestVlan": {
+            "type": "string",
+            "description": "Enable the guest VLAN feature to allow limited access to non-802.1X-compliant clients. Valid values: `disable`, `enable`."
+        },
+        "GuestVlanId": {
+            "type": "string",
+            "description": "Guest VLAN name."
+        },
+        "GuestVlanid": {
+            "type": "number",
+            "description": "Guest VLAN ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MacAuthBypass": {
+            "type": "string",
+            "description": "Enable/disable MAB for this policy. Valid values: `disable`, `enable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Policy name."
+        },
+        "OpenAuth": {
+            "type": "string",
+            "description": "Enable/disable open authentication for this policy. Valid values: `disable`, `enable`."
+        },
+        "PolicyType": {
+            "type": "string",
+            "description": "Policy type. Valid values: `802.1X`."
+        },
+        "RadiusTimeoutOverwrite": {
+            "type": "string",
+            "description": "Enable to override the global RADIUS session timeout. Valid values: `disable`, `enable`."
+        },
+        "SecurityMode": {
+            "type": "string",
+            "description": "Port or MAC based 802.1X security mode. Valid values: `802.1X`, `802.1X-mac-based`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "UserGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserGroupDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

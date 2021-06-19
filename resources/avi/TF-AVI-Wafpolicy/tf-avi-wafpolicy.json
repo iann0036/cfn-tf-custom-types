@@ -1,0 +1,659 @@
+{
+    "typeName": "TF::AVI::Wafpolicy",
+    "description": "The WafPolicy resource allows the creation and management of Avi WafPolicy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Wafpolicy/docs/README.md",
+    "definitions": {
+        "AllowlistDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ApplicationSignaturesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProviderRef": {
+                    "type": "string"
+                },
+                "SelectedApplications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResolvedRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResolvedRulesDefinition"
+                    }
+                },
+                "RuleOverrides": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleOverridesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConfidenceOverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfidHighValue": {
+                    "type": "number"
+                },
+                "ConfidLowValue": {
+                    "type": "number"
+                },
+                "ConfidProbableValue": {
+                    "type": "number"
+                },
+                "ConfidVeryHighValue": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CrsOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                },
+                "RuleOverrides": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleOverridesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "LearningParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnablePerUriLearning": {
+                    "type": "boolean"
+                },
+                "MaxParams": {
+                    "type": "number"
+                },
+                "MaxUris": {
+                    "type": "number"
+                },
+                "MinHitsToLearn": {
+                    "type": "number"
+                },
+                "SamplingPercent": {
+                    "type": "number"
+                },
+                "UpdateInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "PositiveSecurityModelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PostCrsGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "PreCrsGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "ResolvedCrsGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Rule": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Rule"
+            ]
+        },
+        "ResolvedRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Rule": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Rule"
+            ]
+        },
+        "RuleOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                }
+            },
+            "required": [
+                "RuleId"
+            ]
+        },
+        "ExcludeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "MatchElement": {
+                    "type": "string"
+                },
+                "UriPath": {
+                    "type": "string"
+                },
+                "ClientSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientSubnetDefinition"
+                    }
+                },
+                "MatchElementCriteria": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchElementCriteriaDefinition"
+                    }
+                },
+                "UriMatchCriteria": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriMatchCriteriaDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ClientSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "MatchElementCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchOp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UriMatchCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchOp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowModeDelegation": {
+            "type": "boolean",
+            "description": "Allow rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator name. Field introduced in 17.2.4."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Field introduced in 17.2.1."
+        },
+        "EnableAppLearning": {
+            "type": "boolean",
+            "description": "Enable application learning for this waf policy. Field introduced in 18.2.3."
+        },
+        "EnableAutoRuleUpdates": {
+            "type": "boolean",
+            "description": "Enable application learning based rule updates on the waf profile. Rules will be programmed in dedicated waf learning group. Field introduced in 20.1.1."
+        },
+        "EnableRegexLearning": {
+            "type": "boolean",
+            "description": "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1."
+        },
+        "FailureMode": {
+            "type": "string",
+            "description": "Waf policy failure mode. This can be 'open' or 'closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinConfidence": {
+            "type": "string",
+            "description": "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Waf policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Field introduced in 17.2.1."
+        },
+        "ParanoiaLevel": {
+            "type": "string",
+            "description": "Waf ruleset paranoia  mode. This is used to select rules based on the paranoia-level tag. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 17.2.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant. Field introduced in 17.2.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "WafCrsRef": {
+            "type": "string",
+            "description": "Waf core ruleset used for the crs part of this policy. It is a reference to an object of type wafcrs. Field introduced in 18.1.1."
+        },
+        "WafProfileRef": {
+            "type": "string",
+            "description": "Waf profile for waf policy. It is a reference to an object of type wafprofile. Field introduced in 17.2.1."
+        },
+        "Allowlist": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AllowlistDefinition"
+            }
+        },
+        "ApplicationSignatures": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ApplicationSignaturesDefinition"
+            }
+        },
+        "ConfidenceOverride": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfidenceOverrideDefinition"
+            }
+        },
+        "CrsOverrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrsOverridesDefinition"
+            }
+        },
+        "LearningParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LearningParamsDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "PositiveSecurityModel": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PositiveSecurityModelDefinition"
+            }
+        },
+        "PostCrsGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PostCrsGroupsDefinition"
+            }
+        },
+        "PreCrsGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreCrsGroupsDefinition"
+            }
+        },
+        "ResolvedCrsGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResolvedCrsGroupsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "WafProfileRef"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

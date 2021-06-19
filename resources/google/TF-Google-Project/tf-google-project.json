@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::Google::Project",
+    "description": "Allows creation and management of a Google Cloud Platform project.\n\nProjects created with this resource must be associated with an Organization.\nSee the [Organization documentation](https://cloud.google.com/resource-manager/docs/quickstarts) for more details.\n\nThe user or service account that is running Terraform when creating a `google_project`\nresource must have `roles/resourcemanager.projectCreator` on the specified organization. See the\n[Access Control for Organizations Using IAM](https://cloud.google.com/resource-manager/docs/access-control-org)\ndoc for more information.\n\n~> This resource reads the specified billing account on every terraform apply and plan operation so you must have permissions on the specified billing account.\n\n~> It is recommended to use the `constraints/compute.skipDefaultNetworkCreation` [constraint](/docs/providers/google/r/google_organization_policy.html) to remove the default network instead of setting `auto_create_network` to false.\n\nTo get more information about projects, s...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-Project/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoCreateNetwork": {
+            "type": "boolean",
+            "description": "Create the 'default' network automatically.  Default `true`.\nIf set to `false`, the default network will be deleted.  Note that, for quota purposes, you\nwill still need to have 1 network slot available to create the project successfully, even if\nyou set `auto_create_network` to `false`, since the network will exist momentarily."
+        },
+        "BillingAccount": {
+            "type": "string",
+            "description": "The alphanumeric ID of the billing account this project\nbelongs to. The user or service account performing this operation with Terraform\nmust have at mininum Billing Account User privileges (`roles/billing.user`) on the billing account.\nSee [Google Cloud Billing API Access Control](https://cloud.google.com/billing/docs/how-to/billing-access)\nfor more details."
+        },
+        "FolderId": {
+            "type": "string",
+            "description": "The numeric ID of the folder this project should be\ncreated under. Only one of `org_id` or `folder_id` may be\nspecified. If the `folder_id` is specified, then the project is\ncreated under the specified folder. Changing this forces the\nproject to be migrated to the newly specified folder."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A set of key/value label pairs to assign to the project."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The display name of the project."
+        },
+        "Number": {
+            "type": "string"
+        },
+        "OrgId": {
+            "type": "string",
+            "description": "The numeric ID of the organization this project belongs to.\nChanging this forces a new project to be created.  Only one of\n`org_id` or `folder_id` may be specified. If the `org_id` is\nspecified then the project is created at the top level. Changing\nthis forces the project to be migrated to the newly specified\norganization."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The project ID. Changing this forces a new project to be created."
+        },
+        "SkipDelete": {
+            "type": "boolean",
+            "description": "If true, the Terraform resource can be deleted\nwithout deleting the Project via the Google API."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Number"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

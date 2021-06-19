@@ -1,0 +1,259 @@
+{
+    "typeName": "TF::Circonus::Graph",
+    "description": "The ``circonus_graph`` resource creates and manages a\n[Circonus Graph](https://login.circonus.com/user/docs/Visualization/Graph/Create).\n\nhttps://login.circonus.com/resources/api/calls/graph).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/circonus/TF-Circonus-Graph/docs/README.md",
+    "definitions": {
+        "LeftDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RightDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Formula": {
+                    "type": "string"
+                },
+                "Hidden": {
+                    "type": "boolean"
+                },
+                "LegendFormula": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetricDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Alpha": {
+                    "type": "string"
+                },
+                "Axis": {
+                    "type": "string"
+                },
+                "Caql": {
+                    "type": "string"
+                },
+                "Check": {
+                    "type": "string"
+                },
+                "Color": {
+                    "type": "string"
+                },
+                "Formula": {
+                    "type": "string"
+                },
+                "Function": {
+                    "type": "string"
+                },
+                "LegendFormula": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MetricType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "string"
+                },
+                "Stack": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricType"
+            ]
+        },
+        "MetricClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Aggregate": {
+                    "type": "string"
+                },
+                "Axis": {
+                    "type": "string"
+                },
+                "Color": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of what the graph is for."
+        },
+        "GraphStyle": {
+            "type": "string",
+            "description": "How the graph should be rendered.  Valid options\nare `area` or `line` (default)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Left": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LeftDefinition"
+            },
+            "description": "A map of graph left axis options.  Valid values in `left`\ninclude: `logarithmic` can be set to `0` (default) or `1`; `min` is the `min`\nY axis value on the left; and `max` is the Y axis max value on the left."
+        },
+        "LineStyle": {
+            "type": "string",
+            "description": "How the line should change between points.  Can be\neither `stepped` (default) or `interpolated`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The title of the graph."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "A place for storing notes about this graph."
+        },
+        "Right": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RightDefinition"
+            },
+            "description": "A map of graph right axis options.  Valid values in\n`right` include: `logarithmic` can be set to `0` (default) or `1`; `min` is\nthe `min` Y axis value on the right; and `max` is the Y axis max value on the\nright."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags assigned to this graph."
+        },
+        "Guide": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GuideDefinition"
+            }
+        },
+        "Metric": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricDefinition"
+            }
+        },
+        "MetricCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricClusterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

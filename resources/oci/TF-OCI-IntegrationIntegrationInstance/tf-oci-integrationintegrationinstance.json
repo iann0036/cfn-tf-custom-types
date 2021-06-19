@@ -1,0 +1,294 @@
+{
+    "typeName": "TF::OCI::IntegrationIntegrationInstance",
+    "description": "This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.\n\nCreates a new Integration Instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-IntegrationIntegrationInstance/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AlternateCustomEndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateSecretId": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname"
+            ]
+        },
+        "CustomEndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateSecretId": {
+                    "type": "string"
+                },
+                "Hostname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname"
+            ]
+        },
+        "NetworkEndpointDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowlistedHttpIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsIntegrationVcnAllowlisted": {
+                    "type": "boolean"
+                },
+                "NetworkEndpointType": {
+                    "type": "string"
+                },
+                "AllowlistedHttpVcns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AllowlistedHttpVcnsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "NetworkEndpointType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AllowlistedHttpVcnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowlistedIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
+        },
+        "ConsumptionModel": {
+            "type": "string",
+            "description": "Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) Integration Instance Identifier."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The Virtual Cloud Network OCID.\n* `is_integration_vcn_allowlisted` - (Optional) The Integration service's VCN is allow-listed to allow integrations to call back into other integrations\n* `network_endpoint_type` - (Required) The type of network endpoint."
+        },
+        "IdcsAt": {
+            "type": "string",
+            "description": "(Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms."
+        },
+        "InstanceUrl": {
+            "type": "string"
+        },
+        "IntegrationInstanceType": {
+            "type": "string",
+            "description": "(Updatable) Standard or Enterprise type."
+        },
+        "IsByol": {
+            "type": "boolean",
+            "description": "(Updatable) Bring your own license."
+        },
+        "IsFileServerEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) The file server is enabled or not."
+        },
+        "IsVisualBuilderEnabled": {
+            "type": "boolean",
+            "description": "(Updatable) Visual Builder is enabled or not."
+        },
+        "MessagePacks": {
+            "type": "number",
+            "description": "(Updatable) The number of configured message packs."
+        },
+        "State": {
+            "type": "string",
+            "description": "(Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE."
+        },
+        "StateMessage": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "AlternateCustomEndpoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlternateCustomEndpointsDefinition"
+            }
+        },
+        "CustomEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomEndpointDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkEndpointDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkEndpointDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "DisplayName",
+        "IntegrationInstanceType",
+        "IsByol",
+        "MessagePacks"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InstanceUrl",
+        "/properties/StateMessage",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/IdcsAt"
+    ]
+}

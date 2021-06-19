@@ -1,0 +1,332 @@
+{
+    "typeName": "TF::Dome9::AzureSecurityGroup",
+    "description": "The Azure Security Group resource has methods to add and manage Azure Security Group policies for Azure cloud accounts that are managed by Dome9.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-AzureSecurityGroup/docs/README.md",
+    "definitions": {
+        "InboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationPortRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsDefault": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourcePortRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationScopesDefinition"
+                    },
+                    "minItems": 1
+                },
+                "SourceScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceScopesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DestinationPortRanges",
+                "Name",
+                "Priority",
+                "Protocol",
+                "SourcePortRanges"
+            ]
+        },
+        "OutboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationPortRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsDefault": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourcePortRanges": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationScopesDefinition"
+                    },
+                    "minItems": 1
+                },
+                "SourceScopes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceScopesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "DestinationPortRanges",
+                "Name",
+                "Priority",
+                "Protocol",
+                "SourcePortRanges"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "DestinationScopesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDefinition"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Data",
+                "Type"
+            ]
+        },
+        "DataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SourceScopesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDefinition2"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Data",
+                "Type"
+            ]
+        },
+        "DataDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudAccountName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Service description."
+        },
+        "Dome9CloudAccountId": {
+            "type": "string",
+            "description": "Cloud account id in Dome9."
+        },
+        "Dome9SecurityGroupName": {
+            "type": "string",
+            "description": "Name of the security group."
+        },
+        "ExternalSecurityGroupId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsTamperProtected": {
+            "type": "boolean",
+            "description": "Is security group tamper protected."
+        },
+        "LastUpdatedByDome9": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Region can be one of the following: `centralus`, `eastus`, `eastus2`, `usgovlowa`, `usgovvirginia`, `northcentralus`, `southcentralus`, `westus`, `westus2`, `westcentralus`, `northeurope`, `westeurope`, `eastasia`, `southeastasia`, `japaneast`, `japanwest`, `brazilsouth`, `australiaeast`, `australiasoutheast`, `centralindia`, `southindia`, `westindia`, `chinaeast`, `chinanorth`, `canadacentral`, `canadaeast`, `germanycentral`, `germanynortheast`, `koreacentral`, `uksouth`, `ukwest`, `koreasout`."
+        },
+        "ResourceGroup": {
+            "type": "string",
+            "description": "Azure resource group name."
+        },
+        "Inbound": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundDefinition"
+            }
+        },
+        "Outbound": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutboundDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Dome9CloudAccountId",
+        "Dome9SecurityGroupName",
+        "Region",
+        "ResourceGroup"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudAccountName",
+        "/properties/ExternalSecurityGroupId",
+        "/properties/Id",
+        "/properties/LastUpdatedByDome9"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

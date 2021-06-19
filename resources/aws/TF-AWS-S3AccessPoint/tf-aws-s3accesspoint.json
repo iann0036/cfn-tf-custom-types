@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::AWS::S3AccessPoint",
+    "description": "Provides a resource to manage an S3 Access Point.\n\n-> Advanced usage: To use a custom API endpoint for this Terraform resource, use the [`s3control` endpoint provider configuration](/docs/providers/aws/index.html#s3control), not the `s3` endpoint provider configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-S3AccessPoint/docs/README.md",
+    "definitions": {
+        "PublicAccessBlockConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockPublicAcls": {
+                    "type": "boolean"
+                },
+                "BlockPublicPolicy": {
+                    "type": "boolean"
+                },
+                "IgnorePublicAcls": {
+                    "type": "boolean"
+                },
+                "RestrictPublicBuckets": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "VpcConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The AWS account ID for the owner of the bucket for which you want to create an access point. Defaults to automatically determined account ID of the Terraform AWS provider."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of an AWS Partition S3 Bucket or the Amazon Resource Name (ARN) of S3 on Outposts Bucket that you want to associate this access point with."
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "HasPublicAccessPolicy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name you want to assign to this access point."
+        },
+        "NetworkOrigin": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string",
+            "description": "A valid JSON document that specifies the policy that you want to apply to this access point."
+        },
+        "PublicAccessBlockConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicAccessBlockConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "VpcConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigurationDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainName",
+        "/properties/HasPublicAccessPolicy",
+        "/properties/Id",
+        "/properties/NetworkOrigin"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

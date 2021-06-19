@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::BIGIP::CmDevicegroup",
+    "description": "`bigip_cm_devicegroup` A device group is a collection of BIG-IP devices that are configured to securely synchronize their BIG-IP configuration data, and fail over when needed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-CmDevicegroup/docs/README.md",
+    "definitions": {
+        "DeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "SetSyncLeader": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoSync": {
+            "type": "string",
+            "description": "Specifies if the device-group will automatically sync configuration data to its members."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FullLoadOnSync": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncrementalConfig": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Is the name of the device Group."
+        },
+        "NetworkFailover": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "SaveOnAutoSync": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Specifies if the device-group will be used for failover or resource syncing."
+        },
+        "Device": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeviceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

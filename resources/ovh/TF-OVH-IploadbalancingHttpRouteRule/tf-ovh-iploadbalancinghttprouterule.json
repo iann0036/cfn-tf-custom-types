@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::OVH::IploadbalancingHttpRouteRule",
+    "description": "Manage rules for HTTP route.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-IploadbalancingHttpRouteRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Human readable name for your rule, this field is for you."
+        },
+        "Field": {
+            "type": "string",
+            "description": "Name of the field to match like \"protocol\" or \"host\". See \"/ipLoadbalancing/{serviceName}/availableRouteRules\" for a list of available rules."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Match": {
+            "type": "string",
+            "description": "Matching operator. Not all operators are available for all fields. See \"/ipLoadbalancing/{serviceName}/availableRouteRules\"."
+        },
+        "Negate": {
+            "type": "boolean",
+            "description": "Invert the matching operator effect."
+        },
+        "Pattern": {
+            "type": "string",
+            "description": "Value to match against this match. Interpretation if this field depends on the match and field."
+        },
+        "RouteId": {
+            "type": "string",
+            "description": "The route to apply this rule."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
+        },
+        "SubField": {
+            "type": "string",
+            "description": "Name of sub-field, if applicable. This may be a Cookie or Header name for instance."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Field",
+        "Match",
+        "RouteId",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

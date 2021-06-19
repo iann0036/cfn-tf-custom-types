@@ -1,0 +1,130 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerGlobal",
+    "description": "Configure wireless controller global settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerGlobal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApLogServer": {
+            "type": "string",
+            "description": "Enable/disable configuring APs or FortiAPs to send log messages to a syslog server (default = disable). Valid values: `enable`, `disable`."
+        },
+        "ApLogServerIp": {
+            "type": "string",
+            "description": "IP address that APs or FortiAPs send log messages to."
+        },
+        "ApLogServerPort": {
+            "type": "number",
+            "description": "Port that APs or FortiAPs send log messages to."
+        },
+        "ControlMessageOffload": {
+            "type": "string",
+            "description": "Configure CAPWAP control message data channel offload."
+        },
+        "DataEthernetIi": {
+            "type": "string"
+        },
+        "DiscoveryMcAddr": {
+            "type": "string",
+            "description": "Multicast IP address for AP discovery (default = 244.0.1.140)."
+        },
+        "FiappEthType": {
+            "type": "number",
+            "description": "Ethernet type for Fortinet Inter-Access Point Protocol (IAPP), or IEEE 802.11f, packets (0 - 65535, default = 5252)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageDownload": {
+            "type": "string",
+            "description": "Enable/disable WTP image download at join time. Valid values: `enable`, `disable`."
+        },
+        "IpsecBaseIp": {
+            "type": "string",
+            "description": "Base IP address for IPsec VPN tunnels between the access points and the wireless controller (default = 169.254.0.1)."
+        },
+        "LinkAggregation": {
+            "type": "string",
+            "description": "Enable/disable calculating the CAPWAP transmit hash to load balance sessions to link aggregation nodes (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Description of the location of the wireless controller."
+        },
+        "MaxClients": {
+            "type": "number",
+            "description": "Maximum number of clients that can connect simultaneously (default = 0, meaning no limitation)."
+        },
+        "MaxRetransmit": {
+            "type": "number",
+            "description": "Maximum number of tunnel packet retransmissions (0 - 64, default = 3)."
+        },
+        "MeshEthType": {
+            "type": "number",
+            "description": "Mesh Ethernet identifier included in backhaul packets (0 - 65535, default = 8755)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the wireless controller."
+        },
+        "RogueScanMacAdjacency": {
+            "type": "number",
+            "description": "Maximum numerical difference between an AP's Ethernet and wireless MAC values to match for rogue detection (0 - 31, default = 7)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WtpShare": {
+            "type": "string",
+            "description": "Enable/disable sharing of WTPs between VDOMs. Valid values: `enable`, `disable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

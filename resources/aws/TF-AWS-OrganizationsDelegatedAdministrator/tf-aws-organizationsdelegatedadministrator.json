@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::AWS::OrganizationsDelegatedAdministrator",
+    "description": "Provides a resource to manage an [AWS Organizations Delegated Administrator](https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-OrganizationsDelegatedAdministrator/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The account ID number of the member account in the organization to register as a delegated administrator."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DelegationEnabledDate": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JoinedMethod": {
+            "type": "string"
+        },
+        "JoinedTimestamp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ServicePrincipal": {
+            "type": "string",
+            "description": "The service principal of the AWS service for which you want to make the member account a delegated administrator."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "ServicePrincipal"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DelegationEnabledDate",
+        "/properties/Email",
+        "/properties/Id",
+        "/properties/JoinedMethod",
+        "/properties/JoinedTimestamp",
+        "/properties/Name",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Aviatrix::VgwConn",
+    "description": "The **aviatrix_vgw_conn** resource manages the connection between the Aviatrix transit gateway and AWS VGW for purposes of Transit Network.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-VgwConn/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BgpLocalAsNum": {
+            "type": "string"
+        },
+        "BgpVgwAccount": {
+            "type": "string"
+        },
+        "BgpVgwId": {
+            "type": "string"
+        },
+        "BgpVgwRegion": {
+            "type": "string"
+        },
+        "ConnName": {
+            "type": "string"
+        },
+        "EnableEventTriggeredHa": {
+            "type": "boolean"
+        },
+        "EnableLearnedCidrsApproval": {
+            "type": "boolean"
+        },
+        "GwName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManualBgpAdvertisedCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BgpLocalAsNum",
+        "BgpVgwAccount",
+        "BgpVgwId",
+        "BgpVgwRegion",
+        "ConnName",
+        "GwName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

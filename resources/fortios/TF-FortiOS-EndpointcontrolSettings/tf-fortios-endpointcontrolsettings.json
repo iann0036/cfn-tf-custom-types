@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::FortiOS::EndpointcontrolSettings",
+    "description": "Configure endpoint control settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-EndpointcontrolSettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DownloadCustomLink": {
+            "type": "string",
+            "description": "Customized URL for downloading FortiClient."
+        },
+        "DownloadLocation": {
+            "type": "string",
+            "description": "FortiClient download location (FortiGuard or custom). Valid values: `fortiguard`, `custom`."
+        },
+        "ForticlientAvdbUpdateInterval": {
+            "type": "number",
+            "description": "Period of time between FortiClient AntiVirus database updates (0 - 24 hours, default = 8)."
+        },
+        "ForticlientDeregUnsupportedClient": {
+            "type": "string",
+            "description": "Enable/disable deregistering unsupported FortiClient endpoints. Valid values: `enable`, `disable`."
+        },
+        "ForticlientDisconnectUnsupportedClient": {
+            "type": "string",
+            "description": "Enable/disable disconnecting of unsupported FortiClient endpoints. Valid values: `enable`, `disable`."
+        },
+        "ForticlientEmsRestApiCallTimeout": {
+            "type": "number",
+            "description": "FortiClient EMS call timeout in milliseconds (500 - 30000 milliseconds, default = 5000)."
+        },
+        "ForticlientKeepaliveInterval": {
+            "type": "number",
+            "description": "Interval between two KeepAlive messages from FortiClient (20 - 300 sec, default = 60)."
+        },
+        "ForticlientOfflineGrace": {
+            "type": "string",
+            "description": "Enable/disable grace period for offline registered clients. Valid values: `enable`, `disable`."
+        },
+        "ForticlientOfflineGraceInterval": {
+            "type": "number",
+            "description": "Grace period for offline registered FortiClient (60 - 600 sec, default = 120)."
+        },
+        "ForticlientRegKey": {
+            "type": "string",
+            "description": "FortiClient registration key."
+        },
+        "ForticlientRegKeyEnforce": {
+            "type": "string",
+            "description": "Enable/disable requiring or enforcing FortiClient registration keys. Valid values: `enable`, `disable`."
+        },
+        "ForticlientRegTimeout": {
+            "type": "number",
+            "description": "FortiClient registration license timeout (days, min = 1, max = 180, 0 means unlimited)."
+        },
+        "ForticlientSysUpdateInterval": {
+            "type": "number",
+            "description": "Interval between two system update messages from FortiClient (30 - 1440 min, default = 720)."
+        },
+        "ForticlientUserAvatar": {
+            "type": "string",
+            "description": "Enable/disable uploading FortiClient user avatars. Valid values: `enable`, `disable`."
+        },
+        "ForticlientWarningInterval": {
+            "type": "number",
+            "description": "Period of time between FortiClient portal warnings (0 - 24 hours, default = 1)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ForticlientRegKey"
+    ]
+}

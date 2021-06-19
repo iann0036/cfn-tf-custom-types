@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::MongoDBAtlas::PrivateEndpointInterfaceLink",
+    "description": "`mongodbatlas_private_endpoint_interface_link` provides a Private Endpoint Interface Link resource. This represents a Private Endpoint Interface Link, which adds one interface endpoint to a private endpoint connection in an Atlas project.\n\n!> **WARNING:** This resource is deprecated and will be removed in the next major version\n                Please transition to privatelink_endpoint_service as soon as possible. [PrivateLink Endpoints] (https://docs.atlas.mongodb.com/reference/api/private-endpoints-endpoint-create-one/)\n\n~> **IMPORTANT:**You must have one of the following roles to successfully handle the resource:\n  * Organization Owner\n  * Project Owner\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find group_id in the official documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-PrivateEndpointInterfaceLink/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionStatus": {
+            "type": "string"
+        },
+        "DeleteRequested": {
+            "type": "boolean"
+        },
+        "ErrorMessage": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterfaceEndpointId": {
+            "type": "string",
+            "description": "Unique identifier of the interface endpoint you created in your VPC with the AWS resource."
+        },
+        "PrivateLinkId": {
+            "type": "string",
+            "description": "Unique identifier of the AWS PrivateLink connection which is created by `mongodbatlas_private_endpoint` resource."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "Unique identifier for the project."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InterfaceEndpointId",
+        "PrivateLinkId",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectionStatus",
+        "/properties/DeleteRequested",
+        "/properties/ErrorMessage",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

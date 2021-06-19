@@ -1,0 +1,153 @@
+{
+    "typeName": "TF::Fastly::TlsSubscription",
+    "description": "Enables TLS on a domain using a certificate managed by Fastly.\n\nDNS records need to be modified on the domain being secured, in order to respond to the ACME domain ownership challenge.\n\nThere are two options for doing this: the `managed_dns_challenge`, which is the default method; and the `managed_http_challenges`, which points production traffic to Fastly.\n\n~> See the [Fastly documentation](https://docs.fastly.com/en/guides/serving-https-traffic-using-fastly-managed-certificates#verifying-domain-ownership) for more information on verifying domain ownership.\n\nThe example below demonstrates usage with AWS Route53 to configure DNS, and the `fastly_tls_subscription_validation` resource to wait for validation to complete.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-TlsSubscription/docs/README.md",
+    "definitions": {
+        "ManagedDnsChallengeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ManagedHttpChallengesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordName": {
+                    "type": "string"
+                },
+                "RecordType": {
+                    "type": "string"
+                },
+                "RecordValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateAuthority": {
+            "type": "string",
+            "description": "The entity that issues and certifies the TLS certificates for your subscription. Valid values are `lets-encrypt` or `globalsign`."
+        },
+        "CommonName": {
+            "type": "string"
+        },
+        "ConfigurationId": {
+            "type": "string",
+            "description": "The ID of the set of TLS configuration options that apply to the enabled domains on this subscription."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of domains on which to enable TLS."
+        },
+        "ForceDestroy": {
+            "type": "boolean",
+            "description": "Always delete subscription, even when active domains are present. Defaults to false."
+        },
+        "ForceUpdate": {
+            "type": "boolean",
+            "description": "Always update subscription, even when active domains are present. Defaults to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManagedDnsChallenge": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedDnsChallengeDefinition"
+            }
+        },
+        "ManagedHttpChallenges": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedHttpChallengesDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateAuthority",
+        "Domains"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/ManagedDnsChallenge",
+        "/properties/ManagedHttpChallenges",
+        "/properties/State",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

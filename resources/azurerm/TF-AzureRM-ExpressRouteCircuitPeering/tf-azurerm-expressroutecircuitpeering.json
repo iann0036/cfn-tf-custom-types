@@ -1,0 +1,235 @@
+{
+    "typeName": "TF::AzureRM::ExpressRouteCircuitPeering",
+    "description": "Manages an ExpressRoute Circuit Peering.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ExpressRouteCircuitPeering/docs/README.md",
+    "definitions": {
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PrimaryPeerAddressPrefix": {
+                    "type": "string",
+                    "description": "A subnet for the primary link."
+                },
+                "RouteFilterId": {
+                    "type": "string",
+                    "description": "The ID of the Route Filter. Only available when `peering_type` is set to `MicrosoftPeering`."
+                },
+                "SecondaryPeerAddressPrefix": {
+                    "type": "string",
+                    "description": "A subnet for the secondary link."
+                },
+                "MicrosoftPeering": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MicrosoftPeeringDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "PrimaryPeerAddressPrefix",
+                "SecondaryPeerAddressPrefix"
+            ]
+        },
+        "MicrosoftPeeringConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertisedPublicPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Advertised Public Prefixes."
+                },
+                "CustomerAsn": {
+                    "type": "number",
+                    "description": "The CustomerASN of the peering."
+                },
+                "RoutingRegistryName": {
+                    "type": "string",
+                    "description": "The Routing Registry against which the AS number and prefixes are registered.  For example:  `ARIN`, `RIPE`, `AFRINIC` etc."
+                }
+            },
+            "required": [
+                "AdvertisedPublicPrefixes"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MicrosoftPeeringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertisedPublicPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Advertised Public Prefixes."
+                },
+                "CustomerAsn": {
+                    "type": "number",
+                    "description": "The CustomerASN of the peering."
+                },
+                "RoutingRegistryName": {
+                    "type": "string",
+                    "description": "The Routing Registry against which the AS number and prefixes are registered. For example:  `ARIN`, `RIPE`, `AFRINIC` etc."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AzureAsn": {
+            "type": "number"
+        },
+        "ExpressRouteCircuitName": {
+            "type": "string",
+            "description": "The name of the ExpressRoute Circuit in which to create the Peering."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerAsn": {
+            "type": "number",
+            "description": "The Either a 16-bit or a 32-bit ASN. Can either be public or private."
+        },
+        "PeeringType": {
+            "type": "string",
+            "description": "The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`. Changing this forces a new resource to be created."
+        },
+        "PrimaryAzurePort": {
+            "type": "string"
+        },
+        "PrimaryPeerAddressPrefix": {
+            "type": "string",
+            "description": "A `/30` subnet for the primary link."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Express Route Circuit Peering. Changing this forces a new resource to be created."
+        },
+        "RouteFilterId": {
+            "type": "string",
+            "description": "The ID of the Route Filter. Only available when `peering_type` is set to `MicrosoftPeering`."
+        },
+        "SecondaryAzurePort": {
+            "type": "string"
+        },
+        "SecondaryPeerAddressPrefix": {
+            "type": "string",
+            "description": "A `/30` subnet for the secondary link."
+        },
+        "SharedKey": {
+            "type": "string",
+            "description": "The shared key. Can be a maximum of 25 characters."
+        },
+        "VlanId": {
+            "type": "number",
+            "description": "A valid VLAN ID to establish this peering on."
+        },
+        "Ipv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6Definition"
+            },
+            "maxItems": 1
+        },
+        "MicrosoftPeeringConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MicrosoftPeeringConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExpressRouteCircuitName",
+        "PeeringType",
+        "PrimaryPeerAddressPrefix",
+        "ResourceGroupName",
+        "SecondaryPeerAddressPrefix",
+        "VlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AzureAsn",
+        "/properties/Id",
+        "/properties/PrimaryAzurePort",
+        "/properties/SecondaryAzurePort"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SharedKey"
+    ]
+}

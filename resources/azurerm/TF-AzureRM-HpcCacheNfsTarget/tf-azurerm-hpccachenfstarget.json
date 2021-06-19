@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::AzureRM::HpcCacheNfsTarget",
+    "description": "Manages a NFS Target within a HPC Cache.\n\n~> **NOTE:**: By request of the service team the provider no longer automatically registering the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace 'Microsoft.StorageCache'`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-HpcCacheNfsTarget/docs/README.md",
+    "definitions": {
+        "NamespaceJunctionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessPolicyName": {
+                    "type": "string",
+                    "description": "The name of the access policy applied to this target. Defaults to `default`."
+                },
+                "NamespacePath": {
+                    "type": "string",
+                    "description": "The client-facing file path of this NFS target within the HPC Cache NFS Target."
+                },
+                "NfsExport": {
+                    "type": "string",
+                    "description": "The NFS export of this NFS target within the HPC Cache NFS Target."
+                },
+                "TargetPath": {
+                    "type": "string",
+                    "description": "The relative subdirectory path from the `nfs_export` to map to the `namespace_path`. Defaults to `\"\"`, in which case the whole `nfs_export` is exported."
+                }
+            },
+            "required": [
+                "NamespacePath",
+                "NfsExport"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheName": {
+            "type": "string",
+            "description": "The name HPC Cache, which the HPC Cache NFS Target will be added to. Changing this forces a new resource to be created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the HPC Cache NFS Target. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the HPC Cache NFS Target. Changing this forces a new resource to be created."
+        },
+        "TargetHostName": {
+            "type": "string",
+            "description": "The IP address or fully qualified domain name (FQDN) of the HPC Cache NFS target. Changing this forces a new resource to be created."
+        },
+        "UsageModel": {
+            "type": "string",
+            "description": "The type of usage of the HPC Cache NFS Target. Possible values are: `READ_HEAVY_INFREQ`, `READ_HEAVY_CHECK_180`, `WRITE_WORKLOAD_15`, `WRITE_AROUND`, `WRITE_WORKLOAD_CHECK_30`, `WRITE_WORKLOAD_CHECK_60` and `WRITE_WORKLOAD_CLOUDWS`."
+        },
+        "NamespaceJunction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NamespaceJunctionDefinition"
+            },
+            "maxItems": 10,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CacheName",
+        "Name",
+        "ResourceGroupName",
+        "TargetHostName",
+        "UsageModel"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

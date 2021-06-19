@@ -1,0 +1,261 @@
+{
+    "typeName": "TF::Aviatrix::Site2cloud",
+    "description": "The **aviatrix_site2cloud** resource creates and manages Aviatrix-created Site2Cloud connections.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Site2cloud/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupGatewayName": {
+            "type": "string"
+        },
+        "BackupLocalTunnelIp": {
+            "type": "string"
+        },
+        "BackupPreSharedKey": {
+            "type": "string"
+        },
+        "BackupRemoteGatewayIp": {
+            "type": "string"
+        },
+        "BackupRemoteGatewayLatitude": {
+            "type": "number"
+        },
+        "BackupRemoteGatewayLongitude": {
+            "type": "number"
+        },
+        "BackupRemoteTunnelIp": {
+            "type": "string"
+        },
+        "ConnectionName": {
+            "type": "string"
+        },
+        "ConnectionType": {
+            "type": "string"
+        },
+        "CustomAlgorithms": {
+            "type": "boolean"
+        },
+        "CustomMapped": {
+            "type": "boolean"
+        },
+        "EnableActiveActive": {
+            "type": "boolean"
+        },
+        "EnableDeadPeerDetection": {
+            "type": "boolean"
+        },
+        "EnableEventTriggeredHa": {
+            "type": "boolean"
+        },
+        "EnableIkev2": {
+            "type": "boolean"
+        },
+        "EnableSingleIpHa": {
+            "type": "boolean"
+        },
+        "ForwardTrafficToTransit": {
+            "type": "boolean"
+        },
+        "HaEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalDestinationRealCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LocalDestinationVirtualCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LocalSourceRealCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LocalSourceVirtualCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LocalSubnetCidr": {
+            "type": "string"
+        },
+        "LocalSubnetVirtual": {
+            "type": "string"
+        },
+        "LocalTunnelIp": {
+            "type": "string"
+        },
+        "Phase1RemoteIdentifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Phase1Authentication": {
+            "type": "string"
+        },
+        "Phase1DhGroups": {
+            "type": "string"
+        },
+        "Phase1Encryption": {
+            "type": "string"
+        },
+        "Phase2Authentication": {
+            "type": "string"
+        },
+        "Phase2DhGroups": {
+            "type": "string"
+        },
+        "Phase2Encryption": {
+            "type": "string"
+        },
+        "PreSharedKey": {
+            "type": "string"
+        },
+        "PrimaryCloudGatewayName": {
+            "type": "string"
+        },
+        "PrivateRouteEncryption": {
+            "type": "boolean"
+        },
+        "RemoteDestinationRealCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RemoteDestinationVirtualCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RemoteGatewayIp": {
+            "type": "string"
+        },
+        "RemoteGatewayLatitude": {
+            "type": "number"
+        },
+        "RemoteGatewayLongitude": {
+            "type": "number"
+        },
+        "RemoteGatewayType": {
+            "type": "string"
+        },
+        "RemoteSourceRealCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RemoteSourceVirtualCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RemoteSubnetCidr": {
+            "type": "string"
+        },
+        "RemoteSubnetVirtual": {
+            "type": "string"
+        },
+        "RemoteTunnelIp": {
+            "type": "string"
+        },
+        "RouteTableList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SslServerPool": {
+            "type": "string"
+        },
+        "TunnelType": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionName",
+        "ConnectionType",
+        "PrimaryCloudGatewayName",
+        "RemoteGatewayIp",
+        "RemoteGatewayType",
+        "TunnelType",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BackupPreSharedKey",
+        "/properties/PreSharedKey"
+    ]
+}

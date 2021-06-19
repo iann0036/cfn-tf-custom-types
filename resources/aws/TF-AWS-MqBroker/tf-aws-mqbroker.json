@@ -1,0 +1,380 @@
+{
+    "typeName": "TF::AWS::MqBroker",
+    "description": "Provides an Amazon MQ broker resource. This resources also manages users for the broker.\n\n-> For more information on Amazon MQ, see [Amazon MQ documentation](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html).\n\n~> **NOTE:** Amazon MQ currently places limits on **RabbitMQ** brokers. For example, a RabbitMQ broker cannot have: instances with an associated IP address of an ENI attached to the broker, an associated LDAP server to authenticate and authorize broker connections, storage type `EFS`, audit logging, or `configuration` blocks. Although this resource allows you to create RabbitMQ users, RabbitMQ users cannot have console access or groups. Also, Amazon MQ does not return information about RabbitMQ users so drift detection is not possible.\n\n~> **NOTE:** Changes to an MQ Broker can occur when you change a parameter, such as `configuration` or `user`, and are reflected in the next maintenance window. Because of this, Terraform may report a difference in its planning phase because ...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-MqBroker/docs/README.md",
+    "definitions": {
+        "InstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsoleUrl": {
+                    "type": "string"
+                },
+                "Endpoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EncryptionOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "UseAwsOwnedKey": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "LdapServerMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hosts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RoleBase": {
+                    "type": "string"
+                },
+                "RoleName": {
+                    "type": "string"
+                },
+                "RoleSearchMatching": {
+                    "type": "string"
+                },
+                "RoleSearchSubtree": {
+                    "type": "boolean"
+                },
+                "ServiceAccountPassword": {
+                    "type": "string"
+                },
+                "ServiceAccountUsername": {
+                    "type": "string"
+                },
+                "UserBase": {
+                    "type": "string"
+                },
+                "UserRoleName": {
+                    "type": "string"
+                },
+                "UserSearchMatching": {
+                    "type": "string"
+                },
+                "UserSearchSubtree": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "LogsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audit": {
+                    "type": "string"
+                },
+                "General": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "MaintenanceWindowStartTimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "TimeOfDay": {
+                    "type": "string"
+                },
+                "TimeZone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DayOfWeek",
+                "TimeOfDay",
+                "TimeZone"
+            ]
+        },
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsoleAccess": {
+                    "type": "boolean"
+                },
+                "Groups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean",
+            "description": "Specifies whether any broker modifications are applied immediately, or during the next maintenance window. Default is `false`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AuthenticationStrategy": {
+            "type": "string",
+            "description": "Authentication strategy used to secure the broker. Valid values are `simple` and `ldap`. `ldap` is not supported for `engine_type` `RabbitMQ`."
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean",
+            "description": "Whether to automatically upgrade to new minor versions of brokers as Amazon MQ makes releases available."
+        },
+        "BrokerName": {
+            "type": "string",
+            "description": "Name of the broker."
+        },
+        "DeploymentMode": {
+            "type": "string",
+            "description": "Deployment mode of the broker. Valid values are `SINGLE_INSTANCE`, `ACTIVE_STANDBY_MULTI_AZ`, and `CLUSTER_MULTI_AZ`. Default is `SINGLE_INSTANCE`."
+        },
+        "EngineType": {
+            "type": "string",
+            "description": "Type of broker engine. Valid values are `ActiveMQ` and `RabbitMQ`."
+        },
+        "EngineVersion": {
+            "type": "string",
+            "description": "Version of the broker engine. See the [AmazonMQ Broker Engine docs](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html) for supported versions. For example, `5.15.0`."
+        },
+        "HostInstanceType": {
+            "type": "string",
+            "description": "Broker's instance type. For example, `mq.t3.micro`, `mq.m5.large`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstancesDefinition"
+            }
+        },
+        "PubliclyAccessible": {
+            "type": "boolean",
+            "description": "Whether to enable connections from applications outside of the VPC that hosts the broker's subnets."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of security group IDs assigned to the broker."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "Storage type of the broker. For `engine_type` `ActiveMQ`, the valid values are `efs` and `ebs`, and the AWS-default is `efs`. For `engine_type` `RabbitMQ`, only `ebs` is supported. When using `ebs`, only the `mq.m5` broker instance type family is supported."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of subnet IDs in which to launch the broker. A `SINGLE_INSTANCE` deployment requires one subnet. An `ACTIVE_STANDBY_MULTI_AZ` deployment requires multiple subnets."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the broker. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Configuration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "EncryptionOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "LdapServerMetadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LdapServerMetadataDefinition"
+            },
+            "maxItems": 1
+        },
+        "Logs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogsDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenanceWindowStartTime": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowStartTimeDefinition"
+            },
+            "maxItems": 1
+        },
+        "User": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BrokerName",
+        "EngineType",
+        "EngineVersion",
+        "HostInstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Instances"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/LdapServerMetadataDefinition/ServiceAccountPassword",
+        "/definitions/UserDefinition/Password"
+    ]
+}

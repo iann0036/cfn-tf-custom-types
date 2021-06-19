@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::MongoDBAtlas::ThirdPartyIntegration",
+    "description": "`mongodbatlas_third_party_integration` Provides a Third-Party Integration Settings for the given type.\n\n-> **NOTE:** Groups and projects are synonymous terms. You may find `groupId` in the official documentation.\n\n-> **NOTE:** Slack integrations now use the OAuth2 verification method and must be initially configured, or updated from a legacy integration, through the Atlas third-party service integrations page. Legacy tokens will soon no longer be supported.[Read more about slack setup](https://docs.atlas.mongodb.com/tutorial/third-party-service-integrations/)\n\n~> **IMPORTANT** Each project can only have one configuration per {INTEGRATION-TYPE}.\n\n~> **IMPORTANT:** All arguments including the secrets will be stored in the raw state as plain-text. [Read more about sensitive data in state.](https://www.terraform.io/docs/state/sensitive-data.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mongodbatlas/TF-MongoDBAtlas-ThirdPartyIntegration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "Unique identifier of your New Relic account.\n* `write_token` - Your Insights Insert Key.\n* `read_token`  - Your Insights Query Key."
+        },
+        "ApiKey": {
+            "type": "string",
+            "description": "Your API Key.\n* `routing_key` - An optional field for your Routing Key."
+        },
+        "ApiToken": {
+            "type": "string",
+            "description": "Your API Token.\n* `org_name` - Your Flowdock organization name."
+        },
+        "ChannelName": {
+            "type": "string"
+        },
+        "FlowName": {
+            "type": "string",
+            "description": "Your Flowdock Flow name.\n* `api_token` - Your API Token.\n* `org_name` - Your Flowdock organization name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseKey": {
+            "type": "string",
+            "description": "Your License Key.\n* `account_id`  - Unique identifier of your New Relic account.\n* `write_token` - Your Insights Insert Key.\n* `read_token`  - Your Insights Query Key."
+        },
+        "OrgName": {
+            "type": "string",
+            "description": "Your Flowdock organization name."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The unique ID for the project to get all Third-Party service integrations."
+        },
+        "ReadToken": {
+            "type": "string",
+            "description": "Your Insights Query Key."
+        },
+        "Region": {
+            "type": "string",
+            "description": "Indicates which API URL to use, either US or EU. Opsgenie will use US by default."
+        },
+        "RoutingKey": {
+            "type": "string",
+            "description": "An optional field for your Routing Key."
+        },
+        "Secret": {
+            "type": "string",
+            "description": "An optional field for your webhook secret."
+        },
+        "ServiceKey": {
+            "type": "string",
+            "description": "Your Service Key."
+        },
+        "TeamName": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Third-Party Integration Settings type\n* PAGER_DUTY\n* DATADOG\n* NEW_RELIC\n* OPS_GENIE\n* VICTOR_OPS\n* FLOWDOCK\n* WEBHOOK."
+        },
+        "Url": {
+            "type": "string",
+            "description": "Your webhook URL.\n* `secret` - An optional field for your webhook secret."
+        },
+        "WriteToken": {
+            "type": "string",
+            "description": "Your Insights Insert Key.\n* `read_token`  - Your Insights Query Key."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey",
+        "/properties/ApiToken",
+        "/properties/LicenseKey",
+        "/properties/ReadToken",
+        "/properties/RoutingKey",
+        "/properties/Secret",
+        "/properties/ServiceKey",
+        "/properties/WriteToken"
+    ]
+}

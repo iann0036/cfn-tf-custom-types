@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::UpCloud::FirewallRules",
+    "description": "CloudFormation equivalent of upcloud_firewall_rules",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/upcloud/TF-UpCloud-FirewallRules/docs/README.md",
+    "definitions": {
+        "FirewallRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DestinationAddressEnd": {
+                    "type": "string"
+                },
+                "DestinationAddressStart": {
+                    "type": "string"
+                },
+                "DestinationPortEnd": {
+                    "type": "number"
+                },
+                "DestinationPortStart": {
+                    "type": "number"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Family": {
+                    "type": "string"
+                },
+                "IcmpType": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourceAddressEnd": {
+                    "type": "string"
+                },
+                "SourceAddressStart": {
+                    "type": "string"
+                },
+                "SourcePortEnd": {
+                    "type": "number"
+                },
+                "SourcePortStart": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Action",
+                "Direction",
+                "Family"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerId": {
+            "type": "string"
+        },
+        "FirewallRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallRuleDefinition"
+            },
+            "maxItems": 1000,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

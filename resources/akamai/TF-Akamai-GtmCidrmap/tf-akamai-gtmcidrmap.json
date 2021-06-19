@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::Akamai::GtmCidrmap",
+    "description": "Use the `akamai_gtm_cidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).\n\n CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property\u2019s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined. \n \n~> **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmCidrmap/docs/README.md",
+    "definitions": {
+        "AssignmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Blocks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "Nickname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatacenterId",
+                "Nickname"
+            ]
+        },
+        "DefaultDatacenterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatacenterId": {
+                    "type": "number"
+                },
+                "Nickname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DatacenterId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        },
+        "Assignment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AssignmentDefinition"
+            }
+        },
+        "DefaultDatacenter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultDatacenterDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

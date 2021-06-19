@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::MSO::SchemaSiteServiceGraphNode",
+    "description": "CloudFormation equivalent of mso_schema_site_service_graph_node",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/mso/TF-MSO-SchemaSiteServiceGraphNode/docs/README.md",
+    "definitions": {
+        "SiteNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeName": {
+                    "type": "string"
+                },
+                "SiteId": {
+                    "type": "string"
+                },
+                "TenantName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SchemaId": {
+            "type": "string"
+        },
+        "ServiceGraphName": {
+            "type": "string"
+        },
+        "ServiceNodeType": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "SiteNodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SiteNodesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SchemaId",
+        "ServiceGraphName",
+        "ServiceNodeType",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Vault::IdentityGroup",
+    "description": "Creates an Identity Group for Vault. The [Identity secrets engine](https://www.vaultproject.io/docs/secrets/identity/index.html) is the identity management solution for Vault.\n\nA group can contain multiple entities as its members. A group can also have subgroups. Policies set on the group is granted to all members of the group. During request time, when the token's entity ID is being evaluated for the policies that it has access to; along with the policies on the entity itself, policies that are inherited due to group memberships are also granted.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-IdentityGroup/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExternalMemberEntityIds": {
+            "type": "boolean",
+            "description": "`false` by default. If set to `true`, this resource will ignore any Entity IDs returned from Vault or specified in the resource. You can use [`vault_identity_group_member_entity_ids`](identity_group_member_entity_ids.html) to manage Entity IDs for this group in a decoupled manner."
+        },
+        "ExternalPolicies": {
+            "type": "boolean",
+            "description": "`false` by default. If set to `true`, this resource will ignore any policies returned from Vault or specified in the resource. You can use [`vault_identity_group_policies`](identity_group_policies.html) to manage policies for this group in a decoupled manner."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MemberEntityIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Entity IDs to be assigned as group members. Not allowed on `external` groups."
+        },
+        "MemberGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Group IDs to be assigned as group members. Not allowed on `external` groups."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "description": "A Map of additional metadata to associate with the group."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the identity group to create."
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of policies to apply to the group."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the group, internal or external. Defaults to `internal`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

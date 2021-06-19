@@ -1,0 +1,228 @@
+{
+    "typeName": "TF::PrismaCloud::RqlSearch",
+    "description": "Manage a RQL search on the Prisma Cloud Platform.\n\nNOTE:  Prisma Cloud does not currently support deleting RQL searches, so\n`terraform destroy` is a noop.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-RqlSearch/docs/README.md",
+    "definitions": {
+        "ConfigDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "StateId": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            }
+        },
+        "EventDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Account": {
+                    "type": "string"
+                },
+                "RegionApiIdentifier": {
+                    "type": "string"
+                },
+                "RegionId": {
+                    "type": "number"
+                }
+            }
+        },
+        "TimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Absolute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AbsoluteDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Relative": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RelativeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ToNow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ToNowDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AbsoluteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "RelativeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Amount": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Amount",
+                "Unit"
+            ]
+        },
+        "ToNowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Unit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudType": {
+            "type": "string"
+        },
+        "ConfigData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDataDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EventData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventDataDefinition"
+            }
+        },
+        "GroupBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Limit": {
+            "type": "number",
+            "description": "Limit rules (default: `10`)."
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Query": {
+            "type": "string",
+            "description": "The RQL query."
+        },
+        "SearchId": {
+            "type": "string"
+        },
+        "SearchType": {
+            "type": "string",
+            "description": "The search type.  Valid values are `config`\n(default) and `event`."
+        },
+        "TimeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRangeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Query"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudType",
+        "/properties/ConfigData",
+        "/properties/Description",
+        "/properties/EventData",
+        "/properties/GroupBy",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/SearchId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

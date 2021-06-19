@@ -1,0 +1,213 @@
+{
+    "typeName": "TF::OCI::OptimizerResourceAction",
+    "description": "This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.\n\nUpdates the resource action that corresponds to the specified OCID. \nUse this operation to implement the following actions:\n\n  * Postpone resource action\n  * Ignore resource action\n  * Reactivate resource action",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-OptimizerResourceAction/docs/README.md",
+    "definitions": {
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            }
+        },
+        "ExtendedMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            }
+        },
+        "CategoryId": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "CompartmentName": {
+            "type": "string"
+        },
+        "EstimatedCostSaving": {
+            "type": "number"
+        },
+        "ExtendedMetadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExtendedMetadataDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RecommendationId": {
+            "type": "string"
+        },
+        "ResourceActionId": {
+            "type": "string",
+            "description": "The unique OCID associated with the resource action."
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "ResourceType": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "(Updatable) The status of the resource action."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeStatusBegin": {
+            "type": "string"
+        },
+        "TimeStatusEnd": {
+            "type": "string",
+            "description": "(Updatable) The date and time the current status will change. The format is defined by RFC3339."
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceActionId",
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Action",
+        "/properties/CategoryId",
+        "/properties/CompartmentId",
+        "/properties/CompartmentName",
+        "/properties/EstimatedCostSaving",
+        "/properties/ExtendedMetadata",
+        "/properties/Id",
+        "/properties/Metadata",
+        "/properties/Name",
+        "/properties/RecommendationId",
+        "/properties/ResourceId",
+        "/properties/ResourceType",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeStatusBegin",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

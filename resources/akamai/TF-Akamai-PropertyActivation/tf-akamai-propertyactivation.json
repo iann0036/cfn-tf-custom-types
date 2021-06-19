@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::Akamai::PropertyActivation",
+    "description": "~> **Note** Version 1.0.0 of the Akamai Terraform Provider is now available for the Provisioning module. To upgrade to this version, you have to update this resource. See the [migration guide](../guides/1.0_migration.md) for details.\n\nThe `akamai_property_activation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.  \n\nBefore activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-PropertyActivation/docs/README.md",
+    "definitions": {
+        "RuleErrorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BehaviorName": {
+                    "type": "string"
+                },
+                "Detail": {
+                    "type": "string"
+                },
+                "ErrorLocation": {
+                    "type": "string"
+                },
+                "Instance": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RuleWarningsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BehaviorName": {
+                    "type": "string"
+                },
+                "Detail": {
+                    "type": "string"
+                },
+                "ErrorLocation": {
+                    "type": "string"
+                },
+                "Instance": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "number"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationId": {
+            "type": "string"
+        },
+        "AutoAcknowledgeRuleWarnings": {
+            "type": "boolean"
+        },
+        "Contact": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Errors": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "Property": {
+            "type": "string"
+        },
+        "PropertyId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Warnings": {
+            "type": "string"
+        },
+        "RuleErrors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleErrorsDefinition"
+            }
+        },
+        "RuleWarnings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleWarningsDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Contact",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Errors",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/Warnings"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

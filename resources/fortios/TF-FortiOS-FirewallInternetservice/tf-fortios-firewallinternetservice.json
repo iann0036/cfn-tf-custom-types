@@ -1,0 +1,111 @@
+{
+    "typeName": "TF::FortiOS::FirewallInternetservice",
+    "description": "Show Internet Service application.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallInternetservice/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Database": {
+            "type": "string",
+            "description": "Database name this Internet Service belongs to. Valid values: `isdb`, `irdb`."
+        },
+        "Direction": {
+            "type": "string",
+            "description": "How this service may be used in a firewall policy (source, destination or both). Valid values: `src`, `dst`, `both`."
+        },
+        "ExtraIpRangeNumber": {
+            "type": "number",
+            "description": "Extra number of IP ranges."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Internet Service ID."
+        },
+        "IconId": {
+            "type": "number",
+            "description": "Icon ID of Internet Service."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpNumber": {
+            "type": "number",
+            "description": "Total number of IP addresses."
+        },
+        "IpRangeNumber": {
+            "type": "number",
+            "description": "Total number of IP ranges."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Internet Service name."
+        },
+        "Obsolete": {
+            "type": "number",
+            "description": "Indicates whether the Internet Service can be used."
+        },
+        "Reputation": {
+            "type": "number",
+            "description": "Reputation level of the Internet Service."
+        },
+        "Singularity": {
+            "type": "number",
+            "description": "Singular level of the Internet Service."
+        },
+        "SldId": {
+            "type": "number",
+            "description": "Second Level Domain."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::CloudScale::FloatingIp",
+    "description": "Provides a cloudscale.ch Floating IP to represent a publicly-accessible static IP address or IP network that can be assigned to one of your cloudscale.ch servers. Floating IPs can be moved between servers. Possible use cases include: High-availability, non-disruptive maintenance, multiple IPs per server, or re-using the same IP after replacing a server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudscale/TF-CloudScale-FloatingIp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpVersion": {
+            "type": "number",
+            "description": "`4` or `6`, for an IPv4 or IPv6 address or network respectively."
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NextHop": {
+            "type": "string"
+        },
+        "PrefixLength": {
+            "type": "number",
+            "description": "If you want to assign an entire network instead of a single IP address to your server, you must specify the prefix length. Currently, there is only support for `ip_version=6` and `prefix_length=56`."
+        },
+        "RegionSlug": {
+            "type": "string",
+            "description": "You can specify a region slug. Options include `lpg` and `rma`."
+        },
+        "ReversePtr": {
+            "type": "string",
+            "description": "You can specify the PTR record (reverse DNS pointer) in case of a single Floating IP address."
+        },
+        "Server": {
+            "type": "string",
+            "description": "(Re-)Assign the Floating IP to this server (UUID)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "You can specify the type. Options include `regional` (default) and `global`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IpVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/Id",
+        "/properties/Network",
+        "/properties/NextHop"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

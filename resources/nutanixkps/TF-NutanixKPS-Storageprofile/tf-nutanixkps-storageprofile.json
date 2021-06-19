@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::NutanixKPS::Storageprofile",
+    "description": "CloudFormation equivalent of nutanixkps_storageprofile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nutanixkps/TF-NutanixKPS-Storageprofile/docs/README.md",
+    "definitions": {
+        "EbsStorageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "IopsPerGb": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IopsPerGb",
+                "Type"
+            ]
+        },
+        "NutanixVolumesConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataServicesIp": {
+                    "type": "string"
+                },
+                "DataServicesPort": {
+                    "type": "number"
+                },
+                "FlashMode": {
+                    "type": "boolean"
+                },
+                "PrismElementClusterPort": {
+                    "type": "number"
+                },
+                "PrismElementClusterVip": {
+                    "type": "string"
+                },
+                "PrismElementPassword": {
+                    "type": "string"
+                },
+                "PrismElementStorageContainerName": {
+                    "type": "string"
+                },
+                "PrismElementUsername": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DataServicesIp",
+                "PrismElementClusterVip",
+                "PrismElementPassword",
+                "PrismElementStorageContainerName",
+                "PrismElementUsername"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ServiceDomainId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "EbsStorageConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EbsStorageConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "NutanixVolumesConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NutanixVolumesConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IsDefault",
+        "Name",
+        "ServiceDomainId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/NutanixVolumesConfigDefinition/PrismElementPassword"
+    ]
+}

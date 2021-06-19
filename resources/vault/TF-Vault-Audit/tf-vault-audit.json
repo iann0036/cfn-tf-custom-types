@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Vault::Audit",
+    "description": "CloudFormation equivalent of vault_audit",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vault/TF-Vault-Audit/docs/README.md",
+    "definitions": {
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Human-friendly description of the audit device."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Specifies if the audit device is a local only. Local audit devices are not replicated nor (if a secondary) removed by replication."
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "description": "Configuration options to pass to the audit device itself."
+        },
+        "Path": {
+            "type": "string",
+            "description": "The path to mount the audit device. This defaults to the type."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the audit device, such as 'file'."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Options",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

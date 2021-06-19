@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::Amixr::OnCallShift",
+    "description": "CloudFormation equivalent of amixr_on_call_shift",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/amixr/TF-Amixr-OnCallShift/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ByDay": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ByMonth": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "ByMonthday": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Duration": {
+            "type": "number"
+        },
+        "Frequency": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number"
+        },
+        "Level": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RollingUsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "array",
+                "insertionOrder": true,
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "ScheduleId": {
+            "type": "string"
+        },
+        "Start": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WeekStart": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Duration",
+        "Name",
+        "ScheduleId",
+        "Start",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

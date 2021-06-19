@@ -1,0 +1,190 @@
+{
+    "typeName": "TF::AWS::XraySamplingRule",
+    "description": "Creates and manages an AWS XRay Sampling Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-XraySamplingRule/docs/README.md",
+    "definitions": {
+        "AttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Attributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AttributesDefinition"
+            },
+            "description": "Matches attributes derived from the request."
+        },
+        "FixedRate": {
+            "type": "number",
+            "description": "The percentage of matching requests to instrument, after the reservoir is exhausted."
+        },
+        "Host": {
+            "type": "string",
+            "description": "Matches the hostname from a request URL."
+        },
+        "HttpMethod": {
+            "type": "string",
+            "description": "Matches the HTTP method of a request."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the sampling rule."
+        },
+        "ReservoirSize": {
+            "type": "number",
+            "description": "A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively."
+        },
+        "ResourceArn": {
+            "type": "string",
+            "description": "Matches the ARN of the AWS resource on which the service runs."
+        },
+        "RuleName": {
+            "type": "string",
+            "description": "The name of the sampling rule."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "Matches the `name` that the service uses to identify itself in segments."
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "Matches the `origin` that the service uses to identify its type in segments."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value mapping of resource tags. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UrlPath": {
+            "type": "string",
+            "description": "Matches the path from a request URL."
+        },
+        "Version": {
+            "type": "number",
+            "description": "The version of the sampling rule format (`1` )."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FixedRate",
+        "Host",
+        "HttpMethod",
+        "Priority",
+        "ReservoirSize",
+        "ResourceArn",
+        "ServiceName",
+        "ServiceType",
+        "UrlPath",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

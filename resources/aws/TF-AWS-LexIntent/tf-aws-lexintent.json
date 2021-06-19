@@ -1,0 +1,435 @@
+{
+    "typeName": "TF::AWS::LexIntent",
+    "description": "Provides an Amazon Lex Intent resource. For more information see\n[Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LexIntent/docs/README.md",
+    "definitions": {
+        "ConclusionStatementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ConfirmationPromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxAttempts": {
+                    "type": "number"
+                },
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxAttempts"
+            ]
+        },
+        "DialogCodeHookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageVersion": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MessageVersion",
+                "Uri"
+            ]
+        },
+        "FollowUpPromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prompt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PromptDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "RejectionStatement": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RejectionStatementDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "FulfillmentActivityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "CodeHook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CodeHookDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RejectionStatementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SlotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "SampleUtterances": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SlotConstraint": {
+                    "type": "string"
+                },
+                "SlotType": {
+                    "type": "string"
+                },
+                "SlotTypeVersion": {
+                    "type": "string"
+                },
+                "ValueElicitationPrompt": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValueElicitationPromptDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "SlotConstraint",
+                "SlotType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MessageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "GroupNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Content",
+                "ContentType"
+            ]
+        },
+        "PromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxAttempts": {
+                    "type": "number"
+                },
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxAttempts"
+            ]
+        },
+        "CodeHookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageVersion": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MessageVersion",
+                "Uri"
+            ]
+        },
+        "ValueElicitationPromptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxAttempts": {
+                    "type": "number"
+                },
+                "ResponseCard": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MessageDefinition"
+                    },
+                    "maxItems": 15,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxAttempts"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Checksum": {
+            "type": "string"
+        },
+        "CreateVersion": {
+            "type": "boolean",
+            "description": "Determines if a new slot type version is created when the initial\nresource is created and on each update. Defaults to `false`."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the intent. Must be less than or equal to 200 characters in length."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the intent, not case sensitive. Must be less than or equal to 100 characters in length."
+        },
+        "ParentIntentSignature": {
+            "type": "string",
+            "description": "A unique identifier for the built-in intent to base this\nintent on. To find the signature for an intent, see\n[Standard Built-in Intents](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents)\nin the Alexa Skills Kit."
+        },
+        "SampleUtterances": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An array of utterances (strings) that a user might say to signal\nthe intent. For example, \"I want {PizzaSize} pizza\", \"Order {Quantity} {PizzaSize} pizzas\".\nIn each utterance, a slot name is enclosed in curly braces. Must have between 1 and 10 items in the list, and each item must be less than or equal to 200 characters in length."
+        },
+        "Version": {
+            "type": "string"
+        },
+        "ConclusionStatement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConclusionStatementDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConfirmationPrompt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfirmationPromptDefinition"
+            },
+            "maxItems": 1
+        },
+        "DialogCodeHook": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DialogCodeHookDefinition"
+            },
+            "maxItems": 1
+        },
+        "FollowUpPrompt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FollowUpPromptDefinition"
+            },
+            "maxItems": 1
+        },
+        "FulfillmentActivity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FulfillmentActivityDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RejectionStatement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RejectionStatementDefinition"
+            },
+            "maxItems": 1
+        },
+        "Slot": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SlotDefinition"
+            },
+            "maxItems": 100
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Checksum",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LastUpdatedDate",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

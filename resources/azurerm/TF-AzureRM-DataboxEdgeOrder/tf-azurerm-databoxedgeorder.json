@@ -1,0 +1,318 @@
+{
+    "typeName": "TF::AzureRM::DataboxEdgeOrder",
+    "description": "Manages a Databox Edge Order.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DataboxEdgeOrder/docs/README.md",
+    "definitions": {
+        "ReturnTrackingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CarrierName": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "TrackingId": {
+                    "type": "string"
+                },
+                "TrackingUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "ShipmentHistoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ShipmentHistoryDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ShipmentHistoryDefinition"
+                    }
+                },
+                "Comments": {
+                    "type": "string"
+                },
+                "LastUpdate": {
+                    "type": "string"
+                }
+            }
+        },
+        "ShipmentTrackingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CarrierName": {
+                    "type": "string"
+                },
+                "SerialNumber": {
+                    "type": "string"
+                },
+                "TrackingId": {
+                    "type": "string"
+                },
+                "TrackingUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition"
+                    }
+                },
+                "Comments": {
+                    "type": "string"
+                },
+                "Info": {
+                    "type": "string"
+                },
+                "LastUpdate": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContactDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CompanyName": {
+                    "type": "string"
+                },
+                "Emails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhoneNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CompanyName",
+                "Emails",
+                "Name",
+                "PhoneNumber"
+            ]
+        },
+        "ShipmentAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "City": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "PostalCode": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address",
+                "City",
+                "Country",
+                "PostalCode",
+                "State"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ReturnTracking": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ReturnTrackingDefinition"
+            }
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "ShipmentHistory": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ShipmentHistoryDefinition2"
+            }
+        },
+        "ShipmentTracking": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ShipmentTrackingDefinition"
+            }
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition2"
+            }
+        },
+        "Contact": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContactDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ShipmentAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShipmentAddressDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeviceName",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/ReturnTracking",
+        "/properties/SerialNumber",
+        "/properties/ShipmentHistory",
+        "/properties/ShipmentTracking",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

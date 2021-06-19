@@ -1,0 +1,206 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerSnmp",
+    "description": "Configure SNMP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerSnmp/docs/README.md",
+    "definitions": {
+        "CommunityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Community ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Community name."
+                },
+                "QueryV1Status": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v1 queries. Valid values: `enable`, `disable`."
+                },
+                "QueryV2cStatus": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v2c queries. Valid values: `enable`, `disable`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable this SNMP community. Valid values: `enable`, `disable`."
+                },
+                "TrapV1Status": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v1 traps. Valid values: `enable`, `disable`."
+                },
+                "TrapV2cStatus": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP v2c traps. Valid values: `enable`, `disable`."
+                },
+                "Hosts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthProto": {
+                    "type": "string",
+                    "description": "Authentication protocol. Valid values: `md5`, `sha`."
+                },
+                "AuthPwd": {
+                    "type": "string",
+                    "description": "Password for authentication protocol."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "SNMP User Name."
+                },
+                "NotifyHosts": {
+                    "type": "string",
+                    "description": "Configure SNMP User Notify Hosts."
+                },
+                "PrivProto": {
+                    "type": "string",
+                    "description": "Privacy (encryption) protocol. Valid values: `aes`, `des`, `aes256`, `aes256cisco`."
+                },
+                "PrivPwd": {
+                    "type": "string",
+                    "description": "Password for privacy (encryption) protocol."
+                },
+                "Queries": {
+                    "type": "string",
+                    "description": "Enable/disable SNMP queries for this user. Valid values: `enable`, `disable`."
+                },
+                "SecurityLevel": {
+                    "type": "string",
+                    "description": "Security level for message authentication and encryption. Valid values: `no-auth-no-priv`, `auth-no-priv`, `auth-priv`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "SNMP User Enable Valid values: `enable`, `disable`."
+                },
+                "TrapStatus": {
+                    "type": "string",
+                    "description": "Enable/disable traps for this SNMP user. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "HostsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Host entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IPv4 address of the SNMP manager (host)."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContactInfo": {
+            "type": "string",
+            "description": "Contact Information."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EngineId": {
+            "type": "string",
+            "description": "AC SNMP engineId string (maximum 24 characters)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TrapHighCpuThreshold": {
+            "type": "number",
+            "description": "CPU usage when trap is sent."
+        },
+        "TrapHighMemThreshold": {
+            "type": "number",
+            "description": "Memory usage when trap is sent."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Community": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CommunityDefinition"
+            }
+        },
+        "User": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/UserDefinition/AuthPwd",
+        "/definitions/UserDefinition/PrivPwd"
+    ]
+}

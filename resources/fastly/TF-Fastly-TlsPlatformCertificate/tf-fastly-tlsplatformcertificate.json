@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Fastly::TlsPlatformCertificate",
+    "description": "Uploads a TLS certificate to the Fastly Platform TLS service.\n\n-> Each TLS certificate **must** have its corresponding private key uploaded _prior_ to uploading the certificate. This\ncan be achieved in Terraform using [`depends_on`](https://www.terraform.io/docs/configuration/meta-arguments/depends_on.html)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fastly/TF-Fastly-TlsPlatformCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowUntrustedRoot": {
+            "type": "boolean"
+        },
+        "CertificateBody": {
+            "type": "string"
+        },
+        "ConfigurationId": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntermediatesBlob": {
+            "type": "string"
+        },
+        "NotAfter": {
+            "type": "string"
+        },
+        "NotBefore": {
+            "type": "string"
+        },
+        "Replace": {
+            "type": "boolean"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateBody",
+        "ConfigurationId",
+        "IntermediatesBlob"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Domains",
+        "/properties/Id",
+        "/properties/NotAfter",
+        "/properties/NotBefore",
+        "/properties/Replace",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

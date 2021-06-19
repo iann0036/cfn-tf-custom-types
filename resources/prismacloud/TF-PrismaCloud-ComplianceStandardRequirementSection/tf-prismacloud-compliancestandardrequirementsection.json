@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::PrismaCloud::ComplianceStandardRequirementSection",
+    "description": "Manage a compliance standard requirement section.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/prismacloud/TF-PrismaCloud-ComplianceStandardRequirementSection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatedPolicyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "CreatedOn": {
+            "type": "number"
+        },
+        "CsrId": {
+            "type": "string",
+            "description": "Compliance standard ID."
+        },
+        "CsrsId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LastModifiedOn": {
+            "type": "number"
+        },
+        "PoliciesAssignedCount": {
+            "type": "number"
+        },
+        "RequirementName": {
+            "type": "string"
+        },
+        "SectionId": {
+            "type": "string",
+            "description": "Compliance section ID."
+        },
+        "StandardName": {
+            "type": "string"
+        },
+        "SystemDefault": {
+            "type": "boolean"
+        },
+        "ViewOrder": {
+            "type": "number",
+            "description": "View order."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CsrId",
+        "SectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedPolicyIds",
+        "/properties/CreatedBy",
+        "/properties/CreatedOn",
+        "/properties/CsrsId",
+        "/properties/Id",
+        "/properties/LastModifiedBy",
+        "/properties/LastModifiedOn",
+        "/properties/PoliciesAssignedCount",
+        "/properties/RequirementName",
+        "/properties/StandardName",
+        "/properties/SystemDefault"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

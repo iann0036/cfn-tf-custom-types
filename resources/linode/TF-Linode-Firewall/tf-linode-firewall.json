@@ -1,0 +1,217 @@
+{
+    "typeName": "TF::Linode::Firewall",
+    "description": "Manages a Linode Firewall.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/linode/TF-Linode-Firewall/docs/README.md",
+    "definitions": {
+        "DevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntityId": {
+                    "type": "number"
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            }
+        },
+        "InboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Label",
+                "Protocol"
+            ]
+        },
+        "OutboundDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Label",
+                "Protocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Devices": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DevicesDefinition"
+            }
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "If `true`, the Firewall's rules are not enforced (defaults to `false`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundPolicy": {
+            "type": "string",
+            "description": "The default behavior for inbound traffic. This setting can be overridden by updating the inbound.action property of the Firewall Rule. (`ACCEPT`, `DROP`)."
+        },
+        "Label": {
+            "type": "string",
+            "description": "This Firewall's unique label."
+        },
+        "Linodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            },
+            "description": "A list of IDs of Linodes this Firewall should govern it's network traffic for."
+        },
+        "OutboundPolicy": {
+            "type": "string",
+            "description": "The default behavior for outbound traffic. This setting can be overridden by updating the outbound.action property for an individual Firewall Rule. (`ACCEPT`, `DROP`)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags applied to the Kubernetes cluster. Tags are for organizational purposes only."
+        },
+        "Inbound": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundDefinition"
+            }
+        },
+        "Outbound": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutboundDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InboundPolicy",
+        "Label",
+        "OutboundPolicy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Devices",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

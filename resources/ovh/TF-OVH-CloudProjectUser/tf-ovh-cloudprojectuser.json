@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::OVH::CloudProjectUser",
+    "description": "Creates a user in a public cloud project.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-CloudProjectUser/docs/README.md",
+    "definitions": {
+        "OpenstackRcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Permissions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description associated with the user."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OpenstackRc": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OpenstackRcDefinition"
+            }
+        },
+        "Password": {
+            "type": "string"
+        },
+        "RoleName": {
+            "type": "string",
+            "description": "The name of a role. See `role_names`."
+        },
+        "RoleNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of role names. Values can be:\n- administrator,\n- ai_training_operator\n- authentication\n- backup_operator\n- compute_operator\n- image_operator\n- infrastructure_supervisor\n- network_operator\n- network_security_operator\n- objectstore_operator\n- volume_operator."
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            }
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_CLOUD_PROJECT_SERVICE` environment variable is used."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/Id",
+        "/properties/Password",
+        "/properties/Roles",
+        "/properties/Status",
+        "/properties/Username"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::FortiOS::FirewallSslserver",
+    "description": "Configure SSL servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallSslserver/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddHeaderXForwardedProto": {
+            "type": "string",
+            "description": "Enable/disable adding an X-Forwarded-Proto header to forwarded requests. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IPv4 address of the SSL server."
+        },
+        "MappedPort": {
+            "type": "number",
+            "description": "Mapped server service port (1 - 65535, default = 80)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server name."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Server service port (1 - 65535, default = 443)."
+        },
+        "SslAlgorithm": {
+            "type": "string",
+            "description": "Relative strength of encryption algorithms accepted in negotiation. Valid values: `high`, `medium`, `low`."
+        },
+        "SslCert": {
+            "type": "string",
+            "description": "Name of certificate for SSL connections to this server (default = \"Fortinet_CA_SSL\")."
+        },
+        "SslClientRenegotiation": {
+            "type": "string",
+            "description": "Allow or block client renegotiation by server. Valid values: `allow`, `deny`, `secure`."
+        },
+        "SslDhBits": {
+            "type": "string",
+            "description": "Bit-size of Diffie-Hellman (DH) prime used in DHE-RSA negotiation (default = 2048). Valid values: `768`, `1024`, `1536`, `2048`."
+        },
+        "SslMaxVersion": {
+            "type": "string",
+            "description": "Highest SSL/TLS version to negotiate. Valid values: `tls-1.0`, `tls-1.1`, `tls-1.2`."
+        },
+        "SslMinVersion": {
+            "type": "string",
+            "description": "Lowest SSL/TLS version to negotiate. Valid values: `tls-1.0`, `tls-1.1`, `tls-1.2`."
+        },
+        "SslMode": {
+            "type": "string",
+            "description": "SSL/TLS mode for encryption and decryption of traffic. Valid values: `half`, `full`."
+        },
+        "SslSendEmptyFrags": {
+            "type": "string",
+            "description": "Enable/disable sending empty fragments to avoid attack on CBC IV. Valid values: `enable`, `disable`."
+        },
+        "UrlRewrite": {
+            "type": "string",
+            "description": "Enable/disable rewriting the URL. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Ip",
+        "Port",
+        "SslCert"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

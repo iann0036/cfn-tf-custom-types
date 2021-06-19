@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::TencentCloud::CfsFileSystem",
+    "description": "Provides a resource to create a cloud file system(CFS).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CfsFileSystem/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessGroupId": {
+            "type": "string",
+            "description": "ID of a access group."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The available zone that the file system locates at."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MountIp": {
+            "type": "string",
+            "description": "IP of mount point."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of a file system."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "File service protocol. Valid values are `NFS` and `CIFS`. and the default is `NFS`."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "File service StorageType. Valid values are `SD` and `HP`. and the default is `SD`."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "ID of a subnet."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Instance tags."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of a VPC network."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessGroupId",
+        "AvailabilityZone",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

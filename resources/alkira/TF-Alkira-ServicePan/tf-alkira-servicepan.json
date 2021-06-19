@@ -1,0 +1,188 @@
+{
+    "typeName": "TF::Alkira::ServicePan",
+    "description": "CloudFormation equivalent of alkira_service_pan",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-ServicePan/docs/README.md",
+    "definitions": {
+        "InstanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CredentialId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CredentialId",
+                "Name"
+            ]
+        },
+        "ZonesToGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Groups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SegmentName": {
+                    "type": "string"
+                },
+                "ZoneName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Groups",
+                "SegmentName",
+                "ZoneName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "CredentialId": {
+            "type": "string"
+        },
+        "Cxp": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string"
+        },
+        "ManagementSegment": {
+            "type": "string"
+        },
+        "MaxInstanceCount": {
+            "type": "number"
+        },
+        "MinInstanceCount": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PanoramaDeviceGroup": {
+            "type": "string"
+        },
+        "PanoramaEnabled": {
+            "type": "string"
+        },
+        "PanoramaIpAddress": {
+            "type": "string"
+        },
+        "PanoramaTemplate": {
+            "type": "string"
+        },
+        "Segments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServiceId": {
+            "type": "number"
+        },
+        "Size": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceDefinition"
+            },
+            "minItems": 1
+        },
+        "ZonesToGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ZonesToGroupsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cxp",
+        "LicenseType",
+        "ManagementSegment",
+        "Name",
+        "PanoramaEnabled",
+        "Segments",
+        "Size",
+        "Type",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ServiceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

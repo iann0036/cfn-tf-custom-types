@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::Okta::SamlIdpSigningKey",
+    "description": "CloudFormation equivalent of okta_saml_idp_signing_key",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-SamlIdpSigningKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "ExpiresAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kid": {
+            "type": "string"
+        },
+        "Kty": {
+            "type": "string"
+        },
+        "Use": {
+            "type": "string"
+        },
+        "X5c": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "X5tS256": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "X5c"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/ExpiresAt",
+        "/properties/Id",
+        "/properties/Kid",
+        "/properties/Kty",
+        "/properties/Use",
+        "/properties/X5tS256"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::Lacework::AlertChannelSplunk",
+    "description": "You can use this resource to enable Lacework to forward alerts to Splunk using an HTTP Event Collector.\n\nTo find more information see the [Lacework support documentation](https://support.lacework.com/hc/en-us/articles/360007889274-Splunk).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelSplunk/docs/README.md",
+    "definitions": {
+        "EventDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Source"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Channel": {
+            "type": "string",
+            "description": "The Splunk channel name."
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "HecToken": {
+            "type": "string",
+            "description": "The token you generate when you create a new HEC input."
+        },
+        "Host": {
+            "type": "string",
+            "description": "The hostname of the client from which you're sending data."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Port": {
+            "type": "number",
+            "description": "The destination port for forwarding events."
+        },
+        "Ssl": {
+            "type": "boolean",
+            "description": "Enable or Disable SSL."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "EventData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventDataDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HecToken",
+        "Host",
+        "Name",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

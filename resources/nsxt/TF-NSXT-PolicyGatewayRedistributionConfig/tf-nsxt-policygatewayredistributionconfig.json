@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::NSXT::PolicyGatewayRedistributionConfig",
+    "description": "This resource provides a method for the management of a Tier-0 Gateway Route Redistribution config. Note that this configuration can be defined only for Active-Standby Tier0 gateway.\n\nThis resource is applicable to NSX Global Manager and NSX Policy Manager.\n\n# Example Usage\n\n```hcl\nresource \"nsxt_policy_gateway_redistribution_config\" \"test\" {\n  gateway_path = data.nsxt_policy_tier0_gateway.gw1.path\n  bgp_enabled  = true\n  ospf_enabled = true\n\n  rule {\n    name  = \"test-rule-1\"\n    types = [\"TIER1_CONNECTED\", \"TIER1_LB_VIP\"]\n  }\n\n  rule {\n    name           = \"test-rule-2\"\n    types          = [\"TIER0_EVPN_TEP_IP\"]\n    route_map_path = nsxt_policy_gateway_route_map.map1.path\n  }\n}\n```\n\n# Global Manager Example Usage\n\n```hcl\nresource \"nsxt_policy_gateway_redistribution_config\" \"test\" {\n  gateway_path = data.nsxt_policy_tier0_gateway.gw1.path\n  site_path    = nsxt_policy_site.paris.path\n\n  bgp_enabled = true\n\n  rule {\n    name  = \"test-rule-1\"\n    types = [\"TIER1_CONNECTED\", \"TIER1_LB_VIP\"]\n  }\n}\n```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyGatewayRedistributionConfig/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "RouteMapPath": {
+                    "type": "string"
+                },
+                "Types": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BgpEnabled": {
+            "type": "boolean",
+            "description": "Enable route redistribution for BGP. Defaults to `true`."
+        },
+        "GatewayId": {
+            "type": "string"
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Policy path to Tier0 Gateway."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "OspfEnabled": {
+            "type": "boolean",
+            "description": "Enable route redistribution for OSPF. Defaults to `false`. Applicable from NSX 3.1.0 onwards."
+        },
+        "SitePath": {
+            "type": "string",
+            "description": "Policy path to Global Manager site (domain). This attribute is required for NSX Global Manager and not applicable otherwise."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GatewayPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GatewayId",
+        "/properties/Id",
+        "/properties/LocaleServiceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

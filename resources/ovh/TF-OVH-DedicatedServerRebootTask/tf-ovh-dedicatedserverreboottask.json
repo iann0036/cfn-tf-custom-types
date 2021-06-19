@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::OVH::DedicatedServerRebootTask",
+    "description": "Reboot your Dedicated Server.\n\n~> __WARNING__: After some delay, if the task is marked as `done`, the Provider\nmay purge it. To avoid raising errors when terraform refreshes its plan, \n404 errors are ignored on Resource Read, thus some information may be lost\nafter a while.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DedicatedServerRebootTask/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "DoneDate": {
+            "type": "string"
+        },
+        "Function": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keepers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of values traccked to trigger reboot, used also to form implicit dependencies."
+        },
+        "LastUpdate": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The service_name of your dedicated server."
+        },
+        "StartDate": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Keepers",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Comment",
+        "/properties/DoneDate",
+        "/properties/Function",
+        "/properties/Id",
+        "/properties/LastUpdate",
+        "/properties/StartDate",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

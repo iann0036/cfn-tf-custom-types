@@ -1,0 +1,422 @@
+{
+    "typeName": "TF::AVI::Authprofile",
+    "description": "The AuthProfile resource allows the creation and management of Avi AuthProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Authprofile/docs/README.md",
+    "definitions": {
+        "HttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheExpirationTime": {
+                    "type": "number"
+                },
+                "RequestHeader": {
+                    "type": "string"
+                },
+                "RequireUserGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LdapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseDn": {
+                    "type": "string"
+                },
+                "BindAsAdministrator": {
+                    "type": "boolean"
+                },
+                "EmailAttribute": {
+                    "type": "string"
+                },
+                "FullNameAttribute": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecurityMode": {
+                    "type": "string"
+                },
+                "Server": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Settings": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SettingsDefinition"
+                    }
+                },
+                "UserBind": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UserBindDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Server"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "SamlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Idp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IdpDefinition"
+                    }
+                },
+                "Sp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SpDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "TacacsPlusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Server": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "AuthorizationAttrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthorizationAttrsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Server"
+            ]
+        },
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminBindDn": {
+                    "type": "string"
+                },
+                "GroupFilter": {
+                    "type": "string"
+                },
+                "GroupMemberAttribute": {
+                    "type": "string"
+                },
+                "GroupMemberIsFullDn": {
+                    "type": "boolean"
+                },
+                "GroupSearchDn": {
+                    "type": "string"
+                },
+                "GroupSearchScope": {
+                    "type": "string"
+                },
+                "IgnoreReferrals": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "UserAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UserIdAttribute": {
+                    "type": "string"
+                },
+                "UserSearchDn": {
+                    "type": "string"
+                },
+                "UserSearchScope": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UserBindDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnTemplate": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "UserAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UserIdAttribute": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IdpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metadata": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fqdn": {
+                    "type": "string"
+                },
+                "OrgDisplayName": {
+                    "type": "string"
+                },
+                "OrgName": {
+                    "type": "string"
+                },
+                "OrgUrl": {
+                    "type": "string"
+                },
+                "SamlEntityType": {
+                    "type": "string"
+                },
+                "TechContactEmail": {
+                    "type": "string"
+                },
+                "TechContactName": {
+                    "type": "string"
+                },
+                "SpNodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpNodesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AuthorizationAttrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mandatory": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpNodesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EntityId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SigningSslKeyAndCertificateRef": {
+                    "type": "string"
+                },
+                "SingleSignonUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JwtProfileRef": {
+            "type": "string",
+            "description": "Jwtserverprofile to be used for authentication. It is a reference to an object of type jwtserverprofile. Field introduced in 20.1.3."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the auth profile."
+        },
+        "PaAgentRef": {
+            "type": "string",
+            "description": "Pingaccessagent uuid. It is a reference to an object of type pingaccessagent. Field introduced in 18.2.3. Allowed in basic edition, essentials edition, enterprise edition."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the auth profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpDefinition"
+            }
+        },
+        "Ldap": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LdapDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Saml": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SamlDefinition"
+            }
+        },
+        "TacacsPlus": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TacacsPlusDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/TacacsPlusDefinition/Password",
+        "/definitions/SettingsDefinition/Password"
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "typeName": "TF::Alicloud::SlbDomainExtension",
+    "description": "HTTPS listeners of guaranteed-performance SLB support configuring multiple certificates, allowing you to forward requests with different domain names to different backend servers.\nPlease refer to the [documentation](https://www.alibabacloud.com/help/doc-detail/85956.htm?spm=a2c63.p38356.b99.40.1c881563Co8p6w) for details.\n\n-> **NOTE:** Available in 1.60.0+\n\n-> **NOTE:** The instance with shared loadBalancerSpec doesn't support domainExtension.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SlbDomainExtension/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The domain name,."
+        },
+        "FrontendPort": {
+            "type": "number",
+            "description": "The frontend port used by the HTTPS listener of the SLB instance. Valid values: 1\u201365535."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The ID of the SLB instance."
+        },
+        "ServerCertificateId": {
+            "type": "string",
+            "description": "The ID of the certificate used by the domain name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "FrontendPort",
+        "LoadBalancerId",
+        "ServerCertificateId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

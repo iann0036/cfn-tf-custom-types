@@ -1,0 +1,134 @@
+{
+    "typeName": "TF::Aviatrix::Fqdn",
+    "description": "The **aviatrix_fqdn** resource manages [FQDN filtering](https://docs.aviatrix.com/HowTos/fqdn_faq.html) for Aviatrix gateways.\n\n~> **NOTE on FQDN and FQDN Tag Rule resources:** Terraform currently provides both a standalone FQDN Tag Rule resource and an FQDN resource with domain name rules defined in-line. At this time, you cannot use an FQDN resource with in-line rules in conjunction with any FQDN Tag Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules. In order to use the **aviatrix_fqdn_tag_rule** resource, `manage_domain_names` must be set to false in this resource.\n\n~> **NOTE:** Please see the [Notes](#notes) section below for troubleshooting known issues/deltas that may occur when enabling this feature\n\n~> **NOTE:** Please note that there is no need to attach FQDN resource/enable this feature for the HA gateway. Enabling FQDN for the primary gateway will automatically handle this for the HA",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Fqdn/docs/README.md",
+    "definitions": {
+        "DomainNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Fqdn": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Proto": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Fqdn",
+                "Port",
+                "Proto"
+            ]
+        },
+        "GwFilterTagListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GwName": {
+                    "type": "string"
+                },
+                "SourceIpList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "GwName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FqdnEnabled": {
+            "type": "boolean",
+            "description": "FQDN Filter tag status. Valid values: true, false."
+        },
+        "FqdnMode": {
+            "type": "string",
+            "description": "Specify FQDN mode: whitelist or blacklist. Valid values: \"white\", \"black\"."
+        },
+        "FqdnTag": {
+            "type": "string",
+            "description": "FQDN Filter tag name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageDomainNames": {
+            "type": "boolean",
+            "description": "Enable to manage domain name rules in-line. If false, domain name rules must be managed using `aviatrix_fqdn_tag_rule` resources. Default: true. Valid values: true, false. Available in provider version R2.17+."
+        },
+        "DomainNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DomainNamesDefinition"
+            }
+        },
+        "GwFilterTagList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GwFilterTagListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FqdnTag"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

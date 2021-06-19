@@ -1,0 +1,325 @@
+{
+    "typeName": "TF::OCI::DatabaseDatabaseUpgrade",
+    "description": "This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.\n\nUpgrades the specified Oracle Database instance.\n\nDatabase upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.\n\t`db_home.0.db_version` is updated to target DB version specified in the upgrade request. \n\tTo avoid a force new create of the db_home on the next apply, add the following to the resource\n\t```\n\tlifecycle {\n\t   \tignore_changes = [\n\t   \t\tdb_home.0.db_version,\n\t   \t]\n\t}\n\t```",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseDatabaseUpgrade/docs/README.md",
+    "definitions": {
+        "ConnectionStringsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConnectionStringsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllConnectionStrings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConnectionStringsDefinition"
+                    }
+                },
+                "CdbDefault": {
+                    "type": "string"
+                },
+                "CdbIpDefault": {
+                    "type": "string"
+                }
+            }
+        },
+        "DbBackupConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "InternetProxy": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VpcPassword": {
+                    "type": "string"
+                },
+                "VpcUser": {
+                    "type": "string"
+                }
+            }
+        },
+        "DbBackupConfigDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoBackupEnabled": {
+                    "type": "boolean"
+                },
+                "AutoBackupWindow": {
+                    "type": "string"
+                },
+                "BackupDestinationDetails": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DbBackupConfigDefinition"
+                    }
+                },
+                "RecoveryWindowInDays": {
+                    "type": "number"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DatabaseUpgradeSourceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseSoftwareImageId": {
+                    "type": "string"
+                },
+                "DbVersion": {
+                    "type": "string"
+                },
+                "Options": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "The database upgrade action."
+        },
+        "CharacterSet": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "ConnectionStrings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectionStringsDefinition2"
+            }
+        },
+        "DatabaseId": {
+            "type": "string",
+            "description": "The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
+        },
+        "DatabaseSoftwareImageId": {
+            "type": "string",
+            "description": "The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.\n* `db_home_id` - (Required when source=DB_HOME) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.\n* `db_version` - (Required when source=DB_VERSION) A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.\n* `options` - (Optional) Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: \"-upgradeTimezone false -keepEvents\"\n* `source` - (Optional) The source of the Oracle Database software to be used for the upgrade.\n* Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.\n* Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database."
+        },
+        "DbBackupConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DbBackupConfigDefinition2"
+            }
+        },
+        "DbHomeId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.\n* `db_version` - (Required when source=DB_VERSION) A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.\n* `options` - (Optional) Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: \"-upgradeTimezone false -keepEvents\"\n* `source` - (Optional) The source of the Oracle Database software to be used for the upgrade.\n* Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.\n* Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database."
+        },
+        "DbName": {
+            "type": "string"
+        },
+        "DbSystemId": {
+            "type": "string"
+        },
+        "DbUniqueName": {
+            "type": "string"
+        },
+        "DbWorkload": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            }
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastBackupTimestamp": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "NcharacterSet": {
+            "type": "string"
+        },
+        "PdbName": {
+            "type": "string"
+        },
+        "SourceDatabasePointInTimeRecoveryTimestamp": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "VmClusterId": {
+            "type": "string"
+        },
+        "DatabaseUpgradeSourceDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseUpgradeSourceDetailsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Action",
+        "DatabaseId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CharacterSet",
+        "/properties/CompartmentId",
+        "/properties/ConnectionStrings",
+        "/properties/DatabaseSoftwareImageId",
+        "/properties/DbBackupConfig",
+        "/properties/DbHomeId",
+        "/properties/DbName",
+        "/properties/DbSystemId",
+        "/properties/DbUniqueName",
+        "/properties/DbWorkload",
+        "/properties/DefinedTags",
+        "/properties/FreeformTags",
+        "/properties/Id",
+        "/properties/LastBackupTimestamp",
+        "/properties/LifecycleDetails",
+        "/properties/NcharacterSet",
+        "/properties/PdbName",
+        "/properties/SourceDatabasePointInTimeRecoveryTimestamp",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/VmClusterId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

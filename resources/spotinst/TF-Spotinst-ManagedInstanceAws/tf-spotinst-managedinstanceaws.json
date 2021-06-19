@@ -1,0 +1,490 @@
+{
+    "typeName": "TF::Spotinst::ManagedInstanceAws",
+    "description": "Provides a Spotinst AWS ManagedInstance resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-ManagedInstanceAws/docs/README.md",
+    "definitions": {
+        "BlockDeviceMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EbsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "IntegrationRoute53Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DomainsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "LoadBalancersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "AutoWeight": {
+                    "type": "boolean"
+                },
+                "AzAwareness": {
+                    "type": "boolean"
+                },
+                "BalancerId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TargetSetId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ManagedInstanceActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociateIpv6Address": {
+                    "type": "boolean"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "boolean"
+                },
+                "DeviceIndex": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceIndex"
+            ]
+        },
+        "RevertToSpotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PerformAt"
+            ]
+        },
+        "ScheduledTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DomainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostedZoneId": {
+                    "type": "string"
+                },
+                "RecordSetType": {
+                    "type": "string"
+                },
+                "SpotinstAcctId": {
+                    "type": "string"
+                },
+                "RecordSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RecordSetsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "HostedZoneId"
+            ]
+        },
+        "RecordSetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "UsePublicDns": {
+                    "type": "boolean"
+                },
+                "UsePublicIp": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoHealing": {
+            "type": "boolean",
+            "description": "Enable the auto healing which auto replaces the instance in case the health check fails, default: `\"true\"`."
+        },
+        "BlockDevicesMode": {
+            "type": "string",
+            "description": "Determine the way we attach the data volumes to the data devices. Valid values: `\"reattach\"`, `\"onLaunch\"`.\nDefault: `\"onLaunch\"`."
+        },
+        "CpuCredits": {
+            "type": "string",
+            "description": "cpuCredits can have one of two values: `\"unlimited\"`, `\"standard\"`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The ManagedInstance description."
+        },
+        "DrainingTimeout": {
+            "type": "number",
+            "description": "The time in seconds to allow the instance be drained from incoming TCP connections and detached from ELB before terminating it, during a scale down operation."
+        },
+        "EbsOptimized": {
+            "type": "boolean",
+            "description": "Enable EBS optimization for supported instances. Note: Additional charges will be applied by the Cloud Provider.\nDefault: false."
+        },
+        "ElasticIp": {
+            "type": "string",
+            "description": "Elastic IP Allocation Id to associate to the instance."
+        },
+        "EnableMonitoring": {
+            "type": "boolean",
+            "description": "Describes whether instance Enhanced Monitoring is enabled.\nDefault: false."
+        },
+        "FallBackToOd": {
+            "type": "boolean"
+        },
+        "GracePeriod": {
+            "type": "number",
+            "description": "The amount of time, in seconds, after the instance has launched to starts and check its health, default `\"120\"`."
+        },
+        "HealthCheckType": {
+            "type": "string",
+            "description": "The service to use for the health check. Valid values: `\"EC2\"`, `\"ELB\"`, `\"TARGET_GROUP\"`, `\"MULTAI_TARGET_SET\"`.\nDefault: `\"EC2\"`."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "Set IAM profile to instance. Set only one of ARN or Name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The ID of the image used to launch the instance."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Comma separated list of available instance types for instance."
+        },
+        "KeyPair": {
+            "type": "string",
+            "description": "Specify a Key Pair to attach to the instances."
+        },
+        "LifeCycle": {
+            "type": "string",
+            "description": "Set lifecycle, valid values: `\"spot\"`, `\"on_demand\"`.\nDefault `\"spot\"`."
+        },
+        "MinimumInstanceLifetime": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The ManagedInstance name."
+        },
+        "OptimizationWindows": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "When `performAt` is `\"timeWindow\"`: must specify a list of `\"timeWindows\"` with at least one time window. Each string should be formatted as `ddd:hh:mm-ddd:hh:mm` (ddd = day of week = Sun | Mon | Tue | Wed | Thu | Fri | Sat hh = hour 24 = 0 -23 mm = minute = 0 - 59)."
+        },
+        "Orientation": {
+            "type": "string",
+            "description": "Select a prediction strategy. Valid values: `\"balanced\"`, `\"costOriented\"`, `\"availabilityOriented\"`, `\"cheapest\"`.\nDefault: `\"availabilityOriented\"`."
+        },
+        "PersistBlockDevices": {
+            "type": "boolean",
+            "description": "Should the instance maintain its Data volumes."
+        },
+        "PersistPrivateIp": {
+            "type": "boolean",
+            "description": "Should the instance maintain its private IP."
+        },
+        "PersistRootDevice": {
+            "type": "boolean",
+            "description": "Should the instance maintain its root device volumes."
+        },
+        "PlacementTenancy": {
+            "type": "string",
+            "description": "Valid values: `\"default\"`, `\"dedicated\"`.\nDefault: default."
+        },
+        "PreferredType": {
+            "type": "string",
+            "description": "Preferred instance types for the instance. We will automatically select optional similar instance types to ensure optimized cost efficiency."
+        },
+        "PrivateIp": {
+            "type": "string",
+            "description": "Private IP Allocation Id to associate to the instance."
+        },
+        "Product": {
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`, `\"Red Hat Enterprise Linux\"`, `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`,  `\"Red Hat Enterprise Linux (Amazon VPC)\"`."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The AWS region your group will be created in."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "One or more security group IDs."
+        },
+        "ShutdownScript": {
+            "type": "string",
+            "description": "The Base64-encoded shutdown script to execute prior to instance termination."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A comma-separated list of subnet identifiers for your instance."
+        },
+        "UnhealthyDuration": {
+            "type": "number",
+            "description": "The amount of time, in seconds, an existing instance should remain active after becoming unhealthy. After the set time out the instance will be replaced, default `\"120\"`."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The Base64-encoded MIME user data to make available to the instances."
+        },
+        "UtilizeReservedInstances": {
+            "type": "boolean",
+            "description": "In case of any available Reserved Instances, Managed Instance will utilize them before purchasing Spot instances.\nDefault: `\"false\"`."
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappingsDefinition"
+            }
+        },
+        "IntegrationRoute53": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationRoute53Definition"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoadBalancersDefinition"
+            }
+        },
+        "ManagedInstanceAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedInstanceActionDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            }
+        },
+        "RevertToSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevertToSpotDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTaskDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageId",
+        "InstanceTypes",
+        "Name",
+        "PersistBlockDevices",
+        "Product",
+        "SubnetIds",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

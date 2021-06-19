@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::Panos::PanoramaTemplateEntry",
+    "description": "This resource allows you to add/update/delete a specific device in a Panorama\ntemplate.\n\nThis resource has some overlap with the `panos_panorama_template`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_template` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if you have a pre-existing template\nin Panorama and don't want Terraform to delete it on `terraform destroy`.\n\nAn interesting side effect of the underlying XML API - if the template does\nnot already exist, then this resource can actually create it.  However, since\nonly the single entry for the specific serial number is deleted, then a\n`terraform destroy` would not remove the template itself in this situation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaTemplateEntry/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Serial": {
+            "type": "string",
+            "description": "The serial number of the firewall."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "VsysList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A subset of all available vsys on the firewall\nthat should be in this template.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Serial",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

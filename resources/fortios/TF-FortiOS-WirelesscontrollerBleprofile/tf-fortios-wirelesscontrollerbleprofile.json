@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::FortiOS::WirelesscontrollerBleprofile",
+    "description": "Configure Bluetooth Low Energy profile.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WirelesscontrollerBleprofile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Advertising": {
+            "type": "string",
+            "description": "Advertising type. Valid values: `ibeacon`, `eddystone-uid`, `eddystone-url`."
+        },
+        "BeaconInterval": {
+            "type": "number",
+            "description": "Beacon interval (default = 100 msec)."
+        },
+        "BleScanning": {
+            "type": "string",
+            "description": "Enable/disable Bluetooth Low Energy (BLE) scanning. Valid values: `enable`, `disable`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "EddystoneInstance": {
+            "type": "string",
+            "description": "Eddystone instance ID."
+        },
+        "EddystoneNamespace": {
+            "type": "string",
+            "description": "Eddystone namespace ID."
+        },
+        "EddystoneUrl": {
+            "type": "string",
+            "description": "Eddystone URL."
+        },
+        "EddystoneUrlEncodeHex": {
+            "type": "string",
+            "description": "Eddystone encoded URL hexadecimal string."
+        },
+        "IbeaconUuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MajorId": {
+            "type": "number",
+            "description": "Major ID."
+        },
+        "MinorId": {
+            "type": "number",
+            "description": "Minor ID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Bluetooth Low Energy profile name."
+        },
+        "Txpower": {
+            "type": "string",
+            "description": "Transmit power level (default = 0). Valid values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

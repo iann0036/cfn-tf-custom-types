@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::UpCloud::Storage",
+    "description": "CloudFormation equivalent of upcloud_storage",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/upcloud/TF-UpCloud-Storage/docs/README.md",
+    "definitions": {
+        "BackupRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "string"
+                },
+                "Retention": {
+                    "type": "number"
+                },
+                "Time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Interval",
+                "Retention",
+                "Time"
+            ]
+        },
+        "CloneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ImportDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Source": {
+                    "type": "string"
+                },
+                "SourceHash": {
+                    "type": "string"
+                },
+                "SourceLocation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Source",
+                "SourceLocation"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "BackupRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupRuleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Clone": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloneDefinition"
+            },
+            "maxItems": 1
+        },
+        "Import": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ImportDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Size",
+        "Title",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

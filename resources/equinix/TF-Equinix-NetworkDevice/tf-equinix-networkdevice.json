@@ -1,0 +1,403 @@
+{
+    "typeName": "TF::Equinix::NetworkDevice",
+    "description": "Resource `equinix_network_device` allows creation and management of Equinix Network\nEdge virtual network devices.\n\nNetwork Edge virtual network devices can be created in two modes:\n\n* **managed** (default) where Equinix manages connectivity and services in the\ndevice and customer gets limited access to the device\n* **self-configured** where customer provisions and manages own services in the device\nwith less restricted access. Some device types are offered only in this mode\n\nIn addition to management modes, there are two software license modes available:\n\n* **subscription**  where Equinix provides software license, including end-to-end\nsupport, and bills for the service respectively.\n* **BYOL** [bring your own license] where customer brings his own, already procured\ndevice software license. There are no charges associated with such license.\nIt is the only licensing mode for *self-configured* devices",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/equinix/TF-Equinix-NetworkDevice/docs/README.md",
+    "definitions": {
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignedType": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OperationalStatus": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "VendorConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecondaryDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountNumber": {
+                    "type": "string",
+                    "description": "Billing account number for\nsecondary device."
+                },
+                "AclTemplateId": {
+                    "type": "string",
+                    "description": "Identifier of an ACL template that will\nbe applied on a secondary device."
+                },
+                "AdditionalBandwidth": {
+                    "type": "number",
+                    "description": "Additional Internet\nbandwidth, in Mbps, for a secondary device."
+                },
+                "Hostname": {
+                    "type": "string",
+                    "description": "Secondary device hostname."
+                },
+                "LicenseFile": {
+                    "type": "string",
+                    "description": "Path to the license file that\nwill be uploaded and applied on a secondary device. Applicable for some devices\ntypes in BYOL licensing mode."
+                },
+                "LicenseToken": {
+                    "type": "string",
+                    "description": "License Token can be provided\nfor some device types o the device."
+                },
+                "MetroCode": {
+                    "type": "string",
+                    "description": "Metro location of a secondary device."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "reference by name to previously provisioned public SSH key."
+                },
+                "Notifications": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of email addresses that\nwill receive notifications about secondary device."
+                },
+                "VendorConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VendorConfigurationDefinition2"
+                    },
+                    "description": "map of vendor specific\nconfiguration parameters for a secondary device."
+                },
+                "SshKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SshKeyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "AccountNumber",
+                "MetroCode",
+                "Name",
+                "Notifications"
+            ]
+        },
+        "VendorConfigurationDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SshKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KeyName",
+                "Username"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountNumber": {
+            "type": "string",
+            "description": "Billing account number for a device."
+        },
+        "AclTemplateId": {
+            "type": "string",
+            "description": "Identifier of an ACL template that\nwill be applied on the device."
+        },
+        "AdditionalBandwidth": {
+            "type": "number",
+            "description": "Additional Internet bandwidth, in Mbps,\nthat will be allocated to the device (in addition to default 15Mbps)."
+        },
+        "Asn": {
+            "type": "number"
+        },
+        "Byol": {
+            "type": "boolean",
+            "description": "Boolean value that determines device licensing mode:\n*bring your own license* or *subscription* (default)."
+        },
+        "CoreCount": {
+            "type": "number",
+            "description": "Number of CPU cores used by device,."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Device hostname prefix."
+        },
+        "Ibx": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceDefinition"
+            }
+        },
+        "InterfaceCount": {
+            "type": "number",
+            "description": "Number of network interfaces on a device. If not\nspecified, default number for a given device type will be used."
+        },
+        "LicenseFile": {
+            "type": "string",
+            "description": "Path to the license file that will be uploaded and\napplied on a device. Applicable for some devices types in BYOL licensing mode."
+        },
+        "LicenseFileId": {
+            "type": "string"
+        },
+        "LicenseStatus": {
+            "type": "string"
+        },
+        "LicenseToken": {
+            "type": "string",
+            "description": "License Token applicable for some device types\nin BYOL licensing mode."
+        },
+        "MetroCode": {
+            "type": "string",
+            "description": "Device location metro code."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Device name."
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of email addresses that will receive device\nstatus notifications."
+        },
+        "OrderReference": {
+            "type": "string",
+            "description": "Name/number used to identify device order on\nthe invoice."
+        },
+        "PackageCode": {
+            "type": "string",
+            "description": "Device software package code."
+        },
+        "PurchaseOrderNumber": {
+            "type": "string",
+            "description": "Purchase order number associated\nwith a device order."
+        },
+        "RedundancyType": {
+            "type": "string"
+        },
+        "RedundantId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SelfManaged": {
+            "type": "boolean",
+            "description": "Boolean value that determines device management mode:\n*self-managed* or *Equinix managed* (default)."
+        },
+        "SshIpAddress": {
+            "type": "string"
+        },
+        "SshIpFqdn": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TermLength": {
+            "type": "number",
+            "description": "Device term length."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "Device license throughput."
+        },
+        "ThroughputUnit": {
+            "type": "string",
+            "description": "License throughput unit (Mbps or Gbps)."
+        },
+        "TypeCode": {
+            "type": "string",
+            "description": "Device type code."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VendorConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VendorConfigurationDefinition"
+            },
+            "description": "map of vendor specific configuration parameters\nfor a device."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Device software software version."
+        },
+        "ZoneCode": {
+            "type": "string"
+        },
+        "SecondaryDevice": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryDeviceDefinition"
+            },
+            "maxItems": 1
+        },
+        "SshKey": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SshKeyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountNumber",
+        "CoreCount",
+        "MetroCode",
+        "Name",
+        "Notifications",
+        "PackageCode",
+        "TermLength",
+        "TypeCode",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Asn",
+        "/properties/Ibx",
+        "/properties/Id",
+        "/properties/Interface",
+        "/properties/LicenseFileId",
+        "/properties/LicenseStatus",
+        "/properties/RedundancyType",
+        "/properties/RedundantId",
+        "/properties/Region",
+        "/properties/SshIpAddress",
+        "/properties/SshIpFqdn",
+        "/properties/Status",
+        "/properties/Uuid",
+        "/properties/ZoneCode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

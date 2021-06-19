@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::Aviatrix::TransitVpc",
+    "description": "The aviatrix_transit_vpc resource creates and manages the Aviatrix Transit Network Gateways.\n\n!> **WARNING:** The `aviatrix_transit_vpc` resource is deprecated as of **Release 2.0**. It is currently kept for backward-compatibility and will be removed in the future. Please use the transit gateway resource instead. If this is already in the state, please remove it from state file and import as `aviatrix_transit_gateway`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-TransitVpc/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "This parameter represents the name of a Cloud-Account in Aviatrix controller."
+        },
+        "CloudType": {
+            "type": "number",
+            "description": "Type of cloud service provider, requires an integer value. Use 1 for AWS."
+        },
+        "ConnectedTransit": {
+            "type": "string",
+            "description": "Specify Connected Transit status. Supported values: true, false."
+        },
+        "EnableFirenetInterfaces": {
+            "type": "boolean",
+            "description": "Sign of readiness for FireNet connection. Valid values: true and false. Default: false."
+        },
+        "EnableHybridConnection": {
+            "type": "boolean",
+            "description": "Sign of readiness for TGW connection. Only supported for aws. Example: false."
+        },
+        "EnableNat": {
+            "type": "string"
+        },
+        "GwName": {
+            "type": "string",
+            "description": "Name of the gateway which is going to be created."
+        },
+        "HaGwSize": {
+            "type": "string",
+            "description": "HA Gateway Size. Mandatory if HA is enabled (ha_subnet is set). Example: \"t2.micro\"."
+        },
+        "HaInsaneModeAz": {
+            "type": "string",
+            "description": "AZ of subnet being created for Insane Mode Transit HA Gateway. Required if insane_mode is enabled and ha_subnet is set."
+        },
+        "HaSubnet": {
+            "type": "string",
+            "description": "HA Subnet CIDR. Example: \"10.12.0.0/24\".Setting to empty/unset will disable HA. Setting to a valid subnet CIDR will create an HA gateway on the subnet."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsaneMode": {
+            "type": "boolean",
+            "description": "Specify Insane Mode high performance gateway. Insane Mode gateway size must be at least c5 size. If enabled, will look for spare /26 segment to create a new subnet. Only available for AWS. Supported values: true, false."
+        },
+        "InsaneModeAz": {
+            "type": "string",
+            "description": "AZ of subnet being created for Insane Mode Transit Gateway. Required if insane_mode is enabled."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "Public Subnet CIDR. Example: AWS: \"10.0.0.0/24\". Copy/paste from AWS Console to get the right subnet CIDR."
+        },
+        "TagList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Instance tag of cloud provider. Only supported for aws. Example: [\"key1:value1\",\"key002:value002\"]."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC-ID/VNet-Name of cloud provider. Required if for aws. Example: AWS: \"vpc-abcd1234\", GCP: \"mygooglecloudvpcname\", etc..."
+        },
+        "VpcReg": {
+            "type": "string",
+            "description": "Region of cloud provider. Example: AWS: \"us-east-1\", ARM: \"East US 2\", etc..."
+        },
+        "VpcSize": {
+            "type": "string",
+            "description": "Size of the gateway instance. Example: AWS: \"t2.large\", etc..."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "CloudType",
+        "GwName",
+        "Subnet",
+        "VpcId",
+        "VpcReg",
+        "VpcSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

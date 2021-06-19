@@ -1,0 +1,644 @@
+{
+    "typeName": "TF::FortiOS::VpnsslwebPortal",
+    "description": "CloudFormation equivalent of fortios_vpnsslweb_portal",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnsslwebPortal/docs/README.md",
+    "definitions": {
+        "BookmarkGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Bookmark group name."
+                },
+                "Bookmarks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BookmarksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostCheckPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Host check software list name."
+                }
+            },
+            "required": []
+        },
+        "IpPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Ipv6PoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Ipv6SplitTunnelingRoutingAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "MacAddrCheckRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MacAddrMask": {
+                    "type": "number",
+                    "description": "Client MAC address mask."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Client MAC address check rule name."
+                },
+                "MacAddrList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MacAddrListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OsCheckListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "OS check options. Valid values: `deny`, `allow`, `check-up-to-date`."
+                },
+                "LatestPatchLevel": {
+                    "type": "string",
+                    "description": "Latest OS patch level."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Tolerance": {
+                    "type": "number",
+                    "description": "OS patch level tolerance."
+                }
+            },
+            "required": []
+        },
+        "SplitDnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServer1": {
+                    "type": "string",
+                    "description": "DNS server 1."
+                },
+                "DnsServer2": {
+                    "type": "string",
+                    "description": "DNS server 2."
+                },
+                "Domains": {
+                    "type": "string",
+                    "description": "Split DNS domains used for SSL-VPN clients separated by comma(,)."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Ipv6DnsServer1": {
+                    "type": "string",
+                    "description": "IPv6 DNS server 1."
+                },
+                "Ipv6DnsServer2": {
+                    "type": "string",
+                    "description": "IPv6 DNS server 2."
+                }
+            },
+            "required": []
+        },
+        "SplitTunnelingRoutingAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "BookmarksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalParams": {
+                    "type": "string",
+                    "description": "Additional parameters."
+                },
+                "Apptype": {
+                    "type": "string",
+                    "description": "Application type."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Domain": {
+                    "type": "string",
+                    "description": "Login domain."
+                },
+                "Folder": {
+                    "type": "string",
+                    "description": "Network shared file folder parameter."
+                },
+                "Host": {
+                    "type": "string",
+                    "description": "Host name/IP parameter."
+                },
+                "ListeningPort": {
+                    "type": "number",
+                    "description": "Listening port (0 - 65535)."
+                },
+                "LoadBalancingInfo": {
+                    "type": "string",
+                    "description": "The load balancing information or cookie which should be provided to the connection broker."
+                },
+                "LogonPassword": {
+                    "type": "string",
+                    "description": "Logon password."
+                },
+                "LogonUser": {
+                    "type": "string",
+                    "description": "Logon user."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Bookmark name."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Remote port."
+                },
+                "PreconnectionBlob": {
+                    "type": "string",
+                    "description": "An arbitrary string which identifies the RDP source."
+                },
+                "PreconnectionId": {
+                    "type": "number",
+                    "description": "The numeric ID of the RDP source (0-2147483648)."
+                },
+                "RemotePort": {
+                    "type": "number",
+                    "description": "Remote port (0 - 65535)."
+                },
+                "Security": {
+                    "type": "string",
+                    "description": "Security mode for RDP connection. Valid values: `rdp`, `nla`, `tls`, `any`."
+                },
+                "ServerLayout": {
+                    "type": "string",
+                    "description": "Server side keyboard layout."
+                },
+                "ShowStatusWindow": {
+                    "type": "string",
+                    "description": "Enable/disable showing of status window. Valid values: `enable`, `disable`."
+                },
+                "Sso": {
+                    "type": "string",
+                    "description": "Single Sign-On. Valid values: `disable`, `static`, `auto`."
+                },
+                "SsoCredential": {
+                    "type": "string",
+                    "description": "Single sign-on credentials. Valid values: `sslvpn-login`, `alternative`."
+                },
+                "SsoCredentialSentOnce": {
+                    "type": "string",
+                    "description": "Single sign-on credentials are only sent once to remote server. Valid values: `enable`, `disable`."
+                },
+                "SsoPassword": {
+                    "type": "string",
+                    "description": "SSO password."
+                },
+                "SsoUsername": {
+                    "type": "string",
+                    "description": "SSO user name."
+                },
+                "Url": {
+                    "type": "string",
+                    "description": "URL parameter."
+                },
+                "FormData": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FormDataDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MacAddrListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string",
+                    "description": "Client MAC address."
+                }
+            },
+            "required": []
+        },
+        "FormDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Value."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowUserAccess": {
+            "type": "string",
+            "description": "Allow user access to SSL-VPN applications. Valid values: `web`, `ftp`, `smb`, `sftp`, `telnet`, `ssh`, `vnc`, `rdp`, `ping`, `citrix`, `portforward`."
+        },
+        "AutoConnect": {
+            "type": "string",
+            "description": "Enable/disable automatic connect by client when system is up. Valid values: `enable`, `disable`."
+        },
+        "CustomLang": {
+            "type": "string",
+            "description": "Change the web portal display language. Overrides config system global set language. You can use config system custom-language and execute system custom-language to add custom language files."
+        },
+        "CustomizeForticlientDownloadUrl": {
+            "type": "string",
+            "description": "Enable support of customized download URL for FortiClient. Valid values: `enable`, `disable`."
+        },
+        "DisplayBookmark": {
+            "type": "string",
+            "description": "Enable to display the web portal bookmark widget. Valid values: `enable`, `disable`."
+        },
+        "DisplayConnectionTools": {
+            "type": "string",
+            "description": "Enable to display the web portal connection tools widget. Valid values: `enable`, `disable`."
+        },
+        "DisplayHistory": {
+            "type": "string",
+            "description": "Enable to display the web portal user login history widget. Valid values: `enable`, `disable`."
+        },
+        "DisplayStatus": {
+            "type": "string",
+            "description": "Enable to display the web portal status widget. Valid values: `enable`, `disable`."
+        },
+        "DnsServer1": {
+            "type": "string",
+            "description": "IPv4 DNS server 1."
+        },
+        "DnsServer2": {
+            "type": "string",
+            "description": "IPv4 DNS server 2."
+        },
+        "DnsSuffix": {
+            "type": "string",
+            "description": "DNS suffix."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ExclusiveRouting": {
+            "type": "string",
+            "description": "Enable/disable all traffic go through tunnel only. Valid values: `enable`, `disable`."
+        },
+        "ForticlientDownload": {
+            "type": "string",
+            "description": "Enable/disable download option for FortiClient. Valid values: `enable`, `disable`."
+        },
+        "ForticlientDownloadMethod": {
+            "type": "string",
+            "description": "FortiClient download method. Valid values: `direct`, `ssl-vpn`."
+        },
+        "Heading": {
+            "type": "string",
+            "description": "Web portal heading message."
+        },
+        "HideSsoCredential": {
+            "type": "string",
+            "description": "Enable to prevent SSO credential being sent to client. Valid values: `enable`, `disable`."
+        },
+        "HostCheck": {
+            "type": "string",
+            "description": "Type of host checking performed on endpoints. Valid values: `none`, `av`, `fw`, `av-fw`, `custom`."
+        },
+        "HostCheckInterval": {
+            "type": "number",
+            "description": "Periodic host check interval. Value of 0 means disabled and host checking only happens when the endpoint connects."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpMode": {
+            "type": "string",
+            "description": "Method by which users of this SSL-VPN tunnel obtain IP addresses. Valid values: `range`, `user-group`."
+        },
+        "Ipv6DnsServer1": {
+            "type": "string",
+            "description": "IPv6 DNS server 1."
+        },
+        "Ipv6DnsServer2": {
+            "type": "string",
+            "description": "IPv6 DNS server 2."
+        },
+        "Ipv6ExclusiveRouting": {
+            "type": "string",
+            "description": "Enable/disable all IPv6 traffic go through tunnel only. Valid values: `enable`, `disable`."
+        },
+        "Ipv6ServiceRestriction": {
+            "type": "string",
+            "description": "Enable/disable IPv6 tunnel service restriction. Valid values: `enable`, `disable`."
+        },
+        "Ipv6SplitTunneling": {
+            "type": "string",
+            "description": "Enable/disable IPv6 split tunneling. Valid values: `enable`, `disable`."
+        },
+        "Ipv6SplitTunnelingRoutingNegate": {
+            "type": "string",
+            "description": "Enable to negate IPv6 split tunneling routing address. Valid values: `enable`, `disable`."
+        },
+        "Ipv6TunnelMode": {
+            "type": "string",
+            "description": "Enable/disable IPv6 SSL-VPN tunnel mode. Valid values: `enable`, `disable`."
+        },
+        "Ipv6WinsServer1": {
+            "type": "string",
+            "description": "IPv6 WINS server 1."
+        },
+        "Ipv6WinsServer2": {
+            "type": "string",
+            "description": "IPv6 WINS server 2."
+        },
+        "KeepAlive": {
+            "type": "string",
+            "description": "Enable/disable automatic reconnect for FortiClient connections. Valid values: `enable`, `disable`."
+        },
+        "LimitUserLogins": {
+            "type": "string",
+            "description": "Enable to limit each user to one SSL-VPN session at a time. Valid values: `enable`, `disable`."
+        },
+        "MacAddrAction": {
+            "type": "string",
+            "description": "Client MAC address action. Valid values: `allow`, `deny`."
+        },
+        "MacAddrCheck": {
+            "type": "string",
+            "description": "Enable/disable MAC address host checking. Valid values: `enable`, `disable`."
+        },
+        "MacosForticlientDownloadUrl": {
+            "type": "string",
+            "description": "Download URL for Mac FortiClient."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Portal name."
+        },
+        "OsCheck": {
+            "type": "string",
+            "description": "Enable to let the FortiGate decide action based on client OS. Valid values: `enable`, `disable`."
+        },
+        "RedirUrl": {
+            "type": "string",
+            "description": "Client login redirect URL."
+        },
+        "SavePassword": {
+            "type": "string",
+            "description": "Enable/disable FortiClient saving the user's password. Valid values: `enable`, `disable`."
+        },
+        "ServiceRestriction": {
+            "type": "string",
+            "description": "Enable/disable tunnel service restriction. Valid values: `enable`, `disable`."
+        },
+        "SkipCheckForBrowser": {
+            "type": "string",
+            "description": "Enable to skip host check for browser support. Valid values: `enable`, `disable`."
+        },
+        "SkipCheckForUnsupportedOs": {
+            "type": "string",
+            "description": "Enable to skip host check if client OS does not support it. Valid values: `enable`, `disable`."
+        },
+        "SmbMaxVersion": {
+            "type": "string",
+            "description": "SMB maximum client protocol version. Valid values: `smbv1`, `smbv2`, `smbv3`."
+        },
+        "SmbMinVersion": {
+            "type": "string",
+            "description": "SMB minimum client protocol version. Valid values: `smbv1`, `smbv2`, `smbv3`."
+        },
+        "SmbNtlmv1Auth": {
+            "type": "string",
+            "description": "Enable support of NTLMv1 for Samba authentication. Valid values: `enable`, `disable`."
+        },
+        "Smbv1": {
+            "type": "string",
+            "description": "Enable/disable support of SMBv1 for Samba. Valid values: `enable`, `disable`."
+        },
+        "SplitTunneling": {
+            "type": "string",
+            "description": "Enable/disable IPv4 split tunneling. Valid values: `enable`, `disable`."
+        },
+        "SplitTunnelingRoutingNegate": {
+            "type": "string",
+            "description": "Enable to negate split tunneling routing address. Valid values: `enable`, `disable`."
+        },
+        "Theme": {
+            "type": "string",
+            "description": "Web portal color scheme."
+        },
+        "TransformBackwardSlashes": {
+            "type": "string",
+            "description": "Transform backward slashes to forward slashes in URLs. Valid values: `enable`, `disable`."
+        },
+        "TunnelMode": {
+            "type": "string",
+            "description": "Enable/disable IPv4 SSL-VPN tunnel mode. Valid values: `enable`, `disable`."
+        },
+        "UseSdwan": {
+            "type": "string",
+            "description": "Use SD-WAN rules to get output interface. Valid values: `enable`, `disable`."
+        },
+        "UserBookmark": {
+            "type": "string",
+            "description": "Enable to allow web portal users to create their own bookmarks. Valid values: `enable`, `disable`."
+        },
+        "UserGroupBookmark": {
+            "type": "string",
+            "description": "Enable to allow web portal users to create bookmarks for all users in the same user group. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WebMode": {
+            "type": "string",
+            "description": "Enable/disable SSL VPN web mode. Valid values: `enable`, `disable`."
+        },
+        "WindowsForticlientDownloadUrl": {
+            "type": "string",
+            "description": "Download URL for Windows FortiClient."
+        },
+        "WinsServer1": {
+            "type": "string",
+            "description": "IPv4 WINS server 1."
+        },
+        "WinsServer2": {
+            "type": "string",
+            "description": "IPv4 WINS server 1."
+        },
+        "BookmarkGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BookmarkGroupDefinition"
+            }
+        },
+        "HostCheckPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostCheckPolicyDefinition"
+            }
+        },
+        "IpPools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpPoolsDefinition"
+            }
+        },
+        "Ipv6Pools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6PoolsDefinition"
+            }
+        },
+        "Ipv6SplitTunnelingRoutingAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6SplitTunnelingRoutingAddressDefinition"
+            }
+        },
+        "MacAddrCheckRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MacAddrCheckRuleDefinition"
+            }
+        },
+        "OsCheckList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsCheckListDefinition"
+            }
+        },
+        "SplitDns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SplitDnsDefinition"
+            }
+        },
+        "SplitTunnelingRoutingAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SplitTunnelingRoutingAddressDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/BookmarksDefinition/LogonPassword",
+        "/definitions/BookmarksDefinition/SsoPassword"
+    ]
+}

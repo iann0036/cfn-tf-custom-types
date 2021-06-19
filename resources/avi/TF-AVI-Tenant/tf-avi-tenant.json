@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::AVI::Tenant",
+    "description": "The Tenant resource allows the creation and management of Avi Tenant",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Tenant/docs/README.md",
+    "definitions": {
+        "ConfigSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SeInProviderContext": {
+                    "type": "boolean"
+                },
+                "TenantAccessToProviderSe": {
+                    "type": "boolean"
+                },
+                "TenantVrf": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator of this tenant."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "EnforceLabelGroup": {
+            "type": "boolean",
+            "description": "The referred label groups are enforced on the tenant if this is set to true.if this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabelGroupRefs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to true. It is a reference to an object of type labelgroup. Field introduced in 20.1.5."
+        },
+        "Local": {
+            "type": "boolean",
+            "description": "Boolean flag to set local."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "ConfigSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigSettingsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

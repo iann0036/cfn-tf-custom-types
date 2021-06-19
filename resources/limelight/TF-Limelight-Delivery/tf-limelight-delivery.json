@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Limelight::Delivery",
+    "description": "This resource provides a way to configure Content Delivery in Limelight Networks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/limelight/TF-Limelight-Delivery/docs/README.md",
+    "definitions": {
+        "ProtocolSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublishedProtocol": {
+                    "type": "string"
+                },
+                "SourcePort": {
+                    "type": "number"
+                },
+                "SourceProtocol": {
+                    "type": "string"
+                },
+                "Option": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionDefinition"
+                    }
+                }
+            },
+            "required": [
+                "PublishedProtocol",
+                "SourceProtocol"
+            ]
+        },
+        "OptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PublishedHostname": {
+            "type": "string",
+            "description": "Published hostname for the content."
+        },
+        "PublishedPath": {
+            "type": "string",
+            "description": "Published path for the content."
+        },
+        "ServiceProfile": {
+            "type": "string",
+            "description": "Service profile to use. Defaults to `LLNW-Generic`."
+        },
+        "Shortname": {
+            "type": "string",
+            "description": "The account name (shortname)."
+        },
+        "SourceHostname": {
+            "type": "string",
+            "description": "Source (origin) hostname for the content."
+        },
+        "SourcePath": {
+            "type": "string",
+            "description": "Source path on the origin for the content."
+        },
+        "VersionNumber": {
+            "type": "number"
+        },
+        "ProtocolSet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProtocolSetDefinition"
+            },
+            "maxItems": 2,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PublishedHostname",
+        "PublishedPath",
+        "Shortname",
+        "SourceHostname",
+        "SourcePath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VersionNumber"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::Gitlab::DeployKeyEnable",
+    "description": "This resource allows you to enable pre-existing deploy keys for your GitLab projects.\n\n**the GITLAB KEY_ID for the deploy key must be known**",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-DeployKeyEnable/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanPush": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "The Gitlab key id for the pre-existing deploy key."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The name or id of the project to add the deploy key to."
+        },
+        "Title": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyId",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

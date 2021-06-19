@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::AWS::Ec2TransitGateway",
+    "description": "Manages an EC2 Transit Gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ec2TransitGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AmazonSideAsn": {
+            "type": "number",
+            "description": "Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is `64512` to `65534` for 16-bit ASNs and `4200000000` to `4294967294` for 32-bit ASNs. Default value: `64512`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociationDefaultRouteTableId": {
+            "type": "string"
+        },
+        "AutoAcceptSharedAttachments": {
+            "type": "string",
+            "description": "Whether resource attachment requests are automatically accepted. Valid values: `disable`, `enable`. Default value: `disable`."
+        },
+        "DefaultRouteTableAssociation": {
+            "type": "string",
+            "description": "Whether resource attachments are automatically associated with the default association route table. Valid values: `disable`, `enable`. Default value: `enable`."
+        },
+        "DefaultRouteTablePropagation": {
+            "type": "string",
+            "description": "Whether resource attachments automatically propagate routes to the default propagation route table. Valid values: `disable`, `enable`. Default value: `enable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the EC2 Transit Gateway."
+        },
+        "DnsSupport": {
+            "type": "string",
+            "description": "Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PropagationDefaultRouteTableId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpnEcmpSupport": {
+            "type": "string",
+            "description": "Whether VPN Equal Cost Multipath Protocol support is enabled. Valid values: `disable`, `enable`. Default value: `enable`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AssociationDefaultRouteTableId",
+        "/properties/Id",
+        "/properties/OwnerId",
+        "/properties/PropagationDefaultRouteTableId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

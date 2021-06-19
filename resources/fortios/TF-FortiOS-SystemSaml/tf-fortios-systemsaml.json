@@ -1,0 +1,208 @@
+{
+    "typeName": "TF::FortiOS::SystemSaml",
+    "description": "Global settings for SAML authentication.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSaml/docs/README.md",
+    "definitions": {
+        "ServiceProvidersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdpEntityId": {
+                    "type": "string",
+                    "description": "IDP entity ID."
+                },
+                "IdpSingleLogoutUrl": {
+                    "type": "string",
+                    "description": "IDP single logout URL."
+                },
+                "IdpSingleSignOnUrl": {
+                    "type": "string",
+                    "description": "IDP single sign-on URL."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Prefix."
+                },
+                "SpCert": {
+                    "type": "string",
+                    "description": "SP certificate name."
+                },
+                "SpEntityId": {
+                    "type": "string",
+                    "description": "SP entity ID."
+                },
+                "SpPortalUrl": {
+                    "type": "string",
+                    "description": "SP portal URL."
+                },
+                "SpSingleLogoutUrl": {
+                    "type": "string",
+                    "description": "SP single logout URL."
+                },
+                "SpSingleSignOnUrl": {
+                    "type": "string",
+                    "description": "SP single sign-on URL."
+                },
+                "AssertionAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AssertionAttributesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AssertionAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Type."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cert": {
+            "type": "string",
+            "description": "Certificate to sign SAML messages."
+        },
+        "DefaultLoginPage": {
+            "type": "string",
+            "description": "Choose default login page. Valid values: `normal`, `sso`."
+        },
+        "DefaultProfile": {
+            "type": "string",
+            "description": "Default profile for new SSO admin."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EntityId": {
+            "type": "string",
+            "description": "SP entity ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpCert": {
+            "type": "string",
+            "description": "IDP certificate name."
+        },
+        "IdpEntityId": {
+            "type": "string",
+            "description": "IDP entity ID."
+        },
+        "IdpSingleLogoutUrl": {
+            "type": "string",
+            "description": "IDP single logout URL."
+        },
+        "IdpSingleSignOnUrl": {
+            "type": "string",
+            "description": "IDP single sign-on URL."
+        },
+        "Life": {
+            "type": "number",
+            "description": "Length of the range of time when the assertion is valid (in minutes)."
+        },
+        "PortalUrl": {
+            "type": "string",
+            "description": "SP portal URL."
+        },
+        "Role": {
+            "type": "string",
+            "description": "SAML role. Valid values: `identity-provider`, `service-provider`."
+        },
+        "ServerAddress": {
+            "type": "string",
+            "description": "Server address."
+        },
+        "SingleLogoutUrl": {
+            "type": "string",
+            "description": "SP single logout URL."
+        },
+        "SingleSignOnUrl": {
+            "type": "string",
+            "description": "SP single sign-on URL."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable SAML authentication (default = disable). Valid values: `enable`, `disable`."
+        },
+        "Tolerance": {
+            "type": "number",
+            "description": "Tolerance to the range of time when the assertion is valid (in minutes)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ServiceProviders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceProvidersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,247 @@
+{
+    "typeName": "TF::Alicloud::CenRouteMap",
+    "description": "This topic provides an overview of the route map function of Cloud Enterprise Networks (CENs).\nYou can use the route map function to filter routes and modify route attributes.\nBy doing so, you can manage the communication between networks attached to a CEN. \n\nFor information about CEN Route Map and how to use it, see [Manage CEN Route Map](https://www.alibabacloud.com/help/doc-detail/124157.htm).\n\n-> **NOTE:** Available in 1.82.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CenRouteMap/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AsPathMatchMode": {
+            "type": "string",
+            "description": "A match statement. It indicates the mode in which the AS path attribute is matched. Valid values: [\"Include\", \"Complete\"]."
+        },
+        "CenId": {
+            "type": "string",
+            "description": "The ID of the CEN instance."
+        },
+        "CenRegionId": {
+            "type": "string",
+            "description": "The ID of the region to which the CEN instance belongs."
+        },
+        "CidrMatchMode": {
+            "type": "string",
+            "description": "A match statement. It indicates the mode in which the prefix attribute is matched. Valid values: [\"Include\", \"Complete\"]."
+        },
+        "CommunityMatchMode": {
+            "type": "string",
+            "description": "A match statement. It indicates the mode in which the community attribute is matched. Valid values: [\"Include\", \"Complete\"]."
+        },
+        "CommunityOperateMode": {
+            "type": "string",
+            "description": "An action statement. It indicates the mode in which the community attribute is operated. Valid values: [\"Additive\", \"Replace\"]."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the route map."
+        },
+        "DestinationChildInstanceTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of destination instance types. Valid values: [\"VPC\", \"VBR\", \"CCN\"]."
+        },
+        "DestinationCidrBlocks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the prefix list. The prefix is in the CIDR format. You can enter a maximum of 32 CIDR blocks."
+        },
+        "DestinationInstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of IDs of the destination instances."
+        },
+        "DestinationInstanceIdsReverseMatch": {
+            "type": "boolean",
+            "description": "Indicates whether to enable the reverse match method for the DestinationInstanceIds match condition. Valid values: [\"false\", \"true\"]. Default to \"false\"."
+        },
+        "DestinationRouteTableIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of IDs of the destination route tables. You can enter a maximum of 32 route table IDs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MapResult": {
+            "type": "string",
+            "description": "The action that is performed to a route if the route matches all the match conditions. Valid values: [\"Permit\", \"Deny\"]."
+        },
+        "MatchAsns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the AS path list. The AS path is a well-known mandatory attribute, which describes the numbers of the ASs that a BGP route passes through during transmission."
+        },
+        "MatchCommunitySet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the community set. The format of each community is nn:nn, which ranges from 1 to 65535. You can enter a maximum of 32 communities. Communities must comply with RFC 1997. Large communities (RFC 8092) are not supported."
+        },
+        "NextPriority": {
+            "type": "number",
+            "description": "The priority of the next route map that is associated with the current route map. Value range: 1 to 100."
+        },
+        "OperateCommunitySet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An action statement that operates the community attribute. The format of each community is nn:nn, which ranges from 1 to 65535. You can enter a maximum of 32 communities. Communities must comply with RFC 1997. Large communities (RFC 8092) are not supported."
+        },
+        "Preference": {
+            "type": "number",
+            "description": "An action statement that modifies the priority of the route. Value range: 1 to 100. The default priority of a route is 50. A lower value indicates a higher preference."
+        },
+        "PrependAsPath": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An action statement that indicates an AS path is prepended when the regional gateway receives or advertises a route."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the route map. Value range: 1 to 100. A lower value indicates a higher priority."
+        },
+        "RouteMapId": {
+            "type": "string"
+        },
+        "RouteTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of route types. Valid values: [\"System\", \"Custom\", \"BGP\"]."
+        },
+        "SourceChildInstanceTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of source instance types. Valid values: [\"VPC\", \"VBR\", \"CCN\"]."
+        },
+        "SourceInstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of IDs of the source instances."
+        },
+        "SourceInstanceIdsReverseMatch": {
+            "type": "boolean",
+            "description": "Indicates whether to enable the reverse match method for the SourceInstanceIds match condition. Valid values: [\"false\", \"true\"]. Default to \"false\"."
+        },
+        "SourceRegionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of IDs of the source regions. You can enter a maximum of 32 region IDs."
+        },
+        "SourceRouteTableIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A match statement that indicates the list of IDs of the source route tables. You can enter a maximum of 32 route table IDs."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TransmitDirection": {
+            "type": "string",
+            "description": "The direction in which the route map is applied. Valid values: [\"RegionIn\", \"RegionOut\"]."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CenId",
+        "CenRegionId",
+        "MapResult",
+        "Priority",
+        "TransmitDirection"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/RouteMapId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

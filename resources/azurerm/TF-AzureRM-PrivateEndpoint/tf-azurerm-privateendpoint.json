@@ -1,0 +1,283 @@
+{
+    "typeName": "TF::AzureRM::PrivateEndpoint",
+    "description": "Manages a Private Endpoint.\n\nAzure Private Endpoint is a network interface that connects you privately and securely to a service powered by Azure Private Link. Private Endpoint uses a private IP address from your VNet, effectively bringing the service into your VNet. The service could be an Azure service such as Azure Storage, SQL, etc. or your own Private Link Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-PrivateEndpoint/docs/README.md",
+    "definitions": {
+        "CustomDnsConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fqdn": {
+                    "type": "string"
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "PrivateDnsZoneConfigsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fqdn": {
+                    "type": "string"
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "PrivateDnsZoneConfigsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateDnsZoneId": {
+                    "type": "string"
+                },
+                "RecordSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateDnsZoneConfigsDefinition"
+                    }
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrivateDnsZoneGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the Name of the Private DNS Zone Group. Changing this forces a new `private_dns_zone_group` resource to be created."
+                },
+                "PrivateDnsZoneIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies the list of Private DNS Zones to include within the `private_dns_zone_group`."
+                }
+            },
+            "required": [
+                "Name",
+                "PrivateDnsZoneIds"
+            ]
+        },
+        "PrivateServiceConnectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsManualConnection": {
+                    "type": "boolean",
+                    "description": "Does the Private Endpoint require Manual Approval from the remote resource owner? Changing this forces a new resource to be created."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the Name of the Private Service Connection. Changing this forces a new resource to be created."
+                },
+                "PrivateConnectionResourceAlias": {
+                    "type": "string",
+                    "description": "The Service Alias of the Private Link Enabled Remote Resource which this Private Endpoint should be connected to. One of `private_connection_resource_id` or `private_connection_resource_alias` must be specified. Changing this forces a new resource to be created."
+                },
+                "PrivateConnectionResourceId": {
+                    "type": "string",
+                    "description": "The ID of the Private Link Enabled Remote Resource which this Private Endpoint should be connected to. One of `private_connection_resource_id` or `private_connection_resource_alias` must be specified. Changing this forces a new resource to be created."
+                },
+                "RequestMessage": {
+                    "type": "string",
+                    "description": "A message passed to the owner of the remote resource when the private endpoint attempts to establish the connection to the remote resource. The request message can be a maximum of `140` characters in length. Only valid if `is_manual_connection` is set to `true`."
+                },
+                "SubresourceNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of subresource names which the Private Endpoint is able to connect to. `subresource_names` corresponds to `group_id`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "IsManualConnection",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomDnsConfigs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomDnsConfigsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the Name of the Private Endpoint. Changing this forces a new resource to be created."
+        },
+        "PrivateDnsZoneConfigs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateDnsZoneConfigsDefinition2"
+            }
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "Specifies the Name of the Resource Group within which the Private Endpoint should exist. Changing this forces a new resource to be created."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "PrivateDnsZoneGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateDnsZoneGroupDefinition"
+            },
+            "maxItems": 1
+        },
+        "PrivateServiceConnection": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateServiceConnectionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CustomDnsConfigs",
+        "/properties/Id",
+        "/properties/PrivateDnsZoneConfigs"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

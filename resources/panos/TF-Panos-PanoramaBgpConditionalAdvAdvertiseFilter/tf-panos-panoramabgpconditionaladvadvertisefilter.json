@@ -1,0 +1,132 @@
+{
+    "typeName": "TF::Panos::PanoramaBgpConditionalAdvAdvertiseFilter",
+    "description": "This resource allows you to add/update/delete a Panorama advertise filter for a\nBGP conditional advertisement.\n\n~> **Note:** A BGP conditional advertisement is valid only if there is at least\none non-exist filter and one advertise filter attached.  This filter must be paired\nwith the other in order for the configuration to be valid.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaBgpConditionalAdvAdvertiseFilter/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressPrefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of matching address prefixes."
+        },
+        "AsPathRegex": {
+            "type": "string",
+            "description": "AS path to match."
+        },
+        "BgpConditionalAdv": {
+            "type": "string",
+            "description": "The BGP conditional advertisement to add\nthis filter to."
+        },
+        "CommunityRegex": {
+            "type": "string",
+            "description": "Community to match."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
+        },
+        "ExtendedCommunityRegex": {
+            "type": "string",
+            "description": "Extended community to match."
+        },
+        "FromPeers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of peers that advertised the route entry."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Med": {
+            "type": "string",
+            "description": "Match MED."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "NextHops": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of next hop attributes."
+        },
+        "RouteTable": {
+            "type": "string",
+            "description": "Route table to match rule.  Valid\nvalues are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't\nseem to be a way to configure this in the GUI, it is always set to `unicast`.\nThus, if you're running this resource against PAN-OS 8.0+, the appropriate\nthing to do is set this value to `unicast` as well to match the GUI functionality."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router to add this filter to."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AddressPrefixes",
+        "BgpConditionalAdv",
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

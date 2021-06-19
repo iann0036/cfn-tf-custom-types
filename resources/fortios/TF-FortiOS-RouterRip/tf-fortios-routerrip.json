@@ -1,0 +1,351 @@
+{
+    "typeName": "TF::FortiOS::RouterRip",
+    "description": "Configure RIP.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterRip/docs/README.md",
+    "definitions": {
+        "DistanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "string",
+                    "description": "Access list for route destination."
+                },
+                "Distance": {
+                    "type": "number",
+                    "description": "Distance (1 - 255)."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Distance ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Distance prefix."
+                }
+            },
+            "required": []
+        },
+        "DistributeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Direction": {
+                    "type": "string",
+                    "description": "Distribute list direction. Valid values: `in`, `out`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Distribute list ID."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Distribute list interface name."
+                },
+                "Listname": {
+                    "type": "string",
+                    "description": "Distribute access/prefix list name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "status Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthKeychain": {
+                    "type": "string",
+                    "description": "Authentication key-chain name."
+                },
+                "AuthMode": {
+                    "type": "string",
+                    "description": "Authentication mode. Valid values: `none`, `text`, `md5`."
+                },
+                "AuthString": {
+                    "type": "string",
+                    "description": "Authentication string/password."
+                },
+                "Flags": {
+                    "type": "number",
+                    "description": "flags."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                },
+                "ReceiveVersion": {
+                    "type": "string",
+                    "description": "Receive version. Valid values: `1`, `2`."
+                },
+                "SendVersion": {
+                    "type": "string",
+                    "description": "Send version. Valid values: `1`, `2`."
+                },
+                "SendVersion2Broadcast": {
+                    "type": "string",
+                    "description": "Enable/disable broadcast version 1 compatible packets. Valid values: `disable`, `enable`."
+                },
+                "SplitHorizon": {
+                    "type": "string",
+                    "description": "Enable/disable split horizon. Valid values: `poisoned`, `regular`."
+                },
+                "SplitHorizonStatus": {
+                    "type": "string",
+                    "description": "Enable/disable split horizon. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "NeighborDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Neighbor entry ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP address."
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Network entry ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Network prefix."
+                }
+            },
+            "required": []
+        },
+        "OffsetListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessList": {
+                    "type": "string",
+                    "description": "Access list name."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "Offset list direction. Valid values: `in`, `out`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Offset-list ID."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface name."
+                },
+                "Offset": {
+                    "type": "number",
+                    "description": "offset."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "status Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "PassiveInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Passive interface name."
+                }
+            },
+            "required": []
+        },
+        "RedistributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Metric": {
+                    "type": "number",
+                    "description": "Redistribute metric setting."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Redistribute name."
+                },
+                "Routemap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "status Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultInformationOriginate": {
+            "type": "string",
+            "description": "Enable/disable generation of default route. Valid values: `enable`, `disable`."
+        },
+        "DefaultMetric": {
+            "type": "number",
+            "description": "Default metric."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GarbageTimer": {
+            "type": "number",
+            "description": "Garbage timer in seconds."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxOutMetric": {
+            "type": "number",
+            "description": "Maximum metric allowed to output(0 means 'not set')."
+        },
+        "RecvBufferSize": {
+            "type": "number",
+            "description": "Receiving buffer size."
+        },
+        "TimeoutTimer": {
+            "type": "number",
+            "description": "Timeout timer in seconds."
+        },
+        "UpdateTimer": {
+            "type": "number",
+            "description": "Update timer in seconds."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Version": {
+            "type": "string",
+            "description": "RIP version. Valid values: `1`, `2`."
+        },
+        "Distance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistanceDefinition"
+            }
+        },
+        "DistributeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeListDefinition"
+            }
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfaceDefinition"
+            }
+        },
+        "Neighbor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborDefinition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "OffsetList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OffsetListDefinition"
+            }
+        },
+        "PassiveInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PassiveInterfaceDefinition"
+            }
+        },
+        "Redistribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/InterfaceDefinition/AuthString"
+    ]
+}

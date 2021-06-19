@@ -1,0 +1,241 @@
+{
+    "typeName": "TF::Cloudflare::RateLimit",
+    "description": "Provides a Cloudflare rate limit resource for a given zone. This can be used to limit the traffic you receive zone-wide, or matching more specific types of requests/responses.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-RateLimit/docs/README.md",
+    "definitions": {
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Response": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "CorrelateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "By": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Response": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "$ref": "#/definitions/HeadersDefinition"
+                        }
+                    }
+                },
+                "OriginTraffic": {
+                    "type": "boolean"
+                },
+                "Statuses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Schemes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UrlPattern": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BypassUrlPatterns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "URLs matching the patterns specified here will be excluded from rate limiting."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A note that you can use to describe the reason for a rate limit. This value is sanitized and all tags are removed."
+        },
+        "Disabled": {
+            "type": "boolean",
+            "description": "Whether this ratelimit is currently disabled. Default: `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "The time in seconds to count matching traffic. If the count exceeds threshold within this period the action will be performed (min: 1, max: 86,400)."
+        },
+        "Threshold": {
+            "type": "number",
+            "description": "The threshold that triggers the rate limit mitigations, combine with period. i.e. threshold per period (min: 2, max: 1,000,000)."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID to apply rate limiting to."
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Correlate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorrelateDefinition"
+            },
+            "maxItems": 1
+        },
+        "Match": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Period",
+        "Threshold",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

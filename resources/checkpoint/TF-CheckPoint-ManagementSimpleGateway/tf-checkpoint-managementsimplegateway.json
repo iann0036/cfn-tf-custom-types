@@ -1,0 +1,391 @@
+{
+    "typeName": "TF::CheckPoint::ManagementSimpleGateway",
+    "description": "This resource allows you to execute Check Point Simple Gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementSimpleGateway/docs/README.md",
+    "definitions": {
+        "FirewallSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LogsSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VpnSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AntiSpoofing": {
+                    "type": "boolean"
+                },
+                "AntiSpoofingSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AntiSpoofingSettingsDefinition"
+                    }
+                },
+                "Color": {
+                    "type": "string"
+                },
+                "Comments": {
+                    "type": "string"
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4MaskLength": {
+                    "type": "string"
+                },
+                "Ipv4NetworkMask": {
+                    "type": "string"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Ipv6MaskLength": {
+                    "type": "string"
+                },
+                "Ipv6NetworkMask": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecurityZone": {
+                    "type": "boolean"
+                },
+                "SecurityZoneSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityZoneSettingsDefinition"
+                    }
+                },
+                "Topology": {
+                    "type": "string"
+                },
+                "TopologySettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TopologySettingsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "AntiSpoofingSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecurityZoneSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TopologySettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AntiBot": {
+            "type": "boolean",
+            "description": "Anti-Bot blade enabled."
+        },
+        "AntiVirus": {
+            "type": "boolean",
+            "description": "Anti-Virus blade enabled."
+        },
+        "ApplicationControl": {
+            "type": "boolean",
+            "description": "Application Control blade enabled."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "ContentAwareness": {
+            "type": "boolean",
+            "description": "Content Awareness blade enabled."
+        },
+        "DynamicIp": {
+            "type": "boolean",
+            "description": "Dynamic IP address."
+        },
+        "Firewall": {
+            "type": "boolean",
+            "description": "Firewall blade enabled."
+        },
+        "FirewallSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FirewallSettingsDefinition"
+            },
+            "description": "Firewall settings. firewall_settings blocks are documented below."
+        },
+        "Hardware": {
+            "type": "string",
+            "description": "Gateway platform hardware name."
+        },
+        "IcapServer": {
+            "type": "boolean",
+            "description": "ICAP Server enabled."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "Ips": {
+            "type": "boolean",
+            "description": "Intrusion Prevention System blade enabled."
+        },
+        "Ipv4Address": {
+            "type": "string",
+            "description": "IPv4 address."
+        },
+        "Ipv6Address": {
+            "type": "string",
+            "description": "IPv6 address."
+        },
+        "LogsSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogsSettingsDefinition"
+            },
+            "description": "Logs settings. logs_settings blocks are documented below."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "OneTimePassword": {
+            "type": "string",
+            "description": "Secure internal connection one time password."
+        },
+        "OsName": {
+            "type": "string",
+            "description": "Operating system name."
+        },
+        "SaveLogsLocally": {
+            "type": "boolean",
+            "description": "Enable save logs locally."
+        },
+        "SendAlertsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send alerts to identified by the name."
+        },
+        "SendLogsToBackupServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Backup server(s) to send logs to identified by the name."
+        },
+        "SendLogsToServer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Server(s) to send logs to identified by the name."
+        },
+        "SicName": {
+            "type": "string",
+            "description": "Secure Internal Communication name."
+        },
+        "SicState": {
+            "type": "string",
+            "description": "Secure Internal Communication state."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tags identified by name."
+        },
+        "ThreatEmulation": {
+            "type": "boolean",
+            "description": "Threat Emulation blade enabled."
+        },
+        "ThreatExtraction": {
+            "type": "boolean",
+            "description": "Threat Extraction blade enabled."
+        },
+        "UrlFiltering": {
+            "type": "boolean",
+            "description": "URL Filtering blade enabled."
+        },
+        "Version": {
+            "type": "string",
+            "description": "Gateway platform version."
+        },
+        "Vpn": {
+            "type": "boolean",
+            "description": "VPN blade enabled."
+        },
+        "VpnSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VpnSettingsDefinition"
+            },
+            "description": "Gateway VPN settings. vpn_settings blocks are documented below."
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InterfacesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DynamicIp",
+        "/properties/Hardware",
+        "/properties/Id",
+        "/properties/SicName",
+        "/properties/SicState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

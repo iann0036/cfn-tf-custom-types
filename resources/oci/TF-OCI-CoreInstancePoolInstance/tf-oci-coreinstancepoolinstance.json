@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::OCI::CoreInstancePoolInstance",
+    "description": "This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.\n\nAttaches an instance to an instance pool. For information about the prerequisites\nthat an instance must meet before you can attach it to a pool, see\n[Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).\n\nUsing this resource will impact the size of the instance pool, attach will increment the size of the pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreInstancePoolInstance/docs/README.md",
+    "definitions": {
+        "LoadBalancerBackendsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendHealthStatus": {
+                    "type": "string"
+                },
+                "BackendName": {
+                    "type": "string"
+                },
+                "BackendSetName": {
+                    "type": "string"
+                },
+                "LoadBalancerId": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoTerminateInstanceOnDelete": {
+            "type": "boolean"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DecrementSizeOnDelete": {
+            "type": "boolean"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FaultDomain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceConfigurationId": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance."
+        },
+        "InstancePoolId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool."
+        },
+        "LoadBalancerBackends": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerBackendsDefinition"
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId",
+        "InstancePoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityDomain",
+        "/properties/CompartmentId",
+        "/properties/DisplayName",
+        "/properties/FaultDomain",
+        "/properties/Id",
+        "/properties/InstanceConfigurationId",
+        "/properties/LoadBalancerBackends",
+        "/properties/Region",
+        "/properties/Shape",
+        "/properties/State",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

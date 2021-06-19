@@ -1,0 +1,331 @@
+{
+    "typeName": "TF::OCI::ContainerengineCluster",
+    "description": "This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.\n\nCreate a new cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-ContainerengineCluster/docs/README.md",
+    "definitions": {
+        "EndpointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Kubernetes": {
+                    "type": "string"
+                },
+                "PrivateEndpoint": {
+                    "type": "string"
+                },
+                "PublicEndpoint": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreatedByUserId": {
+                    "type": "string"
+                },
+                "CreatedByWorkRequestId": {
+                    "type": "string"
+                },
+                "DeletedByUserId": {
+                    "type": "string"
+                },
+                "DeletedByWorkRequestId": {
+                    "type": "string"
+                },
+                "TimeCreated": {
+                    "type": "string"
+                },
+                "TimeDeleted": {
+                    "type": "string"
+                },
+                "TimeUpdated": {
+                    "type": "string"
+                },
+                "UpdatedByUserId": {
+                    "type": "string"
+                },
+                "UpdatedByWorkRequestId": {
+                    "type": "string"
+                }
+            }
+        },
+        "EndpointConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsPublicIpEnabled": {
+                    "type": "boolean"
+                },
+                "NsgIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SubnetId"
+            ]
+        },
+        "ImagePolicyConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsPolicyEnabled": {
+                    "type": "boolean"
+                },
+                "KeyDetails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyDetailsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServiceLbSubnetIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AddOns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddOnsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AdmissionControllerOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdmissionControllerOptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KubernetesNetworkConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KubernetesNetworkConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KeyDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AddOnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsKubernetesDashboardEnabled": {
+                    "type": "boolean"
+                },
+                "IsTillerEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AdmissionControllerOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsPodSecurityPolicyEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "KubernetesNetworkConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PodsCidr": {
+                    "type": "string"
+                },
+                "ServicesCidr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailableKubernetesUpgrades": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment in which to create the cluster."
+        },
+        "Endpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointsDefinition"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`."
+        },
+        "KubernetesVersion": {
+            "type": "string",
+            "description": "(Updatable) The version of Kubernetes to install into the cluster masters."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "(Updatable) The name of the cluster. Avoid entering confidential information."
+        },
+        "State": {
+            "type": "string"
+        },
+        "VcnId": {
+            "type": "string",
+            "description": "The OCID of the virtual cloud network (VCN) in which to create the cluster."
+        },
+        "EndpointConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ImagePolicyConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImagePolicyConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "KubernetesVersion",
+        "Name",
+        "VcnId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableKubernetesUpgrades",
+        "/properties/Endpoints",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/Metadata",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,545 @@
+{
+    "typeName": "TF::AWS::KinesisAnalyticsApplication",
+    "description": "Provides a Kinesis Analytics Application resource. Kinesis Analytics is a managed service that\nallows processing and analyzing streaming data using standard SQL.\n\nFor more details, see the [Amazon Kinesis Analytics Documentation][1].\n\n-> **Note:** To manage Amazon Kinesis Data Analytics for Apache Flink applications, use the [`aws_kinesisanalyticsv2_application`](/docs/providers/aws/r/kinesisanalyticsv2_application.html) resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-KinesisAnalyticsApplication/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CloudwatchLoggingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogStreamArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogStreamArn",
+                "RoleArn"
+            ]
+        },
+        "InputsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamePrefix": {
+                    "type": "string"
+                },
+                "KinesisFirehose": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisFirehoseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KinesisStream": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisStreamDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Parallelism": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParallelismDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ProcessingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessingConfigurationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Schema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "StartingPositionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartingPositionConfigurationDefinition"
+                    }
+                }
+            },
+            "required": [
+                "NamePrefix"
+            ]
+        },
+        "OutputsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "KinesisFirehose": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisFirehoseDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "KinesisStream": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KinesisStreamDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Lambda": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Schema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ReferenceDataSourcesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TableName": {
+                    "type": "string"
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Schema": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SchemaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "TableName"
+            ]
+        },
+        "KinesisFirehoseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceArn",
+                "RoleArn"
+            ]
+        },
+        "KinesisStreamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceArn",
+                "RoleArn"
+            ]
+        },
+        "ParallelismDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ProcessingConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lambda": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SchemaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordEncoding": {
+                    "type": "string"
+                },
+                "RecordColumns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordColumnsDefinition"
+                    },
+                    "maxItems": 1000,
+                    "minItems": 1
+                },
+                "RecordFormat": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RecordFormatDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "StartingPositionConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StartingPosition": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LambdaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ResourceArn",
+                "RoleArn"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketArn": {
+                    "type": "string"
+                },
+                "FileKey": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketArn",
+                "FileKey",
+                "RoleArn"
+            ]
+        },
+        "RecordColumnsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mapping": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SqlType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "SqlType"
+            ]
+        },
+        "RecordFormatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MappingParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MappingParametersDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MappingParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Csv": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Json": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JsonDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CsvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordColumnDelimiter": {
+                    "type": "string"
+                },
+                "RecordRowDelimiter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RecordColumnDelimiter",
+                "RecordRowDelimiter"
+            ]
+        },
+        "JsonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RecordRowPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RecordRowPath"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Code": {
+            "type": "string",
+            "description": "SQL Code to transform input data, and generate output."
+        },
+        "CreateTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the application."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdateTimestamp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Kinesis Analytics Application."
+        },
+        "StartApplication": {
+            "type": "boolean",
+            "description": "Whether to start or stop the Kinesis Analytics Application. To start an application, an input with a defined `starting_position` must be configured.\nTo modify an application's starting position, first stop the application by setting `start_application = false`, then update `starting_position` and set `start_application = true`."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Key-value map of tags for the Kinesis Analytics Application. If configured with a provider [`default_tags` configuration block](https://www.terraform.io/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Version": {
+            "type": "number"
+        },
+        "CloudwatchLoggingOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudwatchLoggingOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Inputs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Outputs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OutputsDefinition"
+            },
+            "maxItems": 3
+        },
+        "ReferenceDataSources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReferenceDataSourcesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreateTimestamp",
+        "/properties/Id",
+        "/properties/LastUpdateTimestamp",
+        "/properties/Status",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

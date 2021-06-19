@@ -1,0 +1,220 @@
+{
+    "typeName": "TF::OCI::CoreVnicAttachment",
+    "description": "This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.\n\nCreates a secondary VNIC and attaches it to the specified instance.\nFor more information about secondary VNICs, see\n[Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-CoreVnicAttachment/docs/README.md",
+    "definitions": {
+        "CreateVnicDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPrivateDnsRecord": {
+                    "type": "boolean"
+                },
+                "AssignPublicIp": {
+                    "type": "string"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefinedTagsDefinition"
+                    }
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeformTagsDefinition"
+                    }
+                },
+                "HostnameLabel": {
+                    "type": "string"
+                },
+                "NsgIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrivateIp": {
+                    "type": "string"
+                },
+                "SkipSourceDestCheck": {
+                    "type": "boolean"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed. Avoid entering confidential information."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string",
+            "description": "The OCID of the instance."
+        },
+        "NicIndex": {
+            "type": "number",
+            "description": "Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm)."
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The OCID of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match."
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "string",
+            "description": "Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan)."
+        },
+        "VlanTag": {
+            "type": "number"
+        },
+        "VnicId": {
+            "type": "string"
+        },
+        "CreateVnicDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreateVnicDetailsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityDomain",
+        "/properties/CompartmentId",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/SubnetId",
+        "/properties/TimeCreated",
+        "/properties/VlanId",
+        "/properties/VlanTag",
+        "/properties/VnicId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

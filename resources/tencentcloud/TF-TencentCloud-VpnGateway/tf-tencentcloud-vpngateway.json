@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::TencentCloud::VpnGateway",
+    "description": "Provides a resource to create a VPN gateway.\n\n-> **NOTE:** The prepaid VPN gateway do not support renew operation or delete operation with terraform.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-VpnGateway/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "number",
+            "description": "The maximum public network output bandwidth of VPN gateway (unit: Mbps), the available values include: 5,10,20,50,100,200,500,1000. Default is 5. When charge type is `PREPAID`, bandwidth degradation operation is unsupported."
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "Charge Type of the VPN gateway. Valid value: `PREPAID`, `POSTPAID_BY_HOUR`. The default is `POSTPAID_BY_HOUR`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ExpiredTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsAddressBlocked": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the VPN gateway. The length of character is limited to 1-60."
+        },
+        "NewPurchasePlan": {
+            "type": "string"
+        },
+        "PrepaidPeriod": {
+            "type": "number",
+            "description": "Period of instance to be prepaid. Valid value: `1`, `2`, `3`, `4`, `6`, `7`, `8`, `9`, `12`, `24`, `36`. The unit is month. Caution: when this para and renew_flag para are valid, the request means to renew several months more pre-paid period. This para can only be set to take effect in create operation."
+        },
+        "PrepaidRenewFlag": {
+            "type": "string",
+            "description": "Flag indicates whether to renew or not. Valid value: `NOTIFY_AND_RENEW`, `NOTIFY_AND_AUTO_RENEW`, `NOT_NOTIFY_AND_NOT_RENEW`. This para can only be set to take effect in create operation."
+        },
+        "PublicIpAddress": {
+            "type": "string"
+        },
+        "RestrictState": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A list of tags used to associate different resources."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of gateway instance. Valid value: `IPSEC`, `SSL` and `CCN`. Note: CCN type is only for whitelist customer now."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC. Required if vpn gateway is not in `CCN` type, and doesn't make sense for `CCN` vpn gateway."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "Zone of the VPN gateway."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ExpiredTime",
+        "/properties/Id",
+        "/properties/IsAddressBlocked",
+        "/properties/NewPurchasePlan",
+        "/properties/PublicIpAddress",
+        "/properties/RestrictState",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

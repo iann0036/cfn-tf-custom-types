@@ -1,0 +1,787 @@
+{
+    "typeName": "TF::SumoLogic::Dashboard",
+    "description": "Provides a [Sumologic Dashboard (New)][1].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-Dashboard/docs/README.md",
+    "definitions": {
+        "ColoringRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MultipleSeriesAggregateFunction": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SingleSeriesAggregateFunction": {
+                    "type": "string"
+                },
+                "ColorThreshold": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColorThresholdDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MultipleSeriesAggregateFunction",
+                "Scope",
+                "SingleSeriesAggregateFunction"
+            ]
+        },
+        "LayoutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Grid": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GridDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "PanelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SumoSearchPanel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SumoSearchPanelDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TextPanel": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TextPanelDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BeginBoundedTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BeginBoundedTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CompleteLiteralTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CompleteLiteralTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TopologyLabelMapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "VariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowMultiSelect": {
+                    "type": "boolean"
+                },
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "HideFromUi": {
+                    "type": "boolean"
+                },
+                "IncludeAllOption": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SourceDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinitionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ColorThresholdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Color"
+            ]
+        },
+        "GridDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LayoutStructure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LayoutStructureDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SumoSearchPanelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "KeepVisualSettingsConsistentWithParent": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "VisualSettings": {
+                    "type": "string"
+                },
+                "ColoringRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ColoringRuleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LinkedDashboard": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinkedDashboardDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Query": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryDefinition"
+                    }
+                },
+                "TimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "TextPanelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeepVisualSettingsConsistentWithParent": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "VisualSettings": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "BeginBoundedTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "From": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FromDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "To": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ToDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CompleteLiteralTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RangeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RangeName"
+            ]
+        },
+        "DataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Label",
+                "Values"
+            ]
+        },
+        "SourceDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CsvVariableSourceDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvVariableSourceDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LogQueryVariableSourceDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogQueryVariableSourceDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MetadataVariableSourceDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataVariableSourceDefinitionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LayoutStructureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Structure": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Structure"
+            ]
+        },
+        "LinkedDashboardDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "IncludeTimeRange": {
+                    "type": "boolean"
+                },
+                "IncludeVariables": {
+                    "type": "boolean"
+                },
+                "RelativePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricsQueryMode": {
+                    "type": "string"
+                },
+                "QueryKey": {
+                    "type": "string"
+                },
+                "QueryString": {
+                    "type": "string"
+                },
+                "QueryType": {
+                    "type": "string"
+                },
+                "MetricsQueryData": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricsQueryDataDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "QueryKey",
+                "QueryString",
+                "QueryType"
+            ]
+        },
+        "FromDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EpochTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EpochTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Iso8601TimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Iso8601TimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LiteralTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LiteralTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RelativeTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RelativeTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ToDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EpochTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EpochTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Iso8601TimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Iso8601TimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LiteralTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LiteralTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RelativeTimeRange": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RelativeTimeRangeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CsvVariableSourceDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Values": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Values"
+            ]
+        },
+        "LogQueryVariableSourceDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Field",
+                "Query"
+            ]
+        },
+        "MetadataVariableSourceDefinitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filter": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filter",
+                "Key"
+            ]
+        },
+        "MetricsQueryDataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AggregationType": {
+                    "type": "string"
+                },
+                "GroupBy": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Operator": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OperatorDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Metric"
+            ]
+        },
+        "EpochTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EpochMillis": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EpochMillis"
+            ]
+        },
+        "Iso8601TimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iso8601Time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Iso8601Time"
+            ]
+        },
+        "LiteralTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RangeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RangeName"
+            ]
+        },
+        "RelativeTimeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RelativeTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RelativeTime"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Negation": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "OperatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OperatorName": {
+                    "type": "string"
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParameterDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "OperatorName"
+            ]
+        },
+        "ParameterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FolderId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RefreshInterval": {
+            "type": "number"
+        },
+        "Theme": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "ColoringRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ColoringRuleDefinition"
+            }
+        },
+        "Layout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LayoutDefinition"
+            },
+            "maxItems": 1
+        },
+        "Panel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PanelDefinition"
+            }
+        },
+        "TimeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRangeDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TopologyLabelMap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TopologyLabelMapDefinition"
+            },
+            "maxItems": 1
+        },
+        "Variable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VariableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

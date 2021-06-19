@@ -1,0 +1,248 @@
+{
+    "typeName": "TF::NS1::Record",
+    "description": "Provides a NS1 Record resource. This can be used to create, modify, and delete records.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ns1/TF-NS1-Record/docs/README.md",
+    "definitions": {
+        "MetaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AnswersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Answer": {
+                    "type": "string"
+                },
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetaDefinition2"
+                    }
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MetaDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FiltersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigDefinition"
+                    }
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Filter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filter"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RegionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetaDefinition3"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MetaDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string",
+            "description": "The records' domain. Cannot have leading or trailing\ndots - see the example above and `FQDN formatting` below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string",
+            "description": "The target record to link to. This means this record is a\n'linked' record, and it inherits all properties from its target."
+        },
+        "Meta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetaDefinition"
+            }
+        },
+        "ShortAnswers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The records' time to live (in seconds)."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The records' RR type."
+        },
+        "UseClientSubnet": {
+            "type": "boolean",
+            "description": "Whether to use EDNS client subnet data when\navailable(in filter chain)."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The zone the record belongs to. Cannot have leading or\ntrailing dots (\".\") - see the example above and `FQDN formatting` below."
+        },
+        "Answers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnswersDefinition"
+            }
+        },
+        "Filters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FiltersDefinition"
+            }
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RegionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Type",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

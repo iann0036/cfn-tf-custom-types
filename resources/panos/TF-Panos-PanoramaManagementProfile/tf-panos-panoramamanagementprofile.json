@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Panos::PanoramaManagementProfile",
+    "description": "This resource allows you to add/update/delete Panorama interface management profiles\nfor both templates and template stacks.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaManagementProfile/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Http": {
+            "type": "boolean",
+            "description": "Allow HTTP."
+        },
+        "HttpOcsp": {
+            "type": "boolean",
+            "description": "Allow HTTP OCSP."
+        },
+        "Https": {
+            "type": "boolean",
+            "description": "Allow HTTPS."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The management profile's name."
+        },
+        "PermittedIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The list of permitted IP addresses or address\nranges for this management profile."
+        },
+        "Ping": {
+            "type": "boolean",
+            "description": "Allow ping."
+        },
+        "ResponsePages": {
+            "type": "boolean",
+            "description": "Allow response pages."
+        },
+        "Snmp": {
+            "type": "boolean",
+            "description": "Allow SNMP."
+        },
+        "Ssh": {
+            "type": "boolean",
+            "description": "Allow SSH."
+        },
+        "Telnet": {
+            "type": "boolean",
+            "description": "Allow telnet."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "TemplateStack": {
+            "type": "string",
+            "description": "The template stack name."
+        },
+        "UseridService": {
+            "type": "boolean",
+            "description": "Allow User ID service."
+        },
+        "UseridSyslogListenerSsl": {
+            "type": "boolean",
+            "description": "Allow User ID syslog listener\nfor SSL."
+        },
+        "UseridSyslogListenerUdp": {
+            "type": "boolean",
+            "description": "Allow User ID syslog listener\nfor UDP."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

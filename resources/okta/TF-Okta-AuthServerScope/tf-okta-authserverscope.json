@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::Okta::AuthServerScope",
+    "description": "Creates an Authorization Server Scope.\n\nThis resource allows you to create and configure an Authorization Server Scope.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServerScope/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthServerId": {
+            "type": "string",
+            "description": "Auth Server ID."
+        },
+        "Consent": {
+            "type": "string",
+            "description": "Indicates whether a consent dialog is needed for the scope. It can be set to `\"REQUIRED\"` or `\"IMPLICIT\"`."
+        },
+        "Default": {
+            "type": "boolean",
+            "description": "A default scope will be returned in an access token when the client omits the scope parameter in a token request, provided this scope is allowed as part of the access policy rule."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the Auth Server Scope."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetadataPublish": {
+            "type": "string",
+            "description": "Whether to publish metadata or not. It can be set to `\"ALL_CLIENTS\"` or `\"NO_CLIENTS\"`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Auth Server scope name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthServerId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

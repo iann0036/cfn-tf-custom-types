@@ -1,0 +1,119 @@
+{
+    "typeName": "TF::Metal::Project",
+    "description": "Provides an Equinix Metal project resource to allow you manage devices\nin your projects.\n\n-> Keep in mind that Equinix Metal invoicing is per project, so creating many `metal_project` resources will affect the rendered invoice. If you want to keep your Equinix Metal bill simple and easy to review, please re-use your existing projects.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/metal/TF-Metal-Project/docs/README.md",
+    "definitions": {
+        "BgpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Asn": {
+                    "type": "number",
+                    "description": "Autonomous System Number for local BGP deployment."
+                },
+                "DeploymentType": {
+                    "type": "string",
+                    "description": "`private` or `public`, the `private` is likely to be usable immediately, the `public` will need to be review by Equinix Metal engineers."
+                },
+                "Md5": {
+                    "type": "string",
+                    "description": "Password for BGP session in plaintext (not a checksum)."
+                }
+            },
+            "required": [
+                "Asn",
+                "DeploymentType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendTransfer": {
+            "type": "boolean",
+            "description": "Enable or disable [Backend Transfer](https://metal.equinix.com/developers/docs/networking/backend-transfer/), default is false."
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the project."
+        },
+        "OrganizationId": {
+            "type": "string",
+            "description": "The UUID of organization under which you want to create the project. If you leave it out, the project will be create under your the default organization of your account."
+        },
+        "PaymentMethodId": {
+            "type": "string",
+            "description": "The UUID of payment method for this project. The payment method and the project need to belong to the same organization (passed with `organization_id`, or default)."
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "BgpConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BgpConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/Id",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/BgpConfigDefinition/Md5"
+    ]
+}

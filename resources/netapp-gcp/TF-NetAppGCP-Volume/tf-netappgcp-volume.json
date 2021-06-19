@@ -1,0 +1,333 @@
+{
+    "typeName": "TF::NetAppGCP::Volume",
+    "description": "CloudFormation equivalent of netapp-gcp_volume",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-gcp/TF-NetAppGCP-Volume/docs/README.md",
+    "definitions": {
+        "ExportPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MountPointsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Export": {
+                    "type": "string"
+                },
+                "ProtocolType": {
+                    "type": "string"
+                },
+                "Server": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SnapshotPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "DailySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailyScheduleDefinition"
+                    }
+                },
+                "HourlySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HourlyScheduleDefinition"
+                    }
+                },
+                "MonthlySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MonthlyScheduleDefinition"
+                    }
+                },
+                "WeeklySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeeklyScheduleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "string"
+                },
+                "AllowedClients": {
+                    "type": "string"
+                },
+                "HasRootAccess": {
+                    "type": "string"
+                },
+                "Kerberos5Readonly": {
+                    "type": "boolean"
+                },
+                "Kerberos5Readwrite": {
+                    "type": "boolean"
+                },
+                "Kerberos5iReadonly": {
+                    "type": "boolean"
+                },
+                "Kerberos5iReadwrite": {
+                    "type": "boolean"
+                },
+                "Kerberos5pReadonly": {
+                    "type": "boolean"
+                },
+                "Kerberos5pReadwrite": {
+                    "type": "boolean"
+                },
+                "Nfsv3": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Nfsv3Definition"
+                    }
+                },
+                "Nfsv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Nfsv4Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DailyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "HourlyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MonthlyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysOfMonth": {
+                    "type": "string"
+                },
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WeeklyScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "Hour": {
+                    "type": "number"
+                },
+                "Minute": {
+                    "type": "number"
+                },
+                "SnapshotsToKeep": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Nfsv3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Checked": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Nfsv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Checked": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteOnCreationError": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "ProtocolTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RegionalHa": {
+            "type": "boolean"
+        },
+        "ServiceLevel": {
+            "type": "string"
+        },
+        "SharedVpcProjectNumber": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "StorageClass": {
+            "type": "string"
+        },
+        "TypeDp": {
+            "type": "boolean"
+        },
+        "VolumePath": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "ExportPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExportPolicyDefinition"
+            }
+        },
+        "MountPoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MountPointsDefinition"
+            }
+        },
+        "SnapshotPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Network",
+        "ProtocolTypes",
+        "Region",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

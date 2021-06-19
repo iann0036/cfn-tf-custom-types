@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::Panos::PanoramaLayer2Subinterface",
+    "description": "This resource allows you to add/update/delete Panorama layer2 subinterfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaLayer2Subinterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The interface comment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterfaceType": {
+            "type": "string",
+            "description": "The interface type.  Valid values are `ethernet` (default)\nor `aggregate-ethernet`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The interface's name."
+        },
+        "NetflowProfile": {
+            "type": "string",
+            "description": "The netflow profile."
+        },
+        "ParentInterface": {
+            "type": "string",
+            "description": "The name of the parent interface."
+        },
+        "ParentMode": {
+            "type": "string",
+            "description": "The parent's mode.  Valid values are `layer2` (default)\nor `virtual-wire`."
+        },
+        "Tag": {
+            "type": "number",
+            "description": "The interface's tag."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template name."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ParentInterface",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

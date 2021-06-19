@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::FortiOS::FirewallObjectService",
+    "description": "Provides a resource to configure firewall service of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_firewallservice_custom`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallObjectService/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string",
+            "description": "Service category."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully qualified domain name."
+        },
+        "Icmpcode": {
+            "type": "string",
+            "description": "ICMP code."
+        },
+        "Icmptype": {
+            "type": "string",
+            "description": "ICMP type."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iprange": {
+            "type": "string",
+            "description": "Start and end of the IP range associated with service."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Number of minutes before an idle administrator session time out."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol type based on IANA numbers."
+        },
+        "ProtocolNumber": {
+            "type": "string",
+            "description": "IP protocol number."
+        },
+        "SctpPortrange": {
+            "type": "string",
+            "description": "Multiple SCTP port ranges."
+        },
+        "SessionTtl": {
+            "type": "string",
+            "description": "Custom tcp session TTL."
+        },
+        "TcpPortrange": {
+            "type": "string",
+            "description": "Multiple TCP port ranges."
+        },
+        "UdpPortrange": {
+            "type": "string",
+            "description": "Multiple UDP port ranges."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "Name",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

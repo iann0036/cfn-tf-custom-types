@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Google::ServiceNetworkingConnection",
+    "description": "Manages a private VPC connection with a GCP service provider. For more information see\n[the official documentation](https://cloud.google.com/vpc/docs/configure-private-services-access#creating-connection)\nand\n[API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.connections).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ServiceNetworkingConnection/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string",
+            "description": "Name of VPC network connected with service producers using VPC peering."
+        },
+        "Peering": {
+            "type": "string"
+        },
+        "ReservedPeeringRanges": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Named IP address range(s) of PEERING type reserved for\nthis service provider. Note that invoking this method with a different range when connection\nis already established will not reallocate already provisioned service producer subnetworks."
+        },
+        "Service": {
+            "type": "string",
+            "description": "Provider peering service that is managing peering connectivity for a\nservice provider organization. For Google services that support this functionality it is\n'servicenetworking.googleapis.com'."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Network",
+        "ReservedPeeringRanges",
+        "Service"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Peering"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

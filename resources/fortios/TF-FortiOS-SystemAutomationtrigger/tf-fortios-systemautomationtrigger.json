@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::FortiOS::SystemAutomationtrigger",
+    "description": "Trigger for automation stitches.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemAutomationtrigger/docs/README.md",
+    "definitions": {
+        "FieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Value."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EventType": {
+            "type": "string",
+            "description": "Event type."
+        },
+        "FazEventName": {
+            "type": "string",
+            "description": "FortiAnalyzer event handler name."
+        },
+        "FazEventSeverity": {
+            "type": "string",
+            "description": "FortiAnalyzer event severity."
+        },
+        "FazEventTags": {
+            "type": "string",
+            "description": "FortiAnalyzer event tags."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IocLevel": {
+            "type": "string",
+            "description": "IOC threat level. Valid values: `medium`, `high`."
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "License type."
+        },
+        "Logid": {
+            "type": "number",
+            "description": "Log ID to trigger event."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "ReportType": {
+            "type": "string",
+            "description": "Security Rating report. Valid values: `PostureReport`, `CoverageReport`, `OptimizationReport`."
+        },
+        "TriggerDay": {
+            "type": "number",
+            "description": "Day within a month to trigger."
+        },
+        "TriggerFrequency": {
+            "type": "string",
+            "description": "Scheduled trigger frequency (default = daily). Valid values: `hourly`, `daily`, `weekly`, `monthly`."
+        },
+        "TriggerHour": {
+            "type": "number",
+            "description": "Hour of the day on which to trigger (0 - 23, default = 1)."
+        },
+        "TriggerMinute": {
+            "type": "number",
+            "description": "Minute of the hour on which to trigger (0 - 59, 60 to randomize)."
+        },
+        "TriggerType": {
+            "type": "string",
+            "description": "Trigger type. Valid values: `event-based`, `scheduled`."
+        },
+        "TriggerWeekday": {
+            "type": "string",
+            "description": "Day of week for trigger. Valid values: `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Fields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FieldsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

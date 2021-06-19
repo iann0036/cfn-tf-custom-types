@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::FortiOS::LogmemoryGlobalsetting",
+    "description": "Global settings for memory logging.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogmemoryGlobalsetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FullFinalWarningThreshold": {
+            "type": "number",
+            "description": "Log full final warning threshold as a percent (3 - 100, default = 95)."
+        },
+        "FullFirstWarningThreshold": {
+            "type": "number",
+            "description": "Log full first warning threshold as a percent (1 - 98, default = 75)."
+        },
+        "FullSecondWarningThreshold": {
+            "type": "number",
+            "description": "Log full second warning threshold as a percent (2 - 99, default = 90)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "Maximum amount of memory that can be used for memory logging in bytes."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

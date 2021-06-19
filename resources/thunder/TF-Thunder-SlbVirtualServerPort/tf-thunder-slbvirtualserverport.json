@@ -1,0 +1,826 @@
+{
+    "typeName": "TF::Thunder::SlbVirtualServerPort",
+    "description": "`thunder_slb_virtual_server_port` Provides details about thunder slb virtual server port",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbVirtualServerPort/docs/README.md",
+    "definitions": {
+        "AclIdListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclId": {
+                    "type": "number"
+                },
+                "AclIdSeqNum": {
+                    "type": "number"
+                },
+                "AclIdSeqNumShared": {
+                    "type": "number"
+                },
+                "AclIdShared": {
+                    "type": "number"
+                },
+                "AclIdSrcNatPool": {
+                    "type": "string"
+                },
+                "AclIdSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "SharedPartitionPoolId": {
+                    "type": "number"
+                },
+                "VAclIdSeqNum": {
+                    "type": "number"
+                },
+                "VAclIdSeqNumShared": {
+                    "type": "number"
+                },
+                "VAclIdSrcNatPool": {
+                    "type": "string"
+                },
+                "VAclIdSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "VSharedPartitionPoolId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AclNameListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AclName": {
+                    "type": "string"
+                },
+                "AclNameSeqNum": {
+                    "type": "number"
+                },
+                "AclNameSeqNumShared": {
+                    "type": "number"
+                },
+                "AclNameShared": {
+                    "type": "string"
+                },
+                "AclNameSrcNatPool": {
+                    "type": "string"
+                },
+                "AclNameSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "SharedPartitionPoolName": {
+                    "type": "number"
+                },
+                "VAclNameSeqNum": {
+                    "type": "number"
+                },
+                "VAclNameSeqNumShared": {
+                    "type": "number"
+                },
+                "VAclNameSrcNatPool": {
+                    "type": "string"
+                },
+                "VAclNameSrcNatPoolShared": {
+                    "type": "string"
+                },
+                "VSharedPartitionPoolName": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AflexScriptsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aflex": {
+                    "type": "string"
+                },
+                "AflexShared": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AaaPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: Enable; \u2018disable\u2019: Disable;."
+        },
+        "AltProtocol1": {
+            "type": "string",
+            "description": "\u2018http\u2019: HTTP Port;."
+        },
+        "AltProtocol2": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: TCP LB service;."
+        },
+        "AlternatePort": {
+            "type": "number",
+            "description": "Alternate Virtual Port."
+        },
+        "AlternatePortNumber": {
+            "type": "number",
+            "description": "Virtual Port."
+        },
+        "Auto": {
+            "type": "number",
+            "description": "Configure auto NAT for the vport."
+        },
+        "ClientipStickyNat": {
+            "type": "number",
+            "description": "Prefer to use same source NAT address for a client."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection Limit."
+        },
+        "CpuCompute": {
+            "type": "number"
+        },
+        "DefSelectionIfPrefFailed": {
+            "type": "string",
+            "description": "\u2018def-selection-if-pref-failed\u2019: Use default server selection method if prefer method failed; \u2018def-selection-if-pref-failed-disable\u2019: Stop using default server selection method if prefer method failed;."
+        },
+        "EnablePlayeridCheck": {
+            "type": "number",
+            "description": "Enable playerid checks on UDP packets once the AX is in active mode."
+        },
+        "EthFwd": {
+            "type": "number",
+            "description": "Ethernet interface number."
+        },
+        "EthRev": {
+            "type": "number",
+            "description": "Ethernet interface number."
+        },
+        "Expand": {
+            "type": "number",
+            "description": "expand syn-cookie with timestamp and wscale."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on virtual port."
+        },
+        "ForceRoutingMode": {
+            "type": "number",
+            "description": "Force routing mode."
+        },
+        "GslbEnable": {
+            "type": "number",
+            "description": "Enable Global Server Load Balancing."
+        },
+        "GtpSessionLb": {
+            "type": "number"
+        },
+        "HaConnMirror": {
+            "type": "number",
+            "description": "Enable for HA Conn sync."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreGlobal": {
+            "type": "number"
+        },
+        "IpMapList": {
+            "type": "string",
+            "description": "Enter name of IP Map List to be bound (IP Map List Name)."
+        },
+        "Ipinip": {
+            "type": "number",
+            "description": "Enable IP in IP."
+        },
+        "L7HardwareAssist": {
+            "type": "number",
+            "description": "FPGA assist L7 packet parsing."
+        },
+        "MemoryCompute": {
+            "type": "number"
+        },
+        "MessageSwitching": {
+            "type": "number",
+            "description": "Message switching."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SLB Virtual Service Name."
+        },
+        "NoAutoUpOnAflex": {
+            "type": "number",
+            "description": "Don\u2019t automatically mark vport up when aFleX is bound."
+        },
+        "NoDestNat": {
+            "type": "number",
+            "description": "Disable destination NAT, this option only supports in wildcard VIP or when a connection is operated in SSLi + EP mode."
+        },
+        "NoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "OnSyn": {
+            "type": "number",
+            "description": "Enable for HA Conn sync for l4 tcp sessions on SYN."
+        },
+        "OptimizationLevel": {
+            "type": "string",
+            "description": "\u20180\u2019: No optimization; \u20181\u2019: Optimization level 1 (Experimental);."
+        },
+        "PTemplateSipShared": {
+            "type": "number"
+        },
+        "PersistType": {
+            "type": "string",
+            "description": "\u2018src-dst-ip-swap-persist\u2019: Create persist session after source IP and destination IP swap; \u2018use-src-ip-for-dst-persist\u2019: Use the source IP to create a destination persist session; \u2018use-dst-ip-for-src-persist\u2019: Use the destination IP to create source IP persist session;."
+        },
+        "Pool": {
+            "type": "string",
+            "description": "Specify NAT pool or pool group."
+        },
+        "PoolShared": {
+            "type": "string",
+            "description": "Specify NAT pool or pool group."
+        },
+        "PortNumber": {
+            "type": "number",
+            "description": "Port."
+        },
+        "PortTranslation": {
+            "type": "number",
+            "description": "Enable port translation under no-dest-nat."
+        },
+        "Precedence": {
+            "type": "number",
+            "description": "Set auto NAT pool as higher precedence for source NAT."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "\u2018tcp\u2019: TCP LB service; \u2018udp\u2019: UDP Port; \u2018others\u2019: for no tcp/udp protocol, do IP load balancing; \u2018diameter\u2019: diameter port; \u2018dns-tcp\u2019: DNS service over TCP; \u2018dns-udp\u2019: DNS service over UDP; \u2018fast-http\u2019: Fast HTTP Port; \u2018fix\u2019: FIX Port; \u2018ftp\u2019: File Transfer Protocol Port; \u2018ftp-proxy\u2019: ftp proxy port; \u2018http\u2019: HTTP Port; \u2018https\u2019: HTTPS port; \u2018imap\u2019: imap proxy port; \u2018mlb\u2019: Message based load balancing; \u2018mms\u2019: Microsoft Multimedia Service Port; \u2018mysql\u2019: mssql port; \u2018mssql\u2019: mssql; \u2018pop3\u2019: pop3 proxy port; \u2018radius\u2019: RADIUS Port; \u2018rtsp\u2019: Real Time Streaming Protocol Port; \u2018sip\u2019: Session initiation protocol over UDP; \u2018sip-tcp\u2019: Session initiation protocol over TCP; \u2018sips\u2019: Session initiation protocol over TLS; \u2018smpp-tcp\u2019: SMPP service over TCP; \u2018spdy\u2019: spdy port; \u2018spdys\u2019: spdys port; \u2018smtp\u2019: SMTP Port; \u2018ssl-proxy\u2019: Generic SSL proxy; \u2018ssli\u2019: SSL insight; \u2018tcp-proxy\u2019: Generic TCP proxy; \u2018tftp\u2019: TFTP Port;."
+        },
+        "Range": {
+            "type": "number",
+            "description": "Virtual Port range (Virtual Port range value)."
+        },
+        "Rate": {
+            "type": "number",
+            "description": "Specify the log message rate."
+        },
+        "RedirectToHttps": {
+            "type": "number",
+            "description": "Redirect HTTP to HTTPS."
+        },
+        "ReqFail": {
+            "type": "number",
+            "description": "Use alternate virtual port when L7 request fail."
+        },
+        "Reset": {
+            "type": "number",
+            "description": "Send client reset when connection number over limit."
+        },
+        "ResetOnServerSelectionFail": {
+            "type": "number",
+            "description": "Send client reset when server selection fails."
+        },
+        "RtpSipCallIdMatch": {
+            "type": "number",
+            "description": "rtp traffic try to match the real server of sip smp call-id session."
+        },
+        "ScaleoutBucketCount": {
+            "type": "number",
+            "description": "Number of traffic buckets."
+        },
+        "ScaleoutDeviceGroup": {
+            "type": "number",
+            "description": "Device group id."
+        },
+        "Secs": {
+            "type": "number",
+            "description": "Specify the interval in seconds."
+        },
+        "ServSelFail": {
+            "type": "number",
+            "description": "Use alternate virtual port when server selection failure."
+        },
+        "ServiceGroup": {
+            "type": "string",
+            "description": "Bind a Service Group to this Virtual Server (Service Group Name)."
+        },
+        "SharedPartitionCacheTemplate": {
+            "type": "number",
+            "description": "Reference a Cache template from shared partition."
+        },
+        "SharedPartitionClientSslTemplate": {
+            "type": "number",
+            "description": "Reference a Client SSL template from shared partition."
+        },
+        "SharedPartitionConnectionReuseTemplate": {
+            "type": "number",
+            "description": "Reference a connection reuse template from shared partition."
+        },
+        "SharedPartitionDblbTemplate": {
+            "type": "number"
+        },
+        "SharedPartitionDiameterTemplate": {
+            "type": "number",
+            "description": "Reference a Diameter template from shared partition."
+        },
+        "SharedPartitionDnsTemplate": {
+            "type": "number",
+            "description": "Reference a dns template from shared partition."
+        },
+        "SharedPartitionDohTemplate": {
+            "type": "number"
+        },
+        "SharedPartitionDynamicServiceTemplate": {
+            "type": "number",
+            "description": "Reference a dynamic service template from shared partition."
+        },
+        "SharedPartitionExternalServiceTemplate": {
+            "type": "number",
+            "description": "Reference a external service template from shared partition."
+        },
+        "SharedPartitionFixTemplate": {
+            "type": "number"
+        },
+        "SharedPartitionHttpPolicyTemplate": {
+            "type": "number",
+            "description": "Reference a http policy template from shared partition."
+        },
+        "SharedPartitionHttpTemplate": {
+            "type": "number",
+            "description": "Reference a HTTP template from shared partition."
+        },
+        "SharedPartitionImapPop3Template": {
+            "type": "number"
+        },
+        "SharedPartitionPersistCookieTemplate": {
+            "type": "number",
+            "description": "Reference a persist cookie template from shared partition."
+        },
+        "SharedPartitionPersistDestinationIpTemplate": {
+            "type": "number",
+            "description": "Reference a persist destination ip template from shared partition."
+        },
+        "SharedPartitionPersistSourceIpTemplate": {
+            "type": "number",
+            "description": "Reference a persist source ip template from shared partition."
+        },
+        "SharedPartitionPersistSslSidTemplate": {
+            "type": "number",
+            "description": "Reference a persist SSL SID template from shared partition."
+        },
+        "SharedPartitionPolicyTemplate": {
+            "type": "number",
+            "description": "Reference a policy template from shared partition."
+        },
+        "SharedPartitionPool": {
+            "type": "number",
+            "description": "Specify NAT pool or pool group from shared partition."
+        },
+        "SharedPartitionServerSslTemplate": {
+            "type": "number",
+            "description": "Reference a SSL Server template from shared partition."
+        },
+        "SharedPartitionSmppTemplate": {
+            "type": "number"
+        },
+        "SharedPartitionSmtpTemplate": {
+            "type": "number"
+        },
+        "SharedPartitionTcp": {
+            "type": "number",
+            "description": "Reference a tcp template from shared partition."
+        },
+        "SharedPartitionTcpProxyTemplate": {
+            "type": "number",
+            "description": "Reference a TCP Proxy template from shared partition."
+        },
+        "SharedPartitionUdp": {
+            "type": "number",
+            "description": "Reference a UDP template from shared partition."
+        },
+        "SharedPartitionVirtualPortTemplate": {
+            "type": "number",
+            "description": "Reference a Virtual Port template from shared partition."
+        },
+        "SkipRevHash": {
+            "type": "number",
+            "description": "Skip rev tuple hash insertion."
+        },
+        "SnatOnVip": {
+            "type": "number",
+            "description": "Enable source NAT traffic against VIP."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for virtual port; \u2018stats-data-disable\u2019: Disable statistical data collection for virtual port;."
+        },
+        "SubstituteSourceMac": {
+            "type": "number"
+        },
+        "SupportHttp2": {
+            "type": "number",
+            "description": "Support HTTP2."
+        },
+        "SynCookie": {
+            "type": "number",
+            "description": "Enable syn-cookie."
+        },
+        "TemplateCache": {
+            "type": "string",
+            "description": "RAM caching template (Cache Template Name)."
+        },
+        "TemplateCacheShared": {
+            "type": "string",
+            "description": "Cache Template Name."
+        },
+        "TemplateClientSsh": {
+            "type": "string",
+            "description": "Client SSH Template (Client SSH Config Name)."
+        },
+        "TemplateClientSsl": {
+            "type": "string",
+            "description": "Client SSL Template (Client SSL Config Name)."
+        },
+        "TemplateClientSslShared": {
+            "type": "string",
+            "description": "Client SSL Template Name."
+        },
+        "TemplateConnectionReuse": {
+            "type": "string",
+            "description": "Connection Reuse Template (Connection Reuse Template Name)."
+        },
+        "TemplateConnectionReuseShared": {
+            "type": "string",
+            "description": "Connection Reuse Template Name."
+        },
+        "TemplateDblb": {
+            "type": "string",
+            "description": "DBLB Template (DBLB template name)."
+        },
+        "TemplateDblbShared": {
+            "type": "string"
+        },
+        "TemplateDiameter": {
+            "type": "string",
+            "description": "Diameter Template (diameter template name)."
+        },
+        "TemplateDiameterShared": {
+            "type": "string",
+            "description": "Diameter Template Name."
+        },
+        "TemplateDns": {
+            "type": "string",
+            "description": "DNS template (DNS template name)."
+        },
+        "TemplateDnsShared": {
+            "type": "string",
+            "description": "DNS Template Name."
+        },
+        "TemplateDoh": {
+            "type": "string"
+        },
+        "TemplateDohShared": {
+            "type": "string"
+        },
+        "TemplateDynamicService": {
+            "type": "string",
+            "description": "Dynamic Service Template (dynamic-service template name)."
+        },
+        "TemplateDynamicServiceShared": {
+            "type": "string",
+            "description": "Dynamic Service Template Name."
+        },
+        "TemplateExternalService": {
+            "type": "string",
+            "description": "External service template (external-service template name)."
+        },
+        "TemplateExternalServiceShared": {
+            "type": "string",
+            "description": "External Service Template Name."
+        },
+        "TemplateFileInspection": {
+            "type": "string",
+            "description": "File Inspection service template (file-inspection template name)."
+        },
+        "TemplateFix": {
+            "type": "string",
+            "description": "FIX template (FIX Template Name)."
+        },
+        "TemplateFixShared": {
+            "type": "string"
+        },
+        "TemplateFtp": {
+            "type": "string",
+            "description": "FTP port template (Ftp template name)."
+        },
+        "TemplateHttp": {
+            "type": "string",
+            "description": "HTTP Template (HTTP Config Name)."
+        },
+        "TemplateHttpPolicy": {
+            "type": "string",
+            "description": "http-policy template (http-policy template name)."
+        },
+        "TemplateHttpPolicyShared": {
+            "type": "string",
+            "description": "Http Policy Template Name."
+        },
+        "TemplateHttpShared": {
+            "type": "string",
+            "description": "HTTP Template Name."
+        },
+        "TemplateImapPop3": {
+            "type": "string",
+            "description": "IMAP/POP3 Template (IMAP/POP3 Config Name)."
+        },
+        "TemplateImapPop3Shared": {
+            "type": "string"
+        },
+        "TemplateMqtt": {
+            "type": "string"
+        },
+        "TemplatePersistCookie": {
+            "type": "string",
+            "description": "Cookie persistence (Cookie persistence template name)."
+        },
+        "TemplatePersistCookieShared": {
+            "type": "string",
+            "description": "Cookie Persistence Template Name."
+        },
+        "TemplatePersistDestinationIp": {
+            "type": "string",
+            "description": "Destination IP persistence (Destination IP persistence template name)."
+        },
+        "TemplatePersistDestinationIpShared": {
+            "type": "string",
+            "description": "Destination IP Persistence Template Name."
+        },
+        "TemplatePersistSourceIp": {
+            "type": "string",
+            "description": "Source IP persistence (Source IP persistence template name)."
+        },
+        "TemplatePersistSourceIpShared": {
+            "type": "string",
+            "description": "Source IP Persistence Template Name."
+        },
+        "TemplatePersistSslSid": {
+            "type": "string",
+            "description": "SSL session ID persistence (Source IP Persistence Config name)."
+        },
+        "TemplatePersistSslSidShared": {
+            "type": "string",
+            "description": "SSL SID Persistence Template Name."
+        },
+        "TemplatePolicy": {
+            "type": "string",
+            "description": "Policy Template (Policy template name)."
+        },
+        "TemplatePolicyShared": {
+            "type": "string",
+            "description": "Policy Template Name."
+        },
+        "TemplateReqmodIcap": {
+            "type": "string",
+            "description": "ICAP reqmod template (reqmod-icap template name)."
+        },
+        "TemplateRespmodIcap": {
+            "type": "string",
+            "description": "ICAP respmod service template (respmod-icap template name)."
+        },
+        "TemplateScaleout": {
+            "type": "string",
+            "description": "Scaleout template (Scaleout template name)."
+        },
+        "TemplateServerSsh": {
+            "type": "string",
+            "description": "Server SSH Template (Server SSH Config Name)."
+        },
+        "TemplateServerSsl": {
+            "type": "string",
+            "description": "Server Side SSL Template (Server SSL Name)."
+        },
+        "TemplateServerSslShared": {
+            "type": "string",
+            "description": "Server SSL Template Name."
+        },
+        "TemplateSip": {
+            "type": "string",
+            "description": "SIP template."
+        },
+        "TemplateSipShared": {
+            "type": "string"
+        },
+        "TemplateSmpp": {
+            "type": "string",
+            "description": "SMPP template."
+        },
+        "TemplateSmppShared": {
+            "type": "string"
+        },
+        "TemplateSmtp": {
+            "type": "string",
+            "description": "SMTP Template (SMTP Config Name)."
+        },
+        "TemplateSmtpShared": {
+            "type": "string"
+        },
+        "TemplateSsli": {
+            "type": "string",
+            "description": "SSLi template (SSLi Template Name)."
+        },
+        "TemplateTcp": {
+            "type": "string",
+            "description": "L4 TCP Template (TCP Config Name)."
+        },
+        "TemplateTcpProxy": {
+            "type": "string",
+            "description": "TCP Proxy Template Name."
+        },
+        "TemplateTcpProxyClient": {
+            "type": "string",
+            "description": "TCP Proxy Config Client (TCP Proxy Config name)."
+        },
+        "TemplateTcpProxyServer": {
+            "type": "string",
+            "description": "TCP Proxy Config Server (TCP Proxy Config name)."
+        },
+        "TemplateTcpProxyShared": {
+            "type": "string",
+            "description": "TCP Proxy Template name."
+        },
+        "TemplateTcpShared": {
+            "type": "string",
+            "description": "TCP Template Name."
+        },
+        "TemplateUdp": {
+            "type": "string",
+            "description": "L4 UDP Template (UDP Config Name)."
+        },
+        "TemplateUdpShared": {
+            "type": "string",
+            "description": "UDP Template Name."
+        },
+        "TemplateVirtualPort": {
+            "type": "string",
+            "description": "Virtual port template (Virtual port template name)."
+        },
+        "TemplateVirtualPortShared": {
+            "type": "string",
+            "description": "Virtual Port Template Name."
+        },
+        "TrunkFwd": {
+            "type": "number",
+            "description": "Trunk interface number."
+        },
+        "TrunkRev": {
+            "type": "number",
+            "description": "Trunk interface number."
+        },
+        "UseAlternatePort": {
+            "type": "number",
+            "description": "Use alternate virtual port."
+        },
+        "UseCgnv6": {
+            "type": "number",
+            "description": "Follow CGNv6 source NAT configuration."
+        },
+        "UseDefaultIfNoServer": {
+            "type": "number",
+            "description": "Use default forwarding if server selection failed."
+        },
+        "UseRcvHopForResp": {
+            "type": "number",
+            "description": "Use receive hop for response to client(For packets on default-vlan, also config \u201cvlan-global enable-def-vlan-l2-forwarding\u201d.)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "View": {
+            "type": "number",
+            "description": "Specify a GSLB View (ID)."
+        },
+        "WafTemplate": {
+            "type": "string",
+            "description": "WAF template (WAF Template Name)."
+        },
+        "WhenDown": {
+            "type": "number",
+            "description": "Use alternate virtual port when down."
+        },
+        "WhenDownProtocol2": {
+            "type": "number",
+            "description": "Use alternate virtual port when down."
+        },
+        "AclIdList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclIdListDefinition"
+            }
+        },
+        "AclNameList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AclNameListDefinition"
+            }
+        },
+        "AflexScripts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AflexScriptsDefinition"
+            }
+        },
+        "AuthCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthCfgDefinition"
+            },
+            "maxItems": 1
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

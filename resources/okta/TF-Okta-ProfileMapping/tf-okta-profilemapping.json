@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::Okta::ProfileMapping",
+    "description": "Manages a profile mapping.\n\nThis resource allows you to manage a profile mapping by source id.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-ProfileMapping/docs/README.md",
+    "definitions": {
+        "MappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "PushStatus": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Expression",
+                "Id"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteWhenAbsent": {
+            "type": "boolean",
+            "description": "Tells the provider whether to attempt to delete missing mappings under profile mapping."
+        },
+        "Id": {
+            "type": "string",
+            "description": "Key of mapping.\n- `expression` - (Required) Combination or single source properties that will be mapped to the target property.\n- `push_status` - (Optional) Whether to update target properties on user create & update or just on create."
+        },
+        "SourceId": {
+            "type": "string",
+            "description": "Source id of the profile mapping."
+        },
+        "SourceName": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "TargetId": {
+            "type": "string"
+        },
+        "TargetName": {
+            "type": "string"
+        },
+        "TargetType": {
+            "type": "string"
+        },
+        "Mappings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MappingsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SourceId",
+        "TargetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SourceName",
+        "/properties/SourceType",
+        "/properties/TargetName",
+        "/properties/TargetType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

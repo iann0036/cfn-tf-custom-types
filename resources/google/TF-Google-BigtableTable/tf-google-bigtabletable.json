@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::Google::BigtableTable",
+    "description": "Creates a Google Cloud Bigtable table inside an instance. For more information see\n[the official documentation](https://cloud.google.com/bigtable/) and\n[API](https://cloud.google.com/bigtable/docs/go/reference).\n\n-> **Note:** It is strongly recommended to set `lifecycle { prevent_destroy = true }`\non tables in order to prevent accidental data loss. See\n[Terraform docs](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy)\nfor more information on lifecycle parameters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-BigtableTable/docs/README.md",
+    "definitions": {
+        "ColumnFamilyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Family": {
+                    "type": "string",
+                    "description": "The name of the column family."
+                }
+            },
+            "required": [
+                "Family"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the Bigtable instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the table."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "SplitKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of predefined keys to split the table on.\n!> **Warning:** Modifying the `split_keys` of an existing table will cause Terraform\nto delete/recreate the entire `google_bigtable_table` resource."
+        },
+        "ColumnFamily": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ColumnFamilyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

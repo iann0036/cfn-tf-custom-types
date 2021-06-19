@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Alicloud::SlbAttachment",
+    "description": "~> **Warnings:** This resource has been deprecated and please use [alicloud_backend_serverhttps](//www.terraform.io/docs/providers/alicloud/r/slb_backend_server.html).\n\nAdd a group of backend servers (ECS instance) to the Server Load Balancer or remove them from it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SlbAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendServers": {
+            "type": "string"
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of instance ids to added backend server in the SLB."
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "ID of the load balancer."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Type of the instances. Valid value ecs, eni. Default to ecs."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Weight of the instances. Valid value range: [0-100]. Default to 100."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceIds",
+        "LoadBalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

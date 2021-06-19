@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::TencentCloud::TcaplusCluster",
+    "description": "Use this resource to create TcaplusDB cluster.\n\n~> **NOTE:** TcaplusDB now only supports the following regions: `ap-shanghai,ap-hongkong,na-siliconvalley,ap-singapore,ap-seoul,ap-tokyo,eu-frankfurt, and na-ashburn`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-TcaplusCluster/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiAccessId": {
+            "type": "string"
+        },
+        "ApiAccessIp": {
+            "type": "string"
+        },
+        "ApiAccessPort": {
+            "type": "number"
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "Name of the TcaplusDB cluster. Name length should be between 1 and 30."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdlType": {
+            "type": "string",
+            "description": "IDL type of the TcaplusDB cluster. Valid values: `PROTO` and `TDR`."
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "OldPasswordExpireLast": {
+            "type": "number",
+            "description": "Expiration time of old password after password update, unit: second."
+        },
+        "OldPasswordExpireTime": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password of the TcaplusDB cluster. Password length should be between 12 and 16. The password must be a *mix* of uppercase letters (A-Z), lowercase *letters* (a-z) and *numbers* (0-9)."
+        },
+        "PasswordStatus": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "Subnet id of the TcaplusDB cluster."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "VPC id of the TcaplusDB cluster."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "IdlType",
+        "Password",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiAccessId",
+        "/properties/ApiAccessIp",
+        "/properties/ApiAccessPort",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/NetworkType",
+        "/properties/OldPasswordExpireTime",
+        "/properties/PasswordStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

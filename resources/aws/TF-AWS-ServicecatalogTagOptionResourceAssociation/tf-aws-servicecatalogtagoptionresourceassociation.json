@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::AWS::ServicecatalogTagOptionResourceAssociation",
+    "description": "Manages a Service Catalog Tag Option Resource Association.\n\n-> **Tip:** A \"resource\" is either a Service Catalog portfolio or product.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogTagOptionResourceAssociation/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceArn": {
+            "type": "string"
+        },
+        "ResourceCreatedTime": {
+            "type": "string"
+        },
+        "ResourceDescription": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "Resource identifier."
+        },
+        "ResourceName": {
+            "type": "string"
+        },
+        "TagOptionId": {
+            "type": "string",
+            "description": "Tag Option identifier."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceId",
+        "TagOptionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourceArn",
+        "/properties/ResourceCreatedTime",
+        "/properties/ResourceDescription",
+        "/properties/ResourceName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

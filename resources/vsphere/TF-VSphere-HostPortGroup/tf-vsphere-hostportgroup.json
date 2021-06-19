@@ -1,0 +1,182 @@
+{
+    "typeName": "TF::VSphere::HostPortGroup",
+    "description": "The `vsphere_host_port_group` resource can be used to manage vSphere standard\nport groups on an ESXi host. These port groups are connected to standard\nvirtual switches, which can be managed by the\n[`vsphere_host_virtual_switch`][host-virtual-switch] resource.\n\nFor an overview on vSphere networking concepts, see [this page][ref-vsphere-net-concepts].\n\n[host-virtual-switch]: /docs/providers/vsphere/r/host_virtual_switch.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-HostPortGroup/docs/README.md",
+    "definitions": {
+        "ComputedPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "MacAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "ComputedPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ComputedPolicyDefinition"
+            }
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "HostSystemId": {
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the port group up on. Forces a new resource if changed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the port group.  Forces a new resource if\nchanged."
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortsDefinition"
+            }
+        },
+        "ShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "ShapingBurstSize": {
+            "type": "number"
+        },
+        "ShapingEnabled": {
+            "type": "boolean"
+        },
+        "ShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "StandbyNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        },
+        "VirtualSwitchName": {
+            "type": "string",
+            "description": "The name of the virtual switch to bind\nthis port group to. Forces a new resource if changed."
+        },
+        "VlanId": {
+            "type": "number",
+            "description": "The VLAN ID/trunk mode for this port group.  An ID of\n`0` denotes no tagging, an ID of `1`-`4094` tags with the specific ID, and an\nID of `4095` enables trunk mode, allowing the guest to manage its own\ntagging. Default: `0`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HostSystemId",
+        "Name",
+        "VirtualSwitchName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ComputedPolicy",
+        "/properties/Id",
+        "/properties/Key",
+        "/properties/Ports"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::Splunk::AuthenticationUsers",
+    "description": "Create and update user information or delete the user.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/splunk/TF-Splunk-AuthenticationUsers/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultApp": {
+            "type": "string",
+            "description": "User default app. Overrides the default app inherited from the user roles."
+        },
+        "Email": {
+            "type": "string",
+            "description": "User email address."
+        },
+        "ForceChangePass": {
+            "type": "boolean",
+            "description": "Force user to change password indication."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Unique user login name."
+        },
+        "Password": {
+            "type": "string",
+            "description": "User login password."
+        },
+        "Realname": {
+            "type": "string",
+            "description": "Full user name."
+        },
+        "RestartBackgroundJobs": {
+            "type": "boolean",
+            "description": "Restart background search job that has not completed when Splunk restarts indication."
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Role to assign to this user. At least one existing role is required."
+        },
+        "Tz": {
+            "type": "string",
+            "description": "User timezone."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

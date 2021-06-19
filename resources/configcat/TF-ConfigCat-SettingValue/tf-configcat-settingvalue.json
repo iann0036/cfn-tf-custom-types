@@ -1,0 +1,137 @@
+{
+    "typeName": "TF::ConfigCat::SettingValue",
+    "description": "CloudFormation equivalent of configcat_setting_value",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/configcat/TF-ConfigCat-SettingValue/docs/README.md",
+    "definitions": {
+        "PercentageItemsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Percentage": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Percentage",
+                "Value"
+            ]
+        },
+        "RolloutRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string"
+                },
+                "ComparisonAttribute": {
+                    "type": "string"
+                },
+                "ComparisonValue": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparator",
+                "ComparisonAttribute",
+                "ComparisonValue",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnvironmentId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitOnly": {
+            "type": "boolean"
+        },
+        "MandatoryNotes": {
+            "type": "string"
+        },
+        "SettingId": {
+            "type": "string"
+        },
+        "SettingType": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        },
+        "PercentageItems": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PercentageItemsDefinition"
+            }
+        },
+        "RolloutRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RolloutRulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvironmentId",
+        "SettingId",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SettingType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

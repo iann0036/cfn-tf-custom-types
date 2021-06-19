@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::AWS::ServicecatalogProduct",
+    "description": "Manages a Service Catalog Product.\n\n~> **NOTE:** The user or role that uses this resources must have the `cloudformation:GetTemplate` IAM policy permission. This policy permission is required when using the `template_physical_id` argument.\n\n-> A \"provisioning artifact\" is also referred to as a \"version.\" A \"distributor\" is also referred to as a \"vendor.\"",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ServicecatalogProduct/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ProvisioningArtifactParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DisableTemplateValidation": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TemplatePhysicalId": {
+                    "type": "string"
+                },
+                "TemplateUrl": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptLanguage": {
+            "type": "string",
+            "description": "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the product."
+        },
+        "Distributor": {
+            "type": "string",
+            "description": "Distributor (i.e., vendor) of the product."
+        },
+        "HasDefaultPath": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the product."
+        },
+        "Owner": {
+            "type": "string",
+            "description": "Owner of the product."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SupportDescription": {
+            "type": "string",
+            "description": "Support information about the product."
+        },
+        "SupportEmail": {
+            "type": "string",
+            "description": "Contact email for product support."
+        },
+        "SupportUrl": {
+            "type": "string",
+            "description": "Contact URL for product support."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags to apply to the product. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of product. Valid values are `CLOUD_FORMATION_TEMPLATE`, `MARKETPLACE`."
+        },
+        "ProvisioningArtifactParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProvisioningArtifactParametersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Owner",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedTime",
+        "/properties/HasDefaultPath",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

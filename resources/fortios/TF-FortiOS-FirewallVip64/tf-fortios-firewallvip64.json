@@ -1,0 +1,221 @@
+{
+    "typeName": "TF::FortiOS::FirewallVip64",
+    "description": "Configure IPv6 to IPv4 virtual IPs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallVip64/docs/README.md",
+    "definitions": {
+        "MonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Health monitor name."
+                }
+            },
+            "required": []
+        },
+        "RealserversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIp": {
+                    "type": "string",
+                    "description": "Restrict server to a client IP in this range."
+                },
+                "Healthcheck": {
+                    "type": "string",
+                    "description": "Per server health check. Valid values: `disable`, `enable`, `vip`."
+                },
+                "HolddownInterval": {
+                    "type": "number",
+                    "description": "Hold down interval."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Real server ID."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "Mapped server IP."
+                },
+                "MaxConnections": {
+                    "type": "number",
+                    "description": "Maximum number of connections allowed to server."
+                },
+                "Monitor": {
+                    "type": "string",
+                    "description": "Health monitors."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "Mapped server port."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Server administrative status. Valid values: `active`, `standby`, `disable`."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "weight."
+                }
+            },
+            "required": []
+        },
+        "SrcFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string",
+                    "description": "Src-filter range."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable ARP reply. Valid values: `disable`, `enable`."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Extip": {
+            "type": "string",
+            "description": "Start-external-IP [-end-external-IP]."
+        },
+        "Extport": {
+            "type": "string",
+            "description": "External service port."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Custom defined id."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LdbMethod": {
+            "type": "string",
+            "description": "Load balance method. Valid values: `static`, `round-robin`, `weighted`, `least-session`, `least-rtt`, `first-alive`."
+        },
+        "Mappedip": {
+            "type": "string",
+            "description": "Start-mapped-IP [-end-mapped-IP]."
+        },
+        "Mappedport": {
+            "type": "string",
+            "description": "Mapped service port."
+        },
+        "Name": {
+            "type": "string",
+            "description": "VIP64 name."
+        },
+        "Portforward": {
+            "type": "string",
+            "description": "Enable port forwarding. Valid values: `disable`, `enable`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Mapped port protocol. Valid values: `tcp`, `udp`."
+        },
+        "ServerType": {
+            "type": "string",
+            "description": "Server type. Valid values: `http`, `tcp`, `udp`, `ip`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "VIP type: static NAT or server load balance. Valid values: `static-nat`, `server-load-balance`."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "Universally Unique Identifier (UUID; automatically assigned but can be manually reset)."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Monitor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorDefinition"
+            }
+        },
+        "Realservers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RealserversDefinition"
+            }
+        },
+        "SrcFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcFilterDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Extip",
+        "Mappedip"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

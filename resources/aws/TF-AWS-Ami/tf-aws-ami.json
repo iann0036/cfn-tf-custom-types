@@ -1,0 +1,281 @@
+{
+    "typeName": "TF::AWS::Ami",
+    "description": "The AMI resource allows the creation and management of a completely-custom\n*Amazon Machine Image* (AMI).\n\nIf you just want to duplicate an existing AMI, possibly copying it to another\nregion, it's better to use `aws_ami_copy` instead.\n\nIf you just want to share an existing AMI with another AWS account,\nit's better to use `aws_ami_launch_permission` instead.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Ami/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EbsBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean",
+                    "description": "Boolean controlling whether the EBS volumes created to\nsupport each created instance will be deleted once that instance is terminated."
+                },
+                "DeviceName": {
+                    "type": "string",
+                    "description": "The path at which the device is exposed to created instances."
+                },
+                "Encrypted": {
+                    "type": "boolean",
+                    "description": "Boolean controlling whether the created EBS volumes will be encrypted. Can't be used with `snapshot_id`."
+                },
+                "Iops": {
+                    "type": "number",
+                    "description": "Number of I/O operations per second the\ncreated volumes will support."
+                },
+                "SnapshotId": {
+                    "type": "string",
+                    "description": "The id of an EBS snapshot that will be used to initialize the created\nEBS volumes. If set, the `volume_size` attribute must be at least as large as the referenced\nsnapshot."
+                },
+                "Throughput": {
+                    "type": "number",
+                    "description": "The throughput that the EBS volume supports, in MiB/s. Only valid for `volume_type` of `gp3`."
+                },
+                "VolumeSize": {
+                    "type": "number",
+                    "description": "The size of created volumes in GiB.\nIf `snapshot_id` is set and `volume_size` is omitted then the volume will have the same size\nas the selected snapshot."
+                },
+                "VolumeType": {
+                    "type": "string",
+                    "description": "The type of EBS volume to create. Can be `standard`, `gp2`, `gp3`, `io1`, `io2`, `sc1` or `st1` (Default: `standard`)."
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string",
+                    "description": "The path at which the device is exposed to created instances."
+                },
+                "VirtualName": {
+                    "type": "string",
+                    "description": "A name for the ephemeral device, of the form \"ephemeralN\" where\n*N* is a volume number starting from zero."
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Architecture": {
+            "type": "string",
+            "description": "Machine architecture for created instances. Defaults to \"x86_64\"."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A longer, human-readable description for the AMI."
+        },
+        "EnaSupport": {
+            "type": "boolean",
+            "description": "Specifies whether enhanced networking with ENA is enabled. Defaults to `false`."
+        },
+        "Hypervisor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageLocation": {
+            "type": "string"
+        },
+        "ImageOwnerAlias": {
+            "type": "string"
+        },
+        "ImageType": {
+            "type": "string"
+        },
+        "KernelId": {
+            "type": "string"
+        },
+        "ManageEbsSnapshots": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A region-unique name for the AMI."
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "PlatformDetails": {
+            "type": "string"
+        },
+        "Public": {
+            "type": "boolean"
+        },
+        "RamdiskId": {
+            "type": "string"
+        },
+        "RootDeviceName": {
+            "type": "string",
+            "description": "The name of the root device (for example, `/dev/sda1`, or `/dev/xvda`)."
+        },
+        "RootSnapshotId": {
+            "type": "string"
+        },
+        "SriovNetSupport": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "UsageOperation": {
+            "type": "string"
+        },
+        "VirtualizationType": {
+            "type": "string",
+            "description": "Keyword to choose what virtualization mode created instances\nwill use. Can be either \"paravirtual\" (the default) or \"hvm\". The choice of virtualization type\nchanges the set of further arguments that are required, as described below."
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDeviceDefinition"
+            }
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDeviceDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Hypervisor",
+        "/properties/Id",
+        "/properties/ImageOwnerAlias",
+        "/properties/ImageType",
+        "/properties/ManageEbsSnapshots",
+        "/properties/OwnerId",
+        "/properties/Platform",
+        "/properties/PlatformDetails",
+        "/properties/Public",
+        "/properties/RootSnapshotId",
+        "/properties/UsageOperation"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

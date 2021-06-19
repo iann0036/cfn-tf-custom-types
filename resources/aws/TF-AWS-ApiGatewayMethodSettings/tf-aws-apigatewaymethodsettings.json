@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::AWS::ApiGatewayMethodSettings",
+    "description": "Manages API Gateway Stage Method Settings. For example, CloudWatch logging and metrics.\n\n~> **NOTE:** It is recommended to use this resource in conjunction with the [`aws_api_gateway_stage` resource](api_gateway_stage.html) instead of a stage managed by the [`aws_api_gateway_deployment` resource](api_gateway_deployment.html) optional `stage_name` argument. Stages managed by the `aws_api_gateway_deployment` resource are recreated on redeployment and this resource will require a second apply to recreate the method settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-ApiGatewayMethodSettings/docs/README.md",
+    "definitions": {
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheDataEncrypted": {
+                    "type": "boolean"
+                },
+                "CacheTtlInSeconds": {
+                    "type": "number"
+                },
+                "CachingEnabled": {
+                    "type": "boolean"
+                },
+                "DataTraceEnabled": {
+                    "type": "boolean"
+                },
+                "LoggingLevel": {
+                    "type": "string"
+                },
+                "MetricsEnabled": {
+                    "type": "boolean"
+                },
+                "RequireAuthorizationForCacheControl": {
+                    "type": "boolean"
+                },
+                "ThrottlingBurstLimit": {
+                    "type": "number"
+                },
+                "ThrottlingRateLimit": {
+                    "type": "number"
+                },
+                "UnauthorizedCacheControlHeaderStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MethodPath": {
+            "type": "string",
+            "description": "Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage. Ensure to trim any leading forward slashes in the path (e.g. `trimprefix(aws_api_gateway_resource.example.path, \"/\")`)."
+        },
+        "RestApiId": {
+            "type": "string",
+            "description": "The ID of the REST API."
+        },
+        "StageName": {
+            "type": "string",
+            "description": "The name of the stage."
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MethodPath",
+        "RestApiId",
+        "StageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

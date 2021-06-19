@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::TencentCloud::AsScalingGroup",
+    "description": "Provides a resource to create a group of AS (Auto scaling) instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AsScalingGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ForwardBalancerIdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListenerId": {
+                    "type": "string",
+                    "description": "Listener ID for application load balancers."
+                },
+                "LoadBalancerId": {
+                    "type": "string",
+                    "description": "ID of available load balancers."
+                },
+                "RuleId": {
+                    "type": "string",
+                    "description": "ID of forwarding rules."
+                },
+                "TargetAttribute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetAttributeDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "ListenerId",
+                "LoadBalancerId"
+            ]
+        },
+        "TargetAttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number",
+                    "description": "Port number."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Weight."
+                }
+            },
+            "required": [
+                "Port",
+                "Weight"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigurationId": {
+            "type": "string",
+            "description": "An available ID for a launch configuration."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DefaultCooldown": {
+            "type": "number",
+            "description": "Default cooldown time in second, and default value is `300`."
+        },
+        "DesiredCapacity": {
+            "type": "number",
+            "description": "Desired volume of CVM instances, which is between `max_size` and `min_size`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number"
+        },
+        "LoadBalancerIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of traditional load balancers."
+        },
+        "MaxSize": {
+            "type": "number",
+            "description": "Maximum number of CVM instances. Valid value ranges: (0~2000)."
+        },
+        "MinSize": {
+            "type": "number",
+            "description": "Minimum number of CVM instances. Valid value ranges: (0~2000)."
+        },
+        "MultiZoneSubnetPolicy": {
+            "type": "string",
+            "description": "Multi zone or subnet strategy, Valid values: PRIORITY and EQUALITY."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Specifies to which project the scaling group belongs."
+        },
+        "RetryPolicy": {
+            "type": "string",
+            "description": "Available values for retry policies. Valid values: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS."
+        },
+        "ScalingGroupName": {
+            "type": "string",
+            "description": "Name of a scaling group."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of subnet, and for VPC it is required."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Tags of a scaling group."
+        },
+        "TerminationPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Available values for termination policies. Valid values: OLDEST_INSTANCE and NEWEST_INSTANCE."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of VPC network."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of available zones, for Basic network it is required."
+        },
+        "ForwardBalancerIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardBalancerIdsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigurationId",
+        "MaxSize",
+        "MinSize",
+        "ScalingGroupName",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/InstanceCount",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

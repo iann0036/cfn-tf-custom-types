@@ -1,0 +1,371 @@
+{
+    "typeName": "TF::AzureRM::FrontdoorFirewallPolicy",
+    "description": "Manages an Azure Front Door Web Application Firewall Policy instance.\n\n!> **Be Aware:** Azure is rolling out a breaking change on Friday 9th April which may cause issues with the CDN/FrontDoor resources. [More information is available in this Github issue](https://github.com/terraform-providers/terraform-provider-azurerm/issues/11231) - however unfortunately this may necessitate a breaking change to the CDN and FrontDoor resources, more information will be posted [in the Github issue](https://github.com/terraform-providers/terraform-provider-azurerm/issues/11231) as the necessary changes are identified.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FrontdoorFirewallPolicy/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The action to perform when the rule is matched. Possible values are `Allow`, `Block`, `Log`, or `Redirect`."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the rule is enabled or disabled? Defaults to `true`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Gets name of the resource that is unique within a policy. This name can be used to access the resource."
+                },
+                "Priority": {
+                    "type": "number",
+                    "description": "The priority of the rule. Rules with a lower value will be evaluated before rules with a higher value. Defaults to `1`."
+                },
+                "RateLimitDurationInMinutes": {
+                    "type": "number",
+                    "description": "The rate limit duration in minutes. Defaults to `1`."
+                },
+                "RateLimitThreshold": {
+                    "type": "number",
+                    "description": "The rate limit threshold. Defaults to `10`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of rule. Possible values are `MatchRule` or `RateLimitRule`."
+                },
+                "MatchCondition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchConditionDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "Action",
+                "Name",
+                "Type"
+            ]
+        },
+        "ManagedRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string",
+                    "description": "The name of the managed rule to use with this resource."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "The version on the managed rule to use with this resource."
+                },
+                "Exclusion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionDefinition"
+                    },
+                    "maxItems": 100
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverrideDefinition"
+                    },
+                    "maxItems": 100
+                }
+            },
+            "required": [
+                "Type",
+                "Version"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchConditionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Up to `600` possible values to match. Limit is in total across all `match_condition` blocks and `match_values` arguments. String value itself can be up to `256` characters long."
+                },
+                "MatchVariable": {
+                    "type": "string",
+                    "description": "The request variable to compare with. Possible values are `Cookies`, `PostArgs`, `QueryString`, `RemoteAddr`, `RequestBody`, `RequestHeader`, `RequestMethod`, `RequestUri`, or `SocketAddr`."
+                },
+                "NegationCondition": {
+                    "type": "boolean",
+                    "description": "Should the result of the condition be negated."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "Comparison type to use for matching with the variable value. Possible values are `Any`, `BeginsWith`, `Contains`, `EndsWith`, `Equal`, `GeoMatch`, `GreaterThan`, `GreaterThanOrEqual`, `IPMatch`, `LessThan`, `LessThanOrEqual` or `RegEx`."
+                },
+                "Selector": {
+                    "type": "string",
+                    "description": "Match against a specific key if the `match_variable` is `QueryString`, `PostArgs`, `RequestHeader` or `Cookies`."
+                },
+                "Transforms": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Up to `5` transforms to apply. Possible values are `Lowercase`, `RemoveNulls`, `Trim`, `Uppercase`, `URLDecode` or`URLEncode`."
+                }
+            },
+            "required": [
+                "MatchValues",
+                "MatchVariable",
+                "Operator"
+            ]
+        },
+        "ExclusionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchVariable": {
+                    "type": "string",
+                    "description": "The variable type to be excluded. Possible values are `QueryStringArgNames`, `RequestBodyPostArgNames`, `RequestCookieNames`, `RequestHeaderNames`."
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies to. Possible values are: `Equals`, `Contains`, `StartsWith`, `EndsWith`, `EqualsAny`."
+                },
+                "Selector": {
+                    "type": "string",
+                    "description": "Selector for the value in the `match_variable` attribute this exclusion applies to."
+                }
+            },
+            "required": [
+                "MatchVariable",
+                "Operator",
+                "Selector"
+            ]
+        },
+        "OverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RuleGroupName": {
+                    "type": "string",
+                    "description": "The managed rule group to override."
+                },
+                "Exclusion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionDefinition"
+                    },
+                    "maxItems": 100
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    },
+                    "maxItems": 1000
+                }
+            },
+            "required": [
+                "RuleGroupName"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "The action to be applied when the rule matches. Possible values are `Allow`, `Block`, `Log`, or `Redirect`."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is the managed rule override enabled or disabled. Defaults to `false`."
+                },
+                "RuleId": {
+                    "type": "string",
+                    "description": "Identifier for the managed rule."
+                },
+                "Exclusion": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionDefinition"
+                    },
+                    "maxItems": 100
+                }
+            },
+            "required": [
+                "Action",
+                "RuleId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomBlockResponseBody": {
+            "type": "string",
+            "description": "If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding."
+        },
+        "CustomBlockResponseStatusCode": {
+            "type": "number",
+            "description": "If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Is the policy a enabled state or disabled state. Defaults to `true`."
+        },
+        "FrontendEndpointIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The firewall policy mode. Possible values are `Detection`, `Prevention` and defaults to `Prevention`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the policy. Changing this forces a new resource to be created."
+        },
+        "RedirectUrl": {
+            "type": "string",
+            "description": "If action type is redirect, this field represents redirect URL for the client."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the Web Application Firewall Policy."
+        },
+        "CustomRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomRuleDefinition"
+            },
+            "maxItems": 100
+        },
+        "ManagedRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedRuleDefinition"
+            },
+            "maxItems": 100
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FrontendEndpointIds",
+        "/properties/Id",
+        "/properties/Location"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

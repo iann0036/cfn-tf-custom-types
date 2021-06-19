@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Okta::AuthServerClaimDefault",
+    "description": "Configures Default Authorization Server Claim.\n\nThis resource allows you to configure Default Authorization Server Claims.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AuthServerClaimDefault/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlwaysIncludeInToken": {
+            "type": "boolean"
+        },
+        "AuthServerId": {
+            "type": "string",
+            "description": "ID of the authorization server."
+        },
+        "ClaimType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the claim. Can be set to `\"sub\"`, `\"address\"`, `\"birthdate\"`, `\"email\"`,\n`\"email_verified\"`, `\"family_name\"`, `\"gender\"`, `\"given_name\"`, `\"locale\"`, `\"middle_name\"`, `\"name\"`, `\"nickname\"`,\n`\"phone_number\"`, `\"picture\"`, `\"preferred_username\"`, `\"profile\"`, `\"updated_at\"`, `\"website\"`, `\"zoneinfo\"`."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string",
+            "description": "The value of the claim. Only required for `\"sub\"` claim."
+        },
+        "ValueType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthServerId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AlwaysIncludeInToken",
+        "/properties/ClaimType",
+        "/properties/Id",
+        "/properties/Scopes",
+        "/properties/Status",
+        "/properties/ValueType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::FortiOS::VpncertificateSetting",
+    "description": "VPN certificate setting.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpncertificateSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertnameDsa1024": {
+            "type": "string",
+            "description": "1024 bit DSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameDsa2048": {
+            "type": "string",
+            "description": "2048 bit DSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameEcdsa256": {
+            "type": "string",
+            "description": "256 bit ECDSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameEcdsa384": {
+            "type": "string",
+            "description": "384 bit ECDSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameEcdsa521": {
+            "type": "string",
+            "description": "521 bit ECDSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameEd25519": {
+            "type": "string",
+            "description": "253 bit EdDSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameEd448": {
+            "type": "string",
+            "description": "456 bit EdDSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameRsa1024": {
+            "type": "string",
+            "description": "1024 bit RSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameRsa2048": {
+            "type": "string",
+            "description": "2048 bit RSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CertnameRsa4096": {
+            "type": "string",
+            "description": "4096 bit RSA key certificate for re-signing server certificates for SSL inspection."
+        },
+        "CheckCaCert": {
+            "type": "string",
+            "description": "Enable/disable verification of the user certificate and pass authentication if any CA in the chain is trusted (default = enable). Valid values: `enable`, `disable`."
+        },
+        "CheckCaChain": {
+            "type": "string",
+            "description": "Enable/disable verification of the entire certificate chain and pass authentication only if the chain is complete and all of the CAs in the chain are trusted (default = disable). Valid values: `enable`, `disable`."
+        },
+        "CmpKeyUsageChecking": {
+            "type": "string",
+            "description": "Enable/disable server certificate key usage checking in CMP mode (default = enable). Valid values: `enable`, `disable`."
+        },
+        "CmpSaveExtraCerts": {
+            "type": "string",
+            "description": "Enable/disable saving extra certificates in CMP mode. Valid values: `enable`, `disable`."
+        },
+        "CnMatch": {
+            "type": "string",
+            "description": "When searching for a matching certificate, control how to find matches in the cn attribute of the certificate subject name. Valid values: `substring`, `value`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "OcspDefaultServer": {
+            "type": "string",
+            "description": "Default OCSP server."
+        },
+        "OcspOption": {
+            "type": "string",
+            "description": "Specify whether the OCSP URL is from certificate or configured OCSP server. Valid values: `certificate`, `server`."
+        },
+        "OcspStatus": {
+            "type": "string",
+            "description": "Enable/disable receiving certificates using the OCSP. Valid values: `enable`, `disable`."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "SslOcspSourceIp": {
+            "type": "string",
+            "description": "Source IP address to use to communicate with the OCSP server."
+        },
+        "StrictCrlCheck": {
+            "type": "string",
+            "description": "Enable/disable strict mode CRL checking. Valid values: `enable`, `disable`."
+        },
+        "StrictOcspCheck": {
+            "type": "string",
+            "description": "Enable/disable strict mode OCSP checking. Valid values: `enable`, `disable`."
+        },
+        "SubjectMatch": {
+            "type": "string",
+            "description": "When searching for a matching certificate, control how to find matches in the certificate subject name. Valid values: `substring`, `value`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertnameDsa1024",
+        "CertnameDsa2048",
+        "CertnameEcdsa256",
+        "CertnameEcdsa384",
+        "CertnameRsa1024",
+        "CertnameRsa2048"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

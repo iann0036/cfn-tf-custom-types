@@ -1,0 +1,274 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateServerSsl",
+    "description": "`thunder_slb_template_server_ssl` provides details about slb template server_ssl",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateServerSsl/docs/README.md",
+    "definitions": {
+        "CaCertsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaCert": {
+                    "type": "string"
+                },
+                "CaCertPartitionShared": {
+                    "type": "number"
+                },
+                "ServerOcspSg": {
+                    "type": "string"
+                },
+                "ServerOcspSrvr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CipherWithoutPrioListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CipherWoPrio": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CrlCertsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Crl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EcListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ec": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerCertificateErrorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertType": {
+            "type": "string",
+            "description": "\u2018fatal\u2019: Log fatal alerts;."
+        },
+        "Cert": {
+            "type": "string",
+            "description": "Specify Client certificate (Certificate Name)."
+        },
+        "CertSharedStr": {
+            "type": "string",
+            "description": "Certificate Name."
+        },
+        "CipherTemplate": {
+            "type": "string",
+            "description": "Cipher Template (Cipher Config Name)."
+        },
+        "CloseNotify": {
+            "type": "number",
+            "description": "Send close notification when terminate connection."
+        },
+        "Dgversion": {
+            "type": "number",
+            "description": "Lower TLS/SSL version can be downgraded."
+        },
+        "DhType": {
+            "type": "string",
+            "description": "\u20181024\u2019: 1024; \u20181024-dsa\u2019: 1024-dsa; \u20182048\u2019: 2048;."
+        },
+        "EnableTlsAlertLogging": {
+            "type": "number",
+            "description": "Enable TLS alert logging."
+        },
+        "Encrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED password string)."
+        },
+        "ForwardProxyEnable": {
+            "type": "number",
+            "description": "Enable SSL forward proxy."
+        },
+        "HandshakeLoggingEnable": {
+            "type": "number",
+            "description": "Enable SSL handshake logging."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Client private-key (Key Name)."
+        },
+        "KeySharedEncrypted": {
+            "type": "string",
+            "description": "Do NOT use this option manually. (This is an A10 reserved keyword.) (The ENCRYPTED password string)."
+        },
+        "KeySharedPassphrase": {
+            "type": "string",
+            "description": "Password Phrase."
+        },
+        "KeySharedStr": {
+            "type": "string",
+            "description": "Key Name."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server SSL Template Name."
+        },
+        "OcspStapling": {
+            "type": "number",
+            "description": "Enable ocsp-stapling support."
+        },
+        "Passphrase": {
+            "type": "string",
+            "description": "Password Phrase."
+        },
+        "RenegotiationDisable": {
+            "type": "number",
+            "description": "Disable SSL renegotiation."
+        },
+        "SessionCacheSize": {
+            "type": "number",
+            "description": "Session Cache Size (Specify 0 to disable Session ID reuse.)."
+        },
+        "SessionCacheTimeout": {
+            "type": "number",
+            "description": "Session Cache Timeout (Timeout value, in seconds)."
+        },
+        "SessionTicketEnable": {
+            "type": "number",
+            "description": "Enable server side session ticket support."
+        },
+        "SharedPartitionCipherTemplate": {
+            "type": "number",
+            "description": "Reference a cipher template from shared partition."
+        },
+        "SsliLogging": {
+            "type": "number",
+            "description": "SSLi logging level, default is error logging only."
+        },
+        "Sslilogging": {
+            "type": "string",
+            "description": "\u2018disable\u2019: Disable all logging; \u2018all\u2019: enable all logging(error, info);."
+        },
+        "TemplateCipherShared": {
+            "type": "string",
+            "description": "Cipher Template Name."
+        },
+        "UseClientSni": {
+            "type": "number",
+            "description": "use client SNI."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Version": {
+            "type": "number",
+            "description": "TLS/SSL version, default is the highest number supported (TLS/SSL version: 30-SSLv3.0, 31-TLSv1.0, 32-TLSv1.1 and 33-TLSv1.2)."
+        },
+        "CaCerts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CaCertsDefinition"
+            }
+        },
+        "CipherWithoutPrioList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CipherWithoutPrioListDefinition"
+            }
+        },
+        "CrlCerts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrlCertsDefinition"
+            }
+        },
+        "EcList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EcListDefinition"
+            }
+        },
+        "ServerCertificateError": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerCertificateErrorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

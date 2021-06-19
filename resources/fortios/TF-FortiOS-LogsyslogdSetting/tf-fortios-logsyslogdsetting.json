@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::FortiOS::LogsyslogdSetting",
+    "description": "Global settings for remote syslog server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-LogsyslogdSetting/docs/README.md",
+    "definitions": {
+        "CustomFieldNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Custom": {
+                    "type": "string",
+                    "description": "Field custom name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Entry ID."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Field name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "Certificate used to communicate with Syslog server."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EncAlgorithm": {
+            "type": "string",
+            "description": "Enable/disable reliable syslogging with TLS encryption. Valid values: `high-medium`, `high`, `low`, `disable`."
+        },
+        "Facility": {
+            "type": "string",
+            "description": "Remote syslog facility. Valid values: `kernel`, `user`, `mail`, `daemon`, `auth`, `syslog`, `lpr`, `news`, `uucp`, `cron`, `authpriv`, `ftp`, `ntp`, `audit`, `alert`, `clock`, `local0`, `local1`, `local2`, `local3`, `local4`, `local5`, `local6`, `local7`."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Log format. Valid values: `default`, `csv`, `cef`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "MaxLogRate": {
+            "type": "number",
+            "description": "Syslog maximum log rate in MBps (0 = unlimited)."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Remote syslog logging over UDP/Reliable TCP. Valid values: `udp`, `legacy-reliable`, `reliable`."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Server listen port."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "Set log transmission priority. Valid values: `default`, `low`."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Address of remote syslog server."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address of syslog."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable remote syslog logging. Valid values: `enable`, `disable`."
+        },
+        "SyslogType": {
+            "type": "number",
+            "description": "Hidden setting index of Syslog."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "CustomFieldName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomFieldNameDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

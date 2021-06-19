@@ -1,0 +1,273 @@
+{
+    "typeName": "TF::AzureRM::NetappVolume",
+    "description": "Manages a NetApp Volume.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-NetappVolume/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataProtectionReplicationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointType": {
+                    "type": "string",
+                    "description": "The endpoint type, default value is `dst` for destination."
+                },
+                "RemoteVolumeLocation": {
+                    "type": "string",
+                    "description": "Location of the primary volume."
+                },
+                "RemoteVolumeResourceId": {
+                    "type": "string",
+                    "description": "Resource ID of the primary volume."
+                },
+                "ReplicationFrequency": {
+                    "type": "string",
+                    "description": "Replication frequency, supported values are '10minutes', 'hourly', 'daily', values are case sensitive."
+                }
+            },
+            "required": [
+                "RemoteVolumeLocation",
+                "RemoteVolumeResourceId",
+                "ReplicationFrequency"
+            ]
+        },
+        "ExportPolicyRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedClients": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of allowed clients IPv4 addresses."
+                },
+                "CifsEnabled": {
+                    "type": "boolean",
+                    "description": "Is the CIFS protocol allowed?."
+                },
+                "Nfsv3Enabled": {
+                    "type": "boolean",
+                    "description": "Is the NFSv3 protocol allowed?."
+                },
+                "Nfsv4Enabled": {
+                    "type": "boolean",
+                    "description": "Is the NFSv4 protocol allowed?."
+                },
+                "ProtocolsEnabled": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of allowed protocols. Valid values include `CIFS`, `NFSv3`, or `NFSv4.1`. Only one value is supported at this time. This replaces the previous arguments: `cifs_enabled`, `nfsv3_enabled` and `nfsv4_enabled`."
+                },
+                "RootAccessEnabled": {
+                    "type": "boolean",
+                    "description": "Is root access permitted to this volume?."
+                },
+                "RuleIndex": {
+                    "type": "number",
+                    "description": "The index number of the rule."
+                },
+                "UnixReadOnly": {
+                    "type": "boolean",
+                    "description": "Is the file system on unix read only?."
+                },
+                "UnixReadWrite": {
+                    "type": "boolean",
+                    "description": "Is the file system on unix read and write?."
+                }
+            },
+            "required": [
+                "AllowedClients",
+                "RuleIndex"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created."
+        },
+        "CreateFromSnapshotResourceId": {
+            "type": "string",
+            "description": "Creates volume from snapshot. Following properties must be the same as the original volume where the snapshot was taken from: `protocols`, `subnet_id`, `location`, `service_level`, `resource_group_name`, `account_name` and `pool_name`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "MountIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the NetApp Volume. Changing this forces a new resource to be created."
+        },
+        "PoolName": {
+            "type": "string",
+            "description": "The name of the NetApp pool in which the NetApp Volume should be created. Changing this forces a new resource to be created."
+        },
+        "Protocols": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The target volume protocol expressed as a list. Supported single value include `CIFS`, `NFSv3`, or `NFSv4.1`. If argument is not defined it will default to `NFSv3`. Changing this forces a new resource to be created and data will be lost. Dual protocol scenario is supported for CIFS and NFSv3, for more information, please refer to [Create a dual-protocol volume for Azure NetApp Files](https://docs.microsoft.com/en-us/azure/azure-netapp-files/create-volumes-dual-protocol) document."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group where the NetApp Volume should be created. Changing this forces a new resource to be created."
+        },
+        "SecurityStyle": {
+            "type": "string",
+            "description": "Volume security style, accepted values are `Unix` or `Ntfs`. If not provided, single-protocol volume is created defaulting to `Unix` if it is `NFSv3` or `NFSv4.1` volume, if `CIFS`, it will default to `Ntfs`. In a dual-protocol volume, if not provided, its value will be `Ntfs`."
+        },
+        "ServiceLevel": {
+            "type": "string",
+            "description": "The target performance of the file system. Valid values include `Premium`, `Standard`, or `Ultra`."
+        },
+        "StorageQuotaInGb": {
+            "type": "number",
+            "description": "The maximum Storage Quota allowed for a file system in Gigabytes."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of the Subnet the NetApp Volume resides in, which must have the `Microsoft.NetApp/volumes` delegation. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VolumePath": {
+            "type": "string",
+            "description": "A unique file path for the volume. Used when creating mount targets. Changing this forces a new resource to be created."
+        },
+        "DataProtectionReplication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataProtectionReplicationDefinition"
+            },
+            "maxItems": 1
+        },
+        "ExportPolicyRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExportPolicyRuleDefinition"
+            },
+            "maxItems": 5
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "Location",
+        "Name",
+        "PoolName",
+        "ResourceGroupName",
+        "ServiceLevel",
+        "StorageQuotaInGb",
+        "SubnetId",
+        "VolumePath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/MountIpAddresses"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

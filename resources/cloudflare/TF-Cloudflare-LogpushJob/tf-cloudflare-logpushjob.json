@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::Cloudflare::LogpushJob",
+    "description": "Provides a resource which manages Cloudflare Logpush jobs. For Logpush jobs pushing to Amazon S3, Google Cloud Storage,\nMicrosoft Azure or Sumo Logic, this resource cannot be automatically created. In order to have this automated, you must\nhave:\n\n- `cloudflare_logpush_ownership_challenge`: Configured to generate the challenge\n  to confirm ownership of the destination.\n- Either manual inspection or another Terraform Provider to get the contents of\n  the `ownership_challenge_filename` value from the\n  `cloudflare_logpush_ownership_challenge` resource.\n- `cloudflare_logpush_job`: Create and manage the Logpush Job itself.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-LogpushJob/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Dataset": {
+            "type": "string",
+            "description": "Which type of dataset resource to use. Available values are `\"firewall_events\"`, `\"http_requests\"`, and `\"spectrum_events\"`."
+        },
+        "DestinationConf": {
+            "type": "string",
+            "description": "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included. See [Logpush destination documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#destination)."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether to enable the job."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogpullOptions": {
+            "type": "string",
+            "description": "Configuration string for the Logshare API. It specifies things like requested fields and timestamp formats. See [Logpull options documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#options)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the logpush job to create. Must match the regular expression `^[a-zA-Z0-9\\-\\.]*$`."
+        },
+        "OwnershipChallenge": {
+            "type": "string",
+            "description": "Ownership challenge token to prove destination ownership, required when destination is Amazon S3, Google Cloud Storage,\nMicrosoft Azure or Sumo Logic. See [Developer documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#usage)."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID where the logpush job should be created."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Dataset",
+        "DestinationConf",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

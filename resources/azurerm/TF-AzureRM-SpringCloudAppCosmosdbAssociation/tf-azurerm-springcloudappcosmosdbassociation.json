@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::AzureRM::SpringCloudAppCosmosdbAssociation",
+    "description": "Associates a [Spring Cloud Application](spring_cloud_app.html) with a [CosmosDB Account](cosmosdb_account.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SpringCloudAppCosmosdbAssociation/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiType": {
+            "type": "string",
+            "description": "Specifies the api type which should be used when connecting to the CosmosDB Account. Possible values are `cassandra`, `gremlin`, `mongo`, `sql` or `table`. Changing this forces a new resource to be created."
+        },
+        "CosmosdbAccessKey": {
+            "type": "string",
+            "description": "Specifies the CosmosDB Account access key."
+        },
+        "CosmosdbAccountId": {
+            "type": "string",
+            "description": "Specifies the ID of the CosmosDB Account. Changing this forces a new resource to be created."
+        },
+        "CosmosdbCassandraKeyspaceName": {
+            "type": "string",
+            "description": "Specifies the name of the Cassandra Keyspace which the Spring Cloud App should be associated with. Should only be set when `api_type` is `cassandra`."
+        },
+        "CosmosdbGremlinDatabaseName": {
+            "type": "string",
+            "description": "Specifies the name of the Gremlin Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`."
+        },
+        "CosmosdbGremlinGraphName": {
+            "type": "string",
+            "description": "Specifies the name of the Gremlin Graph which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`."
+        },
+        "CosmosdbMongoDatabaseName": {
+            "type": "string",
+            "description": "Specifies the name of the Mongo Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `mongo`."
+        },
+        "CosmosdbSqlDatabaseName": {
+            "type": "string",
+            "description": "Specifies the name of the Sql Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `sql`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created."
+        },
+        "SpringCloudAppId": {
+            "type": "string",
+            "description": "Specifies the ID of the Spring Cloud Application where this Association is created. Changing this forces a new resource to be created."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiType",
+        "CosmosdbAccessKey",
+        "CosmosdbAccountId",
+        "Name",
+        "SpringCloudAppId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

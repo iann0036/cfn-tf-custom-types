@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::TencentCloud::CynosdbReadonlyInstance",
+    "description": "Provide a resource to create a CynosDB readonly instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-CynosdbReadonlyInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "Cluster ID which the readonly instance belongs to."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to delete readonly instance directly or not. Default is false. If set true, instance will be deleted instead of staying recycle bin. Note: works for both `PREPAID` and `POSTPAID_BY_HOUR` cluster."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCpuCore": {
+            "type": "number",
+            "description": "The number of CPU cores of read-write type instance in the CynosDB cluster. Note: modification of this field will take effect immediately, if want to upgrade on maintenance window, please upgrade from console."
+        },
+        "InstanceMaintainDuration": {
+            "type": "number",
+            "description": "Duration time for maintenance, unit in second. `3600` by default."
+        },
+        "InstanceMaintainStartTime": {
+            "type": "number",
+            "description": "Offset time from 00:00, unit in second. For example, 03:00am should be `10800`. `10800` by default."
+        },
+        "InstanceMaintainWeekdays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Weekdays for maintenance. `[\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\", \"Sun\"]` by default."
+        },
+        "InstanceMemorySize": {
+            "type": "number",
+            "description": "Memory capacity of read-write type instance, unit in GB. Note: modification of this field will take effect immediately, if want to upgrade on maintenance window, please upgrade from console."
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "Name of instance."
+        },
+        "InstanceStatus": {
+            "type": "string"
+        },
+        "InstanceStorageSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "InstanceCpuCore",
+        "InstanceMemorySize",
+        "InstanceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/InstanceStatus",
+        "/properties/InstanceStorageSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::NSXT::PolicyOspfConfig",
+    "description": "This resource provides a method for the management of OSPF for T0 Gateway on default locale service. A single resource should be specified per T0 Gateway. Edge Cluster is expected to be configured on the Gateway.\n\nThis resource is applicable to NSX Policy Manager only.\nThis resource is supported with NSX 3.1.0 onwards.\n\n~> **NOTE:** NSX does not support deleting OSPF config on gateway, therefore this resource will update NSX object, but never delete it. To undo OSPF configuration, please disable it within the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyOspfConfig/docs/README.md",
+    "definitions": {
+        "SummaryAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Advertise": {
+                    "type": "boolean"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultOriginate": {
+            "type": "boolean",
+            "description": "A boolean flag to configure advertisement of default route into OSPF domain. Default is `false`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "Ecmp": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable ECMP. Default is `true`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable OSPF. Default is `true`."
+        },
+        "GatewayId": {
+            "type": "string"
+        },
+        "GatewayPath": {
+            "type": "string",
+            "description": "Policy Path for Tier0 Gateway."
+        },
+        "GracefulRestartMode": {
+            "type": "string",
+            "description": "Graceful Restart Mode, one of `HELPER_ONLY` or `DISABLED`. Defaut is `HELPER_ONLY`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocaleServiceId": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "SummaryAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SummaryAddressDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "GatewayPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GatewayId",
+        "/properties/Id",
+        "/properties/LocaleServiceId",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

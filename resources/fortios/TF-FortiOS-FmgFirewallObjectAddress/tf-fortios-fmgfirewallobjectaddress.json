@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::FortiOS::FmgFirewallObjectAddress",
+    "description": "This resource supports Create/Read/Update/Delete firewall object address for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgFirewallObjectAddress/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "ADOM name. default is 'root'."
+        },
+        "AllowRouting": {
+            "type": "string",
+            "description": "Enable/disable use of this address in the static route configuration. default is \"disable\"."
+        },
+        "AssociatedIntf": {
+            "type": "string",
+            "description": "Network interface associated with address."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comments."
+        },
+        "EndIp": {
+            "type": "string",
+            "description": "Final IP address (inclusive) in the range for the address."
+        },
+        "Fqdn": {
+            "type": "string",
+            "description": "Fully Qualified Domain Name address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Address name."
+        },
+        "StartIp": {
+            "type": "string",
+            "description": "First IP address (inclusive) in the range for the address."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "IPv4 address/mask."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of address, Enum: [\"ipmask\", \"iprange\", \"fqdn\"]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

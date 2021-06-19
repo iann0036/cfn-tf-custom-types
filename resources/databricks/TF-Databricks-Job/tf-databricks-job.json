@@ -1,0 +1,773 @@
+{
+    "typeName": "TF::Databricks::Job",
+    "description": "CloudFormation equivalent of databricks_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-Job/docs/README.md",
+    "definitions": {
+        "EmailNotificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoAlertForSkippedRuns": {
+                    "type": "boolean"
+                },
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OnStart": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "OnSuccess": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LibraryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Egg": {
+                    "type": "string"
+                },
+                "Jar": {
+                    "type": "string"
+                },
+                "Whl": {
+                    "type": "string"
+                },
+                "Cran": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CranDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Maven": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MavenDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Pypi": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PypiDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "NewClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoterminationMinutes": {
+                    "type": "number"
+                },
+                "ClusterId": {
+                    "type": "string"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "CustomTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomTagsDefinition"
+                    }
+                },
+                "DriverNodeTypeId": {
+                    "type": "string"
+                },
+                "EnableElasticDisk": {
+                    "type": "boolean"
+                },
+                "EnableLocalDiskEncryption": {
+                    "type": "boolean"
+                },
+                "IdempotencyToken": {
+                    "type": "string"
+                },
+                "InstancePoolId": {
+                    "type": "string"
+                },
+                "NodeTypeId": {
+                    "type": "string"
+                },
+                "NumWorkers": {
+                    "type": "number"
+                },
+                "PolicyId": {
+                    "type": "string"
+                },
+                "SingleUserName": {
+                    "type": "string"
+                },
+                "SparkConf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkConfDefinition"
+                    }
+                },
+                "SparkEnvVars": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SparkEnvVarsDefinition"
+                    }
+                },
+                "SparkVersion": {
+                    "type": "string"
+                },
+                "SshPublicKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Autoscale": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoscaleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AwsAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsAttributesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "AzureAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureAttributesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ClusterLogConf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterLogConfDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DockerImage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DockerImageDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "GcpAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcpAttributesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InitScripts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitScriptsDefinition"
+                    },
+                    "maxItems": 10
+                }
+            },
+            "required": [
+                "SparkVersion"
+            ]
+        },
+        "CustomTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkConfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SparkEnvVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NotebookTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BaseParametersDefinition"
+                    }
+                },
+                "NotebookPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NotebookPath"
+            ]
+        },
+        "BaseParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PauseStatus": {
+                    "type": "string"
+                },
+                "QuartzCronExpression": {
+                    "type": "string"
+                },
+                "TimezoneId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "QuartzCronExpression",
+                "TimezoneId"
+            ]
+        },
+        "SparkJarTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JarUri": {
+                    "type": "string"
+                },
+                "MainClassName": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SparkPythonTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PythonFile": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PythonFile"
+            ]
+        },
+        "SparkSubmitTaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CranDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Package": {
+                    "type": "string"
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Package"
+            ]
+        },
+        "MavenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Coordinates": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Coordinates"
+            ]
+        },
+        "PypiDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Package": {
+                    "type": "string"
+                },
+                "Repo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Package"
+            ]
+        },
+        "AutoscaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxWorkers": {
+                    "type": "number"
+                },
+                "MinWorkers": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AwsAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Availability": {
+                    "type": "string"
+                },
+                "EbsVolumeCount": {
+                    "type": "number"
+                },
+                "EbsVolumeSize": {
+                    "type": "number"
+                },
+                "EbsVolumeType": {
+                    "type": "string"
+                },
+                "FirstOnDemand": {
+                    "type": "number"
+                },
+                "InstanceProfileArn": {
+                    "type": "string"
+                },
+                "SpotBidPricePercent": {
+                    "type": "number"
+                },
+                "ZoneId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AzureAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Availability": {
+                    "type": "string"
+                },
+                "FirstOnDemand": {
+                    "type": "number"
+                },
+                "SpotBidMaxPrice": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ClusterLogConfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DockerImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                },
+                "BasicAuth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BasicAuthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "GcpAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GoogleServiceAccount": {
+                    "type": "string"
+                },
+                "UsePreemptibleExecutors": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "InitScriptsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dbfs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbfsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "S3": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Definition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DbfsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "S3Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CannedAcl": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "EnableEncryption": {
+                    "type": "boolean"
+                },
+                "EncryptionType": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "KmsKey": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "BasicAuthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExistingClusterId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrentRuns": {
+            "type": "number"
+        },
+        "MaxRetries": {
+            "type": "number"
+        },
+        "MinRetryIntervalMillis": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RetryOnTimeout": {
+            "type": "boolean"
+        },
+        "TimeoutSeconds": {
+            "type": "number"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "EmailNotifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailNotificationsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Library": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LibraryDefinition"
+            }
+        },
+        "NewCluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NewClusterDefinition"
+            },
+            "maxItems": 1
+        },
+        "NotebookTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotebookTaskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleDefinition"
+            },
+            "maxItems": 1
+        },
+        "SparkJarTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SparkJarTaskDefinition"
+            },
+            "maxItems": 1
+        },
+        "SparkPythonTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SparkPythonTaskDefinition"
+            },
+            "maxItems": 1
+        },
+        "SparkSubmitTask": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SparkSubmitTaskDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

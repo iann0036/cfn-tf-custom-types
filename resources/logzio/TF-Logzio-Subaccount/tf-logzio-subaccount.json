@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::Logzio::Subaccount",
+    "description": "CloudFormation equivalent of logzio_subaccount",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/logzio/TF-Logzio-Subaccount/docs/README.md",
+    "definitions": {
+        "UtilizationSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessible": {
+            "type": "boolean"
+        },
+        "AccountId": {
+            "type": "number"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AccountToken": {
+            "type": "string"
+        },
+        "DocSizeSetting": {
+            "type": "boolean"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxDailyGb": {
+            "type": "number"
+        },
+        "RetentionDays": {
+            "type": "number"
+        },
+        "Searchable": {
+            "type": "boolean"
+        },
+        "SharingObjectsAccounts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "UtilizationSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UtilizationSettingsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "Email",
+        "RetentionDays"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountId",
+        "/properties/AccountToken",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

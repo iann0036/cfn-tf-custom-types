@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::ACI::BridgeDomain",
+    "description": "CloudFormation equivalent of aci_bridge_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BridgeDomain/docs/README.md",
+    "definitions": {
+        "RelationFvRsBdToNetflowMonitorPolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FltType": {
+                    "type": "string"
+                },
+                "TnNetflowMonitorPolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FltType",
+                "TnNetflowMonitorPolName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ArpFlood": {
+            "type": "string"
+        },
+        "BridgeDomainType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EpClear": {
+            "type": "string"
+        },
+        "EpMoveDetectMode": {
+            "type": "string"
+        },
+        "HostBasedRouting": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntersiteBumTrafficAllow": {
+            "type": "string"
+        },
+        "IntersiteL2Stretch": {
+            "type": "string"
+        },
+        "IpLearning": {
+            "type": "string"
+        },
+        "Ipv6McastAllow": {
+            "type": "string"
+        },
+        "LimitIpLearnToSubnets": {
+            "type": "string"
+        },
+        "LlAddr": {
+            "type": "string"
+        },
+        "Mac": {
+            "type": "string"
+        },
+        "McastAllow": {
+            "type": "string"
+        },
+        "MultiDstPktAct": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "OptimizeWanBandwidth": {
+            "type": "string"
+        },
+        "RelationFvRsAbdPolMonPol": {
+            "type": "string"
+        },
+        "RelationFvRsBdFloodTo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsBdToEpRet": {
+            "type": "string"
+        },
+        "RelationFvRsBdToFhs": {
+            "type": "string"
+        },
+        "RelationFvRsBdToNdP": {
+            "type": "string"
+        },
+        "RelationFvRsBdToOut": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RelationFvRsBdToProfile": {
+            "type": "string"
+        },
+        "RelationFvRsBdToRelayP": {
+            "type": "string"
+        },
+        "RelationFvRsCtx": {
+            "type": "string"
+        },
+        "RelationFvRsIgmpsn": {
+            "type": "string"
+        },
+        "RelationFvRsMldsn": {
+            "type": "string"
+        },
+        "TenantDn": {
+            "type": "string"
+        },
+        "UnicastRoute": {
+            "type": "string"
+        },
+        "UnkMacUcastAct": {
+            "type": "string"
+        },
+        "UnkMcastAct": {
+            "type": "string"
+        },
+        "V6unkMcastAct": {
+            "type": "string"
+        },
+        "Vmac": {
+            "type": "string"
+        },
+        "RelationFvRsBdToNetflowMonitorPol": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelationFvRsBdToNetflowMonitorPolDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

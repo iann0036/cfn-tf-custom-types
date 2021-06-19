@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::AWS::AppsyncDatasource",
+    "description": "Provides an AppSync DataSource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppsyncDatasource/docs/README.md",
+    "definitions": {
+        "DynamodbConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Region": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                },
+                "UseCallerCredentials": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "TableName"
+            ]
+        },
+        "ElasticsearchConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "HttpConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "LambdaConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string",
+            "description": "The API ID for the GraphQL API for the DataSource."
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the DataSource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user-supplied name for the DataSource."
+        },
+        "ServiceRoleArn": {
+            "type": "string",
+            "description": "The IAM service role ARN for the data source."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of the DataSource. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`."
+        },
+        "DynamodbConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DynamodbConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElasticsearchConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "HttpConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "LambdaConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LambdaConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

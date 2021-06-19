@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Alkira::InternetApplication",
+    "description": "CloudFormation equivalent of alkira_internet_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alkira/TF-Alkira-InternetApplication/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "ConnectorId": {
+            "type": "string"
+        },
+        "ConnectorType": {
+            "type": "string"
+        },
+        "FqdnPrefix": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetApplicationId": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PrivatePort": {
+            "type": "string"
+        },
+        "Segment": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectorId",
+        "ConnectorType",
+        "FqdnPrefix",
+        "Name",
+        "PrivateIp",
+        "PrivatePort",
+        "Segment",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GroupId",
+        "/properties/Id",
+        "/properties/InternetApplicationId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

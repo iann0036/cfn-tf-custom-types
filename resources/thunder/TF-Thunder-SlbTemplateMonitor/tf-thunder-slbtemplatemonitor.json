@@ -1,0 +1,203 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateMonitor",
+    "description": "`thunder_slb_template_monitor` Provides details about thunder slb template monitor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateMonitor/docs/README.md",
+    "definitions": {
+        "ClearCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClearAllSequence": {
+                    "type": "number"
+                },
+                "ClearSequence": {
+                    "type": "number"
+                },
+                "Sessions": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LinkDisableCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisSequence": {
+                    "type": "number"
+                },
+                "Diseth": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LinkDownCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkDownSequence1": {
+                    "type": "number"
+                },
+                "LinkDownSequence2": {
+                    "type": "number"
+                },
+                "LinkDownSequence3": {
+                    "type": "number"
+                },
+                "LinkdownEthernet1": {
+                    "type": "number"
+                },
+                "LinkdownEthernet2": {
+                    "type": "number"
+                },
+                "LinkdownEthernet3": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LinkEnableCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnaSequence": {
+                    "type": "number"
+                },
+                "Enaeth": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LinkUpCfgDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkUpSequence1": {
+                    "type": "number"
+                },
+                "LinkUpSequence2": {
+                    "type": "number"
+                },
+                "LinkUpSequence3": {
+                    "type": "number"
+                },
+                "LinkupEthernet1": {
+                    "type": "number"
+                },
+                "LinkupEthernet2": {
+                    "type": "number"
+                },
+                "LinkupEthernet3": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string",
+            "description": "Monitor template ID Number."
+        },
+        "Id2": {
+            "type": "number"
+        },
+        "MonitorRelation": {
+            "type": "string",
+            "description": "\u2018monitor-and\u2019: Configures the monitors in current template to work with AND logic; \u2018monitor-or\u2019: Configures the monitors in current template to work with OR logic;."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "ClearCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClearCfgDefinition"
+            }
+        },
+        "LinkDisableCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinkDisableCfgDefinition"
+            }
+        },
+        "LinkDownCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinkDownCfgDefinition"
+            }
+        },
+        "LinkEnableCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinkEnableCfgDefinition"
+            }
+        },
+        "LinkUpCfg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinkUpCfgDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

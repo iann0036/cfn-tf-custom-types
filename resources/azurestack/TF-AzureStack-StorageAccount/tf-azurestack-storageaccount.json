@@ -1,0 +1,209 @@
+{
+    "typeName": "TF::AzureStack::StorageAccount",
+    "description": "Manages an Azure Storage Account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurestack/TF-AzureStack-StorageAccount/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The Custom Domain Name to use for the Storage Account, which will be validated by Azure."
+                },
+                "UseSubdomain": {
+                    "type": "boolean",
+                    "description": "Should the Custom Domain Name be validated by using indirect CNAME validation?."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountEncryptionSource": {
+            "type": "string",
+            "description": "The Encryption Source for this Storage Account. Possible values are `Microsoft.Keyvault` and `Microsoft.Storage`. Defaults to `Microsoft.Storage`."
+        },
+        "AccountKind": {
+            "type": "string",
+            "description": "Defines the Kind of account. Valid option is `Storage`.\n. Changing this forces a new resource to be created.\nDefaults to `Storage` currently as per [Azure Stack Storage Differences](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-acs-differences)."
+        },
+        "AccountReplicationType": {
+            "type": "string",
+            "description": "Defines the type of replication to use for this storage account. Valid option is `LRS` currently as per [Azure Stack Storage Differences](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-acs-differences)."
+        },
+        "AccountTier": {
+            "type": "string",
+            "description": "Defines the Tier to use for this storage account. Valid options are `Standard` and `Premium`. Changing this forces a new resource to be created - **`Can be provisioned, but no performance limit or guarantee.`**."
+        },
+        "AccountType": {
+            "type": "string"
+        },
+        "EnableBlobEncryption": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the\nresource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the storage account. Changing this forces a\nnew resource to be created. This must be unique across the entire Azure service,\nnot just within the resource group."
+        },
+        "PrimaryAccessKey": {
+            "type": "string"
+        },
+        "PrimaryBlobConnectionString": {
+            "type": "string"
+        },
+        "PrimaryBlobEndpoint": {
+            "type": "string"
+        },
+        "PrimaryConnectionString": {
+            "type": "string"
+        },
+        "PrimaryFileEndpoint": {
+            "type": "string"
+        },
+        "PrimaryLocation": {
+            "type": "string"
+        },
+        "PrimaryQueueEndpoint": {
+            "type": "string"
+        },
+        "PrimaryTableEndpoint": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the storage account. Changing this forces a new resource to be created."
+        },
+        "SecondaryAccessKey": {
+            "type": "string"
+        },
+        "SecondaryBlobConnectionString": {
+            "type": "string"
+        },
+        "SecondaryBlobEndpoint": {
+            "type": "string"
+        },
+        "SecondaryConnectionString": {
+            "type": "string"
+        },
+        "SecondaryLocation": {
+            "type": "string"
+        },
+        "SecondaryQueueEndpoint": {
+            "type": "string"
+        },
+        "SecondaryTableEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "CustomDomain": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomDomainDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountReplicationType",
+        "AccountTier",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PrimaryAccessKey",
+        "/properties/PrimaryBlobConnectionString",
+        "/properties/PrimaryBlobEndpoint",
+        "/properties/PrimaryConnectionString",
+        "/properties/PrimaryFileEndpoint",
+        "/properties/PrimaryLocation",
+        "/properties/PrimaryQueueEndpoint",
+        "/properties/PrimaryTableEndpoint",
+        "/properties/SecondaryAccessKey",
+        "/properties/SecondaryBlobConnectionString",
+        "/properties/SecondaryBlobEndpoint",
+        "/properties/SecondaryConnectionString",
+        "/properties/SecondaryLocation",
+        "/properties/SecondaryQueueEndpoint",
+        "/properties/SecondaryTableEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::OCI::IdentityTagDefault",
+    "description": "This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a new tag default in the specified compartment for the specified tag definition.\n\nIf you specify that a value is required, a value is set during resource creation (either by\nthe user creating the resource or another tag defualt). If no value is set, resource creation\nis blocked.\n\n* If the `isRequired` flag is set to \"true\", the value is set during resource creation.\n* If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-IdentityTagDefault/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "The OCID of the compartment. The tag default will be applied to all new resources created in this compartment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsRequired": {
+            "type": "boolean",
+            "description": "(Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.\n* If the `isRequired` flag is set to \"true\", the value is set during resource creation.\n* If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TagDefinitionId": {
+            "type": "string",
+            "description": "The OCID of the tag definition. The tag default will always assign a default value for this tag definition."
+        },
+        "TagDefinitionName": {
+            "type": "string"
+        },
+        "TagNamespaceId": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string",
+            "description": "(Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "TagDefinitionId",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/State",
+        "/properties/TagDefinitionName",
+        "/properties/TagNamespaceId",
+        "/properties/TimeCreated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

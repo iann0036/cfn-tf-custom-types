@@ -1,0 +1,174 @@
+{
+    "typeName": "TF::AzureRM::DatabricksWorkspace",
+    "description": "Manages a Databricks Workspace",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-DatabricksWorkspace/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CustomParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NoPublicIp": {
+                    "type": "boolean",
+                    "description": "Are public IP Addresses not allowed?."
+                },
+                "PrivateSubnetName": {
+                    "type": "string",
+                    "description": "The name of the Private Subnet within the Virtual Network. Required if `virtual_network_id` is set."
+                },
+                "PublicSubnetName": {
+                    "type": "string",
+                    "description": "The name of the Public Subnet within the Virtual Network. Required if `virtual_network_id` is set."
+                },
+                "VirtualNetworkId": {
+                    "type": "string",
+                    "description": "The ID of a Virtual Network where this Databricks Cluster should be created."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created."
+        },
+        "ManagedResourceGroupId": {
+            "type": "string"
+        },
+        "ManagedResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group where Azure should place the managed Databricks resources. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Databricks Workspace resource. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Databricks Workspace should exist. Changing this forces a new resource to be created."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The `sku` to use for the Databricks Workspace. Possible values are `standard`, `premium`, or `trial`. Changing this can force a new resource to be created in some circumstances."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "WorkspaceId": {
+            "type": "string"
+        },
+        "WorkspaceUrl": {
+            "type": "string"
+        },
+        "CustomParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomParametersDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Sku"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ManagedResourceGroupId",
+        "/properties/WorkspaceId",
+        "/properties/WorkspaceUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

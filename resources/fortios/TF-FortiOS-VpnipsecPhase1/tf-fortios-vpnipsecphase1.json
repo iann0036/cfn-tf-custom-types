@@ -1,0 +1,599 @@
+{
+    "typeName": "TF::FortiOS::VpnipsecPhase1",
+    "description": "Configure VPN remote gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnipsecPhase1/docs/README.md",
+    "definitions": {
+        "BackupGatewayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Address of backup gateway."
+                }
+            },
+            "required": []
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Certificate name."
+                }
+            },
+            "required": []
+        },
+        "Ipv4ExcludeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIp": {
+                    "type": "string",
+                    "description": "End of IPv4 exclusive range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "StartIp": {
+                    "type": "string",
+                    "description": "Start of IPv4 exclusive range."
+                }
+            },
+            "required": []
+        },
+        "Ipv6ExcludeRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIp": {
+                    "type": "string",
+                    "description": "End of IPv6 exclusive range."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "StartIp": {
+                    "type": "string",
+                    "description": "Start of IPv6 exclusive range."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcctVerify": {
+            "type": "string",
+            "description": "Enable/disable verification of RADIUS accounting record. Valid values: `enable`, `disable`."
+        },
+        "AddGwRoute": {
+            "type": "string",
+            "description": "Enable/disable automatically add a route to the remote gateway. Valid values: `enable`, `disable`."
+        },
+        "AddRoute": {
+            "type": "string",
+            "description": "Enable/disable control addition of a route to peer destination selector. Valid values: `disable`, `enable`."
+        },
+        "AssignIp": {
+            "type": "string",
+            "description": "Enable/disable assignment of IP to IPsec interface via configuration method. Valid values: `disable`, `enable`."
+        },
+        "AssignIpFrom": {
+            "type": "string",
+            "description": "Method by which the IP address will be assigned. Valid values: `range`, `usrgrp`, `dhcp`, `name`."
+        },
+        "Authmethod": {
+            "type": "string",
+            "description": "Authentication method. Valid values: `psk`, `signature`."
+        },
+        "AuthmethodRemote": {
+            "type": "string",
+            "description": "Authentication method (remote side). Valid values: `psk`, `signature`."
+        },
+        "Authpasswd": {
+            "type": "string",
+            "description": "XAuth password (max 35 characters)."
+        },
+        "Authusr": {
+            "type": "string",
+            "description": "XAuth user name."
+        },
+        "Authusrgrp": {
+            "type": "string",
+            "description": "Authentication user group."
+        },
+        "AutoNegotiate": {
+            "type": "string",
+            "description": "Enable/disable automatic initiation of IKE SA negotiation. Valid values: `enable`, `disable`."
+        },
+        "Banner": {
+            "type": "string",
+            "description": "Message that unity client should display after connecting."
+        },
+        "CertIdValidation": {
+            "type": "string",
+            "description": "Enable/disable cross validation of peer ID and the identity in the peer's certificate as specified in RFC 4945. Valid values: `enable`, `disable`."
+        },
+        "ChildlessIke": {
+            "type": "string",
+            "description": "Enable/disable childless IKEv2 initiation (RFC 6023). Valid values: `enable`, `disable`."
+        },
+        "ClientAutoNegotiate": {
+            "type": "string",
+            "description": "Enable/disable allowing the VPN client to bring up the tunnel when there is no traffic. Valid values: `disable`, `enable`."
+        },
+        "ClientKeepAlive": {
+            "type": "string",
+            "description": "Enable/disable allowing the VPN client to keep the tunnel up when there is no traffic. Valid values: `disable`, `enable`."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Dhcp6RaLinkaddr": {
+            "type": "string",
+            "description": "Relay agent IPv6 link address to use in DHCP6 requests."
+        },
+        "DhcpRaGiaddr": {
+            "type": "string",
+            "description": "Relay agent gateway IP address to use in the giaddr field of DHCP requests."
+        },
+        "Dhgrp": {
+            "type": "string",
+            "description": "DH group. Valid values: `1`, `2`, `5`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `27`, `28`, `29`, `30`, `31`, `32`."
+        },
+        "DigitalSignatureAuth": {
+            "type": "string",
+            "description": "Enable/disable IKEv2 Digital Signature Authentication (RFC 7427). Valid values: `enable`, `disable`."
+        },
+        "Distance": {
+            "type": "number",
+            "description": "Distance for routes added by IKE (1 - 255)."
+        },
+        "DnsMode": {
+            "type": "string",
+            "description": "DNS server mode. Valid values: `manual`, `auto`."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Instruct unity clients about the default DNS domain."
+        },
+        "Dpd": {
+            "type": "string",
+            "description": "Dead Peer Detection mode. Valid values: `disable`, `on-idle`, `on-demand`."
+        },
+        "DpdRetrycount": {
+            "type": "number",
+            "description": "Number of DPD retry attempts."
+        },
+        "DpdRetryinterval": {
+            "type": "string",
+            "description": "DPD retry interval."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Eap": {
+            "type": "string",
+            "description": "Enable/disable IKEv2 EAP authentication. Valid values: `enable`, `disable`."
+        },
+        "EapExcludePeergrp": {
+            "type": "string",
+            "description": "Peer group excluded from EAP authentication."
+        },
+        "EapIdentity": {
+            "type": "string",
+            "description": "IKEv2 EAP peer identity type. Valid values: `use-id-payload`, `send-request`."
+        },
+        "EnforceUniqueId": {
+            "type": "string",
+            "description": "Enable/disable peer ID uniqueness check. Valid values: `disable`, `keep-new`, `keep-old`."
+        },
+        "FecBase": {
+            "type": "number",
+            "description": "Number of base Forward Error Correction packets (1 - 100)."
+        },
+        "FecCodec": {
+            "type": "number",
+            "description": "ipsec fec encoding/decoding algorithm (0: reed-solomon, 1: xor)."
+        },
+        "FecEgress": {
+            "type": "string",
+            "description": "Enable/disable Forward Error Correction for egress IPsec traffic. Valid values: `enable`, `disable`."
+        },
+        "FecIngress": {
+            "type": "string",
+            "description": "Enable/disable Forward Error Correction for ingress IPsec traffic. Valid values: `enable`, `disable`."
+        },
+        "FecReceiveTimeout": {
+            "type": "number",
+            "description": "Timeout in milliseconds before dropping Forward Error Correction packets (1 - 10000)."
+        },
+        "FecRedundant": {
+            "type": "number",
+            "description": "Number of redundant Forward Error Correction packets (1 - 100)."
+        },
+        "FecSendTimeout": {
+            "type": "number",
+            "description": "Timeout in milliseconds before sending Forward Error Correction packets (1 - 1000)."
+        },
+        "ForticlientEnforcement": {
+            "type": "string",
+            "description": "Enable/disable FortiClient enforcement. Valid values: `enable`, `disable`."
+        },
+        "Fragmentation": {
+            "type": "string",
+            "description": "Enable/disable fragment IKE message on re-transmission. Valid values: `enable`, `disable`."
+        },
+        "FragmentationMtu": {
+            "type": "number",
+            "description": "IKE fragmentation MTU (500 - 16000)."
+        },
+        "GroupAuthentication": {
+            "type": "string",
+            "description": "Enable/disable IKEv2 IDi group authentication. Valid values: `enable`, `disable`."
+        },
+        "GroupAuthenticationSecret": {
+            "type": "string",
+            "description": "Password for IKEv2 IDi group authentication.  (ASCII string or hexadecimal indicated by a leading 0x.)."
+        },
+        "HaSyncEspSeqno": {
+            "type": "string",
+            "description": "Enable/disable sequence number jump ahead for IPsec HA. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "string",
+            "description": "Enable/disable IPsec tunnel idle timeout. Valid values: `enable`, `disable`."
+        },
+        "IdleTimeoutinterval": {
+            "type": "number",
+            "description": "IPsec tunnel idle timeout in minutes (5 - 43200)."
+        },
+        "IkeVersion": {
+            "type": "string",
+            "description": "IKE protocol version. Valid values: `1`, `2`."
+        },
+        "IncludeLocalLan": {
+            "type": "string",
+            "description": "Enable/disable allow local LAN access on unity clients. Valid values: `disable`, `enable`."
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Local physical, aggregate, or VLAN outgoing interface."
+        },
+        "Ipv4DnsServer1": {
+            "type": "string",
+            "description": "IPv4 DNS server 1."
+        },
+        "Ipv4DnsServer2": {
+            "type": "string",
+            "description": "IPv4 DNS server 2."
+        },
+        "Ipv4DnsServer3": {
+            "type": "string",
+            "description": "IPv4 DNS server 3."
+        },
+        "Ipv4EndIp": {
+            "type": "string",
+            "description": "End of IPv4 range."
+        },
+        "Ipv4Name": {
+            "type": "string",
+            "description": "IPv4 address name."
+        },
+        "Ipv4Netmask": {
+            "type": "string",
+            "description": "IPv4 Netmask."
+        },
+        "Ipv4SplitExclude": {
+            "type": "string",
+            "description": "IPv4 subnets that should not be sent over the IPsec tunnel."
+        },
+        "Ipv4SplitInclude": {
+            "type": "string",
+            "description": "IPv4 split-include subnets."
+        },
+        "Ipv4StartIp": {
+            "type": "string",
+            "description": "Start of IPv4 range."
+        },
+        "Ipv4WinsServer1": {
+            "type": "string",
+            "description": "WINS server 1."
+        },
+        "Ipv4WinsServer2": {
+            "type": "string",
+            "description": "WINS server 2."
+        },
+        "Ipv6DnsServer1": {
+            "type": "string",
+            "description": "IPv6 DNS server 1."
+        },
+        "Ipv6DnsServer2": {
+            "type": "string",
+            "description": "IPv6 DNS server 2."
+        },
+        "Ipv6DnsServer3": {
+            "type": "string",
+            "description": "IPv6 DNS server 3."
+        },
+        "Ipv6EndIp": {
+            "type": "string",
+            "description": "End of IPv6 range."
+        },
+        "Ipv6Name": {
+            "type": "string",
+            "description": "IPv6 address name."
+        },
+        "Ipv6Prefix": {
+            "type": "number",
+            "description": "IPv6 prefix."
+        },
+        "Ipv6SplitExclude": {
+            "type": "string",
+            "description": "IPv6 subnets that should not be sent over the IPsec tunnel."
+        },
+        "Ipv6SplitInclude": {
+            "type": "string",
+            "description": "IPv6 split-include subnets."
+        },
+        "Ipv6StartIp": {
+            "type": "string",
+            "description": "Start of IPv6 range."
+        },
+        "Keepalive": {
+            "type": "number",
+            "description": "NAT-T keep alive interval."
+        },
+        "Keylife": {
+            "type": "number",
+            "description": "Time to wait in seconds before phase 1 encryption key expires."
+        },
+        "LocalGw": {
+            "type": "string",
+            "description": "Local VPN gateway."
+        },
+        "Localid": {
+            "type": "string",
+            "description": "Local ID."
+        },
+        "LocalidType": {
+            "type": "string",
+            "description": "Local ID type. Valid values: `auto`, `fqdn`, `user-fqdn`, `keyid`, `address`, `asn1dn`."
+        },
+        "MeshSelectorType": {
+            "type": "string",
+            "description": "Add selectors containing subsets of the configuration depending on traffic. Valid values: `disable`, `subnet`, `host`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "ID protection mode used to establish a secure channel. Valid values: `aggressive`, `main`."
+        },
+        "ModeCfg": {
+            "type": "string",
+            "description": "Enable/disable configuration method. Valid values: `disable`, `enable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "IPsec remote gateway name."
+        },
+        "Nattraversal": {
+            "type": "string",
+            "description": "Enable/disable NAT traversal. Valid values: `enable`, `disable`, `forced`."
+        },
+        "NegotiateTimeout": {
+            "type": "number",
+            "description": "IKE SA negotiation timeout in seconds (1 - 300)."
+        },
+        "NetworkId": {
+            "type": "number",
+            "description": "VPN gateway network ID."
+        },
+        "NetworkOverlay": {
+            "type": "string",
+            "description": "Enable/disable network overlays. Valid values: `disable`, `enable`."
+        },
+        "Peer": {
+            "type": "string",
+            "description": "Accept this peer certificate."
+        },
+        "Peergrp": {
+            "type": "string",
+            "description": "Accept this peer certificate group."
+        },
+        "Peerid": {
+            "type": "string",
+            "description": "Accept this peer identity."
+        },
+        "Peertype": {
+            "type": "string",
+            "description": "Accept this peer type. Valid values: `any`, `one`, `dialup`, `peer`, `peergrp`."
+        },
+        "Ppk": {
+            "type": "string",
+            "description": "Enable/disable IKEv2 Postquantum Preshared Key (PPK). Valid values: `disable`, `allow`, `require`."
+        },
+        "PpkIdentity": {
+            "type": "string",
+            "description": "IKEv2 Postquantum Preshared Key Identity."
+        },
+        "PpkSecret": {
+            "type": "string",
+            "description": "IKEv2 Postquantum Preshared Key (ASCII string or hexadecimal encoded with a leading 0x)."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Priority for routes added by IKE (0 - 4294967295)."
+        },
+        "Proposal": {
+            "type": "string",
+            "description": "Phase1 proposal. Valid values: `des-md5`, `des-sha1`, `des-sha256`, `des-sha384`, `des-sha512`, `3des-md5`, `3des-sha1`, `3des-sha256`, `3des-sha384`, `3des-sha512`, `aes128-md5`, `aes128-sha1`, `aes128-sha256`, `aes128-sha384`, `aes128-sha512`, `aes128gcm-prfsha1`, `aes128gcm-prfsha256`, `aes128gcm-prfsha384`, `aes128gcm-prfsha512`, `aes192-md5`, `aes192-sha1`, `aes192-sha256`, `aes192-sha384`, `aes192-sha512`, `aes256-md5`, `aes256-sha1`, `aes256-sha256`, `aes256-sha384`, `aes256-sha512`, `aes256gcm-prfsha1`, `aes256gcm-prfsha256`, `aes256gcm-prfsha384`, `aes256gcm-prfsha512`, `chacha20poly1305-prfsha1`, `chacha20poly1305-prfsha256`, `chacha20poly1305-prfsha384`, `chacha20poly1305-prfsha512`, `aria128-md5`, `aria128-sha1`, `aria128-sha256`, `aria128-sha384`, `aria128-sha512`, `aria192-md5`, `aria192-sha1`, `aria192-sha256`, `aria192-sha384`, `aria192-sha512`, `aria256-md5`, `aria256-sha1`, `aria256-sha256`, `aria256-sha384`, `aria256-sha512`, `seed-md5`, `seed-sha1`, `seed-sha256`, `seed-sha384`, `seed-sha512`."
+        },
+        "Psksecret": {
+            "type": "string",
+            "description": "Pre-shared secret for PSK authentication (ASCII string or hexadecimal encoded with a leading 0x)."
+        },
+        "PsksecretRemote": {
+            "type": "string",
+            "description": "Pre-shared secret for remote side PSK authentication (ASCII string or hexadecimal encoded with a leading 0x)."
+        },
+        "Reauth": {
+            "type": "string",
+            "description": "Enable/disable re-authentication upon IKE SA lifetime expiration. Valid values: `disable`, `enable`."
+        },
+        "Rekey": {
+            "type": "string",
+            "description": "Enable/disable phase1 rekey. Valid values: `enable`, `disable`."
+        },
+        "RemoteGw": {
+            "type": "string",
+            "description": "Remote VPN gateway."
+        },
+        "RemotegwDdns": {
+            "type": "string",
+            "description": "Domain name of remote gateway (eg. name.DDNS.com)."
+        },
+        "RsaSignatureFormat": {
+            "type": "string",
+            "description": "Digital Signature Authentication RSA signature format. Valid values: `pkcs1`, `pss`."
+        },
+        "SavePassword": {
+            "type": "string",
+            "description": "Enable/disable saving XAuth username and password on VPN clients. Valid values: `disable`, `enable`."
+        },
+        "SendCertChain": {
+            "type": "string",
+            "description": "Enable/disable sending certificate chain. Valid values: `enable`, `disable`."
+        },
+        "SignatureHashAlg": {
+            "type": "string",
+            "description": "Digital Signature Authentication hash algorithms. Valid values: `sha1`, `sha2-256`, `sha2-384`, `sha2-512`."
+        },
+        "SplitIncludeService": {
+            "type": "string",
+            "description": "Split-include services."
+        },
+        "SuiteB": {
+            "type": "string",
+            "description": "Use Suite-B. Valid values: `disable`, `suite-b-gcm-128`, `suite-b-gcm-256`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Remote gateway type. Valid values: `static`, `dynamic`, `ddns`."
+        },
+        "UnitySupport": {
+            "type": "string",
+            "description": "Enable/disable support for Cisco UNITY Configuration Method extensions. Valid values: `disable`, `enable`."
+        },
+        "Usrgrp": {
+            "type": "string",
+            "description": "User group name for dialup peers."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "WizardType": {
+            "type": "string",
+            "description": "GUI VPN Wizard Type."
+        },
+        "Xauthtype": {
+            "type": "string",
+            "description": "XAuth type. Valid values: `disable`, `client`, `pap`, `chap`, `auto`."
+        },
+        "BackupGateway": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupGatewayDefinition"
+            }
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDefinition"
+            }
+        },
+        "Ipv4ExcludeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv4ExcludeRangeDefinition"
+            }
+        },
+        "Ipv6ExcludeRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ipv6ExcludeRangeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Proposal",
+        "Psksecret"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Authpasswd",
+        "/properties/GroupAuthenticationSecret",
+        "/properties/PpkSecret",
+        "/properties/Psksecret",
+        "/properties/PsksecretRemote"
+    ]
+}

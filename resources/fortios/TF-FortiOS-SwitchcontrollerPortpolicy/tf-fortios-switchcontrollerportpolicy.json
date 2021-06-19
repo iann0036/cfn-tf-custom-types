@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerPortpolicy",
+    "description": "Configure port policy to be applied on the managed FortiSwitch ports through NAC device. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerPortpolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BouncePortLink": {
+            "type": "string",
+            "description": "Enable/disable bouncing (administratively bring the link down, up) of a switch port where this port policy is applied. Helps to clear and reassign VLAN from lldp-profile. Valid values: `disable`, `enable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the port policy."
+        },
+        "Fortilink": {
+            "type": "string",
+            "description": "FortiLink interface for which this port policy belongs to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LldpProfile": {
+            "type": "string",
+            "description": "LLDP profile to be applied when using this port-policy."
+        },
+        "N8021x": {
+            "type": "string",
+            "description": "802.1x security policy to be applied when using this port-policy."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Port policy name."
+        },
+        "QosPolicy": {
+            "type": "string",
+            "description": "QoS policy to be applied when using this port-policy."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VlanPolicy": {
+            "type": "string",
+            "description": "VLAN policy to be applied when using this port-policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

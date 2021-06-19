@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::ACI::BgpBestPathPolicy",
+    "description": "Manages ACI BGP Best Path Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BgpBestPathPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object BGP Best Path Policy.\n- `description` - (Optional) Description for object BGP Best Path Policy.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"asPathMultipathRelax\", \"0\". Default Value: \"0\".\n- `name_alias` - (Optional) Name alias for object BGP Best Path Policy."
+        },
+        "Ctrl": {
+            "type": "string",
+            "description": "The control state.\nAllowed values: \"asPathMultipathRelax\", \"0\". Default Value: \"0\".\n- `name_alias` - (Optional) Name alias for object BGP Best Path Policy."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object BGP Best Path Policy.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"asPathMultipathRelax\", \"0\". Default Value: \"0\".\n- `name_alias` - (Optional) Name alias for object BGP Best Path Policy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of Object BGP Best Path Policy.\n- `annotation` - (Optional) Annotation for object BGP Best Path Policy.\n- `description` - (Optional) Description for object BGP Best Path Policy.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"asPathMultipathRelax\", \"0\". Default Value: \"0\".\n- `name_alias` - (Optional) Name alias for object BGP Best Path Policy."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object BGP Best Path Policy."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent tenant object.\n- `name` - (Required) Name of Object BGP Best Path Policy.\n- `annotation` - (Optional) Annotation for object BGP Best Path Policy.\n- `description` - (Optional) Description for object BGP Best Path Policy.\n- `ctrl` - (Optional) The control state.\nAllowed values: \"asPathMultipathRelax\", \"0\". Default Value: \"0\".\n- `name_alias` - (Optional) Name alias for object BGP Best Path Policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

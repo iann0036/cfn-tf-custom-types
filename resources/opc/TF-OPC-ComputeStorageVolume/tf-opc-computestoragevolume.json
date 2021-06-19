@@ -1,0 +1,151 @@
+{
+    "typeName": "TF::OPC::ComputeStorageVolume",
+    "description": "The ``opc_compute_storage_volume`` resource creates and manages a storage volume in an Oracle Cloud Infrastructure Compute Classic identity domain.\n\n~> **Caution:** The ``opc_compute_storage_volume`` resource can completely delete your storage volume just as easily as it can create it. To avoid costly accidents, consider setting [``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy) on your storage volume resources as an extra safety measure.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opc/TF-OPC-ComputeStorageVolume/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bootable": {
+            "type": "boolean",
+            "description": "Is the Volume Bootable? Defaults to `false`."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Hypervisor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageList": {
+            "type": "string",
+            "description": "Defines an image list."
+        },
+        "ImageListEntry": {
+            "type": "number",
+            "description": "Defines an image list entry."
+        },
+        "MachineImage": {
+            "type": "string"
+        },
+        "Managed": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "Readonly": {
+            "type": "boolean"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Snapshot": {
+            "type": "string",
+            "description": "The name of the parent snapshot from which the storage volume is restored or cloned. See [Snapshots](#snapshots), below for more information."
+        },
+        "SnapshotAccount": {
+            "type": "string",
+            "description": "The Account of the parent snapshot from which the storage volume is restored. See [Snapshots](#snapshots), below for more information."
+        },
+        "SnapshotId": {
+            "type": "string",
+            "description": "The Id of the parent snapshot from which the storage volume is restored or cloned. See [Snapshots](#snapshots), below for more information."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StoragePool": {
+            "type": "string"
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "- The Type of Storage to provision. Defaults to `/oracle/public/storage/default`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Comma-separated strings that tag the storage volume."
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

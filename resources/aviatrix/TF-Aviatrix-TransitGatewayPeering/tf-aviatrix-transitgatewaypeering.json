@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::Aviatrix::TransitGatewayPeering",
+    "description": "The **aviatrix_transit_gateway_peering** resource allows the creation and management of peerings between Aviatrix transit gateways.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-TransitGatewayPeering/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableInsaneModeEncryptionOverInternet": {
+            "type": "boolean"
+        },
+        "EnablePeeringOverPrivateNetwork": {
+            "type": "boolean"
+        },
+        "EnableSingleTunnelMode": {
+            "type": "boolean"
+        },
+        "Gateway1ExcludedNetworkCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Gateway1ExcludedTgwConnections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Gateway2ExcludedNetworkCidrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Gateway2ExcludedTgwConnections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrependAsPath1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PrependAsPath2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TransitGatewayName1": {
+            "type": "string"
+        },
+        "TransitGatewayName2": {
+            "type": "string"
+        },
+        "TunnelCount": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TransitGatewayName1",
+        "TransitGatewayName2"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,811 @@
+{
+    "typeName": "TF::AzureRM::FunctionApp",
+    "description": "Manages a Function App.\n\n~> **Note:** To connect an Azure Function App and a subnet within the same region `azurerm_app_service_virtual_network_swift_connection` can be used.\nFor an example, check the `azurerm_app_service_virtual_network_swift_connection` documentation.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-FunctionApp/docs/README.md",
+    "definitions": {
+        "AppSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SiteCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AuthSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalLoginParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalLoginParamsDefinition"
+                    },
+                    "description": "Login parameters to send to the OpenID Connect authorization endpoint when a user logs in. Each parameter must be in the form \"key=value\"."
+                },
+                "AllowedExternalRedirectUrls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "External URLs that can be redirected to as part of logging in or logging out of the app."
+                },
+                "DefaultProvider": {
+                    "type": "string",
+                    "description": "The default provider to use when multiple providers have been set up. Possible values are `AzureActiveDirectory`, `Facebook`, `Google`, `MicrosoftAccount` and `Twitter`."
+                },
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Is Authentication enabled?."
+                },
+                "Issuer": {
+                    "type": "string",
+                    "description": "Issuer URI. When using Azure Active Directory, this value is the URI of the directory tenant, e.g. https://sts.windows.net/{tenant-guid}/."
+                },
+                "RuntimeVersion": {
+                    "type": "string",
+                    "description": "The runtime version of the Authentication/Authorization module."
+                },
+                "TokenRefreshExtensionHours": {
+                    "type": "number",
+                    "description": "The number of hours after session token expiration that a session token can be used to call the token refresh API. Defaults to 72."
+                },
+                "TokenStoreEnabled": {
+                    "type": "boolean",
+                    "description": "If enabled the module will durably store platform-specific security tokens that are obtained during login flows. Defaults to false."
+                },
+                "UnauthenticatedClientAction": {
+                    "type": "string",
+                    "description": "The action to take when an unauthenticated client attempts to access the app. Possible values are `AllowAnonymous` and `RedirectToLoginPage`."
+                },
+                "ActiveDirectory": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActiveDirectoryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Facebook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FacebookDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Google": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoogleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Microsoft": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MicrosoftDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Twitter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TwitterDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "AdditionalLoginParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConnectionStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Connection String."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The type of the Connection String. Possible values are `APIHub`, `Custom`, `DocDb`, `EventHub`, `MySQL`, `NotificationHub`, `PostgreSQL`, `RedisCache`, `ServiceBus`, `SQLAzure` and  `SQLServer`."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "The value for the Connection String."
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Value"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Specifies a list of user managed identity ids to be assigned. Required if `type` is `UserAssigned`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the identity type of the Function App. Possible values are `SystemAssigned` (where Azure will generate a Service Principal for you), `UserAssigned` where you can specify the Service Principal IDs in the `identity_ids` field, and `SystemAssigned, UserAssigned` which assigns both a system managed identity as well as the specified user assigned identities."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "SiteConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysOn": {
+                    "type": "boolean",
+                    "description": "Should the Function App be loaded at all times? Defaults to `false`."
+                },
+                "AutoSwapSlotName": {
+                    "type": "string"
+                },
+                "FtpsState": {
+                    "type": "string",
+                    "description": "State of FTP / FTPS service for this function app. Possible values include: `AllAllowed`, `FtpsOnly` and `Disabled`. Defaults to `AllAllowed`."
+                },
+                "HealthCheckPath": {
+                    "type": "string",
+                    "description": "Path which will be checked for this function app health."
+                },
+                "Http2Enabled": {
+                    "type": "boolean",
+                    "description": "Specifies whether or not the http2 protocol should be enabled. Defaults to `false`."
+                },
+                "IpRestriction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpRestrictionDefinition2"
+                    },
+                    "description": "A [List of objects](/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below."
+                },
+                "JavaVersion": {
+                    "type": "string",
+                    "description": "Java version hosted by the function app in Azure. Possible values are `1.8`, `11`."
+                },
+                "LinuxFxVersion": {
+                    "type": "string",
+                    "description": "Linux App Framework and version for the AppService, e.g. `DOCKER|(golang:latest)`."
+                },
+                "MinTlsVersion": {
+                    "type": "string",
+                    "description": "The minimum supported TLS version for the function app. Possible values are `1.0`, `1.1`, and `1.2`. Defaults to `1.2` for new function apps."
+                },
+                "PreWarmedInstanceCount": {
+                    "type": "number",
+                    "description": "The number of pre-warmed instances for this function app. Only affects apps on the Premium plan."
+                },
+                "ScmIpRestriction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScmIpRestrictionDefinition2"
+                    },
+                    "description": "A [List of objects](/docs/configuration/attr-as-blocks.html) representing ip restrictions as defined below."
+                },
+                "ScmType": {
+                    "type": "string",
+                    "description": "The type of Source Control used by the Function App. Valid values include: `BitBucketGit`, `BitBucketHg`, `CodePlexGit`, `CodePlexHg`, `Dropbox`, `ExternalGit`, `ExternalHg`, `GitHub`, `LocalGit`, `None` (default), `OneDrive`, `Tfs`, `VSO`, and `VSTSRM`."
+                },
+                "ScmUseMainIpRestriction": {
+                    "type": "boolean",
+                    "description": "IP security restrictions for scm to use main. Defaults to false."
+                },
+                "Use32BitWorkerProcess": {
+                    "type": "boolean",
+                    "description": "Should the Function App run in 32 bit mode, rather than 64 bit mode? Defaults to `true`."
+                },
+                "WebsocketsEnabled": {
+                    "type": "boolean",
+                    "description": "Should WebSockets be enabled?."
+                },
+                "Cors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CorsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "IpRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "XAzureFdid": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XFdHealthProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XForwardedFor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XForwardedHost": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "IpRestrictionDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpRestrictionDefinition"
+                    }
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "ServiceTag": {
+                    "type": "string"
+                },
+                "VirtualNetworkSubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "ScmIpRestrictionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "XAzureFdid": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XFdHealthProbe": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XForwardedFor": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "XForwardedHost": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ScmIpRestrictionDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ScmIpRestrictionDefinition"
+                    }
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "ServiceTag": {
+                    "type": "string"
+                },
+                "VirtualNetworkSubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "SourceControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string",
+                    "description": "The branch of the remote repository to use. Defaults to 'master'."
+                },
+                "ManualIntegration": {
+                    "type": "boolean",
+                    "description": "Limits to manual integration. Defaults to `false` if not specified."
+                },
+                "RepoUrl": {
+                    "type": "string",
+                    "description": "The URL of the source code repository."
+                },
+                "RollbackEnabled": {
+                    "type": "boolean",
+                    "description": "Enable roll-back for the repository. Defaults to `false` if not specified."
+                },
+                "UseMercurial": {
+                    "type": "boolean",
+                    "description": "Use Mercurial if `true`, otherwise uses Git."
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ActiveDirectoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedAudiences": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ClientId": {
+                    "type": "string",
+                    "description": "The Client ID of this relying party application. Enables OpenIDConnection authentication with Azure Active Directory."
+                },
+                "ClientSecret": {
+                    "type": "string",
+                    "description": "The Client Secret of this relying party application. If no secret is provided, implicit flow will be used."
+                }
+            },
+            "required": [
+                "ClientId"
+            ]
+        },
+        "FacebookDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppId": {
+                    "type": "string",
+                    "description": "The App ID of the Facebook app used for login."
+                },
+                "AppSecret": {
+                    "type": "string",
+                    "description": "The App Secret of the Facebook app used for Facebook Login."
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "AppId",
+                "AppSecret"
+            ]
+        },
+        "GoogleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string",
+                    "description": "The OpenID Connect Client ID for the Google web application."
+                },
+                "ClientSecret": {
+                    "type": "string",
+                    "description": "The client secret associated with the Google web application."
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "MicrosoftDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string",
+                    "description": "The OAuth 2.0 client ID that was created for the app used for authentication."
+                },
+                "ClientSecret": {
+                    "type": "string",
+                    "description": "The OAuth 2.0 client secret that was created for the app used for authentication."
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "TwitterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsumerKey": {
+                    "type": "string"
+                },
+                "ConsumerSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConsumerKey",
+                "ConsumerSecret"
+            ]
+        },
+        "CorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of origins which should be able to make cross-origin calls. `*` can be used to allow all calls."
+                },
+                "SupportCredentials": {
+                    "type": "boolean",
+                    "description": "Are credentials supported?."
+                }
+            },
+            "required": [
+                "AllowedOrigins"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppServicePlanId": {
+            "type": "string",
+            "description": "The ID of the App Service Plan within which to create this Function App."
+        },
+        "AppSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppSettingsDefinition"
+            },
+            "description": "A map of key-value pairs for [App Settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings) and custom values."
+        },
+        "ClientAffinityEnabled": {
+            "type": "boolean",
+            "description": "Should the Function App send session affinity cookies, which route client requests in the same session to the same instance?."
+        },
+        "ClientCertMode": {
+            "type": "string",
+            "description": "The mode of the Function App's client certificates requirement for incoming requests. Possible values are `Required` and `Optional`."
+        },
+        "CustomDomainVerificationId": {
+            "type": "string"
+        },
+        "DailyMemoryTimeQuota": {
+            "type": "number",
+            "description": "The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan. Defaults to `0`."
+        },
+        "DefaultHostname": {
+            "type": "string"
+        },
+        "EnableBuiltinLogging": {
+            "type": "boolean",
+            "description": "Should the built-in logging of this Function App be enabled? Defaults to `true`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Is the Function App enabled?."
+        },
+        "HttpsOnly": {
+            "type": "boolean",
+            "description": "Can the Function App only be accessed via HTTPS? Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Function App. Changing this forces a new resource to be created."
+        },
+        "OsType": {
+            "type": "string",
+            "description": "A string indicating the Operating System type for this function app."
+        },
+        "OutboundIpAddresses": {
+            "type": "string"
+        },
+        "PossibleOutboundIpAddresses": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Function App."
+        },
+        "SiteCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SiteCredentialDefinition"
+            }
+        },
+        "StorageAccountAccessKey": {
+            "type": "string",
+            "description": "The access key which will be used to access the backend storage account for the Function App."
+        },
+        "StorageAccountName": {
+            "type": "string",
+            "description": "The backend storage account name which will be used by this Function App (such as the dashboard, logs)."
+        },
+        "StorageConnectionString": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Version": {
+            "type": "string",
+            "description": "The runtime version associated with the Function App. Defaults to `~1`."
+        },
+        "AuthSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConnectionString": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConnectionStringDefinition"
+            }
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "SiteConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SiteConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourceControl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceControlDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppServicePlanId",
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CustomDomainVerificationId",
+        "/properties/DefaultHostname",
+        "/properties/Id",
+        "/properties/Kind",
+        "/properties/OutboundIpAddresses",
+        "/properties/PossibleOutboundIpAddresses",
+        "/properties/SiteCredential"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/StorageAccountAccessKey",
+        "/properties/StorageConnectionString",
+        "/definitions/ConnectionStringDefinition/Value",
+        "/definitions/ActiveDirectoryDefinition/ClientSecret",
+        "/definitions/FacebookDefinition/AppSecret",
+        "/definitions/GoogleDefinition/ClientSecret",
+        "/definitions/MicrosoftDefinition/ClientSecret",
+        "/definitions/TwitterDefinition/ConsumerSecret"
+    ]
+}

@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::TencentCloud::ContainerClusterInstance",
+    "description": "Provides a TencentCloud Container Cluster Instance resource.\n\n~> **NOTE:** It has been deprecated and replaced by  tencentcloud_kubernetes_scale_worker.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ContainerClusterInstance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbnormalReason": {
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "number",
+            "description": "The network bandwidth of the node."
+        },
+        "BandwidthType": {
+            "type": "string",
+            "description": "The network type of the node."
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "The id of the cluster."
+        },
+        "Cpu": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.16.0. Set 'instance_type' instead. The cpu of the node."
+        },
+        "CvmType": {
+            "type": "string",
+            "description": "The type of node needed by cvm."
+        },
+        "DockerGraphPath": {
+            "type": "string",
+            "description": "The docker graph path is going to mounted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name ot node."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The instance type of the node needed by cvm."
+        },
+        "IsNormal": {
+            "type": "number"
+        },
+        "IsVpcGateway": {
+            "type": "number",
+            "description": "Describe whether the node enable the gateway capability."
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "The key_id of each node(if using key pair to access)."
+        },
+        "LanIp": {
+            "type": "string"
+        },
+        "Mem": {
+            "type": "number",
+            "description": "It has been deprecated from version 1.16.0. Set 'instance_type' instead. The memory of the node."
+        },
+        "MountTarget": {
+            "type": "string",
+            "description": "The path which volume is going to be mounted."
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password of each node."
+        },
+        "Period": {
+            "type": "number",
+            "description": "The puchase duration of the node needed by cvm."
+        },
+        "RequireWanIp": {
+            "type": "number",
+            "description": "Indicate whether wan ip is needed."
+        },
+        "RootSize": {
+            "type": "number",
+            "description": "The size of the root volume."
+        },
+        "RootType": {
+            "type": "string",
+            "description": "The type of the root volume. see more from CVM."
+        },
+        "SgId": {
+            "type": "string",
+            "description": "The security group id."
+        },
+        "StorageSize": {
+            "type": "number",
+            "description": "The size of the data volume."
+        },
+        "StorageType": {
+            "type": "string",
+            "description": "The type of the data volume. see more from CVM."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The subnet id which the node stays in."
+        },
+        "Unschedulable": {
+            "type": "number",
+            "description": "Determine whether the node will be schedulable. 0 is the default meaning node will be schedulable. 1 for unschedulable."
+        },
+        "UserScript": {
+            "type": "string",
+            "description": "User defined script in a base64-format. The script runs after the kubernetes component is ready on node. see more from CCS api documents."
+        },
+        "WanIp": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone which the node stays in."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bandwidth",
+        "BandwidthType",
+        "ClusterId",
+        "IsVpcGateway",
+        "RootSize",
+        "StorageSize",
+        "SubnetId",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AbnormalReason",
+        "/properties/Id",
+        "/properties/InstanceId",
+        "/properties/IsNormal",
+        "/properties/LanIp",
+        "/properties/WanIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

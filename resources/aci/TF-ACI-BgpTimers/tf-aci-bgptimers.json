@@ -1,0 +1,102 @@
+{
+    "typeName": "TF::ACI::BgpTimers",
+    "description": "Manages ACI BGP Timers",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-BgpTimers/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for bgp timers object.\n- `description` - (Optional) Description for bgp timers object.\n- `gr_ctrl` - (Optional) Graceful restart enabled or helper only for bgp timers object. Default value is \"helper\".\n- `hold_intvl` - (Optional) Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for bgp timers object.\n- `gr_ctrl` - (Optional) Graceful restart enabled or helper only for bgp timers object. Default value is \"helper\".\n- `hold_intvl` - (Optional) Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "GrCtrl": {
+            "type": "string",
+            "description": "Graceful restart enabled or helper only for bgp timers object. Default value is \"helper\".\n- `hold_intvl` - (Optional) Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "HoldIntvl": {
+            "type": "string",
+            "description": "Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KaIntvl": {
+            "type": "string",
+            "description": "Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "MaxAsLimit": {
+            "type": "string",
+            "description": "Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of bgp timers object.\n- `annotation` - (Optional) Annotation for bgp timers object.\n- `description` - (Optional) Description for bgp timers object.\n- `gr_ctrl` - (Optional) Graceful restart enabled or helper only for bgp timers object. Default value is \"helper\".\n- `hold_intvl` - (Optional) Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "StaleIntvl": {
+            "type": "string",
+            "description": "Stale interval for routes advertised by peer for bgp timers object."
+        },
+        "TenantDn": {
+            "type": "string",
+            "description": "Distinguished name of parent tenant object.\n- `name` - (Required) Name of bgp timers object.\n- `annotation` - (Optional) Annotation for bgp timers object.\n- `description` - (Optional) Description for bgp timers object.\n- `gr_ctrl` - (Optional) Graceful restart enabled or helper only for bgp timers object. Default value is \"helper\".\n- `hold_intvl` - (Optional) Time period before declaring neighbor down for bgp timers object. Default value is \"180\".\n- `ka_intvl` - (Optional) Interval time between keepalive messages for bgp timers object. Default value is \"60\".\n- `max_as_limit` - (Optional) Maximum AS limit for bgp timers object. Default value is \"0\".\n- `name_alias` - (Optional) Name alias for bgp timers object. Default value is \"default\".\n- `stale_intvl` - (Optional) Stale interval for routes advertised by peer for bgp timers object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

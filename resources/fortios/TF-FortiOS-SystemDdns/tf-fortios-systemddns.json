@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::FortiOS::SystemDdns",
+    "description": "Configure DDNS.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemDdns/docs/README.md",
+    "definitions": {
+        "MonitorInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceName": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BoundIp": {
+            "type": "string",
+            "description": "Bound IP address."
+        },
+        "ClearText": {
+            "type": "string",
+            "description": "Enable/disable use of clear text connections. Valid values: `disable`, `enable`."
+        },
+        "DdnsAuth": {
+            "type": "string",
+            "description": "Enable/disable TSIG authentication for your DDNS server. Valid values: `disable`, `tsig`."
+        },
+        "DdnsDomain": {
+            "type": "string",
+            "description": "Your fully qualified domain name (for example, yourname.DDNS.com)."
+        },
+        "DdnsKey": {
+            "type": "string",
+            "description": "DDNS update key (base 64 encoding)."
+        },
+        "DdnsKeyname": {
+            "type": "string",
+            "description": "DDNS update key name."
+        },
+        "DdnsPassword": {
+            "type": "string",
+            "description": "DDNS password."
+        },
+        "DdnsServer": {
+            "type": "string",
+            "description": "Select a DDNS service provider. Valid values: `dyndns.org`, `dyns.net`, `tzo.com`, `vavic.com`, `dipdns.net`, `now.net.cn`, `dhs.org`, `easydns.com`, `genericDDNS`, `FortiGuardDDNS`, `noip.com`."
+        },
+        "DdnsServerIp": {
+            "type": "string",
+            "description": "Generic DDNS server IP."
+        },
+        "DdnsSn": {
+            "type": "string",
+            "description": "DDNS Serial Number."
+        },
+        "DdnsTtl": {
+            "type": "number",
+            "description": "Time-to-live for DDNS packets."
+        },
+        "DdnsUsername": {
+            "type": "string",
+            "description": "DDNS user name."
+        },
+        "DdnsZone": {
+            "type": "string",
+            "description": "Zone of your domain name (for example, DDNS.com)."
+        },
+        "Ddnsid": {
+            "type": "number",
+            "description": "DDNS ID."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SslCertificate": {
+            "type": "string",
+            "description": "Name of local certificate for SSL connections."
+        },
+        "UpdateInterval": {
+            "type": "number",
+            "description": "DDNS update interval (60 - 2592000 sec, default = 300)."
+        },
+        "UsePublicIp": {
+            "type": "string",
+            "description": "Enable/disable use of public IP address. Valid values: `disable`, `enable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "MonitorInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MonitorInterfaceDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DdnsServer"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DdnsKey",
+        "/properties/DdnsPassword"
+    ]
+}

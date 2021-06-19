@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::Alicloud::SlbServerGroup",
+    "description": "A virtual server group contains several ECS instances. The virtual server group can help you to define multiple listening dimension,\nand to meet the personalized requirements of domain name and URL forwarding.\n\n-> **NOTE:** One ECS instance can be added into multiple virtual server groups.\n\n-> **NOTE:** One virtual server group can be attached with multiple listeners in one load balancer.\n\n-> **NOTE:** One Classic and Internet load balancer, its virtual server group can add Classic and VPC ECS instances.\n\n-> **NOTE:** One Classic and Intranet load balancer, its virtual server group can only add Classic ECS instances.\n\n-> **NOTE:** One VPC load balancer, its virtual server group can only add the same VPC ECS instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SlbServerGroup/docs/README.md",
+    "definitions": {
+        "ServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "ServerIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Port",
+                "ServerIds"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string",
+            "description": "The Load Balancer ID which is used to launch a new virtual server group."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the virtual server group. Our plugin provides a default name: \"tf-server-group\"."
+        },
+        "Servers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

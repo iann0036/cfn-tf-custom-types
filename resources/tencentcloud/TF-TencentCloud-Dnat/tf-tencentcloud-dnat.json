@@ -1,0 +1,99 @@
+{
+    "typeName": "TF::TencentCloud::Dnat",
+    "description": "Provides a resource to create a NAT forwarding.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Dnat/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the NAT forward."
+        },
+        "ElasticIp": {
+            "type": "string",
+            "description": "Network address of the EIP."
+        },
+        "ElasticPort": {
+            "type": "string",
+            "description": "Port of the EIP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NatId": {
+            "type": "string",
+            "description": "ID of the NAT gateway."
+        },
+        "PrivateIp": {
+            "type": "string",
+            "description": "Network address of the backend service."
+        },
+        "PrivatePort": {
+            "type": "string",
+            "description": "Port of intranet."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Type of the network protocol. Valid value: `TCP` and `UDP`."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ElasticIp",
+        "ElasticPort",
+        "NatId",
+        "PrivateIp",
+        "PrivatePort",
+        "Protocol",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

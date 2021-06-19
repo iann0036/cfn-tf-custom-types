@@ -1,0 +1,123 @@
+{
+    "typeName": "TF::AWS::LambdaCodeSigningConfig",
+    "description": "Provides a Lambda Code Signing Config resource. A code signing configuration defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment validation checks fail).\n\nFor information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions][1]",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LambdaCodeSigningConfig/docs/README.md",
+    "definitions": {
+        "AllowedPublishersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SigningProfileVersionArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package."
+                }
+            },
+            "required": [
+                "SigningProfileVersionArns"
+            ]
+        },
+        "PoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UntrustedArtifactOnDeployment": {
+                    "type": "string",
+                    "description": "Code signing configuration policy for deployment validation failure. If you set the policy to Enforce, Lambda blocks the deployment request if code-signing validation checks fail. If you set the policy to Warn, Lambda allows the deployment and creates a CloudWatch log. Valid values: `Warn`, `Enforce`. Default value: `Warn`."
+                }
+            },
+            "required": [
+                "UntrustedArtifactOnDeployment"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Descriptive name for this code signing configuration."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "AllowedPublishers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllowedPublishersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PoliciesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ConfigId",
+        "/properties/Id",
+        "/properties/LastModified"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

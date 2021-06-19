@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Databricks::AzureAdlsGen1Mount",
+    "description": "CloudFormation equivalent of databricks_azure_adls_gen1_mount",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-AzureAdlsGen1Mount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "ClientSecretKey": {
+            "type": "string"
+        },
+        "ClientSecretScope": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "Directory": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MountName": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SparkConfPrefix": {
+            "type": "string"
+        },
+        "StorageResourceName": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "ClientSecretKey",
+        "ClientSecretScope",
+        "MountName",
+        "StorageResourceName",
+        "TenantId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Source"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

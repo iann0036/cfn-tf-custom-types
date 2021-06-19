@@ -1,0 +1,898 @@
+{
+    "typeName": "TF::FortiOS::WafProfile",
+    "description": "Web application firewall configuration.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WafProfile/docs/README.md",
+    "definitions": {
+        "AddressListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockedLog": {
+                    "type": "string",
+                    "description": "Enable/disable logging on blocked addresses. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                },
+                "BlockedAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BlockedAddressDefinition"
+                    }
+                },
+                "TrustedAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TrustedAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConstraintDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentLength": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContentLengthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Exception": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExceptionDefinition"
+                    }
+                },
+                "HeaderLength": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderLengthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Hostname": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostnameDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LineLength": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LineLengthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Malformed": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MalformedDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaxCookie": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxCookieDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaxHeaderLine": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxHeaderLineDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaxRangeSegment": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxRangeSegmentDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MaxUrlParam": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxUrlParamDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MethodDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ParamLength": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ParamLengthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UrlParamLength": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlParamLengthDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Version": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VersionDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "SignatureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreditCardDetectionThreshold": {
+                    "type": "number",
+                    "description": "The minimum number of Credit cards to detect violation."
+                },
+                "CustomSignature": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomSignatureDefinition"
+                    }
+                },
+                "DisabledSignature": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DisabledSignatureDefinition"
+                    }
+                },
+                "DisabledSubClass": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DisabledSubClassDefinition"
+                    }
+                },
+                "MainClass": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MainClassDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UrlAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `bypass`, `permit`, `block`."
+                },
+                "Address": {
+                    "type": "string",
+                    "description": "Host address."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "URL access ID."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "AccessPattern": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessPatternDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlockedAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "TrustedAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "ContentLengthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Length": {
+                    "type": "number",
+                    "description": "Length of HTTP content in bytes (0 to 2147483647)."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ExceptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string",
+                    "description": "Host address."
+                },
+                "ContentLength": {
+                    "type": "string",
+                    "description": "HTTP content length in request. Valid values: `enable`, `disable`."
+                },
+                "HeaderLength": {
+                    "type": "string",
+                    "description": "HTTP header length in request. Valid values: `enable`, `disable`."
+                },
+                "Hostname": {
+                    "type": "string",
+                    "description": "Enable/disable hostname check. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Exception ID."
+                },
+                "LineLength": {
+                    "type": "string",
+                    "description": "HTTP line length in request. Valid values: `enable`, `disable`."
+                },
+                "Malformed": {
+                    "type": "string",
+                    "description": "Enable/disable malformed HTTP request check. Valid values: `enable`, `disable`."
+                },
+                "MaxCookie": {
+                    "type": "string",
+                    "description": "Maximum number of cookies in HTTP request. Valid values: `enable`, `disable`."
+                },
+                "MaxHeaderLine": {
+                    "type": "string",
+                    "description": "Maximum number of HTTP header line. Valid values: `enable`, `disable`."
+                },
+                "MaxRangeSegment": {
+                    "type": "string",
+                    "description": "Maximum number of range segments in HTTP range line. Valid values: `enable`, `disable`."
+                },
+                "MaxUrlParam": {
+                    "type": "string",
+                    "description": "Maximum number of parameters in URL. Valid values: `enable`, `disable`."
+                },
+                "Method": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP method check. Valid values: `enable`, `disable`."
+                },
+                "ParamLength": {
+                    "type": "string",
+                    "description": "Maximum length of parameter in URL, HTTP POST request or HTTP body. Valid values: `enable`, `disable`."
+                },
+                "Pattern": {
+                    "type": "string",
+                    "description": "URL pattern."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "Enable/disable regular expression based pattern match. Valid values: `enable`, `disable`."
+                },
+                "UrlParamLength": {
+                    "type": "string",
+                    "description": "Maximum length of parameter in URL. Valid values: `enable`, `disable`."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "Enable/disable HTTP version check. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "HeaderLengthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Length": {
+                    "type": "number",
+                    "description": "Length of HTTP header in bytes (0 to 2147483647)."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "HostnameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "LineLengthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Length": {
+                    "type": "number",
+                    "description": "Length of HTTP line in bytes (0 to 2147483647)."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MalformedDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MaxCookieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "MaxCookie": {
+                    "type": "number",
+                    "description": "Maximum number of cookies in HTTP request (0 to 2147483647)."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MaxHeaderLineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "MaxHeaderLine": {
+                    "type": "number",
+                    "description": "Maximum number HTTP header lines (0 to 2147483647)."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MaxRangeSegmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "MaxRangeSegment": {
+                    "type": "number",
+                    "description": "Maximum number of range segments in HTTP range line (0 to 2147483647)."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "MaxUrlParamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "MaxUrlParam": {
+                    "type": "number",
+                    "description": "Maximum number of parameters in URL (0 to 2147483647)."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ParamLengthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Length": {
+                    "type": "number",
+                    "description": "Maximum length of parameter in URL, HTTP POST request or HTTP body in bytes (0 to 2147483647)."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "UrlParamLengthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Length": {
+                    "type": "number",
+                    "description": "Maximum length of URL parameter in bytes (0 to 2147483647)."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "VersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable the constraint. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "CustomSignatureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`, `erase`."
+                },
+                "CaseSensitivity": {
+                    "type": "string",
+                    "description": "Case sensitivity in pattern. Valid values: `disable`, `enable`."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "Traffic direction. Valid values: `request`, `response`."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Signature name."
+                },
+                "Pattern": {
+                    "type": "string",
+                    "description": "Match pattern."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "Match HTTP target. Valid values: `arg`, `arg-name`, `req-body`, `req-cookie`, `req-cookie-name`, `req-filename`, `req-header`, `req-header-name`, `req-raw-uri`, `req-uri`, `resp-body`, `resp-hdr`, `resp-status`."
+                }
+            },
+            "required": []
+        },
+        "DisabledSignatureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Signature ID."
+                }
+            },
+            "required": []
+        },
+        "DisabledSubClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Signature subclass ID."
+                }
+            },
+            "required": []
+        },
+        "MainClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action. Valid values: `allow`, `block`, `erase`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Main signature class ID."
+                },
+                "Log": {
+                    "type": "string",
+                    "description": "Enable/disable logging. Valid values: `enable`, `disable`."
+                },
+                "Severity": {
+                    "type": "string",
+                    "description": "Severity. Valid values: `high`, `medium`, `low`."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "AccessPatternDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "URL access pattern ID."
+                },
+                "Negate": {
+                    "type": "string",
+                    "description": "Enable/disable match negation. Valid values: `enable`, `disable`."
+                },
+                "Pattern": {
+                    "type": "string",
+                    "description": "URL pattern."
+                },
+                "Regex": {
+                    "type": "string",
+                    "description": "Enable/disable regular expression based pattern match. Valid values: `enable`, `disable`."
+                },
+                "Srcaddr": {
+                    "type": "string",
+                    "description": "Source address."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "ExtendedLog": {
+            "type": "string",
+            "description": "Enable/disable extended logging. Valid values: `enable`, `disable`."
+        },
+        "External": {
+            "type": "string",
+            "description": "Disable/Enable external HTTP Inspection. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "WAF Profile name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "AddressList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddressListDefinition"
+            },
+            "maxItems": 1
+        },
+        "Constraint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConstraintDefinition"
+            },
+            "maxItems": 1
+        },
+        "Method": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MethodDefinition"
+            },
+            "maxItems": 1
+        },
+        "Signature": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignatureDefinition"
+            },
+            "maxItems": 1
+        },
+        "UrlAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlAccessDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::ACI::EpgToStaticPath",
+    "description": "CloudFormation equivalent of aci_epg_to_static_path",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-EpgToStaticPath/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ApplicationEpgDn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Encap": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstrImedcy": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "PrimaryEncap": {
+            "type": "string"
+        },
+        "Tdn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationEpgDn",
+        "Tdn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

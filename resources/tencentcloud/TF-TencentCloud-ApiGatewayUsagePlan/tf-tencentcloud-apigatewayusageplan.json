@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayUsagePlan",
+    "description": "Use this resource to create API gateway usage plan.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayUsagePlan/docs/README.md",
+    "definitions": {
+        "AttachListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiId": {
+                    "type": "string"
+                },
+                "ApiName": {
+                    "type": "string"
+                },
+                "CreateTime": {
+                    "type": "string"
+                },
+                "Environment": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "ModifyTime": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ServiceId": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AttachApiKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AttachList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachListDefinition"
+            }
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxRequestNum": {
+            "type": "number",
+            "description": "Total number of requests allowed. Valid values: -1, [1,99999999]. The default value is -1, which indicates no limit."
+        },
+        "MaxRequestNumPreSec": {
+            "type": "number",
+            "description": "Limit of requests per second. Valid values: -1, [1,2000]. The default value is -1, which indicates no limit."
+        },
+        "ModifyTime": {
+            "type": "string"
+        },
+        "UsagePlanDesc": {
+            "type": "string",
+            "description": "Custom usage plan description."
+        },
+        "UsagePlanName": {
+            "type": "string",
+            "description": "Custom usage plan name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "UsagePlanName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AttachApiKeys",
+        "/properties/AttachList",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/ModifyTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

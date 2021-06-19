@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::NSXT::LbHttpApplicationProfile",
+    "description": "Provides a resource to configure Load Balancer HTTP application profile on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-LbHttpApplicationProfile/docs/README.md",
+    "definitions": {
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of this resource."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
+        },
+        "HttpRedirectTo": {
+            "type": "string",
+            "description": "A URL that incoming requests for that virtual server can be temporarily redirected to, If a website is temporarily down or has moved. When set, http_redirect_to_https should be false."
+        },
+        "HttpRedirectToHttps": {
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether the client will automatically be redirected to use SSL. When true, the http_redirect_to should not be specified."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number",
+            "description": "Timeout in seconds to specify how long an HTTP application can remain idle. Defaults to 15 seconds."
+        },
+        "Ntlm": {
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether NTLM challenge/response methodology will be used over HTTP. Can be set to true only if http_redirect_to_https is false."
+        },
+        "RequestBodySize": {
+            "type": "number",
+            "description": "Maximum request body size in bytes. If it is not specified, it means that request body size is unlimited."
+        },
+        "RequestHeaderSize": {
+            "type": "number",
+            "description": "Maximum request header size in bytes. Requests with larger header size will be processed as best effort whereas a request with header below this specified size is guaranteed to be processed. Defaults to 1024 bytes."
+        },
+        "ResponseTimeout": {
+            "type": "number",
+            "description": "Number of seconds waiting for the server response before the connection is closed. Defaults to 60 seconds."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "XForwardedFor": {
+            "type": "string",
+            "description": "When this value is set, the x_forwarded_for header in the incoming request will be inserted or replaced. Supported values are \"INSERT\" and \"REPLACE\"."
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

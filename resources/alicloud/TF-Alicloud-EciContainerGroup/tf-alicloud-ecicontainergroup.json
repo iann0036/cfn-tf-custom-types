@@ -1,0 +1,495 @@
+{
+    "typeName": "TF::Alicloud::EciContainerGroup",
+    "description": "CloudFormation equivalent of alicloud_eci_container_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-EciContainerGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ContainersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Commands": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Cpu": {
+                    "type": "number"
+                },
+                "Gpu": {
+                    "type": "number"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullPolicy": {
+                    "type": "string"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "WorkingDir": {
+                    "type": "string"
+                },
+                "EnvironmentVars": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentVarsDefinition"
+                    }
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    }
+                },
+                "VolumeMounts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Image",
+                "Name"
+            ]
+        },
+        "DnsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NameServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Searches": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Options": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EciSecurityContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sysctls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SysctlsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostAliasesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostnames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InitContainersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Commands": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Cpu": {
+                    "type": "number"
+                },
+                "Gpu": {
+                    "type": "number"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullPolicy": {
+                    "type": "string"
+                },
+                "Memory": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "WorkingDir": {
+                    "type": "string"
+                },
+                "EnvironmentVars": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentVarsDefinition"
+                    }
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    }
+                },
+                "VolumeMounts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeMountsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskVolumeDiskId": {
+                    "type": "string"
+                },
+                "DiskVolumeFsType": {
+                    "type": "string"
+                },
+                "FlexVolumeDriver": {
+                    "type": "string"
+                },
+                "FlexVolumeFsType": {
+                    "type": "string"
+                },
+                "FlexVolumeOptions": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NfsVolumePath": {
+                    "type": "string"
+                },
+                "NfsVolumeReadOnly": {
+                    "type": "boolean"
+                },
+                "NfsVolumeServer": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "ConfigFileVolumeConfigFileToPaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigFileVolumeConfigFileToPathsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EnvironmentVarsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VolumeMountsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MountPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SysctlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ConfigFileVolumeConfigFileToPathsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContainerGroupName": {
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "RamRoleName": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string"
+        },
+        "RestartPolicy": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "Containers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContainersDefinition"
+            },
+            "minItems": 1
+        },
+        "DnsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DnsConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "EciSecurityContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EciSecurityContextDefinition"
+            },
+            "maxItems": 1
+        },
+        "HostAliases": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostAliasesDefinition"
+            }
+        },
+        "InitContainers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InitContainersDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "Volumes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VolumesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContainerGroupName",
+        "SecurityGroupId",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

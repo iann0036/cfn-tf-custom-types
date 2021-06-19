@@ -1,0 +1,493 @@
+{
+    "typeName": "TF::Panos::PanoramaNatRuleGroup",
+    "description": "This resource allows you to add/update/delete a group of Panorama NAT rules.\n\nThis resource manages clusters of NAT rules in a single device group,\nenforcing both the contents of individual rules as well as their\nordering.  Rules are defined in a `rule` config block.\n\nAlthough you cannot modify non-group NAT rules with this\nresource, the `position_keyword` and `position_reference` parameters allow you\nto reference some other NAT rule that already exists, using it as\na means to ensure some rough placement within the ruleset as a whole.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaNatRuleGroup/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "The description."
+                },
+                "Disabled": {
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The NAT rule's name."
+                },
+                "NegateTarget": {
+                    "type": "boolean",
+                    "description": "Instead of applying the rule for the\ngiven serial numbers, apply it to everything except them."
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of administrative tags."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": ". NAT type.  This can be `ipv4` (default), `nat64`, or\n`nptv6`."
+                },
+                "OriginalPacket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OriginalPacketDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Target": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetDefinition"
+                    }
+                },
+                "TranslatedPacket": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TranslatedPacketDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "OriginalPacketDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of destination address(es)."
+                },
+                "DestinationInterface": {
+                    "type": "string",
+                    "description": "Egress interface from route lookup (default:\n`any`)."
+                },
+                "DestinationZone": {
+                    "type": "string",
+                    "description": "The destination zone."
+                },
+                "Service": {
+                    "type": "string",
+                    "description": "Service (default: `any`)."
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of source address(es)."
+                },
+                "SourceZones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of source zone(s)."
+                }
+            },
+            "required": [
+                "DestinationAddresses",
+                "DestinationZone",
+                "SourceAddresses",
+                "SourceZones"
+            ]
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Serial": {
+                    "type": "string",
+                    "description": "The serial number of the firewall."
+                },
+                "VsysList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A subset of all available vsys on the firewall\nthat should be in this device group.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
+                }
+            },
+            "required": [
+                "Serial"
+            ]
+        },
+        "TranslatedPacketDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DestinationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DestinationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dynamic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DynamicTranslation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicTranslationDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Static": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StaticTranslation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticTranslationDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DynamicIp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicIpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "DynamicIpAndPort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicIpAndPortDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StaticIp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticIpDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DynamicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Distribution": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "DynamicTranslationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Distribution": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "StaticDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "StaticTranslationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "DynamicIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TranslatedAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Fallback": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FallbackDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "TranslatedAddresses"
+            ]
+        },
+        "DynamicIpAndPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceAddressDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TranslatedAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TranslatedAddressDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "StaticIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BiDirectional": {
+                    "type": "boolean"
+                },
+                "TranslatedAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TranslatedAddress"
+            ]
+        },
+        "FallbackDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterfaceAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceAddressDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TranslatedAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TranslatedAddressDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "InterfaceAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interface": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Interface"
+            ]
+        },
+        "TranslatedAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TranslatedAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "Device group the NAT rules should be put into\n(default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PositionKeyword": {
+            "type": "string",
+            "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
+        },
+        "PositionReference": {
+            "type": "string",
+            "description": "Required if `position_keyword` is one of the\n\"above\" or \"below\" variants, this is the name of a non-group rule to use\nas a reference to place this group."
+        },
+        "Rulebase": {
+            "type": "string",
+            "description": "The rulebase the NAT rules should be put into.  Valid\nvalues are `pre-rulebase` (default), `rulebase`, or `post-rulebase`."
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

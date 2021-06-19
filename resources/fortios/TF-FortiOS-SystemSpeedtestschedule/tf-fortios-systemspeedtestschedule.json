@@ -1,0 +1,126 @@
+{
+    "typeName": "TF::FortiOS::SystemSpeedtestschedule",
+    "description": "Speed test schedule for each interface. Applies to FortiOS Version `>= 7.0.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSpeedtestschedule/docs/README.md",
+    "definitions": {
+        "SchedulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Name of a firewall recurring schedule."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Diffserv": {
+            "type": "string",
+            "description": "DSCP used for speed test."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Interface name."
+        },
+        "ServerName": {
+            "type": "string",
+            "description": "Speed test server name."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable scheduled speed test. Valid values: `disable`, `enable`."
+        },
+        "UpdateInbandwidth": {
+            "type": "string",
+            "description": "Enable/disable bypassing interface's inbound bandwidth setting. Valid values: `disable`, `enable`."
+        },
+        "UpdateInbandwidthMaximum": {
+            "type": "number",
+            "description": "Maximum downloading bandwidth (kbps) to be used in a speed test."
+        },
+        "UpdateInbandwidthMinimum": {
+            "type": "number",
+            "description": "Minimum downloading bandwidth (kbps) to be considered effective."
+        },
+        "UpdateOutbandwidth": {
+            "type": "string",
+            "description": "Enable/disable bypassing interface's outbound bandwidth setting. Valid values: `disable`, `enable`."
+        },
+        "UpdateOutbandwidthMaximum": {
+            "type": "number",
+            "description": "Maximum uploading bandwidth (kbps) to be used in a speed test."
+        },
+        "UpdateOutbandwidthMinimum": {
+            "type": "number",
+            "description": "Minimum uploading bandwidth (kbps) to be considered effective."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Schedules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchedulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

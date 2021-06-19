@@ -1,0 +1,256 @@
+{
+    "typeName": "TF::Panos::DosProtectionProfile",
+    "description": "Manages DOS protection security profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-DosProtectionProfile/docs/README.md",
+    "definitions": {
+        "IcmpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActivateRate": {
+                    "type": "number"
+                },
+                "AlarmRate": {
+                    "type": "number"
+                },
+                "BlockDuration": {
+                    "type": "number"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "MaxRate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Icmpv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActivateRate": {
+                    "type": "number"
+                },
+                "AlarmRate": {
+                    "type": "number"
+                },
+                "BlockDuration": {
+                    "type": "number"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "MaxRate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "OtherDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActivateRate": {
+                    "type": "number",
+                    "description": "Activate rate."
+                },
+                "AlarmRate": {
+                    "type": "number",
+                    "description": "Alarm rate."
+                },
+                "BlockDuration": {
+                    "type": "number",
+                    "description": "Block duration."
+                },
+                "Enable": {
+                    "type": "boolean",
+                    "description": "Enable."
+                },
+                "MaxRate": {
+                    "type": "number",
+                    "description": "Max rate."
+                }
+            },
+            "required": []
+        },
+        "SynDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "SYN protection action.  Valid values are `red` (default) for \"Random\nEarly Drop\" or `syn-cookies`."
+                },
+                "ActivateRate": {
+                    "type": "number",
+                    "description": "Activate rate."
+                },
+                "AlarmRate": {
+                    "type": "number",
+                    "description": "Alarm rate."
+                },
+                "BlockDuration": {
+                    "type": "number",
+                    "description": "Block duration."
+                },
+                "Enable": {
+                    "type": "boolean",
+                    "description": "Enable."
+                },
+                "MaxRate": {
+                    "type": "number",
+                    "description": "Max rate."
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "UdpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActivateRate": {
+                    "type": "number"
+                },
+                "AlarmRate": {
+                    "type": "number"
+                },
+                "BlockDuration": {
+                    "type": "number"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "MaxRate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "EnableSessionsProtections": {
+            "type": "boolean",
+            "description": "Enable sessions protections."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrentSessions": {
+            "type": "number",
+            "description": "Max concurrent sessions."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The profile type.  Valid values are `aggregate` (default)\nor `classified`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys location (default: `vsys1`)."
+        },
+        "Icmp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcmpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Icmpv6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Icmpv6Definition"
+            },
+            "maxItems": 1
+        },
+        "Other": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OtherDefinition"
+            },
+            "maxItems": 1
+        },
+        "Syn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SynDefinition"
+            },
+            "maxItems": 1
+        },
+        "Udp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UdpDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

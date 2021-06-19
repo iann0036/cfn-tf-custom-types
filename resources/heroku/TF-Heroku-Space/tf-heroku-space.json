@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Heroku::Space",
+    "description": "Provides a Heroku Private Space resource for running apps in isolated, highly available, secure app execution environments.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/heroku/TF-Heroku-Space/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string",
+            "description": "The RFC-1918 CIDR the Private Space will use.\nIt must be a /16 in 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16."
+        },
+        "DataCidr": {
+            "type": "string",
+            "description": "The RFC-1918 CIDR that the Private Space will use for the Heroku-managed peering connection\nthat\u2019s automatically created when using Heroku Data add-ons. It must be between a /16 and a /20."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Private Space."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "The name of the Heroku Team which will own the Private Space."
+        },
+        "OutboundIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Region": {
+            "type": "string",
+            "description": "provision in a specific [Private Spaces region](https://devcenter.heroku.com/articles/regions#viewing-available-regions)."
+        },
+        "Shield": {
+            "type": "boolean",
+            "description": "provision as a [Shield Private Space](https://devcenter.heroku.com/articles/private-spaces#shield-private-spaces)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OutboundIps"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

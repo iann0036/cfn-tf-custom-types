@@ -1,0 +1,86 @@
+{
+    "typeName": "TF::Civo::Volume",
+    "description": "Provides a Civo volume which can be attached to a Instance in order to provide expanded storage.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-Volume/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bootable": {
+            "type": "boolean",
+            "description": "Mark the volume as bootable."
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MountPoint": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name that you wish to use to refer to this volume ."
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SizeGb": {
+            "type": "number",
+            "description": "A minimum of 1 and a maximum of your available disk space from your quota specifies the size of the volume in gigabytes ."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bootable",
+        "Name",
+        "SizeGb"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/Id",
+        "/properties/MountPoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

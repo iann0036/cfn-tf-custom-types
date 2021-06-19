@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::CheckPoint::ManagementVpnCommunityMeshed",
+    "description": "This resource allows you to execute Check Point Vpn Community Meshed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementVpnCommunityMeshed/docs/README.md",
+    "definitions": {
+        "IkePhase1Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IkePhase2Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OverrideVpnDomainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Gateway": {
+                    "type": "string",
+                    "description": "Participant gateway in override VPN domain identified by the name or UID."
+                },
+                "VpnDomain": {
+                    "type": "string",
+                    "description": "VPN domain network identified by the name or UID."
+                }
+            },
+            "required": []
+        },
+        "SharedSecretsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExternalGateway": {
+                    "type": "string",
+                    "description": "External gateway identified by the name or UID."
+                },
+                "SharedSecret": {
+                    "type": "string",
+                    "description": "Shared secret."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "EncryptionMethod": {
+            "type": "string",
+            "description": "The encryption method to be used."
+        },
+        "EncryptionSuite": {
+            "type": "string",
+            "description": "The encryption suite to be used."
+        },
+        "Gateways": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Gateway objects identified by the name or UID.gateways blocks are documented below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "IkePhase1": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IkePhase1Definition"
+            },
+            "description": "Ike Phase 1 settings. Only applicable when the encryption-suite is set to [custom].ike_phase_1 blocks are documented below."
+        },
+        "IkePhase2": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IkePhase2Definition"
+            },
+            "description": "Ike Phase 2 settings. Only applicable when the encryption-suite is set to [custom].ike_phase_2 blocks are documented below."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers.tags blocks are documented below."
+        },
+        "UseSharedSecret": {
+            "type": "boolean",
+            "description": "Indicates whether the shared secret should be used for all external gateways."
+        },
+        "OverrideVpnDomains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OverrideVpnDomainsDefinition"
+            }
+        },
+        "SharedSecrets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SharedSecretsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

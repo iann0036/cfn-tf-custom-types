@@ -1,0 +1,206 @@
+{
+    "typeName": "TF::TencentCloud::AsScalingConfig",
+    "description": "Provides a resource to create a configuration for an AS (Auto scaling) instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AsScalingConfig/docs/README.md",
+    "definitions": {
+        "InstanceTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSize": {
+                    "type": "number",
+                    "description": "Volume of disk in GB. Default is `0`."
+                },
+                "DiskType": {
+                    "type": "string",
+                    "description": "Types of disk. Valid values: `CLOUD_PREMIUM` and `CLOUD_SSD`. valid when disk_type_policy is ORIGINAL."
+                },
+                "SnapshotId": {
+                    "type": "string",
+                    "description": "Data disk snapshot ID."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigurationName": {
+            "type": "string",
+            "description": "Name of a launch configuration."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DiskTypePolicy": {
+            "type": "string",
+            "description": "Policy of cloud disk type. Valid values: `ORIGINAL` and `AUTOMATIC`. Default is `ORIGINAL`."
+        },
+        "EnhancedMonitorService": {
+            "type": "boolean",
+            "description": "To specify whether to enable cloud monitor service. Default is `TRUE`."
+        },
+        "EnhancedSecurityService": {
+            "type": "boolean",
+            "description": "To specify whether to enable cloud security service. Default is `TRUE`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "An available image ID for a cvm instance."
+        },
+        "InstanceTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceTagsDefinition"
+            },
+            "description": "A list of tags used to associate different resources."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specified types of CVM instances."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Charge types for network traffic. Valid values: `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `TRAFFIC_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`."
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number",
+            "description": "Max bandwidth of Internet access in Mbps. Default is `0`."
+        },
+        "KeepImageLogin": {
+            "type": "boolean",
+            "description": "Specify whether to keep original settings of a CVM image. And it can't be used with password or key_ids together."
+        },
+        "KeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "ID list of keys."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password to access."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Specifys to which project the configuration belongs."
+        },
+        "PublicIpAssigned": {
+            "type": "boolean",
+            "description": "Specify whether to assign an Internet IP address."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Security groups to which a CVM instance belongs."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SystemDiskSize": {
+            "type": "number",
+            "description": "Volume of system disk in GB. Default is `50`."
+        },
+        "SystemDiskType": {
+            "type": "string",
+            "description": "Type of a CVM disk. Valid values: `CLOUD_PREMIUM` and `CLOUD_SSD`. Default is `CLOUD_PREMIUM`. valid when disk_type_policy is ORIGINAL."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "ase64-encoded User Data text, the length limit is 16KB."
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDiskDefinition"
+            },
+            "maxItems": 11
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigurationName",
+        "ImageId",
+        "InstanceTypes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

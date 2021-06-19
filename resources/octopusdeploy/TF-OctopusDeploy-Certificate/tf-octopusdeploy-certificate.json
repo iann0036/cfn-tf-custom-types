@@ -1,0 +1,164 @@
+{
+    "typeName": "TF::OctopusDeploy::Certificate",
+    "description": "CloudFormation equivalent of octopusdeploy_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-Certificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Archived": {
+            "type": "string"
+        },
+        "CertificateData": {
+            "type": "string"
+        },
+        "CertificateDataFormat": {
+            "type": "string"
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HasPrivateKey": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsExpired": {
+            "type": "boolean"
+        },
+        "IssuerCommonName": {
+            "type": "string"
+        },
+        "IssuerDistinguishedName": {
+            "type": "string"
+        },
+        "IssuerOrganization": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotAfter": {
+            "type": "string"
+        },
+        "NotBefore": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ReplacedBy": {
+            "type": "string"
+        },
+        "SelfSigned": {
+            "type": "boolean"
+        },
+        "SerialNumber": {
+            "type": "string"
+        },
+        "SignatureAlgorithmName": {
+            "type": "string"
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubjectCommonName": {
+            "type": "string"
+        },
+        "SubjectDistinguishedName": {
+            "type": "string"
+        },
+        "SubjectOrganization": {
+            "type": "string"
+        },
+        "TenantTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TenantedDeploymentParticipation": {
+            "type": "string"
+        },
+        "Tenants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateData",
+        "Name",
+        "Password"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CertificateData",
+        "/properties/Password"
+    ]
+}

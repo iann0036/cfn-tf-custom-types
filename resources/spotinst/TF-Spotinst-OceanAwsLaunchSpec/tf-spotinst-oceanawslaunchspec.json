@@ -1,0 +1,402 @@
+{
+    "typeName": "TF::Spotinst::OceanAwsLaunchSpec",
+    "description": "Manages a Spotinst Ocean AWS [Virtual Node Group](https://docs.spot.io/ocean/features/launch-specifications) resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-OceanAwsLaunchSpec/docs/README.md",
+    "definitions": {
+        "AutoscaleHeadroomsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "GpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumOfUnits"
+            ]
+        },
+        "BlockDeviceMappingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EbsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "CreateOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InitialNodes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "InitialNodes"
+            ]
+        },
+        "ElasticIpPoolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagSelector": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagSelectorDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "ResourceLimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxInstanceCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SpotPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TaintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Effect": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Effect",
+                "Key",
+                "Value"
+            ]
+        },
+        "EbsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "Throughput": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "DynamicVolumeSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicVolumeSizeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TagSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagKey": {
+                    "type": "string"
+                },
+                "TagValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TagKey"
+            ]
+        },
+        "DynamicVolumeSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseSize": {
+                    "type": "number"
+                },
+                "Resource": {
+                    "type": "string"
+                },
+                "SizePerResourceUnit": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BaseSize",
+                "Resource",
+                "SizePerResourceUnit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean",
+            "description": "Configure public IP address allocation."
+        },
+        "IamInstanceProfile": {
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of instance types allowed to be provisioned for pods pending under the specified launch specification. The list overrides the list defined for the cluster."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Virtual Node Group."
+        },
+        "OceanId": {
+            "type": "string",
+            "description": "The ID of the Ocean cluster."
+        },
+        "RestrictScaleDown": {
+            "type": "boolean",
+            "description": "Boolean. When set to `True`, nodes will be treated as if all pods running have the restrict-scale-down label. Therefore, Ocean will not scale nodes down unless empty."
+        },
+        "RootVolumeSize": {
+            "type": "number",
+            "description": "Set root volume size (in GB)."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Optionally adds security group IDs."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of subnet IDs."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
+        },
+        "AutoscaleHeadrooms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AutoscaleHeadroomsDefinition"
+            }
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappingsDefinition"
+            }
+        },
+        "CreateOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreateOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElasticIpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ElasticIpPoolDefinition"
+            }
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "ResourceLimits": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResourceLimitsDefinition"
+            }
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StrategyDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Taints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaintsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "OceanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::Aviatrix::SamlEndpoint",
+    "description": "The **aviatrix_saml_endpoint** resource allows the creation and management of [Aviatrix SAML endpoints](https://docs.aviatrix.com/HowTos/VPN_SAML.html).\n\nFor details on Aviatrix Controller Login with SAML authentication, please see documentation [here](https://docs.aviatrix.com/HowTos/Controller_Login_SAML_Config.html). This feature is now supported as of Aviatrix Terraform provider release R2.14.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-SamlEndpoint/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessSetBy": {
+            "type": "string"
+        },
+        "ControllerLogin": {
+            "type": "boolean"
+        },
+        "CustomEntityId": {
+            "type": "string"
+        },
+        "CustomSamlRequestTemplate": {
+            "type": "string"
+        },
+        "EndpointName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpMetadata": {
+            "type": "string"
+        },
+        "IdpMetadataType": {
+            "type": "string"
+        },
+        "IdpMetadataUrl": {
+            "type": "string"
+        },
+        "RbacGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SignAuthnRequests": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndpointName",
+        "IdpMetadataType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

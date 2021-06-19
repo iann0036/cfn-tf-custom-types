@@ -1,0 +1,108 @@
+{
+    "typeName": "TF::FortiOS::FirewallSecurityPolicysort",
+    "description": "Resource to sort firewall security policies by policyid or policy name, in ascending or descending order.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallSecurityPolicysort/docs/README.md",
+    "definitions": {
+        "StatePolicyListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Policyid": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "ForceRecreate": {
+            "type": "string",
+            "description": "The argument is optional, if it is set, when the value changes, the resource will be re-created. It is usually used when new policies are added, or old policies are deleted, or when the policy name is changed when `sortby` is set to `name`, see Example2."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Sortby": {
+            "type": "string",
+            "description": "Sort security policies by the value, it currently supports \"policyid\" and \"name\"."
+        },
+        "Sortdirection": {
+            "type": "string",
+            "description": "Sort dirction, supports \"ascending\" and \"descending\"."
+        },
+        "StatePolicyList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatePolicyListDefinition"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Sortby",
+        "Sortdirection"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/StatePolicyList"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

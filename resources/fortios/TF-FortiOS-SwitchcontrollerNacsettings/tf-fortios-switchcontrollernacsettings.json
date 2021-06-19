@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerNacsettings",
+    "description": "Configure integrated NAC settings for FortiSwitch. Applies to FortiOS Version `>= 6.4.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerNacsettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoAuth": {
+            "type": "string",
+            "description": "Enable/disable NAC device auto authorization when discovered and nac-policy matched. Valid values: `disable`, `enable`."
+        },
+        "BounceNacPort": {
+            "type": "string",
+            "description": "Enable/disable bouncing (administratively bring the link down, up) of a switch port when NAC mode is configured on the port. Helps to re-initiate the DHCP process for a device. Valid values: `disable`, `enable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InactiveTimer": {
+            "type": "number",
+            "description": "Time interval after which inactive NAC devices will be expired (in minutes, 0 means no expiry)."
+        },
+        "LinkDownFlush": {
+            "type": "string",
+            "description": "Clear NAC devices on switch ports on link down event. Valid values: `disable`, `enable`."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Set NAC mode to be used on the FortiSwitch ports. Valid values: `local`, `global`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "NAC settings name."
+        },
+        "OnboardingVlan": {
+            "type": "string",
+            "description": "Default NAC Onboarding VLAN when NAC devices are discovered."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

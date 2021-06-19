@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::AWS::SsmMaintenanceWindowTarget",
+    "description": "Provides an SSM Maintenance Window Target resource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SsmMaintenanceWindowTarget/docs/README.md",
+    "definitions": {
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the maintenance window target."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the maintenance window target."
+        },
+        "OwnerInformation": {
+            "type": "string",
+            "description": "User-provided value that will be included in any CloudWatch events raised while running tasks for these targets in this Maintenance Window."
+        },
+        "ResourceType": {
+            "type": "string",
+            "description": "The type of target being registered with the Maintenance Window. Possible values are `INSTANCE` and `RESOURCE_GROUP`."
+        },
+        "WindowId": {
+            "type": "string",
+            "description": "The Id of the maintenance window to register the target with."
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            },
+            "maxItems": 5,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResourceType",
+        "WindowId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Alicloud::AdbConnection",
+    "description": "Provides an ADB connection resource to allocate an Internet connection string for ADB cluster.\n\n-> **NOTE:** Each ADB instance will allocate a intranet connnection string automatically and its prifix is ADB instance ID.\n To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.\n\n-> **NOTE:** Available in v1.81.0+.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-AdbConnection/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionPrefix": {
+            "type": "string",
+            "description": "Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <db_cluster_id> + 'tf'."
+        },
+        "ConnectionString": {
+            "type": "string"
+        },
+        "DbClusterId": {
+            "type": "string",
+            "description": "The Id of cluster that can run database."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConnectionString",
+        "/properties/Id",
+        "/properties/IpAddress",
+        "/properties/Port"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,973 @@
+{
+    "typeName": "TF::AVI::Upgradestatusinfo",
+    "description": "The UpgradeStatusInfo resource allows the creation and management of Avi UpgradeStatusInfo",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Upgradestatusinfo/docs/README.md",
+    "definitions": {
+        "HistoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "Ops": {
+                    "type": "string"
+                },
+                "PatchVersion": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "SeUpgradeEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeUpgradeEventsDefinition"
+                    }
+                },
+                "SegStatus": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SegStatusDefinition"
+                    }
+                },
+                "State": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StateDefinition"
+                    }
+                },
+                "UpgradeEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UpgradeEventsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageRef": {
+                    "type": "string"
+                },
+                "PatchRef": {
+                    "type": "string"
+                },
+                "SeGroupOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeGroupOptionsDefinition"
+                    }
+                },
+                "SeGroupResumeOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeGroupResumeOptionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PatchListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PatchImagePath": {
+                    "type": "string"
+                },
+                "PatchImageRef": {
+                    "type": "string"
+                },
+                "PatchVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PreviousPatchListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PatchImagePath": {
+                    "type": "string"
+                },
+                "PatchImageRef": {
+                    "type": "string"
+                },
+                "PatchVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SeUpgradeEventsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromSeRef": {
+                    "type": "string"
+                },
+                "NumSe": {
+                    "type": "number"
+                },
+                "NumSeGroup": {
+                    "type": "number"
+                },
+                "NumVs": {
+                    "type": "number"
+                },
+                "Reason": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeGroupHaMode": {
+                    "type": "string"
+                },
+                "SeGroupRef": {
+                    "type": "string"
+                },
+                "SeRef": {
+                    "type": "string"
+                },
+                "SubTasks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Task": {
+                    "type": "string"
+                },
+                "ToSeRef": {
+                    "type": "string"
+                },
+                "TrafficStatus": {
+                    "type": "string"
+                },
+                "VsRef": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SegParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageRef": {
+                    "type": "string"
+                },
+                "PatchRef": {
+                    "type": "string"
+                },
+                "SeGroupOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeGroupOptionsDefinition"
+                    }
+                },
+                "SeGroupResumeOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SeGroupResumeOptionsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SegStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ControllerVersion": {
+                    "type": "string"
+                },
+                "DisruptedVsRef": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Duration": {
+                    "type": "string"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "EnqueueTime": {
+                    "type": "string"
+                },
+                "HaMode": {
+                    "type": "string"
+                },
+                "InProgress": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NumSe": {
+                    "type": "number"
+                },
+                "NumSeWithNoVs": {
+                    "type": "number"
+                },
+                "NumSeWithVsNotScaledout": {
+                    "type": "number"
+                },
+                "NumSeWithVsScaledout": {
+                    "type": "number"
+                },
+                "NumVs": {
+                    "type": "number"
+                },
+                "NumVsDisrupted": {
+                    "type": "number"
+                },
+                "Progress": {
+                    "type": "number"
+                },
+                "Reason": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RequestTime": {
+                    "type": "string"
+                },
+                "SeAlreadyUpgradedAtStart": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeDisconnectedAtStart": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeGroupName": {
+                    "type": "string"
+                },
+                "SeGroupUuid": {
+                    "type": "string"
+                },
+                "SeIpMissingAtStart": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SePoweredoffAtStart": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeRebootInProgressRef": {
+                    "type": "string"
+                },
+                "SeUpgradeCompleted": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeUpgradeFailed": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeUpgradeInProgress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeUpgradeNotStarted": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeUpgradeSkipSuspended": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeUpgradeSuspended": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeWithNoVs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeWithVsNotScaledout": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeWithVsScaledout": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "TenantRef": {
+                    "type": "string"
+                },
+                "Thread": {
+                    "type": "string"
+                },
+                "TrafficStatus": {
+                    "type": "string"
+                },
+                "VsMigrateInProgressRef": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VsScaleinInProgressRef": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VsScaleoutInProgressRef": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Worker": {
+                    "type": "string"
+                },
+                "SeUpgradeErrors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeUpgradeErrorsDefinition"
+                    }
+                },
+                "VsErrors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VsErrorsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Reason": {
+                    "type": "string"
+                },
+                "Rebooted": {
+                    "type": "boolean"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "LastChangedTime": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LastChangedTimeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UpgradeEventsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Task": {
+                    "type": "string"
+                },
+                "TaskName": {
+                    "type": "string"
+                },
+                "NodesEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodesEventsDefinition"
+                    }
+                },
+                "SubEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubEventsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SeGroupOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionOnError": {
+                    "type": "string"
+                },
+                "Disruptive": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SeGroupResumeOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionOnError": {
+                    "type": "string"
+                },
+                "Disruptive": {
+                    "type": "boolean"
+                },
+                "SkipSuspended": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SeUpgradeErrorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromSeRef": {
+                    "type": "string"
+                },
+                "NumSe": {
+                    "type": "number"
+                },
+                "NumSeGroup": {
+                    "type": "number"
+                },
+                "NumVs": {
+                    "type": "number"
+                },
+                "Reason": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeGroupHaMode": {
+                    "type": "string"
+                },
+                "SeGroupRef": {
+                    "type": "string"
+                },
+                "SeRef": {
+                    "type": "string"
+                },
+                "SubTasks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Task": {
+                    "type": "string"
+                },
+                "ToSeRef": {
+                    "type": "string"
+                },
+                "TrafficStatus": {
+                    "type": "string"
+                },
+                "VsRef": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VsErrorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Reason": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SeGroupHaMode": {
+                    "type": "string"
+                },
+                "SeGroupRef": {
+                    "type": "string"
+                },
+                "SeRef": {
+                    "type": "string"
+                },
+                "TenantRef": {
+                    "type": "string"
+                },
+                "TrafficStatus": {
+                    "type": "string"
+                },
+                "VipId": {
+                    "type": "string"
+                },
+                "VsRef": {
+                    "type": "string"
+                },
+                "EventTimestamp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EventTimestampDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LastChangedTimeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Secs": {
+                    "type": "number"
+                },
+                "Usecs": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Secs",
+                "Usecs"
+            ]
+        },
+        "NodesEventsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "boolean"
+                },
+                "SubTasks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubEventsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "Message": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "boolean"
+                },
+                "SubTasks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EventTimestampDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Secs": {
+                    "type": "number"
+                },
+                "Usecs": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Secs",
+                "Usecs"
+            ]
+        },
+        "IpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AfterRebootRollbackFnc": {
+            "type": "string",
+            "description": "Backward compatible abort function name. Field introduced in 18.2.10, 20.1.1."
+        },
+        "AfterRebootTaskName": {
+            "type": "string",
+            "description": "Backward compatible task dict name. Field introduced in 18.2.10, 20.1.1."
+        },
+        "Clean": {
+            "type": "boolean",
+            "description": "Flag for clean installation. Field introduced in 18.2.10, 20.1.1."
+        },
+        "Duration": {
+            "type": "number",
+            "description": "Duration of upgrade operation in seconds. Field introduced in 18.2.6."
+        },
+        "EnablePatchRollback": {
+            "type": "boolean",
+            "description": "Check if the patch rollback is possible on this node. Field introduced in 18.2.6."
+        },
+        "EnableRollback": {
+            "type": "boolean",
+            "description": "Check if the rollback is possible on this node. Field introduced in 18.2.6."
+        },
+        "EndTime": {
+            "type": "string",
+            "description": "End time of upgrade operation. Field introduced in 18.2.6."
+        },
+        "EnqueueTime": {
+            "type": "string",
+            "description": "Enqueue time of upgrade operation. Field introduced in 18.2.6."
+        },
+        "FipsMode": {
+            "type": "boolean",
+            "description": "Fips mode for the entire system. Field introduced in 20.1.5."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImagePath": {
+            "type": "string",
+            "description": "Image path of current base image. Field introduced in 18.2.10, 20.1.1."
+        },
+        "ImageRef": {
+            "type": "string",
+            "description": "Image uuid for identifying the current base image. It is a reference to an object of type image. Field introduced in 18.2.6."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6."
+        },
+        "NodeType": {
+            "type": "string",
+            "description": "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6."
+        },
+        "ObjCloudRef": {
+            "type": "string",
+            "description": "Cloud that this object belongs to. It is a reference to an object of type cloud. Field introduced in 18.2.6."
+        },
+        "PatchImagePath": {
+            "type": "string",
+            "description": "Image path of current patch image. Field introduced in 18.2.10, 20.1.1."
+        },
+        "PatchImageRef": {
+            "type": "string",
+            "description": "Image uuid for identifying the current patch.example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. It is a reference to an object of type image. Field introduced in 18.2.6."
+        },
+        "PatchReboot": {
+            "type": "boolean",
+            "description": "Flag for patch op with reboot. Field introduced in 18.2.10, 20.1.1."
+        },
+        "PatchVersion": {
+            "type": "string",
+            "description": "Current patch version applied to this node. Example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. Field introduced in 18.2.6."
+        },
+        "PrevImagePath": {
+            "type": "string",
+            "description": "Image path of previous base image. Field introduced in 18.2.10, 20.1.1."
+        },
+        "PrevPatchImagePath": {
+            "type": "string",
+            "description": "Image path of previous patch image. Field introduced in 18.2.10, 20.1.1."
+        },
+        "PreviousImageRef": {
+            "type": "string",
+            "description": "Image uuid for identifying previous base image.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. It is a reference to an object of type image. Field introduced in 18.2.6."
+        },
+        "PreviousPatchImageRef": {
+            "type": "string",
+            "description": "Image uuid for identifying previous patch.example  base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. It is a reference to an object of type image. Field introduced in 18.2.6."
+        },
+        "PreviousPatchVersion": {
+            "type": "string",
+            "description": "Previous patch version applied to this node.example  base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. Field introduced in 18.2.6."
+        },
+        "PreviousVersion": {
+            "type": "string",
+            "description": "Previous version prior to upgrade.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. Field introduced in 18.2.6."
+        },
+        "Progress": {
+            "type": "number",
+            "description": "Upgrade operations progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 18.2.8, 20.1.1. Unit is percent."
+        },
+        "SePatchImagePath": {
+            "type": "string",
+            "description": "Image path of se patch image.(required in case of reimage and upgrade + patch). Field introduced in 18.2.10, 20.1.1."
+        },
+        "SePatchImageRef": {
+            "type": "string",
+            "description": "Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch. It is a reference to an object of type image. Field introduced in 18.2.10, 20.1.1."
+        },
+        "StartTime": {
+            "type": "string",
+            "description": "Start time of upgrade operation. Field introduced in 18.2.6."
+        },
+        "System": {
+            "type": "boolean",
+            "description": "Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. Field introduced in 18.2.6."
+        },
+        "TasksCompleted": {
+            "type": "number",
+            "description": "Completed set of tasks in the upgrade operation. Field introduced in 18.2.6."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 18.2.6."
+        },
+        "TotalTasks": {
+            "type": "number",
+            "description": "Total number of tasks in the upgrade operation. Field introduced in 18.2.6."
+        },
+        "UpgradeOps": {
+            "type": "string",
+            "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "Current base image applied to this node. Field introduced in 18.2.6."
+        },
+        "History": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HistoryDefinition"
+            }
+        },
+        "Params": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParamsDefinition"
+            }
+        },
+        "PatchList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PatchListDefinition"
+            }
+        },
+        "PreviousPatchList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PreviousPatchListDefinition"
+            }
+        },
+        "SeUpgradeEvents": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SeUpgradeEventsDefinition"
+            }
+        },
+        "SegParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SegParamsDefinition"
+            }
+        },
+        "SegStatus": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SegStatusDefinition"
+            }
+        },
+        "State": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StateDefinition"
+            }
+        },
+        "UpgradeEvents": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpgradeEventsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,157 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerVlan",
+    "description": "Configure VLANs for switch controller. Applies to FortiOS Version `<= 6.2.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerVlan/docs/README.md",
+    "definitions": {
+        "PortalMessageOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthDisclaimerPage": {
+                    "type": "string",
+                    "description": "Override auth-disclaimer-page message with message from portal-message-overrides group."
+                },
+                "AuthLoginFailedPage": {
+                    "type": "string",
+                    "description": "Override auth-login-failed-page message with message from portal-message-overrides group."
+                },
+                "AuthLoginPage": {
+                    "type": "string",
+                    "description": "Override auth-login-page message with message from portal-message-overrides group."
+                },
+                "AuthRejectPage": {
+                    "type": "string",
+                    "description": "Override auth-reject-page message with message from portal-message-overrides group."
+                }
+            },
+            "required": []
+        },
+        "SelectedUsergroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User group name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Auth": {
+            "type": "string",
+            "description": "Authentication. Valid values: `radius`, `usergroup`."
+        },
+        "Color": {
+            "type": "number",
+            "description": "Color of icon on the GUI."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Switch VLAN name."
+        },
+        "PortalMessageOverrideGroup": {
+            "type": "string",
+            "description": "Specify captive portal replacement message override group."
+        },
+        "RadiusServer": {
+            "type": "string",
+            "description": "Authentication radius server."
+        },
+        "Security": {
+            "type": "string",
+            "description": "Security. Valid values: `open`, `captive-portal`, `8021x`."
+        },
+        "Usergroup": {
+            "type": "string",
+            "description": "Authentication usergroup."
+        },
+        "Vdom": {
+            "type": "string",
+            "description": "Virtual domain,."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vlanid": {
+            "type": "number",
+            "description": "VLAN ID."
+        },
+        "PortalMessageOverrides": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortalMessageOverridesDefinition"
+            },
+            "maxItems": 1
+        },
+        "SelectedUsergroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SelectedUsergroupsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

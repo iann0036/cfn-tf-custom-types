@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::VictorOps::EscalationPolicy",
+    "description": "[Team Escalation Policies](https://portal.victorops.com/public/api-docs.html#/Escalation32Policies) set who is actually on-call for a given team and are the link to utilize any rotations that have been created.\n\nNote:\n\n    - You need to fetch an existing Rotation Group Slug through the VO public API - [GET-Rotations](https://portal.victorops.com/public/api-docs.html#!/Rotations/get_api_public_v1_teams_team_rotations) for creating an escalation policy resource from Terraform\n    - Update/Delete operations on an escalation policy may fail if it involves deleting or updating a routing key (not supported in current state of the Terraform provider)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/victorops/TF-VictorOps-EscalationPolicy/docs/README.md",
+    "definitions": {
+        "StepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Entries": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "$ref": "#/definitions/EntriesDefinition"
+                        }
+                    }
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Entries"
+            ]
+        },
+        "EntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreCustomPagingPolicies": {
+            "type": "boolean",
+            "description": "`true`/`false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of this escalation policy."
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "The team_id of the team for which you want to create this escalation policy."
+        },
+        "Step": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TeamId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

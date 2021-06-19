@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::TencentCloud::Eip",
+    "description": "Provides an EIP resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Eip/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnycastZone": {
+            "type": "string",
+            "description": "The zone of anycast. Valid value: `ANYCAST_ZONE_GLOBAL` and `ANYCAST_ZONE_OVERSEAS`."
+        },
+        "ApplicableForClb": {
+            "type": "boolean",
+            "description": "It has been deprecated from version 1.27.0. Indicates whether the anycast eip can be associated to a CLB."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "The charge type of eip. Valid value: `BANDWIDTH_PACKAGE`, `BANDWIDTH_POSTPAID_BY_HOUR` and `TRAFFIC_POSTPAID_BY_HOUR`."
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number",
+            "description": "The bandwidth limit of EIP, unit is Mbps."
+        },
+        "InternetServiceProvider": {
+            "type": "string",
+            "description": "Internet service provider of eip. Valid value: `BGP`, `CMCC`, `CTCC` and `CUCC`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of eip."
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "The tags of eip."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of eip. Valid value:  `EIP` and `AnycastEIP`. Default is `EIP`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PublicIp",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,290 @@
+{
+    "typeName": "TF::Google::CloudfunctionsFunction",
+    "description": "Creates a new Cloud Function. For more information see:\n\n* [API documentation](https://cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/functions/docs)\n\n\n~> **Warning:** As of November 1, 2019, newly created Functions are\nprivate-by-default and will require [appropriate IAM permissions](https://cloud.google.com/functions/docs/reference/iam/roles)\nto be invoked. See below examples for how to set up the appropriate permissions,\nor view the [Cloud Functions IAM resources](/docs/providers/google/r/cloudfunctions_cloud_function_iam.html)\nfor Cloud Functions.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-CloudfunctionsFunction/docs/README.md",
+    "definitions": {
+        "BuildEnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EnvironmentVariablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EventTriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventType": {
+                    "type": "string",
+                    "description": "The type of event to observe. For example: `\"google.storage.object.finalize\"`.\nSee the documentation on [calling Cloud Functions](https://cloud.google.com/functions/docs/calling/) for a\nfull reference of accepted triggers."
+                },
+                "Resource": {
+                    "type": "string",
+                    "description": "Required. The name or partial URI of the resource from\nwhich to observe events. For example, `\"myBucket\"` or `\"projects/my-project/topics/my-topic\"`."
+                },
+                "FailurePolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FailurePolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "EventType",
+                "Resource"
+            ]
+        },
+        "SourceRepositoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string",
+                    "description": "The URL pointing to the hosted repository where the function is defined. There are supported Cloud Source Repository URLs in the following formats:."
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FailurePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Retry": {
+                    "type": "boolean",
+                    "description": "Whether the function should be retried on failure. Defaults to `false`."
+                }
+            },
+            "required": [
+                "Retry"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailableMemoryMb": {
+            "type": "number",
+            "description": "Memory (in MB), available to the function. Default value is `256`. Possible values include `128`, `256`, `512`, `1024`, etc."
+        },
+        "BuildEnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BuildEnvironmentVariablesDefinition"
+            },
+            "description": "A set of key/value environment variable pairs available during build time."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the function."
+        },
+        "EntryPoint": {
+            "type": "string",
+            "description": "Name of the function that will be executed when the Google Cloud Function is triggered."
+        },
+        "EnvironmentVariables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariablesDefinition"
+            },
+            "description": "A set of key/value environment variable pairs to assign to the function."
+        },
+        "HttpsTriggerUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IngressSettings": {
+            "type": "string",
+            "description": "String value that controls what traffic can reach the function. Allowed values are `ALLOW_ALL`, `ALLOW_INTERNAL_AND_GCLB` and `ALLOW_INTERNAL_ONLY`. Changes to this field will recreate the cloud function."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "A set of key/value label pairs to assign to the function. Label keys must follow the requirements at https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements."
+        },
+        "MaxInstances": {
+            "type": "number",
+            "description": "The limit on the maximum number of function instances that may coexist at a given time."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user-defined name of the function. Function names must be unique globally."
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Runtime": {
+            "type": "string",
+            "description": "The runtime in which the function is going to run.\nEg. `\"nodejs10\"`, `\"nodejs12\"`, `\"nodejs14\"`, `\"python37\"`, `\"python38\"`, `\"python39\"`, `\"dotnet3\"`, `\"go113\"`, `\"java11\"`, `\"ruby27\"`, etc. Check the [official doc](https://cloud.google.com/functions/docs/concepts/exec#runtimes) for the up-to-date list."
+        },
+        "ServiceAccountEmail": {
+            "type": "string",
+            "description": "If provided, the self-provided service account to run the function with."
+        },
+        "SourceArchiveBucket": {
+            "type": "string",
+            "description": "The GCS bucket containing the zip archive which contains the function."
+        },
+        "SourceArchiveObject": {
+            "type": "string",
+            "description": "The source archive object (file) in archive bucket."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Timeout (in seconds) for the function. Default value is 60 seconds. Cannot be more than 540 seconds."
+        },
+        "TriggerHttp": {
+            "type": "boolean",
+            "description": "Boolean variable. Any HTTP request (of a supported type) to the endpoint will trigger function execution. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Endpoint is returned as `https_trigger_url`. Cannot be used with `trigger_bucket` and `trigger_topic`."
+        },
+        "VpcConnector": {
+            "type": "string",
+            "description": "The VPC Network Connector that this cloud function can connect to. It should be set up as fully-qualified URI. The format of this field is `projects/*/locations/*/connectors/*`."
+        },
+        "VpcConnectorEgressSettings": {
+            "type": "string",
+            "description": "The egress settings for the connector, controlling what traffic is diverted through it. Allowed values are `ALL_TRAFFIC` and `PRIVATE_RANGES_ONLY`. Defaults to `PRIVATE_RANGES_ONLY`. If unset, this field preserves the previously set value."
+        },
+        "EventTrigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventTriggerDefinition"
+            },
+            "maxItems": 1
+        },
+        "SourceRepository": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceRepositoryDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Runtime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

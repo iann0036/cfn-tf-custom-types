@@ -1,0 +1,165 @@
+{
+    "typeName": "TF::AzureRM::LogAnalyticsWorkspace",
+    "description": "Manages a Log Analytics (formally Operational Insights) Workspace.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LogAnalyticsWorkspace/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DailyQuotaGb": {
+            "type": "number",
+            "description": "The workspace daily quota for ingestion in GB.  Defaults to -1 (unlimited) if omitted."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetIngestionEnabled": {
+            "type": "boolean"
+        },
+        "InternetQueryEnabled": {
+            "type": "boolean",
+            "description": "Should the Log Analytics Workflow support querying over the Public Internet? Defaults to `true`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Log Analytics Workspace. Workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol. Changing this forces a new resource to be created."
+        },
+        "PortalUrl": {
+            "type": "string"
+        },
+        "PrimarySharedKey": {
+            "type": "string"
+        },
+        "ReservationCapcityInGbPerDay": {
+            "type": "number",
+            "description": "The capacity reservation level in GB for this workspace.  Must be in increments of 100  between 100 and 5000."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created."
+        },
+        "RetentionInDays": {
+            "type": "number",
+            "description": "The workspace data retention in days. Possible values are either 7 (Free Tier only) or range between 30 and 730."
+        },
+        "SecondarySharedKey": {
+            "type": "string"
+        },
+        "Sku": {
+            "type": "string",
+            "description": "Specifies the Sku of the Log Analytics Workspace. Possible values are `Free`, `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new Sku as of `2018-04-03`). Defaults to `PerGB2018`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "WorkspaceId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PortalUrl",
+        "/properties/PrimarySharedKey",
+        "/properties/SecondarySharedKey",
+        "/properties/WorkspaceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PrimarySharedKey",
+        "/properties/SecondarySharedKey"
+    ]
+}

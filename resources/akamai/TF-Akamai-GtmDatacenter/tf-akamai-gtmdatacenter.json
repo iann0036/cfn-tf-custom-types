@@ -1,0 +1,158 @@
+{
+    "typeName": "TF::Akamai::GtmDatacenter",
+    "description": "Use the `akamai_gtm_datacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to. \n\nGTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam. \n\n~> **Note** Import requires an ID with this format: `existing_domain_name`:`existing_datacenter_id`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmDatacenter/docs/README.md",
+    "definitions": {
+        "DefaultLoadObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoadObject": {
+                    "type": "string"
+                },
+                "LoadObjectPort": {
+                    "type": "number"
+                },
+                "LoadServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "City": {
+            "type": "string"
+        },
+        "CloneOf": {
+            "type": "number"
+        },
+        "CloudServerHostHeaderOverride": {
+            "type": "boolean"
+        },
+        "CloudServerTargeting": {
+            "type": "boolean"
+        },
+        "Continent": {
+            "type": "string"
+        },
+        "Country": {
+            "type": "string"
+        },
+        "DatacenterId": {
+            "type": "number"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Latitude": {
+            "type": "number"
+        },
+        "Longitude": {
+            "type": "number"
+        },
+        "Nickname": {
+            "type": "string"
+        },
+        "PingInterval": {
+            "type": "number"
+        },
+        "PingPacketSize": {
+            "type": "number"
+        },
+        "ScorePenalty": {
+            "type": "number"
+        },
+        "ServermonitorLivenessCount": {
+            "type": "number"
+        },
+        "ServermonitorLoadCount": {
+            "type": "number"
+        },
+        "ServermonitorPool": {
+            "type": "string"
+        },
+        "StateOrProvince": {
+            "type": "string"
+        },
+        "Virtual": {
+            "type": "boolean"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        },
+        "DefaultLoadObject": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultLoadObjectDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DatacenterId",
+        "/properties/Id",
+        "/properties/PingInterval",
+        "/properties/PingPacketSize",
+        "/properties/ScorePenalty",
+        "/properties/ServermonitorLivenessCount",
+        "/properties/ServermonitorLoadCount",
+        "/properties/ServermonitorPool",
+        "/properties/Virtual"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

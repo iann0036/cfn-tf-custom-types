@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Spotinst::HealthCheck",
+    "description": "Provides a Spotinst Health Check resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/spotinst/TF-Spotinst-HealthCheck/docs/README.md",
+    "definitions": {
+        "CheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPoint": {
+                    "type": "string"
+                },
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Healthy": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "TimeOut": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Unhealthy": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Healthy",
+                "Interval",
+                "Port",
+                "Protocol",
+                "Unhealthy"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the health check."
+        },
+        "ProxyAddress": {
+            "type": "string"
+        },
+        "ProxyPort": {
+            "type": "number"
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The ID of the resource to check."
+        },
+        "Check": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CheckDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProxyAddress",
+        "ResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

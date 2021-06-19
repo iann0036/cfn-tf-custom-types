@@ -1,0 +1,152 @@
+{
+    "typeName": "TF::OpenNebula::Service",
+    "description": "Provides an OpenNebula service resource.\n\nThis resource allows you to manage services on your OpenNebula clusters. When applied,\na new service will be created. When destroyed, that service will be removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-Service/docs/README.md",
+    "definitions": {
+        "NetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cardinality": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Nodes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "State": {
+                    "type": "number"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExtraTemplate": {
+            "type": "string",
+            "description": "Service information to be merged with the template during instantiate."
+        },
+        "Gid": {
+            "type": "number",
+            "description": "Set the id of the group owner of the newly created service. The corresponding `gname` will be computed."
+        },
+        "Gname": {
+            "type": "string",
+            "description": "Set the name of the group owner of the newly created service. The corresponding `gid` will be computed."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the service."
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworksDefinition"
+            }
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on service. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            }
+        },
+        "State": {
+            "type": "number"
+        },
+        "TemplateId": {
+            "type": "number",
+            "description": "Service will be instantiated from the template ID."
+        },
+        "Uid": {
+            "type": "number",
+            "description": "Set the id of the user owner of the newly created service. The corresponding `uname` will be computed."
+        },
+        "Uname": {
+            "type": "string",
+            "description": "Set the name of the user owner of the newly created service. The corresponding `uid` will be computed."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TemplateId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Networks",
+        "/properties/Roles",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

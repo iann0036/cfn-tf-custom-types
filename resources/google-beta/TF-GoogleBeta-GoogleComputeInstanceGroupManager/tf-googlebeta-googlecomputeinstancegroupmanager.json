@@ -1,0 +1,349 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeInstanceGroupManager",
+    "description": "CloudFormation equivalent of google_compute_instance_group_manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeInstanceGroupManager/docs/README.md",
+    "definitions": {
+        "StatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllEffective": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "StatusDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HasStatefulConfig": {
+                    "type": "boolean"
+                },
+                "PerInstanceConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition"
+                    }
+                }
+            }
+        },
+        "StatusDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsReached": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "StatusDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsStable": {
+                    "type": "boolean"
+                },
+                "Stateful": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition2"
+                    }
+                },
+                "VersionTarget": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/StatusDefinition3"
+                    }
+                }
+            }
+        },
+        "AutoHealingPoliciesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheck": {
+                    "type": "string"
+                },
+                "InitialDelaySec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HealthCheck",
+                "InitialDelaySec"
+            ]
+        },
+        "NamedPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Port"
+            ]
+        },
+        "StatefulDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteRule": {
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpdatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxSurgeFixed": {
+                    "type": "number"
+                },
+                "MaxSurgePercent": {
+                    "type": "number"
+                },
+                "MaxUnavailableFixed": {
+                    "type": "number"
+                },
+                "MaxUnavailablePercent": {
+                    "type": "number"
+                },
+                "MinReadySec": {
+                    "type": "number"
+                },
+                "MinimalAction": {
+                    "type": "string"
+                },
+                "ReplacementMethod": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MinimalAction",
+                "Type"
+            ]
+        },
+        "VersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceTemplate": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TargetSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetSizeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "InstanceTemplate"
+            ]
+        },
+        "TargetSizeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fixed": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseInstanceName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceGroup": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Operation": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StatusDefinition4"
+            }
+        },
+        "TargetPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TargetSize": {
+            "type": "number"
+        },
+        "WaitForInstances": {
+            "type": "boolean"
+        },
+        "WaitForInstancesStatus": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "AutoHealingPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoHealingPoliciesDefinition"
+            },
+            "maxItems": 1
+        },
+        "NamedPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NamedPortDefinition"
+            }
+        },
+        "StatefulDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StatefulDiskDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Version": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VersionDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BaseInstanceName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/InstanceGroup",
+        "/properties/Operation",
+        "/properties/SelfLink",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

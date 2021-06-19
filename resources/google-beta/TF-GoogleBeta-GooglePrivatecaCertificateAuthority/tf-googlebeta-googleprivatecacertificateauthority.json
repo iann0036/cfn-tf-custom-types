@@ -1,0 +1,356 @@
+{
+    "typeName": "TF::GoogleBeta::GooglePrivatecaCertificateAuthority",
+    "description": "CloudFormation equivalent of google_privateca_certificate_authority",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GooglePrivatecaCertificateAuthority/docs/README.md",
+    "definitions": {
+        "AccessUrlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaCertificateAccessUrl": {
+                    "type": "string"
+                },
+                "CrlAccessUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReusableConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ReusableConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SubjectConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectConfigDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "IssuingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeCaCertUrl": {
+                    "type": "boolean"
+                },
+                "IncludeCrlAccessUrl": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "KeySpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "CloudKmsKeyVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ReusableConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReusableConfig": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ReusableConfig"
+            ]
+        },
+        "SubjectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SubjectAltName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectAltNameDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "CommonName"
+            ]
+        },
+        "SubjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "PostalCode": {
+                    "type": "string"
+                },
+                "Province": {
+                    "type": "string"
+                },
+                "StreetAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Organization"
+            ]
+        },
+        "SubjectAltNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Uris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessUrls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessUrlsDefinition"
+            }
+        },
+        "CertificateAuthorityId": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DisableOnDelete": {
+            "type": "boolean"
+        },
+        "GcsBucket": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Lifetime": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PemCaCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Project": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UpdateTime": {
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "IssuingOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IssuingOptionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "KeySpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeySpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertificateAuthorityId",
+        "Location"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccessUrls",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/PemCaCertificates",
+        "/properties/State",
+        "/properties/UpdateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

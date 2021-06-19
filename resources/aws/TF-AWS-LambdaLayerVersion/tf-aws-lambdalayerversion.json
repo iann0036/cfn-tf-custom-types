@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::AWS::LambdaLayerVersion",
+    "description": "Provides a Lambda Layer Version resource. Lambda Layers allow you to reuse shared bits of code across multiple lambda functions.\n\nFor information about Lambda Layers and how to use them, see [AWS Lambda Layers][1]",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LambdaLayerVersion/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CompatibleRuntimes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [Runtimes][2] this layer is compatible with. Up to 5 runtimes can be specified."
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of what your Lambda Layer does."
+        },
+        "Filename": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LayerArn": {
+            "type": "string"
+        },
+        "LayerName": {
+            "type": "string"
+        },
+        "LicenseInfo": {
+            "type": "string",
+            "description": "License info for your Lambda Layer. See [License Info][3]."
+        },
+        "S3Bucket": {
+            "type": "string",
+            "description": "The S3 bucket location containing the function's deployment package. Conflicts with `filename`. This bucket must reside in the same AWS region where you are creating the Lambda function."
+        },
+        "S3Key": {
+            "type": "string",
+            "description": "The S3 key of an object containing the function's deployment package. Conflicts with `filename`."
+        },
+        "S3ObjectVersion": {
+            "type": "string",
+            "description": "The object version containing the function's deployment package. Conflicts with `filename`."
+        },
+        "SigningJobArn": {
+            "type": "string"
+        },
+        "SigningProfileVersionArn": {
+            "type": "string"
+        },
+        "SourceCodeHash": {
+            "type": "string",
+            "description": "Used to trigger updates. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`. The usual way to set this is `${filebase64sha256(\"file.zip\")}` (Terraform 0.11.12 or later) or `${base64sha256(file(\"file.zip\"))}` (Terraform 0.11.11 and earlier), where \"file.zip\" is the local filename of the lambda layer source archive."
+        },
+        "SourceCodeSize": {
+            "type": "number"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LayerName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/Id",
+        "/properties/LayerArn",
+        "/properties/SigningJobArn",
+        "/properties/SigningProfileVersionArn",
+        "/properties/SourceCodeSize",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

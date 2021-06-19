@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::Google::StorageNotification",
+    "description": "Creates a new notification configuration on a specified bucket, establishing a flow of event notifications from GCS to a Cloud Pub/Sub topic.\n For more information see\n[the official documentation](https://cloud.google.com/storage/docs/pubsub-notifications)\nand\n[API](https://cloud.google.com/storage/docs/json_api/v1/notifications).\n\nIn order to enable notifications, a special Google Cloud Storage service account unique to the project\nmust exist and have the IAM permission \"projects.topics.publish\" for a Cloud Pub/Sub topic in the project.\nThis service account is not created automatically when a project is created.\nTo ensure the service account exists and obtain its email address for use in granting the correct IAM permission, use the\n[`google_storage_project_service_account`](/docs/providers/google/d/storage_project_service_account.html)\ndatasource's `email_address` value, and see below for an example of enabling notifications by granting the correct IAM permission.\nSee [the notifications documentation](ht...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-StorageNotification/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string",
+            "description": "The name of the bucket."
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription."
+        },
+        "EventTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `\"OBJECT_FINALIZE\"`, `\"OBJECT_METADATA_UPDATE\"`, `\"OBJECT_DELETE\"`, `\"OBJECT_ARCHIVE\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotificationId": {
+            "type": "string"
+        },
+        "ObjectNamePrefix": {
+            "type": "string",
+            "description": "Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix."
+        },
+        "PayloadFormat": {
+            "type": "string",
+            "description": "The desired content of the Payload. One of `\"JSON_API_V1\"` or `\"NONE\"`."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Topic": {
+            "type": "string",
+            "description": "The Cloud PubSub topic to which this subscription publishes. Expects either the\ntopic name, assumed to belong to the default GCP provider project, or the project-level name,\ni.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,\nyou will need to use the project-level name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "PayloadFormat",
+        "Topic"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/NotificationId",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

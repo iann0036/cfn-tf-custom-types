@@ -1,0 +1,202 @@
+{
+    "typeName": "TF::AzureRM::SynapseSparkPool",
+    "description": "Manages a Synapse Spark Pool.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SynapseSparkPool/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AutoPauseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DelayInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DelayInMinutes"
+            ]
+        },
+        "AutoScaleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxNodeCount": {
+                    "type": "number"
+                },
+                "MinNodeCount": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxNodeCount",
+                "MinNodeCount"
+            ]
+        },
+        "LibraryRequirementDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Filename": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Filename"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "NodeSize": {
+            "type": "string"
+        },
+        "NodeSizeFamily": {
+            "type": "string"
+        },
+        "SparkEventsFolder": {
+            "type": "string"
+        },
+        "SparkLogFolder": {
+            "type": "string"
+        },
+        "SparkVersion": {
+            "type": "string"
+        },
+        "SynapseWorkspaceId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "AutoPause": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoPauseDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutoScale": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoScaleDefinition"
+            },
+            "maxItems": 1
+        },
+        "LibraryRequirement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LibraryRequirementDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NodeSize",
+        "NodeSizeFamily",
+        "SynapseWorkspaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

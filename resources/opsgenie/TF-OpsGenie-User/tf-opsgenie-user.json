@@ -1,0 +1,155 @@
+{
+    "typeName": "TF::OpsGenie::User",
+    "description": "Manages a User within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-User/docs/README.md",
+    "definitions": {
+        "UserDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UserAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "City": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "Line": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Zipcode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "City",
+                "Country",
+                "Line",
+                "State",
+                "Zipcode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FullName": {
+            "type": "string",
+            "description": "The Full Name of the User."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locale": {
+            "type": "string",
+            "description": "Location information for the user. Please look at [Supported Locale Ids](https://docs.opsgenie.com/docs/supported-locales) for available locales."
+        },
+        "Role": {
+            "type": "string",
+            "description": "The Role assigned to the User. Either a built-in such as 'Admin' or 'User' - or the name of a custom role."
+        },
+        "SkypeUsername": {
+            "type": "string",
+            "description": "Skype username of the user."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of tags to be associated with the user."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Timezone information of the user. Please look at [Supported Timezone Ids](https://docs.opsgenie.com/docs/supported-timezone-ids) for available timezones."
+        },
+        "UserDetails": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserDetailsDefinition"
+            },
+            "description": "Details about the user in form of key and list. of values."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The email address associated with this user. Opsgenie defines that this must not be longer than 100 characters and must contain lowercase characters only."
+        },
+        "UserAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserAddressDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FullName",
+        "Role",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

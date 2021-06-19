@@ -1,0 +1,526 @@
+{
+    "typeName": "TF::Google::DataLossPreventionInspectTemplate",
+    "description": "An inspect job template.\n\n\nTo get more information about InspectTemplate, see:\n\n* [API documentation](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.inspectTemplates)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/dlp/docs/creating-templates-inspect)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=dlp_inspect_template_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataLossPreventionInspectTemplate/docs/README.md",
+    "definitions": {
+        "InspectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentOptions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludeInfoTypes": {
+                    "type": "boolean"
+                },
+                "IncludeQuote": {
+                    "type": "boolean"
+                },
+                "MinLikelihood": {
+                    "type": "string"
+                },
+                "CustomInfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomInfoTypesDefinition"
+                    }
+                },
+                "InfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypesDefinition"
+                    }
+                },
+                "Limits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LimitsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RuleSet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleSetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomInfoTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExclusionType": {
+                    "type": "string"
+                },
+                "Likelihood": {
+                    "type": "string"
+                },
+                "Dictionary": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DictionaryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InfoType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Regex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegexDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StoredType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StoredTypeDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "InfoTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "LimitsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxFindingsPerItem": {
+                    "type": "number"
+                },
+                "MaxFindingsPerRequest": {
+                    "type": "number"
+                },
+                "MaxFindingsPerInfoType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MaxFindingsPerInfoTypeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MaxFindingsPerItem",
+                "MaxFindingsPerRequest"
+            ]
+        },
+        "RuleSetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypesDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DictionaryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStoragePath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudStoragePathDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "WordList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WordListDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "InfoTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RegexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupIndexes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Pattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Pattern"
+            ]
+        },
+        "StoredTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MaxFindingsPerInfoTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxFindings": {
+                    "type": "number"
+                },
+                "InfoType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypeDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "MaxFindings"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExclusionRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExclusionRuleDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "HotwordRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HotwordRuleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "CloudStoragePathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "WordListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Words": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Words"
+            ]
+        },
+        "ExclusionRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchingType": {
+                    "type": "string"
+                },
+                "Dictionary": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DictionaryDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ExcludeInfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeInfoTypesDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Regex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegexDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MatchingType"
+            ]
+        },
+        "HotwordRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HotwordRegex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HotwordRegexDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "LikelihoodAdjustment": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LikelihoodAdjustmentDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Proximity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProximityDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExcludeInfoTypesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InfoTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InfoTypesDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "HotwordRegexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupIndexes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Pattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Pattern"
+            ]
+        },
+        "LikelihoodAdjustmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FixedLikelihood": {
+                    "type": "string"
+                },
+                "RelativeLikelihood": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ProximityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WindowAfter": {
+                    "type": "number"
+                },
+                "WindowBefore": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "InspectConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InspectConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Parent"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

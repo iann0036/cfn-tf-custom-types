@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Akamai::NetworklistActivations",
+    "description": "Use the `akamai_networklist_activations` resource to activate a network list in either the STAGING or PRODUCTION\nenvironment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-NetworklistActivations/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Activate": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string",
+            "description": "The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to\n`STAGING`."
+        },
+        "NetworkListId": {
+            "type": "string",
+            "description": "The ID of the network list to be activated."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "A comment describing the activation."
+        },
+        "NotificationEmails": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A bracketed, comma-separated list of email addresses that will be notified when the\noperation is complete."
+        },
+        "Status": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkListId",
+        "NotificationEmails"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

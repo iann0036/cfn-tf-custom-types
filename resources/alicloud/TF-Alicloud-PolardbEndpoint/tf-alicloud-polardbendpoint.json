@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Alicloud::PolardbEndpoint",
+    "description": "Provides a PolarDB endpoint resource to allocate an Internet endpoint string for PolarDB instance.\n\n-> **NOTE:** Available in v1.80.0+. Each PolarDB instance will allocate a intranet connection string automatically and its prefix is Cluster ID.\n To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-PolardbEndpoint/docs/README.md",
+    "definitions": {
+        "EndpointConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoAddNewNodes": {
+            "type": "string",
+            "description": "Whether the new node automatically joins the default cluster address. Valid values are `Enable`, `Disable`. Default to `Disable`."
+        },
+        "DbClusterId": {
+            "type": "string",
+            "description": "The Id of cluster that can run database."
+        },
+        "EndpointConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointConfigDefinition"
+            },
+            "description": "Advanced configuration of the cluster address."
+        },
+        "EndpointType": {
+            "type": "string",
+            "description": "Type of endpoint. Valid value: `Custom`. Currently supported only `Custom`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetType": {
+            "type": "string"
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Node id list for endpoint configuration. At least 2 nodes if specified, or if the cluster has more than 3 nodes, read-only endpoint is allowed to mount only one node. Default is all nodes."
+        },
+        "ReadWriteMode": {
+            "type": "string",
+            "description": "Read or write mode. Valid values are `ReadWrite`, `ReadOnly`. Default to `ReadOnly`."
+        },
+        "SslConnectionString": {
+            "type": "string"
+        },
+        "SslEnabled": {
+            "type": "string"
+        },
+        "SslExpireTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SslConnectionString",
+        "/properties/SslExpireTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,235 @@
+{
+    "typeName": "TF::TencentCloud::VpnConnection",
+    "description": "Provides a resource to create a VPN connection.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-VpnConnection/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SecurityGroupPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LocalCidrBlock": {
+                    "type": "string",
+                    "description": "Local cidr block."
+                },
+                "RemoteCidrBlock": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Remote cidr block list."
+                }
+            },
+            "required": [
+                "LocalCidrBlock",
+                "RemoteCidrBlock"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CustomerGatewayId": {
+            "type": "string",
+            "description": "ID of the customer gateway."
+        },
+        "EncryptProto": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeDhGroupName": {
+            "type": "string",
+            "description": "DH group name of the IKE operation specification. Valid values: `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`. Default value is `GROUP1`."
+        },
+        "IkeExchangeMode": {
+            "type": "string",
+            "description": "Exchange mode of the IKE operation specification. Valid values: `AGGRESSIVE`, `MAIN`. Default value is `MAIN`."
+        },
+        "IkeLocalAddress": {
+            "type": "string",
+            "description": "Local address of IKE operation specification, valid when ike_local_identity is `ADDRESS`, generally the value is `public_ip_address` of the related VPN gateway."
+        },
+        "IkeLocalFqdnName": {
+            "type": "string",
+            "description": "Local FQDN name of the IKE operation specification."
+        },
+        "IkeLocalIdentity": {
+            "type": "string",
+            "description": "Local identity way of IKE operation specification. Valid values: `ADDRESS`, `FQDN`. Default value is `ADDRESS`."
+        },
+        "IkeProtoAuthenAlgorithm": {
+            "type": "string",
+            "description": "Proto authenticate algorithm of the IKE operation specification. Valid values: `MD5`, `SHA`. Default Value is `MD5`."
+        },
+        "IkeProtoEncryAlgorithm": {
+            "type": "string",
+            "description": "Proto encrypt algorithm of the IKE operation specification. Valid values: `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`."
+        },
+        "IkeRemoteAddress": {
+            "type": "string",
+            "description": "Remote address of IKE operation specification, valid when ike_remote_identity is `ADDRESS`, generally the value is `public_ip_address` of the related customer gateway."
+        },
+        "IkeRemoteFqdnName": {
+            "type": "string",
+            "description": "Remote FQDN name of the IKE operation specification."
+        },
+        "IkeRemoteIdentity": {
+            "type": "string",
+            "description": "Remote identity way of IKE operation specification. Valid values: `ADDRESS`, `FQDN`. Default value is `ADDRESS`."
+        },
+        "IkeSaLifetimeSeconds": {
+            "type": "number",
+            "description": "SA lifetime of the IKE operation specification, unit is `second`. The value ranges from 60 to 604800. Default value is 86400 seconds."
+        },
+        "IkeVersion": {
+            "type": "string",
+            "description": "Version of the IKE operation specification. Default value is `IKEV1`."
+        },
+        "IpsecEncryptAlgorithm": {
+            "type": "string",
+            "description": "Encrypt algorithm of the IPSEC operation specification. Valid values: `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`."
+        },
+        "IpsecIntegrityAlgorithm": {
+            "type": "string",
+            "description": "Integrity algorithm of the IPSEC operation specification. Valid values: `SHA1`, `MD5`. Default value is `MD5`."
+        },
+        "IpsecPfsDhGroup": {
+            "type": "string",
+            "description": "PFS DH group. Valid value: `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`, `NULL`. Default value is `NULL`."
+        },
+        "IpsecSaLifetimeSeconds": {
+            "type": "number",
+            "description": "SA lifetime of the IPSEC operation specification, unit is second. Valid value ranges: [180~604800]. Default value is 3600 seconds."
+        },
+        "IpsecSaLifetimeTraffic": {
+            "type": "number",
+            "description": "SA lifetime of the IPSEC operation specification, unit is KB. The value should not be less then 2560. Default value is 1843200."
+        },
+        "IsCcnType": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the VPN connection. The length of character is limited to 1-60."
+        },
+        "NetStatus": {
+            "type": "string"
+        },
+        "PreShareKey": {
+            "type": "string",
+            "description": "Pre-shared key of the VPN connection."
+        },
+        "RouteType": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A list of tags used to associate different resources."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC. Required if vpn gateway is not in `CCN` type, and doesn't make sense for `CCN` vpn gateway."
+        },
+        "VpnGatewayId": {
+            "type": "string",
+            "description": "ID of the VPN gateway."
+        },
+        "VpnProto": {
+            "type": "string"
+        },
+        "SecurityGroupPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecurityGroupPolicyDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomerGatewayId",
+        "Name",
+        "PreShareKey",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/EncryptProto",
+        "/properties/Id",
+        "/properties/IsCcnType",
+        "/properties/NetStatus",
+        "/properties/RouteType",
+        "/properties/State",
+        "/properties/VpnProto"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

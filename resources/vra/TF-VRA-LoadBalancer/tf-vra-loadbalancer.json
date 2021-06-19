@@ -1,0 +1,332 @@
+{
+    "typeName": "TF::VRA::LoadBalancer",
+    "description": "CloudFormation equivalent of vra_load_balancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vra/TF-VRA-LoadBalancer/docs/README.md",
+    "definitions": {
+        "CustomPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LinksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Href": {
+                    "type": "string"
+                },
+                "Hrefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Rel": {
+                    "type": "string"
+                }
+            }
+        },
+        "NicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CustomProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomPropertiesDefinition2"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "NetworkId"
+            ]
+        },
+        "CustomPropertiesDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheckConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthCheckConfigurationDefinition"
+                    }
+                },
+                "MemberPort": {
+                    "type": "string"
+                },
+                "MemberProtocol": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MemberPort",
+                "MemberProtocol",
+                "Port",
+                "Protocol"
+            ]
+        },
+        "HealthCheckConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TargetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MachineId": {
+                    "type": "string"
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MachineId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CustomProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomPropertiesDefinition"
+            },
+            "description": "Additional custom properties that may be used to extend the machine."
+        },
+        "DeploymentId": {
+            "type": "string",
+            "description": "The id of the deployment that is associated with this resource."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Describes machine within the scope of your organization and is not propagated to the cloud."
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "ExternalRegionId": {
+            "type": "string"
+        },
+        "ExternalZoneId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetFacing": {
+            "type": "boolean",
+            "description": "An Internet-facing load balancer has a publicly resolvable DNS name, so it can route requests from clients over the Internet to the instances that are registered with the load balancer."
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LinksDefinition"
+            }
+        },
+        "Name": {
+            "type": "string",
+            "description": "A human-friendly name used as an identifier in APIs that support this option."
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The id of the project the current user belongs to."
+        },
+        "UpdatedAt": {
+            "type": "string"
+        },
+        "Nics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NicsDefinition"
+            },
+            "minItems": 1
+        },
+        "Routes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoutesDefinition"
+            },
+            "minItems": 1
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/CreatedAt",
+        "/properties/ExternalId",
+        "/properties/ExternalRegionId",
+        "/properties/ExternalZoneId",
+        "/properties/Id",
+        "/properties/Links",
+        "/properties/OrganizationId",
+        "/properties/Owner",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

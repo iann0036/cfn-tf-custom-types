@@ -1,0 +1,199 @@
+{
+    "typeName": "TF::Cloudflare::CustomHostname",
+    "description": "Provides a Cloudflare custom hostname (also known as SSL for SaaS) resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-CustomHostname/docs/README.md",
+    "definitions": {
+        "OwnershipVerificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "OwnershipVerificationHttpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthority": {
+                    "type": "string"
+                },
+                "CnameName": {
+                    "type": "string"
+                },
+                "CnameTarget": {
+                    "type": "string"
+                },
+                "CustomCertificate": {
+                    "type": "string"
+                },
+                "CustomKey": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Wildcard": {
+                    "type": "boolean"
+                },
+                "Settings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SettingsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ciphers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Http2": {
+                    "type": "string"
+                },
+                "MinTlsVersion": {
+                    "type": "string"
+                },
+                "Tls13": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomOriginServer": {
+            "type": "string",
+            "description": "The custom origin server used for certificates."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Hostname you intend to request a certificate for."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnershipVerification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OwnershipVerificationDefinition"
+            }
+        },
+        "OwnershipVerificationHttp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OwnershipVerificationHttpDefinition"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID where the custom hostname should be assigned."
+        },
+        "Ssl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hostname",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/OwnershipVerification",
+        "/properties/OwnershipVerificationHttp",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

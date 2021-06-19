@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::Panos::Ospf",
+    "description": "Manages OSPF config attached to a virtual router.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-Ospf/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowRedistributeDefaultRoute": {
+            "type": "boolean",
+            "description": "Allow redistribute default route."
+        },
+        "BfdProfile": {
+            "type": "string",
+            "description": "BFD profile name."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable flag."
+        },
+        "EnableGracefulRestart": {
+            "type": "boolean",
+            "description": "Enable graceful restart."
+        },
+        "GracePeriod": {
+            "type": "number",
+            "description": "Grace period."
+        },
+        "HelperEnable": {
+            "type": "boolean",
+            "description": "Helper enable."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LsaInterval": {
+            "type": "number",
+            "description": "LSA interval."
+        },
+        "MaxNeighborRestartTime": {
+            "type": "number",
+            "description": "Max neighbor restart time."
+        },
+        "RejectDefaultRoute": {
+            "type": "boolean",
+            "description": "Reject default route."
+        },
+        "Rfc1583": {
+            "type": "boolean",
+            "description": "RFC 1583."
+        },
+        "RouterId": {
+            "type": "string",
+            "description": "Router ID."
+        },
+        "SpfCalculationDelay": {
+            "type": "number",
+            "description": "SPF calculation delay."
+        },
+        "StrictLsaChecking": {
+            "type": "boolean",
+            "description": "Strict LSA checking."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location."
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

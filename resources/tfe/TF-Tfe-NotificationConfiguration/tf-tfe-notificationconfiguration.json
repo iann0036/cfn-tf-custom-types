@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::Tfe::NotificationConfiguration",
+    "description": "Terraform Cloud can be configured to send notifications for run state transitions. \nNotification configurations allow you to specify a URL, destination type, and what events will trigger the notification. \nEach workspace can have up to 20 notification configurations, and they apply to all runs for that workspace.\n\n~> **NOTE:** Using `destination_type` of `email` requires using the provider with Terraform Cloud or an instance of \n  Terraform Enterprise at least as recent as v202005-1.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-NotificationConfiguration/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DestinationType": {
+            "type": "string",
+            "description": "The type of notification configuration payload to send.\nValid values are `email`, `generic` or `slack`."
+        },
+        "EmailAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "**TFE only** A list of email addresses. This value\n_must not_ be provided if `destination_type` is `generic` or `slack`."
+        },
+        "EmailUserIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of user IDs. This value _must not_ be provided\nif `destination_type` is `generic` or `slack`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Whether the notification configuration should be enabled or not.\nDisabled configurations will not send any notifications. Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the notification configuration."
+        },
+        "Token": {
+            "type": "string",
+            "description": "A write-only secure token for the notification configuration, which can\nbe used by the receiving server to verify request authenticity when configured for notification\nconfigurations with a destination type of `generic`. Defaults to `null`.\nThis value _must not_ be provided if `destination_type` is `email` or `slack`."
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The array of triggers for which this notification configuration will\nsend notifications. Valid values are `run:created`, `run:planning`, `run:needs_attention`, `run:applying`\n`run:completed`, `run:errored`. If omitted, no notification triggers are configured."
+        },
+        "Url": {
+            "type": "string",
+            "description": "The HTTP or HTTPS URL of the notification\nconfiguration where notification requests will be made. This value _must not_ be provided if `destination_type`\nis `email`."
+        },
+        "WorkspaceId": {
+            "type": "string",
+            "description": "The id of the workspace that owns the notification configuration."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationType",
+        "Name",
+        "WorkspaceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

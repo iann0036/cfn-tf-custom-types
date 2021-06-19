@@ -1,0 +1,360 @@
+{
+    "typeName": "TF::Alicloud::LaunchTemplate",
+    "description": "Provides an ECS Launch Template resource.\n\nFor information about Launch Template and how to use it, see [Launch Template](https://www.alibabacloud.com/help/doc-detail/73916.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-LaunchTemplate/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TemplateTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDisksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PerformanceLevel": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrimaryIp": {
+                    "type": "string"
+                },
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "VswitchId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SystemDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PerformanceLevel": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoReleaseTime": {
+            "type": "string",
+            "description": "Instance auto release time. The time is presented using the ISO8601 standard and in UTC time. The format is  YYYY-MM-DDTHH:MM:SSZ."
+        },
+        "DeploymentSetId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the data disk."
+        },
+        "EnableVmOsConfig": {
+            "type": "boolean"
+        },
+        "HostName": {
+            "type": "string",
+            "description": "Instance host name.It cannot start or end with a period (.) or a hyphen (-) and it cannot have two or more consecutive periods (.) or hyphens (-).For Windows: The host name can be [2, 15] characters in length. It can contain A-Z, a-z, numbers, periods (.), and hyphens (-). It cannot only contain numbers. For other operating systems: The host name can be [2, 64] characters in length. It can be segments separated by periods (.). It can contain A-Z, a-z, numbers, and hyphens (-)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "Image ID."
+        },
+        "ImageOwnerAlias": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "Billing methods. Optional values:\n- PrePaid: Monthly, or annual subscription. Make sure that your registered credit card is invalid or you have insufficient balance in your PayPal account. Otherwise, InvalidPayMethod error may occur.\n- PostPaid: Pay-As-You-Go."
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the instance. The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-)."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "Instance type. For more information, call resource_alicloud_instances to obtain the latest instance type list."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Internet bandwidth billing method. Optional values: `PayByTraffic` | `PayByBandwidth`."
+        },
+        "InternetMaxBandwidthIn": {
+            "type": "number",
+            "description": "The maximum inbound bandwidth from the Internet network, measured in Mbit/s. Value range: [1, 200]."
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number",
+            "description": "Maximum outbound bandwidth from the Internet, its unit of measurement is Mbit/s. Value range: [0, 100]."
+        },
+        "IoOptimized": {
+            "type": "string",
+            "description": "Whether it is an I/O-optimized instance or not. Optional values:\n- none\n- optimized."
+        },
+        "KeyPairName": {
+            "type": "string",
+            "description": "The name of the key pair.\n- Ignore this parameter for Windows instances. It is null by default. Even if you enter this parameter, only the  Password content is used.\n- The password logon method for Linux instances is set to forbidden upon initialization."
+        },
+        "LaunchTemplateName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the data disk.\n* `size` - (Required) The size of the data disk.\n- cloud\uff1a[5, 2000]\n- cloud_efficiency\uff1a[20, 32768]\n- cloud_ssd\uff1a[20, 32768]\n- cloud_essd\uff1a[20, 32768]\n- ephemeral_ssd: [5, 800]\n* `category` - (Optional) The category of the disk:\n- cloud: Basic cloud disk.\n- cloud_efficiency: Ultra cloud disk.\n- cloud_ssd: SSD cloud Disks.\n- ephemeral_ssd: local SSD Disks\n- cloud_essd: ESSD cloud Disks."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Network type of the instance. Value options: `classic` | `vpc`."
+        },
+        "PasswordInherit": {
+            "type": "boolean"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "RamRoleName": {
+            "type": "string",
+            "description": "The RAM role name of the instance. You can use the RAM API ListRoles to query instance RAM role names."
+        },
+        "ResourceGroupId": {
+            "type": "string"
+        },
+        "SecurityEnhancementStrategy": {
+            "type": "string",
+            "description": "Whether or not to activate the security enhancement feature and install network security software free of charge. Optional values: Active | Deactive."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "The security group ID must be one in the same VPC.\n* `vswitch_id` - (Optional) The VSwitch ID for ENI. The instance must be in the same zone of the same VPC network as the ENI, but they may belong to different VSwitches."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SpotDuration": {
+            "type": "string"
+        },
+        "SpotPriceLimit": {
+            "type": "number"
+        },
+        "SpotStrategy": {
+            "type": "string",
+            "description": "The spot strategy for a Pay-As-You-Go instance. This parameter is valid and required only when InstanceChargeType is set to PostPaid. Value range:\n- NoSpot: Normal Pay-As-You-Go instance.\n- SpotWithPriceLimit: Sets the maximum price for a spot instance.\n- SpotAsPriceGo: The system automatically calculates the price. The maximum value is the Pay-As-You-Go price."
+        },
+        "SystemDiskCategory": {
+            "type": "string",
+            "description": "The category of the system disk. System disk type. Optional values:\n- cloud: Basic cloud disk.\n- cloud_efficiency: Ultra cloud disk.\n- cloud_ssd: SSD cloud Disks.\n- ephemeral_ssd: local SSD Disks\n- cloud_essd: ESSD cloud Disks."
+        },
+        "SystemDiskDescription": {
+            "type": "string",
+            "description": "System disk description. It cannot begin with http:// or https://."
+        },
+        "SystemDiskName": {
+            "type": "string",
+            "description": "System disk name. The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-)."
+        },
+        "SystemDiskSize": {
+            "type": "number",
+            "description": "Size of the system disk, measured in GB. Value range: [20, 500]."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource.\n- Key: It can be up to 64 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It cannot be a null string.\n- Value: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It can be a null string."
+        },
+        "TemplateResourceGroupId": {
+            "type": "string"
+        },
+        "TemplateTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TemplateTagsDefinition"
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "Userdata": {
+            "type": "string",
+            "description": "User data of the instance, which is Base64-encoded. Size of the raw data cannot exceed 16 KB."
+        },
+        "VersionDescription": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "The VSwitch ID for ENI. The instance must be in the same zone of the same VPC network as the ENI, but they may belong to different VSwitches."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The zone ID of the instance."
+        },
+        "DataDisks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DataDisksDefinition"
+            }
+        },
+        "NetworkInterfaces": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfacesDefinition"
+            },
+            "maxItems": 1
+        },
+        "SystemDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemDiskDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

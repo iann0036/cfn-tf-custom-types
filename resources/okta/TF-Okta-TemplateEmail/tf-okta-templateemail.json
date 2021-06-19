@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Okta::TemplateEmail",
+    "description": "Creates an Okta Email Template.\n\nThis resource allows you to create and configure an Okta Email Template.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-TemplateEmail/docs/README.md",
+    "definitions": {
+        "TranslationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Language": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Language",
+                "Subject",
+                "Template"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultLanguage": {
+            "type": "string",
+            "description": "The default language, by default is set to `\"en\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Email template type."
+        },
+        "Translations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TranslationsDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

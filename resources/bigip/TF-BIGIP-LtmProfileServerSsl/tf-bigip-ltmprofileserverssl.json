@@ -1,0 +1,240 @@
+{
+    "typeName": "TF::BIGIP::LtmProfileServerSsl",
+    "description": "`bigip_ltm_profile_server_ssl` Manages server SSL profiles on a BIG-IP\n\nResources should be named with their \"full path\". The full path is the combination of the partition + name (example: /Common/my-pool ) or  partition + directory + name of the resource  (example: /Common/test/my-pool )",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-LtmProfileServerSsl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertTimeout": {
+            "type": "string"
+        },
+        "Authenticate": {
+            "type": "string",
+            "description": "Specifies the frequency of server authentication for an SSL session.When `once`,specifies that the system authenticates the server once for an SSL session.\nWhen `always`, specifies that the system authenticates the server once for an SSL session and also upon reuse of that session."
+        },
+        "AuthenticateDepth": {
+            "type": "number"
+        },
+        "C3dCaCert": {
+            "type": "string"
+        },
+        "C3dCaKey": {
+            "type": "string"
+        },
+        "C3dCaPassphrase": {
+            "type": "string"
+        },
+        "C3dCertExtensionCustomOids": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "C3dCertExtensionIncludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "C3dCertLifespan": {
+            "type": "number"
+        },
+        "C3dCertificateExtensions": {
+            "type": "string"
+        },
+        "CaFile": {
+            "type": "string"
+        },
+        "CacheSize": {
+            "type": "number"
+        },
+        "CacheTimeout": {
+            "type": "number"
+        },
+        "Cert": {
+            "type": "string",
+            "description": "Specifies the name of the certificate that the system uses for server-side SSL processing."
+        },
+        "Chain": {
+            "type": "string",
+            "description": "Specifies the certificates-key chain to associate with the SSL profile."
+        },
+        "Ciphers": {
+            "type": "string",
+            "description": "Specifies the list of ciphers that the system supports. When creating a new profile, the default cipher list is provided by the parent profile."
+        },
+        "DefaultsFrom": {
+            "type": "string",
+            "description": "The parent template of this monitor template. Once this value has been set, it cannot be changed. By default, this value is `/Common/serverssl`."
+        },
+        "ExpireCertResponseControl": {
+            "type": "string"
+        },
+        "FullPath": {
+            "type": "string"
+        },
+        "Generation": {
+            "type": "number"
+        },
+        "GenericAlert": {
+            "type": "string"
+        },
+        "HandshakeTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Specifies the file name of the SSL key."
+        },
+        "ModSslMethods": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "Passphrase": {
+            "type": "string"
+        },
+        "PeerCertMode": {
+            "type": "string",
+            "description": "Specifies the way the system handles client certificates.When ignore, specifies that the system ignores certificates from client systems.When require, specifies that the system requires a client to present a valid certificate.When request, specifies that the system requests a valid certificate from a client but always authenticate the client."
+        },
+        "ProxyCaCert": {
+            "type": "string"
+        },
+        "ProxyCaKey": {
+            "type": "string"
+        },
+        "ProxySsl": {
+            "type": "string"
+        },
+        "RenegotiatePeriod": {
+            "type": "string"
+        },
+        "RenegotiateSize": {
+            "type": "string"
+        },
+        "Renegotiation": {
+            "type": "string",
+            "description": "Enables or disables SSL renegotiation.When creating a new profile, the setting is provided by the parent profile."
+        },
+        "RetainCertificate": {
+            "type": "string",
+            "description": "When `true`, client certificate is retained in SSL session."
+        },
+        "SecureRenegotiation": {
+            "type": "string",
+            "description": "Specifies the method of secure renegotiations for SSL connections. When creating a new profile, the setting is provided by the parent profile.\nWhen `request` is set the system request secure renegotation of SSL connections.\n`require` is a default setting and when set the system permits initial SSL handshakes from clients but terminates renegotiations from unpatched clients.\nThe `require-strict` setting the system requires strict renegotiation of SSL connections. In this mode the system refuses connections to insecure servers, and terminates existing SSL connections to insecure servers."
+        },
+        "ServerName": {
+            "type": "string",
+            "description": "Specifies the fully qualified DNS hostname of the server used in Server Name Indication communications. When creating a new profile, the setting is provided by the parent profile.The server name can also be a wildcard string containing the asterisk `*` character."
+        },
+        "SessionMirroring": {
+            "type": "string"
+        },
+        "SessionTicket": {
+            "type": "string"
+        },
+        "SniDefault": {
+            "type": "string",
+            "description": "Indicates that the system uses this profile as the default SSL profile when there is no match to the server name, or when the client provides no SNI extension support.When creating a new profile, the setting is provided by the parent profile.\nThere can be only one SSL profile with this setting enabled."
+        },
+        "SniRequire": {
+            "type": "string",
+            "description": "Requires that the network peers also provide SNI support, this setting only takes effect when `sni_default` is set to `true`.When creating a new profile, the setting is provided by the parent profile."
+        },
+        "SslC3d": {
+            "type": "string"
+        },
+        "SslForwardProxy": {
+            "type": "string",
+            "description": "Specifies whether SSL forward proxy feature is enabled or not. The default value is disabled."
+        },
+        "SslForwardProxyBypass": {
+            "type": "string",
+            "description": "Specifies whether SSL forward proxy bypass feature is enabled or not. The default value is disabled."
+        },
+        "SslSignHash": {
+            "type": "string"
+        },
+        "StrictResume": {
+            "type": "string",
+            "description": "Enables or disables the resumption of SSL sessions after an unclean shutdown.When creating a new profile, the setting is provided by the parent profile."
+        },
+        "TmOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Enabled selection from a set of industry standard options for handling SSL processing.By default,\nDon't insert empty fragments and No TLSv1.3 are listed as Enabled Options. `Usage` : tm_options    = [\"dont-insert-empty-fragments\",\"no-tlsv1.3\"]."
+        },
+        "UncleanShutdown": {
+            "type": "string"
+        },
+        "UntrustedCertResponseControl": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

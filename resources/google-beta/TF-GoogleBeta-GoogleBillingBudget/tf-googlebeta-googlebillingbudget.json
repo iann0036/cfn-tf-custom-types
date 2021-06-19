@@ -1,0 +1,257 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleBillingBudget",
+    "description": "CloudFormation equivalent of google_billing_budget",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleBillingBudget/docs/README.md",
+    "definitions": {
+        "AllUpdatesRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableDefaultIamRecipients": {
+                    "type": "boolean"
+                },
+                "MonitoringNotificationChannels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PubsubTopic": {
+                    "type": "string"
+                },
+                "SchemaVersion": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AmountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LastPeriodAmount": {
+                    "type": "boolean"
+                },
+                "SpecifiedAmount": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpecifiedAmountDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "BudgetFilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreditTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CreditTypesTreatment": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "Projects": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subaccounts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ThresholdRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SpendBasis": {
+                    "type": "string"
+                },
+                "ThresholdPercent": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ThresholdPercent"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpecifiedAmountDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CurrencyCode": {
+                    "type": "string"
+                },
+                "Nanos": {
+                    "type": "number"
+                },
+                "Units": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BillingAccount": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "AllUpdatesRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllUpdatesRuleDefinition"
+            },
+            "maxItems": 1
+        },
+        "Amount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AmountDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "BudgetFilter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BudgetFilterDefinition"
+            },
+            "maxItems": 1
+        },
+        "ThresholdRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThresholdRulesDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BillingAccount"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

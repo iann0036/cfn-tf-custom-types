@@ -1,0 +1,154 @@
+{
+    "typeName": "TF::Aiven::KafkaConnector",
+    "description": "CloudFormation equivalent of aiven_kafka_connector",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aiven/TF-Aiven-KafkaConnector/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TaskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Connector": {
+                    "type": "string"
+                },
+                "Task": {
+                    "type": "number"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            }
+        },
+        "ConnectorName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PluginAuthor": {
+            "type": "string"
+        },
+        "PluginClass": {
+            "type": "string"
+        },
+        "PluginDocUrl": {
+            "type": "string"
+        },
+        "PluginTitle": {
+            "type": "string"
+        },
+        "PluginType": {
+            "type": "string"
+        },
+        "PluginVersion": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "Task": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaskDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Config",
+        "ConnectorName",
+        "Project",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PluginAuthor",
+        "/properties/PluginClass",
+        "/properties/PluginDocUrl",
+        "/properties/PluginTitle",
+        "/properties/PluginType",
+        "/properties/PluginVersion",
+        "/properties/Task"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

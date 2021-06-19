@@ -1,0 +1,162 @@
+{
+    "typeName": "TF::FortiOS::ApplicationName",
+    "description": "Configure application signatures.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ApplicationName/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Metaid": {
+                    "type": "number",
+                    "description": "Meta ID."
+                },
+                "Valueid": {
+                    "type": "number",
+                    "description": "Value ID."
+                }
+            },
+            "required": []
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Parameter name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Behavior": {
+            "type": "string",
+            "description": "Application behavior."
+        },
+        "Category": {
+            "type": "number",
+            "description": "Application category ID."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Application ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Application name."
+        },
+        "Parameter": {
+            "type": "string",
+            "description": "Application parameter name."
+        },
+        "Popularity": {
+            "type": "number",
+            "description": "Application popularity."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Application protocol."
+        },
+        "Risk": {
+            "type": "number",
+            "description": "Application risk."
+        },
+        "SubCategory": {
+            "type": "number",
+            "description": "Application sub-category ID."
+        },
+        "Technology": {
+            "type": "string",
+            "description": "Application technology."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Vendor": {
+            "type": "string",
+            "description": "Application vendor."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Application weight."
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            }
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

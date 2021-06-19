@@ -1,0 +1,384 @@
+{
+    "typeName": "TF::Gridscale::Server",
+    "description": "Provides a server resource. This can be used to create, modify, and delete servers.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Server/docs/README.md",
+    "definitions": {
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bootdevice": {
+                    "type": "boolean"
+                },
+                "FirewallTemplateUuid": {
+                    "type": "string"
+                },
+                "ObjectUuid": {
+                    "type": "string"
+                },
+                "Ordering": {
+                    "type": "number"
+                },
+                "RulesV4In": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesV4InDefinition"
+                    }
+                },
+                "RulesV4Out": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesV4OutDefinition"
+                    }
+                },
+                "RulesV6In": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesV6InDefinition"
+                    }
+                },
+                "RulesV6Out": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesV6OutDefinition"
+                    }
+                }
+            },
+            "required": [
+                "ObjectUuid"
+            ]
+        },
+        "StorageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ObjectUuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ObjectUuid"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RulesV4InDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV4OutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV6InDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV6OutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRecovery": {
+            "type": "boolean",
+            "description": "If the server should be auto-started in case of a failure (default=true)."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "Defines which Availability-Zone the Server is placed."
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "ConsoleToken": {
+            "type": "string"
+        },
+        "Cores": {
+            "type": "number",
+            "description": "The number of server cores."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CurrentPrice": {
+            "type": "number"
+        },
+        "HardwareProfile": {
+            "type": "string",
+            "description": "The hardware profile of the Server. Options are default, legacy, nested, cisco_csr, sophos_utm, f5_bigip and q35 at the moment of writing. Check the."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "string",
+            "description": "The UUID of the IPv4 address of the server. (***NOTE: The server will NOT automatically be connected to the public network; to give it access to the internet, please add server to the public network.)."
+        },
+        "Ipv6": {
+            "type": "string",
+            "description": "The UUID of the IPv6 address of the server. (***NOTE: The server will NOT automatically be connected to the public network; to give it access to the internet, please add server to the public network.)."
+        },
+        "Isoimage": {
+            "type": "string",
+            "description": "The UUID of an ISO image in gridscale. The server will automatically boot from the ISO if one was added. The UUIDs of ISO images can be found in [the expert panel](https://my.gridscale.io/Expert/ISOImage)."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "Legacy": {
+            "type": "boolean"
+        },
+        "LocationUuid": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "The amount of server memory in GB."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "Power": {
+            "type": "boolean",
+            "description": "The power state of the server. Set this to true to will boot the server, false will shut it down."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UsageInMinutesCores": {
+            "type": "number"
+        },
+        "UsageInMinutesMemory": {
+            "type": "number"
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 7
+        },
+        "Storage": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageDefinition"
+            },
+            "maxItems": 8
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cores",
+        "Memory",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/ConsoleToken",
+        "/properties/CreateTime",
+        "/properties/CurrentPrice",
+        "/properties/Id",
+        "/properties/Legacy",
+        "/properties/LocationUuid",
+        "/properties/Status",
+        "/properties/UsageInMinutesCores",
+        "/properties/UsageInMinutesMemory"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

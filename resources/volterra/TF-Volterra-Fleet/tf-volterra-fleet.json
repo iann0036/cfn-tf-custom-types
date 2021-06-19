@@ -1,0 +1,1778 @@
+{
+    "typeName": "TF::Volterra::Fleet",
+    "description": "CloudFormation equivalent of volterra_fleet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-Fleet/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BondDeviceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BondDevices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BondDevicesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DcClusterGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DcClusterGroupInsideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DeviceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DevicesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InsideVirtualNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InterfaceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfacesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LogReceiverDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkConnectorsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkFirewallDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OutsideVirtualNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StorageClassListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageClasses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageClassesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageDeviceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageDevices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageDevicesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageInterfaceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interfaces": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfacesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageStaticRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageRoutes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageRoutesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UsbPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BondDevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveBackup": {
+                    "type": "boolean"
+                },
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LinkPollingInterval": {
+                    "type": "number"
+                },
+                "LinkUpDelay": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Lacp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LacpDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Devices"
+            ]
+        },
+        "DevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "NetworkDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetworkDeviceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StorageClassesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvancedStorageParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdvancedStorageParametersDefinition"
+                    }
+                },
+                "AllowVolumeExpansion": {
+                    "type": "boolean"
+                },
+                "DefaultStorageClass": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "ReclaimPolicy": {
+                    "type": "string"
+                },
+                "StorageClassName": {
+                    "type": "string"
+                },
+                "StorageDevice": {
+                    "type": "string"
+                },
+                "NetappTrident": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetappTridentDefinition"
+                    }
+                },
+                "OpenebsEnterprise": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OpenebsEnterpriseDefinition"
+                    }
+                },
+                "PureServiceOrchestrator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PureServiceOrchestratorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvancedStorageParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StorageDevicesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvancedAdvancedParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdvancedAdvancedParametersDefinition"
+                    }
+                },
+                "StorageDevice": {
+                    "type": "string"
+                },
+                "NetappTrident": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetappTridentDefinition"
+                    }
+                },
+                "OpenebsEnterprise": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OpenebsEnterpriseDefinition"
+                    }
+                },
+                "PureServiceOrchestrator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PureServiceOrchestratorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AdvancedAdvancedParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StorageRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "Nexthop": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NexthopDefinition"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LacpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rate": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NetworkDeviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Use": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetappTridentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetappBackendOntapNas": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetappBackendOntapNasDefinition"
+                    }
+                },
+                "NetappBackendOntapSan": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NetappBackendOntapSanDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OpenebsEnterpriseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MayastorPools": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MayastorPoolsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PureServiceOrchestratorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterId": {
+                    "type": "string"
+                },
+                "EnableStorageTopology": {
+                    "type": "boolean"
+                },
+                "EnableStrictTopology": {
+                    "type": "boolean"
+                },
+                "Arrays": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ArraysDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NexthopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Interface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterfaceDefinition"
+                    }
+                },
+                "NexthopAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NexthopAddressDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetappBackendOntapNasDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoExportPolicy": {
+                    "type": "boolean"
+                },
+                "BackendName": {
+                    "type": "string"
+                },
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "DataLifDnsName": {
+                    "type": "string"
+                },
+                "DataLifIp": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition3"
+                    }
+                },
+                "LimitAggregateUsage": {
+                    "type": "string"
+                },
+                "LimitVolumeSize": {
+                    "type": "string"
+                },
+                "ManagementLifDnsName": {
+                    "type": "string"
+                },
+                "ManagementLifIp": {
+                    "type": "string"
+                },
+                "NfsMountOptions": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "StorageDriverName": {
+                    "type": "string"
+                },
+                "StoragePrefix": {
+                    "type": "string"
+                },
+                "Svm": {
+                    "type": "string"
+                },
+                "TrustedCaCertificate": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "AutoExportCidrs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AutoExportCidrsDefinition"
+                    }
+                },
+                "ClientPrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientPrivateKeyDefinition"
+                    }
+                },
+                "Password": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PasswordDefinition"
+                    }
+                },
+                "Storage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageDefinition"
+                    }
+                },
+                "VolumeDefaults": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VolumeDefaultsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NetappBackendOntapSanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientCertificate": {
+                    "type": "string"
+                },
+                "DataLifDnsName": {
+                    "type": "string"
+                },
+                "DataLifIp": {
+                    "type": "string"
+                },
+                "IgroupName": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition4"
+                    }
+                },
+                "LimitAggregateUsage": {
+                    "type": "number"
+                },
+                "LimitVolumeSize": {
+                    "type": "number"
+                },
+                "ManagementLifDnsName": {
+                    "type": "string"
+                },
+                "ManagementLifIp": {
+                    "type": "string"
+                },
+                "NoChap": {
+                    "type": "boolean"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "StorageDriverName": {
+                    "type": "string"
+                },
+                "StoragePrefix": {
+                    "type": "string"
+                },
+                "Svm": {
+                    "type": "string"
+                },
+                "TrustedCaCertificate": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "ClientPrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientPrivateKeyDefinition"
+                    }
+                },
+                "Password": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PasswordDefinition"
+                    }
+                },
+                "Storage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageDefinition"
+                    }
+                },
+                "UseChap": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UseChapDefinition"
+                    }
+                },
+                "VolumeDefaults": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VolumeDefaultsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MayastorPoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Node": {
+                    "type": "string"
+                },
+                "PoolDiskDevices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PoolName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PoolDiskDevices"
+            ]
+        },
+        "ArraysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlashArray": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FlashArrayDefinition"
+                    }
+                },
+                "FlashBlade": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FlashBladeDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NexthopAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ipv4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv4Definition"
+                    }
+                },
+                "Ipv6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ipv6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Ipv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ipv6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AutoExportCidrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Prefixes"
+            ]
+        },
+        "ClientPrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PasswordDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition5"
+                    }
+                },
+                "Zone": {
+                    "type": "string"
+                },
+                "VolumeDefaults": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VolumeDefaultsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VolumeDefaultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdaptiveQosPolicy": {
+                    "type": "string"
+                },
+                "Encryption": {
+                    "type": "boolean"
+                },
+                "ExportPolicy": {
+                    "type": "string"
+                },
+                "NoQos": {
+                    "type": "boolean"
+                },
+                "QosPolicy": {
+                    "type": "string"
+                },
+                "SecurityStyle": {
+                    "type": "string"
+                },
+                "SnapshotDir": {
+                    "type": "boolean"
+                },
+                "SnapshotPolicy": {
+                    "type": "string"
+                },
+                "SnapshotReserve": {
+                    "type": "string"
+                },
+                "SpaceReserve": {
+                    "type": "string"
+                },
+                "SplitOnClone": {
+                    "type": "boolean"
+                },
+                "TieringPolicy": {
+                    "type": "string"
+                },
+                "UnixPermissions": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "UseChapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChapTargetUsername": {
+                    "type": "string"
+                },
+                "ChapUsername": {
+                    "type": "string"
+                },
+                "ChapInitiatorSecret": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ChapInitiatorSecretDefinition"
+                    }
+                },
+                "ChapTargetInitiatorSecret": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ChapTargetInitiatorSecretDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FlashArrayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultFsOpt": {
+                    "type": "string"
+                },
+                "DefaultFsType": {
+                    "type": "string"
+                },
+                "DefaultMountOpts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DisablePreemptAttachments": {
+                    "type": "boolean"
+                },
+                "IscsiLoginTimeout": {
+                    "type": "number"
+                },
+                "SanType": {
+                    "type": "string"
+                },
+                "FlashArrays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlashArraysDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FlashBladeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableSnapshotDirectory": {
+                    "type": "boolean"
+                },
+                "ExportRules": {
+                    "type": "string"
+                },
+                "FlashBlades": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlashBladesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ChapInitiatorSecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ChapTargetInitiatorSecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FlashArraysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition6"
+                    }
+                },
+                "MgmtDnsName": {
+                    "type": "string"
+                },
+                "MgmtIp": {
+                    "type": "string"
+                },
+                "ApiToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApiTokenDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FlashBladesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Lables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LablesDefinition"
+                    }
+                },
+                "MgmtDnsName": {
+                    "type": "string"
+                },
+                "MgmtIp": {
+                    "type": "string"
+                },
+                "NfsEndpointDnsName": {
+                    "type": "string"
+                },
+                "NfsEndpointIp": {
+                    "type": "string"
+                },
+                "ApiToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApiTokenDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LablesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ApiTokenDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowAllUsb": {
+            "type": "boolean"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "DefaultConfig": {
+            "type": "boolean"
+        },
+        "DefaultStorageClass": {
+            "type": "boolean"
+        },
+        "DenyAllUsb": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "DisableGpu": {
+            "type": "boolean"
+        },
+        "EnableDefaultFleetConfigDownload": {
+            "type": "boolean"
+        },
+        "EnableGpu": {
+            "type": "boolean"
+        },
+        "FleetLabel": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LogsStreamingDisabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NoBondDevices": {
+            "type": "boolean"
+        },
+        "NoDcClusterGroup": {
+            "type": "boolean"
+        },
+        "NoStorageDevice": {
+            "type": "boolean"
+        },
+        "NoStorageInterfaces": {
+            "type": "boolean"
+        },
+        "NoStorageStaticRoutes": {
+            "type": "boolean"
+        },
+        "OperatingSystemVersion": {
+            "type": "string"
+        },
+        "VolterraSoftwareVersion": {
+            "type": "string"
+        },
+        "BondDeviceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BondDeviceListDefinition"
+            }
+        },
+        "DcClusterGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DcClusterGroupDefinition"
+            }
+        },
+        "DcClusterGroupInside": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DcClusterGroupInsideDefinition"
+            }
+        },
+        "DeviceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DeviceListDefinition"
+            }
+        },
+        "InsideVirtualNetwork": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InsideVirtualNetworkDefinition"
+            }
+        },
+        "InterfaceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InterfaceListDefinition"
+            }
+        },
+        "LogReceiver": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogReceiverDefinition"
+            }
+        },
+        "NetworkConnectors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkConnectorsDefinition"
+            }
+        },
+        "NetworkFirewall": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkFirewallDefinition"
+            }
+        },
+        "OutsideVirtualNetwork": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutsideVirtualNetworkDefinition"
+            }
+        },
+        "StorageClassList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageClassListDefinition"
+            }
+        },
+        "StorageDeviceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageDeviceListDefinition"
+            }
+        },
+        "StorageInterfaceList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageInterfaceListDefinition"
+            }
+        },
+        "StorageStaticRoutes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageStaticRoutesDefinition"
+            }
+        },
+        "UsbPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsbPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FleetLabel",
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

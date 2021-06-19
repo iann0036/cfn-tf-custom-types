@@ -1,0 +1,304 @@
+{
+    "typeName": "TF::FortiOS::UserRadius",
+    "description": "Configure RADIUS server entries.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserRadius/docs/README.md",
+    "definitions": {
+        "AccountingServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID (0 - 4294967295)."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Specify outgoing interface to reach server."
+                },
+                "InterfaceSelectMethod": {
+                    "type": "string",
+                    "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+                },
+                "Port": {
+                    "type": "number",
+                    "description": "RADIUS accounting port number."
+                },
+                "Secret": {
+                    "type": "string",
+                    "description": "Secret key."
+                },
+                "Server": {
+                    "type": "string",
+                    "description": "{<name_str|ip_str>} Server CN domain name or IP."
+                },
+                "SourceIp": {
+                    "type": "string",
+                    "description": "Source IP address for communications to the RADIUS server."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ClassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Class name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcctAllServers": {
+            "type": "string",
+            "description": "Enable/disable sending of accounting messages to all configured servers (default = disable). Valid values: `enable`, `disable`."
+        },
+        "AcctInterimInterval": {
+            "type": "number",
+            "description": "Time in seconds between each accounting interim update message."
+        },
+        "AllUsergroup": {
+            "type": "string",
+            "description": "Enable/disable automatically including this RADIUS server in all user groups. Valid values: `disable`, `enable`."
+        },
+        "AuthType": {
+            "type": "string",
+            "description": "Authentication methods/protocols permitted for this RADIUS server. Valid values: `auto`, `ms_chap_v2`, `ms_chap`, `chap`, `pap`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GroupOverrideAttrType": {
+            "type": "string",
+            "description": "RADIUS attribute type to override user group information. Valid values: `filter-Id`, `class`."
+        },
+        "H3cCompatibility": {
+            "type": "string",
+            "description": "Enable/disable compatibility with the H3C, a mechanism that performs security checking for authentication. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "RADIUS server entry name."
+        },
+        "NasIp": {
+            "type": "string",
+            "description": "IP address used to communicate with the RADIUS server and used as NAS-IP-Address and Called-Station-ID attributes."
+        },
+        "PasswordEncoding": {
+            "type": "string",
+            "description": "Password encoding. Valid values: `auto`, `ISO-8859-1`."
+        },
+        "PasswordRenewal": {
+            "type": "string",
+            "description": "Enable/disable password renewal. Valid values: `enable`, `disable`."
+        },
+        "RadiusCoa": {
+            "type": "string",
+            "description": "Enable to allow a mechanism to change the attributes of an authentication, authorization, and accounting session after it is authenticated. Valid values: `enable`, `disable`."
+        },
+        "RadiusPort": {
+            "type": "number",
+            "description": "RADIUS service port number."
+        },
+        "Rsso": {
+            "type": "string",
+            "description": "Enable/disable RADIUS based single sign on feature. Valid values: `enable`, `disable`."
+        },
+        "RssoContextTimeout": {
+            "type": "number",
+            "description": "Time in seconds before the logged out user is removed from the \"user context list\" of logged on users."
+        },
+        "RssoEndpointAttribute": {
+            "type": "string",
+            "description": "RADIUS attributes used to extract the user end point identifer from the RADIUS Start record. Valid values: `User-Name`, `NAS-IP-Address`, `Framed-IP-Address`, `Framed-IP-Netmask`, `Filter-Id`, `Login-IP-Host`, `Reply-Message`, `Callback-Number`, `Callback-Id`, `Framed-Route`, `Framed-IPX-Network`, `Class`, `Called-Station-Id`, `Calling-Station-Id`, `NAS-Identifier`, `Proxy-State`, `Login-LAT-Service`, `Login-LAT-Node`, `Login-LAT-Group`, `Framed-AppleTalk-Zone`, `Acct-Session-Id`, `Acct-Multi-Session-Id`."
+        },
+        "RssoEndpointBlockAttribute": {
+            "type": "string",
+            "description": "RADIUS attributes used to block a user. Valid values: `User-Name`, `NAS-IP-Address`, `Framed-IP-Address`, `Framed-IP-Netmask`, `Filter-Id`, `Login-IP-Host`, `Reply-Message`, `Callback-Number`, `Callback-Id`, `Framed-Route`, `Framed-IPX-Network`, `Class`, `Called-Station-Id`, `Calling-Station-Id`, `NAS-Identifier`, `Proxy-State`, `Login-LAT-Service`, `Login-LAT-Node`, `Login-LAT-Group`, `Framed-AppleTalk-Zone`, `Acct-Session-Id`, `Acct-Multi-Session-Id`."
+        },
+        "RssoEpOneIpOnly": {
+            "type": "string",
+            "description": "Enable/disable the replacement of old IP addresses with new ones for the same endpoint on RADIUS accounting Start messages. Valid values: `enable`, `disable`."
+        },
+        "RssoFlushIpSession": {
+            "type": "string",
+            "description": "Enable/disable flushing user IP sessions on RADIUS accounting Stop messages. Valid values: `enable`, `disable`."
+        },
+        "RssoLogFlags": {
+            "type": "string",
+            "description": "Events to log. Valid values: `protocol-error`, `profile-missing`, `accounting-stop-missed`, `accounting-event`, `endpoint-block`, `radiusd-other`, `none`."
+        },
+        "RssoLogPeriod": {
+            "type": "number",
+            "description": "Time interval in seconds that group event log messages will be generated for dynamic profile events."
+        },
+        "RssoRadiusResponse": {
+            "type": "string",
+            "description": "Enable/disable sending RADIUS response packets after receiving Start and Stop records. Valid values: `enable`, `disable`."
+        },
+        "RssoRadiusServerPort": {
+            "type": "number",
+            "description": "UDP port to listen on for RADIUS Start and Stop records."
+        },
+        "RssoSecret": {
+            "type": "string",
+            "description": "RADIUS secret used by the RADIUS accounting server."
+        },
+        "RssoValidateRequestSecret": {
+            "type": "string",
+            "description": "Enable/disable validating the RADIUS request shared secret in the Start or End record. Valid values: `enable`, `disable`."
+        },
+        "SecondarySecret": {
+            "type": "string",
+            "description": "Secret key to access the secondary server."
+        },
+        "SecondaryServer": {
+            "type": "string",
+            "description": "{<name_str|ip_str>} secondary RADIUS CN domain name or IP."
+        },
+        "Secret": {
+            "type": "string",
+            "description": "Pre-shared secret key used to access the primary RADIUS server."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Primary RADIUS server CN domain name or IP address."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address for communications to the RADIUS server."
+        },
+        "SsoAttribute": {
+            "type": "string",
+            "description": "RADIUS attribute that contains the profile group name to be extracted from the RADIUS Start record. Valid values: `User-Name`, `NAS-IP-Address`, `Framed-IP-Address`, `Framed-IP-Netmask`, `Filter-Id`, `Login-IP-Host`, `Reply-Message`, `Callback-Number`, `Callback-Id`, `Framed-Route`, `Framed-IPX-Network`, `Class`, `Called-Station-Id`, `Calling-Station-Id`, `NAS-Identifier`, `Proxy-State`, `Login-LAT-Service`, `Login-LAT-Node`, `Login-LAT-Group`, `Framed-AppleTalk-Zone`, `Acct-Session-Id`, `Acct-Multi-Session-Id`."
+        },
+        "SsoAttributeKey": {
+            "type": "string",
+            "description": "Key prefix for SSO group value in the SSO attribute."
+        },
+        "SsoAttributeValueOverride": {
+            "type": "string",
+            "description": "Enable/disable override old attribute value with new value for the same endpoint. Valid values: `enable`, `disable`."
+        },
+        "SwitchControllerAcctFastFramedipDetect": {
+            "type": "number",
+            "description": "Switch controller accounting message Framed-IP detection from DHCP snooping (seconds, default=2)."
+        },
+        "SwitchControllerServiceType": {
+            "type": "string",
+            "description": "RADIUS service type. Valid values: `login`, `framed`, `callback-login`, `callback-framed`, `outbound`, `administrative`, `nas-prompt`, `authenticate-only`, `callback-nas-prompt`, `call-check`, `callback-administrative`."
+        },
+        "TertiarySecret": {
+            "type": "string",
+            "description": "Secret key to access the tertiary server."
+        },
+        "TertiaryServer": {
+            "type": "string",
+            "description": "{<name_str|ip_str>} tertiary RADIUS CN domain name or IP."
+        },
+        "Timeout": {
+            "type": "number",
+            "description": "Time in seconds between re-sending authentication requests."
+        },
+        "UseManagementVdom": {
+            "type": "string",
+            "description": "Enable/disable using management VDOM to send requests. Valid values: `enable`, `disable`."
+        },
+        "UsernameCaseSensitive": {
+            "type": "string",
+            "description": "Enable/disable case sensitive user names. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "AccountingServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccountingServerDefinition"
+            }
+        },
+        "Class": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClassDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/RssoSecret",
+        "/properties/SecondarySecret",
+        "/properties/Secret",
+        "/properties/SsoAttributeKey",
+        "/properties/TertiarySecret",
+        "/definitions/AccountingServerDefinition/Secret"
+    ]
+}

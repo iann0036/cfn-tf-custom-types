@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::AWS::CognitoUserPoolUiCustomization",
+    "description": "Provides a Cognito User Pool UI Customization resource.\n\n~> **Note:** To use this resource, the user pool must have a domain associated with it. For more information, see the Amazon Cognito Developer Guide on [Customizing the Built-in Sign-In and Sign-up Webpages](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-ui-customization.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CognitoUserPoolUiCustomization/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Css": {
+            "type": "string"
+        },
+        "CssVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageFile": {
+            "type": "string"
+        },
+        "ImageUrl": {
+            "type": "string"
+        },
+        "LastModifiedDate": {
+            "type": "string"
+        },
+        "UserPoolId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "UserPoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/CssVersion",
+        "/properties/Id",
+        "/properties/ImageUrl",
+        "/properties/LastModifiedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

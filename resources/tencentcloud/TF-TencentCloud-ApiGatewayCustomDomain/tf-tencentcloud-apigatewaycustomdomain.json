@@ -1,0 +1,105 @@
+{
+    "typeName": "TF::TencentCloud::ApiGatewayCustomDomain",
+    "description": "Use this resource to create custom domain of API gateway.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ApiGatewayCustomDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "string",
+            "description": "Unique certificate ID of the custom domain name to be bound. You can choose to upload for the `protocol` attribute value `https` or `http&https`."
+        },
+        "DefaultDomain": {
+            "type": "string",
+            "description": "Default domain name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefaultMapping": {
+            "type": "boolean",
+            "description": "Whether the default path mapping is used. The default value is `true`. When it is `false`, it means custom path mapping. In this case, the `path_mappings` attribute is required."
+        },
+        "NetType": {
+            "type": "string",
+            "description": "Network type. Valid values: `OUTER`, `INNER`."
+        },
+        "PathMappings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Custom domain name path mapping. The data format is: `path#environment`. Optional values for the environment are `test`, `prepub`, and `release`."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol supported by service. Valid values: `http`, `https`, `http&https`."
+        },
+        "ServiceId": {
+            "type": "string",
+            "description": "Unique service ID."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubDomain": {
+            "type": "string",
+            "description": "Custom domain name to be bound."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultDomain",
+        "NetType",
+        "Protocol",
+        "ServiceId",
+        "SubDomain"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

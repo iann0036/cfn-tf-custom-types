@@ -1,0 +1,832 @@
+{
+    "typeName": "TF::AVI::Httppolicyset",
+    "description": "The HTTPPolicySet resource allows the creation and management of Avi HTTPPolicySet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Httppolicyset/docs/README.md",
+    "definitions": {
+        "HttpRequestPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpResponsePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HttpSecurityPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    }
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Enable",
+                "Index",
+                "Name"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "File": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FileDefinition"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RedirectDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpDefinition"
+                    }
+                },
+                "Cookie": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CookieDefinition"
+                    }
+                },
+                "Hdrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HdrsDefinition"
+                    }
+                },
+                "HostHdr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostHdrDefinition"
+                    }
+                },
+                "IpReputationType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpReputationTypeDefinition"
+                    }
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MethodDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                },
+                "Protocol": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ProtocolDefinition"
+                    }
+                },
+                "Query": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/QueryDefinition"
+                    }
+                },
+                "Version": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VersionDefinition"
+                    }
+                },
+                "VsPort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VsPortDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "FileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType",
+                "FileContent"
+            ]
+        },
+        "RateProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerClientIp": {
+                    "type": "boolean"
+                },
+                "PerUriPath": {
+                    "type": "boolean"
+                },
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RateLimiter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RateLimiterDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ClientIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Addrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddrsDefinition"
+                    }
+                },
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixesDefinition"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "CookieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Name"
+            ]
+        },
+        "HdrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hdr": {
+                    "type": "string"
+                },
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Hdr",
+                "MatchCriteria"
+            ]
+        },
+        "HostHdrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "IpReputationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchOperation": {
+                    "type": "string"
+                },
+                "ReputationTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchOperation",
+                "ReputationTypes"
+            ]
+        },
+        "MethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Methods"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ProtocolDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Protocols": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Protocols"
+            ]
+        },
+        "QueryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "VersionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Versions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Versions"
+            ]
+        },
+        "VsPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Ports"
+            ]
+        },
+        "RateLimiterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSz": {
+                    "type": "number"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "AddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Begin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BeginDefinition"
+                    },
+                    "minItems": 1
+                },
+                "End": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EndDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "RedirectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeepQuery": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "BeginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "EndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Tokens": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TokensDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TokensDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndIndex": {
+                    "type": "number"
+                },
+                "StartIndex": {
+                    "type": "number"
+                },
+                "StrValue": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudConfigCksum": {
+            "type": "string",
+            "description": "Checksum of cloud configuration for pool. Internally set by cloud connector."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator name."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpReputationDbRef": {
+            "type": "string",
+            "description": "Ip reputation database. It is a reference to an object of type ipreputationdb. Field introduced in 20.1.3."
+        },
+        "IsInternalPolicy": {
+            "type": "boolean",
+            "description": "Boolean flag to set is_internal_policy."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the http policy set."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "HttpRequestPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpRequestPolicyDefinition"
+            }
+        },
+        "HttpResponsePolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpResponsePolicyDefinition"
+            }
+        },
+        "HttpSecurityPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpSecurityPolicyDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

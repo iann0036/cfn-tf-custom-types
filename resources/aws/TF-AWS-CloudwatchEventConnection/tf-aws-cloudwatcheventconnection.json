@@ -1,0 +1,333 @@
+{
+    "typeName": "TF::AWS::CloudwatchEventConnection",
+    "description": "Provides an EventBridge connection resource.\n\n~> **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudwatchEventConnection/docs/README.md",
+    "definitions": {
+        "AuthParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApiKeyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Basic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BasicDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "InvocationHttpParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InvocationHttpParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Oauth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OauthDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "ApiKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string",
+                    "description": "Header Name."
+                },
+                "Value": {
+                    "type": "string",
+                    "description": "Header Value. Created and stored in AWS Secrets Manager."
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "BasicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string",
+                    "description": "A password for the authorization. Created and stored in AWS Secrets Manager."
+                },
+                "Username": {
+                    "type": "string",
+                    "description": "A username for the authorization."
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "InvocationHttpParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BodyDefinition"
+                    }
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    }
+                },
+                "QueryString": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OauthDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthorizationEndpoint": {
+                    "type": "string",
+                    "description": "A username for the authorization."
+                },
+                "HttpMethod": {
+                    "type": "string",
+                    "description": "A password for the authorization. Created and stored in AWS Secrets Manager."
+                },
+                "ClientParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientParametersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "OauthHttpParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OauthHttpParametersDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "AuthorizationEndpoint",
+                "HttpMethod"
+            ]
+        },
+        "BodyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsValueSecret": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsValueSecret": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "QueryStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsValueSecret": {
+                    "type": "boolean"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClientParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "OauthHttpParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BodyDefinition"
+                    }
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    }
+                },
+                "QueryString": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringDefinition"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AuthorizationType": {
+            "type": "string",
+            "description": "Choose the type of authorization to use for the connection. One of `API_KEY`,`BASIC`,`OAUTH_CLIENT_CREDENTIALS`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Enter a description for the connection. Maximum of 512 characters."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the new connection. Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_."
+        },
+        "SecretArn": {
+            "type": "string"
+        },
+        "AuthParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthParametersDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthorizationType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/SecretArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ApiKeyDefinition/Value",
+        "/definitions/BasicDefinition/Password",
+        "/definitions/BodyDefinition/Value",
+        "/definitions/HeaderDefinition/Value",
+        "/definitions/QueryStringDefinition/Value",
+        "/definitions/ClientParametersDefinition/ClientSecret",
+        "/definitions/BodyDefinition/Value",
+        "/definitions/HeaderDefinition/Value",
+        "/definitions/QueryStringDefinition/Value"
+    ]
+}

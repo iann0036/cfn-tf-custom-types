@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementLogger",
+    "description": "Manages a Logger within an API Management Service.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementLogger/docs/README.md",
+    "definitions": {
+        "ApplicationInsightsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstrumentationKey": {
+                    "type": "string",
+                    "description": "The instrumentation key used to push data to Application Insights."
+                }
+            },
+            "required": [
+                "InstrumentationKey"
+            ]
+        },
+        "EventhubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionString": {
+                    "type": "string",
+                    "description": "The connection string of an EventHub Namespace."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name of an EventHub."
+                }
+            },
+            "required": [
+                "ConnectionString",
+                "Name"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
+        },
+        "Buffered": {
+            "type": "boolean",
+            "description": "Specifies whether records should be buffered in the Logger prior to publishing. Defaults to `true`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of this Logger."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of this Logger, which must be unique within the API Management Service. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
+        },
+        "ResourceId": {
+            "type": "string",
+            "description": "The target resource id which will be linked in the API-Management portal page."
+        },
+        "ApplicationInsights": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationInsightsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Eventhub": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventhubDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementName",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ApplicationInsightsDefinition/InstrumentationKey",
+        "/definitions/EventhubDefinition/ConnectionString"
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::TencentCloud::MonitorBindingReceiver",
+    "description": "Provides a resource for bind receivers to a policy group resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-MonitorBindingReceiver/docs/README.md",
+    "definitions": {
+        "ReceiversDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "number",
+                    "description": "End of alarm period. Meaning with `start_time`."
+                },
+                "NotifyWay": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Method of warning notification.Optional `CALL`,`EMAIL`,`SITE`,`SMS`,`WECHAT`."
+                },
+                "ReceiveLanguage": {
+                    "type": "string",
+                    "description": "Alert sending language. Optional `en-US`,`zh-CN`."
+                },
+                "ReceiverGroupList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "Alarm receive group ID list."
+                },
+                "ReceiverType": {
+                    "type": "string",
+                    "description": "Receive type. Optional `group`,`user`."
+                },
+                "ReceiverUserList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "Alarm receiver ID list."
+                },
+                "StartTime": {
+                    "type": "number",
+                    "description": "Alarm period start time. Valid value ranges: (0~86399). which removes the date after it is converted to Beijing time as a Unix timestamp, for example 7200 means '10:0:0'."
+                }
+            },
+            "required": [
+                "NotifyWay",
+                "ReceiverType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "number",
+            "description": "Policy group ID for binding receivers."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Receivers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReceiversDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

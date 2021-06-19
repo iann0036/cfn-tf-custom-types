@@ -1,0 +1,522 @@
+{
+    "typeName": "TF::Cloudflare::AccessGroup",
+    "description": "Provides a Cloudflare Access Group resource. Access Groups are used\nin conjunction with Access Policies to restrict access to a\nparticular resource based on group membership.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-AccessGroup/docs/README.md",
+    "definitions": {
+        "ExcludeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyValidServiceToken": {
+                    "type": "boolean"
+                },
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "Certificate": {
+                    "type": "boolean"
+                },
+                "CommonName": {
+                    "type": "string"
+                },
+                "DevicePosture": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailDomain": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Everyone": {
+                    "type": "boolean"
+                },
+                "Geo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoginMethod": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Azure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureDefinition"
+                    }
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    }
+                },
+                "Gsuite": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GsuiteDefinition"
+                    }
+                },
+                "Okta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OktaDefinition"
+                    }
+                },
+                "Saml": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IncludeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyValidServiceToken": {
+                    "type": "boolean"
+                },
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "Certificate": {
+                    "type": "boolean"
+                },
+                "CommonName": {
+                    "type": "string"
+                },
+                "DevicePosture": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailDomain": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Everyone": {
+                    "type": "boolean"
+                },
+                "Geo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoginMethod": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Azure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureDefinition"
+                    }
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    }
+                },
+                "Gsuite": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GsuiteDefinition"
+                    }
+                },
+                "Okta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OktaDefinition"
+                    }
+                },
+                "Saml": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RequireDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyValidServiceToken": {
+                    "type": "boolean"
+                },
+                "AuthMethod": {
+                    "type": "string"
+                },
+                "Certificate": {
+                    "type": "boolean"
+                },
+                "CommonName": {
+                    "type": "string"
+                },
+                "DevicePosture": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailDomain": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Everyone": {
+                    "type": "boolean"
+                },
+                "Geo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ip": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoginMethod": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServiceToken": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Azure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AzureDefinition"
+                    }
+                },
+                "Github": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GithubDefinition"
+                    }
+                },
+                "Gsuite": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GsuiteDefinition"
+                    }
+                },
+                "Okta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OktaDefinition"
+                    }
+                },
+                "Saml": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamlDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AzureDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IdentityProviderId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GithubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityProviderId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Teams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GsuiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IdentityProviderId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OktaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityProviderId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SamlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributeName": {
+                    "type": "string"
+                },
+                "AttributeValue": {
+                    "type": "string"
+                },
+                "IdentityProviderId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The ID of the account the group is associated with. Conflicts with `zone_id`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Friendly name of the Access Group."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The ID of the zone the group is associated with. Conflicts with `account_id`."
+        },
+        "Exclude": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExcludeDefinition"
+            }
+        },
+        "Include": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncludeDefinition"
+            },
+            "minItems": 1
+        },
+        "Require": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequireDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

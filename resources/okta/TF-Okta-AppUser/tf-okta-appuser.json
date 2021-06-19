@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Okta::AppUser",
+    "description": "Creates an Application User.\n\nThis resource allows you to create and configure an Application User.\n\n**When using this resource, make sure to add the following `lifefycle` argument to the application resource you are assigning to:**\n\n```hcl\nlifecycle {\n  ignore_changes = [\"users\"]\n}\n```\n\n~> **Important:** When the `okta_app_user` is retained, by setting `retain_assignment` to `true`, it is no longer managed by Terraform after it is destroyed. To truly delete the assignment, you will need to remove it either through the Okta Console or API. This argument exists for the use case where the same user is assigned in multiple places in order to prevent a single destruction removing all of them.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-AppUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string",
+            "description": "App to associate user with."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password to use."
+        },
+        "Profile": {
+            "type": "string",
+            "description": "The JSON profile of the App User."
+        },
+        "RetainAssignment": {
+            "type": "boolean",
+            "description": "Retain the user association on destroy. If set to true, the resource will be removed from state but not from the Okta app."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "User to associate the application with."
+        },
+        "Username": {
+            "type": "string",
+            "description": "The username to use for the app user. In case the user is assigned to the app with\n'SHARED_USERNAME_AND_PASSWORD' credentials scheme, this field will be computed and should not be set."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "UserId",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

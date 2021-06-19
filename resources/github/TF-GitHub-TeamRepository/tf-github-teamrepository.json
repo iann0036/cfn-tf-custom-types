@@ -1,0 +1,78 @@
+{
+    "typeName": "TF::GitHub::TeamRepository",
+    "description": "This resource manages relationships between teams and repositories\nin your GitHub organization.\n\nCreating this resource grants a particular team permissions on a\nparticular repository.\n\nThe repository and the team must both belong to the same organization\non GitHub. This resource does not actually *create* any repositories;\nto do that, see [`github_repository`](repository.html).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/github/TF-GitHub-TeamRepository/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Permission": {
+            "type": "string",
+            "description": "The permissions of team members regarding the repository.\nMust be one of `pull`, `triage`, `push`, `maintain`, or `admin`. Defaults to `pull`."
+        },
+        "Repository": {
+            "type": "string",
+            "description": "The repository to add to the team."
+        },
+        "TeamId": {
+            "type": "string",
+            "description": "The GitHub team id."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Repository",
+        "TeamId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

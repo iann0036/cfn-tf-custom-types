@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::Alicloud::SecurityGroup",
+    "description": "Provides a security group resource.\n\n-> **NOTE:** `alicloud_security_group` is used to build and manage a security group, and `alicloud_security_group_rule` can define ingress or egress rules for it.\n\n-> **NOTE:** From version 1.7.2, `alicloud_security_group` has supported to segregate different ECS instance in which the same security group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-SecurityGroup/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The security group description. Defaults to null."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InnerAccess": {
+            "type": "boolean",
+            "description": "Field 'inner_access' has been deprecated from provider version 1.55.3. Use 'inner_access_policy' replaces it."
+        },
+        "InnerAccessPolicy": {
+            "type": "string",
+            "description": "Whether to allow both machines to access each other on all ports in the same security group. Valid values: [\"Accept\", \"Drop\"]."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the security group. Defaults to null."
+        },
+        "ResourceGroupId": {
+            "type": "string",
+            "description": "The Id of resource group which the security_group belongs."
+        },
+        "SecurityGroupType": {
+            "type": "string",
+            "description": "The type of the security group. Valid values:\n`normal`: basic security group.\n`enterprise`: advanced security group For more information."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

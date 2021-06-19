@@ -1,0 +1,416 @@
+{
+    "typeName": "TF::AVI::Networksecuritypolicy",
+    "description": "The NetworkSecurityPolicy resource allows the creation and management of Avi NetworkSecurityPolicy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Networksecuritypolicy/docs/README.md",
+    "definitions": {
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Age": {
+                    "type": "number"
+                },
+                "CreatedBy": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Log": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    },
+                    "minItems": 1
+                },
+                "RlParam": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RlParamDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Action",
+                "Enable",
+                "Index",
+                "Name"
+            ]
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientIpDefinition"
+                    }
+                },
+                "ClientPort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientPortDefinition"
+                    }
+                },
+                "IpReputationType": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpReputationTypeDefinition"
+                    }
+                },
+                "Microservice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MicroserviceDefinition"
+                    }
+                },
+                "VsPort": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VsPortDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RlParamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSize": {
+                    "type": "number"
+                },
+                "MaxRate": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BurstSize",
+                "MaxRate"
+            ]
+        },
+        "ClientIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Addrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AddrsDefinition"
+                    }
+                },
+                "Prefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PrefixesDefinition"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "ClientPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Ranges": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "IpReputationTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchOperation": {
+                    "type": "string"
+                },
+                "ReputationTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchOperation",
+                "ReputationTypes"
+            ]
+        },
+        "MicroserviceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupRef": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GroupRef",
+                "MatchCriteria"
+            ]
+        },
+        "VsPortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Ports"
+            ]
+        },
+        "AddrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PrefixesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "RangesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudConfigCksum": {
+            "type": "string",
+            "description": "Checksum of cloud configuration for network sec policy. Internally set by cloud connector."
+        },
+        "CreatedBy": {
+            "type": "string",
+            "description": "Creator name."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpReputationDbRef": {
+            "type": "string",
+            "description": "Ip reputation database. It is a reference to an object of type ipreputationdb. Field introduced in 20.1.1. Allowed in basic edition, essentials edition, enterprise edition."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

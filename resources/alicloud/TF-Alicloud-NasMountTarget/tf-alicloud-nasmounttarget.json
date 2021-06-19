@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Alicloud::NasMountTarget",
+    "description": "Provides a Nas Mount Target resource.\n\n-> NOTE: Available in v1.34.0+.\n\n-> NOTE: Currently this resource support create a mount point in a classic network only when current region is China mainland regions.\n\n-> NOTE: You must grant NAS with specific RAM permissions when creating a classic mount targets,\nand it only can be achieved by creating a classic mount target mannually.\nSee [Add a mount point](https://www.alibabacloud.com/help/doc-detail/60431.htm) and [Why do I need RAM permissions to create a mount point in a classic network](https://www.alibabacloud.com/help/faq-detail/42176.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-NasMountTarget/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessGroupName": {
+            "type": "string",
+            "description": "Permission group name."
+        },
+        "FileSystemId": {
+            "type": "string",
+            "description": "File system ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string",
+            "description": "Whether the MountTarget is active. An inactive MountTarget is inusable. Valid values are Active(default) and Inactive."
+        },
+        "VswitchId": {
+            "type": "string",
+            "description": "VSwitch ID."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FileSystemId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

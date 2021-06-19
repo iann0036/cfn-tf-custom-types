@@ -1,0 +1,303 @@
+{
+    "typeName": "TF::AVI::Wafcrs",
+    "description": "The WafCRS resource allows the creation and management of Avi WafCRS",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Wafcrs/docs/README.md",
+    "definitions": {
+        "GroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "ExcludeListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "MatchElement": {
+                    "type": "string"
+                },
+                "UriPath": {
+                    "type": "string"
+                },
+                "ClientSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientSubnetDefinition"
+                    }
+                },
+                "MatchElementCriteria": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchElementCriteriaDefinition"
+                    }
+                },
+                "UriMatchCriteria": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UriMatchCriteriaDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Rule": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExcludeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludeListDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Rule"
+            ]
+        },
+        "ClientSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "MatchElementCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchOp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UriMatchCriteriaDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchOp": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A short description of this ruleset. Field introduced in 18.1.1."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Integrity": {
+            "type": "string",
+            "description": "Integrity protection value. Field introduced in 18.2.1."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of this ruleset object. Field introduced in 18.2.1."
+        },
+        "ReleaseDate": {
+            "type": "string",
+            "description": "The release date of this version in rfc 3339 / iso 8601 format. Field introduced in 18.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 18.2.1."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "The version of this ruleset object. Field introduced in 18.1.1."
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupsDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Integrity",
+        "Name",
+        "ReleaseDate",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

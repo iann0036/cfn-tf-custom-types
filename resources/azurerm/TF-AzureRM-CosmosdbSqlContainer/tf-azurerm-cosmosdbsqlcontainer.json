@@ -1,0 +1,315 @@
+{
+    "typeName": "TF::AzureRM::CosmosdbSqlContainer",
+    "description": "Manages a SQL Container within a Cosmos DB Account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-CosmosdbSqlContainer/docs/README.md",
+    "definitions": {
+        "AutoscaleSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxThroughput": {
+                    "type": "number",
+                    "description": "The maximum throughput of the SQL container (RU/s). Must be between `4,000` and `1,000,000`. Must be set in increments of `1,000`. Conflicts with `throughput`."
+                }
+            },
+            "required": []
+        },
+        "ConflictResolutionPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConflictResolutionPath": {
+                    "type": "string",
+                    "description": "The conflict resolution path in the case of `LastWriterWins` mode."
+                },
+                "ConflictResolutionProcedure": {
+                    "type": "string",
+                    "description": "The procedure to resolve conflicts in the case of `Custom` mode."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "Indicates the conflict resolution mode. Possible values include: `LastWriterWins`, `Custom`."
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "IndexingPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IndexingMode": {
+                    "type": "string",
+                    "description": "Indicates the indexing mode. Possible values include: `Consistent` and `None`. Defaults to `Consistent`."
+                },
+                "CompositeIndex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CompositeIndexDefinition"
+                    }
+                },
+                "ExcludedPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExcludedPathDefinition"
+                    }
+                },
+                "IncludedPath": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IncludedPathDefinition"
+                    }
+                },
+                "SpatialIndex": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpatialIndexDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UniqueKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Paths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of paths to use for this unique key."
+                }
+            },
+            "required": [
+                "Paths"
+            ]
+        },
+        "CompositeIndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IndexDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ExcludedPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string",
+                    "description": "Path that is excluded from indexing."
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "IncludedPathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string",
+                    "description": "Path for which the indexing behaviour applies to."
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "SpatialIndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string",
+                    "description": "Path for which the indexing behaviour applies to. According to the service design, all spatial types including `LineString`, `MultiPolygon`, `Point`, and `Polygon` will be applied to the path."
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "IndexDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Order": {
+                    "type": "string",
+                    "description": "Order of the index. Possible values are `Ascending` or `Descending`."
+                },
+                "Path": {
+                    "type": "string",
+                    "description": "Path for which the indexing behaviour applies to."
+                }
+            },
+            "required": [
+                "Order",
+                "Path"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string",
+            "description": "The name of the Cosmos DB Account to create the container within. Changing this forces a new resource to be created."
+        },
+        "AnalyticalStorageTtl": {
+            "type": "number",
+            "description": "The default time to live of Analytical Storage for this SQL container. If present and the value is set to `-1`, it is equal to infinity, and items don\u2019t expire by default. If present and the value is set to some number `n` \u2013 items will expire `n` seconds after their last modified time."
+        },
+        "DatabaseName": {
+            "type": "string",
+            "description": "The name of the Cosmos DB SQL Database to create the container within. Changing this forces a new resource to be created."
+        },
+        "DefaultTtl": {
+            "type": "number",
+            "description": "The default time to live of SQL container. If missing, items are not expired automatically. If present and the value is set to `-1`, it is equal to infinity, and items don\u2019t expire by default. If present and the value is set to some number `n` \u2013 items will expire `n` seconds after their last modified time."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Cosmos DB SQL Container. Changing this forces a new resource to be created."
+        },
+        "PartitionKeyPath": {
+            "type": "string",
+            "description": "Define a partition key. Changing this forces a new resource to be created."
+        },
+        "PartitionKeyVersion": {
+            "type": "number",
+            "description": "Define a partition key version. Changing this forces a new resource to be created. Possible values are `1 `and `2`. This should be set to `2` in order to use large partition keys."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Cosmos DB SQL Container is created. Changing this forces a new resource to be created."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "The throughput of SQL container (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon container creation otherwise it cannot be updated without a manual terraform destroy-apply."
+        },
+        "AutoscaleSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoscaleSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ConflictResolutionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConflictResolutionPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "IndexingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IndexingPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "UniqueKey": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UniqueKeyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "DatabaseName",
+        "Name",
+        "PartitionKeyPath",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

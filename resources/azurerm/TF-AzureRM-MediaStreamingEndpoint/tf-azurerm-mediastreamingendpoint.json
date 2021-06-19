@@ -1,0 +1,237 @@
+{
+    "typeName": "TF::AzureRM::MediaStreamingEndpoint",
+    "description": "Manages a Streaming Endpoint.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MediaStreamingEndpoint/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AccessControlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AkamaiSignatureHeaderAuthenticationKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AkamaiSignatureHeaderAuthenticationKeyDefinition"
+                    }
+                },
+                "IpAllow": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpAllowDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CrossSiteAccessPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientAccessPolicy": {
+                    "type": "string"
+                },
+                "CrossDomainPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AkamaiSignatureHeaderAuthenticationKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Base64Key": {
+                    "type": "string"
+                },
+                "Expiration": {
+                    "type": "string"
+                },
+                "Identifier": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpAllowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubnetPrefixLength": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoStartEnabled": {
+            "type": "boolean"
+        },
+        "CdnEnabled": {
+            "type": "boolean"
+        },
+        "CdnProfile": {
+            "type": "string"
+        },
+        "CdnProvider": {
+            "type": "string"
+        },
+        "CustomHostNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HostName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "MaxCacheAgeSeconds": {
+            "type": "number"
+        },
+        "MediaServicesAccountName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ScaleUnits": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "AccessControl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessControlDefinition"
+            },
+            "maxItems": 1
+        },
+        "CrossSiteAccessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrossSiteAccessPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "MediaServicesAccountName",
+        "Name",
+        "ResourceGroupName",
+        "ScaleUnits"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HostName",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

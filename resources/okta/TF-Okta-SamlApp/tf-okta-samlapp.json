@@ -1,0 +1,286 @@
+{
+    "typeName": "TF::Okta::SamlApp",
+    "description": "CloudFormation equivalent of okta_saml_app",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-SamlApp/docs/README.md",
+    "definitions": {
+        "AttributeStatementsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterType": {
+                    "type": "string"
+                },
+                "FilterValue": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessibilityErrorRedirectUrl": {
+            "type": "string"
+        },
+        "AccessibilityLoginRedirectUrl": {
+            "type": "string"
+        },
+        "AccessibilitySelfService": {
+            "type": "boolean"
+        },
+        "AcsEndpoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AppSettingsJson": {
+            "type": "string"
+        },
+        "AssertionSigned": {
+            "type": "boolean"
+        },
+        "Audience": {
+            "type": "string"
+        },
+        "AuthnContextClassRef": {
+            "type": "string"
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "DefaultRelayState": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "DigestAlgorithm": {
+            "type": "string"
+        },
+        "EntityKey": {
+            "type": "string"
+        },
+        "EntityUrl": {
+            "type": "string"
+        },
+        "Features": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HideIos": {
+            "type": "boolean"
+        },
+        "HideWeb": {
+            "type": "boolean"
+        },
+        "HonorForceAuthn": {
+            "type": "boolean"
+        },
+        "HttpPostBinding": {
+            "type": "string"
+        },
+        "HttpRedirectBinding": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdpIssuer": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "KeyYearsValid": {
+            "type": "number"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "string"
+        },
+        "MetadataUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PreconfiguredApp": {
+            "type": "string"
+        },
+        "Recipient": {
+            "type": "string"
+        },
+        "RequestCompressed": {
+            "type": "boolean"
+        },
+        "ResponseSigned": {
+            "type": "boolean"
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "SignatureAlgorithm": {
+            "type": "string"
+        },
+        "SingleLogoutCertificate": {
+            "type": "string"
+        },
+        "SingleLogoutIssuer": {
+            "type": "string"
+        },
+        "SingleLogoutUrl": {
+            "type": "string"
+        },
+        "SpIssuer": {
+            "type": "string"
+        },
+        "SsoUrl": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubjectNameIdFormat": {
+            "type": "string"
+        },
+        "SubjectNameIdTemplate": {
+            "type": "string"
+        },
+        "UserNameTemplate": {
+            "type": "string"
+        },
+        "UserNameTemplateSuffix": {
+            "type": "string"
+        },
+        "UserNameTemplateType": {
+            "type": "string"
+        },
+        "AttributeStatements": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttributeStatementsDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Certificate",
+        "/properties/EntityKey",
+        "/properties/EntityUrl",
+        "/properties/HttpPostBinding",
+        "/properties/HttpRedirectBinding",
+        "/properties/Id",
+        "/properties/KeyId",
+        "/properties/Metadata",
+        "/properties/MetadataUrl",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

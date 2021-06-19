@@ -1,0 +1,100 @@
+{
+    "typeName": "TF::Aviatrix::ArmPeer",
+    "description": "The **aviatrix_arm_peer** resource allows the creation and management of Aviatrix ARM peerings.\n\n!> **WARNING:** The `aviatrix_arm_peer` resource is deprecated as of **Release 2.12**. It is currently kept for backward-compatibility and will be removed in the future. Please use the Azure peer resource instead. If this is already in the state, please remove it from the state file and import as `aviatrix_azure_peer`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-ArmPeer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName1": {
+            "type": "string"
+        },
+        "AccountName2": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VnetCidr1": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VnetCidr2": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VnetNameResourceGroup1": {
+            "type": "string"
+        },
+        "VnetNameResourceGroup2": {
+            "type": "string"
+        },
+        "VnetReg1": {
+            "type": "string"
+        },
+        "VnetReg2": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName1",
+        "AccountName2",
+        "VnetNameResourceGroup1",
+        "VnetNameResourceGroup2",
+        "VnetReg1",
+        "VnetReg2"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/VnetCidr1",
+        "/properties/VnetCidr2"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

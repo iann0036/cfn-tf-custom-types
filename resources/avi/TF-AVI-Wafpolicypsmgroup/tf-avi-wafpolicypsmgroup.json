@@ -1,0 +1,334 @@
+{
+    "typeName": "TF::AVI::Wafpolicypsmgroup",
+    "description": "The WafPolicyPSMGroup resource allows the creation and management of Avi WafPolicyPSMGroup",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Wafpolicypsmgroup/docs/README.md",
+    "definitions": {
+        "LocationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Match": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchDefinition"
+                    }
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RulesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "MatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/HostDefinition"
+                    }
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MethodsDefinition"
+                    }
+                },
+                "Path": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PathDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchValueMaxLength": {
+                    "type": "number"
+                },
+                "MatchValuePattern": {
+                    "type": "string"
+                },
+                "MatchValueStringGroupKey": {
+                    "type": "string"
+                },
+                "MatchValueStringGroupRef": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParanoiaLevel": {
+                    "type": "string"
+                },
+                "RuleId": {
+                    "type": "string"
+                },
+                "MatchElements": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchElementsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Index",
+                "Name",
+                "RuleId"
+            ]
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "MethodsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria",
+                "Methods"
+            ]
+        },
+        "PathDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchCase": {
+                    "type": "string"
+                },
+                "MatchCriteria": {
+                    "type": "string"
+                },
+                "MatchStr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "StringGroupRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "MatchCriteria"
+            ]
+        },
+        "MatchElementsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Excluded": {
+                    "type": "boolean"
+                },
+                "Index": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SubElement": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Index",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Free-text comment about this group. Field introduced in 18.2.3."
+        },
+        "Enable": {
+            "type": "boolean",
+            "description": "Enable or disable this waf rule group. Field introduced in 18.2.3."
+        },
+        "HitAction": {
+            "type": "string",
+            "description": "If a rule in this group matches the match_value pattern, this action will be executed. Allowed actions are waf_action_no_op and waf_action_allow_parameter. Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER. Field introduced in 18.2.3."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsLearningGroup": {
+            "type": "boolean",
+            "description": "This field indicates that this group is used for learning. Field introduced in 18.2.3."
+        },
+        "MissAction": {
+            "type": "string",
+            "description": "If a rule in this group does not match the match_value pattern, this action will be executed. Allowed actions are waf_action_no_op and waf_action_block. Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER. Field introduced in 18.2.3."
+        },
+        "Name": {
+            "type": "string",
+            "description": "User defined name of the group. Field introduced in 18.2.3."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "Tenant that this object belongs to. It is a reference to an object of type tenant. Field introduced in 18.2.3."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Locations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LocationsDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "typeName": "TF::Packet::IpAttachment",
+    "description": "Provides a resource to attach elastic IP subnets to devices.\n\nTo attach an IP subnet from a reserved block to a provisioned device, you must derive a subnet CIDR belonging to\none of your reserved blocks in the same project and facility as the target device.\n\nFor example, you have reserved IPv4 address block 147.229.10.152/30, you can choose to assign either the whole\nblock as one subnet to a device; or 2 subnets with CIDRs 147.229.10.152/31' and 147.229.10.154/31; or 4 subnets\nwith mask prefix length 32. More about the elastic IP subnets is [here](https://metal.equinix.com/developers/docs/networking/elastic-ips/).\n\nDevice and reserved block must be in the same facility.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/packet/TF-Packet-IpAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "number"
+        },
+        "Cidr": {
+            "type": "number"
+        },
+        "CidrNotation": {
+            "type": "string",
+            "description": "CIDR notation of subnet from block reserved in the same\nproject and facility as the device."
+        },
+        "DeviceId": {
+            "type": "string",
+            "description": "ID of device to which to assign the subnet."
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Global": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Manageable": {
+            "type": "boolean"
+        },
+        "Management": {
+            "type": "boolean"
+        },
+        "Netmask": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "Public": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrNotation",
+        "DeviceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/AddressFamily",
+        "/properties/Cidr",
+        "/properties/Gateway",
+        "/properties/Global",
+        "/properties/Id",
+        "/properties/Manageable",
+        "/properties/Management",
+        "/properties/Netmask",
+        "/properties/Network",
+        "/properties/Public"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

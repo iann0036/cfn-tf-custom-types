@@ -1,0 +1,210 @@
+{
+    "typeName": "TF::FortiOS::Wirelesscontrollerhotspot20Hsprofile",
+    "description": "Configure hotspot profile.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-Wirelesscontrollerhotspot20Hsprofile/docs/README.md",
+    "definitions": {
+        "OsuProviderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "OSU provider name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessNetworkAsra": {
+            "type": "string",
+            "description": "Enable/disable additional step required for access (ASRA). Valid values: `enable`, `disable`."
+        },
+        "AccessNetworkEsr": {
+            "type": "string",
+            "description": "Enable/disable emergency services reachable (ESR). Valid values: `enable`, `disable`."
+        },
+        "AccessNetworkInternet": {
+            "type": "string",
+            "description": "Enable/disable connectivity to the Internet. Valid values: `enable`, `disable`."
+        },
+        "AccessNetworkType": {
+            "type": "string",
+            "description": "Access network type. Valid values: `private-network`, `private-network-with-guest-access`, `chargeable-public-network`, `free-public-network`, `personal-device-network`, `emergency-services-only-network`, `test-or-experimental`, `wildcard`."
+        },
+        "AccessNetworkUesa": {
+            "type": "string",
+            "description": "Enable/disable unauthenticated emergency service accessible (UESA). Valid values: `enable`, `disable`."
+        },
+        "AnqpDomainId": {
+            "type": "number",
+            "description": "ANQP Domain ID (0-65535)."
+        },
+        "BssTransition": {
+            "type": "string",
+            "description": "Enable/disable basic service set (BSS) transition Support. Valid values: `enable`, `disable`."
+        },
+        "ConnCap": {
+            "type": "string",
+            "description": "Connection capability name."
+        },
+        "DeauthRequestTimeout": {
+            "type": "number",
+            "description": "Deauthentication request timeout (in seconds)."
+        },
+        "Dgaf": {
+            "type": "string",
+            "description": "Enable/disable downstream group-addressed forwarding (DGAF). Valid values: `enable`, `disable`."
+        },
+        "DomainName": {
+            "type": "string",
+            "description": "Domain name."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "GasComebackDelay": {
+            "type": "number",
+            "description": "GAS comeback delay (0 or 100 - 4000 milliseconds, default = 500)."
+        },
+        "GasFragmentationLimit": {
+            "type": "number",
+            "description": "GAS fragmentation limit (512 - 4096, default = 1024)."
+        },
+        "Hessid": {
+            "type": "string",
+            "description": "Homogeneous extended service set identifier (HESSID)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddrType": {
+            "type": "string",
+            "description": "IP address type name."
+        },
+        "L2tif": {
+            "type": "string",
+            "description": "Enable/disable Layer 2 traffic inspection and filtering. Valid values: `enable`, `disable`."
+        },
+        "N3gppPlmn": {
+            "type": "string",
+            "description": "3GPP PLMN name."
+        },
+        "NaiRealm": {
+            "type": "string",
+            "description": "NAI realm list name."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Hotspot profile name."
+        },
+        "NetworkAuth": {
+            "type": "string",
+            "description": "Network authentication name."
+        },
+        "OperFriendlyName": {
+            "type": "string",
+            "description": "Operator friendly name."
+        },
+        "OsuSsid": {
+            "type": "string",
+            "description": "Online sign up (OSU) SSID."
+        },
+        "PameBi": {
+            "type": "string",
+            "description": "Enable/disable Pre-Association Message Exchange BSSID Independent (PAME-BI). Valid values: `disable`, `enable`."
+        },
+        "ProxyArp": {
+            "type": "string",
+            "description": "Enable/disable Proxy ARP. Valid values: `enable`, `disable`."
+        },
+        "QosMap": {
+            "type": "string",
+            "description": "QoS MAP set ID."
+        },
+        "RoamingConsortium": {
+            "type": "string",
+            "description": "Roaming consortium list name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "VenueGroup": {
+            "type": "string",
+            "description": "Venue group. Valid values: `unspecified`, `assembly`, `business`, `educational`, `factory`, `institutional`, `mercantile`, `residential`, `storage`, `utility`, `vehicular`, `outdoor`."
+        },
+        "VenueName": {
+            "type": "string",
+            "description": "Venue name."
+        },
+        "VenueType": {
+            "type": "string",
+            "description": "Venue type. Valid values: `unspecified`, `arena`, `stadium`, `passenger-terminal`, `amphitheater`, `amusement-park`, `place-of-worship`, `convention-center`, `library`, `museum`, `restaurant`, `theater`, `bar`, `coffee-shop`, `zoo-or-aquarium`, `emergency-center`, `doctor-office`, `bank`, `fire-station`, `police-station`, `post-office`, `professional-office`, `research-facility`, `attorney-office`, `primary-school`, `secondary-school`, `university-or-college`, `factory`, `hospital`, `long-term-care-facility`, `rehab-center`, `group-home`, `prison-or-jail`, `retail-store`, `grocery-market`, `auto-service-station`, `shopping-mall`, `gas-station`, `private`, `hotel-or-motel`, `dormitory`, `boarding-house`, `automobile`, `airplane`, `bus`, `ferry`, `ship-or-boat`, `train`, `motor-bike`, `muni-mesh-network`, `city-park`, `rest-area`, `traffic-control`, `bus-stop`, `kiosk`."
+        },
+        "WanMetrics": {
+            "type": "string",
+            "description": "WAN metric name."
+        },
+        "WnmSleepMode": {
+            "type": "string",
+            "description": "Enable/disable wireless network management (WNM) sleep mode. Valid values: `enable`, `disable`."
+        },
+        "OsuProvider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsuProviderDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

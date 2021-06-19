@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::FortiOS::FmgSystemAdminUser",
+    "description": "This resource supports Create/Read/Update/Delete admin user for FortiManager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgSystemAdminUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password."
+        },
+        "Profileid": {
+            "type": "string",
+            "description": "Profile id."
+        },
+        "RadiusServer": {
+            "type": "string",
+            "description": "RADIUS server name."
+        },
+        "RpcPermit": {
+            "type": "string",
+            "description": "Rpc permit, Enum: [\"read-write\", \"none\", \"read\"]."
+        },
+        "Trusthost1": {
+            "type": "string",
+            "description": "Admin user trusted host IP, default 0.0.0.0 0.0.0.0 for all."
+        },
+        "Trusthost2": {
+            "type": "string",
+            "description": "Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none."
+        },
+        "Trusthost3": {
+            "type": "string",
+            "description": "Admin user trusted host IP, default 255.255.255.255 255.255.255.255 for none."
+        },
+        "UserType": {
+            "type": "string",
+            "description": "User type, Enum: [\"local\", \"radius\", \"ldap\", \"tacacs-plus\", \"pki-auth\", \"group\"]."
+        },
+        "Userid": {
+            "type": "string",
+            "description": "User name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Userid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

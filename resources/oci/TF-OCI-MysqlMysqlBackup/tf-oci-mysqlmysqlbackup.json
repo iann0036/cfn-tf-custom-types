@@ -1,0 +1,422 @@
+{
+    "typeName": "TF::OCI::MysqlMysqlBackup",
+    "description": "This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.\n\nCreate a backup of a DB System.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-MysqlMysqlBackup/docs/README.md",
+    "definitions": {
+        "DbSystemSnapshotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DbSystemSnapshotDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DbSystemSnapshotDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition"
+                    }
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition2"
+                    }
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "RetentionInDays": {
+                    "type": "number"
+                },
+                "WindowStartTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "DbSystemSnapshotDefinition4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DbSystemSnapshotDefinition5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Modes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortX": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StatusDetails": {
+                    "type": "string"
+                }
+            }
+        },
+        "DbSystemSnapshotDefinition6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DbSystemSnapshotDefinition7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WindowStartTime": {
+                    "type": "string"
+                }
+            }
+        },
+        "DbSystemSnapshotDefinition8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminUsername": {
+                    "type": "string"
+                },
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "BackupPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition3"
+                    }
+                },
+                "CompartmentId": {
+                    "type": "string"
+                },
+                "ConfigurationId": {
+                    "type": "string"
+                },
+                "DataStorageSizeInGb": {
+                    "type": "number"
+                },
+                "DefinedTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition4"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Endpoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition5"
+                    }
+                },
+                "FaultDomain": {
+                    "type": "string"
+                },
+                "FreeformTags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition6"
+                    }
+                },
+                "HostnameLabel": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "IsHighlyAvailable": {
+                    "type": "boolean"
+                },
+                "Maintenance": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DbSystemSnapshotDefinition7"
+                    }
+                },
+                "MysqlVersion": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortX": {
+                    "type": "number"
+                },
+                "ShapeName": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            }
+        },
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupSizeInGbs": {
+            "type": "number"
+        },
+        "BackupType": {
+            "type": "string",
+            "description": "The type of backup."
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "CreationType": {
+            "type": "string"
+        },
+        "DataStorageSizeInGb": {
+            "type": "number"
+        },
+        "DbSystemId": {
+            "type": "string",
+            "description": "The OCID of the DB System the Backup is associated with."
+        },
+        "DbSystemSnapshot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DbSystemSnapshotDefinition8"
+            }
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "(Updatable) A user-supplied description for the backup."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) A user-supplied display name for the backup."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "MysqlVersion": {
+            "type": "string"
+        },
+        "RetentionInDays": {
+            "type": "number",
+            "description": "(Updatable) Number of days to retain this backup."
+        },
+        "ShapeName": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbSystemId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackupSizeInGbs",
+        "/properties/CompartmentId",
+        "/properties/CreationType",
+        "/properties/DataStorageSizeInGb",
+        "/properties/DbSystemSnapshot",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/MysqlVersion",
+        "/properties/ShapeName",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

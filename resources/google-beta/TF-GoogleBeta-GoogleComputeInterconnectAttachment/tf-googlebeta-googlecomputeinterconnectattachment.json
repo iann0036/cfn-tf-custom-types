@@ -1,0 +1,184 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleComputeInterconnectAttachment",
+    "description": "CloudFormation equivalent of google_compute_interconnect_attachment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleComputeInterconnectAttachment/docs/README.md",
+    "definitions": {
+        "PrivateInterconnectInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tag8021q": {
+                    "type": "number"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminEnabled": {
+            "type": "boolean"
+        },
+        "Bandwidth": {
+            "type": "string"
+        },
+        "CandidateSubnets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CloudRouterIpAddress": {
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "CustomerRouterIpAddress": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EdgeAvailabilityDomain": {
+            "type": "string"
+        },
+        "Encryption": {
+            "type": "string"
+        },
+        "GoogleReferenceId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interconnect": {
+            "type": "string"
+        },
+        "IpsecInternalAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Mtu": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PairingKey": {
+            "type": "string"
+        },
+        "PartnerAsn": {
+            "type": "string"
+        },
+        "PrivateInterconnectInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateInterconnectInfoDefinition"
+            }
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Router": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VlanTag8021q": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Router"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudRouterIpAddress",
+        "/properties/CreationTimestamp",
+        "/properties/CustomerRouterIpAddress",
+        "/properties/GoogleReferenceId",
+        "/properties/Id",
+        "/properties/PairingKey",
+        "/properties/PartnerAsn",
+        "/properties/PrivateInterconnectInfo",
+        "/properties/SelfLink",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

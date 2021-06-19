@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Tfe::SentinelPolicy",
+    "description": "Sentinel Policy as Code is an embedded policy as code framework integrated\nwith Terraform Enterprise.\n\nPolicies are configured on a per-organization level and are organized and\ngrouped into policy sets, which define the workspaces on which policies are\nenforced during runs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tfe/TF-Tfe-SentinelPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the policy's purpose."
+        },
+        "EnforceMode": {
+            "type": "string",
+            "description": "The enforcement level of the policy. Valid\nvalues are `advisory`, `hard-mandatory` and `soft-mandatory`. Defaults\nto `soft-mandatory`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the policy."
+        },
+        "Organization": {
+            "type": "string",
+            "description": "Name of the organization."
+        },
+        "Policy": {
+            "type": "string",
+            "description": "The actual policy itself."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization",
+        "Policy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,314 @@
+{
+    "typeName": "TF::Gridscale::Firewall",
+    "description": "Provides a firewall resource. This can be used to create, modify, and delete firewalls.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Firewall/docs/README.md",
+    "definitions": {
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateTime": {
+                    "type": "string"
+                },
+                "NetworkName": {
+                    "type": "string"
+                },
+                "NetworkUuid": {
+                    "type": "string"
+                },
+                "ObjectName": {
+                    "type": "string"
+                },
+                "ObjectUuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "RulesV4InDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV4OutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV6InDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "RulesV6OutDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "DstCidr": {
+                    "type": "string"
+                },
+                "DstPort": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SrcCidr": {
+                    "type": "string"
+                },
+                "SrcPort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Order",
+                "Protocol"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of labels in the format [ \"label1\", \"label2\" ]."
+        },
+        "LocationName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The human-readable name of the object. It supports the full UTF-8 character set, with a maximum of 64 characters."
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "Private": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "RulesV4In": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesV4InDefinition"
+            }
+        },
+        "RulesV4Out": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesV4OutDefinition"
+            }
+        },
+        "RulesV6In": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesV6InDefinition"
+            }
+        },
+        "RulesV6Out": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesV6OutDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/Description",
+        "/properties/Id",
+        "/properties/LocationName",
+        "/properties/Network",
+        "/properties/Private",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

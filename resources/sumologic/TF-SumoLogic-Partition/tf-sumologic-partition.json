@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::SumoLogic::Partition",
+    "description": "Provides a [Sumologic Partition][1].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-Partition/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnalyticsTier": {
+            "type": "string"
+        },
+        "DataForwardingId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IndexType": {
+            "type": "string"
+        },
+        "IsActive": {
+            "type": "boolean"
+        },
+        "IsCompliant": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ReduceRetentionPeriodImmediately": {
+            "type": "boolean"
+        },
+        "RetentionPeriod": {
+            "type": "number"
+        },
+        "RoutingExpression": {
+            "type": "string"
+        },
+        "TotalBytes": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DataForwardingId",
+        "/properties/Id",
+        "/properties/IndexType",
+        "/properties/IsActive",
+        "/properties/TotalBytes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

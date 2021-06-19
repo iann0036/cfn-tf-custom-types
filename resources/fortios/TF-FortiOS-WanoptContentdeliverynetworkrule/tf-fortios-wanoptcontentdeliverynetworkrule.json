@@ -1,0 +1,264 @@
+{
+    "typeName": "TF::FortiOS::WanoptContentdeliverynetworkrule",
+    "description": "Configure WAN optimization content delivery network rules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WanoptContentdeliverynetworkrule/docs/README.md",
+    "definitions": {
+        "HostDomainNameSuffixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Suffix portion of the fully qualified domain name."
+                }
+            },
+            "required": []
+        },
+        "RulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchMode": {
+                    "type": "string",
+                    "description": "Match criteria for collecting content ID. Valid values: `all`, `any`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "WAN optimization content delivery network rule name."
+                },
+                "SkipRuleMode": {
+                    "type": "string",
+                    "description": "Skip mode when evaluating skip-rules. Valid values: `all`, `any`."
+                },
+                "ContentId": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ContentIdDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "MatchEntries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchEntriesDefinition"
+                    }
+                },
+                "SkipEntries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SkipEntriesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ContentIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDirection": {
+                    "type": "string",
+                    "description": "Search direction from end-str match. Valid values: `forward`, `backward`."
+                },
+                "EndSkip": {
+                    "type": "number",
+                    "description": "Number of characters in URL to skip after end-str has been matched."
+                },
+                "EndStr": {
+                    "type": "string",
+                    "description": "String from which to end search."
+                },
+                "RangeStr": {
+                    "type": "string",
+                    "description": "Name of content ID within the start string and end string."
+                },
+                "StartDirection": {
+                    "type": "string",
+                    "description": "Search direction from start-str match. Valid values: `forward`, `backward`."
+                },
+                "StartSkip": {
+                    "type": "number",
+                    "description": "Number of characters in URL to skip after start-str has been matched."
+                },
+                "StartStr": {
+                    "type": "string",
+                    "description": "String from which to start search."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "Option in HTTP header or URL parameter to match. Valid values: `path`, `parameter`, `referrer`, `youtube-map`, `youtube-id`, `youku-id`, `hls-manifest`, `dash-manifest`, `hls-fragment`, `dash-fragment`."
+                }
+            },
+            "required": []
+        },
+        "MatchEntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Rule ID."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "Option in HTTP header or URL parameter to match. Valid values: `path`, `parameter`, `referrer`, `youtube-map`, `youtube-id`, `youku-id`."
+                },
+                "Pattern": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PatternDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SkipEntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Rule ID."
+                },
+                "Target": {
+                    "type": "string",
+                    "description": "Option in HTTP header or URL parameter to match. Valid values: `path`, `parameter`, `referrer`, `youtube-map`, `youtube-id`, `youku-id`."
+                },
+                "Pattern": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PatternDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PatternDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "String": {
+                    "type": "string",
+                    "description": "Pattern strings."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Category": {
+            "type": "string",
+            "description": "Content delivery network rule category. Valid values: `vcache`, `youtube`."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment about this CDN-rule."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of table."
+        },
+        "RequestCacheControl": {
+            "type": "string",
+            "description": "Enable/disable HTTP request cache control. Valid values: `enable`, `disable`."
+        },
+        "ResponseCacheControl": {
+            "type": "string",
+            "description": "Enable/disable HTTP response cache control. Valid values: `enable`, `disable`."
+        },
+        "ResponseExpires": {
+            "type": "string",
+            "description": "Enable/disable HTTP response cache expires. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable WAN optimization content delivery network rules. Valid values: `enable`, `disable`."
+        },
+        "TextResponseVcache": {
+            "type": "string",
+            "description": "Enable/disable caching of text responses. Valid values: `enable`, `disable`."
+        },
+        "Updateserver": {
+            "type": "string",
+            "description": "Enable/disable update server. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "HostDomainNameSuffix": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostDomainNameSuffixDefinition"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RulesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

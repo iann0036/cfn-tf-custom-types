@@ -1,0 +1,168 @@
+{
+    "typeName": "TF::AzureRM::BotWebApp",
+    "description": "Manages a Bot Web App.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-BotWebApp/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeveloperAppInsightsApiKey": {
+            "type": "string",
+            "description": "The Application Insights API Key to associate with the Web App Bot."
+        },
+        "DeveloperAppInsightsApplicationId": {
+            "type": "string",
+            "description": "The Application Insights Application ID to associate with the Web App Bot."
+        },
+        "DeveloperAppInsightsKey": {
+            "type": "string",
+            "description": "The Application Insights Key to associate with the Web App Bot."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "The name of the Web App Bot will be displayed as. This defaults to `name` if not specified."
+        },
+        "Endpoint": {
+            "type": "string",
+            "description": "The Web App Bot endpoint."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "LuisAppIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of LUIS App IDs to associate with the Web App Bot."
+        },
+        "LuisKey": {
+            "type": "string",
+            "description": "The LUIS key to associate with the Web App Bot."
+        },
+        "MicrosoftAppId": {
+            "type": "string",
+            "description": "The Microsoft Application ID for the Web App Bot. Changing this forces a new resource to be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Web App Bot. Changing this forces a new resource to be created. Must be globally unique."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which to create the Web App Bot. Changing this forces a new resource to be created."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The SKU of the Web App Bot. Valid values include `F0` or `S1`. Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "MicrosoftAppId",
+        "Name",
+        "ResourceGroupName",
+        "Sku"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/DeveloperAppInsightsApiKey",
+        "/properties/LuisKey"
+    ]
+}

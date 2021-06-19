@@ -1,0 +1,138 @@
+{
+    "typeName": "TF::NetAppCloudManager::ConnectorGcp",
+    "description": "Provides a NetApp_CloudManager connector GCP resource. This can be used to create a new Cloud Manager Connector in GCP.\nIn order to use that resource, you should have a service account key file. The minimum required policy can be found here: [Connector deployment policy for GCP](https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml).\nThe service account for the Connector VM instance must have the permissions defined in [Cloud Manager policy for GCP](https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml)\n\n<!---\ni think we need to create section for terraform and point to there\n-->",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-ConnectorGcp/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The NetApp account ID that the Connector will be associated with. If not provided, Cloud Manager uses the first account. If no account exists, Cloud Manager creates a new account. You can find the account ID in the account tab of Cloud Manager at [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "AssociatePublicIp": {
+            "type": "boolean",
+            "description": "Indicates whether to associate a public IP address to the virtual machine. The default is \"true\"."
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "Company": {
+            "type": "string",
+            "description": "The name of the company of the user."
+        },
+        "FirewallTags": {
+            "type": "boolean",
+            "description": "Indicates whether to add firewall_tags to the connector VM (HTTP and HTTP). The default is \"true\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MachineType": {
+            "type": "string",
+            "description": "The machine_type for the Connector VM. The default value is \"n1-standard-4\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Cloud Manager Connector."
+        },
+        "NetworkProjectId": {
+            "type": "string",
+            "description": "The project id in GCP associated with the Subnet. If not provided, it\u2019s assumed that the Subnet is within the previously specified project id."
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The GCP project_id where the connector will be created."
+        },
+        "ProxyCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The proxy certificates. A list of certificate file names."
+        },
+        "ProxyPassword": {
+            "type": "string",
+            "description": "The proxy password, if using a proxy to connect to the internet."
+        },
+        "ProxyUrl": {
+            "type": "string",
+            "description": "The proxy URL, if using a proxy to connect to the internet."
+        },
+        "ProxyUserName": {
+            "type": "string",
+            "description": "The proxy user name, if using a proxy to connect to the internet."
+        },
+        "ServiceAccountEmail": {
+            "type": "string",
+            "description": "The email of the service_account for the connector instance. This service account is used to allow the Connector to create Cloud Volume ONTAP."
+        },
+        "ServiceAccountPath": {
+            "type": "string",
+            "description": "The local path of the service_account JSON file for GCP authorization purposes. This service account is used to create the Connector in GCP."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The name of the subnet for the virtual machine. The default value is \"Default\"."
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The GCP zone where the Connector will be created."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Company",
+        "Name",
+        "ProjectId",
+        "ServiceAccountEmail",
+        "ServiceAccountPath",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

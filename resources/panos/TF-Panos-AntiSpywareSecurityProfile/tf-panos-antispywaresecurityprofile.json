@@ -1,0 +1,277 @@
+{
+    "typeName": "TF::Panos::AntiSpywareSecurityProfile",
+    "description": "Manages anti-spyware security profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-AntiSpywareSecurityProfile/docs/README.md",
+    "definitions": {
+        "BotnetListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PacketCapture": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Name"
+            ]
+        },
+        "DnsCategoryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action to take.  Valid values are `alert`, `default`, `allow`,\n`block`, or `sinkhole`."
+                },
+                "LogLevel": {
+                    "type": "string",
+                    "description": "Logging level.  Valid values are `default`, `none`, `low`,\n`informational`, `medium`, `high`, or `critical`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "PacketCapture": {
+                    "type": "string",
+                    "description": "Packet capture setting.  Valid values\nare `disable`, `single-packet`, or `extended-capture`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ExceptionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action.  Valid values are `default`, `allow`, `alert`, `drop`,\n`reset-client`, `reset-server`, `reset-both`, or `block-ip`."
+                },
+                "BlockIpDuration": {
+                    "type": "number",
+                    "description": "The duration."
+                },
+                "BlockIpTrackBy": {
+                    "type": "string",
+                    "description": "The track by setting."
+                },
+                "ExemptIps": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of exempt IPs."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Threat name.  You can use the `panos_predefined_threat` data\nsource to discover the various phone home names available to use."
+                },
+                "PacketCapture": {
+                    "type": "string",
+                    "description": "Packet capture setting.  Valid values\nare `disable`, `single-packet`, or `extended-capture`."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action.  Valid values are `default`, `allow`, `alert`, `drop`,\n`reset-client`, `reset-server`, `reset-both`, or `block-ip`."
+                },
+                "BlockIpDuration": {
+                    "type": "number",
+                    "description": "The duration."
+                },
+                "BlockIpTrackBy": {
+                    "type": "string",
+                    "description": "The track by setting."
+                },
+                "Category": {
+                    "type": "string",
+                    "description": "Category."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                },
+                "PacketCapture": {
+                    "type": "string",
+                    "description": "Packet capture setting.  Valid values\nare `disable`, `single-packet`, or `extended-capture`."
+                },
+                "Severities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Severities."
+                },
+                "ThreatName": {
+                    "type": "string",
+                    "description": "Threat name."
+                }
+            },
+            "required": [
+                "Category",
+                "Name"
+            ]
+        },
+        "WhiteListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "PacketCapture": {
+            "type": "string",
+            "description": "Packet capture setting.  Valid values\nare `disable`, `single-packet`, or `extended-capture`."
+        },
+        "SinkholeIpv4Address": {
+            "type": "string",
+            "description": "IPv4 sinkhole address."
+        },
+        "SinkholeIpv6Address": {
+            "type": "string",
+            "description": "IPv6 sinkhole address."
+        },
+        "ThreatExceptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of threat exceptions."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys location (default: `vsys1`)."
+        },
+        "BotnetList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BotnetListDefinition"
+            }
+        },
+        "DnsCategory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsCategoryDefinition"
+            }
+        },
+        "Exception": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExceptionDefinition"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            }
+        },
+        "WhiteList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WhiteListDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

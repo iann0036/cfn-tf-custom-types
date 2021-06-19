@@ -1,0 +1,80 @@
+{
+    "typeName": "TF::Panos::PanoramaGkeCluster",
+    "description": "!> **Note:** This is only valid for the 1.0 GCP Plugin.\n\nThis resource allows you to add/update/delete a GKE cluster in a cluster group.\n\nThis resource requires that the GCP plugin be installed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaGkeCluster/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterCredential": {
+            "type": "string",
+            "description": "The GKE account to use."
+        },
+        "GcpZone": {
+            "type": "string",
+            "description": "The GCP zone."
+        },
+        "GkeClusterGroup": {
+            "type": "string",
+            "description": "The cluster group name."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The cluster group's name."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterCredential",
+        "GcpZone",
+        "GkeClusterGroup",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

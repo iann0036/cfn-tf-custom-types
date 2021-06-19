@@ -1,0 +1,183 @@
+# DO NOT modify this file by hand, changes will be overwritten
+import sys
+from dataclasses import dataclass
+from inspect import getmembers, isclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseModel,
+    BaseResourceHandlerRequest,
+)
+from cloudformation_cli_python_lib.recast import recast_object
+from cloudformation_cli_python_lib.utils import deserialize_list
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseModel):
+    tfcfnid: Optional[str]
+    Bucket: Optional[str]
+    Id: Optional[str]
+    Rule: Optional[Sequence["_RuleDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        dataclasses = {n: o for n, o in getmembers(sys.modules[__name__]) if isclass(o)}
+        recast_object(cls, json_data, dataclasses)
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
+            Rule=deserialize_list(json_data.get("Rule"), RuleDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+
+@dataclass
+class RuleDefinition(BaseModel):
+    Id: Optional[str]
+    Status: Optional[str]
+    AbortIncompleteMultipartUpload: Optional[Sequence["_AbortIncompleteMultipartUploadDefinition"]]
+    Expiration: Optional[Sequence["_ExpirationDefinition"]]
+    Filter: Optional[Sequence["_FilterDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_RuleDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_RuleDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            Id=json_data.get("Id"),
+            Status=json_data.get("Status"),
+            AbortIncompleteMultipartUpload=deserialize_list(json_data.get("AbortIncompleteMultipartUpload"), AbortIncompleteMultipartUploadDefinition),
+            Expiration=deserialize_list(json_data.get("Expiration"), ExpirationDefinition),
+            Filter=deserialize_list(json_data.get("Filter"), FilterDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_RuleDefinition = RuleDefinition
+
+
+@dataclass
+class AbortIncompleteMultipartUploadDefinition(BaseModel):
+    DaysAfterInitiation: Optional[float]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_AbortIncompleteMultipartUploadDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_AbortIncompleteMultipartUploadDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            DaysAfterInitiation=json_data.get("DaysAfterInitiation"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_AbortIncompleteMultipartUploadDefinition = AbortIncompleteMultipartUploadDefinition
+
+
+@dataclass
+class ExpirationDefinition(BaseModel):
+    Date: Optional[str]
+    Days: Optional[float]
+    ExpiredObjectDeleteMarker: Optional[bool]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ExpirationDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ExpirationDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            Date=json_data.get("Date"),
+            Days=json_data.get("Days"),
+            ExpiredObjectDeleteMarker=json_data.get("ExpiredObjectDeleteMarker"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ExpirationDefinition = ExpirationDefinition
+
+
+@dataclass
+class FilterDefinition(BaseModel):
+    Prefix: Optional[str]
+    Tags: Optional[Sequence["_TagsDefinition"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_FilterDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_FilterDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            Prefix=json_data.get("Prefix"),
+            Tags=deserialize_list(json_data.get("Tags"), TagsDefinition),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_FilterDefinition = FilterDefinition
+
+
+@dataclass
+class TagsDefinition(BaseModel):
+    MapKey: Optional[str]
+    MapValue: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_TagsDefinition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_TagsDefinition"]:
+        if not json_data:
+            return None
+        return cls(
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_TagsDefinition = TagsDefinition
+
+

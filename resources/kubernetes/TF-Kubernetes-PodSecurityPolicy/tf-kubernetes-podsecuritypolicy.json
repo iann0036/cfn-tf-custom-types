@@ -1,0 +1,453 @@
+{
+    "typeName": "TF::Kubernetes::PodSecurityPolicy",
+    "description": "A Pod Security Policy is a cluster-level resource that controls security sensitive aspects of the pod specification. The PodSecurityPolicy objects define a set of conditions that a pod must run with in order to be accepted into the system, as well as defaults for the related fields.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/kubernetes/TF-Kubernetes-PodSecurityPolicy/docs/README.md",
+    "definitions": {
+        "MetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Annotations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AnnotationsDefinition"
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SpecDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "AllowedCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedProcMountTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedUnsafeSysctls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultAddCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultAllowPrivilegeEscalation": {
+                    "type": "boolean"
+                },
+                "ForbiddenSysctls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HostIpc": {
+                    "type": "boolean"
+                },
+                "HostNetwork": {
+                    "type": "boolean"
+                },
+                "HostPid": {
+                    "type": "boolean"
+                },
+                "Privileged": {
+                    "type": "boolean"
+                },
+                "ReadOnlyRootFilesystem": {
+                    "type": "boolean"
+                },
+                "RequiredDropCapabilities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Volumes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedFlexVolumes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedFlexVolumesDefinition"
+                    }
+                },
+                "AllowedHostPaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AllowedHostPathsDefinition"
+                    }
+                },
+                "FsGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FsGroupDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "HostPorts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostPortsDefinition"
+                    }
+                },
+                "RunAsGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunAsGroupDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "RunAsUser": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunAsUserDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "SeLinux": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeLinuxDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "SupplementalGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SupplementalGroupsDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AllowedFlexVolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Driver"
+            ]
+        },
+        "AllowedHostPathsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PathPrefix": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "PathPrefix"
+            ]
+        },
+        "FsGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Rule"
+            ]
+        },
+        "HostPortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Max",
+                "Min"
+            ]
+        },
+        "RunAsGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Rule"
+            ]
+        },
+        "RunAsUserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Rule"
+            ]
+        },
+        "SeLinuxDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "SeLinuxOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SeLinuxOptionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Rule"
+            ]
+        },
+        "SupplementalGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Rule"
+            ]
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Max",
+                "Min"
+            ]
+        },
+        "SeLinuxOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Level": {
+                    "type": "string"
+                },
+                "Role": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Level",
+                "Role",
+                "Type",
+                "User"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpecDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

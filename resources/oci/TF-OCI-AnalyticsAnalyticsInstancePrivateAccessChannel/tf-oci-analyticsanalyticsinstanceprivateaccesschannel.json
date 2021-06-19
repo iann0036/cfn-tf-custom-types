@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::OCI::AnalyticsAnalyticsInstancePrivateAccessChannel",
+    "description": "This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.\n\nCreate a Private access Channel for the Analytics instance. The operation is long-running\nand creates a new WorkRequest.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-AnalyticsAnalyticsInstancePrivateAccessChannel/docs/README.md",
+    "definitions": {
+        "PrivateSourceDnsZonesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DnsZone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DnsZone"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AnalyticsInstanceId": {
+            "type": "string",
+            "description": "The OCID of the AnalyticsInstance."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) Display Name of the Private Access Channel."
+        },
+        "EgressSourceIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "(Updatable) OCID of the customer subnet connected to private access channel."
+        },
+        "VcnId": {
+            "type": "string",
+            "description": "(Updatable) OCID of the customer VCN peered with private access channel."
+        },
+        "PrivateSourceDnsZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrivateSourceDnsZonesDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AnalyticsInstanceId",
+        "DisplayName",
+        "SubnetId",
+        "VcnId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EgressSourceIpAddresses",
+        "/properties/Id",
+        "/properties/IpAddress",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

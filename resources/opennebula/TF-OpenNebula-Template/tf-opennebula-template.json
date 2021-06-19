@@ -1,0 +1,299 @@
+{
+    "typeName": "TF::OpenNebula::Template",
+    "description": "Provides an OpenNebula template resource.\n\nThis resource allows you to manage templates on your OpenNebula clusters. When applied,\na new template is created. When destroyed, this template is removed.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opennebula/TF-OpenNebula-Template/docs/README.md",
+    "definitions": {
+        "ContextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Driver": {
+                    "type": "string"
+                },
+                "ImageId": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Target": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GraphicsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keymap": {
+                    "type": "string"
+                },
+                "Listen": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Listen",
+                "Type"
+            ]
+        },
+        "NicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "number"
+                },
+                "PhysicalDevice": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "NetworkId"
+            ]
+        },
+        "OsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arch": {
+                    "type": "string"
+                },
+                "Boot": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Arch",
+                "Boot"
+            ]
+        },
+        "VmgroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Role": {
+                    "type": "string"
+                },
+                "VmgroupId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Role",
+                "VmgroupId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Context": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContextDefinition"
+            },
+            "description": "Array of free form key=value pairs, rendered and added to the CONTEXT variables for the VM. Recommended to include: `NETWORK = \"YES\"` and `SET_HOSTNAME = \"$NAME\"`."
+        },
+        "Cpu": {
+            "type": "number",
+            "description": "Amount of CPU shares assigned to the VM. **Mandatory if `template_****id` is not set**."
+        },
+        "Gid": {
+            "type": "number"
+        },
+        "Gname": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string",
+            "description": "Name of the group which owns the template. Defaults to the caller primary group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number",
+            "description": "Amount of RAM assigned to the VM in MB. **Mandatory if `template_****id` is not set**."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the virtual machine template."
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Permissions applied on template. Defaults to the UMASK in OpenNebula (in UNIX Format: owner-group-other => Use-Manage-Admin)."
+        },
+        "RegTime": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Template tags (Key = Value)."
+        },
+        "Template": {
+            "type": "string",
+            "description": "Text describing the OpenNebula template object, in Opennebula's XML string format."
+        },
+        "Uid": {
+            "type": "number"
+        },
+        "Uname": {
+            "type": "string"
+        },
+        "Vcpu": {
+            "type": "number"
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            }
+        },
+        "Graphics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GraphicsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Nic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicDefinition"
+            }
+        },
+        "Os": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDefinition"
+            },
+            "maxItems": 1
+        },
+        "Vmgroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VmgroupDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gid",
+        "/properties/Gname",
+        "/properties/Id",
+        "/properties/RegTime",
+        "/properties/Uid",
+        "/properties/Uname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

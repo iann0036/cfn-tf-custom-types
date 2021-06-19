@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::FortiOS::FirewallsshHostkey",
+    "description": "SSH proxy host public keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallsshHostkey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "Hostname of the SSH server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IP address of the SSH server."
+        },
+        "Name": {
+            "type": "string",
+            "description": "SSH public key name."
+        },
+        "Nid": {
+            "type": "string",
+            "description": "Set the nid of the ECDSA key. Valid values: `256`, `384`, `521`."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port of the SSH server."
+        },
+        "PublicKey": {
+            "type": "string",
+            "description": "SSH public key."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Set the trust status of the public key. Valid values: `trusted`, `revoked`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Set the type of the public key. Valid values: `RSA`, `DSA`, `ECDSA`, `ED25519`, `RSA-CA`, `DSA-CA`, `ECDSA-CA`, `ED25519-CA`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/PublicKey"
+    ]
+}

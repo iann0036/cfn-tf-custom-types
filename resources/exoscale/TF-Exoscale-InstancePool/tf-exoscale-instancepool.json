@@ -1,0 +1,177 @@
+{
+    "typeName": "TF::Exoscale::InstancePool",
+    "description": "Provides an Exoscale Instance Pool resource. This can be used to create, modify, and delete Instance Pools.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/exoscale/TF-Exoscale-InstancePool/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AffinityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [Anti-Affinity Group][r-affinity] IDs (at creation time only)."
+        },
+        "DeployTargetId": {
+            "type": "string",
+            "description": "A Deploy Target ID."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the Instance Pool."
+        },
+        "DiskSize": {
+            "type": "number",
+            "description": "The managed Compute instances disk size."
+        },
+        "ElasticIpIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [Elastic IP][eip-doc] IDs."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstancePrefix": {
+            "type": "string",
+            "description": "The string to add as prefix to managed Compute instances name (default `pool`)."
+        },
+        "Ipv6": {
+            "type": "boolean"
+        },
+        "KeyPair": {
+            "type": "string",
+            "description": "The name of the [SSH key pair][sshkeypair] to install when creating Compute instances."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Instance Pool."
+        },
+        "NetworkIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [Private Network][privnet-doc] IDs."
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of [Security Group][r-security_group] IDs (at creation time only)."
+        },
+        "ServiceOffering": {
+            "type": "string",
+            "description": "The managed Compute instances [size][size], e.g. `tiny`, `small`, `medium`, `large` etc."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The number of Compute instance members the Instance Pool manages."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TemplateId": {
+            "type": "string",
+            "description": "The ID of the instance [template][template] to use when creating Compute instances. Usage of the [`compute_template`][d-compute_template] data source is recommended."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "A [cloud-init][cloudinit] configuration to apply when creating Compute instances. Whenever possible don't base64-encode neither gzip it yourself, as this will be automatically taken care of on your behalf by the provider."
+        },
+        "VirtualMachines": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The name of the [zone][zone] to deploy the Instance Pool into."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServiceOffering",
+        "Size",
+        "TemplateId",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

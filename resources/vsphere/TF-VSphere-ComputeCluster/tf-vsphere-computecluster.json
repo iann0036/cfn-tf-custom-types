@@ -1,0 +1,338 @@
+{
+    "typeName": "TF::VSphere::ComputeCluster",
+    "description": "-> **A note on the naming of this resource:** VMware refers to clusters of\nhosts in the UI and documentation as _clusters_, _HA clusters_, or _DRS\nclusters_. All of these refer to the same kind of resource (with the latter two\nreferring to specific features of clustering). In Terraform, we use\n`vsphere_compute_cluster` to differentiate host clusters from _datastore\nclusters_, which are clusters of datastores that can be used to distribute load\nand ensure fault tolerance via distribution of virtual machines. Datastore\nclusters can also be managed through Terraform, via the\n[`vsphere_datastore_cluster` resource][docs-r-vsphere-datastore-cluster].\n\n[docs-r-vsphere-datastore-cluster]: /docs/providers/vsphere/r/datastore_cluster.html\n\nThe `vsphere_compute_cluster` resource can be used to create and manage\nclusters of hosts allowing for resource control of compute resources, load\nbalancing through DRS, and high availability through vSphere HA.\n\nFor more information on vSphere clusters and DRS, see [this\npage][r...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vsphere/TF-VSphere-ComputeCluster/docs/README.md",
+    "definitions": {
+        "CustomAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DrsAdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HaAdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VsanDiskGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cache": {
+                    "type": "string"
+                },
+                "Storage": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomAttributesDefinition"
+            },
+            "description": "A map of custom attribute ids to attribute\nvalue strings to set for the datastore cluster. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
+        },
+        "DatacenterId": {
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe datacenter to create the cluster in. Forces a new resource if changed."
+        },
+        "DpmAutomationLevel": {
+            "type": "string"
+        },
+        "DpmEnabled": {
+            "type": "boolean"
+        },
+        "DpmThreshold": {
+            "type": "number"
+        },
+        "DrsAdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DrsAdvancedOptionsDefinition"
+            }
+        },
+        "DrsAutomationLevel": {
+            "type": "string"
+        },
+        "DrsEnablePredictiveDrs": {
+            "type": "boolean"
+        },
+        "DrsEnableVmOverrides": {
+            "type": "boolean"
+        },
+        "DrsEnabled": {
+            "type": "boolean"
+        },
+        "DrsMigrationThreshold": {
+            "type": "number"
+        },
+        "Folder": {
+            "type": "string",
+            "description": "The relative path to a folder to put this cluster in.\nThis is a path relative to the datacenter you are deploying the cluster to.\nExample: for the `dc1` datacenter, and a provided `folder` of `foo/bar`,\nTerraform will place a cluster named `terraform-compute-cluster-test` in a\nhost folder located at `/dc1/host/foo/bar`, with the final inventory path\nbeing `/dc1/host/foo/bar/terraform-datastore-cluster-test`."
+        },
+        "ForceEvacuateOnDestroy": {
+            "type": "boolean"
+        },
+        "HaAdmissionControlFailoverHostSystemIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HaAdmissionControlHostFailureTolerance": {
+            "type": "number"
+        },
+        "HaAdmissionControlPerformanceTolerance": {
+            "type": "number"
+        },
+        "HaAdmissionControlPolicy": {
+            "type": "string"
+        },
+        "HaAdmissionControlResourcePercentageAutoCompute": {
+            "type": "boolean"
+        },
+        "HaAdmissionControlResourcePercentageCpu": {
+            "type": "number"
+        },
+        "HaAdmissionControlResourcePercentageMemory": {
+            "type": "number"
+        },
+        "HaAdmissionControlSlotPolicyExplicitCpu": {
+            "type": "number"
+        },
+        "HaAdmissionControlSlotPolicyExplicitMemory": {
+            "type": "number"
+        },
+        "HaAdmissionControlSlotPolicyUseExplicitSize": {
+            "type": "boolean"
+        },
+        "HaAdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HaAdvancedOptionsDefinition"
+            }
+        },
+        "HaDatastoreApdRecoveryAction": {
+            "type": "string"
+        },
+        "HaDatastoreApdResponse": {
+            "type": "string"
+        },
+        "HaDatastoreApdResponseDelay": {
+            "type": "number"
+        },
+        "HaDatastorePdlResponse": {
+            "type": "string"
+        },
+        "HaEnabled": {
+            "type": "boolean"
+        },
+        "HaHeartbeatDatastoreIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HaHeartbeatDatastorePolicy": {
+            "type": "string"
+        },
+        "HaHostIsolationResponse": {
+            "type": "string"
+        },
+        "HaHostMonitoring": {
+            "type": "string"
+        },
+        "HaVmComponentProtection": {
+            "type": "string"
+        },
+        "HaVmDependencyRestartCondition": {
+            "type": "string"
+        },
+        "HaVmFailureInterval": {
+            "type": "number"
+        },
+        "HaVmMaximumFailureWindow": {
+            "type": "number"
+        },
+        "HaVmMaximumResets": {
+            "type": "number"
+        },
+        "HaVmMinimumUptime": {
+            "type": "number"
+        },
+        "HaVmMonitoring": {
+            "type": "string"
+        },
+        "HaVmRestartAdditionalDelay": {
+            "type": "number"
+        },
+        "HaVmRestartPriority": {
+            "type": "string"
+        },
+        "HaVmRestartTimeout": {
+            "type": "number"
+        },
+        "HostClusterExitTimeout": {
+            "type": "number"
+        },
+        "HostManaged": {
+            "type": "boolean"
+        },
+        "HostSystemIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the cluster."
+        },
+        "ProactiveHaAutomationLevel": {
+            "type": "string"
+        },
+        "ProactiveHaEnabled": {
+            "type": "boolean"
+        },
+        "ProactiveHaModerateRemediation": {
+            "type": "string"
+        },
+        "ProactiveHaProviderIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ProactiveHaSevereRemediation": {
+            "type": "string"
+        },
+        "ResourcePoolId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
+        },
+        "VsanEnabled": {
+            "type": "boolean"
+        },
+        "VsanDiskGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VsanDiskGroupDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatacenterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ResourcePoolId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

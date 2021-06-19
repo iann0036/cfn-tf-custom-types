@@ -1,0 +1,341 @@
+{
+    "typeName": "TF::OCI::DatabaseCloudVmCluster",
+    "description": "This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.\n\nCreates a cloud VM cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-DatabaseCloudVmCluster/docs/README.md",
+    "definitions": {
+        "DefinedTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "FreeformTagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "IormConfigCacheDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbName": {
+                    "type": "string"
+                },
+                "FlashCacheLimit": {
+                    "type": "string"
+                },
+                "Share": {
+                    "type": "number"
+                }
+            }
+        },
+        "IormConfigCacheDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbPlans": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IormConfigCacheDefinition"
+                    }
+                },
+                "LifecycleDetails": {
+                    "type": "string"
+                },
+                "Objective": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "BackupNetworkNsgIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems."
+        },
+        "BackupSubnetId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster."
+        },
+        "CloudExadataInfrastructureId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource."
+        },
+        "ClusterName": {
+            "type": "string",
+            "description": "The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive."
+        },
+        "CompartmentId": {
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
+        },
+        "CpuCoreCount": {
+            "type": "number",
+            "description": "(Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:\n* Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.\n* Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.\n* Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.\n* Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.\n* Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.\n* Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.\n* Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368."
+        },
+        "CreateAsync": {
+            "type": "boolean"
+        },
+        "DataStoragePercentage": {
+            "type": "number",
+            "description": "The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage."
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DefinedTagsDefinition"
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
+        },
+        "DiskRedundancy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only."
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FreeformTagsDefinition"
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "GiVersion": {
+            "type": "string",
+            "description": "A valid Oracle Grid Infrastructure (GI) software version."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IormConfigCache": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IormConfigCacheDefinition2"
+            }
+        },
+        "IsLocalBackupEnabled": {
+            "type": "boolean",
+            "description": "If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster."
+        },
+        "IsSparseDiskgroupEnabled": {
+            "type": "boolean",
+            "description": "If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created."
+        },
+        "LastUpdateHistoryEntryId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string",
+            "description": "(Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "ListenerPort": {
+            "type": "string"
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "NsgIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**\n* Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty."
+        },
+        "ScanDnsName": {
+            "type": "string"
+        },
+        "ScanDnsRecordId": {
+            "type": "string"
+        },
+        "ScanIpIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "SshPublicKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "(Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster."
+        },
+        "State": {
+            "type": "string"
+        },
+        "StorageSizeInGbs": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster."
+        },
+        "SystemVersion": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeZone": {
+            "type": "string",
+            "description": "The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm)."
+        },
+        "VipIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackupSubnetId",
+        "CloudExadataInfrastructureId",
+        "CompartmentId",
+        "CpuCoreCount",
+        "DisplayName",
+        "GiVersion",
+        "Hostname",
+        "SshPublicKeys",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityDomain",
+        "/properties/DiskRedundancy",
+        "/properties/Id",
+        "/properties/IormConfigCache",
+        "/properties/LastUpdateHistoryEntryId",
+        "/properties/LifecycleDetails",
+        "/properties/ListenerPort",
+        "/properties/NodeCount",
+        "/properties/ScanDnsName",
+        "/properties/ScanDnsRecordId",
+        "/properties/ScanIpIds",
+        "/properties/Shape",
+        "/properties/State",
+        "/properties/StorageSizeInGbs",
+        "/properties/SystemVersion",
+        "/properties/TimeCreated",
+        "/properties/VipIds",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

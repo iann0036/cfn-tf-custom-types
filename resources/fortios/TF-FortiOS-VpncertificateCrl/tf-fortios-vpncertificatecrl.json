@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::FortiOS::VpncertificateCrl",
+    "description": "Certificate Revocation List as a PEM file.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpncertificateCrl/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Crl": {
+            "type": "string",
+            "description": "Certificate Revocation List as a PEM file."
+        },
+        "HttpUrl": {
+            "type": "string",
+            "description": "HTTP server URL for CRL auto-update."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdated": {
+            "type": "number",
+            "description": "Time at which CRL was last updated."
+        },
+        "LdapPassword": {
+            "type": "string",
+            "description": "LDAP server user password."
+        },
+        "LdapServer": {
+            "type": "string",
+            "description": "LDAP server name for CRL auto-update."
+        },
+        "LdapUsername": {
+            "type": "string",
+            "description": "LDAP server user name."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Range": {
+            "type": "string",
+            "description": "Either global or VDOM IP address range for the certificate. Valid values: `global`, `vdom`."
+        },
+        "ScepCert": {
+            "type": "string",
+            "description": "Local certificate for SCEP communication for CRL auto-update."
+        },
+        "ScepUrl": {
+            "type": "string",
+            "description": "SCEP server URL for CRL auto-update."
+        },
+        "Source": {
+            "type": "string",
+            "description": "Certificate source type."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP address for communications to a HTTP or SCEP CA server."
+        },
+        "UpdateInterval": {
+            "type": "number",
+            "description": "Time in seconds before the FortiGate checks for an updated CRL. Set to 0 to update only when it expires."
+        },
+        "UpdateVdom": {
+            "type": "string",
+            "description": "VDOM for CRL update."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/LdapPassword"
+    ]
+}

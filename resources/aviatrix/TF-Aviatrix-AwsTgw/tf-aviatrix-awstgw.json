@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::Aviatrix::AwsTgw",
+    "description": "The **aviatrix_aws_tgw** resource allows the creation and management of Aviatrix-created AWS TGWs.\n\n~> **NOTE:** If you are planning to attach VPCs to the **aviatrix_aws_tgw** resource and anticipate updating it often and/or using advanced options such as customized route advertisement, we highly recommend managing those VPCs outside this resource by setting `manage_vpc_attachment` to false and using the **aviatrix_aws_tgw_vpc_attachment** resource instead of the in-line `attached_vpc {}` block.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-AwsTgw/docs/README.md",
+    "definitions": {
+        "SecurityDomainsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AviatrixFirewall": {
+                    "type": "boolean"
+                },
+                "ConnectedDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NativeEgress": {
+                    "type": "boolean"
+                },
+                "NativeFirewall": {
+                    "type": "boolean"
+                },
+                "SecurityDomainName": {
+                    "type": "string"
+                },
+                "AttachedVpc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AttachedVpcDefinition"
+                    }
+                }
+            },
+            "required": [
+                "SecurityDomainName"
+            ]
+        },
+        "AttachedVpcDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomizedRouteAdvertisement": {
+                    "type": "string"
+                },
+                "CustomizedRoutes": {
+                    "type": "string"
+                },
+                "DisableLocalRoutePropagation": {
+                    "type": "boolean"
+                },
+                "RouteTables": {
+                    "type": "string"
+                },
+                "Subnets": {
+                    "type": "string"
+                },
+                "VpcAccountName": {
+                    "type": "string"
+                },
+                "VpcId": {
+                    "type": "string"
+                },
+                "VpcRegion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VpcAccountName",
+                "VpcId",
+                "VpcRegion"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AttachedAviatrixTransitGateway": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AwsSideAsNumber": {
+            "type": "string"
+        },
+        "Cidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CloudType": {
+            "type": "number"
+        },
+        "EnableMulticast": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageSecurityDomain": {
+            "type": "boolean"
+        },
+        "ManageTransitGatewayAttachment": {
+            "type": "boolean"
+        },
+        "ManageVpcAttachment": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "TgwId": {
+            "type": "string"
+        },
+        "TgwName": {
+            "type": "string"
+        },
+        "SecurityDomains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecurityDomainsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountName",
+        "AwsSideAsNumber",
+        "Region",
+        "TgwName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TgwId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

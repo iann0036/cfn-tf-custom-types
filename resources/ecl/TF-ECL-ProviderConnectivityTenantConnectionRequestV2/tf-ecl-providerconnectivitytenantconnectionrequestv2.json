@@ -1,0 +1,115 @@
+{
+    "typeName": "TF::ECL::ProviderConnectivityTenantConnectionRequestV2",
+    "description": "Manages a Provider Connectivity v2 Tenant Connection Request resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-ProviderConnectivityTenantConnectionRequestV2/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApprovalRequestId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of tenant_connection_request."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of tenant_connection_request."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "Network unique id."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "tenant_connection_request tags."
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "TenantIdOther": {
+            "type": "string",
+            "description": "The owner tenant of network."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkId",
+        "TenantIdOther"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApprovalRequestId",
+        "/properties/Id",
+        "/properties/Status",
+        "/properties/TenantId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

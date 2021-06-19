@@ -1,0 +1,401 @@
+{
+    "typeName": "TF::AzureRM::MssqlVirtualMachine",
+    "description": "Manages a Microsoft SQL Virtual Machine",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-MssqlVirtualMachine/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AutoBackupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionEnabled": {
+                    "type": "boolean",
+                    "description": "Enable or disable encryption for backups. Defaults to `false`."
+                },
+                "EncryptionPassword": {
+                    "type": "string",
+                    "description": "Encryption password to use. Must be specified when encryption is enabled."
+                },
+                "RetentionPeriodInDays": {
+                    "type": "number",
+                    "description": "Retention period of backups, in days. Valid values are from `1` to `30`."
+                },
+                "StorageAccountAccessKey": {
+                    "type": "string",
+                    "description": "Access key for the storage account where backups will be kept."
+                },
+                "StorageBlobEndpoint": {
+                    "type": "string",
+                    "description": "Blob endpoint for the storage account where backups will be kept."
+                },
+                "SystemDatabasesBackupEnabled": {
+                    "type": "boolean",
+                    "description": "Include or exclude system databases from auto backup. Defaults to `false`."
+                },
+                "ManualSchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManualScheduleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "RetentionPeriodInDays",
+                "StorageAccountAccessKey",
+                "StorageBlobEndpoint"
+            ]
+        },
+        "AutoPatchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string",
+                    "description": "The day of week to apply the patch on."
+                },
+                "MaintenanceWindowDurationInMinutes": {
+                    "type": "number",
+                    "description": "The size of the Maintenance Window in minutes."
+                },
+                "MaintenanceWindowStartingHour": {
+                    "type": "number",
+                    "description": "The Hour, in the Virtual Machine Time-Zone when the patching maintenance window should begin."
+                }
+            },
+            "required": [
+                "DayOfWeek",
+                "MaintenanceWindowDurationInMinutes",
+                "MaintenanceWindowStartingHour"
+            ]
+        },
+        "KeyVaultCredentialDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyVaultUrl": {
+                    "type": "string",
+                    "description": "The azure Key Vault url. Changing this forces a new resource to be created."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The credential name."
+                },
+                "ServicePrincipalName": {
+                    "type": "string",
+                    "description": "The service principal name to access key vault. Changing this forces a new resource to be created."
+                },
+                "ServicePrincipalSecret": {
+                    "type": "string",
+                    "description": "The service principal name secret to access key vault. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "KeyVaultUrl",
+                "Name",
+                "ServicePrincipalName",
+                "ServicePrincipalSecret"
+            ]
+        },
+        "StorageConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskType": {
+                    "type": "string",
+                    "description": "The type of disk configuration to apply to the SQL Server. Valid values include `NEW`, `EXTEND`, or `ADD`."
+                },
+                "StorageWorkloadType": {
+                    "type": "string",
+                    "description": "The type of storage workload. Valid values include `GENERAL`, `OLTP`, or `DW`."
+                },
+                "DataSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "LogSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogSettingsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "TempDbSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TempDbSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "DiskType",
+                "StorageWorkloadType"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManualScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FullBackupFrequency": {
+                    "type": "string",
+                    "description": "Frequency of full backups. Valid values include `Daily` or `Weekly`. Required when `backup_schedule_automated` is false."
+                },
+                "FullBackupStartHour": {
+                    "type": "number",
+                    "description": "Start hour of a given day during which full backups can take place. Valid values are from `0` to `23`. Required when `backup_schedule_automated` is false."
+                },
+                "FullBackupWindowInHours": {
+                    "type": "number",
+                    "description": "Duration of the time window of a given day during which full backups can take place, in hours. Valid values are between `1` and `23`. Required when `backup_schedule_automated` is false."
+                },
+                "LogBackupFrequencyInMinutes": {
+                    "type": "number",
+                    "description": "Frequency of log backups, in minutes. Valid values are from `5` to `60`. Required when `backup_schedule_automated` is false."
+                }
+            },
+            "required": [
+                "FullBackupFrequency",
+                "FullBackupStartHour",
+                "FullBackupWindowInHours",
+                "LogBackupFrequencyInMinutes"
+            ]
+        },
+        "DataSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultFilePath": {
+                    "type": "string"
+                },
+                "Luns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "DefaultFilePath",
+                "Luns"
+            ]
+        },
+        "LogSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultFilePath": {
+                    "type": "string"
+                },
+                "Luns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "DefaultFilePath",
+                "Luns"
+            ]
+        },
+        "TempDbSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultFilePath": {
+                    "type": "string"
+                },
+                "Luns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "DefaultFilePath",
+                "Luns"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RServicesEnabled": {
+            "type": "boolean",
+            "description": "Should R Services be enabled?."
+        },
+        "SqlConnectivityPort": {
+            "type": "number",
+            "description": "The SQL Server port. Defaults to `1433`."
+        },
+        "SqlConnectivityType": {
+            "type": "string",
+            "description": "The connectivity type used for this SQL Server. Defaults to `PRIVATE`."
+        },
+        "SqlConnectivityUpdatePassword": {
+            "type": "string",
+            "description": "The SQL Server sysadmin login password."
+        },
+        "SqlConnectivityUpdateUsername": {
+            "type": "string",
+            "description": "The SQL Server sysadmin login to create."
+        },
+        "SqlLicenseType": {
+            "type": "string",
+            "description": "The SQL Server license type. Possible values are `AHUB` (Azure Hybrid Benefit) and `PAYG` (Pay-As-You-Go). Changing this forces a new resource to be created."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "VirtualMachineId": {
+            "type": "string",
+            "description": "The ID of the Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "AutoBackup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoBackupDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutoPatching": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoPatchingDefinition"
+            },
+            "maxItems": 1
+        },
+        "KeyVaultCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyVaultCredentialDefinition"
+            },
+            "maxItems": 1
+        },
+        "StorageConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SqlLicenseType",
+        "VirtualMachineId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SqlConnectivityUpdatePassword",
+        "/properties/SqlConnectivityUpdateUsername",
+        "/definitions/AutoBackupDefinition/EncryptionPassword",
+        "/definitions/KeyVaultCredentialDefinition/KeyVaultUrl",
+        "/definitions/KeyVaultCredentialDefinition/ServicePrincipalName",
+        "/definitions/KeyVaultCredentialDefinition/ServicePrincipalSecret"
+    ]
+}

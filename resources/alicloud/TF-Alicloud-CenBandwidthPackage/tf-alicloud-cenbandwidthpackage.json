@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Alicloud::CenBandwidthPackage",
+    "description": "Provides a CEN bandwidth package resource. The CEN bandwidth package is an abstracted object that includes an interconnection bandwidth and interconnection areas. To buy a bandwidth package, you must specify the areas to connect. An area consists of one or more Alibaba Cloud regions. The areas in CEN include Mainland China, Asia Pacific, North America, and Europe.\n\nFor information about CEN and how to use it, see [Manage bandwidth packages](https://www.alibabacloud.com/help/doc-detail/65982.htm).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CenBandwidthPackage/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "number",
+            "description": "The bandwidth in Mbps of the bandwidth package. Cannot be less than 2Mbps."
+        },
+        "CenBandwidthPackageName": {
+            "type": "string"
+        },
+        "ChargeType": {
+            "type": "string",
+            "description": "The billing method. Valid value: PostPaid | PrePaid. Default to PostPaid. If set to PrePaid, the bandwidth package can't be deleted before expired time."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the bandwidth package. Default to null."
+        },
+        "ExpiredTime": {
+            "type": "string"
+        },
+        "GeographicRegionAId": {
+            "type": "string"
+        },
+        "GeographicRegionBId": {
+            "type": "string"
+        },
+        "GeographicRegionIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of the two areas to connect. Valid value: China | North-America | Asia-Pacific | Europe | Middle-East | Australia."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the bandwidth package. Defaults to null."
+        },
+        "PaymentType": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number",
+            "description": "The purchase period in month. Valid value: 1, 2, 3, 6, 12. Default to 1."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bandwidth"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExpiredTime",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

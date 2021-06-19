@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::AzureRM::LighthouseDefinition",
+    "description": "Manages a [Lighthouse](https://docs.microsoft.com/en-us/azure/lighthouse) Definition.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-LighthouseDefinition/docs/README.md",
+    "definitions": {
+        "AuthorizationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DelegatedRoleDefinitionIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The set of role definition ids which define all the permissions that the principal id can assign."
+                },
+                "PrincipalDisplayName": {
+                    "type": "string",
+                    "description": "The display name of the security group/service principal/user that would be assigned permissions to the projected subscription."
+                },
+                "PrincipalId": {
+                    "type": "string",
+                    "description": "Principal ID of the security group/service principal/user that would be assigned permissions to the projected subscription."
+                },
+                "RoleDefinitionId": {
+                    "type": "string",
+                    "description": "The role definition identifier. This role will define the permissions that are granted to the principal. This cannot be an `Owner` role."
+                }
+            },
+            "required": [
+                "PrincipalId",
+                "RoleDefinitionId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the Lighthouse Definition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LighthouseDefinitionId": {
+            "type": "string",
+            "description": "A unique UUID/GUID which identifies this lighthouse definition - one will be generated if not specified. Changing this forces a new resource to be created."
+        },
+        "ManagingTenantId": {
+            "type": "string",
+            "description": "The ID of the managing tenant."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Lighthouse Definition."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "The ID of the managed subscription."
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthorizationDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ManagingTenantId",
+        "Name",
+        "Scope"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

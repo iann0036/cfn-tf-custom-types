@@ -1,0 +1,913 @@
+{
+    "typeName": "TF::AzureRM::WindowsVirtualMachineScaleSet",
+    "description": "Manages a Windows Virtual Machine Scale Set.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-WindowsVirtualMachineScaleSet/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdditionalCapabilitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UltraSsdEnabled": {
+                    "type": "boolean",
+                    "description": "Should the capacity to enable Data Disks of the `UltraSSD_LRS` storage account type be supported on this Virtual Machine Scale Set? Defaults to `false`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        },
+        "AdditionalUnattendContentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string",
+                    "description": "The XML formatted content that is added to the unattend.xml file for the specified path and component. Changing this forces a new resource to be created."
+                },
+                "Setting": {
+                    "type": "string",
+                    "description": "The name of the setting to which the content applies. Possible values are `AutoLogon` and `FirstLogonCommands`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Content",
+                "Setting"
+            ]
+        },
+        "AutomaticInstanceRepairDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should the automatic instance repair be enabled on this Virtual Machine Scale Set?."
+                },
+                "GracePeriod": {
+                    "type": "string",
+                    "description": "Amount of time (in minutes, between 30 and 90, defaults to 30 minutes) for which automatic repairs will be delayed. The grace period starts right after the VM is found unhealthy. The time duration should be specified in ISO 8601 format."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "AutomaticOsUpgradePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableAutomaticRollback": {
+                    "type": "boolean",
+                    "description": "Should automatic rollbacks be disabled?."
+                },
+                "EnableAutomaticOsUpgrade": {
+                    "type": "boolean",
+                    "description": "Should OS Upgrades automatically be applied to Scale Set instances in a rolling fashion when a newer version of the OS Image becomes available?."
+                }
+            },
+            "required": [
+                "DisableAutomaticRollback",
+                "EnableAutomaticOsUpgrade"
+            ]
+        },
+        "BootDiagnosticsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageAccountUri": {
+                    "type": "string",
+                    "description": "The Primary/Secondary Endpoint for the Azure Storage Account which should be used to store Boot Diagnostics, including Console Output and Screenshots from the Hypervisor."
+                }
+            },
+            "required": []
+        },
+        "DataDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string",
+                    "description": "The type of Caching which should be used for this Data Disk. Possible values are `None`, `ReadOnly` and `ReadWrite`."
+                },
+                "CreateOption": {
+                    "type": "string",
+                    "description": "The create option which should be used for this Data Disk. Possible values are `Empty` and `FromImage`. Defaults to `Empty`. (`FromImage` should only be used if the source image includes data disks)."
+                },
+                "DiskEncryptionSetId": {
+                    "type": "string",
+                    "description": "The ID of the Disk Encryption Set which should be used to encrypt this Data Disk."
+                },
+                "DiskIopsReadWrite": {
+                    "type": "number",
+                    "description": "Specifies the Read-Write IOPS for this Data Disk. Only settable for UltraSSD disks."
+                },
+                "DiskMbpsReadWrite": {
+                    "type": "number",
+                    "description": "Specifies the bandwidth in MB per second for this Data Disk. Only settable for UltraSSD disks."
+                },
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "The size of the Data Disk which should be created."
+                },
+                "Lun": {
+                    "type": "number",
+                    "description": "The Logical Unit Number of the Data Disk, which must be unique within the Virtual Machine."
+                },
+                "StorageAccountType": {
+                    "type": "string",
+                    "description": "The Type of Storage Account which should back this Data Disk. Possible values include `Standard_LRS`, `StandardSSD_LRS`, `Premium_LRS` and `UltraSSD_LRS`."
+                },
+                "WriteAcceleratorEnabled": {
+                    "type": "boolean",
+                    "description": "Should Write Accelerator be enabled for this Data Disk? Defaults to `false`."
+                }
+            },
+            "required": [
+                "Caching",
+                "DiskSizeGb",
+                "Lun",
+                "StorageAccountType"
+            ]
+        },
+        "ExtensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoUpgradeMinorVersion": {
+                    "type": "boolean",
+                    "description": "Should the latest version of the Extension be used at Deployment Time, if one is available? This won't auto-update the extension on existing installation. Defaults to `true`."
+                },
+                "ForceUpdateTag": {
+                    "type": "string",
+                    "description": "A value which, when different to the previous value can be used to force-run the Extension even if the Extension Configuration hasn't changed."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The name for the Virtual Machine Scale Set Extension."
+                },
+                "ProtectedSettings": {
+                    "type": "string",
+                    "description": "A JSON String which specifies Sensitive Settings (such as Passwords) for the Extension."
+                },
+                "ProvisionAfterExtensions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "An ordered list of Extension names which this should be provisioned after."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the Publisher of the Extension."
+                },
+                "Settings": {
+                    "type": "string",
+                    "description": "A JSON String which specifies Settings for the Extension."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Specifies the Type of the Extension."
+                },
+                "TypeHandlerVersion": {
+                    "type": "string",
+                    "description": "Specifies the version of the extension to use, available versions can be found using the Azure CLI."
+                }
+            },
+            "required": [
+                "Name",
+                "Publisher",
+                "Type",
+                "TypeHandlerVersion"
+            ]
+        },
+        "IdentityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of User Managed Identity ID's which should be assigned to the Windows Virtual Machine Scale Set."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "The Type of IP Tag, such as `FirstPartyUsage`."
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "NetworkInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of IP Addresses of DNS Servers which should be assigned to the Network Interface."
+                },
+                "EnableAcceleratedNetworking": {
+                    "type": "boolean",
+                    "description": "Does this Network Interface support Accelerated Networking? Defaults to `false`."
+                },
+                "EnableIpForwarding": {
+                    "type": "boolean",
+                    "description": "Does this Network Interface support IP Forwarding? Defaults to `false`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The Name which should be used for this Network Interface. Changing this forces a new resource to be created."
+                },
+                "NetworkSecurityGroupId": {
+                    "type": "string",
+                    "description": "The ID of a Network Security Group which should be assigned to this Network Interface."
+                },
+                "Primary": {
+                    "type": "boolean",
+                    "description": "Is this the Primary IP Configuration?."
+                },
+                "IpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpConfigurationDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "OsDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string",
+                    "description": "The Type of Caching which should be used for the Internal OS Disk. Possible values are `None`, `ReadOnly` and `ReadWrite`."
+                },
+                "DiskEncryptionSetId": {
+                    "type": "string",
+                    "description": "The ID of the Disk Encryption Set which should be used to encrypt this OS Disk."
+                },
+                "DiskSizeGb": {
+                    "type": "number",
+                    "description": "The Size of the Internal OS Disk in GB, if you wish to vary from the size used in the image this Virtual Machine Scale Set is sourced from."
+                },
+                "StorageAccountType": {
+                    "type": "string",
+                    "description": "The Type of Storage Account which should back this the Internal OS Disk. Possible values include `Standard_LRS`, `StandardSSD_LRS` and `Premium_LRS`."
+                },
+                "WriteAcceleratorEnabled": {
+                    "type": "boolean",
+                    "description": "Should Write Accelerator be Enabled for this OS Disk? Defaults to `false`."
+                },
+                "DiffDiskSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiffDiskSettingsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Caching",
+                "StorageAccountType"
+            ]
+        },
+        "PlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Specifies the name of the image from the marketplace. Changing this forces a new resource to be created."
+                },
+                "Product": {
+                    "type": "string",
+                    "description": "Specifies the product of the image from the marketplace. Changing this forces a new resource to be created."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the publisher of the image. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Name",
+                "Product",
+                "Publisher"
+            ]
+        },
+        "RollingUpgradePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxBatchInstancePercent": {
+                    "type": "number",
+                    "description": "The maximum percent of total virtual machine instances that will be upgraded simultaneously by the rolling upgrade in one batch. As this is a maximum, unhealthy instances in previous or future batches can cause the percentage of instances in a batch to decrease to ensure higher reliability."
+                },
+                "MaxUnhealthyInstancePercent": {
+                    "type": "number",
+                    "description": "The maximum percentage of the total virtual machine instances in the scale set that can be simultaneously unhealthy, either as a result of being upgraded, or by being found in an unhealthy state by the virtual machine health checks before the rolling upgrade aborts. This constraint will be checked prior to starting any batch."
+                },
+                "MaxUnhealthyUpgradedInstancePercent": {
+                    "type": "number",
+                    "description": "The maximum percentage of upgraded virtual machine instances that can be found to be in an unhealthy state. This check will happen after each batch is upgraded. If this percentage is ever exceeded, the rolling update aborts."
+                },
+                "PauseTimeBetweenBatches": {
+                    "type": "string",
+                    "description": "The wait time between completing the update for all virtual machines in one batch and starting the next batch. The time duration should be specified in ISO 8601 format."
+                }
+            },
+            "required": [
+                "MaxBatchInstancePercent",
+                "MaxUnhealthyInstancePercent",
+                "MaxUnhealthyUpgradedInstancePercent",
+                "PauseTimeBetweenBatches"
+            ]
+        },
+        "SecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyVaultId": {
+                    "type": "string",
+                    "description": "The ID of the Key Vault from which all Secrets should be sourced."
+                },
+                "Certificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CertificateDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "KeyVaultId"
+            ]
+        },
+        "SourceImageReferenceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string",
+                    "description": "Specifies the offer of the image used to create the virtual machines."
+                },
+                "Publisher": {
+                    "type": "string",
+                    "description": "Specifies the publisher of the image used to create the virtual machines."
+                },
+                "Sku": {
+                    "type": "string",
+                    "description": "Specifies the SKU of the image used to create the virtual machines."
+                },
+                "Version": {
+                    "type": "string",
+                    "description": "Specifies the version of the image used to create the virtual machines."
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku",
+                "Version"
+            ]
+        },
+        "TerminateNotificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean",
+                    "description": "Should the terminate notification be enabled on this Virtual Machine Scale Set? Defaults to `false`."
+                },
+                "Timeout": {
+                    "type": "string",
+                    "description": "Length of time (in minutes, between 5 and 15) a notification to be sent to the VM on the instance metadata server till the VM gets deleted. The time duration should be specified in ISO 8601 format."
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WinrmListenerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string",
+                    "description": "The Secret URL of a Key Vault Certificate, which must be specified when `protocol` is set to `Https`."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The Protocol of the WinRM Listener. Possible values are `Http` and `Https`."
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "IpConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationGatewayBackendAddressPoolIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ApplicationSecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancerBackendAddressPoolIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancerInboundNatRulesIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "PublicIpAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpAddressDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DiffDiskSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Option": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Option"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Store": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Store",
+                "Url"
+            ]
+        },
+        "PublicIpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainNameLabel": {
+                    "type": "string",
+                    "description": "The Prefix which should be used for the Domain Name Label for each Virtual Machine Instance. Azure concatenates the Domain Name Label and Virtual Machine Index to create a unique Domain Name Label for each Virtual Machine."
+                },
+                "IdleTimeoutInMinutes": {
+                    "type": "number",
+                    "description": "The Idle Timeout in Minutes for the Public IP Address. Possible values are in the range `4` to `32`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "The Name of the Public IP Address Configuration."
+                },
+                "PublicIpPrefixId": {
+                    "type": "string",
+                    "description": "The ID of the Public IP Address Prefix from where Public IP Addresses should be allocated. Changing this forces a new resource to be created."
+                },
+                "IpTag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpTagDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "IpTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tag": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Tag",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminPassword": {
+            "type": "string",
+            "description": "The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created."
+        },
+        "AdminUsername": {
+            "type": "string",
+            "description": "The username of the local administrator on each Virtual Machine Scale Set instance. Changing this forces a new resource to be created."
+        },
+        "ComputerNamePrefix": {
+            "type": "string",
+            "description": "The prefix which should be used for the name of the Virtual Machines in this Scale Set. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name_prefix`, then you must specify `computer_name_prefix`."
+        },
+        "CustomData": {
+            "type": "string",
+            "description": "The Base64-Encoded Custom Data which should be used for this Virtual Machine Scale Set."
+        },
+        "DoNotRunExtensionsOnOverprovisionedMachines": {
+            "type": "boolean",
+            "description": "Should Virtual Machine Extensions be run on Overprovisioned Virtual Machines in the Scale Set? Defaults to `false`."
+        },
+        "EnableAutomaticUpdates": {
+            "type": "boolean",
+            "description": "Are automatic updates enabled for this Virtual Machine? Defaults to `true`."
+        },
+        "EncryptionAtHostEnabled": {
+            "type": "boolean",
+            "description": "Should all of the disks (including the temp disk) attached to this Virtual Machine be encrypted by enabling Encryption at Host?."
+        },
+        "EvictionPolicy": {
+            "type": "string",
+            "description": "The Policy which should be used Virtual Machines are Evicted from the Scale Set. Changing this forces a new resource to be created."
+        },
+        "ExtensionsTimeBudget": {
+            "type": "string",
+            "description": "Specifies the duration allocated for all extensions to start. The time duration should be between `15` minutes and `120` minutes (inclusive) and should be specified in ISO 8601 format. Defaults to `90` minutes (`PT1H30M`)."
+        },
+        "HealthProbeId": {
+            "type": "string",
+            "description": "The ID of a Load Balancer Probe which should be used to determine the health of an instance. This is Required and can only be specified when `upgrade_mode` is set to `Automatic` or `Rolling`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instances": {
+            "type": "number",
+            "description": "The number of Virtual Machines in the Scale Set."
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "Specifies the type of on-premise license (also known as [Azure Hybrid Use Benefit](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing)) which should be used for this Virtual Machine Scale Set. Possible values are `None`, `Windows_Client` and `Windows_Server`."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The Azure location where the Windows Virtual Machine Scale Set should exist. Changing this forces a new resource to be created."
+        },
+        "MaxBidPrice": {
+            "type": "number",
+            "description": "The maximum price you're willing to pay for each Virtual Machine in this Scale Set, in US Dollars; which must be greater than the current spot price. If this bid price falls below the current spot price the Virtual Machines in the Scale Set will be evicted using the `eviction_policy`. Defaults to `-1`, which means that each Virtual Machine in the Scale Set should not be evicted for price reasons."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Windows Virtual Machine Scale Set. Changing this forces a new resource to be created."
+        },
+        "Overprovision": {
+            "type": "boolean",
+            "description": "Should Azure over-provision Virtual Machines in this Scale Set? This means that multiple Virtual Machines will be provisioned and Azure will keep the instances which become available first - which improves provisioning success rates and improves deployment time. You're not billed for these over-provisioned VM's and they don't count towards the Subscription Quota. Defaults to `true`."
+        },
+        "PlatformFaultDomainCount": {
+            "type": "number",
+            "description": "Specifies the number of fault domains that are used by this Linux Virtual Machine Scale Set. Changing this forces a new resource to be created."
+        },
+        "Priority": {
+            "type": "string",
+            "description": "The Priority of this Virtual Machine Scale Set. Possible values are `Regular` and `Spot`. Defaults to `Regular`. Changing this value forces a new resource."
+        },
+        "ProvisionVmAgent": {
+            "type": "boolean",
+            "description": "Should the Azure VM Agent be provisioned on each Virtual Machine in the Scale Set? Defaults to `true`. Changing this value forces a new resource to be created."
+        },
+        "ProximityPlacementGroupId": {
+            "type": "string",
+            "description": "The ID of the Proximity Placement Group in which the Virtual Machine Scale Set should be assigned to. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the Resource Group in which the Windows Virtual Machine Scale Set should be exist. Changing this forces a new resource to be created."
+        },
+        "ScaleInPolicy": {
+            "type": "string",
+            "description": "The scale-in policy rule that decides which virtual machines are chosen for removal when a Virtual Machine Scale Set is scaled in. Possible values for the scale-in policy rules are `Default`, `NewestVM` and `OldestVM`, defaults to `Default`. For more information about scale in policy, please [refer to this doc](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-scale-in-policy)."
+        },
+        "SinglePlacementGroup": {
+            "type": "boolean",
+            "description": "Should this Virtual Machine Scale Set be limited to a Single Placement Group, which means the number of instances will be capped at 100 Virtual Machines. Defaults to `true`."
+        },
+        "Sku": {
+            "type": "string",
+            "description": "The Virtual Machine SKU for the Scale Set, such as `Standard_F2`."
+        },
+        "SourceImageId": {
+            "type": "string",
+            "description": "The ID of an Image which each Virtual Machine in this Scale Set should be based on."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags which should be assigned to this Virtual Machine Scale Set."
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Specifies the time zone of the virtual machine, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/)."
+        },
+        "UniqueId": {
+            "type": "string"
+        },
+        "UpgradeMode": {
+            "type": "string",
+            "description": "Specifies how Upgrades (e.g. changing the Image/SKU) should be performed to Virtual Machine Instances. Possible values are `Automatic`, `Manual` and `Rolling`. Defaults to `Manual`."
+        },
+        "ZoneBalance": {
+            "type": "boolean",
+            "description": "Should the Virtual Machines in this Scale Set be strictly evenly distributed across Availability Zones? Defaults to `false`. Changing this forces a new resource to be created."
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of Availability Zones in which the Virtual Machines in this Scale Set should be created in. Changing this forces a new resource to be created."
+        },
+        "AdditionalCapabilities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalCapabilitiesDefinition"
+            },
+            "maxItems": 1
+        },
+        "AdditionalUnattendContent": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalUnattendContentDefinition"
+            }
+        },
+        "AutomaticInstanceRepair": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomaticInstanceRepairDefinition"
+            },
+            "maxItems": 1
+        },
+        "AutomaticOsUpgradePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomaticOsUpgradePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "BootDiagnostics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootDiagnosticsDefinition"
+            },
+            "maxItems": 1
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDiskDefinition"
+            }
+        },
+        "Extension": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExtensionDefinition"
+            }
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityDefinition"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaceDefinition"
+            },
+            "minItems": 1
+        },
+        "OsDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsDiskDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Plan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "RollingUpgradePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RollingUpgradePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Secret": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecretDefinition"
+            }
+        },
+        "SourceImageReference": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceImageReferenceDefinition"
+            },
+            "maxItems": 1
+        },
+        "TerminateNotification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TerminateNotificationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WinrmListener": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WinrmListenerDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdminPassword",
+        "AdminUsername",
+        "Instances",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Sku"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/UniqueId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AdminPassword",
+        "/properties/CustomData",
+        "/definitions/AdditionalUnattendContentDefinition/Content",
+        "/definitions/ExtensionDefinition/ProtectedSettings"
+    ]
+}

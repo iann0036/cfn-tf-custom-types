@@ -1,0 +1,222 @@
+{
+    "typeName": "TF::FortiOS::VpnOcvpn",
+    "description": "Configure Overlay Controller VPN settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnOcvpn/docs/README.md",
+    "definitions": {
+        "ForticlientAccessDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Psksecret": {
+                    "type": "string",
+                    "description": "Pre-shared secret for FortiClient PSK authentication (ASCII string or hexadecimal encoded with a leading 0x)."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient to access OCVPN networks. Valid values: `enable`, `disable`."
+                },
+                "AuthGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthGroupsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OverlaysDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OverlayName": {
+                    "type": "string",
+                    "description": "Overlay name."
+                }
+            },
+            "required": []
+        },
+        "WanInterfaceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Interface name."
+                }
+            },
+            "required": []
+        },
+        "AuthGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthGroup": {
+                    "type": "string",
+                    "description": "Authentication user group for FortiClient access."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Group name."
+                },
+                "Overlays": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OverlaysDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "LAN interface."
+                },
+                "Subnet": {
+                    "type": "string",
+                    "description": "IPv4 address and subnet mask."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "Subnet type. Valid values: `subnet`, `interface`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoDiscovery": {
+            "type": "string",
+            "description": "Enable/disable auto-discovery shortcuts. Valid values: `enable`, `disable`."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Eap": {
+            "type": "string",
+            "description": "Enable/disable EAP client authentication. Valid values: `enable`, `disable`."
+        },
+        "EapUsers": {
+            "type": "string",
+            "description": "EAP authentication user group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAllocationBlock": {
+            "type": "string",
+            "description": "Class B subnet reserved for private IP address assignment."
+        },
+        "Multipath": {
+            "type": "string",
+            "description": "Enable/disable multipath redundancy. Valid values: `enable`, `disable`."
+        },
+        "Nat": {
+            "type": "string",
+            "description": "Enable/disable inter-overlay source NAT. Valid values: `enable`, `disable`."
+        },
+        "PollInterval": {
+            "type": "number",
+            "description": "Overlay Controller VPN polling interval."
+        },
+        "Role": {
+            "type": "string",
+            "description": "Set device role. Valid values: `spoke`, `primary-hub`, `secondary-hub`."
+        },
+        "Sdwan": {
+            "type": "string",
+            "description": "Enable/disable adding OCVPN tunnels to SDWAN. Valid values: `enable`, `disable`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable Overlay Controller cloud assisted VPN. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "ForticlientAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForticlientAccessDefinition"
+            },
+            "maxItems": 1
+        },
+        "Overlays": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OverlaysDefinition"
+            }
+        },
+        "WanInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WanInterfaceDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ForticlientAccessDefinition/Psksecret"
+    ]
+}

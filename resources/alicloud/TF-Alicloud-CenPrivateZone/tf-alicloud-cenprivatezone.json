@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::Alicloud::CenPrivateZone",
+    "description": "This topic describes how to configure PrivateZone access. \nPrivateZone is a VPC-based resolution and management service for private domain names. \nAfter you set a PrivateZone access, the Cloud Connect Network (CCN) and Virtual Border Router (VBR) attached to a CEN instance can access the PrivateZone service through CEN.\n\nFor information about CEN Private Zone and how to use it, see [Manage CEN Private Zone](https://www.alibabacloud.com/help/en/doc-detail/106693.htm).\n\n-> **NOTE:** Available in 1.83.0+",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/alicloud/TF-Alicloud-CenPrivateZone/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessRegionId": {
+            "type": "string",
+            "description": "The access region. The access region is the region of the cloud resource that accesses the PrivateZone service through CEN."
+        },
+        "CenId": {
+            "type": "string",
+            "description": "The ID of the CEN instance."
+        },
+        "HostRegionId": {
+            "type": "string",
+            "description": "The service region. The service region is the target region of the PrivateZone service to be accessed through CEN."
+        },
+        "HostVpcId": {
+            "type": "string",
+            "description": "The VPC that belongs to the service region."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessRegionId",
+        "CenId",
+        "HostRegionId",
+        "HostVpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

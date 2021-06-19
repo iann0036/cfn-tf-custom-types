@@ -1,0 +1,663 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTraps",
+    "description": "`thunder_snmp_server_enable_traps` Provides details about thunder snmp server enable traps",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTraps/docs/README.md",
+    "definitions": {
+        "GslbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "Group": {
+                    "type": "number"
+                },
+                "ServiceIp": {
+                    "type": "number"
+                },
+                "Site": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Zone": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "LsnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "FixedNatPortMappingFileChange": {
+                    "type": "number"
+                },
+                "MaxIpportThreshold": {
+                    "type": "number"
+                },
+                "MaxPortThreshold": {
+                    "type": "number"
+                },
+                "PerIpPortUsageThreshold": {
+                    "type": "number"
+                },
+                "TotalPortUsageThreshold": {
+                    "type": "number"
+                },
+                "TrafficExceeded": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrunkPortThreshold": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RoutingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bgp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BgpDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Isis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IsisDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ospf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OspfDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "SlbDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "ApplicationBufferLimit": {
+                    "type": "number"
+                },
+                "BwRateLimitExceed": {
+                    "type": "number"
+                },
+                "BwRateLimitResume": {
+                    "type": "number"
+                },
+                "GatewayDown": {
+                    "type": "number"
+                },
+                "GatewayUp": {
+                    "type": "number"
+                },
+                "ServerConnLimit": {
+                    "type": "number"
+                },
+                "ServerConnResume": {
+                    "type": "number"
+                },
+                "ServerDisabled": {
+                    "type": "number"
+                },
+                "ServerDown": {
+                    "type": "number"
+                },
+                "ServerSelectionFailure": {
+                    "type": "number"
+                },
+                "ServerUp": {
+                    "type": "number"
+                },
+                "ServiceConnLimit": {
+                    "type": "number"
+                },
+                "ServiceConnResume": {
+                    "type": "number"
+                },
+                "ServiceDown": {
+                    "type": "number"
+                },
+                "ServiceGroupDown": {
+                    "type": "number"
+                },
+                "ServiceGroupMemberDown": {
+                    "type": "number"
+                },
+                "ServiceGroupMemberUp": {
+                    "type": "number"
+                },
+                "ServiceGroupUp": {
+                    "type": "number"
+                },
+                "ServiceUp": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VipConnlimit": {
+                    "type": "number"
+                },
+                "VipConnratelimit": {
+                    "type": "number"
+                },
+                "VipDown": {
+                    "type": "number"
+                },
+                "VipPortConnlimit": {
+                    "type": "number"
+                },
+                "VipPortConnratelimit": {
+                    "type": "number"
+                },
+                "VipPortDown": {
+                    "type": "number"
+                },
+                "VipPortUp": {
+                    "type": "number"
+                },
+                "VipUp": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SlbChangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "ConnectionResourceEvent": {
+                    "type": "number"
+                },
+                "ResourceUsageWarning": {
+                    "type": "number"
+                },
+                "Server": {
+                    "type": "number"
+                },
+                "ServerPort": {
+                    "type": "number"
+                },
+                "SslCertChange": {
+                    "type": "number"
+                },
+                "SslCertExpire": {
+                    "type": "number"
+                },
+                "SystemThreshold": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Vip": {
+                    "type": "number"
+                },
+                "VipPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SnmpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "Linkdown": {
+                    "type": "number"
+                },
+                "Linkup": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SslDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ServerCertificateError": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SystemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "All": {
+                    "type": "number"
+                },
+                "ControlCpuHigh": {
+                    "type": "number"
+                },
+                "DataCpuHigh": {
+                    "type": "number"
+                },
+                "Fan": {
+                    "type": "number"
+                },
+                "FileSysReadOnly": {
+                    "type": "number"
+                },
+                "HighDiskUse": {
+                    "type": "number"
+                },
+                "HighMemoryUse": {
+                    "type": "number"
+                },
+                "HighTemp": {
+                    "type": "number"
+                },
+                "LicenseManagement": {
+                    "type": "number"
+                },
+                "LowTemp": {
+                    "type": "number"
+                },
+                "PacketDrop": {
+                    "type": "number"
+                },
+                "Power": {
+                    "type": "number"
+                },
+                "PriDisk": {
+                    "type": "number"
+                },
+                "Restart": {
+                    "type": "number"
+                },
+                "SecDisk": {
+                    "type": "number"
+                },
+                "Shutdown": {
+                    "type": "number"
+                },
+                "SmpResourceEvent": {
+                    "type": "number"
+                },
+                "Start": {
+                    "type": "number"
+                },
+                "SyslogSeverityOne": {
+                    "type": "number"
+                },
+                "TacacsServerUpDown": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VcsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StateChange": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VrrpADefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "number"
+                },
+                "All": {
+                    "type": "number"
+                },
+                "Standby": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BgpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BgpBackwardTransNotification": {
+                    "type": "number"
+                },
+                "BgpEstablishedNotification": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IsisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsisAdjacencyChange": {
+                    "type": "number"
+                },
+                "IsisAreaMismatch": {
+                    "type": "number"
+                },
+                "IsisAttemptToExceedMaxSequence": {
+                    "type": "number"
+                },
+                "IsisAuthenticationFailure": {
+                    "type": "number"
+                },
+                "IsisAuthenticationTypeFailure": {
+                    "type": "number"
+                },
+                "IsisCorruptedLspDetected": {
+                    "type": "number"
+                },
+                "IsisDatabaseOverload": {
+                    "type": "number"
+                },
+                "IsisIdLenMismatch": {
+                    "type": "number"
+                },
+                "IsisLspTooLargeToPropagate": {
+                    "type": "number"
+                },
+                "IsisManualAddressDrops": {
+                    "type": "number"
+                },
+                "IsisMaxAreaAddressesMismatch": {
+                    "type": "number"
+                },
+                "IsisOriginatingLspBufferSizeMismatch": {
+                    "type": "number"
+                },
+                "IsisOwnLspPurge": {
+                    "type": "number"
+                },
+                "IsisProtocolsSupportedMismatch": {
+                    "type": "number"
+                },
+                "IsisRejectedAdjacency": {
+                    "type": "number"
+                },
+                "IsisSequenceNumberSkip": {
+                    "type": "number"
+                },
+                "IsisVersionSkew": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OspfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OspfIfAuthFailure": {
+                    "type": "number"
+                },
+                "OspfIfConfigError": {
+                    "type": "number"
+                },
+                "OspfIfRxBadPacket": {
+                    "type": "number"
+                },
+                "OspfIfStateChange": {
+                    "type": "number"
+                },
+                "OspfLsdbApproachingOverflow": {
+                    "type": "number"
+                },
+                "OspfLsdbOverflow": {
+                    "type": "number"
+                },
+                "OspfMaxAgeLsa": {
+                    "type": "number"
+                },
+                "OspfNbrStateChange": {
+                    "type": "number"
+                },
+                "OspfOriginateLsa": {
+                    "type": "number"
+                },
+                "OspfTxRetransmit": {
+                    "type": "number"
+                },
+                "OspfVirtIfAuthFailure": {
+                    "type": "number"
+                },
+                "OspfVirtIfConfigError": {
+                    "type": "number"
+                },
+                "OspfVirtIfRxBadPacket": {
+                    "type": "number"
+                },
+                "OspfVirtIfStateChange": {
+                    "type": "number"
+                },
+                "OspfVirtIfTxRetransmit": {
+                    "type": "number"
+                },
+                "OspfVirtNbrStateChange": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Enable all SLB traps."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lldp": {
+            "type": "number",
+            "description": "Enable lldp traps."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Gslb": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GslbDefinition"
+            },
+            "maxItems": 1
+        },
+        "Lsn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LsnDefinition"
+            },
+            "maxItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            },
+            "maxItems": 1
+        },
+        "Routing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingDefinition"
+            },
+            "maxItems": 1
+        },
+        "Slb": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlbDefinition"
+            },
+            "maxItems": 1
+        },
+        "SlbChange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SlbChangeDefinition"
+            },
+            "maxItems": 1
+        },
+        "Snmp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnmpDefinition"
+            },
+            "maxItems": 1
+        },
+        "Ssl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslDefinition"
+            },
+            "maxItems": 1
+        },
+        "System": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SystemDefinition"
+            },
+            "maxItems": 1
+        },
+        "Vcs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VcsDefinition"
+            },
+            "maxItems": 1
+        },
+        "VrrpA": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VrrpADefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

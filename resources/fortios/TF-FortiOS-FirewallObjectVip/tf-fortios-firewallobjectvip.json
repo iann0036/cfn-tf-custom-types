@@ -1,0 +1,103 @@
+{
+    "typeName": "TF::FortiOS::FirewallObjectVip",
+    "description": "Provides a resource to configure firewall virtual IPs (VIPs) of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_firewall_vip`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallObjectVip/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comment."
+        },
+        "Extintf": {
+            "type": "string",
+            "description": "Interface connected to the source network that receives the packets that will be forwarded to the destination network."
+        },
+        "Extip": {
+            "type": "string",
+            "description": "IP address or address range on the external interface that you want to map to an address or address range on the\ndestination network."
+        },
+        "Extport": {
+            "type": "string",
+            "description": "Incoming port number range that you want to map to a port number range on the destination network."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mappedip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "IP address or address range on the destination network to which the external IP address is mapped."
+        },
+        "Mappedport": {
+            "type": "string",
+            "description": "Port number range on the destination network to which the external port number range is mapped."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual IP name."
+        },
+        "Portforward": {
+            "type": "string",
+            "description": "Enable/disable port forwarding."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Protocol to use when forwarding packets."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Extip",
+        "Mappedip",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

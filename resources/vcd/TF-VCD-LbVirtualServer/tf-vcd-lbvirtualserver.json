@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::VCD::LbVirtualServer",
+    "description": "Provides a vCloud Director edge gateway load balancer virtual server resource. Adds an edge gateway\ninternal or uplink interface as a virtual server. A virtual server has a public IP address and services all incoming client requests. \n\n~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge gateway (edge gateway must be advanced).\nThis depends on NSX version to work properly. Please refer to [VMware Product Interoperability Matrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) \nto check supported vCloud director and NSX for vSphere configurations.\n\n~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined in the NSX vSphere \nAPI Guide. The API supports NSX 6.2, 6.3, and 6.4.\n\nSupported in provider *v2.4+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-LbVirtualServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppProfileId": {
+            "type": "string",
+            "description": "Application profile ID to be associated with the virtual server."
+        },
+        "AppRuleIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of attached application rule IDs."
+        },
+        "ConnectionLimit": {
+            "type": "number",
+            "description": "Maximum concurrent connections that the virtual server can process."
+        },
+        "ConnectionRateLimit": {
+            "type": "number",
+            "description": "Maximum incoming new connection requests per second."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Virtual server description."
+        },
+        "EdgeGateway": {
+            "type": "string",
+            "description": "The name of the edge gateway on which the virtual server is to be\ncreated."
+        },
+        "EnableAcceleration": {
+            "type": "boolean",
+            "description": "Defines if the virtual server uses acceleration. Default\n`false`."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Defines if the virtual server is enabled. Default `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string",
+            "description": "Set the IP address that the load balancer listens on."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual server name."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
+        },
+        "Port": {
+            "type": "number",
+            "description": "The port number that the load balancer listens on."
+        },
+        "Protocol": {
+            "type": "string",
+            "description": "Select the protocol that the virtual server accepts. One of `tcp`, `udp`,\n`http`, or `https` **Note**: You must select the same protocol used by the selected\n**Application Profile**."
+        },
+        "ServerPoolId": {
+            "type": "string",
+            "description": "The server pool that the load balancer will use."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway",
+        "IpAddress",
+        "Name",
+        "Port",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,142 @@
+{
+    "typeName": "TF::CheckPoint::ManagementServiceSctp",
+    "description": "This resource allows you to execute Check Point Service Sctp.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementServiceSctp/docs/README.md",
+    "definitions": {
+        "AggressiveAgingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggressiveAging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AggressiveAgingDefinition"
+            },
+            "description": "Sets short (aggressive) timeouts for idle connections.aggressive_aging blocks are documented below."
+        },
+        "Color": {
+            "type": "string",
+            "description": "Color of the object. Should be one of existing colors."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "KeepConnectionsOpenAfterPolicyInstallation": {
+            "type": "boolean",
+            "description": "Keep connections open after policy has been installed even if they are not allowed under the new policy. This overrides the settings in the Connection Persistence page. If you change this property, the change will not affect open connections, but only future connections."
+        },
+        "MatchForAny": {
+            "type": "boolean",
+            "description": "Indicates whether this service is used when 'Any' is set as the rule's service and there are several service objects with the same source port and protocol."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Object name."
+        },
+        "Port": {
+            "type": "string",
+            "description": "Port number. To specify a port range add a hyphen between the lowest and the highest port numbers, for example 44-45."
+        },
+        "SessionTimeout": {
+            "type": "number",
+            "description": "Time (in seconds) before the session times out."
+        },
+        "SourcePort": {
+            "type": "string",
+            "description": "Source port number. To specify a port range add a hyphen between the lowest and the highest port numbers, for example 44-45."
+        },
+        "SyncConnectionsOnCluster": {
+            "type": "boolean",
+            "description": "Enables state-synchronized High Availability or Load Sharing on a ClusterXL or OPSEC-certified cluster."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of tag identifiers.tags blocks are documented below."
+        },
+        "UseDefaultSessionTimeout": {
+            "type": "boolean",
+            "description": "Use default virtual session timeout."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

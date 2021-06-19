@@ -1,0 +1,74 @@
+{
+    "typeName": "TF::HCloud::VolumeAttachment",
+    "description": "Provides a Hetzner Cloud Volume attachment to attach a Volume to a Hetzner Cloud Server. Deleting a Volume Attachment will detach the Volume from the Server.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/hcloud/TF-HCloud-VolumeAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Automount": {
+            "type": "boolean",
+            "description": "Automount the volume upon attaching it."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerId": {
+            "type": "number",
+            "description": "Server to attach the Volume to.\n- `automount` - (Optional, bool) Automount the volume upon attaching it."
+        },
+        "VolumeId": {
+            "type": "number",
+            "description": "ID of the Volume.\n- `server_id` - (Required, int) Server to attach the Volume to.\n- `automount` - (Optional, bool) Automount the volume upon attaching it."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServerId",
+        "VolumeId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

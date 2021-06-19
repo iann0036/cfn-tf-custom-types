@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::FortiOS::WebfilterOverride",
+    "description": "Configure FortiGuard Web Filter administrative overrides.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebfilterOverride/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Expires": {
+            "type": "string",
+            "description": "Override expiration date and time, from 5 minutes to 365 from now (format: yyyy/mm/dd hh:mm:ss)."
+        },
+        "Fosid": {
+            "type": "number",
+            "description": "Override rule ID."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Initiator": {
+            "type": "string",
+            "description": "Initiating user of override (read-only setting)."
+        },
+        "Ip": {
+            "type": "string",
+            "description": "IPv4 address which the override applies."
+        },
+        "Ip6": {
+            "type": "string",
+            "description": "IPv6 address which the override applies."
+        },
+        "NewProfile": {
+            "type": "string",
+            "description": "Name of the new web filter profile used by the override."
+        },
+        "OldProfile": {
+            "type": "string",
+            "description": "Name of the web filter profile which the override applies."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "Override either the specific user, user group, IPv4 address, or IPv6 address. Valid values: `user`, `user-group`, `ip`, `ip6`."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable override rule. Valid values: `enable`, `disable`."
+        },
+        "User": {
+            "type": "string",
+            "description": "Name of the user which the override applies."
+        },
+        "UserGroup": {
+            "type": "string",
+            "description": "Specify the user group for which the override applies."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Expires",
+        "NewProfile",
+        "OldProfile",
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

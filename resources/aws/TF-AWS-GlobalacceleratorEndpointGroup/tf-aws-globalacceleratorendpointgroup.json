@@ -1,0 +1,163 @@
+{
+    "typeName": "TF::AWS::GlobalacceleratorEndpointGroup",
+    "description": "Provides a Global Accelerator endpoint group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-GlobalacceleratorEndpointGroup/docs/README.md",
+    "definitions": {
+        "EndpointConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientIpPreservationEnabled": {
+                    "type": "boolean"
+                },
+                "EndpointId": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "PortOverrideDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointPort": {
+                    "type": "number"
+                },
+                "ListenerPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndpointPort",
+                "ListenerPort"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "EndpointGroupRegion": {
+            "type": "string"
+        },
+        "HealthCheckIntervalSeconds": {
+            "type": "number",
+            "description": "The time\u201410 seconds or 30 seconds\u2014between each health check for an endpoint. The default value is 30."
+        },
+        "HealthCheckPath": {
+            "type": "string",
+            "description": "If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (`/`). Terraform will only perform drift detection of its value when present in a configuration."
+        },
+        "HealthCheckPort": {
+            "type": "number",
+            "description": "The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.\nTerraform will only perform drift detection of its value when present in a configuration."
+        },
+        "HealthCheckProtocol": {
+            "type": "string",
+            "description": "The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerArn": {
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the listener."
+        },
+        "ThresholdCount": {
+            "type": "number",
+            "description": "The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3."
+        },
+        "TrafficDialPercentage": {
+            "type": "number",
+            "description": "The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. The default value is 100."
+        },
+        "EndpointConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointConfigurationDefinition"
+            }
+        },
+        "PortOverride": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PortOverrideDefinition"
+            },
+            "maxItems": 10
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ListenerArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

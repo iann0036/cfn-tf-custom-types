@@ -1,0 +1,148 @@
+{
+    "typeName": "TF::Okta::SwaApp",
+    "description": "CloudFormation equivalent of okta_swa_app",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-SwaApp/docs/README.md",
+    "definitions": {
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessibilityErrorRedirectUrl": {
+            "type": "string"
+        },
+        "AccessibilitySelfService": {
+            "type": "boolean"
+        },
+        "AutoSubmitToolbar": {
+            "type": "boolean"
+        },
+        "ButtonField": {
+            "type": "string"
+        },
+        "Groups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HideIos": {
+            "type": "boolean"
+        },
+        "HideWeb": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PasswordField": {
+            "type": "string"
+        },
+        "PreconfiguredApp": {
+            "type": "string"
+        },
+        "SignOnMode": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "UrlRegex": {
+            "type": "string"
+        },
+        "UserNameTemplate": {
+            "type": "string"
+        },
+        "UserNameTemplateSuffix": {
+            "type": "string"
+        },
+        "UserNameTemplateType": {
+            "type": "string"
+        },
+        "UsernameField": {
+            "type": "string"
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Label"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/SignOnMode"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

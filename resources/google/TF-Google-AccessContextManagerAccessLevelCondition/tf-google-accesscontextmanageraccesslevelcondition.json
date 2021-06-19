@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::Google::AccessContextManagerAccessLevelCondition",
+    "description": "Allows configuring a single access level condition to be appended to an access level's conditions.\nThis resource is intended to be used in cases where it is not possible to compile a full list\nof conditions to include in a `google_access_context_manager_access_level` resource,\nto enable them to be added separately.\n\n~> **Note:** If this resource is used alongside a `google_access_context_manager_access_level` resource,\nthe access level resource must have a `lifecycle` block with `ignore_changes = [basic[0].conditions]` so\nthey don't fight over which service accounts should be included.\n\n\nTo get more information about AccessLevelCondition, see:\n\n* [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels)\n* How-to Guides\n    * [Access Policy Quickstart](https://cloud.google.com/access-context-manager/docs/quickstart)\n\n~> **Warning:** If you are using User ADCs (Application Default Credentials) with this resource,\nyou must specify a `billing_proje...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-AccessContextManagerAccessLevelCondition/docs/README.md",
+    "definitions": {
+        "DevicePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedDeviceManagementLevels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedEncryptionStatuses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RequireAdminApproval": {
+                    "type": "boolean"
+                },
+                "RequireCorpOwned": {
+                    "type": "boolean"
+                },
+                "RequireScreenLock": {
+                    "type": "boolean"
+                },
+                "OsConstraints": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OsConstraintsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OsConstraintsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinimumVersion": {
+                    "type": "string"
+                },
+                "OsType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OsType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessLevel": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpSubnetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Members": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Negate": {
+            "type": "boolean"
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RequiredAccessLevels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DevicePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DevicePolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccessLevel"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

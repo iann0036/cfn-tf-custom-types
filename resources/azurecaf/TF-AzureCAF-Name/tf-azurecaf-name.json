@@ -1,0 +1,133 @@
+{
+    "typeName": "TF::AzureCAF::Name",
+    "description": "The resource azurecaf_name implements a set of methodologies to apply consistent resource naming using the default Microsoft Cloud Adoption Framework for Azure recommendations as per [naming-and-tagging](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging).\n\nthe azurecaf_name supersedes the previous azurecaf_naming_convention. This new resource provides more flexibility and will be updated on a regular basis as new Azure services are released.\n\nThe azurecaf_name resource allows you to:\n\n* Clean inputs to make sure they remain compliant with the allowed patterns for each Azure resource\n* Generate random characters to append at the end of the resource name\n* Handle prefix, suffixes (either manual or as per the Azure cloud adoption framework resource conventions)\n* Allow passthrough mode (simply validate the output)",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurecaf/TF-AzureCAF-Name/docs/README.md",
+    "definitions": {
+        "ResultsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CleanInput": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Passthrough": {
+            "type": "boolean"
+        },
+        "Prefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RandomLength": {
+            "type": "number"
+        },
+        "RandomSeed": {
+            "type": "number"
+        },
+        "ResourceType": {
+            "type": "string"
+        },
+        "ResourceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Result": {
+            "type": "string"
+        },
+        "Results": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResultsDefinition"
+            }
+        },
+        "Separator": {
+            "type": "string"
+        },
+        "Suffixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UseSlug": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Result",
+        "/properties/Results"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

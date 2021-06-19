@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::NewRelic::ApiAccessKey",
+    "description": "Use this resource to programmatically create and manage the following types of keys:\n- [User API keys](https://docs.newrelic.com/docs/apis/get-started/intro-apis/types-new-relic-api-keys#user-api-key)\n- License (or ingest) keys, including:\n    - General [license key](https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key) used for APM\n    - [Browser license key](https://docs.newrelic.com/docs/browser/new-relic-browser/configuration/copy-browser-monitoring-license-key-app-id)\n\nPlease visit the New Relic article ['Use NerdGraph to manage license keys and User API keys'](https://docs.newrelic.com/docs/apis/nerdgraph/examples/use-nerdgraph-manage-license-keys-user-keys)\nfor more information.\n\n-> **IMPORTANT!**\nPlease be very careful when updating existing `newrelic_api_access_key` resources as only `newrelic_api_access_key.name`\nand `newrelic_api_access_key.notes` are updatable. All other resource attributes will force a resource recreation which will\ninvalidate the previous API k...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-ApiAccessKey/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "number",
+            "description": "The New Relic account ID of the account you wish to create the API access key.\n- `key_type` - (Required) What type of API key to create. Valid options are `INGEST` or `USER`, case-sensitive.\n- `ingest_type` - (Optional) Required if `key_type = INGEST`. Valid options are `BROWSER` or `LICENSE`, case-sensitive.\n- `user_id` - (Optional) Required if `key_type = USER`. The New Relic user ID yous wish to create the API access key for in an account.\n- `name` - (Optional) The name of the key.\n- `notes` - (Optional) Any notes about this ingest key."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IngestType": {
+            "type": "string",
+            "description": "Required if `key_type = INGEST`. Valid options are `BROWSER` or `LICENSE`, case-sensitive.\n- `user_id` - (Optional) Required if `key_type = USER`. The New Relic user ID yous wish to create the API access key for in an account.\n- `name` - (Optional) The name of the key.\n- `notes` - (Optional) Any notes about this ingest key."
+        },
+        "Key": {
+            "type": "string"
+        },
+        "KeyType": {
+            "type": "string",
+            "description": "What type of API key to create. Valid options are `INGEST` or `USER`, case-sensitive.\n- `ingest_type` - (Optional) Required if `key_type = INGEST`. Valid options are `BROWSER` or `LICENSE`, case-sensitive.\n- `user_id` - (Optional) Required if `key_type = USER`. The New Relic user ID yous wish to create the API access key for in an account.\n- `name` - (Optional) The name of the key.\n- `notes` - (Optional) Any notes about this ingest key."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the key.\n- `notes` - (Optional) Any notes about this ingest key."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Any notes about this ingest key."
+        },
+        "UserId": {
+            "type": "number",
+            "description": "Required if `key_type = USER`. The New Relic user ID yous wish to create the API access key for in an account.\n- `name` - (Optional) The name of the key.\n- `notes` - (Optional) Any notes about this ingest key."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountId",
+        "KeyType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Key"
+    ]
+}

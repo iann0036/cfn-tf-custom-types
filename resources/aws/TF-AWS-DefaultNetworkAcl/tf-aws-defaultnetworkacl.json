@@ -1,0 +1,227 @@
+{
+    "typeName": "TF::AWS::DefaultNetworkAcl",
+    "description": "Provides a resource to manage a VPC's default network ACL. This resource can manage the default network ACL of the default or a non-default VPC.\n\n~> **NOTE:** This is an advanced resource with special caveats. Please read this document in its entirety before using this resource. The `aws_default_network_acl` behaves differently from normal resources. Terraform does not _create_ this resource but instead attempts to \"adopt\" it into management.\n\nEvery VPC has a default network ACL that can be managed but not destroyed. When Terraform first adopts the Default Network ACL, it **immediately removes all rules in the ACL**. It then proceeds to create any rules specified in the configuration. This step is required so that only the rules specified in the configuration are created.\n\nThis resource treats its inline rules as absolute; only the rules defined inline are created, and any additions/removals external to this resource will result in diffs being shown. For these reasons, this resource is incompatible with t...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DefaultNetworkAcl/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EgressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "FromPort": {
+                    "type": "number"
+                },
+                "IcmpCode": {
+                    "type": "number"
+                },
+                "IcmpType": {
+                    "type": "number"
+                },
+                "Ipv6CidrBlock": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RuleNo": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Action",
+                "FromPort",
+                "Protocol",
+                "RuleNo",
+                "ToPort"
+            ]
+        },
+        "IngressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CidrBlock": {
+                    "type": "string"
+                },
+                "FromPort": {
+                    "type": "number"
+                },
+                "IcmpCode": {
+                    "type": "number"
+                },
+                "IcmpType": {
+                    "type": "number"
+                },
+                "Ipv6CidrBlock": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RuleNo": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Action",
+                "FromPort",
+                "Protocol",
+                "RuleNo",
+                "ToPort"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DefaultNetworkAclId": {
+            "type": "string",
+            "description": "Network ACL ID to manage. This attribute is exported from `aws_vpc`, or manually found via the AWS Console."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of Subnet IDs to apply the ACL to. See the notes below on managing Subnets in the Default Network ACL."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Egress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EgressDefinition"
+            }
+        },
+        "Ingress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IngressDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultNetworkAclId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/OwnerId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

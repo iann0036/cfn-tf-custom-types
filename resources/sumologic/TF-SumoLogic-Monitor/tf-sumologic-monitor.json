@@ -1,0 +1,266 @@
+{
+    "typeName": "TF::SumoLogic::Monitor",
+    "description": "Provides the ability to create, read, delete, and update [Monitors][1].",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/sumologic/TF-SumoLogic-Monitor/docs/README.md",
+    "definitions": {
+        "PostRequestMapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "NotificationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RunForTriggerTypes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Notification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotificationDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "RunForTriggerTypes"
+            ]
+        },
+        "QueriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "RowId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query",
+                "RowId"
+            ]
+        },
+        "TriggersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DetectionMethod": {
+                    "type": "string"
+                },
+                "OccurrenceType": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "ThresholdType": {
+                    "type": "string"
+                },
+                "TimeRange": {
+                    "type": "string"
+                },
+                "TriggerSource": {
+                    "type": "string"
+                },
+                "TriggerType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NotificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "ConnectionId": {
+                    "type": "string"
+                },
+                "ConnectionType": {
+                    "type": "string"
+                },
+                "MessageBody": {
+                    "type": "string"
+                },
+                "PayloadOverride": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subject": {
+                    "type": "string"
+                },
+                "TimeZone": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CreatedBy": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GroupNotifications": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDisabled": {
+            "type": "boolean"
+        },
+        "IsLocked": {
+            "type": "boolean"
+        },
+        "IsMutable": {
+            "type": "boolean"
+        },
+        "IsSystem": {
+            "type": "boolean"
+        },
+        "ModifiedAt": {
+            "type": "string"
+        },
+        "ModifiedBy": {
+            "type": "string"
+        },
+        "MonitorType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ParentId": {
+            "type": "string"
+        },
+        "PostRequestMap": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PostRequestMapDefinition"
+            }
+        },
+        "Status": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationsDefinition"
+            }
+        },
+        "Queries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueriesDefinition"
+            }
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TriggersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MonitorType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

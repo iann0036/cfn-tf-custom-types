@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::OVH::CloudProjectKubeNodepool",
+    "description": "Creates a nodepool in a kubernetes managed cluster.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-CloudProjectKubeNodepool/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AntiAffinity": {
+            "type": "boolean",
+            "description": "should the pool use the anti-affinity feature. Default to `false`."
+        },
+        "Autoscale": {
+            "type": "boolean",
+            "description": "Enable auto-scaling for the pool. Default to `false`."
+        },
+        "AvailableNodes": {
+            "type": "number"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "CurrentNodes": {
+            "type": "number"
+        },
+        "DesiredNodes": {
+            "type": "number",
+            "description": "number of nodes to start."
+        },
+        "Flavor": {
+            "type": "string"
+        },
+        "FlavorName": {
+            "type": "string",
+            "description": "a valid OVH public cloud flavor ID in which the nodes will be start.\ncluster will be available. Ex.: \"b2-7\". Changing this value recreates the resource."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubeId": {
+            "type": "string",
+            "description": "The id of the managed kubernetes cluster."
+        },
+        "MaxNodes": {
+            "type": "number",
+            "description": "maximum number of nodes allowed in the pool.\nSetting `desired_nodes` over this value will raise an error."
+        },
+        "MinNodes": {
+            "type": "number",
+            "description": "minimum number of nodes allowed in the pool.\nSetting `desired_nodes` under this value will raise an error."
+        },
+        "MonthlyBilled": {
+            "type": "boolean",
+            "description": "should the nodes be billed on a monthly basis. Default to `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the nodepool.\nChanging this value recreates the resource."
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_CLOUD_PROJECT_SERVICE` environment variable is used."
+        },
+        "SizeStatus": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UpToDateNodes": {
+            "type": "number"
+        },
+        "UpdatedAt": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FlavorName",
+        "KubeId",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableNodes",
+        "/properties/CreatedAt",
+        "/properties/CurrentNodes",
+        "/properties/Flavor",
+        "/properties/Id",
+        "/properties/ProjectId",
+        "/properties/SizeStatus",
+        "/properties/Status",
+        "/properties/UpToDateNodes",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

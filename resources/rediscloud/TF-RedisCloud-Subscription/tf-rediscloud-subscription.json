@@ -1,0 +1,340 @@
+{
+    "typeName": "TF::RedisCloud::Subscription",
+    "description": "Creates a Subscription within your Redis Enterprise Cloud Account.\nThis resource is responsible for creating subscriptions and the databases within that subscription. \nThis allows Redis Enterprise Cloud to provision your databases in the most efficient way.\n\n~> **Note:** The subscription resource manages changes to its databases by identifying a databases through its name.  This means **database names cannot be changed**, as this resource has no other way of being able to identify the database and would lead to the database to be destroyed.\nDue to the limitations mentioned above, the differences shown by Terraform will be different from normal plan.\nWhen an argument has been changed on a nested database - for example changing the `memory_limit_in_gb` from 1 to 2, Terraform\nwill display the resource as being modified with the database as being removed, and a new one added. As the resource\nidentifies the database based on the name, the only change that would happen would be to update the database to increas...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/rediscloud/TF-RedisCloud-Subscription/docs/README.md",
+    "definitions": {
+        "AllowlistDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cidrs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of CIDR ranges that are allowed to access the databases associated with this subscription."
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of security groups that are allowed to access the databases associated with this subscription."
+                }
+            },
+            "required": []
+        },
+        "CloudProviderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudAccountId": {
+                    "type": "string",
+                    "description": "Cloud account identifier. Default: Redis Labs internal cloud account\n(using Cloud Account ID = 1 implies using Redis Labs internal cloud account). Note that a GCP subscription can be created\nonly with Redis Labs internal cloud account."
+                },
+                "Provider": {
+                    "type": "string",
+                    "description": "The cloud provider to use with the subscription, (either `AWS` or `GCP`). Default: \u2018AWS\u2019."
+                },
+                "Region": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RegionDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageItemSizeInBytes": {
+                    "type": "number",
+                    "description": "Relevant only to ram-and-flash clusters. Estimated average size (measured in bytes)\nof the items stored in the database. Default: 1000."
+                },
+                "ClientSslCertificate": {
+                    "type": "string",
+                    "description": "SSL certificate to authenticate user connections."
+                },
+                "DataPersistence": {
+                    "type": "string",
+                    "description": "Rate of database data persistence (in persistent storage). Default: \u2018none\u2019."
+                },
+                "ExternalEndpointForOssClusterApi": {
+                    "type": "boolean",
+                    "description": "Should use the external endpoint for open-source (OSS) Cluster API.\nCan only be enabled if OSS Cluster API support is enabled. Default: 'false'."
+                },
+                "HashingPolicy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of regular expression rules to shard the database by. See\n[the documentation on clustering](https://docs.redislabs.com/latest/rc/concepts/clustering/) for more information on the\nhashing policy. This cannot be set when `support_oss_cluster_api` is set to true."
+                },
+                "MemoryLimitInGb": {
+                    "type": "number",
+                    "description": "Maximum memory usage for this specific database."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "A meaningful name to identify the database. Caution should be taken when changing this value - see\nthe top of the page for more information."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Password used to access the database."
+                },
+                "PeriodicBackupPath": {
+                    "type": "string",
+                    "description": "Path that will be used to store database backup files."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "The protocol that will be used to access the database, (either \u2018redis\u2019 or 'memcached\u2019) Default: \u2018redis\u2019."
+                },
+                "ReplicaOf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of Redis database URIs, in the format `redis://user:password@host:port`, that this\ndatabase will be a replica of. If the URI provided is Redis Labs Cloud instance, only host and port should be provided.\nCannot be enabled when `support_oss_cluster_api` is enabled."
+                },
+                "Replication": {
+                    "type": "boolean",
+                    "description": "Databases replication. Default: \u2018true\u2019."
+                },
+                "SourceIps": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of CIDR addresses to allow access to the database. Defaults to allowing traffic."
+                },
+                "SupportOssClusterApi": {
+                    "type": "boolean",
+                    "description": "Support Redis open-source (OSS) Cluster API. Default: \u2018false\u2019."
+                },
+                "ThroughputMeasurementBy": {
+                    "type": "string",
+                    "description": "Throughput measurement method, (either \u2018number-of-shards\u2019 or \u2018operations-per-second\u2019)."
+                },
+                "ThroughputMeasurementValue": {
+                    "type": "number",
+                    "description": "Throughput value (as applies to selected measurement method)."
+                },
+                "Alert": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AlertDefinition"
+                    }
+                },
+                "Module": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ModuleDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "MemoryLimitInGb",
+                "Name",
+                "Password",
+                "Protocol",
+                "ThroughputMeasurementBy",
+                "ThroughputMeasurementValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RegionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MultipleAvailabilityZones": {
+                    "type": "boolean",
+                    "description": "Support deployment on multiple availability zones within the selected region. Default: \u2018false\u2019."
+                },
+                "NetworkingDeploymentCidr": {
+                    "type": "string",
+                    "description": "Deployment CIDR mask."
+                },
+                "NetworkingVpcId": {
+                    "type": "string",
+                    "description": "Either an existing VPC Id (already exists in the specific region) or create a new VPC\n(if no VPC is specified). VPC Identifier must be in a valid format (for example: \u2018vpc-0125be68a4625884ad\u2019) and existing\nwithin the hosting account."
+                },
+                "PreferredAvailabilityZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Availability zones deployment preferences (for the selected provider & region)."
+                },
+                "Region": {
+                    "type": "string",
+                    "description": "Deployment region as defined by cloud provider."
+                }
+            },
+            "required": [
+                "NetworkingDeploymentCidr",
+                "PreferredAvailabilityZones",
+                "Region"
+            ]
+        },
+        "AlertDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "ModuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MemoryStorage": {
+            "type": "string",
+            "description": "Memory storage preference: either \u2018ram\u2019 or a combination of 'ram-and-flash\u2019. Default: \u2018ram\u2019."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A meaningful name to identify the subscription."
+        },
+        "PaymentMethodId": {
+            "type": "string",
+            "description": "A valid payment method pre-defined in the current account. This value is __Optional__ for AWS/GCP Marketplace accounts, but __Required__ for all other account types."
+        },
+        "PersistentStorageEncryption": {
+            "type": "boolean",
+            "description": "Encrypt data stored in persistent storage. Required for a GCP subscription. Default: \u2018true\u2019."
+        },
+        "Allowlist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AllowlistDefinition"
+            },
+            "maxItems": 1
+        },
+        "CloudProvider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudProviderDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Database": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DatabaseDefinition"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/DatabaseDefinition/Password"
+    ]
+}

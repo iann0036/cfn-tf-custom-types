@@ -1,0 +1,593 @@
+{
+    "typeName": "TF::OraclePaaS::JavaServiceInstance",
+    "description": "The `oraclepaas_java_service_instance` resource creates and manages an Oracle Java Cloud Service instance on Oracle Cloud Infrastructure and Oracle Cloud Infrastructure Classic.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oraclepaas/TF-OraclePaaS-JavaServiceInstance/docs/README.md",
+    "definitions": {
+        "BackupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoGenerate": {
+                    "type": "boolean"
+                },
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "UseOauthForStorage": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "LoadBalancerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoadBalancingPolicy": {
+                    "type": "string"
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OracleTrafficDirectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HighAvailability": {
+                    "type": "boolean"
+                },
+                "IpReservations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancingPolicy": {
+                    "type": "string"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "Admin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdminDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Listener": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ListenerDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Shape"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WeblogicServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackupVolumeSize": {
+                    "type": "string"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ConnectString": {
+                    "type": "string"
+                },
+                "IpReservations": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MiddlewareVolumeSize": {
+                    "type": "string"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "UpperStackProductName": {
+                    "type": "string"
+                },
+                "Admin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdminDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "ApplicationDatabase": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ApplicationDatabaseDefinition"
+                    }
+                },
+                "Cluster": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClusterDefinition"
+                    }
+                },
+                "Database": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DatabaseDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Domain": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DomainDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "ManagedServers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagedServersDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "NodeManager": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeManagerDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Shape"
+            ]
+        },
+        "AdminDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "SecuredPort": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "ListenerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "PrivilegedPort": {
+                    "type": "number"
+                },
+                "PrivilegedSecuredPort": {
+                    "type": "number"
+                },
+                "SecuredPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ApplicationDatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Password",
+                "Username"
+            ]
+        },
+        "ClusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PathPrefixes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServerCount": {
+                    "type": "number"
+                },
+                "ServersPerNode": {
+                    "type": "number"
+                },
+                "Shape": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "DatabaseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "DomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PartitionCount": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ManagedServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InitialHeapSize": {
+                    "type": "number"
+                },
+                "InitialPermanentGeneration": {
+                    "type": "number"
+                },
+                "JvmArgs": {
+                    "type": "string"
+                },
+                "MaxHeapSize": {
+                    "type": "number"
+                },
+                "MaxPermanentGeneration": {
+                    "type": "number"
+                },
+                "OverwriteJvmArgs": {
+                    "type": "boolean"
+                },
+                "ServerCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NodeManagerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PortsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentPort": {
+                    "type": "number"
+                },
+                "DeploymentChannelPort": {
+                    "type": "number"
+                },
+                "PrivilegedContentPort": {
+                    "type": "number"
+                },
+                "PrivilegedSecuredContentPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssignPublicIp": {
+            "type": "boolean",
+            "description": "Flag that specifies whether to assign (true) or not assign (false) public IP addresses to the nodes in your service instance. The default is `true`, which means any node added during service instance provisioning, or later added as part of a scaling operation, will have a public IP address assigned to it. This attribute is only applicable when provisioning an Oracle Java Cloud Service instance in a region on Oracle Cloud Infrastructure Classic, and a custom IP network is specified in `ip_network`."
+        },
+        "AvailabilityDomain": {
+            "type": "string",
+            "description": "Name of a data center location in the Oracle Cloud Infrastructure region that is specified in region. This is\nonly available for OCI."
+        },
+        "BackupDestination": {
+            "type": "string",
+            "description": "Specifies whether to enable backups for this Oracle Java Cloud Service instance.\nValid values are `BOTH` or `NONE`. Defaults to `BOTH`."
+        },
+        "BringYourOwnLicense": {
+            "type": "boolean",
+            "description": "Flag that specifies whether to apply an existing on-premises license for Oracle WebLogic Server (true) to the new\nOracle Java Cloud Service instance you are provisioning. The default value is `false`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Provides additional on the java service instance."
+        },
+        "DesiredState": {
+            "type": "string",
+            "description": "Specifies the desired state of the service instance. Allowed values are `running` or `shutdown`.\nThe default is `running`."
+        },
+        "Edition": {
+            "type": "string",
+            "description": "The edition for the service instance. Possible values are `SE`, `EE`, or `SUITE`."
+        },
+        "EnableAdminConsole": {
+            "type": "boolean",
+            "description": "Flag that specifies whether to enable (true) or disable (false) the access\nrules that control external communication to the WebLogic Server Administration Console, Fusion Middleware Control,\nand Load Balancer Console."
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Flag that specifies whether you want to force the removal of the service instance even if the database\ninstance cannot be reached to delete the database schemas. Default value is `true`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpNetwork": {
+            "type": "string",
+            "description": "The three-part name of a custom IP network to attach this service instance to. For example: `/Compute-identity_domain/user/object`."
+        },
+        "Level": {
+            "type": "string",
+            "description": "Service level for the service instance. Possible values are `BASIC` or `PAAS`. Default\nvalue is `PAAS`."
+        },
+        "MeteringFrequency": {
+            "type": "string",
+            "description": "Billing unit. Possible values are `HOURLY` or `MONTHLY`. Default value is `HOURLY`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Service Instance."
+        },
+        "NotificationEmail": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "Name of the region where the Oracle Java Cloud Service instance is to be provisioned.\nThis attribute is only applicable to accounts where regions are supported. A region name must be specified if you\nwant to use ipReservations or ipNetwork."
+        },
+        "ServiceVersion": {
+            "type": "string",
+            "description": "Oracle WebLogic Server software version. Valid values are: `12cRelease213`, `12cRelease212`, `12cR3`, or `11gR1`."
+        },
+        "SnapshotName": {
+            "type": "string",
+            "description": "Name of the snapshot to clone from."
+        },
+        "SourceServiceName": {
+            "type": "string",
+            "description": "Name of the existing Oracle Java Cloud Service instance that has the snapshot from which you are creating a clone."
+        },
+        "SshPublicKey": {
+            "type": "string",
+            "description": "The ssh key to connect to the java service instance."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "A subdivision of a cloud network that is set up in the data center as specified in `availability_domain`.\nThis is only available for OCI."
+        },
+        "UseIdentityService": {
+            "type": "boolean",
+            "description": "Flag that specifies whether to use Oracle Identity Cloud Service (true) or the local WebLogic identity store\n(false) for user authentication and to maintain administrators, application users, groups and roles. The default\nvalue is false."
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackupsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LoadBalancer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerDefinition"
+            },
+            "maxItems": 1
+        },
+        "OracleTrafficDirector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OracleTrafficDirectorDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "WeblogicServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WeblogicServerDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Edition",
+        "Name",
+        "SshPublicKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/BackupsDefinition/CloudStoragePassword",
+        "/definitions/BackupsDefinition/CloudStorageUsername",
+        "/definitions/AdminDefinition/Password",
+        "/definitions/DatabaseDefinition/Password",
+        "/definitions/NodeManagerDefinition/Password",
+        "/definitions/NodeManagerDefinition/Username"
+    ]
+}

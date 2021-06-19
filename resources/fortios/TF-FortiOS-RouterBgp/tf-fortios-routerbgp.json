@@ -1,0 +1,1347 @@
+{
+    "typeName": "TF::FortiOS::RouterBgp",
+    "description": "Configure BGP.\n\n~> The provider supports the definition of Neighbor in Router Bgp `fortios_router_bgp`, and also allows the definition of separate Neighbor resources `fortios_routerbgp_neighbor`, but do not use a `fortios_router_bgp` with in-line Neighbor in conjunction with any `fortios_routerbgp_neighbor` resources, otherwise conflicts and overwrite will occur.\n\n~> The provider supports the definition of Network in Router Bgp `fortios_router_bgp`, and also allows the definition of separate Network resources `fortios_routerbgp_network`, but do not use a `fortios_router_bgp` with in-line Network in conjunction with any `fortios_routerbgp_network` resources, otherwise conflicts and overwrite will occur.\n\n~> The provider supports the definition of Network6 in Router Bgp `fortios_router_bgp`, and also allows the definition of separate Network6 resources `fortios_routerbgp_network6`, but do not use a `fortios_router_bgp` with in-line Network6 in conjunction with any `fortios_routerbgp_network6` resources, oth...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-RouterBgp/docs/README.md",
+    "definitions": {
+        "AdminDistanceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Distance": {
+                    "type": "number",
+                    "description": "Administrative distance to apply (1 - 255)."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "NeighbourPrefix": {
+                    "type": "string",
+                    "description": "Neighbor address prefix."
+                },
+                "RouteList": {
+                    "type": "string",
+                    "description": "Access list of routes to apply new distance to."
+                }
+            },
+            "required": []
+        },
+        "AggregateAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsSet": {
+                    "type": "string",
+                    "description": "Enable/disable generate AS set path information. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Aggregate prefix."
+                },
+                "SummaryOnly": {
+                    "type": "string",
+                    "description": "Enable/disable filter more specific routes from updates. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "AggregateAddress6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AsSet": {
+                    "type": "string",
+                    "description": "Enable/disable generate AS set path information. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Prefix6": {
+                    "type": "string",
+                    "description": "Aggregate IPv6 prefix."
+                },
+                "SummaryOnly": {
+                    "type": "string",
+                    "description": "Enable/disable filter more specific routes from updates. Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "ConfederationPeersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Peer": {
+                    "type": "string",
+                    "description": "Peer ID."
+                }
+            },
+            "required": []
+        },
+        "NeighborDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Activate": {
+                    "type": "string",
+                    "description": "Enable/disable address family IPv4 for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "Activate6": {
+                    "type": "string",
+                    "description": "Enable/disable address family IPv6 for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "AdditionalPath": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 additional-path capability. Valid values: `send`, `receive`, `both`, `disable`."
+                },
+                "AdditionalPath6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 additional-path capability. Valid values: `send`, `receive`, `both`, `disable`."
+                },
+                "AdvAdditionalPath": {
+                    "type": "number",
+                    "description": "Number of IPv4 additional paths that can be advertised to this neighbor."
+                },
+                "AdvAdditionalPath6": {
+                    "type": "number",
+                    "description": "Number of IPv6 additional paths that can be advertised to this neighbor."
+                },
+                "AdvertisementInterval": {
+                    "type": "number",
+                    "description": "Minimum interval (sec) between sending updates."
+                },
+                "AllowasIn": {
+                    "type": "number",
+                    "description": "IPv4 The maximum number of occurrence of my AS number allowed."
+                },
+                "AllowasIn6": {
+                    "type": "number",
+                    "description": "IPv6 The maximum number of occurrence of my AS number allowed."
+                },
+                "AllowasInEnable": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 Enable to allow my AS in AS path. Valid values: `enable`, `disable`."
+                },
+                "AllowasInEnable6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 Enable to allow my AS in AS path. Valid values: `enable`, `disable`."
+                },
+                "AsOverride": {
+                    "type": "string",
+                    "description": "Enable/disable replace peer AS with own AS for IPv4. Valid values: `enable`, `disable`."
+                },
+                "AsOverride6": {
+                    "type": "string",
+                    "description": "Enable/disable replace peer AS with own AS for IPv6. Valid values: `enable`, `disable`."
+                },
+                "AttributeUnchanged": {
+                    "type": "string",
+                    "description": "IPv4 List of attributes that should be unchanged. Valid values: `as-path`, `med`, `next-hop`."
+                },
+                "AttributeUnchanged6": {
+                    "type": "string",
+                    "description": "IPv6 List of attributes that should be unchanged. Valid values: `as-path`, `med`, `next-hop`."
+                },
+                "Bfd": {
+                    "type": "string",
+                    "description": "Enable/disable BFD for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDefaultOriginate": {
+                    "type": "string",
+                    "description": "Enable/disable advertise default IPv4 route to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDefaultOriginate6": {
+                    "type": "string",
+                    "description": "Enable/disable advertise default IPv6 route to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDynamic": {
+                    "type": "string",
+                    "description": "Enable/disable advertise dynamic capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityGracefulRestart": {
+                    "type": "string",
+                    "description": "Enable/disable advertise IPv4 graceful restart capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityGracefulRestart6": {
+                    "type": "string",
+                    "description": "Enable/disable advertise IPv6 graceful restart capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityOrf": {
+                    "type": "string",
+                    "description": "Accept/Send IPv4 ORF lists to/from this neighbor. Valid values: `none`, `receive`, `send`, `both`."
+                },
+                "CapabilityOrf6": {
+                    "type": "string",
+                    "description": "Accept/Send IPv6 ORF lists to/from this neighbor. Valid values: `none`, `receive`, `send`, `both`."
+                },
+                "CapabilityRouteRefresh": {
+                    "type": "string",
+                    "description": "Enable/disable advertise route refresh capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "ConnectTimer": {
+                    "type": "number",
+                    "description": "Interval (sec) for connect timer."
+                },
+                "DefaultOriginateRoutemap": {
+                    "type": "string",
+                    "description": "Route map to specify criteria to originate IPv4 default."
+                },
+                "DefaultOriginateRoutemap6": {
+                    "type": "string",
+                    "description": "Route map to specify criteria to originate IPv6 default."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "DistributeListIn": {
+                    "type": "string",
+                    "description": "Filter for IPv4 updates from this neighbor."
+                },
+                "DistributeListIn6": {
+                    "type": "string",
+                    "description": "Filter for IPv6 updates from this neighbor."
+                },
+                "DistributeListOut": {
+                    "type": "string",
+                    "description": "Filter for IPv4 updates to this neighbor."
+                },
+                "DistributeListOut6": {
+                    "type": "string",
+                    "description": "Filter for IPv6 updates to this neighbor."
+                },
+                "DontCapabilityNegotiate": {
+                    "type": "string",
+                    "description": "Don't negotiate capabilities with this neighbor Valid values: `enable`, `disable`."
+                },
+                "EbgpEnforceMultihop": {
+                    "type": "string",
+                    "description": "Enable/disable allow multi-hop EBGP neighbors. Valid values: `enable`, `disable`."
+                },
+                "EbgpMultihopTtl": {
+                    "type": "number",
+                    "description": "EBGP multihop TTL for this peer."
+                },
+                "FilterListIn": {
+                    "type": "string",
+                    "description": "BGP filter for IPv4 inbound routes."
+                },
+                "FilterListIn6": {
+                    "type": "string",
+                    "description": "BGP filter for IPv6 inbound routes."
+                },
+                "FilterListOut": {
+                    "type": "string",
+                    "description": "BGP filter for IPv4 outbound routes."
+                },
+                "FilterListOut6": {
+                    "type": "string",
+                    "description": "BGP filter for IPv6 outbound routes."
+                },
+                "HoldtimeTimer": {
+                    "type": "number",
+                    "description": "Interval (sec) before peer considered dead."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP/IPv6 address of neighbor."
+                },
+                "KeepAliveTimer": {
+                    "type": "number",
+                    "description": "Keep alive timer interval (sec)."
+                },
+                "LinkDownFailover": {
+                    "type": "string",
+                    "description": "Enable/disable failover upon link down. Valid values: `enable`, `disable`."
+                },
+                "LocalAs": {
+                    "type": "number",
+                    "description": "Local AS number of neighbor."
+                },
+                "LocalAsNoPrepend": {
+                    "type": "string",
+                    "description": "Do not prepend local-as to incoming updates. Valid values: `enable`, `disable`."
+                },
+                "LocalAsReplaceAs": {
+                    "type": "string",
+                    "description": "Replace real AS with local-as in outgoing updates. Valid values: `enable`, `disable`."
+                },
+                "MaximumPrefix": {
+                    "type": "number",
+                    "description": "Maximum number of IPv4 prefixes to accept from this peer."
+                },
+                "MaximumPrefix6": {
+                    "type": "number",
+                    "description": "Maximum number of IPv6 prefixes to accept from this peer."
+                },
+                "MaximumPrefixThreshold": {
+                    "type": "number",
+                    "description": "Maximum IPv4 prefix threshold value (1 - 100 percent)."
+                },
+                "MaximumPrefixThreshold6": {
+                    "type": "number",
+                    "description": "Maximum IPv6 prefix threshold value (1 - 100 percent)."
+                },
+                "MaximumPrefixWarningOnly": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 Only give warning message when limit is exceeded. Valid values: `enable`, `disable`."
+                },
+                "MaximumPrefixWarningOnly6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 Only give warning message when limit is exceeded. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelf": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 next-hop calculation for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelf6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 next-hop calculation for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelfRr": {
+                    "type": "string",
+                    "description": "Enable/disable setting nexthop's address to interface's IPv4 address for route-reflector routes. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelfRr6": {
+                    "type": "string",
+                    "description": "Enable/disable setting nexthop's address to interface's IPv6 address for route-reflector routes. Valid values: `enable`, `disable`."
+                },
+                "OverrideCapability": {
+                    "type": "string",
+                    "description": "Enable/disable override result of capability negotiation. Valid values: `enable`, `disable`."
+                },
+                "Passive": {
+                    "type": "string",
+                    "description": "Enable/disable sending of open messages to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Password used in MD5 authentication."
+                },
+                "PrefixListIn": {
+                    "type": "string",
+                    "description": "IPv4 Inbound filter for updates from this neighbor."
+                },
+                "PrefixListIn6": {
+                    "type": "string",
+                    "description": "IPv6 Inbound filter for updates from this neighbor."
+                },
+                "PrefixListOut": {
+                    "type": "string",
+                    "description": "IPv4 Outbound filter for updates to this neighbor."
+                },
+                "PrefixListOut6": {
+                    "type": "string",
+                    "description": "IPv6 Outbound filter for updates to this neighbor."
+                },
+                "RemoteAs": {
+                    "type": "number",
+                    "description": "AS number of neighbor."
+                },
+                "RemovePrivateAs": {
+                    "type": "string",
+                    "description": "Enable/disable remove private AS number from IPv4 outbound updates. Valid values: `enable`, `disable`."
+                },
+                "RemovePrivateAs6": {
+                    "type": "string",
+                    "description": "Enable/disable remove private AS number from IPv6 outbound updates. Valid values: `enable`, `disable`."
+                },
+                "RestartTime": {
+                    "type": "number",
+                    "description": "Graceful restart delay time (sec, 0 = global default)."
+                },
+                "RetainStaleTime": {
+                    "type": "number",
+                    "description": "Time to retain stale routes."
+                },
+                "RouteMapIn": {
+                    "type": "string",
+                    "description": "IPv4 Inbound route map filter."
+                },
+                "RouteMapIn6": {
+                    "type": "string",
+                    "description": "IPv6 Inbound route map filter."
+                },
+                "RouteMapOut": {
+                    "type": "string",
+                    "description": "IPv4 Outbound route map filter."
+                },
+                "RouteMapOut6": {
+                    "type": "string",
+                    "description": "IPv6 Outbound route map filter."
+                },
+                "RouteMapOut6Preferable": {
+                    "type": "string",
+                    "description": "IPv6 outbound route map filter if the peer is preferred."
+                },
+                "RouteMapOutPreferable": {
+                    "type": "string",
+                    "description": "IPv4 outbound route map filter if the peer is preferred."
+                },
+                "RouteReflectorClient": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 AS route reflector client. Valid values: `enable`, `disable`."
+                },
+                "RouteReflectorClient6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 AS route reflector client. Valid values: `enable`, `disable`."
+                },
+                "RouteServerClient": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 AS route server client. Valid values: `enable`, `disable`."
+                },
+                "RouteServerClient6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 AS route server client. Valid values: `enable`, `disable`."
+                },
+                "SendCommunity": {
+                    "type": "string",
+                    "description": "IPv4 Send community attribute to neighbor. Valid values: `standard`, `extended`, `both`, `disable`."
+                },
+                "SendCommunity6": {
+                    "type": "string",
+                    "description": "IPv6 Send community attribute to neighbor. Valid values: `standard`, `extended`, `both`, `disable`."
+                },
+                "Shutdown": {
+                    "type": "string",
+                    "description": "Enable/disable shutdown this neighbor. Valid values: `enable`, `disable`."
+                },
+                "SoftReconfiguration": {
+                    "type": "string",
+                    "description": "Enable/disable allow IPv4 inbound soft reconfiguration. Valid values: `enable`, `disable`."
+                },
+                "SoftReconfiguration6": {
+                    "type": "string",
+                    "description": "Enable/disable allow IPv6 inbound soft reconfiguration. Valid values: `enable`, `disable`."
+                },
+                "StaleRoute": {
+                    "type": "string",
+                    "description": "Enable/disable stale route after neighbor down. Valid values: `enable`, `disable`."
+                },
+                "StrictCapabilityMatch": {
+                    "type": "string",
+                    "description": "Enable/disable strict capability matching. Valid values: `enable`, `disable`."
+                },
+                "UnsuppressMap": {
+                    "type": "string",
+                    "description": "IPv4 Route map to selectively unsuppress suppressed routes."
+                },
+                "UnsuppressMap6": {
+                    "type": "string",
+                    "description": "IPv6 Route map to selectively unsuppress suppressed routes."
+                },
+                "UpdateSource": {
+                    "type": "string",
+                    "description": "Interface to use as source IP/IPv6 address of TCP connections."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Neighbor weight."
+                },
+                "ConditionalAdvertise": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionalAdvertiseDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NeighborGroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Activate": {
+                    "type": "string",
+                    "description": "Enable/disable address family IPv4 for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "Activate6": {
+                    "type": "string",
+                    "description": "Enable/disable address family IPv6 for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "AdditionalPath": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 additional-path capability. Valid values: `send`, `receive`, `both`, `disable`."
+                },
+                "AdditionalPath6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 additional-path capability. Valid values: `send`, `receive`, `both`, `disable`."
+                },
+                "AdvAdditionalPath": {
+                    "type": "number",
+                    "description": "Number of IPv4 additional paths that can be advertised to this neighbor."
+                },
+                "AdvAdditionalPath6": {
+                    "type": "number",
+                    "description": "Number of IPv6 additional paths that can be advertised to this neighbor."
+                },
+                "AdvertisementInterval": {
+                    "type": "number",
+                    "description": "Minimum interval (sec) between sending updates."
+                },
+                "AllowasIn": {
+                    "type": "number",
+                    "description": "IPv4 The maximum number of occurrence of my AS number allowed."
+                },
+                "AllowasIn6": {
+                    "type": "number",
+                    "description": "IPv6 The maximum number of occurrence of my AS number allowed."
+                },
+                "AllowasInEnable": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 Enable to allow my AS in AS path. Valid values: `enable`, `disable`."
+                },
+                "AllowasInEnable6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 Enable to allow my AS in AS path. Valid values: `enable`, `disable`."
+                },
+                "AsOverride": {
+                    "type": "string",
+                    "description": "Enable/disable replace peer AS with own AS for IPv4. Valid values: `enable`, `disable`."
+                },
+                "AsOverride6": {
+                    "type": "string",
+                    "description": "Enable/disable replace peer AS with own AS for IPv6. Valid values: `enable`, `disable`."
+                },
+                "AttributeUnchanged": {
+                    "type": "string",
+                    "description": "IPv4 List of attributes that should be unchanged. Valid values: `as-path`, `med`, `next-hop`."
+                },
+                "AttributeUnchanged6": {
+                    "type": "string",
+                    "description": "IPv6 List of attributes that should be unchanged. Valid values: `as-path`, `med`, `next-hop`."
+                },
+                "Bfd": {
+                    "type": "string",
+                    "description": "Enable/disable BFD for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDefaultOriginate": {
+                    "type": "string",
+                    "description": "Enable/disable advertise default IPv4 route to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDefaultOriginate6": {
+                    "type": "string",
+                    "description": "Enable/disable advertise default IPv6 route to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityDynamic": {
+                    "type": "string",
+                    "description": "Enable/disable advertise dynamic capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityGracefulRestart": {
+                    "type": "string",
+                    "description": "Enable/disable advertise IPv4 graceful restart capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityGracefulRestart6": {
+                    "type": "string",
+                    "description": "Enable/disable advertise IPv6 graceful restart capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "CapabilityOrf": {
+                    "type": "string",
+                    "description": "Accept/Send IPv4 ORF lists to/from this neighbor. Valid values: `none`, `receive`, `send`, `both`."
+                },
+                "CapabilityOrf6": {
+                    "type": "string",
+                    "description": "Accept/Send IPv6 ORF lists to/from this neighbor. Valid values: `none`, `receive`, `send`, `both`."
+                },
+                "CapabilityRouteRefresh": {
+                    "type": "string",
+                    "description": "Enable/disable advertise route refresh capability to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "ConnectTimer": {
+                    "type": "number",
+                    "description": "Interval (sec) for connect timer."
+                },
+                "DefaultOriginateRoutemap": {
+                    "type": "string",
+                    "description": "Route map to specify criteria to originate IPv4 default."
+                },
+                "DefaultOriginateRoutemap6": {
+                    "type": "string",
+                    "description": "Route map to specify criteria to originate IPv6 default."
+                },
+                "Description": {
+                    "type": "string",
+                    "description": "Description."
+                },
+                "DistributeListIn": {
+                    "type": "string",
+                    "description": "Filter for IPv4 updates from this neighbor."
+                },
+                "DistributeListIn6": {
+                    "type": "string",
+                    "description": "Filter for IPv6 updates from this neighbor."
+                },
+                "DistributeListOut": {
+                    "type": "string",
+                    "description": "Filter for IPv4 updates to this neighbor."
+                },
+                "DistributeListOut6": {
+                    "type": "string",
+                    "description": "Filter for IPv6 updates to this neighbor."
+                },
+                "DontCapabilityNegotiate": {
+                    "type": "string",
+                    "description": "Don't negotiate capabilities with this neighbor Valid values: `enable`, `disable`."
+                },
+                "EbgpEnforceMultihop": {
+                    "type": "string",
+                    "description": "Enable/disable allow multi-hop EBGP neighbors. Valid values: `enable`, `disable`."
+                },
+                "EbgpMultihopTtl": {
+                    "type": "number",
+                    "description": "EBGP multihop TTL for this peer."
+                },
+                "FilterListIn": {
+                    "type": "string",
+                    "description": "BGP filter for IPv4 inbound routes."
+                },
+                "FilterListIn6": {
+                    "type": "string",
+                    "description": "BGP filter for IPv6 inbound routes."
+                },
+                "FilterListOut": {
+                    "type": "string",
+                    "description": "BGP filter for IPv4 outbound routes."
+                },
+                "FilterListOut6": {
+                    "type": "string",
+                    "description": "BGP filter for IPv6 outbound routes."
+                },
+                "HoldtimeTimer": {
+                    "type": "number",
+                    "description": "Interval (sec) before peer considered dead."
+                },
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface."
+                },
+                "KeepAliveTimer": {
+                    "type": "number",
+                    "description": "Keep alive timer interval (sec)."
+                },
+                "LinkDownFailover": {
+                    "type": "string",
+                    "description": "Enable/disable failover upon link down. Valid values: `enable`, `disable`."
+                },
+                "LocalAs": {
+                    "type": "number",
+                    "description": "Local AS number of neighbor."
+                },
+                "LocalAsNoPrepend": {
+                    "type": "string",
+                    "description": "Do not prepend local-as to incoming updates. Valid values: `enable`, `disable`."
+                },
+                "LocalAsReplaceAs": {
+                    "type": "string",
+                    "description": "Replace real AS with local-as in outgoing updates. Valid values: `enable`, `disable`."
+                },
+                "MaximumPrefix": {
+                    "type": "number",
+                    "description": "Maximum number of IPv4 prefixes to accept from this peer."
+                },
+                "MaximumPrefix6": {
+                    "type": "number",
+                    "description": "Maximum number of IPv6 prefixes to accept from this peer."
+                },
+                "MaximumPrefixThreshold": {
+                    "type": "number",
+                    "description": "Maximum IPv4 prefix threshold value (1 - 100 percent)."
+                },
+                "MaximumPrefixThreshold6": {
+                    "type": "number",
+                    "description": "Maximum IPv6 prefix threshold value (1 - 100 percent)."
+                },
+                "MaximumPrefixWarningOnly": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 Only give warning message when limit is exceeded. Valid values: `enable`, `disable`."
+                },
+                "MaximumPrefixWarningOnly6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 Only give warning message when limit is exceeded. Valid values: `enable`, `disable`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Neighbor group name."
+                },
+                "NextHopSelf": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 next-hop calculation for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelf6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 next-hop calculation for this neighbor. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelfRr": {
+                    "type": "string",
+                    "description": "Enable/disable setting nexthop's address to interface's IPv4 address for route-reflector routes. Valid values: `enable`, `disable`."
+                },
+                "NextHopSelfRr6": {
+                    "type": "string",
+                    "description": "Enable/disable setting nexthop's address to interface's IPv6 address for route-reflector routes. Valid values: `enable`, `disable`."
+                },
+                "OverrideCapability": {
+                    "type": "string",
+                    "description": "Enable/disable override result of capability negotiation. Valid values: `enable`, `disable`."
+                },
+                "Passive": {
+                    "type": "string",
+                    "description": "Enable/disable sending of open messages to this neighbor. Valid values: `enable`, `disable`."
+                },
+                "PrefixListIn": {
+                    "type": "string",
+                    "description": "IPv4 Inbound filter for updates from this neighbor."
+                },
+                "PrefixListIn6": {
+                    "type": "string",
+                    "description": "IPv6 Inbound filter for updates from this neighbor."
+                },
+                "PrefixListOut": {
+                    "type": "string",
+                    "description": "IPv4 Outbound filter for updates to this neighbor."
+                },
+                "PrefixListOut6": {
+                    "type": "string",
+                    "description": "IPv6 Outbound filter for updates to this neighbor."
+                },
+                "RemoteAs": {
+                    "type": "number",
+                    "description": "AS number of neighbor."
+                },
+                "RemovePrivateAs": {
+                    "type": "string",
+                    "description": "Enable/disable remove private AS number from IPv4 outbound updates. Valid values: `enable`, `disable`."
+                },
+                "RemovePrivateAs6": {
+                    "type": "string",
+                    "description": "Enable/disable remove private AS number from IPv6 outbound updates. Valid values: `enable`, `disable`."
+                },
+                "RestartTime": {
+                    "type": "number",
+                    "description": "Graceful restart delay time (sec, 0 = global default)."
+                },
+                "RetainStaleTime": {
+                    "type": "number",
+                    "description": "Time to retain stale routes."
+                },
+                "RouteMapIn": {
+                    "type": "string",
+                    "description": "IPv4 Inbound route map filter."
+                },
+                "RouteMapIn6": {
+                    "type": "string",
+                    "description": "IPv6 Inbound route map filter."
+                },
+                "RouteMapOut": {
+                    "type": "string",
+                    "description": "IPv4 Outbound route map filter."
+                },
+                "RouteMapOut6": {
+                    "type": "string",
+                    "description": "IPv6 Outbound route map filter."
+                },
+                "RouteMapOut6Preferable": {
+                    "type": "string",
+                    "description": "IPv6 outbound route map filter if the peer is preferred."
+                },
+                "RouteMapOutPreferable": {
+                    "type": "string",
+                    "description": "IPv4 outbound route map filter if the peer is preferred."
+                },
+                "RouteReflectorClient": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 AS route reflector client. Valid values: `enable`, `disable`."
+                },
+                "RouteReflectorClient6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 AS route reflector client. Valid values: `enable`, `disable`."
+                },
+                "RouteServerClient": {
+                    "type": "string",
+                    "description": "Enable/disable IPv4 AS route server client. Valid values: `enable`, `disable`."
+                },
+                "RouteServerClient6": {
+                    "type": "string",
+                    "description": "Enable/disable IPv6 AS route server client. Valid values: `enable`, `disable`."
+                },
+                "SendCommunity": {
+                    "type": "string",
+                    "description": "IPv4 Send community attribute to neighbor. Valid values: `standard`, `extended`, `both`, `disable`."
+                },
+                "SendCommunity6": {
+                    "type": "string",
+                    "description": "IPv6 Send community attribute to neighbor. Valid values: `standard`, `extended`, `both`, `disable`."
+                },
+                "Shutdown": {
+                    "type": "string",
+                    "description": "Enable/disable shutdown this neighbor. Valid values: `enable`, `disable`."
+                },
+                "SoftReconfiguration": {
+                    "type": "string",
+                    "description": "Enable/disable allow IPv4 inbound soft reconfiguration. Valid values: `enable`, `disable`."
+                },
+                "SoftReconfiguration6": {
+                    "type": "string",
+                    "description": "Enable/disable allow IPv6 inbound soft reconfiguration. Valid values: `enable`, `disable`."
+                },
+                "StaleRoute": {
+                    "type": "string",
+                    "description": "Enable/disable stale route after neighbor down. Valid values: `enable`, `disable`."
+                },
+                "StrictCapabilityMatch": {
+                    "type": "string",
+                    "description": "Enable/disable strict capability matching. Valid values: `enable`, `disable`."
+                },
+                "UnsuppressMap": {
+                    "type": "string",
+                    "description": "IPv4 Route map to selectively unsuppress suppressed routes."
+                },
+                "UnsuppressMap6": {
+                    "type": "string",
+                    "description": "IPv6 Route map to selectively unsuppress suppressed routes."
+                },
+                "UpdateSource": {
+                    "type": "string",
+                    "description": "Interface to use as source IP/IPv6 address of TCP connections."
+                },
+                "Weight": {
+                    "type": "number",
+                    "description": "Neighbor weight."
+                }
+            },
+            "required": []
+        },
+        "NeighborRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Neighbor range ID."
+                },
+                "MaxNeighborNum": {
+                    "type": "number",
+                    "description": "Maximum number of neighbors."
+                },
+                "NeighborGroup": {
+                    "type": "string",
+                    "description": "Neighbor group name."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Neighbor range prefix."
+                }
+            },
+            "required": []
+        },
+        "NeighborRange6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "IPv6 neighbor range ID."
+                },
+                "MaxNeighborNum": {
+                    "type": "number",
+                    "description": "Maximum number of neighbors."
+                },
+                "NeighborGroup": {
+                    "type": "string",
+                    "description": "Neighbor group name."
+                },
+                "Prefix6": {
+                    "type": "string",
+                    "description": "IPv6 prefix."
+                }
+            },
+            "required": []
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backdoor": {
+                    "type": "string",
+                    "description": "Enable/disable route as backdoor. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Prefix": {
+                    "type": "string",
+                    "description": "Network prefix."
+                },
+                "RouteMap": {
+                    "type": "string",
+                    "description": "Route map to modify generated route."
+                }
+            },
+            "required": []
+        },
+        "Network6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backdoor": {
+                    "type": "string",
+                    "description": "Enable/disable route as backdoor. Valid values: `enable`, `disable`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "ID."
+                },
+                "Prefix6": {
+                    "type": "string",
+                    "description": "Network IPv6 prefix."
+                },
+                "RouteMap": {
+                    "type": "string",
+                    "description": "Route map to modify generated route."
+                }
+            },
+            "required": []
+        },
+        "RedistributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Distribute list entry name."
+                },
+                "RouteMap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "Redistribute6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Distribute list entry name."
+                },
+                "RouteMap": {
+                    "type": "string",
+                    "description": "Route map name."
+                },
+                "Status": {
+                    "type": "string",
+                    "description": "Status Valid values: `enable`, `disable`."
+                }
+            },
+            "required": []
+        },
+        "VrfLeakDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Vrf": {
+                    "type": "string",
+                    "description": "Origin VRF ID <0 - 31>."
+                },
+                "Target": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConditionalAdvertiseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertiseRoutemap": {
+                    "type": "string",
+                    "description": "Name of advertising route map."
+                },
+                "ConditionRoutemap": {
+                    "type": "string",
+                    "description": "Name of condition route map."
+                },
+                "ConditionType": {
+                    "type": "string",
+                    "description": "Type of condition. Valid values: `exist`, `non-exist`."
+                }
+            },
+            "required": []
+        },
+        "TargetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interface": {
+                    "type": "string",
+                    "description": "Interface which is used to leak routes to target VRF."
+                },
+                "RouteMap": {
+                    "type": "string",
+                    "description": "Route map of VRF leaking."
+                },
+                "Vrf": {
+                    "type": "string",
+                    "description": "Target VRF ID <0 - 31>."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalPath": {
+            "type": "string",
+            "description": "Enable/disable selection of BGP IPv4 additional paths. Valid values: `enable`, `disable`."
+        },
+        "AdditionalPath6": {
+            "type": "string",
+            "description": "Enable/disable selection of BGP IPv6 additional paths. Valid values: `enable`, `disable`."
+        },
+        "AdditionalPathSelect": {
+            "type": "number",
+            "description": "Number of additional paths to be selected for each IPv4 NLRI."
+        },
+        "AdditionalPathSelect6": {
+            "type": "number",
+            "description": "Number of additional paths to be selected for each IPv6 NLRI."
+        },
+        "AlwaysCompareMed": {
+            "type": "string",
+            "description": "Enable/disable always compare MED. Valid values: `enable`, `disable`."
+        },
+        "As": {
+            "type": "number",
+            "description": "Router AS number, valid from 1 to 4294967295, 0 to disable BGP."
+        },
+        "BestpathAsPathIgnore": {
+            "type": "string",
+            "description": "Enable/disable ignore AS path. Valid values: `enable`, `disable`."
+        },
+        "BestpathCmpConfedAspath": {
+            "type": "string",
+            "description": "Enable/disable compare federation AS path length. Valid values: `enable`, `disable`."
+        },
+        "BestpathCmpRouterid": {
+            "type": "string",
+            "description": "Enable/disable compare router ID for identical EBGP paths. Valid values: `enable`, `disable`."
+        },
+        "BestpathMedConfed": {
+            "type": "string",
+            "description": "Enable/disable compare MED among confederation paths. Valid values: `enable`, `disable`."
+        },
+        "BestpathMedMissingAsWorst": {
+            "type": "string",
+            "description": "Enable/disable treat missing MED as least preferred. Valid values: `enable`, `disable`."
+        },
+        "ClientToClientReflection": {
+            "type": "string",
+            "description": "Enable/disable client-to-client route reflection. Valid values: `enable`, `disable`."
+        },
+        "ClusterId": {
+            "type": "string",
+            "description": "Route reflector cluster ID."
+        },
+        "ConfederationIdentifier": {
+            "type": "number",
+            "description": "Confederation identifier."
+        },
+        "Dampening": {
+            "type": "string",
+            "description": "Enable/disable route-flap dampening. Valid values: `enable`, `disable`."
+        },
+        "DampeningMaxSuppressTime": {
+            "type": "number",
+            "description": "Maximum minutes a route can be suppressed."
+        },
+        "DampeningReachabilityHalfLife": {
+            "type": "number",
+            "description": "Reachability half-life time for penalty (min)."
+        },
+        "DampeningReuse": {
+            "type": "number",
+            "description": "Threshold to reuse routes."
+        },
+        "DampeningRouteMap": {
+            "type": "string",
+            "description": "Criteria for dampening."
+        },
+        "DampeningSuppress": {
+            "type": "number",
+            "description": "Threshold to suppress routes."
+        },
+        "DampeningUnreachabilityHalfLife": {
+            "type": "number",
+            "description": "Unreachability half-life time for penalty (min)."
+        },
+        "DefaultLocalPreference": {
+            "type": "number",
+            "description": "Default local preference."
+        },
+        "DeterministicMed": {
+            "type": "string",
+            "description": "Enable/disable enforce deterministic comparison of MED. Valid values: `enable`, `disable`."
+        },
+        "DistanceExternal": {
+            "type": "number",
+            "description": "Distance for routes external to the AS."
+        },
+        "DistanceInternal": {
+            "type": "number",
+            "description": "Distance for routes internal to the AS."
+        },
+        "DistanceLocal": {
+            "type": "number",
+            "description": "Distance for routes local to the AS."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "EbgpMultipath": {
+            "type": "string",
+            "description": "Enable/disable EBGP multi-path. Valid values: `enable`, `disable`."
+        },
+        "EnforceFirstAs": {
+            "type": "string",
+            "description": "Enable/disable enforce first AS for EBGP routes. Valid values: `enable`, `disable`."
+        },
+        "FastExternalFailover": {
+            "type": "string",
+            "description": "Enable/disable reset peer BGP session if link goes down. Valid values: `enable`, `disable`."
+        },
+        "GracefulEndOnTimer": {
+            "type": "string",
+            "description": "Enable/disable to exit graceful restart on timer only. Valid values: `enable`, `disable`."
+        },
+        "GracefulRestart": {
+            "type": "string",
+            "description": "Enable/disable BGP graceful restart capabilities. Valid values: `enable`, `disable`."
+        },
+        "GracefulRestartTime": {
+            "type": "number",
+            "description": "Time needed for neighbors to restart (sec)."
+        },
+        "GracefulStalepathTime": {
+            "type": "number",
+            "description": "Time to hold stale paths of restarting neighbor (sec)."
+        },
+        "GracefulUpdateDelay": {
+            "type": "number",
+            "description": "Route advertisement/selection delay after restart (sec)."
+        },
+        "HoldtimeTimer": {
+            "type": "number",
+            "description": "Number of seconds to mark peer as dead."
+        },
+        "IbgpMultipath": {
+            "type": "string",
+            "description": "Enable/disable IBGP multi-path. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreOptionalCapability": {
+            "type": "string",
+            "description": "Don't send unknown optional capability notification message Valid values: `enable`, `disable`."
+        },
+        "KeepaliveTimer": {
+            "type": "number",
+            "description": "Frequency to send keep alive requests."
+        },
+        "LogNeighbourChanges": {
+            "type": "string",
+            "description": "Enable logging of BGP neighbour's changes Valid values: `enable`, `disable`."
+        },
+        "MultipathRecursiveDistance": {
+            "type": "string",
+            "description": "Enable/disable use of recursive distance to select multipath. Valid values: `enable`, `disable`."
+        },
+        "NetworkImportCheck": {
+            "type": "string",
+            "description": "Enable/disable ensure BGP network route exists in IGP. Valid values: `enable`, `disable`."
+        },
+        "RecursiveNextHop": {
+            "type": "string",
+            "description": "Enable/disable recursive resolution of next-hop using BGP route. Valid values: `enable`, `disable`."
+        },
+        "RouterId": {
+            "type": "string",
+            "description": "Router ID."
+        },
+        "ScanTime": {
+            "type": "number",
+            "description": "Background scanner interval (sec), 0 to disable it."
+        },
+        "Synchronization": {
+            "type": "string",
+            "description": "Enable/disable only advertise routes from iBGP if routes present in an IGP. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "AdminDistance": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdminDistanceDefinition"
+            }
+        },
+        "AggregateAddress": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AggregateAddressDefinition"
+            }
+        },
+        "AggregateAddress6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AggregateAddress6Definition"
+            }
+        },
+        "ConfederationPeers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfederationPeersDefinition"
+            }
+        },
+        "Neighbor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborDefinition"
+            }
+        },
+        "NeighborGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborGroupDefinition"
+            }
+        },
+        "NeighborRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborRangeDefinition"
+            }
+        },
+        "NeighborRange6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborRange6Definition"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "Network6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Network6Definition"
+            }
+        },
+        "Redistribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedistributeDefinition"
+            }
+        },
+        "Redistribute6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Redistribute6Definition"
+            }
+        },
+        "VrfLeak": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VrfLeakDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "As"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/NeighborDefinition/Password"
+    ]
+}

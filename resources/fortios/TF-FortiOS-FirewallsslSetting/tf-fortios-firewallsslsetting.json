@@ -1,0 +1,116 @@
+{
+    "typeName": "TF::FortiOS::FirewallsslSetting",
+    "description": "SSL proxy settings.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FirewallsslSetting/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbbreviateHandshake": {
+            "type": "string",
+            "description": "Enable/disable use of SSL abbreviated handshake. Valid values: `enable`, `disable`."
+        },
+        "CertCacheCapacity": {
+            "type": "number",
+            "description": "Maximum capacity of the host certificate cache (0 - 500, default = 200)."
+        },
+        "CertCacheTimeout": {
+            "type": "number",
+            "description": "Time limit to keep certificate cache (1 - 120 min, default = 10)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KxpQueueThreshold": {
+            "type": "number",
+            "description": "Maximum length of the CP KXP queue. When the queue becomes full, the proxy switches cipher functions to the main CPU (0 - 512, default = 16)."
+        },
+        "NoMatchingCipherAction": {
+            "type": "string",
+            "description": "Bypass or drop the connection when no matching cipher is found. Valid values: `bypass`, `drop`."
+        },
+        "ProxyConnectTimeout": {
+            "type": "number",
+            "description": "Time limit to make an internal connection to the appropriate proxy process (1 - 60 sec, default = 30)."
+        },
+        "SessionCacheCapacity": {
+            "type": "number",
+            "description": "Capacity of the SSL session cache (--Obsolete--) (1 - 1000, default = 500)."
+        },
+        "SessionCacheTimeout": {
+            "type": "number",
+            "description": "Time limit to keep SSL session state (1 - 60 min, default = 20)."
+        },
+        "SslDhBits": {
+            "type": "string",
+            "description": "Bit-size of Diffie-Hellman (DH) prime used in DHE-RSA negotiation (default = 2048). Valid values: `768`, `1024`, `1536`, `2048`."
+        },
+        "SslQueueThreshold": {
+            "type": "number",
+            "description": "Maximum length of the CP SSL queue. When the queue becomes full, the proxy switches cipher functions to the main CPU (0 - 512, default = 32)."
+        },
+        "SslSendEmptyFrags": {
+            "type": "string",
+            "description": "Enable/disable sending empty fragments to avoid attack on CBC IV (for SSL 3.0 and TLS 1.0 only). Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CertCacheCapacity",
+        "CertCacheTimeout",
+        "NoMatchingCipherAction",
+        "ProxyConnectTimeout",
+        "SessionCacheCapacity",
+        "SessionCacheTimeout",
+        "SslDhBits",
+        "SslSendEmptyFrags"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

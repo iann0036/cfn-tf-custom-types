@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::Google::ComputeTargetPool",
+    "description": "Manages a Target Pool within GCE. This is a collection of instances used as\ntarget of a network load balancer (Forwarding Rule). For more information see\n[the official\ndocumentation](https://cloud.google.com/compute/docs/load-balancing/network/target-pools)\nand [API](https://cloud.google.com/compute/docs/reference/latest/targetPools).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeTargetPool/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupPool": {
+            "type": "string",
+            "description": "URL to the backup target pool. Must also set\nfailover\\_ratio."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Textual description field."
+        },
+        "FailoverRatio": {
+            "type": "number",
+            "description": "Ratio (0 to 1) of failed nodes before using the\nbackup pool (which must also be set)."
+        },
+        "HealthChecks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of zero or one health check name or self_link. Only\nlegacy `google_compute_http_health_check` is supported."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of instances in the pool. They can be given as\nURLs, or in the form of \"zone/name\". Note that the instances need not exist\nat the time of target pool creation, so there is no need to use the\nTerraform interpolators to create a dependency on the instances from the\ntarget pool."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the resource, required by GCE. Changing\nthis forces a new resource to be created."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string",
+            "description": "Where the target pool resides. Defaults to project\nregion."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SessionAffinity": {
+            "type": "string",
+            "description": "How to distribute load. Options are \"NONE\" (no\naffinity). \"CLIENT\\_IP\" (hash of the source/dest addresses / ports), and\n\"CLIENT\\_IP\\_PROTO\" also includes the protocol (default \"NONE\")."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

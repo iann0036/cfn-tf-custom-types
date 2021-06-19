@@ -1,0 +1,256 @@
+{
+    "typeName": "TF::NSXT::PolicyTier1Gateway",
+    "description": "This resource provides a method for the management of a Tier-1 Gateway. A Tier-1 Gateway is often used for tenants, users and applications. There can be many Tier-1 gateways connected to a common Tier-0 provider gateway.\n\nThis resource is applicable to NSX Global Manager and NSX Policy Manager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/nsxt/TF-NSXT-PolicyTier1Gateway/docs/README.md",
+    "definitions": {
+        "IntersiteConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FallbackSitePaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PrimarySitePath": {
+                    "type": "string"
+                },
+                "TransitSubnet": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LocaleServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EdgeClusterPath": {
+                    "type": "string"
+                },
+                "PreferredEdgePaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "EdgeClusterPath"
+            ]
+        },
+        "RouteAdvertisementRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrefixOperator": {
+                    "type": "string"
+                },
+                "RouteAdvertisementTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Subnets"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultRuleLogging": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if the default rule logging will be enabled or not. The default value is false."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the resource."
+        },
+        "DhcpConfigPath": {
+            "type": "string",
+            "description": "Policy path to DHCP server or relay configuration to use for this gateway."
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "Display name of the resource."
+        },
+        "EdgeClusterPath": {
+            "type": "string",
+            "description": "The path of the edge cluster where the Tier-0 is placed.\n* `preferred_edge_paths` - (Optional) Policy paths to edge nodes. Specified edge is used as preferred edge cluster member when failover mode is set to `PREEMPTIVE`."
+        },
+        "EgressQosProfilePath": {
+            "type": "string",
+            "description": "QoS Profile path for egress traffic on link connected to Tier0 gateway."
+        },
+        "EnableFirewall": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if the edge firewall will be enabled or not. The default value is true."
+        },
+        "EnableStandbyRelocation": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if the standby relocation will be enabled or not. The default value is false."
+        },
+        "FailoverMode": {
+            "type": "string",
+            "description": "This failover mode determines, whether the preferred service router instance for given logical router will preempt the peer. Accepted values are PREEMPTIVE/NON_PREEMPTIVE."
+        },
+        "ForceWhitelisting": {
+            "type": "boolean",
+            "description": "Boolean flag indicating if white-listing will be forced or not. The default value is false. This argument is deprecated and will be removed. Please use `nsxt_policy_predefined_gateway_policy` resource to control default action."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IngressQosProfilePath": {
+            "type": "string",
+            "description": "QoS Profile path for ingress traffic on link connected to Tier0 gateway."
+        },
+        "Ipv6DadProfilePath": {
+            "type": "string",
+            "description": "Policy path to IPv6 DAD profile."
+        },
+        "Ipv6NdraProfilePath": {
+            "type": "string",
+            "description": "Policy path to IPv6 NDRA profile."
+        },
+        "NsxId": {
+            "type": "string",
+            "description": "The NSX ID of this resource. If set, this ID will be used to create the policy resource."
+        },
+        "Path": {
+            "type": "string"
+        },
+        "PoolAllocation": {
+            "type": "string",
+            "description": "Size of edge node allocation at for routing and load balancer service to meet performance and scalability requirements, one of `ROUTING`, `LB_SMALL`, `LB_MEDIUM`, `LB_LARGE`, `LB_XLARGE`. Default is `ROUTING`. Changing this attribute would force new resource."
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RouteAdvertisementTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of desired types of route advertisements, supported values: `TIER1_STATIC_ROUTES`, `TIER1_CONNECTED`, `TIER1_NAT`, `TIER1_LB_VIP`, `TIER1_LB_SNAT`, `TIER1_DNS_FORWARDER_IP`, `TIER1_IPSEC_LOCAL_ENDPOINT`."
+        },
+        "Tier0Path": {
+            "type": "string",
+            "description": "The path of the connected Tier0."
+        },
+        "IntersiteConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntersiteConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "LocaleService": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocaleServiceDefinition"
+            }
+        },
+        "RouteAdvertisementRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteAdvertisementRuleDefinition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Path",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

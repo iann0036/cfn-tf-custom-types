@@ -1,0 +1,94 @@
+{
+    "typeName": "TF::Panos::AddressObject",
+    "description": "This resource allows you to add/update/delete address objects.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-AddressObject/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The address object's description."
+        },
+        "DeviceGroup": {
+            "type": "string",
+            "description": "The device group location (default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The address object's name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of administrative tags."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of address object.  This can be `ip-netmask`\n(default), `ip-range`, `fqdn`, or `ip-wildcard` (PAN-OS 9.0+)."
+        },
+        "Value": {
+            "type": "string",
+            "description": "The address object's value.  This can take various\nforms depending on what type of address object this is, but can be something\nlike `192.168.80.150` or `192.168.80.0/24`."
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys to put the address object into (default:\n`vsys1`)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

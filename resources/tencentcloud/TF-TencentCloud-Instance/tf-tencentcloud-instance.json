@@ -1,0 +1,292 @@
+{
+    "typeName": "TF::TencentCloud::Instance",
+    "description": "Provides a CVM instance resource.\n\n~> **NOTE:** You can launch an CVM instance for a VPC network via specifying parameter `vpc_id`. One instance can only belong to one VPC.\n\n~> **NOTE:** At present, 'PREPAID' instance cannot be deleted and must wait it to be outdated and released automatically.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Instance/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "DataDisksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataDiskId": {
+                    "type": "string",
+                    "description": "Data disk ID used to initialize the data disk. When data disk type is `LOCAL_BASIC` and `LOCAL_SSD`, disk id is not supported."
+                },
+                "DataDiskSize": {
+                    "type": "number",
+                    "description": "Size of the data disk, and unit is GB. If disk type is `CLOUD_SSD`, the size range is [100, 16000], and the others are [10-16000]."
+                },
+                "DataDiskSnapshotId": {
+                    "type": "string",
+                    "description": "Snapshot ID of the data disk. The selected data disk snapshot size must be smaller than the data disk size."
+                },
+                "DataDiskType": {
+                    "type": "string",
+                    "description": "Data disk type. For more information about limits on different data disk types, see [Storage Overview](https://intl.cloud.tencent.com/document/product/213/4952). Valid values: `LOCAL_BASIC`: local disk, `LOCAL_SSD`: local SSD disk, `CLOUD_BASIC`: HDD cloud disk, `CLOUD_PREMIUM`: Premium Cloud Storage, `CLOUD_SSD`: SSD, `CLOUD_HSSD`: Enhanced SSD. NOTE: `LOCAL_BASIC` and `LOCAL_SSD` are deprecated."
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean",
+                    "description": "Decides whether the disk is deleted with instance(only applied to `CLOUD_BASIC`, `CLOUD_SSD` and `CLOUD_PREMIUM` disk with `POSTPAID_BY_HOUR` instance), default is true."
+                },
+                "Encrypt": {
+                    "type": "boolean",
+                    "description": "Decides whether the disk is encrypted. Default is `false`."
+                },
+                "ThroughputPerformance": {
+                    "type": "number",
+                    "description": "Add extra performance to the data disk. Only works when disk type is `CLOUD_TSSD` or `CLOUD_HSSD`."
+                }
+            },
+            "required": [
+                "DataDiskSize",
+                "DataDiskType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocatePublicIp": {
+            "type": "boolean",
+            "description": "Associate a public IP address with an instance in a VPC or Classic. Boolean value, Default is false."
+        },
+        "AvailabilityZone": {
+            "type": "string",
+            "description": "The available zone for the CVM instance."
+        },
+        "CamRoleName": {
+            "type": "string",
+            "description": "CAM role name authorized to access."
+        },
+        "CdhHostId": {
+            "type": "string",
+            "description": "Id of cdh instance. Note: it only works when instance_charge_type is set to `CDHPAID`."
+        },
+        "CdhInstanceType": {
+            "type": "string",
+            "description": "Type of instance created on cdh, the value of this parameter is in the format of CDH_XCXG based on the number of CPU cores and memory capacity. Note: it only works when instance_charge_type is set to `CDHPAID`."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DisableMonitorService": {
+            "type": "boolean",
+            "description": "Disable enhance service for monitor, it is enabled by default. When this options is set, monitor agent won't be installed."
+        },
+        "DisableSecurityService": {
+            "type": "boolean",
+            "description": "Disable enhance service for security, it is enabled by default. When this options is set, security agent won't be installed."
+        },
+        "ExpiredTime": {
+            "type": "string"
+        },
+        "ForceDelete": {
+            "type": "boolean",
+            "description": "Indicate whether to force delete the instance. Default is `false`. If set true, the instance will be permanently deleted instead of being moved into the recycle bin. Note: only works for `PREPAID` instance."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The hostname of the instance. Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers. Other types (such as Linux) of instances: The name should be a combination of 2 to 60 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string",
+            "description": "The image to use for the instance. Changing `image_id` will cause the instance to be destroyed and re-created."
+        },
+        "InstanceChargeType": {
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID`, `POSTPAID_BY_HOUR`, `SPOTPAID` and `CDHPAID`. The default is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR` and `CDHPAID`. `PREPAID` instance may not allow to delete before expired. `SPOTPAID` instance must set `spot_instance_type` and `spot_max_price` at the same time. `CDHPAID` instance must set `cdh_instance_type` and `cdh_host_id`."
+        },
+        "InstanceChargeTypePrepaidPeriod": {
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when instance_charge_type is set to `PREPAID`. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `24`, `36`."
+        },
+        "InstanceChargeTypePrepaidRenewFlag": {
+            "type": "string",
+            "description": "Auto renewal flag. Valid values: `NOTIFY_AND_AUTO_RENEW`: notify upon expiration and renew automatically, `NOTIFY_AND_MANUAL_RENEW`: notify upon expiration but do not renew automatically, `DISABLE_NOTIFY_AND_MANUAL_RENEW`: neither notify upon expiration nor renew automatically. Default value: `NOTIFY_AND_MANUAL_RENEW`. If this parameter is specified as `NOTIFY_AND_AUTO_RENEW`, the instance will be automatically renewed on a monthly basis if the account balance is sufficient. NOTE: it only works when instance_charge_type is set to `PREPAID`."
+        },
+        "InstanceName": {
+            "type": "string",
+            "description": "The name of the instance. The max length of instance_name is 60, and default value is `Terraform-CVM-Instance`."
+        },
+        "InstanceStatus": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The type of the instance."
+        },
+        "InternetChargeType": {
+            "type": "string",
+            "description": "Internet charge type of the instance, Valid values are `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `BANDWIDTH_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`. This value does not need to be set when `allocate_public_ip` is false."
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number",
+            "description": "Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bits per second). This value does not need to be set when `allocate_public_ip` is false."
+        },
+        "KeepImageLogin": {
+            "type": "boolean",
+            "description": "Whether to keep image login or not, default is `false`. When the image type is private or shared or imported, this parameter can be set `true`."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The key pair to use for the instance, it looks like `skey-16jig7tx`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for the instance. In order for the new password to take effect, the instance will be restarted after the password change."
+        },
+        "PlacementGroupId": {
+            "type": "string",
+            "description": "The ID of a placement group."
+        },
+        "PrivateIp": {
+            "type": "string",
+            "description": "The private IP to be assigned to this instance, must be in the provided subnet and available."
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "The project the instance belongs to, default to 0."
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "RunningFlag": {
+            "type": "boolean",
+            "description": "Set instance to running or stop. Default value is true, the instance will shutdown when this flag is false."
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of security group IDs to associate with."
+        },
+        "SpotInstanceType": {
+            "type": "string",
+            "description": "Type of spot instance, only support `ONE-TIME` now. Note: it only works when instance_charge_type is set to `SPOTPAID`."
+        },
+        "SpotMaxPrice": {
+            "type": "string",
+            "description": "Max price of a spot instance, is the format of decimal string, for example \"0.50\". Note: it only works when instance_charge_type is set to `SPOTPAID`."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of a VPC subnet. If you want to create instances in a VPC network, this parameter must be set."
+        },
+        "SystemDiskId": {
+            "type": "string",
+            "description": "System disk snapshot ID used to initialize the system disk. When system disk type is `LOCAL_BASIC` and `LOCAL_SSD`, disk id is not supported."
+        },
+        "SystemDiskSize": {
+            "type": "number",
+            "description": "Size of the system disk. Valid value ranges: (50~1000). and unit is GB. Default is 50GB."
+        },
+        "SystemDiskType": {
+            "type": "string",
+            "description": "System disk type. For more information on limits of system disk types, see [Storage Overview](https://intl.cloud.tencent.com/document/product/213/4952). Valid values: `LOCAL_BASIC`: local disk, `LOCAL_SSD`: local SSD disk, `CLOUD_BASIC`: HDD cloud disk, `CLOUD_SSD`: SSD, `CLOUD_PREMIUM`: Premium Cloud Storage. NOTE: `LOCAL_BASIC` and `LOCAL_SSD` are deprecated."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource. For tag limits, please refer to [Use Limits](https://intl.cloud.tencent.com/document/product/651/13354)."
+        },
+        "UserData": {
+            "type": "string",
+            "description": "The user data to be injected into this instance. Must be base64 encoded and up to 16 KB."
+        },
+        "UserDataRaw": {
+            "type": "string",
+            "description": "The user data to be injected into this instance, in plain text. Conflicts with `user_data`. Up to 16 KB after base64 encoded."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The ID of a VPC network. If you want to create instances in a VPC network, this parameter must be set."
+        },
+        "DataDisks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisksDefinition"
+            },
+            "maxItems": 10
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "ImageId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ExpiredTime",
+        "/properties/Id",
+        "/properties/InstanceStatus",
+        "/properties/PublicIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

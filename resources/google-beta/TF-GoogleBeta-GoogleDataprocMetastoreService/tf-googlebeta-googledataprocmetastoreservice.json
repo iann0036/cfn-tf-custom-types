@@ -1,0 +1,254 @@
+{
+    "typeName": "TF::GoogleBeta::GoogleDataprocMetastoreService",
+    "description": "CloudFormation equivalent of google_dataproc_metastore_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google-beta/TF-GoogleBeta-GoogleDataprocMetastoreService/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "HiveMetastoreConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConfigOverrides": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConfigOverridesDefinition"
+                    }
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "KerberosConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KerberosConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        },
+        "ConfigOverridesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "MaintenanceWindowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeek": {
+                    "type": "string"
+                },
+                "HourOfDay": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DayOfWeek",
+                "HourOfDay"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "KerberosConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Krb5ConfigGcsUri": {
+                    "type": "string"
+                },
+                "Principal": {
+                    "type": "string"
+                },
+                "Keytab": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeytabDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Krb5ConfigGcsUri",
+                "Principal"
+            ]
+        },
+        "KeytabDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudSecret"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArtifactGcsUri": {
+            "type": "string"
+        },
+        "EndpointUri": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "StateMessage": {
+            "type": "string"
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "HiveMetastoreConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HiveMetastoreConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindowDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ArtifactGcsUri",
+        "/properties/EndpointUri",
+        "/properties/Id",
+        "/properties/Name",
+        "/properties/State",
+        "/properties/StateMessage"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

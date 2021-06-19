@@ -1,0 +1,77 @@
+{
+    "typeName": "TF::OVH::DedicatedServerUpdate",
+    "description": "Update various properties of your Dedicated Server.\n\n~> __WARNING__: `rescue_mail` and `root_device` properties aren't\nupdated consistently. This is an issue on the OVH API which \nhas been reported. Meanwhile, these properties aren't not mapped\non this terraform resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ovh/TF-OVH-DedicatedServerUpdate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootId": {
+            "type": "number",
+            "description": "boot id of the server."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Monitoring": {
+            "type": "boolean",
+            "description": "Icmp monitoring state."
+        },
+        "ServiceName": {
+            "type": "string",
+            "description": "The service_name of your dedicated server."
+        },
+        "State": {
+            "type": "string",
+            "description": "error, hacked, hackedBlocked, ok."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,486 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateHttp",
+    "description": "`thunder_slb_template_http` Provides details about thunder slb template http",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateHttp/docs/README.md",
+    "definitions": {
+        "CompressionContentTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CompressionExcludeContentTypeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludeContentType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CompressionExcludeUriDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludeUri": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HostSwitchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostMatchString": {
+                    "type": "string"
+                },
+                "HostServiceGroup": {
+                    "type": "string"
+                },
+                "HostSwitchingType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RedirectRewriteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectSecure": {
+                    "type": "number"
+                },
+                "RedirectSecurePort": {
+                    "type": "number"
+                },
+                "MatchList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchListDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RequestHeaderEraseListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestHeaderErase": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RequestHeaderInsertListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestHeaderInsert": {
+                    "type": "string"
+                },
+                "RequestHeaderInsertType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseContentReplaceListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseContentReplace": {
+                    "type": "string"
+                },
+                "ResponseNewString": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseHeaderEraseListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseHeaderErase": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ResponseHeaderInsertListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResponseHeaderInsert": {
+                    "type": "string"
+                },
+                "ResponseHeaderInsertType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Logging": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UrlSwitchingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "UrlMatchString": {
+                    "type": "string"
+                },
+                "UrlServiceGroup": {
+                    "type": "string"
+                },
+                "UrlSwitchingType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MatchListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectMatch": {
+                    "type": "string"
+                },
+                "RewriteTo": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "100ContWaitForReqComplete": {
+            "type": "number",
+            "description": "When REQ has Expect 100 and response is not 100, then wait for whole request to be sent."
+        },
+        "BypassSg": {
+            "type": "string",
+            "description": "Select service group for non-http traffic (Service Group Name)."
+        },
+        "ClientIpHdrReplace": {
+            "type": "number",
+            "description": "Replace the existing header."
+        },
+        "ClientPortHdrReplace": {
+            "type": "number",
+            "description": "Replace the existing header."
+        },
+        "CompressionAutoDisableOnHighCpu": {
+            "type": "number",
+            "description": "Auto-disable software compression on high cpu usage (Disable compression if cpu usage is above threshold. Default is off.)."
+        },
+        "CompressionEnable": {
+            "type": "number",
+            "description": "Enable Compression."
+        },
+        "CompressionKeepAcceptEncoding": {
+            "type": "number",
+            "description": "Keep accept encoding."
+        },
+        "CompressionKeepAcceptEncodingEnable": {
+            "type": "number",
+            "description": "Enable Server Accept Encoding."
+        },
+        "CompressionLevel": {
+            "type": "number",
+            "description": "compression level, default 1 (compression level value, default is 1)."
+        },
+        "CompressionMinimumContentLength": {
+            "type": "number",
+            "description": "Minimum Content Length (Minimum content length for compression in bytes. Default is 120.)."
+        },
+        "CookieFormat": {
+            "type": "string",
+            "description": "\u2018rfc6265\u2019: Follow rfc6265;."
+        },
+        "FailoverUrl": {
+            "type": "string",
+            "description": "Failover to this URL (Failover URL Name)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertClientIp": {
+            "type": "number",
+            "description": "Insert Client IP address into HTTP header."
+        },
+        "InsertClientIpHeaderName": {
+            "type": "string",
+            "description": "HTTP Header Name for inserting Client IP."
+        },
+        "InsertClientPort": {
+            "type": "number",
+            "description": "Insert Client Port address into HTTP header."
+        },
+        "InsertClientPortHeaderName": {
+            "type": "string",
+            "description": "HTTP Header Name for inserting Client Port."
+        },
+        "KeepClientAlive": {
+            "type": "number",
+            "description": "Keep client alive."
+        },
+        "LogRetry": {
+            "type": "number",
+            "description": "log when HTTP request retry."
+        },
+        "MaxConcurrentStreams": {
+            "type": "number",
+            "description": "Max concurrent streams, default 100."
+        },
+        "Name": {
+            "type": "string",
+            "description": "HTTP Template Name."
+        },
+        "NonHttpBypass": {
+            "type": "number",
+            "description": "Bypass non-http traffic instead of dropping."
+        },
+        "PersistOn401": {
+            "type": "number",
+            "description": "Persist to the same server if the response code is 401."
+        },
+        "RdPort": {
+            "type": "number",
+            "description": "Port (Port Number)."
+        },
+        "RdRespCode": {
+            "type": "string",
+            "description": "\u2018301\u2019: Moved Permanently; \u2018302\u2019: Found; \u2018303\u2019: See Other; \u2018307\u2019: Temporary Redirect;."
+        },
+        "RdSecure": {
+            "type": "number",
+            "description": "Use HTTPS."
+        },
+        "RdSimpleLoc": {
+            "type": "string",
+            "description": "Redirect location tag absolute URI string."
+        },
+        "Redirect": {
+            "type": "number",
+            "description": "Automatically send a redirect response."
+        },
+        "ReqHdrWaitTime": {
+            "type": "number",
+            "description": "HTTP request header wait time before abort connection."
+        },
+        "ReqHdrWaitTimeVal": {
+            "type": "number",
+            "description": "Number of seconds wait for client request header (default is 7)."
+        },
+        "RequestLineCaseInsensitive": {
+            "type": "number",
+            "description": "Parse http request line as case insensitive."
+        },
+        "RequestTimeout": {
+            "type": "number",
+            "description": "Request timeout if response not received (timeout in seconds)."
+        },
+        "RetryOn5xx": {
+            "type": "number",
+            "description": "Retry http request on HTTP 5xx code."
+        },
+        "RetryOn5xxPerReq": {
+            "type": "number",
+            "description": "Retry http request on HTTP 5xx code for each request."
+        },
+        "RetryOn5xxPerReqVal": {
+            "type": "number",
+            "description": "Number of times to retry (default is 3)."
+        },
+        "RetryOn5xxVal": {
+            "type": "number",
+            "description": "Number of times to retry (default is 3)."
+        },
+        "StrictTransactionSwitch": {
+            "type": "number",
+            "description": "Force server selection on every HTTP request."
+        },
+        "Term11clientHdrConnClose": {
+            "type": "number",
+            "description": "Terminate HTTP 1.1 client when req has Connection: close."
+        },
+        "UrlHashFirst": {
+            "type": "number",
+            "description": "Use the begining part of URL to calculate hash value (URL string length to calculate hash value)."
+        },
+        "UrlHashLast": {
+            "type": "number",
+            "description": "Use the end part of URL to calculate hash value (URL string length to calculate hash value)."
+        },
+        "UrlHashOffset": {
+            "type": "number",
+            "description": "Skip part of URL to calculate hash value (Offset of the URL string)."
+        },
+        "UrlHashPersist": {
+            "type": "number",
+            "description": "Use URL\u2019s hash value to select server."
+        },
+        "UseServerStatus": {
+            "type": "number",
+            "description": "Use Server-Status header to do URL hashing."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "CompressionContentType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CompressionContentTypeDefinition"
+            }
+        },
+        "CompressionExcludeContentType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CompressionExcludeContentTypeDefinition"
+            }
+        },
+        "CompressionExcludeUri": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CompressionExcludeUriDefinition"
+            }
+        },
+        "HostSwitching": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostSwitchingDefinition"
+            }
+        },
+        "RedirectRewrite": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedirectRewriteDefinition"
+            },
+            "maxItems": 1
+        },
+        "RequestHeaderEraseList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestHeaderEraseListDefinition"
+            }
+        },
+        "RequestHeaderInsertList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestHeaderInsertListDefinition"
+            }
+        },
+        "ResponseContentReplaceList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseContentReplaceListDefinition"
+            }
+        },
+        "ResponseHeaderEraseList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseHeaderEraseListDefinition"
+            }
+        },
+        "ResponseHeaderInsertList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseHeaderInsertListDefinition"
+            }
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        },
+        "UrlSwitching": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlSwitchingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

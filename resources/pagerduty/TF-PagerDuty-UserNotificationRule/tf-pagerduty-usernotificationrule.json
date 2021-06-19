@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::PagerDuty::UserNotificationRule",
+    "description": "A [notification rule](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_notification_rules_notification_rule_id) configures where and when a PagerDuty user is notified when a triggered incident is assigned to him. Unique notification rules can be created for both high and low-urgency incidents.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-UserNotificationRule/docs/README.md",
+    "definitions": {
+        "ContactMethodDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContactMethod": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContactMethodDefinition"
+            },
+            "description": "A contact method block, configured as a block described below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StartDelayInMinutes": {
+            "type": "number",
+            "description": "The delay before firing the rule, in minutes.\n* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
+        },
+        "Urgency": {
+            "type": "string",
+            "description": "Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
+        },
+        "UserId": {
+            "type": "string",
+            "description": "The ID of the user.\n* `start_delay_in_minutes` - (Required) The delay before firing the rule, in minutes.\n* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContactMethod",
+        "StartDelayInMinutes",
+        "Urgency",
+        "UserId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,261 @@
+{
+    "typeName": "TF::Dynatrace::ServiceAnomalies",
+    "description": "CloudFormation equivalent of dynatrace_service_anomalies",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-ServiceAnomalies/docs/README.md",
+    "definitions": {
+        "FailureRatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Auto": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Thresholds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThresholdsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LoadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Drops": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DropsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Spikes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpikesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "LoadDropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minutes": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ResponseTimesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Auto": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Thresholds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ThresholdsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Load": {
+                    "type": "string"
+                },
+                "Milliseconds": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                },
+                "SlowestMilliseconds": {
+                    "type": "number"
+                },
+                "SlowestPercent": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Load",
+                "Milliseconds",
+                "Percent",
+                "SlowestMilliseconds",
+                "SlowestPercent"
+            ]
+        },
+        "ThresholdsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Load": {
+                    "type": "string"
+                },
+                "Milliseconds": {
+                    "type": "number"
+                },
+                "Sensitivity": {
+                    "type": "string"
+                },
+                "SlowestMilliseconds": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Load",
+                "Milliseconds",
+                "Sensitivity",
+                "SlowestMilliseconds"
+            ]
+        },
+        "DropsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minutes": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SpikesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minutes": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "FailureRates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FailureRatesDefinition"
+            },
+            "maxItems": 1
+        },
+        "Load": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadDefinition"
+            },
+            "maxItems": 1
+        },
+        "LoadDrops": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadDropsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ResponseTimes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseTimesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::ACI::VmmDomain",
+    "description": "CloudFormation equivalent of aci_vmm_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-VmmDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "ArpLearning": {
+            "type": "string"
+        },
+        "AveTimeOut": {
+            "type": "string"
+        },
+        "ConfigInfraPg": {
+            "type": "string"
+        },
+        "CtrlKnob": {
+            "type": "string"
+        },
+        "Delimiter": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableAve": {
+            "type": "string"
+        },
+        "EnableTag": {
+            "type": "string"
+        },
+        "EncapMode": {
+            "type": "string"
+        },
+        "EnfPref": {
+            "type": "string"
+        },
+        "EpInventoryType": {
+            "type": "string"
+        },
+        "EpRetTime": {
+            "type": "string"
+        },
+        "HvAvailMonitor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "McastAddr": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "PrefEncapMode": {
+            "type": "string"
+        },
+        "ProviderProfileDn": {
+            "type": "string"
+        },
+        "RelationInfraRsDomVxlanNsDef": {
+            "type": "string"
+        },
+        "RelationInfraRsVipAddrNs": {
+            "type": "string"
+        },
+        "RelationInfraRsVlanNs": {
+            "type": "string"
+        },
+        "RelationInfraRsVlanNsDef": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultCdpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultFwPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultL2InstPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultLacpLagPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultLldpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDefaultStpIfPol": {
+            "type": "string"
+        },
+        "RelationVmmRsDomMcastAddrNs": {
+            "type": "string"
+        },
+        "RelationVmmRsPrefEnhancedLagPol": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProviderProfileDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

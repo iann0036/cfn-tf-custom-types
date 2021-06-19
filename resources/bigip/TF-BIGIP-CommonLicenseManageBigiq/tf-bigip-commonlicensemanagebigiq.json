@@ -1,0 +1,135 @@
+{
+    "typeName": "TF::BIGIP::CommonLicenseManageBigiq",
+    "description": "`bigip_common_license_manage_bigiq` This Resource is used for BIGIP/Provider License Management from BIGIQ",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-CommonLicenseManageBigiq/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssignmentType": {
+            "type": "string",
+            "description": "The type of assignment, which is determined by whether the BIG-IP is unreachable, unmanaged, or managed by BIG-IQ. Possible values: \u201cUNREACHABLE\u201d, \u201cUNMANAGED\u201d, or \u201cMANAGED\u201d."
+        },
+        "BigiqAddress": {
+            "type": "string",
+            "description": "BIGIQ License Manager IP Address, variable type `string`."
+        },
+        "BigiqLoginRef": {
+            "type": "string",
+            "description": "BIGIQ Login reference for token authentication."
+        },
+        "BigiqPassword": {
+            "type": "string",
+            "description": "BIGIQ License Manager password.  variable type `string`."
+        },
+        "BigiqPort": {
+            "type": "string",
+            "description": "type `int`, BIGIQ License Manager Port number, specify if port is other than `443`."
+        },
+        "BigiqTokenAuth": {
+            "type": "boolean",
+            "description": "type `bool`, if set to `true` enables Token based Authentication,default is `false`."
+        },
+        "BigiqUser": {
+            "type": "string",
+            "description": "BIGIQ License Manager username, variable type `string`."
+        },
+        "DeviceLicenseStatus": {
+            "type": "string"
+        },
+        "Hypervisor": {
+            "type": "string",
+            "description": "Identifies the platform running the BIG-IP VE. Possible values: \u201caws\u201d, \u201cazure\u201d, \u201cgce\u201d, \u201cvmware\u201d, \u201chyperv\u201d, \u201ckvm\u201d, or \u201cxen\u201d. type `string`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "License Assignment is done with specified `key`, supported only with RegKeypool type License assignement. type `string`."
+        },
+        "LicensePoolname": {
+            "type": "string",
+            "description": "A name given to the license pool. type `string`."
+        },
+        "MacAddress": {
+            "type": "string",
+            "description": "MAC address of the BIG-IP. type `string`."
+        },
+        "Skukeyword1": {
+            "type": "string",
+            "description": "An optional offering name. type `string`."
+        },
+        "Skukeyword2": {
+            "type": "string",
+            "description": "An optional offering name. type `string`."
+        },
+        "Tenant": {
+            "type": "string",
+            "description": "For an unreachable BIG-IP, you can provide an optional description for the assignment in this field."
+        },
+        "UnitOfMeasure": {
+            "type": "string",
+            "description": "The units used to measure billing. For example, \u201chourly\u201d or \u201cdaily\u201d. Type `string`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AssignmentType",
+        "BigiqAddress",
+        "BigiqPassword",
+        "BigiqUser",
+        "LicensePoolname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/BigiqLoginRef",
+        "/properties/BigiqPassword",
+        "/properties/BigiqPort",
+        "/properties/BigiqTokenAuth",
+        "/properties/BigiqUser"
+    ]
+}

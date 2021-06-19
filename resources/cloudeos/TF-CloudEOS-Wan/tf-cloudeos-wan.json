@@ -1,0 +1,104 @@
+{
+    "typeName": "TF::CloudEOS::Wan",
+    "description": "The `cloudeos_wan` resource is used to provide attributes for the underlay and overlay connectivity\namongst Edges and Route Reflectors which are part of single WAN Network. In a traditional network topology,\na WAN Network includes multiple site/branch/cloud Edges connected through Ipsec VPN and/or private connects.\nSimilarly here, we have extended that concept which allows you to connect multiple clouds and regions\nin a single WAN fabric.\n\nThe Edge/RR VPC and Edge CloudEOS router associate with a WAN using its `name`.\nIt is also possible to create multiple isolated WAN fabrics by creating multiple `cloudeos_wan` resources\nand then associating the WAN name to the corresponding resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudeos/TF-CloudEOS-Wan/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CvContainerName": {
+            "type": "string",
+            "description": "CVaaS Container Name to which the CloudEdge Routers\nwill be added to."
+        },
+        "EdgeToEdgeDedicatedConnect": {
+            "type": "boolean",
+            "description": "Dedicated connection between two Edge VPC,\ndefault is false. ( Not Supported yet )."
+        },
+        "EdgeToEdgeIgw": {
+            "type": "boolean",
+            "description": "Edge to Edge Connectivity through the Internet Gateway."
+        },
+        "EdgeToEdgePeering": {
+            "type": "boolean",
+            "description": "Peering across Edge VPC's, default is false.\n( Not supported yet )."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the wan resource."
+        },
+        "TfId": {
+            "type": "string"
+        },
+        "TopologyName": {
+            "type": "string",
+            "description": "Name of the topology this wan resource depends on."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TopologyName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/TfId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::FortiOS::UserTacacs",
+    "description": "Configure TACACS+ server entries.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserTacacs/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthenType": {
+            "type": "string",
+            "description": "Allowed authentication protocols/methods. Valid values: `mschap`, `chap`, `pap`, `ascii`, `auto`."
+        },
+        "Authorization": {
+            "type": "string",
+            "description": "Enable/disable TACACS+ authorization. Valid values: `enable`, `disable`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "Key": {
+            "type": "string",
+            "description": "Key to access the primary server."
+        },
+        "Name": {
+            "type": "string",
+            "description": "TACACS+ server entry name."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port number of the TACACS+ server."
+        },
+        "SecondaryKey": {
+            "type": "string",
+            "description": "Key to access the secondary server."
+        },
+        "SecondaryServer": {
+            "type": "string",
+            "description": "Secondary TACACS+ server CN domain name or IP address."
+        },
+        "Server": {
+            "type": "string",
+            "description": "Primary TACACS+ server CN domain name or IP address."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "source IP for communications to TACACS+ server."
+        },
+        "TertiaryKey": {
+            "type": "string",
+            "description": "Key to access the tertiary server."
+        },
+        "TertiaryServer": {
+            "type": "string",
+            "description": "Tertiary TACACS+ server CN domain name or IP address."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Key",
+        "/properties/SecondaryKey",
+        "/properties/TertiaryKey"
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "typeName": "TF::Scaleway::LbCertificate",
+    "description": "Creates and manages Scaleway Load-Balancer Certificates.\nFor more information, see [the documentation](https://developers.scaleway.com/en/products/lb/api).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/scaleway/TF-Scaleway-LbCertificate/docs/README.md",
+    "definitions": {
+        "CustomCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateChain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CertificateChain"
+            ]
+        },
+        "LetsencryptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "SubjectAlternativeName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "CommonName"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CommonName": {
+            "type": "string"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotValidAfter": {
+            "type": "string"
+        },
+        "NotValidBefore": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubjectAlternativeName": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CustomCertificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomCertificateDefinition"
+            },
+            "maxItems": 1
+        },
+        "Letsencrypt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LetsencryptDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LbId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CommonName",
+        "/properties/Fingerprint",
+        "/properties/Id",
+        "/properties/NotValidAfter",
+        "/properties/NotValidBefore",
+        "/properties/Status",
+        "/properties/SubjectAlternativeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

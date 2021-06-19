@@ -1,0 +1,127 @@
+{
+    "typeName": "TF::Thunder::Partition",
+    "description": "`thunder_partition` provides details about partition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Partition/docs/README.md",
+    "definitions": {
+        "SharedVlanDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MgmtFloatingIpAddress": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Vlan": {
+                    "type": "number"
+                },
+                "Vrid": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceAccounting": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationType": {
+            "type": "string",
+            "description": "'adc\u2019: Application type ADC; 'cgnv6\u2019: Application type CGNv6;."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Id1": {
+            "type": "number",
+            "description": "Specify unique Partition id."
+        },
+        "PartitionName": {
+            "type": "string",
+            "description": "Object partition name."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "SharedVlan": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SharedVlanDefinition"
+            },
+            "maxItems": 1
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

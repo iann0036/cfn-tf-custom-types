@@ -1,0 +1,281 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerLocation",
+    "description": "Configure FortiSwitch location services.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerLocation/docs/README.md",
+    "definitions": {
+        "AddressCivicDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Additional": {
+                    "type": "string",
+                    "description": "Location additional details."
+                },
+                "AdditionalCode": {
+                    "type": "string",
+                    "description": "Location additional code details."
+                },
+                "Block": {
+                    "type": "string",
+                    "description": "Location block details."
+                },
+                "BranchRoad": {
+                    "type": "string",
+                    "description": "Location branch road details."
+                },
+                "Building": {
+                    "type": "string",
+                    "description": "Location building details."
+                },
+                "City": {
+                    "type": "string",
+                    "description": "Location city details."
+                },
+                "CityDivision": {
+                    "type": "string",
+                    "description": "Location city division details."
+                },
+                "Country": {
+                    "type": "string",
+                    "description": "The two-letter ISO 3166 country code in capital ASCII letters eg. US, CA, DK, DE."
+                },
+                "CountrySubdivision": {
+                    "type": "string",
+                    "description": "National subdivisions (state, canton, region, province, or prefecture)."
+                },
+                "County": {
+                    "type": "string",
+                    "description": "County, parish, gun (JP), or district (IN)."
+                },
+                "Direction": {
+                    "type": "string",
+                    "description": "Leading street direction."
+                },
+                "Floor": {
+                    "type": "string",
+                    "description": "Floor."
+                },
+                "Landmark": {
+                    "type": "string",
+                    "description": "Landmark or vanity address."
+                },
+                "Language": {
+                    "type": "string",
+                    "description": "Language."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Name (residence and office occupant)."
+                },
+                "Number": {
+                    "type": "string",
+                    "description": "House number."
+                },
+                "NumberSuffix": {
+                    "type": "string",
+                    "description": "House number suffix."
+                },
+                "ParentKey": {
+                    "type": "string",
+                    "description": "Parent key name."
+                },
+                "PlaceType": {
+                    "type": "string",
+                    "description": "Placetype."
+                },
+                "PostOfficeBox": {
+                    "type": "string",
+                    "description": "Post office box (P.O. box)."
+                },
+                "PostalCommunity": {
+                    "type": "string",
+                    "description": "Postal community name."
+                },
+                "PrimaryRoad": {
+                    "type": "string",
+                    "description": "Primary road name."
+                },
+                "RoadSection": {
+                    "type": "string",
+                    "description": "Road section."
+                },
+                "Room": {
+                    "type": "string",
+                    "description": "Room number."
+                },
+                "Script": {
+                    "type": "string",
+                    "description": "Script used to present the address information."
+                },
+                "Seat": {
+                    "type": "string",
+                    "description": "Seat number."
+                },
+                "Street": {
+                    "type": "string",
+                    "description": "Street."
+                },
+                "StreetNamePostMod": {
+                    "type": "string",
+                    "description": "Street name post modifier."
+                },
+                "StreetNamePreMod": {
+                    "type": "string",
+                    "description": "Street name pre modifier."
+                },
+                "StreetSuffix": {
+                    "type": "string",
+                    "description": "Street suffix."
+                },
+                "SubBranchRoad": {
+                    "type": "string",
+                    "description": "Sub branch road name."
+                },
+                "TrailingStrSuffix": {
+                    "type": "string",
+                    "description": "Trailing street suffix."
+                },
+                "Unit": {
+                    "type": "string",
+                    "description": "Unit (apartment, suite)."
+                },
+                "Zip": {
+                    "type": "string",
+                    "description": "Postal/zip code."
+                }
+            },
+            "required": []
+        },
+        "CoordinatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Altitude": {
+                    "type": "string",
+                    "description": "+/- Floating point no. eg. 117.47."
+                },
+                "AltitudeUnit": {
+                    "type": "string",
+                    "description": "m ( meters), f ( floors). Valid values: `m`, `f`."
+                },
+                "Datum": {
+                    "type": "string",
+                    "description": "WGS84, NAD83, NAD83/MLLW. Valid values: `WGS84`, `NAD83`, `NAD83/MLLW`."
+                },
+                "Latitude": {
+                    "type": "string",
+                    "description": "Floating point start with ( +/- )  or end with ( N or S ) eg. +/-16.67 or 16.67N."
+                },
+                "Longitude": {
+                    "type": "string",
+                    "description": "Floating point start with ( +/- )  or end with ( E or W ) eg. +/-26.789 or 26.789E."
+                },
+                "ParentKey": {
+                    "type": "string",
+                    "description": "Parent key name."
+                }
+            },
+            "required": []
+        },
+        "ElinNumberDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ElinNum": {
+                    "type": "string",
+                    "description": "Configure ELIN callback number."
+                },
+                "ParentKey": {
+                    "type": "string",
+                    "description": "Parent key name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Unique location item name."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "AddressCivic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddressCivicDefinition"
+            },
+            "maxItems": 1
+        },
+        "Coordinates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CoordinatesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ElinNumber": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElinNumberDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

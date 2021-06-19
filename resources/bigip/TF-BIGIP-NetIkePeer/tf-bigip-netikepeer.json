@@ -1,0 +1,206 @@
+{
+    "typeName": "TF::BIGIP::NetIkePeer",
+    "description": "`bigip_net_ike_peer` Manages a ike_peer configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/bigip/TF-BIGIP-NetIkePeer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppService": {
+            "type": "string",
+            "description": "The application service that the object belongs to."
+        },
+        "CaCertFile": {
+            "type": "string",
+            "description": "the trusted root and intermediate certificate authorities."
+        },
+        "CrlFile": {
+            "type": "string",
+            "description": "Specifies the file name of the Certificate Revocation List. Only supported in IKEv1."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description."
+        },
+        "DpdDelay": {
+            "type": "number",
+            "description": "Specifies the number of seconds between Dead Peer Detection messages."
+        },
+        "GeneratePolicy": {
+            "type": "string",
+            "description": "Enable or disable the generation of Security Policy Database entries(SPD) when the device is the responder of the IKE remote node."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Lifetime": {
+            "type": "number",
+            "description": "Defines the lifetime in minutes of an IKE SA which will be proposed in the phase 1 negotiations."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "Defines the exchange mode for phase 1 when racoon is the initiator, or the acceptable exchange mode when racoon is the responder."
+        },
+        "MyCertFile": {
+            "type": "string",
+            "description": "Specifies the name of the certificate file object."
+        },
+        "MyCertKeyFile": {
+            "type": "string",
+            "description": "Specifies the name of the certificate key file object."
+        },
+        "MyCertKeyPassphrase": {
+            "type": "string",
+            "description": "Specifies the passphrase of the key used for my-cert-key-file."
+        },
+        "MyIdType": {
+            "type": "string",
+            "description": "Specifies the identifier type sent to the remote host to use in the phase 1 negotiation."
+        },
+        "MyIdValue": {
+            "type": "string",
+            "description": "Specifies the identifier value sent to the remote host in the phase 1 negotiation."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the ike_peer."
+        },
+        "NatTraversal": {
+            "type": "string",
+            "description": "Enables use of the NAT-Traversal IPsec extension."
+        },
+        "Passive": {
+            "type": "string",
+            "description": "Specifies whether the local IKE agent can be the initiator of the IKE negotiation with this ike-peer."
+        },
+        "PeersCertFile": {
+            "type": "string",
+            "description": "Specifies the peer\u2019s certificate for authentication."
+        },
+        "PeersCertType": {
+            "type": "string",
+            "description": "Specifies that the only peers-cert-type supported is certfile."
+        },
+        "PeersIdType": {
+            "type": "string",
+            "description": "Specifies which of address, fqdn, asn1dn, user-fqdn or keyid-tag types to use as peers-id-type."
+        },
+        "PeersIdValue": {
+            "type": "string",
+            "description": "Specifies the peer\u2019s identifier to be received."
+        },
+        "Phase1AuthMethod": {
+            "type": "string",
+            "description": "Specifies the authentication method used for phase 1 negotiation."
+        },
+        "Phase1EncryptAlgorithm": {
+            "type": "string",
+            "description": "Specifies the encryption algorithm used for the isakmp phase 1 negotiation."
+        },
+        "Phase1HashAlgorithm": {
+            "type": "string",
+            "description": "Defines the hash algorithm used for the isakmp phase 1 negotiation."
+        },
+        "Phase1PerfectForwardSecrecy": {
+            "type": "string",
+            "description": "Defines the Diffie-Hellman group for key exchange to provide perfect forward secrecy."
+        },
+        "PresharedKey": {
+            "type": "string",
+            "description": "Specifies the preshared key for ISAKMP SAs."
+        },
+        "PresharedKeyEncrypted": {
+            "type": "string",
+            "description": "Display the encrypted preshared-key for the IKE remote node."
+        },
+        "Prf": {
+            "type": "string",
+            "description": "Specifies the pseudo-random function used to derive keying material for all cryptographic operations."
+        },
+        "ProxySupport": {
+            "type": "string",
+            "description": "If this value is enabled, both values of ID payloads in the phase 2 exchange are used as the addresses of end-point of IPsec-SAs."
+        },
+        "RemoteAddress": {
+            "type": "string",
+            "description": "Specifies the IP address of the IKE remote node."
+        },
+        "ReplayWindowSize": {
+            "type": "number",
+            "description": "Specifies the replay window size of the IPsec SAs negotiated with the IKE remote node."
+        },
+        "State": {
+            "type": "string",
+            "description": "Enables or disables this IKE remote node."
+        },
+        "TrafficSelector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies the names of the traffic-selector objects associated with this ike-peer."
+        },
+        "VerifyCert": {
+            "type": "string",
+            "description": "Specifies whether to verify the certificate chain of the remote peer based on the trusted certificates in ca-cert-file."
+        },
+        "Version": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Specifies which version of IKE to be used."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RemoteAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

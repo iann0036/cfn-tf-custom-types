@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Gitlab::DeployToken",
+    "description": "This resource allows you to create and manage deploy token for your GitLab projects and groups.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gitlab/TF-Gitlab-DeployToken/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExpiresAt": {
+            "type": "string",
+            "description": "Time the token will expire it, RFC3339 format. Will not expire per default."
+        },
+        "Group": {
+            "type": "string",
+            "description": "The name or id of the group to add the deploy token to.\nEither `project` or `group` must be set."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name to describe the deploy token with."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The name or id of the project to add the deploy token to.\nEither `project` or `group` must be set."
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Valid values: `read_repository`, `read_registry`."
+        },
+        "Token": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "A username for the deploy token. Default is `gitlab+deploy-token-{n}`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Scopes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Token"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Token"
+    ]
+}

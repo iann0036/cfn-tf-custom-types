@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::Thunder::SnmpServerEnableTrapsRoutingIsis",
+    "description": "`thunder_snmp_server_enable_traps_routing_isis` Provides details about thunder snmp server enable traps routing isis",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerEnableTrapsRoutingIsis/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsisAdjacencyChange": {
+            "type": "number",
+            "description": "Enable isisAdjacencyChange traps."
+        },
+        "IsisAreaMismatch": {
+            "type": "number",
+            "description": "Enable isisAreaMismatch traps."
+        },
+        "IsisAttemptToExceedMaxSequence": {
+            "type": "number",
+            "description": "Enable isisAttemptToExceedMaxSequence traps."
+        },
+        "IsisAuthenticationFailure": {
+            "type": "number",
+            "description": "Enable isisAuthenticationFailure traps."
+        },
+        "IsisAuthenticationTypeFailure": {
+            "type": "number",
+            "description": "Enable isisAuthenticationTypeFailure traps."
+        },
+        "IsisCorruptedLspDetected": {
+            "type": "number",
+            "description": "Enable isisCorruptedLSPDetected traps."
+        },
+        "IsisDatabaseOverload": {
+            "type": "number",
+            "description": "Enable isisDatabaseOverload traps."
+        },
+        "IsisIdLenMismatch": {
+            "type": "number",
+            "description": "Enable isisIDLenMismatch traps."
+        },
+        "IsisLspTooLargeToPropagate": {
+            "type": "number",
+            "description": "Enable isisLSPTooLargeToPropagate traps."
+        },
+        "IsisManualAddressDrops": {
+            "type": "number",
+            "description": "Enable isisManualAddressDrops traps."
+        },
+        "IsisMaxAreaAddressesMismatch": {
+            "type": "number",
+            "description": "Enable isisMaxAreaAddressesMismatch traps."
+        },
+        "IsisOriginatingLspBufferSizeMismatch": {
+            "type": "number",
+            "description": "Enable isisOriginatingLSPBufferSizeMismatch traps."
+        },
+        "IsisOwnLspPurge": {
+            "type": "number",
+            "description": "Enable isisOwnLSPPurge traps."
+        },
+        "IsisProtocolsSupportedMismatch": {
+            "type": "number",
+            "description": "Enable isisProtocolsSupportedMismatch traps."
+        },
+        "IsisRejectedAdjacency": {
+            "type": "number",
+            "description": "Enable isisRejectedAdjacency traps."
+        },
+        "IsisSequenceNumberSkip": {
+            "type": "number",
+            "description": "Enable isisSequenceNumberSkip traps."
+        },
+        "IsisVersionSkew": {
+            "type": "number",
+            "description": "Enable isisVersionSkew traps."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

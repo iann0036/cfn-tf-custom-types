@@ -1,0 +1,93 @@
+{
+    "typeName": "TF::PagerDuty::BusinessService",
+    "description": "A [business service](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Business_Services/get_business_services) allows you to model capabilities that span multiple technical services and that may be owned by several different teams.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/pagerduty/TF-PagerDuty-BusinessService/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A human-friendly description of the service.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `point_of_contact` - (Optional) The owner of the business service.\n* `type` - (Optional) Default value is `business_service`. Can also be set as `business_service_reference`.\n* `team` - (Optional) ID of the team that owns the business service."
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the business service.\n* `description` - (Optional) A human-friendly description of the service.\nIf not set, a placeholder of \"Managed by Terraform\" will be set.\n* `point_of_contact` - (Optional) The owner of the business service.\n* `type` - (Optional) Default value is `business_service`. Can also be set as `business_service_reference`.\n* `team` - (Optional) ID of the team that owns the business service."
+        },
+        "PointOfContact": {
+            "type": "string",
+            "description": "The owner of the business service.\n* `type` - (Optional) Default value is `business_service`. Can also be set as `business_service_reference`.\n* `team` - (Optional) ID of the team that owns the business service."
+        },
+        "Self": {
+            "type": "string"
+        },
+        "Summary": {
+            "type": "string"
+        },
+        "Team": {
+            "type": "string",
+            "description": "ID of the team that owns the business service."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Default value is `business_service`. Can also be set as `business_service_reference`.\n* `team` - (Optional) ID of the team that owns the business service."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HtmlUrl",
+        "/properties/Id",
+        "/properties/Self",
+        "/properties/Summary"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

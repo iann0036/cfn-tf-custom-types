@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::Thunder::OverlayTunnelOptions",
+    "description": "`thunder_overlay_tunnel_options` Provides details about thunder overlay tunnel options",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-OverlayTunnelOptions/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GatewayMac": {
+            "type": "string",
+            "description": "MAC to be used with Gateway segment Id (MAC Address for the Gateway segment)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpDscpPreserve": {
+            "type": "number",
+            "description": "Copy DSCP bits from inner IP to outer IP header."
+        },
+        "NvgreDisableFlowId": {
+            "type": "number",
+            "description": "Disable Flow-ID computation for NVGRE."
+        },
+        "NvgreKeyModeLower24": {
+            "type": "number",
+            "description": "Use the lower 24-bits of the GRE key as the VSID."
+        },
+        "TcpMssAdjustDisable": {
+            "type": "number",
+            "description": "Disable TCP MSS adjustment in SYN packet for tunnels."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "VxlanDestPort": {
+            "type": "number",
+            "description": "VXLAN UDP Destination Port (UDP Port Number (default 4789))."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

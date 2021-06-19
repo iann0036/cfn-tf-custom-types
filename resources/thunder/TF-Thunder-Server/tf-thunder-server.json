@@ -1,0 +1,299 @@
+{
+    "typeName": "TF::Thunder::Server",
+    "description": "`thunder_server` Provides details about thunder server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-Server/docs/README.md",
+    "definitions": {
+        "AlternateServerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alternate": {
+                    "type": "number"
+                },
+                "AlternateName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PortListDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ConnLimit": {
+                    "type": "number"
+                },
+                "ConnResume": {
+                    "type": "number"
+                },
+                "ExtendedStats": {
+                    "type": "number"
+                },
+                "FollowPortProtocol": {
+                    "type": "string"
+                },
+                "HealthCheck": {
+                    "type": "string"
+                },
+                "HealthCheckDisable": {
+                    "type": "number"
+                },
+                "HealthCheckFollowPort": {
+                    "type": "number"
+                },
+                "NoLogging": {
+                    "type": "number"
+                },
+                "NoSsl": {
+                    "type": "number"
+                },
+                "PortNumber": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Range": {
+                    "type": "number"
+                },
+                "RportHealthCheckShared": {
+                    "type": "string"
+                },
+                "SharedRportHealthCheck": {
+                    "type": "number"
+                },
+                "StatsDataAction": {
+                    "type": "string"
+                },
+                "SupportHttp2": {
+                    "type": "number"
+                },
+                "TemplatePort": {
+                    "type": "string"
+                },
+                "TemplateServerSsl": {
+                    "type": "string"
+                },
+                "UserTag": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                },
+                "AlternatePort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AlternatePortDefinition"
+                    }
+                },
+                "SamplingEnable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SamplingEnableDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AlternatePortDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alternate": {
+                    "type": "number"
+                },
+                "AlternateName": {
+                    "type": "string"
+                },
+                "AlternateServerPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "\u2018enable\u2019: enable; \u2018disable\u2019: disable; \u2018disable-with-health-check\u2019: disable port, but health check work;."
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection Limit."
+        },
+        "ConnResume": {
+            "type": "number",
+            "description": "Connection Resume."
+        },
+        "ExtendedStats": {
+            "type": "number",
+            "description": "Enable extended statistics on real server port."
+        },
+        "ExternalIp": {
+            "type": "string",
+            "description": "External IP address for NAT of GSLB."
+        },
+        "FqdnName": {
+            "type": "string",
+            "description": "Server hostname."
+        },
+        "HealthCheck": {
+            "type": "string",
+            "description": "Health Check (Monitor Name)."
+        },
+        "HealthCheckDisable": {
+            "type": "number",
+            "description": "Disable health check."
+        },
+        "HealthCheckShared": {
+            "type": "string",
+            "description": "Health Check Monitor (Health monitor name)."
+        },
+        "Host": {
+            "type": "string",
+            "description": "IP Address."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6": {
+            "type": "string",
+            "description": "IPv6 address Mapping of GSLB."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Server Name."
+        },
+        "NoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ResolveAs": {
+            "type": "string",
+            "description": "\u2018resolve-to-ipv4\u2019: Use A Query only to resolve FQDN; \u2018resolve-to-ipv6\u2019: Use AAAA Query only to resolve FQDN; \u2018resolve-to-ipv4-and-ipv6\u2019: Use A as well as AAAA Query to resolve FQDN;."
+        },
+        "ServerIpv6Addr": {
+            "type": "string",
+            "description": "IPV6 address."
+        },
+        "SharedPartitionHealthCheck": {
+            "type": "number",
+            "description": "Reference a health-check from shared partition."
+        },
+        "SlowStart": {
+            "type": "number",
+            "description": "Slowly ramp up the connection number after server is up (start from 128, then double every 10 sec till 4096)."
+        },
+        "SpoofingCache": {
+            "type": "number",
+            "description": "This server is a spoofing cache."
+        },
+        "StatsDataAction": {
+            "type": "string",
+            "description": "\u2018stats-data-enable\u2019: Enable statistical data collection for real server port; \u2018stats-data-disable\u2019: Disable statistical data collection for real server port;."
+        },
+        "TemplateServer": {
+            "type": "string",
+            "description": "Server template (Server template name)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Port Weight (Connection Weight)."
+        },
+        "AlternateServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlternateServerDefinition"
+            }
+        },
+        "PortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortListDefinition"
+            }
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

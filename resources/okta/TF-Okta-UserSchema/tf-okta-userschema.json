@@ -1,0 +1,211 @@
+{
+    "typeName": "TF::Okta::UserSchema",
+    "description": "Creates a User Schema property.\n\nThis resource allows you to create and configure a custom user schema property.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-UserSchema/docs/README.md",
+    "definitions": {
+        "ArrayOneOfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Const": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Const",
+                "Title"
+            ]
+        },
+        "MasterOverridePriorityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "OneOfDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Const": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Const",
+                "Title"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArrayEnum": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of values that an array property's items can be set to."
+        },
+        "ArrayType": {
+            "type": "string",
+            "description": "The type of the array elements if `type` is set to `\"array\"`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description of the user schema property."
+        },
+        "Enum": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Array of values a primitive property can be set to. See `array_enum` for arrays."
+        },
+        "ExternalName": {
+            "type": "string",
+            "description": "External name of the user schema property."
+        },
+        "ExternalNamespace": {
+            "type": "string",
+            "description": "External name of the user schema property."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Index": {
+            "type": "string",
+            "description": "The property name."
+        },
+        "Master": {
+            "type": "string",
+            "description": "Master priority for the user schema property. It can be set to `\"PROFILE_MASTER\"`, `\"OVERRIDE\"` or `\"OKTA\"`."
+        },
+        "MaxLength": {
+            "type": "number",
+            "description": "The maximum length of the user property value. Only applies to type `\"string\"`."
+        },
+        "MinLength": {
+            "type": "number",
+            "description": "The minimum length of the user property value. Only applies to type `\"string\"`."
+        },
+        "Pattern": {
+            "type": "string"
+        },
+        "Permissions": {
+            "type": "string",
+            "description": "Access control permissions for the property. It can be set to `\"READ_WRITE\"`, `\"READ_ONLY\"`, `\"HIDE\"`."
+        },
+        "Required": {
+            "type": "boolean",
+            "description": "Whether the property is required for this application's users."
+        },
+        "Scope": {
+            "type": "string",
+            "description": "determines whether an app user attribute can be set at the Individual or Group Level."
+        },
+        "Title": {
+            "type": "string",
+            "description": "display name for the enum value."
+        },
+        "Type": {
+            "type": "string",
+            "description": "- Type of profile source.\n- `value` - (Required) - ID of profile source."
+        },
+        "Unique": {
+            "type": "string",
+            "description": "Whether the property should be unique. It can be set to `\"UNIQUE_VALIDATED\"` or `\"NOT_UNIQUE\"`."
+        },
+        "UserType": {
+            "type": "string",
+            "description": "User type ID."
+        },
+        "ArrayOneOf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArrayOneOfDefinition"
+            }
+        },
+        "MasterOverridePriority": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterOverridePriorityDefinition"
+            }
+        },
+        "OneOf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OneOfDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Index",
+        "Title",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

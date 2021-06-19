@@ -1,0 +1,172 @@
+{
+    "typeName": "TF::AVI::Licenseledgerdetails",
+    "description": "The LicenseLedgerDetails resource allows the creation and management of Avi LicenseLedgerDetails",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Licenseledgerdetails/docs/README.md",
+    "definitions": {
+        "EscrowInfosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LastUpdated": {
+                    "type": "number"
+                },
+                "ServiceCores": {
+                    "type": "number"
+                },
+                "TenantUuid": {
+                    "type": "string"
+                },
+                "Tier": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LastUpdated",
+                "ServiceCores",
+                "Tier"
+            ]
+        },
+        "SeInfosDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LastUpdated": {
+                    "type": "number"
+                },
+                "ServiceCores": {
+                    "type": "number"
+                },
+                "TenantUuid": {
+                    "type": "string"
+                },
+                "Tier": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LastUpdated",
+                "ServiceCores",
+                "Tier"
+            ]
+        },
+        "TierUsagesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tier": {
+                    "type": "string"
+                },
+                "Usage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UsageDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UsageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Available": {
+                    "type": "number"
+                },
+                "Consumed": {
+                    "type": "number"
+                },
+                "Escrow": {
+                    "type": "number"
+                },
+                "Remaining": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "EscrowInfos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EscrowInfosDefinition"
+            }
+        },
+        "SeInfos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SeInfosDefinition"
+            }
+        },
+        "TierUsages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TierUsagesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

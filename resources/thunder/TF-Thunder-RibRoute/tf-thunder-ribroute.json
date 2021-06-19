@@ -1,0 +1,167 @@
+{
+    "typeName": "TF::Thunder::RibRoute",
+    "description": "`thunder_rib_route` Provides details about thunder rib route",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RibRoute/docs/README.md",
+    "definitions": {
+        "IpNexthopIpv4Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DescriptionNexthopIp": {
+                    "type": "string"
+                },
+                "DistanceNexthopIp": {
+                    "type": "number"
+                },
+                "IpNextHop": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpNexthopLifDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DescriptionNexthopLif": {
+                    "type": "string"
+                },
+                "Lif": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpNexthopPartitionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DescriptionNexthopPartition": {
+                    "type": "string"
+                },
+                "DescriptionPartitionVrid": {
+                    "type": "string"
+                },
+                "PartitionName": {
+                    "type": "string"
+                },
+                "VridNumInPartition": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IpNexthopTunnelDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DescriptionNexthopTunnel": {
+                    "type": "string"
+                },
+                "DistanceNexthopTunnel": {
+                    "type": "number"
+                },
+                "IpNextHopTunnel": {
+                    "type": "string"
+                },
+                "Tunnel": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpDestAddr": {
+            "type": "string",
+            "description": "Destination prefix."
+        },
+        "IpMask": {
+            "type": "string",
+            "description": "Destination prefix mask."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "IpNexthopIpv4": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNexthopIpv4Definition"
+            }
+        },
+        "IpNexthopLif": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNexthopLifDefinition"
+            }
+        },
+        "IpNexthopPartition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNexthopPartitionDefinition"
+            }
+        },
+        "IpNexthopTunnel": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpNexthopTunnelDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

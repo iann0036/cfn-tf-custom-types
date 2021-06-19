@@ -1,0 +1,88 @@
+{
+    "typeName": "TF::Vultr::DnsRecord",
+    "description": "Provides a Vultr DNS Record resource. This can be used to create, read, modify, and delete DNS Records.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-DnsRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Data": {
+            "type": "string",
+            "description": "IP Address of the instance the domain is associated with."
+        },
+        "Domain": {
+            "type": "string",
+            "description": "Name of the DNS Domain this record will belong to."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name (subdomain) for this record."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Priority of this record (only required for MX and SRV)."
+        },
+        "Ttl": {
+            "type": "number",
+            "description": "The time to live of this record."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of record."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Data",
+        "Domain",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

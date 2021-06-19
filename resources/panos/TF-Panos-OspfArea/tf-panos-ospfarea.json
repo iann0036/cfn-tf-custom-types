@@ -1,0 +1,144 @@
+{
+    "typeName": "TF::Panos::OspfArea",
+    "description": "Manages an OSPF area config.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-OspfArea/docs/README.md",
+    "definitions": {
+        "ExtRangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Network": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Network"
+            ]
+        },
+        "RangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action.  Valid values are `advertise` (default) or `suppress`."
+                },
+                "Network": {
+                    "type": "string",
+                    "description": "Network."
+                }
+            },
+            "required": [
+                "Network"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptSummary": {
+            "type": "boolean",
+            "description": "(stub/nssa) Accept summary."
+        },
+        "AdvertiseMetric": {
+            "type": "number",
+            "description": "(stub/nssa) Advertise metric."
+        },
+        "AdvertiseType": {
+            "type": "string",
+            "description": "Advertise type.  Valid values are `ext-2` or `ext-1`."
+        },
+        "DefaultRouteAdvertise": {
+            "type": "boolean",
+            "description": "(stub/nssa) Default route advertise."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The template location."
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string",
+            "description": "Area type.  Valid values are `normal` (default), `stub`, or `nssa`."
+        },
+        "VirtualRouter": {
+            "type": "string",
+            "description": "The virtual router name."
+        },
+        "ExtRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtRangeDefinition"
+            }
+        },
+        "Range": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangeDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

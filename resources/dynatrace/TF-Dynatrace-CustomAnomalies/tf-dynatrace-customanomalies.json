@@ -1,0 +1,571 @@
+{
+    "typeName": "TF::Dynatrace::CustomAnomalies",
+    "description": "CloudFormation equivalent of dynatrace_custom_anomalies",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dynatrace/TF-Dynatrace-CustomAnomalies/docs/README.md",
+    "definitions": {
+        "DimensionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DimensionDefinition"
+                    }
+                },
+                "Entity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntityDefinition"
+                    }
+                },
+                "String": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StringDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScopesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomDeviceGroupName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomDeviceGroupNameDefinition"
+                    }
+                },
+                "Entity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EntityDefinition"
+                    }
+                },
+                "HostGroupName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostGroupNameDefinition"
+                    }
+                },
+                "HostName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostNameDefinition"
+                    }
+                },
+                "ManagementZone": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManagementZoneDefinition"
+                    }
+                },
+                "Name": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NameDefinition"
+                    }
+                },
+                "ProcessGroupId": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessGroupIdDefinition"
+                    }
+                },
+                "ProcessGroupName": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessGroupNameDefinition"
+                    }
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    }
+                },
+                "Tag": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TagDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StrategyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Auto": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutoDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Generic": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GenericDefinition"
+                    }
+                },
+                "Static": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "DimensionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "EntityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "StringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CustomDeviceGroupNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "HostGroupNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "HostNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ManagementZoneDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ProcessGroupIdDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "ProcessGroupNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Unknowns": {
+                    "type": "string"
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "AutoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertCondition": {
+                    "type": "string"
+                },
+                "AlertingOnMissingData": {
+                    "type": "boolean"
+                },
+                "DealertingSamples": {
+                    "type": "number"
+                },
+                "Samples": {
+                    "type": "number"
+                },
+                "SignalFluctuations": {
+                    "type": "number"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ViolatingSamples": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AlertCondition",
+                "DealertingSamples",
+                "Samples",
+                "SignalFluctuations",
+                "ViolatingSamples"
+            ]
+        },
+        "GenericDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "StaticDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertCondition": {
+                    "type": "string"
+                },
+                "AlertingOnMissingData": {
+                    "type": "boolean"
+                },
+                "DealertingSamples": {
+                    "type": "number"
+                },
+                "Samples": {
+                    "type": "number"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Unknowns": {
+                    "type": "string"
+                },
+                "ViolatingSamples": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AlertCondition",
+                "DealertingSamples",
+                "Samples",
+                "Threshold",
+                "Unit",
+                "ViolatingSamples"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Context",
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregationType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisabledReason": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PrimaryDimensionKey": {
+            "type": "string"
+        },
+        "Severity": {
+            "type": "string"
+        },
+        "Unknowns": {
+            "type": "string"
+        },
+        "WarningReason": {
+            "type": "string"
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DimensionsDefinition"
+            }
+        },
+        "Scopes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScopesDefinition"
+            }
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StrategyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Enabled",
+        "MetricId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "typeName": "TF::AWS::LbCookieStickinessPolicy",
+    "description": "Provides a load balancer cookie stickiness policy, which allows an ELB to control the sticky session lifetime of the browser.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-LbCookieStickinessPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CookieExpirationPeriod": {
+            "type": "number",
+            "description": "The time period after which\nthe session cookie should be considered stale, expressed in seconds."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbPort": {
+            "type": "number",
+            "description": "The load balancer port to which the policy\nshould be applied. This must be an active listener on the load\nbalancer."
+        },
+        "LoadBalancer": {
+            "type": "string",
+            "description": "The load balancer to which the policy\nshould be attached."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the stickiness policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LbPort",
+        "LoadBalancer",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "typeName": "TF::Vultr::PrivateNetwork",
+    "description": "Provides a Vultr private network resource. This can be used to create, read, and delete private networks on your Vultr account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-PrivateNetwork/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description you want to give your network."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region ID that you want the network to be created in."
+        },
+        "V4Subnet": {
+            "type": "string",
+            "description": "The IPv4 subnet to be used when attaching instances to this network."
+        },
+        "V4SubnetMask": {
+            "type": "number",
+            "description": "The number of bits for the netmask in CIDR notation. Example: 32."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DateCreated",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

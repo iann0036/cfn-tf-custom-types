@@ -1,0 +1,159 @@
+{
+    "typeName": "TF::Civo::Instance",
+    "description": "Provides a Civo Instance resource. This can be used to create,\nmodify, and delete Instances.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-Instance/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CpuCores": {
+            "type": "number"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DiskGb": {
+            "type": "number"
+        },
+        "FirewallId": {
+            "type": "string",
+            "description": "The ID of the firewall to use, from the current list. If left blank or not sent, the default firewall will be used (open to all)."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "The Instance hostname, if is not declare the provider will generate one for you."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialPassword": {
+            "type": "string"
+        },
+        "InitialUser": {
+            "type": "string",
+            "description": "The name of the initial user created on the server (optional; this will default to the template's default_username and fallback to civo)."
+        },
+        "NetworkId": {
+            "type": "string",
+            "description": "This must be the ID of the network from the network listing (optional; default network used when not specified)."
+        },
+        "Notes": {
+            "type": "string",
+            "description": "Add some notes to the instance."
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PseudoIp": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "PublicIpRequired": {
+            "type": "string",
+            "description": "This should be either `create`, `none` or `move_ip_from:intances_id`."
+        },
+        "RamMb": {
+            "type": "number"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region for the instance, if not declare we use the region in declared in the provider."
+        },
+        "ReverseDns": {
+            "type": "string",
+            "description": "A fully qualified domain name that should be used as the instance's IP's reverse DNS (optional, uses the hostname if unspecified)."
+        },
+        "Script": {
+            "type": "string",
+            "description": "the contents of a script that will be uploaded to /usr/local/bin/civo-user-init-script on your instance, read/write/executable only by root and then will be executed at the end of the cloud initialization."
+        },
+        "Size": {
+            "type": "string",
+            "description": "The name of the size, from the current list, e.g. g3.k3s.small (required)."
+        },
+        "SourceId": {
+            "type": "string"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "SshkeyId": {
+            "type": "string",
+            "description": "The ID of an already uploaded SSH public key to use for login to the default user (optional; if one isn't provided a random password will be set and returned in the initial_password field)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "An optional list of tags, represented as a key, value pair."
+        },
+        "Template": {
+            "type": "string",
+            "description": "The ID for the template to use to build the instance."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CpuCores",
+        "/properties/CreatedAt",
+        "/properties/DiskGb",
+        "/properties/Id",
+        "/properties/InitialPassword",
+        "/properties/PrivateIp",
+        "/properties/PseudoIp",
+        "/properties/PublicIp",
+        "/properties/RamMb",
+        "/properties/SourceId",
+        "/properties/SourceType",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

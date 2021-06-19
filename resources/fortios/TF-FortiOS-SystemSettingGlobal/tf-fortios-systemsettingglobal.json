@@ -1,0 +1,85 @@
+{
+    "typeName": "TF::FortiOS::SystemSettingGlobal",
+    "description": "Provides a resource to configure options related to the overall operation of FortiOS.\n\n!> **Warning:** The resource will be deprecated and replaced by new resource `fortios_system_global`, we recommend that you use the new resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemSettingGlobal/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdminScp": {
+            "type": "string",
+            "description": "Enable SCP over SSH."
+        },
+        "AdminSport": {
+            "type": "string",
+            "description": "Administrative access port for HTTPS."
+        },
+        "AdminSshPort": {
+            "type": "string",
+            "description": "Administrative access port for SSH."
+        },
+        "Admintimeout": {
+            "type": "string",
+            "description": "Number of minutes before an idle administrator session time out."
+        },
+        "Hostname": {
+            "type": "string",
+            "description": "FortiGate unit's hostname."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Timezone": {
+            "type": "string",
+            "description": "Number corresponding to your time zone from 00 to 86."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Hostname"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

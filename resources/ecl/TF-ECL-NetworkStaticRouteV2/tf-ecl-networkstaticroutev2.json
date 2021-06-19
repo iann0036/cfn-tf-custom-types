@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::ECL::NetworkStaticRouteV2",
+    "description": "Manages a V2 static route resource within Enterprise Cloud.\n~> **Notice** We only support Static Route with service_type \"internet\" for now.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-NetworkStaticRouteV2/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AwsGwId": {
+            "type": "string",
+            "description": "AWS Gateway on which this static route will be set. Conflicts with \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "AzureGwId": {
+            "type": "string",
+            "description": "Azure Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the Static Route resource."
+        },
+        "Destination": {
+            "type": "string",
+            "description": "CIDR this static route points to."
+        },
+        "FicGwId": {
+            "type": "string",
+            "description": "FIC Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"azure_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "GcpGwId": {
+            "type": "string",
+            "description": "GCP Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"interdc_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InterdcGwId": {
+            "type": "string",
+            "description": "Inter DC Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"internet_gw_id\" and \"vpn_gw_id\"."
+        },
+        "InternetGwId": {
+            "type": "string",
+            "description": "Internet Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\" and \"vpn_gw_id\"."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the Static Route resource."
+        },
+        "Nexthop": {
+            "type": "string",
+            "description": "Next Hop address for specified CIDR."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which to obtain the V2 Network client.\nPublic ips are associated with accounts, but a Network client is needed to\ncreate one. If omitted, the `region` argument of the provider is used.\nChanging this creates a new public ip."
+        },
+        "ServiceType": {
+            "type": "string",
+            "description": "Service type for this route. Must be one of \"aws\", \"azure\", \"gcp\", \"interdc\", \"internet\" and \"vpn\"."
+        },
+        "TenantId": {
+            "type": "string",
+            "description": "Tenant ID of the owner (UUID)."
+        },
+        "VpnGwId": {
+            "type": "string",
+            "description": "VPN Gateway on which this static route will be set. Conflicts with \"aws_gw_id\", \"azure_gw_id\", \"fic_gw_id\", \"gcp_gw_id\", \"interdc_gw_id\" and \"internet_gw_id\"."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Nexthop",
+        "ServiceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

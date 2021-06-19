@@ -1,0 +1,96 @@
+{
+    "typeName": "TF::ACI::L3outOspfExternalPolicy",
+    "description": "Manages ACI L3-out OSPF External Policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outOspfExternalPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object L3-out OSPF External Policy.\n- `area_cost` - (Optional) The OSPF Area cost.\n- `area_ctrl` - (Optional) The controls of redistribution and summary LSA generation into NSSA and Stub areas.\nAllowed values: \"redistribute\", \"summary\", \"suppress-fa\", \"unspecified\" (Multiple Comma-Delimited values are allowed. E.g., \"redistribute,summary\"). Default value: \"redistribute,summary\".\n- `area_id` - (Optional) The OSPF Area ID.\n- `area_type` - (Optional) The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "AreaCost": {
+            "type": "string",
+            "description": "The OSPF Area cost.\n- `area_ctrl` - (Optional) The controls of redistribution and summary LSA generation into NSSA and Stub areas.\nAllowed values: \"redistribute\", \"summary\", \"suppress-fa\", \"unspecified\" (Multiple Comma-Delimited values are allowed. E.g., \"redistribute,summary\"). Default value: \"redistribute,summary\".\n- `area_id` - (Optional) The OSPF Area ID.\n- `area_type` - (Optional) The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "AreaCtrl": {
+            "type": "string",
+            "description": "The controls of redistribution and summary LSA generation into NSSA and Stub areas.\nAllowed values: \"redistribute\", \"summary\", \"suppress-fa\", \"unspecified\" (Multiple Comma-Delimited values are allowed. E.g., \"redistribute,summary\"). Default value: \"redistribute,summary\".\n- `area_id` - (Optional) The OSPF Area ID.\n- `area_type` - (Optional) The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "AreaId": {
+            "type": "string",
+            "description": "The OSPF Area ID.\n- `area_type` - (Optional) The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "AreaType": {
+            "type": "string",
+            "description": "The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "L3OutsideDn": {
+            "type": "string",
+            "description": "Distinguished name of parent l3 outside object.\n- `annotation` - (Optional) Annotation for object L3-out OSPF External Policy.\n- `area_cost` - (Optional) The OSPF Area cost.\n- `area_ctrl` - (Optional) The controls of redistribution and summary LSA generation into NSSA and Stub areas.\nAllowed values: \"redistribute\", \"summary\", \"suppress-fa\", \"unspecified\" (Multiple Comma-Delimited values are allowed. E.g., \"redistribute,summary\"). Default value: \"redistribute,summary\".\n- `area_id` - (Optional) The OSPF Area ID.\n- `area_type` - (Optional) The area type.\nAllowed values: \"nssa\", \"regular\", \"stub\". Default value: \"nssa\".\n- `multipod_internal` - (Optional) Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "MultipodInternal": {
+            "type": "string",
+            "description": "Start OSPF in WAN instance instead of default.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `name_alias` - (Optional) Name alias for object L3-out OSPF External Policy."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object L3-out OSPF External Policy."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "L3OutsideDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "typeName": "TF::LaunchDarkly::Project",
+    "description": "Provides a LaunchDarkly project resource.\n\nThis resource allows you to create and manage projects within your LaunchDarkly organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-Project/docs/README.md",
+    "definitions": {
+        "EnvironmentsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "ConfirmChanges": {
+                    "type": "boolean"
+                },
+                "DefaultTrackEvents": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RequireComments": {
+                    "type": "boolean"
+                },
+                "SecureMode": {
+                    "type": "boolean"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Color",
+                "Key",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeInSnippet": {
+            "type": "boolean"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The project's unique key."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The project's name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The project's set of tags."
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnvironmentsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Key",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

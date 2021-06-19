@@ -1,0 +1,149 @@
+{
+    "typeName": "TF::Gridscale::Backupschedule",
+    "description": "Provides a storage backup schedule resource. This can be used to create, modify, and delete backup schedules.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/gridscale/TF-Gridscale-Backupschedule/docs/README.md",
+    "definitions": {
+        "StorageBackupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateTime": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ObjectUuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean",
+            "description": "The status of the schedule active or not."
+        },
+        "ChangeTime": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepBackups": {
+            "type": "number",
+            "description": "The amount of Snapshots to keep before overwriting the last created Snapshot (>=1)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "UUID of the backup schedule."
+        },
+        "NextRuntime": {
+            "type": "string",
+            "description": "The date and time that the backup schedule will be run."
+        },
+        "NextRuntimeComputed": {
+            "type": "string"
+        },
+        "RunInterval": {
+            "type": "number",
+            "description": "The interval at which the schedule will run (in minutes, >=60)."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageBackups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageBackupsDefinition"
+            }
+        },
+        "StorageUuid": {
+            "type": "string",
+            "description": "UUID of the storage that the backup schedule belongs to."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Active",
+        "KeepBackups",
+        "Name",
+        "NextRuntime",
+        "RunInterval",
+        "StorageUuid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeTime",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/NextRuntimeComputed",
+        "/properties/Status",
+        "/properties/StorageBackups"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

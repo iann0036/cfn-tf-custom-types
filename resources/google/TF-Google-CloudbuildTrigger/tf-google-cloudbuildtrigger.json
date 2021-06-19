@@ -1,0 +1,660 @@
+{
+    "typeName": "TF::Google::CloudbuildTrigger",
+    "description": "Configuration for an automated build in response to source repository changes.\n\n\nTo get more information about Trigger, see:\n\n* [API documentation](https://cloud.google.com/cloud-build/docs/api/reference/rest/v1/projects.triggers)\n* How-to Guides\n    * [Automating builds using build triggers](https://cloud.google.com/cloud-build/docs/running-builds/automate-builds)\n\n~> **Note:** You can retrieve the email of the Cloud Build Service Account used in jobs by using the `google_project_service_identity` resource.\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=cloudbuild_trigger_filename&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cl...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-CloudbuildTrigger/docs/README.md",
+    "definitions": {
+        "SubstitutionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "BuildDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Images": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LogsBucket": {
+                    "type": "string"
+                },
+                "QueueTtl": {
+                    "type": "string"
+                },
+                "Substitutions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubstitutionsDefinition2"
+                    }
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Timeout": {
+                    "type": "string"
+                },
+                "Artifacts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ArtifactsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Options": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OptionsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Secret": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretDefinition"
+                    }
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Step": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SubstitutionsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GithubDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "PullRequest": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PullRequestDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Push": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PushDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggerTemplateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BranchName": {
+                    "type": "string"
+                },
+                "CommitSha": {
+                    "type": "string"
+                },
+                "Dir": {
+                    "type": "string"
+                },
+                "InvertRegex": {
+                    "type": "boolean"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "RepoName": {
+                    "type": "string"
+                },
+                "TagName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ArtifactsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Images": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Objects": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ObjectsDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "DynamicSubstitutions": {
+                    "type": "boolean"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LogStreamingOption": {
+                    "type": "string"
+                },
+                "Logging": {
+                    "type": "string"
+                },
+                "MachineType": {
+                    "type": "string"
+                },
+                "RequestedVerifyOption": {
+                    "type": "string"
+                },
+                "SecretEnv": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceProvenanceHash": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubstitutionOption": {
+                    "type": "string"
+                },
+                "WorkerPool": {
+                    "type": "string"
+                },
+                "Volumes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SecretDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                },
+                "SecretEnv": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretEnvDefinition"
+                    }
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "SecretEnvDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RepoSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RepoSourceDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "StorageSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StorageSourceDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "StepDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Dir": {
+                    "type": "string"
+                },
+                "Entrypoint": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SecretEnv": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Timeout": {
+                    "type": "string"
+                },
+                "Timing": {
+                    "type": "string"
+                },
+                "WaitFor": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Volumes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "PullRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "CommentControl": {
+                    "type": "string"
+                },
+                "InvertRegex": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Branch"
+            ]
+        },
+        "PushDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "InvertRegex": {
+                    "type": "boolean"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ObjectsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Paths": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VolumesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Path"
+            ]
+        },
+        "RepoSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BranchName": {
+                    "type": "string"
+                },
+                "CommitSha": {
+                    "type": "string"
+                },
+                "Dir": {
+                    "type": "string"
+                },
+                "InvertRegex": {
+                    "type": "boolean"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "RepoName": {
+                    "type": "string"
+                },
+                "Substitutions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubstitutionsDefinition3"
+                    }
+                },
+                "TagName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RepoName"
+            ]
+        },
+        "SubstitutionsDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "StorageSourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Generation": {
+                    "type": "string"
+                },
+                "Object": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Object"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "Filename": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoredFiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IncludedFiles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "Substitutions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SubstitutionsDefinition"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TriggerId": {
+            "type": "string"
+        },
+        "Build": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BuildDefinition"
+            },
+            "maxItems": 1
+        },
+        "Github": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GithubDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        },
+        "TriggerTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TriggerTemplateDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/TriggerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

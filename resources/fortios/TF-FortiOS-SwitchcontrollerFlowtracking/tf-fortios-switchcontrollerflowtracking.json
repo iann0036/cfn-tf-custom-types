@@ -1,0 +1,150 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerFlowtracking",
+    "description": "Configure FortiSwitch flow tracking and export via ipfix/netflow.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerFlowtracking/docs/README.md",
+    "definitions": {
+        "AggregatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Aggregate id."
+                },
+                "Ip": {
+                    "type": "string",
+                    "description": "IP address to group all matching traffic sessions to a flow."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CollectorIp": {
+            "type": "string",
+            "description": "Configure collector ip address."
+        },
+        "CollectorPort": {
+            "type": "number",
+            "description": "Configure collector port number(0-65535, default=0)."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Format": {
+            "type": "string",
+            "description": "Configure flow tracking protocol. Valid values: `netflow1`, `netflow5`, `netflow9`, `ipfix`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Level": {
+            "type": "string",
+            "description": "Configure flow tracking level. Valid values: `vlan`, `ip`, `port`, `proto`, `mac`."
+        },
+        "MaxExportPktSize": {
+            "type": "number",
+            "description": "Configure flow max export packet size (512-9216, default=512 bytes)."
+        },
+        "SampleMode": {
+            "type": "string",
+            "description": "Configure sample mode for the flow tracking. Valid values: `local`, `perimeter`, `device-ingress`."
+        },
+        "SampleRate": {
+            "type": "number",
+            "description": "Configure sample rate for the perimeter and device-ingress sampling(0 - 99999)."
+        },
+        "TimeoutGeneral": {
+            "type": "number",
+            "description": "Configure flow session general timeout (60-604800, default=3600 seconds)."
+        },
+        "TimeoutIcmp": {
+            "type": "number",
+            "description": "Configure flow session ICMP timeout (60-604800, default=300 seconds)."
+        },
+        "TimeoutMax": {
+            "type": "number",
+            "description": "Configure flow session max timeout (60-604800, default=604800 seconds)."
+        },
+        "TimeoutTcp": {
+            "type": "number",
+            "description": "Configure flow session TCP timeout (60-604800, default=3600 seconds)."
+        },
+        "TimeoutTcpFin": {
+            "type": "number",
+            "description": "Configure flow session TCP FIN timeout (60-604800, default=300 seconds)."
+        },
+        "TimeoutTcpRst": {
+            "type": "number",
+            "description": "Configure flow session TCP RST timeout (60-604800, default=120 seconds)."
+        },
+        "TimeoutUdp": {
+            "type": "number",
+            "description": "Configure flow session UDP timeout (60-604800, default=300 seconds)."
+        },
+        "Transport": {
+            "type": "string",
+            "description": "Configure L4 transport protocol for exporting packets. Valid values: `udp`, `tcp`, `sctp`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Aggregates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AggregatesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

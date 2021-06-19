@@ -1,0 +1,91 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerStormcontrolpolicy",
+    "description": "Configure FortiSwitch storm control policy to be applied on managed-switch ports.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerStormcontrolpolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Broadcast": {
+            "type": "string",
+            "description": "Enable/disable storm control to drop/allow broadcast traffic in override mode. Valid values: `enable`, `disable`."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the storm control policy."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Storm control policy name."
+        },
+        "Rate": {
+            "type": "number",
+            "description": "Threshold rate in packets per second at which storm traffic is controlled in override mode (default=500, 0 to drop all)."
+        },
+        "StormControlMode": {
+            "type": "string",
+            "description": "Set Storm control mode. Valid values: `global`, `override`, `disabled`."
+        },
+        "UnknownMulticast": {
+            "type": "string",
+            "description": "Enable/disable storm control to drop/allow unknown multicast traffic in override mode. Valid values: `enable`, `disable`."
+        },
+        "UnknownUnicast": {
+            "type": "string",
+            "description": "Enable/disable storm control to drop/allow unknown unicast traffic in override mode. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

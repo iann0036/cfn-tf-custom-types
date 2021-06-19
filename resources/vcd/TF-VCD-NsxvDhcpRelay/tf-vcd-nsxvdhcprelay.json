@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::VCD::NsxvDhcpRelay",
+    "description": "Provides a vCloud Director Edge Gateway DHCP relay configuration resource. The DHCP relay capability\nprovided by NSX in vCloud Director environment allows to leverage existing DHCP infrastructure from\nwithin vCloud Director environment without any interruption to the IP address management in existing\nDHCP infrastructure. DHCP messages are relayed from virtual machines to the designated DHCP servers\nin your physical DHCP infrastructure, which allows IP addresses controlled by the NSX software to\ncontinue to be in sync with IP addresses in the rest of your DHCP-controlled environments. \n\n~> **Note:** This resource is a \"singleton\". Because DHCP relay settings are just edge gateway\nproperties - only one resource per Edge Gateway is useful.\n\nSupported in provider *v2.6+*",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vcd/TF-VCD-NsxvDhcpRelay/docs/README.md",
+    "definitions": {
+        "RelayAgentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GatewayIpAddress": {
+                    "type": "string"
+                },
+                "NetworkName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NetworkName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DomainNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A set of domain names."
+        },
+        "EdgeGateway": {
+            "type": "string",
+            "description": "The name of the edge gateway on which DHCP relay is to be configured."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A set of IP addresses."
+        },
+        "IpSets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "A set of IP set names."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
+        },
+        "Vdc": {
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
+        },
+        "RelayAgent": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RelayAgentDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

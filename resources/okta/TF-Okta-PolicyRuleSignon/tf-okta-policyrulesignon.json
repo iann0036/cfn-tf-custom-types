@@ -1,0 +1,141 @@
+{
+    "typeName": "TF::Okta::PolicyRuleSignon",
+    "description": "Creates a Sign On Policy Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-PolicyRuleSignon/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Access": {
+            "type": "string",
+            "description": "Allow or deny access based on the rule conditions: `\"ALLOW\"` or `\"DENY\"`. The default is `\"ALLOW\"`."
+        },
+        "Authtype": {
+            "type": "string",
+            "description": "Authentication entrypoint: `\"ANY\"` or `\"RADIUS\"`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MfaLifetime": {
+            "type": "number",
+            "description": "Elapsed time before the next MFA challenge."
+        },
+        "MfaPrompt": {
+            "type": "string",
+            "description": "Prompt for MFA based on the device used, a factor session lifetime, or every sign-on attempt: `\"DEVICE\"`, `\"SESSION\"` or `\"ALWAYS\"`."
+        },
+        "MfaRememberDevice": {
+            "type": "boolean",
+            "description": "Remember MFA device. The default `false`."
+        },
+        "MfaRequired": {
+            "type": "boolean",
+            "description": "Require MFA. By default is `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Policy Rule Name."
+        },
+        "NetworkConnection": {
+            "type": "string",
+            "description": "Network selection mode: `\"ANYWHERE\"`, `\"ZONE\"`, `\"ON_NETWORK\"`, or `\"OFF_NETWORK\"`."
+        },
+        "NetworkExcludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The network zones to exclude. Conflicts with `network_includes`."
+        },
+        "NetworkIncludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The network zones to include. Conflicts with `network_excludes`."
+        },
+        "Policyid": {
+            "type": "string",
+            "description": "Policy ID."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Policy Rule Priority, this attribute can be set to a valid priority. To avoid endless diff situation we error if an invalid priority is provided. API defaults it to the last (lowest) if not there."
+        },
+        "SessionIdle": {
+            "type": "number",
+            "description": "Max minutes a session can be idle.,."
+        },
+        "SessionLifetime": {
+            "type": "number",
+            "description": "Max minutes a session is active: Disable = 0."
+        },
+        "SessionPersistent": {
+            "type": "boolean",
+            "description": "Whether session cookies will last across browser sessions. Okta Administrators can never have persistent session cookies."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Policy Rule Status: `\"ACTIVE\"` or `\"INACTIVE\"`."
+        },
+        "UsersExcluded": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Policyid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

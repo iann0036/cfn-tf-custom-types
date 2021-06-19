@@ -1,0 +1,203 @@
+{
+    "typeName": "TF::NewRelic::AlertChannel",
+    "description": "Use this resource to create and manage New Relic alert channels.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/newrelic/TF-NewRelic-AlertChannel/docs/README.md",
+    "definitions": {
+        "ConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "AuthPassword": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "AuthUsername": {
+                    "type": "string"
+                },
+                "BaseUrl": {
+                    "type": "string"
+                },
+                "Channel": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadersDefinition"
+                    }
+                },
+                "HeadersString": {
+                    "type": "string"
+                },
+                "IncludeJsonAttachment": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PayloadDefinition"
+                    }
+                },
+                "PayloadString": {
+                    "type": "string"
+                },
+                "PayloadType": {
+                    "type": "string"
+                },
+                "Recipients": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "RouteKey": {
+                    "type": "string"
+                },
+                "ServiceKey": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "string"
+                },
+                "Teams": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "UserId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PayloadDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the channel.\n* `type` - (Required) The type of channel.  One of: `email`, `slack`, `opsgenie`, `pagerduty`, `victorops`, or `webhook`.\n* `config` - (Optional) A nested block that describes an alert channel configuration.  Only one config block is permitted per alert channel definition.  See [Nested config blocks](#nested-config-blocks) below for details."
+        },
+        "Type": {
+            "type": "string",
+            "description": "The type of channel.  One of: `email`, `slack`, `opsgenie`, `pagerduty`, `victorops`, or `webhook`.\n* `config` - (Optional) A nested block that describes an alert channel configuration.  Only one config block is permitted per alert channel definition.  See [Nested config blocks](#nested-config-blocks) below for details."
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ConfigDefinition/ApiKey",
+        "/definitions/ConfigDefinition/AuthPassword",
+        "/definitions/ConfigDefinition/AuthType",
+        "/definitions/ConfigDefinition/BaseUrl",
+        "/definitions/ConfigDefinition/Headers",
+        "/definitions/ConfigDefinition/HeadersString",
+        "/definitions/ConfigDefinition/Key",
+        "/definitions/ConfigDefinition/Payload",
+        "/definitions/ConfigDefinition/PayloadString",
+        "/definitions/ConfigDefinition/RouteKey",
+        "/definitions/ConfigDefinition/ServiceKey",
+        "/definitions/ConfigDefinition/Url"
+    ]
+}

@@ -1,0 +1,292 @@
+{
+    "typeName": "TF::AWS::SagemakerModel",
+    "description": "Provides a SageMaker model resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-SagemakerModel/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerHostname": {
+                    "type": "string",
+                    "description": "The DNS host name for the container."
+                },
+                "Environment": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentDefinition"
+                    },
+                    "description": "Environment variables for the Docker container.\nA list of key value pairs."
+                },
+                "Image": {
+                    "type": "string",
+                    "description": "The registry path where the inference code image is stored in Amazon ECR."
+                },
+                "Mode": {
+                    "type": "string",
+                    "description": "The container hosts value `SingleModel/MultiModel`. The default value is `SingleModel`."
+                },
+                "ModelDataUrl": {
+                    "type": "string",
+                    "description": "The URL for the S3 location where model artifacts are stored."
+                },
+                "ImageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Image"
+            ]
+        },
+        "EnvironmentDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PrimaryContainerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerHostname": {
+                    "type": "string"
+                },
+                "Environment": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentDefinition2"
+                    }
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "ModelDataUrl": {
+                    "type": "string"
+                },
+                "ImageConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Image"
+            ]
+        },
+        "EnvironmentDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "VpcConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "Subnets"
+            ]
+        },
+        "ImageConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RepositoryAccessMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RepositoryAccessMode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "EnableNetworkIsolation": {
+            "type": "boolean"
+        },
+        "ExecutionRoleArn": {
+            "type": "string",
+            "description": "A role that SageMaker can assume to access model artifacts and docker images for deployment."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the model (must be unique). If omitted, Terraform will assign a random, unique name."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Container": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ContainerDefinition"
+            }
+        },
+        "PrimaryContainer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PrimaryContainerDefinition"
+            },
+            "maxItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExecutionRoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

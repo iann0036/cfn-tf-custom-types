@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Databricks::AzureBlobMount",
+    "description": "CloudFormation equivalent of databricks_azure_blob_mount",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/databricks/TF-Databricks-AzureBlobMount/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ContainerName": {
+            "type": "string"
+        },
+        "Directory": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MountName": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "StorageAccountName": {
+            "type": "string"
+        },
+        "TokenSecretKey": {
+            "type": "string"
+        },
+        "TokenSecretScope": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthType",
+        "ContainerName",
+        "MountName",
+        "StorageAccountName",
+        "TokenSecretKey",
+        "TokenSecretScope"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Source"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/TokenSecretKey"
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::ACI::ServiceRedirectPolicy",
+    "description": "CloudFormation equivalent of aci_service_redirect_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-ServiceRedirectPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "AnycastEnabled": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DestType": {
+            "type": "string"
+        },
+        "HashingAlgorithm": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxThresholdPercent": {
+            "type": "string"
+        },
+        "MinThresholdPercent": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "ProgramLocalPodOnly": {
+            "type": "string"
+        },
+        "RelationVnsRsIpslaMonitoringPol": {
+            "type": "string"
+        },
+        "ResilientHashEnabled": {
+            "type": "string"
+        },
+        "TenantDn": {
+            "type": "string"
+        },
+        "ThresholdDownAction": {
+            "type": "string"
+        },
+        "ThresholdEnable": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TenantDn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

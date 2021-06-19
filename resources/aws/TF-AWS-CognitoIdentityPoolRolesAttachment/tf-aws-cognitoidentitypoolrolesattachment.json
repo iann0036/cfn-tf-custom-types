@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::AWS::CognitoIdentityPoolRolesAttachment",
+    "description": "Provides an AWS Cognito Identity Pool Roles Attachment.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CognitoIdentityPoolRolesAttachment/docs/README.md",
+    "definitions": {
+        "RolesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "RoleMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AmbiguousRoleResolution": {
+                    "type": "string"
+                },
+                "IdentityProvider": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "MappingRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MappingRuleDefinition"
+                    },
+                    "maxItems": 25
+                }
+            },
+            "required": [
+                "IdentityProvider",
+                "Type"
+            ]
+        },
+        "MappingRuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Claim": {
+                    "type": "string"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Claim",
+                "MatchType",
+                "RoleArn",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityPoolId": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RolesDefinition"
+            }
+        },
+        "RoleMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoleMappingDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IdentityPoolId",
+        "Roles"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

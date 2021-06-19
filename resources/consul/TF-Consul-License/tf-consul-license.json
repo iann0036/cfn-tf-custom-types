@@ -1,0 +1,120 @@
+{
+    "typeName": "TF::Consul::License",
+    "description": "~> **NOTE:** This feature requires [Consul Enterprise](https://www.consul.io/docs/enterprise/index.html).\n\nThe `consul_license` resource provides datacenter-level management of\nthe Consul Enterprise license. If ACLs are enabled then a token with operator\nprivileges may be required in order to use this command.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/consul/TF-Consul-License/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomerId": {
+            "type": "string"
+        },
+        "Datacenter": {
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Features": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallationId": {
+            "type": "string"
+        },
+        "IssueTime": {
+            "type": "string"
+        },
+        "License": {
+            "type": "string",
+            "description": "The Consul license to use."
+        },
+        "LicenseId": {
+            "type": "string"
+        },
+        "Product": {
+            "type": "string"
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "Valid": {
+            "type": "boolean"
+        },
+        "Warnings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "License"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CustomerId",
+        "/properties/ExpirationTime",
+        "/properties/Features",
+        "/properties/Id",
+        "/properties/InstallationId",
+        "/properties/IssueTime",
+        "/properties/LicenseId",
+        "/properties/Product",
+        "/properties/StartTime",
+        "/properties/Valid",
+        "/properties/Warnings"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/License"
+    ]
+}

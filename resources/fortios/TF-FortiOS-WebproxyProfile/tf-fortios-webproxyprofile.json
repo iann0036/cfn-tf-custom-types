@@ -1,0 +1,186 @@
+{
+    "typeName": "TF::FortiOS::WebproxyProfile",
+    "description": "Configure web proxy profiles.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-WebproxyProfile/docs/README.md",
+    "definitions": {
+        "HeadersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string",
+                    "description": "Action when the HTTP header is forwarded. Valid values: `add-to-request`, `add-to-response`, `remove-from-request`, `remove-from-response`."
+                },
+                "AddOption": {
+                    "type": "string",
+                    "description": "Configure options to append content to existing HTTP header or add new HTTP header. Valid values: `append`, `new-on-not-found`, `new`."
+                },
+                "Base64Encoding": {
+                    "type": "string",
+                    "description": "Enable/disable use of base64 encoding of HTTP content. Valid values: `disable`, `enable`."
+                },
+                "Content": {
+                    "type": "string",
+                    "description": "HTTP header content."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "HTTP forwarded header id."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "HTTP forwarded header name."
+                },
+                "Protocol": {
+                    "type": "string",
+                    "description": "Configure protocol(s) to take add-option action on (HTTP, HTTPS, or both). Valid values: `https`, `http`."
+                },
+                "Dstaddr": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DstaddrDefinition"
+                    }
+                },
+                "Dstaddr6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dstaddr6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DstaddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        },
+        "Dstaddr6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "HeaderClientIp": {
+            "type": "string",
+            "description": "Action to take on the HTTP client-IP header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderFrontEndHttps": {
+            "type": "string",
+            "description": "Action to take on the HTTP front-end-HTTPS header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderViaRequest": {
+            "type": "string",
+            "description": "Action to take on the HTTP via header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderViaResponse": {
+            "type": "string",
+            "description": "Action to take on the HTTP via header in forwarded responses: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderXAuthenticatedGroups": {
+            "type": "string",
+            "description": "Action to take on the HTTP x-authenticated-groups header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderXAuthenticatedUser": {
+            "type": "string",
+            "description": "Action to take on the HTTP x-authenticated-user header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "HeaderXForwardedFor": {
+            "type": "string",
+            "description": "Action to take on the HTTP x-forwarded-for header in forwarded requests: forwards (pass), adds, or removes the HTTP header. Valid values: `pass`, `add`, `remove`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogHeaderChange": {
+            "type": "string",
+            "description": "Enable/disable logging HTTP header changes. Valid values: `enable`, `disable`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "StripEncoding": {
+            "type": "string",
+            "description": "Enable/disable stripping unsupported encoding from the request header. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeadersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

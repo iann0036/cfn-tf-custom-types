@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Vultr::FirewallGroup",
+    "description": "Provides a Vultr Firewall Group resource. This can be used to create, read, modify, and delete Firewall Group.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/vultr/TF-Vultr-FirewallGroup/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DateCreated": {
+            "type": "string"
+        },
+        "DateModified": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description of the firewall group."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number"
+        },
+        "MaxRuleCount": {
+            "type": "number"
+        },
+        "RuleCount": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DateCreated",
+        "/properties/DateModified",
+        "/properties/Id",
+        "/properties/InstanceCount",
+        "/properties/MaxRuleCount",
+        "/properties/RuleCount"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,497 @@
+{
+    "typeName": "TF::Wavefront::Dashboard",
+    "description": "CloudFormation equivalent of wavefront_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/wavefront/TF-Wavefront-Dashboard/docs/README.md",
+    "definitions": {
+        "ParameterDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "DynamicFieldType": {
+                    "type": "string"
+                },
+                "HideFromView": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ParameterType": {
+                    "type": "string"
+                },
+                "QueryValue": {
+                    "type": "string"
+                },
+                "TagKey": {
+                    "type": "string"
+                },
+                "ValuesToReadableStrings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ValuesToReadableStringsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "DefaultValue",
+                "HideFromView",
+                "Label",
+                "Name",
+                "ParameterType",
+                "ValuesToReadableStrings"
+            ]
+        },
+        "ValuesToReadableStringsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Row": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RowDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RowDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Chart": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChartDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "ChartDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Base": {
+                    "type": "number"
+                },
+                "ChartAttribute": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Summarization": {
+                    "type": "string"
+                },
+                "Units": {
+                    "type": "string"
+                },
+                "ChartSetting": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChartSettingDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Name",
+                "Summarization",
+                "Units"
+            ]
+        },
+        "ChartSettingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoColumnTags": {
+                    "type": "boolean"
+                },
+                "ColumnTags": {
+                    "type": "string"
+                },
+                "CustomTags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExpectedDataSpacing": {
+                    "type": "number"
+                },
+                "FixedLegendDisplayStats": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FixedLegendEnabled": {
+                    "type": "boolean"
+                },
+                "FixedLegendFilterField": {
+                    "type": "string"
+                },
+                "FixedLegendFilterLimit": {
+                    "type": "number"
+                },
+                "FixedLegendFilterSort": {
+                    "type": "string"
+                },
+                "FixedLegendHideLabel": {
+                    "type": "boolean"
+                },
+                "FixedLegendPosition": {
+                    "type": "string"
+                },
+                "FixedLegendUseRawStats": {
+                    "type": "boolean"
+                },
+                "GroupBySource": {
+                    "type": "boolean"
+                },
+                "InvertDynamicLegendHoverControl": {
+                    "type": "boolean"
+                },
+                "LineType": {
+                    "type": "string"
+                },
+                "Max": {
+                    "type": "number"
+                },
+                "Min": {
+                    "type": "number"
+                },
+                "NumTags": {
+                    "type": "number"
+                },
+                "PlainMarkdownContent": {
+                    "type": "string"
+                },
+                "ShowHosts": {
+                    "type": "boolean"
+                },
+                "ShowLabels": {
+                    "type": "boolean"
+                },
+                "ShowRawValues": {
+                    "type": "boolean"
+                },
+                "SortValuesDescending": {
+                    "type": "boolean"
+                },
+                "SparklineDecimalPrecision": {
+                    "type": "number"
+                },
+                "SparklineDisplayColor": {
+                    "type": "string"
+                },
+                "SparklineDisplayFontSize": {
+                    "type": "string"
+                },
+                "SparklineDisplayHorizontalPosition": {
+                    "type": "string"
+                },
+                "SparklineDisplayPostfix": {
+                    "type": "string"
+                },
+                "SparklineDisplayPrefix": {
+                    "type": "string"
+                },
+                "SparklineDisplayValueType": {
+                    "type": "string"
+                },
+                "SparklineDisplayVerticalPosition": {
+                    "type": "string"
+                },
+                "SparklineFillColor": {
+                    "type": "string"
+                },
+                "SparklineLineColor": {
+                    "type": "string"
+                },
+                "SparklineSize": {
+                    "type": "string"
+                },
+                "SparklineValueColorMapApplyTo": {
+                    "type": "string"
+                },
+                "SparklineValueColorMapColors": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SparklineValueColorMapValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "SparklineValueColorMapValuesV2": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "SparklineValueTextMapText": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SparklineValueTextMapThresholds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "StackType": {
+                    "type": "string"
+                },
+                "TagMode": {
+                    "type": "string"
+                },
+                "TimeBasedColoring": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "WindowSize": {
+                    "type": "number"
+                },
+                "Windowing": {
+                    "type": "string"
+                },
+                "Xmax": {
+                    "type": "number"
+                },
+                "Xmin": {
+                    "type": "number"
+                },
+                "Y0ScaleSiBy1024": {
+                    "type": "boolean"
+                },
+                "Y0UnitAutoscaling": {
+                    "type": "boolean"
+                },
+                "Y1ScaleSiBy1024": {
+                    "type": "boolean"
+                },
+                "Y1UnitAutoscaling": {
+                    "type": "boolean"
+                },
+                "Y1Units": {
+                    "type": "string"
+                },
+                "Y1max": {
+                    "type": "number"
+                },
+                "Y1min": {
+                    "type": "number"
+                },
+                "Ymax": {
+                    "type": "number"
+                },
+                "Ymin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "QueryBuilderEnabled": {
+                    "type": "boolean"
+                },
+                "ScatterPlotSource": {
+                    "type": "string"
+                },
+                "SourceDescription": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Query"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanModify": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CanView": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayQueryParameters": {
+            "type": "boolean"
+        },
+        "DisplaySectionTableOfContents": {
+            "type": "boolean"
+        },
+        "EventFilterType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Url": {
+            "type": "string"
+        },
+        "ParameterDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ParameterDetailsDefinition"
+            }
+        },
+        "Section": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SectionDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name",
+        "Tags",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

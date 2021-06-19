@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::TencentCloud::SqlserverPublishSubscribe",
+    "description": "Provides a SQL Server PublishSubscribe resource belongs to SQL Server instance.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SqlserverPublishSubscribe/docs/README.md",
+    "definitions": {
+        "DatabaseTuplesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublishDatabase": {
+                    "type": "string",
+                    "description": "Publish the database."
+                }
+            },
+            "required": [
+                "PublishDatabase"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeleteSubscribeDb": {
+            "type": "boolean",
+            "description": "Whether to delete the subscriber database when deleting the Publish and Subscribe. `true` for deletes the subscribe database, `false` for does not delete the subscribe database. default is `false`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PublishInstanceId": {
+            "type": "string",
+            "description": "ID of the SQL Server instance which publish."
+        },
+        "PublishSubscribeName": {
+            "type": "string",
+            "description": "The name of the Publish and Subscribe. Default is `default_name`."
+        },
+        "SubscribeInstanceId": {
+            "type": "string",
+            "description": "ID of the SQL Server instance which subscribe."
+        },
+        "DatabaseTuples": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DatabaseTuplesDefinition"
+            },
+            "maxItems": 80,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PublishInstanceId",
+        "SubscribeInstanceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

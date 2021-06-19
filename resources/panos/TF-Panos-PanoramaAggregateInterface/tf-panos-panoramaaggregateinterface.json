@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::Panos::PanoramaAggregateInterface",
+    "description": "This resource allows you to add/update/delete Panorama aggregate ethernet interfaces.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/panos/TF-Panos-PanoramaAggregateInterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustTcpMss": {
+            "type": "boolean",
+            "description": "Adjust TCP MSS (default: false)."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "The interface comment."
+        },
+        "CreateDhcpDefaultRoute": {
+            "type": "boolean",
+            "description": "Set to `true` to create a DHCP\ndefault route."
+        },
+        "DecryptForward": {
+            "type": "boolean",
+            "description": "Set to `true` to enable decrypt forward."
+        },
+        "DhcpDefaultRouteMetric": {
+            "type": "number",
+            "description": "The metric for the DHCP default\nroute."
+        },
+        "DhcpSendHostnameEnable": {
+            "type": "boolean",
+            "description": "For DHCP layer3 interfaces:\nenable sending the firewall or a custom hostname to DHCP server."
+        },
+        "DhcpSendHostnameValue": {
+            "type": "string",
+            "description": "For DHCP layer3 interfaces:\nthe interface hostname.  Leaving this unspecified with `dhcp_send_hostname_enable`\nset means to send the system hostname."
+        },
+        "EnableDhcp": {
+            "type": "boolean",
+            "description": "Set to `true` to enable DHCP."
+        },
+        "EnableUntaggedSubinterface": {
+            "type": "boolean",
+            "description": "Set to `true` to enable\nuntagged subinterfaces."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4MssAdjust": {
+            "type": "number",
+            "description": "The IPv4 MSS adjust value."
+        },
+        "Ipv6Enabled": {
+            "type": "boolean",
+            "description": "Set to `true` to enable IPv6."
+        },
+        "Ipv6InterfaceId": {
+            "type": "string",
+            "description": "The IPv6 interface ID."
+        },
+        "Ipv6MssAdjust": {
+            "type": "number",
+            "description": "The IPv6 MSS adjust value."
+        },
+        "LacpEnable": {
+            "type": "boolean",
+            "description": "Enable LACP."
+        },
+        "LacpFastFailover": {
+            "type": "boolean",
+            "description": "Enable LACP fast failover."
+        },
+        "LacpHaEnableSameSystemMac": {
+            "type": "boolean",
+            "description": "LACP HA enable same system MAC."
+        },
+        "LacpHaPassivePreNegotiation": {
+            "type": "boolean",
+            "description": "LACP HA passive pre-negotiation."
+        },
+        "LacpHaSameSystemMacAddress": {
+            "type": "string",
+            "description": "LACP HA same system MAC address."
+        },
+        "LacpMaxPorts": {
+            "type": "number",
+            "description": "LACP max ports."
+        },
+        "LacpMode": {
+            "type": "string",
+            "description": "LACP mode.  Valid values are `active` or `passive`."
+        },
+        "LacpSystemPriority": {
+            "type": "number",
+            "description": "LACP system priority."
+        },
+        "LacpTransmissionRate": {
+            "type": "string",
+            "description": "LACP transmission rate.  Valid values are `fast` or `slow`."
+        },
+        "LldpEnable": {
+            "type": "boolean",
+            "description": "Enable LLDP."
+        },
+        "LldpHaPassivePreNegotiation": {
+            "type": "boolean",
+            "description": "LLDP HA passive pre-negotiation."
+        },
+        "LldpProfile": {
+            "type": "string",
+            "description": "LLDP profile name."
+        },
+        "ManagementProfile": {
+            "type": "string",
+            "description": "The management profile."
+        },
+        "Mode": {
+            "type": "string",
+            "description": "The interface mode.  Valid values are `layer3` (default),\n`layer2`, `virtual-wire`, `ha`, or `decrypt-mirror`."
+        },
+        "Mtu": {
+            "type": "number",
+            "description": "The MTU."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The interface's name."
+        },
+        "NetflowProfile": {
+            "type": "string",
+            "description": "The netflow profile."
+        },
+        "StaticIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of static IPv4 addresses."
+        },
+        "Template": {
+            "type": "string"
+        },
+        "Vsys": {
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Template"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

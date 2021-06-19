@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::SignalFx::Detector",
+    "description": "Provides a SignalFx detector resource. This can be used to create and manage detectors.\n\n~> **NOTE** If you're interested in using SignalFx detector features such as Historical Anomaly, Resource Running Out, or others then consider building them in the UI first then using the \"Show SignalFlow\" feature to extract the value for `program_text`. You may also consult the [documentation for detector functions in signalflow-library](https://github.com/signalfx/signalflow-library/tree/master/library/signalfx/detectors).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-Detector/docs/README.md",
+    "definitions": {
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DetectLabel": {
+                    "type": "string"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Notifications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ParameterizedBody": {
+                    "type": "string"
+                },
+                "ParameterizedSubject": {
+                    "type": "string"
+                },
+                "RunbookUrl": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "Tip": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DetectLabel",
+                "Severity"
+            ]
+        },
+        "VizOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ValuePrefix": {
+                    "type": "string"
+                },
+                "ValueSuffix": {
+                    "type": "string"
+                },
+                "ValueUnit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedWriterTeams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Team IDs that have write access to this detector. Remember to use an admin's token if using this feature and to include that admin's team id (or user id in `authorized_writer_users`)."
+        },
+        "AuthorizedWriterUsers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "User IDs that have write access to this detector. Remember to use an admin's token if using this feature and to include that admin's user id (or team id in `authorized_writer_teams`)."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for the rule. Displays as the alert condition in the Alert Rules tab of the detector editor in the web UI.\n* `disabled` - (Optional) When true, notifications and events will not be generated for the detect label. `false` by default.\n* `notifications` - (Optional) List of strings specifying where notifications will be sent when an incident occurs. See [Create A Single Detector](https://developers.signalfx.com/detectors_reference.html#operation/Create%20Single%20Detector) for more info.\n* `parameterized_body` - (Optional) Custom notification message body when an alert is triggered. See [Set Up Detectors to Trigger Alerts](https://docs.signalfx.com/en/latest/detect-alert/set-up-detectors.html#about-detectors#alert-settings) for more info.\n* `parameterized_subject` - (Optional) Custom notification message subject when an alert is triggered. See [Set Up Detectors to Trigger Alerts](https://docs.signalfx.com/en/latest/detect-alert/set-up-detectors.html#about-detectors#alert-settings) for more info.\n* `runbook_url` - (Optional) URL of page to consult when an alert is triggered. This can be used with custom notification messages.\n* `tip` - (Optional) Plain text suggested first course of action, such as a command line to execute. This can be used with custom notification messages."
+        },
+        "DisableSampling": {
+            "type": "boolean",
+            "description": "When `false`, the visualization may sample the output timeseries rather than displaying them all. `false` by default."
+        },
+        "EndTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait for late datapoints. See [Delayed Datapoints](https://signalfx-product-docs.readthedocs-hosted.com/en/latest/charts/chart-builder.html#delayed-datapoints) for more info. Max value is `900` seconds (15 minutes). `Auto` (as little as possible) by default."
+        },
+        "MinDelay": {
+            "type": "number",
+            "description": "How long (in seconds) to wait even if the datapoints are arriving in a timely fashion. Max value is 900 (15m)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the detector."
+        },
+        "ProgramText": {
+            "type": "string",
+            "description": "Signalflow program text for the detector. More info [in the SignalFx docs](https://developers.signalfx.com/signalflow_analytics/signalflow_overview.html#_signalflow_programming_language)."
+        },
+        "ShowDataMarkers": {
+            "type": "boolean",
+            "description": "When `true`, markers will be drawn for each datapoint within the visualization. `true` by default."
+        },
+        "ShowEventLines": {
+            "type": "boolean",
+            "description": "When `true`, the visualization will display a vertical line for each event trigger. `false` by default."
+        },
+        "StartTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization. Conflicts with `time_range`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Tags associated with the detector."
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Team IDs to associate the detector to."
+        },
+        "TimeRange": {
+            "type": "number",
+            "description": "Seconds to display in the visualization. This is a rolling range from the current time. Example: `3600` corresponds to `-1h` in web UI. `3600` by default."
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RuleDefinition"
+            },
+            "minItems": 1
+        },
+        "VizOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VizOptionsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ProgramText"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

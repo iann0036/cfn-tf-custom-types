@@ -1,0 +1,125 @@
+{
+    "typeName": "TF::Lacework::AlertChannelJiraServer",
+    "description": "Configure Lacework to forward events to Jira. Lacework calls the Jira integration REST API and creates a new Jira open issue for each Lacework event that meets or exceeds the specified alert severity level. If there is a large volume of events that exceed the ability of Jira REST API to create new Jira issues, priority is given to those events with the highest severity.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/lacework/TF-Lacework-AlertChannelJiraServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOrUpdatedBy": {
+            "type": "string"
+        },
+        "CreatedOrUpdatedTime": {
+            "type": "string"
+        },
+        "CustomTemplateFile": {
+            "type": "string",
+            "description": "A Custom Template JSON file to populate fields in the new Jira issues."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "The state of the external integration. Defaults to `true`."
+        },
+        "GroupIssuesBy": {
+            "type": "string",
+            "description": "Defines how Lacework compliance events get grouped. Must be one of `Events` or `Resources`. Defaults to `Events`.\nThe available options are:\n* **Events**:\tSingle Jira issue will be created when compliance events of the same type but from different resources are detected by Lacework. For example, if three different S3 resources are generating the same compliance event, only one Jira ticket is created.\n* **Resources**: Multiple Jira issues will be created when multiple resources are generating the same compliance event. For example, if three different S3 resources are generating the same compliance event, three Jira issues are created."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntgGuid": {
+            "type": "string"
+        },
+        "IssueType": {
+            "type": "string",
+            "description": "The Jira Issue type (such as a `Bug`) to create when a new Jira issue is created."
+        },
+        "JiraUrl": {
+            "type": "string",
+            "description": "The URL of your Jira implementation without https protocol (`https://`). For example, `mycompany.atlassian.net` or `mycompany.jira.com`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The Alert Channel integration name."
+        },
+        "OrgLevel": {
+            "type": "boolean"
+        },
+        "Password": {
+            "type": "string",
+            "description": "The password to the Jira user."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "The project key for the Jira project where the new Jira issues should be created."
+        },
+        "TypeName": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string",
+            "description": "The Jira user name. Lacework recommends a dedicated Jira user. See above for more information."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IssueType",
+        "JiraUrl",
+        "Name",
+        "Password",
+        "ProjectKey",
+        "Username"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOrUpdatedBy",
+        "/properties/CreatedOrUpdatedTime",
+        "/properties/Id",
+        "/properties/IntgGuid",
+        "/properties/OrgLevel",
+        "/properties/TypeName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

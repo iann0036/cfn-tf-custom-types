@@ -1,0 +1,89 @@
+{
+    "typeName": "TF::Dome9::CloudaccountKubernetes",
+    "description": "This resource used to onboard kubernetes cloud accounts to Dome9. This is the first and pre-requisite step in order to apply Dome9 kubernetes features on the account.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dome9/TF-Dome9-CloudaccountKubernetes/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterVersion": {
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the kubernetes cluster as it will appear in Dome9 kubernetes cloud account."
+        },
+        "OrganizationalUnitId": {
+            "type": "string",
+            "description": "The Organizational Unit this cloud account will be attached to."
+        },
+        "OrganizationalUnitName": {
+            "type": "string"
+        },
+        "OrganizationalUnitPath": {
+            "type": "string"
+        },
+        "Vendor": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterVersion",
+        "/properties/CreationDate",
+        "/properties/Id",
+        "/properties/OrganizationalUnitName",
+        "/properties/OrganizationalUnitPath",
+        "/properties/Vendor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "typeName": "TF::Thunder::SnmpServerDisableTraps",
+    "description": "`thunder_snmp_server_disable_traps` Provides details about thunder snmp server disable traps",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SnmpServerDisableTraps/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "All": {
+            "type": "number",
+            "description": "Disable all traps on this partition."
+        },
+        "Gslb": {
+            "type": "number",
+            "description": "Disable all gslb traps on this partition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Slb": {
+            "type": "number",
+            "description": "Disable all slb traps on this partition."
+        },
+        "SlbChange": {
+            "type": "number",
+            "description": "Disable all slb-change traps on this partition."
+        },
+        "Snmp": {
+            "type": "number",
+            "description": "Disable all snmp traps on this partition."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "VrrpA": {
+            "type": "number",
+            "description": "Disable all vrrp-a on this partition."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

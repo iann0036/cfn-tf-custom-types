@@ -1,0 +1,272 @@
+{
+    "typeName": "TF::NetAppCloudManager::CvoAws",
+    "description": "Provides an netapp-cloudmanager_cvo_aws resource. This can be used to create a new Cloud Volume ONTAP system in AWS (single node or an HA pair).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-CvoAws/docs/README.md",
+    "definitions": {
+        "AwsTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagKey": {
+                    "type": "string"
+                },
+                "TagValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TagKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupVolumesToCbs": {
+            "type": "boolean",
+            "description": "Automatically enable back up of all volumes to S3 [true, false]. The default is false."
+        },
+        "CapacityTier": {
+            "type": "string",
+            "description": "Whether to enable data tiering for the first data aggregate: ['S3','NONE']. The default is 'S3'."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "CloudProviderAccount": {
+            "type": "string",
+            "description": "The cloud provider credentials id to use when deploying the Cloud Volumes ONTAP system. You can find the ID in Cloud Manager from the Settings > Credentials page. If not specified, Cloud Manager uses the instance profile of the Connector."
+        },
+        "ClusterFloatingIp": {
+            "type": "string",
+            "description": "For HA FloatingIP, the cluster management floating IP address."
+        },
+        "DataEncryptionType": {
+            "type": "string",
+            "description": "The type of encryption to use for the working environment: ['AWS', 'NONE']. The default is 'AWS'."
+        },
+        "DataFloatingIp": {
+            "type": "string",
+            "description": "For HA FloatingIP, the data floating IP address."
+        },
+        "DataFloatingIp2": {
+            "type": "string"
+        },
+        "EbsVolumeSize": {
+            "type": "number",
+            "description": "EBS volume size for the first data aggregate. For GB, the unit can be: [100 or 500]. For TB, the unit can be: [1,2,4,8,16]. The default is '1' ."
+        },
+        "EbsVolumeSizeUnit": {
+            "type": "string",
+            "description": "['GB' or 'TB']. The default is 'TB'."
+        },
+        "EbsVolumeType": {
+            "type": "string",
+            "description": "The EBS volume type for the first data aggregate ['gp3', 'gp2','io1','st1','sc1']. The default is 'gp2'."
+        },
+        "EnableCompliance": {
+            "type": "boolean",
+            "description": "Enable the Cloud Compliance service on the working environment [true, false]. The default is false."
+        },
+        "EnableMonitoring": {
+            "type": "boolean",
+            "description": "Enable the Monitoring service on the working environment [true, false]. The default is false."
+        },
+        "FailoverMode": {
+            "type": "string",
+            "description": "For HA, the failover mode for the HA pair: ['PrivateIP', 'FloatingIP']. 'PrivateIP' is for a single availability zone and 'FloatingIP' is for multiple availability zones."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceProfileName": {
+            "type": "string",
+            "description": "The instance profile name for the working environment. If not provided, Cloud Manager creates the instance profile."
+        },
+        "InstanceTenancy": {
+            "type": "string",
+            "description": "The EC2 instance tenancy: ['default','dedicated']. The default is 'default'."
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The instance type to use, which depends on the license type: Explore:['m5.xlarge'], Standard:['m5.2xlarge','r5.xlarge'], Premium:['m5.4xlarge','r5.2xlarge','c4.8xlarge'], BYOL: all instance types defined for PayGo. For more supported instance types, refer to Cloud Volumes ONTAP Release Notes. The default is 'm5.2xlarge'."
+        },
+        "Iops": {
+            "type": "number",
+            "description": "Provisioned IOPS. Required only when 'ebs_volume_type' is 'io1' or 'gp3'."
+        },
+        "IsHa": {
+            "type": "boolean",
+            "description": "Indicate whether the working environment is an HA pair or not [true, false]. The default is false."
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string",
+            "description": "The type of license to use. For single node: ['cot-explore-paygo','cot-standard-paygo', 'cot-premium-paygo', 'cot-premium-byol']. For HA: ['ha-cot-explore-paygo','ha-cot-standard-paygo','ha-cot-premium-paygo','ha-cot-premium-byol']. The default is 'cot-standard-paygo'."
+        },
+        "MediatorAssignPublicIp": {
+            "type": "boolean",
+            "description": "bool option to assign public IP. The default is 'true'."
+        },
+        "MediatorKeyPairName": {
+            "type": "string",
+            "description": "For HA, the key pair name for the mediator instance."
+        },
+        "MediatorSubnetId": {
+            "type": "string",
+            "description": "For HA, the subnet ID of the mediator."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Cloud Volumes ONTAP working environment."
+        },
+        "Node1SubnetId": {
+            "type": "string",
+            "description": "For HA, the subnet ID of the first node."
+        },
+        "Node2SubnetId": {
+            "type": "string",
+            "description": "For HA, the subnet ID of the second node."
+        },
+        "NssAccount": {
+            "type": "string",
+            "description": "The NetApp Support Site account ID to use with this Cloud Volumes ONTAP system. If the license type is BYOL and an NSS account isn't provided, Cloud Manager tries to use the first existing NSS account."
+        },
+        "OntapVersion": {
+            "type": "string",
+            "description": "The required ONTAP version. Ignored if 'use_latest_version' is set to true. The default is to use the latest version."
+        },
+        "OptimizedNetworkUtilization": {
+            "type": "boolean",
+            "description": "Use optimized network utilization [true, false]. The default is true."
+        },
+        "PlatformSerialNumber": {
+            "type": "string",
+            "description": "The serial number for the cluster. This is required when 'license_type' is set 'cot-premium-byol'."
+        },
+        "PlatformSerialNumberNode1": {
+            "type": "string",
+            "description": "For HA BYOL, the serial number for the first node. This is required when using 'ha-cot-premium-byol'."
+        },
+        "PlatformSerialNumberNode2": {
+            "type": "string",
+            "description": "For HA BYOL, the serial number for the second node. This is required when using 'ha-cot-premium-byol'."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region where the working environment will be created."
+        },
+        "RouteTableIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "For HA FloatingIP, the list of route table IDs that will be updated with the floating IPs."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "The ID of the security group for the working environment. If not provided, Cloud Manager creates the security group."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The subnet id where the working environment will be created. Required when single mode only."
+        },
+        "SvmFloatingIp": {
+            "type": "string",
+            "description": "For HA FloatingIP, the SVM management floating IP address."
+        },
+        "SvmPassword": {
+            "type": "string",
+            "description": "The admin password for Cloud Volumes ONTAP."
+        },
+        "Throughput": {
+            "type": "number",
+            "description": "Required only when 'ebs_volume_type' is 'gp3'."
+        },
+        "TierLevel": {
+            "type": "string",
+            "description": "The tiering level when 'capacity_tier' is set to 'S3' ['normal','ia','ia-single','intelligent']. The default is 'normal'."
+        },
+        "UseLatestVersion": {
+            "type": "boolean",
+            "description": "Indicates whether to use the latest available ONTAP version. The default is 'true'."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "The VPC ID where the working environment will be created. If this argument isn't provided, the VPC will be calculated by using the provided subnet ID."
+        },
+        "WorkspaceId": {
+            "type": "string",
+            "description": "The ID of the Cloud Manager workspace where you want to deploy Cloud Volumes ONTAP. If not provided, Cloud Manager uses the first workspace. You can find the ID from the Workspace tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "WritingSpeedState": {
+            "type": "string",
+            "description": "The write speed setting for Cloud Volumes ONTAP: ['NORMAL','HIGH']. The default is 'NORMAL'. This argument is not relevant for HA pairs."
+        },
+        "AwsTag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AwsTagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientId",
+        "Name",
+        "Region",
+        "SvmPassword"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/SvmPassword"
+    ]
+}

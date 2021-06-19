@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::CheckPoint::ManagementHttpsRule",
+    "description": "This resource allows you to execute Check Point Https Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/checkpoint/TF-CheckPoint-ManagementHttpsRule/docs/README.md",
+    "definitions": {
+        "PositionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string",
+            "description": "Rule inspect level. \"Bypass\" or \"Inspect\"."
+        },
+        "Blade": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Blades for HTTPS Inspection. Identified by Name or UID to enable the inspection for.\n\"Anti Bot\",\"Anti Virus\",\"Application Control\",\"Data Awareness\",\"DLP\",\"IPS\",\"Threat Emulation\",\"Url Filtering\".blade blocks are documented below."
+        },
+        "Certificate": {
+            "type": "string",
+            "description": "Internal Server Certificate identified by Name or UID,\notherwise, \"Outbound Certificate\" is a default value."
+        },
+        "Comments": {
+            "type": "string",
+            "description": "Comments string."
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by Name or UID that represents connection destination.destination blocks are documented below."
+        },
+        "DestinationNegate": {
+            "type": "boolean",
+            "description": "TRUE if \"negate\" value is set for Destination."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "Enable/Disable the rule."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreErrors": {
+            "type": "boolean",
+            "description": "Apply changes ignoring errors. You won't be able to publish such a changes. If ignore-warnings flag was omitted - warnings will also be ignored."
+        },
+        "IgnoreWarnings": {
+            "type": "boolean",
+            "description": "Apply changes ignoring warnings."
+        },
+        "InstallOn": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Which Gateways identified by the name or UID to install the policy on.install_on blocks are documented below."
+        },
+        "Layer": {
+            "type": "string",
+            "description": "Layer that holds the Object. Identified by the Name or UID."
+        },
+        "Name": {
+            "type": "string",
+            "description": "HTTPS rule name."
+        },
+        "Position": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PositionDefinition"
+            },
+            "description": "Position in the rulebase."
+        },
+        "Service": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by Name or UID that represents connection service.service blocks are documented below."
+        },
+        "ServiceNegate": {
+            "type": "boolean",
+            "description": "TRUE if \"negate\" value is set for Service."
+        },
+        "SiteCategory": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Site Categories objects identified by the name or UID.site_category blocks are documented below."
+        },
+        "SiteCategoryNegate": {
+            "type": "boolean",
+            "description": "TRUE if \"negate\" value is set for Site Category."
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Collection of Network objects identified by Name or UID that represents connection source.source blocks are documented below."
+        },
+        "SourceNegate": {
+            "type": "boolean",
+            "description": "TRUE if \"negate\" value is set for Source."
+        },
+        "Track": {
+            "type": "string",
+            "description": "\"None\",\"Log\",\"Alert\",\"Mail\",\"SNMP trap\",\"Mail\",\"User Alert\", \"User Alert 2\", \"User Alert 3\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Layer",
+        "Position"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

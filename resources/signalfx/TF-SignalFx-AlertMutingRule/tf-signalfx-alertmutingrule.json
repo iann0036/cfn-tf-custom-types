@@ -1,0 +1,114 @@
+{
+    "typeName": "TF::SignalFx::AlertMutingRule",
+    "description": "Provides a SignalFx resource for managing alert muting rules. See [Mute Notifications](https://docs.signalfx.com/en/latest/detect-alert/mute-notifications.html) for more information.\n\n~> **WARNING** SignalFx does not allow the start time of a **currently active** muting rule to be modified. As such, attempting to modify a currently active rule will destroy the existing rule and create a new rule. This may result in the emission of notifications.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-AlertMutingRule/docs/README.md",
+    "definitions": {
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negated": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "PropertyValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Property",
+                "PropertyValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "The description for this muting rule."
+        },
+        "Detectors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "A convenience attribute that associated this muting rule with specific detector ids."
+        },
+        "EffectiveStartTime": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "StartTime": {
+            "type": "number",
+            "description": "Starting time of an alert muting rule as a Unit time stamp in seconds."
+        },
+        "StopTime": {
+            "type": "number",
+            "description": "Starting time of an alert muting rule as a Unix time stamp in seconds."
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "StartTime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EffectiveStartTime",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

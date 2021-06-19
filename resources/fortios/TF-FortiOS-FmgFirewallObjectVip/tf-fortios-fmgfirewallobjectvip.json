@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::FortiOS::FmgFirewallObjectVip",
+    "description": "This resource supports Create/Read/Update/Delete firewall object virtual ip for FortiManager.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-FmgFirewallObjectVip/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Adom": {
+            "type": "string",
+            "description": "ADOM name. default is 'root'."
+        },
+        "ArpReply": {
+            "type": "string",
+            "description": "Enable to respond to ARP requests for this virtual IP address. Enabled by default."
+        },
+        "Comment": {
+            "type": "string",
+            "description": "Comments."
+        },
+        "ConfigDefault": {
+            "type": "string",
+            "description": "Enable/Disable config default value. enabled by default."
+        },
+        "ExtIntf": {
+            "type": "string",
+            "description": "Interface connected to the source network that receives the packets that will be forwarded to the destination network."
+        },
+        "ExtIp": {
+            "type": "string",
+            "description": "IP address or address range on the external interface that you want to map to an address or address range on the destination network."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MappedAddr": {
+            "type": "string",
+            "description": "Mapped FQDN address name."
+        },
+        "MappedIp": {
+            "type": "string",
+            "description": "Mapped Ip address."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual IP name."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Virtual IP type, Enum: [\"static-nat\", \"dns-translation\", \"fqdn\"]."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

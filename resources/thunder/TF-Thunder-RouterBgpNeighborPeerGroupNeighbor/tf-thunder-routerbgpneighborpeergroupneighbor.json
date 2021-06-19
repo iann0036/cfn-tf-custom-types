@@ -1,0 +1,313 @@
+{
+    "typeName": "TF::Thunder::RouterBgpNeighborPeerGroupNeighbor",
+    "description": "`thunder_router_bgp_neighbor_peer_group_neighbor` Provides details about thunder router bgp neighbor peer group neighbor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterBgpNeighborPeerGroupNeighbor/docs/README.md",
+    "definitions": {
+        "DistributeListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DistributeList": {
+                    "type": "string"
+                },
+                "DistributeListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborFilterListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterList": {
+                    "type": "string"
+                },
+                "FilterListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborPrefixListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NbrPrefixList": {
+                    "type": "string"
+                },
+                "NbrPrefixListDirection": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NeighborRouteMapListsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NbrRmapDirection": {
+                    "type": "string"
+                },
+                "NbrRouteMap": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "Activate": {
+            "type": "number",
+            "description": "Enable the Address Family for this Neighbor."
+        },
+        "AdvertisementInterval": {
+            "type": "number"
+        },
+        "AllowasIn": {
+            "type": "number"
+        },
+        "AllowasInCount": {
+            "type": "number"
+        },
+        "AsNumber": {
+            "type": "number"
+        },
+        "AsOriginationInterval": {
+            "type": "number"
+        },
+        "Bfd": {
+            "type": "number",
+            "description": "Bidirectional Forwarding Detection (BFD)."
+        },
+        "CollideEstablished": {
+            "type": "number"
+        },
+        "Connect": {
+            "type": "number",
+            "description": "BGP connect timer."
+        },
+        "DefaultOriginate": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Neighbor specific description (Up to 80 characters describing this neighbor)."
+        },
+        "DisallowInfiniteHoldtime": {
+            "type": "number"
+        },
+        "DontCapabilityNegotiate": {
+            "type": "number"
+        },
+        "Dynamic": {
+            "type": "number",
+            "description": "Advertise dynamic capability to this neighbor."
+        },
+        "EbgpMultihop": {
+            "type": "number"
+        },
+        "EbgpMultihopHopCount": {
+            "type": "number"
+        },
+        "EnforceMultihop": {
+            "type": "number"
+        },
+        "Ethernet": {
+            "type": "number",
+            "description": "Ethernet interface (Port number)."
+        },
+        "ExtendedNexthop": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Inbound": {
+            "type": "number",
+            "description": "Allow inbound soft reconfiguration for this neighbor."
+        },
+        "Lif": {
+            "type": "number",
+            "description": "Logical interface (Lif interface number)."
+        },
+        "Loopback": {
+            "type": "number",
+            "description": "Loopback interface (Port number)."
+        },
+        "MaximumPrefix": {
+            "type": "number"
+        },
+        "MaximumPrefixThres": {
+            "type": "number"
+        },
+        "Multihop": {
+            "type": "number",
+            "description": "Enable multihop."
+        },
+        "NextHopSelf": {
+            "type": "number"
+        },
+        "OverrideCapability": {
+            "type": "number"
+        },
+        "PassValue": {
+            "type": "string"
+        },
+        "Passive": {
+            "type": "number",
+            "description": "Don't send open messages to this neighbor."
+        },
+        "PeerGroup": {
+            "type": "string"
+        },
+        "PeerGroupKey": {
+            "type": "number"
+        },
+        "PeerGroupRemoteAs": {
+            "type": "number"
+        },
+        "PrefixListDirection": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "RemovePrivateAs": {
+            "type": "number"
+        },
+        "RouteMap": {
+            "type": "string"
+        },
+        "RouteRefresh": {
+            "type": "number"
+        },
+        "SendCommunityVal": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "Shutdown": {
+            "type": "number",
+            "description": "Administratively shut down this neighbor."
+        },
+        "StrictCapabilityMatch": {
+            "type": "number"
+        },
+        "TimersHoldtime": {
+            "type": "number"
+        },
+        "TimersKeepalive": {
+            "type": "number"
+        },
+        "Trunk": {
+            "type": "number",
+            "description": "Trunk interface (Trunk interface number)."
+        },
+        "Tunnel": {
+            "type": "number",
+            "description": "Tunnel interface (Tunnel interface number)."
+        },
+        "UnsuppressMap": {
+            "type": "string"
+        },
+        "UpdateSourceIp": {
+            "type": "string"
+        },
+        "UpdateSourceIpv6": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "Ve": {
+            "type": "number",
+            "description": "Virtual ethernet interface (Virtual ethernet interface number)."
+        },
+        "Weight": {
+            "type": "number",
+            "description": "Set default weight for routes from this neighbor."
+        },
+        "DistributeLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributeListsDefinition"
+            }
+        },
+        "NeighborFilterLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborFilterListsDefinition"
+            }
+        },
+        "NeighborPrefixLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborPrefixListsDefinition"
+            }
+        },
+        "NeighborRouteMapLists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NeighborRouteMapListsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

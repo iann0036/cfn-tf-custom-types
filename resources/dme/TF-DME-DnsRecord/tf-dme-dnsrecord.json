@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::DME::DnsRecord",
+    "description": "CloudFormation equivalent of dme_dns_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/dme/TF-DME-DnsRecord/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CaaType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "DynamicDns": {
+            "type": "string"
+        },
+        "GtdLocation": {
+            "type": "string"
+        },
+        "Hardlink": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerCritical": {
+            "type": "string"
+        },
+        "Keywords": {
+            "type": "string"
+        },
+        "MxLevel": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "string"
+        },
+        "RedirectType": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainId",
+        "Name",
+        "Ttl",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

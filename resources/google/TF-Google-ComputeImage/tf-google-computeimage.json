@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::Google::ComputeImage",
+    "description": "Represents an Image resource.\n\nGoogle Compute Engine uses operating system images to create the root\npersistent disks for your instances. You specify an image when you create\nan instance. Images contain a boot loader, an operating system, and a\nroot file system. Linux operating system images are also capable of\nrunning containers on Compute Engine.\n\nImages can be either public or custom.\n\nPublic images are provided and maintained by Google, open-source\ncommunities, and third-party vendors. By default, all projects have\naccess to these images and can use them to create instances.  Custom\nimages are available only to your project. You can create a custom image\nfrom root persistent disks and other images. Then, use the custom image\nto create an instance.\n\n\nTo get more information about Image, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/v1/images)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/compute/docs/images)\n\n<div class = \"oics-button\" style=\"floa...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeImage/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "GuestOsFeaturesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "RawDiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerType": {
+                    "type": "string"
+                },
+                "Sha1": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Source"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ArchiveSizeBytes": {
+            "type": "number"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DiskSizeGb": {
+            "type": "number"
+        },
+        "Family": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Licenses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SourceDisk": {
+            "type": "string"
+        },
+        "SourceImage": {
+            "type": "string"
+        },
+        "SourceSnapshot": {
+            "type": "string"
+        },
+        "GuestOsFeatures": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GuestOsFeaturesDefinition"
+            }
+        },
+        "RawDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RawDiskDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ArchiveSizeBytes",
+        "/properties/CreationTimestamp",
+        "/properties/Id",
+        "/properties/LabelFingerprint",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

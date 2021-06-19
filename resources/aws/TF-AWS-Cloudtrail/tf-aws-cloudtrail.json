@@ -1,0 +1,233 @@
+{
+    "typeName": "TF::AWS::Cloudtrail",
+    "description": "Provides a CloudTrail resource.\n\n-> **Tip:** For a multi-region trail, this resource must be in the home region of the trail.\n\n-> **Tip:** For an organization trail, this resource must be in the master account of the organization.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-Cloudtrail/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EventSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeManagementEvents": {
+                    "type": "boolean"
+                },
+                "ReadWriteType": {
+                    "type": "string"
+                },
+                "DataResource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataResourceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InsightSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsightType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InsightType"
+            ]
+        },
+        "DataResourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Type",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CloudWatchLogsGroupArn": {
+            "type": "string",
+            "description": "Log group name using an ARN that represents the log group to which CloudTrail logs will be delivered. Note that CloudTrail requires the Log Stream wildcard."
+        },
+        "CloudWatchLogsRoleArn": {
+            "type": "string",
+            "description": "Role for the CloudWatch Logs endpoint to assume to write to a user\u2019s log group."
+        },
+        "EnableLogFileValidation": {
+            "type": "boolean",
+            "description": "Whether log file integrity validation is enabled. Defaults to `false`."
+        },
+        "EnableLogging": {
+            "type": "boolean",
+            "description": "Enables logging for the trail. Defaults to `true`. Setting this to `false` will pause logging."
+        },
+        "HomeRegion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeGlobalServiceEvents": {
+            "type": "boolean",
+            "description": "Whether the trail is publishing events from global services such as IAM to the log files. Defaults to `true`."
+        },
+        "IsMultiRegionTrail": {
+            "type": "boolean",
+            "description": "Whether the trail is created in the current region or in all regions. Defaults to `false`."
+        },
+        "IsOrganizationTrail": {
+            "type": "boolean",
+            "description": "Whether the trail is an AWS Organizations trail. Organization trails log events for the master account and all member accounts. Can only be created in the organization master account. Defaults to `false`."
+        },
+        "KmsKeyId": {
+            "type": "string",
+            "description": "KMS key ARN to use to encrypt the logs delivered by CloudTrail."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the trail."
+        },
+        "S3BucketName": {
+            "type": "string",
+            "description": "Name of the S3 bucket designated for publishing log files."
+        },
+        "S3KeyPrefix": {
+            "type": "string",
+            "description": "S3 key prefix that follows the name of the bucket you have designated for log file delivery."
+        },
+        "SnsTopicName": {
+            "type": "string",
+            "description": "Name of the Amazon SNS topic defined for notification of log file delivery."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "Map of tags to assign to the trail. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "EventSelector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventSelectorDefinition"
+            },
+            "maxItems": 5
+        },
+        "InsightSelector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InsightSelectorDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "S3BucketName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/HomeRegion",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

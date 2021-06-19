@@ -1,0 +1,388 @@
+{
+    "typeName": "TF::SignalFx::Dashboard",
+    "description": "A dashboard is a curated collection of specific charts and supports dimensional [filters](http://docs.signalfx.com/en/latest/dashboards/dashboard-filter-dynamic.html#filter-dashboard-charts), [dashboard variables](http://docs.signalfx.com/en/latest/dashboards/dashboard-filter-dynamic.html#dashboard-variables) and [time range](http://docs.signalfx.com/en/latest/_sidebars-and-includes/using-time-range-selector.html#time-range-selector) options. These options are applied to all charts in the dashboard, providing a consistent view of the data displayed in that dashboard. This also means that when you open a chart to drill down for more details, you are viewing the same data that is visible in the dashboard view.\n\n~> **NOTE** Since every dashboard is included in a [dashboard group](dashboard_group.html) (SignalFx collection of dashboards), you need to create that first and reference it as shown in the example.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/signalfx/TF-SignalFx-Dashboard/docs/README.md",
+    "definitions": {
+        "ChartDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChartId": {
+                    "type": "string"
+                },
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Row": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ChartId"
+            ]
+        },
+        "ColumnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChartIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Column": {
+                    "type": "number"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ChartIds"
+            ]
+        },
+        "EventOverlayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Line": {
+                    "type": "boolean"
+                },
+                "Signal": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Signal"
+            ]
+        },
+        "FilterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplyIfExist": {
+                    "type": "boolean"
+                },
+                "Negated": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Property",
+                "Values"
+            ]
+        },
+        "GridDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChartIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Width": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ChartIds"
+            ]
+        },
+        "SelectedEventOverlayDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Signal": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SourceDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Signal"
+            ]
+        },
+        "VariableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "ApplyIfExist": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "ReplaceOnly": {
+                    "type": "boolean"
+                },
+                "RestrictedSuggestions": {
+                    "type": "boolean"
+                },
+                "ValueRequired": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ValuesSuggested": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Alias",
+                "Property"
+            ]
+        },
+        "SourceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Negated": {
+                    "type": "boolean"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Property",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedWriterTeams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Team IDs that have write access to this dashboard group. Remember to use an admin's token if using this feature and to include that admin's team (or user id in `authorized_writer_teams`)."
+        },
+        "AuthorizedWriterUsers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "User IDs that have write access to this dashboard group. Remember to use an admin's token if using this feature and to include that admin's user id (or team id in `authorized_writer_teams`)."
+        },
+        "ChartsResolution": {
+            "type": "string",
+            "description": "Specifies the chart data display resolution for charts in this dashboard. Value can be one of `\"default\"`,  `\"low\"`, `\"high\"`, or  `\"highest\"`."
+        },
+        "DashboardGroup": {
+            "type": "string",
+            "description": "The ID of the dashboard group that contains the dashboard."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Variable description.\n* `values` - (Optional) List of of strings (which will be treated as an OR filter on the property).\n* `value_required` - (Optional) Determines whether a value is required for this variable (and therefore whether it will be possible to view this dashboard without this filter applied). `false` by default.\n* `values_suggested` - (Optional) A list of strings of suggested values for this variable; these suggestions will receive priority when values are autosuggested for this variable.\n* `restricted_suggestions` - (Optional) If `true`, this variable may only be set to the values listed in `values_suggested` and only these values will appear in autosuggestion menus. `false` by default.\n* `replace_only` - (Optional) If `true`, this variable will only apply to charts that have a filter for the property.\n* `apply_if_exist` - (Optional) If true, this variable will also match data that doesn't have this property at all."
+        },
+        "DiscoveryOptionsQuery": {
+            "type": "string"
+        },
+        "DiscoveryOptionsSelectors": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EndTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the dashboard."
+        },
+        "StartTime": {
+            "type": "number",
+            "description": "Seconds since epoch. Used for visualization."
+        },
+        "TimeRange": {
+            "type": "string",
+            "description": "The time range prior to now to visualize. SignalFx time syntax (e.g. `\"-5m\"`, `\"-1h\"`)."
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Chart": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ChartDefinition"
+            }
+        },
+        "Column": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ColumnDefinition"
+            }
+        },
+        "EventOverlay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventOverlayDefinition"
+            }
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilterDefinition"
+            }
+        },
+        "Grid": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GridDefinition"
+            }
+        },
+        "SelectedEventOverlay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SelectedEventOverlayDefinition"
+            }
+        },
+        "Variable": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VariableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DashboardGroup",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

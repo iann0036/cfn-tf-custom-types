@@ -1,0 +1,81 @@
+# DO NOT modify this file by hand, changes will be overwritten
+import sys
+from dataclasses import dataclass
+from inspect import getmembers, isclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseModel,
+    BaseResourceHandlerRequest,
+)
+from cloudformation_cli_python_lib.recast import recast_object
+from cloudformation_cli_python_lib.utils import deserialize_list
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseModel):
+    tfcfnid: Optional[str]
+    ContactInfo: Optional[str]
+    Description: Optional[str]
+    EngineId: Optional[str]
+    Id: Optional[str]
+    Location: Optional[str]
+    Status: Optional[str]
+    TrapHighCpuThreshold: Optional[float]
+    TrapLogFullThreshold: Optional[float]
+    TrapLowMemoryThreshold: Optional[float]
+    Vdomparam: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        dataclasses = {n: o for n, o in getmembers(sys.modules[__name__]) if isclass(o)}
+        recast_object(cls, json_data, dataclasses)
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            ContactInfo=json_data.get("ContactInfo"),
+            Description=json_data.get("Description"),
+            EngineId=json_data.get("EngineId"),
+            Id=json_data.get("Id"),
+            Location=json_data.get("Location"),
+            Status=json_data.get("Status"),
+            TrapHighCpuThreshold=json_data.get("TrapHighCpuThreshold"),
+            TrapLogFullThreshold=json_data.get("TrapLogFullThreshold"),
+            TrapLowMemoryThreshold=json_data.get("TrapLowMemoryThreshold"),
+            Vdomparam=json_data.get("Vdomparam"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+

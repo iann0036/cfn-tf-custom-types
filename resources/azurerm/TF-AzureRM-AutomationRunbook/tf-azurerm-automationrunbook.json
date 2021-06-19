@@ -1,0 +1,243 @@
+{
+    "typeName": "TF::AzureRM::AutomationRunbook",
+    "description": "Manages a Automation Runbook.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-AutomationRunbook/docs/README.md",
+    "definitions": {
+        "JobScheduleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "JobScheduleDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JobScheduleId": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JobScheduleDefinition"
+                    }
+                },
+                "RunOn": {
+                    "type": "string"
+                },
+                "ScheduleName": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "PublishContentLinkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uri": {
+                    "type": "string",
+                    "description": "The uri of the runbook content."
+                },
+                "Version": {
+                    "type": "string"
+                },
+                "Hash": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HashDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HashDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Algorithm",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomationAccountName": {
+            "type": "string",
+            "description": "The name of the automation account in which the Runbook is created. Changing this forces a new resource to be created."
+        },
+        "Content": {
+            "type": "string",
+            "description": "The desired content of the runbook."
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description for this credential."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JobSchedule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/JobScheduleDefinition2"
+            }
+        },
+        "Location": {
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
+        },
+        "LogProgress": {
+            "type": "boolean",
+            "description": "Progress log option."
+        },
+        "LogVerbose": {
+            "type": "boolean",
+            "description": "Verbose log option."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Runbook. Changing this forces a new resource to be created."
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "description": "The name of the resource group in which the Runbook is created. Changing this forces a new resource to be created."
+        },
+        "RunbookType": {
+            "type": "string",
+            "description": "The type of the runbook - can be either `Graph`, `GraphPowerShell`, `GraphPowerShellWorkflow`, `PowerShellWorkflow`, `PowerShell` or `Script`."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "PublishContentLink": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublishContentLinkDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutomationAccountName",
+        "Location",
+        "LogProgress",
+        "LogVerbose",
+        "Name",
+        "ResourceGroupName",
+        "RunbookType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

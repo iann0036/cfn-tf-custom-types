@@ -1,0 +1,83 @@
+{
+    "typeName": "TF::Aviatrix::Tunnel",
+    "description": "The **aviatrix_tunnel** resource allows the creation and management of Aviatrix Encrypted Peering tunnels.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aviatrix/TF-Aviatrix-Tunnel/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableHa": {
+            "type": "boolean"
+        },
+        "GwName1": {
+            "type": "string"
+        },
+        "GwName2": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeeringHastatus": {
+            "type": "string"
+        },
+        "PeeringLink": {
+            "type": "string"
+        },
+        "PeeringState": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GwName1",
+        "GwName2"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/PeeringHastatus",
+        "/properties/PeeringLink",
+        "/properties/PeeringState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

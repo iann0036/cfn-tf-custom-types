@@ -1,0 +1,166 @@
+{
+    "typeName": "TF::OctopusDeploy::Account",
+    "description": "CloudFormation equivalent of octopusdeploy_account",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-Account/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessKey": {
+            "type": "string"
+        },
+        "AccountType": {
+            "type": "string"
+        },
+        "ActiveDirectoryEndpointBaseUri": {
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string"
+        },
+        "AuthenticationEndpoint": {
+            "type": "string"
+        },
+        "AzureEnvironment": {
+            "type": "string"
+        },
+        "CertificateData": {
+            "type": "string"
+        },
+        "CertificateThumbprint": {
+            "type": "string"
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PrivateKeyFile": {
+            "type": "string"
+        },
+        "PrivateKeyPassphrase": {
+            "type": "string"
+        },
+        "ResourceManagerEndpoint": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "ServiceManagementEndpointBaseUri": {
+            "type": "string"
+        },
+        "ServiceManagementEndpointSuffix": {
+            "type": "string"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "SubscriptionId": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "TenantTags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TenantedDeploymentParticipation": {
+            "type": "string"
+        },
+        "Tenants": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Token": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/CertificateData",
+        "/properties/CertificateThumbprint",
+        "/properties/ClientSecret",
+        "/properties/Password",
+        "/properties/PrivateKeyFile",
+        "/properties/PrivateKeyPassphrase",
+        "/properties/SecretKey",
+        "/properties/Token",
+        "/properties/Username"
+    ]
+}

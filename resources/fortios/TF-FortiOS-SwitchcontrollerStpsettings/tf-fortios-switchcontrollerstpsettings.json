@@ -1,0 +1,95 @@
+{
+    "typeName": "TF::FortiOS::SwitchcontrollerStpsettings",
+    "description": "Configure FortiSwitch spanning tree protocol (STP).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SwitchcontrollerStpsettings/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ForwardTime": {
+            "type": "number",
+            "description": "Period of time a port is in listening and learning state (4 - 30 sec, default = 15)."
+        },
+        "HelloTime": {
+            "type": "number",
+            "description": "Period of time between successive STP frame Bridge Protocol Data Units (BPDUs) sent on a port (1 - 10 sec, default = 2)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxAge": {
+            "type": "number",
+            "description": "Maximum time before a bridge port saves its configuration BPDU information (6 - 40 sec, default = 20)."
+        },
+        "MaxHops": {
+            "type": "number",
+            "description": "Maximum number of hops between the root bridge and the furthest bridge (1- 40, default = 20)."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of global STP settings configuration."
+        },
+        "PendingTimer": {
+            "type": "number",
+            "description": "Pending time (1 - 15 sec, default = 4)."
+        },
+        "Revision": {
+            "type": "number",
+            "description": "STP revision number (0 - 65535)."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Enable/disable STP. Valid values: `enable`, `disable`."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

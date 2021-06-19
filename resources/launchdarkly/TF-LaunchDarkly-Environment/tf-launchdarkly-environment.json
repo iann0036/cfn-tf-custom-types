@@ -1,0 +1,124 @@
+{
+    "typeName": "TF::LaunchDarkly::Environment",
+    "description": "Provides a LaunchDarkly environment resource.\n\nThis resource allows you to create and manage environments in your LaunchDarkly organization.\n\n-> **Note:** Mixing the use of nested `environments` blocks in the [`launchdarkly_project`](/docs/providers/launchdarkly/r/project.html) resource and `launchdarkly_environment` resources is not recommended.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/launchdarkly/TF-LaunchDarkly-Environment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiKey": {
+            "type": "string"
+        },
+        "ClientSideId": {
+            "type": "string"
+        },
+        "Color": {
+            "type": "string",
+            "description": "The color swatch as an RGB hex value with no leading `#`. For example: `000000`."
+        },
+        "ConfirmChanges": {
+            "type": "boolean",
+            "description": "Set to `true` if this environment requires confirmation for flag and segment changes."
+        },
+        "DefaultTrackEvents": {
+            "type": "boolean",
+            "description": "Set to `true` to enable data export for every flag created in this environment after you configure this argument. To learn more, read [Data Export](https://docs.launchdarkly.com/docs/data-export)."
+        },
+        "DefaultTtl": {
+            "type": "number",
+            "description": "The TTL for the environment. This must be between 0 and 60 minutes. The TTL setting only applies to environments using the PHP SDK. To learn more, read [TTL settings](https://docs.launchdarkly.com/docs/environments#section-ttl-settings)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "The project-unique key for the environment."
+        },
+        "MobileKey": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the environment."
+        },
+        "ProjectKey": {
+            "type": "string",
+            "description": "- The environment's project key."
+        },
+        "RequireComments": {
+            "type": "boolean",
+            "description": "Set to `true` if this environment requires comments for flag and segment changes."
+        },
+        "SecureMode": {
+            "type": "boolean",
+            "description": "Set to `true` to ensure a user of the client-side SDK cannot impersonate another user."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Set of tags associated with the environment."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Color",
+        "Key",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiKey",
+        "/properties/ClientSideId",
+        "/properties/Id",
+        "/properties/MobileKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/ApiKey",
+        "/properties/ClientSideId",
+        "/properties/MobileKey"
+    ]
+}

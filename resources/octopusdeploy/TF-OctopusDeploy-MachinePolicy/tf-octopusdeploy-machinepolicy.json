@@ -1,0 +1,225 @@
+{
+    "typeName": "TF::OctopusDeploy::MachinePolicy",
+    "description": "CloudFormation equivalent of octopusdeploy_machine_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/octopusdeploy/TF-OctopusDeploy-MachinePolicy/docs/README.md",
+    "definitions": {
+        "MachineCleanupPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteMachinesBehavior": {
+                    "type": "string"
+                },
+                "DeleteMachinesElapsedTimespan": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MachineConnectivityPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MachineConnectivityBehavior": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "MachineHealthCheckPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheckCron": {
+                    "type": "string"
+                },
+                "HealthCheckCronTimezone": {
+                    "type": "string"
+                },
+                "HealthCheckInterval": {
+                    "type": "number"
+                },
+                "HealthCheckType": {
+                    "type": "string"
+                },
+                "BashHealthCheckPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BashHealthCheckPolicyDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "PowershellHealthCheckPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PowershellHealthCheckPolicyDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "MachineUpdatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CalamariUpdateBehavior": {
+                    "type": "string"
+                },
+                "TentacleUpdateAccountId": {
+                    "type": "string"
+                },
+                "TentacleUpdateBehavior": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BashHealthCheckPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RunType": {
+                    "type": "string"
+                },
+                "ScriptBody": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PowershellHealthCheckPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RunType": {
+                    "type": "string"
+                },
+                "ScriptBody": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionConnectTimeout": {
+            "type": "number"
+        },
+        "ConnectionRetryCountLimit": {
+            "type": "number"
+        },
+        "ConnectionRetrySleepInterval": {
+            "type": "number"
+        },
+        "ConnectionRetryTimeLimit": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PollingRequestMaximumMessageProcessingTimeout": {
+            "type": "number"
+        },
+        "PollingRequestQueueTimeout": {
+            "type": "number"
+        },
+        "SpaceId": {
+            "type": "string"
+        },
+        "MachineCleanupPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MachineCleanupPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MachineConnectivityPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MachineConnectivityPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MachineHealthCheckPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MachineHealthCheckPolicyDefinition"
+            },
+            "maxItems": 1
+        },
+        "MachineUpdatePolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MachineUpdatePolicyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/IsDefault"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

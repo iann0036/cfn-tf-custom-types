@@ -1,0 +1,427 @@
+{
+    "typeName": "TF::Cloudflare::PageRule",
+    "description": "Provides a Cloudflare page rule resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/cloudflare/TF-Cloudflare-PageRule/docs/README.md",
+    "definitions": {
+        "ActionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysOnline": {
+                    "type": "string"
+                },
+                "AlwaysUseHttps": {
+                    "type": "boolean"
+                },
+                "AutomaticHttpsRewrites": {
+                    "type": "string"
+                },
+                "BrowserCacheTtl": {
+                    "type": "string"
+                },
+                "BrowserCheck": {
+                    "type": "string"
+                },
+                "BypassCacheOnCookie": {
+                    "type": "string"
+                },
+                "CacheByDeviceType": {
+                    "type": "string"
+                },
+                "CacheDeceptionArmor": {
+                    "type": "string"
+                },
+                "CacheLevel": {
+                    "type": "string"
+                },
+                "CacheOnCookie": {
+                    "type": "string"
+                },
+                "DisableApps": {
+                    "type": "boolean"
+                },
+                "DisablePerformance": {
+                    "type": "boolean"
+                },
+                "DisableRailgun": {
+                    "type": "boolean"
+                },
+                "DisableSecurity": {
+                    "type": "boolean"
+                },
+                "EdgeCacheTtl": {
+                    "type": "number"
+                },
+                "EmailObfuscation": {
+                    "type": "string"
+                },
+                "ExplicitCacheControl": {
+                    "type": "string"
+                },
+                "HostHeaderOverride": {
+                    "type": "string"
+                },
+                "IpGeolocation": {
+                    "type": "string"
+                },
+                "Mirage": {
+                    "type": "string"
+                },
+                "OpportunisticEncryption": {
+                    "type": "string"
+                },
+                "OriginErrorPagePassThru": {
+                    "type": "string"
+                },
+                "Polish": {
+                    "type": "string"
+                },
+                "ResolveOverride": {
+                    "type": "string"
+                },
+                "RespectStrongEtag": {
+                    "type": "string"
+                },
+                "ResponseBuffering": {
+                    "type": "string"
+                },
+                "RocketLoader": {
+                    "type": "string"
+                },
+                "SecurityLevel": {
+                    "type": "string"
+                },
+                "ServerSideExclude": {
+                    "type": "string"
+                },
+                "SortQueryStringForCache": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "string"
+                },
+                "TrueClientIpHeader": {
+                    "type": "string"
+                },
+                "Waf": {
+                    "type": "string"
+                },
+                "CacheKeyFields": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheKeyFieldsDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "CacheTtlByStatus": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CacheTtlByStatusDefinition"
+                    }
+                },
+                "ForwardingUrl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardingUrlDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "Minify": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MinifyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CacheKeyFieldsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cookie": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CookieDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Host": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "QueryString": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryStringDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "User": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UserDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "CacheTtlByStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Codes": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Codes",
+                "Ttl"
+            ]
+        },
+        "ForwardingUrlDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatusCode",
+                "Url"
+            ]
+        },
+        "MinifyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Css": {
+                    "type": "string"
+                },
+                "Html": {
+                    "type": "string"
+                },
+                "Js": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Css",
+                "Html",
+                "Js"
+            ]
+        },
+        "CookieDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckPresence": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HeaderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckPresence": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Exclude": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resolved": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "QueryStringDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclude": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ignore": {
+                    "type": "boolean"
+                },
+                "Include": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UserDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceType": {
+                    "type": "boolean"
+                },
+                "Geo": {
+                    "type": "boolean"
+                },
+                "Lang": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number",
+            "description": "The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule)."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Whether the page rule is active or disabled."
+        },
+        "Target": {
+            "type": "string",
+            "description": "The URL pattern to target with the page rule."
+        },
+        "ZoneId": {
+            "type": "string",
+            "description": "The DNS zone ID to which the page rule should be added."
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActionsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Target",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

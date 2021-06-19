@@ -1,0 +1,122 @@
+{
+    "typeName": "TF::ECL::SssUserV1",
+    "description": "Manages a V1 user resource within Enterprise Cloud.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/ecl/TF-ECL-SssUserV1/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BrandId": {
+            "type": "string"
+        },
+        "ContractId": {
+            "type": "string"
+        },
+        "ContractOwner": {
+            "type": "boolean"
+        },
+        "ExternalReferenceId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeystoneEndpoint": {
+            "type": "string"
+        },
+        "KeystoneName": {
+            "type": "string"
+        },
+        "KeystonePassword": {
+            "type": "string"
+        },
+        "LoginId": {
+            "type": "string",
+            "description": "Login id of new user."
+        },
+        "LoginIntegration": {
+            "type": "string"
+        },
+        "MailAddress": {
+            "type": "string",
+            "description": "Mail address of new user."
+        },
+        "NotifyPassword": {
+            "type": "string",
+            "description": "If this flag is set 'true',\nnotification email will be sent to new user's email address.\nEven this parameter is optional, you must specify this in case \"Creation\"."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Initial password of new user.\nIf this parameter is not designated,\nrandom initial password is generated and applied to new user."
+        },
+        "SssEndpoint": {
+            "type": "string"
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "UserId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoginId",
+        "MailAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BrandId",
+        "/properties/ContractId",
+        "/properties/ContractOwner",
+        "/properties/ExternalReferenceId",
+        "/properties/Id",
+        "/properties/KeystoneEndpoint",
+        "/properties/KeystoneName",
+        "/properties/KeystonePassword",
+        "/properties/LoginIntegration",
+        "/properties/SssEndpoint",
+        "/properties/StartTime",
+        "/properties/UserId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "typeName": "TF::OpsGenie::EmailIntegration",
+    "description": "Manages an Email Integration within Opsgenie.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/opsgenie/TF-OpsGenie-EmailIntegration/docs/README.md",
+    "definitions": {
+        "RespondersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EmailUsername": {
+            "type": "string",
+            "description": "The username part of the email address. It must be unique for each integration."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A Member block as documented below."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreRespondersFromPayload": {
+            "type": "boolean",
+            "description": "If enabled, the integration will ignore recipients sent in request payloads. Default: `false`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the integration. Name must be unique for each integration."
+        },
+        "OwnerTeamId": {
+            "type": "string",
+            "description": "Owner team id of the integration."
+        },
+        "SuppressNotifications": {
+            "type": "boolean",
+            "description": "If enabled, notifications that come from alerts will be suppressed. Default: `false`."
+        },
+        "Responders": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RespondersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EmailUsername",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

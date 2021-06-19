@@ -1,0 +1,92 @@
+{
+    "typeName": "TF::Thunder::RouterBgpAddressFamilyIpv6NetworkIpv6Network",
+    "description": "`thunder_router_bgp_address_family_ipv6_network_ipv6_network` Provides details about thunder router bgp address family ipv6 network ipv6 network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-RouterBgpAddressFamilyIpv6NetworkIpv6Network/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Action": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "number"
+        },
+        "Backdoor": {
+            "type": "number",
+            "description": "Specify a BGP backdoor route."
+        },
+        "CommValue": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Network specific description (Up to 80 characters describing this network)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NetworkIpv6": {
+            "type": "string"
+        },
+        "ProcessId": {
+            "type": "string"
+        },
+        "RouteMap": {
+            "type": "string"
+        },
+        "Sequence": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

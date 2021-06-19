@@ -1,0 +1,187 @@
+{
+    "typeName": "TF::Akamai::GtmDomain",
+    "description": "Use the `akamai_gtm_domain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration. \n\n~> **Note** Import requires an ID with this format: `existing_domain_name`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-GtmDomain/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CnameCoalescingEnabled": {
+            "type": "boolean"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "Contract": {
+            "type": "string"
+        },
+        "DefaultErrorPenalty": {
+            "type": "number"
+        },
+        "DefaultHealthMax": {
+            "type": "number"
+        },
+        "DefaultHealthMultiplier": {
+            "type": "number"
+        },
+        "DefaultHealthThreshold": {
+            "type": "number"
+        },
+        "DefaultMaxUnreachablePenalty": {
+            "type": "number"
+        },
+        "DefaultSslClientCertificate": {
+            "type": "string"
+        },
+        "DefaultSslClientPrivateKey": {
+            "type": "string"
+        },
+        "DefaultTimeoutPenalty": {
+            "type": "number"
+        },
+        "DefaultUnreachableThreshold": {
+            "type": "number"
+        },
+        "EmailNotificationList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EndUserMappingEnabled": {
+            "type": "boolean"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadFeedback": {
+            "type": "boolean"
+        },
+        "LoadImbalancePercentage": {
+            "type": "number"
+        },
+        "MapUpdateInterval": {
+            "type": "number"
+        },
+        "MaxProperties": {
+            "type": "number"
+        },
+        "MaxResources": {
+            "type": "number"
+        },
+        "MaxTestTimeout": {
+            "type": "number"
+        },
+        "MaxTtl": {
+            "type": "number"
+        },
+        "MinPingableRegionFraction": {
+            "type": "number"
+        },
+        "MinTestInterval": {
+            "type": "number"
+        },
+        "MinTtl": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PingInterval": {
+            "type": "number"
+        },
+        "PingPacketSize": {
+            "type": "number"
+        },
+        "RoundRobinPrefix": {
+            "type": "string"
+        },
+        "ServermonitorLivenessCount": {
+            "type": "number"
+        },
+        "ServermonitorLoadCount": {
+            "type": "number"
+        },
+        "ServermonitorPool": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "WaitOnComplete": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultHealthMax",
+        "/properties/DefaultHealthMultiplier",
+        "/properties/DefaultHealthThreshold",
+        "/properties/DefaultMaxUnreachablePenalty",
+        "/properties/DefaultUnreachableThreshold",
+        "/properties/Id",
+        "/properties/MapUpdateInterval",
+        "/properties/MaxProperties",
+        "/properties/MaxResources",
+        "/properties/MaxTestTimeout",
+        "/properties/MaxTtl",
+        "/properties/MinPingableRegionFraction",
+        "/properties/MinTestInterval",
+        "/properties/MinTtl",
+        "/properties/PingInterval",
+        "/properties/PingPacketSize",
+        "/properties/RoundRobinPrefix",
+        "/properties/ServermonitorLivenessCount",
+        "/properties/ServermonitorLoadCount",
+        "/properties/ServermonitorPool"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

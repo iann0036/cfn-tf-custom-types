@@ -1,0 +1,90 @@
+{
+    "typeName": "TF::Civo::FirewallRule",
+    "description": "Provides a Civo Cloud Firewall Rule resource. \nThis can be used to create, modify, and delete Firewalls Rules.\nThis resource don't have an update option because the backend don't have the\nsupport for that, so in this case we use ForceNew for all object in the resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-FirewallRule/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Direction": {
+            "type": "string"
+        },
+        "EndPort": {
+            "type": "string"
+        },
+        "FirewallId": {
+            "type": "string",
+            "description": "The Firewall id."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "StartPort": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

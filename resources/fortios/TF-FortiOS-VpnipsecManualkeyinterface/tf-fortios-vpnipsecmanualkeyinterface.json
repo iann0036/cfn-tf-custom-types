@@ -1,0 +1,129 @@
+{
+    "typeName": "TF::FortiOS::VpnipsecManualkeyinterface",
+    "description": "Configure IPsec manual keys.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-VpnipsecManualkeyinterface/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddrType": {
+            "type": "string",
+            "description": "IP version to use for IP packets. Valid values: `4`, `6`."
+        },
+        "AuthAlg": {
+            "type": "string",
+            "description": "Authentication algorithm. Must be the same for both ends of the tunnel. Valid values: `null`, `md5`, `sha1`, `sha256`, `sha384`, `sha512`."
+        },
+        "AuthKey": {
+            "type": "string",
+            "description": "Hexadecimal authentication key in 16-digit (8-byte) segments separated by hyphens."
+        },
+        "EncAlg": {
+            "type": "string",
+            "description": "Encryption algorithm. Must be the same for both ends of the tunnel. Valid values: `null`, `des`, `3des`, `aes128`, `aes192`, `aes256`, `aria128`, `aria192`, `aria256`, `seed`."
+        },
+        "EncKey": {
+            "type": "string",
+            "description": "Hexadecimal encryption key in 16-digit (8-byte) segments separated by hyphens."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Name of the physical, aggregate, or VLAN interface."
+        },
+        "IpVersion": {
+            "type": "string",
+            "description": "IP version to use for VPN interface. Valid values: `4`, `6`."
+        },
+        "LocalGw": {
+            "type": "string",
+            "description": "IPv4 address of the local gateway's external interface."
+        },
+        "LocalGw6": {
+            "type": "string",
+            "description": "Local IPv6 address of VPN gateway."
+        },
+        "LocalSpi": {
+            "type": "string",
+            "description": "Local SPI, a hexadecimal 8-digit (4-byte) tag. Discerns between two traffic streams with different encryption rules."
+        },
+        "Name": {
+            "type": "string",
+            "description": "IPsec tunnel name."
+        },
+        "RemoteGw": {
+            "type": "string",
+            "description": "IPv4 address of the remote gateway's external interface."
+        },
+        "RemoteGw6": {
+            "type": "string",
+            "description": "Remote IPv6 address of VPN gateway."
+        },
+        "RemoteSpi": {
+            "type": "string",
+            "description": "Remote SPI, a hexadecimal 8-digit (4-byte) tag. Discerns between two traffic streams with different encryption rules."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthAlg",
+        "EncAlg",
+        "Interface",
+        "RemoteGw",
+        "RemoteGw6"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/AuthKey",
+        "/properties/EncKey"
+    ]
+}

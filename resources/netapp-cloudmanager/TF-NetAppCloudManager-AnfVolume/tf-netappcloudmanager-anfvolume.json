@@ -1,0 +1,192 @@
+{
+    "typeName": "TF::NetAppCloudManager::AnfVolume",
+    "description": "Provides a netapp-cloudmanager_anf_volume resource. This can be used to create, and delete volumes for Azure NetApp Files.\nRequires existence of a Cloud Manager Connector.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-AnfVolume/docs/README.md",
+    "definitions": {
+        "ExportPolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RuleDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RuleDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedClients": {
+                    "type": "string"
+                },
+                "Cifs": {
+                    "type": "boolean"
+                },
+                "Nfsv3": {
+                    "type": "boolean"
+                },
+                "Nfsv41": {
+                    "type": "boolean"
+                },
+                "RuleIndex": {
+                    "type": "number"
+                },
+                "UnixReadOnly": {
+                    "type": "boolean"
+                },
+                "UnixReadWrite": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Account": {
+            "type": "string",
+            "description": "The name of the account."
+        },
+        "CapacityPool": {
+            "type": "string",
+            "description": "The name of the capacity pool."
+        },
+        "ClientId": {
+            "type": "string",
+            "description": "The client ID of the Cloud Manager Connector. You can find the ID from a previous create Connector action as shown in the example, or from the Connector tab on [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string",
+            "description": "The location of the account."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the volume."
+        },
+        "NetappAccount": {
+            "type": "string",
+            "description": "The name of the netapp account."
+        },
+        "ProtocolTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResourceGroups": {
+            "type": "string",
+            "description": "The name of the resource group in Azure where the volume will be created."
+        },
+        "ServiceLevel": {
+            "type": "string",
+            "description": "['Premium' or 'Standard' or 'Ultra']."
+        },
+        "Size": {
+            "type": "number",
+            "description": "The volume size, supported with decimal numbers."
+        },
+        "SizeUnit": {
+            "type": "string",
+            "description": "[ 'GB' ]."
+        },
+        "Subnet": {
+            "type": "string",
+            "description": "The name of the subnet."
+        },
+        "Subscription": {
+            "type": "string",
+            "description": "The name of the subscription."
+        },
+        "VirtualNetwork": {
+            "type": "string",
+            "description": "The name of the virtual network."
+        },
+        "VolumePath": {
+            "type": "string",
+            "description": "The volume path."
+        },
+        "WorkingEnvironmentName": {
+            "type": "string",
+            "description": "The working environment name."
+        },
+        "ExportPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExportPolicyDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CapacityPool",
+        "ClientId",
+        "Location",
+        "Name",
+        "NetappAccount",
+        "ProtocolTypes",
+        "ResourceGroups",
+        "ServiceLevel",
+        "Size",
+        "SizeUnit",
+        "Subnet",
+        "Subscription",
+        "VirtualNetwork",
+        "VolumePath",
+        "WorkingEnvironmentName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

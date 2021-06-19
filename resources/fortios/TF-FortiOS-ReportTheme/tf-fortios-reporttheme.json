@@ -1,0 +1,183 @@
+{
+    "typeName": "TF::FortiOS::ReportTheme",
+    "description": "Report themes configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-ReportTheme/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BulletListStyle": {
+            "type": "string",
+            "description": "Bullet list style."
+        },
+        "ColumnCount": {
+            "type": "string",
+            "description": "Report page column count. Valid values: `1`, `2`, `3`."
+        },
+        "DefaultHtmlStyle": {
+            "type": "string",
+            "description": "Default HTML report style."
+        },
+        "DefaultPdfStyle": {
+            "type": "string",
+            "description": "Default PDF report style."
+        },
+        "GraphChartStyle": {
+            "type": "string",
+            "description": "Graph chart style."
+        },
+        "Heading1Style": {
+            "type": "string",
+            "description": "Report heading style."
+        },
+        "Heading2Style": {
+            "type": "string",
+            "description": "Report heading style."
+        },
+        "Heading3Style": {
+            "type": "string",
+            "description": "Report heading style."
+        },
+        "Heading4Style": {
+            "type": "string",
+            "description": "Report heading style."
+        },
+        "HlineStyle": {
+            "type": "string",
+            "description": "Horizontal line style."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageStyle": {
+            "type": "string",
+            "description": "Image style."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Report theme name."
+        },
+        "NormalTextStyle": {
+            "type": "string",
+            "description": "Normal text style."
+        },
+        "NumberedListStyle": {
+            "type": "string",
+            "description": "Numbered list style."
+        },
+        "PageFooterStyle": {
+            "type": "string",
+            "description": "Report page footer style."
+        },
+        "PageHeaderStyle": {
+            "type": "string",
+            "description": "Report page header style."
+        },
+        "PageOrient": {
+            "type": "string",
+            "description": "Report page orientation. Valid values: `portrait`, `landscape`."
+        },
+        "PageStyle": {
+            "type": "string",
+            "description": "Report page style."
+        },
+        "ReportSubtitleStyle": {
+            "type": "string",
+            "description": "Report subtitle style."
+        },
+        "ReportTitleStyle": {
+            "type": "string",
+            "description": "Report title style."
+        },
+        "TableChartCaptionStyle": {
+            "type": "string",
+            "description": "Table chart caption style."
+        },
+        "TableChartEvenRowStyle": {
+            "type": "string",
+            "description": "Table chart even row style."
+        },
+        "TableChartHeadStyle": {
+            "type": "string",
+            "description": "Table chart head row style."
+        },
+        "TableChartOddRowStyle": {
+            "type": "string",
+            "description": "Table chart odd row style."
+        },
+        "TableChartStyle": {
+            "type": "string",
+            "description": "Table chart style."
+        },
+        "TocHeading1Style": {
+            "type": "string",
+            "description": "Table of contents heading style."
+        },
+        "TocHeading2Style": {
+            "type": "string",
+            "description": "Table of contents heading style."
+        },
+        "TocHeading3Style": {
+            "type": "string",
+            "description": "Table of contents heading style."
+        },
+        "TocHeading4Style": {
+            "type": "string",
+            "description": "Table of contents heading style."
+        },
+        "TocTitleStyle": {
+            "type": "string",
+            "description": "Table of contents title style."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

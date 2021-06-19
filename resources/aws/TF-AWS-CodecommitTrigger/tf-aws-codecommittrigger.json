@@ -1,0 +1,113 @@
+{
+    "typeName": "TF::AWS::CodecommitTrigger",
+    "description": "Provides a CodeCommit Trigger Resource.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CodecommitTrigger/docs/README.md",
+    "definitions": {
+        "TriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branches": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CustomData": {
+                    "type": "string"
+                },
+                "DestinationArn": {
+                    "type": "string"
+                },
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DestinationArn",
+                "Events",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigurationId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RepositoryName": {
+            "type": "string",
+            "description": "The name for the repository. This needs to be less than 100 characters."
+        },
+        "Trigger": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TriggerDefinition"
+            },
+            "maxItems": 10,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RepositoryName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigurationId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

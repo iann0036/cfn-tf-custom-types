@@ -1,0 +1,708 @@
+{
+    "typeName": "TF::AVI::Vrfcontext",
+    "description": "The VrfContext resource allows the creation and management of Avi VrfContext",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Vrfcontext/docs/README.md",
+    "definitions": {
+        "AttrsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "BfdProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Minrx": {
+                    "type": "number"
+                },
+                "Mintx": {
+                    "type": "number"
+                },
+                "Multi": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "BgpProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HoldTime": {
+                    "type": "number"
+                },
+                "Ibgp": {
+                    "type": "boolean"
+                },
+                "KeepaliveInterval": {
+                    "type": "number"
+                },
+                "LocalAs": {
+                    "type": "number"
+                },
+                "LocalPreference": {
+                    "type": "number"
+                },
+                "NumAsPathPrepend": {
+                    "type": "number"
+                },
+                "SendCommunity": {
+                    "type": "boolean"
+                },
+                "Shutdown": {
+                    "type": "boolean"
+                },
+                "IpCommunities": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpCommunitiesDefinition"
+                    }
+                },
+                "Peers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PeersDefinition"
+                    }
+                },
+                "RoutingOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RoutingOptionsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Ibgp",
+                "LocalAs"
+            ]
+        },
+        "DebugvrfcontextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommandBufferInterval": {
+                    "type": "number"
+                },
+                "CommandBufferSize": {
+                    "type": "number"
+                },
+                "Flags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FlagsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GatewayMonDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GatewayMonitorFailThreshold": {
+                    "type": "number"
+                },
+                "GatewayMonitorInterval": {
+                    "type": "number"
+                },
+                "GatewayMonitorSuccessThreshold": {
+                    "type": "number"
+                },
+                "GatewayIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GatewayIpDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InternalGatewayMonitorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableGatewayMonitor": {
+                    "type": "boolean"
+                },
+                "GatewayMonitorFailureThreshold": {
+                    "type": "number"
+                },
+                "GatewayMonitorInterval": {
+                    "type": "number"
+                },
+                "GatewayMonitorSuccessThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "StaticRoutesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableGatewayMonitor": {
+                    "type": "boolean"
+                },
+                "IfName": {
+                    "type": "string"
+                },
+                "RouteId": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                },
+                "NextHop": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NextHopDefinition"
+                    },
+                    "minItems": 1
+                },
+                "Prefix": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrefixDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "RouteId"
+            ]
+        },
+        "IpCommunitiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Community": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpBegin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpBeginDefinition"
+                    },
+                    "minItems": 1
+                },
+                "IpEnd": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpEndDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Community"
+            ]
+        },
+        "PeersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertiseSnatIp": {
+                    "type": "boolean"
+                },
+                "AdvertiseVip": {
+                    "type": "boolean"
+                },
+                "AdvertisementInterval": {
+                    "type": "number"
+                },
+                "Bfd": {
+                    "type": "boolean"
+                },
+                "ConnectTimer": {
+                    "type": "number"
+                },
+                "EbgpMultihop": {
+                    "type": "number"
+                },
+                "HoldTime": {
+                    "type": "number"
+                },
+                "IbgpLocalAsOverride": {
+                    "type": "boolean"
+                },
+                "KeepaliveInterval": {
+                    "type": "number"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "LocalAs": {
+                    "type": "number"
+                },
+                "Md5Secret": {
+                    "type": "string"
+                },
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "RemoteAs": {
+                    "type": "number"
+                },
+                "Shutdown": {
+                    "type": "boolean"
+                },
+                "PeerIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PeerIpDefinition"
+                    }
+                },
+                "PeerIp6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PeerIp6Definition"
+                    }
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RoutingOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdvertiseDefaultRoute": {
+                    "type": "boolean"
+                },
+                "AdvertiseLearnedRoutes": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "LearnOnlyDefaultRoute": {
+                    "type": "boolean"
+                },
+                "LearnRoutes": {
+                    "type": "boolean"
+                },
+                "MaxLearnLimit": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "FlagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Flag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Flag"
+            ]
+        },
+        "GatewayIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "NextHopDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PrefixDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpBeginDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "IpEndDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PeerIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "PeerIp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "Subnet6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud."
+        },
+        "Description": {
+            "type": "string",
+            "description": "User defined description for the object."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LldpEnable": {
+            "type": "boolean",
+            "description": "Enable lldp. Field introduced in 18.2.10, 20.1.1. Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the object."
+        },
+        "SystemDefault": {
+            "type": "boolean",
+            "description": "Boolean flag to set system_default."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Attrs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttrsDefinition"
+            }
+        },
+        "BfdProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BfdProfileDefinition"
+            }
+        },
+        "BgpProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BgpProfileDefinition"
+            }
+        },
+        "Debugvrfcontext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DebugvrfcontextDefinition"
+            }
+        },
+        "GatewayMon": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GatewayMonDefinition"
+            }
+        },
+        "InternalGatewayMonitor": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InternalGatewayMonitorDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "StaticRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticRoutesDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/PeersDefinition/Md5Secret"
+    ]
+}

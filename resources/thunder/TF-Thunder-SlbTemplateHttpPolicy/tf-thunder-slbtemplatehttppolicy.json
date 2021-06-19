@@ -1,0 +1,143 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateHttpPolicy",
+    "description": "`thunder_slb_template_http_policy` Provides details about thunder slb template http policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateHttpPolicy/docs/README.md",
+    "definitions": {
+        "GeoLocationMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GeoLocation": {
+                    "type": "string"
+                },
+                "GeoLocationServiceGroup": {
+                    "type": "string"
+                },
+                "GeoLocationTemplate": {
+                    "type": "string"
+                },
+                "GeoLocationTemplateName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpPolicyMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchString": {
+                    "type": "string"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "OtherMatchString": {
+                    "type": "string"
+                },
+                "OtherMatchType": {
+                    "type": "string"
+                },
+                "ServiceGroup": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                },
+                "TemplateName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UrlUnderHost": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CookieName": {
+            "type": "string",
+            "description": "name of cookie to match (Cookie Name)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "http-policy template name."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        },
+        "GeoLocationMatch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GeoLocationMatchDefinition"
+            }
+        },
+        "HttpPolicyMatch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpPolicyMatchDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

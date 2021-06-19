@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::ACI::LocalUser",
+    "description": "CloudFormation equivalent of aci_local_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-LocalUser/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountStatus": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "CertAttribute": {
+            "type": "string"
+        },
+        "ClearPwdHistory": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "Expiration": {
+            "type": "string"
+        },
+        "Expires": {
+            "type": "string"
+        },
+        "FirstName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameAlias": {
+            "type": "string"
+        },
+        "Otpenable": {
+            "type": "string"
+        },
+        "Otpkey": {
+            "type": "string"
+        },
+        "Phone": {
+            "type": "string"
+        },
+        "Pwd": {
+            "type": "string"
+        },
+        "PwdLifeTime": {
+            "type": "string"
+        },
+        "PwdUpdateRequired": {
+            "type": "string"
+        },
+        "RbacString": {
+            "type": "string"
+        },
+        "UnixUserId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

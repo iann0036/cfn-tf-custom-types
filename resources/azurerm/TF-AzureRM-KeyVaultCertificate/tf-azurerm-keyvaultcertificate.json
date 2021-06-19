@@ -1,0 +1,437 @@
+{
+    "typeName": "TF::AzureRM::KeyVaultCertificate",
+    "description": "Manages a Key Vault Certificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-KeyVaultCertificate/docs/README.md",
+    "definitions": {
+        "CertificateAttributeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Created": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Expires": {
+                    "type": "string"
+                },
+                "NotBefore": {
+                    "type": "string"
+                },
+                "RecoveryLevel": {
+                    "type": "string"
+                },
+                "Updated": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "CertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Contents": {
+                    "type": "string",
+                    "description": "The base64-encoded certificate contents. Changing this forces a new resource to be created."
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "The password associated with the certificate. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Contents"
+            ]
+        },
+        "CertificatePolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IssuerParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IssuerParametersDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "KeyProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyPropertiesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "LifetimeAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifetimeActionDefinition"
+                    }
+                },
+                "SecretProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretPropertiesDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "X509CertificateProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/X509CertificatePropertiesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IssuerParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The name of the Certificate Issuer. Possible values include `Self` (for self-signed certificate), or `Unknown` (for a certificate issuing authority like `Let's Encrypt` and Azure direct supported ones). Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "KeyPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Curve": {
+                    "type": "string",
+                    "description": "Specifies the curve to use when creating an `EC` key. Possible values are `P-256`, `P-256K`, `P-384`, and `P-521`. This field will be required in a future release if `key_type` is `EC` or `EC-HSM`. Changing this forces a new resource to be created."
+                },
+                "Exportable": {
+                    "type": "boolean",
+                    "description": "Is this certificate exportable? Changing this forces a new resource to be created."
+                },
+                "KeySize": {
+                    "type": "number",
+                    "description": "The size of the key used in the certificate. Possible values include `2048`, `3072`, and `4096` for `RSA` keys, or `256`, `384`, and `521` for `EC` keys. This property is required when using RSA keys. Changing this forces a new resource to be created."
+                },
+                "KeyType": {
+                    "type": "string",
+                    "description": "Specifies the type of key, such as `RSA` or `EC`. Changing this forces a new resource to be created."
+                },
+                "ReuseKey": {
+                    "type": "boolean",
+                    "description": "Is the key reusable? Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "Exportable",
+                "KeyType",
+                "ReuseKey"
+            ]
+        },
+        "LifetimeActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActionDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                },
+                "Trigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TriggerDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": []
+        },
+        "SecretPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string",
+                    "description": "The Content-Type of the Certificate, such as `application/x-pkcs12` for a PFX or `application/x-pem-file` for a PEM. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "ContentType"
+            ]
+        },
+        "X509CertificatePropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExtendedKeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of Extended/Enhanced Key Usages. Changing this forces a new resource to be created."
+                },
+                "KeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of uses associated with this Key. Possible values include `cRLSign`, `dataEncipherment`, `decipherOnly`, `digitalSignature`, `encipherOnly`, `keyAgreement`, `keyCertSign`, `keyEncipherment` and `nonRepudiation` and are case-sensitive. Changing this forces a new resource to be created."
+                },
+                "Subject": {
+                    "type": "string",
+                    "description": "The Certificate's Subject. Changing this forces a new resource to be created."
+                },
+                "ValidityInMonths": {
+                    "type": "number",
+                    "description": "The Certificates Validity Period in Months. Changing this forces a new resource to be created."
+                },
+                "SubjectAlternativeNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectAlternativeNamesDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "KeyUsage",
+                "Subject",
+                "ValidityInMonths"
+            ]
+        },
+        "ActionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string",
+                    "description": "The Type of action to be performed when the lifetime trigger is triggerec. Possible values include `AutoRenew` and `EmailContacts`. Changing this forces a new resource to be created."
+                }
+            },
+            "required": [
+                "ActionType"
+            ]
+        },
+        "TriggerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysBeforeExpiry": {
+                    "type": "number",
+                    "description": "The number of days before the Certificate expires that the action associated with this Trigger should run. Changing this forces a new resource to be created. Conflicts with `lifetime_percentage`."
+                },
+                "LifetimePercentage": {
+                    "type": "number",
+                    "description": "The percentage at which during the Certificates Lifetime the action associated with this Trigger should run. Changing this forces a new resource to be created. Conflicts with `days_before_expiry`."
+                }
+            },
+            "required": []
+        },
+        "SubjectAlternativeNamesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of alternative DNS names (FQDNs) identified by the Certificate. Changing this forces a new resource to be created."
+                },
+                "Emails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of email addresses identified by this Certificate. Changing this forces a new resource to be created."
+                },
+                "Upns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of User Principal Names identified by the Certificate. Changing this forces a new resource to be created."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateAttribute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateAttributeDefinition"
+            }
+        },
+        "CertificateData": {
+            "type": "string"
+        },
+        "CertificateDataBase64": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyVaultId": {
+            "type": "string",
+            "description": "The ID of the Key Vault where the Certificate should be created."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the Key Vault Certificate. Changing this forces a new resource to be created."
+        },
+        "SecretId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A mapping of tags to assign to the resource."
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateDefinition"
+            },
+            "maxItems": 1
+        },
+        "CertificatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificatePolicyDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyVaultId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateAttribute",
+        "/properties/CertificateData",
+        "/properties/CertificateDataBase64",
+        "/properties/Id",
+        "/properties/SecretId",
+        "/properties/Thumbprint",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/CertificateDefinition/Contents",
+        "/definitions/CertificateDefinition/Password"
+    ]
+}

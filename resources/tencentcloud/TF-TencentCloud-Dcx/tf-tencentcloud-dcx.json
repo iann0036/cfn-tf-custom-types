@@ -1,0 +1,128 @@
+{
+    "typeName": "TF::TencentCloud::Dcx",
+    "description": "Provides a resource to creating dedicated tunnels instances.\n\n~> **NOTE:** 1. ID of the DC is queried, can only apply for this resource offline.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Dcx/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "number",
+            "description": "Bandwidth of the DC."
+        },
+        "BgpAsn": {
+            "type": "number",
+            "description": "BGP ASN of the user. A required field within BGP."
+        },
+        "BgpAuthKey": {
+            "type": "string",
+            "description": "BGP key of the user."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CustomerAddress": {
+            "type": "string",
+            "description": "Interconnect IP of the DC within client."
+        },
+        "DcId": {
+            "type": "string",
+            "description": "ID of the DC to be queried, application deployment offline."
+        },
+        "DcgId": {
+            "type": "string",
+            "description": "ID of the DC Gateway. Currently only new in the console."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the dedicated tunnel."
+        },
+        "NetworkType": {
+            "type": "string",
+            "description": "Type of the network. Valid value: `VPC`, `BMVPC` and `CCN`. The default value is `VPC`."
+        },
+        "RouteFilterPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "Static route, the network address of the user IDC. It can be modified after setting but cannot be deleted. AN unable field within BGP."
+        },
+        "RouteType": {
+            "type": "string",
+            "description": "Type of the route, and available values include BGP and STATIC. The default value is `BGP`."
+        },
+        "State": {
+            "type": "string"
+        },
+        "TencentAddress": {
+            "type": "string",
+            "description": "Interconnect IP of the DC within Tencent."
+        },
+        "Vlan": {
+            "type": "number",
+            "description": "Vlan of the dedicated tunnels. Valid value ranges: (0~3000). `0` means that only one tunnel can be created for the physical connect."
+        },
+        "VpcId": {
+            "type": "string",
+            "description": "ID of the VPC or BMVPC."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DcId",
+        "DcgId",
+        "Name",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Id",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,229 @@
+{
+    "typeName": "TF::Google::DataflowJob",
+    "description": "Creates a job on Dataflow, which is an implementation of Apache Beam running on Google Compute Engine. For more information see\nthe official documentation for\n[Beam](https://beam.apache.org) and [Dataflow](https://cloud.google.com/dataflow/).",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-DataflowJob/docs/README.md",
+    "definitions": {
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "ParametersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TransformNameMappingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalExperiments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "List of experiments that should be used by the job. An example value is `[\"enable_stackdriver_agent_metrics\"]`."
+        },
+        "EnableStreamingEngine": {
+            "type": "boolean",
+            "description": "Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpConfiguration": {
+            "type": "string",
+            "description": "The configuration for VM IPs.  Options are `\"WORKER_IP_PUBLIC\"` or `\"WORKER_IP_PRIVATE\"`."
+        },
+        "JobId": {
+            "type": "string"
+        },
+        "KmsKeyName": {
+            "type": "string",
+            "description": "The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`."
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            },
+            "description": "User labels to be specified for the job. Keys and values should follow the restrictions\nspecified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.\n**NOTE**: Google-provided Dataflow templates often provide default labels that begin with `goog-dataflow-provided`.\nUnless explicitly set in config, these labels will be ignored to prevent diffs on re-apply."
+        },
+        "MachineType": {
+            "type": "string",
+            "description": "The machine type to use for the job."
+        },
+        "MaxWorkers": {
+            "type": "number",
+            "description": "The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost."
+        },
+        "Name": {
+            "type": "string",
+            "description": "A unique name for the resource, required by Dataflow."
+        },
+        "Network": {
+            "type": "string",
+            "description": "The network to which VMs will be assigned. If it is not provided, \"default\" will be used."
+        },
+        "OnDelete": {
+            "type": "string",
+            "description": "One of \"drain\" or \"cancel\".  Specifies behavior of deletion during `terraform destroy`.  See above note."
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParametersDefinition"
+            },
+            "description": "Key/Value pairs to be passed to the Dataflow job (as used in the template)."
+        },
+        "Project": {
+            "type": "string",
+            "description": "The project in which the resource belongs. If it is not provided, the provider project is used."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region in which the created job should run."
+        },
+        "ServiceAccountEmail": {
+            "type": "string",
+            "description": "The Service Account email used to create the job."
+        },
+        "State": {
+            "type": "string"
+        },
+        "Subnetwork": {
+            "type": "string",
+            "description": "The subnetwork to which VMs will be assigned. Should be of the form \"regions/REGION/subnetworks/SUBNETWORK\"."
+        },
+        "TempGcsLocation": {
+            "type": "string",
+            "description": "A writeable location on GCS for the Dataflow job to dump its temporary data."
+        },
+        "TemplateGcsPath": {
+            "type": "string",
+            "description": "The GCS path to the Dataflow job template."
+        },
+        "TransformNameMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TransformNameMappingDefinition"
+            },
+            "description": "Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update."
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string",
+            "description": "The zone in which the created job should run. If it is not provided, the provider zone is used."
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TempGcsLocation",
+        "TemplateGcsPath"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/JobId",
+        "/properties/State",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,218 @@
+{
+    "typeName": "TF::AzureRM::ApiManagementApiDiagnostic",
+    "description": "Manages a API Management Service API Diagnostics Logs.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-ApiManagementApiDiagnostic/docs/README.md",
+    "definitions": {
+        "BackendRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BackendResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FrontendRequestDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "FrontendResponseDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyBytes": {
+                    "type": "number"
+                },
+                "HeadersToLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlwaysLogErrors": {
+            "type": "boolean"
+        },
+        "ApiManagementLoggerId": {
+            "type": "string"
+        },
+        "ApiManagementName": {
+            "type": "string"
+        },
+        "ApiName": {
+            "type": "string"
+        },
+        "HttpCorrelationProtocol": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string"
+        },
+        "LogClientIp": {
+            "type": "boolean"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SamplingPercentage": {
+            "type": "number"
+        },
+        "Verbosity": {
+            "type": "string"
+        },
+        "BackendRequest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendRequestDefinition"
+            },
+            "maxItems": 1
+        },
+        "BackendResponse": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendResponseDefinition"
+            },
+            "maxItems": 1
+        },
+        "FrontendRequest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendRequestDefinition"
+            },
+            "maxItems": 1
+        },
+        "FrontendResponse": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendResponseDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiManagementLoggerId",
+        "ApiManagementName",
+        "ApiName",
+        "Identifier",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

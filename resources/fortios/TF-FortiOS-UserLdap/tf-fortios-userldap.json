@@ -1,0 +1,197 @@
+{
+    "typeName": "TF::FortiOS::UserLdap",
+    "description": "Configure LDAP server entries.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-UserLdap/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountKeyFilter": {
+            "type": "string",
+            "description": "Account key filter, using the UPN as the search filter."
+        },
+        "AccountKeyProcessing": {
+            "type": "string",
+            "description": "Account key processing operation, either keep or strip domain string of UPN in the token. Valid values: `same`, `strip`."
+        },
+        "CaCert": {
+            "type": "string",
+            "description": "CA certificate name."
+        },
+        "Cnid": {
+            "type": "string",
+            "description": "Common name identifier for the LDAP server. The common name identifier for most LDAP servers is \"cn\"."
+        },
+        "Dn": {
+            "type": "string",
+            "description": "Distinguished name used to look up entries on the LDAP server."
+        },
+        "GroupFilter": {
+            "type": "string",
+            "description": "Filter used for group matching."
+        },
+        "GroupMemberCheck": {
+            "type": "string",
+            "description": "Group member checking methods. Valid values: `user-attr`, `group-object`, `posix-group-object`."
+        },
+        "GroupObjectFilter": {
+            "type": "string",
+            "description": "Filter used for group searching."
+        },
+        "GroupSearchBase": {
+            "type": "string",
+            "description": "Search base used for group searching."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string",
+            "description": "Specify outgoing interface to reach server."
+        },
+        "InterfaceSelectMethod": {
+            "type": "string",
+            "description": "Specify how to select outgoing interface to reach server. Valid values: `auto`, `sdwan`, `specify`."
+        },
+        "MemberAttr": {
+            "type": "string",
+            "description": "Name of attribute from which to get group membership."
+        },
+        "Name": {
+            "type": "string",
+            "description": "LDAP server entry name."
+        },
+        "ObtainUserInfo": {
+            "type": "string",
+            "description": "Enable/disable obtaining of user information. Valid values: `enable`, `disable`."
+        },
+        "Password": {
+            "type": "string",
+            "description": "Password for initial binding."
+        },
+        "PasswordExpiryWarning": {
+            "type": "string",
+            "description": "Enable/disable password expiry warnings. Valid values: `enable`, `disable`."
+        },
+        "PasswordRenewal": {
+            "type": "string",
+            "description": "Enable/disable online password renewal. Valid values: `enable`, `disable`."
+        },
+        "Port": {
+            "type": "number",
+            "description": "Port to be used for communication with the LDAP server (default = 389)."
+        },
+        "SearchType": {
+            "type": "string",
+            "description": "Search type. Valid values: `recursive`."
+        },
+        "SecondaryServer": {
+            "type": "string",
+            "description": "Secondary LDAP server CN domain name or IP."
+        },
+        "Secure": {
+            "type": "string",
+            "description": "Port to be used for authentication. Valid values: `disable`, `starttls`, `ldaps`."
+        },
+        "Server": {
+            "type": "string",
+            "description": "LDAP server CN domain name or IP."
+        },
+        "ServerIdentityCheck": {
+            "type": "string",
+            "description": "Enable/disable LDAP server identity check (verify server domain name/IP address against the server certificate). Valid values: `enable`, `disable`."
+        },
+        "SourceIp": {
+            "type": "string",
+            "description": "Source IP for communications to LDAP server."
+        },
+        "SslMinProtoVersion": {
+            "type": "string",
+            "description": "Minimum supported protocol version for SSL/TLS connections (default is to follow system global setting). Valid values: `default`, `SSLv3`, `TLSv1`, `TLSv1-1`, `TLSv1-2`."
+        },
+        "TertiaryServer": {
+            "type": "string",
+            "description": "Tertiary LDAP server CN domain name or IP."
+        },
+        "TwoFactor": {
+            "type": "string",
+            "description": "Enable/disable two-factor authentication. Valid values: `disable`, `fortitoken-cloud`."
+        },
+        "TwoFactorAuthentication": {
+            "type": "string",
+            "description": "Authentication method by FortiToken Cloud. Valid values: `fortitoken`, `email`, `sms`."
+        },
+        "TwoFactorNotification": {
+            "type": "string",
+            "description": "Notification method for user activation by FortiToken Cloud. Valid values: `email`, `sms`."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Authentication type for LDAP searches. Valid values: `simple`, `anonymous`, `regular`."
+        },
+        "UserInfoExchangeServer": {
+            "type": "string",
+            "description": "MS Exchange server from which to fetch user information."
+        },
+        "Username": {
+            "type": "string",
+            "description": "Username (full DN) for initial binding."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Dn",
+        "Server"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "typeName": "TF::TencentCloud::AsScalingPolicy",
+    "description": "Provides a resource for an AS (Auto scaling) policy.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-AsScalingPolicy/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustmentType": {
+            "type": "string",
+            "description": "Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Valid values: `CHANGE_IN_CAPACITY`, `EXACT_CAPACITY` and `PERCENT_CHANGE_IN_CAPACITY`."
+        },
+        "AdjustmentValue": {
+            "type": "number",
+            "description": "Define the number of instances by which to scale.For `CHANGE_IN_CAPACITY` type or PERCENT_CHANGE_IN_CAPACITY, a positive increment adds to the current capacity and a negative value removes from the current capacity. For `EXACT_CAPACITY` type, it defines an absolute number of the existing Auto Scaling group size."
+        },
+        "ComparisonOperator": {
+            "type": "string",
+            "description": "Comparison operator. Valid values: `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `EQUAL_TO` and `NOT_EQUAL_TO`."
+        },
+        "ContinuousTime": {
+            "type": "number",
+            "description": "Retry times. Valid value ranges: (1~10)."
+        },
+        "Cooldown": {
+            "type": "number",
+            "description": "Cooldwon time in second. Default is `30`0."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string",
+            "description": "Name of an indicator. Valid values: `CPU_UTILIZATION`, `MEM_UTILIZATION`, `LAN_TRAFFIC_OUT`, `LAN_TRAFFIC_IN`, `WAN_TRAFFIC_OUT` and `WAN_TRAFFIC_IN`."
+        },
+        "NotificationUserGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "An ID group of users to be notified when an alarm is triggered."
+        },
+        "Period": {
+            "type": "number",
+            "description": "Time period in second. Valid values: `60` and `300`."
+        },
+        "PolicyName": {
+            "type": "string",
+            "description": "Name of a policy used to define a reaction when an alarm is triggered."
+        },
+        "ScalingGroupId": {
+            "type": "string",
+            "description": "ID of a scaling group."
+        },
+        "Statistic": {
+            "type": "string",
+            "description": "Statistic types. Valid values: `AVERAGE`, `MAXIMUM` and `MINIMUM`. Default is `AVERAGE`."
+        },
+        "Threshold": {
+            "type": "number",
+            "description": "Alarm threshold."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdjustmentType",
+        "AdjustmentValue",
+        "ComparisonOperator",
+        "ContinuousTime",
+        "MetricName",
+        "Period",
+        "PolicyName",
+        "ScalingGroupId",
+        "Threshold"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

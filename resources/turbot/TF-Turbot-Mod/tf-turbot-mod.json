@@ -1,0 +1,112 @@
+{
+    "typeName": "TF::Turbot::Mod",
+    "description": "The `Turbot Mod` resource adds support to install, update and uninstall a mod. The currently installed mod will be validated against the desired version, and the appropriate action will be taken. Removing a mod from the config will uninstall the mod.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/turbot/TF-Turbot-Mod/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mod": {
+            "type": "string",
+            "description": "The mod to be installed, updated or uninstalled. For example, `aws-s3`.\n- `org` - (Required) The parent author of the mod.\n- `parent` - (Optional) Installation point for the mod in the resource hierarchy. Defaults to the Turbot root resource.\n- `version` - (Optional) The version to be installed, e.g. `5.1.3`. If a semantic version range is given, e.g. `^5` then the latest available version from that range will be installed. Defaults to `*`, which is the latest available version of the mod."
+        },
+        "Org": {
+            "type": "string",
+            "description": "The parent author of the mod.\n- `parent` - (Optional) Installation point for the mod in the resource hierarchy. Defaults to the Turbot root resource.\n- `version` - (Optional) The version to be installed, e.g. `5.1.3`. If a semantic version range is given, e.g. `^5` then the latest available version from that range will be installed. Defaults to `*`, which is the latest available version of the mod."
+        },
+        "Parent": {
+            "type": "string",
+            "description": "Installation point for the mod in the resource hierarchy. Defaults to the Turbot root resource.\n- `version` - (Optional) The version to be installed, e.g. `5.1.3`. If a semantic version range is given, e.g. `^5` then the latest available version from that range will be installed. Defaults to `*`, which is the latest available version of the mod."
+        },
+        "ParentAkas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string",
+            "description": "The version to be installed, e.g. `5.1.3`. If a semantic version range is given, e.g. `^5` then the latest available version from that range will be installed. Defaults to `*`, which is the latest available version of the mod."
+        },
+        "VersionCurrent": {
+            "type": "string"
+        },
+        "VersionLatest": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Mod",
+        "Org"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/ParentAkas",
+        "/properties/Uri",
+        "/properties/VersionCurrent",
+        "/properties/VersionLatest"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

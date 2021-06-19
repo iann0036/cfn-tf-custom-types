@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Akamai::DnsZone",
+    "description": "Use the `akamai_dns_zone` resource to configure a DNS zone that integrates with your existing DNS infrastructure.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/akamai/TF-Akamai-DnsZone/docs/README.md",
+    "definitions": {
+        "TsigKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Secret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Algorithm",
+                "Name",
+                "Secret"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActivationState": {
+            "type": "string"
+        },
+        "AliasCount": {
+            "type": "number"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "Contract": {
+            "type": "string"
+        },
+        "EndCustomerId": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Masters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SignAndServe": {
+            "type": "boolean"
+        },
+        "SignAndServeAlgorithm": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VersionId": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "TsigKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TsigKeyDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Contract",
+        "Group",
+        "Type",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActivationState",
+        "/properties/AliasCount",
+        "/properties/Id",
+        "/properties/VersionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,813 @@
+{
+    "typeName": "TF::AVI::Ipamdnsproviderprofile",
+    "description": "The IpamDnsProviderProfile resource allows the creation and management of Avi IpamDnsProviderProfile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Ipamdnsproviderprofile/docs/README.md",
+    "definitions": {
+        "AwsProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "EgressServiceSubnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IamAssumeRole": {
+                    "type": "string"
+                },
+                "PublishVipToPublicZone": {
+                    "type": "boolean"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "UsableDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UsableNetworkUuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseIamRoles": {
+                    "type": "boolean"
+                },
+                "Vpc": {
+                    "type": "string"
+                },
+                "VpcId": {
+                    "type": "string"
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZonesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "VpcId"
+            ]
+        },
+        "AzureProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EgressServiceSubnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResourceGroup": {
+                    "type": "string"
+                },
+                "SubscriptionId": {
+                    "type": "string"
+                },
+                "UsableDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UsableNetworkUuids": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseEnhancedHa": {
+                    "type": "boolean"
+                },
+                "UseStandardAlb": {
+                    "type": "boolean"
+                },
+                "VirtualNetworkIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AzureServiceprincipal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AzureServiceprincipalDefinition"
+                    }
+                },
+                "AzureUserpass": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AzureUserpassDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomIpamDnsProfileRef": {
+                    "type": "string"
+                },
+                "UsableDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DynamicParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DynamicParamsDefinition"
+                    }
+                },
+                "UsableSubnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UsableSubnetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GcpProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchSeGroupSubnet": {
+                    "type": "boolean"
+                },
+                "NetworkHostProjectId": {
+                    "type": "string"
+                },
+                "RegionName": {
+                    "type": "string"
+                },
+                "SeProjectId": {
+                    "type": "string"
+                },
+                "UsableNetworkRefs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "UseGcpNetwork": {
+                    "type": "boolean"
+                },
+                "VpcNetworkName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InfobloxProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsView": {
+                    "type": "string"
+                },
+                "NetworkView": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "UsableDomains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "WapiVersion": {
+                    "type": "string"
+                },
+                "ExtensibleAttributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExtensibleAttributesDefinition"
+                    }
+                },
+                "IpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressDefinition"
+                    },
+                    "minItems": 1
+                },
+                "UsableAllocSubnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UsableAllocSubnetsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Password",
+                "Username"
+            ]
+        },
+        "InternalProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsVirtualserviceRef": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "DnsServiceDomain": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsServiceDomainDefinition"
+                    }
+                },
+                "UsableNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UsableNetworksDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "OciProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudCredentialsRef": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Tenancy": {
+                    "type": "string"
+                },
+                "VcnCompartmentId": {
+                    "type": "string"
+                },
+                "VcnId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OpenstackProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeystoneHost": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VipNetworkName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ProxyConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Port"
+            ]
+        },
+        "TencentProfileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudCredentialsRef": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "UsableSubnetIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                },
+                "Zones": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZonesDefinition"
+                    }
+                }
+            },
+            "required": [
+                "Region",
+                "VpcId"
+            ]
+        },
+        "ZonesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "UsableSubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AvailabilityZone",
+                "UsableSubnetId"
+            ]
+        },
+        "AzureServiceprincipalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationId": {
+                    "type": "string"
+                },
+                "AuthenticationToken": {
+                    "type": "string"
+                },
+                "TenantId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AzureUserpassDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "TenantName": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DynamicParamsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsDynamic": {
+                    "type": "boolean"
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "UsableSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "ExtensibleAttributesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsDynamic": {
+                    "type": "boolean"
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "IpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "UsableAllocSubnetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DnsServiceDomainDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainName": {
+                    "type": "string"
+                },
+                "PassThrough": {
+                    "type": "boolean"
+                },
+                "RecordTtl": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DomainName"
+            ]
+        },
+        "UsableNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NwRef": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    }
+                }
+            },
+            "required": [
+                "NwRef"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "Subnet6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocateIpInVrf": {
+            "type": "boolean",
+            "description": "If this flag is set, only allocate ip from networks in the virtual service vrf. Applicable for avi vantage ipam only. Field introduced in 17.2.4."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the ipam/dns provider profile."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant."
+        },
+        "Type": {
+            "type": "string",
+            "description": "Provider type for the ipam/dns provider profile. Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM, IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS, IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS. Allowed in basic(allowed values- ipamdns_type_internal) edition, essentials(allowed values- ipamdns_type_internal) edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "AwsProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AwsProfileDefinition"
+            }
+        },
+        "AzureProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AzureProfileDefinition"
+            }
+        },
+        "CustomProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomProfileDefinition"
+            }
+        },
+        "GcpProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GcpProfileDefinition"
+            }
+        },
+        "InfobloxProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InfobloxProfileDefinition"
+            }
+        },
+        "InternalProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InternalProfileDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "OciProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OciProfileDefinition"
+            }
+        },
+        "OpenstackProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OpenstackProfileDefinition"
+            }
+        },
+        "ProxyConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ProxyConfigurationDefinition"
+            }
+        },
+        "TencentProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TencentProfileDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/AwsProfileDefinition/AccessKeyId",
+        "/definitions/AwsProfileDefinition/SecretAccessKey",
+        "/definitions/InfobloxProfileDefinition/Password",
+        "/definitions/OpenstackProfileDefinition/Password",
+        "/definitions/ProxyConfigurationDefinition/Password",
+        "/definitions/AzureServiceprincipalDefinition/AuthenticationToken",
+        "/definitions/AzureUserpassDefinition/Password"
+    ]
+}

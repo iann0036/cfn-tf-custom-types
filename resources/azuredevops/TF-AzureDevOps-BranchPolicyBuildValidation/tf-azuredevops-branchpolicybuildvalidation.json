@@ -1,0 +1,147 @@
+{
+    "typeName": "TF::AzureDevOps::BranchPolicyBuildValidation",
+    "description": "Manages a build validation branch policy within Azure DevOps.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azuredevops/TF-AzureDevOps-BranchPolicyBuildValidation/docs/README.md",
+    "definitions": {
+        "SettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BuildDefinitionId": {
+                    "type": "number",
+                    "description": "The ID of the build to monitor for the policy.\n- `display_name` - (Required) The display name for the policy.\n- `manual_queue_only` - (Optional) If set to true, the build will need to be manually queued. Defaults to `false`\n- `queue_on_source_update_only` - (Optional) True if the build should queue on source updates only. Defaults to `true`.\n- `valid_duration` - (Optional) The number of minutes for which the build is valid. If `0`, the build will not expire. Defaults to `720` (12 hours).\n- `filename_patterns` - (Optional) If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "DisplayName": {
+                    "type": "string",
+                    "description": "The display name for the policy.\n- `manual_queue_only` - (Optional) If set to true, the build will need to be manually queued. Defaults to `false`\n- `queue_on_source_update_only` - (Optional) True if the build should queue on source updates only. Defaults to `true`.\n- `valid_duration` - (Optional) The number of minutes for which the build is valid. If `0`, the build will not expire. Defaults to `720` (12 hours).\n- `filename_patterns` - (Optional) If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "FilenamePatterns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "ManualQueueOnly": {
+                    "type": "boolean",
+                    "description": "If set to true, the build will need to be manually queued. Defaults to `false`\n- `queue_on_source_update_only` - (Optional) True if the build should queue on source updates only. Defaults to `true`.\n- `valid_duration` - (Optional) The number of minutes for which the build is valid. If `0`, the build will not expire. Defaults to `720` (12 hours).\n- `filename_patterns` - (Optional) If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "QueueOnSourceUpdateOnly": {
+                    "type": "boolean",
+                    "description": "True if the build should queue on source updates only. Defaults to `true`.\n- `valid_duration` - (Optional) The number of minutes for which the build is valid. If `0`, the build will not expire. Defaults to `720` (12 hours).\n- `filename_patterns` - (Optional) If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "ValidDuration": {
+                    "type": "number",
+                    "description": "The number of minutes for which the build is valid. If `0`, the build will not expire. Defaults to `720` (12 hours).\n- `filename_patterns` - (Optional) If a path filter is set, the policy will only apply when files which match the filter are changes. Not setting this field means that the policy will always apply. You can specify absolute paths and wildcards. Example: `[\"/WebApp/Models/Data.cs\", \"/WebApp/*\", \"*.cs\"]`. Paths prefixed with \"!\" are excluded. Example: `[\"/WebApp/*\", \"!/WebApp/Tests/*\"]`. Order is significant.\n- `scope` (Required) Controls which repositories and branches the policy will be enabled for. This block must be defined at least once."
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScopeDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "BuildDefinitionId",
+                "DisplayName"
+            ]
+        },
+        "ScopeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchType": {
+                    "type": "string"
+                },
+                "RepositoryId": {
+                    "type": "string",
+                    "description": "The repository ID. Needed only if the scope of the policy will be limited to a single repository.\n- `repository_ref` - (Optional) The ref pattern to use for the match. If `match_type` is `Exact`, this should be a qualified ref such as `refs/heads/master`. If `match_type` is `Prefix`, this should be a ref path such as `refs/heads/releases`.\n- `match_type` (Optional) The match type to use when applying the policy. Supported values are `Exact` (default) or `Prefix`."
+                },
+                "RepositoryRef": {
+                    "type": "string",
+                    "description": "The ref pattern to use for the match. If `match_type` is `Exact`, this should be a qualified ref such as `refs/heads/master`. If `match_type` is `Prefix`, this should be a ref path such as `refs/heads/releases`.\n- `match_type` (Optional) The match type to use when applying the policy. Supported values are `Exact` (default) or `Prefix`."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Blocking": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Enabled": {
+            "type": "boolean",
+            "description": "A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string",
+            "description": "The ID of the project in which the policy will be created.\n- `enabled` - (Optional) A flag indicating if the policy should be enabled. Defaults to `true`.\n- `blocking` - (Optional) A flag indicating if the policy should be blocking. Defaults to `true`.\n- `settings` - (Required) Configuration for the policy. This block must be defined exactly once."
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SettingsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

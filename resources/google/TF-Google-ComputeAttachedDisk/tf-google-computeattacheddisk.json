@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::Google::ComputeAttachedDisk",
+    "description": "Persistent disks can be attached to a compute instance using [the `attached_disk`\nsection within the compute instance configuration](https://www.terraform.io/docs/providers/google/r/compute_instance.html#attached_disk).\nHowever there may be situations where managing the attached disks via the compute\ninstance config isn't preferable or possible, such as attaching dynamic\nnumbers of disks using the `count` variable.\n\n\nTo get more information about attaching disks, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/instances/attachDisk)\n* [Resource: google_compute_disk](https://www.terraform.io/docs/providers/google/r/compute_disk.html)\n* How-to Guides\n    * [Adding a persistent disk](https://cloud.google.com/compute/docs/disks/add-persistent-disk)\n\n**Note:** When using `google_compute_attached_disk` you **must** use `lifecycle.ignore_changes = [\"attached_disk\"]` on the `google_compute_instance` resource that has the disks attached. Otherwise the two resources will fight for...",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/google/TF-Google-ComputeAttachedDisk/docs/README.md",
+    "definitions": {
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceName": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Disk",
+        "Instance"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

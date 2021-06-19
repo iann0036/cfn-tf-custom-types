@@ -1,0 +1,209 @@
+{
+    "typeName": "TF::Okta::PolicyRuleIdpDiscovery",
+    "description": "Creates an IdP Discovery Policy Rule.\n\nThis resource allows you to create and configure an IdP Discovery Policy Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/okta/TF-Okta-PolicyRuleIdpDiscovery/docs/README.md",
+    "definitions": {
+        "AppExcludeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "AppIncludeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PlatformIncludeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OsExpression": {
+                    "type": "string"
+                },
+                "OsType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UserIdentifierPatternsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MatchType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string",
+            "description": "Use if `type` is `\"APP\"` to indicate the application id to include."
+        },
+        "IdpId": {
+            "type": "string",
+            "description": "The identifier for the Idp the rule should route to if all conditions are met."
+        },
+        "IdpType": {
+            "type": "string",
+            "description": "Type of Idp. One of: `\"SAML2\"`, `\"IWA\"`, `\"AgentlessDSSO\"`, `\"X509\"`, `\"FACEBOOK\"`, `\"GOOGLE\"`, `\"LINKEDIN\"`, `\"MICROSOFT\"`, `\"OIDC\"`."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Use if the `type` is `\"APP_TYPE\"` to indicate the type of application(s) to include in instances where an entire group (i.e. `yahoo_mail`) of applications should be included."
+        },
+        "NetworkConnection": {
+            "type": "string",
+            "description": "The network selection mode. One of `\"ANYWEHRE\"` or `\"ZONE\"`."
+        },
+        "NetworkExcludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Required if `network_connection` = `\"ZONE\"`. Indicates the network zones to exclude."
+        },
+        "NetworkIncludes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Required if `network_connection` = `\"ZONE\"`. Indicates the network zones to include."
+        },
+        "Policyid": {
+            "type": "string",
+            "description": "Policy ID."
+        },
+        "Priority": {
+            "type": "number",
+            "description": "Idp rule priority. This attribute can be set to a valid priority. To avoid an endless diff situation an error is thrown if an invalid property is provided. The Okta API defaults to the last (lowest) if not provided."
+        },
+        "Status": {
+            "type": "string",
+            "description": "Idp rule status: `\"ACTIVE\"` or `\"INACTIVE\"`. By default, it is `\"ACTIVE\"`."
+        },
+        "UserIdentifierAttribute": {
+            "type": "string",
+            "description": "Profile attribute matching can only have a single value that describes the type indicated in `user_identifier_type`. This is the attribute or identifier that the `user_identifier_patterns` are checked against."
+        },
+        "UserIdentifierType": {
+            "type": "string",
+            "description": "One of: `\"IDENTIFIER\"`, `\"ATTRIBUTE\"`."
+        },
+        "AppExclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppExcludeDefinition"
+            }
+        },
+        "AppInclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppIncludeDefinition"
+            }
+        },
+        "PlatformInclude": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PlatformIncludeDefinition"
+            }
+        },
+        "UserIdentifierPatterns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UserIdentifierPatternsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Policyid"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

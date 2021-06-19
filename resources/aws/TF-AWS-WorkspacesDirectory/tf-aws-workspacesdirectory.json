@@ -1,0 +1,260 @@
+{
+    "typeName": "TF::AWS::WorkspacesDirectory",
+    "description": "Provides a WorkSpaces directory in AWS WorkSpaces Service.\n\n~> **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-WorkspacesDirectory/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "SelfServicePermissionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChangeComputeType": {
+                    "type": "boolean"
+                },
+                "IncreaseVolumeSize": {
+                    "type": "boolean"
+                },
+                "RebuildWorkspace": {
+                    "type": "boolean"
+                },
+                "RestartWorkspace": {
+                    "type": "boolean"
+                },
+                "SwitchRunningMode": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "WorkspaceAccessPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceTypeAndroid": {
+                    "type": "string"
+                },
+                "DeviceTypeChromeos": {
+                    "type": "string"
+                },
+                "DeviceTypeIos": {
+                    "type": "string"
+                },
+                "DeviceTypeOsx": {
+                    "type": "string"
+                },
+                "DeviceTypeWeb": {
+                    "type": "string"
+                },
+                "DeviceTypeWindows": {
+                    "type": "string"
+                },
+                "DeviceTypeZeroclient": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WorkspaceCreationPropertiesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomSecurityGroupId": {
+                    "type": "string"
+                },
+                "DefaultOu": {
+                    "type": "string"
+                },
+                "EnableInternetAccess": {
+                    "type": "boolean"
+                },
+                "EnableMaintenanceMode": {
+                    "type": "boolean"
+                },
+                "UserEnabledAsLocalAdministrator": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Alias": {
+            "type": "string"
+        },
+        "CustomerUserName": {
+            "type": "string"
+        },
+        "DirectoryId": {
+            "type": "string",
+            "description": "The directory identifier for registration in WorkSpaces service."
+        },
+        "DirectoryName": {
+            "type": "string"
+        },
+        "DirectoryType": {
+            "type": "string"
+        },
+        "DnsIpAddresses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IamRoleId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The identifiers of the IP access control groups associated with the directory."
+        },
+        "RegistrationCode": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The identifiers of the subnets where the directory resides."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            }
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "WorkspaceSecurityGroupId": {
+            "type": "string"
+        },
+        "SelfServicePermissions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SelfServicePermissionsDefinition"
+            },
+            "maxItems": 1
+        },
+        "WorkspaceAccessProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkspaceAccessPropertiesDefinition"
+            },
+            "maxItems": 1
+        },
+        "WorkspaceCreationProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkspaceCreationPropertiesDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DirectoryId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Alias",
+        "/properties/CustomerUserName",
+        "/properties/DirectoryName",
+        "/properties/DirectoryType",
+        "/properties/DnsIpAddresses",
+        "/properties/IamRoleId",
+        "/properties/Id",
+        "/properties/RegistrationCode",
+        "/properties/WorkspaceSecurityGroupId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

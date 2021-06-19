@@ -1,0 +1,190 @@
+{
+    "typeName": "TF::AWS::CloudhsmV2Cluster",
+    "description": "Creates an Amazon CloudHSM v2 cluster.\n\nFor information about CloudHSM v2, see the\n[AWS CloudHSM User Guide][1] and the [Amazon\nCloudHSM API Reference][2].\n\n~> **NOTE:** A CloudHSM Cluster can take several minutes to set up.\nPractically no single attribute can be updated, except for `tags`.\nIf you need to delete a cluster, you have to remove its HSM modules first.\nTo initialize cluster, you have to add an HSM instance to the cluster, then sign CSR and upload it.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-CloudhsmV2Cluster/docs/README.md",
+    "definitions": {
+        "ClusterCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsHardwareCertificate": {
+                    "type": "string"
+                },
+                "ClusterCertificate": {
+                    "type": "string"
+                },
+                "ClusterCsr": {
+                    "type": "string"
+                },
+                "HsmCertificate": {
+                    "type": "string"
+                },
+                "ManufacturerHardwareCertificate": {
+                    "type": "string"
+                }
+            }
+        },
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterCertificatesDefinition"
+            }
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ClusterState": {
+            "type": "string"
+        },
+        "HsmType": {
+            "type": "string",
+            "description": "The type of HSM module in the cluster. Currently, only `hsm1.medium` is supported."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SourceBackupIdentifier": {
+            "type": "string",
+            "description": "The id of Cloud HSM v2 cluster backup to be restored."
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            },
+            "description": "The IDs of subnets in which cluster will operate."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HsmType",
+        "SubnetIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterCertificates",
+        "/properties/ClusterId",
+        "/properties/ClusterState",
+        "/properties/Id",
+        "/properties/SecurityGroupId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "typeName": "TF::TencentCloud::SslCertificate",
+    "description": "Provides a resource to create a SSL certificate.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-SslCertificate/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BeginTime": {
+            "type": "string"
+        },
+        "Cert": {
+            "type": "string",
+            "description": "Content of the SSL certificate. Not allowed newline at the start and end."
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "EndTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string",
+            "description": "Key of the SSL certificate and required when certificate type is `SVR`. Not allowed newline at the start and end."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of the SSL certificate."
+        },
+        "ProductZhName": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "number",
+            "description": "Project ID of the SSL certificate. Default is `0`."
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubjectNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string",
+            "description": "Type of the SSL certificate. Valid values: `CA` and `SVR`."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cert",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BeginTime",
+        "/properties/CreateTime",
+        "/properties/Domain",
+        "/properties/EndTime",
+        "/properties/Id",
+        "/properties/ProductZhName",
+        "/properties/Status",
+        "/properties/SubjectNames"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Key"
+    ]
+}

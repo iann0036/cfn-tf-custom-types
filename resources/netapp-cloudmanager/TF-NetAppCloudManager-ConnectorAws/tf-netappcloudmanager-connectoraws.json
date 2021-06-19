@@ -1,0 +1,161 @@
+{
+    "typeName": "TF::NetAppCloudManager::ConnectorAws",
+    "description": "Provides a NetApp_CloudManager Connector AWS resource. This can be used to create a new Cloud Manager Connector in AWS.\nThe environment needs to be configured with the proper credentials before it can be used (aws configure).\nThe minimum required policy can be found at [Connector deployment policy for AWS](https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json)\n\n<!---\ni think we need to create section for terraform and point to there\n-->",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/netapp-cloudmanager/TF-NetAppCloudManager-ConnectorAws/docs/README.md",
+    "definitions": {
+        "AwsTagDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TagKey": {
+                    "type": "string"
+                },
+                "TagValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TagKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string",
+            "description": "The NetApp account ID that the Connector will be associated with. If not provided, Cloud Manager uses the first account. If no account exists, Cloud Manager creates a new account. You can find the account ID in the account tab of Cloud Manager at [https://cloudmanager.netapp.com](https://cloudmanager.netapp.com)."
+        },
+        "Ami": {
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean",
+            "description": "Indicates whether to associate a public IP address to the instance. If not provided, the association will be done based on the subnet's configuration."
+        },
+        "ClientId": {
+            "type": "string"
+        },
+        "Company": {
+            "type": "string",
+            "description": "The name of the company of the user."
+        },
+        "EnableTerminationProtection": {
+            "type": "boolean",
+            "description": "Indicates whether to enable termination protection on the instance, default is false."
+        },
+        "IamInstanceProfileName": {
+            "type": "string",
+            "description": "The name of the instance profile for the Connector."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string",
+            "description": "The type of instance (for example, t3.xlarge). At least 4 CPU and 16 GB of memory are required."
+        },
+        "KeyName": {
+            "type": "string",
+            "description": "The name of the key pair to use for the Connector instance."
+        },
+        "Name": {
+            "type": "string",
+            "description": "The name of the Cloud Manager Connector."
+        },
+        "ProxyCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "The proxy certificates. A list of certificate file names."
+        },
+        "ProxyPassword": {
+            "type": "string",
+            "description": "The proxy password, if using a proxy to connect to the internet."
+        },
+        "ProxyUrl": {
+            "type": "string",
+            "description": "The proxy URL, if using a proxy to connect to the internet."
+        },
+        "ProxyUserName": {
+            "type": "string",
+            "description": "The proxy user name, if using a proxy to connect to the internet."
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region where the Cloud Manager Connector will be created."
+        },
+        "SecurityGroupId": {
+            "type": "string",
+            "description": "The ID of the security group for the instance, multiple security groups can be provided seperated by ','."
+        },
+        "SubnetId": {
+            "type": "string",
+            "description": "The ID of the subnet for the instance."
+        },
+        "AwsTag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AwsTagDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Company",
+        "IamInstanceProfileName",
+        "KeyName",
+        "Name",
+        "Region",
+        "SecurityGroupId",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientId",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

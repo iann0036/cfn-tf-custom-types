@@ -1,0 +1,625 @@
+{
+    "typeName": "TF::FortiOS::EndpointcontrolProfile",
+    "description": "Configure FortiClient endpoint control profiles. Applies to FortiOS Version `<= 6.2.0`.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-EndpointcontrolProfile/docs/README.md",
+    "definitions": {
+        "DeviceGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Device group object from available options."
+                }
+            },
+            "required": []
+        },
+        "ForticlientAndroidSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableWfWhenProtected": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient web category filtering when protected by FortiGate. Valid values: `enable`, `disable`."
+                },
+                "ForticlientAdvancedVpn": {
+                    "type": "string",
+                    "description": "Enable/disable advanced FortiClient VPN configuration. Valid values: `enable`, `disable`."
+                },
+                "ForticlientAdvancedVpnBuffer": {
+                    "type": "string",
+                    "description": "Advanced FortiClient VPN configuration."
+                },
+                "ForticlientVpnProvisioning": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient VPN provisioning. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWf": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient web filtering. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWfProfile": {
+                    "type": "string",
+                    "description": "The FortiClient web filter profile to apply."
+                },
+                "ForticlientVpnSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientVpnSettingsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForticlientIosSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientVpnProvisioning": {
+                    "type": "string",
+                    "description": "FortiClient VPN provisioning. Valid values: `enable`, `disable`."
+                },
+                "ConfigurationContent": {
+                    "type": "string",
+                    "description": "Content of configuration profile."
+                },
+                "ConfigurationName": {
+                    "type": "string",
+                    "description": "Name of configuration profile."
+                },
+                "DisableWfWhenProtected": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient web category filtering when protected by FortiGate. Valid values: `enable`, `disable`."
+                },
+                "DistributeConfigurationProfile": {
+                    "type": "string",
+                    "description": "Enable/disable configuration profile (.mobileconfig file) distribution. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWf": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient web filtering. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWfProfile": {
+                    "type": "string",
+                    "description": "The FortiClient web filter profile to apply."
+                },
+                "ClientVpnSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ClientVpnSettingsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForticlientWinmacSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvRealtimeProtection": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient AntiVirus real-time protection. Valid values: `enable`, `disable`."
+                },
+                "AvSignatureUpToDate": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient AV signature updates. Valid values: `enable`, `disable`."
+                },
+                "ForticlientApplicationFirewall": {
+                    "type": "string",
+                    "description": "Enable/disable the FortiClient application firewall. Valid values: `enable`, `disable`."
+                },
+                "ForticlientApplicationFirewallList": {
+                    "type": "string",
+                    "description": "FortiClient application firewall rule list."
+                },
+                "ForticlientAv": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient AntiVirus scanning. Valid values: `enable`, `disable`."
+                },
+                "ForticlientEmsCompliance": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient Enterprise Management Server (EMS) compliance. Valid values: `enable`, `disable`."
+                },
+                "ForticlientEmsComplianceAction": {
+                    "type": "string",
+                    "description": "FortiClient EMS compliance action. Valid values: `block`, `warning`."
+                },
+                "ForticlientLinuxVer": {
+                    "type": "string",
+                    "description": "Minimum FortiClient Linux version."
+                },
+                "ForticlientLogUpload": {
+                    "type": "string",
+                    "description": "Enable/disable uploading FortiClient logs. Valid values: `enable`, `disable`."
+                },
+                "ForticlientLogUploadLevel": {
+                    "type": "string",
+                    "description": "Select the FortiClient logs to upload. Valid values: `traffic`, `vulnerability`, `event`."
+                },
+                "ForticlientLogUploadServer": {
+                    "type": "string",
+                    "description": "IP address or FQDN of the server to which to upload FortiClient logs."
+                },
+                "ForticlientMacVer": {
+                    "type": "string",
+                    "description": "Minimum FortiClient Mac OS version."
+                },
+                "ForticlientMinimumSoftwareVersion": {
+                    "type": "string",
+                    "description": "Enable/disable requiring clients to run FortiClient with a minimum software version number. Valid values: `enable`, `disable`."
+                },
+                "ForticlientRegistrationComplianceAction": {
+                    "type": "string",
+                    "description": "FortiClient registration compliance action. Valid values: `block`, `warning`."
+                },
+                "ForticlientSecurityPosture": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient security posture check options. Valid values: `enable`, `disable`."
+                },
+                "ForticlientSecurityPostureComplianceAction": {
+                    "type": "string",
+                    "description": "FortiClient security posture compliance action. Valid values: `block`, `warning`."
+                },
+                "ForticlientSystemCompliance": {
+                    "type": "string",
+                    "description": "Enable/disable enforcement of FortiClient system compliance. Valid values: `enable`, `disable`."
+                },
+                "ForticlientSystemComplianceAction": {
+                    "type": "string",
+                    "description": "Block or warn clients not compliant with FortiClient requirements. Valid values: `block`, `warning`."
+                },
+                "ForticlientVulnScan": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient vulnerability scanning. Valid values: `enable`, `disable`."
+                },
+                "ForticlientVulnScanComplianceAction": {
+                    "type": "string",
+                    "description": "FortiClient vulnerability compliance action. Valid values: `block`, `warning`."
+                },
+                "ForticlientVulnScanEnforce": {
+                    "type": "string",
+                    "description": "Configure the level of the vulnerability found that causes a FortiClient vulnerability compliance action. Valid values: `critical`, `high`, `medium`, `low`, `info`."
+                },
+                "ForticlientVulnScanEnforceGrace": {
+                    "type": "number",
+                    "description": "FortiClient vulnerability scan enforcement grace period (0 - 30 days, default = 1)."
+                },
+                "ForticlientVulnScanExempt": {
+                    "type": "string",
+                    "description": "Enable/disable compliance exemption for vulnerabilities that cannot be patched automatically. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWf": {
+                    "type": "string",
+                    "description": "Enable/disable FortiClient web filtering. Valid values: `enable`, `disable`."
+                },
+                "ForticlientWfProfile": {
+                    "type": "string",
+                    "description": "The FortiClient web filter profile to apply."
+                },
+                "ForticlientWinVer": {
+                    "type": "string",
+                    "description": "Minimum FortiClient Windows version."
+                },
+                "OsAvSoftwareInstalled": {
+                    "type": "string",
+                    "description": "Enable/disable checking for OS recognized AntiVirus software. Valid values: `enable`, `disable`."
+                },
+                "SandboxAddress": {
+                    "type": "string",
+                    "description": "FortiSandbox address."
+                },
+                "SandboxAnalysis": {
+                    "type": "string",
+                    "description": "Enable/disable sending files to FortiSandbox for analysis. Valid values: `enable`, `disable`."
+                },
+                "ForticlientEmsEntries": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientEmsEntriesDefinition"
+                    }
+                },
+                "ForticlientOperatingSystem": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientOperatingSystemDefinition"
+                    }
+                },
+                "ForticlientOwnFile": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientOwnFileDefinition"
+                    }
+                },
+                "ForticlientRegistryEntry": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientRegistryEntryDefinition"
+                    }
+                },
+                "ForticlientRunningApp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForticlientRunningAppDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OnNetAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address object from available options."
+                }
+            },
+            "required": []
+        },
+        "SrcAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "Address object from available options."
+                }
+            },
+            "required": []
+        },
+        "UserGroupsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User group name."
+                }
+            },
+            "required": []
+        },
+        "UsersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "User name."
+                }
+            },
+            "required": []
+        },
+        "ForticlientVpnSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string",
+                    "description": "Authentication method. Valid values: `psk`, `certificate`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "VPN name."
+                },
+                "PresharedKey": {
+                    "type": "string",
+                    "description": "Pre-shared secret for PSK authentication."
+                },
+                "RemoteGw": {
+                    "type": "string",
+                    "description": "IP address or FQDN of the remote VPN gateway."
+                },
+                "SslvpnAccessPort": {
+                    "type": "number",
+                    "description": "SSL VPN access port (1 - 65535)."
+                },
+                "SslvpnRequireCertificate": {
+                    "type": "string",
+                    "description": "Enable/disable requiring SSL VPN client certificate. Valid values: `enable`, `disable`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "VPN type (IPsec or SSL VPN). Valid values: `ipsec`, `ssl`."
+                }
+            },
+            "required": []
+        },
+        "ClientVpnSettingsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMethod": {
+                    "type": "string",
+                    "description": "Authentication method. Valid values: `psk`, `certificate`."
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "VPN name."
+                },
+                "PresharedKey": {
+                    "type": "string",
+                    "description": "Pre-shared secret for PSK authentication."
+                },
+                "RemoteGw": {
+                    "type": "string",
+                    "description": "IP address or FQDN of the remote VPN gateway."
+                },
+                "SslvpnAccessPort": {
+                    "type": "number",
+                    "description": "SSL VPN access port (1 - 65535)."
+                },
+                "SslvpnRequireCertificate": {
+                    "type": "string",
+                    "description": "Enable/disable requiring SSL VPN client certificate. Valid values: `enable`, `disable`."
+                },
+                "Type": {
+                    "type": "string",
+                    "description": "VPN type (IPsec or SSL VPN). Valid values: `ipsec`, `ssl`."
+                },
+                "VpnConfigurationContent": {
+                    "type": "string",
+                    "description": "Content of VPN configuration."
+                },
+                "VpnConfigurationName": {
+                    "type": "string",
+                    "description": "Name of VPN configuration."
+                }
+            },
+            "required": []
+        },
+        "ForticlientEmsEntriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "FortiClient EMS name."
+                }
+            },
+            "required": []
+        },
+        "ForticlientOperatingSystemDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Operating system entry ID."
+                },
+                "OsName": {
+                    "type": "string",
+                    "description": "Customize operating system name or Mac OS format:x.x.x."
+                },
+                "OsType": {
+                    "type": "string",
+                    "description": "Operating system type. Valid values: `custom`, `mac-os`, `win-7`, `win-80`, `win-81`, `win-10`, `win-2000`, `win-home-svr`, `win-svr-10`, `win-svr-2003`, `win-svr-2003-r2`, `win-svr-2008`, `win-svr-2008-r2`, `win-svr-2012`, `win-svr-2012-r2`, `win-sto-svr-2003`, `win-vista`, `win-xp`, `ubuntu-linux`, `centos-linux`, `redhat-linux`, `fedora-linux`."
+                }
+            },
+            "required": []
+        },
+        "ForticlientOwnFileDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "File": {
+                    "type": "string",
+                    "description": "File path and name."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "File ID."
+                }
+            },
+            "required": []
+        },
+        "ForticlientRegistryEntryDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "description": "Registry entry ID."
+                },
+                "RegistryEntry": {
+                    "type": "string",
+                    "description": "Registry entry."
+                }
+            },
+            "required": []
+        },
+        "ForticlientRunningAppDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppName": {
+                    "type": "string",
+                    "description": "Application name."
+                },
+                "AppSha256Signature": {
+                    "type": "string",
+                    "description": "App's SHA256 signature."
+                },
+                "AppSha256Signature2": {
+                    "type": "string",
+                    "description": "App's SHA256 Signature."
+                },
+                "AppSha256Signature3": {
+                    "type": "string",
+                    "description": "App's SHA256 Signature."
+                },
+                "AppSha256Signature4": {
+                    "type": "string",
+                    "description": "App's SHA256 Signature."
+                },
+                "ApplicationCheckRule": {
+                    "type": "string",
+                    "description": "Application check rule. Valid values: `present`, `absent`."
+                },
+                "Id": {
+                    "type": "number",
+                    "description": "Application ID."
+                },
+                "ProcessName": {
+                    "type": "string",
+                    "description": "Process name."
+                },
+                "ProcessName2": {
+                    "type": "string",
+                    "description": "Process name."
+                },
+                "ProcessName3": {
+                    "type": "string",
+                    "description": "Process name."
+                },
+                "ProcessName4": {
+                    "type": "string",
+                    "description": "Process name."
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description."
+        },
+        "DynamicSortSubtable": {
+            "type": "string",
+            "description": "true or false, set this parameter to true when using dynamic for_each + toset to configure and sort sub-tables, please do not set this parameter when configuring static sub-tables."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProfileName": {
+            "type": "string",
+            "description": "Profile name."
+        },
+        "ReplacemsgOverrideGroup": {
+            "type": "string",
+            "description": "Select an endpoint control replacement message override group from available options."
+        },
+        "Vdomparam": {
+            "type": "string",
+            "description": "Specifies the vdom to which the resource will be applied when the FortiGate unit is running in VDOM mode. Only one vdom can be specified. If you want to inherit the vdom configuration of the provider, please do not set this parameter."
+        },
+        "DeviceGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeviceGroupsDefinition"
+            }
+        },
+        "ForticlientAndroidSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForticlientAndroidSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ForticlientIosSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForticlientIosSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "ForticlientWinmacSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForticlientWinmacSettingsDefinition"
+            },
+            "maxItems": 1
+        },
+        "OnNetAddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnNetAddrDefinition"
+            }
+        },
+        "SrcAddr": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SrcAddrDefinition"
+            }
+        },
+        "UserGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserGroupsDefinition"
+            }
+        },
+        "Users": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UsersDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/definitions/ForticlientVpnSettingsDefinition/PresharedKey",
+        "/definitions/ClientVpnSettingsDefinition/PresharedKey"
+    ]
+}

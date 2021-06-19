@@ -1,0 +1,98 @@
+{
+    "typeName": "TF::ACI::L3outStaticRoute",
+    "description": "Manages ACI L3out Static Route",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aci/TF-ACI-L3outStaticRoute/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Aggregate": {
+            "type": "string",
+            "description": "Aggregated Route for object l3out static route.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `annotation` - (Optional) Annotation for object l3out static route.\n- `description` - (Optional) Description for object l3out static route.\n- `name_alias` - (Optional) Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "Annotation": {
+            "type": "string",
+            "description": "Annotation for object l3out static route.\n- `description` - (Optional) Description for object l3out static route.\n- `name_alias` - (Optional) Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "Description": {
+            "type": "string",
+            "description": "Description for object l3out static route.\n- `name_alias` - (Optional) Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "FabricNodeDn": {
+            "type": "string",
+            "description": "Distinguished name of parent fabric node object.\n- `ip` - (Required) The static route IP address assigned to the outside network.\n- `aggregate` - (Optional) Aggregated Route for object l3out static route.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `annotation` - (Optional) Annotation for object l3out static route.\n- `description` - (Optional) Description for object l3out static route.\n- `name_alias` - (Optional) Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string",
+            "description": "The static route IP address assigned to the outside network.\n- `aggregate` - (Optional) Aggregated Route for object l3out static route.\nAllowed values: \"no\", \"yes\". Default value: \"no\".\n- `annotation` - (Optional) Annotation for object l3out static route.\n- `description` - (Optional) Description for object l3out static route.\n- `name_alias` - (Optional) Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "NameAlias": {
+            "type": "string",
+            "description": "Name alias for object l3out static route.\n- `pref` - (Optional) The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "Pref": {
+            "type": "string",
+            "description": "The administrative preference value for this route. This value is useful for resolving routes advertised from different protocols. Default value: \"1\".\n- `rt_ctrl` - (Optional) Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        },
+        "RelationIpRsRouteTrack": {
+            "type": "string",
+            "description": "Relation to class fvTrackList. Cardinality - N_TO_ONE. Type - String."
+        },
+        "RtCtrl": {
+            "type": "string",
+            "description": "Route control for object l3out static route.\nAllowed values: \"bfd\", \"unspecified\". Default value: \"unspecified\"."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FabricNodeDn",
+        "Ip"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

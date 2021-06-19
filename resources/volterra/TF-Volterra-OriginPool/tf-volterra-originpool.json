@@ -1,0 +1,981 @@
+{
+    "typeName": "TF::Volterra::OriginPool",
+    "description": "CloudFormation equivalent of volterra_origin_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-OriginPool/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdvancedOptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionTimeout": {
+                    "type": "number"
+                },
+                "DisableCircuitBreaker": {
+                    "type": "boolean"
+                },
+                "DisableOutlierDetection": {
+                    "type": "boolean"
+                },
+                "DisableSubsets": {
+                    "type": "boolean"
+                },
+                "HttpIdleTimeout": {
+                    "type": "number"
+                },
+                "NoPanicThreshold": {
+                    "type": "boolean"
+                },
+                "PanicThreshold": {
+                    "type": "number"
+                },
+                "CircuitBreaker": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CircuitBreakerDefinition"
+                    }
+                },
+                "EnableSubsets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EnableSubsetsDefinition"
+                    }
+                },
+                "Http2Options": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Http2OptionsDefinition"
+                    }
+                },
+                "OutlierDetection": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/OutlierDetectionDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HealthcheckDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OriginServersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition2"
+                    }
+                },
+                "ConsulService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ConsulServiceDefinition"
+                    }
+                },
+                "CustomEndpointObject": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomEndpointObjectDefinition"
+                    }
+                },
+                "K8sService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/K8sServiceDefinition"
+                    }
+                },
+                "PrivateIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateIpDefinition"
+                    }
+                },
+                "PrivateName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateNameDefinition"
+                    }
+                },
+                "PublicIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpDefinition"
+                    }
+                },
+                "PublicName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublicNameDefinition"
+                    }
+                },
+                "VnPrivateIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VnPrivateIpDefinition"
+                    }
+                },
+                "VnPrivateName": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VnPrivateNameDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LabelsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UseTlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableSni": {
+                    "type": "boolean"
+                },
+                "NoMtls": {
+                    "type": "boolean"
+                },
+                "SkipServerVerification": {
+                    "type": "boolean"
+                },
+                "Sni": {
+                    "type": "string"
+                },
+                "UseHostHeaderAsSni": {
+                    "type": "boolean"
+                },
+                "VolterraTrustedCa": {
+                    "type": "boolean"
+                },
+                "TlsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsConfigDefinition"
+                    }
+                },
+                "UseMtls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UseMtlsDefinition"
+                    }
+                },
+                "UseServerVerification": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UseServerVerificationDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CircuitBreakerDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionLimit": {
+                    "type": "number"
+                },
+                "MaxRequests": {
+                    "type": "number"
+                },
+                "PendingRequests": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Retries": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "EnableSubsetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AnyEndpoint": {
+                    "type": "boolean"
+                },
+                "FailRequest": {
+                    "type": "boolean"
+                },
+                "DefaultSubset": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DefaultSubsetDefinition"
+                    }
+                },
+                "EndpointSubsets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EndpointSubsetsDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Http2OptionsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OutlierDetectionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BaseEjectionTime": {
+                    "type": "number"
+                },
+                "Consecutive5xx": {
+                    "type": "number"
+                },
+                "ConsecutiveGatewayFailure": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "MaxEjectionPercent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ConsulServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsideNetwork": {
+                    "type": "boolean"
+                },
+                "OutsideNetwork": {
+                    "type": "boolean"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "SiteLocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteLocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CustomEndpointObjectDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EndpointDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "K8sServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsideNetwork": {
+                    "type": "boolean"
+                },
+                "OutsideNetwork": {
+                    "type": "boolean"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "Vk8sNetworks": {
+                    "type": "boolean"
+                },
+                "SiteLocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteLocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PrivateIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InsideNetwork": {
+                    "type": "boolean"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "OutsideNetwork": {
+                    "type": "boolean"
+                },
+                "SiteLocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteLocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PrivateNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsName": {
+                    "type": "string"
+                },
+                "InsideNetwork": {
+                    "type": "boolean"
+                },
+                "OutsideNetwork": {
+                    "type": "boolean"
+                },
+                "SiteLocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteLocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PublicIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PublicNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VnPrivateIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "VirtualNetwork": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNetworkDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VnPrivateNameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsName": {
+                    "type": "string"
+                },
+                "PrivateNetwork": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateNetworkDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultSecurity": {
+                    "type": "boolean"
+                },
+                "LowSecurity": {
+                    "type": "boolean"
+                },
+                "MediumSecurity": {
+                    "type": "boolean"
+                },
+                "CustomSecurity": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomSecurityDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UseMtlsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TlsCertificates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TlsCertificatesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UseServerVerificationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrustedCaUrl": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DefaultSubsetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultSubset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DefaultSubsetDefinition2"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DefaultSubsetDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EndpointSubsetsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Keys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteLocatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Site": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SiteDefinition"
+                    }
+                },
+                "VirtualSite": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VirtualSiteDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EndpointDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateNetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomSecurityDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CipherSuites": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxVersion": {
+                    "type": "string"
+                },
+                "MinVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CipherSuites"
+            ]
+        },
+        "TlsCertificatesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VirtualSiteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "PrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "EndpointSelection": {
+            "type": "string"
+        },
+        "HealthCheckPort": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "LoadbalancerAlgorithm": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "NoTls": {
+            "type": "boolean"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "SameAsEndpointPort": {
+            "type": "boolean"
+        },
+        "AdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AdvancedOptionsDefinition"
+            }
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthcheckDefinition"
+            }
+        },
+        "OriginServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OriginServersDefinition"
+            }
+        },
+        "UseTls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UseTlsDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndpointSelection",
+        "LoadbalancerAlgorithm",
+        "Name",
+        "Namespace",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

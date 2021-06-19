@@ -1,0 +1,139 @@
+{
+    "typeName": "TF::Thunder::SlbTemplateVirtualServer",
+    "description": "`thunder_slb_template_virtual_server` Provides details about thunder slb template virtual server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbTemplateVirtualServer/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnLimit": {
+            "type": "number",
+            "description": "Connection limit."
+        },
+        "ConnLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnLimitReset": {
+            "type": "number",
+            "description": "Send client reset when connection over limit."
+        },
+        "ConnRateLimit": {
+            "type": "number",
+            "description": "Connection rate limit."
+        },
+        "ConnRateLimitNoLogging": {
+            "type": "number",
+            "description": "Do not log connection over limit event."
+        },
+        "ConnRateLimitReset": {
+            "type": "number",
+            "description": "Send client reset when connection rate over limit."
+        },
+        "IcmpLockup": {
+            "type": "number",
+            "description": "Enter lockup state when ICMP rate exceeds lockup rate limit (Maximum rate limit. If exceeds this limit, drop all ICMP packet for a time period)."
+        },
+        "IcmpLockupPeriod": {
+            "type": "number",
+            "description": "Lockup period (second)."
+        },
+        "IcmpRateLimit": {
+            "type": "number",
+            "description": "ICMP rate limit (Normal rate limit. If exceeds this limit, drop the ICMP packet that goes over the limit)."
+        },
+        "Icmpv6Lockup": {
+            "type": "number",
+            "description": "Enter lockup state when ICMP rate exceeds lockup rate limit (Maximum rate limit. If exceeds this limit, drop all ICMP packet for a time period)."
+        },
+        "Icmpv6LockupPeriod": {
+            "type": "number",
+            "description": "Lockup period (second)."
+        },
+        "Icmpv6RateLimit": {
+            "type": "number",
+            "description": "ICMPv6 rate limit (Normal rate limit. If exceeds this limit, drop the ICMP packet that goes over the limit)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Virtual server template name."
+        },
+        "RateInterval": {
+            "type": "string",
+            "description": "\u2018100ms\u2019: Use 100 ms as sampling interval; \u2018second\u2019: Use 1 second as sampling interval;."
+        },
+        "SubnetGratuitousArp": {
+            "type": "number",
+            "description": "Send gratuitous ARP for every IP in the subnet virtual server."
+        },
+        "TcpStackTfoActiveConnLimit": {
+            "type": "number",
+            "description": "The allowed active layer 7 tcp fast-open connection limit, default is zero (number)."
+        },
+        "TcpStackTfoBackoffTime": {
+            "type": "number",
+            "description": "The time tcp stack will wait before allowing new fast-open requests after security condition, default 600 seconds (number)."
+        },
+        "TcpStackTfoCookieTimeLimit": {
+            "type": "number",
+            "description": "The time limit (in seconds) that a layer 7 tcp fast-open cookie is valid, default is 60 seconds (number)."
+        },
+        "UserTag": {
+            "type": "string",
+            "description": "Customized tag."
+        },
+        "Uuid": {
+            "type": "string",
+            "description": "uuid of the object."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

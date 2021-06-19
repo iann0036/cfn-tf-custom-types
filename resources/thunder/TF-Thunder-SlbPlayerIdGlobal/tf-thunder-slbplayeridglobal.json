@@ -1,0 +1,101 @@
+{
+    "typeName": "TF::Thunder::SlbPlayerIdGlobal",
+    "description": "`thunder_slb_player_id_global` Provides details about thunder SLB player id global",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/thunder/TF-Thunder-SlbPlayerIdGlobal/docs/README.md",
+    "definitions": {
+        "SamplingEnableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Counters1": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbsMaxExpiration": {
+            "type": "number",
+            "description": "Absolute max record expiration value (default 10 minutes) (Absolute max record expiration time in minutes, default 10)."
+        },
+        "Enable64bitPlayerId": {
+            "type": "number",
+            "description": "Enable 64 bit player id check. Default is 32 bit."
+        },
+        "EnforcementTimer": {
+            "type": "number",
+            "description": "Time to playerid enforcement after bootup (default 480 seconds) (Time to playerid enforcement in seconds, default 480)."
+        },
+        "ForcePassive": {
+            "type": "number",
+            "description": "Forces the device to be in passive mode (Only stats and no packet drops)."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinExpiration": {
+            "type": "number",
+            "description": "Minimum record expiration value (default 1 min) (Min record expiration time in minutes, default 1)."
+        },
+        "PktActivityExpiration": {
+            "type": "number",
+            "description": "Packet activity record expiration value (default 5 minutes) (Packet activity record expiration time in minutes, default 5)."
+        },
+        "SamplingEnable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SamplingEnableDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

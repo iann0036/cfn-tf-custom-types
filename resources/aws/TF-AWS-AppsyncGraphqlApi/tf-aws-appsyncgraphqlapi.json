@@ -1,0 +1,271 @@
+{
+    "typeName": "TF::AWS::AppsyncGraphqlApi",
+    "description": "Provides an AppSync GraphQL API.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-AppsyncGraphqlApi/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "UrisDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "AdditionalAuthenticationProviderDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationType": {
+                    "type": "string"
+                },
+                "OpenidConnectConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OpenidConnectConfigDefinition"
+                    },
+                    "maxItems": 1
+                },
+                "UserPoolConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UserPoolConfigDefinition"
+                    },
+                    "maxItems": 1
+                }
+            },
+            "required": [
+                "AuthenticationType"
+            ]
+        },
+        "LogConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogsRoleArn": {
+                    "type": "string"
+                },
+                "ExcludeVerboseContent": {
+                    "type": "boolean"
+                },
+                "FieldLogLevel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudwatchLogsRoleArn",
+                "FieldLogLevel"
+            ]
+        },
+        "OpenidConnectConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthTtl": {
+                    "type": "number"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "IatTtl": {
+                    "type": "number"
+                },
+                "Issuer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Issuer"
+            ]
+        },
+        "UserPoolConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppIdClientRegex": {
+                    "type": "string"
+                },
+                "AwsRegion": {
+                    "type": "string"
+                },
+                "UserPoolId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserPoolId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AuthenticationType": {
+            "type": "string",
+            "description": "The authentication type. Valid values: `API_KEY`, `AWS_IAM`, `AMAZON_COGNITO_USER_POOLS`, `OPENID_CONNECT`."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A user-supplied name for the GraphqlApi."
+        },
+        "Schema": {
+            "type": "string",
+            "description": "The schema definition, in GraphQL schema language format. Terraform cannot perform drift detection of this configuration."
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource. If configured with a provider [`default_tags` configuration block](/docs/providers/aws/index.html#default_tags-configuration-block) present, tags with matching keys will overwrite those defined at the provider-level."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        },
+        "Uris": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UrisDefinition"
+            }
+        },
+        "XrayEnabled": {
+            "type": "boolean",
+            "description": "Whether tracing with X-ray is enabled. Defaults to false."
+        },
+        "AdditionalAuthenticationProvider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalAuthenticationProviderDefinition"
+            }
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "OpenidConnectConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OpenidConnectConfigDefinition"
+            },
+            "maxItems": 1
+        },
+        "UserPoolConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UserPoolConfigDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthenticationType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Id",
+        "/properties/Uris"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

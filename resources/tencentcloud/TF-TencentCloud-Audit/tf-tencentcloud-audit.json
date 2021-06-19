@@ -1,0 +1,97 @@
+{
+    "typeName": "TF::TencentCloud::Audit",
+    "description": "Provides a resource to create an audit.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-Audit/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuditSwitch": {
+            "type": "boolean",
+            "description": "Indicate whether to turn on audit logging or not."
+        },
+        "CosBucket": {
+            "type": "string",
+            "description": "Name of the cos bucket to save audit log. Caution: the validation of existing cos bucket will not be checked by terraform."
+        },
+        "CosRegion": {
+            "type": "string",
+            "description": "Region of the cos bucket."
+        },
+        "EnableKmsEncry": {
+            "type": "boolean",
+            "description": "Indicate whether the log is encrypt with KMS algorithm or not."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string",
+            "description": "Existing CMK unique key. This field can be get by data source `tencentcloud_audit_key_alias`. Caution: the region of the KMS must be as same as the `cos_region`."
+        },
+        "LogFilePrefix": {
+            "type": "string",
+            "description": "The log file name prefix. The length ranges from 3 to 40. If not set, the account ID will be the log file prefix."
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name of audit. Valid length ranges from 3 to 128. Only alpha character or numbers or '_' supported."
+        },
+        "ReadWriteAttribute": {
+            "type": "number",
+            "description": "Event attribute filter. Valid values: `1`, `2`, `3`. `1` for readonly, `2` for write-only, `3` for all."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuditSwitch",
+        "CosBucket",
+        "CosRegion",
+        "Name",
+        "ReadWriteAttribute"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

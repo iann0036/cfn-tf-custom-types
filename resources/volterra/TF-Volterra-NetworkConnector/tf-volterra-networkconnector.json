@@ -1,0 +1,585 @@
+{
+    "typeName": "TF::Volterra::NetworkConnector",
+    "description": "CloudFormation equivalent of volterra_network_connector",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/volterra/TF-Volterra-NetworkConnector/docs/README.md",
+    "definitions": {
+        "AnnotationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "EnableForwardProxyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionTimeout": {
+                    "type": "number"
+                },
+                "MaxConnectAttempts": {
+                    "type": "number"
+                },
+                "NoInterception": {
+                    "type": "boolean"
+                },
+                "WhiteListedPorts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "WhiteListedPrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TlsIntercept": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TlsInterceptDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SliToGlobalDrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SliToGlobalSnatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                },
+                "SnatConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnatConfigDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SliToSloSnatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultGwSnat": {
+                    "type": "boolean"
+                },
+                "DynamicRouting": {
+                    "type": "boolean"
+                },
+                "InterfaceIp": {
+                    "type": "boolean"
+                },
+                "SnatPool": {
+                    "type": "string"
+                },
+                "SnatPoolAllocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnatPoolAllocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SloToGlobalDrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SloToGlobalSnatDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GlobalVn": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/GlobalVnDefinition"
+                    }
+                },
+                "SnatConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnatConfigDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TlsInterceptDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableForAllDomains": {
+                    "type": "boolean"
+                },
+                "TrustedCaUrl": {
+                    "type": "string"
+                },
+                "VolterraCertificate": {
+                    "type": "boolean"
+                },
+                "VolterraTrustedCa": {
+                    "type": "boolean"
+                },
+                "CustomCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomCertificateDefinition"
+                    }
+                },
+                "Policy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PolicyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GlobalVnDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SnatConfigDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultGwSnat": {
+                    "type": "boolean"
+                },
+                "DynamicRouting": {
+                    "type": "boolean"
+                },
+                "InterfaceIp": {
+                    "type": "boolean"
+                },
+                "SnatPool": {
+                    "type": "string"
+                },
+                "SnatPoolAllocator": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SnatPoolAllocatorDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SnatPoolAllocatorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CustomCertificateDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PrivateKeyDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PolicyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InterceptionRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InterceptionRulesDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PrivateKeyDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecretEncodingType": {
+                    "type": "string"
+                },
+                "BlindfoldSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoDefinition"
+                    }
+                },
+                "BlindfoldSecretInfoInternal": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/BlindfoldSecretInfoInternalDefinition"
+                    }
+                },
+                "ClearSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClearSecretInfoDefinition"
+                    }
+                },
+                "VaultSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/VaultSecretInfoDefinition"
+                    }
+                },
+                "WingmanSecretInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/WingmanSecretInfoDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "InterceptionRulesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableInterception": {
+                    "type": "boolean"
+                },
+                "EnableInterception": {
+                    "type": "boolean"
+                },
+                "DomainMatch": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DomainMatchDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BlindfoldSecretInfoInternalDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DecryptionProvider": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "StoreProvider": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ClearSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VaultSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "SecretEncoding": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "WingmanSecretInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DomainMatchDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactValue": {
+                    "type": "string"
+                },
+                "RegexValue": {
+                    "type": "string"
+                },
+                "SuffixValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Annotations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AnnotationsDefinition"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Disable": {
+            "type": "boolean"
+        },
+        "DisableForwardProxy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LabelsDefinition"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "SliToSloDr": {
+            "type": "boolean"
+        },
+        "EnableForwardProxy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EnableForwardProxyDefinition"
+            }
+        },
+        "SliToGlobalDr": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SliToGlobalDrDefinition"
+            }
+        },
+        "SliToGlobalSnat": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SliToGlobalSnatDefinition"
+            }
+        },
+        "SliToSloSnat": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SliToSloSnatDefinition"
+            }
+        },
+        "SloToGlobalDr": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SloToGlobalDrDefinition"
+            }
+        },
+        "SloToGlobalSnat": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SloToGlobalSnatDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Namespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

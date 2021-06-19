@@ -1,0 +1,82 @@
+{
+    "typeName": "TF::TencentCloud::ClbTargetGroupAttachment",
+    "description": "Provides a resource to create a CLB target group attachment is bound to the load balancing listener or forwarding rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/tencentcloud/TF-TencentCloud-ClbTargetGroupAttachment/docs/README.md",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClbId": {
+            "type": "string",
+            "description": "ID of the CLB."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string",
+            "description": "ID of the CLB listener."
+        },
+        "RuleId": {
+            "type": "string",
+            "description": "ID of the CLB listener rule."
+        },
+        "TargetGroupId": {
+            "type": "string",
+            "description": "ID of the CLB target group."
+        },
+        "TargrtGroupId": {
+            "type": "string",
+            "description": "It has been deprecated from version 1.47.1. Use `target_group_id` instead. ID of the CLB target group."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbId",
+        "ListenerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

@@ -1,0 +1,545 @@
+{
+    "typeName": "TF::AVI::Vsvip",
+    "description": "The VsVip resource allows the creation and management of Avi VsVip",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/avi/TF-AVI-Vsvip/docs/README.md",
+    "definitions": {
+        "DnsInfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Fqdn": {
+                    "type": "string"
+                },
+                "NumRecordsInResponse": {
+                    "type": "number"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Cname": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CnameDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpamSelectorDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LabelsDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "MarkersDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "VipDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoAllocateFloatingIp": {
+                    "type": "boolean"
+                },
+                "AutoAllocateIp": {
+                    "type": "boolean"
+                },
+                "AutoAllocateIpType": {
+                    "type": "string"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "AviAllocatedFip": {
+                    "type": "boolean"
+                },
+                "AviAllocatedVip": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "FloatingSubnet6Uuid": {
+                    "type": "string"
+                },
+                "FloatingSubnetUuid": {
+                    "type": "string"
+                },
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "PortUuid": {
+                    "type": "string"
+                },
+                "PrefixLength": {
+                    "type": "number"
+                },
+                "Subnet6Uuid": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                },
+                "VipId": {
+                    "type": "string"
+                },
+                "DiscoveredNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DiscoveredNetworksDefinition"
+                    }
+                },
+                "FloatingIp": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FloatingIpDefinition"
+                    }
+                },
+                "FloatingIp6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FloatingIp6Definition"
+                    }
+                },
+                "Ip6Address": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ip6AddressDefinition"
+                    }
+                },
+                "IpAddress": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddressDefinition"
+                    }
+                },
+                "IpamNetworkSubnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpamNetworkSubnetDefinition"
+                    }
+                },
+                "PlacementNetworks": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlacementNetworksDefinition"
+                    }
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": [
+                "VipId"
+            ]
+        },
+        "CnameDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cname": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cname"
+            ]
+        },
+        "LabelsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key"
+            ]
+        },
+        "DiscoveredNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": [
+                "NetworkRef"
+            ]
+        },
+        "FloatingIpDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "FloatingIp6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "Ip6AddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "IpAddressDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        },
+        "IpamNetworkSubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet6Uuid": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PlacementNetworksDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkRef": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SubnetDefinition"
+                    }
+                },
+                "Subnet6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet6Definition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SubnetDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "Subnet6Definition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mask": {
+                    "type": "number"
+                },
+                "IpAddr": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/IpAddrDefinition"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "Mask"
+            ]
+        },
+        "IpAddrDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Addr": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Addr",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BgpPeerLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            },
+            "description": "Select bgp peers, using peer label, for vsvip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed."
+        },
+        "CloudRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type cloud. Field introduced in 17.1.1."
+        },
+        "EastWestPlacement": {
+            "type": "boolean",
+            "description": "Force placement on all service engines in the service engine group (container clouds only). Field introduced in 17.1.1. Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "Name for the vsvip object. Field introduced in 17.1.1."
+        },
+        "TenantRef": {
+            "type": "string",
+            "description": "It is a reference to an object of type tenant. Field introduced in 17.1.1."
+        },
+        "Tier1Lr": {
+            "type": "string",
+            "description": "This sets the placement scope of virtualservice to given tier1 logical router in nsx-t. Field introduced in 20.1.1."
+        },
+        "UseStandardAlb": {
+            "type": "boolean",
+            "description": "This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is set. This is only used when fip is used for vs on azure cloud. Field introduced in 18.2.3. Allowed in basic edition, essentials edition, enterprise edition."
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VrfContextRef": {
+            "type": "string",
+            "description": "Virtual routing context that the virtual service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type vrfcontext. Field introduced in 17.1.1."
+        },
+        "VsvipCloudConfigCksum": {
+            "type": "string",
+            "description": "Checksum of cloud configuration for vsvip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2."
+        },
+        "DnsInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsInfoDefinition"
+            }
+        },
+        "IpamSelector": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpamSelectorDefinition"
+            }
+        },
+        "Markers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MarkersDefinition"
+            }
+        },
+        "Vip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VipDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

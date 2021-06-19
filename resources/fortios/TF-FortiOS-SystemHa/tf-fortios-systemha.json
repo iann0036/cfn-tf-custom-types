@@ -1,0 +1,342 @@
+{
+    "typeName": "TF::FortiOS::SystemHa",
+    "description": "Configure HA.\n\nDue to the limitations of the current system, the feature is temporarily unavailable. Please use the following resource configuration as an alternative.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/fortios/TF-FortiOS-SystemHa/docs/README.md",
+    "definitions": {
+        "HaMgmtInterfacesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dst": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Gateway6": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "number"
+                },
+                "Interface": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SecondaryVclusterDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Monitor": {
+                    "type": "string"
+                },
+                "Override": {
+                    "type": "string"
+                },
+                "OverrideWaitTime": {
+                    "type": "number"
+                },
+                "PingserverFailoverThreshold": {
+                    "type": "number"
+                },
+                "PingserverMonitorInterface": {
+                    "type": "string"
+                },
+                "PingserverSecondaryForceReset": {
+                    "type": "string"
+                },
+                "PingserverSlaveForceReset": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "VclusterId": {
+                    "type": "number"
+                },
+                "Vdom": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arps": {
+            "type": "number"
+        },
+        "ArpsInterval": {
+            "type": "number"
+        },
+        "Authentication": {
+            "type": "string"
+        },
+        "CpuThreshold": {
+            "type": "string"
+        },
+        "DynamicSortSubtable": {
+            "type": "string"
+        },
+        "Encryption": {
+            "type": "string"
+        },
+        "FtpProxyThreshold": {
+            "type": "string"
+        },
+        "GratuitousArps": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "number"
+        },
+        "GroupName": {
+            "type": "string"
+        },
+        "HaDirect": {
+            "type": "string"
+        },
+        "HaEthType": {
+            "type": "string"
+        },
+        "HaMgmtStatus": {
+            "type": "string"
+        },
+        "HaUptimeDiffMargin": {
+            "type": "number"
+        },
+        "HbInterval": {
+            "type": "number"
+        },
+        "HbLostThreshold": {
+            "type": "number"
+        },
+        "Hbdev": {
+            "type": "string"
+        },
+        "HcEthType": {
+            "type": "string"
+        },
+        "HelloHolddown": {
+            "type": "number"
+        },
+        "HttpProxyThreshold": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImapProxyThreshold": {
+            "type": "string"
+        },
+        "InterClusterSessionSync": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "L2epEthType": {
+            "type": "string"
+        },
+        "LinkFailedSignal": {
+            "type": "string"
+        },
+        "LoadBalanceAll": {
+            "type": "string"
+        },
+        "LogicalSn": {
+            "type": "string"
+        },
+        "MemoryCompatibleMode": {
+            "type": "string"
+        },
+        "MemoryThreshold": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Monitor": {
+            "type": "string"
+        },
+        "MulticastTtl": {
+            "type": "number"
+        },
+        "NntpProxyThreshold": {
+            "type": "string"
+        },
+        "Override": {
+            "type": "string"
+        },
+        "OverrideWaitTime": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PingserverFailoverThreshold": {
+            "type": "number"
+        },
+        "PingserverFlipTimeout": {
+            "type": "number"
+        },
+        "PingserverMonitorInterface": {
+            "type": "string"
+        },
+        "PingserverSecondaryForceReset": {
+            "type": "string"
+        },
+        "PingserverSlaveForceReset": {
+            "type": "string"
+        },
+        "Pop3ProxyThreshold": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "RouteHold": {
+            "type": "number"
+        },
+        "RouteTtl": {
+            "type": "number"
+        },
+        "RouteWait": {
+            "type": "number"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "SessionPickup": {
+            "type": "string"
+        },
+        "SessionPickupConnectionless": {
+            "type": "string"
+        },
+        "SessionPickupDelay": {
+            "type": "string"
+        },
+        "SessionPickupExpectation": {
+            "type": "string"
+        },
+        "SessionPickupNat": {
+            "type": "string"
+        },
+        "SessionSyncDev": {
+            "type": "string"
+        },
+        "SmtpProxyThreshold": {
+            "type": "string"
+        },
+        "SsdFailover": {
+            "type": "string"
+        },
+        "StandaloneConfigSync": {
+            "type": "string"
+        },
+        "StandaloneMgmtVdom": {
+            "type": "string"
+        },
+        "SyncConfig": {
+            "type": "string"
+        },
+        "SyncPacketBalance": {
+            "type": "string"
+        },
+        "UnicastHb": {
+            "type": "string"
+        },
+        "UnicastHbNetmask": {
+            "type": "string"
+        },
+        "UnicastHbPeerip": {
+            "type": "string"
+        },
+        "UninterruptibleUpgrade": {
+            "type": "string"
+        },
+        "Vcluster2": {
+            "type": "string"
+        },
+        "VclusterId": {
+            "type": "number"
+        },
+        "Vdom": {
+            "type": "string"
+        },
+        "Vdomparam": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "string"
+        },
+        "HaMgmtInterfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HaMgmtInterfacesDefinition"
+            }
+        },
+        "SecondaryVcluster": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecondaryVclusterDefinition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Key",
+        "/properties/Password"
+    ]
+}

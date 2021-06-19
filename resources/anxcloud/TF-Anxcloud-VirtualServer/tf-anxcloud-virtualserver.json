@@ -1,0 +1,336 @@
+{
+    "typeName": "TF::Anxcloud::VirtualServer",
+    "description": "CloudFormation equivalent of anxcloud_virtual_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/anxcloud/TF-Anxcloud-VirtualServer/docs/README.md",
+    "definitions": {
+        "InfoDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusType": {
+                    "type": "string"
+                },
+                "BusTypeLabel": {
+                    "type": "string"
+                },
+                "DiskGb": {
+                    "type": "number"
+                },
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "Latency": {
+                    "type": "number"
+                },
+                "StorageType": {
+                    "type": "string"
+                }
+            }
+        },
+        "InfoDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "number"
+                },
+                "IpV4": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IpV6": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Nic": {
+                    "type": "number"
+                },
+                "Vlan": {
+                    "type": "string"
+                }
+            }
+        },
+        "InfoDefinition3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cores": {
+                    "type": "number"
+                },
+                "Cpu": {
+                    "type": "number"
+                },
+                "CustomName": {
+                    "type": "string"
+                },
+                "DisksInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InfoDefinition"
+                    }
+                },
+                "DisksNumber": {
+                    "type": "number"
+                },
+                "GuestOs": {
+                    "type": "string"
+                },
+                "GuestToolsStatus": {
+                    "type": "string"
+                },
+                "Identifier": {
+                    "type": "string"
+                },
+                "LocationCode": {
+                    "type": "string"
+                },
+                "LocationCountry": {
+                    "type": "string"
+                },
+                "LocationName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Network": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/InfoDefinition2"
+                    }
+                },
+                "Ram": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "VersionTools": {
+                    "type": "string"
+                }
+            }
+        },
+        "DiskDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskGb": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DiskGb"
+            ]
+        },
+        "NetworkDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ips": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NicType": {
+                    "type": "string"
+                },
+                "VlanId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NicType",
+                "VlanId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootDelay": {
+            "type": "number"
+        },
+        "CpuPerformanceType": {
+            "type": "string"
+        },
+        "Cpus": {
+            "type": "number"
+        },
+        "CriticalOperationConfirmed": {
+            "type": "boolean"
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EnterBiosSetup": {
+            "type": "boolean"
+        },
+        "ForceRestartIfNeeded": {
+            "type": "boolean"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InfoDefinition3"
+            }
+        },
+        "LocationId": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Script": {
+            "type": "string"
+        },
+        "Sockets": {
+            "type": "number"
+        },
+        "SshKey": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TemplateId": {
+            "type": "string"
+        },
+        "TemplateType": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskDefinition"
+            },
+            "minItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkDefinition"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cpus",
+        "Hostname",
+        "LocationId",
+        "Memory",
+        "TemplateId",
+        "TemplateType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id",
+        "/properties/Info"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    },
+    "writeOnlyProperties": [
+        "/properties/Password"
+    ]
+}

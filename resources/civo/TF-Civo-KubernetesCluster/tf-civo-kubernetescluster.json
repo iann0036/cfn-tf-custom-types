@@ -1,0 +1,256 @@
+{
+    "typeName": "TF::Civo::KubernetesCluster",
+    "description": "Provides a Civo Kubernetes cluster resource. This can be used to create, delete, and modify clusters.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/civo/TF-Civo-KubernetesCluster/docs/README.md",
+    "definitions": {
+        "InstalledApplicationsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Application": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "Installed": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            }
+        },
+        "InstancesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCores": {
+                    "type": "number"
+                },
+                "DiskGb": {
+                    "type": "number"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "RamMb": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "PoolsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCores": {
+                    "type": "number"
+                },
+                "DiskGb": {
+                    "type": "number"
+                },
+                "Hostname": {
+                    "type": "string"
+                },
+                "RamMb": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "PoolsDefinition2": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Count": {
+                    "type": "number"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "InstanceNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Instances": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PoolsDefinition"
+                    }
+                },
+                "Size": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiEndpoint": {
+            "type": "string"
+        },
+        "Applications": {
+            "type": "string",
+            "description": "A comma separated list of applications to install. Spaces within application names are fine, but shouldn't be either side of the comma. Application names are case-sensitive; the available applications can be listed with the civo CLI: 'civo kubernetes applications ls'. If you want to remove a default installed application, prefix it with a '-', e.g. -Traefik."
+        },
+        "BuiltAt": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DnsEntry": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstalledApplications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstalledApplicationsDefinition"
+            }
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstancesDefinition"
+            }
+        },
+        "Kubeconfig": {
+            "type": "string"
+        },
+        "KubernetesVersion": {
+            "type": "string",
+            "description": "The version of k3s to install (The default is currently the latest available)."
+        },
+        "MasterIp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string",
+            "description": "A name for the Kubernetes cluster, if is not declare the provider will generate one for you."
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "NumTargetNodes": {
+            "type": "number",
+            "description": "The number of instances to create (The default at the time of writing is 3)."
+        },
+        "Pools": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PoolsDefinition2"
+            }
+        },
+        "Ready": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string",
+            "description": "The region for the cluster."
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "string",
+            "description": "A space separated list of tags, to be used freely as required."
+        },
+        "TargetNodesSize": {
+            "type": "string",
+            "description": "The size of each node (The default is currently g3.k3s.small)."
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiEndpoint",
+        "/properties/BuiltAt",
+        "/properties/CreatedAt",
+        "/properties/DnsEntry",
+        "/properties/Id",
+        "/properties/InstalledApplications",
+        "/properties/Instances",
+        "/properties/Kubeconfig",
+        "/properties/MasterIp",
+        "/properties/Pools",
+        "/properties/Ready",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

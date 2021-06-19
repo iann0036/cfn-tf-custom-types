@@ -1,0 +1,170 @@
+{
+    "typeName": "TF::AWS::DefaultVpc",
+    "description": "Provides a resource to manage the [default AWS VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\nin the current region.\n\nFor AWS accounts created after 2013-12-04, each region comes with a Default VPC.\n**This is an advanced resource**, and has special caveats to be aware of when\nusing it. Please read this document in its entirety before using this resource.\n\nThe `aws_default_vpc` behaves differently from normal resources, in that\nTerraform does not _create_ this resource, but instead \"adopts\" it\ninto management.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/aws/TF-AWS-DefaultVpc/docs/README.md",
+    "definitions": {
+        "TagsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "TagsAllDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssignGeneratedIpv6CidrBlock": {
+            "type": "boolean"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "DefaultNetworkAclId": {
+            "type": "string"
+        },
+        "DefaultRouteTableId": {
+            "type": "string"
+        },
+        "DefaultSecurityGroupId": {
+            "type": "string"
+        },
+        "DhcpOptionsId": {
+            "type": "string"
+        },
+        "EnableClassiclink": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable ClassicLink\nfor the VPC. Only valid in regions and accounts that support EC2 Classic.\nSee the [ClassicLink documentation][1] for more information. Defaults false."
+        },
+        "EnableClassiclinkDnsSupport": {
+            "type": "boolean"
+        },
+        "EnableDnsHostnames": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable DNS hostnames in the VPC. Defaults false."
+        },
+        "EnableDnsSupport": {
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable DNS support in the VPC. Defaults true."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceTenancy": {
+            "type": "string"
+        },
+        "Ipv6AssociationId": {
+            "type": "string"
+        },
+        "Ipv6CidrBlock": {
+            "type": "string"
+        },
+        "MainRouteTableId": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsDefinition"
+            },
+            "description": "A map of tags to assign to the resource."
+        },
+        "TagsAll": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TagsAllDefinition"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AssignGeneratedIpv6CidrBlock",
+        "/properties/CidrBlock",
+        "/properties/DefaultNetworkAclId",
+        "/properties/DefaultRouteTableId",
+        "/properties/DefaultSecurityGroupId",
+        "/properties/DhcpOptionsId",
+        "/properties/Id",
+        "/properties/InstanceTenancy",
+        "/properties/Ipv6AssociationId",
+        "/properties/Ipv6CidrBlock",
+        "/properties/MainRouteTableId",
+        "/properties/OwnerId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

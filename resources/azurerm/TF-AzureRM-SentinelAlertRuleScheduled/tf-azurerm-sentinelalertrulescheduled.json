@@ -1,0 +1,212 @@
+{
+    "typeName": "TF::AzureRM::SentinelAlertRuleScheduled",
+    "description": "Manages a Sentinel Scheduled Alert Rule.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/azurerm/TF-AzureRM-SentinelAlertRuleScheduled/docs/README.md",
+    "definitions": {
+        "EventGroupingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AggregationMethod": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AggregationMethod"
+            ]
+        },
+        "IncidentConfigurationDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CreateIncident": {
+                    "type": "boolean"
+                },
+                "Grouping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupingDefinition"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "CreateIncident"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GroupingDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "EntityMatchingMethod": {
+                    "type": "string"
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LookbackDuration": {
+                    "type": "string"
+                },
+                "ReopenClosedIncidents": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertRuleTemplateGuid": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogAnalyticsWorkspaceId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Query": {
+            "type": "string"
+        },
+        "QueryFrequency": {
+            "type": "string"
+        },
+        "QueryPeriod": {
+            "type": "string"
+        },
+        "Severity": {
+            "type": "string"
+        },
+        "SuppressionDuration": {
+            "type": "string"
+        },
+        "SuppressionEnabled": {
+            "type": "boolean"
+        },
+        "Tactics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TriggerOperator": {
+            "type": "string"
+        },
+        "TriggerThreshold": {
+            "type": "number"
+        },
+        "EventGrouping": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventGroupingDefinition"
+            },
+            "maxItems": 1
+        },
+        "IncidentConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncidentConfigurationDefinition"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "LogAnalyticsWorkspaceId",
+        "Name",
+        "Query",
+        "Severity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Id"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}

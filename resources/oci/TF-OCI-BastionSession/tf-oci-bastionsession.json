@@ -1,0 +1,204 @@
+{
+    "typeName": "TF::OCI::BastionSession",
+    "description": "This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.\n\nCreates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "documentationUrl": "https://github.com/iann0036/cfn-tf-custom-types/blob/docs/resources/oci/TF-OCI-BastionSession/docs/README.md",
+    "definitions": {
+        "SshMetadataDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MapKey": {
+                    "type": "string"
+                },
+                "MapValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MapKey",
+                "MapValue"
+            ]
+        },
+        "KeyDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PublicKeyContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PublicKeyContent"
+            ]
+        },
+        "TargetResourceDetailsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SessionType": {
+                    "type": "string"
+                },
+                "TargetResourceId": {
+                    "type": "string"
+                },
+                "TargetResourceOperatingSystemUserName": {
+                    "type": "string"
+                },
+                "TargetResourcePort": {
+                    "type": "number"
+                },
+                "TargetResourcePrivateIpAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SessionType",
+                "TargetResourceId"
+            ]
+        },
+        "TimeoutsDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BastionId": {
+            "type": "string",
+            "description": "The unique identifier (OCID) of the bastion on which to create this session."
+        },
+        "BastionName": {
+            "type": "string"
+        },
+        "BastionPublicHostKeyInfo": {
+            "type": "string"
+        },
+        "BastionUserName": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string",
+            "description": "(Updatable) The name of the session."
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyType": {
+            "type": "string",
+            "description": "The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format."
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "SessionTtlInSeconds": {
+            "type": "number",
+            "description": "The amount of time the session can remain active."
+        },
+        "SshMetadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SshMetadataDefinition"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "KeyDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyDetailsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TargetResourceDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetResourceDetailsDefinition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/TimeoutsDefinition"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BastionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BastionName",
+        "/properties/BastionPublicHostKeyInfo",
+        "/properties/BastionUserName",
+        "/properties/Id",
+        "/properties/LifecycleDetails",
+        "/properties/SshMetadata",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "s3:GetObject"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "lambda:InvokeFunction"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ]
+        }
+    }
+}
